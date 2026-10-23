@@ -133,3 +133,10 @@ b.pos{color:var(--pos)}b.neg{color:var(--neg)}
 .mapa-grid>*{min-width:0}.painel,.placar>*,.kpis>*{min-width:0}
 
 .grafico .hora{font-size:9.5px;fill:#6f6888;font-weight:500}.grafico .hora-tit{font-size:10px;font-style:italic}.grafico .tick-h{stroke:#9a93ad}
+/* mapa municipal */
+.mapa .mun{cursor:pointer;transition:filter .1s}.mapa .mun:hover{filter:brightness(1.12) drop-shadow(0 0 2px rgba(0,0,0,.5))}
+.mapa-mun svg{touch-action:pan-y;user-select:none;max-height:78vh}
+.mapa-mun .zoom{position:absolute;top:8px;right:8px;display:flex;flex-direction:column;gap:4px;z-index:4}
+.mapa-mun .zoom button{width:32px;height:32px;border-radius:8px;border:1px solid #d9d4f0;background:#fff;color:var(--roxo);font-size:18px;line-height:1;cursor:pointer}
+.mapa-mun .zoom button:hover{background:var(--lilas)}
+.carregando{color:var(--tx2);padding:30px;text-align:center}

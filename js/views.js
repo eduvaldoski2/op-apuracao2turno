@@ -5,6 +5,8 @@ import { projetarMunicipios } from './proj.js';
 import { esc, dlt, grw, tabela } from './ui.js';
 import { graficoPlacar } from './charts.js';
 import { criarMapa, legendaMapa } from './map.js';
+import { criarMapaMun } from './mapamun.js';
+import { getJSON } from './tse.js';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -239,8 +241,23 @@ export function viewUf(ctx, uf, kOrd) {
     : `${kpi('Já apurado', fNum(r.pst, 1) + '%', null, '')}${kpi('Abstenção (proj.)', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), '')}${kpi('Brancos + nulos (proj.)', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), '')}${kpi('Chance de Lula vencer', `${Math.round(100 * r.pw)}%`, null, 'modelo estatístico')}`;
   const html = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false })}<div class="centro"><div class="centro-t">${esc(UF_NOME[uf])}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : ''}</div></div>${cartaoCand('F', r, { modo, conf: false })}</section>
   <section class="kpis k4">${kp}</section>
+  ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Cor = quem lidera no município; tom mais escuro = maior percentual. Clique para ver os bairros; use + / − ou a roda do mouse para aproximar.</p><div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado">${legendaMapa()}</div></div></section>`}
   <section class="painel"><h2>Municípios de ${esc(UF_NOME[uf])}${ap ? '' : ' (projeção)'}</h2><p class="sub">Ordenado por ${CAND[ord].nome} (maior % primeiro) — altere clicando nos títulos. ${ap ? 'Municípios sem urnas apuradas aparecem no fim, como "aguardando".' : 'Municípios ainda não apurados mostram a projeção a partir do 1º turno.'}</p><div id="tab-m"></div></section>`;
+  const cdi = new Map((B.byUf[uf] || []).map(b => [b.cd, String(b.cdi)]));
+  const dm = {}, porCdi = {};
+  for (const m of rows) { const id = cdi.get(m.id); if (!id) continue; porCdi[id] = m;
+    dm[id] = (m.apurado || !ap) && m.L + m.F > 0 ? { k: m.L >= m.F ? 'L' : 'F', pw: Math.max(m.pL, m.pF), pL: m.pL, pF: m.pF, dL: m.dL, dF: m.dF } : { k: null }; }
+  const tipM = id => { const m = porCdi[id]; if (!m) return ''; const nome = esc(m.nome);
+    if (!(m.L + m.F > 0)) return `<b>${nome}</b><br><span class="t-s">aguardando apuração</span>`;
+    return `<b>${nome}</b><br><span class="t-s">${ap ? fNum(m.pst, 0) + '% das seções apuradas' : 'projeção'}</span><br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(m.pL, 2)}%</b> ${fDelta(m.dL, 1)} · ${fInt(m.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(m.pF, 2)}%</b> ${fDelta(m.dF, 1)} · ${fInt(m.F)}`; };
   return { html, titulo: UF_NOME[uf], montar(root) {
+    const alvoMapa = root.querySelector('#mapa-mun');
+    if (alvoMapa) getJSON(`data/mapa_mun/${uf}.json`, { retries: 1 }).then(geo => {
+      const idPorCdi = new Map((B.byUf[uf] || []).map(b => [String(b.cdi), b.cd]));
+      const mp = criarMapaMun(alvoMapa, geo, { onClick: id => { const cd = idPorCdi.get(id); if (cd) ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${cd}`); }, tooltip: tipM });
+      for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome.replace(/\b(\p{L})(\p{L}*)/gu, (_, a, b) => (a + b.toLowerCase())).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
+      mp.atualizar(dm);
+    }).catch(() => { alvoMapa.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
     tabela(root.querySelector('#tab-m'), { cols, rows, sort: 'p' + ord, dir: 'desc', filtro: (m, q) => m.nome.toLowerCase().includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${slugn(UF_NOME[uf])}_municipios_${ap ? 'apuracao' : 'projecao'}`, cab: ['Município', '% apurado', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Lula cresc. votos %', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Flávio cresc. votos %'], linhas: rows.slice().sort((a, b) => (isNaN(b['p' + ord]) - isNaN(a['p' + ord])) || b['p' + ord] - a['p' + ord]).map(m => [m.nome, m.pst, m.L, m.pL, m.dL, m.gL, m.F, m.pF, m.dF, m.gF]) });
   } };
