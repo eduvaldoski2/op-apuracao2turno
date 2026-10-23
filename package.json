@@ -1,0 +1,13 @@
+{
+  "name": "oficina-apuracao",
+  "private": true,
+  "type": "module",
+  "description": "Oficina Política — painel de apuração do 2º turno 2026 (presidente)",
+  "scripts": {
+    "test": "node tests/model.test.mjs && node tests/backtest.mjs 3",
+    "mock": "node scripts/mock_tse.mjs --port 8787 --auto 180",
+    "base": "node scripts/coletor.mjs --base data/base_1t.json",
+    "coletar": "node scripts/coletor.mjs --out data/live --loop 30",
+    "site": "python3 -m http.server 8000"
+  }
+}

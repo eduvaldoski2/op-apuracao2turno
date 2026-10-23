@@ -1,0 +1,52 @@
+name: Coletor da apuração (2º turno)
+# Lê os arquivos do TSE a cada ~25 s, calcula a projeção e publica snap.json/hist.json/meta.json na branch "dados".
+# O painel (GitHub Pages) lê esses arquivos. Rede de segurança: o agendamento reinicia o coletor se ele cair.
+on:
+  workflow_dispatch:
+    inputs:
+      forcar:
+        description: 'Rodar mesmo fora de 25–26/10/2026 (teste)'
+        required: false
+        default: 'nao'
+  schedule:
+    - cron: '*/10 * * * *'
+permissions:
+  contents: write
+concurrency:
+  group: coletor
+  cancel-in-progress: false
+jobs:
+  coletar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - name: Janela de execução
+        id: janela
+        run: |
+          hoje=$(date -u +%Y-%m-%d)
+          if [ "${{ github.event.inputs.forcar }}" = "sim" ] || [ "$hoje" = "2026-10-25" ] || [ "$hoje" = "2026-10-26" ]; then echo "rodar=sim" >> "$GITHUB_OUTPUT"; else echo "rodar=nao" >> "$GITHUB_OUTPUT"; fi
+      - uses: actions/checkout@v4
+        if: steps.janela.outputs.rodar == 'sim'
+      - uses: actions/setup-node@v4
+        if: steps.janela.outputs.rodar == 'sim'
+        with: { node-version: '22' }
+      - name: Preparar branch dados
+        if: steps.janela.outputs.rodar == 'sim'
+        run: |
+          git config user.name "coletor"; git config user.email "coletor@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin dados >/dev/null 2>&1; then
+            git fetch --depth=1 origin dados && git worktree add dados FETCH_HEAD && (cd dados && git checkout -B dados)
+          else
+            git worktree add --orphan -b dados dados 2>/dev/null || (mkdir dados && cd dados && git init -q -b dados && git remote add origin "https://github.com/${{ github.repository }}.git")
+          fi
+          cd dados && git config user.name "coletor" && git config user.email "coletor@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" || true
+      - name: Coletar (laço de ~5h50)
+        if: steps.janela.outputs.rodar == 'sim'
+        run: |
+          fim=$((SECONDS+21000))
+          while [ $SECONDS -lt $fim ]; do
+            node scripts/coletor.mjs --out dados/live --basefile data/base_1t.json || true
+            (cd dados && git add -A && if ! git diff --cached --quiet; then git commit -q --amend -m "dados" 2>/dev/null || git commit -q -m "dados"; git push -q -f origin dados || true; fi)
+            sleep 20
+          done
