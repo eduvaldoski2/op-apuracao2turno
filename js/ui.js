@@ -1,5 +1,5 @@
 // Componentes de interface: tabela ordenável, cartões, formatação de variações.
-import { fDelta, fGrowth } from './util.js?v=cd1e5713';
+import { fDelta, fGrowth } from './util.js?v=56ddea49';
 export const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 export const dlt = (v, d = 1, unit = ' p.p.') => { if (v == null || isNaN(v)) return ''; const t = fDelta(v, d, unit); const c = Math.round(v * 10 ** d) === 0 ? 'zero' : v > 0 ? 'pos' : 'neg'; return `<span class="dlt ${c}" title="variação em relação ao 1º turno">(${t})</span>`; };

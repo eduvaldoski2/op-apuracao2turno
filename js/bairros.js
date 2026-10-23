@@ -1,16 +1,16 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=cd1e5713';
-import { CONFIG } from './config.js?v=cd1e5713';
-import { getJSON } from './tse.js?v=cd1e5713';
-import { esc, dlt, tabela } from './ui.js?v=cd1e5713';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=cd1e5713';
-import { listaMunicipios } from './model.js?v=cd1e5713';
-import { projetarMunicipios } from './proj.js?v=cd1e5713';
-import { criarMapaPontos } from './mapapontos.js?v=cd1e5713';
-import { criarMapaBairros } from './mapabairros.js?v=cd1e5713';
-import { legendaMapa } from './map.js?v=cd1e5713';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=56ddea49';
+import { CONFIG } from './config.js?v=56ddea49';
+import { getJSON } from './tse.js?v=56ddea49';
+import { esc, dlt, tabela } from './ui.js?v=56ddea49';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=56ddea49';
+import { listaMunicipios } from './model.js?v=56ddea49';
+import { projetarMunicipios } from './proj.js?v=56ddea49';
+import { criarMapaPontos } from './mapapontos.js?v=56ddea49';
+import { criarMapaBairros } from './mapabairros.js?v=56ddea49';
+import { legendaMapa } from './map.js?v=56ddea49';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
@@ -43,9 +43,18 @@ export function demoSecoes(est, linhaMun) {
   if (!esc_.length || !(L + F > 0)) return { s, t: '' };
   const aptos = esc_.reduce((t, o) => t + o.x[1], 0) || 1, pm = L / (L + F);
   const p1 = o => (o.x[2] + 0.5) / (o.x[2] + o.x[3] + 1), media1 = Math.exp(esc_.reduce((t, o) => t + o.x[1] * Math.log(p1(o) / (1 - p1(o))), 0) / aptos);
-  let somaL = 0; const tmp = esc_.map(o => { const comp = c * o.x[1] / aptos; const pj = expit(logit(clamp(pm, .02, .98)) + 0.8 * (logit(p1(o)) - Math.log(media1)) + (hash(o.x[0], o.z + 7) - .5) * .25); const vv = comp * (1 - (vb + tvn) / (c || 1)); somaL += vv * pj; return { o, comp, pj, vv }; });
+  // cada seção tem comparecimento, brancos e nulos próprios (perfil do 1º turno na mesma seção + ruído); a soma bate com o município
+  const v1 = o => o.x[2] + o.x[3] + o.x[4] + o.x[5] + o.x[6];
+  const raw = esc_.map(o => o.x[1] * clamp(clamp(v1(o) / Math.max(1, o.x[1]), .35, .97) * (1 + (hash(o.x[0], o.z + 11) - .5) * .12), .2, .99));
+  const sr = raw.reduce((t, v) => t + v, 0) || 1;
+  const rb = vb / (c || 1), rn = tvn / (c || 1);
+  const bi = o => (o.x[5] + 1) / (v1(o) + 2), ni = o => (o.x[6] + 1) / (v1(o) + 2);
+  const mb = esc_.reduce((t, o, i) => t + raw[i] * bi(o), 0) / sr, mn = esc_.reduce((t, o, i) => t + raw[i] * ni(o), 0) / sr;
+  let somaL = 0; const tmp = esc_.map((o, i) => { const comp = Math.min(o.x[1] * .99, raw[i] * c / sr);
+    const b = comp * clamp(rb * bi(o) / mb * (1 + (hash(o.x[0], o.z + 3) - .5) * .5), 0, .3), nu = comp * clamp(rn * ni(o) / mn * (1 + (hash(o.x[0], o.z + 5) - .5) * .5), 0, .4);
+    const pj = expit(logit(clamp(pm, .02, .98)) + 0.8 * (logit(p1(o)) - Math.log(media1)) + (hash(o.x[0], o.z + 7) - .5) * .25); const vv = Math.max(0, comp - b - nu); somaL += vv * pj; return { o, comp, pj, vv, b, nu }; });
   const k = L / (somaL || 1);
-  for (const t of tmp) { const l = Math.round(t.vv * clamp(t.pj * k, 0, 1)), f = Math.round(t.vv) - l, b = Math.round(t.comp * vb / (c || 1)), nu = Math.round(t.comp * tvn / (c || 1)); s[t.o.z + '-' + t.o.x[0]] = [l, Math.max(0, f), 0, b, nu]; }
+  for (const t of tmp) { const l = Math.round(t.vv * clamp(t.pj * k, 0, 1)), f = Math.max(0, Math.round(t.vv) - l); s[t.o.z + '-' + t.o.x[0]] = [l, f, 0, Math.round(t.b), Math.round(t.nu)]; }
   return { s, t: 'demo' };
 }
 
@@ -94,7 +103,11 @@ export function agregarPoligonos(locais, geo) {
   return out;
 }
 let geoCache = new Map();
-async function geoBairros(cd) { if (!geoCache.has(cd)) geoCache.set(cd, getJSON(`data/bairros_geo/${cd}.json`, { retries: 0 }).catch(() => null)); return geoCache.get(cd); }
+const ACENTOS_SP = 'Água Rasa|Alto de Pinheiros|Belém|Brás|Brasilândia|Butantã|Cangaíba|Capão Redondo|Carrão|Cidade Líder|Consolação|Freguesia do Ó|Grajaú|Jaçanã|Jaguaré|Jaraguá|Jardim Ângela|Jardim São Luís|José Bonifácio|Limão|Parque do Carmo|República|Sacomã|Santa Cecília|São Domingos|São Lucas|São Mateus|São Miguel|São Rafael|Saúde|Sé|Tatuapé|Tremembé|Vila Curuçá|Vila Jacuí|Vila Sônia'.split('|');
+const semAcento = t => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const MAPA_AC = new Map(ACENTOS_SP.map(n => [semAcento(n), n]));
+const corrige = g => { if (g && g.rotulo === 'distrito') for (const f of g.f) f.n = MAPA_AC.get(semAcento(f.n)) || f.n; return g; };
+async function geoBairros(cd) { if (!geoCache.has(cd)) geoCache.set(cd, getJSON(`data/bairros_geo/${cd}.json`, { retries: 0 }).then(corrige).catch(() => null)); return geoCache.get(cd); }
 
 // ---------- utilidades compartilhadas pelas telas ----------
 const pref = ap => ap ? '#/' : '#/p/';
