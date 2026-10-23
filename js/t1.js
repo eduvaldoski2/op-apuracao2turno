@@ -1,11 +1,11 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=2e9360eb';
-import { esc, tabela } from './ui.js?v=2e9360eb';
-import { kpi } from './views.js?v=2e9360eb';
-import { criarMapa } from './map.js?v=2e9360eb';
-import { criarMapaMun } from './mapamun.js?v=2e9360eb';
-import { getJSON } from './tse.js?v=2e9360eb';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=ebeb69e4';
+import { esc, tabela, sem } from './ui.js?v=ebeb69e4';
+import { kpi } from './views.js?v=ebeb69e4';
+import { criarMapa } from './map.js?v=ebeb69e4';
+import { criarMapaMun } from './mapamun.js?v=ebeb69e4';
+import { getJSON } from './tse.js?v=ebeb69e4';
 
 let cache = null;
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
@@ -98,7 +98,7 @@ export function viewT1Uf(ctx, uf) {
       mp.atualizar(Object.fromEntries(muns.filter(m => cdi.get(m.id)).map(m => [cdi.get(m.id), dadoMapa(T, m.u)])));
     }).catch(() => { alvo.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
     const cols = colsTop(T, u, { k: 'nome', t: 'Município', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, ini: 'asc' });
-    tabela(root.querySelector('#tab-m'), { cols, rows: muns, onRow: x => ctx.ir(`#/t1/mun/${uf}/${x.id}`), sort: 'p' + ord[0], dir: 'desc', filtro: (x, q) => x.nome.toLowerCase().includes(q), limite: 1000 });
+    tabela(root.querySelector('#tab-m'), { cols, rows: muns, onRow: x => ctx.ir(`#/t1/mun/${uf}/${x.id}`), sort: 'p' + ord[0], dir: 'desc', filtro: (x, q) => sem(x.nome).includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${uf}_1turno_municipios`, cab: cols.map(c => c.t), linhas: muns.map(x => cols.map(c => (c.x || c.v)(x))) });
   } };
 }

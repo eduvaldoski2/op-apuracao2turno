@@ -1,17 +1,17 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=2e9360eb';
-import { CONFIG } from './config.js?v=2e9360eb';
-import { getJSON } from './tse.js?v=2e9360eb';
-import { esc, dlt, tabela } from './ui.js?v=2e9360eb';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=2e9360eb';
-import { listaMunicipios } from './model.js?v=2e9360eb';
-import { dec, blocoCands, kpisT1 } from './t1.js?v=2e9360eb';
-import { projetarMunicipios } from './proj.js?v=2e9360eb';
-import { criarMapaPontos } from './mapapontos.js?v=2e9360eb';
-import { criarMapaBairros } from './mapabairros.js?v=2e9360eb';
-import { legendaMapa } from './map.js?v=2e9360eb';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=ebeb69e4';
+import { CONFIG } from './config.js?v=ebeb69e4';
+import { getJSON } from './tse.js?v=ebeb69e4';
+import { esc, dlt, tabela, sem } from './ui.js?v=ebeb69e4';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=ebeb69e4';
+import { listaMunicipios } from './model.js?v=ebeb69e4';
+import { dec, blocoCands, kpisT1 } from './t1.js?v=ebeb69e4';
+import { projetarMunicipios } from './proj.js?v=ebeb69e4';
+import { criarMapaPontos } from './mapapontos.js?v=ebeb69e4';
+import { criarMapaBairros } from './mapabairros.js?v=ebeb69e4';
+import { legendaMapa } from './map.js?v=ebeb69e4';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
@@ -207,7 +207,7 @@ export function viewMun(ctx, uf, cd) {
       }
       const prog = tot.st ? `${fNum(tot.pst, 1)}% das seções do município já chegaram (${fInt(tot.st)} de ${fInt(tot.ts)}).` : 'Os resultados aparecem aqui conforme as seções forem totalizadas.';
       root.querySelector('#mb-estado').textContent = prog; const pg = root.querySelector('#geo-prog'); if (pg) pg.textContent = prog;
-      tabela(root.querySelector('#tab-b'), { cols: colunas('b', ap, uf, cd, rotTab), rows: linhasTab, onRow: x => ctx.ir(dist ? `${rotaMun(ctx.modo, uf, cd)}/d/${x.di}` : `${rotaMun(ctx.modo, uf, cd)}/b/${chaveB(x.nome)}`), sort: tot.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, q) => x.nome.toLowerCase().includes(q), limite: 500 });
+      tabela(root.querySelector('#tab-b'), { cols: colunas('b', ap, uf, cd, rotTab), rows: linhasTab, onRow: x => ctx.ir(dist ? `${rotaMun(ctx.modo, uf, cd)}/d/${x.di}` : `${rotaMun(ctx.modo, uf, cd)}/b/${chaveB(x.nome)}`), sort: tot.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, q) => sem(x.nome).includes(q), limite: 500 });
       ctx.csv = () => ({ nome: `${uf}_${cd}_${rotTab.toLowerCase()}s_${ap ? 'apuracao' : 'projecao'}`, cab: [rotTab, ...cabCsv.slice(1)], linhas: linhasCsv(linhasTab, x => bonito(x.nome)) });
     }
     iniciar(ctx, uf, cd, root, alvo, desenhar);
@@ -229,7 +229,7 @@ export function viewDistrito(ctx, uf, cd, di) {
       const bairros = [...porB].map(([n, ls]) => Object.assign(somar(ls), { nome: n, id: n }));
       corpo.innerHTML = `${placar(u, `${nome} · ${mun.nome}`, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(u)}
         <section class="painel"><h2>Bairros de ${esc(nome)} (${fInt(bairros.length)})</h2><p class="sub">Bairro conforme o cadastro do TSE para cada local de votação. <b>Clique num bairro</b> para ver os locais de votação.</p><div id="tab-b"></div></section>`;
-      tabela(corpo.querySelector('#tab-b'), { cols: colunas('b', ap, uf, cd, 'Bairro'), rows: bairros, onRow: x => ctx.ir(`${rotaMun(ctx.modo, uf, cd)}/d/${di}/b/${chaveB(x.nome)}`), sort: u.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, q) => x.nome.toLowerCase().includes(q), limite: 500 });
+      tabela(corpo.querySelector('#tab-b'), { cols: colunas('b', ap, uf, cd, 'Bairro'), rows: bairros, onRow: x => ctx.ir(`${rotaMun(ctx.modo, uf, cd)}/d/${di}/b/${chaveB(x.nome)}`), sort: u.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, q) => sem(x.nome).includes(q), limite: 500 });
       ctx.csv = () => ({ nome: `${uf}_${cd}_${nome}_bairros_${ap ? 'apuracao' : 'projecao'}`.toLowerCase().replace(/[^a-z0-9_]+/g, '-'), cab: ['Bairro', ...cabCsv.slice(1)], linhas: linhasCsv(bairros, x => bonito(x.nome)) });
     });
   } };
@@ -252,7 +252,7 @@ export function viewBairro(ctx, uf, cd, chave, di) {
       if (!locais.length) { corpo.innerHTML = `<div class="aviso">Nenhum local de votação encontrado nesta área.</div>`; return; }
       corpo.innerHTML = `${placar(u, `${nome} · ${mun.nome}`, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(u)}
         <section class="painel"><h2>Locais de votação (${fInt(locais.length)})</h2><p class="sub">Clique num local de votação para ver o resultado de cada seção.</p><div id="tab-l"></div></section>`;
-      tabela(corpo.querySelector('#tab-l'), { cols: colunas('l', ap, uf, cd), rows: locais, onRow: x => ctx.ir(`${rotaMun(ctx.modo, uf, cd)}/l/${x.id}`), sort: u.st ? 'pL' : 'apt', dir: 'desc', filtro: (x, q) => (x.nome + ' ' + x.end).toLowerCase().includes(q), limite: 300 });
+      tabela(corpo.querySelector('#tab-l'), { cols: colunas('l', ap, uf, cd), rows: locais, onRow: x => ctx.ir(`${rotaMun(ctx.modo, uf, cd)}/l/${x.id}`), sort: u.st ? 'pL' : 'apt', dir: 'desc', filtro: (x, q) => sem(x.nome + ' ' + x.end).includes(q), limite: 300 });
       ctx.csv = () => ({ nome: `${uf}_${cd}_${nome}_locais_${ap ? 'apuracao' : 'projecao'}`.toLowerCase().replace(/[^a-z0-9_]+/g, '-'), cab: ['Local de votação', ...cabCsv.slice(1)], linhas: linhasCsv(locais, x => bonito(x.nome)) });
     });
   } };

@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=2e9360eb';
-import { listaMunicipios, rankingUfs } from './model.js?v=2e9360eb';
-import { projetarMunicipios } from './proj.js?v=2e9360eb';
-import { esc, dlt, grw, tabela } from './ui.js?v=2e9360eb';
-import { graficoPlacar } from './charts.js?v=2e9360eb';
-import { criarMapa, legendaMapa } from './map.js?v=2e9360eb';
-import { criarMapaMun } from './mapamun.js?v=2e9360eb';
-import { getJSON } from './tse.js?v=2e9360eb';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=ebeb69e4';
+import { listaMunicipios, rankingUfs } from './model.js?v=ebeb69e4';
+import { projetarMunicipios } from './proj.js?v=ebeb69e4';
+import { esc, dlt, grw, tabela, sem } from './ui.js?v=ebeb69e4';
+import { graficoPlacar } from './charts.js?v=ebeb69e4';
+import { criarMapa, legendaMapa } from './map.js?v=ebeb69e4';
+import { criarMapaMun } from './mapamun.js?v=ebeb69e4';
+import { getJSON } from './tse.js?v=ebeb69e4';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -259,7 +259,7 @@ export function viewUf(ctx, uf, kOrd) {
       for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome.replace(/\b(\p{L})(\p{L}*)/gu, (_, a, b) => (a + b.toLowerCase())).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
       mp.atualizar(dm);
     }).catch(() => { alvoMapa.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
-    tabela(root.querySelector('#tab-m'), { cols, rows, onRow: m => ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${m.id}`), sort: 'p' + ord, dir: 'desc', filtro: (m, q) => m.nome.toLowerCase().includes(q), limite: 1000 });
+    tabela(root.querySelector('#tab-m'), { cols, rows, onRow: m => ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${m.id}`), sort: 'p' + ord, dir: 'desc', filtro: (m, q) => sem(m.nome).includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${slugn(UF_NOME[uf])}_municipios_${ap ? 'apuracao' : 'projecao'}`, cab: ['Município', '% apurado', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Lula cresc. votos %', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Flávio cresc. votos %'], linhas: rows.slice().sort((a, b) => (isNaN(b['p' + ord]) - isNaN(a['p' + ord])) || b['p' + ord] - a['p' + ord]).map(m => [m.nome, m.pst, m.L, m.pL, m.dL, m.gL, m.F, m.pF, m.dF, m.gF]) });
   } };
 }

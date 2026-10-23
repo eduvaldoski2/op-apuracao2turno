@@ -1,5 +1,7 @@
 // Componentes de interface: tabela ordenável, cartões, formatação de variações.
-import { fDelta, fGrowth } from './util.js?v=2e9360eb';
+import { fDelta, fGrowth } from './util.js?v=ebeb69e4';
+// texto sem acentos e em minúsculas (busca "sao" acha "São")
+export const sem = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 export const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 export const dlt = (v, d = 1, unit = ' p.p.') => { if (v == null || isNaN(v)) return ''; const t = fDelta(v, d, unit); const c = Math.round(v * 10 ** d) === 0 ? 'zero' : v > 0 ? 'pos' : 'neg'; return `<span class="dlt ${c}" title="variação em relação ao 1º turno">(${t})</span>`; };
@@ -22,7 +24,7 @@ export function tabela(el, { cols, rows, sort, dir = 'desc', onRow, vazio = 'Sem
   el.innerHTML = `${filtro ? `<div class="tab-filtro sem-export"><input type="search" placeholder="Buscar…" aria-label="Buscar"><span class="tab-n"></span></div>` : ''}<div class="tab-scroll"><table class="tab"><thead><tr>${cols.map(c => `<th data-k="${c.k}" class="${c.cls || ''}" scope="col"><button type="button">${c.t}<span class="seta">↕</span></button></th>`).join('')}</tr></thead><tbody></tbody></table></div>`;
   el.querySelector('thead').addEventListener('click', e => { const th = e.target.closest('th'); if (!th) return; const k = th.dataset.k; if (k === s) d = d === 'asc' ? 'desc' : 'asc'; else { s = k; d = cols.find(c => c.k === k).ini || 'desc'; } desenhar(); });
   if (onRow) el.querySelector('tbody').addEventListener('click', e => { const tr = e.target.closest('tr[data-i]'); if (tr) onRow(el._linhas[+tr.dataset.i]); });
-  const inp = el.querySelector('input'); if (inp) inp.addEventListener('input', () => { q = inp.value.trim().toLowerCase(); desenhar(); });
+  const inp = el.querySelector('input'); if (inp) inp.addEventListener('input', () => { q = sem(inp.value.trim()); desenhar(); });
   desenhar();
   return { csv: () => ({ cab: cols.map(c => c.t.replace(/<[^>]+>/g, '')), linhas: el._linhas.map(r => cols.map(c => (c.x || c.v)(r))) }) };
 }
