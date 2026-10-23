@@ -52,8 +52,16 @@ for fo in json.load(open(fontes)):
     except Exception as e: print(f"ERRO leitura {cd5} {fo['municipio']}: {e}"); continue
     print(f"== {fo['municipio']} ({cd5}) arquivo={os.path.basename(arqs[0])} feições={len(df)} crs={df.crs} colunas={[c for c in df.columns if c!='geometry']}")
     print(df.drop(columns='geometry').head(4).to_string()[:600])
+    if fo.get('debug'):
+        d0 = df.drop(columns='geometry')
+        for c in fo['debug']: print('  valores', c, d0[c].value_counts(dropna=False).head(15).to_dict())
+        print(d0[d0.astype(str).apply(lambda r: r.str.contains('Marista|Aeroporto|Bueno', case=False).any(), axis=1)].head(12).to_string()[:1800])
     if df.crs is None: print('  CRS ausente; assumindo SIRGAS 2000 (EPSG:4674)'); df = df.set_crs(4674)
     df = df.to_crs(4326); campo = acha_campo(df, fo.get('campo')); print('  campo de nome:', campo)
+    if fo.get('nome'):   # nome composto por várias colunas (ex.: tipo + nome)
+        df['_nome'] = df[fo['nome']].fillna('').astype(str).agg(' '.join, axis=1).str.replace(r'\s+', ' ', regex=True).str.strip(); campo = '_nome'
+    if fo.get('excluir'):  # {coluna: [valores]} a descartar
+        for c, vs in fo['excluir'].items(): df = df[~df[c].isin(vs)]
     if not campo: continue
     geoms = []
     for nome, g in zip(df[campo], df.geometry):
