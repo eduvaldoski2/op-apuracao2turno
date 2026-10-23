@@ -8,10 +8,31 @@
   "campo": "",
   "rotulo": "setor/bairro",
   "fonte": "Prefeitura de Goiânia — bairros e setores (dados abertos, CC BY)",
-  "debug": [
-   "tp_bai",
-   "nm",
-   "ql_bai"
-  ]
+  "tipo": {
+   "coluna": "tp_bai",
+   "nome": "nm_bai",
+   "alt": "nm",
+   "mapa": {
+    "S": "Setor",
+    "Jd": "Jardim",
+    "Vl": "Vila",
+    "Res": "Residencial",
+    "Prq": "Parque",
+    "Ch": "Chácara",
+    "Con": "Condomínio",
+    "Cj": "Conjunto",
+    "Cjr": "Conjunto Residencial",
+    "Lot": "Loteamento",
+    "Bro": "Bairro",
+    "Sir": "Sítio de Recreio"
+   }
+  },
+  "excluir": {
+   "tp_bai": [
+    "Glb",
+    "Glc",
+    "Glf"
+   ]
+  }
  }
 ]

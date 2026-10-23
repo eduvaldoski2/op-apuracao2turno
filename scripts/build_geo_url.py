@@ -60,6 +60,13 @@ for fo in json.load(open(fontes)):
     df = df.to_crs(4326); campo = acha_campo(df, fo.get('campo')); print('  campo de nome:', campo)
     if fo.get('nome'):   # nome composto por várias colunas (ex.: tipo + nome)
         df['_nome'] = df[fo['nome']].fillna('').astype(str).agg(' '.join, axis=1).str.replace(r'\s+', ' ', regex=True).str.strip(); campo = '_nome'
+    if fo.get('tipo'):   # {coluna: tipo, nome: coluna do nome, alt: coluna alternativa, mapa: {abreviação: por extenso}}
+        t = fo['tipo']; mp = t['mapa']
+        def comp(r):
+            nm = r[t['nome']] if isinstance(r[t['nome']], str) and r[t['nome']].strip() else None
+            if nm is None: a = r.get(t.get('alt')); return a if isinstance(a, str) else None
+            ab = mp.get(r[t['coluna']]); return f'{ab} {nm}' if ab else nm
+        df = df.copy(); df['_nome'] = df.apply(comp, axis=1); campo = '_nome'
     if fo.get('excluir'):  # {coluna: [valores]} a descartar
         for c, vs in fo['excluir'].items(): df = df[~df[c].isin(vs)]
     if not campo: continue
