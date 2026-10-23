@@ -15,6 +15,8 @@ export const CONFIG = {
   diretoTSE: true,                 // se nenhuma fonte responde, lê direto do TSE (apenas nível de UF)
   // métricas de uso (anônimas, sem cookies). provedor: 'umami' | 'plausible' | 'goatcounter'; id = ID do site (Umami), domínio (Plausible) ou código (GoatCounter).
   // painel = endereço do painel de resultados do provedor (aparece em admin.html). Vazio = métricas desligadas.
+  // pareamento com TV (PeerJS): vazio = servidor público de sinalização do PeerJS; ou { host, port, path, secure } de um servidor próprio
+  pareamento: {},
   metricas: { provedor: '', id: '', host: '', painel: '' },
   inicioApuracao: '2026-10-25T17:00:00-03:00',
 };
