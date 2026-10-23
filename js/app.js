@@ -1,21 +1,21 @@
-import { CONFIG } from './config.js?v=7d0b3ec3';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=7d0b3ec3';
-import { calcular } from './model.js?v=7d0b3ec3';
-import { projetar, PARAMS } from './proj.js?v=7d0b3ec3';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=7d0b3ec3';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=7d0b3ec3';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=7d0b3ec3';
-import { eventosEntre } from './avisos.js?v=7d0b3ec3';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=7d0b3ec3';
-import { abrirTelao, iniciarTV } from './tv.js?v=7d0b3ec3';
-import { iniciarConsentimento } from './consentimento.js?v=7d0b3ec3';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=7d0b3ec3';
-import { lerCard } from './card.js?v=7d0b3ec3';
-import { abrirCompartilhar } from './compartilhar.js?v=7d0b3ec3';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=7d0b3ec3';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=7d0b3ec3';
-import { esc } from './ui.js?v=7d0b3ec3';
-import { getFoco, setFoco, comFoco } from './foco.js?v=7d0b3ec3';
+import { CONFIG } from './config.js?v=40c9867e';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=40c9867e';
+import { calcular } from './model.js?v=40c9867e';
+import { projetar, PARAMS } from './proj.js?v=40c9867e';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=40c9867e';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=40c9867e';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=40c9867e';
+import { eventosEntre } from './avisos.js?v=40c9867e';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=40c9867e';
+import { abrirTelao, iniciarTV } from './tv.js?v=40c9867e';
+import { iniciarConsentimento } from './consentimento.js?v=40c9867e';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=40c9867e';
+import { lerCard } from './card.js?v=40c9867e';
+import { abrirCompartilhar } from './compartilhar.js?v=40c9867e';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=40c9867e';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=40c9867e';
+import { esc } from './ui.js?v=40c9867e';
+import { getFoco, setFoco, comFoco } from './foco.js?v=40c9867e';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -196,7 +196,8 @@ async function iniciar() {
     $('#demo-play').onclick = () => { if (!rodando && S.demo.fim !== false) { location.reload(); return; } rodando = !rodando; $('#demo-play').textContent = rodando ? '⏸ Pausar' : '▶ Continuar'; };
     $('#demo-vel').oninput = e => { vel = +e.target.value; };
     passo(); (function laco() { setTimeout(() => { passo(); laco(); }, 2600 / vel); })();
-  } else { await ciclo(); setInterval(ciclo, CONFIG.intervalo); }
+  } else { await ciclo(); const volta = () => setTimeout(async () => { await ciclo(); volta(); }, CONFIG.intervalo * (0.8 + 0.4 * Math.random())); volta(); }   // com variação aleatória, para os visitantes não consultarem todos no mesmo instante
+
   render(); setInterval(status, 1000);
 }
 iniciarMetricas(); guardaOrigem(); iniciarConsentimento();
