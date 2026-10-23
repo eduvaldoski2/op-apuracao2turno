@@ -1,13 +1,13 @@
-import { CONFIG } from './config.js?v=510bcfbc';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=510bcfbc';
-import { calcular } from './model.js?v=510bcfbc';
-import { projetar, PARAMS } from './proj.js?v=510bcfbc';
-import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=510bcfbc';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=510bcfbc';
-import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=510bcfbc';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=510bcfbc';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=510bcfbc';
-import { esc } from './ui.js?v=510bcfbc';
+import { CONFIG } from './config.js?v=2e9360eb';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=2e9360eb';
+import { calcular } from './model.js?v=2e9360eb';
+import { projetar, PARAMS } from './proj.js?v=2e9360eb';
+import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=2e9360eb';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=2e9360eb';
+import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=2e9360eb';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=2e9360eb';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=2e9360eb';
+import { esc } from './ui.js?v=2e9360eb';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };

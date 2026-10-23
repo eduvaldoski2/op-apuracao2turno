@@ -1,11 +1,11 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=510bcfbc';
-import { esc, tabela } from './ui.js?v=510bcfbc';
-import { kpi } from './views.js?v=510bcfbc';
-import { criarMapa } from './map.js?v=510bcfbc';
-import { criarMapaMun } from './mapamun.js?v=510bcfbc';
-import { getJSON } from './tse.js?v=510bcfbc';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=2e9360eb';
+import { esc, tabela } from './ui.js?v=2e9360eb';
+import { kpi } from './views.js?v=2e9360eb';
+import { criarMapa } from './map.js?v=2e9360eb';
+import { criarMapaMun } from './mapamun.js?v=2e9360eb';
+import { getJSON } from './tse.js?v=2e9360eb';
 
 let cache = null;
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
@@ -18,8 +18,8 @@ export function prepT1(T) {
   T.chave = T.cands.map(c => c.n === '13' ? 'L' : c.n === '22' ? 'F' : 'c' + c.n);
   let j = 0; T.chave.forEach(k => { if (k !== 'L' && k !== 'F') PAL[k] = CORES[j++ % CORES.length]; });
   T.cor = i => T.chave[i] === 'L' ? CAND.L.cor : T.chave[i] === 'F' ? CAND.F.cor : PAL[T.chave[i]];
-  T.nome = i => { const c = T.cands[i]; return bonitoNome(c.nm || c.nome || c.ds || ('Candidato ' + c.n)); };
-  T.part = i => { const c = T.cands[i]; return c.sg || c.sgp || c.pt || c.p || ''; };
+  T.nome = i => { const c = T.cands[i]; return bonitoNome(c.nmu || c.nm || ('Candidato ' + c.n)); };
+  T.part = i => { const c = T.cands[i]; return c.sg || (c.n === '13' ? 'PT' : c.n === '22' ? 'PL' : ''); };
   const iL = T.cands.findIndex(c => c.n === '13'), iF = T.cands.findIndex(c => c.n === '22'); T.iL = iL; T.iF = iF;
   return T;
 }
@@ -40,7 +40,7 @@ function cartao(T, i, u, selo) {
 // lista de todos os candidatos (barras), ordenada por votos
 export function blocoCands(T, u, titulo = 'Todos os candidatos') {
   const ord = u.v.map((x, i) => i).sort((a, b) => u.v[b] - u.v[a]), max = Math.max(...u.p.filter(x => isFinite(x)), 1);
-  return `<section class="painel"><h2>${esc(titulo)}</h2><p class="sub">Porcentagem sobre os votos válidos (exclui brancos e nulos).</p><div class="cand-lista">${ord.map(i => `<div class="cl-linha"><span class="cl-nome"><i style="background:${T.cor(i)}"></i><b>${esc(T.nome(i))}</b> <small>${esc(T.part(i))} · ${esc(T.cands[i].n)}</small></span><span class="cl-barra"><b style="width:${isFinite(u.p[i]) ? 100 * u.p[i] / max : 0}%;background:${T.cor(i)}"></b></span><span class="cl-pct">${fNum(u.p[i], 2)}%</span><span class="cl-votos">${fInt(u.v[i])}</span></div>`).join('')}</div></section>`;
+  return `<section class="painel"><h2>${esc(titulo)}</h2><p class="sub">Porcentagem sobre os votos válidos (exclui brancos e nulos).</p><div class="cand-lista">${ord.map(i => `<div class="cl-linha"><span class="cl-nome"><i style="background:${T.cor(i)}"></i><b>${esc(T.nome(i))}</b> <small>${esc([T.part(i), T.cands[i].n].filter(Boolean).join(' · '))}</small></span><span class="cl-barra"><b style="width:${isFinite(u.p[i]) ? 100 * u.p[i] / max : 0}%;background:${T.cor(i)}"></b></span><span class="cl-pct">${fNum(u.p[i], 2)}%</span><span class="cl-votos">${fInt(u.v[i])}</span></div>`).join('')}</div></section>`;
 }
 export const kpisT1 = u => `<section class="kpis k4">${kpi('Comparecimento', fNum(100 - u.pAb, 2) + '%', null, `${fInt(u.c)} de ${fInt(u.te)} eleitores`)}${kpi('Abstenção', fNum(u.pAb, 2) + '%', null, `${fInt(u.ab)} eleitores`)}${kpi('Votos em branco', fNum(u.pBr, 2) + '%', null, `${fInt(u.vb)} votos`)}${kpi('Votos nulos', fNum(u.pNu, 2) + '%', null, `${fInt(u.tvn)} votos`)}</section>`;
 export function legendaT1(T, u) {
@@ -62,7 +62,7 @@ export function viewT1Geral(ctx) {
   const T = ctx.T1, br = dec(T, T.br), ord = br.v.map((x, i) => i).sort((a, b) => br.v[b] - br.v[a]);
   const ufs = UFS.filter(u => T.uf[u[0]]).map(u => ({ id: u[0], nome: UF_NOME[u[0]] || u[0].toUpperCase(), u: dec(T, T.uf[u[0]]) }));
   const html = `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 (presidente), conforme os arquivos de divulgação do TSE${T.hg ? ` — última atualização ${esc(T.dg || '')} ${esc(T.hg)}` : ''}.</div>
-  <section class="placar t1p">${cartao(T, ord[0], br, 'Foi ao 2º turno')}<div class="centro"><div class="centro-t">Brasil · 1º turno</div><div class="barra2">${ord.slice(0, 4).map(i => `<i style="width:${br.p[i]}%;background:${T.cor(i)}" title="${esc(T.nome(i))}"></i>`).join('')}</div><div class="margem"><b>${fInt(br.vv)}</b> votos válidos</div></div>${cartao(T, ord[1], br, 'Foi ao 2º turno')}</section>
+  <section class="placar t1p">${cartao(T, ord[0], br, /2º turno/i.test(T.cands[ord[0]].st) ? 'Foi ao 2º turno' : '')}<div class="centro"><div class="centro-t">Brasil · 1º turno</div><div class="barra2">${ord.slice(0, 4).map(i => `<i style="width:${br.p[i]}%;background:${T.cor(i)}" title="${esc(T.nome(i))}"></i>`).join('')}</div><div class="margem"><b>${fInt(br.vv)}</b> votos válidos</div></div>${cartao(T, ord[1], br, /2º turno/i.test(T.cands[ord[1]].st) ? 'Foi ao 2º turno' : '')}</section>
   ${kpisT1(br)}${blocoCands(T, br)}
   <section class="painel mapa-sec"><h2>Resultado por estado</h2><p class="sub">Cor = candidato mais votado no estado. Clique em um estado para ver os municípios.</p><div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado">${legendaT1(T, br)}</div></div></section>
   <section class="painel"><h2>Todos os estados</h2><p class="sub">Clique nos títulos para ordenar. Clique em um estado para abrir os municípios.</p><div id="tab-uf"></div></section>`;
