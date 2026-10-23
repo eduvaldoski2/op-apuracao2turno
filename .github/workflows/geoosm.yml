@@ -1,0 +1,43 @@
+name: Malhas de bairros do OpenStreetMap (municípios sem malha do IBGE)
+on:
+  workflow_dispatch:
+    inputs:
+      quantos: { description: 'Quantos municípios (maiores primeiro)', default: '350' }
+  push:
+    paths: ['scripts/osm_baixar.mjs', 'scripts/build_geo_osm.py', '.github/workflows/geoosm.yml']
+permissions:
+  contents: write
+jobs:
+  osm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: pip install shapely 2>&1 | tail -1; npm i --no-save osmtogeojson@3.0.0-beta.5 2>&1 | tail -1
+      - name: Lista dos maiores municípios sem malha
+        run: |
+          python3 - <<'P'
+          import json,glob,os
+          N=int(os.environ.get('N','350'))
+          geo={os.path.basename(f)[:-5] for f in glob.glob('data/bairros_geo/*.json')}
+          b=json.load(open('data/base_1t.json')); ibge={r[1]:r[3] for r in b['rows']}
+          out=[]
+          for f in glob.glob('data/bairros/*/*.json'):
+              d=json.load(open(f)); cd=d['cd']
+              if cd in geo or cd not in ibge: continue
+              out.append((sum(s[1] for l in d['l'] for s in l[14]),{'cd5':cd,'ibge':ibge[cd],'nome':d['n'],'uf':d['uf']}))
+          out.sort(key=lambda x:-x[0]); json.dump([o[1] for o in out[:N]],open('/tmp/lista.json','w')); print('municípios na lista',min(N,len(out)))
+          P
+        env: { N: '${{ github.event.inputs.quantos || 350 }}' }
+      - name: Baixar do OpenStreetMap
+        run: node scripts/osm_baixar.mjs /tmp/lista.json /tmp/osm 2>&1 | tee osm.log | tail -5
+      - name: Montar malhas
+        run: python3 scripts/build_geo_osm.py /tmp/osm data/bairros data/bairros_geo 0.6 2>&1 | tee -a osm.log | tail -40
+      - name: Publicar
+        run: |
+          git config user.name coletor; git config user.email coletor@users.noreply.github.com
+          git add data/bairros_geo && git commit -q -m "Malhas de bairros do OpenStreetMap (municípios sem malha do IBGE)" && git pull -q --rebase origin main && git push || echo "nada a publicar" >> osm.log
+          git checkout --orphan sonda-osm; git rm -rf -q . 2>/dev/null; git add -f osm.log; git commit -q -m log; git push -f origin HEAD:sonda-osm
