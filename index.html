@@ -71,8 +71,6 @@ input[aria-invalid=true]{border-color:var(--erro);background:#fff8f7}
 .ok-box h2{margin:0 0 6px;font:400 26px 'DM Serif Display',Georgia,serif;color:var(--ok)}
 .ok-box p{margin:0;color:var(--tx2)}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
-/* aviso de autorização: o clique no botão é o ato de consentimento */
-.ck-aviso{margin:6px 0 2px;font-size:13px;line-height:1.5;color:var(--tx2)}
 footer.rodape{padding:22px 20px 30px;text-align:center;font-size:13px;color:var(--tx2)}
 footer.rodape p{margin:4px 0}
 @media (max-width:420px){.slogan{letter-spacing:.13em;padding-left:.13em;font-size:11.5px}form{padding:20px 16px}.btn-ap{padding:0 22px;letter-spacing:.06em}}
@@ -102,8 +100,9 @@ footer.rodape p{margin:4px 0}
     <label class="c">WhatsApp <small>(com DDD)</small>
       <input type="tel" name="telefone" autocomplete="tel-national" inputmode="tel" required maxlength="20" placeholder="(21) 99999-9999"></label>
     <div class="hp" aria-hidden="true"><label>Não preencha este campo<input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>
+    <label class="ck"><input type="checkbox" name="c_contato" required>
+      <span id="txt-consent">Autorizo a Oficina Política a entrar em contato comigo por e-mail e WhatsApp para avisar sobre o lançamento e as novidades de suas ferramentas para profissionais da política. Posso revogar esta autorização a qualquer momento.</span></label>
     <p class="nota">Seus dados não são vendidos nem usados para outra finalidade. Saiba mais na <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>, que explica também como pedir a exclusão dos seus dados.</p>
-    <p class="ck-aviso" id="txt-consent">Ao clicar em “Quero ser o primeiro a conhecer”, você autoriza a Oficina Política a entrar em contato com você por e-mail e WhatsApp para avisar sobre o lançamento e as novidades de suas ferramentas para profissionais da política. Você pode revogar esta autorização a qualquer momento.</p>
     <p class="msg" id="msg" role="alert" aria-live="polite"></p>
     <button class="enviar" type="submit">Quero ser o primeiro a conhecer</button>
   </form>
@@ -118,7 +117,7 @@ footer.rodape p{margin:4px 0}
 <script>
 (function () {
   'use strict';
-  var TEXTO_VERSAO = 'h2', ENDPOINT = 'api/lead.php';
+  var TEXTO_VERSAO = 'h1', ENDPOINT = 'api/lead.php';
   var f = document.getElementById('f'), msg = document.getElementById('msg');
   // guarda a origem do acesso (UTM / site de referência) só nesta visita, para saber de onde veio o contato
   var origem = {};
@@ -149,6 +148,7 @@ footer.rodape p{margin:4px 0}
     if (nome.length < 3 || nome.indexOf(' ') < 0) return erro(f.nome, 'Informe seu nome completo.');
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return erro(f.email, 'Informe um e-mail válido.');
     if (dig.length < 10 || dig.length > 11 || /^(\d)\1+$/.test(dig)) return erro(f.telefone, 'Informe o WhatsApp com DDD, por exemplo (21) 99999-9999.');
+    if (!f.c_contato.checked) return erro(f.c_contato, 'Para se cadastrar, marque a caixa de autorização para receber nossas mensagens.');
     var bt = f.querySelector('.enviar'); bt.disabled = true; bt.textContent = 'Enviando…';
     var corpo = { formulario: 'home', nome: nome, email: email, telefone: dig, consentimento_contato: true, texto_versao: TEXTO_VERSAO, pagina: 'home', origem: origem };
     fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) })
