@@ -46,7 +46,7 @@ async function ciclo(uf, ciclo_n) {
   const r = await get(cfgUrl, { inm: etags[uf] });
   if (r.naoMudou) return { novas: 0, total: 0 };
   if (r.nada || r.erro) { log(uf, 'config indisponível', r.nada ? '404' : r.erro); return { novas: 0, total: 0 }; }
-  etags[uf] = r.etag; gravar(etagF, etags);
+  const etagNovo = r.etag;
   const tarefas = []; let total = 0;
   for (const abr of r.dado.abr || []) for (const mu of abr.mu || []) {
     if (somente && mu.cd !== somente) continue;
@@ -59,7 +59,7 @@ async function ciclo(uf, ciclo_n) {
       tarefas.push({ m, k, base, z: z.cd, ns: s.ns, mu: mu.cd });
     }
   }
-  if (tarefas.length > maxT) tarefas.length = maxT;
+  const cortou = tarefas.length > maxT; if (cortou) tarefas.length = maxT;
   let novas = 0, erros = 0;
   await pool(tarefas, conc, async tk => {
     const aux = await get(tk.base + '-aux.json');
@@ -73,6 +73,7 @@ async function ciclo(uf, ciclo_n) {
     if (!d) { falhas.set(tk.base, (falhas.get(tk.base) || 0) + 1); return; }
     tk.m.s[tk.k] = [d.L, d.F, d.O, d.B, d.N, d.aptos]; tk.m.sujo = true; novas++;
   });
+  if (cortou || erros) delete etags[uf]; else etags[uf] = etagNovo; gravar(etagF, etags);
   const hora = new Date(Date.now() - 3 * 3600e3).toISOString().slice(11, 19);
   for (const m of cache.values()) if (m.uf === uf && m.sujo) { gravar(arq(uf, m.cd), { t: hora, s: m.s }); m.sujo = false; }
   return { novas, total, erros, pend: tarefas.length };
