@@ -1,7 +1,7 @@
 // Consentimento de cookies (LGPD) e anúncios: Meta Pixel e Google Ads só são carregados depois do "aceitar" do visitante.
 // Sem pixel/ID configurado em CONFIG.anuncios e sem formulário de leads, este módulo não faz nada (nenhum banner aparece).
 // A medição de uso do painel (js/metricas.js) é anônima e sem cookies, e não depende deste consentimento.
-import { CONFIG } from './config.js?v=40c9867e';
+import { CONFIG } from './config.js?v=d8d1a466';
 
 const KEY = 'op_consent', VERSAO = 1;
 const A = CONFIG.anuncios || {}, meta = A.meta?.pixel || '', goog = A.google?.id || '';

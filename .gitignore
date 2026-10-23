@@ -4,3 +4,4 @@ data/live/
 /*.png
 api/config.php
 api/dados/*.sqlite
+api/dados/cache/

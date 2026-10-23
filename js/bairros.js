@@ -1,18 +1,18 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=40c9867e';
-import { CONFIG } from './config.js?v=40c9867e';
-import { getJSON } from './tse.js?v=40c9867e';
-import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=40c9867e';
-import { comFoco } from './foco.js?v=40c9867e';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=40c9867e';
-import { listaMunicipios } from './model.js?v=40c9867e';
-import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=40c9867e';
-import { projetarMunicipios } from './proj.js?v=40c9867e';
-import { criarMapaPontos } from './mapapontos.js?v=40c9867e';
-import { criarMapaBairros } from './mapabairros.js?v=40c9867e';
-import { legendaMapa } from './map.js?v=40c9867e';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=d8d1a466';
+import { CONFIG } from './config.js?v=d8d1a466';
+import { getJSON } from './tse.js?v=d8d1a466';
+import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=d8d1a466';
+import { comFoco } from './foco.js?v=d8d1a466';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=d8d1a466';
+import { listaMunicipios } from './model.js?v=d8d1a466';
+import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=d8d1a466';
+import { projetarMunicipios } from './proj.js?v=d8d1a466';
+import { criarMapaPontos } from './mapapontos.js?v=d8d1a466';
+import { criarMapaBairros } from './mapabairros.js?v=d8d1a466';
+import { legendaMapa } from './map.js?v=d8d1a466';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
@@ -28,7 +28,7 @@ export async function estatico(uf, cd) {
 }
 export async function aoVivo(uf, cd) {
   const g = CONFIG.gruposBairros[uf] || 1;
-  const fontes = q.get('fontebairros') ? [q.get('fontebairros')] : [`https://raw.githubusercontent.com/${CONFIG.repo}/${CONFIG.prefixoBairros}${g}/live/`, 'data/live/'];
+  const fontes = q.get('fontebairros') ? [q.get('fontebairros')] : [`liveb/${g}/`, `https://raw.githubusercontent.com/${CONFIG.repo}/${CONFIG.prefixoBairros}${g}/live/`, 'data/live/'];
   for (const f of fontes) { try { const j = await getJSON(`${f}bairros/${uf}/${cd}.json${bust()}`, { retries: 0 }); if (j && j.s) return j; } catch { /* tenta a próxima fonte */ } }
   return { s: {}, t: '' };
 }

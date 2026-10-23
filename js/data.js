@@ -1,8 +1,8 @@
 // Carregamento dos dados: base do 1º turno, snapshot do 2º turno (fonte do coletor, TSE direto ou demonstração).
-import { CONFIG } from './config.js?v=40c9867e';
-import { TSE, montarSnapshot, getJSON } from './tse.js?v=40c9867e';
-import { projetar, PARAMS } from './proj.js?v=40c9867e';
-import { prepBase } from './model.js?v=40c9867e';
+import { CONFIG } from './config.js?v=d8d1a466';
+import { TSE, montarSnapshot, getJSON } from './tse.js?v=d8d1a466';
+import { projetar, PARAMS } from './proj.js?v=d8d1a466';
+import { prepBase } from './model.js?v=d8d1a466';
 
 const q = new URLSearchParams(location.search);
 export const MODO_DEMO = q.has('demo');
@@ -16,10 +16,12 @@ export async function carregarEstatico({ semBase = false } = {}) {
 }
 
 // ---- fonte do coletor ----
+const falhouEm = new Map();   // fonte -> quando falhou; uma fonte que falhou fica 2 min de lado se houver outra
 let cacheFonte = null;   // última leitura do coletor: só baixa snap/hist de novo quando o meta.json (minúsculo) indica mudança
 async function daFonte() {
-  const fontes = q.get('fonte') ? [q.get('fonte')] : CONFIG.fontes;
-  for (const f of fontes) {
+  const todas = q.get('fonte') ? [q.get('fonte')] : CONFIG.fontes;
+  const boas = todas.filter(f => !(falhouEm.get(f) > Date.now() - 120000));
+  for (const f of (boas.length ? boas : todas)) {
     try {
       let meta = null; try { meta = await getJSON(f + 'meta.json' + bust(), { retries: 0 }); } catch { /* opcional */ }
       if (cacheFonte && cacheFonte.f === f && meta?.ultimaMudanca && meta.ultimaMudanca === cacheFonte.mudanca) return { ...cacheFonte.res, meta };
@@ -28,7 +30,8 @@ async function daFonte() {
         const res = { snap, hist, fonte: 'coletor' }; cacheFonte = { f, mudanca: meta?.ultimaMudanca ?? null, res };
         return { ...res, meta };
       }
-    } catch { /* tenta a próxima */ }
+      falhouEm.set(f, Date.now());
+    } catch { falhouEm.set(f, Date.now()); /* tenta a próxima */ }
   }
   return null;
 }
@@ -53,7 +56,7 @@ export async function lerAoVivo() {
 
 // carrega municípios de uma UF diretamente do TSE (modo direto)
 export async function municipiosDireto(uf, snap) {
-  const { urls, parseAb, parseResultado, pool } = await import('./tse.js?v=40c9867e');
+  const { urls, parseAb, parseResultado, pool } = await import('./tse.js?v=d8d1a466');
   const cfg = { ...TSE, base: q.get('tse') || TSE.base }, U = urls(cfg);
   const ab = parseAb(await getJSON(U.abUf(uf)));
   const cds = Object.entries(ab.mun).filter(([, m]) => m.st > 0).map(([cd]) => cd);
@@ -63,7 +66,7 @@ export async function municipiosDireto(uf, snap) {
 
 // ---- demonstração (dados simulados, reprodução acelerada) ----
 export async function criarDemo() {
-  const { simular } = await import('./sim.js?v=40c9867e');
+  const { simular } = await import('./sim.js?v=d8d1a466');
   let real = null;
   try { real = (await (await fetch('data/base_1t.json')).json()).rows; } catch { /* sem base real: usa o país sintético */ }
   const sim = simular({ seed: +q.get('seed') || 7, real });

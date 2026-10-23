@@ -2,6 +2,7 @@
 export const CONFIG = {
   repo: 'eduvaldoski2/op-apuracao2turno',
   fontes: [   // onde o coletor publica snap.json / hist.json (na ordem de tentativa)
+    'live/',  // intermediário na hospedagem (api/live.php): cópia de 20 s, aguenta picos; no GitHub Pages não existe e é pulado
     'https://raw.githubusercontent.com/eduvaldoski2/op-apuracao2turno/dados/live/',
     'data/live/',
   ],

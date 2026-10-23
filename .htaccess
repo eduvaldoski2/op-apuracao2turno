@@ -1,0 +1,29 @@
+# Hostinger (LiteSpeed/Apache). Raiz do site.
+Options -Indexes
+DirectoryIndex index.html
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# pastas internas não ficam públicas
+RewriteRule ^(\.git|\.github|scripts|tests|node_modules)(/|$) - [F,L]
+RewriteRule ^(package\.json|package-lock\.json|README\.md)$ - [F,L]
+# placar ao vivo e resultado por seção passam pelo intermediário (cópia curta em cache)
+RewriteRule ^live/(.+)$ api/live.php?p=$1 [L,QSA]
+RewriteRule ^liveb/([1-5])/(.+)$ api/live.php?b=$1&p=$2 [L,QSA]
+</IfModule>
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_headers.c>
+<FilesMatch "\.(js|css)$">
+Header set Cache-Control "public, max-age=3600"
+</FilesMatch>
+<FilesMatch "\.(png|jpg|jpeg|svg|webp|woff2)$">
+Header set Cache-Control "public, max-age=86400"
+</FilesMatch>
+<FilesMatch "^(index|admin|privacidade)\.html$">
+Header set Cache-Control "no-cache"
+</FilesMatch>
+<If "%{REQUEST_URI} =~ m#^/data/(?!live/)#">
+Header set Cache-Control "public, max-age=3600"
+</If>
+</IfModule>
