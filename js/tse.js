@@ -70,8 +70,8 @@ export function parseResultado(j, cfg = TSE) {
   let L = 0, F = 0, eleitoL = false, eleitoF = false, achouL = false, achouF = false;
   for (const c of cs) {
     const n = String(c.n);
-    if (n === cfg.numL) { L = cnt(c.vap); achouL = true; eleitoL = /^eleit/i.test(c.st || '') || c.e === 's'; }
-    if (n === cfg.numF) { F = cnt(c.vap); achouF = true; eleitoF = /^eleit/i.test(c.st || '') || c.e === 's'; }
+    if (n === cfg.numL) { L = cnt(c.vap); achouL = true; eleitoL = /^eleit/i.test(c.st || ''); }
+    if (n === cfg.numF) { F = cnt(c.vap); achouF = true; eleitoF = /^eleit/i.test(c.st || ''); }
   }
   const te = cnt(E.te), est = cnt(E.est) || te, c = cnt(E.c);
   const a = E.a != null ? cnt(E.a) : Math.max(0, est - c);
