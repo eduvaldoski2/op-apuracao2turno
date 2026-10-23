@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=cfb573d5';
-import { listaMunicipios, rankingUfs } from './model.js?v=cfb573d5';
-import { projetarMunicipios } from './proj.js?v=cfb573d5';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=cfb573d5';
-import { graficoPlacar } from './charts.js?v=cfb573d5';
-import { criarMapa, legendaMapa } from './map.js?v=cfb573d5';
-import { criarMapaMun } from './mapamun.js?v=cfb573d5';
-import { getJSON } from './tse.js?v=cfb573d5';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=64e1beae';
+import { listaMunicipios, rankingUfs } from './model.js?v=64e1beae';
+import { projetarMunicipios } from './proj.js?v=64e1beae';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=64e1beae';
+import { graficoPlacar } from './charts.js?v=64e1beae';
+import { criarMapa, legendaMapa } from './map.js?v=64e1beae';
+import { criarMapaMun } from './mapamun.js?v=64e1beae';
+import { getJSON } from './tse.js?v=64e1beae';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);

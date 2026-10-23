@@ -422,7 +422,7 @@ body.tl-aberto{overflow:hidden}
 .ck-ov{position:fixed;left:0;right:0;bottom:0;z-index:4000;display:flex;justify-content:center;padding:10px;pointer-events:none}
 .ck-box{pointer-events:auto;max-width:820px;width:100%;background:#fff;border:1px solid var(--linha);border-radius:14px;box-shadow:0 8px 30px #2b235855;padding:14px 16px}
 .ck-t{margin:0 0 10px;font-size:13.5px;line-height:1.45;color:var(--tx)}
-.ck-det{display:grid;gap:8px;margin:0 0 10px;font-size:13px}
+.ck-det{display:grid;gap:8px;margin:0 0 10px;font-size:13px}.ck-det[hidden]{display:none}
 .ck-l{display:flex;gap:9px;align-items:flex-start}.ck-l input{margin-top:3px}
 .ck-bt{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
 .ck-b{font:inherit;font-weight:700;font-size:13.5px;padding:8px 16px;border-radius:99px;border:1.5px solid var(--roxo);background:#fff;color:var(--roxo);cursor:pointer}
