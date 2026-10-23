@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-const carregaScript = src => new Promise((ok, err) => { if (document.querySelector(`script[data-v="${src}"]`)) return ok(); const s = document.createElement('script'); s.src = src; s.dataset.v = src; s.onload = ok; s.onerror = () => err(new Error('falha ao carregar ' + src)); document.head.appendChild(s); });
-const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=8342a609';
+export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
 const celula = v => { if (v == null || (typeof v === 'number' && isNaN(v))) return ''; if (typeof v === 'number') return String(Math.round(v * 1e4) / 1e4).replace('.', ','); const s = String(v); return /[;"\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
@@ -10,7 +10,7 @@ export function baixarCSV(nome, cabecalho, linhas, rodape = []) {
   baixar(new Blob(['\uFEFF' + txt], { type: 'text/csv;charset=utf-8' }), nome + '.csv');
 }
 
-async function capturar(el, titulo, sub, cadeia = '') {
+async function capturar(el, titulo, sub, cadeia = '', omitir = '') {
   await carregaScript('vendor/html2canvas.min.js');
   return window.html2canvas(el, {
     scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: Math.max(1100, el.scrollWidth),
@@ -18,6 +18,7 @@ async function capturar(el, titulo, sub, cadeia = '') {
       doc.querySelectorAll('.sem-export').forEach(n => n.remove());
       doc.querySelectorAll('.mapa-tip,.g-tip').forEach(n => n.remove());
       doc.querySelectorAll('.tela-topo').forEach(n => n.remove());
+      if (omitir) doc.querySelectorAll(omitir).forEach(n => n.remove());
       doc.querySelectorAll('details').forEach(d => { d.open = true; });
       const alvo = doc.querySelector('[data-export-raiz]') || doc.body;
       const cab = doc.createElement('div');
@@ -34,17 +35,29 @@ async function capturar(el, titulo, sub, cadeia = '') {
     },
   });
 }
-export async function baixarPNG(el, nome, titulo, sub, cadeia) {
+// PNG da tela inteira (inclui mapas e tabelas) — alternativa ao card
+export async function baixarPNGTela(el, nome, titulo, sub, cadeia) {
   const c = await capturar(el, titulo, sub, cadeia);
   await new Promise(ok => c.toBlob(b => { baixar(b, nome + '.png'); ok(); }, 'image/png'));
 }
-export async function baixarPDF(el, nome, titulo, sub, cadeia) {
-  const c = await capturar(el, titulo, sub, cadeia);
+// PNG do card (peça de redes: margens, proporção fixa, hierarquia entre candidatos)
+export const blobCard = async (dados, fmt = FORMATOS['3x5'], escala = 1) => { const c = await cardCanvas(dados, fmt, escala); return new Promise(ok => c.toBlob(ok, 'image/png')); };
+export async function baixarCardPNG(dados, nome, fmt = FORMATOS['3x5']) { baixar(await blobCard(dados, fmt, 1), `${nome}_${fmt.rot.replace(':', 'x')}.png`); }
+
+// PDF: página 1 = card (A4) com a hierarquia de candidatos; páginas seguintes = mapas e tabelas da tela.
+export async function baixarPDF(el, nome, titulo, sub, cadeia, dadosCard = null) {
   await carregaScript('vendor/jspdf.umd.min.js');
   const { jsPDF } = window.jspdf, pdf = new jsPDF('p', 'mm', 'a4');
   const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight(), m = 8;
+  let pag = 0;
+  if (dadosCard) {
+    const cv = await cardCanvas(dadosCard, FORMATOS.a4, 1.5);
+    pdf.addImage(cv.toDataURL('image/jpeg', 0.93), 'JPEG', 0, 0, pw, ph); pag = 1;
+    if (!el.querySelector('#vista .painel')) { pdf.save(nome + '.pdf'); return; }
+  }
+  const c = await capturar(el, titulo, sub, cadeia, dadosCard ? '.resumo,.fichas,.kpis,.placar,.foco-aviso,.nota-base,.comp-toggle,.aviso.t1' : '');
   const larg = pw - 2 * m, escala = larg / c.width, altPag = (ph - 2 * m - 6) / escala;
-  let y = 0, pag = 0;
+  let y = 0;
   while (y < c.height - 1) {
     const h = Math.min(altPag, c.height - y), pc = document.createElement('canvas'); pc.width = c.width; pc.height = Math.ceil(h);
     pc.getContext('2d').drawImage(c, 0, y, c.width, h, 0, 0, c.width, h);

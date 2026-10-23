@@ -1,14 +1,16 @@
-import { CONFIG } from './config.js?v=6d72e742';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=6d72e742';
-import { calcular } from './model.js?v=6d72e742';
-import { projetar, PARAMS } from './proj.js?v=6d72e742';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=6d72e742';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=6d72e742';
-import { baixarCSV, baixarXLSX, baixarPNG, baixarPDF, slug } from './export.js?v=6d72e742';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=6d72e742';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=6d72e742';
-import { esc } from './ui.js?v=6d72e742';
-import { setFoco, comFoco } from './foco.js?v=6d72e742';
+import { CONFIG } from './config.js?v=8342a609';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=8342a609';
+import { calcular } from './model.js?v=8342a609';
+import { projetar, PARAMS } from './proj.js?v=8342a609';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=8342a609';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=8342a609';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=8342a609';
+import { lerCard } from './card.js?v=8342a609';
+import { abrirCompartilhar } from './compartilhar.js?v=8342a609';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=8342a609';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=8342a609';
+import { esc } from './ui.js?v=8342a609';
+import { setFoco, comFoco } from './foco.js?v=8342a609';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -94,7 +96,7 @@ async function renderT1(r, manterScroll, forcar) {
 function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
   const sub = r.tela === 'geral' && r.modo !== 't1' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
-  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><span>⬇ Baixar</span><button data-exp="pdf">PDF</button><button data-exp="png">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' ? 'disabled' : ''} title="Planilha do Excel (.xlsx)">Excel</button></div>`;
+  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><button class="exp-comp" data-exp="compartilhar" title="Compartilhar no WhatsApp, Instagram e outras redes">⤴ Compartilhar</button><span>⬇ Baixar</span><button data-exp="pdf" title="PDF: página de resumo + mapas e tabelas">PDF</button><button data-exp="png" title="Imagem para redes sociais (card)">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' ? 'disabled' : ''} title="Planilha do Excel (.xlsx)">Excel</button></div>`;
   const trilha = v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : '';
   root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${exp}</div><div id="vista">${v.html}</div></div>`;
   v.montar(root);
@@ -146,19 +148,24 @@ function aplicar(res) {
 async function ciclo() { try { aplicar(await lerAoVivo()); } catch (e) { console.warn(e); status(); } }
 
 // ---------- exportação ----------
-async function exportar(tipo, btn) {
+// contexto comum a PNG, PDF e compartilhar: título, cadeia (Brasil > UF > município…), subtítulo e dados do card
+function contextoExport() {
   const r = S.vRota, titulo = document.querySelector('.tela-topo h1')?.textContent || S.vTitulo || 'Oficina Política';
   const sub = `${r.modo === 'pr' ? 'Projeção' : r.modo === 't1' ? 'Resultado oficial do 1º turno' : 'Apuração'} ${r.modo === 't1' ? '2026 · TSE' : '2º turno 2026 · '}${S.snap && r.modo !== 't1' ? 'TSE ' + String(S.snap.hg).slice(0, 5) + ' · ' + fNum(100 * S.snap.br.st / S.snap.br.ts, 1) + '% apurado' : ''}${S.simulado && r.modo !== 't1' ? ' · DADOS SIMULADOS' : ''}`;
   const nome = `oficina-politica_${slug(titulo)}${S.snap ? '_' + String(S.snap.hg).slice(0, 5).replace(':', 'h') : ''}`;
+  const itens = [...document.querySelectorAll('.trilha a, .trilha [aria-current]')].map(x => x.textContent.trim()), semRot = t => t.replace(/^[^:]{1,25}:\s*/, '');
+  const principal = itens.length ? semRot(itens[itens.length - 1]) : titulo.replace(/\s+[—–-]\s+[12]º turno$/, ''), cadeia = itens.slice(0, -1).map(semRot).join('  ›  ');
+  const base = lerCard($('[data-export-raiz]'));
+  return { r, titulo, sub, nome, principal, cadeia, dados: base ? { ...base, titulo: principal, cadeia, sub } : null };
+}
+async function exportar(tipo, btn) {
+  if (tipo === 'compartilhar') { abrirCompartilhar(contextoExport); return; }
+  const c = contextoExport(), { r, nome, sub, principal, cadeia, dados } = c;
   const txt = btn.textContent; btn.disabled = true; btn.textContent = '…';
   try {
-    if (tipo === 'csv' || tipo === 'xlsx') { const c = S.vCtx?.csv?.(); if (!c) return; const rod = [`Fonte: TSE. Oficina Política.${S.simulado ? ' DADOS SIMULADOS.' : ''}${r.modo === 'pr' ? ' Valores de projeção estatística, não oficiais.' : ''}`]; (tipo === 'csv' ? baixarCSV : baixarXLSX)(c.nome || nome, c.cab, c.linhas, rod); }
-    else {
-      const itens = [...document.querySelectorAll('.trilha a, .trilha [aria-current]')].map(x => x.textContent.trim()), semRot = t => t.replace(/^[^:]{1,25}:\s*/, '');
-      const principal = itens.length ? semRot(itens[itens.length - 1]) : titulo, cadeia = itens.slice(0, -1).map(semRot).join('  ›  ');
-      if (tipo === 'png') await baixarPNG($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia));
-      else await baixarPDF($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia));
-    }
+    if (tipo === 'csv' || tipo === 'xlsx') { const cs = S.vCtx?.csv?.(); if (!cs) return; const rod = [`Fonte: TSE. Oficina Política.${S.simulado ? ' DADOS SIMULADOS.' : ''}${r.modo === 'pr' ? ' Valores de projeção estatística, não oficiais.' : ''}`]; (tipo === 'csv' ? baixarCSV : baixarXLSX)(cs.nome || nome, cs.cab, cs.linhas, rod); }
+    else if (tipo === 'png') { if (dados) await baixarCardPNG(dados, nome); else await baixarPNGTela($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia)); }
+    else await baixarPDF($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia), dados);
   } catch (e) { toast('Não foi possível gerar o arquivo: ' + e.message, true); }
   finally { btn.disabled = false; btn.textContent = txt; }
 }
