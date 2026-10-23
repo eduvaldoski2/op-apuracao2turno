@@ -1,5 +1,5 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=ea1daf2e';
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=c09037a4';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -45,7 +45,7 @@ export const blobCard = async (dados, fmt = FORMATOS['3x5'], escala = 1) => { co
 export async function baixarCardPNG(dados, nome, fmt = FORMATOS['4x5']) { baixar(await blobCard(dados, fmt, 1), `${nome}_${fmt.rot.replace(':', 'x')}.png`); }
 
 // PDF: página 1 = card (A4) com a hierarquia de candidatos; páginas seguintes = mapas e tabelas da tela.
-export async function baixarPDF(el, nome, titulo, sub, cadeia, dadosCard = null) {
+export async function baixarPDF(el, nome, titulo, sub, cadeia, dadosCard = null, extra = null) {
   await carregaScript('vendor/jspdf.umd.min.js');
   const { jsPDF } = window.jspdf, pdf = new jsPDF('p', 'mm', 'a4');
   const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight(), m = 8;
@@ -55,6 +55,7 @@ export async function baixarPDF(el, nome, titulo, sub, cadeia, dadosCard = null)
     pdf.addImage(cv.toDataURL('image/jpeg', 0.93), 'JPEG', 0, 0, pw, ph); pag = 1;
     if (!el.querySelector('#vista .painel')) { pdf.save(nome + '.pdf'); return; }
   }
+  const rodape = n => { pdf.setFontSize(7); pdf.setTextColor(120); pdf.text(`oficinapolitica.com.br · ${sub} · pág. ${n}`, m, ph - 4); };
   const c = await capturar(el, titulo, sub, cadeia, dadosCard ? '.resumo,.fichas,.kpis,.placar,.foco-aviso,.nota-base,.comp-toggle,.aviso.t1' : '');
   const larg = pw - 2 * m, escala = larg / c.width, altPag = (ph - 2 * m - 6) / escala;
   let y = 0;
@@ -63,8 +64,35 @@ export async function baixarPDF(el, nome, titulo, sub, cadeia, dadosCard = null)
     pc.getContext('2d').drawImage(c, 0, y, c.width, h, 0, 0, c.width, h);
     if (pag) pdf.addPage();
     pdf.addImage(pc.toDataURL('image/jpeg', 0.92), 'JPEG', m, m, larg, h * escala);
-    pdf.setFontSize(7); pdf.setTextColor(120); pdf.text(`oficinapolitica.com.br · ${sub} · pág. ${pag + 1}`, m, ph - 4);
+    rodape(pag + 1);
     y += h; pag++;
+  }
+  // páginas extras (ex.: seções de cada local de votação): blocos agrupados por página, sem cortar um local ao meio quando possível
+  if (extra?.blocos?.length) {
+    await carregaScript('vendor/html2canvas.min.js');
+    const LARG = 1100, altCss = ((ph - 2 * m - 6) / larg) * LARG - 30;
+    const caixa = document.createElement('div'); caixa.style.cssText = `position:fixed;left:-99999px;top:0;width:${LARG}px;background:#fff;padding:12px 18px`; document.body.appendChild(caixa);
+    try {
+      const grupos = []; let atual = [], alt = 0;
+      const tit = `<div style="font:400 26px 'DM Serif Display',Georgia,serif;color:#3E347E;margin:0 0 12px">${extra.titulo}</div>`;
+      caixa.innerHTML = tit; const hTit = caixa.offsetHeight - 24; let primeiro = true;
+      for (const bl of extra.blocos) {
+        caixa.innerHTML = bl; const h = caixa.offsetHeight - 24 + 18;
+        if (atual.length && alt + h > altCss) { grupos.push(atual); atual = []; alt = 0; }
+        atual.push(bl); alt += h + (primeiro ? hTit : 0); primeiro = false;
+      }
+      if (atual.length) grupos.push(atual);
+      for (let g = 0; g < grupos.length; g++) {
+        caixa.innerHTML = (g === 0 ? tit : '') + grupos[g].join('');
+        const c2 = await window.html2canvas(caixa, { scale: 1.6, backgroundColor: '#ffffff', logging: false, useCORS: true, windowWidth: LARG + 40 });
+        const e2 = larg / c2.width, altP = (ph - 2 * m - 6) / e2; let y2 = 0;
+        while (y2 < c2.height - 1) {
+          const h2 = Math.min(altP, c2.height - y2), pc2 = document.createElement('canvas'); pc2.width = c2.width; pc2.height = Math.ceil(h2);
+          pc2.getContext('2d').drawImage(c2, 0, y2, c2.width, h2, 0, 0, c2.width, h2);
+          if (pag) pdf.addPage(); pdf.addImage(pc2.toDataURL('image/jpeg', 0.92), 'JPEG', m, m, larg, h2 * e2); rodape(pag + 1); y2 += h2; pag++;
+        }
+      }
+    } finally { caixa.remove(); }
   }
   pdf.save(nome + '.pdf');
 }

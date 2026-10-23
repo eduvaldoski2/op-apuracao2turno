@@ -1,21 +1,21 @@
-import { CONFIG } from './config.js?v=ea1daf2e';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=ea1daf2e';
-import { calcular } from './model.js?v=ea1daf2e';
-import { projetar, PARAMS } from './proj.js?v=ea1daf2e';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=ea1daf2e';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=ea1daf2e';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=ea1daf2e';
-import { eventosEntre } from './avisos.js?v=ea1daf2e';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=ea1daf2e';
-import { abrirTelao, iniciarTV } from './tv.js?v=ea1daf2e';
-import { iniciarConsentimento } from './consentimento.js?v=ea1daf2e';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=ea1daf2e';
-import { lerCard } from './card.js?v=ea1daf2e';
-import { abrirCompartilhar } from './compartilhar.js?v=ea1daf2e';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=ea1daf2e';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=ea1daf2e';
-import { esc } from './ui.js?v=ea1daf2e';
-import { getFoco, setFoco, comFoco } from './foco.js?v=ea1daf2e';
+import { CONFIG } from './config.js?v=c09037a4';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=c09037a4';
+import { calcular } from './model.js?v=c09037a4';
+import { projetar, PARAMS } from './proj.js?v=c09037a4';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=c09037a4';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=c09037a4';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=c09037a4';
+import { eventosEntre } from './avisos.js?v=c09037a4';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=c09037a4';
+import { abrirTelao, iniciarTV } from './tv.js?v=c09037a4';
+import { iniciarConsentimento } from './consentimento.js?v=c09037a4';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=c09037a4';
+import { lerCard } from './card.js?v=c09037a4';
+import { abrirCompartilhar } from './compartilhar.js?v=c09037a4';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=c09037a4';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=c09037a4';
+import { esc } from './ui.js?v=c09037a4';
+import { getFoco, setFoco, comFoco } from './foco.js?v=c09037a4';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -173,7 +173,7 @@ async function exportar(tipo, btn) {
   try {
     if (tipo === 'csv' || tipo === 'xlsx') { const cs = S.vCtx?.csv?.(); if (!cs) return; const rod = [`Fonte: TSE. Oficina Política.${S.simulado ? ' DADOS SIMULADOS.' : ''}${r.modo === 'pr' ? ' Valores de projeção estatística, não oficiais.' : ''}`]; (tipo === 'csv' ? baixarCSV : baixarXLSX)(cs.nome || nome, cs.cab, cs.linhas, rod); }
     else if (tipo === 'png') { if (dados) await baixarCardPNG(dados, nome); else await baixarPNGTela($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia)); }
-    else await baixarPDF($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia), dados);
+    else await baixarPDF($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia), dados, S.vCtx?.pdfExtra?.() || null);
   } catch (e) { toast('Não foi possível gerar o arquivo: ' + e.message, true); }
   finally { btn.disabled = false; btn.textContent = txt; }
 }
