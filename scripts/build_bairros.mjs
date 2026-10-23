@@ -50,7 +50,9 @@ function entrada(r, sec, principal) {
   return s;
 }
 // 1ª passada: seções principais (as agregadas votam na urna da principal; o resultado sai na seção principal)
+const vistas = new Set();   // o arquivo traz a mesma seção mais de uma vez (ex.: uma linha por turno): conta cada seção uma só vez
 const nL = await linhas(zipLocais, mLoc, r => {
+  const kv = pad(r.CD_MUNICIPIO, 5) + '-' + (+r.NR_ZONA) + '-' + (+r.NR_SECAO); if (vistas.has(kv)) return; vistas.add(kv);
   const sec = +r.NR_SECAO, ehPrincipal = r.CD_TIPO_SECAO_AGREGADA === '1' || +r.NR_SECAO_PRINCIPAL < 0 || +r.NR_SECAO_PRINCIPAL === sec;
   if (!ehPrincipal) { agreg.push(r); return; }
   entrada(r, sec, sec);

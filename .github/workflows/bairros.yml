@@ -16,19 +16,20 @@ jobs:
       - name: Baixar dados abertos do TSE
         run: |
           mkdir -p /tmp/tse
-          curl -sS -f -L -o /tmp/tse/locais.zip https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip
-          curl -sS -f -L -o /tmp/tse/votos.zip https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2026_BR.zip
+          curl -sS -f -L --http1.1 --retry 5 --retry-all-errors -o /tmp/tse/locais.zip https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip
+          curl -sS -f -L --http1.1 --retry 5 --retry-all-errors -o /tmp/tse/votos.zip https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2026_BR.zip
           ls -la /tmp/tse
       - name: Montar
         run: node scripts/build_bairros.mjs /tmp/tse/locais.zip /tmp/tse/votos.zip data/bairros 2>&1 | tee bairros.log
       - name: Conferir contra a base por município
         run: |
           node -e "
-          const fs=require('fs');const b=JSON.parse(fs.readFileSync('data/base_1t.json','utf8'));let dif=0,n=0,sem=0,maxd=0;
+          const fs=require('fs');const b=JSON.parse(fs.readFileSync('data/base_1t.json','utf8'));let dif=0,n=0,sem=0,maxd=0,rmin=9,rmax=0,gr=0;
           for(const r of b.rows){const f='data/bairros/'+r[0]+'/'+r[1]+'.json';if(!fs.existsSync(f)){sem++;continue;}
             const j=JSON.parse(fs.readFileSync(f,'utf8'));let L=0,F=0;for(const l of j.l){L+=l[9];F+=l[10];}
+            let ap=0;for(const l of j.l)for(const x of l[14])ap+=x[1];if(r[5]>2000){const q=ap/r[5];rmin=Math.min(rmin,q);rmax=Math.max(rmax,q);if(q>1.05||q<0.95)gr++;}
             n++;const d=Math.abs(L-r[10])+Math.abs(F-r[11]);if(d>0){dif++;maxd=Math.max(maxd,d);}}
-          console.log('municípios conferidos',n,'sem arquivo',sem,'com diferença',dif,'maior diferença',maxd);"
+          console.log('municípios conferidos',n,'sem arquivo',sem,'com diferença',dif,'maior diferença',maxd,'| aptos/eleitorado base: min',rmin.toFixed(3),'max',rmax.toFixed(3),'fora de 0,95-1,05:',gr);"
           du -sh data/bairros; find data/bairros -name '*.json' | wc -l
       - name: Publicar
         run: |
