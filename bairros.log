@@ -1,0 +1,6 @@
+locais: eleitorado_local_votacao_2026_BRASIL.csv
+linhas de locais: 1034358 municípios: 5757
+votos: votacao_secao_2026_BR.csv
+linhas presidente: 3800511 votos sem seção no cadastro: 0
+votáveis (presidente, total): {"13":53879538,"14":2675887,"16":43103,"21":22693,"22":56104503,"27":40043,"29":15024,"30":326488,"35":16881,"55":2605148,"70":3448569,"80":122911,"95":2300798,"96":3669003}
+arquivos 5757 locais 94299 seções 499248 sem bairro 0 sem coordenada 0 | Lula 53879538 Flávio 56104503
