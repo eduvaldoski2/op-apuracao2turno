@@ -1,7 +1,7 @@
 // Gráficos de linha em SVG puro (sem dependências): avanço da apuração, placar e projeção ao longo da apuração.
 import { CAND, fNum, fPct, fInt } from './util.js';
 
-const H = 300, M = { l: 46, r: 18, t: 20, b: 36 };
+const M0 = { l: 46, r: 18, t: 20, b: 36 };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 function eixo(dom, n) { const [a, b] = dom; const passo = (b - a) / n; return Array.from({ length: n + 1 }, (_, i) => a + i * passo); }
@@ -12,7 +12,7 @@ function bonito(a, b, n = 5) { // passo "redondo"
 
 // cfg: { x:[min,max], y:[min,max], xt:[ticks], yt:[ticks], xf, yf, series:[{nome,cor,pts:[{x,y,tip}],dash,marker,w,faixa:[{x,lo,hi}],rotulos:fn}], refY:[{y,txt}], extra: svg string, tipTitulo }
 export function linhas(el, cfg) {
-  const W = (el.clientWidth || 900) < 600 ? 440 : 820;
+  const W = (el.clientWidth || 900) < 600 ? 440 : 820, H = cfg.h || 300, M = { ...M0, b: cfg.mb || M0.b };
   const iw = W - M.l - M.r, ih = H - M.t - M.b;
   const X = v => M.l + (v - cfg.x[0]) / (cfg.x[1] - cfg.x[0]) * iw, Y = v => M.t + ih - (v - cfg.y[0]) / (cfg.y[1] - cfg.y[0]) * ih;
   let g = '';
@@ -20,6 +20,11 @@ export function linhas(el, cfg) {
   for (const v of yt) g += `<line x1="${M.l}" x2="${W - M.r}" y1="${Y(v)}" y2="${Y(v)}" class="grade"/><text x="${M.l - 7}" y="${Y(v) + 3.5}" text-anchor="end" class="eixo">${cfg.yf ? cfg.yf(v) : v}</text>`;
   for (const v of xt) g += `<line x1="${X(v)}" x2="${X(v)}" y1="${M.t}" y2="${H - M.b}" class="grade v"/><text x="${X(v)}" y="${H - M.b + 16}" text-anchor="middle" class="eixo">${cfg.xf ? cfg.xf(v) : v}</text>`;
   for (const r of cfg.refY || []) g += `<line x1="${M.l}" x2="${W - M.r}" y1="${Y(r.y)}" y2="${Y(r.y)}" class="ref"/><text x="${W - M.r - 3}" y="${Y(r.y) - 4}" text-anchor="end" class="eixo ref-t">${esc(r.txt)}</text>`;
+  if (cfg.horas) { // horário de cada parcial, sob o eixo (rotacionado, com espaçamento mínimo)
+    let ult = -1e9; const gap = W < 600 ? 15 : 13;
+    for (const h of cfg.horas) { const x = X(h.x); if (x - ult < gap) continue; ult = x; g += `<line x1="${x}" x2="${x}" y1="${H - M.b}" y2="${H - M.b + 4}" class="tick-h"/><text transform="translate(${x + 3.5},${H - M.b + 30}) rotate(-62)" text-anchor="end" class="hora">${esc(h.t)}</text>`; }
+    g += `<text x="${M.l - 7}" y="${H - M.b + 30}" text-anchor="end" class="eixo hora-tit">hora ›</text>`;
+  }
   if (cfg.xTitulo) g += `<text x="${M.l + iw / 2}" y="${H - 3}" text-anchor="middle" class="eixo tit">${esc(cfg.xTitulo)}</text>`;
   for (const s of cfg.series) {
     if (s.faixa?.length > 1) {
@@ -53,22 +58,7 @@ export function linhas(el, cfg) {
 const minutos = h => { const [a, b] = String(h).split(':'); return (+a) * 60 + (+b || 0); };
 const hhmm = m => String(Math.floor(m / 60) % 24).padStart(2, '0') + ':' + String(Math.round(m % 60)).padStart(2, '0');
 
-// 1) avanço da apuração no tempo (cada ponto = uma divulgação do TSE)
-export function graficoAvanco(el, hist) {
-  if (!hist.length) { el.innerHTML = '<p class="vazio">Aguardando a primeira divulgação do TSE…</p>'; return; }
-  const pts = hist.map(h => ({ x: minutos(h.ht), y: h.pst, h, tip: `<b>${h.ht}</b> · divulgação do TSE<br><b>${fNum(h.pst, 2)}%</b> das seções apuradas<br><span style="color:${CAND.L.cor}">${CAND.L.nome} ${fNum(100 * h.L / h.vv, 2)}%</span> · <span style="color:${CAND.F.cor}">${CAND.F.nome} ${fNum(100 * h.F / h.vv, 2)}%</span>` }));
-  const a = Math.min(17 * 60, Math.floor(Math.min(...pts.map(p => p.x)) / 30) * 30), b = Math.max(a + 180, Math.ceil((Math.max(...pts.map(p => p.x)) + 10) / 30) * 30);
-  const viradas = []; let lider = null;
-  hist.forEach((h, i) => { const l = h.L > h.F ? 'L' : h.F > h.L ? 'F' : lider; if (lider && l !== lider) viradas.push(i); lider = l; });
-  linhas(el, {
-    x: [a, b], y: [0, 100], yt: [0, 20, 40, 60, 80, 100], xt: eixo([a, b], Math.max(2, Math.round((b - a) / 30))).filter(v => v % 30 === 0), xf: hhmm, yf: v => v + '%', xTitulo: 'Horário da divulgação do TSE (Brasília)',
-    aria: 'Evolução do percentual de seções apuradas ao longo do tempo',
-    series: [{ nome: '% apurado', cor: '#5b2a86', pts, marker: 3.6, w: 2.8, rotulos: p => `${p.h.ht} · ${fNum(p.y, 1)}%` }],
-    extra: (X, Y) => viradas.map(i => `<g><path d="M${X(pts[i].x)},${Y(pts[i].y) + 12} l5,6 l-5,6 l-5,-6z" fill="#f28c28" stroke="#fff"/><text x="${X(pts[i].x)}" y="${Y(pts[i].y) + 34}" text-anchor="middle" class="rot-pt" fill="#b45f06">virada</text></g>`).join(''),
-  });
-}
-
-// 2) placar (% dos válidos) × % apurado; no modo projeção, soma a linha projetada com faixa
+// Marcha da apuração: % dos válidos × % apurado, com o horário de cada parcial; no modo projeção soma a linha projetada com faixa
 export function graficoPlacar(el, hist, { projecao = false } = {}) {
   if (!hist.length) { el.innerHTML = '<p class="vazio">Aguardando a primeira divulgação do TSE…</p>'; return; }
   const L = hist.map(h => ({ x: h.pst, y: 100 * h.L / h.vv, h })), F = hist.map(h => ({ x: h.pst, y: 100 * h.F / h.vv, h }));
@@ -84,6 +74,6 @@ export function graficoPlacar(el, hist, { projecao = false } = {}) {
     vals = vals.concat(pr.flatMap(h => [h.pL, 100 - h.pL, h.lo, h.hi, 100 - h.lo, 100 - h.hi]));
   }
   let lo = Math.min(...vals, 47), hi = Math.max(...vals, 53); lo = Math.floor((lo - 1) / 2) * 2; hi = Math.ceil((hi + 1) / 2) * 2;
-  linhas(el, { x: [0, 100], y: [Math.max(0, lo), Math.min(100, hi)], xt: [0, 20, 40, 60, 80, 100], xf: v => v + '%', yf: v => v + '%', xTitulo: '% das seções apuradas', refY: [{ y: 50, txt: '50%' }], series,
-    aria: 'Percentual de votos válidos de cada candidato conforme avança a apuração' });
+  linhas(el, { x: [0, 100], y: [Math.max(0, lo), Math.min(100, hi)], xt: [0, 20, 40, 60, 80, 100], xf: v => v + '%', yf: v => v + '%', xTitulo: '% das seções apuradas (sob cada ponto, o horário da parcial do TSE)', refY: [{ y: 50, txt: '50%' }], series, h: 350, mb: 78, horas: hist.map(h => ({ x: h.pst, t: h.ht })),
+    aria: 'Marcha da apuração: percentual de votos válidos de cada candidato conforme avança a apuração, com o horário de cada parcial' });
 }

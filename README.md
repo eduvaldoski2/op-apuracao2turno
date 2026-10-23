@@ -13,8 +13,8 @@ mapa por estado, listas por candidato → estado → município, exportação (P
 ```
 npm test                                   # testes do modelo + backtest sintético
 node scripts/mock_tse.mjs --auto 180       # TSE simulado em localhost:8787
-node scripts/coletor.mjs --out data/live --loop 10 --tse http://localhost:8787/oficial --basefile data/demo/base_sim.json
-python3 -m http.server 8000                # abre http://localhost:8000/?base=data/demo/base_sim.json&fonte=data/live/
+node scripts/coletor.mjs --out data/live --loop 10 --tse http://localhost:8787/oficial --basefile data/base_1t.json
+python3 -m http.server 8000                # abre http://localhost:8000/?fonte=data/live/
 ```
 
 ## Créditos

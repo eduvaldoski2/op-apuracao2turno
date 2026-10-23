@@ -61,7 +61,9 @@ export async function municipiosDireto(uf, snap) {
 // ---- demonstração (dados simulados, reprodução acelerada) ----
 export async function criarDemo() {
   const { simular } = await import('./sim.js');
-  const sim = simular({ seed: +q.get('seed') || 7 });
+  let real = null;
+  try { real = (await (await fetch('data/base_1t.json')).json()).rows; } catch { /* sem base real: usa o país sintético */ }
+  const sim = simular({ seed: +q.get('seed') || 7, real });
   const B = prepBase(sim.base);
   const hist = []; let t = 0.015;
   const passo = () => {

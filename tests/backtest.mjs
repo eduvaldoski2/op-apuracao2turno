@@ -6,7 +6,8 @@ const passos = [0.04, 0.08, 0.12, 0.18, 0.25, 0.32, 0.4, 0.5, 0.6, 0.75];
 const rows = {};
 let cobre = {}, tot = {};
 for (let s = 1; s <= nSeeds; s++) {
-  const sim = simular({ seed: s, swingBR: (s % 3 - 1) * 0.04 + 0.01 });
+  const real = process.env.REAL ? JSON.parse((await import('node:fs')).readFileSync('data/base_1t.json','utf8')).rows : null;
+  const sim = simular({ real, seed: s, swingBR: (s % 3 - 1) * 0.04 + 0.01 });
   const B = prepBase(sim.base);
   const vd = sim.verdade, pLtrue = 100 * vd.L / (vd.L + vd.F);
   for (const t of passos) {

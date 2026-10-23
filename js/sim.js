@@ -1,5 +1,6 @@
-// Gerador de dados SIMULADOS (nomes fictícios) — usado no modo demonstração, no servidor mock e nos testes.
-// Nada aqui representa resultado real. Os "candidatos" simulados usam os mesmos números 13/22 apenas para exercitar o painel.
+// Gerador de dados SIMULADOS — usado no modo demonstração, no servidor mock e nos testes.
+// Com `real` (linhas de data/base_1t.json) usa os municípios, eleitorados e o 1º turno REAIS e simula apenas o 2º turno;
+// sem `real`, gera um país sintético com nomes fictícios. Nenhum resultado de 2º turno aqui é real. Os "candidatos" simulados usam os mesmos números 13/22 apenas para exercitar o painel.
 import { logit, expit, UF_IDS } from './util.js';
 import { rng } from './proj.js';
 
@@ -16,13 +17,14 @@ const REG = { ac: 'N', al: 'NE', ap: 'N', am: 'N', ba: 'NE', ce: 'NE', df: 'CO',
 
 function gauss(r) { let u = 0; while (!u) u = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * r()); }
 
-export function simular({ seed = 7, swingBR = 0.03, escala = 1 } = {}) {
+export function simular({ seed = 7, swingBR = 0.03, escala = 1, real = null } = {}) {
   const r = rng(seed);
   const muns = [];
   const dReg = {}; for (const k of ['N', 'NE', 'CO', 'SE', 'S', 'EX']) dReg[k] = gauss(r) * 0.05;
   const dUf = {}; for (const uf of UF_IDS) dUf[uf] = swingBR + dReg[REG[uf]] + gauss(r) * 0.04;
   const turnBR = -0.012, dTurU = {}; for (const uf of UF_IDS) dTurU[uf] = turnBR + gauss(r) * 0.01;
-  for (const uf of UF_IDS) {
+  if (real) for (const x of real) muns.push({ uf: x[0], cd: x[1], nome: x[2], cdi: x[3], ts: x[4], te: x[5], c: x[6], a: x[7], vb: x[8], tvn: x[9], L: x[10], F: x[11], vv: x[12] });
+  else for (const uf of UF_IDS) {
     const [n0, mil, pl, pf] = TAB[uf]; const n = Math.max(1, Math.round(n0 * escala));
     const pesos = Array.from({ length: n }, () => Math.exp(gauss(r) * 1.15)); const sp = pesos.reduce((a, b) => a + b, 0);
     const pi0 = pl / (pl + pf);
@@ -42,15 +44,15 @@ export function simular({ seed = 7, swingBR = 0.03, escala = 1 } = {}) {
   for (const m of muns) {
     const pi1 = (m.L + .5) / (m.L + m.F + 1);
     const pi2 = expit(logit(pi1) + dUf[m.uf] + gauss(r) * 0.08);
-    const t1 = m.c / m.te, t2 = clampN(t1 + dTurU[m.uf] + gauss(r) * 0.012, 0.05, 0.95);
+    const t1 = m.c / Math.max(1, m.te), t2 = clampN(t1 + dTurU[m.uf] + gauss(r) * 0.012, 0.05, 0.95);
     const c2 = Math.round(m.te * t2);
-    const bl = clampN(m.vb / m.c + 0.004 + gauss(r) * 0.003, 0.002, 0.08), nu = clampN(m.tvn / m.c + 0.012 + gauss(r) * 0.004, 0.003, 0.12);
+    const bl = clampN(m.vb / Math.max(1, m.c) + 0.004 + gauss(r) * 0.003, 0.002, 0.08), nu = clampN(m.tvn / Math.max(1, m.c) + 0.012 + gauss(r) * 0.004, 0.003, 0.12);
     const vb2 = Math.round(c2 * bl), tvn2 = Math.round(c2 * nu), vv2 = c2 - vb2 - tvn2;
     m.t = { c: c2, vb: vb2, tvn: tvn2, L: Math.round(vv2 * pi2), F: vv2 - Math.round(vv2 * pi2) };
     m.start = OFFSET[REG[m.uf]] + r() * 0.06; m.dur = 0.18 + 0.5 * Math.pow(m.te / 40000, 0.25) * (0.7 + 0.6 * r()); m.dur = Math.min(m.dur, 0.97 - m.start);
   }
   const base = {
-    turno: 1, eleicao: 6257, simulado: true, gerado: 'SIMULADO', ufs: UF_IDS.map(cd => ({ cd, ds: cd })),
+    turno: 1, eleicao: 6257, simulado: true, gerado: real ? '1T real + 2T simulado' : 'SIMULADO', ufs: UF_IDS.map(cd => ({ cd, ds: cd })),
     rows: muns.map(m => [m.uf, m.cd, m.nome, m.cdi, m.ts, m.te, m.c, m.a, m.vb, m.tvn, m.L, m.F, m.vv, 0]),
   };
   const frac = (m, t) => Math.max(0, Math.min(1, (t - m.start) / m.dur));

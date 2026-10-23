@@ -21,7 +21,7 @@ export function criarMapa(el, geo, { onClick, tooltip } = {}) {
   function linhas(d, x, y, esc, txt, anchor = 'middle') {
     if (!d || d.pL == null || isNaN(d.pL)) return `<text x="${x}" y="${y + 3 * esc}" text-anchor="${anchor}" font-size="${7.5 * esc}" fill="${txt}">–</text>`;
     const row = (k, p, dv, yy) => `<rect x="${x - 17 * esc}" y="${yy - 5.6 * esc}" width="${5 * esc}" height="${5 * esc}" rx="1" fill="${CAND[k].cor}" stroke="#fff" stroke-width=".6"/>` +
-      `<text x="${x - 10.5 * esc}" y="${yy - 1 * esc}" font-size="${7.6 * esc}" fill="${txt}"><tspan font-weight="700">${num(p)}</tspan><tspan dx="2" opacity=".92">${dl(dv)}</tspan></text>`;
+      `<text x="${x - 10.5 * esc}" y="${yy - 1 * esc}" font-size="${7.6 * esc}" fill="${txt}"><tspan font-weight="700">${num(p)}</tspan><tspan dx="2" font-size="${5.6 * esc}" opacity=".9">${dl(dv)}</tspan></text>`;
     return row('L', d.pL, d.dL, y) + row('F', d.pF, d.dF, y + 8.6 * esc);
   }
   function desenhar() {

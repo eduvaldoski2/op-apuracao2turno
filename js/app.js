@@ -2,7 +2,7 @@ import { CONFIG } from './config.js';
 import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js';
 import { calcular } from './model.js';
 import { projetar, PARAMS } from './proj.js';
-import { viewGeral, viewCand, viewUf, viewMetodo } from './views.js';
+import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js';
 import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js';
 import { CAND, fNum, fInt, horaBR } from './util.js';
 import { esc } from './ui.js';
@@ -25,8 +25,7 @@ function toast(msg) {
 function rota() {
   const h = location.hash.replace(/^#\/?/, ''), [caminho, qs] = h.split('?'), p = caminho.split('/').filter(Boolean), q = new URLSearchParams(qs || '');
   let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; if (p[0] === 'projecao') p.shift(); else p.shift(); }
-  if (p[0] === 'metodo') return { modo: 'ap', tela: 'metodo', foco: 'metodo' };
-  if (p[0] === 'criterios') return { modo: 'pr', tela: 'metodo', foco: 'projecao' };
+  if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
   if (p[0] === 'cand' && CAND[p[1]]) return { modo, tela: 'cand', k: p[1] };
   if (p[0] === 'uf' && p[1]) return { modo, tela: 'uf', uf: p[1], c: q.get('c') };
   return { modo, tela: 'geral' };
@@ -36,9 +35,8 @@ const ir = h => { location.hash = h; };
 let ultimoCtx = null;
 function render(manterScroll = false) {
   const r = rota(), y = window.scrollY;
-  const ehMetodo = r.tela === 'metodo' && r.foco === 'metodo';
-  document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.modo === 'metodo' ? ehMetodo : (!ehMetodo && a.dataset.modo === r.modo)));
-  if (r.tela === 'metodo') { const v = viewMetodo({ B: S.B, PARAMS }, r.foco); return pintar(v, r, { sub: null }); }
+  document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.modo === r.modo));
+  if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS }, r.modo); return pintar(v, r, {}); }
   if (!S.snap) return aguardando(r);
   const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, hist: S.hist, V: getV(), P: r.modo === 'pr' ? getP() : null, ir, csv: null };
   let v;
@@ -51,9 +49,9 @@ function render(manterScroll = false) {
 }
 
 function pintar(v, r, ctx) {
-  const voltar = r.tela !== 'geral' && r.tela !== 'metodo' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
-  const sub = r.modo === 'pr' && r.tela === 'geral' ? `<a class="criterios sem-export" href="#/p/criterios">ⓘ Critérios da projeção</a>` : '';
-  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar"><span>Baixar:</span><button data-exp="pdf">PDF</button><button data-exp="png">PNG</button><button data-exp="csv" ${r.tela === 'metodo' ? 'disabled' : ''}>CSV</button></div>`;
+  const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
+  const sub = r.tela === 'geral' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
+  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar"><span>Baixar:</span><button data-exp="pdf">PDF</button><button data-exp="png">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button></div>`;
   root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1>${sub}${exp}</div><div id="vista">${v.html}</div></div>`;
   v.montar(root);
   root.querySelector('[data-voltar]')?.addEventListener('click', e => { e.preventDefault(); if (history.length > 1) history.back(); else ir(r.modo === 'pr' ? '#/projecao' : '#/'); });

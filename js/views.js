@@ -3,7 +3,7 @@ import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, 
 import { listaMunicipios, rankingUfs } from './model.js';
 import { projetarMunicipios } from './proj.js';
 import { esc, dlt, grw, tabela } from './ui.js';
-import { graficoAvanco, graficoPlacar } from './charts.js';
+import { graficoPlacar } from './charts.js';
 import { criarMapa, legendaMapa } from './map.js';
 
 const KS = ['L', 'F'];
@@ -92,7 +92,7 @@ export function viewGeral(ctx) {
   if (ap) {
     if (base.pst < 98) h += `<div class="aviso">Apuração parcial: as urnas chegam por regiões em horários diferentes, então o placar de agora ainda não é o resultado final. Veja a aba <a href="#/projecao">Projeção</a>.</div>`;
   } else {
-    h += `<div class="aviso proj">Projeção estatística — <b>não é resultado oficial</b>. Baseada nas seções já apuradas e no 1º turno de cada município (<a href="#/metodo">como funciona</a>).</div>`;
+    h += `<div class="aviso proj">Projeção estatística — <b>não é resultado oficial</b>. Baseada nas seções já apuradas e no 1º turno de cada município (<a href="#/p/criterios">critérios</a>).</div>`;
   }
 
   // placar
@@ -126,10 +126,9 @@ export function viewGeral(ctx) {
 
   // gráficos
   if (ap) {
-    h += `<section class="painel"><h2>Avanço da apuração</h2><p class="sub">Cada ponto é uma divulgação do TSE: horário e % das seções apuradas. ◆ marca virada na liderança.</p><div id="g-avanco" class="grafico-wrap"></div></section>`;
-    h += `<section class="painel"><h2>Placar conforme a apuração avança</h2><p class="sub">% dos votos válidos de cada candidato em cada divulgação.</p><div id="g-placar" class="grafico-wrap"></div></section>`;
+    h += `<section class="painel"><h2>Marcha da apuração</h2><p class="sub">% dos votos válidos de cada candidato conforme as urnas são apuradas. Cada ponto é uma parcial divulgada pelo TSE: o eixo mostra o % apurado e, sob o ponto, o horário da divulgação.</p><div id="g-placar" class="grafico-wrap"></div></section>`;
   } else {
-    h += `<section class="painel"><h2>Projeção ao longo da apuração</h2><p class="sub">Linhas cheias: placar parcial. Linhas tracejadas e sombra: projeção do resultado final de cada candidato com faixa de 90% de confiança — a faixa estreita à medida que as urnas chegam.</p><div id="g-placar" class="grafico-wrap"></div></section>`;
+    h += `<section class="painel"><h2>Marcha da projeção</h2><p class="sub">Linhas cheias: placar parcial. Linhas tracejadas e sombra: projeção do resultado final de cada candidato com faixa de 90% de confiança — a faixa estreita à medida que as urnas chegam.</p><div id="g-placar" class="grafico-wrap"></div></section>`;
   }
 
   // mapa
@@ -143,8 +142,7 @@ export function viewGeral(ctx) {
   return {
     html: h,
     montar(root) {
-      if (ap) { graficoAvanco(root.querySelector('#g-avanco'), hist); graficoPlacar(root.querySelector('#g-placar'), hist); }
-      else graficoPlacar(root.querySelector('#g-placar'), hist, { projecao: true });
+      graficoPlacar(root.querySelector('#g-placar'), hist, { projecao: !ap });
       const dm = dadosMapa(ufs), mp = criarMapa(root.querySelector('#mapa'), ctx.geo, { onClick: u => ctx.ir(`#/${ap ? '' : 'p/'}uf/${u}`), tooltip: u => tipUF(ufs.find(x => x.id === u), modo) });
       mp.atualizar(dm);
       const t = tabela(root.querySelector('#tab-uf'), { cols: colsUF(modo), rows: ufs, sort: 'pL', dir: 'desc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
@@ -248,11 +246,10 @@ export function viewUf(ctx, uf, kOrd) {
   } };
 }
 
-// ---------- critérios da projeção / método ----------
-export function viewMetodo(ctx, foco) {
+// ---------- critérios (apuração e projeção, cada um na sua aba) ----------
+export function viewCriterios(ctx, modo) {
   const { PARAMS } = ctx;
-  const html = `<article class="metodo">
-  <section class="painel" id="projecao"><h2>Critérios da projeção</h2>
+  const proj = `<section class="painel" id="projecao"><h2>Critérios da projeção</h2>
   <p class="lead">A projeção parte do que já foi apurado no 2º turno e usa o 1º turno como régua: ela pergunta, urna a urna, <b>o quanto cada município mudou em relação ao 1º turno</b> e aplica essa mudança ao que ainda falta apurar.</p>
   <ol class="passos">
    <li><b>Ponto de partida: o 1º turno por município.</b> Para cada um dos ${fInt(ctx.B.muns.length)} municípios (e cidades do exterior) guardamos o resultado oficial do 1º turno: comparecimento, brancos, nulos e votos de ${CAND.L.nome} e ${CAND.F.nome}. É a "linha de base" de cada lugar — cidades com histórico forte de um candidato continuam sendo projetadas como tal.</li>
@@ -261,29 +258,28 @@ export function viewMetodo(ctx, foco) {
    <li><b>Projeção do que falta.</b> Para cada município, o eleitorado ainda não apurado é projetado com o comparecimento, os brancos e os nulos do 1º turno daquele município mais a mudança do seu estado, e a divisão entre os candidatos parte do 1º turno do município mais o <i>swing</i> do estado. Soma-se isso ao que já está apurado.</li>
    <li><b>Faixa de incerteza (90%).</b> Simulamos ${PARAMS.draws} cenários, sorteando a mudança nacional, regional e estadual dentro da incerteza de cada nível (e o ruído entre municípios). A faixa mostrada é o intervalo que contém 90% dos cenários. Ela é larga no início e estreita conforme a apuração avança.</li>
    <li><b>Probabilidade de vitória.</b> É a fração dos cenários em que o candidato termina à frente. Só é exibida a partir de ${PARAMS.minPstProb}% das seções apuradas, quando o modelo já tem informação suficiente para isso ser razoável.</li>
-   <li><b>Quando os dados são só por estado.</b> Se o coletor de municípios não estiver disponível, a mesma lógica roda com cada estado como unidade única (menos precisa).</li>
+   <li><b>Quando os dados são só por estado.</b> Se os resultados por município não estiverem disponíveis, a mesma lógica roda com cada estado como unidade única (menos precisa).</li>
   </ol>
   <h3>Limites e cuidados</h3>
   <ul>
    <li>É uma estimativa estatística, <b>não o resultado oficial</b>. O resultado oficial é o do TSE.</li>
-   <li>Pressupõe que as urnas que faltam em um município se comportam como as já apuradas do mesmo município (e que a mudança de um estado vale para o restante dele). Zonas rurais, urbanas e voto em trânsito podem fugir disso.</li>
-   <li>Os parâmetros (quanto confiar no estado vs. na região vs. no país) foram calibrados em <b>simulações</b>, pois não há série nacional de 2º turno em município nos arquivos do TSE para validação histórica. Vamos refinar com os dados reais conforme a apuração avança — o painel mostra a incerteza de forma transparente.</li>
+   <li>Pressupõe que as urnas que faltam em um município se comportam como as já apuradas do mesmo município (e que a mudança de um estado vale para o restante dele). Zonas rurais e urbanas, bairros e voto em trânsito podem fugir disso.</li>
+   <li>Os parâmetros (quanto confiar no estado vs. na região vs. no país) foram calibrados em <b>simulações</b>, pois não há série nacional de 2º turno por município nos arquivos do TSE para validação histórica.</li>
    <li>Não usa pesquisas de opinião, nem informações de fora do TSE.</li>
   </ul>
   <h3>Parâmetros atuais do modelo</h3>
   <div class="tab-scroll"><table class="tab mini"><thead><tr><th>Componente</th><th class="n">Incerteza nacional (a priori)</th><th class="n">Entre regiões</th><th class="n">Entre estados</th><th class="n">Entre municípios</th></tr></thead><tbody>
    ${[['Swing entre candidatos (logit)', PARAMS.swing], ['Comparecimento (proporção)', PARAMS.turn], ['Votos brancos (proporção)', PARAMS.blank], ['Votos nulos (proporção)', PARAMS.nulo]].map(([n, s]) => `<tr><td>${n}</td><td class="n">${s.s0}</td><td class="n">${s.sr}</td><td class="n">${s.su}</td><td class="n">${s.sm}</td></tr>`).join('')}
-  </tbody></table></div></section>
-
-  <section class="painel" id="metodo"><h2>Como o painel calcula a apuração</h2>
+  </tbody></table></div></section>`;
+  const apu = `<section class="painel" id="apuracao"><h2>Critérios da apuração</h2>
   <ul>
-   <li><b>Fonte:</b> arquivos de divulgação de resultados do TSE (eleição 6258, 2º turno de 25/10/2026). O painel consulta periodicamente os arquivos e mostra o horário de cada divulgação.</li>
-   <li><b>Percentuais dos candidatos:</b> sobre os votos válidos (no 2º turno, votos nominais nos dois candidatos). <b>Brancos e nulos:</b> sobre os votos dados. <b>Abstenção:</b> sobre o eleitorado. <b>Alienação eleitoral:</b> (abstenção + brancos + nulos) ÷ eleitorado.</li>
+   <li><b>Fonte:</b> arquivos de divulgação de resultados do TSE (eleição 6258, 2º turno de 25/10/2026). O painel consulta os arquivos continuamente e mostra o horário de cada divulgação (parcial).</li>
+   <li><b>Percentuais dos candidatos:</b> sobre os votos válidos (no 2º turno, votos nominais nos dois candidatos). <b>Brancos e nulos:</b> sobre os votos dados (comparecimento). <b>Abstenção:</b> sobre o eleitorado. <b>Alienação eleitoral:</b> (abstenção + brancos + nulos) ÷ eleitorado.</li>
    <li><b>Comparação com o 1º turno:</b> por padrão, "mesmo recorte" — o 1º turno só dos municípios/eleitorado já apurados no 2º (para comparar o que é comparável durante a apuração). É possível trocar para o 1º turno final. Variações em pontos percentuais (p.p.); "crescimento de votos" é a variação relativa do número de votos.</li>
+   <li><b>Marcha da apuração:</b> cada ponto é uma parcial divulgada pelo TSE, no eixo do % apurado, com o horário da divulgação sob o ponto.</li>
    <li><b>Selo "ELEITO":</b> só aparece quando o TSE confirma. "Lidera na parcial" não é resultado final.</li>
    <li><b>Mapa:</b> cor = quem lidera no estado; tom mais escuro = maior percentual. Estados pequenos têm o resultado no quadro lateral.</li>
   </ul>
-  <h3>Créditos</h3><p>Mapa: <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noopener">@svg-maps/brazil</a> (CC BY 4.0). Dados: TSE. Painel: Oficina Política — iniciativa independente, sem vínculo com o TSE.</p></section>
-  </article>`;
-  return { html, titulo: 'Critérios e método', montar(root) { if (foco) root.querySelector('#' + foco)?.scrollIntoView(); }, semExport: false };
+  <h3>Créditos</h3><p>Mapa: <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noopener">@svg-maps/brazil</a> (CC BY 4.0). Dados: TSE. Painel: Oficina Política — iniciativa independente, sem vínculo com o TSE.</p></section>`;
+  return { html: `<article class="metodo">${modo === 'pr' ? proj : apu}</article>`, titulo: modo === 'pr' ? 'Critérios da projeção' : 'Critérios da apuração', montar() {} };
 }
