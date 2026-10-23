@@ -17,11 +17,16 @@ async function capturar(el, titulo, sub) {
     onclone: doc => {
       doc.querySelectorAll('.sem-export').forEach(n => n.remove());
       doc.querySelectorAll('.mapa-tip,.g-tip').forEach(n => n.remove());
+      doc.querySelectorAll('details').forEach(d => { d.open = true; });
       const alvo = doc.querySelector('[data-export-raiz]') || doc.body;
       const cab = doc.createElement('div');
-      cab.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:14px 18px;margin-bottom:14px;background:#2A2260;color:#fff;border-radius:10px;font-family:system-ui,sans-serif';
-      cab.innerHTML = `<img src="img/logo-negativo.svg" alt="Oficina Política" style="height:34px;width:auto"><div style="text-align:right"><div style="font-weight:700;font-size:15px">${titulo}</div><div style="font-size:12px;opacity:.9">${sub}</div></div>`;
+      cab.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 22px;margin-bottom:16px;background:linear-gradient(100deg,#2A2260,#3E347E);color:#fff;border-radius:12px;font-family:system-ui,sans-serif';
+      cab.innerHTML = `<img src="img/logo-negativo.svg" alt="Oficina Política" style="height:54px;width:auto"><div style="text-align:right"><div style="font-weight:700;font-size:16px">${titulo}</div><div style="font-size:12.5px;opacity:.9;margin-top:3px">${sub}</div></div>`;
       alvo.insertBefore(cab, alvo.firstChild);
+      const rod = doc.createElement('div');
+      rod.style.cssText = 'display:flex;align-items:center;gap:14px;padding:14px 18px;margin-top:20px;border-top:2px solid #e4dfee;font-family:system-ui,sans-serif;color:#5d5675;font-size:12px;line-height:1.4';
+      rod.innerHTML = `<img src="img/icone.svg" alt="" style="width:38px;height:38px"><div><div style="font-weight:700;font-size:16px;color:#3E347E">oficinapolitica.com.br</div><div>Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.</div></div>`;
+      alvo.appendChild(rod);
     },
   });
 }
@@ -41,7 +46,7 @@ export async function baixarPDF(el, nome, titulo, sub) {
     pc.getContext('2d').drawImage(c, 0, y, c.width, h, 0, 0, c.width, h);
     if (pag) pdf.addPage();
     pdf.addImage(pc.toDataURL('image/jpeg', 0.92), 'JPEG', m, m, larg, h * escala);
-    pdf.setFontSize(7); pdf.setTextColor(120); pdf.text(`Oficina Política · ${sub} · pág. ${pag + 1}`, m, ph - 4);
+    pdf.setFontSize(7); pdf.setTextColor(120); pdf.text(`oficinapolitica.com.br · ${sub} · pág. ${pag + 1}`, m, ph - 4);
     y += h; pag++;
   }
   pdf.save(nome + '.pdf');

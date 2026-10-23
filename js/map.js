@@ -1,5 +1,6 @@
 // Mapa do Brasil por UF (SVG). Estados pequenos ganham quadro lateral ("seta") com o resultado.
-import { corDoPct, corTexto, fNum, fDelta, CAND, sigla, ESC } from './util.js?v=0df7f6be';
+import { corDoPct, corTexto, fNum, fDelta, CAND, sigla, ESC } from './util.js?v=X';
+import { entenda } from './ui.js?v=X';
 
 const CALLOUT = { // x,y do quadro (unidades do viewBox)
   rn: [632, 146], pb: [632, 188], pe: [632, 230], al: [632, 272], se: [632, 314], df: [632, 356], es: [632, 398], rj: [632, 440], sc: [632, 482], ac: [6, 292],
@@ -19,6 +20,7 @@ export function criarMapa(el, geo, { onClick, tooltip } = {}) {
     const fill = corDoPct(d.k, d.pw); return { fill, txt: corTexto(fill), stroke: '#ffffff' };
   }
   function linhas(d, x, y, esc, txt, anchor = 'middle') {
+    if (d && d.solo) return `<text x="${x}" y="${y + 3 * esc}" text-anchor="${anchor}" font-size="${8.4 * esc}" font-weight="700" fill="${txt}">${num(d.pw)}</text>`;
     if (!d || d.pL == null || isNaN(d.pL)) return `<text x="${x}" y="${y + 3 * esc}" text-anchor="${anchor}" font-size="${7.5 * esc}" fill="${txt}">–</text>`;
     const row = (k, p, dv, yy) => `<rect x="${x - 17 * esc}" y="${yy - 5.6 * esc}" width="${5 * esc}" height="${5 * esc}" rx="1" fill="${CAND[k].cor}" stroke="#fff" stroke-width=".6"/>` +
       `<text x="${x - 10.5 * esc}" y="${yy - 1 * esc}" font-size="${7.6 * esc}" fill="${txt}"><tspan font-weight="700">${num(p)}</tspan><tspan dx="2" font-size="${5.6 * esc}" opacity=".9">${dl(dv)}</tspan></text>`;
@@ -58,5 +60,5 @@ export function criarMapa(el, geo, { onClick, tooltip } = {}) {
 
 export function legendaMapa() {
   const grad = k => `linear-gradient(90deg, ${corDoPct(k, ESC.min)}, ${corDoPct(k, (ESC.min + ESC.max) / 2)}, ${corDoPct(k, ESC.max)})`;
-  return `<div class="leg-mapa"><span><i style="background:${grad('L')}"></i>${CAND.L.nome}: ${ESC.min}% → ${ESC.max}%+</span><span><i style="background:${grad('F')}"></i>${CAND.F.nome}: ${ESC.min}% → ${ESC.max}%+</span><span><i style="background:#e4e1ea"></i>sem apuração</span><small>Cor = quem lidera no estado; tom mais escuro = maior percentual dos votos válidos. Números: % dos válidos e variação (p.p.) em relação ao 1º turno.</small></div>`;
+  return `<div class="leg-mapa"><span><i style="background:${grad('L')}"></i>${CAND.L.nome}: ${ESC.min}% → ${ESC.max}%+</span><span><i style="background:${grad('F')}"></i>${CAND.F.nome}: ${ESC.min}% → ${ESC.max}%+</span><span><i style="background:#e4e1ea"></i>sem apuração</span>${entenda('Cor = quem lidera no estado; tom mais escuro = maior percentual dos votos válidos. Números: % dos válidos e variação (p.p.) em relação ao 1º turno.')}</div>`;
 }

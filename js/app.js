@@ -1,13 +1,14 @@
-import { CONFIG } from './config.js?v=0df7f6be';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=0df7f6be';
-import { calcular } from './model.js?v=0df7f6be';
-import { projetar, PARAMS } from './proj.js?v=0df7f6be';
-import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=0df7f6be';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=0df7f6be';
-import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=0df7f6be';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=0df7f6be';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=0df7f6be';
-import { esc } from './ui.js?v=0df7f6be';
+import { CONFIG } from './config.js?v=0c1512c9';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=0c1512c9';
+import { calcular } from './model.js?v=0c1512c9';
+import { projetar, PARAMS } from './proj.js?v=0c1512c9';
+import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=0c1512c9';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=0c1512c9';
+import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=0c1512c9';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=0c1512c9';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=0c1512c9';
+import { esc } from './ui.js?v=0c1512c9';
+import { setFoco, comFoco } from './foco.js?v=0c1512c9';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -19,12 +20,14 @@ function getP() { const s = sig() + '|' + (S.snap.mun ? Object.keys(S.snap.mun).
 
 // ---------- toast (some em 7 s, sem som) ----------
 function toast(msg) {
+  if (rota().modo === 't1') return;
   const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg; $('#toasts').appendChild(t);
   setTimeout(() => t.classList.add('sai'), 6500); setTimeout(() => t.remove(), 7000);
 }
 
 // ---------- rota ----------
-function rota() {
+function rota() { const r = rota0(); if (r.modo === 't1') r.c = new URLSearchParams((location.hash.split('?')[1]) || '').get('c'); return r; }
+function rota0() {
   const h = location.hash.replace(/^#\/?/, ''), [caminho, qs] = h.split('?'), p = caminho.split('/').filter(Boolean), q = new URLSearchParams(qs || '');
   let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; p.shift(); } else if (p[0] === 't1') { modo = 't1'; p.shift(); }
   if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
@@ -39,16 +42,18 @@ function rota() {
   if (p[0] === 'uf' && p[1]) return { modo, tela: 'uf', uf: p[1], c: q.get('c') };
   return { modo, tela: 'geral' };
 }
-const ir = h => { location.hash = h; };
+const ir = h => { location.hash = comFoco(h); };
 
 let ultimoCtx = null;
-function render(manterScroll = false) {
+function render(manterScroll = false, forcar = false) {
   const r = rota(), y = window.scrollY;
+  setFoco(r.modo === 't1' ? r.c : null);
+  const bs = document.getElementById('barra-status'); if (bs) bs.hidden = r.modo === 't1';
   document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.modo === r.modo));
   if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS }, r.modo); return pintar(v, r, {}); }
   const faixa = document.getElementById('sim'), demoBar = document.getElementById('demo-bar');
   if (faixa) faixa.hidden = r.modo === 't1' || !S.simulado; if (demoBar) demoBar.hidden = r.modo === 't1' || !S.demo;
-  if (r.modo === 't1') return renderT1(r, manterScroll);
+  if (r.modo === 't1') return renderT1(r, manterScroll, forcar);
   setEscala(50, 78);
   if (!S.snap) return aguardando(r);
   const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, hist: S.hist, V: getV(), P: r.modo === 'pr' ? getP() : null, ir, csv: null, demo: !!S.demo };
@@ -65,8 +70,8 @@ function render(manterScroll = false) {
   if (manterScroll) window.scrollTo(0, y); else window.scrollTo(0, 0);
 }
 
-async function renderT1(r, manterScroll) {
-  if (manterScroll && S.vRota?.modo === 't1') return;   // dados estáticos: a atualização periódica não precisa redesenhar
+async function renderT1(r, manterScroll, forcar) {
+  if (manterScroll && !forcar && S.vRota?.modo === 't1') return;   // dados estáticos: a atualização periódica não precisa redesenhar
   if (!S.T1) {
     root.innerHTML = `<div data-export-raiz><div class="tela-topo"><h1>Resultados do 1º turno</h1></div><p class="carregando">Carregando resultado oficial do 1º turno…</p></div>`;
     try { S.T1 = prepT1(await carregarT1()); } catch (e) { root.innerHTML = `<div class="aviso">O resultado do 1º turno ainda não está disponível (${esc(e.message || e)}).</div>`; return; }
@@ -81,14 +86,15 @@ async function renderT1(r, manterScroll) {
   else if (r.tela === 'distrito') v = viewDistrito(ctx, r.uf, r.cd, r.di);
   else if (r.tela === 'local') v = viewLocal(ctx, r.uf, r.cd, r.id);
   else v = viewT1Geral(ctx);
-  pintar(v, r, ctx); window.scrollTo(0, 0);
+  const y0 = window.scrollY; pintar(v, r, ctx); window.scrollTo(0, manterScroll ? y0 : 0);
 }
 
 function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
   const sub = r.tela === 'geral' && r.modo !== 't1' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
-  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar"><span>Baixar:</span><button data-exp="pdf">PDF</button><button data-exp="png">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button></div>`;
-  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1>${sub}${exp}</div>${v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : ''}<div id="vista">${v.html}</div></div>`;
+  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><span>⬇ Baixar</span><button data-exp="pdf">PDF</button><button data-exp="png">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button></div>`;
+  const trilha = v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : '';
+  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${exp}</div><div id="vista">${v.html}</div></div>`;
   v.montar(root);
   root.querySelector('[data-voltar]')?.addEventListener('click', e => { e.preventDefault(); if (history.length > 1) history.back(); else ir(r.modo === 'pr' ? '#/projecao' : r.modo === 't1' ? '#/t1' : '#/'); });
   root.querySelectorAll('[data-ref]').forEach(b => b.addEventListener('click', () => { S.refMode = b.dataset.ref; render(true); }));
@@ -161,7 +167,8 @@ async function iniciar() {
     } else { const e = await carregarEstatico(); S.B = e.B; S.geo = e.geo; S.simulado = e.simulado; }
   } catch (e) { root.innerHTML = `<div class="aviso">A base do 1º turno ainda não está publicada (${esc(e.message)}). Enquanto isso, veja a <a href="?demo=1">demonstração com dados simulados</a>.</div>`; return; }
   $('#sim').hidden = !S.simulado;
-  window.addEventListener('hashchange', () => render(false));
+  let caminhoAnt = location.hash.split('?')[0];
+  window.addEventListener('hashchange', () => { const c = location.hash.split('?')[0], mesmo = c === caminhoAnt && /^#\/t1/.test(c); caminhoAnt = c; render(mesmo, mesmo); });
   if (MODO_DEMO) {
     $('#demo-bar').hidden = false; let rodando = true, vel = 1;
     const passo = () => { if (!rodando) return; const r = S.demo.passo(); aplicar(r); if (r.fim) { rodando = false; $('#demo-play').textContent = '↺ Reiniciar'; } };

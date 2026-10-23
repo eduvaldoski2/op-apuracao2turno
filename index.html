@@ -21,31 +21,37 @@
 <meta name="theme-color" content="#3E347E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="css/app.css?v=0df7f6be">
+<link rel="stylesheet" href="css/app.css?v=0c1512c9">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="alternate icon" type="image/png" href="img/favicon.png">
 </head>
 <body>
 <a class="pula" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo">
-  <a class="marca" href="#/" aria-label="Oficina Política — início"><img class="marca-logo" src="img/logo-negativo.svg" alt="Oficina Política" width="203" height="34"></a>
-  <div class="topo-prod">Apuração · 2º turno 2026 · Presidente</div>
-  <div id="status" class="status"></div>
+  <div class="topo-in">
+    <a class="marca" href="#/" aria-label="Oficina Política — início"><img class="marca-logo" src="img/logo-negativo.svg" alt="Oficina Política" width="360" height="60"></a>
+    <div class="topo-prod">Apuração · 2º turno 2026 · Presidente</div>
+  </div>
 </header>
-<nav class="abas" aria-label="Seções">
-  <a class="aba" data-modo="ap" href="#/">Apuração</a>
-  <a class="aba" data-modo="pr" href="#/projecao">Projeção</a>
-  <a class="aba" data-modo="t1" href="#/t1">Resultados 1º Turno</a>
-</nav>
+<nav class="abas" aria-label="Seções"><div class="abas-in" role="tablist">
+  <a class="aba" role="tab" data-modo="ap" href="#/">Apuração</a>
+  <a class="aba" role="tab" data-modo="pr" href="#/projecao">Projeção</a>
+  <a class="aba" role="tab" data-modo="t1" href="#/t1"><span class="so-desk">Resultados </span>1º Turno</a>
+</div></nav>
+<div class="barra-status" id="barra-status"><span id="status" class="status"></span></div>
 <div id="sim" class="faixa-sim" hidden>DADOS SIMULADOS — municípios e 1º turno reais; a apuração do 2º turno é fictícia, só para demonstração. Não são resultados reais.</div>
 <div id="demo-bar" class="demo-bar" hidden><b>Demonstração</b> <button id="demo-play" class="tg">⏸ Pausar</button> velocidade <input id="demo-vel" type="range" min="0.5" max="6" step="0.5" value="1" aria-label="Velocidade da demonstração"></div>
 <main id="conteudo" tabindex="-1"><p class="carregando">Carregando…</p></main>
 <div id="toasts" class="toasts" aria-live="polite"></div>
 <footer class="rodape">
-  <p>Dados: <a href="https://resultados.tse.jus.br" target="_blank" rel="noopener">TSE — Divulgação de Resultados</a>. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE. A projeção é uma estimativa estatística.</p>
-  <p>Mapa: <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noopener">@svg-maps/brazil</a> (CC BY 4.0).</p>
-  <p>Limites de bairros: <a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais.html" target="_blank" rel="noopener">IBGE (Censo 2022)</a>, Prefeitura de São Paulo (GeoSampa), Governo do Distrito Federal (IPEDF) e © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">colaboradores do OpenStreetMap</a> (ODbL), conforme indicado em cada mapa.</p>
+  <div class="rodape-in">
+    <a class="rodape-marca" href="https://oficinapolitica.com.br" target="_blank" rel="noopener"><img src="img/icone.svg" alt="" width="40" height="40"><span>oficinapolitica.com.br</span></a>
+    <div class="rodape-txt">
+      <p>Dados: <a href="https://resultados.tse.jus.br" target="_blank" rel="noopener">TSE — Divulgação de Resultados</a>. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE. A projeção é uma estimativa estatística.</p>
+      <p>Mapa: <a href="https://github.com/VictorCazanave/svg-maps" target="_blank" rel="noopener">@svg-maps/brazil</a> (CC BY 4.0). Limites de bairros: <a href="https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais.html" target="_blank" rel="noopener">IBGE (Censo 2022)</a>, Prefeitura de São Paulo (GeoSampa), Governo do Distrito Federal (IPEDF) e © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">colaboradores do OpenStreetMap</a> (ODbL), conforme indicado em cada mapa.</p>
+    </div>
+  </div>
 </footer>
-<script type="module" src="js/app.js?v=0df7f6be"></script>
+<script type="module" src="js/app.js?v=0c1512c9"></script>
 </body>
 </html>

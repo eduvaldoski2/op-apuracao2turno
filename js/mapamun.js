@@ -1,7 +1,7 @@
 // Mapa de um estado por município (SVG), no mesmo padrão do mapa do Brasil: cor = quem lidera, tom = % do líder,
 // rótulos dentro dos municípios grandes (sigla do nome + % de cada candidato e variação). Sem caixas laterais.
 // Suporta zoom (roda do mouse / botões / pinça) e arraste; os rótulos reaparecem conforme o zoom.
-import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=0df7f6be';
+import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=0c1512c9';
 
 const num = v => (v == null || isNaN(v)) ? '–' : fNum(v, 1);
 const dl = v => (v == null || isNaN(v)) ? '' : fDelta(v, 1, '');
@@ -25,6 +25,7 @@ export function criarMapaMun(el, geo, { onClick, tooltip } = {}) {
     if (px < 7) return '';
     const nome = esc(g.n);
     const nomeCurto = nome.length * fs * 0.5 > g.r * 2 ? nome.slice(0, Math.max(3, Math.floor(g.r * 2 / (fs * 0.5)) - 1)) + '.' : nome;
+    if (d && d.solo) return px >= 16 ? `<g pointer-events="none"><text x="${g.lx}" y="${g.ly - 3 * fs / 8}" text-anchor="middle" font-size="${6.4 * fs / 8}" font-weight="800" fill="${c.txt}">${nomeCurto}</text><text x="${g.lx}" y="${g.ly + 6 * fs / 8}" text-anchor="middle" font-size="${8.4 * fs / 8}" font-weight="700" fill="${c.txt}">${num(d.pw)}</text></g>` : `<g pointer-events="none"><text x="${g.lx}" y="${g.ly + 2.6 * fs / 8}" text-anchor="middle" font-size="${7.2 * fs / 8}" font-weight="800" fill="${c.txt}">${num(d.pw)}</text></g>`;
     if (!d || d.pL == null || isNaN(d.pL)) return px >= 14 ? `<text x="${g.lx}" y="${g.ly}" text-anchor="middle" font-size="${fs * .9}" fill="${c.txt}">${nomeCurto}</text>` : '';
     const row = (k, p, dv, yy) => `<rect x="${g.lx - 17 * fs / 8}" y="${yy - 5.6 * fs / 8}" width="${5 * fs / 8}" height="${5 * fs / 8}" rx="1" fill="${CAND[k].cor}" stroke="#fff" stroke-width=".5"/>` +
       `<text x="${g.lx - 10.5 * fs / 8}" y="${yy - fs / 8}" font-size="${7.6 * fs / 8}" fill="${c.txt}"><tspan font-weight="700">${num(p)}</tspan><tspan dx="2" font-size="${5.6 * fs / 8}" opacity=".9">${dl(dv)}</tspan></text>`;

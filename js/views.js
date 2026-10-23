@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=0df7f6be';
-import { listaMunicipios, rankingUfs } from './model.js?v=0df7f6be';
-import { projetarMunicipios } from './proj.js?v=0df7f6be';
-import { esc, dlt, grw, tabela, sem } from './ui.js?v=0df7f6be';
-import { graficoPlacar } from './charts.js?v=0df7f6be';
-import { criarMapa, legendaMapa } from './map.js?v=0df7f6be';
-import { criarMapaMun } from './mapamun.js?v=0df7f6be';
-import { getJSON } from './tse.js?v=0df7f6be';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=0c1512c9';
+import { listaMunicipios, rankingUfs } from './model.js?v=0c1512c9';
+import { projetarMunicipios } from './proj.js?v=0c1512c9';
+import { esc, dlt, grw, pcel, entenda, tabela, sem } from './ui.js?v=X';
+import { graficoPlacar } from './charts.js?v=0c1512c9';
+import { criarMapa, legendaMapa } from './map.js?v=0c1512c9';
+import { criarMapaMun } from './mapamun.js?v=0c1512c9';
+import { getJSON } from './tse.js?v=0c1512c9';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -64,7 +64,7 @@ const tipUF = (r, modo) => !r ? '' : `<b>${UF_NOME[r.id]}</b><br>${modo === 'ap'
 export function colsUF(modo) {
   const mk = k => [
     { k: 'v' + k, t: `${cabCand(k)} votos`, h: r => `<span class="num">${fInt(r[k])}</span>`, v: r => r[k], cls: 'n' },
-    { k: 'p' + k, t: `${cabCand(k)} %`, h: r => `<b>${fNum(r['p' + k], 2)}%</b> ${dlt(r['d' + k])}`, v: r => r['p' + k], x: r => r['p' + k], cls: 'n' },
+    { k: 'p' + k, t: `${cabCand(k)} %`, h: r => pcel(r['p' + k], r['d' + k]), v: r => r['p' + k], x: r => r['p' + k], cls: 'n' },
     { k: 'g' + k, t: `cresc. votos`, h: r => grw(r['g' + k]), v: r => r['g' + k], cls: 'n sec' },
   ];
   return [
@@ -72,9 +72,9 @@ export function colsUF(modo) {
     { k: 'pst', t: modo === 'ap' ? '% apurado' : '% apurado hoje', h: r => `${fNum(r.pst, 1)}%`, v: r => r.pst, cls: 'n' },
     ...mk('L'), ...mk('F'),
     { k: 'marg', t: 'Margem', h: r => `<span style="color:${r.lider ? CAND[r.lider].cor : '#666'}">${r.lider ? CAND[r.lider].nome.split(' ')[0] : '–'} +${fInt(Math.abs(r.L - r.F))}</span>`, v: r => r.L - r.F, cls: 'n sec' },
-    { k: 'ab', t: 'Abstenção', h: r => `${fNum(r.pAb, 1)}% ${dlt(r.dAb)}`, v: r => r.pAb, cls: 'n sec' },
-    { k: 'br', t: 'Brancos', h: r => `${fNum(r.pBr, 2)}% ${dlt(r.dBr, 2)}`, v: r => r.pBr, cls: 'n sec' },
-    { k: 'nu', t: 'Nulos', h: r => `${fNum(r.pNu, 2)}% ${dlt(r.dNu, 2)}`, v: r => r.pNu, cls: 'n sec' },
+    { k: 'ab', t: 'Abstenção', h: r => pcel(r.pAb, r.dAb, 1, true), v: r => r.pAb, cls: 'n sec' },
+    { k: 'br', t: 'Brancos', h: r => pcel(r.pBr, r.dBr, 2, true), v: r => r.pBr, cls: 'n sec' },
+    { k: 'nu', t: 'Nulos', h: r => pcel(r.pNu, r.dNu, 2, true), v: r => r.pNu, cls: 'n sec' },
     ...(modo === 'pr' ? [{ k: 'pw', t: 'Chance de vitória de Lula', h: r => r.pw == null ? '' : probCel(r.pw), v: r => r.pw, cls: 'n' }, { k: 'pend', t: 'Eleitores a apurar', h: r => fCompact(r.pend), v: r => r.pend, cls: 'n sec' }] : []),
   ];
 }
@@ -129,9 +129,9 @@ export function viewGeral(ctx) {
 
   // gráficos
   if (ap) {
-    h += `<section class="painel"><h2>Marcha da apuração</h2><p class="sub">% dos votos válidos de cada candidato conforme as urnas são apuradas. Cada ponto é uma parcial divulgada pelo TSE: o eixo mostra o % apurado e, sob o ponto, o horário da divulgação.</p><div id="g-placar" class="grafico-wrap"></div></section>`;
+    h += `<section class="painel"><h2>Marcha da apuração</h2><p class="sub">% dos votos válidos de cada candidato conforme as urnas são apuradas.</p>${entenda('Cada ponto é uma parcial divulgada pelo TSE: o eixo mostra o % apurado e, sob o ponto, o horário da divulgação.')}<div id="g-placar" class="grafico-wrap"></div></section>`;
   } else {
-    h += `<section class="painel"><h2>Marcha da projeção</h2><p class="sub">Linhas cheias: placar parcial. Linhas tracejadas e sombra: projeção do resultado final de cada candidato com faixa de 90% de confiança — a faixa estreita à medida que as urnas chegam.</p><div id="g-placar" class="grafico-wrap"></div></section>`;
+    h += `<section class="painel"><h2>Marcha da projeção</h2><p class="sub">Placar parcial e projeção do resultado final.</p>${entenda('Linhas cheias: placar parcial. Linhas tracejadas e sombra: projeção do resultado final de cada candidato com faixa de 90% de confiança — a faixa estreita à medida que as urnas chegam.')}<div id="g-placar" class="grafico-wrap"></div></section>`;
   }
 
   // mapa
@@ -141,14 +141,14 @@ export function viewGeral(ctx) {
   h += ap ? balanco(V.br) : pendentes(P, B);
 
   // tabela de UFs
-  h += `<section class="painel"><h2>Todos os estados</h2><p class="sub">Clique nos títulos para ordenar. Clique em um estado para abrir os municípios.</p><div id="tab-uf"></div></section>`;
+  h += `<section class="painel"><h2>Todos os estados</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um estado</b> para abrir os municípios.</p><div id="tab-uf"></div></section>`;
   return {
     html: h,
     montar(root) {
       graficoPlacar(root.querySelector('#g-placar'), hist, { projecao: !ap });
       const dm = dadosMapa(ufs), mp = criarMapa(root.querySelector('#mapa'), ctx.geo, { onClick: u => ctx.ir(`#/${ap ? '' : 'p/'}uf/${u}`), tooltip: u => tipUF(ufs.find(x => x.id === u), modo) });
       mp.atualizar(dm);
-      const t = tabela(root.querySelector('#tab-uf'), { cols: colsUF(modo), rows: ufs, sort: 'pL', dir: 'desc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
+      const t = tabela(root.querySelector('#tab-uf'), { cols: colsUF(modo), rows: ufs, sort: 'nome', dir: 'asc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
       ctx.csv = () => ({ nome: `${ap ? 'apuracao' : 'projecao'}_2t_estados`, ...csvUF(base, ufs, modo) });
       void t;
     },
@@ -232,18 +232,18 @@ export function viewUf(ctx, uf, kOrd) {
     { k: 'pst', t: '% apurado', h: m => ap ? (m.apurado ? `${fNum(m.pst, 0)}%` : '–') : (m.apurado ? `${fNum(m.pst, 0)}%` : 'proj.'), v: m => m.pst, cls: 'n' },
     ...KS.flatMap(k => [
       { k: 'v' + k, t: `${cabCand(k)} votos`, h: m => isNaN(m[k]) ? '' : `<span class="num">${fInt(m[k])}</span>`, v: m => m[k], cls: 'n' },
-      { k: 'p' + k, t: `${cabCand(k)} %`, h: m => isNaN(m['p' + k]) ? '' : `<b>${fNum(m['p' + k], 2)}%</b> ${dlt(m['d' + k])}`, v: m => m['p' + k], x: m => m['p' + k], cls: 'n' },
+      { k: 'p' + k, t: `${cabCand(k)} %`, h: m => isNaN(m['p' + k]) ? '' : pcel(m['p' + k], m['d' + k]), v: m => m['p' + k], x: m => m['p' + k], cls: 'n' },
       { k: 'g' + k, t: 'cresc. votos', h: m => grw(m['g' + k]), v: m => m['g' + k], cls: 'n sec' },
     ]),
-    { k: 'lid', t: 'Vence', h: m => m.lider ? `<span class="chip-l" style="background:${CAND[m.lider].cor}">${CAND[m.lider].nome.split(' ')[0]}</span>` : '', v: m => m.lider ? (m.lider === 'L' ? 1 : 0) : NaN },
+    { k: 'lid', t: 'Vence', h: m => m.lider ? `<span class="chip-l" style="background:${CAND[m.lider].cor}">${CAND[m.lider].nome.split(' ')[0]}</span>` : '', v: m => m.lider ? (m.lider === 'L' ? 1 : 0) : NaN, cls: 'c' },
   ];
   const kp = ap
     ? `${kpi('Apurado', fNum(r.pst, 1) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}`
     : `${kpi('Já apurado', fNum(r.pst, 1) + '%', null, '')}${kpi('Abstenção (proj.)', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), '')}${kpi('Brancos + nulos (proj.)', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), '')}${kpi('Chance de Lula vencer', `${Math.round(100 * r.pw)}%`, null, 'modelo estatístico')}`;
   const html = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false })}<div class="centro"><div class="centro-t">${esc(UF_NOME[uf])}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : ''}</div></div>${cartaoCand('F', r, { modo, conf: false })}</section>
   <section class="kpis k4">${kp}</section>
-  ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Cor = quem lidera no município; tom mais escuro = maior percentual. Clique para ver os bairros; use + / − ou a roda do mouse para aproximar.</p><div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado">${legendaMapa()}</div></div></section>`}
-  <section class="painel"><h2>Municípios de ${esc(UF_NOME[uf])}${ap ? '' : ' (projeção)'}</h2><p class="sub">Ordenado por ${CAND[ord].nome} (maior % primeiro) — altere clicando nos títulos. Clique em um município para ver os bairros. ${ap ? 'Municípios sem urnas apuradas aparecem no fim, como "aguardando".' : 'Municípios ainda não apurados mostram a projeção a partir do 1º turno.'}</p><div id="tab-m"></div></section>`;
+  ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Clique em um município para ver os bairros.</p>${entenda('Cor = quem lidera no município; tom mais escuro = maior percentual dos votos válidos. Use + / − ou a roda do mouse para aproximar.')}<div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado">${legendaMapa()}</div></div></section>`}
+  <section class="painel"><h2>Municípios de ${esc(UF_NOME[uf])}${ap ? '' : ' (projeção)'}</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um município</b> para ver os bairros.</p>${entenda(ap ? 'Municípios sem urnas apuradas aparecem como “aguardando”. Variações em p.p. comparam com o 1º turno no mesmo recorte apurado.' : 'Municípios ainda não apurados mostram a projeção a partir do 1º turno.')}<div id="tab-m"></div></section>`;
   const cdi = new Map((B.byUf[uf] || []).map(b => [b.cd, String(b.cdi)]));
   const dm = {}, porCdi = {};
   for (const m of rows) { const id = cdi.get(m.id); if (!id) continue; porCdi[id] = m;
@@ -259,7 +259,7 @@ export function viewUf(ctx, uf, kOrd) {
       for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome.replace(/\b(\p{L})(\p{L}*)/gu, (_, a, b) => (a + b.toLowerCase())).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
       mp.atualizar(dm);
     }).catch(() => { alvoMapa.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
-    tabela(root.querySelector('#tab-m'), { cols, rows, onRow: m => ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${m.id}`), sort: 'p' + ord, dir: 'desc', filtro: (m, q) => sem(m.nome).includes(q), limite: 1000 });
+    tabela(root.querySelector('#tab-m'), { cols, rows, onRow: m => ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${m.id}`), sort: 'nome', dir: 'asc', filtro: (m, q) => sem(m.nome).includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${slugn(UF_NOME[uf])}_municipios_${ap ? 'apuracao' : 'projecao'}`, cab: ['Município', '% apurado', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Lula cresc. votos %', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Flávio cresc. votos %'], linhas: rows.slice().sort((a, b) => (isNaN(b['p' + ord]) - isNaN(a['p' + ord])) || b['p' + ord] - a['p' + ord]).map(m => [m.nome, m.pst, m.L, m.pL, m.dL, m.gL, m.F, m.pF, m.dF, m.gF]) });
   } };
 }
