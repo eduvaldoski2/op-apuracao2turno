@@ -1,0 +1,119 @@
+osm pe 24996 PALMARES relações 2
+osm sp 69159 PORTO FERREIRA relações 1
+osm pa 05630 VIGIA relações 2
+osm pa 04170 AUGUSTO CORRÊA relações 4
+osm go 93254 CRISTALINA relações 1
+osm sp 66699 MAIRINQUE relações 1
+osm mg 52132 SANTOS DUMONT relações 4
+osm pb 21512 QUEIMADAS relações 1
+osm rj 58408 ARMAÇÃO DOS BÚZIOS relações 1
+erro 63312 The operation was aborted due to timeout
+osm mg 41793 BRUMADINHO relações 4
+osm pe 23094 ÁGUAS BELAS relações 2
+osm ba 37133 MARAGOGIPE relações 6
+erro 15954 The operation was aborted due to timeout
+osm pe 23418 BOM CONSELHO relações 5
+osm rj 58939 SANTO ANTÔNIO DE PÁDUA relações 9
+osm ce 15458 SANTA QUITÉRIA relações 11
+osm sp 68438 PEDREIRA relações 1
+erro 28592 The operation was aborted due to timeout
+erro 75876 The operation was aborted due to timeout
+osm sp 64351 GARÇA relações 2
+osm pa 05754 URUARÁ relações 2
+osm sp 70076 SALTO DE PIRAPORA relações 1
+osm al 28932 TEOTÔNIO VILELA relações 1
+osm sp 68659 ESPÍRITO SANTO DO PINHAL relações 1
+osm pa 04758 JACUNDÁ relações 1
+osm mg 47791 MACHADO relações 1
+osm mg 48216 MATOZINHOS relações 28
+osm sp 69272 PRESIDENTE EPITÁCIO relações 2
+erro 80411 The operation was aborted due to timeout
+osm sc 80411 BARRA VELHA relações 19
+osm ba 34690 CONCEIÇÃO DO JACUÍPE relações 1
+osm ba 38415 RIO REAL relações 1
+osm ba 36633 JEREMOABO relações 2
+erro 61131 The operation was aborted due to timeout
+osm sp 61131 AGUDOS relações 2
+osm pe 25836 SIRINHAÉM relações 3
+erro 27570 The operation was aborted due to timeout
+osm al 27570 GIRAU DO PONCIANO relações 1
+osm ba 34851 CORRENTINA relações 3
+osm ba 37419 MUCURI relações 4
+osm ba 35750 INHAMBUPE relações 1
+osm pa 04235 BAIÃO relações 4
+osm sp 65838 ITUVERAVA relações 3
+osm sp 66150 JOSÉ BONIFÁCIO relações 1
+osm sp 63630 CRAVINHOS relações 1
+osm pe 25194 PETROLÂNDIA relações 1
+osm pa 04693 IRITUIA relações 1
+erro 56014 The operation was aborted due to timeout
+osm pe 25097 PASSIRA relações 2
+erro 20214 The operation was aborted due to timeout
+osm pb 20214 ESPERANÇA relações 1
+erro 40681 The operation was aborted due to timeout
+osm pe 24899 NAZARÉ DA MATA relações 1
+osm ba 34258 CANAVIEIRAS relações 3
+osm pa 04871 MARAPANIM relações 5
+osm pa 05436 SÃO DOMINGOS DO CAPIM relações 1
+osm mg 40320 JUATUBA relações 4
+osm ce 13234 ARACOIABA relações 9
+osm rj 58572 MIGUEL PEREIRA relações 3
+erro 08958 The operation was aborted due to timeout
+osm rj 59315 PATY DO ALFERES relações 2
+osm ap 06092 OIAPOQUE relações 3
+osm pa 05819 CONCÓRDIA DO PARÁ relações 1
+{"feitos":53,"vazios":12,"erros":5}
+feito pa 04170 AUGUSTO CORRÊA nivel=9 poligonos=4 cob=0.85
+feito pa 04235 BAIÃO nivel=9 poligonos=4 cob=0.83
+descartado 04693 IRITUIA niveis={'9': 1} cob=0.00
+descartado 04758 JACUNDÁ niveis={'9': 1} cob=0.00
+feito pa 04871 MARAPANIM nivel=9 poligonos=5 cob=0.98
+descartado 05436 SÃO DOMINGOS DO CAPIM niveis={'9': 1} cob=0.00
+descartado 05630 VIGIA niveis={'9': 2} cob=0.00
+descartado 05754 URUARÁ niveis={'9': 2} cob=0.00
+descartado 05819 CONCÓRDIA DO PARÁ niveis={'9': 1} cob=0.00
+descartado 06092 OIAPOQUE niveis={'9': 3} cob=0.00
+feito ce 13234 ARACOIABA nivel=9 poligonos=9 cob=1.00
+feito ce 15458 SANTA QUITÉRIA nivel=9 poligonos=11 cob=1.00
+descartado 20214 ESPERANÇA niveis={'9': 1} cob=0.00
+descartado 21512 QUEIMADAS niveis={'9': 1} cob=0.00
+descartado 23094 ÁGUAS BELAS niveis={'9': 2} cob=0.00
+feito pe 23418 BOM CONSELHO nivel=9 poligonos=5 cob=1.00
+descartado 24899 NAZARÉ DA MATA niveis={'9': 1} cob=0.00
+descartado 24996 PALMARES niveis={'9': 2} cob=0.00
+descartado 25097 PASSIRA niveis={'9': 2} cob=0.00
+descartado 25194 PETROLÂNDIA niveis={'9': 1} cob=0.00
+descartado 25836 SIRINHAÉM niveis={'9': 3} cob=0.00
+descartado 27570 GIRAU DO PONCIANO niveis={'9': 1} cob=0.00
+descartado 28932 TEOTÔNIO VILELA niveis={'9': 1} cob=0.00
+descartado 34258 CANAVIEIRAS niveis={'9': 3} cob=0.00
+descartado 34690 CONCEIÇÃO DO JACUÍPE niveis={'9': 1} cob=0.00
+descartado 34851 CORRENTINA niveis={'9': 3} cob=0.00
+descartado 35750 INHAMBUPE niveis={'9': 1} cob=0.00
+descartado 36633 JEREMOABO niveis={'9': 2} cob=0.00
+feito ba 37133 MARAGOGIPE nivel=9 poligonos=6 cob=0.87
+feito ba 37419 MUCURI nivel=9 poligonos=4 cob=1.00
+descartado 38415 RIO REAL niveis={'9': 1} cob=0.00
+descartado 40320 JUATUBA niveis={'9': 2, '10': 2} cob=0.00
+descartado 41793 BRUMADINHO niveis={'9': 4} cob=0.47
+descartado 47791 MACHADO niveis={'9': 1} cob=0.00
+feito mg 48216 MATOZINHOS nivel=10 poligonos=28 cob=0.84
+descartado 52132 SANTOS DUMONT niveis={'9': 4} cob=0.13
+descartado 58408 ARMAÇÃO DOS BÚZIOS niveis={'9': 1} cob=0.00
+descartado 58572 MIGUEL PEREIRA niveis={'9': 3} cob=0.00
+feito rj 58939 SANTO ANTÔNIO DE PÁDUA nivel=9 poligonos=9 cob=1.00
+descartado 59315 PATY DO ALFERES niveis={'9': 2} cob=0.00
+descartado 61131 AGUDOS niveis={'9': 2} cob=0.00
+descartado 63630 CRAVINHOS niveis={'9': 1} cob=0.00
+descartado 64351 GARÇA niveis={'9': 2} cob=0.00
+descartado 65838 ITUVERAVA niveis={'9': 3} cob=0.00
+descartado 66150 JOSÉ BONIFÁCIO niveis={'9': 1} cob=0.00
+descartado 66699 MAIRINQUE niveis={'9': 1} cob=0.00
+descartado 68438 PEDREIRA niveis={'9': 1} cob=0.00
+descartado 68659 ESPÍRITO SANTO DO PINHAL niveis={'9': 1} cob=0.00
+descartado 69159 PORTO FERREIRA niveis={'9': 1} cob=0.00
+descartado 69272 PRESIDENTE EPITÁCIO niveis={'9': 2} cob=0.00
+descartado 70076 SALTO DE PIRAPORA niveis={'9': 1} cob=0.00
+feito sc 80411 BARRA VELHA nivel=10 poligonos=19 cob=1.00
+descartado 93254 CRISTALINA niveis={'10': 1} cob=0.00
+{"feitos": 11, "bytes": 300203, "sem_cobertura": 42}
