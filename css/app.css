@@ -352,3 +352,19 @@ tr.clic{cursor:pointer}tr.clic:hover td{background:#f3f1f8}
 .balao ul li::marker{color:var(--laranja)}
 @media (max-width:640px){.balao{flex-direction:column;gap:6px}.balao-c::before{left:18px;top:-9px;transform:rotate(135deg)}}
 .disp{max-width:920px;margin:0 auto}
+
+/* ---- botão de TV e modo TV ---- */
+.exp .exp-tv{display:inline-flex;align-items:center;gap:5px;padding:7px 12px}
+.exp .exp-tv svg{flex:none}
+@media (max-width:640px){.exp .exp-tv{flex:1;justify-content:center;padding:8px 6px}}
+.tv-acoes{grid-template-columns:1fr}
+.tv-acoes .sb{justify-content:center}.tv-acoes .sb:disabled{opacity:.45;cursor:default}
+.tv-alt{margin:6px 0 8px;padding-left:18px;display:grid;gap:5px}
+.tv-url{display:block;word-break:break-all;background:#f4f1fa;border-radius:8px;padding:6px 9px;font-size:11px;color:var(--tx2)}
+body.tv{background:#faf8fd}
+body.tv .abas,body.tv .barra-ferr,body.tv .voltar,body.tv .rodape,body.tv .btn-avisos,body.tv .comp-toggle,body.tv .entenda,body.tv .mapa-modo,body.tv .zoom,body.tv .nota-base,body.tv .criterios{display:none!important}
+body.tv .topo-prod{font-size:1.15em}
+body.tv .barra-status{text-align:right}
+body.tv .tela-topo h1{font-size:2.2rem}
+.tv-dica{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:1200;background:rgba(30,24,60,.9);color:#fff;border-radius:99px;padding:10px 22px;font-size:15px;font-weight:700;transition:opacity .8s}
+.tv-dica.sai{opacity:0}

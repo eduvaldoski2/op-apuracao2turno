@@ -1,17 +1,18 @@
-import { CONFIG } from './config.js?v=5bfe97a9';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=5bfe97a9';
-import { calcular } from './model.js?v=5bfe97a9';
-import { projetar, PARAMS } from './proj.js?v=5bfe97a9';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=5bfe97a9';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=5bfe97a9';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=5bfe97a9';
-import { avisosLigados, alternarAvisos, rotuloAvisos, notificar, eventosEntre } from './avisos.js?v=5bfe97a9';
-import { lerCard } from './card.js?v=5bfe97a9';
-import { abrirCompartilhar } from './compartilhar.js?v=5bfe97a9';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=5bfe97a9';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=5bfe97a9';
-import { esc } from './ui.js?v=5bfe97a9';
-import { setFoco, comFoco } from './foco.js?v=5bfe97a9';
+import { CONFIG } from './config.js?v=0628c14e';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=0628c14e';
+import { calcular } from './model.js?v=0628c14e';
+import { projetar, PARAMS } from './proj.js?v=0628c14e';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=0628c14e';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=0628c14e';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=0628c14e';
+import { avisosLigados, alternarAvisos, rotuloAvisos, notificar, eventosEntre } from './avisos.js?v=0628c14e';
+import { abrirTV, iniciarTV } from './tv.js?v=0628c14e';
+import { lerCard } from './card.js?v=0628c14e';
+import { abrirCompartilhar } from './compartilhar.js?v=0628c14e';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=0628c14e';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=0628c14e';
+import { esc } from './ui.js?v=0628c14e';
+import { setFoco, comFoco } from './foco.js?v=0628c14e';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -97,7 +98,7 @@ async function renderT1(r, manterScroll, forcar) {
 function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
   const sub = r.tela === 'geral' && r.modo !== 't1' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
-  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><button class="exp-comp" data-exp="compartilhar" title="Compartilhar no WhatsApp, Instagram e outras redes">⤴ Compartilhar</button><span>⬇ Baixar</span><button data-exp="pdf" title="PDF: página de resumo + mapas e tabelas">PDF</button><button data-exp="png" title="Imagem para redes sociais (card)">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' ? 'disabled' : ''} title="Planilha do Excel (.xlsx)">Excel</button></div>`;
+  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><button class="exp-comp" data-exp="compartilhar" title="Compartilhar no WhatsApp, Instagram e outras redes">⤴ Compartilhar</button><button class="exp-tv" data-exp="tv" title="Transmitir para Chromecast ou Smart TV (modo TV)" aria-label="Transmitir para a TV"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M1 18v3h3a3 3 0 0 0-3-3zm0-4v2a7 7 0 0 1 7 7h2a9 9 0 0 0-9-9zm0-4v2a11 11 0 0 1 11 11h2A13 13 0 0 0 1 10zm20-7H3a2 2 0 0 0-2 2v3h2V5h18v14h-7v2h7a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg><span>TV</span></button><span>⬇ Baixar</span><button data-exp="pdf" title="PDF: página de resumo + mapas e tabelas">PDF</button><button data-exp="png" title="Imagem para redes sociais (card)">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' ? 'disabled' : ''} title="Planilha do Excel (.xlsx)">Excel</button></div>`;
   const trilha = v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : '';
   root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${exp}</div><div id="vista">${v.html}</div></div>`;
   v.montar(root);
@@ -162,6 +163,7 @@ function contextoExport() {
 }
 async function exportar(tipo, btn) {
   if (tipo === 'compartilhar') { abrirCompartilhar(contextoExport); return; }
+  if (tipo === 'tv') { abrirTV(); return; }
   const c = contextoExport(), { r, nome, sub, principal, cadeia, dados } = c;
   const txt = btn.textContent; btn.disabled = true; btn.textContent = '…';
   try {
@@ -194,4 +196,4 @@ async function iniciar() {
   } else { await ciclo(); setInterval(ciclo, CONFIG.intervalo); }
   render(); setInterval(status, 1000);
 }
-iniciar();
+iniciar().then(iniciarTV);
