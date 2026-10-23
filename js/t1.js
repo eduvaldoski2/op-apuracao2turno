@@ -1,14 +1,16 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=24133225';
-import { esc, tabela, sem, entenda } from './ui.js?v=24133225';
-import { getFoco } from './foco.js?v=24133225';
-import { kpi } from './views.js?v=24133225';
-import { criarMapa } from './map.js?v=24133225';
-import { criarMapaMun } from './mapamun.js?v=24133225';
-import { getJSON } from './tse.js?v=24133225';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=5bfe97a9';
+import { esc, tabela, sem, entenda } from './ui.js?v=5bfe97a9';
+import { getFoco } from './foco.js?v=5bfe97a9';
+import { kpi } from './views.js?v=5bfe97a9';
+import { criarMapa } from './map.js?v=5bfe97a9';
+import { criarMapaMun } from './mapamun.js?v=5bfe97a9';
+import { getJSON } from './tse.js?v=5bfe97a9';
+import { leitura, balao } from './insights.js?v=5bfe97a9';
+import { dispersao } from './dispersao.js?v=5bfe97a9';
 
-let cache = null;
+let cache = null, formaMapa = 'areas', eixoDisp = 'abst';
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
 const CORES = ['#e8890c', '#2f9e6b', '#7a4fc4', '#17a2b8', '#c9a400', '#d6336c', '#6c757d', '#8d6e63', '#0b7285', '#a61e4d'];
 export const ESCALA_T1 = [25, 65];
@@ -95,11 +97,14 @@ function colsTop(T, ref, nomeCol) {
 export function viewT1Geral(ctx) {
   const T = ctx.T1, br = dec(T, T.br), fi = idxFoco(T);
   const ufs = UFS.filter(u => T.uf[u[0]]).map(u => ({ id: u[0], nome: UF_NOME[u[0]] || u[0].toUpperCase(), u: dec(T, T.uf[u[0]]) }));
+  const cB = fi >= 0 ? fi : T.iL, nomeCB = fi >= 0 ? T.nome(fi) : 'Lula';
+  const frasesBr = leitura(ufs.filter(x => x.u.vv > 0).map(x => { const o = [...x.u.p].sort((a, b) => b - a); return { nome: x.nome, te: x.u.te, vv: x.u.vv, pAb: x.u.pAb, p: x.u.p[cB], p2: [o[0], o[1]] }; }), { cand: nomeCB, plural: 'estados', artigo: 'do país', minGrande: 1e6 });
   const html = `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 (presidente) · TSE${T.hg ? ` · atualizado em ${esc(T.dg || '')} ${esc(T.hg)}` : ''}</div>
   ${topoT1(T, br, 'Brasil', { brasil: true })}
   ${kpisT1(br)}
   <section class="painel mapa-sec"><h2>${fi >= 0 ? `${esc(T.nome(fi))} por estado` : 'Resultado por estado'}</h2><p class="sub">Clique em um estado para ver os municípios.</p><div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado">${legendaT1(T, br)}</div></div></section>
-  <section class="painel"><h2>Todos os estados</h2><p class="sub">Clique nos títulos para ordenar. Clique em um estado para abrir os municípios.</p><div id="tab-uf"></div></section>`;
+  <section class="painel"><h2>Todos os estados</h2><p class="sub">Clique nos títulos para ordenar. Clique em um estado para abrir os municípios.</p><div id="tab-uf"></div></section>
+  ${balao(frasesBr)}`;
   return { html, titulo: 'Brasil — 1º turno', montar(root) {
     aplicaEscala(T, ufs.map(x => fi >= 0 ? x.u.p[fi] : NaN));
     const por = Object.fromEntries(ufs.map(x => [x.id, x]));
@@ -119,9 +124,13 @@ export function viewT1Uf(ctx, uf) {
   const nomes = new Map((B.byUf[uf] || []).map(b => [b.cd, b])), cdi = new Map((B.byUf[uf] || []).map(b => [b.cd, String(b.cdi)]));
   const muns = (T.mun[uf] || []).map(r => ({ id: r[0], nome: bonitoNome(nomes.get(r[0])?.nome || r[0]), u: dec(T, r, 1) }));
   const mapa = uf !== 'zz' && uf !== 'df';
+  const cI = fi >= 0 ? fi : T.iL, nomeC = fi >= 0 ? T.nome(fi) : 'Lula';
+  const unid = muns.filter(m => m.u.vv > 0 && isFinite(m.u.p[cI])).map(m => { const o = [...m.u.p].sort((a, b) => b - a); return { id: m.id, nome: m.nome, te: m.u.te, vv: m.u.vv, pAb: m.u.pAb, p: m.u.p[cI], p2: [o[0], o[1]], lid: m.u.lid, mu: m }; });
+  const frasesUf = unid.length >= 8 ? leitura(unid, { cand: nomeC, plural: 'municípios', artigo: 'do estado' }) : [];
   const html = `${topoT1(T, u, nomeUf)}
   ${kpisT1(u)}
-  ${mapa ? `<section class="painel mapa-sec"><h2>${fi >= 0 ? `${esc(T.nome(fi))} em ` : 'Mapa de '}${esc(nomeUf)} por município</h2><p class="sub">Clique em um município para ver os bairros.</p><div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado">${legendaT1(T, u)}</div></div></section>` : ''}
+  ${mapa ? `<section class="painel mapa-sec"><h2>${fi >= 0 ? `${esc(T.nome(fi))} em ` : 'Mapa de '}${esc(nomeUf)} por município</h2><p class="sub">Clique em um município para ver os bairros.</p><div class="mapa-modo sem-export" role="group" aria-label="Forma do mapa"><button data-forma="areas" class="${formaMapa === 'areas' ? 'on' : ''}">Áreas</button><button data-forma="bolhas" class="${formaMapa === 'bolhas' ? 'on' : ''}">Bolhas (peso do eleitorado)</button></div><div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado">${legendaT1(T, u)}</div></div></section>` : ''}
+  ${unid.length >= 8 ? `<section class="painel disp-sec"><h2>Relações entre os dados</h2><p class="sub">Cada bolha é um município; o tamanho é o eleitorado e a cor é o candidato mais votado. Clique numa bolha para abri-lo.</p><div class="mapa-modo sem-export" role="group" aria-label="Eixo horizontal"><button data-eixo="abst" class="${eixoDisp === 'abst' ? 'on' : ''}">Abstenção</button><button data-eixo="tam" class="${eixoDisp === 'tam' ? 'on' : ''}">Tamanho do eleitorado</button></div><div id="disp"></div>${balao(frasesUf)}</section>` : ''}
   <section class="painel"><h2>Municípios de ${esc(nomeUf)}</h2><p class="sub">Clique em um município para ver os bairros e os locais de votação.</p><div id="tab-m"></div></section>`;
   return { html, titulo: `${nomeUf} — 1º turno`, trilha: [['Brasil', '#/t1'], [nomeUf]], montar(root) {
     aplicaEscala(T, muns.map(m => fi >= 0 ? m.u.p[fi] : NaN));
@@ -131,8 +140,17 @@ export function viewT1Uf(ctx, uf) {
       const idCd = new Map([...cdi].map(([cd, i]) => [i, cd])), porCd = new Map(muns.map(m => [m.id, m]));
       for (const [id, g] of Object.entries(geo.muns)) { const m = porCd.get(idCd.get(id)); if (m) g.n = m.nome; }
       const mp = criarMapaMun(alvo, geo, { onClick: id => { const cd = idCd.get(id); if (cd) ctx.ir(`#/t1/mun/${uf}/${cd}`); }, tooltip: id => { const m = porCd.get(idCd.get(id)); return m ? tipUnidade(T, m.nome, m.u) : ''; } });
-      mp.atualizar(Object.fromEntries(muns.filter(m => cdi.get(m.id)).map(m => [cdi.get(m.id), dadoMapaT1(T, m.u)])));
+      mp.atualizar(Object.fromEntries(muns.filter(m => cdi.get(m.id)).map(m => [cdi.get(m.id), { ...dadoMapaT1(T, m.u), peso: m.u.te }])));
+      mp.bolhas(formaMapa === 'bolhas');
+      root.querySelectorAll('[data-forma]').forEach(b => b.addEventListener('click', () => { formaMapa = b.dataset.forma; mp.bolhas(formaMapa === 'bolhas'); root.querySelectorAll('[data-forma]').forEach(x => x.classList.toggle('on', x === b)); }));
     }).catch(() => { alvo.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
+    const elD = root.querySelector('#disp');
+    if (elD) {
+      const mediaC = u.vv ? 100 * u.v[cI] / u.vv : NaN;
+      const desenhaD = () => dispersao(elD, { pts: unid.map(x => ({ id: x.id, nome: x.nome, x: eixoDisp === 'abst' ? x.pAb : x.te, y: x.p, r: x.te, cor: T.cor(x.lid), tip: `<b>${esc(x.nome)}</b><br>${esc(nomeC)}: <b>${fNum(x.p, 1)}%</b><br><span class="t-s">abstenção ${fNum(x.pAb, 1)}% · ${fInt(x.te)} eleitores</span>` })), xLog: eixoDisp === 'tam', xRot: eixoDisp === 'abst' ? 'Abstenção (%)' : 'Eleitorado do município (escala logarítmica)', yRot: `% de ${nomeC} nos votos válidos`, xFmt: eixoDisp === 'abst' ? v => fNum(v, 0) + '%' : v => v >= 1e6 ? v / 1e6 + ' mi' : v >= 1e3 ? v / 1e3 + ' mil' : v, refY: mediaC, onClick: id => ctx.ir(`#/t1/mun/${uf}/${id}`) });
+      desenhaD();
+      root.querySelectorAll('[data-eixo]').forEach(b => b.addEventListener('click', () => { eixoDisp = b.dataset.eixo; root.querySelectorAll('[data-eixo]').forEach(x => x.classList.toggle('on', x === b)); desenhaD(); }));
+    }
     const cols = colsTop(T, u, { k: 'nome', t: 'Município', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, ini: 'asc' });
     tabela(root.querySelector('#tab-m'), { cols, rows: muns, onRow: x => ctx.ir(`#/t1/mun/${uf}/${x.id}`), sort: 'nome', dir: 'asc', filtro: (x, q) => sem(x.nome).includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${uf}_1turno_municipios`, cab: cols.map(c => c.t.replace(/<[^>]+>/g, '')), linhas: muns.map(x => cols.map(c => (c.x || c.v)(x))) });

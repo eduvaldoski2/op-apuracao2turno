@@ -338,3 +338,17 @@ tr.clic{cursor:pointer}tr.clic:hover td{background:#f3f1f8}
 .btn-avisos[aria-pressed="true"]{background:var(--roxo);color:#fff;border-color:var(--roxo)}
 .btn-avisos:hover{border-color:var(--roxo-3)}
 @media (max-width:760px){.btn-avisos{margin:0 8px 4px 0}}
+
+/* ---- dispersão e balão de leitura ---- */
+.disp-wrap{position:relative}.disp{width:100%;height:auto;display:block}
+.disp circle{cursor:pointer;transition:fill-opacity .12s}.disp circle:hover{fill-opacity:1;stroke:#2b2540}
+.balao{position:relative;display:flex;gap:14px;align-items:flex-start;margin:18px 0 4px}
+.balao-ic{flex:none;width:46px;height:46px;margin-top:6px}
+.balao-c{position:relative;flex:1;background:#f4f1fa;border:1.5px solid #ddd5ee;border-radius:18px;padding:14px 18px 12px}
+.balao-c::before{content:"";position:absolute;left:-9px;top:20px;width:16px;height:16px;background:#f4f1fa;border-left:1.5px solid #ddd5ee;border-bottom:1.5px solid #ddd5ee;transform:rotate(45deg)}
+.balao-t{font-weight:700;color:var(--roxo);font-size:14.5px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.balao-t span{font-size:11.5px;font-weight:500;color:var(--tx2)}
+.balao ul{margin:8px 0 6px;padding-left:18px;display:grid;gap:6px;font-size:14px;line-height:1.45}
+.balao ul li::marker{color:var(--laranja)}
+@media (max-width:640px){.balao{flex-direction:column;gap:6px}.balao-c::before{left:18px;top:-9px;transform:rotate(135deg)}}
+.disp{max-width:920px;margin:0 auto}

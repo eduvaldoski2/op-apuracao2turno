@@ -1,7 +1,7 @@
 // Mapa de um estado por município (SVG), no mesmo padrão do mapa do Brasil: cor = quem lidera, tom = % do líder,
 // rótulos dentro dos municípios grandes (sigla do nome + % de cada candidato e variação). Sem caixas laterais.
 // Suporta zoom (roda do mouse / botões / pinça) e arraste; os rótulos reaparecem conforme o zoom.
-import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=24133225';
+import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=5bfe97a9';
 
 const num = v => (v == null || isNaN(v)) ? '–' : fNum(v, 1);
 const dl = v => (v == null || isNaN(v)) ? '' : fDelta(v, 1, '');
@@ -14,7 +14,7 @@ export function criarMapaMun(el, geo, { onClick, tooltip } = {}) {
     <div class="zoom sem-export"><button type="button" data-z="in" aria-label="Aproximar">+</button><button type="button" data-z="out" aria-label="Afastar">−</button><button type="button" data-z="0" aria-label="Ver tudo">⤢</button></div>
     <div class="mapa-tip" hidden></div>`;
   const svg = el.querySelector('svg'), tip = el.querySelector('.mapa-tip');
-  let dados = {}, z = 1, cx = vw / 2, cy = vh / 2, kpx = 1;
+  let bolhas = false, dados = {}, z = 1, cx = vw / 2, cy = vh / 2, kpx = 1;
 
   const cor = d => (!d || d.k == null) ? { fill: '#e4e1ea', txt: '#1b1530' } : d.fill ? { fill: d.fill, txt: corTexto(d.fill) } : (f => ({ fill: f, txt: corTexto(f) }))(corDoPct(d.k, d.pw));
   const view = () => { const w = vw / z, h = vh / z; cx = Math.max(w / 2, Math.min(vw - w / 2, cx)); cy = Math.max(h / 2, Math.min(vh - h / 2, cy)); svg.setAttribute('viewBox', `${(cx - w / 2).toFixed(1)} ${(cy - h / 2).toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`); };
@@ -36,11 +36,19 @@ export function criarMapaMun(el, geo, { onClick, tooltip } = {}) {
     kpx = (svg.clientWidth || vw) / vw;
     let p = '', t = '';
     const sw = (0.7 / z).toFixed(2);
+    const bol = [];
+    const pmax = bolhas ? Math.max(1, ...Object.values(dados).map(d => d?.peso || 0)) : 1, R = Math.min(vw, vh) * 0.06 / Math.pow(z, .55);
     for (const [id, g] of Object.entries(geo.muns)) {
       const d = dados[id], c = cor(d);
+      if (bolhas) {
+        p += `<path class="mun" data-m="${id}" d="${g.d}" fill="#ece8f2" stroke="#fff" stroke-width="${sw}" stroke-linejoin="round"/>`;
+        if (d && d.k != null && d.peso > 0) bol.push({ id, g, c, r: Math.max(R * 0.12, R * Math.sqrt(d.peso / pmax)) });
+        continue;
+      }
       p += `<path class="mun" data-m="${id}" d="${g.d}" fill="${c.fill}" stroke="#fff" stroke-width="${sw}" stroke-linejoin="round"/>`;
       t += rotulo(id, g, d, c);
     }
+    if (bolhas) { bol.sort((a, b) => b.r - a.r); t = bol.map(b => `<circle class="bol" data-m="${b.id}" cx="${b.g.lx}" cy="${b.g.ly}" r="${b.r.toFixed(2)}" fill="${b.c.fill}" fill-opacity=".9" stroke="#fff" stroke-width="${sw}"/>`).join(''); }
     svg.innerHTML = `<g>${p}</g><g>${t}</g>`;
     view();
   }
@@ -70,5 +78,5 @@ export function criarMapaMun(el, geo, { onClick, tooltip } = {}) {
   svg.addEventListener('wheel', ev => { ev.preventDefault(); zoom(ev.deltaY < 0 ? 1.25 : 0.8, ev.clientX, ev.clientY); }, { passive: false });
   el.querySelector('.zoom').addEventListener('click', ev => { const b = ev.target.closest('button'); if (!b) return; const k = b.dataset.z; if (k === 'in') zoom(1.5); else if (k === 'out') zoom(1 / 1.5); else { z = 1; cx = vw / 2; cy = vh / 2; desenhar(); } });
   desenhar();
-  return { atualizar(d) { dados = d; desenhar(); }, svg };
+  return { atualizar(d) { dados = d; desenhar(); }, bolhas(on) { bolhas = !!on; desenhar(); }, svg };
 }
