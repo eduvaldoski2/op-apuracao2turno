@@ -1,0 +1,37 @@
+name: Montar base de bairros (locais de votação + 1º turno por seção)
+on:
+  workflow_dispatch:
+  push:
+    paths: ['scripts/build_bairros.mjs', '.github/workflows/bairros.yml']
+permissions:
+  contents: write
+jobs:
+  bairros:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - name: Baixar dados abertos do TSE
+        run: |
+          mkdir -p /tmp/tse
+          curl -sS -f -L -o /tmp/tse/locais.zip https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip
+          curl -sS -f -L -o /tmp/tse/votos.zip https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2026_BR.zip
+          ls -la /tmp/tse
+      - name: Montar
+        run: node scripts/build_bairros.mjs /tmp/tse/locais.zip /tmp/tse/votos.zip data/bairros 2>&1 | tee bairros.log
+      - name: Conferir contra a base por município
+        run: |
+          node -e "
+          const fs=require('fs');const b=JSON.parse(fs.readFileSync('data/base_1t.json','utf8'));let dif=0,n=0,sem=0,maxd=0;
+          for(const r of b.rows){const f='data/bairros/'+r[0]+'/'+r[1]+'.json';if(!fs.existsSync(f)){sem++;continue;}
+            const j=JSON.parse(fs.readFileSync(f,'utf8'));let L=0,F=0;for(const l of j.l){L+=l[9];F+=l[10];}
+            n++;const d=Math.abs(L-r[10])+Math.abs(F-r[11]);if(d>0){dif++;maxd=Math.max(maxd,d);}}
+          console.log('municípios conferidos',n,'sem arquivo',sem,'com diferença',dif,'maior diferença',maxd);"
+          du -sh data/bairros; find data/bairros -name '*.json' | wc -l
+      - name: Publicar
+        run: |
+          git config user.name "coletor"; git config user.email "coletor@users.noreply.github.com"
+          git add data/bairros && git commit -q -m "Base de bairros (locais de votação TSE 2026 + 1º turno por seção)" && git push || true
+          git checkout --orphan sonda-b; git rm -rf -q . 2>/dev/null; git add -f bairros.log; git commit -q -m log; git push -f origin HEAD:sonda
