@@ -70,7 +70,7 @@ export const sdiv = (a, b) => (b ? a / b : NaN);
 
 // ---------- cores ----------
 function hex(c) { return [1, 3, 5].map(i => parseInt(c.slice(i, i + 2), 16)); }
-function mix(c1, c2, t) { const a = hex(c1), b = hex(c2); return '#' + a.map((x, i) => Math.round(x + (b[i] - x) * t).toString(16).padStart(2, '0')).join(''); }
+export function mix(c1, c2, t) { const a = hex(c1), b = hex(c2); return '#' + a.map((x, i) => Math.round(x + (b[i] - x) * t).toString(16).padStart(2, '0')).join(''); }
 // tom do vencedor: maior % = mais escuro. 50% -> claro; 75%+ -> escuro.
 // escala de cor do mapa: % do líder que vira cor cheia (2º turno: 50→78; 1º turno usa uma faixa menor)
 export const ESC = { min: 50, max: 78 };

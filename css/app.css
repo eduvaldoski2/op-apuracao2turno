@@ -313,3 +313,11 @@ tr.clic{cursor:pointer}tr.clic:hover td{background:#f3f1f8}
 .fa-m b{display:block;font-weight:700}
 .fa-m::after{content:"";position:absolute;left:50%;top:18px;height:20px;width:3px;margin-left:-1.5px;background:var(--c);border-radius:2px}
 .fa-esc{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;font-size:11.5px;color:var(--tx2)}
+
+/* ---- seletor do mapa e legenda de variação ---- */
+.mapa-modo{display:inline-flex;margin:4px 0 12px;border:1px solid var(--linha);border-radius:10px;overflow:hidden;background:#fff}
+.mapa-modo button{font:inherit;font-size:13px;font-weight:700;color:var(--roxo);background:#fff;border:0;border-right:1px solid var(--linha);padding:7px 14px;cursor:pointer}
+.mapa-modo button:last-child{border-right:0}.mapa-modo button.on{background:var(--roxo);color:#fff}
+.leg-sw .sw-bar{height:12px;border-radius:99px;margin:4px 0 2px}
+.leg-sw .sw-esc{display:flex;justify-content:space-between;font-size:11.5px;color:var(--tx2);margin-bottom:8px}
+@media (max-width:640px){.mapa-modo{display:flex}.mapa-modo button{flex:1;padding:8px 6px;font-size:12.5px}}

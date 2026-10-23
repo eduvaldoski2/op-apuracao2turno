@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=d495f9be';
-import { listaMunicipios, rankingUfs } from './model.js?v=d495f9be';
-import { projetarMunicipios } from './proj.js?v=d495f9be';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=d495f9be';
-import { graficoPlacar } from './charts.js?v=d495f9be';
-import { criarMapa, legendaMapa } from './map.js?v=d495f9be';
-import { criarMapaMun } from './mapamun.js?v=d495f9be';
-import { getJSON } from './tse.js?v=d495f9be';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=2b428045';
+import { listaMunicipios, rankingUfs } from './model.js?v=2b428045';
+import { projetarMunicipios } from './proj.js?v=2b428045';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=2b428045';
+import { graficoPlacar } from './charts.js?v=2b428045';
+import { criarMapa, legendaMapa } from './map.js?v=2b428045';
+import { criarMapaMun } from './mapamun.js?v=2b428045';
+import { getJSON } from './tse.js?v=2b428045';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -43,6 +43,32 @@ export function cartaoCand(k, r, { modo, conf, projecao, semLink }) {
 }
 export function kpi(titulo, valor, delta, sub, { dica, cls = '' } = {}) {
   return `<div class="kpi ${cls}" ${dica ? `title="${esc(dica)}"` : ''}><div class="kpi-t">${titulo}</div><div class="kpi-v">${valor}${delta != null ? ' ' + delta : ''}</div><div class="kpi-s">${sub || ''}</div></div>`;
+}
+
+
+// ---------- mapa de variação (swing): quanto cada lugar mudou em relação ao 1º turno ----------
+let modoMapa = 'venc';
+const SW = { L: ['#f9d5d3', '#c8102e'], F: ['#cfdcf3', '#1d4ea8'], N: '#f1eef6' };
+const corSwing = (v, mx) => { if (!isFinite(v)) return '#e4e1ea'; const [c, f] = SW[v >= 0 ? 'L' : 'F'], t = Math.min(1, Math.abs(v) / mx); return t < .5 ? mix(SW.N, c, t * 2) : mix(c, f, (t - .5) * 2); };
+const sinal = v => (v > 0.049 ? '+' : v < -0.049 ? '−' : '') + fNum(Math.abs(v), 1);
+const escalaSwing = vals => { const a = vals.filter(isFinite).map(Math.abs).sort((x, y) => x - y); return a.length ? clamp(Math.ceil(a[Math.floor(.9 * (a.length - 1))]), 2, 12) : 4; };
+// itens: [[id, dL, linha]] -> dados no formato dos mapas (fill/lab personalizados)
+function swingMapa(itens, mx) {
+  const d = {};
+  for (const [id, v, r] of itens) d[id] = isFinite(v) && r.L + r.F > 0 ? { k: 'L', fill: corSwing(v, mx), solo: true, pw: v, lab: sinal(v), pL: r.pL, pF: r.pF, dL: r.dL, dF: r.dF } : { k: null };
+  return d;
+}
+function legendaSwing(mx) {
+  const g = `linear-gradient(90deg,${SW.F[1]},${SW.F[0]},${SW.N},${SW.L[0]},${SW.L[1]})`;
+  return `<div class="leg-mapa leg-sw"><div class="sw-bar" style="background:${g}"></div><div class="sw-esc"><span>Flávio +${mx} p.p.</span><span>0</span><span>Lula +${mx} p.p.</span></div><span><i style="background:#e4e1ea"></i>sem apuração</span>${entenda(`Cada área mostra <b>quantos pontos percentuais</b> a votação de ${CAND.L.nome} (% dos votos válidos) <b>subiu ou caiu</b> em relação ao 1º turno. <b style="color:${SW.L[1]}">Vermelho</b>: Lula ganhou terreno. <b style="color:${SW.F[1]}">Azul</b>: Flávio ganhou terreno (Lula perdeu). Como a apuração chega por partes, a comparação usa o 1º turno <b>nas mesmas urnas já apuradas</b>. A escala vai até ±${mx} p.p.; valores maiores ficam na cor máxima.`)}</div>`;
+}
+const seletorMapa = () => `<div class="mapa-modo sem-export" role="group" aria-label="O que o mapa mostra"><button data-mm="venc" class="${modoMapa === 'venc' ? 'on' : ''}">Quem lidera</button><button data-mm="swing" class="${modoMapa === 'swing' ? 'on' : ''}">Variação de Lula vs. 1º turno</button></div>`;
+// liga o seletor ao mapa: dm = dados "quem lidera", dsw = dados de variação, leg(modo) devolve a legenda
+function ligaModoMapa(root, mp, dm, dsw, mx) {
+  const slot = root.querySelector('.leg-slot'), bt = root.querySelectorAll('[data-mm]');
+  const aplica = () => { mp.atualizar(modoMapa === 'swing' ? dsw : dm); if (slot) slot.innerHTML = modoMapa === 'swing' ? legendaSwing(mx) : legendaMapa(); bt.forEach(b => b.classList.toggle('on', b.dataset.mm === modoMapa)); };
+  bt.forEach(b => b.addEventListener('click', () => { modoMapa = b.dataset.mm; aplica(); }));
+  aplica();
 }
 
 // ---------- mapa: dados ----------
@@ -134,7 +160,7 @@ export function viewGeral(ctx) {
   }
 
   // mapa
-  h += `<section class="painel mapa-sec"><h2>${ap ? 'Resultado por estado' : 'Projeção por estado'}</h2><p class="sub">Clique em um estado para ver os municípios${ap ? '' : ' (resultado projetado)'}.</p><div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado">${legendaMapa()}${tabelaRegioes(ctx, ap)}</div></div></section>`;
+  h += `<section class="painel mapa-sec"><h2>${ap ? 'Resultado por estado' : 'Projeção por estado'}</h2><p class="sub">Clique em um estado para ver os municípios${ap ? '' : ' (resultado projetado)'}.</p>${seletorMapa()}<div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div>${tabelaRegioes(ctx, ap)}</div></div></section>`;
 
   // balanço (apuração) ou composição de pendentes (projeção)
   h += ap ? faltaApurar(base, ufs, B) + balanco(V.br) : pendentes(P, B);
@@ -146,7 +172,7 @@ export function viewGeral(ctx) {
     montar(root) {
       graficoPlacar(root.querySelector('#g-placar'), hist, { projecao: !ap });
       const dm = dadosMapa(ufs), mp = criarMapa(root.querySelector('#mapa'), ctx.geo, { onClick: u => ctx.ir(`#/${ap ? '' : 'p/'}uf/${u}`), tooltip: u => tipUF(ufs.find(x => x.id === u), modo) });
-      mp.atualizar(dm);
+      { const mx = escalaSwing(ufs.map(u => u.dL)); ligaModoMapa(root, mp, dm, swingMapa(ufs.map(u => [u.id, u.dL, u]), mx), mx); }
       const t = tabela(root.querySelector('#tab-uf'), { cols: colsUF(modo), rows: ufs, sort: 'nome', dir: 'asc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
       ctx.csv = () => ({ nome: `${ap ? 'apuracao' : 'projecao'}_2t_estados`, ...csvUF(base, ufs, modo) });
       root.querySelectorAll('tr[data-reg]').forEach(tr => tr.addEventListener('click', () => ctx.ir(`#/${ap ? '' : 'p/'}regiao/${tr.dataset.reg}`)));
@@ -279,7 +305,7 @@ export function viewUf(ctx, uf, kOrd) {
     : `${kpi('Já apurado', fNum(r.pst, 1) + '%', null, '')}${kpi('Abstenção (proj.)', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), '')}${kpi('Brancos + nulos (proj.)', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), '')}${kpi('Chance de Lula vencer', `${Math.round(100 * r.pw)}%`, null, 'modelo estatístico')}`;
   const html = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false })}<div class="centro"><div class="centro-t">${esc(UF_NOME[uf])}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : ''}</div></div>${cartaoCand('F', r, { modo, conf: false })}</section>
   <section class="kpis k4">${kp}</section>
-  ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Clique em um município para ver os bairros.</p>${entenda('Cor = quem lidera no município; tom mais escuro = maior percentual dos votos válidos. Use + / − ou a roda do mouse para aproximar.')}<div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado">${legendaMapa()}</div></div></section>`}
+  ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Clique em um município para ver os bairros.</p>${entenda('Cor = quem lidera no município; tom mais escuro = maior percentual dos votos válidos. Use + / − ou a roda do mouse para aproximar.')}${seletorMapa()}<div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div></div></div></section>`}
   <section class="painel"><h2>Municípios de ${esc(UF_NOME[uf])}${ap ? '' : ' (projeção)'}</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um município</b> para ver os bairros.</p>${entenda(ap ? 'Municípios sem urnas apuradas aparecem como “aguardando”. Variações em p.p. comparam com o 1º turno no mesmo recorte apurado.' : 'Municípios ainda não apurados mostram a projeção a partir do 1º turno.')}<div id="tab-m"></div></section>`;
   const cdi = new Map((B.byUf[uf] || []).map(b => [b.cd, String(b.cdi)]));
   const dm = {}, porCdi = {};
@@ -294,7 +320,7 @@ export function viewUf(ctx, uf, kOrd) {
       const idPorCdi = new Map((B.byUf[uf] || []).map(b => [String(b.cdi), b.cd]));
       const mp = criarMapaMun(alvoMapa, geo, { onClick: id => { const cd = idPorCdi.get(id); if (cd) ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${cd}`); }, tooltip: tipM });
       for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome.replace(/\b(\p{L})(\p{L}*)/gu, (_, a, b) => (a + b.toLowerCase())).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
-      mp.atualizar(dm);
+      { const itens = rows.filter(m => cdi.get(m.id)).map(m => [cdi.get(m.id), m.dL, m]), mx = escalaSwing(itens.map(i => i[1])); ligaModoMapa(root, mp, dm, swingMapa(itens, mx), mx); }
     }).catch(() => { alvoMapa.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
     tabela(root.querySelector('#tab-m'), { cols, rows, onRow: m => ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${m.id}`), sort: 'nome', dir: 'asc', filtro: (m, q) => sem(m.nome).includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${slugn(UF_NOME[uf])}_municipios_${ap ? 'apuracao' : 'projecao'}`, cab: ['Município', '% apurado', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Lula cresc. votos %', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Flávio cresc. votos %'], linhas: rows.slice().sort((a, b) => (isNaN(b['p' + ord]) - isNaN(a['p' + ord])) || b['p' + ord] - a['p' + ord]).map(m => [m.nome, m.pst, m.L, m.pL, m.dL, m.gL, m.F, m.pF, m.dF, m.gF]) });
