@@ -1,6 +1,6 @@
 // Card de compartilhamento (PNG/PDF): peça própria, com margem, proporção fixa e hierarquia entre candidatos.
 // Lê os dados que a tela já exibe (fichas do 1º turno ou placar Lula × Flávio) e monta um layout de redes sociais.
-import { esc } from './ui.js?v=d8d1a466';
+import { esc } from './ui.js?v=ea1daf2e';
 
 export const carregaScript = src => new Promise((ok, err) => { if (document.querySelector(`script[data-v="${src}"]`)) return ok(); const s = document.createElement('script'); s.src = src; s.dataset.v = src; s.onload = ok; s.onerror = () => err(new Error('falha ao carregar ' + src)); document.head.appendChild(s); });
 

@@ -6,6 +6,11 @@ RewriteEngine On
 # pastas internas não ficam públicas
 RewriteRule ^(\.git|\.github|scripts|tests|node_modules)(/|$) - [F,L]
 RewriteRule ^(package\.json|package-lock\.json|README\.md)$ - [F,L]
+# o painel de apuração fica em /apuracao-2t-2026/ (os arquivos continuam na raiz; o endereço com acento também funciona)
+RewriteRule ^apuração-2t-2026(/.*)?$ /apuracao-2t-2026/ [R=301,L,NE]
+RewriteRule ^apuracao-2t-2026$ /apuracao-2t-2026/ [R=301,L]
+RewriteRule ^apuracao-2t-2026/$ painel.html [L]
+RewriteRule ^apuracao-2t-2026/(.+)$ $1 [L]
 # placar ao vivo e resultado por seção passam pelo intermediário (cópia curta em cache)
 RewriteRule ^live/(.+)$ api/live.php?p=$1 [L,QSA]
 RewriteRule ^liveb/([1-5])/(.+)$ api/live.php?b=$1&p=$2 [L,QSA]
@@ -20,7 +25,7 @@ Header set Cache-Control "public, max-age=3600"
 <FilesMatch "\.(png|jpg|jpeg|svg|webp|woff2)$">
 Header set Cache-Control "public, max-age=86400"
 </FilesMatch>
-<FilesMatch "^(index|admin|privacidade)\.html$">
+<FilesMatch "^(index|painel|admin|privacidade|termos)\.html$">
 Header set Cache-Control "no-cache"
 </FilesMatch>
 <If "%{REQUEST_URI} =~ m#^/data/(?!live/)#">

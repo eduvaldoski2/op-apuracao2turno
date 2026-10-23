@@ -6,7 +6,7 @@ mapa por estado, listas por candidato → estado → município, exportação (P
 ## Como funciona
 - `data/base_1t.json` — resultado final do 1º turno por município (gerado pelo workflow **Montar base do 1º turno**).
 - **Coletor** (`scripts/coletor.mjs`, workflow *Coletor da apuração*): lê os arquivos do TSE, calcula a projeção e publica `snap.json`, `hist.json`, `meta.json` na branch `dados`.
-- **Painel** (`index.html` + `js/`): lê a branch `dados` (se falhar, lê direto do TSE no nível de estado) e atualiza a cada 30 s.
+- **Painel** (`painel.html` + `js/`, servido em `/apuracao-2t-2026/`; a página inicial é `index.html`): lê a branch `dados` (se falhar, lê direto do TSE no nível de estado) e atualiza a cada 30 s.
 - `?demo=1` abre uma **demonstração com dados simulados** (reprodução acelerada de uma apuração fictícia).
 
 ## Camada de bairros (Brasil › estado › município › bairro › local de votação › seções)
