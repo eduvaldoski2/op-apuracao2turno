@@ -1,16 +1,17 @@
-import { CONFIG } from './config.js?v=2b428045';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=2b428045';
-import { calcular } from './model.js?v=2b428045';
-import { projetar, PARAMS } from './proj.js?v=2b428045';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=2b428045';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=2b428045';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=2b428045';
-import { lerCard } from './card.js?v=2b428045';
-import { abrirCompartilhar } from './compartilhar.js?v=2b428045';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=2b428045';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=2b428045';
-import { esc } from './ui.js?v=2b428045';
-import { setFoco, comFoco } from './foco.js?v=2b428045';
+import { CONFIG } from './config.js?v=24133225';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=24133225';
+import { calcular } from './model.js?v=24133225';
+import { projetar, PARAMS } from './proj.js?v=24133225';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=24133225';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=24133225';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=24133225';
+import { avisosLigados, alternarAvisos, rotuloAvisos, notificar, eventosEntre } from './avisos.js?v=24133225';
+import { lerCard } from './card.js?v=24133225';
+import { abrirCompartilhar } from './compartilhar.js?v=24133225';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=24133225';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=24133225';
+import { esc } from './ui.js?v=24133225';
+import { setFoco, comFoco } from './foco.js?v=24133225';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -139,6 +140,7 @@ function aplicar(res) {
       const b = res.snap.br, pL = 100 * b.L / b.vv, pF = 100 * b.F / b.vv, la = antes.br.L > antes.br.F ? 'L' : 'F', ln = b.L > b.F ? 'L' : 'F';
       toast(`Nova parcial do TSE (${String(res.snap.hg).slice(0, 5)}): ${fNum(100 * b.st / b.ts, 1)}% apurado — ${CAND.L.nome} ${fNum(pL, 2)}% × ${CAND.F.nome} ${fNum(pF, 2)}%`);
       if (la !== ln) toast(`Virada na liderança: ${CAND[ln].nome} passou à frente.`);
+      for (const e of eventosEntre(antes, res.snap, { L: CAND.L.nome, F: CAND.F.nome })) { if (e.tag !== 'virada') toast(`${e.titulo} — ${e.corpo}`); notificar(e.titulo, e.corpo, e.tag); }
     }
     render(true);
   }
@@ -173,6 +175,7 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-exp]
 
 // ---------- início ----------
 async function iniciar() {
+  const ba = $('#btn-avisos'); if (ba) { const rot = () => { ba.textContent = rotuloAvisos(); ba.setAttribute('aria-pressed', String(avisosLigados())); }; rot(); ba.addEventListener('click', async () => { toast(await alternarAvisos(), true); rot(); }); }
   try {
     if (MODO_DEMO) {
       S.demo = await criarDemo(); S.B = S.demo.B; S.simulado = true;

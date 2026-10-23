@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=2b428045';
-import { listaMunicipios, rankingUfs } from './model.js?v=2b428045';
-import { projetarMunicipios } from './proj.js?v=2b428045';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=2b428045';
-import { graficoPlacar } from './charts.js?v=2b428045';
-import { criarMapa, legendaMapa } from './map.js?v=2b428045';
-import { criarMapaMun } from './mapamun.js?v=2b428045';
-import { getJSON } from './tse.js?v=2b428045';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=24133225';
+import { listaMunicipios, rankingUfs } from './model.js?v=24133225';
+import { projetarMunicipios } from './proj.js?v=24133225';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=24133225';
+import { graficoPlacar } from './charts.js?v=24133225';
+import { criarMapa, legendaMapa } from './map.js?v=24133225';
+import { criarMapaMun } from './mapamun.js?v=24133225';
+import { getJSON } from './tse.js?v=24133225';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -163,7 +163,7 @@ export function viewGeral(ctx) {
   h += `<section class="painel mapa-sec"><h2>${ap ? 'Resultado por estado' : 'Projeção por estado'}</h2><p class="sub">Clique em um estado para ver os municípios${ap ? '' : ' (resultado projetado)'}.</p>${seletorMapa()}<div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div>${tabelaRegioes(ctx, ap)}</div></div></section>`;
 
   // balanço (apuração) ou composição de pendentes (projeção)
-  h += ap ? faltaApurar(base, ufs, B) + balanco(V.br) : pendentes(P, B);
+  h += ap ? faltaApurar(base, ufs, B) + viradas(hist, ufs, B) + balanco(V.br) : pendentes(P, B);
 
   // tabela de UFs
   h += `<section class="painel"><h2>Todos os estados</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um estado</b> para abrir os municípios.</p><div id="tab-uf"></div></section>`;
@@ -229,6 +229,34 @@ function faltaApurar(base, ufs, B) {
   ${!conc && nec.length && necMin <= 100 ? `<div class="fa-barra" role="img" aria-label="Quanto do restante o candidato atrás precisa"><div class="fa-trilho"><i style="width:${clamp(hoje, 0, 100)}%;background:${CAND[atras].cor}"></i></div>${marca(hoje, CAND[atras].cor, 'hoje')}${marca(necMin, '#2b2540', 'precisa')}<div class="fa-esc"><span>0%</span><span>50%</span><span>100% dos votos restantes</span></div></div>` : ''}
   ${!conc && rs.length ? `<h3 class="fa-h">Onde estão os eleitores que faltam</h3><div class="pend">${rs.map(({ u, r }) => `<div class="pend-l"><span>${esc(u.nome)}</span><div class="pend-b"><i style="width:${100 * r / rs[0].r}%"></i></div><b>${fCompact(r)}</b><small>${fNum(100 * r / tot, 0)}% do restante · ${fNum(u.pst, 0)}% apurado${u.lider && u.pst > 0 ? ' · ' + CAND[u.lider].nome.split(' ')[0] + ' ' + fNum(u.lider === 'L' ? u.pL : u.pF, 1) + '%' : ''}</small></div>`).join('')}</div>` : ''}
   ${entenda(`<b>Como é calculado.</b> Eleitores restantes = eleitorado total − eleitorado das seções já apuradas. Votos válidos restantes = restantes × (1 − alienação), usando a alienação (abstenção + brancos + nulos) observada até agora e a do 1º turno; o painel mostra a média e, quando as duas estimativas diferem, uma faixa. O candidato atrás precisa de <b>½ + diferença ÷ (2 × votos válidos restantes)</b> dos votos que ainda faltam. É uma conta aritmética de cenário, <b>não é projeção</b>: as urnas restantes não são uma amostra aleatória (veja a aba Projeção).`)}</section>`;
+}
+// ---------- viradas e marcos da apuração (aba Apuração) ----------
+export function eventosApuracao(hist) {
+  const ev = []; let ant = null;
+  hist.forEach((h, i) => {
+    const lid = h.L > h.F ? 'L' : h.F > h.L ? 'F' : null, dif = Math.abs(h.L - h.F);
+    if (i === 0) ev.push({ h, tipo: 'ini', lid, dif });
+    else if (lid && ant && lid !== ant) ev.push({ h, tipo: 'virada', lid, dif });
+    for (const m of [25, 50, 75, 90, 99]) if (i > 0 && hist[i - 1].pst < m && h.pst >= m) ev.push({ h, tipo: 'marco', m, lid, dif });
+    if (lid) ant = lid;
+  });
+  return ev;
+}
+function viradas(hist, ufs, B) {
+  if (!hist.length) return '';
+  const ev = eventosApuracao(hist).reverse().slice(0, 10);
+  const li = e => {
+    const c = e.lid ? CAND[e.lid] : null, quem = c ? `<b style="color:${c.cor}">${c.nome}</b>` : 'Empate';
+    const txt = e.tipo === 'virada' ? `<b>Virada:</b> ${quem} passa à frente, por ${fInt(e.dif)} votos` : e.tipo === 'marco' ? `<b>${e.m}% das seções apuradas</b> — ${quem} ${e.lid ? 'à frente por ' + fInt(e.dif) + ' votos' : ''}` : `<b>Primeira parcial</b> — ${quem} ${e.lid ? 'à frente por ' + fInt(e.dif) + ' votos' : ''}`;
+    return `<li class="tl-${e.tipo}"><span class="tl-h">${esc(e.h.ht || String(e.h.hg).slice(0, 5))}</span><span class="tl-p">${fNum(e.h.pst, 1)}%</span><span class="tl-t">${txt}</span></li>`;
+  };
+  const virou = ufs.filter(u => u.pst > 0 && B.ufTot?.[u.id] && u.lider && (B.ufTot[u.id].L > B.ufTot[u.id].F ? 'L' : 'F') !== u.lider && u.id !== 'zz');
+  const chips = virou.map(u => { const a = B.ufTot[u.id].L > B.ufTot[u.id].F ? 'L' : 'F'; return `<a class="chip-v" href="#/uf/${u.id}" title="No 1º turno (Lula × Flávio) o estado foi de ${CAND[a].nome}; hoje lidera ${CAND[u.lider].nome}">${esc(u.nome)} <i style="background:${CAND[a].cor}"></i>→<i style="background:${CAND[u.lider].cor}"></i></a>`; }).join('');
+  return `<section class="painel viradas"><h2>Viradas e marcos</h2><p class="sub">O que mudou ao longo da apuração (mais recentes primeiro).</p>
+  <ol class="tl">${ev.map(li).join('')}</ol>
+  <h3 class="fa-h">Estados que mudaram de lado em relação ao 1º turno</h3>
+  ${virou.length ? `<div class="chips-v">${chips}</div>` : '<p class="vazio">Até agora nenhum estado apurado mudou de lado.</p>'}
+  ${entenda('“Mudou de lado” compara quem lidera hoje no estado com quem tinha mais votos, no 1º turno, entre Lula e Flávio (somando só os dois). Estados com apuração muito baixa ainda podem oscilar. As viradas na liderança nacional são detectadas entre uma parcial e outra do TSE.')}</section>`;
 }
 function balanco(b) {
   const r = b.refAbs, v1 = b.refRaw.vv, o1 = Math.max(0, v1 - r.L - r.F);
