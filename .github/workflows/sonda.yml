@@ -16,4 +16,4 @@ jobs:
         run: |
           git config user.name sonda; git config user.email sonda@users.noreply.github.com
           git checkout --orphan sonda; git rm -rf -q . ; git checkout HEAD -- 2>/dev/null || true
-          mkdir -p out; git add -f sonda.txt; git commit -q -m "sonda"; git push -f origin HEAD:sonda
+          mkdir -p out; git add -f sonda.txt bu_amostra.dat; git commit -q -m "sonda"; git push -f origin HEAD:sonda
