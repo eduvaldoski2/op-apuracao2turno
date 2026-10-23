@@ -1,0 +1,123 @@
+osm ce 14273 ITAPAJÉ relações 9
+erro 70955 The operation was aborted due to timeout
+osm sp 70955 SÃO JOSÉ DO RIO PARDO relações 1
+erro 30228 The operation was aborted due to timeout
+erro 71757 The operation was aborted due to timeout
+osm sp 71757 TAQUARITINGA relações 3
+osm pb 22071 SAPÉ relações 2
+osm mg 47430 LAGOA DA PRATA relações 1
+osm ba 39632 VERA CRUZ relações 4
+osm ce 15873 AMONTADA relações 10
+osm rj 58254 CASIMIRO DE ABREU relações 4
+osm rn 18414 SÃO JOSÉ DE MIPIBU relações 11
+osm ba 39713 XIQUE-XIQUE relações 3
+osm go 95630 QUIRINÓPOLIS relações 2
+osm mg 46019 IGARAPÉ relações 104
+osm pb 20796 MAMANGUAPE relações 2
+osm mt 98310 JUÍNA relações 1
+erro 02577 The operation was aborted due to timeout
+osm am 02577 MANICORÉ relações 1
+erro 63894 The operation was aborted due to timeout
+osm ba 36978 MACAÚBAS relações 3
+erro 04731 The operation was aborted due to timeout
+osm pa 04731 ITUPIRANGA relações 1
+osm am 02836 SÃO GABRIEL DA CACHOEIRA relações 4
+erro 27073 The operation was aborted due to timeout
+osm al 27073 ATALAIA relações 2
+osm ba 38610 SANTALUZ relações 2
+osm ms 91251 PARANAÍBA relações 6
+osm pi 11398 OEIRAS relações 33
+osm ba 37613 NOVA VIÇOSA relações 4
+osm pe 25518 SANTA MARIA DA BOA VISTA relações 3
+osm sp 72311 VARGEM GRANDE DO SUL relações 1
+erro 39039 The operation was aborted due to timeout
+osm pa 05975 DOM ELISEU relações 1
+osm sp 68110 PARAGUAÇU PAULISTA relações 4
+osm al 28371 PILAR relações 2
+osm rj 59234 VASSOURAS relações 4
+osm pa 04910 MOCAJUBA relações 2
+osm ba 34355 CANSANÇÃO relações 1
+osm ba 33197 AMARGOSA relações 17
+osm mg 40673 ARAÇUAÍ relações 2
+osm rn 18856 TOUROS relações 1
+osm ce 15733 UBAJARA relações 4
+osm ba 38270 RIACHÃO DO JACUÍPE relações 2
+osm rn 17132 JOÃO CÂMARA relações 21
+erro 25810 The operation was aborted due to timeout
+osm pe 25810 SERTÂNIA relações 5
+osm sp 61336 AMÉRICO BRASILIENSE relações 9
+osm mg 54151 VÁRZEA DA PALMA relações 1
+erro 27278 The operation was aborted due to timeout
+osm sp 69337 PROMISSÃO relações 2
+erro 99490 The operation was aborted due to timeout
+osm pa 05398 SANTO ANTÔNIO DO TAUÁ relações 3
+osm al 27898 MARAGOGI relações 2
+osm pa 04553 CURRALINHO relações 2
+erro 77712 The operation was aborted due to timeout
+osm sp 61018 ADAMANTINA relações 1
+osm pa 04103 MÃE DO RIO relações 1
+osm rs 85553 CAÇAPAVA DO SUL relações 6
+osm ro 00396 MACHADINHO D'OESTE relações 4
+erro 30830 The operation was aborted due to timeout
+osm se 31232 CANINDÉ DE SÃO FRANCISCO relações 1
+osm am 02135 BENJAMIN CONSTANT relações 1
+osm ce 15334 REDENÇÃO relações 5
+osm pa 04863 MOJUÍ DOS CAMPOS relações 1
+osm rs 87777 PALMEIRA DAS MISSÕES relações 5
+osm pa 04090 ALMEIRIM relações 3
+{"feitos":54,"vazios":12,"erros":4}
+feito ro 00396 MACHADINHO D'OESTE nivel=9 poligonos=4 cob=1.00
+descartado 02135 BENJAMIN CONSTANT niveis={'9': 1} cob=0.00
+descartado 02577 MANICORÉ niveis={'9': 1} cob=0.00
+feito am 02836 SÃO GABRIEL DA CACHOEIRA nivel=9 poligonos=4 cob=0.97
+descartado 04090 ALMEIRIM niveis={'9': 3} cob=0.00
+descartado 04103 MÃE DO RIO niveis={'9': 1} cob=0.00
+descartado 04553 CURRALINHO niveis={'9': 2} cob=0.00
+descartado 04731 ITUPIRANGA niveis={'9': 1} cob=0.00
+descartado 04863 MOJUÍ DOS CAMPOS niveis={'9': 1} cob=0.00
+descartado 04910 MOCAJUBA niveis={'9': 2} cob=0.00
+descartado 05398 SANTO ANTÔNIO DO TAUÁ niveis={'9': 3} cob=0.00
+descartado 05975 DOM ELISEU niveis={'9': 1} cob=0.00
+descartado 11398 OEIRAS niveis={'10': 31, None: 1} cob=0.40
+feito ce 14273 ITAPAJÉ nivel=9 poligonos=9 cob=1.00
+feito ce 15334 REDENÇÃO nivel=9 poligonos=5 cob=1.00
+feito ce 15733 UBAJARA nivel=9 poligonos=4 cob=1.00
+feito ce 15873 AMONTADA nivel=9 poligonos=10 cob=1.00
+descartado 17132 JOÃO CÂMARA niveis={'9': 1, '10': 20} cob=0.44
+descartado 18414 SÃO JOSÉ DE MIPIBU niveis={'9': 1, '10': 7, 'place': 2} cob=0.29
+descartado 18856 TOUROS niveis={'9': 1} cob=0.00
+descartado 20796 MAMANGUAPE niveis={'9': 2} cob=0.00
+descartado 22071 SAPÉ niveis={'9': 2} cob=0.00
+descartado 25518 SANTA MARIA DA BOA VISTA niveis={'9': 3} cob=0.00
+feito pe 25810 SERTÂNIA nivel=9 poligonos=5 cob=1.00
+descartado 27073 ATALAIA niveis={'9': 2} cob=0.00
+descartado 27898 MARAGOGI niveis={'9': 2} cob=0.00
+descartado 28371 PILAR niveis={'9': 1, '10': 1} cob=0.00
+descartado 31232 CANINDÉ DE SÃO FRANCISCO niveis={'9': 1} cob=0.00
+descartado 33197 AMARGOSA niveis={'9': 4, '10': 12} cob=0.50
+descartado 34355 CANSANÇÃO niveis={'9': 1} cob=0.00
+descartado 36978 MACAÚBAS niveis={'9': 3} cob=0.00
+feito ba 37613 NOVA VIÇOSA nivel=9 poligonos=4 cob=1.00
+descartado 38270 RIACHÃO DO JACUÍPE niveis={'9': 2} cob=0.00
+descartado 38610 SANTALUZ niveis={'9': 2} cob=0.00
+feito ba 39632 VERA CRUZ nivel=9 poligonos=4 cob=1.00
+descartado 39713 XIQUE-XIQUE niveis={'9': 3} cob=0.00
+descartado 40673 ARAÇUAÍ niveis={'9': 2} cob=0.00
+feito mg 46019 IGARAPÉ nivel=10 poligonos=104 cob=0.94
+descartado 47430 LAGOA DA PRATA niveis={'9': 1} cob=0.00
+descartado 54151 VÁRZEA DA PALMA niveis={'9': 1} cob=0.00
+feito rj 58254 CASIMIRO DE ABREU nivel=9 poligonos=4 cob=1.00
+feito rj 59234 VASSOURAS nivel=9 poligonos=4 cob=1.00
+descartado 61018 ADAMANTINA niveis={'9': 1} cob=0.00
+descartado 61336 AMÉRICO BRASILIENSE niveis={'10': 8, '9': 1} cob=0.36
+feito sp 68110 PARAGUAÇU PAULISTA nivel=9 poligonos=4 cob=1.00
+descartado 69337 PROMISSÃO niveis={'9': 2} cob=0.00
+descartado 70955 SÃO JOSÉ DO RIO PARDO niveis={'9': 1} cob=0.00
+descartado 71757 TAQUARITINGA niveis={'9': 3} cob=0.00
+descartado 72311 VARGEM GRANDE DO SUL niveis={'9': 1} cob=0.00
+feito rs 85553 CAÇAPAVA DO SUL nivel=9 poligonos=6 cob=0.98
+feito rs 87777 PALMEIRA DAS MISSÕES nivel=9 poligonos=5 cob=1.00
+feito ms 91251 PARANAÍBA nivel=9 poligonos=6 cob=1.00
+descartado 95630 QUIRINÓPOLIS niveis={'10': 2} cob=0.00
+descartado 98310 JUÍNA niveis={'place': 1} cob=0.00
+{"feitos": 16, "bytes": 751423, "sem_cobertura": 38}
