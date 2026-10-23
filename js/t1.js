@@ -1,11 +1,11 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=ebeb69e4';
-import { esc, tabela, sem } from './ui.js?v=ebeb69e4';
-import { kpi } from './views.js?v=ebeb69e4';
-import { criarMapa } from './map.js?v=ebeb69e4';
-import { criarMapaMun } from './mapamun.js?v=ebeb69e4';
-import { getJSON } from './tse.js?v=ebeb69e4';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=22d54806';
+import { esc, tabela, sem } from './ui.js?v=22d54806';
+import { kpi } from './views.js?v=22d54806';
+import { criarMapa } from './map.js?v=22d54806';
+import { criarMapaMun } from './mapamun.js?v=22d54806';
+import { getJSON } from './tse.js?v=22d54806';
 
 let cache = null;
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
@@ -18,7 +18,7 @@ export function prepT1(T) {
   T.chave = T.cands.map(c => c.n === '13' ? 'L' : c.n === '22' ? 'F' : 'c' + c.n);
   let j = 0; T.chave.forEach(k => { if (k !== 'L' && k !== 'F') PAL[k] = CORES[j++ % CORES.length]; });
   T.cor = i => T.chave[i] === 'L' ? CAND.L.cor : T.chave[i] === 'F' ? CAND.F.cor : PAL[T.chave[i]];
-  T.nome = i => { const c = T.cands[i]; return bonitoNome(c.nmu || c.nm || ('Candidato ' + c.n)); };
+  T.nome = i => { const c = T.cands[i]; if (T.chave[i] === 'L' || T.chave[i] === 'F') return CAND[T.chave[i]].nome; return bonitoNome(c.nmu || c.nm || ('Candidato ' + c.n)); };
   T.part = i => { const c = T.cands[i]; return c.sg || (c.n === '13' ? 'PT' : c.n === '22' ? 'PL' : ''); };
   const iL = T.cands.findIndex(c => c.n === '13'), iF = T.cands.findIndex(c => c.n === '22'); T.iL = iL; T.iF = iF;
   return T;

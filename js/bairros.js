@@ -1,17 +1,17 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=ebeb69e4';
-import { CONFIG } from './config.js?v=ebeb69e4';
-import { getJSON } from './tse.js?v=ebeb69e4';
-import { esc, dlt, tabela, sem } from './ui.js?v=ebeb69e4';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=ebeb69e4';
-import { listaMunicipios } from './model.js?v=ebeb69e4';
-import { dec, blocoCands, kpisT1 } from './t1.js?v=ebeb69e4';
-import { projetarMunicipios } from './proj.js?v=ebeb69e4';
-import { criarMapaPontos } from './mapapontos.js?v=ebeb69e4';
-import { criarMapaBairros } from './mapabairros.js?v=ebeb69e4';
-import { legendaMapa } from './map.js?v=ebeb69e4';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=22d54806';
+import { CONFIG } from './config.js?v=22d54806';
+import { getJSON } from './tse.js?v=22d54806';
+import { esc, dlt, tabela, sem } from './ui.js?v=22d54806';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=22d54806';
+import { listaMunicipios } from './model.js?v=22d54806';
+import { dec, blocoCands, kpisT1 } from './t1.js?v=22d54806';
+import { projetarMunicipios } from './proj.js?v=22d54806';
+import { criarMapaPontos } from './mapapontos.js?v=22d54806';
+import { criarMapaBairros } from './mapabairros.js?v=22d54806';
+import { legendaMapa } from './map.js?v=22d54806';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
