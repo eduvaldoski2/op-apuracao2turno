@@ -75,11 +75,14 @@ await linhas(zipVotos, mV, r => {
   vot[v] = (vot[v] || 0) + q;
   const s = m && m.secs.get(+r.NR_ZONA + '-' + +r.NR_SECAO);
   if (!s) { semSec += q; return; }
-  if (v === 13) s.L += q; else if (v === 22) s.F += q; else if (v === 95) s.B += q; else if (v === 96) s.N += q; else s.O += q;
+  if (v === 13) s.L += q; else if (v === 22) s.F += q; else if (v === 95) s.B += q; else if (v === 96) s.N += q; else { s.O += q; (s.X ??= {})[v] = (s.X[v] || 0) + q; }
 });
 console.error('linhas presidente:', linhasV, 'votos sem seção no cadastro:', semSec);
 console.error('votáveis (presidente, total):', JSON.stringify(Object.fromEntries(Object.entries(vot).sort((a, b) => b[1] - a[1]).slice(0, 14))));
 
+// candidatos além de Lula (13) e Flávio (22), do mais ao menos votado: voto por seção vai em data/b1t (carregado só na aba do 1º turno)
+const outros = Object.entries(vot).filter(([n]) => !['13', '22', '95', '96'].includes(n)).sort((a, b) => b[1] - a[1]).map(([n]) => +n);
+const dirB1 = path.join(path.dirname(outDir), 'b1t');
 // 3) saída
 let nf = 0, nloc = 0, nsec = 0, semBairro = 0, semGeo = 0; const tot = { L: 0, F: 0 };
 for (const [cd, m] of mun) {
@@ -88,6 +91,9 @@ for (const [cd, m] of mun) {
     nloc++; nsec += secs.length; if (!l.bairro) semBairro++; if (l.lat == null || l.lat === 0) semGeo++; tot.L += s('L'); tot.F += s('F');
     return [l.z, l.id, l.nome, l.end, l.bairro, l.cep, l.lat, l.lon, s('ap'), s('L'), s('F'), s('O'), s('B'), s('N'), secs.map(x => [x.n, x.ap, x.L, x.F, x.O, x.B, x.N])];
   });
+  const ordenados = [...m.locais.values()].sort((a, b) => a.z - b.z || a.id - b.id).map(l => [...l.secs.values()].sort((a, b) => a.n - b.n).map(x => outros.map(n => (x.X && x.X[n]) || 0)));
+  fs.mkdirSync(path.join(dirB1, m.uf), { recursive: true });
+  fs.writeFileSync(path.join(dirB1, m.uf, cd + '.json'), JSON.stringify({ c: outros, l: ordenados }));
   const dir = path.join(outDir, m.uf); fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(path.join(dir, cd + '.json'), JSON.stringify({ cd, uf: m.uf, n: m.nome, l: ls }));
   nf++;
