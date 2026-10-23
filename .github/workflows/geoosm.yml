@@ -9,7 +9,7 @@ permissions:
 jobs:
   osm:
     runs-on: ubuntu-latest
-    timeout-minutes: 100
+    timeout-minutes: 115
     strategy:
       fail-fast: false
       matrix: { fatia: [0, 1, 2, 3, 4, 5] }
@@ -35,10 +35,14 @@ jobs:
           P
         env: { N: '${{ github.event.inputs.quantos || 350 }}', PU: '${{ github.event.inputs.pular || 0 }}' }
       - name: Baixar do OpenStreetMap
+        timeout-minutes: 90
+        continue-on-error: true
         run: node scripts/osm_baixar.mjs /tmp/lista.json /tmp/osm ${{ matrix.fatia }} 6 2>&1 | tee osm.log | tail -5
       - name: Montar malhas
+        if: always()
         run: python3 scripts/build_geo_osm.py /tmp/osm data/bairros data/bairros_geo 0.6 2>&1 | tee -a osm.log | tail -40
       - name: Publicar
+        if: always()
         run: |
           git config user.name coletor; git config user.email coletor@users.noreply.github.com
           git add data/bairros_geo && git commit -q -m "Malhas de bairros do OpenStreetMap (fatia ${{ matrix.fatia }})" || echo "nada a publicar" >> osm.log
