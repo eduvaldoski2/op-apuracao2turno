@@ -1,7 +1,7 @@
 // Consentimento de cookies (LGPD): Google Analytics 4, Meta Pixel e Google Ads só são carregados depois do "aceitar" do visitante.
 // Sem GA4/pixel/ID configurado em CONFIG (analytics.ga4, anuncios) e sem formulário de leads, este módulo não faz nada (nenhum banner aparece).
 // A medição de uso do painel (js/metricas.js) é anônima e sem cookies, e não depende deste consentimento.
-import { CONFIG } from './config.js?v=64e1beae';
+import { CONFIG } from './config.js?v=d8596fe3';
 
 const KEY = 'op_consent', VERSAO = 1;
 const RAIZ_PAG = /\/apuracao-2t-2026\//.test(location.pathname) ? '/' : '';   // a política fica na raiz do site
@@ -15,7 +15,7 @@ export const cookiesConfigurados = () => anunciosConfigurados() || analiseConfig
 export const moduloAtivo = () => cookiesConfigurados() || !!CONFIG.leads?.endpoint;
 
 export function lerConsent() { try { const c = JSON.parse(localStorage.getItem(KEY) || 'null'); return c && c.v === VERSAO ? c : null; } catch { return null; } }
-const gravar = c => { try { localStorage.setItem(KEY, JSON.stringify({ v: VERSAO, ts: new Date().toISOString(), marketing: !!c.marketing, analise: !!c.analise })); } catch { /* sem armazenamento */ } };
+const gravar = c => { try { localStorage.setItem(KEY, JSON.stringify({ v: VERSAO, ts: new Date().toISOString(), marketing: !!c.marketing && anunciosConfigurados(), analise: !!c.analise && analiseConfigurada() })); } catch { /* sem armazenamento */ } };
 export const marketingOk = () => !gpc() && !!lerConsent()?.marketing && anunciosConfigurados() && !semAnuncios();
 export const analiseOk = () => !gpc() && !!lerConsent()?.analise && analiseConfigurada() && !semAnuncios();
 
