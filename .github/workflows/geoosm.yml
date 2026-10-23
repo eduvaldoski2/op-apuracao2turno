@@ -3,8 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       quantos: { description: 'Quantos municípios (maiores primeiro)', default: '350' }
-  push:
-    paths: ['scripts/osm_baixar.mjs', 'scripts/build_geo_osm.py', '.github/workflows/geoosm.yml']
+      pular: { description: 'Pular os N maiores (já tentados)', default: '0' }
 permissions:
   contents: write
 jobs:
@@ -32,9 +31,9 @@ jobs:
               d=json.load(open(f)); cd=d['cd']
               if cd in geo or cd not in ibge: continue
               out.append((sum(s[1] for l in d['l'] for s in l[14]),{'cd5':cd,'ibge':ibge[cd],'nome':d['n'],'uf':d['uf']}))
-          out.sort(key=lambda x:-x[0]); json.dump([o[1] for o in out[:N]],open('/tmp/lista.json','w')); print('municípios na lista',min(N,len(out)))
+          out.sort(key=lambda x:-x[0]); PU=int(os.environ.get('PU','0')); json.dump([o[1] for o in out[PU:PU+N]],open('/tmp/lista.json','w')); print('municípios na lista',min(N,len(out)))
           P
-        env: { N: '${{ github.event.inputs.quantos || 350 }}' }
+        env: { N: '${{ github.event.inputs.quantos || 350 }}', PU: '${{ github.event.inputs.pular || 0 }}' }
       - name: Baixar do OpenStreetMap
         run: node scripts/osm_baixar.mjs /tmp/lista.json /tmp/osm ${{ matrix.fatia }} 6 2>&1 | tee osm.log | tail -5
       - name: Montar malhas
