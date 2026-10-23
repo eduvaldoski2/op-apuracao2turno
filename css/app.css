@@ -87,6 +87,7 @@ b.pos{color:var(--pos)}b.neg{color:var(--neg)}
 .tab th button{all:unset;cursor:pointer;padding:8px 9px;display:block;width:100%;box-sizing:border-box;font-weight:700}
 .tab th.n button{text-align:right}.tab th.on{color:var(--roxo)}.tab .seta{opacity:.5;font-size:10px;margin-left:4px}
 .tab td{padding:7px 9px;border-bottom:1px solid #f0ecf6;vertical-align:middle}
+.tab .vt{display:block;margin-top:1px;font-size:11.5px;font-weight:400;color:var(--tx2);line-height:1.2}
 .tab td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .tab tr.clic{cursor:pointer}.tab tr.clic:hover td{background:#faf7ff}
 .tab tr.aguardando td{color:#9a93ad}.agu{color:#9a93ad;font-weight:500}

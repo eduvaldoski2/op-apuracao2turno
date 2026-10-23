@@ -1,14 +1,14 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=b43e71fe';
-import { esc, tabela, sem, entenda } from './ui.js?v=b43e71fe';
-import { getFoco } from './foco.js?v=b43e71fe';
-import { kpi } from './views.js?v=b43e71fe';
-import { criarMapa } from './map.js?v=b43e71fe';
-import { criarMapaMun } from './mapamun.js?v=b43e71fe';
-import { getJSON } from './tse.js?v=b43e71fe';
-import { leitura, balao } from './insights.js?v=b43e71fe';
-import { dispersao } from './dispersao.js?v=b43e71fe';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=ba51246d';
+import { esc, tabela, sem, entenda } from './ui.js?v=ba51246d';
+import { getFoco } from './foco.js?v=ba51246d';
+import { kpi } from './views.js?v=ba51246d';
+import { criarMapa } from './map.js?v=ba51246d';
+import { criarMapaMun } from './mapamun.js?v=ba51246d';
+import { getJSON } from './tse.js?v=ba51246d';
+import { leitura, balao } from './insights.js?v=ba51246d';
+import { dispersao } from './dispersao.js?v=ba51246d';
 
 let cache = null, formaMapa = 'areas', eixoDisp = 'abst';
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
@@ -91,7 +91,7 @@ function colsTop(T, ref, nomeCol) {
     lid, ...cauda];
   const top = ref.v.map((x, i) => i).sort((a, b) => ref.v[b] - ref.v[a]).slice(0, 4);
   return [nomeCol, lid,
-    ...top.map(i => ({ k: 'p' + i, t: `${cn(i)} %`, h: x => x.u.vv ? `<b>${fNum(x.u.p[i], 2)}%</b>` : '', v: x => x.u.p[i], x: x => x.u.p[i], cls: 'n' })), ...cauda];
+    ...top.map(i => ({ k: 'p' + i, t: `${cn(i)} %`, h: x => x.u.vv ? `<b>${fNum(x.u.p[i], 2)}%</b><small class="vt">${fInt(x.u.v[i])} votos</small>` : '', v: x => x.u.p[i], x: x => x.u.p[i], cls: 'n' })), ...cauda];
 }
 
 export function viewT1Geral(ctx) {
