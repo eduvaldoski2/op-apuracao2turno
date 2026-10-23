@@ -1,0 +1,115 @@
+erro 93955 The operation was aborted due to timeout
+erro 05010 The operation was aborted due to timeout
+osm pa 05010 ÓBIDOS relações 8
+osm rn 16713 EXTREMOZ relações 8
+erro 47252 The operation was aborted due to timeout
+osm mg 47252 JOÃO PINHEIRO relações 7
+osm sp 63096 CAPIVARI relações 1
+osm ba 33537 BARRA relações 3
+erro 56553 The operation was aborted due to timeout
+osm es 56553 ITAPEMIRIM relações 5
+osm pe 23515 BREJO DA MADRE DE DEUS relações 10
+osm ba 36536 JAGUAQUARA relações 2
+osm mg 41459 BOCAIÚVA relações 2
+osm rj 59277 ARRAIAL DO CABO relações 1
+osm pe 26077 TORITAMA relações 1
+erro 52736 The operation was aborted due to timeout
+osm mg 41998 CAETÉ relações 5
+erro 38890 The operation was aborted due to timeout
+osm rj 58718 PARACAMBI relações 1
+osm sp 71315 SERRANA relações 1
+osm rs 89338 TORRES relações 22
+osm mg 51390 SALINAS relações 2
+osm mg 41416 BOA ESPERANÇA relações 55
+erro 14613 The operation was aborted due to timeout
+osm es 57932 SANTA MARIA DE JETIBÁ relações 2
+osm mg 42455 CAPELINHA relações 17
+osm pe 25615 SÃO CAITANO relações 3
+osm pe 23272 BARREIROS relações 2
+osm pr 77313 PAIÇANDU relações 11
+osm mg 49174 OURO BRANCO relações 4
+osm ba 38857 SÃO GONÇALO DOS CAMPOS relações 3
+osm ms 91073 MARACAJU relações 2
+osm pe 24015 CUSTÓDIA relações 3
+osm pa 05916 PACAJÁ relações 1
+osm ba 38059 POJUCA relações 2
+osm sp 71919 TIETÊ relações 1
+osm rs 88170 RIO PARDO relações 21
+osm sp 71099 SÃO PEDRO relações 1
+osm pe 25690 SÃO JOSÉ DO BELMONTE relações 2
+osm go 94897 NIQUELÂNDIA relações 53
+osm ba 34975 CURAÇÁ relações 5
+osm pa 05193 PRAINHA relações 2
+osm pb 19933 CONDE relações 2
+osm mg 40290 ALÉM PARAÍBA relações 1
+osm sp 61492 APARECIDA relações 1
+osm ms 90654 COXIM relações 4
+osm sp 64874 IBATÉ relações 1
+erro 33979 The operation was aborted due to timeout
+osm ba 33979 CACHOEIRA relações 3
+erro 05959 The operation was aborted due to timeout
+osm ce 15415 SANTANA DO ACARAÚ relações 8
+osm ba 35912 IRARÁ relações 2
+erro 04723 The operation was aborted due to timeout
+osm pa 04723 ANAPU relações 1
+osm se 32115 PORTO DA FOLHA relações 1
+osm ce 13633 CARIRIAÇU relações 12
+osm es 56073 ANCHIETA relações 3
+osm ma 09512 VITÓRIA DO MEARIM relações 1
+osm pa 04618 GURUPÁ relações 3
+osm sp 61050 AGUAÍ relações 1
+erro 78239 The operation was aborted due to timeout
+osm pr 78239 RIO NEGRO relações 16
+{"feitos":51,"vazios":16,"erros":3}
+descartado 04618 GURUPÁ niveis={'9': 3} cob=0.00
+descartado 04723 ANAPU niveis={'9': 1} cob=0.00
+descartado 05010 ÓBIDOS niveis={'9': 1, '10': 6} cob=0.11
+descartado 05193 PRAINHA niveis={'9': 2} cob=0.00
+descartado 05916 PACAJÁ niveis={'9': 1} cob=0.00
+descartado 09512 VITÓRIA DO MEARIM niveis={'place': 1} cob=0.00
+descartado 13633 CARIRIAÇU niveis={'10': 12} cob=0.24
+feito ce 15415 SANTANA DO ACARAÚ nivel=9 poligonos=8 cob=0.98
+descartado 16713 EXTREMOZ niveis={'9': 1, 'place': 6, '11': 1} cob=0.25
+descartado 19933 CONDE niveis={'9': 2} cob=0.00
+descartado 23272 BARREIROS niveis={'9': 2} cob=0.00
+feito pe 23515 BREJO DA MADRE DE DEUS nivel=9 poligonos=5 cob=0.93
+descartado 24015 CUSTÓDIA niveis={'9': 3} cob=0.00
+descartado 25615 SÃO CAITANO niveis={'9': 3} cob=0.00
+descartado 25690 SÃO JOSÉ DO BELMONTE niveis={'9': 2} cob=0.00
+descartado 26077 TORITAMA niveis={'9': 1} cob=0.00
+descartado 32115 PORTO DA FOLHA niveis={'9': 1} cob=0.00
+descartado 33537 BARRA niveis={'9': 3} cob=0.00
+descartado 33979 CACHOEIRA niveis={'9': 3} cob=0.00
+feito ba 34975 CURAÇÁ nivel=9 poligonos=5 cob=1.00
+descartado 35912 IRARÁ niveis={'9': 2} cob=0.00
+descartado 36536 JAGUAQUARA niveis={'9': 2} cob=0.00
+descartado 38059 POJUCA niveis={'9': 2} cob=0.00
+descartado 38857 SÃO GONÇALO DOS CAMPOS niveis={'9': 3} cob=0.00
+descartado 40290 ALÉM PARAÍBA niveis={'9': 1} cob=0.00
+feito mg 41416 BOA ESPERANÇA nivel=10 poligonos=55 cob=0.88
+descartado 41459 BOCAIÚVA niveis={'9': 2} cob=0.00
+descartado 41998 CAETÉ niveis={'9': 5} cob=0.33
+descartado 42455 CAPELINHA niveis={'10': 17} cob=0.46
+feito mg 47252 JOÃO PINHEIRO nivel=9 poligonos=7 cob=0.97
+descartado 49174 OURO BRANCO niveis={'10': 4} cob=0.05
+descartado 51390 SALINAS niveis={'9': 2} cob=0.00
+descartado 56073 ANCHIETA niveis={'9': 3} cob=0.00
+feito es 56553 ITAPEMIRIM nivel=9 poligonos=5 cob=1.00
+descartado 57932 SANTA MARIA DE JETIBÁ niveis={'9': 2} cob=0.00
+descartado 58718 PARACAMBI niveis={'9': 1} cob=0.00
+descartado 59277 ARRAIAL DO CABO niveis={'9': 1} cob=0.00
+descartado 61050 AGUAÍ niveis={'9': 1} cob=0.00
+descartado 61492 APARECIDA niveis={'9': 1} cob=0.00
+descartado 63096 CAPIVARI niveis={'9': 1} cob=0.00
+descartado 64874 IBATÉ niveis={'9': 1} cob=0.00
+descartado 71099 SÃO PEDRO niveis={'9': 1} cob=0.00
+descartado 71315 SERRANA niveis={'9': 1} cob=0.00
+descartado 71919 TIETÊ niveis={'9': 1} cob=0.00
+descartado 77313 PAIÇANDU niveis={'10': 11} cob=0.28
+descartado 78239 RIO NEGRO niveis={'10': 16} cob=0.57
+feito rs 88170 RIO PARDO nivel=9 poligonos=8 cob=1.00
+descartado 89338 TORRES niveis={'9': 2, '10': 16} cob=0.48
+feito ms 90654 COXIM nivel=9 poligonos=4 cob=1.00
+descartado 91073 MARACAJU niveis={'9': 2} cob=0.00
+descartado 94897 NIQUELÂNDIA niveis={'10': 53} cob=0.44
+{"sem_cobertura": 43, "feitos": 8, "bytes": 475565}
