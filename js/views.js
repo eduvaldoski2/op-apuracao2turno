@@ -24,11 +24,11 @@ export function linhaPr(id, p, B, snap) {
     band: p.band, pw: p.pWinL, pend: p.pendEleit, te: p.te, a: p.a, vb: p.vb, tvn: p.tvn, c: p.c, vv: p.L + p.F };
 }
 
-const cabCand = k => `<span class="cab-c" style="--c:${CAND[k].cor}">${CAND[k].nome.split(' ')[0]}</span>`;
-const barraDupla = (pL, pF) => `<div class="barra2" role="img" aria-label="${CAND.L.nome} ${fNum(pL, 2)}% e ${CAND.F.nome} ${fNum(pF, 2)}%"><i style="width:${clamp(pL, 0, 100)}%;background:${CAND.L.cor}"></i><i style="width:${clamp(pF, 0, 100)}%;background:${CAND.F.cor}"></i><b></b></div>`;
+export const cabCand = k => `<span class="cab-c" style="--c:${CAND[k].cor}">${CAND[k].nome.split(' ')[0]}</span>`;
+export const barraDupla = (pL, pF) => `<div class="barra2" role="img" aria-label="${CAND.L.nome} ${fNum(pL, 2)}% e ${CAND.F.nome} ${fNum(pF, 2)}%"><i style="width:${clamp(pL, 0, 100)}%;background:${CAND.L.cor}"></i><i style="width:${clamp(pF, 0, 100)}%;background:${CAND.F.cor}"></i><b></b></div>`;
 
 // ---------- cartões ----------
-function cartaoCand(k, r, { modo, conf, projecao }) {
+export function cartaoCand(k, r, { modo, conf, projecao }) {
   const c = CAND[k], p = k === 'L' ? r.pL : r.pF, d = k === 'L' ? r.dL : r.dF, v = r[k];
   let selo = '';
   if (modo === 'ap') selo = conf ? `<span class="selo ok">ELEITO · confirmado pelo TSE</span>` : (r.lider === k && r.pst > 0 ? `<span class="selo parcial">Lidera na parcial</span>` : '');
@@ -40,7 +40,7 @@ function cartaoCand(k, r, { modo, conf, projecao }) {
     <div class="cand-votos"><b>${fInt(v)}</b> votos${modo === 'pr' ? ' (projetados)' : ''}</div>${faixa}
     <div class="cand-dica sem-export">ver estados ›</div></a>`;
 }
-function kpi(titulo, valor, delta, sub, { dica, cls = '' } = {}) {
+export function kpi(titulo, valor, delta, sub, { dica, cls = '' } = {}) {
   return `<div class="kpi ${cls}" ${dica ? `title="${esc(dica)}"` : ''}><div class="kpi-t">${titulo}</div><div class="kpi-v">${valor}${delta != null ? ' ' + delta : ''}</div><div class="kpi-s">${sub || ''}</div></div>`;
 }
 
@@ -242,7 +242,7 @@ export function viewUf(ctx, uf, kOrd) {
   const html = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false })}<div class="centro"><div class="centro-t">${esc(UF_NOME[uf])}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : ''}</div></div>${cartaoCand('F', r, { modo, conf: false })}</section>
   <section class="kpis k4">${kp}</section>
   ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Cor = quem lidera no município; tom mais escuro = maior percentual. Clique para ver os bairros; use + / − ou a roda do mouse para aproximar.</p><div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado">${legendaMapa()}</div></div></section>`}
-  <section class="painel"><h2>Municípios de ${esc(UF_NOME[uf])}${ap ? '' : ' (projeção)'}</h2><p class="sub">Ordenado por ${CAND[ord].nome} (maior % primeiro) — altere clicando nos títulos. ${ap ? 'Municípios sem urnas apuradas aparecem no fim, como "aguardando".' : 'Municípios ainda não apurados mostram a projeção a partir do 1º turno.'}</p><div id="tab-m"></div></section>`;
+  <section class="painel"><h2>Municípios de ${esc(UF_NOME[uf])}${ap ? '' : ' (projeção)'}</h2><p class="sub">Ordenado por ${CAND[ord].nome} (maior % primeiro) — altere clicando nos títulos. Clique em um município para ver os bairros. ${ap ? 'Municípios sem urnas apuradas aparecem no fim, como "aguardando".' : 'Municípios ainda não apurados mostram a projeção a partir do 1º turno.'}</p><div id="tab-m"></div></section>`;
   const cdi = new Map((B.byUf[uf] || []).map(b => [b.cd, String(b.cdi)]));
   const dm = {}, porCdi = {};
   for (const m of rows) { const id = cdi.get(m.id); if (!id) continue; porCdi[id] = m;
@@ -258,7 +258,7 @@ export function viewUf(ctx, uf, kOrd) {
       for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome.replace(/\b(\p{L})(\p{L}*)/gu, (_, a, b) => (a + b.toLowerCase())).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
       mp.atualizar(dm);
     }).catch(() => { alvoMapa.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
-    tabela(root.querySelector('#tab-m'), { cols, rows, sort: 'p' + ord, dir: 'desc', filtro: (m, q) => m.nome.toLowerCase().includes(q), limite: 1000 });
+    tabela(root.querySelector('#tab-m'), { cols, rows, onRow: m => ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${m.id}`), sort: 'p' + ord, dir: 'desc', filtro: (m, q) => m.nome.toLowerCase().includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${slugn(UF_NOME[uf])}_municipios_${ap ? 'apuracao' : 'projecao'}`, cab: ['Município', '% apurado', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Lula cresc. votos %', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Flávio cresc. votos %'], linhas: rows.slice().sort((a, b) => (isNaN(b['p' + ord]) - isNaN(a['p' + ord])) || b['p' + ord] - a['p' + ord]).map(m => [m.nome, m.pst, m.L, m.pL, m.dL, m.gL, m.F, m.pF, m.dF, m.gF]) });
   } };
 }

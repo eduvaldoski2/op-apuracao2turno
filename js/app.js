@@ -3,6 +3,7 @@ import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } f
 import { calcular } from './model.js';
 import { projetar, PARAMS } from './proj.js';
 import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js';
+import { viewMun } from './bairros.js';
 import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js';
 import { CAND, fNum, fInt, horaBR } from './util.js';
 import { esc } from './ui.js';
@@ -27,6 +28,7 @@ function rota() {
   let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; if (p[0] === 'projecao') p.shift(); else p.shift(); }
   if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
   if (p[0] === 'cand' && CAND[p[1]]) return { modo, tela: 'cand', k: p[1] };
+  if (p[0] === 'mun' && p[1] && p[2]) return { modo, tela: 'mun', uf: p[1], cd: p[2] };
   if (p[0] === 'uf' && p[1]) return { modo, tela: 'uf', uf: p[1], c: q.get('c') };
   return { modo, tela: 'geral' };
 }
@@ -38,10 +40,11 @@ function render(manterScroll = false) {
   document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.modo === r.modo));
   if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS }, r.modo); return pintar(v, r, {}); }
   if (!S.snap) return aguardando(r);
-  const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, hist: S.hist, V: getV(), P: r.modo === 'pr' ? getP() : null, ir, csv: null };
+  const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, hist: S.hist, V: getV(), P: r.modo === 'pr' ? getP() : null, ir, csv: null, demo: !!S.demo };
   let v;
   if (r.tela === 'geral') v = viewGeral(ctx);
   else if (r.tela === 'cand') v = viewCand(ctx, r.k);
+  else if (r.tela === 'mun') v = viewMun(ctx, r.uf, r.cd);
   else { if (S.fonte === 'tse-direto' && !S.snap.mun?.[r.uf]) { municipiosDireto(r.uf, S.snap).then(() => { S.Psig = ''; S.Vsig = ''; render(true); }).catch(() => {}); } v = viewUf(ctx, r.uf, r.c); }
   ultimoCtx = ctx;
   pintar(v, r, ctx);

@@ -140,3 +140,6 @@ b.pos{color:var(--pos)}b.neg{color:var(--neg)}
 .mapa-mun .zoom button{width:32px;height:32px;border-radius:8px;border:1px solid #d9d4f0;background:#fff;color:var(--roxo);font-size:18px;line-height:1;cursor:pointer}
 .mapa-mun .zoom button:hover{background:var(--lilas)}
 .carregando{color:var(--tx2);padding:30px;text-align:center}
+.alterna{display:flex;gap:6px;margin:6px 0 10px;flex-wrap:wrap}.alterna button{border:1px solid #d9d4f0;background:#fff;color:var(--roxo);border-radius:999px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}.alterna button.on{background:var(--roxo);color:#fff;border-color:var(--roxo)}
+.nota{font-size:12px;color:var(--tx2);margin-top:8px}.tab small{color:var(--tx2)}
+tr.clic{cursor:pointer}tr.clic:hover td{background:#f3f1f8}
