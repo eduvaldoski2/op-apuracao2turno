@@ -57,7 +57,7 @@ for f in sorted(glob.glob(os.path.join(zdir, '*.geojson'))):
     feitos = [{'n': nm, 'c': str(i), 'p': aneis(g, 0.00012)} for i, (nm, g) in enumerate(geoms)]
     txt = json.dumps({'m': cd5, 'uf': est['uf'], 'ibge': '', 'fonte': 'OpenStreetMap (colaboradores, ODbL) — bairros', 'rotulo': 'bairro', 'cob': round(cob, 3), 'f': feitos, 'loc': loc}, separators=(',', ':'), ensure_ascii=False)
     dest = os.path.join(out, cd5 + '.json')
-    if os.path.exists(dest): tot['ja_existia'] += 1; continue
+    if os.path.exists(dest) and not json.load(open(dest)).get('aprox'): tot['ja_existia'] += 1; continue
     open(dest, 'w').write(txt); tot['feitos'] += 1; tot['bytes'] += len(txt)
     linhas.append(f"feito {est['uf']} {cd5} {est['n']} nivel={nivel} poligonos={len(geoms)} cob={cob:.2f}")
 print('\n'.join(linhas)); print(json.dumps(tot))
