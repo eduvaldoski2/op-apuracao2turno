@@ -22,7 +22,7 @@ export const CONFIG = {
   pareamento: {},
   metricas: { provedor: '', id: '', host: '', painel: '' },
   // Google Analytics 4 (só carrega com o consentimento do visitante; vazio = desligado). ga4: ID da métrica, no formato 'G-XXXXXXXXXX'.
-  analytics: { ga4: '' },
+  analytics: { ga4: 'G-DE3VNZ3VWH' },
   // anúncios (só são carregados com o consentimento do visitante; vazio = desligado). Veja admin.html.
   anuncios: { meta: { pixel: '' }, google: { id: '', conversaoLead: '' } },   // google.id: 'AW-XXXXXXXXX' ou 'G-XXXXXXXXXX'; conversaoLead: 'AW-XXXXXXXXX/rótulo'
   // captação de contatos (leads): endpoint = endereço do api/lead.php publicado na hospedagem. Vazio = formulário desligado.
