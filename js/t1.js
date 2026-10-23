@@ -1,11 +1,11 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=22d54806';
-import { esc, tabela, sem } from './ui.js?v=22d54806';
-import { kpi } from './views.js?v=22d54806';
-import { criarMapa } from './map.js?v=22d54806';
-import { criarMapaMun } from './mapamun.js?v=22d54806';
-import { getJSON } from './tse.js?v=22d54806';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=8ec099e0';
+import { esc, tabela, sem } from './ui.js?v=8ec099e0';
+import { kpi } from './views.js?v=8ec099e0';
+import { criarMapa } from './map.js?v=8ec099e0';
+import { criarMapaMun } from './mapamun.js?v=8ec099e0';
+import { getJSON } from './tse.js?v=8ec099e0';
 
 let cache = null;
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));

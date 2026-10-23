@@ -22,7 +22,7 @@ def aneis(g, tol):
         res.append([[v for c in r for v in (r5(c[0]), r5(c[1]))] for r in rs])
     return res
 tot = dict(mun=0, feitos=0, baixa_cob=0, sem_locais=0, bytes=0)
-def emitir(u, cd5, ibge, est, geoms, limite=0.45, fonte='IBGE (Censo 2022) — bairros', rotulo='bairro'):
+def emitir(u, cd5, ibge, est, geoms, limite=0.45, fonte='IBGE (Censo 2022) — bairros', rotulo='bairro', rotulo_nome=None):
     locais = est['l']
     if not geoms or not locais: tot['sem_locais'] += 1; return
     tree = STRtree([g for _, _, g in geoms]); loc = {}; n_ok = 0; n_t = 0
@@ -41,7 +41,7 @@ def emitir(u, cd5, ibge, est, geoms, limite=0.45, fonte='IBGE (Censo 2022) — b
         if len(locais) >= 60: print('BAIXA COBERTURA', u, cd5, est['n'], 'locais', len(locais), 'poligonos', len(geoms), 'cob', round(cob, 2), flush=True)
         return
     feitos = [{'n': nm, 'c': cb, 'p': aneis(g, 0.00012)} for nm, cb, g in geoms]
-    txt = json.dumps({'m': cd5, 'uf': u, 'ibge': ibge, 'fonte': fonte, 'rotulo': rotulo, 'cob': round(cob, 3), 'f': feitos, 'loc': loc}, separators=(',', ':'), ensure_ascii=False)
+    txt = json.dumps({'m': cd5, 'uf': u, 'ibge': ibge, 'fonte': fonte, 'rotulo': rotulo, **({'rotuloNome': rotulo_nome} if rotulo_nome else {}), 'cob': round(cob, 3), 'f': feitos, 'loc': loc}, separators=(',', ':'), ensure_ascii=False)
     open(os.path.join(out, cd5 + '.json'), 'w').write(txt); tot['feitos'] += 1; tot['bytes'] += len(txt)
     print('feito', u, cd5, est['n'], 'cob', round(cob, 2), 'poligonos', len(geoms), flush=True)
 
@@ -74,17 +74,20 @@ for zp in sorted(glob.glob(os.path.join(zdir, '*_bairros_CD2022.zip'))):
         emitir(u, cd5, ibge, est, geoms)
     print(uf, 'ok', flush=True)
 
-# fontes municipais complementares (GeoJSON em lon/lat): { arquivo: (ibge, campo_nome, campo_codigo) }
-EXTRAS = {'sp_distritos_geosampa.geojson': ('3550308', 'nm_distrito_municipal', 'cd_distrito_municipal')}
-for fn, (ibge, cn, cc) in EXTRAS.items():
-    path = os.path.join(os.path.dirname(os.path.abspath(basef)), 'fontes', fn)
-    if not os.path.exists(path) or ibge not in cd_por_ibge: continue
-    u, cd5 = cd_por_ibge[ibge]
-    if os.path.exists(os.path.join(out, cd5 + '.json')): continue   # a malha do IBGE tem prioridade
+# fontes municipais/estaduais complementares (GeoJSON em lon/lat). A malha do IBGE tem prioridade quando já existe para o município.
+EXTRAS = [
+    dict(arq='sp_distritos_geosampa.geojson', ibge='3550308', nome='nm_distrito_municipal', cod='cd_distrito_municipal', limite=0.3, fonte='Prefeitura de São Paulo (GeoSampa) — distritos municipais', rotulo='distrito', rotulo_nome=None),
+    dict(arq='df_regioes_administrativas.geojson', ibge='5300108', nome='ra_nome', cod='ra_codigo', limite=0.3, fonte='Governo do Distrito Federal (IPEDF) — regiões administrativas', rotulo='distrito', rotulo_nome='Região administrativa'),
+]
+for ex in EXTRAS:
+    path = os.path.join(os.path.dirname(os.path.abspath(basef)), 'fontes', ex['arq'])
+    if not os.path.exists(path) or ex['ibge'] not in cd_por_ibge: continue
+    u, cd5 = cd_por_ibge[ex['ibge']]
+    if os.path.exists(os.path.join(out, cd5 + '.json')) and not ex.get('forcar'): continue   # a malha do IBGE tem prioridade
     est = json.load(open(os.path.join(estd, u, cd5 + '.json')))
     gj = json.load(open(path)); geoms = []
     for ft in gj['features']:
         g = shape(ft['geometry']); g = g if g.is_valid else make_valid(g)
-        geoms.append((str(ft['properties'][cn]).title(), str(ft['properties'][cc]), g))
-    emitir(u, cd5, ibge, est, geoms, limite=0.3, fonte='Prefeitura de São Paulo (GeoSampa) — distritos municipais', rotulo='distrito')
+        geoms.append((str(ft['properties'][ex['nome']]).title(), str(ft['properties'][ex['cod']]), g))
+    emitir(u, cd5, ex['ibge'], est, geoms, limite=ex['limite'], fonte=ex['fonte'], rotulo=ex['rotulo'], rotulo_nome=ex['rotulo_nome'])
 print(json.dumps(tot))

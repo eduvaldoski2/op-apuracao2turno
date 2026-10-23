@@ -1,17 +1,17 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=22d54806';
-import { CONFIG } from './config.js?v=22d54806';
-import { getJSON } from './tse.js?v=22d54806';
-import { esc, dlt, tabela, sem } from './ui.js?v=22d54806';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=22d54806';
-import { listaMunicipios } from './model.js?v=22d54806';
-import { dec, blocoCands, kpisT1 } from './t1.js?v=22d54806';
-import { projetarMunicipios } from './proj.js?v=22d54806';
-import { criarMapaPontos } from './mapapontos.js?v=22d54806';
-import { criarMapaBairros } from './mapabairros.js?v=22d54806';
-import { legendaMapa } from './map.js?v=22d54806';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=8ec099e0';
+import { CONFIG } from './config.js?v=8ec099e0';
+import { getJSON } from './tse.js?v=8ec099e0';
+import { esc, dlt, tabela, sem } from './ui.js?v=8ec099e0';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=8ec099e0';
+import { listaMunicipios } from './model.js?v=8ec099e0';
+import { dec, blocoCands, kpisT1 } from './t1.js?v=8ec099e0';
+import { projetarMunicipios } from './proj.js?v=8ec099e0';
+import { criarMapaPontos } from './mapapontos.js?v=8ec099e0';
+import { criarMapaBairros } from './mapabairros.js?v=8ec099e0';
+import { legendaMapa } from './map.js?v=8ec099e0';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
@@ -110,6 +110,7 @@ let geoCache = new Map();
 const ACENTOS_SP = 'Água Rasa|Alto de Pinheiros|Belém|Brás|Brasilândia|Butantã|Cangaíba|Capão Redondo|Carrão|Cidade Líder|Consolação|Freguesia do Ó|Grajaú|Jaçanã|Jaguaré|Jaraguá|Jardim Ângela|Jardim São Luís|José Bonifácio|Limão|Parque do Carmo|República|Sacomã|Santa Cecília|São Domingos|São Lucas|São Mateus|São Miguel|São Rafael|Saúde|Sé|Tatuapé|Tremembé|Vila Curuçá|Vila Jacuí|Vila Sônia'.split('|');
 const semAcento = t => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 const MAPA_AC = new Map(ACENTOS_SP.map(n => [semAcento(n), n]));
+export const nivelG = geo => geo?.rotuloNome ? { cap: geo.rotuloNome, min: geo.rotuloNome.toLowerCase(), plural: 'Regiões administrativas', um: 'uma', na: 'nesta' } : { cap: 'Distrito', min: 'distrito', plural: 'Distritos', um: 'um', na: 'neste' };
 const corrige = g => { if (g && g.rotulo === 'distrito') for (const f of g.f) f.n = MAPA_AC.get(semAcento(f.n)) || f.n; return g; };
 async function geoBairros(cd) { if (!geoCache.has(cd)) geoCache.set(cd, getJSON(`data/bairros_geo/${cd}.json`, { retries: 0 }).then(corrige).catch(() => null)); return geoCache.get(cd); }
 
@@ -197,10 +198,10 @@ export function viewMun(ctx, uf, cd) {
         const por = agregarPoligonos(locais, geo); root.querySelector('#sec-geo').hidden = false; root.querySelector('#geo-fonte').textContent = 'Limites: ' + (geo.fonte || 'IBGE (Censo 2022)') + '.';
         const ir = i => por[i] && ctx.ir(dist ? `${rotaMun(ctx.modo, uf, cd)}/d/${i}` : `${rotaMun(ctx.modo, uf, cd)}/b/g:${i}`);
         if (dist) {
-          root.querySelector('#geo-titulo').textContent = 'Mapa por distrito';
-          root.querySelector('#geo-clique').textContent = 'Clique num distrito'; linhasTab = Object.entries(por).map(([i, u]) => Object.assign(u, { id: 'd' + i, di: i })); rotTab = 'Distrito';
-          root.querySelector('#tab-titulo').textContent = `Distritos de ${nomeMun}`;
-          root.querySelector('#tab-sub').innerHTML = 'Clique num <b>distrito</b> para ver os bairros e, depois, os locais de votação. ${nota(ctx)}';
+          root.querySelector('#geo-titulo').textContent = `Mapa por ${nivelG(geo).min}`;
+          root.querySelector('#geo-clique').textContent = `Clique ${nivelG(geo).um === 'uma' ? 'numa' : 'num'} ${nivelG(geo).min}`; linhasTab = Object.entries(por).map(([i, u]) => Object.assign(u, { id: 'd' + i, di: i })); rotTab = nivelG(geo).cap;
+          root.querySelector('#tab-titulo').textContent = `${nivelG(geo).plural} de ${nomeMun}`;
+          root.querySelector('#tab-sub').innerHTML = `Clique ${nivelG(geo).um === 'uma' ? 'numa' : 'num'} <b>${nivelG(geo).min}</b> para ver os bairros e, depois, os locais de votação. ${nota(ctx)}`;
         }
         if (!mapaGeo) mapaGeo = criarMapaBairros(root.querySelector('#mapa-geo'), geo, { nome: bonito, onClick: ir, tooltip: i => { const u = por[i], f = geo.f[i]; return u ? tipUnidade(esc(bonito(f.n)), u, `${fInt(u.locais)} locais`) : `<b>${esc(bonito(f.n))}</b><br><span class="t-s">sem local de votação dentro do limite</span>`; } });
         const dg = {}; for (const [i, u] of Object.entries(por)) dg[i] = u.st ? { k: u.lider, pw: u.pw, pL: u.pL, pF: u.pF, dL: u.dL, dF: u.dF } : {}; mapaGeo.atualizar(dg);
@@ -221,10 +222,10 @@ export function viewDistrito(ctx, uf, cd, di) {
   return { html: `<div id="d-corpo"><p class="carregando">Carregando…</p></div>`, titulo: 'Distrito', trilha: trilhaBase(ctx.modo, mun, uf, cd), montar(root) {
     const corpo = root.querySelector('#d-corpo');
     iniciar(ctx, uf, cd, root, corpo, ({ geo, ag }) => {
-      const locais = ag.locais.filter(l => geo?.loc[l.id] === di), nome = bonito(geo?.f[di]?.n || 'Distrito'), u = somar(locais);
+      const nv = nivelG(geo), locais = ag.locais.filter(l => geo?.loc[l.id] === di), nome = bonito(geo?.f[di]?.n || nv.cap), u = somar(locais);
       document.querySelector('.tela-topo h1').textContent = `${nome} — ${mun.nome} (${uf.toUpperCase()})`;
-      const nav = document.querySelector('.trilha'); if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ctx.modo, mun, uf, cd), [`Distrito: ${nome}`]]);
-      if (!locais.length) { corpo.innerHTML = `<div class="aviso">Nenhum local de votação encontrado neste distrito.</div>`; return; }
+      const nav = document.querySelector('.trilha'); if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ctx.modo, mun, uf, cd), [`${nv.cap}: ${nome}`]]);
+      if (!locais.length) { corpo.innerHTML = `<div class="aviso">Nenhum local de votação encontrado ${nv.na} ${nv.min}.</div>`; return; }
       const porB = new Map(); for (const l of locais) { if (!porB.has(l.bairro)) porB.set(l.bairro, []); porB.get(l.bairro).push(l); }
       const bairros = [...porB].map(([n, ls]) => Object.assign(somar(ls), { nome: n, id: n }));
       corpo.innerHTML = `${placar(u, `${nome} · ${mun.nome}`, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(u)}
@@ -246,9 +247,9 @@ export function viewBairro(ctx, uf, cd, chave, di) {
       const locais = ag.locais.filter(l => (geoSel ? geo?.loc[l.id] === valor : l.bairro === valor) && (di == null || geo?.loc[l.id] === di));
       const nome = geoSel ? bonito(geo?.f[valor]?.n || 'Área') : bonito(valor), u = somar(locais);
       document.querySelector('.tela-topo h1').textContent = `${nome} — ${mun.nome} (${uf.toUpperCase()})`;
-      const nomeDist = di != null ? bonito(geo?.f[di]?.n || 'Distrito') : null;
-      const rot = geoSel && geo?.rotulo === 'distrito' ? 'Distrito' : 'Bairro';
-      const nav = document.querySelector('.trilha'); if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ctx.modo, mun, uf, cd), ...(di != null ? [[`Distrito: ${nomeDist}`, `${rotaMun(ctx.modo, uf, cd)}/d/${di}`]] : []), [`${rot}: ${nome}`]]);
+      const nv = nivelG(geo), nomeDist = di != null ? bonito(geo?.f[di]?.n || nv.cap) : null;
+      const rot = geoSel && geo?.rotulo === 'distrito' ? nv.cap : 'Bairro';
+      const nav = document.querySelector('.trilha'); if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ctx.modo, mun, uf, cd), ...(di != null ? [[`${nv.cap}: ${nomeDist}`, `${rotaMun(ctx.modo, uf, cd)}/d/${di}`]] : []), [`${rot}: ${nome}`]]);
       if (!locais.length) { corpo.innerHTML = `<div class="aviso">Nenhum local de votação encontrado nesta área.</div>`; return; }
       corpo.innerHTML = `${placar(u, `${nome} · ${mun.nome}`, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(u)}
         <section class="painel"><h2>Locais de votação (${fInt(locais.length)})</h2><p class="sub">Clique num local de votação para ver o resultado de cada seção.</p><div id="tab-l"></div></section>`;
@@ -271,7 +272,7 @@ export function viewLocal(ctx, uf, cd, id) {
       document.querySelector('.tela-topo h1').textContent = nome;
       const bairroKey = chaveB(l.bairro), nav = document.querySelector('.trilha');
       const di = geo?.rotulo === 'distrito' ? geo.loc[l.id] : null, dRot = di != null ? `${rotaMun(ctx.modo, uf, cd)}/d/${di}` : null, bRota = `${rotaMun(ctx.modo, uf, cd)}${di != null ? '/d/' + di : ''}/b/${bairroKey}`;
-      if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ctx.modo, mun, uf, cd), ...(di != null ? [[`Distrito: ${bonito(geo.f[di].n)}`, dRot]] : []), [`Bairro: ${bonito(l.bairro)}`, bRota], [`Local: ${nome}`]]);
+      if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ctx.modo, mun, uf, cd), ...(di != null ? [[`${nivelG(geo).cap}: ${bonito(geo.f[di].n)}`, dRot]] : []), [`Bairro: ${bonito(l.bairro)}`, bRota], [`Local: ${nome}`]]);
       const secs = bruto[14].map(s => { const x = live.s[l.z + '-' + s[0]], o = s[4], vv1 = s[2] + s[3] + o, c1 = vv1 + s[5] + s[6];
         const r = { n: s[0], ap: s[1], ok: !!x, p1L: pc(s[2], vv1), p1F: pc(s[3], vv1), L: x ? x[0] : NaN, F: x ? x[1] : NaN, B: x ? x[3] : NaN, N: x ? x[4] : NaN };
         if (x) { const vv = x[0] + x[1] + x[2], c = vv + x[3] + x[4]; r.pL = pc(x[0], vv); r.pF = pc(x[1], vv); r.dL = r.pL - r.p1L; r.dF = r.pF - r.p1F; r.pAb = pc(s[1] - c, s[1]); r.lider = x[0] >= x[1] ? 'L' : 'F'; } else { r.pL = r.pF = r.dL = r.dF = r.pAb = NaN; r.lider = null; }
