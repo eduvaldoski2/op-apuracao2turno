@@ -24,3 +24,11 @@ assert.ok(pt >= P.br.band.pL[0] && pt <= P.br.band.pL[1], 'verdade dentro da fai
 // 6) sem apuração: não quebra
 const zero = sim.snapshot(0); const P0 = projetar(B, zero, { draws: 30 }); assert.ok(isFinite(P0.br.pL));
 console.log('ok — modelo e projeção');
+
+// 6) decodificador do boletim de urna: seção real do 1º turno (AC, Porto Walter, zona 4 seção 77) — conferida com a votação por seção do TSE
+{
+  const { decodificarBU } = await import('../scripts/bu.mjs'); const { readFileSync } = await import('node:fs');
+  const d = decodificarBU(readFileSync(new URL('./bu_amostra.dat', import.meta.url)), 6257);
+  assert.deepEqual([d.L, d.F, d.O, d.B, d.N], [99, 103, 15, 4, 13]);
+  console.log('ok — decodificador de BU');
+}

@@ -9,6 +9,7 @@ import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js';
 import { listaMunicipios } from './model.js';
 import { projetarMunicipios } from './proj.js';
 import { criarMapaPontos } from './mapapontos.js';
+import { criarMapaBairros } from './mapabairros.js';
 import { legendaMapa } from './map.js';
 
 const q = new URLSearchParams(location.search);
@@ -86,6 +87,15 @@ export function agregar(est, live) {
   return { locais, bairros, tot };
 }
 
+export function agregarPoligonos(locais, geo) {
+  const por = new Map();
+  for (const l of locais) { const i = geo.loc[l.id]; if (i == null) continue; if (!por.has(i)) por.set(i, Object.assign(novo(), { locais: 0 })); const b = por.get(i); soma(b, l); b.locais++; }
+  const out = {}; for (const [i, b] of por) { derivar(b); b.nome = geo.f[i].n; out[i] = b; }
+  return out;
+}
+let geoCache = new Map();
+async function geoBairros(cd) { if (!geoCache.has(cd)) geoCache.set(cd, getJSON(`data/bairros_geo/${cd}.json`, { retries: 0 }).catch(() => null)); return geoCache.get(cd); }
+
 // ---------- tela ----------
 const lastAgg = new Map();
 export function viewMun(ctx, uf, cd) {
@@ -102,13 +112,14 @@ export function viewMun(ctx, uf, cd) {
   const kp = ap && m?.apurado ? `<section class="kpis k4">${kpi('Apurado', fNum(r.pst, 1) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}</section>` : '';
   const html = `${cartoes}${kp}
   ${ap ? '' : `<div class="aviso proj">Projeção estatística por município. O detalhamento por bairro abaixo mostra apenas o que já foi apurado nas seções (não é projeção).</div>`}
+  <section class="painel mapa-sec" id="sec-geo" hidden><h2>Mapa por bairro</h2><p class="sub">Limites de bairros do IBGE (Censo 2022); cada bairro soma os locais de votação que ficam dentro dele. Os nomes e limites do IBGE podem diferir do bairro cadastrado pelo TSE na tabela abaixo. Cor = quem lidera; tom mais escuro = maior percentual. Use + / − ou a roda do mouse para aproximar.</p><div class="mapa-grid"><div id="mapa-geo"></div><div class="mapa-lado">${legendaMapa()}<p class="nota">Bairros em cinza ainda não têm seções apuradas.</p></div></div></section>
   <section class="painel mapa-sec"><h2>Mapa dos locais de votação</h2><p class="sub">Cada ponto é um local de votação; o tamanho é proporcional ao eleitorado. Cor = quem lidera; tom mais escuro = maior percentual. <span id="mb-estado"></span></p>
     <div class="alterna sem-export" id="mb-modo"><button data-m="local" class="on">Cor por local de votação</button><button data-m="bairro">Cor por bairro</button></div>
     <div class="mapa-grid"><div id="mapa-pts"><p class="carregando">Carregando…</p></div><div class="mapa-lado">${legendaMapa()}<p class="nota">Locais em cinza ainda não tiveram todas as seções apuradas.</p></div></div></section>
   <section class="painel"><h2>Bairros de ${esc(nomeMun)}</h2><p class="sub">Bairro conforme o cadastro do TSE para cada local de votação. Percentuais e variações consideram só as seções já apuradas, comparadas com o 1º turno nessas mesmas seções.</p><div id="tab-b"></div></section>
   <section class="painel"><h2>Locais de votação</h2><p class="sub">Escolas e demais locais onde as urnas ficam. Use a busca para achar um bairro ou local.</p><div id="tab-l"></div></section>`;
   return { html, titulo: `${nomeMun} (${uf.toUpperCase()})`, montar(root) {
-    const alvo = root.querySelector('#mapa-pts'); let ag = lastAgg.get(uf + cd), modoMapa = 'local', mapa = null, tb = null, tl = null;
+    const alvo = root.querySelector('#mapa-pts'); let ag = lastAgg.get(uf + cd), modoMapa = 'local', mapa = null, mapaGeo = null, geo = null, tb = null, tl = null;
     const colsB = (tipo) => {
       const nomeCol = tipo === 'b' ? { k: 'nome', t: 'Bairro', h: x => `<b>${esc(bonito(x.nome))}</b>${x.st ? '' : ' <small class="agu">aguardando</small>'}`, v: x => x.nome, ini: 'asc' } : { k: 'nome', t: 'Local de votação', h: x => `<b>${esc(bonito(x.nome))}</b><br><small>${esc(bonito(x.bairro))} · ${esc(bonito(x.end))}</small>`, v: x => x.nome, ini: 'asc' };
       return [nomeCol,
@@ -132,6 +143,7 @@ export function viewMun(ctx, uf, cd) {
         return `<b>${tt}</b><br><span class="t-s">${modoMapa === 'bairro' ? '' : esc(bonito(l.bairro)) + ' · '}${fInt(u.st)}/${fInt(u.ts)} seções apuradas</span>` + (u.st ? `<br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(u.pL, 2)}%</b> ${fDelta(u.dL, 1)} · ${fInt(u.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(u.pF, 2)}%</b> ${fDelta(u.dF, 1)} · ${fInt(u.F)}` : `<br><span class="t-s">1º turno: ${CAND.L.nome.split(' ')[0]} ${fNum(u.p1LT, 1)}% · ${CAND.F.nome.split(' ')[0]} ${fNum(u.p1FT, 1)}%</span>`); };
       if (!mapa) { mapa = criarMapaPontos(alvo, locais, { tooltip: tip }); }
       mapa.atualizar(dados);
+      if (geo) { const por = agregarPoligonos(locais, geo); root.querySelector('#sec-geo').hidden = false; if (!mapaGeo) mapaGeo = criarMapaBairros(root.querySelector('#mapa-geo'), geo, { nome: bonito, tooltip: i => { const u = por[i]; const f = geo.f[i]; if (!u) return `<b>${esc(bonito(f.n))}</b><br><span class="t-s">sem local de votação dentro do limite</span>`; return `<b>${esc(bonito(f.n))}</b><br><span class="t-s">${fInt(u.st)}/${fInt(u.ts)} seções apuradas · ${fInt(u.locais)} locais</span>` + (u.st ? `<br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(u.pL, 2)}%</b> ${fDelta(u.dL, 1)} · ${fInt(u.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(u.pF, 2)}%</b> ${fDelta(u.dF, 1)} · ${fInt(u.F)}` : `<br><span class="t-s">1º turno: ${CAND.L.nome.split(' ')[0]} ${fNum(u.p1LT, 1)}% · ${CAND.F.nome.split(' ')[0]} ${fNum(u.p1FT, 1)}%</span>`); } }); const dg = {}; for (const [i, u] of Object.entries(por)) dg[i] = u.st ? { k: u.lider, pw: u.pw, pL: u.pL, pF: u.pF, dL: u.dL, dF: u.dF } : {}; mapaGeo.atualizar(dg); }
       root.querySelector('#mb-estado').textContent = tot.st ? `${fNum(tot.pst, 1)}% das seções do município já chegaram (${fInt(tot.st)} de ${fInt(tot.ts)}).` : 'Os resultados aparecem aqui conforme as seções forem totalizadas.';
       tb = tabela(root.querySelector('#tab-b'), { cols: colsB('b'), rows: bairros, sort: tot.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, s) => x.nome.toLowerCase().includes(s), limite: 500 });
       tl = tabela(root.querySelector('#tab-l'), { cols: colsB('l'), rows: locais, sort: 'apt', dir: 'desc', filtro: (x, s) => (x.nome + ' ' + x.bairro + ' ' + x.end).toLowerCase().includes(s), limite: 200 });
@@ -141,7 +153,7 @@ export function viewMun(ctx, uf, cd) {
     if (ag) desenhar();
     (async () => {
       try {
-        const est = await estatico(uf, cd);
+        const est = await estatico(uf, cd); geo = await geoBairros(cd);
         const live = ctx.demo ? demoSecoes(est, snap.mun?.[uf]?.find(x => x[0] === cd)) : await aoVivo(uf, cd);
         ag = agregar(est, live); lastAgg.set(uf + cd, ag);
         if (alvo.isConnected) { mapa = null; desenhar(); }
