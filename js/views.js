@@ -28,17 +28,18 @@ export const cabCand = k => `<span class="cab-c" style="--c:${CAND[k].cor}">${CA
 export const barraDupla = (pL, pF) => `<div class="barra2" role="img" aria-label="${CAND.L.nome} ${fNum(pL, 2)}% e ${CAND.F.nome} ${fNum(pF, 2)}%"><i style="width:${clamp(pL, 0, 100)}%;background:${CAND.L.cor}"></i><i style="width:${clamp(pF, 0, 100)}%;background:${CAND.F.cor}"></i><b></b></div>`;
 
 // ---------- cartões ----------
-export function cartaoCand(k, r, { modo, conf, projecao }) {
+export function cartaoCand(k, r, { modo, conf, projecao, semLink }) {
   const c = CAND[k], p = k === 'L' ? r.pL : r.pF, d = k === 'L' ? r.dL : r.dF, v = r[k];
   let selo = '';
   if (modo === 'ap') selo = conf ? `<span class="selo ok">ELEITO · confirmado pelo TSE</span>` : (r.lider === k && r.pst > 0 ? `<span class="selo parcial">Lidera na parcial</span>` : '');
   else selo = r.lider === k ? `<span class="selo proj">Projeção: à frente</span>` : '';
   const faixa = modo === 'pr' && r.band ? `<div class="faixa">faixa de 90%: ${fNum(k === 'L' ? r.band.pL[0] : r.band.pF[0], 2)}% a ${fNum(k === 'L' ? r.band.pL[1] : r.band.pF[1], 2)}%</div>` : '';
-  return `<a class="cand" href="#/${modo === 'pr' ? 'p/' : ''}cand/${k}" style="--c:${c.cor}" title="Ver o ranking de estados de ${c.nome}">
+  const tag = semLink ? 'div' : 'a';
+  return `<${tag} class="cand" ${semLink ? '' : `href="#/${modo === 'pr' ? 'p/' : ''}cand/${k}" title="Ver o ranking de estados de ${c.nome}"`} style="--c:${c.cor}">
     <div class="cand-topo"><span class="cand-num">${c.n}</span><div><div class="cand-nome">${c.nome}</div><div class="cand-part">${c.partido}</div></div>${selo}</div>
     <div class="cand-pct">${fNum(p, 2)}%${dlt(d, 2)}</div>
     <div class="cand-votos"><b>${fInt(v)}</b> votos${modo === 'pr' ? ' (projetados)' : ''}</div>${faixa}
-    <div class="cand-dica sem-export">ver estados ›</div></a>`;
+    ${semLink ? '' : '<div class="cand-dica sem-export">ver estados ›</div>'}</${tag}>`;
 }
 export function kpi(titulo, valor, delta, sub, { dica, cls = '' } = {}) {
   return `<div class="kpi ${cls}" ${dica ? `title="${esc(dica)}"` : ''}><div class="kpi-t">${titulo}</div><div class="kpi-v">${valor}${delta != null ? ' ' + delta : ''}</div><div class="kpi-s">${sub || ''}</div></div>`;
@@ -250,7 +251,7 @@ export function viewUf(ctx, uf, kOrd) {
   const tipM = id => { const m = porCdi[id]; if (!m) return ''; const nome = esc(m.nome);
     if (!(m.L + m.F > 0)) return `<b>${nome}</b><br><span class="t-s">aguardando apuração</span>`;
     return `<b>${nome}</b><br><span class="t-s">${ap ? fNum(m.pst, 0) + '% das seções apuradas' : 'projeção'}</span><br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(m.pL, 2)}%</b> ${fDelta(m.dL, 1)} · ${fInt(m.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(m.pF, 2)}%</b> ${fDelta(m.dF, 1)} · ${fInt(m.F)}`; };
-  return { html, titulo: UF_NOME[uf], montar(root) {
+  return { html, titulo: UF_NOME[uf], trilha: [['Brasil', ap ? '#/' : '#/p/'], [UF_NOME[uf]]], montar(root) {
     const alvoMapa = root.querySelector('#mapa-mun');
     if (alvoMapa) getJSON(`data/mapa_mun/${uf}.json`, { retries: 1 }).then(geo => {
       const idPorCdi = new Map((B.byUf[uf] || []).map(b => [String(b.cdi), b.cd]));

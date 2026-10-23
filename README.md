@@ -9,7 +9,8 @@ mapa por estado, listas por candidato → estado → município, exportação (P
 - **Painel** (`index.html` + `js/`): lê a branch `dados` (se falhar, lê direto do TSE no nível de estado) e atualiza a cada 30 s.
 - `?demo=1` abre uma **demonstração com dados simulados** (reprodução acelerada de uma apuração fictícia).
 
-## Camada de bairros (estado → município → bairro → local de votação)
+## Camada de bairros (Brasil › estado › município › bairro › local de votação › seções)
+- Navegação: `#/mun/{uf}/{cd}` (mapa e tabela de bairros) → `#/mun/{uf}/{cd}/b/{n:NOME|g:índice}` (locais do bairro/distrito) → `#/mun/{uf}/{cd}/l/{zona-local}` (seções do local). Cada tela tem trilha de navegação, cartões, KPIs e CSV; em `#/p/…` é a mesma navegação no modo projeção.
 - `data/bairros/{uf}/{cd5}.json` — locais de votação (TSE, dados abertos 2026): bairro, endereço, CEP, coordenadas, seções e 1º turno por seção. Gerado por `scripts/build_bairros.mjs` (workflow *Montar base de bairros*); confere exatamente com a base por município.
 - `data/bairros_geo/{cd5}.json` — malha de bairros do IBGE (Censo 2022) e o polígono de cada local; só onde a malha existe (workflow *Malhas de bairros*, `scripts/build_geo_bairros.py`).
 - `data/mapa_mun/{uf}.json` — SVG dos municípios de cada estado (`scripts/build_mapa_mun.py`, dados IBGE via tbrugz/geodata-br).

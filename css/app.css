@@ -145,3 +145,10 @@ b.pos{color:var(--pos)}b.neg{color:var(--neg)}
 tr.clic{cursor:pointer}tr.clic:hover td{background:#f3f1f8}
 .marca-logo{height:34px;width:auto;display:block}
 @media (max-width:560px){.marca-logo{height:28px}}
+
+/* trilha de navegação (Brasil › UF › município › bairro › local) */
+.trilha{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .45rem;margin:-.2rem 0 1rem;font-size:.85rem;color:var(--roxo)}
+.trilha a{color:var(--roxo);text-decoration:none;border-bottom:1px solid transparent}.trilha a:hover{border-color:var(--laranja)}
+.trilha i{font-style:normal;opacity:.5}.trilha [aria-current]{font-weight:700;color:var(--roxo-2)}
+.info-local{line-height:1.6;margin:0}
+.mapa-mun .mun[data-p]{cursor:pointer}

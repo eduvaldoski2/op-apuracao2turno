@@ -96,13 +96,54 @@ export function agregarPoligonos(locais, geo) {
 let geoCache = new Map();
 async function geoBairros(cd) { if (!geoCache.has(cd)) geoCache.set(cd, getJSON(`data/bairros_geo/${cd}.json`, { retries: 0 }).catch(() => null)); return geoCache.get(cd); }
 
-// ---------- tela ----------
-const lastAgg = new Map();
+// ---------- utilidades compartilhadas pelas telas ----------
+const pref = ap => ap ? '#/' : '#/p/';
+const rotaMun = (ap, uf, cd) => `${pref(ap)}mun/${uf}/${cd}`;
+const chaveB = n => 'n:' + encodeURIComponent(n);
+export const somar = locais => { const u = Object.assign(novo(), { locais: locais.length }); for (const l of locais) soma(u, l); return derivar(u); };
+const unidadeR = u => ({ pst: u.pst, st: u.st, ts: u.ts, L: u.L, F: u.F, pL: u.pL, pF: u.pF, dL: u.dL, dF: u.dF, lider: u.lider });
+const placar = (u, titulo, modo, ap, vazio) => { const r = unidadeR(u); return `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false, semLink: true })}<div class="centro"><div class="centro-t">${esc(titulo)}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : vazio}</div></div>${cartaoCand('F', r, { modo, conf: false, semLink: true })}</section>`; };
+const kpisUnidade = u => `<section class="kpis k4">${kpi('Seções apuradas', `${fInt(u.st)}/${fInt(u.ts)}`, null, u.ts ? fNum(u.pst, 0) + '% das seções' : '')}${kpi('Abstenção', u.st ? fNum(u.pAb, 2) + '%' : '–', u.st ? dlt(u.dAb, 2) : null, `${fInt(u.apT)} eleitores no total`)}${kpi('Brancos + nulos', u.st ? fNum(u.pBr + u.pNu, 2) + '%' : '–', null, `${fInt(u.B + u.N)} votos`)}${kpi('Comparecimento', u.st ? fNum(100 - u.pAb, 2) + '%' : '–', null, `${fInt(u.c)} votos apurados`)}</section>`;
+
+const tipUnidade = (titulo, u, rotuloSub) => `<b>${titulo}</b><br><span class="t-s">${rotuloSub ? rotuloSub + ' · ' : ''}${fInt(u.st)}/${fInt(u.ts)} seções apuradas</span>` + (u.st ? `<br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(u.pL, 2)}%</b> ${fDelta(u.dL, 1)} · ${fInt(u.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(u.pF, 2)}%</b> ${fDelta(u.dF, 1)} · ${fInt(u.F)}` : `<br><span class="t-s">1º turno: ${CAND.L.nome.split(' ')[0]} ${fNum(u.p1LT, 1)}% · ${CAND.F.nome.split(' ')[0]} ${fNum(u.p1FT, 1)}%</span>`);
+const corDe = u => u.lider ? corDoPct(u.lider, u.pw) : '#c9c4d8';
+
+function colunas(tipo, ap, uf, cd) {
+  const nomeCol = tipo === 'b' ? { k: 'nome', t: 'Bairro', h: x => `<b>${esc(bonito(x.nome))}</b>${x.st ? '' : ' <small class="agu">aguardando</small>'}`, v: x => x.nome, ini: 'asc' }
+    : { k: 'nome', t: 'Local de votação', h: x => `<b>${esc(bonito(x.nome))}</b><br><small>${esc(bonito(x.bairro))} · ${esc(bonito(x.end))}</small>`, v: x => x.nome, ini: 'asc' };
+  return [nomeCol,
+    ...(tipo === 'b' ? [{ k: 'locais', t: 'Locais', h: x => fInt(x.locais), v: x => x.locais, cls: 'n sec' }] : []),
+    { k: 'pst', t: 'Seções apuradas', h: x => `${fInt(x.st)}/${fInt(x.ts)}`, v: x => x.pst, cls: 'n' },
+    ...['L', 'F'].flatMap(k => [
+      { k: 'v' + k, t: `${cabCand(k)} votos`, h: x => x.st ? `<span class="num">${fInt(x[k])}</span>` : '', v: x => x.st ? x[k] : NaN, cls: 'n' },
+      { k: 'p' + k, t: `${cabCand(k)} %`, h: x => x.st ? `<b>${fNum(x['p' + k], 2)}%</b> ${dlt(x['d' + k])}` : `<span class="t-s">1º t.: ${fNum(x['p1' + k + 'T'], 1)}%</span>`, v: x => x.st ? x['p' + k] : NaN, x: x => x['p' + k], cls: 'n' }]),
+    { k: 'lid', t: 'Vence', h: x => x.lider ? `<span class="chip-l" style="background:${CAND[x.lider].cor}">${CAND[x.lider].nome.split(' ')[0]}</span>` : '', v: x => x.lider ? (x.lider === 'L' ? 1 : 0) : NaN },
+    { k: 'ab', t: 'Abstenção', h: x => x.st ? `${fNum(x.pAb, 1)}% ${dlt(x.dAb)}` : '', v: x => x.pAb, cls: 'n sec' },
+    { k: 'apt', t: 'Eleitores', h: x => fInt(x.apT), v: x => x.apT, cls: 'n sec' }];
+}
+const linhasCsv = (arr, nomeCol) => arr.slice().sort((a, b) => (isNaN(b.pL) - isNaN(a.pL)) || b.pL - a.pL).map(x => [nomeCol(x), x.ts, x.st, x.L, x.pL, x.dL, x.F, x.pF, x.dF, x.pAb, x.apT]);
+const cabCsv = ['Nome', 'Seções totais', 'Seções apuradas', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Abstenção %', 'Eleitores'];
+
+// carrega (com cache) os dados do município e devolve { est, geo, ag, live }
+const cacheMun = new Map();
+async function carregarMun(ctx, uf, cd) {
+  const est = await estatico(uf, cd), geo = await geoBairros(cd);
+  const live = ctx.demo ? demoSecoes(est, ctx.snap.mun?.[uf]?.find(x => x[0] === cd)) : await aoVivo(uf, cd);
+  const ag = agregar(est, live); const r = { est, geo, live, ag }; cacheMun.set(uf + cd, r); return r;
+}
+function iniciar(ctx, uf, cd, root, alvoErro, aoPronto) {
+  const c = cacheMun.get(uf + cd); if (c) aoPronto(c);
+  carregarMun(ctx, uf, cd).then(r => { if (alvoErro.isConnected) aoPronto(r); }).catch(e => { if (alvoErro.isConnected && !c) alvoErro.innerHTML = `<p class="aviso">Os dados deste município não estão disponíveis (${esc(e.message || e)}).</p>`; });
+}
+const infoMun = (ctx, uf, cd) => { const b = (ctx.B.byUf[uf] || []).find(x => x.cd === cd); return b ? { nome: bonito(b.nome), uf, ufn: UF_NOME[uf] || uf.toUpperCase() } : null; };
+const trilhaBase = (ap, mun, uf, cd) => [['Brasil', pref(ap)], [mun.ufn, `${pref(ap)}uf/${uf}`], [mun.nome, rotaMun(ap, uf, cd)]];
+
+// ---------- Município ----------
 export function viewMun(ctx, uf, cd) {
   const { modo, B, V, P, snap } = ctx, ap = modo === 'ap';
-  const b = (B.byUf[uf] || []).find(x => x.cd === cd);
-  if (!b) return { html: `<div class="aviso">Município não encontrado.</div>`, titulo: 'Município', montar() {} };
-  const nomeMun = bonito(b.nome), ufn = UF_NOME[uf] || uf.toUpperCase();
+  const mun = infoMun(ctx, uf, cd);
+  if (!mun) return { html: `<div class="aviso">Município não encontrado.</div>`, titulo: 'Município', montar() {} };
+  const nomeMun = mun.nome;
   const m = (ap ? listaMunicipios(B, V, uf) : projetarMunicipios(B, snap, P, uf)).find(x => x.cd === cd);
   let r;
   if (ap && m?.apurado) r = linhaAp(cd, m);
@@ -112,50 +153,91 @@ export function viewMun(ctx, uf, cd) {
   const kp = ap && m?.apurado ? `<section class="kpis k4">${kpi('Apurado', fNum(r.pst, 1) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}</section>` : '';
   const html = `${cartoes}${kp}
   ${ap ? '' : `<div class="aviso proj">Projeção estatística por município. O detalhamento por bairro abaixo mostra apenas o que já foi apurado nas seções (não é projeção).</div>`}
-  <section class="painel mapa-sec" id="sec-geo" hidden><h2 id="geo-titulo">Mapa por bairro</h2><p class="sub">Cada área soma os locais de votação que ficam dentro dela. <span id="geo-fonte"></span> Os nomes e limites podem diferir do bairro cadastrado pelo TSE na tabela abaixo. Cor = quem lidera; tom mais escuro = maior percentual. Use + / − ou a roda do mouse para aproximar. <span id="geo-prog"></span></p><div class="mapa-grid"><div id="mapa-geo"></div><div class="mapa-lado">${legendaMapa()}<p class="nota">Bairros em cinza ainda não têm seções apuradas.</p></div></div></section>
-  <section class="painel mapa-sec" id="sec-pts"><h2>Mapa por bairro</h2><p class="sub">Não há limites oficiais de bairros para este município; cada ponto é um local de votação (o tamanho é proporcional ao eleitorado) e a cor é a do resultado do <b>bairro</b> a que ele pertence. Cor = quem lidera; tom mais escuro = maior percentual. <span id="mb-estado"></span></p>
+  <section class="painel mapa-sec" id="sec-geo" hidden><h2 id="geo-titulo">Mapa por bairro</h2><p class="sub">Cada área soma os locais de votação que ficam dentro dela. <span id="geo-fonte"></span> Os nomes e limites podem diferir do bairro cadastrado pelo TSE na tabela abaixo. Cor = quem lidera; tom mais escuro = maior percentual. <b>Clique numa área</b> para ver os locais de votação dela; use + / − ou a roda do mouse para aproximar. <span id="geo-prog"></span></p><div class="mapa-grid"><div id="mapa-geo"></div><div class="mapa-lado">${legendaMapa()}<p class="nota">Áreas em cinza ainda não têm seções apuradas.</p></div></div></section>
+  <section class="painel mapa-sec" id="sec-pts"><h2>Mapa por bairro</h2><p class="sub">Não há limites oficiais de bairros para este município; cada ponto é um local de votação (o tamanho é proporcional ao eleitorado) e a cor é a do resultado do <b>bairro</b> a que ele pertence. <b>Clique num ponto</b> para abrir o local de votação. <span id="mb-estado"></span></p>
     <div class="mapa-grid"><div id="mapa-pts"><p class="carregando">Carregando…</p></div><div class="mapa-lado">${legendaMapa()}<p class="nota">Pontos em cinza: bairro ainda sem seções apuradas.</p></div></div></section>
-  <section class="painel"><h2>Bairros de ${esc(nomeMun)}</h2><p class="sub">Bairro conforme o cadastro do TSE para cada local de votação. Percentuais e variações consideram só as seções já apuradas, comparadas com o 1º turno nessas mesmas seções.</p><div id="tab-b"></div></section>
-  <section class="painel"><h2>Locais de votação</h2><p class="sub">Escolas e demais locais onde as urnas ficam. Use a busca para achar um bairro ou local.</p><div id="tab-l"></div></section>`;
-  return { html, titulo: `${nomeMun} (${uf.toUpperCase()})`, montar(root) {
-    const alvo = root.querySelector('#mapa-pts'); let ag = lastAgg.get(uf + cd), modoMapa = 'bairro', mapa = null, mapaGeo = null, geo = null, tb = null, tl = null;
-    const colsB = (tipo) => {
-      const nomeCol = tipo === 'b' ? { k: 'nome', t: 'Bairro', h: x => `<b>${esc(bonito(x.nome))}</b>${x.st ? '' : ' <small class="agu">aguardando</small>'}`, v: x => x.nome, ini: 'asc' } : { k: 'nome', t: 'Local de votação', h: x => `<b>${esc(bonito(x.nome))}</b><br><small>${esc(bonito(x.bairro))} · ${esc(bonito(x.end))}</small>`, v: x => x.nome, ini: 'asc' };
-      return [nomeCol,
-        ...(tipo === 'b' ? [{ k: 'locais', t: 'Locais', h: x => fInt(x.locais), v: x => x.locais, cls: 'n sec' }] : []),
-        { k: 'pst', t: 'Seções apuradas', h: x => `${fInt(x.st)}/${fInt(x.ts)}`, v: x => x.pst, cls: 'n' },
-        ...['L', 'F'].flatMap(k => [
-          { k: 'v' + k, t: `${cabCand(k)} votos`, h: x => x.st ? `<span class="num">${fInt(x[k])}</span>` : '', v: x => x.st ? x[k] : NaN, cls: 'n' },
-          { k: 'p' + k, t: `${cabCand(k)} %`, h: x => x.st ? `<b>${fNum(x['p' + k], 2)}%</b> ${dlt(x['d' + k])}` : `<span class="t-s">1º t.: ${fNum(x['p1' + k + 'T'], 1)}%</span>`, v: x => x.st ? x['p' + k] : NaN, x: x => x['p' + k], cls: 'n' }]),
-        { k: 'lid', t: 'Vence', h: x => x.lider ? `<span class="chip-l" style="background:${CAND[x.lider].cor}">${CAND[x.lider].nome.split(' ')[0]}</span>` : '', v: x => x.lider ? (x.lider === 'L' ? 1 : 0) : NaN },
-        { k: 'ab', t: 'Abstenção', h: x => x.st ? `${fNum(x.pAb, 1)}% ${dlt(x.dAb)}` : '', v: x => x.pAb, cls: 'n sec' },
-        { k: 'apt', t: 'Eleitores', h: x => fInt(x.apT), v: x => x.apT, cls: 'n sec' }];
-    };
-    function desenhar() {
-      if (!ag) return;
-      const { locais, bairros, tot } = ag;
-      const corDe = u => u.lider ? corDoPct(u.lider, u.pw) : '#c9c4d8';
-      const bmap = new Map(bairros.map(x => [x.nome, x]));
-      const dados = {}; for (const l of locais) dados[l.id] = { fill: corDe(modoMapa === 'bairro' ? (bmap.get(l.bairro) || l) : l) };
-      const porId = new Map(locais.map(l => [l.id, l]));
-      const tip = id => { const l = porId.get(id), u = modoMapa === 'bairro' ? bmap.get(l.bairro) : l; const tt = modoMapa === 'bairro' ? `Bairro ${esc(bonito(u.nome))}` : esc(bonito(l.nome));
-        return `<b>${tt}</b><br><span class="t-s">${modoMapa === 'bairro' ? '' : esc(bonito(l.bairro)) + ' · '}${fInt(u.st)}/${fInt(u.ts)} seções apuradas</span>` + (u.st ? `<br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(u.pL, 2)}%</b> ${fDelta(u.dL, 1)} · ${fInt(u.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(u.pF, 2)}%</b> ${fDelta(u.dF, 1)} · ${fInt(u.F)}` : `<br><span class="t-s">1º turno: ${CAND.L.nome.split(' ')[0]} ${fNum(u.p1LT, 1)}% · ${CAND.F.nome.split(' ')[0]} ${fNum(u.p1FT, 1)}%</span>`); };
-      if (!geo) { if (!mapa) mapa = criarMapaPontos(alvo, locais, { tooltip: tip }); mapa.atualizar(dados); }
+  <section class="painel"><h2>Bairros de ${esc(nomeMun)}</h2><p class="sub">Bairro conforme o cadastro do TSE para cada local de votação. <b>Clique num bairro</b> para ver os locais de votação. Percentuais e variações consideram só as seções já apuradas, comparadas com o 1º turno nessas mesmas seções.</p><div id="tab-b"></div></section>`;
+  return { html, titulo: `${nomeMun} (${uf.toUpperCase()})`, trilha: [['Brasil', pref(ap)], [mun.ufn, `${pref(ap)}uf/${uf}`], [nomeMun]], montar(root) {
+    const alvo = root.querySelector('#mapa-pts'); let mapa = null, mapaGeo = null;
+    function desenhar({ geo, ag }) {
+      const { locais, bairros, tot } = ag, bmap = new Map(bairros.map(x => [x.nome, x])), porId = new Map(locais.map(l => [l.id, l]));
+      if (!geo) {
+        const dados = {}; for (const l of locais) dados[l.id] = { fill: corDe(bmap.get(l.bairro) || l) };
+        if (!mapa) mapa = criarMapaPontos(alvo, locais, { tooltip: id => { const l = porId.get(id), u = bmap.get(l.bairro); return tipUnidade(`${esc(bonito(l.nome))}`, u, `Bairro ${esc(bonito(u.nome))}`); }, onClick: id => ctx.ir(`${rotaMun(ap, uf, cd)}/l/${id}`) });
+        mapa.atualizar(dados);
+      }
       root.querySelector('#sec-pts').hidden = !!geo;
-      if (geo) { const por = agregarPoligonos(locais, geo); root.querySelector('#sec-geo').hidden = false; root.querySelector('#geo-fonte').textContent = 'Limites: ' + (geo.fonte || 'IBGE (Censo 2022)') + '.'; if (geo.rotulo === 'distrito') root.querySelector('#geo-titulo').textContent = 'Mapa por distrito';  if (!mapaGeo) mapaGeo = criarMapaBairros(root.querySelector('#mapa-geo'), geo, { nome: bonito, tooltip: i => { const u = por[i]; const f = geo.f[i]; if (!u) return `<b>${esc(bonito(f.n))}</b><br><span class="t-s">sem local de votação dentro do limite</span>`; return `<b>${esc(bonito(f.n))}</b><br><span class="t-s">${fInt(u.st)}/${fInt(u.ts)} seções apuradas · ${fInt(u.locais)} locais</span>` + (u.st ? `<br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(u.pL, 2)}%</b> ${fDelta(u.dL, 1)} · ${fInt(u.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(u.pF, 2)}%</b> ${fDelta(u.dF, 1)} · ${fInt(u.F)}` : `<br><span class="t-s">1º turno: ${CAND.L.nome.split(' ')[0]} ${fNum(u.p1LT, 1)}% · ${CAND.F.nome.split(' ')[0]} ${fNum(u.p1FT, 1)}%</span>`); } }); const dg = {}; for (const [i, u] of Object.entries(por)) dg[i] = u.st ? { k: u.lider, pw: u.pw, pL: u.pL, pF: u.pF, dL: u.dL, dF: u.dF } : {}; mapaGeo.atualizar(dg); }
-      const prog = tot.st ? `${fNum(tot.pst, 1)}% das seções do município já chegaram (${fInt(tot.st)} de ${fInt(tot.ts)}).` : 'Os resultados aparecem aqui conforme as seções forem totalizadas.'; root.querySelector('#mb-estado').textContent = prog; const pg = root.querySelector('#geo-prog'); if (pg) pg.textContent = prog;
-      tb = tabela(root.querySelector('#tab-b'), { cols: colsB('b'), rows: bairros, sort: tot.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, s) => x.nome.toLowerCase().includes(s), limite: 500 });
-      tl = tabela(root.querySelector('#tab-l'), { cols: colsB('l'), rows: locais, sort: 'apt', dir: 'desc', filtro: (x, s) => (x.nome + ' ' + x.bairro + ' ' + x.end).toLowerCase().includes(s), limite: 200 });
-      ctx.csv = () => ({ nome: `${uf}_${cd}_bairros_${ap ? 'apuracao' : 'projecao'}`, cab: ['Bairro', 'Locais', 'Seções totais', 'Seções apuradas', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Abstenção %', 'Eleitores'], linhas: bairros.slice().sort((a, b) => (isNaN(b.pL) - isNaN(a.pL)) || b.pL - a.pL).map(x => [bonito(x.nome), x.locais, x.ts, x.st, x.L, x.pL, x.dL, x.F, x.pF, x.dF, x.pAb, x.apT]) });
+      if (geo) {
+        const por = agregarPoligonos(locais, geo); root.querySelector('#sec-geo').hidden = false; root.querySelector('#geo-fonte').textContent = 'Limites: ' + (geo.fonte || 'IBGE (Censo 2022)') + '.'; if (geo.rotulo === 'distrito') root.querySelector('#geo-titulo').textContent = 'Mapa por distrito';
+        if (!mapaGeo) mapaGeo = criarMapaBairros(root.querySelector('#mapa-geo'), geo, { nome: bonito, onClick: i => { if (por[i]) ctx.ir(`${rotaMun(ap, uf, cd)}/b/g:${i}`); }, tooltip: i => { const u = por[i], f = geo.f[i]; return u ? tipUnidade(esc(bonito(f.n)), u, `${fInt(u.locais)} locais`) : `<b>${esc(bonito(f.n))}</b><br><span class="t-s">sem local de votação dentro do limite</span>`; } });
+        const dg = {}; for (const [i, u] of Object.entries(por)) dg[i] = u.st ? { k: u.lider, pw: u.pw, pL: u.pL, pF: u.pF, dL: u.dL, dF: u.dF } : {}; mapaGeo.atualizar(dg);
+      }
+      const prog = tot.st ? `${fNum(tot.pst, 1)}% das seções do município já chegaram (${fInt(tot.st)} de ${fInt(tot.ts)}).` : 'Os resultados aparecem aqui conforme as seções forem totalizadas.';
+      root.querySelector('#mb-estado').textContent = prog; const pg = root.querySelector('#geo-prog'); if (pg) pg.textContent = prog;
+      tabela(root.querySelector('#tab-b'), { cols: colunas('b', ap, uf, cd), rows: bairros, onRow: x => ctx.ir(`${rotaMun(ap, uf, cd)}/b/${chaveB(x.nome)}`), sort: tot.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, q) => x.nome.toLowerCase().includes(q), limite: 500 });
+      ctx.csv = () => ({ nome: `${uf}_${cd}_bairros_${ap ? 'apuracao' : 'projecao'}`, cab: ['Bairro', ...cabCsv.slice(1)].map((c, i) => i === 0 ? 'Bairro' : c), linhas: linhasCsv(bairros, x => bonito(x.nome)) });
     }
-    if (ag) desenhar();
-    (async () => {
-      try {
-        const est = await estatico(uf, cd); geo = await geoBairros(cd);
-        const live = ctx.demo ? demoSecoes(est, snap.mun?.[uf]?.find(x => x[0] === cd)) : await aoVivo(uf, cd);
-        ag = agregar(est, live); lastAgg.set(uf + cd, ag);
-        if (alvo.isConnected) { mapa = null; desenhar(); }
-      } catch (e) { if (alvo.isConnected) alvo.innerHTML = `<p class="aviso">Os dados de bairros deste município não estão disponíveis (${esc(e.message || e)}).</p>`; }
-    })();
+    iniciar(ctx, uf, cd, root, alvo, desenhar);
   } };
 }
+
+// ---------- Bairro (ou área da malha) → locais de votação ----------
+export function viewBairro(ctx, uf, cd, chave) {
+  const ap = ctx.modo === 'ap', mun = infoMun(ctx, uf, cd);
+  if (!mun) return { html: `<div class="aviso">Município não encontrado.</div>`, titulo: 'Bairro', montar() {} };
+  const geoSel = chave.startsWith('g:'), valor = geoSel ? +chave.slice(2) : decodeURIComponent(chave.slice(2));
+  const html = `<div id="b-corpo"><p class="carregando">Carregando…</p></div>`;
+  return { html, titulo: 'Bairro', trilha: trilhaBase(ap, mun, uf, cd), montar(root) {
+    const corpo = root.querySelector('#b-corpo');
+    iniciar(ctx, uf, cd, root, corpo, ({ geo, ag }) => {
+      const locais = ag.locais.filter(l => geoSel ? geo?.loc[l.id] === valor : l.bairro === valor);
+      const nome = geoSel ? bonito(geo?.f[valor]?.n || 'Área') : bonito(valor), u = somar(locais), rotulo = geoSel && geo?.rotulo === 'distrito' ? 'Distrito' : 'Bairro';
+      document.querySelector('.tela-topo h1').textContent = `${nome} — ${mun.nome} (${uf.toUpperCase()})`;
+      const nav = document.querySelector('.trilha'); if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ap, mun, uf, cd), [`${rotulo}: ${nome}`]]);
+      if (!locais.length) { corpo.innerHTML = `<div class="aviso">Nenhum local de votação encontrado nesta área.</div>`; return; }
+      corpo.innerHTML = `${placar(u, `${nome} · ${mun.nome}`, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(u)}
+        <section class="painel mapa-sec"><h2>Locais de votação de ${esc(nome)}</h2><p class="sub">Cada ponto é um local de votação (tamanho proporcional ao eleitorado); a cor é o resultado do local. <b>Clique num ponto</b> ou numa linha da tabela para abrir o local.</p><div class="mapa-grid"><div id="mapa-b"></div><div class="mapa-lado">${legendaMapa()}<p class="nota">Pontos em cinza: local ainda sem seções apuradas.</p></div></div></section>
+        <section class="painel"><h2>Locais de votação (${fInt(locais.length)})</h2><div id="tab-l"></div></section>`;
+      const porId = new Map(locais.map(l => [l.id, l])), dados = {}; for (const l of locais) dados[l.id] = { fill: corDe(l) };
+      const ir = id => ctx.ir(`${rotaMun(ap, uf, cd)}/l/${id}`);
+      criarMapaPontos(corpo.querySelector('#mapa-b'), locais, { tooltip: id => { const l = porId.get(id); return tipUnidade(esc(bonito(l.nome)), l, esc(bonito(l.end))); }, onClick: ir }).atualizar(dados);
+      tabela(corpo.querySelector('#tab-l'), { cols: colunas('l', ap, uf, cd), rows: locais, onRow: x => ir(x.id), sort: u.st ? 'pL' : 'apt', dir: 'desc', filtro: (x, q) => (x.nome + ' ' + x.end).toLowerCase().includes(q), limite: 300 });
+      ctx.csv = () => ({ nome: `${uf}_${cd}_${nome}_locais_${ap ? 'apuracao' : 'projecao'}`.toLowerCase().replace(/[^a-z0-9_]+/g, '-'), cab: ['Local de votação', ...cabCsv.slice(1)], linhas: linhasCsv(locais, x => bonito(x.nome)) });
+    });
+  } };
+}
+
+// ---------- Local de votação → seções ----------
+export function viewLocal(ctx, uf, cd, id) {
+  const ap = ctx.modo === 'ap', mun = infoMun(ctx, uf, cd);
+  if (!mun) return { html: `<div class="aviso">Município não encontrado.</div>`, titulo: 'Local de votação', montar() {} };
+  return { html: `<div id="l-corpo"><p class="carregando">Carregando…</p></div>`, titulo: 'Local de votação', trilha: trilhaBase(ap, mun, uf, cd), montar(root) {
+    const corpo = root.querySelector('#l-corpo');
+    iniciar(ctx, uf, cd, root, corpo, ({ est, ag, live }) => {
+      const l = ag.locais.find(x => x.id === id), bruto = est.l.find(x => x[0] + '-' + x[1] === id);
+      if (!l || !bruto) { corpo.innerHTML = `<div class="aviso">Local de votação não encontrado.</div>`; return; }
+      const nome = bonito(l.nome);
+      document.querySelector('.tela-topo h1').textContent = nome;
+      const bairroKey = chaveB(l.bairro), nav = document.querySelector('.trilha');
+      if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ap, mun, uf, cd), [`Bairro: ${bonito(l.bairro)}`, `${rotaMun(ap, uf, cd)}/b/${bairroKey}`], [`Local: ${nome}`]]);
+      const secs = bruto[14].map(s => { const x = live.s[l.z + '-' + s[0]], o = s[4], vv1 = s[2] + s[3] + o, c1 = vv1 + s[5] + s[6];
+        const r = { n: s[0], ap: s[1], ok: !!x, p1L: pc(s[2], vv1), p1F: pc(s[3], vv1), L: x ? x[0] : NaN, F: x ? x[1] : NaN, B: x ? x[3] : NaN, N: x ? x[4] : NaN };
+        if (x) { const vv = x[0] + x[1] + x[2], c = vv + x[3] + x[4]; r.pL = pc(x[0], vv); r.pF = pc(x[1], vv); r.dL = r.pL - r.p1L; r.dF = r.pF - r.p1F; r.pAb = pc(s[1] - c, s[1]); r.lider = x[0] >= x[1] ? 'L' : 'F'; } else { r.pL = r.pF = r.dL = r.dF = r.pAb = NaN; r.lider = null; }
+        return r; });
+      corpo.innerHTML = `${placar(l, nome, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(l)}
+        <section class="painel"><h2>Sobre o local</h2><p class="info-local"><b>${esc(bonito(l.end))}</b><br>Bairro: <a href="#${rotaMun(ap, uf, cd).slice(1)}/b/${bairroKey}">${esc(bonito(l.bairro))}</a> · CEP ${esc(l.cep || '–')} · zona eleitoral ${fInt(l.z)} · ${fInt(l.apT)} eleitores · ${fInt(l.ts)} seções${l.lat ? ` · <a href="https://www.google.com/maps?q=${l.lat},${l.lon}" target="_blank" rel="noopener">ver no mapa ↗</a>` : ''}</p></section>
+        <section class="painel"><h2>Seções (${fInt(secs.length)})</h2><p class="sub">Resultado de cada urna deste local. As seções agregadas votam na urna da seção principal. A variação compara com o 1º turno na mesma seção.</p><div id="tab-s"></div></section>`;
+      tabela(corpo.querySelector('#tab-s'), { cols: [
+        { k: 'n', t: 'Seção', h: s => `<b>${fInt(s.n)}</b>${s.ok ? '' : ' <small class="agu">aguardando</small>'}`, v: s => s.n, ini: 'asc' },
+        { k: 'ap', t: 'Eleitores', h: s => fInt(s.ap), v: s => s.ap, cls: 'n sec' },
+        ...['L', 'F'].flatMap(k => [
+          { k: 'v' + k, t: `${cabCand(k)} votos`, h: s => s.ok ? `<span class="num">${fInt(s[k])}</span>` : '', v: s => s[k], cls: 'n' },
+          { k: 'p' + k, t: `${cabCand(k)} %`, h: s => s.ok ? `<b>${fNum(s['p' + k], 2)}%</b> ${dlt(s['d' + k])}` : `<span class="t-s">1º t.: ${fNum(s['p1' + k], 1)}%</span>`, v: s => s['p' + k], x: s => s['p' + k], cls: 'n' }]),
+        { k: 'lid', t: 'Vence', h: s => s.lider ? `<span class="chip-l" style="background:${CAND[s.lider].cor}">${CAND[s.lider].nome.split(' ')[0]}</span>` : '', v: s => s.lider ? (s.lider === 'L' ? 1 : 0) : NaN },
+        { k: 'B', t: 'Brancos', h: s => s.ok ? fInt(s.B) : '', v: s => s.B, cls: 'n sec' }, { k: 'N', t: 'Nulos', h: s => s.ok ? fInt(s.N) : '', v: s => s.N, cls: 'n sec' },
+        { k: 'ab', t: 'Abstenção', h: s => s.ok ? fNum(s.pAb, 1) + '%' : '', v: s => s.pAb, cls: 'n sec' }], rows: secs, sort: 'n', dir: 'asc' });
+      ctx.csv = () => ({ nome: `${uf}_${cd}_local_${id}_secoes`, cab: ['Seção', 'Eleitores', 'Lula votos', 'Lula %', 'Flávio votos', 'Flávio %', 'Brancos', 'Nulos', 'Abstenção %'], linhas: secs.map(s => [s.n, s.ap, s.L, s.pL, s.F, s.pF, s.B, s.N, s.pAb]) });
+    });
+  } };
+}
+export const trilhaHtml = t => t.map(([rot, href], i) => href && i < t.length - 1 ? `<a href="${href}">${esc(rot)}</a>` : `<span aria-current="page">${esc(rot)}</span>`).join('<i>›</i>');

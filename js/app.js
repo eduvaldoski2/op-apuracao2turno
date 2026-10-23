@@ -3,7 +3,7 @@ import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } f
 import { calcular } from './model.js';
 import { projetar, PARAMS } from './proj.js';
 import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js';
-import { viewMun } from './bairros.js';
+import { viewMun, viewBairro, viewLocal, trilhaHtml } from './bairros.js';
 import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js';
 import { CAND, fNum, fInt, horaBR } from './util.js';
 import { esc } from './ui.js';
@@ -28,7 +28,11 @@ function rota() {
   let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; if (p[0] === 'projecao') p.shift(); else p.shift(); }
   if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
   if (p[0] === 'cand' && CAND[p[1]]) return { modo, tela: 'cand', k: p[1] };
-  if (p[0] === 'mun' && p[1] && p[2]) return { modo, tela: 'mun', uf: p[1], cd: p[2] };
+  if (p[0] === 'mun' && p[1] && p[2]) {
+    if (p[3] === 'b' && p[4]) return { modo, tela: 'bairro', uf: p[1], cd: p[2], chave: p[4] };
+    if (p[3] === 'l' && p[4]) return { modo, tela: 'local', uf: p[1], cd: p[2], id: decodeURIComponent(p[4]) };
+    return { modo, tela: 'mun', uf: p[1], cd: p[2] };
+  }
   if (p[0] === 'uf' && p[1]) return { modo, tela: 'uf', uf: p[1], c: q.get('c') };
   return { modo, tela: 'geral' };
 }
@@ -45,6 +49,8 @@ function render(manterScroll = false) {
   if (r.tela === 'geral') v = viewGeral(ctx);
   else if (r.tela === 'cand') v = viewCand(ctx, r.k);
   else if (r.tela === 'mun') v = viewMun(ctx, r.uf, r.cd);
+  else if (r.tela === 'bairro') v = viewBairro(ctx, r.uf, r.cd, r.chave);
+  else if (r.tela === 'local') v = viewLocal(ctx, r.uf, r.cd, r.id);
   else { if (S.fonte === 'tse-direto' && !S.snap.mun?.[r.uf]) { municipiosDireto(r.uf, S.snap).then(() => { S.Psig = ''; S.Vsig = ''; render(true); }).catch(() => {}); } v = viewUf(ctx, r.uf, r.c); }
   ultimoCtx = ctx;
   pintar(v, r, ctx);
@@ -55,7 +61,7 @@ function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
   const sub = r.tela === 'geral' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
   const exp = `<div class="exp sem-export" role="group" aria-label="Baixar"><span>Baixar:</span><button data-exp="pdf">PDF</button><button data-exp="png">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button></div>`;
-  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1>${sub}${exp}</div><div id="vista">${v.html}</div></div>`;
+  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1>${sub}${exp}</div>${v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : ''}<div id="vista">${v.html}</div></div>`;
   v.montar(root);
   root.querySelector('[data-voltar]')?.addEventListener('click', e => { e.preventDefault(); if (history.length > 1) history.back(); else ir(r.modo === 'pr' ? '#/projecao' : '#/'); });
   root.querySelectorAll('[data-ref]').forEach(b => b.addEventListener('click', () => { S.refMode = b.dataset.ref; render(true); }));
@@ -106,7 +112,7 @@ async function ciclo() { try { aplicar(await lerAoVivo()); } catch (e) { console
 
 // ---------- exportação ----------
 async function exportar(tipo, btn) {
-  const r = S.vRota, titulo = S.vTitulo || 'Oficina Política';
+  const r = S.vRota, titulo = document.querySelector('.tela-topo h1')?.textContent || S.vTitulo || 'Oficina Política';
   const sub = `${r.modo === 'pr' ? 'Projeção' : 'Apuração'} 2º turno 2026 · ${S.snap ? 'TSE ' + String(S.snap.hg).slice(0, 5) + ' · ' + fNum(100 * S.snap.br.st / S.snap.br.ts, 1) + '% apurado' : ''}${S.simulado ? ' · DADOS SIMULADOS' : ''}`;
   const nome = `oficina-politica_${slug(titulo)}${S.snap ? '_' + String(S.snap.hg).slice(0, 5).replace(':', 'h') : ''}`;
   const txt = btn.textContent; btn.disabled = true; btn.textContent = '…';

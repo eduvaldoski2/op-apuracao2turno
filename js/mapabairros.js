@@ -4,7 +4,7 @@ import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js';
 const W = 720, num = v => (v == null || isNaN(v)) ? '–' : fNum(v, 1), dl = v => (v == null || isNaN(v)) ? '' : fDelta(v, 1, '');
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-export function criarMapaBairros(el, geo, { tooltip, nome = s => s } = {}) {
+export function criarMapaBairros(el, geo, { tooltip, onClick, nome = s => s } = {}) {
   let la0 = 90, la1 = -90, lo0 = 180, lo1 = -180;
   for (const f of geo.f) for (const p of f.p) { const r = p[0]; for (let i = 0; i < r.length; i += 2) { if (r[i] < lo0) lo0 = r[i]; if (r[i] > lo1) lo1 = r[i]; if (r[i + 1] < la0) la0 = r[i + 1]; if (r[i + 1] > la1) la1 = r[i + 1]; } }
   const cl = Math.cos((la0 + la1) / 2 * Math.PI / 180), gw = (lo1 - lo0) * cl, gh = la1 - la0, k = Math.min(W / gw, 620 / gh), vw = Math.round(gw * k) + 10, vh = Math.round(gh * k) + 10;
@@ -45,7 +45,7 @@ export function criarMapaBairros(el, geo, { tooltip, nome = s => s } = {}) {
     tip.innerHTML = tooltip(+m); tip.hidden = false; const r = el.getBoundingClientRect(); const x = ev.clientX - r.left + 14, y = ev.clientY - r.top + 14;
     tip.style.left = Math.max(0, Math.min(x, r.width - tip.offsetWidth - 4)) + 'px'; tip.style.top = Math.max(0, Math.min(y, r.height - tip.offsetHeight - 4)) + 'px';
   });
-  svg.addEventListener('pointerup', () => { arrasto = null; });
+  svg.addEventListener('pointerup', ev => { if (!moveu) { const m = alvo(ev); if (m != null && onClick) onClick(+m); } arrasto = null; });
   svg.addEventListener('pointerleave', () => { tip.hidden = true; arrasto = null; });
   const zoom = (f, px, py) => {
     const nz = Math.max(1, Math.min(24, z * f)); if (nz === z) return;
