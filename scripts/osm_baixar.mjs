@@ -2,22 +2,22 @@
 //   node scripts/osm_baixar.mjs lista.json saida_dir
 import fs from 'node:fs';
 import osmtogeojson from 'osmtogeojson';
-const [listaf, saida] = process.argv.slice(2);
-const lista = JSON.parse(fs.readFileSync(listaf, 'utf8')); fs.mkdirSync(saida, { recursive: true });
+const [listaf, saida, fatia = '0', de = '1'] = process.argv.slice(2);
+const lista = JSON.parse(fs.readFileSync(listaf, 'utf8')).filter((_, i) => i % +de === +fatia); fs.mkdirSync(saida, { recursive: true });
 const UA = 'oficina-politica-apuracao/1.0 (https://github.com/eduvaldoski2/op-apuracao2turno)';
 const HOSTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter'];
 const dorme = ms => new Promise(r => setTimeout(r, ms));
-const consulta = ibge => `[out:json][timeout:180];
+const consulta = ibge => `[out:json][timeout:90];
 rel["boundary"="administrative"]["admin_level"="8"]["IBGE:GEOCODIGO"="${ibge}"]->.m; .m map_to_area->.a;
 ( rel(area.a)["boundary"="administrative"]["admin_level"~"^(9|10|11|12)$"]; rel(area.a)["type"="boundary"]["place"~"^(suburb|neighbourhood|quarter)$"]; );
 out geom;`;
 let feitos = 0, vazios = 0, erros = 0;
 for (const m of lista) {
   let ok = false;
-  for (let t = 0; t < 4 && !ok; t++) {
+  for (let t = 0; t < 3 && !ok; t++) {
     const h = HOSTS[t % HOSTS.length];
     try {
-      const r = await fetch(h, { method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded', Accept: '*/*' }, body: 'data=' + encodeURIComponent(consulta(m.ibge)), signal: AbortSignal.timeout(200000) });
+      const r = await fetch(h, { method: 'POST', headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded', Accept: '*/*' }, body: 'data=' + encodeURIComponent(consulta(m.ibge)), signal: AbortSignal.timeout(100000) });
       if (r.status === 429 || r.status >= 500) { await dorme(15000 * (t + 1)); continue; }
       if (!r.ok) throw new Error(r.status);
       const j = await r.json(); const n = (j.elements || []).length;

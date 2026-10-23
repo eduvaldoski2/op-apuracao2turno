@@ -10,7 +10,10 @@ permissions:
 jobs:
   osm:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 100
+    strategy:
+      fail-fast: false
+      matrix: { fatia: [0, 1, 2, 3, 4, 5] }
     steps:
       - uses: actions/checkout@v4
         with: { ref: main }
@@ -33,11 +36,12 @@ jobs:
           P
         env: { N: '${{ github.event.inputs.quantos || 350 }}' }
       - name: Baixar do OpenStreetMap
-        run: node scripts/osm_baixar.mjs /tmp/lista.json /tmp/osm 2>&1 | tee osm.log | tail -5
+        run: node scripts/osm_baixar.mjs /tmp/lista.json /tmp/osm ${{ matrix.fatia }} 6 2>&1 | tee osm.log | tail -5
       - name: Montar malhas
         run: python3 scripts/build_geo_osm.py /tmp/osm data/bairros data/bairros_geo 0.6 2>&1 | tee -a osm.log | tail -40
       - name: Publicar
         run: |
           git config user.name coletor; git config user.email coletor@users.noreply.github.com
-          git add data/bairros_geo && git commit -q -m "Malhas de bairros do OpenStreetMap (municípios sem malha do IBGE)" && git pull -q --rebase origin main && git push || echo "nada a publicar" >> osm.log
-          git checkout --orphan sonda-osm; git rm -rf -q . 2>/dev/null; git add -f osm.log; git commit -q -m log; git push -f origin HEAD:sonda-osm
+          git add data/bairros_geo && git commit -q -m "Malhas de bairros do OpenStreetMap (fatia ${{ matrix.fatia }})" || echo "nada a publicar" >> osm.log
+          for t in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q && break; sleep $((RANDOM % 10 + 3)); done
+          git checkout --orphan sonda-osm; git rm -rf -q . 2>/dev/null; git add -f osm.log; git commit -q -m log; git push -f origin HEAD:sonda-osm-${{ matrix.fatia }}
