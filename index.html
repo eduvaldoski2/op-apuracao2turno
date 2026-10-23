@@ -19,6 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://oficinapolitica.com.br/img/og.jpg">
 <meta name="theme-color" content="#3E347E">
+<link rel="stylesheet" href="css/consent.css">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="alternate icon" type="image/png" href="img/favicon.png">
 <link rel="preload" href="fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -156,10 +157,17 @@ footer.rodape p{margin:4px 0}
         var ok = document.getElementById('ok');
         document.getElementById('ok-t').textContent = 'Obrigado, ' + nome.split(' ')[0] + '. Avisaremos você por e-mail e WhatsApp assim que as ferramentas estiverem no ar.';
         f.hidden = true; ok.hidden = false; ok.focus();
+        try { document.dispatchEvent(new CustomEvent('op:lead')); } catch (e) {}
       })
       .catch(function () { bt.disabled = false; bt.textContent = 'Quero ser o primeiro a conhecer'; msg.textContent = 'Não foi possível enviar agora. Tente de novo em instantes.'; });
   });
 })();
+</script>
+<script type="module">
+// Aviso de cookies (só aparece se o Google Analytics ou anúncios estiverem configurados em js/config.js)
+import { iniciarConsentimento, conversaoLead } from './js/consentimento.js';
+document.addEventListener('op:lead', conversaoLead);
+iniciarConsentimento();
 </script>
 </body>
 </html>
