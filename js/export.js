@@ -17,6 +17,7 @@ async function capturar(el, titulo, sub) {
     onclone: doc => {
       doc.querySelectorAll('.sem-export').forEach(n => n.remove());
       doc.querySelectorAll('.mapa-tip,.g-tip').forEach(n => n.remove());
+      doc.querySelectorAll('.tela-topo').forEach(n => n.remove());
       doc.querySelectorAll('details').forEach(d => { d.open = true; });
       const alvo = doc.querySelector('[data-export-raiz]') || doc.body;
       const cab = doc.createElement('div');
