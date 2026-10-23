@@ -9,6 +9,12 @@ mapa por estado, listas por candidato → estado → município, exportação (P
 - **Painel** (`index.html` + `js/`): lê a branch `dados` (se falhar, lê direto do TSE no nível de estado) e atualiza a cada 30 s.
 - `?demo=1` abre uma **demonstração com dados simulados** (reprodução acelerada de uma apuração fictícia).
 
+## Camada de bairros (estado → município → bairro → local de votação)
+- `data/bairros/{uf}/{cd5}.json` — locais de votação (TSE, dados abertos 2026): bairro, endereço, CEP, coordenadas, seções e 1º turno por seção. Gerado por `scripts/build_bairros.mjs` (workflow *Montar base de bairros*); confere exatamente com a base por município.
+- `data/bairros_geo/{cd5}.json` — malha de bairros do IBGE (Censo 2022) e o polígono de cada local; só onde a malha existe (workflow *Malhas de bairros*, `scripts/build_geo_bairros.py`).
+- `data/mapa_mun/{uf}.json` — SVG dos municípios de cada estado (`scripts/build_mapa_mun.py`, dados IBGE via tbrugz/geodata-br).
+- **Coleta por seção** (`scripts/secoes.mjs` + `scripts/bu.mjs`, workflow *Coletor por seção*): decodifica o boletim de urna (BER/ASN.1) das seções totalizadas e publica `live/bairros/{uf}/{cd5}.json` nas branches `dados-b1…b5` (grupos de estados, `CONFIG.gruposBairros`). Ensaio: rodar o workflow com `pleito=3220 ele=6257 prefixo=ensaio-b forcar=sim`.
+
 ## Comandos
 ```
 npm test                                   # testes do modelo + backtest sintético
