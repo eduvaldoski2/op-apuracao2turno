@@ -9,8 +9,7 @@ export function ler(buf, i = 0, fim = buf.length) {
     if (len & 0x80) { const n = len & 0x7f; len = 0; for (let k = 0; k < n; k++) len = len * 256 + buf[i++]; }
     const ini = i, f = Math.min(ini + len, fim);
     const no = { cls, tag, cons, ini, fim: f };
-    if (cons) no.f = ler(buf, ini, f);
-    else { no.v = buf.subarray(ini, f); if (cls === 0 && tag === 4 && f - ini > 4) { try { const sub = ler(buf, ini, f); if (sub.length && sub.every(x => x.fim <= f) && sub[sub.length - 1].fim === f) { no.cons = true; no.f = sub; } } catch { /* octet string comum */ } } }
+    if (cons) no.f = ler(buf, ini, f); else no.v = buf.subarray(ini, f);
     nos.push(no); i = f;
   }
   return nos;
