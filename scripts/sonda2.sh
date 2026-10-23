@@ -2,7 +2,7 @@
 mkdir -p out; cd out
 t() { echo "=== $1"; }
 t locais-tse
-curl -sS -f -L -m 300 -o locais.zip https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip; ls -la locais.zip; unzip -Z1 locais.zip
+curl -sS -f -L --http1.1 --retry 4 --retry-all-errors -m 600 -o locais.zip https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2026.zip; ls -la locais.zip; unzip -Z1 locais.zip
 F=$(unzip -Z1 locais.zip | grep -i 'BRASIL.csv' | head -1); unzip -p locais.zip "$F" | head -4 | iconv -f latin1 -t utf8
 echo "-- linhas SP zona 1 secao 1 / total linhas"
 unzip -p locais.zip "$F" | iconv -f latin1 -t utf8 | awk -F';' 'NR==1{for(i=1;i<=NF;i++)h[$i]=i} NR>1 && $(h["\"SG_UF\""])=="\"SP\"" && $(h["\"CD_MUNICIPIO\""])=="\"71072\"" && $(h["\"NR_ZONA\""])=="\"1\"" && $(h["\"NR_SECAO\""])=="\"1\"" {print}' | head -5

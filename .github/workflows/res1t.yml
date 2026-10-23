@@ -1,0 +1,22 @@
+name: Resultado oficial do 1º turno por candidato (BR, UF, município)
+on:
+  workflow_dispatch:
+  push:
+    paths: ['scripts/res1t.mjs', '.github/workflows/res1t.yml']
+permissions:
+  contents: write
+jobs:
+  res:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: node scripts/res1t.mjs data/res_1t.json data/base_1t.json 2>&1 | tee res1t.log
+      - name: Publicar
+        run: |
+          git config user.name coletor; git config user.email coletor@users.noreply.github.com
+          git add data/res_1t.json && git commit -q -m "Resultado oficial do 1º turno por candidato (TSE)" && git pull -q --rebase origin main && git push || echo FALHA >> res1t.log
+          git checkout --orphan sonda-r; git rm -rf -q . 2>/dev/null; git add -f res1t.log; git commit -q -m log; git push -f origin HEAD:sonda-res1t

@@ -1,7 +1,7 @@
 // Leitura dos arquivos estáticos de divulgação do TSE (navegador e Node).
 // O esquema do 2º turno (eleição 6258) foi mapeado a partir do 1º turno (6257); os leitores são tolerantes
 // (procuram os campos por nome em qualquer nível) e o coletor registra um diagnóstico quando algo não bate.
-import { cnt, pct, UF_IDS } from './util.js?v=5b1061cc';
+import { cnt, pct, UF_IDS } from './util.js?v=cd1e5713';
 
 export const TSE = {
   base: 'https://resultados.tse.jus.br/oficial',
@@ -55,7 +55,7 @@ function acha(node, pred, prof = 0) {
   for (const k in node) { const r = acha(node[k], pred, prof + 1); if (r) return r; }
   return null;
 }
-function candidatos(node, out = [], prof = 0) {
+export function candidatos(node, out = [], prof = 0) {
   if (!node || typeof node !== 'object' || prof > 10) return out;
   if (!Array.isArray(node) && node.vap != null && node.n != null) out.push(node);
   for (const k in node) if (node[k] && typeof node[k] === 'object') candidatos(node[k], out, prof + 1);
