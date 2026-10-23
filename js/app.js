@@ -1,12 +1,12 @@
-import { CONFIG } from './config.js';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js';
-import { calcular } from './model.js';
-import { projetar, PARAMS } from './proj.js';
-import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js';
-import { viewMun, viewBairro, viewLocal, trilhaHtml } from './bairros.js';
-import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js';
-import { CAND, fNum, fInt, horaBR } from './util.js';
-import { esc } from './ui.js';
+import { CONFIG } from './config.js?v=7fc178b3';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=7fc178b3';
+import { calcular } from './model.js?v=7fc178b3';
+import { projetar, PARAMS } from './proj.js?v=7fc178b3';
+import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=7fc178b3';
+import { viewMun, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=7fc178b3';
+import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=7fc178b3';
+import { CAND, fNum, fInt, horaBR } from './util.js?v=7fc178b3';
+import { esc } from './ui.js?v=7fc178b3';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };

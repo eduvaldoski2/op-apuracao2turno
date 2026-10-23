@@ -27,3 +27,6 @@ python3 -m http.server 8000                # abre http://localhost:8000/?fonte=d
 ## Créditos
 Dados: TSE. Mapa: [@svg-maps/brazil](https://github.com/VictorCazanave/svg-maps) (CC BY 4.0). html2canvas e jsPDF (MIT) em `vendor/`.
 Iniciativa independente, sem vínculo com o TSE.
+
+## Cache do navegador
+`node scripts/versao.mjs` carimba os imports com `?v=<hash>` (roda sozinho no pré-commit), para que quem já abriu o painel receba sempre a versão nova.

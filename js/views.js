@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js';
-import { listaMunicipios, rankingUfs } from './model.js';
-import { projetarMunicipios } from './proj.js';
-import { esc, dlt, grw, tabela } from './ui.js';
-import { graficoPlacar } from './charts.js';
-import { criarMapa, legendaMapa } from './map.js';
-import { criarMapaMun } from './mapamun.js';
-import { getJSON } from './tse.js';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=7fc178b3';
+import { listaMunicipios, rankingUfs } from './model.js?v=7fc178b3';
+import { projetarMunicipios } from './proj.js?v=7fc178b3';
+import { esc, dlt, grw, tabela } from './ui.js?v=7fc178b3';
+import { graficoPlacar } from './charts.js?v=7fc178b3';
+import { criarMapa, legendaMapa } from './map.js?v=7fc178b3';
+import { criarMapaMun } from './mapamun.js?v=7fc178b3';
+import { getJSON } from './tse.js?v=7fc178b3';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
