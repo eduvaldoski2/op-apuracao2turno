@@ -152,3 +152,15 @@ tr.clic{cursor:pointer}tr.clic:hover td{background:#f3f1f8}
 .trilha i{font-style:normal;opacity:.5}.trilha [aria-current]{font-weight:700;color:var(--roxo-2)}
 .info-local{line-height:1.6;margin:0}
 .mapa-mun .mun[data-p]{cursor:pointer}
+
+/* aba Resultados 1º Turno */
+.aviso.t1{background:#eeeaf7;color:var(--roxo-2);border:1px solid #d9d2ee}
+.placar.t1p .barra2{display:flex;height:14px;border-radius:7px;overflow:hidden;background:#e4e1ea}
+.placar.t1p .barra2 i{display:block;height:100%}
+.cand-lista{display:flex;flex-direction:column;gap:.55rem}
+.cl-linha{display:grid;grid-template-columns:minmax(150px,1.3fr) 2fr 70px 95px;align-items:center;gap:.7rem}
+.cl-nome{display:flex;align-items:center;gap:.5rem;min-width:0}.cl-nome i{width:12px;height:12px;border-radius:3px;flex:none}
+.cl-nome small{color:#6b6580;margin-left:.2rem}
+.cl-barra{height:12px;background:#ece9f4;border-radius:6px;overflow:hidden;display:block}.cl-barra b{display:block;height:100%;border-radius:6px}
+.cl-pct{text-align:right;font-weight:700}.cl-votos{text-align:right;color:#4a4560;font-variant-numeric:tabular-nums}
+@media (max-width:640px){.cl-linha{grid-template-columns:1fr 60px 80px;grid-template-areas:"n n n" "b p v"}.cl-nome{grid-area:n}.cl-barra{grid-area:b}.cl-pct{grid-area:p}.cl-votos{grid-area:v}}

@@ -1,5 +1,5 @@
 // Mapa do Brasil por UF (SVG). Estados pequenos ganham quadro lateral ("seta") com o resultado.
-import { corDoPct, corTexto, fNum, fDelta, CAND, sigla } from './util.js?v=56ddea49';
+import { corDoPct, corTexto, fNum, fDelta, CAND, sigla, ESC } from './util.js?v=510bcfbc';
 
 const CALLOUT = { // x,y do quadro (unidades do viewBox)
   rn: [632, 146], pb: [632, 188], pe: [632, 230], al: [632, 272], se: [632, 314], df: [632, 356], es: [632, 398], rj: [632, 440], sc: [632, 482], ac: [6, 292],
@@ -57,6 +57,6 @@ export function criarMapa(el, geo, { onClick, tooltip } = {}) {
 }
 
 export function legendaMapa() {
-  const grad = k => `linear-gradient(90deg, ${corDoPct(k, 50)}, ${corDoPct(k, 64)}, ${corDoPct(k, 78)})`;
-  return `<div class="leg-mapa"><span><i style="background:${grad('L')}"></i>${CAND.L.nome}: 50% → 78%+</span><span><i style="background:${grad('F')}"></i>${CAND.F.nome}: 50% → 78%+</span><span><i style="background:#e4e1ea"></i>sem apuração</span><small>Cor = quem lidera no estado; tom mais escuro = maior percentual dos votos válidos. Números: % dos válidos e variação (p.p.) em relação ao 1º turno.</small></div>`;
+  const grad = k => `linear-gradient(90deg, ${corDoPct(k, ESC.min)}, ${corDoPct(k, (ESC.min + ESC.max) / 2)}, ${corDoPct(k, ESC.max)})`;
+  return `<div class="leg-mapa"><span><i style="background:${grad('L')}"></i>${CAND.L.nome}: ${ESC.min}% → ${ESC.max}%+</span><span><i style="background:${grad('F')}"></i>${CAND.F.nome}: ${ESC.min}% → ${ESC.max}%+</span><span><i style="background:#e4e1ea"></i>sem apuração</span><small>Cor = quem lidera no estado; tom mais escuro = maior percentual dos votos válidos. Números: % dos válidos e variação (p.p.) em relação ao 1º turno.</small></div>`;
 }

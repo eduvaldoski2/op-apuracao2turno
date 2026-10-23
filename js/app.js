@@ -1,12 +1,13 @@
-import { CONFIG } from './config.js?v=56ddea49';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=56ddea49';
-import { calcular } from './model.js?v=56ddea49';
-import { projetar, PARAMS } from './proj.js?v=56ddea49';
-import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=56ddea49';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=56ddea49';
-import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=56ddea49';
-import { CAND, fNum, fInt, horaBR } from './util.js?v=56ddea49';
-import { esc } from './ui.js?v=56ddea49';
+import { CONFIG } from './config.js?v=510bcfbc';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=510bcfbc';
+import { calcular } from './model.js?v=510bcfbc';
+import { projetar, PARAMS } from './proj.js?v=510bcfbc';
+import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=510bcfbc';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=510bcfbc';
+import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=510bcfbc';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=510bcfbc';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=510bcfbc';
+import { esc } from './ui.js?v=510bcfbc';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -25,7 +26,7 @@ function toast(msg) {
 // ---------- rota ----------
 function rota() {
   const h = location.hash.replace(/^#\/?/, ''), [caminho, qs] = h.split('?'), p = caminho.split('/').filter(Boolean), q = new URLSearchParams(qs || '');
-  let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; if (p[0] === 'projecao') p.shift(); else p.shift(); }
+  let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; p.shift(); } else if (p[0] === 't1') { modo = 't1'; p.shift(); }
   if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
   if (p[0] === 'cand' && CAND[p[1]]) return { modo, tela: 'cand', k: p[1] };
   if (p[0] === 'mun' && p[1] && p[2]) {
@@ -45,6 +46,10 @@ function render(manterScroll = false) {
   const r = rota(), y = window.scrollY;
   document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.modo === r.modo));
   if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS }, r.modo); return pintar(v, r, {}); }
+  const faixa = document.getElementById('sim'), demoBar = document.getElementById('demo-bar');
+  if (faixa) faixa.hidden = r.modo === 't1' || !S.simulado; if (demoBar) demoBar.hidden = r.modo === 't1' || !S.demo;
+  if (r.modo === 't1') return renderT1(r, manterScroll);
+  setEscala(50, 78);
   if (!S.snap) return aguardando(r);
   const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, hist: S.hist, V: getV(), P: r.modo === 'pr' ? getP() : null, ir, csv: null, demo: !!S.demo };
   let v;
@@ -60,13 +65,32 @@ function render(manterScroll = false) {
   if (manterScroll) window.scrollTo(0, y); else window.scrollTo(0, 0);
 }
 
+async function renderT1(r, manterScroll) {
+  if (manterScroll && S.vRota?.modo === 't1') return;   // dados estáticos: a atualização periódica não precisa redesenhar
+  if (!S.T1) {
+    root.innerHTML = `<div data-export-raiz><div class="tela-topo"><h1>Resultados do 1º turno</h1></div><p class="carregando">Carregando resultado oficial do 1º turno…</p></div>`;
+    try { S.T1 = prepT1(await carregarT1()); } catch (e) { root.innerHTML = `<div class="aviso">O resultado do 1º turno ainda não está disponível (${esc(e.message || e)}).</div>`; return; }
+    if (rota().modo !== 't1') return;
+  }
+  const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, T1: S.T1, ir, csv: null, demo: !!S.demo };
+  setEscala(25, 65);
+  let v;
+  if (r.tela === 'uf') v = viewT1Uf(ctx, r.uf);
+  else if (r.tela === 'mun') v = viewMun(ctx, r.uf, r.cd);
+  else if (r.tela === 'bairro') v = viewBairro(ctx, r.uf, r.cd, r.chave, r.di);
+  else if (r.tela === 'distrito') v = viewDistrito(ctx, r.uf, r.cd, r.di);
+  else if (r.tela === 'local') v = viewLocal(ctx, r.uf, r.cd, r.id);
+  else v = viewT1Geral(ctx);
+  pintar(v, r, ctx); window.scrollTo(0, 0);
+}
+
 function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
-  const sub = r.tela === 'geral' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
+  const sub = r.tela === 'geral' && r.modo !== 't1' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
   const exp = `<div class="exp sem-export" role="group" aria-label="Baixar"><span>Baixar:</span><button data-exp="pdf">PDF</button><button data-exp="png">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button></div>`;
   root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1>${sub}${exp}</div>${v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : ''}<div id="vista">${v.html}</div></div>`;
   v.montar(root);
-  root.querySelector('[data-voltar]')?.addEventListener('click', e => { e.preventDefault(); if (history.length > 1) history.back(); else ir(r.modo === 'pr' ? '#/projecao' : '#/'); });
+  root.querySelector('[data-voltar]')?.addEventListener('click', e => { e.preventDefault(); if (history.length > 1) history.back(); else ir(r.modo === 'pr' ? '#/projecao' : r.modo === 't1' ? '#/t1' : '#/'); });
   root.querySelectorAll('[data-ref]').forEach(b => b.addEventListener('click', () => { S.refMode = b.dataset.ref; render(true); }));
   S.vCtx = ctx; S.vTitulo = v.titulo; S.vRota = r;
 }
@@ -116,7 +140,7 @@ async function ciclo() { try { aplicar(await lerAoVivo()); } catch (e) { console
 // ---------- exportação ----------
 async function exportar(tipo, btn) {
   const r = S.vRota, titulo = document.querySelector('.tela-topo h1')?.textContent || S.vTitulo || 'Oficina Política';
-  const sub = `${r.modo === 'pr' ? 'Projeção' : 'Apuração'} 2º turno 2026 · ${S.snap ? 'TSE ' + String(S.snap.hg).slice(0, 5) + ' · ' + fNum(100 * S.snap.br.st / S.snap.br.ts, 1) + '% apurado' : ''}${S.simulado ? ' · DADOS SIMULADOS' : ''}`;
+  const sub = `${r.modo === 'pr' ? 'Projeção' : r.modo === 't1' ? 'Resultado oficial do 1º turno' : 'Apuração'} ${r.modo === 't1' ? '2026 · TSE' : '2º turno 2026 · '}${S.snap && r.modo !== 't1' ? 'TSE ' + String(S.snap.hg).slice(0, 5) + ' · ' + fNum(100 * S.snap.br.st / S.snap.br.ts, 1) + '% apurado' : ''}${S.simulado && r.modo !== 't1' ? ' · DADOS SIMULADOS' : ''}`;
   const nome = `oficina-politica_${slug(titulo)}${S.snap ? '_' + String(S.snap.hg).slice(0, 5).replace(':', 'h') : ''}`;
   const txt = btn.textContent; btn.disabled = true; btn.textContent = '…';
   try {

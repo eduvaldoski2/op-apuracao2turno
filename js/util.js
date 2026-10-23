@@ -72,9 +72,15 @@ export const sdiv = (a, b) => (b ? a / b : NaN);
 function hex(c) { return [1, 3, 5].map(i => parseInt(c.slice(i, i + 2), 16)); }
 function mix(c1, c2, t) { const a = hex(c1), b = hex(c2); return '#' + a.map((x, i) => Math.round(x + (b[i] - x) * t).toString(16).padStart(2, '0')).join(''); }
 // tom do vencedor: maior % = mais escuro. 50% -> claro; 75%+ -> escuro.
+// escala de cor do mapa: % do líder que vira cor cheia (2º turno: 50→78; 1º turno usa uma faixa menor)
+export const ESC = { min: 50, max: 78 };
+export const setEscala = (min, max) => { ESC.min = min; ESC.max = max; };
+export const PAL = {};   // cor base de candidatos extras (1º turno), por chave
 export function corDoPct(k, p, cfg = {}) {
   if (p == null || isNaN(p)) return '#e4e1ea';
-  const t = clamp((p - 50) / ((cfg.max || 78) - 50), 0, 1);
+  const mn = cfg.min ?? ESC.min, mx = cfg.max ?? ESC.max;
+  const t = clamp((p - mn) / (mx - mn), 0, 1);
+  if (k !== 'L' && k !== 'F') { const base = PAL[k] || '#6b6580'; const c = mix('#ffffff', base, .28), e = mix(base, '#000000', .45); return t < 0.5 ? mix(c, base, t * 2) : mix(base, e, (t - 0.5) * 2); }
   const claro = k === 'L' ? '#f7cfcb' : '#cddcf3';
   const medio = k === 'L' ? '#e0483f' : '#4a7fd6';
   const escuro = k === 'L' ? '#7d0a14' : '#0b2a66';
