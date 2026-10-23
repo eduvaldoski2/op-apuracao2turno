@@ -20,7 +20,7 @@ async function capturar(el, titulo, sub) {
       const alvo = doc.querySelector('[data-export-raiz]') || doc.body;
       const cab = doc.createElement('div');
       cab.style.cssText = 'display:flex;justify-content:space-between;align-items:center;padding:14px 18px;margin-bottom:14px;background:#2A2260;color:#fff;border-radius:10px;font-family:system-ui,sans-serif';
-      cab.innerHTML = `<div><div style="font-size:26px;line-height:1"><span style="font-family:'DM Serif Display',Georgia,serif">Oficina</span><b style="font-family:'Space Grotesk',sans-serif;color:#F08A24;letter-spacing:-.4px">política</b></div></div><div style="text-align:right"><div style="font-weight:700;font-size:15px">${titulo}</div><div style="font-size:12px;opacity:.9">${sub}</div></div>`;
+      cab.innerHTML = `<img src="img/logo-negativo.svg" alt="Oficina Política" style="height:34px;width:auto"><div style="text-align:right"><div style="font-weight:700;font-size:15px">${titulo}</div><div style="font-size:12px;opacity:.9">${sub}</div></div>`;
       alvo.insertBefore(cab, alvo.firstChild);
     },
   });
