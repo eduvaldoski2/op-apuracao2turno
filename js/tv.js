@@ -1,87 +1,115 @@
-// Modo TV: tela cheia, fonte grande, sem controles, com rolagem automática entre os painéis.
-// Transmissão: Presentation API (Chrome → Chromecast / TVs com Google Cast); alternativas: espelhar a aba ou abrir o link do modo TV na TV.
-import { evento } from './metricas.js?v=a5e0d9ed';
-import { esc } from './ui.js?v=a5e0d9ed';
-import { iniciarReceptor, parear, desparear, pareado } from './pareamento.js?v=a5e0d9ed';
+// Modo telão: apresentação em slides (placar, marcha, mapa, indicadores…) em tela cheia, 16:9, com troca lateral animada.
+// Os slides são cópias das seções mais relevantes da tela aberta e se refazem sozinhos a cada nova divulgação do TSE.
+import { evento } from './metricas.js?v=f6469d43';
 
-let timer = null, pausaAte = 0, idx = 0, resizeFn = null;
-export const emTV = () => document.body.classList.contains('tv');
+const PALCO = { w: 1280, h: 720 }, INTERVALO = 14000, PAUSA = 45000;
+let T = null;   // estado do telão quando aberto
+export const emTV = () => !!T;
 export function urlTV() { const u = new URL(location.href); u.searchParams.set('tv', '1'); return u.href; }
 
-function ajustaZoom() { const z = Math.max(1, Math.min(2.4, innerWidth / 1280)); document.documentElement.style.zoom = z > 1.05 ? String(z) : ''; }
-function paineis() { return [...document.querySelectorAll('#vista > section, #vista > .aviso, #vista > .placar')].filter(e => e.offsetHeight > 40); }
-
-export function modoTV(on, { tela = true } = {}) {
-  if (on === emTV()) return;
-  document.body.classList.toggle('tv', on);
-  if (on) {
-    ajustaZoom(); resizeFn = ajustaZoom; addEventListener('resize', resizeFn);
-    if (tela && document.fullscreenEnabled && !document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(() => {});
-    const pausa = () => { pausaAte = Date.now() + 45000; };
-    ['pointerdown', 'wheel', 'keydown', 'touchstart'].forEach(ev => addEventListener(ev, pausa, { passive: true }));
-    dica('Modo TV — pressione Esc para sair');
-    idx = 0; scrollTo(0, 0);
-    timer = setInterval(() => {
-      if (Date.now() < pausaAte) return;
-      const ps = paineis(); if (!ps.length) return;
-      idx = (idx + 1) % (ps.length + 1);
-      if (idx === 0) scrollTo({ top: 0, behavior: 'smooth' });
-      else ps[idx - 1].scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 16000);
-  } else {
-    document.documentElement.style.zoom = ''; clearInterval(timer); timer = null;
-    if (resizeFn) removeEventListener('resize', resizeFn);
-    if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+// ---- escolhe e copia as seções da tela atual ----
+const util = e => e.offsetHeight > 30 || e.matches('details');
+function coletar() {
+  const raiz = document.getElementById('vista'); if (!raiz) return [];
+  const slides = []; let grupo = null;
+  const add = (cls, ...els) => slides.push({ cls, els });
+  for (const e of raiz.children) {
+    if (!util(e)) continue;
+    if (e.matches('.resumo, .fichas')) { if (!grupo) { grupo = { cls: 'fichas', els: [] }; slides.push(grupo); } grupo.els.push(e); continue; }
+    if (e.matches('.placar')) add('placar', e);
+    else if (e.querySelector(':scope > #g-placar, :scope > .grafico-wrap #g-placar, #g-placar')) add('marcha', e);
+    else if (e.matches('.mapa-sec')) add('mapa', e);
+    else if (e.matches('.disp-sec')) add('disp', e);
+    else if (e.matches('.kpis')) add('kpis', e);
+    else if (e.matches('details.falta, details.viradas')) add('texto', e);
+    else if (e.matches('.painel') && e.querySelector('.pend')) add('texto', e);
+    else if (e.matches('aside.balao')) add('balao', e);
   }
+  return slides;
 }
-function dica(t) { const d = document.createElement('div'); d.className = 'tv-dica'; d.textContent = t; document.body.appendChild(d); setTimeout(() => d.classList.add('sai'), 4000); setTimeout(() => d.remove(), 5000); }
-document.addEventListener('fullscreenchange', () => { if (!document.fullscreenElement && emTV() && !new URLSearchParams(location.search).has('tv')) modoTV(false); });
-addEventListener('keydown', e => { if (e.key === 'Escape' && emTV() && !document.fullscreenElement && !new URLSearchParams(location.search).has('tv')) modoTV(false); });
+function copia(e) {
+  const c = e.cloneNode(true);
+  c.querySelectorAll('.sem-export, .entenda, .comp-toggle, .mapa-modo, .zoom, .nota-base, .tab-scroll, table, .cand-dica, script').forEach(x => x.remove());
+  c.querySelectorAll('a').forEach(a => a.removeAttribute('href'));
+  c.querySelectorAll('[id]').forEach(x => x.removeAttribute('id'));
+  if (c.matches('details')) c.open = true; c.querySelectorAll('details').forEach(d => { d.open = true; });
+  return c;
+}
 
-export function iniciarTV() { if (new URLSearchParams(location.search).has('tv')) { modoTV(true, { tela: false }); iniciarReceptor(); } }
+// ---- montagem do palco ----
+function montar() {
+  const raiz = document.createElement('div'); raiz.id = 'telao'; raiz.setAttribute('role', 'dialog'); raiz.setAttribute('aria-label', 'Modo telão');
+  raiz.innerHTML = `<div class="tl-palco"><div class="tl-topo"><img src="img/logo-negativo.svg" alt="Oficina Política" height="34"><span class="tl-prod"></span><span class="tl-status"></span></div><div class="tl-slides"></div><div class="tl-pontos"></div><div class="tl-barra"><i></i></div></div><button class="tl-x" aria-label="Sair do modo telão" title="Sair (Esc)">✕</button><button class="tl-nav tl-ant" aria-label="Slide anterior">‹</button><button class="tl-nav tl-prox" aria-label="Próximo slide">›</button>`;
+  document.body.appendChild(raiz); return raiz;
+}
+function escala() { const k = Math.min(innerWidth / PALCO.w, innerHeight / PALCO.h), p = T.raiz.querySelector('.tl-palco'); p.style.transform = `translate(-50%,-50%) scale(${k})`; }
+function posicoes() {
+  const n = T.els.length;
+  T.els.forEach((el, i) => { const d = (i - T.i + n) % n; el.className = 'tl-slide ' + T.cls[i] + (n === 1 || d === 0 ? ' atual' : d === 1 ? ' depois' : d === n - 1 ? ' antes' : ' longe'); });
+  T.pontos.querySelectorAll('i').forEach((p, i) => p.classList.toggle('on', i === T.i));
+  const b = T.raiz.querySelector('.tl-barra i'); b.style.transition = 'none'; b.style.width = '0'; void b.offsetWidth;
+  if (!T.pausaAte || Date.now() > T.pausaAte) { b.style.transition = `width ${INTERVALO}ms linear`; b.style.width = '100%'; }
+}
+function ajusta(el) {   // escolhe a maior escala (0,45–1,5) em que o conteúdo cabe na altura do slide; reflui a largura para compensar
+  const c = el.querySelector('.tl-c'); if (!c) return; const max = el.classList.contains('mapa') ? 1.15 : 1.5, disp = el.clientHeight - 24;
+  let k = max, ok = false; c.style.transform = '';
+  if (/\b(mapa|disp)\b/.test(el.className)) { c.style.width = '100%'; k = Math.max(.3, Math.min(max, disp / c.scrollHeight)); c.style.transform = `scale(${k})`; return; }   // a altura desses blocos cresce com a largura: só reduz
+  for (; k >= 0.45; k = Math.round((k - .05) * 100) / 100) { c.style.width = `${100 / k}%`; if (c.scrollHeight * k <= disp) { ok = true; break; } }
+  if (!ok) k = .45; c.style.width = `${100 / k}%`; c.style.transform = `scale(${k})`;
+}
+function construir(manterIndice) {
+  const defs = coletar(), tela = document.querySelector('.tela-topo h1')?.textContent || '';
+  T.raiz.querySelector('.tl-prod').textContent = tela ? tela : 'Apuração · 2º turno 2026';
+  const cont = T.raiz.querySelector('.tl-slides'); cont.innerHTML = '';
+  if (!defs.length) { cont.innerHTML = '<div class="tl-slide atual vazio"><div class="tl-c"><p>Aguardando dados…</p></div></div>'; T.els = [cont.firstChild]; T.cls = ['vazio']; T.i = 0; T.pontos.innerHTML = ''; return; }
+  T.cls = defs.map(d => d.cls); T.els = defs.map(d => { const s = document.createElement('div'), c = document.createElement('div'); c.className = 'tl-c'; d.els.forEach(e => c.appendChild(copia(e))); s.appendChild(c); cont.appendChild(s); return s; });
+  T.pontos.innerHTML = defs.map(() => '<i></i>').join('');
+  T.i = manterIndice ? Math.min(T.i, defs.length - 1) : 0;
+  T.els.forEach(s => s.classList.add('sem-anim')); posicoes(); T.els.forEach(ajusta); requestAnimationFrame(() => T.els.forEach(s => s.classList.remove('sem-anim')));
+}
+function status() { const s = document.getElementById('status'); T.raiz.querySelector('.tl-status').textContent = s ? s.textContent.replace(/\s+/g, ' ').trim() : ''; }
+function ir(delta, manual) {
+  const n = T.els.length; if (n < 2) return;
+  T.i = (T.i + delta + n) % n; if (manual) T.pausaAte = Date.now() + PAUSA; posicoes();
+}
+function ciclo() { if (!T) return; if (!T.pausaAte || Date.now() > T.pausaAte) { ir(1); } else { T.pausaAte = Date.now() < T.pausaAte ? T.pausaAte : 0; } T.timer = setTimeout(ciclo, INTERVALO); }
 
-// diálogo "Transmitir para a TV"
-export function abrirTV() {
-  if (document.querySelector('.share-ov')) return;
-  const link = urlTV(), pode = typeof PresentationRequest !== 'undefined', base = location.href.split(/[?#]/)[0].replace(/[^/]*$/, ''), curto = base.replace(/^https?:\/\//, '') + 'tv.html';
-  const ov = document.createElement('div'); ov.className = 'share-ov'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-label', 'Transmitir para a TV');
-  ov.innerHTML = `<div class="share-box"><div class="share-topo"><h2>Transmitir para a TV</h2><button class="share-x" data-t="fechar" aria-label="Fechar">✕</button></div>
-  <p class="share-t">O modo TV mostra o painel em tela cheia, com letras grandes, sem botões, e passa sozinho pelos blocos (placar, mapa, viradas…), atualizando a cada divulgação do TSE.</p>
-  <div class="tv-par-box"><h3>Qualquer Smart TV (recomendado)</h3>
-    <ol><li>No navegador da TV, abra <b class="tv-curto">${esc(curto)}</b></li><li>A TV mostra um <b>código de 4 dígitos</b>. Digite-o aqui:</li></ol>
-    <form class="tv-form" data-form><input inputmode="numeric" pattern="[0-9]{4}" maxlength="4" placeholder="0000" aria-label="Código da TV" data-cod autocomplete="off"><button class="sb sb-nat" type="submit">Conectar</button></form>
-    <p class="share-msg" data-msg aria-live="polite"></p>
-    <p class="tv-peq">Depois de conectada, a TV acompanha a tela que você abrir no painel (UF, município, bairros…).</p></div>
-  <div class="share-acoes tv-acoes">
-    <button class="sb" data-t="cast"><i style="background:#4285F4"></i>Chromecast pelo Chrome${pode ? '' : ' (indisponível neste navegador)'}</button>
-    <button class="sb" data-t="tela">⛶ Modo TV nesta tela</button>
-    <button class="sb" data-t="link"><i style="background:#6f6888"></i>Copiar link do modo TV</button>
-  </div>
-  <div class="share-nota"><b>Outras formas:</b><ul class="tv-alt"><li><b>Chromecast pelo celular Android:</b> ative o <i>Modo TV nesta tela</i> e use, nas configurações rápidas, <i>Transmitir tela / Smart View</i>.</li><li><b>Chrome no computador:</b> menu ⋮ → Salvar, compartilhar e transmitir → <i>Transmitir…</i> → escolha a TV e, em “Fontes”, a aba.</li><li><b>Smart TV sem pareamento:</b> digite na TV o link do modo TV (botão acima) — ele abre direto.</li><li><b>Apple TV / AirPlay:</b> no Safari, ícone de AirPlay.</li></ul></div></div>`;
-  document.body.appendChild(ov); document.body.classList.add('share-aberto');
-  const msg = t => { ov.querySelector('[data-msg]').textContent = t; };
-  const fechar = () => { ov.remove(); document.body.classList.remove('share-aberto'); document.removeEventListener('keydown', tecla); };
-  const tecla = e => { if (e.key === 'Escape') fechar(); };
-  document.addEventListener('keydown', tecla);
-  const p0 = pareado(); if (p0) msg(p0.estado === 'conectado' ? `TV ${p0.codigo} conectada. Ela acompanha esta tela.` : 'Conectando à TV…');
-  ov.querySelector('[data-form]').addEventListener('submit', e => {
-    e.preventDefault(); const cod = ov.querySelector('[data-cod]').value.trim();
-    if (!/^\d{4}$/.test(cod)) return msg('Digite os 4 números que aparecem na TV.');
-    evento('tv', { acao: 'parear' }); msg('Conectando…');
-    parear(cod, (est, extra) => { if (!ov.isConnected) return; msg(est === 'conectado' ? `Conectado! A TV ${cod} acompanha esta tela. Pode fechar esta janela.` : est === 'erro' ? extra : est === 'reconectando' ? (extra || 'Reconectando…') : 'Conectando…'); });
-  });
-  ov.addEventListener('click', async e => {
-    if (e.target === ov) return fechar();
-    const b = e.target.closest('[data-t]'); if (!b) return; const a = b.dataset.t;
-    if (a !== 'fechar') evento('tv', { acao: a });
-    if (a === 'fechar') fechar();
-    else if (a === 'tela') { fechar(); modoTV(true); }
-    else if (a === 'link') { try { await navigator.clipboard.writeText(link); msg('Link do modo TV copiado.'); } catch { msg('Copie o link do modo TV manualmente.'); } }
-    else if (a === 'cast') {
-      if (!pode) return msg('Este navegador não oferece transmissão direta; use o pareamento por código.');
-      try { await new PresentationRequest([link]).start(); msg('Transmitindo. Para encerrar, use o ícone de transmissão do Chrome.'); }
-      catch (err) { msg(err?.name === 'NotFoundError' ? 'O Chrome não encontrou Chromecast nesta rede. Use o pareamento por código acima.' : err?.name === 'AbortError' ? 'Transmissão cancelada.' : 'Não foi possível iniciar: ' + (err?.message || err?.name) + '. Use o pareamento por código acima.'); }
-    }
-  });
-  ov.querySelector('[data-cod]').focus();
+export function abrirTelao({ tela = true } = {}) {
+  if (T) return;
+  const raiz = montar(); T = { raiz, els: [], cls: [], i: 0, pausaAte: 0, pontos: raiz.querySelector('.tl-pontos'), obs: null, rebuild: 0, ocultaX: 0 };
+  construir(false); status(); escala(); evento('tv', { acao: 'telao' });
+  T.timer = setTimeout(ciclo, INTERVALO);
+  T.onResize = () => { escala(); T.els.forEach(ajusta); }; addEventListener('resize', T.onResize);
+  T.onKey = e => { if (e.key === 'Escape') fecharTelao(); else if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); ir(1, true); } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); ir(-1, true); } };
+  addEventListener('keydown', T.onKey);
+  raiz.querySelector('.tl-x').addEventListener('click', fecharTelao);
+  raiz.querySelector('.tl-ant').addEventListener('click', () => ir(-1, true)); raiz.querySelector('.tl-prox').addEventListener('click', () => ir(1, true));
+  let x0 = null; raiz.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
+  raiz.addEventListener('touchend', e => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 50) ir(dx < 0 ? 1 : -1, true); }, { passive: true });
+  const mostra = () => { raiz.classList.add('ativo'); clearTimeout(T.ocultaX); T.ocultaX = setTimeout(() => raiz.classList.remove('ativo'), 3000); };
+  raiz.addEventListener('mousemove', mostra); raiz.addEventListener('touchstart', mostra, { passive: true }); mostra();
+  // refaz os slides quando o painel atualiza (nova parcial) ou muda de tela
+  const cont = document.getElementById('conteudo'), rota = location.hash;
+  T.rota = rota; T.obs = new MutationObserver(() => { clearTimeout(T.rebuild); T.rebuild = setTimeout(() => { if (!T) return; const mesma = location.hash === T.rota; T.rota = location.hash; construir(mesma); status(); }, 500); });
+  if (cont) T.obs.observe(cont, { childList: true });
+  T.st = setInterval(status, 5000);
+  if (tela && document.fullscreenEnabled && !document.fullscreenElement) document.documentElement.requestFullscreen?.().catch(() => {});
+  T.onFs = () => { if (!document.fullscreenElement && T && T.fsTinha) fecharTelao(); T && (T.fsTinha = !!document.fullscreenElement); };
+  document.addEventListener('fullscreenchange', T.onFs);
+  try { navigator.wakeLock?.request('screen').then(l => { if (T) T.wl = l; else l.release(); }).catch(() => {}); } catch { /* sem wake lock */ }
+  document.body.classList.add('tl-aberto');
+}
+export function fecharTelao() {
+  if (!T) return; const t = T; T = null;
+  clearTimeout(t.timer); clearTimeout(t.rebuild); clearTimeout(t.ocultaX); clearInterval(t.st); t.obs?.disconnect();
+  removeEventListener('resize', t.onResize); removeEventListener('keydown', t.onKey); document.removeEventListener('fullscreenchange', t.onFs);
+  try { t.wl?.release(); } catch { /* ok */ }
+  if (document.fullscreenElement) document.exitFullscreen?.().catch(() => {});
+  t.raiz.remove(); document.body.classList.remove('tl-aberto');
+  const u = new URL(location.href); if (u.searchParams.has('tv')) { u.searchParams.delete('tv'); history.replaceState(null, '', u.href); }
+}
+// abre sozinho com ?tv=1 (por exemplo, o link aberto no navegador de uma Smart TV)
+export function iniciarTV() {
+  if (!new URLSearchParams(location.search).has('tv')) return;
+  let n = 0; const tenta = () => { if (document.querySelector('#vista section, #vista details')) abrirTelao({ tela: false }); else if (n++ < 60) setTimeout(tenta, 500); }; tenta();
 }

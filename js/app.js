@@ -1,19 +1,19 @@
-import { CONFIG } from './config.js?v=a5e0d9ed';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=a5e0d9ed';
-import { calcular } from './model.js?v=a5e0d9ed';
-import { projetar, PARAMS } from './proj.js?v=a5e0d9ed';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=a5e0d9ed';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=a5e0d9ed';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=a5e0d9ed';
-import { avisosLigados, alternarAvisos, rotuloAvisos, notificar, eventosEntre } from './avisos.js?v=a5e0d9ed';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=a5e0d9ed';
-import { abrirTV, iniciarTV } from './tv.js?v=a5e0d9ed';
-import { lerCard } from './card.js?v=a5e0d9ed';
-import { abrirCompartilhar } from './compartilhar.js?v=a5e0d9ed';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=a5e0d9ed';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=a5e0d9ed';
-import { esc } from './ui.js?v=a5e0d9ed';
-import { getFoco, setFoco, comFoco } from './foco.js?v=a5e0d9ed';
+import { CONFIG } from './config.js?v=f6469d43';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=f6469d43';
+import { calcular } from './model.js?v=f6469d43';
+import { projetar, PARAMS } from './proj.js?v=f6469d43';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=f6469d43';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=f6469d43';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=f6469d43';
+import { eventosEntre } from './avisos.js?v=f6469d43';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=f6469d43';
+import { abrirTelao, iniciarTV } from './tv.js?v=f6469d43';
+import { lerCard } from './card.js?v=f6469d43';
+import { abrirCompartilhar } from './compartilhar.js?v=f6469d43';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=f6469d43';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=f6469d43';
+import { esc } from './ui.js?v=f6469d43';
+import { getFoco, setFoco, comFoco } from './foco.js?v=f6469d43';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -99,7 +99,7 @@ async function renderT1(r, manterScroll, forcar) {
 function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
   const sub = r.tela === 'geral' && r.modo !== 't1' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
-  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><button class="exp-comp" data-exp="compartilhar" title="Compartilhar no WhatsApp, Instagram e outras redes">⤴ Compartilhar</button><button class="exp-tv" data-exp="tv" title="Transmitir para Chromecast ou Smart TV (modo TV)" aria-label="Transmitir para a TV"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M1 18v3h3a3 3 0 0 0-3-3zm0-4v2a7 7 0 0 1 7 7h2a9 9 0 0 0-9-9zm0-4v2a11 11 0 0 1 11 11h2A13 13 0 0 0 1 10zm20-7H3a2 2 0 0 0-2 2v3h2V5h18v14h-7v2h7a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg><span>TV</span></button><span>⬇ Baixar</span><button data-exp="pdf" title="PDF: página de resumo + mapas e tabelas">PDF</button><button data-exp="png" title="Imagem para redes sociais (card)">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' ? 'disabled' : ''} title="Planilha do Excel (.xlsx)">Excel</button></div>`;
+  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><button class="exp-comp" data-exp="compartilhar" title="Compartilhar no WhatsApp, Instagram e outras redes">⤴ Compartilhar</button><button class="exp-tv" data-exp="tv" title="Modo telão: slides em tela cheia para projetar ou exibir na TV" aria-label="Modo telão"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3v2H7v-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 2v9h16V6H4z"/></svg><span>Telão</span></button><span>⬇ Baixar</span><button data-exp="pdf" title="PDF: página de resumo + mapas e tabelas">PDF</button><button data-exp="png" title="Imagem para redes sociais (card)">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' ? 'disabled' : ''} title="Planilha do Excel (.xlsx)">Excel</button></div>`;
   const trilha = v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : '';
   root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${exp}</div><div id="vista">${v.html}</div></div>`;
   v.montar(root);
@@ -142,7 +142,7 @@ function aplicar(res) {
       const b = res.snap.br, pL = 100 * b.L / b.vv, pF = 100 * b.F / b.vv, la = antes.br.L > antes.br.F ? 'L' : 'F', ln = b.L > b.F ? 'L' : 'F';
       toast(`Nova parcial do TSE (${String(res.snap.hg).slice(0, 5)}): ${fNum(100 * b.st / b.ts, 1)}% apurado — ${CAND.L.nome} ${fNum(pL, 2)}% × ${CAND.F.nome} ${fNum(pF, 2)}%`);
       if (la !== ln) toast(`Virada na liderança: ${CAND[ln].nome} passou à frente.`);
-      for (const e of eventosEntre(antes, res.snap, { L: CAND.L.nome, F: CAND.F.nome })) { if (e.tag !== 'virada') toast(`${e.titulo} — ${e.corpo}`); notificar(e.titulo, e.corpo, e.tag); }
+      for (const e of eventosEntre(antes, res.snap, { L: CAND.L.nome, F: CAND.F.nome })) { if (e.tag !== 'virada') toast(`${e.titulo} — ${e.corpo}`); }
     }
     render(true);
   }
@@ -164,7 +164,7 @@ function contextoExport() {
 }
 async function exportar(tipo, btn) {
   if (tipo === 'compartilhar') { abrirCompartilhar(contextoExport); return; }
-  if (tipo === 'tv') { evento('tv', { acao: 'abrir' }); abrirTV(); return; }
+  if (tipo === 'tv') { abrirTelao(); return; }
   evento('exportar', { tipo, aba: S.vRota?.modo || 'ap' });
   const c = contextoExport(), { r, nome, sub, principal, cadeia, dados } = c;
   const txt = btn.textContent; btn.disabled = true; btn.textContent = '…';
@@ -179,7 +179,6 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-exp]
 
 // ---------- início ----------
 async function iniciar() {
-  const ba = $('#btn-avisos'); if (ba) { const rot = () => { ba.textContent = rotuloAvisos(); ba.setAttribute('aria-pressed', String(avisosLigados())); }; rot(); ba.addEventListener('click', async () => { toast(await alternarAvisos(), true); rot(); evento('avisos', { estado: avisosLigados() ? 'ligado' : 'desligado' }); }); }
   try {
     if (MODO_DEMO) {
       S.demo = await criarDemo(); S.B = S.demo.B; S.simulado = true;

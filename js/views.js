@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=a5e0d9ed';
-import { listaMunicipios, rankingUfs } from './model.js?v=a5e0d9ed';
-import { projetarMunicipios } from './proj.js?v=a5e0d9ed';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=a5e0d9ed';
-import { graficoPlacar } from './charts.js?v=a5e0d9ed';
-import { criarMapa, legendaMapa } from './map.js?v=a5e0d9ed';
-import { criarMapaMun } from './mapamun.js?v=a5e0d9ed';
-import { getJSON } from './tse.js?v=a5e0d9ed';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=f6469d43';
+import { listaMunicipios, rankingUfs } from './model.js?v=f6469d43';
+import { projetarMunicipios } from './proj.js?v=f6469d43';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=f6469d43';
+import { graficoPlacar } from './charts.js?v=f6469d43';
+import { criarMapa, legendaMapa } from './map.js?v=f6469d43';
+import { criarMapaMun } from './mapamun.js?v=f6469d43';
+import { getJSON } from './tse.js?v=f6469d43';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -35,11 +35,11 @@ export function cartaoCand(k, r, { modo, conf, projecao, semLink }) {
   else selo = r.lider === k ? `<span class="selo proj">Projeção: à frente</span>` : '';
   const faixa = modo === 'pr' && r.band ? `<div class="faixa">faixa de 90%: ${fNum(k === 'L' ? r.band.pL[0] : r.band.pF[0], 2)}% a ${fNum(k === 'L' ? r.band.pL[1] : r.band.pF[1], 2)}%</div>` : '';
   const tag = semLink ? 'div' : 'a';
-  return `<${tag} class="cand" ${semLink ? '' : `href="#/${modo === 'pr' ? 'p/' : ''}cand/${k}" title="Ver o ranking de estados de ${c.nome}"`} style="--c:${c.cor}">
+  return `<${tag} class="cand" ${semLink ? '' : `href="#/${modo === 'pr' ? 'p/' : ''}cand/${k}" title="Abrir os resultados de ${c.nome}"`} style="--c:${c.cor}">
     <div class="cand-topo"><span class="cand-num">${c.n}</span><div><div class="cand-nome">${c.nome}</div><div class="cand-part">${c.partido}</div></div>${selo}</div>
     <div class="cand-pct">${fNum(p, 2)}%${dlt(d, 2)}</div>
     <div class="cand-votos"><b>${fInt(v)}</b> votos${modo === 'pr' ? ' (projetados)' : ''}</div>${faixa}
-    ${semLink ? '' : '<div class="cand-dica sem-export">ver estados ›</div>'}</${tag}>`;
+  </${tag}>`;
 }
 export function kpi(titulo, valor, delta, sub, { dica, cls = '' } = {}) {
   return `<div class="kpi ${cls}" ${dica ? `title="${esc(dica)}"` : ''}><div class="kpi-t">${titulo}</div><div class="kpi-v">${valor}${delta != null ? ' ' + delta : ''}</div><div class="kpi-s">${sub || ''}</div></div>`;
@@ -47,26 +47,28 @@ export function kpi(titulo, valor, delta, sub, { dica, cls = '' } = {}) {
 
 
 // ---------- mapa de variação (swing): quanto cada lugar mudou em relação ao 1º turno ----------
+// modoMapa: 'venc' (Geral: quem lidera) | 'L' (variação de Lula) | 'F' (variação de Flávio)
 let modoMapa = 'venc';
 const SW = { L: ['#f9d5d3', '#c8102e'], F: ['#cfdcf3', '#1d4ea8'], N: '#f1eef6' };
-const corSwing = (v, mx) => { if (!isFinite(v)) return '#e4e1ea'; const [c, f] = SW[v >= 0 ? 'L' : 'F'], t = Math.min(1, Math.abs(v) / mx); return t < .5 ? mix(SW.N, c, t * 2) : mix(c, f, (t - .5) * 2); };
+const corSwing = (v, mx, k = 'L') => { if (!isFinite(v)) return '#e4e1ea'; const o = k === 'L' ? 'F' : 'L', [c, f] = SW[v >= 0 ? k : o], t = Math.min(1, Math.abs(v) / mx); return t < .5 ? mix(SW.N, c, t * 2) : mix(c, f, (t - .5) * 2); };
 const sinal = v => (v > 0.049 ? '+' : v < -0.049 ? '−' : '') + fNum(Math.abs(v), 1);
 const escalaSwing = vals => { const a = vals.filter(isFinite).map(Math.abs).sort((x, y) => x - y); return a.length ? clamp(Math.ceil(a[Math.floor(.9 * (a.length - 1))]), 2, 12) : 4; };
-// itens: [[id, dL, linha]] -> dados no formato dos mapas (fill/lab personalizados)
-function swingMapa(itens, mx) {
+// itens: [[id, linha]] (linha com L, F, pL, pF, dL, dF) -> dados no formato dos mapas (fill/lab personalizados)
+function swingMapa(itens, mx, k) {
   const d = {};
-  for (const [id, v, r] of itens) d[id] = isFinite(v) && r.L + r.F > 0 ? { k: 'L', fill: corSwing(v, mx), solo: true, pw: v, lab: sinal(v), pL: r.pL, pF: r.pF, dL: r.dL, dF: r.dF } : { k: null };
+  for (const [id, r] of itens) { const v = r['d' + k]; d[id] = isFinite(v) && r.L + r.F > 0 ? { k, fill: corSwing(v, mx, k), solo: true, pw: v, lab: sinal(v), pL: r.pL, pF: r.pF, dL: r.dL, dF: r.dF } : { k: null }; }
   return d;
 }
-function legendaSwing(mx) {
-  const g = `linear-gradient(90deg,${SW.F[1]},${SW.F[0]},${SW.N},${SW.L[0]},${SW.L[1]})`;
-  return `<div class="leg-mapa leg-sw"><div class="sw-bar" style="background:${g}"></div><div class="sw-esc"><span>Flávio +${mx} p.p.</span><span>0</span><span>Lula +${mx} p.p.</span></div><span><i style="background:#e4e1ea"></i>sem apuração</span>${entenda(`Cada área mostra <b>quantos pontos percentuais</b> a votação de ${CAND.L.nome} (% dos votos válidos) <b>subiu ou caiu</b> em relação ao 1º turno. <b style="color:${SW.L[1]}">Vermelho</b>: Lula ganhou terreno. <b style="color:${SW.F[1]}">Azul</b>: Flávio ganhou terreno (Lula perdeu). Como a apuração chega por partes, a comparação usa o 1º turno <b>nas mesmas urnas já apuradas</b>. A escala vai até ±${mx} p.p.; valores maiores ficam na cor máxima.`)}</div>`;
+function legendaSwing(mx, k) {
+  const o = k === 'L' ? 'F' : 'L', g = `linear-gradient(90deg,${SW[o][1]},${SW[o][0]},${SW.N},${SW[k][0]},${SW[k][1]})`;
+  return `<div class="leg-mapa leg-sw"><div class="sw-bar" style="background:${g}"></div><div class="sw-esc"><span>${CAND[o].nome.split(' ')[0]} +${mx} p.p.</span><span>0</span><span>${CAND[k].nome.split(' ')[0]} +${mx} p.p.</span></div><span><i style="background:#e4e1ea"></i>sem apuração</span>${entenda(`Cada área mostra <b>quantos pontos percentuais</b> a votação de ${CAND[k].nome} (% dos votos válidos) <b>subiu ou caiu</b> em relação ao 1º turno. Na cor de ${CAND[k].nome.split(' ')[0]}: ganhou terreno; na cor do adversário: perdeu. Como a apuração chega por partes, a comparação usa o 1º turno <b>nas mesmas urnas já apuradas</b>. A escala vai até ±${mx} p.p.; valores maiores ficam na cor máxima.`)}</div>`;
 }
-const seletorMapa = () => `<div class="mapa-modo sem-export" role="group" aria-label="O que o mapa mostra"><button data-mm="venc" class="${modoMapa === 'venc' ? 'on' : ''}">Quem lidera</button><button data-mm="swing" class="${modoMapa === 'swing' ? 'on' : ''}">Variação de Lula vs. 1º turno</button></div>`;
-// liga o seletor ao mapa: dm = dados "quem lidera", dsw = dados de variação, leg(modo) devolve a legenda
-function ligaModoMapa(root, mp, dm, dsw, mx) {
+const seletorMapa = () => `<div class="mapa-modo sem-export" role="group" aria-label="O que o mapa mostra">${[['venc', 'Geral', 'Quem lidera em cada área'], ['L', 'Lula', 'Variação da votação de Lula em relação ao 1º turno'], ['F', 'Flávio', 'Variação da votação de Flávio Bolsonaro em relação ao 1º turno']].map(([m, t, d]) => `<button data-mm="${m}" title="${d}" class="${modoMapa === m ? 'on' : ''}">${t}</button>`).join('')}</div>`;
+// liga o seletor ao mapa: dm = dados "quem lidera", itens = [[id, linha]] para as variações
+function ligaModoMapa(root, mp, dm, itens) {
+  const mx = escalaSwing(itens.flatMap(([, r]) => [r.dL, r.dF])), dsw = { L: swingMapa(itens, mx, 'L'), F: swingMapa(itens, mx, 'F') };
   const slot = root.querySelector('.leg-slot'), bt = root.querySelectorAll('[data-mm]');
-  const aplica = () => { mp.atualizar(modoMapa === 'swing' ? dsw : dm); if (slot) slot.innerHTML = modoMapa === 'swing' ? legendaSwing(mx) : legendaMapa(); bt.forEach(b => b.classList.toggle('on', b.dataset.mm === modoMapa)); };
+  const aplica = () => { mp.atualizar(modoMapa === 'venc' ? dm : dsw[modoMapa]); if (slot) slot.innerHTML = modoMapa === 'venc' ? legendaMapa() : legendaSwing(mx, modoMapa); bt.forEach(b => b.classList.toggle('on', b.dataset.mm === modoMapa)); };
   bt.forEach(b => b.addEventListener('click', () => { modoMapa = b.dataset.mm; aplica(); }));
   aplica();
 }
@@ -133,15 +135,15 @@ export function viewGeral(ctx) {
           : `<div class="cobertura"><b>${fNum(base.pst, 1)}%</b> já apurado</div><div class="cob-bar"><i style="width:${clamp(base.pst, 0, 100)}%"></i></div>${prob}`}
       ${barraDupla(base.pL, base.pF)}
       <div class="margem">${lider ? `<b style="color:${CAND[lider].cor}">${CAND[lider].nome}</b> ${ap ? 'à frente por' : 'por'} <b>${fInt(Math.abs(dif))}</b> votos${!ap && P.br.band.margem ? ` <span class="faixa">(margem de Lula, faixa de 90%: ${fCompact(P.br.band.margem[0])} a ${fCompact(P.br.band.margem[1])})</span>` : ''}` : 'Empate'}</div>
-      <div class="alien">Abstenção + brancos + nulos${ap ? '' : ' (projeção)'}: <b>${fCompact(alienados)}</b> (${fNum(base.ali, 1)}% do eleitorado)${dif ? ` — <b>${fNum(alienados / Math.abs(dif), 1)}×</b> a diferença entre os candidatos` : ''}</div>
     </div>
     ${cartaoCand('F', base, { modo, conf: conf.F })}
   </section>`;
 
-  // KPIs
+  // KPIs (depois das tabelas)
+  let kp = '';
   const lbl = ap ? (V.refMode === 'final' ? 'em relação ao 1º turno completo' : 'em relação ao 1º turno nas mesmas urnas já apuradas') : 'em relação ao 1º turno final';
   const fx = (b, k) => !ap && P.br.band?.[k] ? `<br><span class="faixa">faixa: ${fNum(P.br.band[k][0], 1)}–${fNum(P.br.band[k][1], 1)}%</span>` : '';
-  h += `<div class="comp-toggle sem-export">${ap ? `Comparar com: <button class="tg ${V.refMode === 'lfl' ? 'on' : ''}" data-ref="lfl" title="Compara com o que o candidato teve no 1º turno só nos locais que já foram apurados agora">mesmas urnas do 1º turno</button><button class="tg ${V.refMode === 'final' ? 'on' : ''}" data-ref="final" title="Compara com o resultado final do 1º turno">1º turno completo</button>` : ''}<span class="comp-s">Variações em pontos percentuais (p.p.) ${lbl}.</span>${ap ? entenda('<b>Mesmas urnas do 1º turno</b> (padrão): como a apuração chega por partes, o placar parcial só é justo se comparado ao que cada candidato teve, no 1º turno, <b>nos mesmos lugares já apurados</b>. Ex.: se só o Sul apurou, a variação compara com o 1º turno do Sul, e não do Brasil inteiro.<br><b>1º turno completo</b>: compara com o resultado final do 1º turno no Brasil/estado inteiro. Só é equivalente quando a apuração chega perto de 100%.', 'O que é “mesmas urnas”?') : ''}</div>
+  kp += `<div class="comp-toggle sem-export">${ap ? `Comparar com: <button class="tg ${V.refMode === 'lfl' ? 'on' : ''}" data-ref="lfl" title="Compara com o que o candidato teve no 1º turno só nos locais que já foram apurados agora">mesmas urnas do 1º turno</button><button class="tg ${V.refMode === 'final' ? 'on' : ''}" data-ref="final" title="Compara com o resultado final do 1º turno">1º turno completo</button>` : ''}<span class="comp-s">Variações em pontos percentuais (p.p.) ${lbl}.</span>${ap ? entenda('<b>Mesmas urnas do 1º turno</b> (padrão): como a apuração chega por partes, o placar parcial só é justo se comparado ao que cada candidato teve, no 1º turno, <b>nos mesmos lugares já apurados</b>. Ex.: se só o Sul apurou, a variação compara com o 1º turno do Sul, e não do Brasil inteiro.<br><b>1º turno completo</b>: compara com o resultado final do 1º turno no Brasil/estado inteiro. Só é equivalente quando a apuração chega perto de 100%.', 'O que é “mesmas urnas”?') : ''}</div>
   <section class="kpis">
     ${ap ? kpi('Seções apuradas', fNum(base.pst, 2) + '%', null, `${fInt(base.st)} de ${fInt(base.ts)}`) : kpi('Eleitores ainda a apurar', fCompact(P.br.pendEleit), null, `de ${fCompact(P.br.te)} no total`)}
     ${kpi('Abstenção', fNum(base.pAb, 2) + '%', dlt(base.dAb, 2), `${fInt(base.a)} eleitores${fx(0, 'pAb')}`, { dica: 'Abstenção = eleitores que não compareceram ÷ eleitorado (das seções apuradas, na aba Apuração).' })}
@@ -150,29 +152,30 @@ export function viewGeral(ctx) {
     ${kpi('Alienação eleitoral', fNum(base.ali, 2) + '%', dlt(base.dAli, 2), `abstenção + brancos + nulos · ${fCompact(alienados)}`, { cls: 'destaque', dica: 'Índice usado em estudos sobre participação: (abstenções + brancos + nulos) ÷ eleitorado.' })}
     ${kpi('Comparecimento', fNum(base.pCo, 2) + '%', dlt(base.dCo, 2), `${fInt(base.c)} votos dados`)}
   </section>`;
-  h += `<p class="nota-base">Base dos percentuais: candidatos = votos válidos; brancos e nulos = votos dados (comparecimento); abstenção e alienação = eleitorado${ap ? ' das seções apuradas' : ''}.</p>`;
+  kp += `<p class="nota-base">Base dos percentuais: candidatos = votos válidos; brancos e nulos = votos dados (comparecimento); abstenção e alienação = eleitorado${ap ? ' das seções apuradas' : ''}.</p>`;
 
   // gráficos
   if (ap) {
-    h += `<section class="painel"><h2>Marcha da apuração</h2><p class="sub">% dos votos válidos de cada candidato conforme as urnas são apuradas.</p>${entenda('Cada ponto é uma parcial divulgada pelo TSE: o eixo mostra o % apurado e, sob o ponto, o horário da divulgação.')}<div id="g-placar" class="grafico-wrap"></div></section>`;
+    h += `<section class="painel"><h2>Marcha da apuração</h2><p class="sub">% dos votos válidos de cada candidato conforme as urnas são apuradas.</p>${entenda('Cada ponto é uma parcial divulgada pelo TSE: o eixo mostra o % apurado e, sob o ponto, o horário da divulgação.')}<div id="g-placar" class="grafico-wrap"></div>${legLinhas(false)}</section>`;
   } else {
-    h += `<section class="painel"><h2>Marcha da projeção</h2><p class="sub">Placar parcial e projeção do resultado final.</p>${entenda('Linhas cheias: placar parcial. Linhas tracejadas e sombra: projeção do resultado final de cada candidato com faixa de 90% de confiança — a faixa estreita à medida que as urnas chegam.')}<div id="g-placar" class="grafico-wrap"></div></section>`;
+    h += `<section class="painel"><h2>Marcha da projeção</h2><p class="sub">Placar parcial e projeção do resultado final.</p>${entenda('Linhas cheias: placar parcial. Linhas tracejadas e sombra: projeção do resultado final de cada candidato com faixa de 90% de confiança — a faixa estreita à medida que as urnas chegam.')}<div id="g-placar" class="grafico-wrap"></div>${legLinhas(true)}</section>`;
   }
 
   // mapa
   h += `<section class="painel mapa-sec"><h2>${ap ? 'Resultado por estado' : 'Projeção por estado'}</h2><p class="sub">Clique em um estado para ver os municípios${ap ? '' : ' (resultado projetado)'}.</p>${seletorMapa()}<div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div>${tabelaRegioes(ctx, ap)}</div></div></section>`;
 
+  // tabela de UFs
+  h += `<section class="painel"><h2>Todos os estados</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um estado</b> para abrir os municípios.</p><div id="tab-uf"></div></section>`;
+  h += kp;
   // balanço (apuração) ou composição de pendentes (projeção)
   h += ap ? faltaApurar(base, ufs, B) + viradas(hist, ufs, B) + balanco(V.br) : pendentes(P, B);
 
-  // tabela de UFs
-  h += `<section class="painel"><h2>Todos os estados</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um estado</b> para abrir os municípios.</p><div id="tab-uf"></div></section>`;
   return {
     html: h,
     montar(root) {
       graficoPlacar(root.querySelector('#g-placar'), hist, { projecao: !ap });
       const dm = dadosMapa(ufs), mp = criarMapa(root.querySelector('#mapa'), ctx.geo, { onClick: u => ctx.ir(`#/${ap ? '' : 'p/'}uf/${u}`), tooltip: u => tipUF(ufs.find(x => x.id === u), modo) });
-      { const mx = escalaSwing(ufs.map(u => u.dL)); ligaModoMapa(root, mp, dm, swingMapa(ufs.map(u => [u.id, u.dL, u]), mx), mx); }
+      ligaModoMapa(root, mp, dm, ufs.map(u => [u.id, u]));
       const t = tabela(root.querySelector('#tab-uf'), { cols: colsUF(modo), rows: ufs, sort: 'nome', dir: 'asc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
       ctx.csv = () => ({ nome: `${ap ? 'apuracao' : 'projecao'}_2t_estados`, ...csvUF(base, ufs, modo) });
       root.querySelectorAll('tr[data-reg]').forEach(tr => tr.addEventListener('click', () => ctx.ir(`#/${ap ? '' : 'p/'}regiao/${tr.dataset.reg}`)));
@@ -195,6 +198,15 @@ function probBloco(pb, base) {
   return `<div class="prob-bloco"><div class="prob-t">Probabilidade de vitória <small>(modelo)</small></div><div class="prob-dup"><span style="width:${clamp(pl, 3, 97)}%;background:${CAND.L.cor}">${CAND.L.nome.split(' ')[0]} ${fmt(pl)}%</span><span style="width:${clamp(pf, 3, 97)}%;background:${CAND.F.cor}">${CAND.F.nome.split(' ')[0]} ${fmt(pf)}%</span></div></div>`;
 }
 const PARAMS_MIN = 30;
+// legenda das linhas do gráfico de marcha
+function legLinhas(proj) {
+  const sw = (cor, dash, faixa) => `<svg width="30" height="10" aria-hidden="true">${faixa ? `<rect x="0" y="1" width="30" height="8" rx="2" fill="${cor}" opacity=".22"/>` : ''}<line x1="1" y1="5" x2="29" y2="5" stroke="${cor}" stroke-width="2.4" ${dash ? 'stroke-dasharray="5 4"' : ''}/></svg>`;
+  const it = (cor, dash, t, faixa) => `<span>${sw(cor, dash, faixa)}${t}</span>`;
+  const L = CAND.L.nome.split(' ')[0], F = CAND.F.nome.split(' ')[0];
+  return `<div class="leg-linhas" aria-label="Legenda das linhas">${proj
+    ? it(CAND.L.cor, 0, `${L} — placar parcial`) + it(CAND.F.cor, 0, `${F} — placar parcial`) + it(CAND.L.cor, 1, `${L} — projeção do resultado final`, 1) + it(CAND.F.cor, 1, `${F} — projeção do resultado final`, 1) + '<span class="leg-n">Sombra = faixa de 90% de confiança da projeção</span>'
+    : it(CAND.L.cor, 0, L) + it(CAND.F.cor, 0, F)}</div>`;
+}
 
 function tabelaRegioes(ctx, ap) {
   const { V, P } = ctx; const rs = Object.keys(REGIOES).filter(r => (ap ? V.reg[r] : P.reg[r]));
@@ -224,11 +236,11 @@ function faltaApurar(base, ufs, B) {
   else frase = `Faltam cerca de <b>${fCompact(vvR)}</b> votos válidos. Para virar, <b style="color:${CAND[atras].cor}">${CAND[atras].nome}</b> precisaria de <b>${necMin > 100 ? '>100' : fNum(necMin, 1)}${necMax - necMin > 0.15 && necMax <= 100 ? `–${fNum(necMax, 1)}` : ''}%</b> dos votos válidos que ainda não foram contados (hoje tem ${fNum(hoje, 1)}% dos apurados).`;
   const marca = (v, cor, rot) => isFinite(v) && v >= 0 && v <= 100 ? `<span class="fa-m" style="left:${v}%;--c:${cor}"><b>${rot}</b></span>` : '';
   const rs = ufs.map(u => ({ u, r: Math.max(0, (u.te || 0) - (u.est || 0)) })).filter(x => x.r > 0).sort((a, b) => b.r - a.r).slice(0, 6), tot = R || 1;
-  return `<section class="painel falta"><h2>Quanto falta apurar</h2><p class="sub">${fNum(100 - pc(base.est, base.te), 1)}% do eleitorado ainda não foi apurado (${fCompact(R)} eleitores).</p>
+  return `<details class="painel colapsa falta"><summary><h2>Quanto falta apurar</h2><span class="sub">${fNum(100 - pc(base.est, base.te), 1)}% do eleitorado ainda não foi apurado (${fCompact(R)} eleitores).</span></summary><div class="colapsa-c">
   <p class="fa-frase">${frase}</p>
   ${!conc && nec.length && necMin <= 100 ? `<div class="fa-barra" role="img" aria-label="Quanto do restante o candidato atrás precisa"><div class="fa-trilho"><i style="width:${clamp(hoje, 0, 100)}%;background:${CAND[atras].cor}"></i></div>${marca(hoje, CAND[atras].cor, 'hoje')}${marca(necMin, '#2b2540', 'precisa')}<div class="fa-esc"><span>0%</span><span>50%</span><span>100% dos votos restantes</span></div></div>` : ''}
   ${!conc && rs.length ? `<h3 class="fa-h">Onde estão os eleitores que faltam</h3><div class="pend">${rs.map(({ u, r }) => `<div class="pend-l"><span>${esc(u.nome)}</span><div class="pend-b"><i style="width:${100 * r / rs[0].r}%"></i></div><b>${fCompact(r)}</b><small>${fNum(100 * r / tot, 0)}% do restante · ${fNum(u.pst, 0)}% apurado${u.lider && u.pst > 0 ? ' · ' + CAND[u.lider].nome.split(' ')[0] + ' ' + fNum(u.lider === 'L' ? u.pL : u.pF, 1) + '%' : ''}</small></div>`).join('')}</div>` : ''}
-  ${entenda(`<b>Como é calculado.</b> Eleitores restantes = eleitorado total − eleitorado das seções já apuradas. Votos válidos restantes = restantes × (1 − alienação), usando a alienação (abstenção + brancos + nulos) observada até agora e a do 1º turno; o painel mostra a média e, quando as duas estimativas diferem, uma faixa. O candidato atrás precisa de <b>½ + diferença ÷ (2 × votos válidos restantes)</b> dos votos que ainda faltam. É uma conta aritmética de cenário, <b>não é projeção</b>: as urnas restantes não são uma amostra aleatória (veja a aba Projeção).`)}</section>`;
+  ${entenda(`<b>Como é calculado.</b> Eleitores restantes = eleitorado total − eleitorado das seções já apuradas. Votos válidos restantes = restantes × (1 − alienação), usando a alienação (abstenção + brancos + nulos) observada até agora e a do 1º turno; o painel mostra a média e, quando as duas estimativas diferem, uma faixa. O candidato atrás precisa de <b>½ + diferença ÷ (2 × votos válidos restantes)</b> dos votos que ainda faltam. É uma conta aritmética de cenário, <b>não é projeção</b>: as urnas restantes não são uma amostra aleatória (veja a aba Projeção).`)}</div></details>`;
 }
 // ---------- viradas e marcos da apuração (aba Apuração) ----------
 export function eventosApuracao(hist) {
@@ -252,19 +264,19 @@ function viradas(hist, ufs, B) {
   };
   const virou = ufs.filter(u => u.pst > 0 && B.ufTot?.[u.id] && u.lider && (B.ufTot[u.id].L > B.ufTot[u.id].F ? 'L' : 'F') !== u.lider && u.id !== 'zz');
   const chips = virou.map(u => { const a = B.ufTot[u.id].L > B.ufTot[u.id].F ? 'L' : 'F'; return `<a class="chip-v" href="#/uf/${u.id}" title="No 1º turno (Lula × Flávio) o estado foi de ${CAND[a].nome}; hoje lidera ${CAND[u.lider].nome}">${esc(u.nome)} <i style="background:${CAND[a].cor}"></i>→<i style="background:${CAND[u.lider].cor}"></i></a>`; }).join('');
-  return `<section class="painel viradas"><h2>Viradas e marcos</h2><p class="sub">O que mudou ao longo da apuração (mais recentes primeiro).</p>
+  return `<details class="painel colapsa viradas"><summary><h2>Viradas e marcos</h2><span class="sub">O que mudou ao longo da apuração (mais recentes primeiro).</span></summary><div class="colapsa-c">
   <ol class="tl">${ev.map(li).join('')}</ol>
   <h3 class="fa-h">Estados que mudaram de lado em relação ao 1º turno</h3>
   ${virou.length ? `<div class="chips-v">${chips}</div>` : '<p class="vazio">Até agora nenhum estado apurado mudou de lado.</p>'}
-  ${entenda('“Mudou de lado” compara quem lidera hoje no estado com quem tinha mais votos, no 1º turno, entre Lula e Flávio (somando só os dois). Estados com apuração muito baixa ainda podem oscilar. As viradas na liderança nacional são detectadas entre uma parcial e outra do TSE.')}</section>`;
+  ${entenda('“Mudou de lado” compara quem lidera hoje no estado com quem tinha mais votos, no 1º turno, entre Lula e Flávio (somando só os dois). Estados com apuração muito baixa ainda podem oscilar. As viradas na liderança nacional são detectadas entre uma parcial e outra do TSE.')}</div></details>`;
 }
 function balanco(b) {
   const r = b.refAbs, v1 = b.refRaw.vv, o1 = Math.max(0, v1 - r.L - r.F);
   const lin = (n, a1, a2, cor) => `<tr><td>${cor ? `<i class="pt" style="background:${cor}"></i>` : ''}${n}</td><td class="n">${fInt(a1)}</td><td class="n">${fInt(a2)}</td><td class="n"><b class="${a2 - a1 >= 0 ? 'pos' : 'neg'}">${a2 - a1 >= 0 ? '+' : '−'}${fInt(Math.abs(a2 - a1))}</b></td></tr>`;
-  return `<section class="painel"><h2>Balanço de votos em relação ao 1º turno</h2><p class="sub">No mesmo recorte já apurado (1º turno proporcional às seções contadas): para onde foram os votos de quem votou em outros candidatos e como variaram os não-votos.</p>
+  return `<details class="painel colapsa"><summary><h2>Balanço de votos em relação ao 1º turno</h2><span class="sub">No mesmo recorte já apurado (1º turno proporcional às seções contadas): para onde foram os votos de quem votou em outros candidatos e como variaram os não-votos.</span></summary><div class="colapsa-c">
   <div class="tab-scroll"><table class="tab mini"><thead><tr><th></th><th class="n">1º turno</th><th class="n">2º turno</th><th class="n">Variação</th></tr></thead><tbody>
   ${lin(CAND.L.nome, r.L, b.L, CAND.L.cor)}${lin(CAND.F.nome, r.F, b.F, CAND.F.cor)}${lin('Outros candidatos do 1º turno', o1, 0, '#9a93ad')}${lin('Abstenção', r.a, b.a)}${lin('Votos brancos', r.vb, b.vb)}${lin('Votos nulos', r.tvn, b.tvn)}
-  </tbody></table></div></section>`;
+  </tbody></table></div></div></details>`;
 }
 function pendentes(P, B) {
   const rs = UF_IDS.map(u => P.uf[u]).filter(Boolean).map((p, i) => ({ u: UF_IDS[i], p })).sort((a, b) => b.p.pendEleit - a.p.pendEleit).slice(0, 8);
@@ -348,7 +360,7 @@ export function viewUf(ctx, uf, kOrd) {
       const idPorCdi = new Map((B.byUf[uf] || []).map(b => [String(b.cdi), b.cd]));
       const mp = criarMapaMun(alvoMapa, geo, { onClick: id => { const cd = idPorCdi.get(id); if (cd) ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${cd}`); }, tooltip: tipM });
       for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome.replace(/\b(\p{L})(\p{L}*)/gu, (_, a, b) => (a + b.toLowerCase())).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
-      { const itens = rows.filter(m => cdi.get(m.id)).map(m => [cdi.get(m.id), m.dL, m]), mx = escalaSwing(itens.map(i => i[1])); ligaModoMapa(root, mp, dm, swingMapa(itens, mx), mx); }
+      ligaModoMapa(root, mp, dm, rows.filter(m => cdi.get(m.id)).map(m => [cdi.get(m.id), m]));
     }).catch(() => { alvoMapa.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
     tabela(root.querySelector('#tab-m'), { cols, rows, onRow: m => ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${m.id}`), sort: 'nome', dir: 'asc', filtro: (m, q) => sem(m.nome).includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${slugn(UF_NOME[uf])}_municipios_${ap ? 'apuracao' : 'projecao'}`, cab: ['Município', '% apurado', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Lula cresc. votos %', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Flávio cresc. votos %'], linhas: rows.slice().sort((a, b) => (isNaN(b['p' + ord]) - isNaN(a['p' + ord])) || b['p' + ord] - a['p' + ord]).map(m => [m.nome, m.pst, m.L, m.pL, m.dL, m.gL, m.F, m.pF, m.dF, m.gF]) });
