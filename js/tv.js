@@ -1,6 +1,7 @@
 // Modo TV: tela cheia, fonte grande, sem controles, com rolagem automática entre os painéis.
 // Transmissão: Presentation API (Chrome → Chromecast / TVs com Google Cast); alternativas: espelhar a aba ou abrir o link do modo TV na TV.
-import { esc } from './ui.js?v=0628c14e';
+import { evento } from './metricas.js?v=07b82c22';
+import { esc } from './ui.js?v=07b82c22';
 
 let timer = null, pausaAte = 0, idx = 0, resizeFn = null;
 export const emTV = () => document.body.classList.contains('tv');
@@ -61,6 +62,7 @@ export function abrirTV() {
   ov.addEventListener('click', async e => {
     if (e.target === ov) return fechar();
     const b = e.target.closest('[data-t]'); if (!b) return; const a = b.dataset.t;
+    if (a !== 'fechar') evento('tv', { acao: a });
     if (a === 'fechar') fechar();
     else if (a === 'tela') { fechar(); modoTV(true); }
     else if (a === 'link') { try { await navigator.clipboard.writeText(link); msg('Link do modo TV copiado.'); } catch { msg('Copie o link abaixo manualmente.'); } }

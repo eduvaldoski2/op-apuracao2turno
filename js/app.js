@@ -1,18 +1,19 @@
-import { CONFIG } from './config.js?v=0628c14e';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=0628c14e';
-import { calcular } from './model.js?v=0628c14e';
-import { projetar, PARAMS } from './proj.js?v=0628c14e';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=0628c14e';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=0628c14e';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=0628c14e';
-import { avisosLigados, alternarAvisos, rotuloAvisos, notificar, eventosEntre } from './avisos.js?v=0628c14e';
-import { abrirTV, iniciarTV } from './tv.js?v=0628c14e';
-import { lerCard } from './card.js?v=0628c14e';
-import { abrirCompartilhar } from './compartilhar.js?v=0628c14e';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=0628c14e';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=0628c14e';
-import { esc } from './ui.js?v=0628c14e';
-import { setFoco, comFoco } from './foco.js?v=0628c14e';
+import { CONFIG } from './config.js?v=07b82c22';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=07b82c22';
+import { calcular } from './model.js?v=07b82c22';
+import { projetar, PARAMS } from './proj.js?v=07b82c22';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=07b82c22';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=07b82c22';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=07b82c22';
+import { avisosLigados, alternarAvisos, rotuloAvisos, notificar, eventosEntre } from './avisos.js?v=07b82c22';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=07b82c22';
+import { abrirTV, iniciarTV } from './tv.js?v=07b82c22';
+import { lerCard } from './card.js?v=07b82c22';
+import { abrirCompartilhar } from './compartilhar.js?v=07b82c22';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=07b82c22';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=07b82c22';
+import { esc } from './ui.js?v=07b82c22';
+import { getFoco, setFoco, comFoco } from './foco.js?v=07b82c22';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -52,7 +53,7 @@ const ir = h => { location.hash = comFoco(h); };
 let ultimoCtx = null;
 function render(manterScroll = false, forcar = false) {
   const r = rota(), y = window.scrollY;
-  setFoco(r.modo === 't1' ? r.c : null);
+  { const fAnt = getFoco(); setFoco(r.modo === 't1' ? r.c : null); metTela(r); if (r.modo === 't1' && r.c && r.c !== fAnt) evento('candidato_foco', { cand: r.c }); }
   const bs = document.getElementById('barra-status'); if (bs) bs.hidden = r.modo === 't1';
   document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.modo === r.modo));
   if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS }, r.modo); return pintar(v, r, {}); }
@@ -163,7 +164,8 @@ function contextoExport() {
 }
 async function exportar(tipo, btn) {
   if (tipo === 'compartilhar') { abrirCompartilhar(contextoExport); return; }
-  if (tipo === 'tv') { abrirTV(); return; }
+  if (tipo === 'tv') { evento('tv', { acao: 'abrir' }); abrirTV(); return; }
+  evento('exportar', { tipo, aba: S.vRota?.modo || 'ap' });
   const c = contextoExport(), { r, nome, sub, principal, cadeia, dados } = c;
   const txt = btn.textContent; btn.disabled = true; btn.textContent = '…';
   try {
@@ -177,7 +179,7 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-exp]
 
 // ---------- início ----------
 async function iniciar() {
-  const ba = $('#btn-avisos'); if (ba) { const rot = () => { ba.textContent = rotuloAvisos(); ba.setAttribute('aria-pressed', String(avisosLigados())); }; rot(); ba.addEventListener('click', async () => { toast(await alternarAvisos(), true); rot(); }); }
+  const ba = $('#btn-avisos'); if (ba) { const rot = () => { ba.textContent = rotuloAvisos(); ba.setAttribute('aria-pressed', String(avisosLigados())); }; rot(); ba.addEventListener('click', async () => { toast(await alternarAvisos(), true); rot(); evento('avisos', { estado: avisosLigados() ? 'ligado' : 'desligado' }); }); }
   try {
     if (MODO_DEMO) {
       S.demo = await criarDemo(); S.B = S.demo.B; S.simulado = true;
@@ -196,4 +198,5 @@ async function iniciar() {
   } else { await ciclo(); setInterval(ciclo, CONFIG.intervalo); }
   render(); setInterval(status, 1000);
 }
+iniciarMetricas();
 iniciar().then(iniciarTV);

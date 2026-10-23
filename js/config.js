@@ -13,5 +13,8 @@ export const CONFIG = {
   intervalo: 30000,                // ms entre consultas
   atrasoMax: 12 * 60 * 1000,       // acima disso a fonte é considerada atrasada
   diretoTSE: true,                 // se nenhuma fonte responde, lê direto do TSE (apenas nível de UF)
+  // métricas de uso (anônimas, sem cookies). provedor: 'umami' | 'plausible' | 'goatcounter'; id = ID do site (Umami), domínio (Plausible) ou código (GoatCounter).
+  // painel = endereço do painel de resultados do provedor (aparece em admin.html). Vazio = métricas desligadas.
+  metricas: { provedor: '', id: '', host: '', painel: '' },
   inicioApuracao: '2026-10-25T17:00:00-03:00',
 };

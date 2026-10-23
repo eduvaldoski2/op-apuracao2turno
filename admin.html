@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Administração · Oficina Política</title>
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;700&display=swap">
+<style>
+:root{--roxo:#3E347E;--roxo-2:#2A2260;--laranja:#E8890C;--tx:#2b2540;--tx2:#6f6888;--linha:#e4dfee;--lilas:#f4f1fa;--bg:#faf8fd}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 'Space Grotesk',system-ui,sans-serif}
+header{background:linear-gradient(100deg,var(--roxo-2),var(--roxo));padding:18px 20px}
+header div{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:16px;justify-content:space-between;flex-wrap:wrap}
+header img{height:46px;display:block}header span{color:#fff;opacity:.9;font-size:14px}
+main{max-width:980px;margin:0 auto;padding:22px 16px 60px;display:grid;gap:18px}
+section{background:#fff;border:1px solid var(--linha);border-radius:16px;padding:20px 22px}
+h1{font:400 32px/1.1 'DM Serif Display',Georgia,serif;color:var(--roxo);margin:0 0 4px}
+h2{font:400 22px/1.15 'DM Serif Display',Georgia,serif;color:var(--roxo);margin:0 0 8px}
+p{margin:6px 0}.sub{color:var(--tx2)}
+.estado{display:inline-flex;align-items:center;gap:8px;font-weight:700;padding:6px 14px;border-radius:99px;background:var(--lilas)}
+.estado i{width:11px;height:11px;border-radius:50%;background:#c0392b}.estado.ok i{background:#1b8a5a}
+.btn{display:inline-block;font:inherit;font-weight:700;color:#fff;background:var(--roxo);border:0;border-radius:10px;padding:10px 18px;cursor:pointer;text-decoration:none;margin:6px 8px 0 0}
+.btn.sec{background:#fff;color:var(--roxo);border:1px solid var(--linha)}
+.btn[aria-disabled="true"]{opacity:.45;pointer-events:none}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #efecf5;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--tx2);background:var(--lilas)}
+code{background:var(--lilas);padding:1px 6px;border-radius:6px;font-size:13px}
+.tab-scroll{overflow-x:auto}
+ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+</style>
+</head>
+<body>
+<header><div><img src="img/logo-negativo.svg" alt="Oficina Política"><span>Administração · métricas de uso</span></div></header>
+<main>
+<section>
+  <h1>Métricas de uso do painel</h1>
+  <p class="sub">Quantas pessoas acessam, de onde vêm, o que mais usam e o que compartilham — de forma anônima e sem cookies.</p>
+  <p><span class="estado" id="estado"><i></i><span id="estado-t">Verificando…</span></span></p>
+  <p id="estado-d" class="sub"></p>
+  <p><a class="btn" id="abrir" href="#" target="_blank" rel="noopener" aria-disabled="true">Abrir o painel de resultados</a><button class="btn sec" id="ignorar" type="button"></button></p>
+  <p class="sub">O painel de resultados fica no provedor de métricas (com login). Esta página é o atalho, o guia de leitura e a lista do que é medido.</p>
+</section>
+
+<section>
+  <h2>Onde ver cada resposta</h2>
+  <div class="tab-scroll"><table>
+    <thead><tr><th>Pergunta</th><th>Onde olhar no painel do provedor</th></tr></thead>
+    <tbody>
+      <tr><td>Quantas pessoas acessaram?</td><td><b>Visitantes</b> (pessoas distintas) e <b>Visualizações</b> (telas abertas), por dia e por hora.</td></tr>
+      <tr><td>De onde vieram?</td><td><b>Referências</b> (WhatsApp, Instagram, Google…), <b>UTM</b> (links compartilhados pelo botão Compartilhar levam <code>utm_source</code> com o canal) e <b>País/Região</b>.</td></tr>
+      <tr><td>Que telas mais veem?</td><td><b>Páginas</b>: caminhos como <code>/ap/geral</code>, <code>/t1/uf/rj</code>, <code>/t1/mun/sp</code>. O primeiro trecho é a aba: <code>ap</code> Apuração, <code>pr</code> Projeção, <code>t1</code> 1º turno.</td></tr>
+      <tr><td>Quais funcionalidades mexeram?</td><td><b>Eventos</b> (tabela abaixo): exportações, compartilhamentos por canal, modo TV, mapa de variação/bolhas, candidato acompanhado, explicações abertas.</td></tr>
+      <tr><td>Quem usa celular ou computador?</td><td><b>Dispositivos</b>, <b>Navegadores</b> e <b>Sistemas</b>.</td></tr>
+      <tr><td>Quando é o pico?</td><td>Gráfico por hora no dia 25/10 — compare com o horário das parciais do TSE.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>O que é medido (eventos)</h2>
+  <div class="tab-scroll"><table>
+    <thead><tr><th>Evento</th><th>Quando dispara</th><th>Detalhes enviados</th></tr></thead>
+    <tbody>
+      <tr><td><code>(página)</code></td><td>Cada vez que a pessoa muda de tela (aba, estado, município, bairro, local)</td><td>Caminho, ex.: <code>/t1/uf/rj</code></td></tr>
+      <tr><td><code>candidato_foco</code></td><td>Clica numa ficha para acompanhar um candidato (1º turno)</td><td><code>cand</code>: L, F ou c&lt;nº&gt;</td></tr>
+      <tr><td><code>exportar</code></td><td>PDF, PNG, CSV ou Excel</td><td><code>tipo</code>, <code>aba</code></td></tr>
+      <tr><td><code>compartilhar_abrir</code></td><td>Abre o painel Compartilhar</td><td>—</td></tr>
+      <tr><td><code>compartilhar</code></td><td>Escolhe um canal: whatsapp, instagram, facebook, x, telegram, copiar_link, copiar_imagem, baixar_imagem, nativo</td><td><code>canal</code>, <code>formato</code> (4x5, 3x5, 9x16)</td></tr>
+      <tr><td><code>compartilhar_formato</code></td><td>Troca o formato da imagem</td><td><code>formato</code></td></tr>
+      <tr><td><code>tv</code></td><td>Abre o diálogo de TV e escolhe: cast, tela, link</td><td><code>acao</code></td></tr>
+      <tr><td><code>mapa_modo</code></td><td>Alterna o mapa: venc, swing, areas, bolhas</td><td><code>modo</code></td></tr>
+      <tr><td><code>dispersao_eixo</code></td><td>Troca o eixo do gráfico de dispersão</td><td><code>eixo</code></td></tr>
+      <tr><td><code>entenda_aberto</code></td><td>Abre uma explicação [+ Entenda]</td><td><code>item</code> (título)</td></tr>
+      <tr><td><code>ordenar_tabela</code></td><td>Clica no título de uma coluna</td><td>—</td></tr>
+      <tr><td><code>avisos</code></td><td>Liga ou desliga os avisos do navegador</td><td><code>estado</code></td></tr>
+      <tr><td><code>link_externo</code></td><td>Clica num link para fora do painel</td><td><code>dominio</code></td></tr>
+      <tr><td><code>erro_js</code></td><td>Erro de programação no navegador (máx. 3 por visita)</td><td>—</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Como ativar (uma vez)</h2>
+  <ol>
+    <li>Crie uma conta num provedor de métricas sem cookies: <b>Umami</b> (nuvem gratuita ou próprio servidor), <b>Plausible</b> (pago) ou <b>GoatCounter</b> (gratuito para uso pessoal; confira os termos para uso comercial).</li>
+    <li>Cadastre o site (<code>eduvaldoski2.github.io/op-apuracao2turno</code> e, depois, <code>oficinapolitica.com.br</code>) e copie o <b>ID do site</b>.</li>
+    <li>Preencha em <code>js/config.js</code>, no bloco <code>metricas</code>: <code>provedor</code>, <code>id</code> e <code>painel</code> (endereço do seu painel de resultados). Ou me passe o ID que eu preencho.</li>
+  </ol>
+  <p class="sub">Limites e preços dos planos mudam; confira no site do provedor antes de escolher. No dia da apuração o volume de eventos sobe bastante.</p>
+</section>
+
+<section>
+  <h2>Privacidade (LGPD)</h2>
+  <ul>
+    <li>Não usa cookies nem identifica pessoas: só conta visitas, telas e ações, sem nome, e-mail, telefone ou localização exata.</li>
+    <li>Respeita “Do Not Track” e o controle de privacidade global do navegador.</li>
+    <li>O aviso aos visitantes está no rodapé do painel (“Fontes e avisos”). Se um dia for usado um provedor que grava cookies, será necessário pedir consentimento antes.</li>
+    <li>Isto é um guia técnico, não aconselhamento jurídico.</li>
+  </ul>
+</section>
+</main>
+<script type="module">
+import { CONFIG } from './js/config.js';
+import { metricasAtivas, motivoInativo } from './js/metricas.js';
+const c = CONFIG.metricas || {}, KEY = 'op_sem_metricas';
+const conf = !!(c.provedor && c.id);
+const est = document.getElementById('estado');
+est.classList.toggle('ok', conf);
+document.getElementById('estado-t').textContent = conf ? `Configurado: ${c.provedor}` : 'Métricas desligadas (nenhum provedor configurado)';
+const abrir = document.getElementById('abrir');
+if (c.painel) { abrir.href = c.painel; abrir.removeAttribute('aria-disabled'); }
+const ign = document.getElementById('ignorar');
+const rot = () => { let off = false; try { off = localStorage.getItem(KEY) === '1'; } catch {} ign.textContent = off ? 'Voltar a contar meus acessos' : 'Não contar meus acessos neste navegador'; document.getElementById('estado-d').textContent = metricasAtivas() ? 'Este navegador está sendo contado.' : (motivoInativo() || ''); };
+ign.addEventListener('click', () => { try { localStorage.getItem(KEY) === '1' ? localStorage.removeItem(KEY) : localStorage.setItem(KEY, '1'); } catch {} location.reload(); });
+rot();
+</script>
+</body>
+</html>

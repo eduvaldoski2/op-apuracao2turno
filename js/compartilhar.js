@@ -1,7 +1,8 @@
 // Painel "Compartilhar": prévia do card, escolha de formato e atalhos (WhatsApp, Instagram, Facebook, X, Telegram, link, imagem).
-import { FORMATOS } from './card.js?v=0628c14e';
-import { blobCard, baixar } from './export.js?v=0628c14e';
-import { esc } from './ui.js?v=0628c14e';
+import { FORMATOS } from './card.js?v=07b82c22';
+import { blobCard, baixar } from './export.js?v=07b82c22';
+import { evento } from './metricas.js?v=07b82c22';
+import { esc } from './ui.js?v=07b82c22';
 
 const enc = encodeURIComponent;
 const ordemFormatos = ['4x5', '3x5', '9x16'];
@@ -10,10 +11,13 @@ let aberto = null;
 // obter() devolve { dados, nome, principal, sub } da tela atual (dados = null quando a tela não tem card)
 export function abrirCompartilhar(obter) {
   if (aberto) return;
-  const info = obter(), url = location.href.split('?v=')[0];
+  const info = obter(), urlBase = location.href.split('?v=')[0];
+  // links compartilhados levam UTM para o provedor de métricas mostrar de onde vieram os acessos
+  const url = canal => { const u = new URL(urlBase); u.searchParams.set('utm_source', canal); u.searchParams.set('utm_medium', 'compartilhar'); u.searchParams.set('utm_campaign', 'apuracao_2t_2026'); return u.href; };
   const { dados, nome, principal } = info;
   const a = dados?.cands?.[0], b = dados?.cands?.[1];
   const texto = `${principal}${a && b ? `: ${a.nome} ${a.pct} × ${b.nome} ${b.pct}` : ''} · Oficina Política`;
+  evento('compartilhar_abrir');
   let fmt = '4x5', blob = null, urlPrev = null, tok = 0;
   const ov = document.createElement('div');
   ov.className = 'share-ov'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-label', 'Compartilhar esta tela');
@@ -57,20 +61,21 @@ export function abrirCompartilhar(obter) {
   const nativo = async () => {
     if (!blob) { msg('A imagem ainda está sendo gerada — tente de novo em instantes.'); return false; }
     if (!podeNativo()) return false;
-    try { await navigator.share({ files: [arquivo()], text: `${texto}\n${url}`, title: principal }); return true; } catch (e) { if (e.name !== 'AbortError') msg('Não foi possível abrir o compartilhamento do aparelho.'); return true; }
+    try { await navigator.share({ files: [arquivo()], text: `${texto}\n${url('nativo')}`, title: principal }); return true; } catch (e) { if (e.name !== 'AbortError') msg('Não foi possível abrir o compartilhamento do aparelho.'); return true; }
   };
   ov.addEventListener('click', async e => {
     if (e.target === ov) return fechar();
-    const f = e.target.closest('[data-fmt]'); if (f) { fmt = f.dataset.fmt; ov.querySelectorAll('[data-fmt]').forEach(x => x.classList.toggle('on', x === f)); msg(''); return gerar(); }
+    const f = e.target.closest('[data-fmt]'); if (f) { fmt = f.dataset.fmt; evento('compartilhar_formato', { formato: fmt }); ov.querySelectorAll('[data-fmt]').forEach(x => x.classList.toggle('on', x === f)); msg(''); return gerar(); }
     const bt = e.target.closest('[data-s]'); if (!bt) return;
     const a = bt.dataset.s;
+    if (a !== 'fechar') evento('compartilhar', { canal: { wa: 'whatsapp', ig: 'instagram', fb: 'facebook', x: 'x', tg: 'telegram', link: 'copiar_link', copiar: 'copiar_imagem', baixar: 'baixar_imagem', nativo: 'nativo' }[a] || a, formato: fmt });
     if (a === 'fechar') fechar();
     else if (a === 'nativo') await nativo();
-    else if (a === 'wa') abrirUrl(`https://wa.me/?text=${enc(texto + '\n' + url)}`);
-    else if (a === 'fb') abrirUrl(`https://www.facebook.com/sharer/sharer.php?u=${enc(url)}&quote=${enc(texto)}`);
-    else if (a === 'x') abrirUrl(`https://twitter.com/intent/tweet?text=${enc(texto)}&url=${enc(url)}`);
-    else if (a === 'tg') abrirUrl(`https://t.me/share/url?url=${enc(url)}&text=${enc(texto)}`);
-    else if (a === 'link') { try { await navigator.clipboard.writeText(url); msg('Link copiado.'); } catch { msg('Copie o endereço na barra do navegador: ' + url); } }
+    else if (a === 'wa') abrirUrl(`https://wa.me/?text=${enc(texto + '\n' + url('whatsapp'))}`);
+    else if (a === 'fb') abrirUrl(`https://www.facebook.com/sharer/sharer.php?u=${enc(url('facebook'))}&quote=${enc(texto)}`);
+    else if (a === 'x') abrirUrl(`https://twitter.com/intent/tweet?text=${enc(texto)}&url=${enc(url('x'))}`);
+    else if (a === 'tg') abrirUrl(`https://t.me/share/url?url=${enc(url('telegram'))}&text=${enc(texto)}`);
+    else if (a === 'link') { try { await navigator.clipboard.writeText(url('link')); msg('Link copiado.'); } catch { msg('Copie o endereço na barra do navegador.'); } }
     else if (a === 'baixar') { if (!blob) return msg('A imagem ainda está sendo gerada.'); baixar(blob, arquivo().name); msg('Imagem baixada.'); }
     else if (a === 'copiar') {
       if (!blob) return msg('A imagem ainda está sendo gerada.');
