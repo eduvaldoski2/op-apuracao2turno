@@ -1,7 +1,8 @@
 // Métricas de uso, anônimas e sem cookies: quantos acessaram, de onde vieram (referência/UTM/país, pelo provedor), o que mais usam.
 // Provedor configurável em js/config.js (CONFIG.metricas). Sem provedor configurado, nada é enviado.
 // Respeita "Do Not Track" / Global Privacy Control e o opt-out local (?semmetricas=1 neste navegador; ?metricas=1 reativa).
-import { CONFIG } from './config.js?v=f6469d43';
+import { CONFIG } from './config.js?v=797a5b37';
+import { rastrearTela } from './consentimento.js?v=797a5b37';
 
 const KEY = 'op_sem_metricas';
 const q = new URLSearchParams(location.search);
@@ -47,6 +48,7 @@ let ultima = '';
 export function tela(r) {
   const chave = [r.modo, r.tela, r.uf || '', r.cd || '', r.reg || '', r.id || ''].join('|'); if (chave === ultima) return; ultima = chave;
   const url = `/${r.modo || 'ap'}/${r.tela || 'geral'}${r.uf ? '/' + r.uf : ''}${r.cd ? '/' + r.cd : ''}`;
+  rastrearTela(url, document.title);
   quando(() => ad().tela(url, document.title));
 }
 

@@ -2,3 +2,5 @@ node_modules/
 *.tmp
 data/live/
 /*.png
+api/config.php
+api/dados/*.sqlite

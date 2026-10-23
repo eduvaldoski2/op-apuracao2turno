@@ -93,6 +93,16 @@ ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
 </section>
 
 <section>
+  <h2>Anúncios (Meta e Google) e captação de contatos</h2>
+  <p>Tudo isso está pronto, mas <b>desligado</b> até você preencher <code>js/config.js</code>. Nada é carregado sem o “Aceitar” do visitante (faixa de cookies), e quem envia o sinal de privacidade do navegador não vê a faixa.</p>
+  <ol>
+    <li><b>Dados do controlador</b> (obrigatório antes de ligar qualquer coisa): preencha <code>CONFIG.privacidade</code> — nome/razão social, CNPJ, e-mail do encarregado. Eles aparecem em <a href="privacidade.html">privacidade.html</a>. Peça a revisão de um advogado.</li>
+    <li><b>Meta Pixel</b>: crie o pixel no Gerenciador de Eventos da Meta e coloque o ID em <code>CONFIG.anuncios.meta.pixel</code>. O painel envia PageView a cada tela e o evento <b>Lead</b> quando alguém preenche o formulário.</li>
+    <li><b>Google Ads</b>: coloque o ID da tag em <code>CONFIG.anuncios.google.id</code> (AW-…) e, para a conversão de contato, <code>conversaoLead</code> (AW-…/rótulo). O painel já usa o modo de consentimento do Google.</li>
+    <li><b>Formulário de contatos</b>: envie a pasta <code>api/</code> para a hospedagem, copie <code>api/config.sample.php</code> para <code>api/config.php</code> e preencha (domínios permitidos, token de administração com 20+ caracteres e um “sal” qualquer). Depois coloque o endereço de <code>api/lead.php</code> em <code>CONFIG.leads.endpoint</code>. O link “Receber a análise e os próximos painéis” aparece no rodapé.</li>
+    <li><b>Ver e exportar os contatos</b>: <code>api/exportar.php?token=SEU_TOKEN&amp;formato=csv</code> (planilha) ou <code>&amp;formato=audiencia</code> (e-mail/telefone em hash SHA-256, só de quem autorizou anúncios — para criar Públicos Personalizados na Meta e Correspondência de clientes no Google). Para atender um pedido de exclusão: <code>&amp;excluir=email@exemplo.com</code>.</li>
+  </ol>
+  <p class="aviso"><b>Atenção às regras de anúncio de eleições.</b> O Google Ads não veicula anúncios políticos no Brasil, e a Meta passou a bloquear anúncios sobre temas sociais, eleições e política de quem não é anunciante autorizado, por determinação do TSE (restrição em vigor até depois de 25/10). Anúncios que divulguem este painel podem ser enquadrados como política/eleição. Teste uma campanha pequena e confirme a classificação antes de investir.</p>
   <h2>Privacidade (LGPD)</h2>
   <ul>
     <li>Não usa cookies nem identifica pessoas: só conta visitas, telas e ações, sem nome, e-mail, telefone ou localização exata.</li>
