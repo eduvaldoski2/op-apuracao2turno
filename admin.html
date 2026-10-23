@@ -6,8 +6,12 @@
 <meta name="robots" content="noindex,nofollow">
 <title>Administração · Oficina Política</title>
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;700&display=swap">
 <style>
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-serif-display-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/dm-serif-display-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(fonts/space-grotesk-latin-wght-normal.woff2) format('woff2-variations');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 700;font-display:swap;src:url(fonts/space-grotesk-latin-ext-wght-normal.woff2) format('woff2-variations');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
 :root{--roxo:#3E347E;--roxo-2:#2A2260;--laranja:#E8890C;--tx:#2b2540;--tx2:#6f6888;--linha:#e4dfee;--lilas:#f4f1fa;--bg:#faf8fd}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 'Space Grotesk',system-ui,sans-serif}
@@ -30,21 +34,104 @@ th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--tx2)
 code{background:var(--lilas);padding:1px 6px;border-radius:6px;font-size:13px}
 .tab-scroll{overflow-x:auto}
 ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:10px 0}
+.card{border:1px solid var(--linha);border-radius:12px;padding:12px 14px;background:var(--lilas)}
+.card b{display:block;font:400 28px/1.1 'DM Serif Display',Georgia,serif;color:var(--roxo)}.card span{font-size:13px;color:var(--tx2)}
+.lk{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
+.lk a{display:block;border:1px solid var(--linha);border-radius:12px;padding:12px 14px;text-decoration:none;color:var(--tx);background:#fff}
+.lk a:hover{border-color:var(--roxo)}.lk b{display:block;color:var(--roxo)}.lk span{font-size:13px;color:var(--tx2)}
+.ver{display:flex;gap:10px;align-items:center;margin:6px 0}.ver i{width:11px;height:11px;border-radius:50%;background:#c9c2dd;flex:none}.ver.ok i{background:#1b8a5a}.ver.ruim i{background:#c0392b}.ver.aviso i{background:#e8890c}
+input[type=password],input[type=search]{font:inherit;padding:9px 12px;border:1.5px solid #cfc8e6;border-radius:10px;min-width:240px;background:#fff}
+.msg{color:#a3261a;font-weight:700;margin:6px 0}
+.btn.peq{padding:5px 10px;font-size:13px;margin:0}
+.btn.perigo{background:#fff;color:#a3261a;border:1px solid #e3b5b0}
+.chk label{display:flex;gap:10px;align-items:flex-start;margin:7px 0;cursor:pointer}.chk input{margin-top:4px;width:18px;height:18px;accent-color:var(--roxo)}
+.chk input:checked+span{text-decoration:line-through;color:var(--tx2)}
+details>summary{cursor:pointer;font:400 22px/1.2 'DM Serif Display',Georgia,serif;color:var(--roxo)}
+details[open]>summary{margin-bottom:10px}
+td.ac{white-space:nowrap}
+@media (max-width:640px){main{padding:14px 10px 50px}section{padding:16px 14px}}
 </style>
 </head>
 <body>
-<header><div><img src="img/logo-negativo.svg" alt="Oficina Política"><span>Administração · métricas de uso</span></div></header>
+<header><div><img src="img/logo-negativo.svg" alt="Oficina Política"><span>Administração</span></div></header>
 <main>
 <section>
-  <h1>Métricas de uso do painel</h1>
-  <p class="sub">Quantas pessoas acessam, de onde vêm, o que mais usam e o que compartilham — de forma anônima e sem cookies.</p>
-  <p><span class="estado" id="estado"><i></i><span id="estado-t">Verificando…</span></span></p>
-  <p id="estado-d" class="sub"></p>
-  <p><a class="btn" id="abrir" href="#" target="_blank" rel="noopener" aria-disabled="true">Abrir o painel de resultados</a><button class="btn sec" id="ignorar" type="button"></button></p>
-  <p class="sub">O painel de resultados fica no provedor de métricas (com login). Esta página é o atalho, o guia de leitura e a lista do que é medido.</p>
+  <h1>Administração</h1>
+  <p class="sub">Tudo da Oficina Política reunido: situação do site, cadastros da página inicial, atalhos e pendências.</p>
+  <div class="grid" id="cards">
+    <div class="card"><b id="c-tempo">—</b><span id="c-tempo-r">para a apuração do 2º turno</span></div>
+    <div class="card"><b id="c-total">🔒</b><span>cadastros (entre com o token)</span></div>
+    <div class="card"><b id="c-hoje">🔒</b><span>cadastros hoje</span></div>
+    <div class="card"><b id="c-7">🔒</b><span>cadastros nos últimos 7 dias</span></div>
+  </div>
+</section>
+
+<section id="cadastros">
+  <h2>Cadastros da página inicial</h2>
+  <p class="sub">Quem preencheu o formulário (nome, e-mail e WhatsApp). Os dados ficam no seu servidor da Hostinger. Para ver, cole o token de administração (a senha longa que está em <code>public_html/api/config.php</code>). Ele fica guardado só nesta aba do navegador e é apagado ao fechá-la.</p>
+  <form id="f-tok" autocomplete="off" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+    <input type="password" id="tok" placeholder="Token de administração" autocomplete="off" aria-label="Token de administração">
+    <button class="btn" type="submit" style="margin:0">Entrar</button>
+    <button class="btn sec" type="button" id="sair" hidden style="margin:0">Sair</button>
+  </form>
+  <p class="msg" id="tok-msg" role="alert"></p>
+  <div id="lista" hidden>
+    <p style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+      <input type="search" id="busca" placeholder="Buscar por nome ou e-mail" aria-label="Buscar">
+      <button class="btn peq" type="button" id="b-csv">Baixar planilha (CSV)</button>
+      <button class="btn peq sec" type="button" id="b-aud">Lista para anúncios (hash)</button>
+      <button class="btn peq sec" type="button" id="b-mail">Copiar e-mails</button>
+      <button class="btn peq sec" type="button" id="b-atualizar">Atualizar</button>
+    </p>
+    <p class="sub" id="l-res"></p>
+    <div class="tab-scroll"><table>
+      <thead><tr><th>Data</th><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Origem</th><th></th></tr></thead>
+      <tbody id="l-corpo"></tbody>
+    </table></div>
+    <p class="sub">Pedido de exclusão (LGPD): use “Excluir” na linha da pessoa; o nome, o e-mail e o telefone são apagados de forma definitiva.</p>
+  </div>
 </section>
 
 <section>
+  <h2>Situação</h2>
+  <div id="ver"></div>
+</section>
+
+<section>
+  <h2>Atalhos</h2>
+  <div class="lk">
+    <a href="./" target="_blank" rel="noopener"><b>Página inicial</b><span>oficinapolitica.com.br</span></a>
+    <a href="apuracao-2t-2026/" target="_blank" rel="noopener"><b>Painel de apuração</b><span>/apuracao-2t-2026</span></a>
+    <a href="privacidade.html" target="_blank" rel="noopener"><b>Política de Privacidade</b><span>e Termos de Uso</span></a>
+    <a href="https://hpanel.hostinger.com/" target="_blank" rel="noopener"><b>Hostinger</b><span>hospedagem, arquivos, e-mails</span></a>
+    <a href="https://dash.cloudflare.com/" target="_blank" rel="noopener"><b>Cloudflare</b><span>DNS, cache, segurança</span></a>
+    <a href="https://analytics.google.com/" target="_blank" rel="noopener"><b>Google Analytics</b><span>visitas e tempo real</span></a>
+    <a href="https://github.com/eduvaldoski2/op-apuracao2turno" target="_blank" rel="noopener"><b>GitHub</b><span>código do site</span></a>
+    <a href="https://github.com/eduvaldoski2/op-apuracao2turno/actions" target="_blank" rel="noopener"><b>Coletor de dados</b><span>GitHub Actions: apuração ao vivo</span></a>
+    <a href="https://resultados.tse.jus.br/" target="_blank" rel="noopener"><b>Resultados do TSE</b><span>fonte oficial</span></a>
+    <a href="https://registro.br/" target="_blank" rel="noopener"><b>Registro.br</b><span>domínio</span></a>
+  </div>
+</section>
+
+<section class="chk">
+  <h2>Pendências</h2>
+  <p class="sub">Sua lista de conferência. As marcas ficam salvas só neste navegador.</p>
+  <div id="pend"></div>
+</section>
+
+<section>
+  <details>
+    <summary>Guia das métricas e anúncios</summary>
+    <p class="sub">Métricas anônimas e sem cookies (opcional, além do Google Analytics com consentimento) e como ligar anúncios. Veja também a seção “Situação”.</p>
+    <p><span class="estado" id="estado"><i></i><span id="estado-t">Verificando…</span></span></p>
+    <p id="estado-d" class="sub"></p>
+    <p><a class="btn" id="abrir" href="#" target="_blank" rel="noopener" aria-disabled="true">Abrir o painel de resultados</a><button class="btn sec" id="ignorar" type="button">Não contar meus acessos neste navegador</button></p>
+  </details>
+</section>
+
+<section class="guia" hidden>
   <h2>Onde ver cada resposta</h2>
   <div class="tab-scroll"><table>
     <thead><tr><th>Pergunta</th><th>Onde olhar no painel do provedor</th></tr></thead>
@@ -59,7 +146,7 @@ ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
   </table></div>
 </section>
 
-<section>
+<section class="guia" hidden>
   <h2>O que é medido (eventos)</h2>
   <div class="tab-scroll"><table>
     <thead><tr><th>Evento</th><th>Quando dispara</th><th>Detalhes enviados</th></tr></thead>
@@ -82,7 +169,7 @@ ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
   </table></div>
 </section>
 
-<section>
+<section class="guia" hidden>
   <h2>Como ativar (uma vez)</h2>
   <ol>
     <li>Crie uma conta num provedor de métricas sem cookies: <b>Umami</b> (nuvem gratuita ou próprio servidor), <b>Plausible</b> (pago) ou <b>GoatCounter</b> (gratuito para uso pessoal; confira os termos para uso comercial).</li>
@@ -92,7 +179,7 @@ ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
   <p class="sub">Limites e preços dos planos mudam; confira no site do provedor antes de escolher. No dia da apuração o volume de eventos sobe bastante.</p>
 </section>
 
-<section>
+<section class="guia" hidden>
   <h2>Anúncios (Meta e Google) e captação de contatos</h2>
   <p>Tudo isso está pronto, mas <b>desligado</b> até você preencher <code>js/config.js</code>. Nada é carregado sem o “Aceitar” do visitante (faixa de cookies), e quem envia o sinal de privacidade do navegador não vê a faixa.</p>
   <ol>
@@ -100,7 +187,7 @@ ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
     <li><b>Meta Pixel</b>: crie o pixel no Gerenciador de Eventos da Meta e coloque o ID em <code>CONFIG.anuncios.meta.pixel</code>. O painel envia PageView a cada tela e o evento <b>Lead</b> quando alguém preenche o formulário.</li>
     <li><b>Google Ads</b>: coloque o ID da tag em <code>CONFIG.anuncios.google.id</code> (AW-…) e, para a conversão de contato, <code>conversaoLead</code> (AW-…/rótulo). O painel já usa o modo de consentimento do Google.</li>
     <li><b>Formulário de contatos</b>: envie a pasta <code>api/</code> para a hospedagem, copie <code>api/config.sample.php</code> para <code>api/config.php</code> e preencha (domínios permitidos, token de administração com 20+ caracteres e um “sal” qualquer). Depois coloque o endereço de <code>api/lead.php</code> em <code>CONFIG.leads.endpoint</code>. O link “Receber a análise e os próximos painéis” aparece no rodapé.</li>
-    <li><b>Ver e exportar os contatos</b>: <code>api/exportar.php?token=SEU_TOKEN&amp;formato=csv</code> (planilha) ou <code>&amp;formato=audiencia</code> (e-mail/telefone em hash SHA-256, só de quem autorizou anúncios — para criar Públicos Personalizados na Meta e Correspondência de clientes no Google). Para atender um pedido de exclusão: <code>&amp;excluir=email@exemplo.com</code>.</li>
+    <li><b>Ver e exportar os contatos</b>: <code>a aba “Cadastros” desta página (ou api/exportar.php?token=SEU_TOKEN&amp;formato=csv)</code> (planilha) ou <code>&amp;formato=audiencia</code> (e-mail/telefone em hash SHA-256, só de quem autorizou anúncios — para criar Públicos Personalizados na Meta e Correspondência de clientes no Google). Para atender um pedido de exclusão: <code>&amp;excluir=email@exemplo.com</code>.</li>
   </ol>
   <p class="aviso"><b>Atenção às regras de anúncio de eleições.</b> O Google Ads não veicula anúncios políticos no Brasil, e a Meta passou a bloquear anúncios sobre temas sociais, eleições e política de quem não é anunciante autorizado, por determinação do TSE (restrição em vigor até depois de 25/10). Anúncios que divulguem este painel podem ser enquadrados como política/eleição. Teste uma campanha pequena e confirme a classificação antes de investir.</p>
   <h2>Privacidade (LGPD)</h2>
@@ -115,17 +202,119 @@ ol,ul{padding-left:20px;margin:6px 0}li{margin:4px 0}
 <script type="module">
 import { CONFIG } from './js/config.js';
 import { metricasAtivas, motivoInativo } from './js/metricas.js';
-const c = CONFIG.metricas || {}, KEY = 'op_sem_metricas';
-const conf = !!(c.provedor && c.id);
-const est = document.getElementById('estado');
-est.classList.toggle('ok', conf);
-document.getElementById('estado-t').textContent = conf ? `Configurado: ${c.provedor}` : 'Métricas desligadas (nenhum provedor configurado)';
-const abrir = document.getElementById('abrir');
-if (c.painel) { abrir.href = c.painel; abrir.removeAttribute('aria-disabled'); }
-const ign = document.getElementById('ignorar');
-const rot = () => { let off = false; try { off = localStorage.getItem(KEY) === '1'; } catch {} ign.textContent = off ? 'Voltar a contar meus acessos' : 'Não contar meus acessos neste navegador'; document.getElementById('estado-d').textContent = metricasAtivas() ? 'Este navegador está sendo contado.' : (motivoInativo() || ''); };
-ign.addEventListener('click', () => { try { localStorage.getItem(KEY) === '1' ? localStorage.removeItem(KEY) : localStorage.setItem(KEY, '1'); } catch {} location.reload(); });
+const $ = id => document.getElementById(id);
+const el = (t, txt, cls) => { const e = document.createElement(t); if (txt != null) e.textContent = txt; if (cls) e.className = cls; return e; };
+
+// ---------- guia de métricas (parte recolhida) ----------
+const c = CONFIG.metricas || {}, KEY = 'op_sem_metricas', conf = !!(c.provedor && c.id);
+$('estado').classList.toggle('ok', conf);
+$('estado-t').textContent = conf ? `Configurado: ${c.provedor}` : 'Contador sem cookies desligado (nenhum provedor configurado)';
+if (c.painel) { $('abrir').href = c.painel; $('abrir').removeAttribute('aria-disabled'); }
+const rot = () => { let off = false; try { off = localStorage.getItem(KEY) === '1'; } catch {} $('ignorar').textContent = off ? 'Voltar a contar meus acessos' : 'Não contar meus acessos neste navegador'; $('estado-d').textContent = metricasAtivas() ? 'Este navegador está sendo contado.' : (motivoInativo() || ''); };
+$('ignorar').addEventListener('click', () => { try { localStorage.getItem(KEY) === '1' ? localStorage.removeItem(KEY) : localStorage.setItem(KEY, '1'); } catch {} location.reload(); });
 rot();
+// o guia detalhado (tabelas) abre junto com o <details>
+const det = document.querySelector('details'), guias = document.querySelectorAll('section.guia');
+guias.forEach(g => { g.hidden = true; });
+det.addEventListener('toggle', () => guias.forEach(g => { g.hidden = !det.open; }));
+
+// ---------- contagem regressiva ----------
+const alvo = new Date(CONFIG.inicioApuracao).getTime();
+const tick = () => {
+  const d = alvo - Date.now();
+  if (d <= 0) { $('c-tempo').textContent = 'No ar'; $('c-tempo-r').textContent = 'apuração em andamento'; return; }
+  const h = Math.floor(d / 36e5), m = Math.floor(d % 36e5 / 6e4);
+  $('c-tempo').textContent = h >= 48 ? `${Math.floor(h / 24)}d ${h % 24}h` : `${h}h ${String(m).padStart(2, '0')}min`;
+};
+tick(); setInterval(tick, 30000);
+
+// ---------- situação ----------
+const ver = $('ver');
+function linha(cls, txt, det) { const d = el('div', null, 'ver ' + cls); d.append(el('i'), (() => { const s = el('span'); s.append(el('b', txt)); if (det) s.append(document.createTextNode(' — ' + det)); return s; })()); ver.append(d); return d; }
+const ga = CONFIG.analytics?.ga4;
+linha(ga ? 'ok' : 'aviso', 'Google Analytics', ga ? `ligado (${ga}), só mede quem aceitar os cookies` : 'desligado');
+linha(conf ? 'ok' : '', 'Contador sem cookies', conf ? c.provedor : 'desligado (opcional)');
+linha((CONFIG.anuncios?.meta?.pixel || CONFIG.anuncios?.google?.id) ? 'ok' : '', 'Anúncios (Meta/Google)', (CONFIG.anuncios?.meta?.pixel || CONFIG.anuncios?.google?.id) ? 'configurados' : 'desligados');
+linha(CONFIG.privacidade?.cnpj ? 'ok' : 'aviso', 'Dados do responsável na Política de Privacidade', CONFIG.privacidade?.cnpj ? 'preenchidos' : 'faltam CPF/CNPJ e endereço');
+(async () => {
+  const fontes = CONFIG.fontes || [];
+  const l = linha('', 'Placar ao vivo', 'verificando…');
+  try {
+    const r = await fetch(fontes[0] + 'snap.json?' + Date.now(), { cache: 'no-store' });
+    if (r.ok) { const j = await r.json().catch(() => ({})); const t = j.gerado || j.atualizado || j.ts || r.headers.get('last-modified'); l.className = 'ver ok'; l.querySelector('span').lastChild.textContent = ' — dados recebidos' + (t ? ` (atualizado em ${new Date(t).toLocaleString('pt-BR')})` : ''); }
+    else { l.className = 'ver aviso'; l.querySelector('span').lastChild.textContent = ' — ainda sem dados do 2º turno (normal antes das 17h de 25/10)'; }
+  } catch { l.className = 'ver aviso'; l.querySelector('span').lastChild.textContent = ' — não foi possível consultar'; }
+})();
+
+// ---------- pendências ----------
+const PEND = [
+  ['caixa', 'Criar a caixa de e-mail contato@oficinapolitica.com.br (Hostinger > E-mails) — é o contato que consta na Política de Privacidade'],
+  ['resp', 'Informar os dados do responsável pela Política de Privacidade (nome ou razão social, CPF/CNPJ e endereço) e pedir revisão de um advogado'],
+  ['ssl', 'Cloudflare: trocar o SSL para “Completo (estrito)” depois de confirmar o certificado na Hostinger'],
+  ['dia25', 'Dia 25/10, depois das 17h: conferir o placar ao vivo e o coletor (GitHub Actions)'],
+  ['bkp', 'Guardar uma cópia do token de administração em local seguro (gerenciador de senhas)'],
+];
+const pend = $('pend'); let marcadas = {}; try { marcadas = JSON.parse(localStorage.getItem('op_pend') || '{}'); } catch {}
+PEND.forEach(([k, t]) => { const lb = el('label'), i = el('input'); i.type = 'checkbox'; i.checked = !!marcadas[k]; i.addEventListener('change', () => { marcadas[k] = i.checked; try { localStorage.setItem('op_pend', JSON.stringify(marcadas)); } catch {} }); lb.append(i, el('span', t)); pend.append(lb); });
+
+// ---------- cadastros ----------
+const API = 'api/exportar.php';
+let tok = ''; try { tok = sessionStorage.getItem('op_admin_tok') || ''; } catch {}
+let leads = [];
+const msg = t => { $('tok-msg').textContent = t || ''; };
+async function chama(corpo) {
+  const r = await fetch(API, { method: 'POST', headers: { 'X-Token': tok, 'Content-Type': 'application/x-www-form-urlencoded' }, body: new URLSearchParams(corpo) });
+  if (r.status === 403) { const e = new Error('token'); e.tok = true; throw e; }
+  if (!r.ok) throw new Error('http ' + r.status);
+  return r;
+}
+const fmtData = iso => { try { return new Date(iso).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }); } catch { return iso; } };
+const fmtTel = t => { const d = String(t || '').replace(/\D/g, '').replace(/^55/, ''); return d.length >= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}` : t; };
+const origemTxt = o => { try { const j = JSON.parse(o || '{}'); return j.utm_source ? [j.utm_source, j.utm_medium, j.utm_campaign].filter(Boolean).join(' / ') : (j.ref || 'direto'); } catch { return 'direto'; } };
+function desenha() {
+  const q = $('busca').value.trim().toLowerCase();
+  const vis = leads.filter(l => !q || (l.nome + ' ' + l.email).toLowerCase().includes(q));
+  const corpo = $('l-corpo'); corpo.replaceChildren();
+  vis.forEach(l => {
+    const tr = el('tr'); tr.append(el('td', fmtData(l.criado)), el('td', l.nome), el('td', l.email), el('td', fmtTel(l.telefone)), el('td', origemTxt(l.origem)));
+    const ac = el('td', null, 'ac');
+    const wa = el('a', 'WhatsApp', 'btn peq sec'); wa.href = 'https://wa.me/' + String(l.telefone).replace(/\D/g, ''); wa.target = '_blank'; wa.rel = 'noopener'; wa.style.marginRight = '6px';
+    const ex = el('button', 'Excluir', 'btn peq perigo'); ex.type = 'button';
+    ex.addEventListener('click', async () => {
+      if (!confirm(`Excluir definitivamente os dados de ${l.nome} (${l.email})?`)) return;
+      try { await chama({ excluir: l.email }); await carrega(); } catch { msg('Não foi possível excluir agora.'); }
+    });
+    ac.append(wa, ex); tr.append(ac); corpo.append(tr);
+  });
+  $('l-res').textContent = `${vis.length} de ${leads.length} cadastros`;
+}
+function resumo() {
+  const agora = Date.now(), ini = new Date(); ini.setHours(0, 0, 0, 0);
+  $('c-total').textContent = leads.length;
+  $('c-hoje').textContent = leads.filter(l => new Date(l.criado) >= ini).length;
+  $('c-7').textContent = leads.filter(l => agora - new Date(l.criado) <= 7 * 864e5).length;
+}
+async function carrega() {
+  msg('');
+  try {
+    const r = await chama({ formato: 'json' }); leads = (await r.json()).leads || [];
+    $('lista').hidden = false; $('sair').hidden = false; $('tok').value = ''; resumo(); desenha();
+  } catch (e) {
+    if (e.tok) { msg('Token incorreto.'); sair(true); } else msg('Não foi possível carregar os cadastros agora. Tente de novo.');
+  }
+}
+function sair(manter) { tok = ''; try { sessionStorage.removeItem('op_admin_tok'); } catch {} leads = []; $('lista').hidden = true; $('sair').hidden = true; ['c-total', 'c-hoje', 'c-7'].forEach(i => { $(i).textContent = '🔒'; }); if (!manter) msg(''); }
+$('f-tok').addEventListener('submit', e => { e.preventDefault(); const v = $('tok').value.trim(); if (!v) return; tok = v; try { sessionStorage.setItem('op_admin_tok', tok); } catch {} carrega(); });
+$('sair').addEventListener('click', () => sair());
+$('busca').addEventListener('input', desenha);
+$('b-atualizar').addEventListener('click', carrega);
+$('b-mail').addEventListener('click', async () => { try { await navigator.clipboard.writeText(leads.map(l => l.email).join('; ')); msg(''); $('l-res').textContent = 'E-mails copiados.'; } catch { $('l-res').textContent = 'Não foi possível copiar.'; } });
+async function baixa(formato, nome) {
+  try { const r = await chama({ formato }); const b = await r.blob(); const a = el('a'); a.href = URL.createObjectURL(b); a.download = `${nome}_${new Date().toISOString().slice(0, 10)}.csv`; document.body.append(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000); } catch { msg('Não foi possível baixar agora.'); }
+}
+$('b-csv').addEventListener('click', () => baixa('csv', 'cadastros_oficina_politica'));
+$('b-aud').addEventListener('click', () => baixa('audiencia', 'audiencia_anuncios'));
+if (tok) carrega();
 </script>
 </body>
 </html>

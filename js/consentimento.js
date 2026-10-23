@@ -1,7 +1,7 @@
 // Consentimento de cookies (LGPD): Google Analytics 4, Meta Pixel e Google Ads só são carregados depois do "aceitar" do visitante.
 // Sem GA4/pixel/ID configurado em CONFIG (analytics.ga4, anuncios) e sem formulário de leads, este módulo não faz nada (nenhum banner aparece).
 // A medição de uso do painel (js/metricas.js) é anônima e sem cookies, e não depende deste consentimento.
-import { CONFIG } from './config.js?v=d8596fe3';
+import { CONFIG } from './config.js?v=b43e71fe';
 
 const KEY = 'op_consent', VERSAO = 1;
 const RAIZ_PAG = /\/apuracao-2t-2026\//.test(location.pathname) ? '/' : '';   // a política fica na raiz do site
@@ -56,9 +56,16 @@ function aplicarGoogle() {
   if (primeiro) pageview();
 }
 function revogaMeta() { try { window.fbq?.('consent', 'revoke'); } catch { /* ok */ } }
+// apaga cookies do Google/Meta já gravados quando a pessoa não (ou deixou de) autorizar
+function limpaCookies(prefixos) {
+  const dom = location.hostname.split('.'), doms = ['', location.hostname, '.' + location.hostname, dom.length > 2 ? '.' + dom.slice(-3).join('.') : '', dom.length > 1 ? '.' + dom.slice(-2).join('.') : ''];
+  document.cookie.split(';').map(c => c.split('=')[0].trim()).filter(n => prefixos.some(p => n === p || n.startsWith(p + '_') || n.startsWith(p))).forEach(n => doms.forEach(d => { document.cookie = `${n}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/` + (d ? `; domain=${d}` : ''); }));
+}
 const aplicar = () => {
   if (marketingOk()) carregaMeta(); else if (carregado) revogaMeta();
   aplicarGoogle();
+  if (!analiseOk()) limpaCookies(['_ga']);
+  if (!marketingOk()) limpaCookies(['_fbp', '_fbc', '_gcl']);
 };
 
 // ---- visualizações e eventos (sem dados pessoais) ----
