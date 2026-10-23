@@ -1,0 +1,116 @@
+erro 30112 The operation was aborted due to timeout
+osm ba 38750 SANTO ESTEVÃO relações 1
+erro 98256 The operation was aborted due to timeout
+osm rs 98256 PAROBÉ relações 3
+erro 13056 The operation was aborted due to timeout
+osm ce 13056 ACOPIARA relações 11
+osm pa 05231 SALINÓPOLIS relações 1
+osm ba 38032 POÇÕES relações 1
+osm pa 04570 CURUÇÁ relações 23
+osm sp 62693 CABREÚVA relações 9
+osm sp 67270 MONTE ALTO relações 2
+osm sp 70890 SÃO JOAQUIM DA BARRA relações 1
+osm pa 05711 XINGUARA relações 1
+osm rs 88790 SÃO LOURENÇO DO SUL relações 8
+osm ba 38830 SÃO FRANCISCO DO CONDE relações 3
+osm rs 88552 SANTO ANTÔNIO DA PATRULHA relações 17
+osm ce 14176 IPU relações 6
+osm ba 35793 IPIAÚ relações 1
+osm sp 68357 PEDERNEIRAS relações 4
+osm se 31593 ITABAIANINHA relações 1
+osm rs 87378 MARAU relações 4
+osm pa 04634 IGARAPÉ-AÇU relações 2
+erro 14192 The operation was aborted due to timeout
+osm ce 14192 IPUEIRAS relações 13
+osm pe 23434 BOM JARDIM relações 5
+osm pa 04979 MUANÁ relações 3
+osm rj 58955 SÃO FIDÉLIS relações 7
+osm mg 46876 ITURAMA relações 1
+erro 31631 The operation was aborted due to timeout
+osm se 31631 ITAPORANGA D'AJUDA relações 1
+osm sp 67873 ORLÂNDIA relações 1
+osm mg 48135 MATEUS LEME relações 2
+osm es 56375 DOMINGOS MARTINS relações 6
+osm sp 65552 ITÁPOLIS relações 5
+osm ba 37893 PILÃO ARCADO relações 4
+erro 62057 The operation was aborted due to timeout
+osm sp 62057 BARRA BONITA relações 1
+erro 07110 The operation was aborted due to timeout
+osm ba 36412 ITIÚBA relações 1
+erro 53597 The operation was aborted due to timeout
+osm mg 53597 TAIOBEIRAS relações 6
+erro 08311 The operation was aborted due to timeout
+osm ms 90115 AMAMBAI relações 1
+osm al 28754 SÃO SEBASTIÃO relações 1
+osm pr 77356 PALMEIRA relações 1
+osm rj 58440 ITATIAIA relações 1
+erro 61573 The operation was aborted due to timeout
+osm sp 61573 ARAÇOIABA DA SERRA relações 1
+osm ba 37354 MORRO DO CHAPÉU relações 7
+erro 08630 The operation was aborted due to timeout
+erro 76333 The operation was aborted due to timeout
+erro 23590 The operation was aborted due to timeout
+osm pe 23590 CABROBÓ relações 25
+osm pa 05037 OEIRAS DO PARÁ relações 1
+osm pb 21253 PEDRAS DE FOGO relações 1
+erro 41629 The operation was aborted due to timeout
+osm mg 41629 SÃO JOAQUIM DE BICAS relações 2
+osm mg 49050 NOVO CRUZEIRO relações 3
+osm es 56154 BAIXO GUANDU relações 26
+osm pe 24619 JOÃO ALFREDO relações 2
+osm ba 34150 CAMAMU relações 3
+osm ba 37753 PARATINGA relações 2
+osm sc 81132 GAROPABA relações 24
+osm sp 62731 CACHOEIRA PAULISTA relações 1
+{"feitos":50,"vazios":16,"erros":4}
+feito pa 04570 CURUÇÁ nivel=9 poligonos=7 cob=0.92
+descartado 04634 IGARAPÉ-AÇU niveis={'9': 2} cob=0.00
+descartado 04979 MUANÁ niveis={'9': 3} cob=0.00
+descartado 05037 OEIRAS DO PARÁ niveis={'9': 1} cob=0.00
+descartado 05231 SALINÓPOLIS niveis={'9': 1} cob=0.00
+descartado 05711 XINGUARA niveis={'9': 1} cob=0.00
+feito ce 13056 ACOPIARA nivel=9 poligonos=11 cob=1.00
+feito ce 14176 IPU nivel=9 poligonos=6 cob=1.00
+feito ce 14192 IPUEIRAS nivel=9 poligonos=13 cob=1.00
+descartado 21253 PEDRAS DE FOGO niveis={'9': 1} cob=0.00
+feito pe 23434 BOM JARDIM nivel=9 poligonos=5 cob=1.00
+descartado 23590 CABROBÓ niveis={'9': 1} cob=0.00
+descartado 24619 JOÃO ALFREDO niveis={'9': 1, '10': 1} cob=0.00
+descartado 28754 SÃO SEBASTIÃO niveis={'9': 1} cob=0.00
+descartado 31593 ITABAIANINHA niveis={'9': 1} cob=0.00
+descartado 31631 ITAPORANGA D'AJUDA niveis={'9': 1} cob=0.00
+descartado 34150 CAMAMU niveis={'9': 3} cob=0.00
+descartado 35793 IPIAÚ niveis={'9': 1} cob=0.00
+descartado 36412 ITIÚBA niveis={'9': 1} cob=0.00
+feito ba 37354 MORRO DO CHAPÉU nivel=9 poligonos=7 cob=1.00
+descartado 37753 PARATINGA niveis={'9': 2} cob=0.00
+feito ba 37893 PILÃO ARCADO nivel=9 poligonos=4 cob=0.99
+descartado 38032 POÇÕES niveis={'9': 1} cob=0.00
+descartado 38750 SANTO ESTEVÃO niveis={'9': 1} cob=0.00
+descartado 38830 SÃO FRANCISCO DO CONDE niveis={'9': 3} cob=0.00
+descartado 41629 SÃO JOAQUIM DE BICAS niveis={'10': 2} cob=0.00
+descartado 46876 ITURAMA niveis={'9': 1} cob=0.00
+descartado 48135 MATEUS LEME niveis={'9': 2} cob=0.00
+descartado 49050 NOVO CRUZEIRO niveis={'9': 3} cob=0.00
+descartado 53597 TAIOBEIRAS niveis={'10': 5} cob=0.53
+feito es 56154 BAIXO GUANDU nivel=10 poligonos=19 cob=0.61
+feito es 56375 DOMINGOS MARTINS nivel=9 poligonos=6 cob=1.00
+descartado 58440 ITATIAIA niveis={'9': 1} cob=0.00
+feito rj 58955 SÃO FIDÉLIS nivel=9 poligonos=5 cob=1.00
+descartado 61573 ARAÇOIABA DA SERRA niveis={'9': 1} cob=0.00
+descartado 62057 BARRA BONITA niveis={'9': 1} cob=0.00
+feito sp 62693 CABREÚVA nivel=9 poligonos=4 cob=1.00
+descartado 62731 CACHOEIRA PAULISTA niveis={'9': 1} cob=0.00
+descartado 65552 ITÁPOLIS niveis={'9': 3, '10': 2} cob=0.00
+descartado 67270 MONTE ALTO niveis={'9': 2} cob=0.00
+descartado 67873 ORLÂNDIA niveis={'9': 1} cob=0.00
+feito sp 68357 PEDERNEIRAS nivel=9 poligonos=4 cob=1.00
+descartado 70890 SÃO JOAQUIM DA BARRA niveis={'9': 1} cob=0.00
+descartado 77356 PALMEIRA niveis={'9': 1} cob=0.00
+feito sc 81132 GAROPABA nivel=10 poligonos=21 cob=1.00
+feito rs 87378 MARAU nivel=9 poligonos=4 cob=0.95
+feito rs 88552 SANTO ANTÔNIO DA PATRULHA nivel=9 poligonos=6 cob=1.00
+feito rs 88790 SÃO LOURENÇO DO SUL nivel=9 poligonos=8 cob=1.00
+descartado 90115 AMAMBAI niveis={'9': 1} cob=0.00
+descartado 98256 PAROBÉ niveis={'9': 3} cob=0.00
+{"feitos": 16, "bytes": 592498, "sem_cobertura": 34}
