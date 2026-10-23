@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Oficina Política</title>
-<meta name="description" content="Oficina Política: apuração do 2º turno 2026 em tempo real e, em breve, um conjunto de ferramentas para quem é profissional da política.">
+<meta name="description" content="Oficina Política — para quem faz política sem improviso. Apuração do 2º turno 2026 em tempo real e, em breve, um conjunto de ferramentas para quem é profissional da política.">
 <link rel="canonical" href="https://oficinapolitica.com.br/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Oficina Política">
@@ -35,7 +35,9 @@ body{margin:0;min-height:100vh;display:flex;flex-direction:column;color:var(--tx
 .pula{position:absolute;left:-999px;top:8px;background:var(--roxo);color:#fff;padding:8px 14px;border-radius:8px;z-index:9}
 .pula:focus{left:8px}
 main{flex:1;width:100%;max-width:640px;margin:0 auto;padding:clamp(36px,8vh,84px) 20px 28px;text-align:center}
+.marca{margin:0;font-weight:inherit}
 .logo{display:block;margin:0 auto;width:min(100%,560px);height:auto}
+.slogan{display:block;margin:16px auto 0;font:600 clamp(11.5px,3.1vw,15px)/1.35 'Space Grotesk',system-ui,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--roxo-3);padding-left:.26em}
 .acao{margin:clamp(34px,6vh,54px) 0 0}
 .btn-ap{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:62px;padding:0 34px;border-radius:999px;background:var(--roxo);color:#fff;text-decoration:none;font-weight:700;font-size:clamp(14px,3.9vw,17px);letter-spacing:.09em;text-transform:uppercase;box-shadow:0 10px 24px -10px rgba(42,34,96,.65);transition:transform .18s ease,box-shadow .18s ease,background .18s ease;max-width:100%}
 .btn-ap:hover{background:var(--roxo-2);transform:translateY(-2px);box-shadow:0 16px 28px -12px rgba(42,34,96,.7)}
@@ -70,14 +72,14 @@ input[aria-invalid=true]{border-color:var(--erro);background:#fff8f7}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
 footer.rodape{padding:22px 20px 30px;text-align:center;font-size:13px;color:var(--tx2)}
 footer.rodape p{margin:4px 0}
-@media (max-width:420px){form{padding:20px 16px}.btn-ap{padding:0 22px;letter-spacing:.06em}}
+@media (max-width:420px){.slogan{letter-spacing:.13em;padding-left:.13em;font-size:11.5px}form{padding:20px 16px}.btn-ap{padding:0 22px;letter-spacing:.06em}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 <a class="pula" href="#conteudo">Pular para o conteúdo</a>
 <main id="conteudo">
-  <h1 style="margin:0"><img class="logo" src="img/logo-cor.svg" width="1497" height="248" alt="Oficina Política"></h1>
+  <h1 class="marca"><img class="logo" src="img/logo-cor.svg" width="1497" height="248" alt="Oficina Política"><span class="slogan">Para quem faz política sem improviso</span></h1>
 
   <div class="acao">
     <a class="btn-ap" href="apuracao-2t-2026/">Apuração do segundo turno
