@@ -1,0 +1,100 @@
+erro 47678 The operation was aborted due to timeout
+osm mg 47678 LEOPOLDINA relações 5
+erro 09490 The operation was aborted due to timeout
+erro 62952 The operation was aborted due to timeout
+osm sc 83550 TIJUCAS relações 11
+osm pr 76570 LAPA relações 3
+osm sc 83577 TIMBÓ relações 14
+osm ce 14010 GUARACIABA DO NORTE relações 6
+osm sp 63053 CAPÃO BONITO relações 2
+osm mg 49115 OLIVEIRA relações 2
+erro 94030 The operation was aborted due to timeout
+osm ce 15814 VÁRZEA ALEGRE relações 6
+osm am 02070 AUTAZES relações 2
+osm mg 50431 PORTEIRINHA relações 6
+osm ba 35092 ENTRE RIOS relações 3
+osm go 95559 PORANGATU relações 69
+erro 54410 The operation was aborted due to timeout
+osm go 96334 URUAÇU relações 73
+erro 16195 The operation was aborted due to timeout
+osm sp 71978 TREMEMBÉ relações 2
+osm am 02518 LÁBREA relações 1
+osm pe 23132 ALIANÇA relações 4
+osm ba 33570 BARRA DO CHOÇA relações 2
+erro 38776 The operation was aborted due to timeout
+osm ba 38776 SÃO DESIDÉRIO relações 2
+osm pe 25356 RIBEIRÃO relações 3
+osm sp 69051 PONTAL relações 2
+osm rn 17655 NOVA CRUZ relações 1
+osm pa 04855 MARACANÃ relações 3
+erro 76775 The operation was aborted due to timeout
+osm pr 76775 MANDAGUARI relações 15
+erro 02232 The operation was aborted due to timeout
+erro 11134 The operation was aborted due to timeout
+osm pb 20958 MONTEIRO relações 1
+osm se 31259 CAPELA relações 4
+osm ba 35114 ESPLANADA relações 3
+erro 69310 The operation was aborted due to timeout
+osm sp 69310 PRESIDENTE VENCESLAU relações 1
+osm ba 34550 CÍCERO DANTAS relações 2
+osm ms 91430 RIO BRILHANTE relações 2
+osm mt 90280 CONFRESA relações 58
+osm es 56316 CONCEIÇÃO DA BARRA relações 3
+osm ba 38113 PRADO relações 2
+osm pa 04669 TRACUATEUA relações 1
+erro 91294 The operation was aborted due to timeout
+osm pe 24139 FLORESTA relações 19
+osm pa 05339 SANTANA DO ARAGUAIA relações 1
+osm mg 45594 GUANHÃES relações 4
+osm ce 14877 NOVA RUSSAS relações 9
+osm pa 04383 NOVO PROGRESSO relações 1
+osm rn 16438 CANGUARETAMA relações 1
+osm sp 71056 SÃO MIGUEL ARCANJO relações 2
+erro 51438 The operation was aborted due to timeout
+erro 41076 The operation was aborted due to timeout
+osm mg 41076 BARÃO DE COCAIS relações 1
+osm pa 05533 SÃO SEBASTIÃO DA BOA VISTA relações 1
+{"feitos":42,"vazios":22,"erros":6}
+descartado 02070 AUTAZES niveis={'9': 2} cob=0.00
+descartado 02518 LÁBREA niveis={'9': 1} cob=0.00
+descartado 04383 NOVO PROGRESSO niveis={'9': 1} cob=0.00
+descartado 04669 TRACUATEUA niveis={'9': 1} cob=0.00
+descartado 04855 MARACANÃ niveis={'9': 3} cob=0.00
+descartado 05339 SANTANA DO ARAGUAIA niveis={'9': 1} cob=0.00
+descartado 05533 SÃO SEBASTIÃO DA BOA VISTA niveis={'9': 1} cob=0.00
+feito ce 14010 GUARACIABA DO NORTE nivel=9 poligonos=6 cob=1.00
+feito ce 14877 NOVA RUSSAS nivel=9 poligonos=9 cob=1.00
+feito ce 15814 VÁRZEA ALEGRE nivel=9 poligonos=6 cob=1.00
+descartado 16438 CANGUARETAMA niveis={'9': 1} cob=0.00
+descartado 17655 NOVA CRUZ niveis={'9': 1} cob=0.00
+descartado 20958 MONTEIRO niveis={'9': 1} cob=0.00
+feito pe 23132 ALIANÇA nivel=9 poligonos=4 cob=1.00
+descartado 24139 FLORESTA niveis={'9': 3} cob=0.00
+descartado 25356 RIBEIRÃO niveis={'9': 3} cob=0.00
+feito se 31259 CAPELA nivel=9 poligonos=4 cob=0.95
+descartado 33570 BARRA DO CHOÇA niveis={'9': 2} cob=0.00
+descartado 34550 CÍCERO DANTAS niveis={'9': 2} cob=0.00
+descartado 35092 ENTRE RIOS niveis={'9': 3} cob=0.00
+descartado 35114 ESPLANADA niveis={'9': 3} cob=0.00
+descartado 38113 PRADO niveis={'9': 2} cob=0.00
+descartado 38776 SÃO DESIDÉRIO niveis={'9': 2} cob=0.00
+descartado 41076 BARÃO DE COCAIS niveis={'9': 1} cob=0.00
+descartado 45594 GUANHÃES niveis={'9': 4} cob=0.28
+descartado 47678 LEOPOLDINA niveis={'9': 5} cob=0.21
+descartado 49115 OLIVEIRA niveis={'9': 2} cob=0.00
+descartado 50431 PORTEIRINHA niveis={'9': 6} cob=0.57
+descartado 56316 CONCEIÇÃO DA BARRA niveis={'9': 3} cob=0.00
+descartado 63053 CAPÃO BONITO niveis={'9': 2} cob=0.00
+descartado 69051 PONTAL niveis={'9': 2} cob=0.00
+descartado 69310 PRESIDENTE VENCESLAU niveis={'9': 1} cob=0.00
+descartado 71056 SÃO MIGUEL ARCANJO niveis={'9': 2} cob=0.00
+descartado 71978 TREMEMBÉ niveis={'9': 1, '10': 1} cob=0.00
+descartado 76570 LAPA niveis={'9': 3} cob=0.00
+descartado 76775 MANDAGUARI niveis={'10': 15} cob=0.15
+feito sc 83550 TIJUCAS nivel=10 poligonos=11 cob=0.74
+feito sc 83577 TIMBÓ nivel=10 poligonos=14 cob=0.80
+descartado 90280 CONFRESA niveis={'10': 57} cob=0.41
+descartado 91430 RIO BRILHANTE niveis={'9': 2} cob=0.00
+feito go 95559 PORANGATU nivel=10 poligonos=69 cob=0.74
+feito go 96334 URUAÇU nivel=10 poligonos=72 cob=0.67
+{"sem_cobertura": 33, "feitos": 9, "bytes": 175933}
