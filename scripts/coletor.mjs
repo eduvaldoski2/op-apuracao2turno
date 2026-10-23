@@ -10,7 +10,8 @@ import { projetar } from '../js/proj.js';
 import { UF_IDS } from '../js/util.js';
 
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? (process.argv[i + 1]?.startsWith('--') ? true : process.argv[i + 1]) : d; };
-const cfg = { ...TSE, base: arg('tse', process.env.TSE_BASE || TSE.base) };
+const cfg = { ...TSE, base: arg('tse', process.env.TSE_BASE || TSE.base), ele: { ...TSE.ele } };
+if (arg('ele', null)) cfg.ele[2] = +arg('ele');   // ensaio: ex. --ele 6257 lê o 1º turno como se fosse o 2º
 const ler = (f, d) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return d; } };
 const gravar = (f, o) => { fs.mkdirSync(path.dirname(f), { recursive: true }); const tmp = f + '.tmp'; fs.writeFileSync(tmp, JSON.stringify(o)); fs.renameSync(tmp, f); };
 const log = (...a) => console.log(new Date().toISOString().slice(11, 19), ...a);
