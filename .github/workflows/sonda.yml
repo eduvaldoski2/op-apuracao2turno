@@ -11,9 +11,9 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - run: bash scripts/sonda.sh > sonda.txt 2>&1 || true
+      - run: bash scripts/sonda2.sh > sonda.txt 2>&1 || true
       - name: Publicar resultado
         run: |
           git config user.name sonda; git config user.email sonda@users.noreply.github.com
           git checkout --orphan sonda; git rm -rf -q . ; git checkout HEAD -- 2>/dev/null || true
-          mkdir -p out; git add -f sonda.txt sp_distritos.json; git commit -q -m "sonda"; git push -f origin HEAD:sonda
+          mkdir -p out; git add -f sonda.txt out; git commit -q -m "sonda"; git push -f origin HEAD:sonda
