@@ -1,0 +1,7 @@
+== Goiânia (93734) arquivo=93734.zip feições=1156 crs=EPSG:31982 colunas=['id', 'tp_bai', 'nm_bai', 'nm', 'nm1', 'nm2', 'ql_bai', 'in_lei181', 'in_puama', 'id_re7', 'x_coord', 'y_coord', 'pop_total', 'pop_masc', 'pop_fem', 'in_lei228', 'id_mun', 'id_mzo', 'created_da', 'last_edite', 'nm3', 'Shape_Leng', 'Shape_Area']
+             id tp_bai nm_bai         nm                       nm1         nm2             ql_bai  in_lei181  in_puama        id_re7       x_coord       y_coord  pop_total  pop_masc  pop_fem  in_lei228        id_mun id_mzo created_da last_edite        nm3   Shape_Leng     Shape_Area
+0  000400001141    Glb    NaN      Gleba  Gleba: Faz. Quebra Anzol       Gleba  Faz. Quebra Anzol          0         0           NaN  668488.48150  8.153454e+06          0         0        0          0           NaN   None        NaT 2017-11-23      Gleba  1046.171704   56599.105347
+1  000400001142    Con  União  C
+  campo de nome: None
+  polígonos=688 cobertura dos locais=0.99
+  FEITO 267 KB
