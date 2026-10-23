@@ -1,10 +1,10 @@
 // Painel "Compartilhar": prévia do card, escolha de formato e atalhos (WhatsApp, Instagram, Facebook, X, Telegram, link, imagem).
-import { FORMATOS } from './card.js?v=f510198b';
-import { blobCard, baixar } from './export.js?v=f510198b';
-import { esc } from './ui.js?v=f510198b';
+import { FORMATOS } from './card.js?v=d495f9be';
+import { blobCard, baixar } from './export.js?v=d495f9be';
+import { esc } from './ui.js?v=d495f9be';
 
 const enc = encodeURIComponent;
-const ordemFormatos = ['3x5', '4x5', '9x16'];
+const ordemFormatos = ['4x5', '3x5', '9x16'];
 let aberto = null;
 
 // obter() devolve { dados, nome, principal, sub } da tela atual (dados = null quando a tela não tem card)
@@ -14,7 +14,7 @@ export function abrirCompartilhar(obter) {
   const { dados, nome, principal } = info;
   const a = dados?.cands?.[0], b = dados?.cands?.[1];
   const texto = `${principal}${a && b ? `: ${a.nome} ${a.pct} × ${b.nome} ${b.pct}` : ''} · Oficina Política`;
-  let fmt = '3x5', blob = null, urlPrev = null, tok = 0;
+  let fmt = '4x5', blob = null, urlPrev = null, tok = 0;
   const ov = document.createElement('div');
   ov.className = 'share-ov'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-label', 'Compartilhar esta tela');
   ov.innerHTML = `<div class="share-box">

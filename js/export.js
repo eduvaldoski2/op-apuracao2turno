@@ -1,5 +1,5 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=f510198b';
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=d495f9be';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -42,7 +42,7 @@ export async function baixarPNGTela(el, nome, titulo, sub, cadeia) {
 }
 // PNG do card (peça de redes: margens, proporção fixa, hierarquia entre candidatos)
 export const blobCard = async (dados, fmt = FORMATOS['3x5'], escala = 1) => { const c = await cardCanvas(dados, fmt, escala); return new Promise(ok => c.toBlob(ok, 'image/png')); };
-export async function baixarCardPNG(dados, nome, fmt = FORMATOS['3x5']) { baixar(await blobCard(dados, fmt, 1), `${nome}_${fmt.rot.replace(':', 'x')}.png`); }
+export async function baixarCardPNG(dados, nome, fmt = FORMATOS['4x5']) { baixar(await blobCard(dados, fmt, 1), `${nome}_${fmt.rot.replace(':', 'x')}.png`); }
 
 // PDF: página 1 = card (A4) com a hierarquia de candidatos; páginas seguintes = mapas e tabelas da tela.
 export async function baixarPDF(el, nome, titulo, sub, cadeia, dadosCard = null) {

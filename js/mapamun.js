@@ -1,7 +1,7 @@
 // Mapa de um estado por município (SVG), no mesmo padrão do mapa do Brasil: cor = quem lidera, tom = % do líder,
 // rótulos dentro dos municípios grandes (sigla do nome + % de cada candidato e variação). Sem caixas laterais.
 // Suporta zoom (roda do mouse / botões / pinça) e arraste; os rótulos reaparecem conforme o zoom.
-import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=f510198b';
+import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=d495f9be';
 
 const num = v => (v == null || isNaN(v)) ? '–' : fNum(v, 1);
 const dl = v => (v == null || isNaN(v)) ? '' : fDelta(v, 1, '');
@@ -16,7 +16,7 @@ export function criarMapaMun(el, geo, { onClick, tooltip } = {}) {
   const svg = el.querySelector('svg'), tip = el.querySelector('.mapa-tip');
   let dados = {}, z = 1, cx = vw / 2, cy = vh / 2, kpx = 1;
 
-  const cor = d => (!d || d.k == null) ? { fill: '#e4e1ea', txt: '#1b1530' } : (f => ({ fill: f, txt: corTexto(f) }))(corDoPct(d.k, d.pw));
+  const cor = d => (!d || d.k == null) ? { fill: '#e4e1ea', txt: '#1b1530' } : d.fill ? { fill: d.fill, txt: corTexto(d.fill) } : (f => ({ fill: f, txt: corTexto(f) }))(corDoPct(d.k, d.pw));
   const view = () => { const w = vw / z, h = vh / z; cx = Math.max(w / 2, Math.min(vw - w / 2, cx)); cy = Math.max(h / 2, Math.min(vh - h / 2, cy)); svg.setAttribute('viewBox', `${(cx - w / 2).toFixed(1)} ${(cy - h / 2).toFixed(1)} ${w.toFixed(1)} ${h.toFixed(1)}`); };
 
   function rotulo(id, g, d, c) {
@@ -25,12 +25,12 @@ export function criarMapaMun(el, geo, { onClick, tooltip } = {}) {
     if (px < 7) return '';
     const nome = esc(g.n);
     const nomeCurto = nome.length * fs * 0.5 > g.r * 2 ? nome.slice(0, Math.max(3, Math.floor(g.r * 2 / (fs * 0.5)) - 1)) + '.' : nome;
-    if (d && d.solo) return px >= 16 ? `<g pointer-events="none"><text x="${g.lx}" y="${g.ly - 3 * fs / 8}" text-anchor="middle" font-size="${6.4 * fs / 8}" font-weight="800" fill="${c.txt}">${nomeCurto}</text><text x="${g.lx}" y="${g.ly + 6 * fs / 8}" text-anchor="middle" font-size="${8.4 * fs / 8}" font-weight="700" fill="${c.txt}">${num(d.pw)}</text></g>` : `<g pointer-events="none"><text x="${g.lx}" y="${g.ly + 2.6 * fs / 8}" text-anchor="middle" font-size="${7.2 * fs / 8}" font-weight="800" fill="${c.txt}">${num(d.pw)}</text></g>`;
+    if (d && d.solo) return px >= 16 ? `<g pointer-events="none"><text x="${g.lx}" y="${g.ly - 3 * fs / 8}" text-anchor="middle" font-size="${6.4 * fs / 8}" font-weight="800" fill="${c.txt}">${nomeCurto}</text><text x="${g.lx}" y="${g.ly + 6 * fs / 8}" text-anchor="middle" font-size="${8.4 * fs / 8}" font-weight="700" fill="${c.txt}">${d.lab ?? num(d.pw)}</text></g>` : `<g pointer-events="none"><text x="${g.lx}" y="${g.ly + 2.6 * fs / 8}" text-anchor="middle" font-size="${7.2 * fs / 8}" font-weight="800" fill="${c.txt}">${d.lab ?? num(d.pw)}</text></g>`;
     if (!d || d.pL == null || isNaN(d.pL)) return px >= 14 ? `<text x="${g.lx}" y="${g.ly}" text-anchor="middle" font-size="${fs * .9}" fill="${c.txt}">${nomeCurto}</text>` : '';
     const row = (k, p, dv, yy) => `<rect x="${g.lx - 17 * fs / 8}" y="${yy - 5.6 * fs / 8}" width="${5 * fs / 8}" height="${5 * fs / 8}" rx="1" fill="${CAND[k].cor}" stroke="#fff" stroke-width=".5"/>` +
       `<text x="${g.lx - 10.5 * fs / 8}" y="${yy - fs / 8}" font-size="${7.6 * fs / 8}" fill="${c.txt}"><tspan font-weight="700">${num(p)}</tspan><tspan dx="2" font-size="${5.6 * fs / 8}" opacity=".9">${dl(dv)}</tspan></text>`;
     if (px >= 16) return `<g pointer-events="none"><text x="${g.lx}" y="${g.ly - 9 * fs / 8}" text-anchor="middle" font-size="${6.4 * fs / 8}" font-weight="800" fill="${c.txt}">${nomeCurto}</text>${row('L', d.pL, d.dL, g.ly + 1 * fs / 8)}${row('F', d.pF, d.dF, g.ly + 9.6 * fs / 8)}</g>`;
-    return `<g pointer-events="none"><text x="${g.lx}" y="${g.ly + 2.6 * fs / 8}" text-anchor="middle" font-size="${7.2 * fs / 8}" font-weight="800" fill="${c.txt}">${num(d.pw)}</text></g>`;
+    return `<g pointer-events="none"><text x="${g.lx}" y="${g.ly + 2.6 * fs / 8}" text-anchor="middle" font-size="${7.2 * fs / 8}" font-weight="800" fill="${c.txt}">${d.lab ?? num(d.pw)}</text></g>`;
   }
   function desenhar() {
     kpx = (svg.clientWidth || vw) / vw;

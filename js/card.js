@@ -1,13 +1,13 @@
 // Card de compartilhamento (PNG/PDF): peça própria, com margem, proporção fixa e hierarquia entre candidatos.
 // Lê os dados que a tela já exibe (fichas do 1º turno ou placar Lula × Flávio) e monta um layout de redes sociais.
-import { esc } from './ui.js?v=f510198b';
+import { esc } from './ui.js?v=d495f9be';
 
 export const carregaScript = src => new Promise((ok, err) => { if (document.querySelector(`script[data-v="${src}"]`)) return ok(); const s = document.createElement('script'); s.src = src; s.dataset.v = src; s.onload = ok; s.onerror = () => err(new Error('falha ao carregar ' + src)); document.head.appendChild(s); });
 
 // formatos: w × h em pixels. "livre" = quanto couber (a altura é calculada pelo conteúdo)
 export const FORMATOS = {
-  '3x5': { id: '3x5', rot: '3:5', desc: 'Padrão · vertical', w: 1080, h: 1800, k: 1, col2: false, seguro: 0 },
-  '4x5': { id: '4x5', rot: '4:5', desc: 'Feed do Instagram', w: 1080, h: 1350, k: .8, col2: true, seguro: 0 },
+  '3x5': { id: '3x5', rot: '3:5', desc: 'Vertical alto', w: 1080, h: 1800, k: 1, col2: false, seguro: 0 },
+  '4x5': { id: '4x5', rot: '4:5', desc: 'Padrão · Instagram', w: 1080, h: 1350, k: .8, col2: true, seguro: 0 },
   '9x16': { id: '9x16', rot: '9:16', desc: 'Stories e Reels', w: 1080, h: 1920, k: 1, col2: false, seguro: 120 },
   'a4': { id: 'a4', rot: 'A4', desc: 'Página do PDF', w: 1080, h: 1527, k: .95, col2: false, seguro: 0 },
 };
