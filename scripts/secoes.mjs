@@ -15,7 +15,7 @@ const P6 = 'p' + String(pleito).padStart(6, '0'), log = (...a) => console.log(ne
 const ler = (f, d) => { try { return JSON.parse(fs.readFileSync(f, 'utf8')); } catch { return d; } };
 const gravar = (f, o) => { fs.mkdirSync(path.dirname(f), { recursive: true }); const t = f + '.tmp'; fs.writeFileSync(t, JSON.stringify(o)); fs.renameSync(t, f); };
 const pad = (x, n) => String(x).padStart(n, '0');
-const etags = {};
+const etagF = path.join(out, 'etags.json'); const etags = ler(etagF, {});
 
 // ritmo global (requisições/s) e pausa coletiva quando o TSE responde 429
 const rps = +arg('rps', 60); let proximo = 0, pausaAte = 0, n429 = 0;
@@ -46,7 +46,7 @@ async function ciclo(uf, ciclo_n) {
   const r = await get(cfgUrl, { inm: etags[uf] });
   if (r.naoMudou) return { novas: 0, total: 0 };
   if (r.nada || r.erro) { log(uf, 'config indisponível', r.nada ? '404' : r.erro); return { novas: 0, total: 0 }; }
-  etags[uf] = r.etag;
+  etags[uf] = r.etag; gravar(etagF, etags);
   const tarefas = []; let total = 0;
   for (const abr of r.dado.abr || []) for (const mu of abr.mu || []) {
     if (somente && mu.cd !== somente) continue;
