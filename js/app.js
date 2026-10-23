@@ -1,12 +1,12 @@
-import { CONFIG } from './config.js?v=7fc178b3';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=7fc178b3';
-import { calcular } from './model.js?v=7fc178b3';
-import { projetar, PARAMS } from './proj.js?v=7fc178b3';
-import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=7fc178b3';
-import { viewMun, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=7fc178b3';
-import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=7fc178b3';
-import { CAND, fNum, fInt, horaBR } from './util.js?v=7fc178b3';
-import { esc } from './ui.js?v=7fc178b3';
+import { CONFIG } from './config.js?v=5b1061cc';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=5b1061cc';
+import { calcular } from './model.js?v=5b1061cc';
+import { projetar, PARAMS } from './proj.js?v=5b1061cc';
+import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=5b1061cc';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=5b1061cc';
+import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=5b1061cc';
+import { CAND, fNum, fInt, horaBR } from './util.js?v=5b1061cc';
+import { esc } from './ui.js?v=5b1061cc';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -29,6 +29,8 @@ function rota() {
   if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
   if (p[0] === 'cand' && CAND[p[1]]) return { modo, tela: 'cand', k: p[1] };
   if (p[0] === 'mun' && p[1] && p[2]) {
+    if (p[3] === 'd' && p[4] && p[5] === 'b' && p[6]) return { modo, tela: 'bairro', uf: p[1], cd: p[2], chave: p[6], di: +p[4] };
+    if (p[3] === 'd' && p[4]) return { modo, tela: 'distrito', uf: p[1], cd: p[2], di: +p[4] };
     if (p[3] === 'b' && p[4]) return { modo, tela: 'bairro', uf: p[1], cd: p[2], chave: p[4] };
     if (p[3] === 'l' && p[4]) return { modo, tela: 'local', uf: p[1], cd: p[2], id: decodeURIComponent(p[4]) };
     return { modo, tela: 'mun', uf: p[1], cd: p[2] };
@@ -49,7 +51,8 @@ function render(manterScroll = false) {
   if (r.tela === 'geral') v = viewGeral(ctx);
   else if (r.tela === 'cand') v = viewCand(ctx, r.k);
   else if (r.tela === 'mun') v = viewMun(ctx, r.uf, r.cd);
-  else if (r.tela === 'bairro') v = viewBairro(ctx, r.uf, r.cd, r.chave);
+  else if (r.tela === 'bairro') v = viewBairro(ctx, r.uf, r.cd, r.chave, r.di);
+  else if (r.tela === 'distrito') v = viewDistrito(ctx, r.uf, r.cd, r.di);
   else if (r.tela === 'local') v = viewLocal(ctx, r.uf, r.cd, r.id);
   else { if (S.fonte === 'tse-direto' && !S.snap.mun?.[r.uf]) { municipiosDireto(r.uf, S.snap).then(() => { S.Psig = ''; S.Vsig = ''; render(true); }).catch(() => {}); } v = viewUf(ctx, r.uf, r.c); }
   ultimoCtx = ctx;
