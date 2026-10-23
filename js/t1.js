@@ -1,11 +1,11 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=8ec099e0';
-import { esc, tabela, sem } from './ui.js?v=8ec099e0';
-import { kpi } from './views.js?v=8ec099e0';
-import { criarMapa } from './map.js?v=8ec099e0';
-import { criarMapaMun } from './mapamun.js?v=8ec099e0';
-import { getJSON } from './tse.js?v=8ec099e0';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto } from './util.js?v=930c966c';
+import { esc, tabela, sem } from './ui.js?v=930c966c';
+import { kpi } from './views.js?v=930c966c';
+import { criarMapa } from './map.js?v=930c966c';
+import { criarMapaMun } from './mapamun.js?v=930c966c';
+import { getJSON } from './tse.js?v=930c966c';
 
 let cache = null;
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
@@ -42,6 +42,7 @@ export function blocoCands(T, u, titulo = 'Todos os candidatos') {
   const ord = u.v.map((x, i) => i).sort((a, b) => u.v[b] - u.v[a]), max = Math.max(...u.p.filter(x => isFinite(x)), 1);
   return `<section class="painel"><h2>${esc(titulo)}</h2><p class="sub">Porcentagem sobre os votos válidos (exclui brancos e nulos).</p><div class="cand-lista">${ord.map(i => `<div class="cl-linha"><span class="cl-nome"><i style="background:${T.cor(i)}"></i><b>${esc(T.nome(i))}</b> <small>${esc([T.part(i), T.cands[i].n].filter(Boolean).join(' · '))}</small></span><span class="cl-barra"><b style="width:${isFinite(u.p[i]) ? 100 * u.p[i] / max : 0}%;background:${T.cor(i)}"></b></span><span class="cl-pct">${fNum(u.p[i], 2)}%</span><span class="cl-votos">${fInt(u.v[i])}</span></div>`).join('')}</div></section>`;
 }
+export const unidadeV = (T, V) => { const vv = V.reduce((a, b) => a + b, 0); return { v: V, vv, p: V.map(x => vv ? 100 * x / vv : NaN) }; };
 export const kpisT1 = u => `<section class="kpis k4">${kpi('Comparecimento', fNum(100 - u.pAb, 2) + '%', null, `${fInt(u.c)} de ${fInt(u.te)} eleitores`)}${kpi('Abstenção', fNum(u.pAb, 2) + '%', null, `${fInt(u.ab)} eleitores`)}${kpi('Votos em branco', fNum(u.pBr, 2) + '%', null, `${fInt(u.vb)} votos`)}${kpi('Votos nulos', fNum(u.pNu, 2) + '%', null, `${fInt(u.tvn)} votos`)}</section>`;
 export function legendaT1(T, u) {
   const ord = u.v.map((x, i) => i).sort((a, b) => u.v[b] - u.v[a]).slice(0, 6);

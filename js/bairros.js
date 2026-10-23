@@ -1,17 +1,17 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=8ec099e0';
-import { CONFIG } from './config.js?v=8ec099e0';
-import { getJSON } from './tse.js?v=8ec099e0';
-import { esc, dlt, tabela, sem } from './ui.js?v=8ec099e0';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=8ec099e0';
-import { listaMunicipios } from './model.js?v=8ec099e0';
-import { dec, blocoCands, kpisT1 } from './t1.js?v=8ec099e0';
-import { projetarMunicipios } from './proj.js?v=8ec099e0';
-import { criarMapaPontos } from './mapapontos.js?v=8ec099e0';
-import { criarMapaBairros } from './mapabairros.js?v=8ec099e0';
-import { legendaMapa } from './map.js?v=8ec099e0';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=930c966c';
+import { CONFIG } from './config.js?v=930c966c';
+import { getJSON } from './tse.js?v=930c966c';
+import { esc, dlt, tabela, sem } from './ui.js?v=930c966c';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=930c966c';
+import { listaMunicipios } from './model.js?v=930c966c';
+import { dec, blocoCands, kpisT1, unidadeV } from './t1.js?v=930c966c';
+import { projetarMunicipios } from './proj.js?v=930c966c';
+import { criarMapaPontos } from './mapapontos.js?v=930c966c';
+import { criarMapaBairros } from './mapabairros.js?v=930c966c';
+import { legendaMapa } from './map.js?v=930c966c';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
@@ -62,7 +62,7 @@ export function demoSecoes(est, linhaMun) {
 // ---------- agregação ----------
 const novo = () => ({ ts: 0, st: 0, ap: 0, apT: 0, L: 0, F: 0, O: 0, B: 0, N: 0, L1: 0, F1: 0, O1: 0, B1: 0, N1: 0, L1T: 0, F1T: 0, O1T: 0, B1T: 0, N1T: 0 });
 
-const soma = (a, b) => { for (const k of Object.keys(novo())) a[k] += b[k]; };
+const soma = (a, b) => { for (const k of Object.keys(novo())) a[k] += b[k]; if (b.V) { a.V ??= new Array(b.V.length).fill(0); for (let i = 0; i < b.V.length; i++) a.V[i] += b.V[i]; } };
 let semDelta = false;
 export const setSemDelta = v => { semDelta = !!v; };
 function derivar(u) {
@@ -78,9 +78,15 @@ function derivar(u) {
   if (semDelta) u.dL = u.dF = u.dAb = NaN;
   return u;
 }
-export function agregar(est, live) {
+// voto de cada candidato do 1º turno por local (ext = { x: data/b1t, T: res_1t preparado }): vetor alinhado a T.cands
+function vetorLocal(est, ext, i) {
+  const { x, T } = ext, V = new Array(T.cands.length).fill(0), idx = x.c.map(n => T.cands.findIndex(c => +c.n === n));
+  est.l[i][14].forEach((s, j) => { V[T.iL] += s[2]; V[T.iF] += s[3]; const row = x.l[i]?.[j]; if (row) row.forEach((q, k) => { if (idx[k] >= 0) V[idx[k]] += q; }); });
+  return V;
+}
+export function agregar(est, live, ext) {
   const locais = [], porBairro = new Map(), tot = novo();
-  for (const l of est.l) {
+  for (const [li, l] of est.l.entries()) {
     const u = novo(); u.ts = l[14].length;
     for (const s of l[14]) {
       u.apT += s[1]; u.L1T += s[2]; u.F1T += s[3]; u.O1T += s[4]; u.B1T += s[5]; u.N1T += s[6];
@@ -89,11 +95,12 @@ export function agregar(est, live) {
       u.L1 += s[2]; u.F1 += s[3]; u.O1 += s[4]; u.B1 += s[5]; u.N1 += s[6];
     }
     const bairro = l[4] || SEM_BAIRRO;
+    if (ext) u.V = vetorLocal(est, ext, li);
     derivar(u); Object.assign(u, { id: l[0] + '-' + l[1], z: l[0], nome: l[2], end: l[3], bairro, cep: l[5], lat: l[6], lon: l[7] });
     locais.push(u);
     if (!porBairro.has(bairro)) porBairro.set(bairro, Object.assign(novo(), { locais: 0 }));
-    const b = porBairro.get(bairro); soma(b, Object.fromEntries(Object.keys(novo()).map(k => [k, u[k]]))); b.locais++;
-    soma(tot, Object.fromEntries(Object.keys(novo()).map(k => [k, u[k]])));
+    const b = porBairro.get(bairro); soma(b, u); b.locais++;
+    soma(tot, u);
   }
   const bairros = [...porBairro].map(([nome, b]) => Object.assign(derivar(b), { nome, id: nome }));
   derivar(tot);
@@ -122,12 +129,13 @@ const chaveB = n => 'n:' + encodeURIComponent(n);
 export const somar = locais => { const u = Object.assign(novo(), { locais: locais.length }); for (const l of locais) soma(u, l); return derivar(u); };
 const unidadeR = u => ({ pst: u.pst, st: u.st, ts: u.ts, L: u.L, F: u.F, pL: u.pL, pF: u.pF, dL: u.dL, dF: u.dF, lider: u.lider });
 const placar = (u, titulo, modo, ap, vazio) => { const r = unidadeR(u); return `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false, semLink: true })}<div class="centro"><div class="centro-t">${esc(titulo)}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : vazio}</div></div>${cartaoCand('F', r, { modo, conf: false, semLink: true })}</section>`; };
+const listaCands = (ctx, u, titulo) => ctx.modo === 't1' && u.V ? blocoCands(ctx.T1, unidadeV(ctx.T1, u.V), titulo) : '';
 const kpisUnidade = u => `<section class="kpis k4">${kpi('Seções apuradas', `${fInt(u.st)}/${fInt(u.ts)}`, null, u.ts ? fNum(u.pst, 0) + '% das seções' : '')}${kpi('Abstenção', u.st ? fNum(u.pAb, 2) + '%' : '–', u.st ? dlt(u.dAb, 2) : null, `${fInt(u.apT)} eleitores no total`)}${kpi('Brancos + nulos', u.st ? fNum(u.pBr + u.pNu, 2) + '%' : '–', null, `${fInt(u.B + u.N)} votos`)}${kpi('Comparecimento', u.st ? fNum(100 - u.pAb, 2) + '%' : '–', null, `${fInt(u.c)} votos apurados`)}</section>`;
 
 const tipUnidade = (titulo, u, rotuloSub) => `<b>${titulo}</b><br><span class="t-s">${rotuloSub ? rotuloSub + ' · ' : ''}${fInt(u.st)}/${fInt(u.ts)} seções apuradas</span>` + (u.st ? `<br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(u.pL, 2)}%</b> ${fDelta(u.dL, 1)} · ${fInt(u.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(u.pF, 2)}%</b> ${fDelta(u.dF, 1)} · ${fInt(u.F)}` : `<br><span class="t-s">1º turno: ${CAND.L.nome.split(' ')[0]} ${fNum(u.p1LT, 1)}% · ${CAND.F.nome.split(' ')[0]} ${fNum(u.p1FT, 1)}%</span>`);
 const corDe = u => u.lider ? corDoPct(u.lider, u.pw) : '#c9c4d8';
 
-function colunas(tipo, ap, uf, cd, rot = 'Bairro') {
+function colunas(tipo, ap, uf, cd, rot = 'Bairro', t1 = false) {
   const nomeCol = tipo === 'b' ? { k: 'nome', t: rot, h: x => `<b>${esc(bonito(x.nome))}</b>${x.st ? '' : ' <small class="agu">aguardando</small>'}`, v: x => x.nome, ini: 'asc' }
     : { k: 'nome', t: 'Local de votação', h: x => `<b>${esc(bonito(x.nome))}</b><br><small>${esc(bonito(x.bairro))} · ${esc(bonito(x.end))}</small>`, v: x => x.nome, ini: 'asc' };
   return [nomeCol,
@@ -136,6 +144,7 @@ function colunas(tipo, ap, uf, cd, rot = 'Bairro') {
     ...['L', 'F'].flatMap(k => [
       { k: 'v' + k, t: `${cabCand(k)} votos`, h: x => x.st ? `<span class="num">${fInt(x[k])}</span>` : '', v: x => x.st ? x[k] : NaN, cls: 'n' },
       { k: 'p' + k, t: `${cabCand(k)} %`, h: x => x.st ? `<b>${fNum(x['p' + k], 2)}%</b> ${dlt(x['d' + k])}` : `<span class="t-s">1º t.: ${fNum(x['p1' + k + 'T'], 1)}%</span>`, v: x => x.st ? x['p' + k] : NaN, x: x => x['p' + k], cls: 'n' }]),
+    ...(t1 ? [{ k: 'pO', t: 'Outros %', h: x => x.vv ? `${fNum(pc(x.O, x.vv), 2)}%` : '', v: x => pc(x.O, x.vv), cls: 'n sec' }] : []),
     { k: 'lid', t: 'Vence', h: x => x.lider ? `<span class="chip-l" style="background:${CAND[x.lider].cor}">${CAND[x.lider].nome.split(' ')[0]}</span>` : '', v: x => x.lider ? (x.lider === 'L' ? 1 : 0) : NaN },
     { k: 'ab', t: 'Abstenção', h: x => x.st ? `${fNum(x.pAb, 1)}% ${dlt(x.dAb)}` : '', v: x => x.pAb, cls: 'n sec' },
     { k: 'apt', t: 'Eleitores', h: x => fInt(x.apT), v: x => x.apT, cls: 'n sec' }];
@@ -151,7 +160,8 @@ async function carregarMun(ctx, uf, cd) {
   setSemDelta(ctx.modo === 't1');
   const est = await estatico(uf, cd), geo = await geoBairros(cd);
   const live = ctx.modo === 't1' ? sint1T(est) : ctx.demo ? demoSecoes(est, ctx.snap.mun?.[uf]?.find(x => x[0] === cd)) : await aoVivo(uf, cd);
-  const ag = agregar(est, live); const r = { est, geo, live, ag }; cacheMun.set(chaveC(ctx, uf, cd), r); return r;
+  let x1 = null; if (ctx.modo === 't1') x1 = await getJSON(`data/b1t/${uf}/${cd}.json`, { retries: 1 }).catch(() => null);
+  const ag = agregar(est, live, x1 ? { x: x1, T: ctx.T1 } : null); const r = { est, geo, live, ag }; cacheMun.set(chaveC(ctx, uf, cd), r); return r;
 }
 function iniciar(ctx, uf, cd, root, alvoErro, aoPronto) {
   setSemDelta(ctx.modo === 't1');
@@ -208,7 +218,7 @@ export function viewMun(ctx, uf, cd) {
       }
       const prog = tot.st ? `${fNum(tot.pst, 1)}% das seções do município já chegaram (${fInt(tot.st)} de ${fInt(tot.ts)}).` : 'Os resultados aparecem aqui conforme as seções forem totalizadas.';
       root.querySelector('#mb-estado').textContent = prog; const pg = root.querySelector('#geo-prog'); if (pg) pg.textContent = prog;
-      tabela(root.querySelector('#tab-b'), { cols: colunas('b', ap, uf, cd, rotTab), rows: linhasTab, onRow: x => ctx.ir(dist ? `${rotaMun(ctx.modo, uf, cd)}/d/${x.di}` : `${rotaMun(ctx.modo, uf, cd)}/b/${chaveB(x.nome)}`), sort: tot.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, q) => sem(x.nome).includes(q), limite: 500 });
+      tabela(root.querySelector('#tab-b'), { cols: colunas('b', ap, uf, cd, rotTab, t1), rows: linhasTab, onRow: x => ctx.ir(dist ? `${rotaMun(ctx.modo, uf, cd)}/d/${x.di}` : `${rotaMun(ctx.modo, uf, cd)}/b/${chaveB(x.nome)}`), sort: tot.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, q) => sem(x.nome).includes(q), limite: 500 });
       ctx.csv = () => ({ nome: `${uf}_${cd}_${rotTab.toLowerCase()}s_${ap ? 'apuracao' : 'projecao'}`, cab: [rotTab, ...cabCsv.slice(1)], linhas: linhasCsv(linhasTab, x => bonito(x.nome)) });
     }
     iniciar(ctx, uf, cd, root, alvo, desenhar);
@@ -228,9 +238,9 @@ export function viewDistrito(ctx, uf, cd, di) {
       if (!locais.length) { corpo.innerHTML = `<div class="aviso">Nenhum local de votação encontrado ${nv.na} ${nv.min}.</div>`; return; }
       const porB = new Map(); for (const l of locais) { if (!porB.has(l.bairro)) porB.set(l.bairro, []); porB.get(l.bairro).push(l); }
       const bairros = [...porB].map(([n, ls]) => Object.assign(somar(ls), { nome: n, id: n }));
-      corpo.innerHTML = `${placar(u, `${nome} · ${mun.nome}`, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(u)}
+      corpo.innerHTML = `${placar(u, `${nome} · ${mun.nome}`, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(u)}${listaCands(ctx, u, 'Resultado por candidato')}
         <section class="painel"><h2>Bairros de ${esc(nome)} (${fInt(bairros.length)})</h2><p class="sub">Bairro conforme o cadastro do TSE para cada local de votação. <b>Clique num bairro</b> para ver os locais de votação.</p><div id="tab-b"></div></section>`;
-      tabela(corpo.querySelector('#tab-b'), { cols: colunas('b', ap, uf, cd, 'Bairro'), rows: bairros, onRow: x => ctx.ir(`${rotaMun(ctx.modo, uf, cd)}/d/${di}/b/${chaveB(x.nome)}`), sort: u.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, q) => sem(x.nome).includes(q), limite: 500 });
+      tabela(corpo.querySelector('#tab-b'), { cols: colunas('b', ap, uf, cd, 'Bairro', ctx.modo === 't1'), rows: bairros, onRow: x => ctx.ir(`${rotaMun(ctx.modo, uf, cd)}/d/${di}/b/${chaveB(x.nome)}`), sort: u.st ? 'pL' : 'locais', dir: 'desc', filtro: (x, q) => sem(x.nome).includes(q), limite: 500 });
       ctx.csv = () => ({ nome: `${uf}_${cd}_${nome}_bairros_${ap ? 'apuracao' : 'projecao'}`.toLowerCase().replace(/[^a-z0-9_]+/g, '-'), cab: ['Bairro', ...cabCsv.slice(1)], linhas: linhasCsv(bairros, x => bonito(x.nome)) });
     });
   } };
@@ -251,9 +261,9 @@ export function viewBairro(ctx, uf, cd, chave, di) {
       const rot = geoSel && geo?.rotulo === 'distrito' ? nv.cap : 'Bairro';
       const nav = document.querySelector('.trilha'); if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ctx.modo, mun, uf, cd), ...(di != null ? [[`${nv.cap}: ${nomeDist}`, `${rotaMun(ctx.modo, uf, cd)}/d/${di}`]] : []), [`${rot}: ${nome}`]]);
       if (!locais.length) { corpo.innerHTML = `<div class="aviso">Nenhum local de votação encontrado nesta área.</div>`; return; }
-      corpo.innerHTML = `${placar(u, `${nome} · ${mun.nome}`, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(u)}
+      corpo.innerHTML = `${placar(u, `${nome} · ${mun.nome}`, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(u)}${listaCands(ctx, u, 'Resultado por candidato')}
         <section class="painel"><h2>Locais de votação (${fInt(locais.length)})</h2><p class="sub">Clique num local de votação para ver o resultado de cada seção.</p><div id="tab-l"></div></section>`;
-      tabela(corpo.querySelector('#tab-l'), { cols: colunas('l', ap, uf, cd), rows: locais, onRow: x => ctx.ir(`${rotaMun(ctx.modo, uf, cd)}/l/${x.id}`), sort: u.st ? 'pL' : 'apt', dir: 'desc', filtro: (x, q) => sem(x.nome + ' ' + x.end).includes(q), limite: 300 });
+      tabela(corpo.querySelector('#tab-l'), { cols: colunas('l', ap, uf, cd, undefined, ctx.modo === 't1'), rows: locais, onRow: x => ctx.ir(`${rotaMun(ctx.modo, uf, cd)}/l/${x.id}`), sort: u.st ? 'pL' : 'apt', dir: 'desc', filtro: (x, q) => sem(x.nome + ' ' + x.end).includes(q), limite: 300 });
       ctx.csv = () => ({ nome: `${uf}_${cd}_${nome}_locais_${ap ? 'apuracao' : 'projecao'}`.toLowerCase().replace(/[^a-z0-9_]+/g, '-'), cab: ['Local de votação', ...cabCsv.slice(1)], linhas: linhasCsv(locais, x => bonito(x.nome)) });
     });
   } };
@@ -276,9 +286,9 @@ export function viewLocal(ctx, uf, cd, id) {
       const secs = bruto[14].map(s => { const x = live.s[l.z + '-' + s[0]], o = s[4], vv1 = s[2] + s[3] + o, c1 = vv1 + s[5] + s[6];
         const r = { n: s[0], ap: s[1], ok: !!x, p1L: pc(s[2], vv1), p1F: pc(s[3], vv1), L: x ? x[0] : NaN, F: x ? x[1] : NaN, B: x ? x[3] : NaN, N: x ? x[4] : NaN };
         if (x) { const vv = x[0] + x[1] + x[2], c = vv + x[3] + x[4]; r.pL = pc(x[0], vv); r.pF = pc(x[1], vv); r.dL = r.pL - r.p1L; r.dF = r.pF - r.p1F; r.pAb = pc(s[1] - c, s[1]); r.lider = x[0] >= x[1] ? 'L' : 'F'; } else { r.pL = r.pF = r.dL = r.dF = r.pAb = NaN; r.lider = null; }
-        if (ctx.modo === 't1') r.dL = r.dF = NaN;
+        if (ctx.modo === 't1') { r.dL = r.dF = NaN; r.pO = x ? pc(x[2], x[0] + x[1] + x[2]) : NaN; }
         return r; });
-      corpo.innerHTML = `${placar(l, nome, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(l)}
+      corpo.innerHTML = `${placar(l, nome, ctx.modo, ap, 'Aguardando a apuração das seções')}${kpisUnidade(l)}${listaCands(ctx, l, 'Resultado por candidato')}
         <section class="painel"><h2>Sobre o local</h2><p class="info-local"><b>${esc(bonito(l.end))}</b><br>Bairro: <a href="${bRota}">${esc(bonito(l.bairro))}</a> · CEP ${esc(l.cep || '–')} · zona eleitoral ${fInt(l.z)} · ${fInt(l.apT)} eleitores · ${fInt(l.ts)} seções${l.lat ? ` · <a href="https://www.google.com/maps?q=${l.lat},${l.lon}" target="_blank" rel="noopener">ver no mapa ↗</a>` : ''}</p></section>
         <section class="painel"><h2>Seções (${fInt(secs.length)})</h2><p class="sub">Resultado de cada urna deste local. As seções agregadas votam na urna da seção principal. A variação compara com o 1º turno na mesma seção.</p><div id="tab-s"></div></section>`;
       tabela(corpo.querySelector('#tab-s'), { cols: [
@@ -287,6 +297,7 @@ export function viewLocal(ctx, uf, cd, id) {
         ...['L', 'F'].flatMap(k => [
           { k: 'v' + k, t: `${cabCand(k)} votos`, h: s => s.ok ? `<span class="num">${fInt(s[k])}</span>` : '', v: s => s[k], cls: 'n' },
           { k: 'p' + k, t: `${cabCand(k)} %`, h: s => s.ok ? `<b>${fNum(s['p' + k], 2)}%</b> ${dlt(s['d' + k])}` : `<span class="t-s">1º t.: ${fNum(s['p1' + k], 1)}%</span>`, v: s => s['p' + k], x: s => s['p' + k], cls: 'n' }]),
+        ...(ctx.modo === 't1' ? [{ k: 'pO', t: 'Outros %', h: s => s.ok ? `${fNum(s.pO, 2)}%` : '', v: s => s.pO, cls: 'n sec' }] : []),
         { k: 'lid', t: 'Vence', h: s => s.lider ? `<span class="chip-l" style="background:${CAND[s.lider].cor}">${CAND[s.lider].nome.split(' ')[0]}</span>` : '', v: s => s.lider ? (s.lider === 'L' ? 1 : 0) : NaN },
         { k: 'B', t: 'Brancos', h: s => s.ok ? fInt(s.B) : '', v: s => s.B, cls: 'n sec' }, { k: 'N', t: 'Nulos', h: s => s.ok ? fInt(s.N) : '', v: s => s.N, cls: 'n sec' },
         { k: 'ab', t: 'Abstenção', h: s => s.ok ? fNum(s.pAb, 1) + '%' : '', v: s => s.pAb, cls: 'n sec' }], rows: secs, sort: 'n', dir: 'asc' });
