@@ -17,16 +17,21 @@ const gravar = (f, o) => { fs.mkdirSync(path.dirname(f), { recursive: true }); c
 const pad = (x, n) => String(x).padStart(n, '0');
 const etags = {};
 
-async function get(url, { json = true, buf = false, retries = 2, inm } = {}) {
+// ritmo global (requisições/s) e pausa coletiva quando o TSE responde 429
+const rps = +arg('rps', 60); let proximo = 0, pausaAte = 0, n429 = 0;
+async function vez() { const agora = Date.now(); proximo = Math.max(proximo, agora, pausaAte) + 1000 / rps; const espera = proximo - 1000 / rps - agora; if (espera > 0) await new Promise(r => setTimeout(r, espera)); }
+async function get(url, { json = true, buf = false, retries = 5, inm } = {}) {
   for (let t = 0; t <= retries; t++) {
     try {
+      await vez();
       const r = await fetch(url, { headers: inm ? { 'If-None-Match': inm } : {}, signal: AbortSignal.timeout(30000) });
       if (r.status === 304) return { naoMudou: true };
       if (r.status === 404) return { nada: true };
+      if (r.status === 429 || r.status === 503) { n429++; const ra = +r.headers.get('retry-after') || 0; pausaAte = Math.max(pausaAte, Date.now() + Math.max(1500, ra * 1000) * (1 + t * 0.5)); throw new Error('HTTP ' + r.status); }
       if (!r.ok) throw new Error('HTTP ' + r.status);
       const et = r.headers.get('etag');
       return { dado: buf ? Buffer.from(await r.arrayBuffer()) : json ? await r.json() : await r.text(), etag: et };
-    } catch (e) { if (t === retries) return { erro: String(e.message || e) }; await new Promise(r => setTimeout(r, 400 * (t + 1))); }
+    } catch (e) { if (t === retries) return { erro: String(e.message || e) }; await new Promise(r => setTimeout(r, 300 * (t + 1))); }
   }
 }
 async function pool(itens, n, fn) { let i = 0; const ws = Array.from({ length: Math.min(n, itens.length) }, async () => { while (i < itens.length) { const k = i++; await fn(itens[k], k); } }); await Promise.all(ws); }
@@ -76,7 +81,7 @@ async function ciclo(uf, ciclo_n) {
 const ini = Date.now(); let n = 0;
 do {
   const t0 = Date.now();
-  for (const uf of ufs) { const r = await ciclo(uf, n); if (r.novas || r.erros) log(uf, `novas ${r.novas}/${r.pend ?? 0} (cfg ${r.total}) erros ${r.erros}`); }
+  for (const uf of ufs) { const r = await ciclo(uf, n); if (r.novas || r.erros) log(uf, `novas ${r.novas}/${r.pend ?? 0} (cfg ${r.total}) erros ${r.erros} 429:${n429}`); }
   n++;
   const resto = loop * 1000 - (Date.now() - t0); if (loop && resto > 0) await new Promise(r => setTimeout(r, resto));
 } while (loop && Date.now() - ini < maxMin * 60000);
