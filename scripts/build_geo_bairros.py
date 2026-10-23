@@ -60,7 +60,10 @@ for zp in sorted(glob.glob(os.path.join(zdir, '*_bairros_CD2022.zip'))):
                 if geoms[i][2].distance(pt) > 0.003: continue
             loc[f'{l[0]}-{l[1]}'] = i; n_ok += 1
         cob = n_ok / n_t if n_t else 0
-        if cob < 0.6: tot['baixa_cob'] += 1; continue
+        if cob < 0.45:
+            tot['baixa_cob'] += 1
+            if len(locais) >= 60: print('BAIXA COBERTURA', u, cd5, est['n'], 'locais', len(locais), 'poligonos', len(geoms), 'cob', round(cob, 2), flush=True)
+            continue
         # só mantém polígonos úteis (com local ou área razoável) — mantém todos para o mapa ficar completo
         feitos = [{'n': nm, 'c': cb, 'p': aneis(g, 0.00012)} for nm, cb, g in geoms]
         txt = json.dumps({'m': cd5, 'uf': u, 'ibge': ibge, 'cob': round(cob, 3), 'f': feitos, 'loc': loc}, separators=(',', ':'), ensure_ascii=False)
