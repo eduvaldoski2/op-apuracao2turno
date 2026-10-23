@@ -8,7 +8,7 @@ for u in \
  https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_2022.zip \
  https://dadosabertos.tse.jus.br/dataset/eleitorado-2026 \
  https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_de_setores_censitarios__divisoes_intramunicipais/censo_2022/ \
- https://servicodados.ibge.gov.br/api/v3/malhas/municipios/3304557?formato=application/vnd.geo+json&intrarregiao=bairro ; do H "$u"; done
+  'https://servicodados.ibge.gov.br/api/v3/malhas/municipios/3304557?formato=application/vnd.geo+json&intrarregiao=bairro' ; do H "$u"; done
 echo "=== download locais de votacao"
 for a in 2026 2024; do
   curl -sS -m 300 -L -o lv$a.zip "https://cdn.tse.jus.br/estatistica/sead/odsele/eleitorado_locais_votacao/eleitorado_local_votacao_$a.zip" && ls -la lv$a.zip && unzip -o -q lv$a.zip -d lv$a && ls -la lv$a && break
