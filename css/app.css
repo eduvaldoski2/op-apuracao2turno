@@ -303,3 +303,13 @@ tr.clic{cursor:pointer}tr.clic:hover td{background:#f3f1f8}
   .exp button{flex:1;padding:8px 6px}
   .exp .exp-comp{flex:1.7;padding:8px 10px}
 }
+
+/* ---- quanto falta apurar ---- */
+.falta .fa-frase{font-size:16.5px;line-height:1.5;margin:6px 0 4px}
+.falta .fa-h{font-size:15px;margin:18px 0 8px;color:var(--roxo)}
+.fa-barra{position:relative;margin:34px 6px 8px;padding-bottom:22px}
+.fa-trilho{height:14px;background:#ece9f3;border-radius:99px;overflow:hidden}.fa-trilho i{display:block;height:100%;border-radius:99px}
+.fa-m{position:absolute;top:-22px;transform:translateX(-50%);font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--c);white-space:nowrap}
+.fa-m b{display:block;font-weight:700}
+.fa-m::after{content:"";position:absolute;left:50%;top:18px;height:20px;width:3px;margin-left:-1.5px;background:var(--c);border-radius:2px}
+.fa-esc{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;font-size:11.5px;color:var(--tx2)}

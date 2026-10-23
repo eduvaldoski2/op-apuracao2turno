@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=8342a609';
-import { listaMunicipios, rankingUfs } from './model.js?v=8342a609';
-import { projetarMunicipios } from './proj.js?v=8342a609';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=8342a609';
-import { graficoPlacar } from './charts.js?v=8342a609';
-import { criarMapa, legendaMapa } from './map.js?v=8342a609';
-import { criarMapaMun } from './mapamun.js?v=8342a609';
-import { getJSON } from './tse.js?v=8342a609';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=f510198b';
+import { listaMunicipios, rankingUfs } from './model.js?v=f510198b';
+import { projetarMunicipios } from './proj.js?v=f510198b';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=f510198b';
+import { graficoPlacar } from './charts.js?v=f510198b';
+import { criarMapa, legendaMapa } from './map.js?v=f510198b';
+import { criarMapaMun } from './mapamun.js?v=f510198b';
+import { getJSON } from './tse.js?v=f510198b';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -137,7 +137,7 @@ export function viewGeral(ctx) {
   h += `<section class="painel mapa-sec"><h2>${ap ? 'Resultado por estado' : 'Projeção por estado'}</h2><p class="sub">Clique em um estado para ver os municípios${ap ? '' : ' (resultado projetado)'}.</p><div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado">${legendaMapa()}${tabelaRegioes(ctx, ap)}</div></div></section>`;
 
   // balanço (apuração) ou composição de pendentes (projeção)
-  h += ap ? balanco(V.br) : pendentes(P, B);
+  h += ap ? faltaApurar(base, ufs, B) + balanco(V.br) : pendentes(P, B);
 
   // tabela de UFs
   h += `<section class="painel"><h2>Todos os estados</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um estado</b> para abrir os municípios.</p><div id="tab-uf"></div></section>`;
@@ -180,6 +180,30 @@ function tabelaRegioes(ctx, ap) {
   return `<h3>Por região</h3><p class="nota" style="margin:0 0 6px">Clique numa região para ver os estados.</p><div class="tab-scroll"><table class="tab mini"><thead><tr><th>Região</th><th class="n">${ap ? '% apurado' : 'a apurar'}</th><th class="n">${cabCand('L')}</th><th class="n">${cabCand('F')}</th><th class="n">Abst.</th></tr></thead><tbody>${rs.map(lin).join('')}</tbody></table></div>`;
 }
 
+// ---------- quanto falta apurar (aba Apuração) ----------
+// Estimativa simples e transparente: eleitores restantes × (1 − alienação); mostra quanto do restante o candidato atrás precisa.
+function faltaApurar(base, ufs, B) {
+  const R = Math.max(0, base.te - base.est);
+  const ali1 = B?.br ? 100 * (B.br.a + B.br.vb + B.br.tvn) / B.br.te : base.ali;
+  const vvA = R * (1 - base.ali / 100), vvB = R * (1 - ali1 / 100), vvR = (vvA + vvB) / 2;
+  const lider = base.L >= base.F ? 'L' : 'F', atras = lider === 'L' ? 'F' : 'L', m = Math.abs(base.L - base.F);
+  const conc = base.pst >= 99.995 || R < 1;
+  const necA = vvA > 0 ? 100 * (0.5 + m / (2 * vvA)) : NaN, necB = vvB > 0 ? 100 * (0.5 + m / (2 * vvB)) : NaN;
+  const nec = [necA, necB].filter(isFinite), necMin = Math.min(...nec), necMax = Math.max(...nec);
+  const hoje = atras === 'L' ? base.pL : base.pF;
+  let frase;
+  if (conc) frase = `A apuração está concluída: <b style="color:${CAND[lider].cor}">${CAND[lider].nome}</b> venceu por <b>${fInt(m)}</b> votos.`;
+  else if (!nec.length) frase = 'Aguardando dados para estimar o que falta.';
+  else if (necMin > 100) frase = `<b>Matematicamente decidido:</b> mesmo com todos os votos válidos que faltam, <b>${CAND[atras].nome}</b> não alcança <b style="color:${CAND[lider].cor}">${CAND[lider].nome}</b>.`;
+  else frase = `Faltam cerca de <b>${fCompact(vvR)}</b> votos válidos. Para virar, <b style="color:${CAND[atras].cor}">${CAND[atras].nome}</b> precisaria de <b>${necMin > 100 ? '>100' : fNum(necMin, 1)}${necMax - necMin > 0.15 && necMax <= 100 ? `–${fNum(necMax, 1)}` : ''}%</b> dos votos válidos que ainda não foram contados (hoje tem ${fNum(hoje, 1)}% dos apurados).`;
+  const marca = (v, cor, rot) => isFinite(v) && v >= 0 && v <= 100 ? `<span class="fa-m" style="left:${v}%;--c:${cor}"><b>${rot}</b></span>` : '';
+  const rs = ufs.map(u => ({ u, r: Math.max(0, (u.te || 0) - (u.est || 0)) })).filter(x => x.r > 0).sort((a, b) => b.r - a.r).slice(0, 6), tot = R || 1;
+  return `<section class="painel falta"><h2>Quanto falta apurar</h2><p class="sub">${fNum(100 - pc(base.est, base.te), 1)}% do eleitorado ainda não foi apurado (${fCompact(R)} eleitores).</p>
+  <p class="fa-frase">${frase}</p>
+  ${!conc && nec.length && necMin <= 100 ? `<div class="fa-barra" role="img" aria-label="Quanto do restante o candidato atrás precisa"><div class="fa-trilho"><i style="width:${clamp(hoje, 0, 100)}%;background:${CAND[atras].cor}"></i></div>${marca(hoje, CAND[atras].cor, 'hoje')}${marca(necMin, '#2b2540', 'precisa')}<div class="fa-esc"><span>0%</span><span>50%</span><span>100% dos votos restantes</span></div></div>` : ''}
+  ${!conc && rs.length ? `<h3 class="fa-h">Onde estão os eleitores que faltam</h3><div class="pend">${rs.map(({ u, r }) => `<div class="pend-l"><span>${esc(u.nome)}</span><div class="pend-b"><i style="width:${100 * r / rs[0].r}%"></i></div><b>${fCompact(r)}</b><small>${fNum(100 * r / tot, 0)}% do restante · ${fNum(u.pst, 0)}% apurado${u.lider && u.pst > 0 ? ' · ' + CAND[u.lider].nome.split(' ')[0] + ' ' + fNum(u.lider === 'L' ? u.pL : u.pF, 1) + '%' : ''}</small></div>`).join('')}</div>` : ''}
+  ${entenda(`<b>Como é calculado.</b> Eleitores restantes = eleitorado total − eleitorado das seções já apuradas. Votos válidos restantes = restantes × (1 − alienação), usando a alienação (abstenção + brancos + nulos) observada até agora e a do 1º turno; o painel mostra a média e, quando as duas estimativas diferem, uma faixa. O candidato atrás precisa de <b>½ + diferença ÷ (2 × votos válidos restantes)</b> dos votos que ainda faltam. É uma conta aritmética de cenário, <b>não é projeção</b>: as urnas restantes não são uma amostra aleatória (veja a aba Projeção).`)}</section>`;
+}
 function balanco(b) {
   const r = b.refAbs, v1 = b.refRaw.vv, o1 = Math.max(0, v1 - r.L - r.F);
   const lin = (n, a1, a2, cor) => `<tr><td>${cor ? `<i class="pt" style="background:${cor}"></i>` : ''}${n}</td><td class="n">${fInt(a1)}</td><td class="n">${fInt(a2)}</td><td class="n"><b class="${a2 - a1 >= 0 ? 'pos' : 'neg'}">${a2 - a1 >= 0 ? '+' : '−'}${fInt(Math.abs(a2 - a1))}</b></td></tr>`;
