@@ -1,5 +1,5 @@
 // Componentes de interface: tabela ordenável, cartões, formatação de variações.
-import { fDelta, fGrowth, fNum } from './util.js?v=2e6ef6f2';
+import { fDelta, fGrowth, fNum } from './util.js?v=6d72e742';
 // texto sem acentos e em minúsculas (busca "sao" acha "São")
 export const sem = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 export const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -7,6 +7,8 @@ export const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;',
 export const dlt = (v, d = 1, unit = ' p.p.') => { if (v == null || isNaN(v)) return ''; const t = fDelta(v, d, unit); const c = Math.round(v * 10 ** d) === 0 ? 'zero' : v > 0 ? 'pos' : 'neg'; return `<span class="dlt ${c}" title="variação em relação ao 1º turno">(${t})</span>`; };
 // célula "percentual + variação" com largura fixa para a variação: os números alinham na coluna
 export const pcel = (p, d, dig = 2, leve = false) => `<span class="pc${leve ? ' leve' : ''}"><b>${fNum(p, dig)}%</b>${d == null || isNaN(d) ? '' : dlt(d)}</span>`;
+// célula de votos com o ganho em relação ao 1º turno entre parênteses: 150.930 (+12.345)
+export const vcel = (v, g, tit = '') => `<span class="vc" ${tit ? `title="${tit}"` : ''}><b>${fNum(v, 0)}</b>${g == null || isNaN(g) ? '' : `<span class="dlt ${Math.round(g) === 0 ? 'zero' : g > 0 ? 'pos' : 'neg'}">(${fDelta(g, 0, '')})</span>`}</span>`;
 // bloco recolhível de explicação: [+] Entenda
 export const entenda = (html, rot = 'Entenda') => `<details class="entenda"><summary><span class="mais" aria-hidden="true"></span>${rot}</summary><div class="entenda-c">${html}</div></details>`;
 export const grw = (v, d = 1) => { if (v == null || !isFinite(v)) return ''; const t = fGrowth(v, d); const c = Math.round(v * 10 ** d) === 0 ? 'zero' : v > 0 ? 'pos' : 'neg'; return `<span class="dlt ${c}">${t}</span>`; };

@@ -7,10 +7,10 @@ const celula = v => { if (v == null || (typeof v === 'number' && isNaN(v))) retu
 
 export function baixarCSV(nome, cabecalho, linhas, rodape = []) {
   const txt = [cabecalho, ...linhas].map(l => l.map(celula).join(';')).concat(rodape.map(r => celula(r))).join('\r\n');
-  baixar(new Blob(['﻿' + txt], { type: 'text/csv;charset=utf-8' }), nome + '.csv');
+  baixar(new Blob(['\uFEFF' + txt], { type: 'text/csv;charset=utf-8' }), nome + '.csv');
 }
 
-async function capturar(el, titulo, sub) {
+async function capturar(el, titulo, sub, cadeia = '') {
   await carregaScript('vendor/html2canvas.min.js');
   return window.html2canvas(el, {
     scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: Math.max(1100, el.scrollWidth),
@@ -21,22 +21,25 @@ async function capturar(el, titulo, sub) {
       doc.querySelectorAll('details').forEach(d => { d.open = true; });
       const alvo = doc.querySelector('[data-export-raiz]') || doc.body;
       const cab = doc.createElement('div');
-      cab.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 22px;margin-bottom:16px;background:linear-gradient(100deg,#2A2260,#3E347E);color:#fff;border-radius:12px;font-family:system-ui,sans-serif';
-      cab.innerHTML = `<img src="img/logo-negativo.svg" alt="Oficina Política" style="height:54px;width:auto"><div style="text-align:right"><div style="font-weight:700;font-size:16px">${titulo}</div><div style="font-size:12.5px;opacity:.9;margin-top:3px">${sub}</div></div>`;
-      alvo.insertBefore(cab, alvo.firstChild);
+      cab.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 24px;margin-bottom:6px;background:linear-gradient(100deg,#2A2260,#3E347E);color:#fff;border-radius:12px;font-family:system-ui,sans-serif';
+      cab.innerHTML = `<img src="img/logo-negativo.svg" alt="Oficina Política" style="height:54px;width:auto"><div style="text-align:right;font-size:13px;opacity:.92;line-height:1.4">${sub}</div>`;
+      const tit = doc.createElement('div');
+      tit.style.cssText = 'padding:14px 6px 12px;margin-bottom:6px';
+      tit.innerHTML = `<div style="font:400 44px/1.1 'DM Serif Display',Georgia,serif;color:#3E347E">${titulo}</div>${cadeia ? `<div style="margin-top:8px;font:500 15px/1.35 'Space Grotesk',system-ui,sans-serif;color:#5d5675">${cadeia}</div>` : ''}`;
+      alvo.insertBefore(tit, alvo.firstChild); alvo.insertBefore(cab, alvo.firstChild);
       const rod = doc.createElement('div');
-      rod.style.cssText = 'display:flex;align-items:center;gap:14px;padding:14px 18px;margin-top:20px;border-top:2px solid #e4dfee;font-family:system-ui,sans-serif;color:#5d5675;font-size:12px;line-height:1.4';
-      rod.innerHTML = `<img src="img/icone.svg" alt="" style="width:38px;height:38px"><div><div style="font-weight:700;font-size:16px;color:#3E347E">oficinapolitica.com.br</div><div>Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.</div></div>`;
+      rod.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:10px;padding:26px 18px 18px;margin-top:22px;border-top:2px solid #e4dfee;font-family:system-ui,sans-serif;color:#6f6888;font-size:11.5px;line-height:1.45;text-align:center';
+      rod.innerHTML = `<div style="display:flex;align-items:center;gap:14px"><img src="img/icone.svg" alt="" style="width:60px;height:60px"><div style="font-weight:700;font-size:28px;color:#3E347E">oficinapolitica.com.br</div></div><div style="max-width:900px">Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.</div>`;
       alvo.appendChild(rod);
     },
   });
 }
-export async function baixarPNG(el, nome, titulo, sub) {
-  const c = await capturar(el, titulo, sub);
+export async function baixarPNG(el, nome, titulo, sub, cadeia) {
+  const c = await capturar(el, titulo, sub, cadeia);
   await new Promise(ok => c.toBlob(b => { baixar(b, nome + '.png'); ok(); }, 'image/png'));
 }
-export async function baixarPDF(el, nome, titulo, sub) {
-  const c = await capturar(el, titulo, sub);
+export async function baixarPDF(el, nome, titulo, sub, cadeia) {
+  const c = await capturar(el, titulo, sub, cadeia);
   await carregaScript('vendor/jspdf.umd.min.js');
   const { jsPDF } = window.jspdf, pdf = new jsPDF('p', 'mm', 'a4');
   const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight(), m = 8;
@@ -51,4 +54,41 @@ export async function baixarPDF(el, nome, titulo, sub) {
     y += h; pag++;
   }
   pdf.save(nome + '.pdf');
+}
+
+// ---- XLSX (Excel/Sheets/Numbers abrem sem problema de acento ou de vírgula decimal) ----
+const crcT = (() => { const t = []; for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+const crc32 = b => { let c = 0xFFFFFFFF; for (let i = 0; i < b.length; i++) c = crcT[(c ^ b[i]) & 255] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+function zip(arquivos) {   // sem compressão (método 0)
+  const enc = new TextEncoder(), partes = [], central = []; let off = 0;
+  const u16 = v => [v & 255, v >> 8 & 255], u32 = v => [v & 255, v >> 8 & 255, v >> 16 & 255, v >>> 24 & 255];
+  for (const [nome, txt] of arquivos) {
+    const n = enc.encode(nome), d = enc.encode(txt), c = crc32(d);
+    const loc = new Uint8Array([0x50, 0x4b, 3, 4, ...u16(20), ...u16(0x0800), ...u16(0), ...u16(0), ...u16(0x21), ...u32(c), ...u32(d.length), ...u32(d.length), ...u16(n.length), ...u16(0)]);
+    partes.push(loc, n, d);
+    central.push(new Uint8Array([0x50, 0x4b, 1, 2, ...u16(20), ...u16(20), ...u16(0x0800), ...u16(0), ...u16(0), ...u16(0x21), ...u32(c), ...u32(d.length), ...u32(d.length), ...u16(n.length), ...u16(0), ...u16(0), ...u16(0), ...u16(0), ...u32(0), ...u32(off)]), n);
+    off += loc.length + n.length + d.length;
+  }
+  const tam = central.reduce((t, x) => t + x.length, 0);
+  const fim = new Uint8Array([0x50, 0x4b, 5, 6, ...u16(0), ...u16(0), ...u16(arquivos.length), ...u16(arquivos.length), ...u32(tam), ...u32(off), ...u16(0)]);
+  return new Blob([...partes, ...central, fim], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+}
+const xe = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])).replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/g, '');
+const col = i => { let s = ''; for (i++; i > 0; i = Math.floor((i - 1) / 26)) s = String.fromCharCode(65 + (i - 1) % 26) + s; return s; };
+export function baixarXLSX(nome, cabecalho, linhas, rodape = []) {
+  const cel = (v, r, c, st) => { const ref = col(c) + (r + 1); if (v == null || (typeof v === 'number' && !isFinite(v))) return ''; return typeof v === 'number' ? `<c r="${ref}"${st ? ` s="${st}"` : ''}><v>${v}</v></c>` : `<c r="${ref}" t="inlineStr"${st ? ` s="${st}"` : ''}><is><t xml:space="preserve">${xe(v)}</t></is></c>`; };
+  const todas = [cabecalho, ...linhas, ...(rodape.length ? [[''], ...rodape.map(x => [x])] : [])];
+  const rows = todas.map((l, r) => `<row r="${r + 1}">${l.map((v, c) => cel(v, r, c, r === 0 ? 1 : 0)).join('')}</row>`).join('');
+  const larg = cabecalho.map((h, i) => Math.min(48, Math.max(10, String(h).length + 2, ...linhas.slice(0, 200).map(l => String(l[i] ?? '').length + 2))));
+  const cols = larg.map((w, i) => `<col min="${i + 1}" max="${i + 1}" width="${w}" customWidth="1"/>`).join('');
+  const sheet = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews><cols>${cols}</cols><sheetData>${rows}</sheetData></worksheet>`;
+  const arq = [
+    ['[Content_Types].xml', '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/><Override PartName="/xl/worksheets/sheet1.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/><Override PartName="/xl/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.styles+xml"/></Types>'],
+    ['_rels/.rels', '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/></Relationships>'],
+    ['xl/workbook.xml', '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><sheets><sheet name="Dados" sheetId="1" r:id="rId1"/></sheets></workbook>'],
+    ['xl/_rels/workbook.xml.rels', '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/></Relationships>'],
+    ['xl/styles.xml', '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><fonts count="2"><font><sz val="11"/><name val="Calibri"/></font><font><b/><sz val="11"/><color rgb="FFFFFFFF"/><name val="Calibri"/></font></fonts><fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF3E347E"/></patternFill></fill></fills><borders count="1"><border/></borders><cellStyleXfs count="1"><xf/></cellStyleXfs><cellXfs count="2"><xf/><xf fontId="1" fillId="2" applyFont="1" applyFill="1"/></cellXfs></styleSheet>'],
+    ['xl/worksheets/sheet1.xml', sheet],
+  ];
+  baixar(zip(arq), nome + '.xlsx');
 }

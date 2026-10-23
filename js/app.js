@@ -1,14 +1,14 @@
-import { CONFIG } from './config.js?v=2e6ef6f2';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=2e6ef6f2';
-import { calcular } from './model.js?v=2e6ef6f2';
-import { projetar, PARAMS } from './proj.js?v=2e6ef6f2';
-import { viewGeral, viewCand, viewUf, viewCriterios } from './views.js?v=2e6ef6f2';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=2e6ef6f2';
-import { baixarCSV, baixarPNG, baixarPDF, slug } from './export.js?v=2e6ef6f2';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=2e6ef6f2';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=2e6ef6f2';
-import { esc } from './ui.js?v=2e6ef6f2';
-import { setFoco, comFoco } from './foco.js?v=2e6ef6f2';
+import { CONFIG } from './config.js?v=6d72e742';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=6d72e742';
+import { calcular } from './model.js?v=6d72e742';
+import { projetar, PARAMS } from './proj.js?v=6d72e742';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=6d72e742';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=6d72e742';
+import { baixarCSV, baixarXLSX, baixarPNG, baixarPDF, slug } from './export.js?v=6d72e742';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=6d72e742';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=6d72e742';
+import { esc } from './ui.js?v=6d72e742';
+import { setFoco, comFoco } from './foco.js?v=6d72e742';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -19,8 +19,8 @@ function getV() { const s = sig(); if (S.Vsig !== s) { S.V = calcular(S.B, S.sna
 function getP() { const s = sig() + '|' + (S.snap.mun ? Object.keys(S.snap.mun).length : 0); if (S.Psig !== s) { S.P = projetar(S.B, S.snap, S.demo ? { draws: 120 } : {}); S.Psig = s; } return S.P; }
 
 // ---------- toast (some em 7 s, sem som) ----------
-function toast(msg) {
-  if (rota().modo === 't1') return;
+function toast(msg, forcar = false) {
+  if (!forcar && rota().modo === 't1') return;
   const t = document.createElement('div'); t.className = 'toast'; t.textContent = msg; $('#toasts').appendChild(t);
   setTimeout(() => t.classList.add('sai'), 6500); setTimeout(() => t.remove(), 7000);
 }
@@ -39,6 +39,7 @@ function rota0() {
     if (p[3] === 'l' && p[4]) return { modo, tela: 'local', uf: p[1], cd: p[2], id: decodeURIComponent(p[4]) };
     return { modo, tela: 'mun', uf: p[1], cd: p[2] };
   }
+  if (p[0] === 'regiao' && p[1]) return { modo, tela: 'regiao', reg: p[1] };
   if (p[0] === 'uf' && p[1]) return { modo, tela: 'uf', uf: p[1], c: q.get('c') };
   return { modo, tela: 'geral' };
 }
@@ -60,6 +61,7 @@ function render(manterScroll = false, forcar = false) {
   let v;
   if (r.tela === 'geral') v = viewGeral(ctx);
   else if (r.tela === 'cand') v = viewCand(ctx, r.k);
+  else if (r.tela === 'regiao') v = viewRegiao(ctx, r.reg);
   else if (r.tela === 'mun') v = viewMun(ctx, r.uf, r.cd);
   else if (r.tela === 'bairro') v = viewBairro(ctx, r.uf, r.cd, r.chave, r.di);
   else if (r.tela === 'distrito') v = viewDistrito(ctx, r.uf, r.cd, r.di);
@@ -92,7 +94,7 @@ async function renderT1(r, manterScroll, forcar) {
 function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
   const sub = r.tela === 'geral' && r.modo !== 't1' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
-  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><span>⬇ Baixar</span><button data-exp="pdf">PDF</button><button data-exp="png">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button></div>`;
+  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><span>⬇ Baixar</span><button data-exp="pdf">PDF</button><button data-exp="png">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' ? 'disabled' : ''} title="Planilha do Excel (.xlsx)">Excel</button></div>`;
   const trilha = v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : '';
   root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${exp}</div><div id="vista">${v.html}</div></div>`;
   v.montar(root);
@@ -119,7 +121,7 @@ function status() {
   const atras = S.meta?.checado ? Date.now() - new Date(S.meta.checado).getTime() > CONFIG.atrasoMax : false;
   const fonte = { coletor: 'coletor próprio', 'tse-direto': 'TSE direto (estados)', demo: 'DEMONSTRAÇÃO' }[S.fonte] || S.fonte;
   const v = S.vistoEm ? Math.round((Date.now() - S.vistoEm) / 1000) : 0;
-  el.innerHTML = `<span class="dot ${atras ? 'off' : 'on'}"></span> TSE <b>${esc(String(S.snap.hg).slice(0, 5))}</b> · <b>${fNum(100 * S.snap.br.st / S.snap.br.ts, 1)}%</b> apurado · checado há ${v}s · ${fonte}${atras ? ' · <b class="alerta">fonte atrasada</b>' : ''}`;
+  el.innerHTML = `<span class="dot ${atras ? 'off' : 'on'}"></span> TSE <b>${esc(String(S.snap.hg).slice(0, 5))}</b> · <b>${fNum(100 * S.snap.br.st / S.snap.br.ts, 1)}%</b> apurado · atualizado há ${v}s${atras ? ' · <b class="alerta">fonte atrasada</b>' : ''}`; el.title = `Fonte: ${fonte}`;
 }
 
 function aplicar(res) {
@@ -150,11 +152,15 @@ async function exportar(tipo, btn) {
   const nome = `oficina-politica_${slug(titulo)}${S.snap ? '_' + String(S.snap.hg).slice(0, 5).replace(':', 'h') : ''}`;
   const txt = btn.textContent; btn.disabled = true; btn.textContent = '…';
   try {
-    if (tipo === 'csv') { const c = S.vCtx?.csv?.(); if (!c) return; const rod = [`Fonte: TSE. Oficina Política.${S.simulado ? ' DADOS SIMULADOS.' : ''}${r.modo === 'pr' ? ' Valores de projeção estatística, não oficiais.' : ''}`]; baixarCSV(c.nome || nome, c.cab, c.linhas, rod); }
-    else if (tipo === 'png') await baixarPNG($('[data-export-raiz]'), nome, titulo, sub);
-    else await baixarPDF($('[data-export-raiz]'), nome, titulo, sub);
-  } catch (e) { toast('Não foi possível gerar o arquivo: ' + e.message); }
-  btn.disabled = false; btn.textContent = txt;
+    if (tipo === 'csv' || tipo === 'xlsx') { const c = S.vCtx?.csv?.(); if (!c) return; const rod = [`Fonte: TSE. Oficina Política.${S.simulado ? ' DADOS SIMULADOS.' : ''}${r.modo === 'pr' ? ' Valores de projeção estatística, não oficiais.' : ''}`]; (tipo === 'csv' ? baixarCSV : baixarXLSX)(c.nome || nome, c.cab, c.linhas, rod); }
+    else {
+      const itens = [...document.querySelectorAll('.trilha a, .trilha [aria-current]')].map(x => x.textContent.trim()), semRot = t => t.replace(/^[^:]{1,25}:\s*/, '');
+      const principal = itens.length ? semRot(itens[itens.length - 1]) : titulo, cadeia = itens.slice(0, -1).map(semRot).join('  ›  ');
+      if (tipo === 'png') await baixarPNG($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia));
+      else await baixarPDF($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia));
+    }
+  } catch (e) { toast('Não foi possível gerar o arquivo: ' + e.message, true); }
+  finally { btn.disabled = false; btn.textContent = txt; }
 }
 document.addEventListener('click', e => { const b = e.target.closest('[data-exp]'); if (b) exportar(b.dataset.exp, b); });
 

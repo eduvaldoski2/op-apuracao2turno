@@ -250,3 +250,21 @@ tr.clic{cursor:pointer}tr.clic:hover td{background:#f3f1f8}
 .tab td,.tab th button{padding-left:7px;padding-right:7px}
 @media (max-width:640px){.fichas{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.ficha{padding:10px 10px}.ficha-pct{font-size:24px}.ficha-nome{font-size:14px}.ficha-id{padding-right:24px}.ficha-dica{font-size:10.5px}.ficha-num{font-size:13px;padding:3px 6px}}
 .ficha-rodape{flex-wrap:wrap}
+
+/* rodapé centralizado */
+.rodape-in{flex-direction:column;align-items:center;text-align:center;gap:14px;padding:30px 16px 34px}
+.rodape-marca{font-size:26px;gap:14px}
+.rodape-marca img{width:64px;height:64px}
+.rodape-fontes{margin:0;max-width:760px;width:100%}
+.rodape-fontes>summary{font-size:12px}
+.rodape-fontes .entenda-c{text-align:center;font-size:12.5px}
+.rodape-fontes .entenda-c p{margin:0 0 6px}
+@media (max-width:640px){.rodape-marca{font-size:21px}.rodape-marca img{width:52px;height:52px}}
+/* status em uma linha só */
+.status{white-space:nowrap;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;vertical-align:bottom}
+@media (max-width:760px){.status{font-size:11.5px}}
+/* células de votos com ganho */
+.vc{display:inline-flex;align-items:baseline;justify-content:flex-end;gap:.4em}
+.vc b{font-weight:500;display:inline-block;min-width:4.6em;text-align:right}
+.vc .dlt{display:inline-block;min-width:5.6em;text-align:left;margin:0}
+.tab tr.clic.reg-l td{cursor:pointer}

@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=2e6ef6f2';
-import { listaMunicipios, rankingUfs } from './model.js?v=2e6ef6f2';
-import { projetarMunicipios } from './proj.js?v=2e6ef6f2';
-import { esc, dlt, grw, pcel, entenda, tabela, sem } from './ui.js?v=X';
-import { graficoPlacar } from './charts.js?v=2e6ef6f2';
-import { criarMapa, legendaMapa } from './map.js?v=2e6ef6f2';
-import { criarMapaMun } from './mapamun.js?v=2e6ef6f2';
-import { getJSON } from './tse.js?v=2e6ef6f2';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp } from './util.js?v=6d72e742';
+import { listaMunicipios, rankingUfs } from './model.js?v=6d72e742';
+import { projetarMunicipios } from './proj.js?v=6d72e742';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=6d72e742';
+import { graficoPlacar } from './charts.js?v=6d72e742';
+import { criarMapa, legendaMapa } from './map.js?v=6d72e742';
+import { criarMapaMun } from './mapamun.js?v=6d72e742';
+import { getJSON } from './tse.js?v=6d72e742';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -14,12 +14,12 @@ export const ref1 = t => ({ pL: pc(t.L, t.vv), pF: pc(t.F, t.vv), pAb: pc(t.a, t
 
 // ---- linhas normalizadas (nível UF / região / Brasil) ----
 export function linhaAp(id, b) {
-  return { id, nome: id === 'BR' ? 'Brasil' : (UF_NOME[id] || REGIOES[id] || id), pst: b.pst, st: b.st, ts: b.ts, L: b.L, F: b.F, pL: b.pL, pF: b.pF, dL: b.d.L, dF: b.d.F, gL: b.g.L, gF: b.g.F,
+  return { id, nome: id === 'BR' ? 'Brasil' : (UF_NOME[id] || REGIOES[id] || id), pst: b.pst, st: b.st, ts: b.ts, L: b.L, F: b.F, pL: b.pL, pF: b.pF, dL: b.d.L, dF: b.d.F, gL: b.g.L, gF: b.g.F, vgL: b.L - (b.refAbs?.L ?? NaN), vgF: b.F - (b.refAbs?.F ?? NaN),
     pAb: b.pAb, dAb: b.d.Ab, pBr: b.pBr, dBr: b.d.Br, pNu: b.pNu, dNu: b.d.Nu, ali: b.ali, dAli: b.d.ali, pCo: b.pCo, dCo: b.d.Co, lider: b.lider, est: b.est, te: b.te, a: b.a, vb: b.vb, tvn: b.tvn, c: b.c, vv: b.vv };
 }
 export function linhaPr(id, p, B, snap) {
   const t = id === 'BR' ? B.br : B.ufTot[id], r = ref1(t);
-  return { id, nome: id === 'BR' ? 'Brasil' : (UF_NOME[id] || id), pst: p.pst, L: p.L, F: p.F, pL: p.pL, pF: p.pF, dL: p.pL - r.pL, dF: p.pF - r.pF, gL: 100 * (p.L / t.L - 1), gF: 100 * (p.F / t.F - 1),
+  return { id, nome: id === 'BR' ? 'Brasil' : (UF_NOME[id] || id), pst: p.pst, L: p.L, F: p.F, pL: p.pL, pF: p.pF, dL: p.pL - r.pL, dF: p.pF - r.pF, gL: 100 * (p.L / t.L - 1), gF: 100 * (p.F / t.F - 1), vgL: p.L - t.L, vgF: p.F - t.F,
     pAb: p.pAb, dAb: p.pAb - r.pAb, pBr: p.pBr, dBr: p.pBr - r.pBr, pNu: p.pNu, dNu: p.pNu - r.pNu, ali: p.ali, dAli: p.ali - r.ali, pCo: p.pCo, dCo: p.pCo - r.pCo, lider: p.L > p.F ? 'L' : 'F',
     band: p.band, pw: p.pWinL, pend: p.pendEleit, te: p.te, a: p.a, vb: p.vb, tvn: p.tvn, c: p.c, vv: p.L + p.F };
 }
@@ -63,9 +63,8 @@ const tipUF = (r, modo) => !r ? '' : `<b>${UF_NOME[r.id]}</b><br>${modo === 'ap'
 // ---------- tabela de UFs ----------
 export function colsUF(modo) {
   const mk = k => [
-    { k: 'v' + k, t: `${cabCand(k)} votos`, h: r => `<span class="num">${fInt(r[k])}</span>`, v: r => r[k], cls: 'n' },
+    { k: 'v' + k, t: `${cabCand(k)} votos`, h: r => vcel(r[k], r.pst > 0 ? r['vg' + k] : NaN, r['g' + k] != null && isFinite(r['g' + k]) ? `crescimento de ${fNum(r['g' + k], 1)}% em relação ao 1º turno` : ''), v: r => r[k], cls: 'n' },
     { k: 'p' + k, t: `${cabCand(k)} %`, h: r => pcel(r['p' + k], r['d' + k]), v: r => r['p' + k], x: r => r['p' + k], cls: 'n' },
-    { k: 'g' + k, t: `cresc. votos`, h: r => grw(r['g' + k]), v: r => r['g' + k], cls: 'n sec' },
   ];
   return [
     { k: 'nome', t: 'Estado', h: r => `<b>${esc(r.nome)}</b>`, v: r => r.nome, ini: 'asc' },
@@ -114,9 +113,9 @@ export function viewGeral(ctx) {
   </section>`;
 
   // KPIs
-  const lbl = ap ? (V.refMode === 'final' ? 'em relação ao 1º turno final' : 'em relação ao 1º turno no mesmo recorte') : 'em relação ao 1º turno final';
+  const lbl = ap ? (V.refMode === 'final' ? 'em relação ao 1º turno completo' : 'em relação ao 1º turno nas mesmas urnas já apuradas') : 'em relação ao 1º turno final';
   const fx = (b, k) => !ap && P.br.band?.[k] ? `<br><span class="faixa">faixa: ${fNum(P.br.band[k][0], 1)}–${fNum(P.br.band[k][1], 1)}%</span>` : '';
-  h += `<div class="comp-toggle sem-export">${ap ? `Comparar com: <button class="tg ${V.refMode === 'lfl' ? 'on' : ''}" data-ref="lfl" title="Compara com o 1º turno apenas nos municípios/eleitorado já apurados (maçã com maçã)">mesmo recorte do 1º turno</button><button class="tg ${V.refMode === 'final' ? 'on' : ''}" data-ref="final" title="Compara com o resultado final do 1º turno">1º turno final</button>` : ''}<span class="comp-s">Variações em pontos percentuais (p.p.) ${lbl}.</span></div>
+  h += `<div class="comp-toggle sem-export">${ap ? `Comparar com: <button class="tg ${V.refMode === 'lfl' ? 'on' : ''}" data-ref="lfl" title="Compara com o que o candidato teve no 1º turno só nos locais que já foram apurados agora">mesmas urnas do 1º turno</button><button class="tg ${V.refMode === 'final' ? 'on' : ''}" data-ref="final" title="Compara com o resultado final do 1º turno">1º turno completo</button>` : ''}<span class="comp-s">Variações em pontos percentuais (p.p.) ${lbl}.</span>${ap ? entenda('<b>Mesmas urnas do 1º turno</b> (padrão): como a apuração chega por partes, o placar parcial só é justo se comparado ao que cada candidato teve, no 1º turno, <b>nos mesmos lugares já apurados</b>. Ex.: se só o Sul apurou, a variação compara com o 1º turno do Sul, e não do Brasil inteiro.<br><b>1º turno completo</b>: compara com o resultado final do 1º turno no Brasil/estado inteiro. Só é equivalente quando a apuração chega perto de 100%.', 'O que é “mesmas urnas”?') : ''}</div>
   <section class="kpis">
     ${ap ? kpi('Seções apuradas', fNum(base.pst, 2) + '%', null, `${fInt(base.st)} de ${fInt(base.ts)}`) : kpi('Eleitores ainda a apurar', fCompact(P.br.pendEleit), null, `de ${fCompact(P.br.te)} no total`)}
     ${kpi('Abstenção', fNum(base.pAb, 2) + '%', dlt(base.dAb, 2), `${fInt(base.a)} eleitores${fx(0, 'pAb')}`, { dica: 'Abstenção = eleitores que não compareceram ÷ eleitorado (das seções apuradas, na aba Apuração).' })}
@@ -150,6 +149,7 @@ export function viewGeral(ctx) {
       mp.atualizar(dm);
       const t = tabela(root.querySelector('#tab-uf'), { cols: colsUF(modo), rows: ufs, sort: 'nome', dir: 'asc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
       ctx.csv = () => ({ nome: `${ap ? 'apuracao' : 'projecao'}_2t_estados`, ...csvUF(base, ufs, modo) });
+      root.querySelectorAll('tr[data-reg]').forEach(tr => tr.addEventListener('click', () => ctx.ir(`#/${ap ? '' : 'p/'}regiao/${tr.dataset.reg}`)));
       void t;
     },
     titulo: ap ? 'Apuração · 2º turno' : 'Projeção do resultado final',
@@ -159,7 +159,7 @@ export function viewGeral(ctx) {
 function csvUF(base, ufs, modo) {
   const cab = ['Território', '% apurado', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Lula cresc. votos %', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Flávio cresc. votos %', 'Abstenção %', 'Abstenção var. p.p.', 'Brancos %', 'Nulos %', 'Alienação %', 'Alienação var. p.p.'];
   const l = r => [r.nome, r.pst, r.L, r.pL, r.dL, r.gL, r.F, r.pF, r.dF, r.gF, r.pAb, r.dAb, r.pBr, r.pNu, r.ali, r.dAli];
-  return { cab, linhas: [l(base), ...ufs.slice().sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')).map(l)] };
+  return { cab, linhas: [...(base ? [l(base)] : []), ...ufs.slice().sort((a, b) => a.nome.localeCompare(b.nome, 'pt-BR')).map(l)] };
 }
 
 function probBloco(pb, base) {
@@ -174,10 +174,10 @@ function tabelaRegioes(ctx, ap) {
   const { V, P } = ctx; const rs = Object.keys(REGIOES).filter(r => (ap ? V.reg[r] : P.reg[r]));
   if (!rs.length) return '';
   const lin = r => {
-    if (ap) { const b = V.reg[r]; return `<tr><td><b>${REGIOES[r]}</b></td><td class="n">${fNum(b.pst, 0)}%</td><td class="n">${fNum(b.pL, 1)}% ${dlt(b.d.L)}</td><td class="n">${fNum(b.pF, 1)}% ${dlt(b.d.F)}</td><td class="n">${fNum(b.pAb, 1)}% ${dlt(b.d.Ab)}</td></tr>`; }
-    const b = P.reg[r]; return `<tr><td><b>${REGIOES[r]}</b></td><td class="n">${fCompact(b.pendEleit)}</td><td class="n">${fNum(b.pL, 1)}%</td><td class="n">${fNum(b.pF, 1)}%</td><td class="n">${fNum(b.pAb, 1)}%</td></tr>`;
+    if (ap) { const b = V.reg[r]; return `<tr class="clic" data-reg="${r}"><td><b>${REGIOES[r]}</b></td><td class="n">${fNum(b.pst, 0)}%</td><td class="n">${fNum(b.pL, 1)}% ${dlt(b.d.L)}</td><td class="n">${fNum(b.pF, 1)}% ${dlt(b.d.F)}</td><td class="n">${fNum(b.pAb, 1)}% ${dlt(b.d.Ab)}</td></tr>`; }
+    const b = P.reg[r]; return `<tr class="clic" data-reg="${r}"><td><b>${REGIOES[r]}</b></td><td class="n">${fCompact(b.pendEleit)}</td><td class="n">${fNum(b.pL, 1)}%</td><td class="n">${fNum(b.pF, 1)}%</td><td class="n">${fNum(b.pAb, 1)}%</td></tr>`;
   };
-  return `<h3>Por região</h3><div class="tab-scroll"><table class="tab mini"><thead><tr><th>Região</th><th class="n">${ap ? '% apurado' : 'a apurar'}</th><th class="n">${cabCand('L')}</th><th class="n">${cabCand('F')}</th><th class="n">Abst.</th></tr></thead><tbody>${rs.map(lin).join('')}</tbody></table></div>`;
+  return `<h3>Por região</h3><p class="nota" style="margin:0 0 6px">Clique numa região para ver os estados.</p><div class="tab-scroll"><table class="tab mini"><thead><tr><th>Região</th><th class="n">${ap ? '% apurado' : 'a apurar'}</th><th class="n">${cabCand('L')}</th><th class="n">${cabCand('F')}</th><th class="n">Abst.</th></tr></thead><tbody>${rs.map(lin).join('')}</tbody></table></div>`;
 }
 
 function balanco(b) {
@@ -216,6 +216,20 @@ export function viewCand(ctx, k) {
 const slugn = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
 
 // ---------- UF com municípios ----------
+// ---------- região (Norte, Nordeste…) → estados ----------
+export function viewRegiao(ctx, reg) {
+  const { modo, B, V, P, snap } = ctx, ap = modo !== 'pr', nome = REGIOES[reg];
+  if (!nome) return { html: `<div class="aviso">Região não encontrada.</div>`, titulo: 'Região', montar() {} };
+  const ufs = UF_IDS.filter(u => UF_REGIAO[u] === reg && (ap ? V.uf[u] : P.uf[u])).map(u => ap ? linhaAp(u, V.uf[u]) : linhaPr(u, P.uf[u], B, snap));
+  const base = ap && V.reg[reg] ? linhaAp(reg, V.reg[reg]) : null;
+  const placar = base ? `<section class="placar uf">${cartaoCand('L', base, { modo, conf: false, semLink: true })}<div class="centro"><div class="centro-t">${esc(nome)}</div>${barraDupla(base.pL, base.pF)}<div class="margem">${base.lider ? `<b style="color:${CAND[base.lider].cor}">${CAND[base.lider].nome}</b> à frente por <b>${fInt(Math.abs(base.L - base.F))}</b> votos` : 'Aguardando a apuração'}</div></div>${cartaoCand('F', base, { modo, conf: false, semLink: true })}</section>` : '';
+  const html = `${placar}<section class="painel"><h2>Estados — ${esc(nome)}</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um estado</b> para abrir os municípios.</p><div id="tab-uf"></div></section>`;
+  return { html, titulo: `${nome} · estados`, trilha: [['Brasil', ap ? '#/' : '#/p/'], [nome]], montar(root) {
+    tabela(root.querySelector('#tab-uf'), { cols: colsUF(ap ? 'ap' : 'pr'), rows: ufs, sort: 'nome', dir: 'asc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
+    ctx.csv = () => ({ nome: `${slugn(nome)}_estados_${ap ? 'apuracao' : 'projecao'}`, ...csvUF(base, ufs, ap ? 'ap' : 'pr') });
+  } };
+}
+
 export function viewUf(ctx, uf, kOrd) {
   const { modo, B, V, P, snap } = ctx, ap = modo === 'ap';
   const blk = ap ? V.uf[uf] : P.uf[uf];
@@ -223,17 +237,16 @@ export function viewUf(ctx, uf, kOrd) {
   const r = ap ? linhaAp(uf, blk) : linhaPr(uf, blk, B, snap);
   const ms = ap ? listaMunicipios(B, V, uf) : projetarMunicipios(B, snap, P, uf);
   const rows = ms.map(m => ap
-    ? (m.apurado ? { id: m.cd, nome: m.nome, apurado: true, pst: m.pst, L: m.L, F: m.F, pL: m.pL, pF: m.pF, dL: m.d.L, dF: m.d.F, gL: m.g.L, gF: m.g.F, lider: m.lider }
+    ? (m.apurado ? { id: m.cd, nome: m.nome, apurado: true, pst: m.pst, L: m.L, F: m.F, pL: m.pL, pF: m.pF, dL: m.d.L, dF: m.d.F, gL: m.g.L, gF: m.g.F, L1: m.refAbs?.L, F1: m.refAbs?.F, lider: m.lider }
       : { id: m.cd, nome: m.nome, apurado: false, pst: 0, L: NaN, F: NaN, pL: NaN, pF: NaN, dL: NaN, dF: NaN, gL: NaN, gF: NaN, p1L: m.p1L, p1F: m.p1F, _cls: 'aguardando' })
-    : { id: m.cd, nome: m.nome, apurado: m.apurado, pst: m.pst, L: m.L, F: m.F, pL: m.pL, pF: m.pF, dL: m.pL - m.p1L, dF: m.pF - m.p1F, gL: 100 * (m.L / (m.L1 || NaN) - 1), gF: 100 * (m.F / (m.F1 || NaN) - 1), lider: m.L > m.F ? 'L' : 'F' });
+    : { id: m.cd, nome: m.nome, apurado: m.apurado, pst: m.pst, L: m.L, F: m.F, pL: m.pL, pF: m.pF, dL: m.pL - m.p1L, dF: m.pF - m.p1F, gL: 100 * (m.L / (m.L1 || NaN) - 1), gF: 100 * (m.F / (m.F1 || NaN) - 1), L1: m.L1, F1: m.F1, lider: m.L > m.F ? 'L' : 'F' });
   const ord = kOrd || r.lider || 'L';
   const cols = [
     { k: 'nome', t: 'Município', h: m => `<b>${esc(m.nome)}</b>${m.apurado || !ap ? '' : ' <small class="agu">aguardando</small>'}`, v: m => m.nome, ini: 'asc' },
     { k: 'pst', t: '% apurado', h: m => ap ? (m.apurado ? `${fNum(m.pst, 0)}%` : '–') : (m.apurado ? `${fNum(m.pst, 0)}%` : 'proj.'), v: m => m.pst, cls: 'n' },
     ...KS.flatMap(k => [
-      { k: 'v' + k, t: `${cabCand(k)} votos`, h: m => isNaN(m[k]) ? '' : `<span class="num">${fInt(m[k])}</span>`, v: m => m[k], cls: 'n' },
+      { k: 'v' + k, t: `${cabCand(k)} votos`, h: m => isNaN(m[k]) ? '' : vcel(m[k], m.apurado || !ap ? m[k] - m[k + '1'] : NaN, isFinite(m['g' + k]) ? `crescimento de ${fNum(m['g' + k], 1)}% em relação ao 1º turno` : ''), v: m => m[k], cls: 'n' },
       { k: 'p' + k, t: `${cabCand(k)} %`, h: m => isNaN(m['p' + k]) ? '' : pcel(m['p' + k], m['d' + k]), v: m => m['p' + k], x: m => m['p' + k], cls: 'n' },
-      { k: 'g' + k, t: 'cresc. votos', h: m => grw(m['g' + k]), v: m => m['g' + k], cls: 'n sec' },
     ]),
     { k: 'lid', t: 'Vence', h: m => m.lider ? `<span class="chip-l" style="background:${CAND[m.lider].cor}">${CAND[m.lider].nome.split(' ')[0]}</span>` : '', v: m => m.lider ? (m.lider === 'L' ? 1 : 0) : NaN, cls: 'c' },
   ];
