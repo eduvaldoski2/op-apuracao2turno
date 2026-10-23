@@ -1,0 +1,37 @@
+name: Malhas de bairros de fontes abertas oficiais (prefeituras)
+on:
+  workflow_dispatch:
+    inputs:
+      substituir: { description: 'Substituir malhas já existentes (OSM/IBGE) do mesmo município', default: 'sim' }
+  push:
+    paths: ['scripts/fontes_bairros.json', 'scripts/build_geo_url.py', '.github/workflows/geoabertos.yml']
+permissions:
+  contents: write
+jobs:
+  abertos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - run: pip install geopandas pyogrio shapely 2>&1 | tail -1
+      - name: Baixar
+        run: |
+          mkdir -p /tmp/dl
+          python3 - <<'P' | tee baixar.log
+          import json, subprocess, os
+          for f in json.load(open('scripts/fontes_bairros.json')):
+              ext = f['url'].rsplit('.', 1)[-1].split('?')[0].lower(); ext = ext if ext in ('zip','json','geojson','kml','kmz','shp','gpkg') else 'zip'
+              dest = f"/tmp/dl/{f['cd5']}.{ext}"
+              r = subprocess.run(['curl','-sSL','--max-time','240','-A','Mozilla/5.0','-o',dest,'-w','%{http_code} %{size_download}','--retry','2',f['url']],capture_output=True,text=True)
+              print(f['municipio'], f['url'], '->', r.stdout, r.stderr[:200])
+          P
+      - name: Montar malhas
+        run: python3 scripts/build_geo_url.py scripts/fontes_bairros.json /tmp/dl data/bairros data/bairros_geo 0.5 2>&1 | tee montar.log
+      - name: Publicar
+        run: |
+          git config user.name coletor; git config user.email coletor@users.noreply.github.com
+          cp baixar.log montar.log /tmp/ 
+          git add data/bairros_geo && git commit -q -m "Malhas de bairros de fontes abertas oficiais" || echo "nada a publicar" >> montar.log
+          for t in 1 2 3 4 5; do git pull -q --rebase origin main && git push -q && break; sleep $((RANDOM % 10 + 3)); done
+          git checkout --orphan sonda-abertos; git rm -rf -q . 2>/dev/null; cp /tmp/baixar.log /tmp/montar.log .; git add -f baixar.log montar.log; git commit -q -m log; git push -f origin HEAD:sonda-abertos
