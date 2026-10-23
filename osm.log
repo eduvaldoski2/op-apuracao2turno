@@ -1,0 +1,127 @@
+osm ba 33413 ARACI relações 1
+osm rj 58289 SÃO FRANCISCO DE ITABAPOANA relações 7
+osm mg 42234 CAMPO BELO relações 1
+osm mg 44318 DIAMANTINA relações 10
+osm pe 25593 SÃO BENTO DO UNA relações 2
+osm ce 15474 SÃO BENEDITO relações 3
+osm se 32417 SIMÃO DIAS relações 1
+osm ce 14630 MAURITI relações 9
+osm sp 65978 JALES relações 1
+osm ba 38970 SEABRA relações 4
+erro 58750 The operation was aborted due to timeout
+osm rj 58750 PARATY relações 4
+osm pr 79634 MATINHOS relações 14
+osm ms 91570 SIDROLÂNDIA relações 3
+osm ba 36919 LIVRAMENTO DE NOSSA SENHORA relações 25
+osm rj 58734 PARAÍBA DO SUL relações 4
+osm sp 70297 SANTA CRUZ DO RIO PARDO relações 4
+osm sp 69833 RIO GRANDE DA SERRA relações 2
+erro 40835 The operation was aborted due to timeout
+osm es 56120 MARATAÍZES relações 10
+erro 10731 The operation was aborted due to timeout
+osm pe 24759 LAJEDO relações 1
+osm ba 38210 REMANSO relações 2
+osm mg 51918 SANTA RITA DO SAPUCAÍ relações 1
+erro 40339 The operation was aborted due to timeout
+osm ce 14699 MISSÃO VELHA relações 12
+osm pe 23450 BONITO relações 3
+osm sp 71439 SOCORRO relações 1
+osm ba 38636 SANTA MARIA DA VITÓRIA relações 3
+osm mg 40517 ANDRADAS relações 2
+erro 56278 The operation was aborted due to timeout
+erro 66036 The operation was aborted due to timeout
+osm sp 66036 JARDINÓPOLIS relações 2
+osm pb 21792 SÃO BENTO relações 15
+osm pe 24058 EXU relações 5
+osm ce 14419 JAGUARUANA relações 8
+osm sp 67717 NOVO HORIZONTE relações 2
+osm sp 64491 GUAÍRA relações 1
+osm sp 64734 GUARIBA relações 1
+osm ap 06130 LARANJAL DO JARI relações 1
+osm pa 04081 TUCUMÃ relações 1
+osm pe 23396 BODOCÓ relações 3
+osm rn 18236 SANTA CRUZ relações 11
+osm ce 15075 PARAMBU relações 9
+osm pr 78212 RIO BRANCO DO SUL relações 19
+osm mg 41718 BRASÍLIA DE MINAS relações 2
+osm pa 05738 RONDON DO PARÁ relações 1
+osm sp 66052 JARINU relações 1
+erro 46493 The operation was aborted due to timeout
+osm mg 46493 ITAMARANDIBA relações 11
+osm sp 64670 GUARAREMA relações 4
+osm ba 39047 SERRA DO RAMALHO relações 13
+osm sp 70335 SANTA FÉ DO SUL relações 1
+osm rs 87998 PORTÃO relações 5
+osm ba 38555 SANTA CRUZ CABRÁLIA relações 1
+osm mg 49190 OURO FINO relações 2
+erro 69817 The operation was aborted due to timeout
+osm pe 26115 TRINDADE relações 1
+osm sp 68918 PITANGUEIRAS relações 2
+osm sp 63754 DESCALVADO relações 1
+osm pe 24457 IPUBI relações 3
+osm pa 04189 IPIXUNA DO PARÁ relações 1
+erro 25976 The operation was aborted due to timeout
+osm pe 25976 ITAMBÉ relações 3
+erro 57134 The operation was aborted due to timeout
+osm go 92657 BELA VISTA DE GOIÁS relações 38
+osm pe 25712 SÃO JOSÉ DO EGITO relações 3
+erro 76236 The operation was aborted due to timeout
+{"feitos":57,"vazios":7,"erros":6}
+descartado 04081 TUCUMÃ niveis={'9': 1} cob=0.00
+descartado 04189 IPIXUNA DO PARÁ niveis={'9': 1} cob=0.00
+descartado 05738 RONDON DO PARÁ niveis={'9': 1} cob=0.00
+descartado 06130 LARANJAL DO JARI niveis={'9': 1} cob=0.00
+feito ce 14419 JAGUARUANA nivel=9 poligonos=8 cob=0.95
+feito ce 14630 MAURITI nivel=9 poligonos=9 cob=0.93
+descartado 14699 MISSÃO VELHA niveis={'10': 12} cob=0.31
+feito ce 15075 PARAMBU nivel=9 poligonos=9 cob=1.00
+descartado 15474 SÃO BENEDITO niveis={'9': 3} cob=0.00
+feito rn 18236 SANTA CRUZ nivel=10 poligonos=10 cob=0.82
+feito pb 21792 SÃO BENTO nivel=10 poligonos=14 cob=0.75
+descartado 23396 BODOCÓ niveis={'9': 3} cob=0.00
+descartado 23450 BONITO niveis={'9': 3} cob=0.00
+feito pe 24058 EXU nivel=9 poligonos=5 cob=1.00
+descartado 24457 IPUBI niveis={'9': 3} cob=0.00
+descartado 24759 LAJEDO niveis={'9': 1} cob=0.00
+descartado 25593 SÃO BENTO DO UNA niveis={'9': 2} cob=0.00
+descartado 25712 SÃO JOSÉ DO EGITO niveis={'9': 3} cob=0.00
+descartado 25976 ITAMBÉ niveis={'9': 3} cob=0.00
+descartado 26115 TRINDADE niveis={'9': 1} cob=0.00
+descartado 32417 SIMÃO DIAS niveis={'9': 1} cob=0.00
+descartado 33413 ARACI niveis={'9': 1} cob=0.00
+feito ba 36919 LIVRAMENTO DE NOSSA SENHORA nivel=9 poligonos=4 cob=1.00
+descartado 38210 REMANSO niveis={'9': 2} cob=0.00
+descartado 38555 SANTA CRUZ CABRÁLIA niveis={'9': 1} cob=0.00
+descartado 38636 SANTA MARIA DA VITÓRIA niveis={'9': 3} cob=0.00
+descartado 38970 SEABRA niveis={'9': 3, 'place': 1} cob=0.00
+descartado 39047 SERRA DO RAMALHO niveis={'10': 12, '9': 1} cob=0.09
+descartado 40517 ANDRADAS niveis={'9': 2} cob=0.00
+descartado 41718 BRASÍLIA DE MINAS niveis={'9': 2} cob=0.00
+descartado 42234 CAMPO BELO niveis={'9': 1} cob=0.00
+descartado 44318 DIAMANTINA niveis={'9': 10} cob=0.53
+descartado 46493 ITAMARANDIBA niveis={'9': 3, '10': 8} cob=0.15
+descartado 49190 OURO FINO niveis={'9': 2} cob=0.00
+descartado 51918 SANTA RITA DO SAPUCAÍ niveis={'10': 1} cob=0.00
+descartado 56120 MARATAÍZES niveis={'10': 10} cob=0.50
+descartado 58289 SÃO FRANCISCO DE ITABAPOANA niveis={'9': 3, '10': 4} cob=0.10
+feito rj 58734 PARAÍBA DO SUL nivel=9 poligonos=4 cob=0.97
+descartado 58750 PARATY niveis={'9': 3} cob=0.00
+descartado 63754 DESCALVADO niveis={'9': 1} cob=0.00
+descartado 64491 GUAÍRA niveis={'9': 1} cob=0.00
+descartado 64670 GUARAREMA niveis={'9': 1, '10': 3} cob=0.00
+descartado 64734 GUARIBA niveis={'9': 1} cob=0.00
+descartado 65978 JALES niveis={'9': 1} cob=0.00
+descartado 66036 JARDINÓPOLIS niveis={'9': 2} cob=0.00
+descartado 66052 JARINU niveis={'9': 1} cob=0.00
+descartado 67717 NOVO HORIZONTE niveis={'9': 2} cob=0.00
+descartado 68918 PITANGUEIRAS niveis={'9': 2} cob=0.00
+descartado 69833 RIO GRANDE DA SERRA niveis={'9': 1, '10': 1} cob=0.00
+feito sp 70297 SANTA CRUZ DO RIO PARDO nivel=9 poligonos=4 cob=1.00
+descartado 70335 SANTA FÉ DO SUL niveis={'9': 1} cob=0.00
+descartado 71439 SOCORRO niveis={'9': 1} cob=0.00
+descartado 78212 RIO BRANCO DO SUL niveis={'10': 19} cob=0.33
+feito pr 79634 MATINHOS nivel=10 poligonos=14 cob=1.00
+feito rs 87998 PORTÃO nivel=10 poligonos=4 cob=0.77
+descartado 91570 SIDROLÂNDIA niveis={'9': 3} cob=0.00
+feito go 92657 BELA VISTA DE GOIÁS nivel=10 poligonos=38 cob=0.82
+{"sem_cobertura": 45, "feitos": 12, "bytes": 222448}
