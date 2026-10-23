@@ -37,18 +37,29 @@ const normB = s => (s || '').replace(/\s+/g, ' ').trim().toUpperCase();
 const mun = new Map();   // cd5 -> {uf, nome, locais: Map(z-nrLocal -> local), secs: Map(z-sec -> sec)}
 const mLoc = (await lista(zipLocais)).find(f => /BRASIL\.csv$/i.test(f)) || (await lista(zipLocais)).find(f => /\.csv$/i.test(f));
 console.error('locais:', mLoc);
-const nL = await linhas(zipLocais, mLoc, r => {
-  const uf = r.SG_UF.toLowerCase(), cd = pad(r.CD_MUNICIPIO, 5), z = +r.NR_ZONA, sec = +r.NR_SECAO;
+const agreg = [];
+function entrada(r, sec, principal) {
+  const uf = r.SG_UF.toLowerCase(), cd = pad(r.CD_MUNICIPIO, 5), z = +r.NR_ZONA;
   if (!mun.has(cd)) mun.set(cd, { uf, nome: r.NM_MUNICIPIO, locais: new Map(), secs: new Map() });
   const m = mun.get(cd), kl = z + '-' + r.NR_LOCAL_VOTACAO;
-  const principal = r.CD_TIPO_SECAO_AGREGADA === '1' || +r.NR_SECAO_PRINCIPAL < 0 ? sec : +r.NR_SECAO_PRINCIPAL;
   let loc = m.locais.get(kl);
   if (!loc) { loc = { z, id: +r.NR_LOCAL_VOTACAO, nome: r.NM_LOCAL_VOTACAO, end: r.DS_ENDERECO, bairro: normB(r.NM_BAIRRO), cep: r.NR_CEP, lat: num(r.NR_LATITUDE), lon: num(r.NR_LONGITUDE), secs: new Map() }; m.locais.set(kl, loc); }
   let s = loc.secs.get(principal);
   if (!s) { s = { n: principal, ap: 0, L: 0, F: 0, O: 0, B: 0, N: 0 }; loc.secs.set(principal, s); m.secs.set(z + '-' + principal, s); }
   s.ap += +r.QT_ELEITOR_SECAO || 0;
-  if (sec !== principal) m.secs.set(z + '-' + sec, s);
+  return s;
+}
+// 1ª passada: seções principais (as agregadas votam na urna da principal; o resultado sai na seção principal)
+const nL = await linhas(zipLocais, mLoc, r => {
+  const sec = +r.NR_SECAO, ehPrincipal = r.CD_TIPO_SECAO_AGREGADA === '1' || +r.NR_SECAO_PRINCIPAL < 0 || +r.NR_SECAO_PRINCIPAL === sec;
+  if (!ehPrincipal) { agreg.push(r); return; }
+  entrada(r, sec, sec);
 });
+// 2ª passada: eleitores das seções agregadas somam na seção principal; se a principal não existir, vira entrada própria
+for (const r of agreg) {
+  const m = mun.get(pad(r.CD_MUNICIPIO, 5)), z = +r.NR_ZONA, p = +r.NR_SECAO_PRINCIPAL, s = m && m.secs.get(z + '-' + p);
+  if (s) { s.ap += +r.QT_ELEITOR_SECAO || 0; m.secs.set(z + '-' + (+r.NR_SECAO), s); } else { const e = entrada(r, p, p); m.secs.set(z + '-' + (+r.NR_SECAO), e); }
+}
 console.error('linhas de locais:', nL, 'municípios:', mun.size);
 
 // 2) 1º turno por seção (presidente)
