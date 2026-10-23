@@ -2,7 +2,7 @@ name: Malhas de bairros (IBGE Censo 2022) ligadas aos locais de votação
 on:
   workflow_dispatch:
   push:
-    paths: ['scripts/build_geo_bairros.py', '.github/workflows/geobairros.yml']
+    paths: ['scripts/build_geo_bairros.py', '.github/workflows/geobairros.yml', 'data/fontes/**']
 permissions:
   contents: write
 jobs:
