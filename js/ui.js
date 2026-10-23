@@ -1,10 +1,14 @@
 // Componentes de interface: tabela ordenável, cartões, formatação de variações.
-import { fDelta, fGrowth } from './util.js?v=930c966c';
+import { fDelta, fGrowth, fNum } from './util.js?v=0df7f6be';
 // texto sem acentos e em minúsculas (busca "sao" acha "São")
 export const sem = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 export const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 export const dlt = (v, d = 1, unit = ' p.p.') => { if (v == null || isNaN(v)) return ''; const t = fDelta(v, d, unit); const c = Math.round(v * 10 ** d) === 0 ? 'zero' : v > 0 ? 'pos' : 'neg'; return `<span class="dlt ${c}" title="variação em relação ao 1º turno">(${t})</span>`; };
+// célula "percentual + variação" com largura fixa para a variação: os números alinham na coluna
+export const pcel = (p, d, dig = 2) => `<span class="pc"><b>${fNum(p, dig)}%</b>${d == null || isNaN(d) ? '' : dlt(d)}</span>`;
+// bloco recolhível de explicação: [+] Entenda
+export const entenda = (html, rot = 'Entenda') => `<details class="entenda"><summary><span class="mais" aria-hidden="true"></span>${rot}</summary><div class="entenda-c">${html}</div></details>`;
 export const grw = (v, d = 1) => { if (v == null || !isFinite(v)) return ''; const t = fGrowth(v, d); const c = Math.round(v * 10 ** d) === 0 ? 'zero' : v > 0 ? 'pos' : 'neg'; return `<span class="dlt ${c}">${t}</span>`; };
 
 // cols: [{k,t,h(row)=>html,v(row)=>valor ordenável,x(row)=>valor CSV,cls,ini:'asc'|'desc'}]
