@@ -30,3 +30,11 @@ Iniciativa independente, sem vínculo com o TSE.
 
 ## Cache do navegador
 `node scripts/versao.mjs` carimba os imports com `?v=<hash>` (roda sozinho no pré-commit), para que quem já abriu o painel receba sempre a versão nova.
+
+## Aba Resultados 1º Turno
+- `scripts/res1t.mjs` (workflow *Resultado oficial do 1º turno por candidato*) → `data/res_1t.json`: Brasil, UF e município com todos os candidatos (+ partidos do `consulta_cand`).
+- `data/b1t/{uf}/{cd5}.json` (gerado por `scripts/build_bairros.mjs`): voto dos candidatos além de Lula/Flávio por seção; só é carregado na aba do 1º turno para listar todos os candidatos em distrito, bairro e local.
+- Rotas: `#/t1`, `#/t1/uf/{uf}`, `#/t1/mun/{uf}/{cd}` e, abaixo, `/d/…`, `/b/…`, `/l/…` como na apuração.
+
+## Fontes de limites (mapas por bairro)
+IBGE (Censo 2022) → `scripts/build_geo_bairros.py`; São Paulo (GeoSampa, distritos) e Distrito Federal (IPEDF, regiões administrativas) via `data/fontes/`; demais grandes municípios sem malha do IBGE → OpenStreetMap (`scripts/osm_baixar.mjs` + `scripts/build_geo_osm.py`, workflow *Malhas de bairros do OpenStreetMap*; só entra a camada que cobre ≥ 60% dos locais de votação). Onde o limite é distrito/região, a navegação tem um nível a mais: Distrito › Bairro (TSE) › Local.
