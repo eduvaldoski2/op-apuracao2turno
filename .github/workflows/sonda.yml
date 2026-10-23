@@ -2,7 +2,7 @@ name: Sondagem de fontes (bairros)
 on:
   workflow_dispatch:
   push:
-    paths: ['.github/workflows/sonda.yml', 'scripts/sonda.sh']
+    paths: ['.github/workflows/sonda.yml', 'scripts/sonda*', 'scripts/ber.mjs']
 permissions:
   contents: write
 jobs:
