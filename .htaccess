@@ -22,6 +22,7 @@ AddOutputFilterByType DEFLATE text/html text/css application/javascript applicat
 <FilesMatch "\.(js|css)$">
 Header set Cache-Control "public, max-age=3600"
 </FilesMatch>
+AddType application/manifest+json .webmanifest
 <FilesMatch "\.(png|jpg|jpeg|svg|webp|woff2)$">
 Header set Cache-Control "public, max-age=86400"
 </FilesMatch>
