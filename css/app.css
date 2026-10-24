@@ -43,7 +43,7 @@ main{max-width:1180px;margin:0 auto;padding:18px 16px 40px}
 .selo{margin-left:auto;font-size:11px;font-weight:800;border-radius:99px;padding:3px 9px;letter-spacing:.3px}
 .selo.ok{background:#14683a;color:#fff}.selo.parcial{background:#fff0d6;color:#8a4b00}.selo.proj{background:#e7dcf7;color:#4b1f78}
 .centro{background:#fff;border-radius:var(--r);box-shadow:var(--sombra);padding:14px 16px;text-align:center;display:flex;flex-direction:column;gap:7px;justify-content:center}
-.centro-t{font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--tx2)}
+.centro-t{font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--tx2);white-space:normal;overflow-wrap:anywhere;line-height:1.3}
 .cobertura{font-size:16px}.cobertura b{font-size:28px;color:var(--roxo)}
 .cob-bar{height:8px;background:#eee9f5;border-radius:9px;overflow:hidden}.cob-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--roxo-3),var(--laranja))}
 .cob-s,.alien{font-size:12.5px;color:var(--tx2)}.margem{font-size:14.5px}
@@ -188,7 +188,7 @@ tr.clic{cursor:pointer}tr.clic:hover td{background:#f3f1f8}
 .exp button:disabled{opacity:.45;cursor:default}
 @media (max-width:640px){.tela-topo h1{font-size:22px}.exp{margin-left:0}.barra-ferr{gap:8px}}
 /* sem quebra de linha onde não deve */
-.cand-nome,.cand-part,.selo,.kpi-t,.chip-l,.btn,.tg,.voltar,.criterios,.centro-t{white-space:nowrap}
+.cand-nome,.cand-part,.selo,.kpi-t,.chip-l,.btn,.tg,.voltar,.criterios{white-space:nowrap}
 .kpi-t{overflow:hidden;text-overflow:ellipsis}
 .painel h2{text-wrap:balance}
 /* tabelas: alinhamento */

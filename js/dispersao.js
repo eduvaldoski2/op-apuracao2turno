@@ -1,5 +1,5 @@
 // Dispersão (SVG): cada bolha = uma unidade (município); tamanho = eleitorado.
-import { fNum } from './util.js?v=55e89464';
+import { fNum } from './util.js?v=5fc07c15';
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const nice = (lo, hi, n = 5) => { const span = hi - lo || 1, raw = span / n, p = Math.pow(10, Math.floor(Math.log10(raw))), f = raw / p, st = (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) * p, out = []; for (let v = Math.ceil(lo / st) * st; v <= hi + 1e-9; v += st) out.push(+v.toFixed(10)); return out; };
 
