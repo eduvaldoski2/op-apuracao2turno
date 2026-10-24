@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://oficinapolitica.com.br/img/og.jpg">
 <meta name="theme-color" content="#3E347E">
-<link rel="stylesheet" href="css/consent.css?v=dbc5b1b6">
+<link rel="stylesheet" href="css/consent.css?v=55e89464">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -46,11 +46,18 @@ main{flex:1;width:100%;max-width:640px;margin:0 auto;padding:clamp(36px,8vh,84px
 .logo{display:block;margin:0 auto;width:min(100%,560px);height:auto}
 .slogan{display:block;margin:16px auto 0;font:600 clamp(11.5px,3.1vw,15px)/1.35 'Space Grotesk',system-ui,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--roxo-3);padding-left:.26em}
 .acao{margin:clamp(34px,6vh,54px) 0 0}
-.btn-ap{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:62px;padding:0 34px;border-radius:999px;background:var(--roxo);color:#fff;text-decoration:none;font-weight:700;font-size:clamp(14px,3.9vw,17px);letter-spacing:.09em;text-transform:uppercase;box-shadow:0 10px 24px -10px rgba(42,34,96,.65);transition:transform .18s ease,box-shadow .18s ease,background .18s ease;max-width:100%}
-.btn-ap:hover{background:var(--roxo-2);transform:translateY(-2px);box-shadow:0 16px 28px -12px rgba(42,34,96,.7)}
+.kick{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 14px;margin:0 0 16px;font:700 clamp(11.5px,3.2vw,14px)/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja-2)}
+.kick .t1{display:inline-flex;align-items:center;gap:10px}.kick .d{font-weight:500;color:var(--tx2)}
+.kick i{flex:none;width:10px;height:10px;border-radius:50%;background:var(--laranja);animation:pulso 1.9s ease-out infinite}
+@keyframes pulso{0%{box-shadow:0 0 0 0 rgba(240,138,36,.55)}70%,100%{box-shadow:0 0 0 11px rgba(240,138,36,0)}}
+.btn-ap{display:flex;align-items:center;justify-content:space-between;gap:18px;width:100%;max-width:540px;margin:0 auto;min-height:92px;padding:14px 20px 14px 30px;border-radius:26px;background:linear-gradient(110deg,var(--roxo-2),var(--roxo));color:#fff;text-decoration:none;text-align:left;border:2px solid rgba(240,138,36,.85);box-shadow:0 22px 38px -16px rgba(42,34,96,.8),0 0 0 6px rgba(240,138,36,.12);transition:transform .18s ease,box-shadow .18s ease,filter .18s ease}
+.btn-ap b{display:block;font-weight:700;font-size:clamp(16px,4.9vw,22px);line-height:1.15;letter-spacing:.07em;text-transform:uppercase}
+.btn-ap small{display:block;margin-top:6px;font-weight:500;font-size:clamp(12px,3.4vw,14px);line-height:1.3;letter-spacing:.01em;opacity:.86}
+.btn-ap .seta{flex:none;display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--laranja);color:#2a1700;transition:transform .18s ease}
+.btn-ap svg{width:24px;height:24px}
+.btn-ap:hover{filter:brightness(1.12);transform:translateY(-3px);box-shadow:0 28px 44px -18px rgba(42,34,96,.85),0 0 0 8px rgba(240,138,36,.18)}
+.btn-ap:hover .seta{transform:translateX(4px)}
 .btn-ap:active{transform:translateY(0)}
-.btn-ap svg{flex:none;width:20px;height:20px;transition:transform .18s ease}
-.btn-ap:hover svg{transform:translateX(4px)}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
 .sep{display:flex;align-items:center;gap:14px;margin:clamp(40px,7vh,64px) auto 26px;max-width:360px;color:var(--roxo-3)}
 .sep::before,.sep::after{content:"";flex:1;height:1px;background:var(--linha)}
@@ -79,8 +86,8 @@ input[aria-invalid=true]{border-color:var(--erro);background:#fff8f7}
 .hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
 footer.rodape{padding:22px 20px 30px;text-align:center;font-size:13px;color:var(--tx2)}
 footer.rodape p{margin:4px 0}
-@media (max-width:420px){.slogan{letter-spacing:.13em;padding-left:.13em;font-size:11.5px}form{padding:20px 16px}.btn-ap{padding:0 22px;letter-spacing:.06em}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (max-width:420px){.slogan{letter-spacing:.13em;padding-left:.13em;font-size:11.5px}form{padding:20px 16px}.btn-ap{padding:12px 14px 12px 22px;gap:12px;min-height:84px}.btn-ap .seta{width:46px;height:46px}.btn-ap b{letter-spacing:.04em}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
@@ -89,8 +96,9 @@ footer.rodape p{margin:4px 0}
   <h1 class="marca"><img class="logo" src="img/logo-cor.svg" width="1497" height="248" alt="Oficina Política"><span class="slogan">Para quem faz política sem improviso</span></h1>
 
   <div class="acao">
-    <a class="btn-ap" href="apuracao-2t-2026/">Apuração do segundo turno
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <p class="kick"><span class="t1"><i aria-hidden="true"></i>Eleição presidencial 2026</span><span id="kick-t" class="d">domingo, 25/10, a partir das 17h</span></p>
+    <a class="btn-ap" href="apuracao-2t-2026/"><span><b>Apuração do segundo turno</b><small>Resultados por estado, município e bairro</small></span>
+      <span class="seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </div>
 
   <div class="sep" aria-hidden="true"><i></i></div>
@@ -120,6 +128,13 @@ footer.rodape p{margin:4px 0}
   <p>© 2026 Oficina Política. Iniciativa independente, sem vínculo com o TSE ou com candidaturas.</p>
 </footer>
 
+<script>
+(function () {
+  var k = document.getElementById('kick-t'); if (!k) return;
+  var ini = new Date('2026-10-25T17:00:00-03:00').getTime(), fim = new Date('2026-10-26T06:00:00-03:00').getTime(), agora = Date.now();
+  k.textContent = agora < ini ? 'domingo, 25/10, a partir das 17h' : agora < fim ? 'apuração ao vivo' : 'resultado do 2º turno';
+})();
+</script>
 <script>
 (function () {
   'use strict';
@@ -171,7 +186,7 @@ footer.rodape p{margin:4px 0}
 </script>
 <script type="module">
 // Aviso de cookies (só aparece se o Google Analytics ou anúncios estiverem configurados em js/config.js)
-import { iniciarConsentimento, conversaoLead } from './js/consentimento.js?v=dbc5b1b6';
+import { iniciarConsentimento, conversaoLead } from './js/consentimento.js?v=55e89464';
 document.addEventListener('op:lead', conversaoLead);
 iniciarConsentimento();
 </script>
