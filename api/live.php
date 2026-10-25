@@ -15,7 +15,7 @@ function sha_do_ramo($ramo, $repo) {
   $f = __DIR__ . '/dados/cache/refs.json'; $agora = time();
   $m = is_file($f) ? json_decode(@file_get_contents($f), true) : null;
   if (!is_array($m) || ($agora - ($m['t'] ?? 0)) > 3) {
-    $ch = curl_init("https://github.com/$repo.git/info/refs?service=git-upload-pack&t=" . $agora . mt_rand(10, 99));
+    $ch = curl_init("https://github.com/$repo.git/info/refs?service=git-upload-pack");
     curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 3, CURLOPT_USERAGENT => 'git/2.43.0']);
     $r = curl_exec($ch); $cod = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE); $GLOBALS['dbg']['refs'] = $cod . ':' . ($r === false ? curl_error($ch) : strlen($r)); curl_close($ch);
     $n = ['t' => $agora, 'r' => []];
