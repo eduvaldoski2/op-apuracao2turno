@@ -10,13 +10,14 @@ $ramo = $b === 0 ? (getenv('OP_RAMO_LIVE') ?: 'dados') : 'dados-b' . $b;
 
 // O raw.githubusercontent guarda cópias velhas por ramo (às vezes minutos). Endereço por código (sha) da versão é sempre novo e fresco:
 // o código vem do próprio git do GitHub (info/refs), guardado só por 3 s.
+$GLOBALS['dbg'] = [];
 function sha_do_ramo($ramo, $repo) {
   $f = __DIR__ . '/dados/cache/refs.json'; $agora = time();
   $m = is_file($f) ? json_decode(@file_get_contents($f), true) : null;
   if (!is_array($m) || ($agora - ($m['t'] ?? 0)) > 3) {
     $ch = curl_init("https://github.com/$repo.git/info/refs?service=git-upload-pack&t=" . $agora . mt_rand(10, 99));
     curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 5, CURLOPT_CONNECTTIMEOUT => 3, CURLOPT_USERAGENT => 'git/2.43.0']);
-    $r = curl_exec($ch); $cod = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
+    $r = curl_exec($ch); $cod = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE); $GLOBALS['dbg']['refs'] = $cod . ':' . ($r === false ? curl_error($ch) : strlen($r)); curl_close($ch);
     $n = ['t' => $agora, 'r' => []];
     if ($r !== false && $cod === 200 && preg_match_all('#([0-9a-f]{40}) refs/heads/(dados[a-z0-9-]*)\n#', str_replace("\0", ' ', $r), $mm, PREG_SET_ORDER)) {
       foreach ($mm as $x) $n['r'][$x[2]] = $x[1];
@@ -26,7 +27,7 @@ function sha_do_ramo($ramo, $repo) {
   return is_array($m) ? ($m['r'][$ramo] ?? null) : null;
 }
 $sha = null; $dirc = __DIR__ . '/dados/cache'; if (!is_dir($dirc)) @mkdir($dirc, 0775, true);
-$sha = sha_do_ramo($ramo, $REPO);
+$sha = sha_do_ramo($ramo, $REPO); $GLOBALS['dbg']['sha'] = $sha ? substr($sha, 0, 8) : 'nenhum';
 $url = $sha ? "https://raw.githubusercontent.com/$REPO/$sha/live/$p" : "https://raw.githubusercontent.com/$REPO/$ramo/live/$p";   // (+ ?t=... na hora de buscar: o raw.githubusercontent guarda cópias por até 5 min; com parâmetro novo vem sempre a versão atual)
 $ttl = 3;                          // segundos que uma cópia vale
 $dir = __DIR__ . '/dados/cache'; if (!is_dir($dir)) @mkdir($dir, 0775, true);
@@ -42,7 +43,7 @@ if ($idade > $ttl) {
     if ($idade > $ttl) {
       $ch = curl_init($url . ($sha ? '' : '?t=' . time() . mt_rand(10, 99)));
       curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 8, CURLOPT_CONNECTTIMEOUT => 4, CURLOPT_ENCODING => '', CURLOPT_USERAGENT => 'op-apuracao-proxy']);
-      $r = curl_exec($ch); $cod = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
+      $r = curl_exec($ch); $cod = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE); $GLOBALS['dbg']['dado'] = $cod . ':' . ($r === false ? curl_error($ch) : strlen($r)); curl_close($ch);
       if ($r !== false && $cod === 200 && $r !== '') { file_put_contents($arq . '.tmp', $r); rename($arq . '.tmp', $arq); }
       elseif ($cod === 404 && !is_file($arq)) { $status = 404; }
       elseif (is_file($arq)) { touch($arq, $agora - $ttl + 5); }   // GitHub falhou: serve a cópia que já existe e tenta de novo em 5 s
@@ -55,7 +56,7 @@ if ($status !== 200) { http_response_code($status); header('Cache-Control: publi
 $etag = '"' . md5($corpo) . '"';
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: public, max-age=2, s-maxage=' . $ttl . ', stale-while-revalidate=4, stale-if-error=600');
-header('ETag: ' . $etag); header('Access-Control-Allow-Origin: *');
+header('X-OP-Dbg: ' . json_encode($GLOBALS['dbg'] + ['idade' => $idade, 'mtime' => is_file($arq) ? filemtime($arq) : 0, 'agora' => time()])); header('ETag: ' . $etag); header('Access-Control-Allow-Origin: *');
 if (($_SERVER['HTTP_IF_NONE_MATCH'] ?? '') === $etag) { http_response_code(304); exit; }
 if (strpos($_SERVER['HTTP_ACCEPT_ENCODING'] ?? '', 'gzip') !== false && function_exists('gzencode')) { header('Content-Encoding: gzip'); header('Vary: Accept-Encoding'); $corpo = gzencode($corpo, 5); }
 header('Content-Length: ' . strlen($corpo)); echo $corpo;
