@@ -65,7 +65,9 @@ async function montarBase(destino) {
 // ---------- apuração ----------
 async function ciclo(out, B, estado) {
   const prev = estado.prev;
-  const snap = await montarSnapshot({ cfg, prev, log, suprir: dosBoletins });
+  const tIni = Date.now();
+  const snap = await montarSnapshot({ cfg, prev, log, suprir: dosBoletins, conc: 40 });
+  log(`leitura do TSE em ${Date.now() - tIni} ms`);
   log(`snapshot montado: st=${snap.br.st} hg=${snap.hg} avisos=${snap.diag.length}${snap.diag.length ? ' ' + snap.diag[0] : ''}`);
   // O arquivo do Brasil do TSE às vezes fica parado enquanto os de estado/município continuam sendo atualizados
   // (e o TSE reescreve arquivos mantendo a mesma hora). Por isso a mudança considera também estados e municípios.
