@@ -1,21 +1,21 @@
-import { CONFIG } from './config.js?v=5fc07c15';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=5fc07c15';
-import { calcular } from './model.js?v=5fc07c15';
-import { projetar, PARAMS } from './proj.js?v=5fc07c15';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=5fc07c15';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=5fc07c15';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=5fc07c15';
-import { eventosEntre } from './avisos.js?v=5fc07c15';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=5fc07c15';
-import { abrirTelao, iniciarTV } from './tv.js?v=5fc07c15';
-import { iniciarConsentimento } from './consentimento.js?v=5fc07c15';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=5fc07c15';
-import { lerCard } from './card.js?v=5fc07c15';
-import { abrirCompartilhar } from './compartilhar.js?v=5fc07c15';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=5fc07c15';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=5fc07c15';
-import { esc } from './ui.js?v=5fc07c15';
-import { getFoco, setFoco, comFoco } from './foco.js?v=5fc07c15';
+import { CONFIG } from './config.js?v=57e33c25';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=57e33c25';
+import { calcular } from './model.js?v=57e33c25';
+import { projetar, PARAMS } from './proj.js?v=57e33c25';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=57e33c25';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=57e33c25';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=57e33c25';
+import { eventosEntre } from './avisos.js?v=57e33c25';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=57e33c25';
+import { abrirTelao, iniciarTV } from './tv.js?v=57e33c25';
+import { iniciarConsentimento } from './consentimento.js?v=57e33c25';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=57e33c25';
+import { lerCard } from './card.js?v=57e33c25';
+import { abrirCompartilhar } from './compartilhar.js?v=57e33c25';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=57e33c25';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=57e33c25';
+import { esc } from './ui.js?v=57e33c25';
+import { getFoco, setFoco, comFoco } from './foco.js?v=57e33c25';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -122,13 +122,19 @@ function aguardando(r) {
 }
 
 // ---------- status / atualização ----------
+// horário da divulgação do TSE; se a divulgação não é de hoje, mostra a data (ex.: "24/10 19:19")
+function horaTSE(snap) {
+  const h = String(snap.hg).slice(0, 5);
+  const hoje = new Date().toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' });
+  return !S.simulado && snap.dg && snap.dg !== hoje ? snap.dg.slice(0, 5) + ' ' + h : h;
+}
 function status() {
   const el = $('#status'); if (!S.snap) { el.innerHTML = `<span class="dot off"></span> Aguardando divulgação do TSE`; return; }
   const idade = S.snap.gerado ? Math.max(0, Math.round((Date.now() - new Date(S.snap.gerado).getTime()) / 1000)) : null;
   const atras = S.meta?.checado ? Date.now() - new Date(S.meta.checado).getTime() > CONFIG.atrasoMax : false;
   const fonte = { coletor: 'coletor próprio', 'tse-direto': 'TSE direto (estados)', demo: 'DEMONSTRAÇÃO' }[S.fonte] || S.fonte;
   const v = S.vistoEm ? Math.round((Date.now() - S.vistoEm) / 1000) : 0;
-  el.innerHTML = `<span class="dot ${atras ? 'off' : 'on'}"></span> TSE <b>${esc(String(S.snap.hg).slice(0, 5))}</b> · <b>${fNum(100 * S.snap.br.st / S.snap.br.ts, 1)}%</b> apurado · atualizado há ${v}s${atras ? ' · <b class="alerta">fonte atrasada</b>' : ''}`; el.title = `Fonte: ${fonte}`;
+  el.innerHTML = `<span class="dot ${atras ? 'off' : 'on'}"></span> TSE <b>${esc(horaTSE(S.snap))}</b> · <b>${fNum(100 * S.snap.br.st / S.snap.br.ts, 1)}%</b> apurado · atualizado há ${v}s${atras ? ' · <b class="alerta">fonte atrasada</b>' : ''}`; el.title = `Fonte: ${fonte}`;
 }
 
 function aplicar(res) {
@@ -157,7 +163,7 @@ async function ciclo() { try { aplicar(await lerAoVivo()); } catch (e) { console
 // contexto comum a PNG, PDF e compartilhar: título, cadeia (Brasil > UF > município…), subtítulo e dados do card
 function contextoExport() {
   const r = S.vRota, titulo = document.querySelector('.tela-topo h1')?.textContent || S.vTitulo || 'Oficina Política';
-  const sub = `${r.modo === 'pr' ? 'Projeção' : r.modo === 't1' ? 'Resultado oficial do 1º turno' : 'Apuração'} ${r.modo === 't1' ? '2026 · TSE' : '2º turno 2026 · '}${S.snap && r.modo !== 't1' ? 'TSE ' + String(S.snap.hg).slice(0, 5) + ' · ' + fNum(100 * S.snap.br.st / S.snap.br.ts, 1) + '% apurado' : ''}${S.simulado && r.modo !== 't1' ? ' · DADOS SIMULADOS' : ''}`;
+  const sub = `${r.modo === 'pr' ? 'Projeção' : r.modo === 't1' ? 'Resultado oficial do 1º turno' : 'Apuração'} ${r.modo === 't1' ? '2026 · TSE' : '2º turno 2026 · '}${S.snap && r.modo !== 't1' ? 'TSE ' + horaTSE(S.snap) + ' · ' + fNum(100 * S.snap.br.st / S.snap.br.ts, 1) + '% apurado' : ''}${S.simulado && r.modo !== 't1' ? ' · DADOS SIMULADOS' : ''}`;
   const nome = `oficina-politica_${slug(titulo)}${S.snap ? '_' + String(S.snap.hg).slice(0, 5).replace(':', 'h') : ''}`;
   const itens = [...document.querySelectorAll('.trilha a, .trilha [aria-current]')].map(x => x.textContent.trim()), semRot = t => t.replace(/^[^:]{1,25}:\s*/, '');
   const principal = itens.length ? semRot(itens[itens.length - 1]) : titulo.replace(/\s+[—–-]\s+[12]º turno$/, ''), cadeia = itens.slice(0, -1).map(semRot).join('  ›  ');
