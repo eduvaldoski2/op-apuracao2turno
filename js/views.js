@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=70ccdf5a';
-import { listaMunicipios, rankingUfs } from './model.js?v=70ccdf5a';
-import { projetarMunicipios } from './proj.js?v=70ccdf5a';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=70ccdf5a';
-import { graficoPlacar } from './charts.js?v=70ccdf5a';
-import { criarMapa, legendaMapa } from './map.js?v=70ccdf5a';
-import { criarMapaMun } from './mapamun.js?v=70ccdf5a';
-import { getJSON } from './tse.js?v=70ccdf5a';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=aaf8c7f9';
+import { listaMunicipios, rankingUfs } from './model.js?v=aaf8c7f9';
+import { projetarMunicipios } from './proj.js?v=aaf8c7f9';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=aaf8c7f9';
+import { graficoPlacar } from './charts.js?v=aaf8c7f9';
+import { criarMapa, legendaMapa } from './map.js?v=aaf8c7f9';
+import { criarMapaMun } from './mapamun.js?v=aaf8c7f9';
+import { getJSON } from './tse.js?v=aaf8c7f9';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -141,7 +141,7 @@ function montarMunBR(root, ctx, ap) {
   const alvo = root.querySelector('#mapa-bm');
   const tip = id => { const m = porCdi[id]; if (!m) return ''; const nome = `<b>${esc(m.nome)}</b> <span class="t-s">${esc(sigla(m.uf))}</span>`;
     if (!m.ok) return `${nome}<br><span class="t-s">${ap ? 'aguardando apuração' : 'sem dados'}</span>`;
-    return `${nome}<br><span class="t-s">${ap ? fNum(m.pst, 0) + '% das seções apuradas' : 'projeção'}</span><br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(m.pL, 2)}%</b> ${fDelta(m.dL, 1)} · ${fInt(m.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(m.pF, 2)}%</b> ${fDelta(m.dF, 1)} · ${fInt(m.F)}`; };
+    return `${nome}<br><span class="t-s">${ap ? fNum(m.pst, 2) + '% das seções apuradas' : 'projeção'}</span><br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(m.pL, 2)}%</b> ${fDelta(m.dL, 1)} · ${fInt(m.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(m.pF, 2)}%</b> ${fDelta(m.dF, 1)} · ${fInt(m.F)}`; };
   (geoBR ??= getJSON('data/mapa_br_mun.json', { retries: 2, timeout: 90000 })).then(geo => {
     for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome;
     const mp = criarMapaMun(alvo, geo, { onClick: id => { const m = porCdi[id]; if (m) ctx.ir(rota(m.uf, m.cd)); }, tooltip: tip });
@@ -160,7 +160,7 @@ function dadosMapa(linhas) {
   }
   return d;
 }
-const tipUF = (r, modo) => !r ? '' : `<b>${UF_NOME[r.id]}</b><br>${modo === 'ap' ? `<span class="t-s">${fNum(r.pst, 1)}% das seções apuradas</span>` : `<span class="t-s">projeção · ${fNum(r.pst, 1)}% apurado</span>`}<br>
+const tipUF = (r, modo) => !r ? '' : `<b>${UF_NOME[r.id]}</b><br>${modo === 'ap' ? `<span class="t-s">${fNum(r.pst, 2)}% das seções apuradas</span>` : `<span class="t-s">projeção · ${fNum(r.pst, 2)}% apurado</span>`}<br>
   <span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(r.pL, 2)}%</b> ${fDelta(r.dL, 1)} · ${fInt(r.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(r.pF, 2)}%</b> ${fDelta(r.dF, 1)} · ${fInt(r.F)}<br>
   <span class="t-s">Abstenção ${fNum(r.pAb, 1)}% ${fDelta(r.dAb, 1)} · Brancos ${fNum(r.pBr, 1)}% · Nulos ${fNum(r.pNu, 1)}%</span>`;
 
@@ -172,7 +172,7 @@ export function colsUF(modo) {
   ];
   return [
     { k: 'nome', t: 'Estado', h: r => `<b>${esc(r.nome)}</b>`, v: r => r.nome, ini: 'asc' },
-    { k: 'pst', t: modo === 'ap' ? '% apurado' : '% apurado hoje', h: r => `${fNum(r.pst, 1)}%`, v: r => r.pst, cls: 'n' },
+    { k: 'pst', t: modo === 'ap' ? '% apurado' : '% apurado hoje', h: r => `${fNum(r.pst, 2)}%`, v: r => r.pst, cls: 'n' },
     ...mk('L'), ...mk('F'),
     { k: 'marg', t: 'Margem', h: r => `<span style="color:${r.lider ? CAND[r.lider].cor : '#666'}">${r.lider ? CAND[r.lider].nome.split(' ')[0] : '–'} +${fInt(Math.abs(r.L - r.F))}</span>`, v: r => r.L - r.F, cls: 'n sec' },
     { k: 'ab', t: 'Abstenção', h: r => pcel(r.pAb, r.dAb, 1, true), v: r => r.pAb, cls: 'n sec' },
@@ -208,7 +208,7 @@ export function viewGeral(ctx) {
     <div class="centro">
       <div class="centro-t">${ap ? 'Apuração' : 'Projeção do resultado final'}</div>
       ${ap ? `<div class="cobertura"><b>${fNum(base.pst, 2)}%</b> das seções</div><div class="cob-bar"><i style="width:${clamp(base.pst, 0, 100)}%"></i></div><div class="cob-s">${fInt(base.st)} de ${fInt(base.ts)} seções · eleitorado apurado ${fNum(pc(base.est, base.te), 1)}%</div>`
-          : `<div class="cobertura"><b>${fNum(base.pst, 1)}%</b> já apurado</div><div class="cob-bar"><i style="width:${clamp(base.pst, 0, 100)}%"></i></div>${prob}`}
+          : `<div class="cobertura"><b>${fNum(base.pst, 2)}%</b> já apurado</div><div class="cob-bar"><i style="width:${clamp(base.pst, 0, 100)}%"></i></div>${prob}`}
       ${barraDupla(base.pL, base.pF)}
       <div class="margem">${lider ? `<b style="color:${CAND[lider].cor}">${CAND[lider].nome}</b> ${ap ? 'à frente por' : 'por'} <b>${fInt(Math.abs(dif))}</b> votos${!ap && P.br.band.margem ? ` <span class="faixa">(margem de Lula, faixa de 90%: ${fCompact(P.br.band.margem[0])} a ${fCompact(P.br.band.margem[1])})</span>` : ''}` : 'Empate'}</div>
     </div>
@@ -274,7 +274,7 @@ function csvUF(base, ufs, modo) {
 
 function probBloco(pb, base) {
   const p = pb.pWinL;
-  if (!pb.pstProb) return `<div class="prob-bloco"><div class="prob-t">Probabilidade de vitória</div><div class="prob-na">disponível a partir de ${PARAMS_MIN}% apurado (hoje ${fNum(pb.pst, 1)}%)</div></div>`;
+  if (!pb.pstProb) return `<div class="prob-bloco"><div class="prob-t">Probabilidade de vitória</div><div class="prob-na">disponível a partir de ${PARAMS_MIN}% apurado (hoje ${fNum(pb.pst, 2)}%)</div></div>`;
   const pl = Math.round(p * 100), pf = 100 - pl, fmt = x => x >= 99 ? '>99' : x <= 1 ? '<1' : x;
   return `<div class="prob-bloco"><div class="prob-t">Probabilidade de vitória <small>(modelo)</small></div><div class="prob-dup"><span style="width:${clamp(pl, 3, 97)}%;background:${CAND.L.cor}">${CAND.L.nome.split(' ')[0]} ${fmt(pl)}%</span><span style="width:${clamp(pf, 3, 97)}%;background:${CAND.F.cor}">${CAND.F.nome.split(' ')[0]} ${fmt(pf)}%</span></div></div>`;
 }
@@ -293,7 +293,7 @@ function tabelaRegioes(ctx, ap) {
   const { V, P } = ctx; const rs = Object.keys(REGIOES).filter(r => (ap ? V.reg[r] : P.reg[r]));
   if (!rs.length) return '';
   const lin = r => {
-    if (ap) { const b = V.reg[r]; return `<tr class="clic" data-reg="${r}"><td><b>${REGIOES[r]}</b></td><td class="n">${fNum(b.pst, 0)}%</td><td class="n">${fNum(b.pL, 1)}% ${dlt(b.d.L)}</td><td class="n">${fNum(b.pF, 1)}% ${dlt(b.d.F)}</td><td class="n">${fNum(b.pAb, 1)}% ${dlt(b.d.Ab)}</td></tr>`; }
+    if (ap) { const b = V.reg[r]; return `<tr class="clic" data-reg="${r}"><td><b>${REGIOES[r]}</b></td><td class="n">${fNum(b.pst, 2)}%</td><td class="n">${fNum(b.pL, 1)}% ${dlt(b.d.L)}</td><td class="n">${fNum(b.pF, 1)}% ${dlt(b.d.F)}</td><td class="n">${fNum(b.pAb, 1)}% ${dlt(b.d.Ab)}</td></tr>`; }
     const b = P.reg[r]; return `<tr class="clic" data-reg="${r}"><td><b>${REGIOES[r]}</b></td><td class="n">${fCompact(b.pendEleit)}</td><td class="n">${fNum(b.pL, 1)}%</td><td class="n">${fNum(b.pF, 1)}%</td><td class="n">${fNum(b.pAb, 1)}%</td></tr>`;
   };
   return `<h3>Por região</h3><p class="nota" style="margin:0 0 6px">Clique numa região para ver os estados.</p><div class="tab-scroll"><table class="tab mini"><thead><tr><th>Região</th><th class="n">${ap ? '% apurado' : 'a apurar'}</th><th class="n">${cabCand('L')}</th><th class="n">${cabCand('F')}</th><th class="n">Abst.</th></tr></thead><tbody>${rs.map(lin).join('')}</tbody></table></div>`;
@@ -343,7 +343,7 @@ function viradas(hist, ufs, B) {
   const li = e => {
     const c = e.lid ? CAND[e.lid] : null, quem = c ? `<b style="color:${c.cor}">${c.nome}</b>` : 'Empate';
     const txt = e.tipo === 'virada' ? `<b>Virada:</b> ${quem} passa à frente, por ${fInt(e.dif)} votos` : e.tipo === 'marco' ? `<b>${e.m}% das seções apuradas</b> — ${quem} ${e.lid ? 'à frente por ' + fInt(e.dif) + ' votos' : ''}` : `<b>Primeira parcial</b> — ${quem} ${e.lid ? 'à frente por ' + fInt(e.dif) + ' votos' : ''}`;
-    return `<li class="tl-${e.tipo}"><span class="tl-h">${esc(e.h.ht || String(e.h.hg).slice(0, 5))}</span><span class="tl-p">${fNum(e.h.pst, 1)}%</span><span class="tl-t">${txt}</span></li>`;
+    return `<li class="tl-${e.tipo}"><span class="tl-h">${esc(e.h.ht || String(e.h.hg).slice(0, 5))}</span><span class="tl-p">${fNum(e.h.pst, 2)}%</span><span class="tl-t">${txt}</span></li>`;
   };
   const virou = ufs.filter(u => u.pst > 0 && B.ufTot?.[u.id] && u.lider && (B.ufTot[u.id].L > B.ufTot[u.id].F ? 'L' : 'F') !== u.lider && u.id !== 'zz');
   const chips = virou.map(u => { const a = B.ufTot[u.id].L > B.ufTot[u.id].F ? 'L' : 'F'; return `<a class="chip-v" href="#/uf/${u.id}" title="No 1º turno (Lula × Flávio) o estado foi de ${CAND[a].nome}; hoje lidera ${CAND[u.lider].nome}">${esc(u.nome)} <i style="background:${CAND[a].cor}"></i>→<i style="background:${CAND[u.lider].cor}"></i></a>`; }).join('');
@@ -378,7 +378,7 @@ export function viewCand(ctx, k) {
     { k: 'p', t: '% dos válidos', h: r => `<span class="barra-cel"><i style="width:${clamp(r['p' + k], 0, 100)}%;background:${c.cor}"></i></span><b>${fNum(r['p' + k], 2)}%</b>`, v: r => r['p' + k], cls: 'n larga' },
     { k: 'd', t: 'Var. p.p. vs 1º turno', h: r => dlt(r['d' + k], 2), v: r => r['d' + k], cls: 'n' },
     { k: 'g', t: 'Cresc. de votos vs 1º turno', h: r => grw(r['g' + k]), v: r => r['g' + k], cls: 'n' },
-    { k: 'pst', t: '% apurado', h: r => `${fNum(r.pst, 1)}%`, v: r => r.pst, cls: 'n' },
+    { k: 'pst', t: '% apurado', h: r => `${fNum(r.pst, 2)}%`, v: r => r.pst, cls: 'n' },
   ];
   const html = `<section class="painel"><h2>${c.nome}: estados do maior para o menor percentual</h2><p class="sub">${ap ? 'Resultado parcial do 2º turno' : 'Resultado projetado'}. Variação e crescimento em relação ao 1º turno${ap ? ' (mesmo recorte apurado)' : ''}. Clique em um estado para ver os municípios.</p><div id="tab-c"></div></section>`;
   return { html, titulo: `${c.nome} · estados`, montar(root) {
@@ -416,7 +416,7 @@ export function viewUf(ctx, uf, kOrd) {
   const ord = kOrd || r.lider || 'L';
   const cols = [
     { k: 'nome', t: 'Município', h: m => `<b>${esc(m.nome)}</b>${m.apurado || !ap ? '' : ' <small class="agu">aguardando</small>'}`, v: m => m.nome, ini: 'asc' },
-    { k: 'pst', t: '% apurado', h: m => ap ? (m.apurado ? `${fNum(m.pst, 0)}%` : '–') : (m.apurado ? `${fNum(m.pst, 0)}%` : 'proj.'), v: m => m.pst, cls: 'n' },
+    { k: 'pst', t: '% apurado', h: m => ap ? (m.apurado ? `${fNum(m.pst, 2)}%` : '–') : (m.apurado ? `${fNum(m.pst, 2)}%` : 'proj.'), v: m => m.pst, cls: 'n' },
     ...KS.flatMap(k => [
       { k: 'v' + k, t: `${cabCand(k)} votos`, h: m => isNaN(m[k]) ? '' : vcel(m[k], m.apurado || !ap ? m[k] - m[k + '1'] : NaN, isFinite(m['g' + k]) ? `crescimento de ${fNum(m['g' + k], 1)}% em relação ao 1º turno` : ''), v: m => m[k], cls: 'n' },
       { k: 'p' + k, t: `${cabCand(k)} %`, h: m => isNaN(m['p' + k]) ? '' : pcel(m['p' + k], m['d' + k]), v: m => m['p' + k], x: m => m['p' + k], cls: 'n' },
@@ -424,8 +424,8 @@ export function viewUf(ctx, uf, kOrd) {
     { k: 'lid', t: 'Vence', h: m => m.lider ? `<span class="chip-l" style="background:${CAND[m.lider].cor}">${CAND[m.lider].nome.split(' ')[0]}</span>` : '', v: m => m.lider ? (m.lider === 'L' ? 1 : 0) : NaN, cls: 'c' },
   ];
   const kp = ap
-    ? `${kpi('Apurado', fNum(r.pst, 1) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}`
-    : `${kpi('Já apurado', fNum(r.pst, 1) + '%', null, '')}${kpi('Abstenção (proj.)', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), '')}${kpi('Brancos + nulos (proj.)', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), '')}${kpi('Chance de Lula vencer', `${Math.round(100 * r.pw)}%`, null, 'modelo estatístico')}`;
+    ? `${kpi('Apurado', fNum(r.pst, 2) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}`
+    : `${kpi('Já apurado', fNum(r.pst, 2) + '%', null, '')}${kpi('Abstenção (proj.)', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), '')}${kpi('Brancos + nulos (proj.)', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), '')}${kpi('Chance de Lula vencer', `${Math.round(100 * r.pw)}%`, null, 'modelo estatístico')}`;
   const html = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false })}<div class="centro"><div class="centro-t">${esc(UF_NOME[uf])}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : ''}</div></div>${cartaoCand('F', r, { modo, conf: false })}</section>
   <section class="kpis k4">${kp}</section>
   ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Clique em um município para ver os bairros.</p>${entenda('Cor = quem lidera no município; tom mais escuro = maior percentual dos votos válidos. Use + / − ou a roda do mouse para aproximar.')}${seletorMapa()}<div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div></div></div></section>`}
@@ -436,7 +436,7 @@ export function viewUf(ctx, uf, kOrd) {
     dm[id] = (m.apurado || !ap) && m.L + m.F > 0 ? { k: m.L >= m.F ? 'L' : 'F', pw: Math.max(m.pL, m.pF), pL: m.pL, pF: m.pF, dL: m.dL, dF: m.dF } : { k: null }; }
   const tipM = id => { const m = porCdi[id]; if (!m) return ''; const nome = esc(m.nome);
     if (!(m.L + m.F > 0)) return `<b>${nome}</b><br><span class="t-s">aguardando apuração</span>`;
-    return `<b>${nome}</b><br><span class="t-s">${ap ? fNum(m.pst, 0) + '% das seções apuradas' : 'projeção'}</span><br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(m.pL, 2)}%</b> ${fDelta(m.dL, 1)} · ${fInt(m.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(m.pF, 2)}%</b> ${fDelta(m.dF, 1)} · ${fInt(m.F)}`; };
+    return `<b>${nome}</b><br><span class="t-s">${ap ? fNum(m.pst, 2) + '% das seções apuradas' : 'projeção'}</span><br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(m.pL, 2)}%</b> ${fDelta(m.dL, 1)} · ${fInt(m.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(m.pF, 2)}%</b> ${fDelta(m.dF, 1)} · ${fInt(m.F)}`; };
   return { html, titulo: UF_NOME[uf], trilha: [['Brasil', ap ? '#/' : '#/p/'], [UF_NOME[uf]]], montar(root) {
     const alvoMapa = root.querySelector('#mapa-mun');
     if (alvoMapa) getJSON(`data/mapa_mun/${uf}.json`, { retries: 1 }).then(geo => {

@@ -1,5 +1,5 @@
 name: Coletor da apuração (2º turno)
-# Lê os arquivos do TSE a cada ~25 s, calcula a projeção e publica snap.json/hist.json/meta.json na branch "dados".
+# Lê os arquivos do TSE a cada ~10 s, calcula a projeção e publica snap.json/hist.json/meta.json na branch "dados".
 # O painel (GitHub Pages) lê esses arquivos. Rede de segurança: o agendamento reinicia o coletor se ele cair.
 on:
   workflow_dispatch:
@@ -62,5 +62,5 @@ jobs:
           while [ $SECONDS -lt $fim ]; do
             timeout 150 node scripts/coletor.mjs --out dados/live --basefile data/base_1t.json --ele "$ELE"; echo "[node saiu com codigo $?]"
             (cd dados && git add -A && if ! git diff --cached --quiet; then git commit -q --amend -m "dados" 2>/dev/null || git commit -q -m "dados"; timeout 60 git push -q -f origin "$RAMO" || true; fi)
-            sleep 20
+            sleep 3
           done

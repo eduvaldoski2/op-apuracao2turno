@@ -1,18 +1,18 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=70ccdf5a';
-import { CONFIG, RAIZ } from './config.js?v=70ccdf5a';
-import { getJSON } from './tse.js?v=70ccdf5a';
-import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=70ccdf5a';
-import { comFoco } from './foco.js?v=70ccdf5a';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=70ccdf5a';
-import { listaMunicipios } from './model.js?v=70ccdf5a';
-import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=70ccdf5a';
-import { projetarMunicipios } from './proj.js?v=70ccdf5a';
-import { criarMapaPontos } from './mapapontos.js?v=70ccdf5a';
-import { criarMapaBairros } from './mapabairros.js?v=70ccdf5a';
-import { legendaMapa } from './map.js?v=70ccdf5a';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=aaf8c7f9';
+import { CONFIG, RAIZ } from './config.js?v=aaf8c7f9';
+import { getJSON } from './tse.js?v=aaf8c7f9';
+import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=aaf8c7f9';
+import { comFoco } from './foco.js?v=aaf8c7f9';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=aaf8c7f9';
+import { listaMunicipios } from './model.js?v=aaf8c7f9';
+import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=aaf8c7f9';
+import { projetarMunicipios } from './proj.js?v=aaf8c7f9';
+import { criarMapaPontos } from './mapapontos.js?v=aaf8c7f9';
+import { criarMapaBairros } from './mapabairros.js?v=aaf8c7f9';
+import { legendaMapa } from './map.js?v=aaf8c7f9';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
@@ -138,7 +138,7 @@ const corDeX = (ctx, u) => { if (ctx.modo !== 't1' || !u.V) return corDe(u); con
 // CSV do 1º turno: todos os candidatos
 const cabCsvT1 = (T, rot) => [rot, 'Seções', 'Eleitores', 'Abstenção %', 'Brancos', 'Nulos', ...T.cands.flatMap((c, i) => [`${T.nome(i)} votos`, `${T.nome(i)} %`])];
 const linhasCsvT1 = (T, arr, nomeCol) => arr.slice().sort((a, b) => String(nomeCol(a)).localeCompare(String(nomeCol(b)), 'pt-BR')).map(x => { const u = unidadeV(T, x.V); return [nomeCol(x), x.ts, x.apT, x.pAb, x.B, x.N, ...T.cands.flatMap((c, i) => [u.v[i], u.p[i]])]; });
-const kpisUnidade = u => `<section class="kpis k4">${kpi('Seções apuradas', `${fInt(u.st)}/${fInt(u.ts)}`, null, u.ts ? fNum(u.pst, 0) + '% das seções' : '')}${kpi('Abstenção', u.st ? fNum(u.pAb, 2) + '%' : '–', u.st ? dlt(u.dAb, 2) : null, `${fInt(u.apT)} eleitores no total`)}${kpi('Brancos + nulos', u.st ? fNum(u.pBr + u.pNu, 2) + '%' : '–', null, `${fInt(u.B + u.N)} votos`)}${kpi('Comparecimento', u.st ? fNum(100 - u.pAb, 2) + '%' : '–', null, `${fInt(u.c)} votos apurados`)}</section>`;
+const kpisUnidade = u => `<section class="kpis k4">${kpi('Seções apuradas', `${fInt(u.st)}/${fInt(u.ts)}`, null, u.ts ? fNum(u.pst, 2) + '% das seções' : '')}${kpi('Abstenção', u.st ? fNum(u.pAb, 2) + '%' : '–', u.st ? dlt(u.dAb, 2) : null, `${fInt(u.apT)} eleitores no total`)}${kpi('Brancos + nulos', u.st ? fNum(u.pBr + u.pNu, 2) + '%' : '–', null, `${fInt(u.B + u.N)} votos`)}${kpi('Comparecimento', u.st ? fNum(100 - u.pAb, 2) + '%' : '–', null, `${fInt(u.c)} votos apurados`)}</section>`;
 
 const tipUnidade = (titulo, u, rotuloSub) => `<b>${titulo}</b><br><span class="t-s">${rotuloSub ? rotuloSub + ' · ' : ''}${fInt(u.st)}/${fInt(u.ts)} seções apuradas</span>` + (u.st ? `<br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(u.pL, 2)}%</b> ${fDelta(u.dL, 1)} · ${fInt(u.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(u.pF, 2)}%</b> ${fDelta(u.dF, 1)} · ${fInt(u.F)}` : `<br><span class="t-s">1º turno: ${CAND.L.nome.split(' ')[0]} ${fNum(u.p1LT, 1)}% · ${CAND.F.nome.split(' ')[0]} ${fNum(u.p1FT, 1)}%</span>`);
 const corDe = u => u.lider ? corDoPct(u.lider, u.pw) : '#c9c4d8';
@@ -209,7 +209,7 @@ export function viewMun(ctx, uf, cd) {
   else if (m && (m.L + m.F > 0)) r = { pst: m.pst, st: 0, ts: 0, L: m.L, F: m.F, pL: m.pL, pF: m.pF, dL: m.pL - m.p1L, dF: m.pF - m.p1F, lider: m.L > m.F ? 'L' : 'F', pAb: m.pAb, dAb: m.dAb, pBr: m.pBr, pNu: m.pNu, ali: m.ali, dAli: m.dAli };
   else r = { pst: 0, L: NaN, F: NaN, pL: NaN, pF: NaN, lider: null };
   const cartoes = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo: t1 ? 'ap' : modo, conf: false, semLink: t1 })}<div class="centro"><div class="centro-t">${esc(nomeMun)} · ${uf.toUpperCase()}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : (ap ? 'Aguardando a apuração das seções' : '')}</div></div>${cartaoCand('F', r, { modo: t1 ? 'ap' : modo, conf: false, semLink: t1 })}</section>`;
-  const kp = ap && m?.apurado ? `<section class="kpis k4">${kpi('Apurado', fNum(r.pst, 1) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}</section>` : '';
+  const kp = ap && m?.apurado ? `<section class="kpis k4">${kpi('Apurado', fNum(r.pst, 2) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}</section>` : '';
   const html = `${t1 && uT1 ? topoT1(ctx.T1, uT1, nomeMun) + kpisT1(uT1) : cartoes + kp}
   ${ap ? '' : `<div class="aviso proj">Projeção estatística por município. O detalhamento por bairro abaixo mostra apenas o que já foi apurado nas seções (não é projeção).</div>`}
   <section class="painel mapa-sec" id="sec-geo" hidden><h2 id="geo-titulo">Mapa por bairro</h2><p class="sub"><b id="geo-clique">Clique numa área</b> para ver os locais de votação dela. <span id="geo-prog"></span> <span id="geo-aprox" class="geo-aprox"></span></p>

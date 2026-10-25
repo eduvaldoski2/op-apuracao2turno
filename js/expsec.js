@@ -1,5 +1,5 @@
 // Botão "Baixar" em cada seção (painel) da tela: PNG, PDF, CSV e Excel só daquela seção.
-import { baixarPNGSecao, baixarPDFSecao, baixarCSV, baixarXLSX, tabelaDaSecao, slug } from './export.js?v=70ccdf5a';
+import { baixarPNGSecao, baixarPDFSecao, baixarCSV, baixarXLSX, tabelaDaSecao, slug } from './export.js?v=aaf8c7f9';
 
 const MENU = (tab) => `<div class="exp-sec sem-export"><button type="button" class="exp-sec-b" aria-haspopup="true" aria-expanded="false" title="Baixar esta seção">⬇ Baixar</button><div class="exp-sec-m" role="menu" hidden><button type="button" role="menuitem" data-es="png">Imagem (PNG)</button><button type="button" role="menuitem" data-es="pdf">PDF</button>${tab ? '<button type="button" role="menuitem" data-es="csv">Planilha (CSV)</button><button type="button" role="menuitem" data-es="xlsx">Excel (XLSX)</button>' : ''}</div></div>`;
 

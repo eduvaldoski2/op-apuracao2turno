@@ -1,22 +1,22 @@
-import { CONFIG } from './config.js?v=70ccdf5a';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=70ccdf5a';
-import { calcular } from './model.js?v=70ccdf5a';
-import { projetar, PARAMS } from './proj.js?v=70ccdf5a';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=70ccdf5a';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=70ccdf5a';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=70ccdf5a';
-import { iniciarExportSecoes } from './expsec.js?v=70ccdf5a';
-import { eventosEntre } from './avisos.js?v=70ccdf5a';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=70ccdf5a';
-import { abrirTelao, iniciarTV } from './tv.js?v=70ccdf5a';
-import { iniciarConsentimento } from './consentimento.js?v=70ccdf5a';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=70ccdf5a';
-import { lerCard } from './card.js?v=70ccdf5a';
-import { abrirCompartilhar } from './compartilhar.js?v=70ccdf5a';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=70ccdf5a';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=70ccdf5a';
-import { esc } from './ui.js?v=70ccdf5a';
-import { getFoco, setFoco, comFoco } from './foco.js?v=70ccdf5a';
+import { CONFIG } from './config.js?v=aaf8c7f9';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=aaf8c7f9';
+import { calcular } from './model.js?v=aaf8c7f9';
+import { projetar, PARAMS } from './proj.js?v=aaf8c7f9';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=aaf8c7f9';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=aaf8c7f9';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=aaf8c7f9';
+import { iniciarExportSecoes } from './expsec.js?v=aaf8c7f9';
+import { eventosEntre } from './avisos.js?v=aaf8c7f9';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=aaf8c7f9';
+import { abrirTelao, iniciarTV } from './tv.js?v=aaf8c7f9';
+import { iniciarConsentimento } from './consentimento.js?v=aaf8c7f9';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=aaf8c7f9';
+import { lerCard } from './card.js?v=aaf8c7f9';
+import { abrirCompartilhar } from './compartilhar.js?v=aaf8c7f9';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=aaf8c7f9';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=aaf8c7f9';
+import { esc } from './ui.js?v=aaf8c7f9';
+import { getFoco, setFoco, comFoco } from './foco.js?v=aaf8c7f9';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -136,7 +136,7 @@ function status() {
   const atras = S.meta?.checado ? Date.now() - new Date(S.meta.checado).getTime() > CONFIG.atrasoMax : false;
   const fonte = { coletor: 'coletor próprio', 'tse-direto': 'TSE direto (estados)', demo: 'DEMONSTRAÇÃO' }[S.fonte] || S.fonte;
   const v = S.vistoEm ? Math.round((Date.now() - S.vistoEm) / 1000) : 0;
-  el.innerHTML = `<span class="dot ${atras ? 'off' : 'on'}"></span> TSE <b>${esc(horaTSE(S.snap))}</b> · <b>${fNum(100 * S.snap.br.st / S.snap.br.ts, 1)}%</b> apurado · atualizado há ${v}s${atras ? ' · <b class="alerta">fonte atrasada</b>' : ''}`; el.title = `Fonte: ${fonte}`;
+  el.innerHTML = `<span class="dot ${atras ? 'off' : 'on'}"></span> TSE <b>${esc(horaTSE(S.snap))}</b> · <b>${fNum(100 * S.snap.br.st / S.snap.br.ts, 2)}%</b> apurado · atualizado há ${v}s${atras ? ' · <b class="alerta">fonte atrasada</b>' : ''}`; el.title = `Fonte: ${fonte}`;
 }
 
 function aplicar(res) {
@@ -150,7 +150,7 @@ function aplicar(res) {
     S.snap = res.snap; S.Vsig = ''; S.Psig = '';
     if (antes) {
       const b = res.snap.br, pL = 100 * b.L / b.vv, pF = 100 * b.F / b.vv, la = antes.br.L > antes.br.F ? 'L' : 'F', ln = b.L > b.F ? 'L' : 'F';
-      toast(`Nova parcial do TSE (${String(res.snap.hg).slice(0, 5)}): ${fNum(100 * b.st / b.ts, 1)}% apurado — ${CAND.L.nome} ${fNum(pL, 2)}% × ${CAND.F.nome} ${fNum(pF, 2)}%`);
+      toast(`Nova parcial do TSE (${String(res.snap.hg).slice(0, 5)}): ${fNum(100 * b.st / b.ts, 2)}% apurado — ${CAND.L.nome} ${fNum(pL, 2)}% × ${CAND.F.nome} ${fNum(pF, 2)}%`);
       if (la !== ln) toast(`Virada na liderança: ${CAND[ln].nome} passou à frente.`);
       for (const e of eventosEntre(antes, res.snap, { L: CAND.L.nome, F: CAND.F.nome })) { if (e.tag !== 'virada') toast(`${e.titulo} — ${e.corpo}`); }
     }
@@ -165,7 +165,7 @@ async function ciclo() { try { aplicar(await lerAoVivo()); } catch (e) { console
 // contexto comum a PNG, PDF e compartilhar: título, cadeia (Brasil > UF > município…), subtítulo e dados do card
 function contextoExport() {
   const r = S.vRota, titulo = document.querySelector('.tela-topo h1')?.textContent || S.vTitulo || 'Oficina Política';
-  const sub = `${r.modo === 'pr' ? 'Projeção' : r.modo === 't1' ? 'Resultado oficial do 1º turno' : 'Apuração'} ${r.modo === 't1' ? '2026 · TSE' : '2º turno 2026 · '}${S.snap && r.modo !== 't1' ? 'TSE ' + horaTSE(S.snap) + ' · ' + fNum(100 * S.snap.br.st / S.snap.br.ts, 1) + '% apurado' : ''}${S.simulado && r.modo !== 't1' ? ' · DADOS SIMULADOS' : ''}`;
+  const sub = `${r.modo === 'pr' ? 'Projeção' : r.modo === 't1' ? 'Resultado oficial do 1º turno' : 'Apuração'} ${r.modo === 't1' ? '2026 · TSE' : '2º turno 2026 · '}${S.snap && r.modo !== 't1' ? 'TSE ' + horaTSE(S.snap) + ' · ' + fNum(100 * S.snap.br.st / S.snap.br.ts, 2) + '% apurado' : ''}${S.simulado && r.modo !== 't1' ? ' · DADOS SIMULADOS' : ''}`;
   const nome = `oficina-politica_${slug(titulo)}${S.snap ? '_' + String(S.snap.hg).slice(0, 5).replace(':', 'h') : ''}`;
   const itens = [...document.querySelectorAll('.trilha a, .trilha [aria-current]')].map(x => x.textContent.trim()), semRot = t => t.replace(/^[^:]{1,25}:\s*/, '');
   const principal = itens.length ? semRot(itens[itens.length - 1]) : titulo.replace(/\s+[—–-]\s+[12]º turno$/, ''), cadeia = itens.slice(0, -1).map(semRot).join('  ›  ');
