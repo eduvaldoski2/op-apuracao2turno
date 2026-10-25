@@ -48,9 +48,12 @@ async function ciclo(out, B, estado) {
   const snap = await montarSnapshot({ cfg, prev, log });
   log(`snapshot montado: st=${snap.br.st} hg=${snap.hg} avisos=${snap.diag.length}${snap.diag.length ? ' ' + snap.diag[0] : ''}`);
   const mudou = !prev || snap.br.st !== prev.br.st || snap.hg !== prev.hg || snap.br.L !== prev.br.L;
+  log(`mudou=${mudou} prev.st=${prev?.br?.st} prev.hg=${prev?.hg} snap.hg=${snap.hg}`);
   const meta = { checado: new Date().toISOString(), tse: cfg.base, turno: cfg.turno, ele: cfg.ele[cfg.turno], diag: snap.diag, ok: snap.br.ok !== false };
   if (!mudou) { gravar(path.join(out, 'meta.json'), { ...meta, ultimaMudanca: estado.ultima }); return false; }
+  log('projetando…');
   const t0 = Date.now(); const P = projetar(B, snap);
+  log('projeção ok');
   snap.proj = { pL: P.br.pL, pF: P.br.pF, band: P.br.band.pL, pw: P.br.pWinL };
   const h = estado.hist;
   const ht = String(snap.hg).slice(0, 5);
