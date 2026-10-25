@@ -1,7 +1,7 @@
 // Leitura dos arquivos estáticos de divulgação do TSE (navegador e Node).
 // O esquema do 2º turno (eleição 6258) foi mapeado a partir do 1º turno (6257); os leitores são tolerantes
 // (procuram os campos por nome em qualquer nível) e o coletor registra um diagnóstico quando algo não bate.
-import { cnt, pct, UF_IDS } from './util.js?v=57e33c25';
+import { cnt, pct, UF_IDS } from './util.js?v=6a3d88c7';
 
 export const TSE = {
   base: 'https://resultados.tse.jus.br/oficial',
@@ -31,10 +31,11 @@ export async function getJSON(url, { retries = 3, timeout = 20000, signal } = {}
     const ac = new AbortController(); const t = setTimeout(() => ac.abort(), timeout);
     try {
       const r = await fetch(url, { cache: 'no-store', signal: signal || ac.signal });
-      clearTimeout(t);
-      if (r.status === 404) { const e = new Error('404 ' + url); e.status = 404; throw e; }
+      if (r.status === 404) { clearTimeout(t); const e = new Error('404 ' + url); e.status = 404; throw e; }
       if (!r.ok) throw new Error(r.status + ' ' + url);
-      return await r.json();
+      const j = await r.json();   // o timeout cobre também a leitura do corpo (evita travar se o TSE parar de enviar)
+      clearTimeout(t);
+      return j;
     } catch (e) { clearTimeout(t); err = e; if (e.status === 404) throw e; await new Promise(r => setTimeout(r, 400 * (i + 1))); }
   }
   throw err;
