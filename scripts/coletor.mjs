@@ -9,6 +9,21 @@ import { prepBase } from '../js/model.js';
 import { projetar } from '../js/proj.js';
 import { UF_IDS } from '../js/util.js';
 
+// grupos de estados dos boletins por seção (igual a js/config.js › gruposBairros)
+const GRUPOS = { sp: 1, mg: 2, pa: 2, pi: 2, am: 2, df: 2, rj: 3, pe: 3, sc: 3, mt: 3, ms: 3, ro: 3, zz: 3, rr: 3, ba: 4, ce: 4, go: 4, es: 4, al: 4, to: 4, ac: 4, rs: 5, pr: 5, ma: 5, pb: 5, rn: 5, se: 5, ap: 5 };
+const REPO = process.env.GITHUB_REPOSITORY || 'eduvaldoski2/op-apuracao2turno';
+// Soma os boletins de urna já coletados do município (branch dados-bN) e devolve a linha do município, se tiver mais seções que o TSE publicou.
+async function dosBoletins(uf, cd, base) {
+  const g = GRUPOS[uf]; if (!g) return null;
+  const j = await getJSON(`https://raw.githubusercontent.com/${REPO}/dados-b${g}/live/bairros/${uf}/${cd}.json?t=${Date.now()}`, { retries: 1, timeout: 15000 });
+  const v = Object.values(j?.s || {}); if (!v.length || v.length <= base[2]) return null;
+  const t = { L: 0, F: 0, O: 0, B: 0, N: 0, ap: 0 };
+  for (const x of v) { t.L += x[0]; t.F += x[1]; t.O += x[2]; t.B += x[3]; t.N += x[4]; t.ap += x[5] || 0; }
+  const c = t.L + t.F + t.O + t.B + t.N;
+  // [cd, ts, st, te, est, c, a, vb, tvn, L, F, vv]
+  return [cd, base[1], v.length, base[3], t.ap, c, Math.max(0, t.ap - c), t.B, t.N, t.L, t.F, t.L + t.F + t.O];
+}
+
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? (process.argv[i + 1]?.startsWith('--') ? true : process.argv[i + 1]) : d; };
 const cfg = { ...TSE, base: arg('tse', process.env.TSE_BASE || TSE.base), ele: { ...TSE.ele } };
 if (arg('ele', null)) cfg.ele[2] = +arg('ele');   // ensaio: ex. --ele 6257 lê o 1º turno como se fosse o 2º
@@ -45,7 +60,7 @@ async function montarBase(destino) {
 // ---------- apuração ----------
 async function ciclo(out, B, estado) {
   const prev = estado.prev;
-  const snap = await montarSnapshot({ cfg, prev, log });
+  const snap = await montarSnapshot({ cfg, prev, log, suprir: dosBoletins });
   log(`snapshot montado: st=${snap.br.st} hg=${snap.hg} avisos=${snap.diag.length}${snap.diag.length ? ' ' + snap.diag[0] : ''}`);
   // O arquivo do Brasil do TSE às vezes fica parado enquanto os de estado/município continuam sendo atualizados
   // (e o TSE reescreve arquivos mantendo a mesma hora). Por isso a mudança considera também estados e municípios.

@@ -1,7 +1,7 @@
 // Leitura dos arquivos estáticos de divulgação do TSE (navegador e Node).
 // O esquema do 2º turno (eleição 6258) foi mapeado a partir do 1º turno (6257); os leitores são tolerantes
 // (procuram os campos por nome em qualquer nível) e o coletor registra um diagnóstico quando algo não bate.
-import { cnt, pct, UF_IDS } from './util.js?v=d2374df0';
+import { cnt, pct, UF_IDS } from './util.js?v=afe89857';
 
 export const TSE = {
   base: 'https://resultados.tse.jus.br/oficial',
@@ -105,7 +105,7 @@ const linhaMun = (cd, p) => [cd, p.ts, p.st, p.te, p.est, p.c, p.a, p.vb, p.tvn,
 const blocoUF = p => ({ ts: p.ts, st: p.st, te: p.te, est: p.est, c: p.c, a: p.a, vb: p.vb, tvn: p.tvn, vv: p.vv, L: p.L, F: p.F, eL: p.eleito?.L ? 1 : 0, eF: p.eleito?.F ? 1 : 0 });
 
 // Monta o snapshot completo. `prev` = snapshot anterior (reaproveita municípios/UFs que não mudaram).
-export async function montarSnapshot({ cfg = TSE, prev = null, conc = 12, log = () => {}, ufs = UF_IDS, municipios = true } = {}) {
+export async function montarSnapshot({ cfg = TSE, prev = null, conc = 12, log = () => {}, ufs = UF_IDS, municipios = true, suprir = null } = {}) {
   const U = urls(cfg);
   const br = parseResultado(await getJSON(U.br()), cfg);
   const diag = [];
@@ -132,14 +132,34 @@ export async function montarSnapshot({ cfg = TSE, prev = null, conc = 12, log = 
         if (!m.st) continue;
         const ant = antigas.get(cd);
         if (ant && ant[2] === m.st && ant[4] === m.est) snap.mun[uf].push(ant);
-        else tarefas.push({ uf, cd });
+        else tarefas.push({ uf, cd, st: m.st });
       }
     }
     log(`municípios a buscar: ${tarefas.length}`);
-    const res = await pool(tarefas, conc, async ({ uf, cd }) => linhaMun(cd, parseResultado(await getJSON(U.mun(uf, cd)), cfg)));
+    // O TSE às vezes informa seções apuradas no município (arquivo de acompanhamento) e ainda publica o resultado do
+    // município zerado/atrasado. Nesse caso `suprir` calcula a linha a partir dos boletins de urna já coletados.
+    let supridos = 0;
+    const res = await pool(tarefas, conc, async ({ uf, cd, st }) => {
+      const base = parseResultado(await getJSON(U.mun(uf, cd)), cfg);
+      let linha = linhaMun(cd, base);
+      if (suprir && base.st < st) { try { const l2 = await suprir(uf, cd, linha); if (l2) { linha = l2; supridos++; } } catch { /* sem boletins: fica o que o TSE publicou */ } }
+      return linha;
+    });
+    if (suprir) log(`municípios completados pelos boletins: ${supridos}`);
     res.forEach((r, i) => { if (r.erro) diag.push(`mun ${tarefas[i].uf}${tarefas[i].cd}: ${r.erro.message}`); else snap.mun[tarefas[i].uf].push(r); });
   }
   delete snap._ab;
+  // Totais nunca ficam abaixo da soma do que está nos municípios (quando o TSE atrasa o arquivo do estado/Brasil)
+  if (municipios && suprir) {
+    const soma = rows => { const t = { st: 0, est: 0, c: 0, a: 0, vb: 0, tvn: 0, vv: 0, L: 0, F: 0 }; for (const r of rows) { t.st += r[2]; t.est += r[4]; t.c += r[5]; t.a += r[6]; t.vb += r[7]; t.tvn += r[8]; t.L += r[9]; t.F += r[10]; t.vv += r[11]; } return t; };
+    for (const uf of Object.keys(snap.uf)) {
+      const t = soma(snap.mun[uf] || []);
+      if (t.st > (snap.uf[uf].st || 0)) { Object.assign(snap.uf[uf], t); log(`${uf}: total elevado pela soma dos municípios (${t.st} seções)`); }
+    }
+    const tb = { st: 0, est: 0, c: 0, a: 0, vb: 0, tvn: 0, vv: 0, L: 0, F: 0 };
+    for (const u of Object.values(snap.uf)) for (const k in tb) tb[k] += u[k] || 0;
+    if (tb.st > snap.br.st) { Object.assign(snap.br, tb); log(`Brasil: total elevado pela soma dos estados (${tb.st} seções)`); }
+  }
   snap.diag = diag.slice(0, 50);
   return snap;
 }
