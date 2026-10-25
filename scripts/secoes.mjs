@@ -42,24 +42,38 @@ function arq(uf, cd) { return path.join(out, 'bairros', uf, cd + '.json'); }
 function carregar(uf, cd) { const k = uf + cd; if (!cache.has(k)) cache.set(k, { uf, cd, t: '', s: ler(arq(uf, cd), { s: {} }).s || {}, sujo: false }); return cache.get(k); }
 
 async function ciclo(uf, ciclo_n) {
+  // 1) lista de seções do estado (config do TSE) e 2) quantas seções cada município já tem totalizadas (arquivo de acompanhamento do TSE)
   const cfgUrl = `${tse}/arquivo-urna/${pleito}/config/${uf}/${uf}-${P6}-cs.json`;
-  const r = await get(cfgUrl, { inm: etags[uf] });
-  if (r.naoMudou) return { novas: 0, total: 0 };
+  const r = await get(cfgUrl);
   if (r.nada || r.erro) { log(uf, 'config indisponível', r.nada ? '404' : r.erro); return { novas: 0, total: 0 }; }
-  const etagNovo = r.etag;
-  const tarefas = []; let total = 0;
+  const ra = await get(`${tse}/${ele}/dados/${uf}/${uf}-e${pad(ele, 6)}-ab.json`);
+  const stMun = new Map();
+  for (const a of (ra.dado?.abr || [])) if (String(a.tpabr).toLowerCase().startsWith('mu')) stMun.set(String(a.cdabr).padStart(5, '0'), +(a.s?.st || 0));
+  if (!ra.dado) log(uf, 'acompanhamento indisponível', ra.nada ? '404' : ra.erro);
+  // Só busca boletins nos municípios em que o TSE já tem mais seções totalizadas do que as que já coletamos
+  // (antes tentava as primeiras 2.500 seções do estado em ordem de código, a maioria ainda sem boletim, e batia no limite de requisições do TSE).
+  const grupos = []; let total = 0;
   for (const abr of r.dado.abr || []) for (const mu of abr.mu || []) {
     if (somente && mu.cd !== somente) continue;
     const m = carregar(uf, mu.cd);
+    const lista = [];
     for (const z of mu.zon || []) for (const s of z.sec || []) {
       total++; const k = +z.cd + '-' + +s.ns;
       if (m.s[k]) continue;
-      const base = `${tse}/arquivo-urna/${pleito}/dados/${uf}/${mu.cd}/${z.cd}/${s.ns}/${P6}-${uf}-m${mu.cd}-z${z.cd}-s${s.ns}`;
-      const nf = falhas.get(base) || 0; if (nf >= 3 && ciclo_n % 20 !== 0) continue;
-      tarefas.push({ m, k, base, z: z.cd, ns: s.ns, mu: mu.cd });
+      lista.push({ m, k, base: `${tse}/arquivo-urna/${pleito}/dados/${uf}/${mu.cd}/${z.cd}/${s.ns}/${P6}-${uf}-m${mu.cd}-z${z.cd}-s${s.ns}`, z: z.cd, ns: s.ns, mu: mu.cd });
     }
+    const feitas = Object.keys(m.s).length, faltam = (stMun.get(mu.cd) ?? 0) - feitas;
+    if (faltam > 0 && lista.length) grupos.push({ lista, faltam });
   }
-  const cortou = tarefas.length > maxT; if (cortou) tarefas.length = maxT;
+  grupos.sort((a, b) => a.lista.length - b.lista.length);   // municípios pequenos primeiro
+  const tarefas = []; let sobra = maxT;
+  for (const g of grupos) {
+    if (sobra <= 0) break;
+    let l = g.lista;
+    if (l.length > sobra) { l = l.slice().sort(() => Math.random() - 0.5).slice(0, sobra); }   // município grande: amostra aleatória (cobre tudo ao longo das rodadas)
+    tarefas.push(...l); sobra -= l.length;
+  }
+  const cortou = false;
   let novas = 0, erros = 0;
   await pool(tarefas, conc, async tk => {
     const aux = await get(tk.base + '-aux.json');
@@ -73,7 +87,6 @@ async function ciclo(uf, ciclo_n) {
     if (!d) { falhas.set(tk.base, (falhas.get(tk.base) || 0) + 1); return; }
     tk.m.s[tk.k] = [d.L, d.F, d.O, d.B, d.N, d.aptos]; tk.m.sujo = true; novas++;
   });
-  if (cortou || erros) delete etags[uf]; else etags[uf] = etagNovo; gravar(etagF, etags);
   const hora = new Date(Date.now() - 3 * 3600e3).toISOString().slice(11, 19);
   for (const m of cache.values()) if (m.uf === uf && m.sujo) { gravar(arq(uf, m.cd), { t: hora, s: m.s }); m.sujo = false; }
   return { novas, total, erros, pend: tarefas.length };
