@@ -1,18 +1,18 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=78fee5bc';
-import { CONFIG, RAIZ } from './config.js?v=78fee5bc';
-import { getJSON } from './tse.js?v=78fee5bc';
-import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=78fee5bc';
-import { comFoco } from './foco.js?v=78fee5bc';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=78fee5bc';
-import { listaMunicipios } from './model.js?v=78fee5bc';
-import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=78fee5bc';
-import { projetarMunicipios } from './proj.js?v=78fee5bc';
-import { criarMapaPontos } from './mapapontos.js?v=78fee5bc';
-import { criarMapaBairros } from './mapabairros.js?v=78fee5bc';
-import { legendaMapa } from './map.js?v=78fee5bc';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=ed9efb5c';
+import { CONFIG, RAIZ } from './config.js?v=ed9efb5c';
+import { getJSON } from './tse.js?v=ed9efb5c';
+import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=ed9efb5c';
+import { comFoco } from './foco.js?v=ed9efb5c';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=ed9efb5c';
+import { listaMunicipios } from './model.js?v=ed9efb5c';
+import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=ed9efb5c';
+import { projetarMunicipios } from './proj.js?v=ed9efb5c';
+import { criarMapaPontos } from './mapapontos.js?v=ed9efb5c';
+import { criarMapaBairros } from './mapabairros.js?v=ed9efb5c';
+import { legendaMapa } from './map.js?v=ed9efb5c';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
