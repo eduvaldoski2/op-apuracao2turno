@@ -60,7 +60,7 @@ jobs:
           RAMO="${{ github.event.inputs.ramo || 'dados' }}"; ELE="${{ github.event.inputs.ele || '6258' }}"; MIN="${{ github.event.inputs.minutos || '350' }}"
           fim=$((SECONDS+MIN*60))
           while [ $SECONDS -lt $fim ]; do
-            timeout 150 node scripts/coletor.mjs --out dados/live --basefile data/base_1t.json --ele "$ELE" || true
+            timeout 150 node scripts/coletor.mjs --out dados/live --basefile data/base_1t.json --ele "$ELE"; echo "[node saiu com codigo $?]"
             (cd dados && git add -A && if ! git diff --cached --quiet; then git commit -q --amend -m "dados" 2>/dev/null || git commit -q -m "dados"; timeout 60 git push -q -f origin "$RAMO" || true; fi)
             sleep 20
           done

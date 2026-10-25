@@ -46,6 +46,7 @@ async function montarBase(destino) {
 async function ciclo(out, B, estado) {
   const prev = estado.prev;
   const snap = await montarSnapshot({ cfg, prev, log });
+  log(`snapshot montado: st=${snap.br.st} hg=${snap.hg} avisos=${snap.diag.length}${snap.diag.length ? ' ' + snap.diag[0] : ''}`);
   const mudou = !prev || snap.br.st !== prev.br.st || snap.hg !== prev.hg || snap.br.L !== prev.br.L;
   const meta = { checado: new Date().toISOString(), tse: cfg.base, turno: cfg.turno, ele: cfg.ele[cfg.turno], diag: snap.diag, ok: snap.br.ok !== false };
   if (!mudou) { gravar(path.join(out, 'meta.json'), { ...meta, ultimaMudanca: estado.ultima }); return false; }
