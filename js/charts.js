@@ -1,5 +1,5 @@
 // Gráficos de linha em SVG puro (sem dependências): avanço da apuração, placar e projeção ao longo da apuração.
-import { CAND, fNum, fPct, fInt } from './util.js?v=374d5e7b';
+import { CAND, fNum, fPct, fInt } from './util.js?v=0f1e012a';
 
 const M0 = { l: 46, r: 18, t: 20, b: 36 };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
