@@ -1,5 +1,5 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=ed9efb5c';
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=d55cb036';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -132,4 +132,83 @@ export function baixarXLSX(nome, cabecalho, linhas, rodape = []) {
     ['xl/worksheets/sheet1.xml', sheet],
   ];
   baixar(zip(arq), nome + '.xlsx');
+}
+
+// ---- Exportação de uma seção (painel) da tela: PNG, PDF, CSV e Excel ----
+async function capturarSecao(el, sub, topo) {
+  await carregaScript('vendor/html2canvas.min.js');
+  el.setAttribute('data-exp-alvo', '1');
+  try {
+    return await window.html2canvas(el, {
+      scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: 1320,
+      onclone: doc => {
+        const alvo = doc.querySelector('[data-exp-alvo]'); if (!alvo) return;
+        alvo.querySelectorAll('.sem-export').forEach(n => n.remove());
+        doc.querySelectorAll('.mapa-tip,.g-tip').forEach(n => n.remove());
+        alvo.querySelectorAll('details').forEach(d => { d.open = true; });
+        alvo.querySelectorAll('.tab-scroll').forEach(n => { n.style.overflow = 'visible'; n.style.maxHeight = 'none'; });
+        alvo.querySelectorAll('th,thead,.tab th').forEach(n => { n.style.position = 'static'; n.style.top = 'auto'; });
+        alvo.style.cssText += ';box-shadow:none;margin:0;padding:18px 20px 14px;width:1240px';
+        const cab = doc.createElement('div');
+        cab.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 18px;margin:-18px -20px 14px;background:linear-gradient(100deg,#2A2260,#3E347E);color:#fff;font-family:system-ui,sans-serif';
+        cab.innerHTML = `<img src="img/logo-negativo.svg" alt="Oficina Política" style="height:38px;width:auto"><div style="text-align:right;font-size:12px;opacity:.92;line-height:1.4">${topo ? `<b>${topo}</b><br>` : ''}${sub}</div>`;
+        alvo.insertBefore(cab, alvo.firstChild);
+        const rod = doc.createElement('div');
+        rod.style.cssText = 'margin-top:14px;padding-top:10px;border-top:2px solid #e4dfee;font:11.5px/1.45 system-ui,sans-serif;color:#6f6888;text-align:center';
+        rod.innerHTML = '<b style="color:#3E347E;font-size:15px">oficinapolitica.com.br</b><br>Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.';
+        alvo.appendChild(rod);
+      },
+    });
+  } finally { el.removeAttribute('data-exp-alvo'); }
+}
+export async function baixarPNGSecao(el, nome, sub, topo) {
+  const c = await capturarSecao(el, sub, topo);
+  await new Promise(ok => c.toBlob(b => { baixar(b, nome + '.png'); ok(); }, 'image/png'));
+}
+export async function baixarPDFSecao(el, nome, sub, topo) {
+  await carregaScript('vendor/jspdf.umd.min.js');
+  const c = await capturarSecao(el, sub, topo);
+  const { jsPDF } = window.jspdf, pdf = new jsPDF('p', 'mm', 'a4');
+  const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight(), m = 8;
+  const larg = pw - 2 * m, escala = larg / c.width, altPag = (ph - 2 * m - 6) / escala;
+  let y = 0, pag = 0;
+  while (y < c.height - 1) {
+    const h = Math.min(altPag, c.height - y), pc = document.createElement('canvas'); pc.width = c.width; pc.height = Math.ceil(h);
+    pc.getContext('2d').drawImage(c, 0, y, c.width, h, 0, 0, c.width, h);
+    if (pag) pdf.addPage();
+    pdf.addImage(pc.toDataURL('image/jpeg', 0.92), 'JPEG', m, m, larg, h * escala);
+    pdf.setFontSize(7); pdf.setTextColor(120); pdf.text(`oficinapolitica.com.br · ${sub} · pág. ${pag + 1}`, m, ph - 4);
+    y += h; pag++;
+  }
+  pdf.save(nome + '.pdf');
+}
+// Lê a tabela que está na tela (o que a pessoa vê, já filtrado/ordenado) e devolve { cab, linhas } com números de verdade.
+export function tabelaDaSecao(el) {
+  const t = el.querySelector('table'); if (!t) return null;
+  const lim = s => String(s).replace(/[↕▲▼]/g, '').replace(/\s+/g, ' ').trim();
+  const ths = [...t.querySelectorAll('thead th')].map(th => lim(th.innerText)); if (!ths.length) return null;
+  const trs = [...t.querySelectorAll('tbody tr')].filter(tr => !tr.querySelector('td.vazio') && tr.offsetParent !== null);
+  const reD = /^(.*?)\s*\(\s*([+\-−]?[\d.,]+)\s*(p\.p\.)?\s*\)\s*$/;
+  const numero = s => { s = String(s).trim().replace('−', '-'); if (/^[+-]?\d{1,3}(\.\d{3})+$/.test(s) || /^[+-]?\d+$/.test(s)) return +s.replace(/\./g, ''); if (/^[+-]?\d+,\d+$/.test(s) || /^[+-]?\d{1,3}(\.\d{3})+,\d+$/.test(s)) return +s.replace(/\./g, '').replace(',', '.'); return null; };
+  const m = trs.map(tr => [...tr.children].map(td => {
+    const linhas = (td.innerText || '').split('\n').map(x => x.replace(/\s+/g, ' ').trim()).filter(Boolean);
+    let txt = linhas.join(' · '), delta = null, pp = false;
+    const d = txt.match(reD); if (d && d[1] !== '') { txt = d[1].replace(/\s·\s*$/, ''); delta = d[2]; pp = !!d[3]; }
+    return { txt, delta, pp };
+  }));
+  const cab = [], cols = [];
+  for (let j = 0; j < ths.length; j++) {
+    const cel = m.map(r => r[j]).filter(Boolean);
+    const temDelta = cel.some(c => c.delta != null), pp = cel.some(c => c.pp);
+    const vazios = c => !c.txt || /^[–-]%?$/.test(c.txt) || /^1º t\.:/.test(c.txt);
+    const ehPct = cel.some(c => /^[+\-−]?\d+(,\d+)?%$/.test(c.txt)) && cel.every(c => vazios(c) || /^[+\-−]?\d+(,\d+)?%$/.test(c.txt));
+    cab.push(ths[j] + (ehPct && !/%/.test(ths[j]) ? ' (%)' : '')); if (temDelta) cab.push(ths[j] + (pp ? ' – variação (p.p.)' : ' – variação'));
+    cols.push({ temDelta, ehPct });
+  }
+  const linhas = m.map(r => { const out = []; for (let j = 0; j < ths.length; j++) { const c = r[j] || { txt: '', delta: null }, k = cols[j]; let v = c.txt;
+    if (k.ehPct) { const n = numero(v.replace('%', '')); v = n != null ? n : (/^1º t\.:/.test(v) || /^[–-]%?$/.test(v) ? '' : v); } else { const n = numero(v); if (n != null) v = n; }
+    out.push(v);
+    if (k.temDelta) out.push(c.delta != null ? (numero(c.delta) ?? c.delta) : '');
+  } return out; });
+  return { cab, linhas };
 }
