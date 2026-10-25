@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=7e1219cc';
-import { listaMunicipios, rankingUfs } from './model.js?v=7e1219cc';
-import { projetarMunicipios } from './proj.js?v=7e1219cc';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=7e1219cc';
-import { graficoPlacar } from './charts.js?v=7e1219cc';
-import { criarMapa, legendaMapa } from './map.js?v=7e1219cc';
-import { criarMapaMun } from './mapamun.js?v=7e1219cc';
-import { getJSON } from './tse.js?v=7e1219cc';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=d2374df0';
+import { listaMunicipios, rankingUfs } from './model.js?v=d2374df0';
+import { projetarMunicipios } from './proj.js?v=d2374df0';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=d2374df0';
+import { graficoPlacar } from './charts.js?v=d2374df0';
+import { criarMapa, legendaMapa } from './map.js?v=d2374df0';
+import { criarMapaMun } from './mapamun.js?v=d2374df0';
+import { getJSON } from './tse.js?v=d2374df0';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -325,6 +325,7 @@ function faltaApurar(base, ufs, B) {
 }
 // ---------- viradas e marcos da apuração (aba Apuração) ----------
 export function eventosApuracao(hist) {
+  hist = hist.filter(h => h.L + h.F > 0);   // ignora os arquivos do TSE publicados antes da apuração (0 votos)
   const ev = []; let ant = null;
   hist.forEach((h, i) => {
     const lid = h.L > h.F ? 'L' : h.F > h.L ? 'F' : null, dif = Math.abs(h.L - h.F);
@@ -338,6 +339,7 @@ export function eventosApuracao(hist) {
 function viradas(hist, ufs, B) {
   if (!hist.length) return '';
   const ev = eventosApuracao(hist).reverse().slice(0, 10);
+  if (!ev.length) return '';
   const li = e => {
     const c = e.lid ? CAND[e.lid] : null, quem = c ? `<b style="color:${c.cor}">${c.nome}</b>` : 'Empate';
     const txt = e.tipo === 'virada' ? `<b>Virada:</b> ${quem} passa à frente, por ${fInt(e.dif)} votos` : e.tipo === 'marco' ? `<b>${e.m}% das seções apuradas</b> — ${quem} ${e.lid ? 'à frente por ' + fInt(e.dif) + ' votos' : ''}` : `<b>Primeira parcial</b> — ${quem} ${e.lid ? 'à frente por ' + fInt(e.dif) + ' votos' : ''}`;
