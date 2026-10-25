@@ -4,8 +4,8 @@ export const RAIZ = (typeof location !== 'undefined' && /\/apuracao-2t-2026\//.t
 export const CONFIG = {
   repo: 'eduvaldoski2/op-apuracao2turno',
   fontes: [   // onde o coletor publica snap.json / hist.json (na ordem de tentativa)
-    'https://raw.githubusercontent.com/eduvaldoski2/op-apuracao2turno/dados/live/',   // direto do GitHub: a cada 5 s a URL muda e o GitHub entrega a cópia nova (a mais rápida)
-    RAIZ + 'live/',  // intermediário na hospedagem (api/live.php): reserva, aguenta picos; no GitHub Pages não existe e é pulado
+    RAIZ + 'live/',  // intermediário na hospedagem (api/live.php): busca pelo código da versão mais nova no GitHub (sem cópia velha), aguenta picos; no GitHub Pages não existe e é pulado
+    'https://raw.githubusercontent.com/eduvaldoski2/op-apuracao2turno/dados/live/',   // reserva (o GitHub às vezes entrega cópia velha)
     'data/live/',
   ],
   base: 'data/base_1t.json',
@@ -13,7 +13,7 @@ export const CONFIG = {
   gruposBairros: { sp: 1, mg: 2, pa: 2, pi: 2, am: 2, df: 2, rj: 3, pe: 3, sc: 3, mt: 3, ms: 3, ro: 3, zz: 3, rr: 3, ba: 4, ce: 4, go: 4, es: 4, al: 4, to: 4, ac: 4, rs: 5, pr: 5, ma: 5, pb: 5, rn: 5, se: 5, ap: 5 },
   prefixoBairros: 'dados-b',       // 1º turno por município
   mapa: 'data/mapa_uf.json',
-  intervalo: 12000,                // ms entre consultas
+  intervalo: 8000,                 // ms entre consultas
   atrasoMax: 12 * 60 * 1000,       // acima disso a fonte é considerada atrasada
   diretoTSE: true,                 // se nenhuma fonte responde, lê direto do TSE (apenas nível de UF)
   // métricas de uso (anônimas, sem cookies). provedor: 'umami' | 'plausible' | 'goatcounter'; id = ID do site (Umami), domínio (Plausible) ou código (GoatCounter).
