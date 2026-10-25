@@ -1,6 +1,6 @@
 // Mapa do Brasil por UF (SVG). Estados pequenos ganham quadro lateral ("seta") com o resultado.
-import { corDoPct, corTexto, fNum, fDelta, CAND, sigla, ESC } from './util.js?v=b141ab46';
-import { entenda } from './ui.js?v=b141ab46';
+import { corDoPct, corTexto, fNum, fDelta, CAND, sigla, ESC } from './util.js?v=d08a3f4d';
+import { entenda } from './ui.js?v=d08a3f4d';
 
 const CALLOUT = { // x,y do quadro (unidades do viewBox)
   rn: [632, 146], pb: [632, 188], pe: [632, 230], al: [632, 272], se: [632, 314], df: [632, 356], es: [632, 398], rj: [632, 440], sc: [632, 482], ac: [6, 292],

@@ -1,5 +1,5 @@
 // Gráficos de linha em SVG puro (sem dependências): avanço da apuração, placar e projeção ao longo da apuração.
-import { CAND, fNum, fPct, fInt } from './util.js?v=b141ab46';
+import { CAND, fNum, fPct, fInt } from './util.js?v=d08a3f4d';
 
 const M0 = { l: 46, r: 18, t: 20, b: 36 };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -58,9 +58,32 @@ export function linhas(el, cfg) {
 const minutos = h => { const [a, b] = String(h).split(':'); return (+a) * 60 + (+b || 0); };
 const hhmm = m => String(Math.floor(m / 60) % 24).padStart(2, '0') + ':' + String(Math.round(m % 60)).padStart(2, '0');
 
+
+// Evolução da apuração no tempo: % dos votos válidos de cada candidato × horário da parcial do TSE
+const segs = h => { const [a, b, c] = String(h).split(':'); return (+a) * 3600 + (+b || 0) * 60 + (+c || 0); };
+const hhmmSeg = t => { const m = Math.round(t / 60) % 1440; return String(Math.floor(m / 60)).padStart(2, '0') + 'h' + String(m % 60).padStart(2, '0'); };
+function graficoTempo(el, hist) {
+  // ordena por horário do TSE, uma parcial por horário (a última), e trata a virada da meia-noite
+  const por = new Map(); let ant = -1, dia = 0;
+  for (const h of hist.filter(h => h.hg && h.vv > 0)) { let t = segs(h.hg); if (ant >= 0 && t + dia * 86400 < ant - 3600) dia++; ant = t + dia * 86400; por.set(h.hg + '|' + dia, { h, t: t + dia * 86400 }); }
+  const pts = [...por.values()].sort((a, b) => a.t - b.t);
+  if (!pts.length) { el.innerHTML = '<p class="vazio">Aguardando a primeira divulgação do TSE…</p>'; return; }
+  const tip = h => `<b>${h.ht || String(h.hg).slice(0, 5)}</b> · ${fNum(h.pst, 2)}% apurado<br><span style="color:${CAND.L.cor}">${CAND.L.nome} ${fNum(100 * h.L / h.vv, 2)}%</span> · <span style="color:${CAND.F.cor}">${CAND.F.nome} ${fNum(100 * h.F / h.vv, 2)}%</span><br><span class="t-s">${fInt(h.L)} × ${fInt(h.F)} votos</span>`;
+  const L = pts.map(p => ({ x: p.t, y: 100 * p.h.L / p.h.vv, tip: tip(p.h) })), F = pts.map(p => ({ x: p.t, y: 100 * p.h.F / p.h.vv, tip: tip(p.h) }));
+  let t0 = pts[0].t, t1 = pts[pts.length - 1].t; if (t1 - t0 < 120) { t0 -= 60; t1 += 60; }
+  const n = (el.clientWidth || 900) < 600 ? 4 : 6, xt = Array.from({ length: n }, (_, i) => Math.round((t0 + (t1 - t0) * i / (n - 1)) / 60) * 60);
+  const vmax = Math.max(...L.map(p => p.y), ...F.map(p => p.y)), alto = vmax > 75;
+  const series = [{ cor: CAND.L.cor, pts: L, w: 3.4 }, { cor: CAND.F.cor, pts: F, w: 3.4 }];
+  const ponta = (X, Y) => [[L, CAND.L.cor], [F, CAND.F.cor]].map(([a, c]) => { const p = a[a.length - 1]; return `<circle cx="${X(p.x).toFixed(1)}" cy="${Y(p.y).toFixed(1)}" r="7.5" fill="${c}"/>`; }).join('');
+  linhas(el, { x: [t0, t1], y: [0, alto ? 100 : 75], yt: alto ? [0, 25, 50, 75, 100] : [0, 25, 50, 75], xt, xf: hhmmSeg, yf: v => v + '%', series, extra: ponta, h: 300,
+    aria: 'Evolução da apuração: percentual de votos válidos de cada candidato ao longo do horário das parciais do TSE' });
+  el.insertAdjacentHTML('beforeend', `<div class="g-leg"><span><b style="background:${CAND.L.cor}">${CAND.L.partido}</b>${esc(CAND.L.nome)}</span><span><b style="background:${CAND.F.cor}">${CAND.F.partido}</b>${esc(CAND.F.nome)}</span></div>`);
+}
+
 // Marcha da apuração: % dos válidos × % apurado, com o horário de cada parcial; no modo projeção soma a linha projetada com faixa
 export function graficoPlacar(el, hist, { projecao = false } = {}) {
   if (!hist.length) { el.innerHTML = '<p class="vazio">Aguardando a primeira divulgação do TSE…</p>'; return; }
+  if (!projecao) return graficoTempo(el, hist);
   const L = hist.map(h => ({ x: h.pst, y: 100 * h.L / h.vv, h })), F = hist.map(h => ({ x: h.pst, y: 100 * h.F / h.vv, h }));
   const tipo = (p, extra = '') => `<b>${fNum(p.h.pst, 2)}%</b> apurado (${p.h.ht})<br><span style="color:${CAND.L.cor}">${CAND.L.nome} ${fNum(100 * p.h.L / p.h.vv, 2)}%</span> · <span style="color:${CAND.F.cor}">${CAND.F.nome} ${fNum(100 * p.h.F / p.h.vv, 2)}%</span>${extra}`;
   L.forEach(p => p.tip = tipo(p, projecao ? `<br>Projeção final ${CAND.L.nome}: <b>${fNum(p.h.pL, 2)}%</b> (${fNum(p.h.lo, 2)}–${fNum(p.h.hi, 2)})` : ''));
