@@ -4,8 +4,8 @@ export const RAIZ = (typeof location !== 'undefined' && /\/apuracao-2t-2026\//.t
 export const CONFIG = {
   repo: 'eduvaldoski2/op-apuracao2turno',
   fontes: [   // onde o coletor publica snap.json / hist.json (na ordem de tentativa)
-    RAIZ + 'live/',  // intermediário na hospedagem (api/live.php): cópia de 20 s, aguenta picos; no GitHub Pages não existe e é pulado
-    'https://raw.githubusercontent.com/eduvaldoski2/op-apuracao2turno/dados/live/',
+    'https://raw.githubusercontent.com/eduvaldoski2/op-apuracao2turno/dados/live/',   // direto do GitHub: a cada 5 s a URL muda e o GitHub entrega a cópia nova (a mais rápida)
+    RAIZ + 'live/',  // intermediário na hospedagem (api/live.php): reserva, aguenta picos; no GitHub Pages não existe e é pulado
     'data/live/',
   ],
   base: 'data/base_1t.json',
