@@ -449,3 +449,18 @@ body.tl-aberto{overflow:hidden}
 .tl-pn{font-weight:700;font-size:18px}.tl-pl b{font-size:30px;line-height:1}.tl-pl small{font-size:13px;color:#6b6585}
 .tl-pl.d{flex-direction:row-reverse}.tl-pl.d .tl-pn{order:3}
 .tl-pb{flex:1;display:flex;height:14px;border-radius:99px;overflow:hidden;background:#eee}.tl-pb i{display:block;height:100%}
+
+/* abas do quadro do mapa (por estado | por municípios) + busca de município */
+.abas-mapa{display:flex;gap:6px;margin:8px 0 14px;border-bottom:2px solid var(--linha)}
+.abas-mapa button{font:inherit;font-size:14px;font-weight:700;color:var(--roxo-2);background:#e9e5f5;border:1px solid #cbc3e6;border-bottom:0;border-radius:11px 11px 0 0;padding:10px 18px 9px;cursor:pointer;margin-bottom:-2px}
+.abas-mapa button.on{background:#fff;border-top:3px solid var(--laranja);padding-top:8px;border-color:var(--linha);border-top-color:var(--laranja);color:var(--roxo)}
+@media (max-width:640px){.abas-mapa button{flex:1;padding:10px 6px 9px;font-size:13px}}
+.busca-mun{margin:2px 0 14px;max-width:520px}.busca-mun label{display:block;font-size:12.5px;font-weight:700;color:var(--tx2);margin-bottom:5px;text-transform:uppercase;letter-spacing:.4px}
+.bm-box{position:relative}.bm-box input{width:100%;font:inherit;font-size:16px;padding:11px 14px;border:2px solid var(--linha);border-radius:11px;background:#fff;color:var(--tx)}
+.bm-box input:focus{outline:0;border-color:var(--roxo-3)}
+#bm-lista{position:absolute;z-index:20;left:0;right:0;top:calc(100% + 4px);margin:0;padding:4px;list-style:none;background:#fff;border:1px solid var(--linha);border-radius:11px;box-shadow:0 10px 28px rgba(45,20,80,.18);max-height:340px;overflow:auto}
+#bm-lista li{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer;font-size:15px}
+#bm-lista li small{color:var(--tx2);font-size:12.5px;white-space:nowrap}#bm-lista li.on,#bm-lista li:hover{background:var(--lilas)}#bm-lista li.vazio{cursor:default;color:var(--tx2);background:none}
+.bm-res{background:#fff;border:1px solid var(--linha);border-radius:12px;padding:12px 14px;margin-top:14px}.bm-tt{font-size:12.5px;font-weight:700;color:var(--tx2);text-transform:uppercase;letter-spacing:.4px;margin-bottom:8px}
+.bm-lin{display:flex;align-items:center;gap:9px;padding:4px 0;font-size:15px}.bm-lin i{width:13px;height:13px;border-radius:3px;flex:none}.bm-lin span{flex:1}.bm-lin b{font-variant-numeric:tabular-nums}
+#am-mun .mapa-mun svg{max-height:82vh}

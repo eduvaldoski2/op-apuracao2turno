@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=6a3d88c7';
-import { listaMunicipios, rankingUfs } from './model.js?v=6a3d88c7';
-import { projetarMunicipios } from './proj.js?v=6a3d88c7';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=6a3d88c7';
-import { graficoPlacar } from './charts.js?v=6a3d88c7';
-import { criarMapa, legendaMapa } from './map.js?v=6a3d88c7';
-import { criarMapaMun } from './mapamun.js?v=6a3d88c7';
-import { getJSON } from './tse.js?v=6a3d88c7';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=7e1219cc';
+import { listaMunicipios, rankingUfs } from './model.js?v=7e1219cc';
+import { projetarMunicipios } from './proj.js?v=7e1219cc';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=7e1219cc';
+import { graficoPlacar } from './charts.js?v=7e1219cc';
+import { criarMapa, legendaMapa } from './map.js?v=7e1219cc';
+import { criarMapaMun } from './mapamun.js?v=7e1219cc';
+import { getJSON } from './tse.js?v=7e1219cc';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -71,6 +71,82 @@ function ligaModoMapa(root, mp, dm, itens) {
   const aplica = () => { mp.atualizar(modoMapa === 'venc' ? dm : dsw[modoMapa]); if (slot) slot.innerHTML = modoMapa === 'venc' ? legendaMapa() : legendaSwing(mx, modoMapa); bt.forEach(b => b.classList.toggle('on', b.dataset.mm === modoMapa)); };
   bt.forEach(b => b.addEventListener('click', () => { modoMapa = b.dataset.mm; aplica(); }));
   aplica();
+}
+
+// ---------- abas do quadro do mapa: por estado | por municípios (Brasil inteiro, cor = quem lidera) ----------
+let abaMapa = 'uf', geoBR = null, bmTexto = '', bmFoco = false;   // lembram a busca quando o painel é redesenhado por nova parcial
+const bonitoM = s => String(s || '').toLowerCase().replace(/(^|[\s\-\/(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E|Em) /g, x => x.toLowerCase());
+function abasMapa(root, ctx, ap) {
+  const bt = root.querySelectorAll('[data-am]'), pUf = root.querySelector('#am-uf'), pMun = root.querySelector('#am-mun'), h2 = root.querySelector('#am-h2'), sub = root.querySelector('#am-sub');
+  if (!pUf || !pMun) return;
+  const T = {
+    uf: [ap ? 'Resultado por estado' : 'Projeção por estado', `Clique em um estado para ver os municípios${ap ? '' : ' (resultado projetado)'}.`],
+    mun: [ap ? 'Resultado por municípios' : 'Projeção por municípios', 'Cada município na cor de quem está na frente. Busque pelo nome ou clique no mapa para abrir a página do município.'],
+  };
+  let montado = false;
+  const mostrar = a => {
+    abaMapa = a; pUf.hidden = a !== 'uf'; pMun.hidden = a !== 'mun';
+    bt.forEach(b => { const on = b.dataset.am === a; b.classList.toggle('on', on); b.setAttribute('aria-selected', on); });
+    h2.textContent = T[a][0]; sub.textContent = T[a][1];
+    if (a === 'mun' && !montado) { montado = true; try { montarMunBR(root, ctx, ap); } catch (e) { root.querySelector('#mapa-bm').innerHTML = '<p class="aviso">Mapa dos municípios indisponível no momento.</p>'; } }
+  };
+  bt.forEach(b => b.addEventListener('click', () => mostrar(b.dataset.am)));
+  mostrar(abaMapa);
+}
+function montarMunBR(root, ctx, ap) {
+  const { B, V, P, snap } = ctx, rota = (uf, cd) => `#/${ap ? '' : 'p/'}mun/${uf}/${cd}`;
+  const idx = [], dm = {}, porCdi = {}; let nL = 0, nF = 0, nA = 0;
+  for (const uf of UF_IDS) {
+    if (uf === 'zz') continue;
+    const lista = B.byUf[uf] || []; if (!lista.length) continue;
+    const cdi = new Map(lista.map(b => [b.cd, String(b.cdi)]));
+    for (const b of lista) idx.push({ n: bonitoM(b.nome), s: sem(b.nome), uf, cd: b.cd });
+    if (ap ? !V.uf[uf] : !P.uf[uf]) { nA += lista.length; continue; }
+    for (const m of (ap ? listaMunicipios(B, V, uf) : projetarMunicipios(B, snap, P, uf))) {
+      const id = cdi.get(m.cd); if (!id) continue;
+      const ok = (ap ? m.apurado : true) && m.L + m.F > 0;
+      const dL = ap ? m.d?.L : m.pL - m.p1L, dF = ap ? m.d?.F : m.pF - m.p1F;
+      porCdi[id] = { uf, cd: m.cd, nome: bonitoM(m.nome), ok, pst: m.pst, L: m.L, F: m.F, pL: m.pL, pF: m.pF, dL, dF };
+      if (ok) { const k = m.L >= m.F ? 'L' : 'F'; dm[id] = { k, pw: Math.max(m.pL, m.pF), pL: m.pL, pF: m.pF, dL, dF }; k === 'L' ? nL++ : nF++; } else { dm[id] = { k: null }; nA++; }
+    }
+  }
+  root.querySelector('#bm-resumo').innerHTML = `<div class="bm-res"><div class="bm-tt">${ap ? 'Municípios na frente' : 'Municípios na frente (projeção)'}</div>
+    <div class="bm-lin"><i style="background:${CAND.L.cor}"></i><span>${CAND.L.nome}</span><b>${fInt(nL)}</b></div>
+    <div class="bm-lin"><i style="background:${CAND.F.cor}"></i><span>${CAND.F.nome}</span><b>${fInt(nF)}</b></div>
+    ${nA ? `<div class="bm-lin"><i style="background:#e4e1ea"></i><span>${ap ? 'Aguardando apuração' : 'Sem dados'}</span><b>${fInt(nA)}</b></div>` : ''}</div>`;
+  // busca por nome
+  const q = root.querySelector('#bm-q'), ul = root.querySelector('#bm-lista'); let achados = [], sel = 0;
+  const pinta = () => { ul.querySelectorAll('li[data-i]').forEach(li => li.classList.toggle('on', +li.dataset.i === sel)); };
+  const busca = () => {
+    const t = sem(q.value).trim();
+    if (t.length < 2) { ul.hidden = true; achados = []; return; }
+    achados = idx.filter(r => r.s.includes(t)).sort((a, b) => (b.s.startsWith(t) - a.s.startsWith(t)) || a.s.length - b.s.length || a.n.localeCompare(b.n, 'pt-BR')).slice(0, 8); sel = 0;
+    ul.innerHTML = achados.length ? achados.map((r, i) => `<li role="option" data-i="${i}" class="${i === 0 ? 'on' : ''}"><b>${esc(r.n)}</b><small>${esc(UF_NOME[r.uf] || r.uf.toUpperCase())}</small></li>`).join('') : '<li class="vazio">Nenhum município encontrado</li>';
+    ul.hidden = false;
+  };
+  const abrir = r => { if (r) { ul.hidden = true; ctx.ir(rota(r.uf, r.cd)); } };
+  q.addEventListener('input', () => { bmTexto = q.value; busca(); });
+  q.addEventListener('focus', () => { bmFoco = true; busca(); });
+  if (bmTexto) { q.value = bmTexto; if (bmFoco) { q.focus({ preventScroll: true }); } }
+  q.addEventListener('keydown', ev => {
+    if (ev.key === 'ArrowDown' && achados.length) { ev.preventDefault(); sel = (sel + 1) % achados.length; pinta(); }
+    else if (ev.key === 'ArrowUp' && achados.length) { ev.preventDefault(); sel = (sel - 1 + achados.length) % achados.length; pinta(); }
+    else if (ev.key === 'Enter') { ev.preventDefault(); abrir(achados[sel]); }
+    else if (ev.key === 'Escape') { ul.hidden = true; }
+  });
+  ul.addEventListener('mousedown', ev => { ev.preventDefault(); const li = ev.target.closest('li[data-i]'); if (li) abrir(achados[+li.dataset.i]); });
+  ul.addEventListener('touchend', ev => { const li = ev.target.closest('li[data-i]'); if (li) { ev.preventDefault(); abrir(achados[+li.dataset.i]); } });
+  q.addEventListener('blur', () => { if (q.isConnected) bmFoco = false; setTimeout(() => { ul.hidden = true; }, 150); });
+  // mapa
+  const alvo = root.querySelector('#mapa-bm');
+  const tip = id => { const m = porCdi[id]; if (!m) return ''; const nome = `<b>${esc(m.nome)}</b> <span class="t-s">${esc(sigla(m.uf))}</span>`;
+    if (!m.ok) return `${nome}<br><span class="t-s">${ap ? 'aguardando apuração' : 'sem dados'}</span>`;
+    return `${nome}<br><span class="t-s">${ap ? fNum(m.pst, 0) + '% das seções apuradas' : 'projeção'}</span><br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(m.pL, 2)}%</b> ${fDelta(m.dL, 1)} · ${fInt(m.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(m.pF, 2)}%</b> ${fDelta(m.dF, 1)} · ${fInt(m.F)}`; };
+  (geoBR ??= getJSON('data/mapa_br_mun.json', { retries: 2, timeout: 90000 })).then(geo => {
+    for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome;
+    const mp = criarMapaMun(alvo, geo, { onClick: id => { const m = porCdi[id]; if (m) ctx.ir(rota(m.uf, m.cd)); }, tooltip: tip });
+    mp.atualizar(dm);
+  }).catch(() => { geoBR = null; alvo.innerHTML = '<p class="aviso">Mapa dos municípios indisponível no momento. A busca por nome continua funcionando.</p>'; });
 }
 
 // ---------- mapa: dados ----------
@@ -162,7 +238,11 @@ export function viewGeral(ctx) {
   }
 
   // mapa
-  h += `<section class="painel mapa-sec"><h2>${ap ? 'Resultado por estado' : 'Projeção por estado'}</h2><p class="sub">Clique em um estado para ver os municípios${ap ? '' : ' (resultado projetado)'}.</p>${seletorMapa()}<div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div>${tabelaRegioes(ctx, ap)}</div></div></section>`;
+  h += `<section class="painel mapa-sec"><h2 id="am-h2">${ap ? 'Resultado por estado' : 'Projeção por estado'}</h2><p class="sub" id="am-sub">Clique em um estado para ver os municípios${ap ? '' : ' (resultado projetado)'}.</p>
+  <div class="abas-mapa sem-export" role="tablist" aria-label="Escolha o mapa"><button type="button" role="tab" data-am="uf" class="on">${ap ? 'Resultado' : 'Projeção'} por estado</button><button type="button" role="tab" data-am="mun">${ap ? 'Resultado' : 'Projeção'} por municípios</button></div>
+  <div id="am-uf">${seletorMapa()}<div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div>${tabelaRegioes(ctx, ap)}</div></div></div>
+  <div id="am-mun" hidden><div class="busca-mun sem-export"><label for="bm-q">Buscar município</label><div class="bm-box"><input id="bm-q" type="search" placeholder="Digite o nome do município…" autocomplete="off" aria-controls="bm-lista" aria-autocomplete="list"><ul id="bm-lista" role="listbox" hidden></ul></div></div>
+  <div class="mapa-grid"><div id="mapa-bm"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado"><div class="leg-slot-bm">${legendaMapa()}</div><div id="bm-resumo"></div></div></div></div></section>`;
 
   // tabela de UFs
   h += `<section class="painel"><h2>Todos os estados</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um estado</b> para abrir os municípios.</p><div id="tab-uf"></div></section>`;
@@ -176,6 +256,7 @@ export function viewGeral(ctx) {
       graficoPlacar(root.querySelector('#g-placar'), hist, { projecao: !ap });
       const dm = dadosMapa(ufs), mp = criarMapa(root.querySelector('#mapa'), ctx.geo, { onClick: u => ctx.ir(`#/${ap ? '' : 'p/'}uf/${u}`), tooltip: u => tipUF(ufs.find(x => x.id === u), modo) });
       ligaModoMapa(root, mp, dm, ufs.map(u => [u.id, u]));
+      abasMapa(root, ctx, ap);
       const t = tabela(root.querySelector('#tab-uf'), { cols: colsUF(modo), rows: ufs, sort: 'nome', dir: 'asc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
       ctx.csv = () => ({ nome: `${ap ? 'apuracao' : 'projecao'}_2t_estados`, ...csvUF(base, ufs, modo) });
       root.querySelectorAll('tr[data-reg]').forEach(tr => tr.addEventListener('click', () => ctx.ir(`#/${ap ? '' : 'p/'}regiao/${tr.dataset.reg}`)));

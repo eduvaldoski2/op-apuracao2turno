@@ -1,7 +1,7 @@
 // Mapa de um estado por município (SVG), no mesmo padrão do mapa do Brasil: cor = quem lidera, tom = % do líder,
 // rótulos dentro dos municípios grandes (sigla do nome + % de cada candidato e variação). Sem caixas laterais.
 // Suporta zoom (roda do mouse / botões / pinça) e arraste; os rótulos reaparecem conforme o zoom.
-import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=6a3d88c7';
+import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=7e1219cc';
 
 const num = v => (v == null || isNaN(v)) ? '–' : fNum(v, 1);
 const dl = v => (v == null || isNaN(v)) ? '' : fDelta(v, 1, '');
@@ -22,7 +22,7 @@ export function criarMapaMun(el, geo, { onClick, tooltip } = {}) {
   function rotulo(id, g, d, c) {
     // r = raio do maior círculo inscrito (unid. do viewBox); na tela vale r*z*escalaPx
     const px = g.r * z * kpx, fs = 8 / (z * kpx);
-    if (px < 7) return '';
+    if (px < (geo.rmin ?? 7)) return '';
     const nome = esc(g.n);
     const nomeCurto = nome.length * fs * 0.5 > g.r * 2 ? nome.slice(0, Math.max(3, Math.floor(g.r * 2 / (fs * 0.5)) - 1)) + '.' : nome;
     if (d && d.solo) return px >= 16 ? `<g pointer-events="none"><text x="${g.lx}" y="${g.ly - 3 * fs / 8}" text-anchor="middle" font-size="${6.4 * fs / 8}" font-weight="800" fill="${c.txt}">${nomeCurto}</text><text x="${g.lx}" y="${g.ly + 6 * fs / 8}" text-anchor="middle" font-size="${8.4 * fs / 8}" font-weight="700" fill="${c.txt}">${d.lab ?? num(d.pw)}</text></g>` : `<g pointer-events="none"><text x="${g.lx}" y="${g.ly + 2.6 * fs / 8}" text-anchor="middle" font-size="${7.2 * fs / 8}" font-weight="800" fill="${c.txt}">${d.lab ?? num(d.pw)}</text></g>`;
@@ -35,7 +35,7 @@ export function criarMapaMun(el, geo, { onClick, tooltip } = {}) {
   function desenhar() {
     kpx = (svg.clientWidth || vw) / vw;
     let p = '', t = '';
-    const sw = (0.7 / z).toFixed(2);
+    const sw = ((geo.sw ?? 0.7) / z).toFixed(2);
     const bol = [];
     const pmax = bolhas ? Math.max(1, ...Object.values(dados).map(d => d?.peso || 0)) : 1, R = Math.min(vw, vh) * 0.06 / Math.pow(z, .55);
     for (const [id, g] of Object.entries(geo.muns)) {
@@ -49,7 +49,10 @@ export function criarMapaMun(el, geo, { onClick, tooltip } = {}) {
       t += rotulo(id, g, d, c);
     }
     if (bolhas) { bol.sort((a, b) => b.r - a.r); t = bol.map(b => `<circle class="bol" data-m="${b.id}" cx="${b.g.lx}" cy="${b.g.ly}" r="${b.r.toFixed(2)}" fill="${b.c.fill}" fill-opacity=".9" stroke="#fff" stroke-width="${sw}"/>`).join(''); }
-    svg.innerHTML = `<g>${p}</g><g>${t}</g>`;
+    // mapa do Brasil inteiro: contornos dos estados por baixo (cobrem frestas) e por cima (divisas)
+    const sob = geo.borda ? `<path d="${geo.borda}" fill="#d6d1e4" stroke="#d6d1e4" stroke-width="${(0.9 / z).toFixed(2)}" pointer-events="none"/>` : '';
+    const sobre = geo.borda ? `<path d="${geo.borda}" fill="none" stroke="#1b1530" stroke-opacity=".5" stroke-width="${(0.3 / z).toFixed(2)}" stroke-linejoin="round" pointer-events="none"/>` : '';
+    svg.innerHTML = `${sob}<g>${p}</g>${sobre}<g>${t}</g>`;
     view();
   }
   const alvo = ev => ev.target.closest('[data-m]')?.dataset.m;
