@@ -1,18 +1,18 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=d55cb036';
-import { CONFIG, RAIZ } from './config.js?v=d55cb036';
-import { getJSON } from './tse.js?v=d55cb036';
-import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=d55cb036';
-import { comFoco } from './foco.js?v=d55cb036';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=d55cb036';
-import { listaMunicipios } from './model.js?v=d55cb036';
-import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=d55cb036';
-import { projetarMunicipios } from './proj.js?v=d55cb036';
-import { criarMapaPontos } from './mapapontos.js?v=d55cb036';
-import { criarMapaBairros } from './mapabairros.js?v=d55cb036';
-import { legendaMapa } from './map.js?v=d55cb036';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=70ccdf5a';
+import { CONFIG, RAIZ } from './config.js?v=70ccdf5a';
+import { getJSON } from './tse.js?v=70ccdf5a';
+import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=70ccdf5a';
+import { comFoco } from './foco.js?v=70ccdf5a';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=70ccdf5a';
+import { listaMunicipios } from './model.js?v=70ccdf5a';
+import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=70ccdf5a';
+import { projetarMunicipios } from './proj.js?v=70ccdf5a';
+import { criarMapaPontos } from './mapapontos.js?v=70ccdf5a';
+import { criarMapaBairros } from './mapabairros.js?v=70ccdf5a';
+import { legendaMapa } from './map.js?v=70ccdf5a';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
@@ -143,8 +143,8 @@ const kpisUnidade = u => `<section class="kpis k4">${kpi('Seções apuradas', `$
 const tipUnidade = (titulo, u, rotuloSub) => `<b>${titulo}</b><br><span class="t-s">${rotuloSub ? rotuloSub + ' · ' : ''}${fInt(u.st)}/${fInt(u.ts)} seções apuradas</span>` + (u.st ? `<br><span style="color:${CAND.L.cor}">■</span> ${CAND.L.nome}: <b>${fNum(u.pL, 2)}%</b> ${fDelta(u.dL, 1)} · ${fInt(u.L)}<br><span style="color:${CAND.F.cor}">■</span> ${CAND.F.nome}: <b>${fNum(u.pF, 2)}%</b> ${fDelta(u.dF, 1)} · ${fInt(u.F)}` : `<br><span class="t-s">1º turno: ${CAND.L.nome.split(' ')[0]} ${fNum(u.p1LT, 1)}% · ${CAND.F.nome.split(' ')[0]} ${fNum(u.p1FT, 1)}%</span>`);
 const corDe = u => u.lider ? corDoPct(u.lider, u.pw) : '#c9c4d8';
 
-// votos de um candidato com, em parênteses embaixo, a vantagem (+) ou desvantagem (−) em relação ao outro no mesmo recorte
-const vdif = (v, dLF, k) => { const d = k === 'L' ? dLF : -dLF; return `<span class="vc"><b>${fInt(v)}</b>${isNaN(d) ? '' : `<span class="dlt ${d > 0 ? 'pos' : d < 0 ? 'neg' : 'zero'}" title="Diferença de votos para o outro candidato">(${d > 0 ? '+' : d < 0 ? '−' : ''}${fInt(Math.abs(d))})</span>`}</span>`; };
+// votos de um candidato com, em parênteses embaixo, quantos a mais (+) ou a menos (−) ele teve em relação à própria votação no 1º turno, nas mesmas seções
+const vdif = (v, v1) => { const d = v - v1; return `<span class="vc"><b>${fInt(v)}</b>${isNaN(d) ? '' : `<span class="dlt ${d > 0 ? 'pos' : d < 0 ? 'neg' : 'zero'}" title="Diferença para a votação do próprio candidato no 1º turno, nas mesmas seções">(${d > 0 ? '+' : d < 0 ? '−' : ''}${fInt(Math.abs(d))})</span>`}</span>`; };
 function colunas(tipo, ap, uf, cd, rot = 'Bairro', T1 = null) {
   const nomeCol = tipo === 'b' ? { k: 'nome', t: rot, h: x => `<b>${esc(bonito(x.nome))}</b>${x.st ? '' : ' <small class="agu">aguardando</small>'}`, v: x => x.nome, ini: 'asc' }
     : { k: 'nome', t: 'Local de votação', h: x => `<b>${esc(bonito(x.nome))}</b><br><small>${esc(bonito(x.bairro))} · ${esc(bonito(x.end))}</small>`, v: x => x.nome, ini: 'asc' };
@@ -167,7 +167,7 @@ function colunas(tipo, ap, uf, cd, rot = 'Bairro', T1 = null) {
   return [nomeCol, ...locaisCol,
     { k: 'pst', t: 'Seções apuradas', h: x => `${fInt(x.st)}/${fInt(x.ts)}`, v: x => x.pst, cls: 'n' },
     ...['L', 'F'].flatMap(k => [
-      { k: 'v' + k, t: `${cabCand(k)} votos`, h: x => x.st ? vdif(x[k], x.L - x.F, k) : '', v: x => x.st ? x[k] : NaN, cls: 'n' },
+      { k: 'v' + k, t: `${cabCand(k)} votos`, h: x => x.st ? vdif(x[k], x[k + '1']) : '', v: x => x.st ? x[k] : NaN, cls: 'n' },
       { k: 'p' + k, t: `${cabCand(k)} %`, h: x => x.st ? pcel(x['p' + k], x['d' + k]) : `<span class="t-s">1º t.: ${fNum(x['p1' + k + 'T'], 1)}%</span>`, v: x => x.st ? x['p' + k] : NaN, x: x => x['p' + k], cls: 'n' }]),
     { k: 'lid', t: 'Vence', h: x => x.lider ? `<span class="chip-l" style="background:${CAND[x.lider].cor}">${CAND[x.lider].nome.split(' ')[0]}</span>` : '', v: x => x.lider ? (x.lider === 'L' ? 1 : 0) : NaN, cls: 'c' },
     { k: 'ab', t: 'Abstenção', h: x => x.st ? pcel(x.pAb, x.dAb, 1, true) : '', v: x => x.pAb, cls: 'n sec' },
@@ -337,7 +337,7 @@ export function viewLocal(ctx, uf, cd, id) {
       if (nav) nav.innerHTML = trilhaHtml([...trilhaBase(ctx.modo, mun, uf, cd), ...(di != null ? [[`${nivelG(geo).cap}: ${bonito(geo.f[di].n)}`, dRot]] : []), [`Bairro: ${bonito(l.bairro)}`, bRota], [`Local: ${nome}`]]);
       const idxC = T1 && x1 ? x1.c.map(n => T1.cands.findIndex(c => +c.n === n)) : [];
       const secs = bruto[14].map((s, j) => { const x = live.s[l.z + '-' + s[0]], o = s[4], vv1 = s[2] + s[3] + o, c1 = vv1 + s[5] + s[6];
-        const r = { n: s[0], ap: s[1], ok: !!x, p1L: pc(s[2], vv1), p1F: pc(s[3], vv1), L: x ? x[0] : NaN, F: x ? x[1] : NaN, B: x ? x[3] : NaN, N: x ? x[4] : NaN };
+        const r = { n: s[0], ap: s[1], ok: !!x, L1: s[2], F1: s[3], p1L: pc(s[2], vv1), p1F: pc(s[3], vv1), L: x ? x[0] : NaN, F: x ? x[1] : NaN, B: x ? x[3] : NaN, N: x ? x[4] : NaN };
         if (x) { const vv = x[0] + x[1] + x[2], c = vv + x[3] + x[4]; r.pL = pc(x[0], vv); r.pF = pc(x[1], vv); r.dL = r.pL - r.p1L; r.dF = r.pF - r.p1F; r.pAb = pc(s[1] - c, s[1]); r.lider = x[0] >= x[1] ? 'L' : 'F'; } else { r.pL = r.pF = r.dL = r.dF = r.pAb = NaN; r.lider = null; }
         if (T1) { r.dL = r.dF = NaN; r.pO = x ? pc(x[2], x[0] + x[1] + x[2]) : NaN;
           const V = new Array(T1.cands.length).fill(0); V[T1.iL] += s[2]; V[T1.iF] += s[3]; x1?.l[li]?.[j]?.forEach((q, k) => { if (idxC[k] >= 0) V[idxC[k]] += q; });
@@ -365,7 +365,7 @@ export function viewLocal(ctx, uf, cd, id) {
         { k: 'n', t: 'Seção', h: s => `<b>${fInt(s.n)}</b>${s.ok ? '' : ' <small class="agu">aguardando</small>'}`, v: s => s.n, ini: 'asc' },
         { k: 'ap', t: 'Eleitores', h: s => fInt(s.ap), v: s => s.ap, cls: 'n sec' },
         ...['L', 'F'].flatMap(k => [
-          { k: 'v' + k, t: `${cabCand(k)} votos`, h: s => s.ok ? vdif(s[k], s.L - s.F, k) : '', v: s => s[k], cls: 'n' },
+          { k: 'v' + k, t: `${cabCand(k)} votos`, h: s => s.ok ? vdif(s[k], s[k + '1']) : '', v: s => s[k], cls: 'n' },
           { k: 'p' + k, t: `${cabCand(k)} %`, h: s => s.ok ? pcel(s['p' + k], s['d' + k]) : `<span class="t-s">1º t.: ${fNum(s['p1' + k], 1)}%</span>`, v: s => s['p' + k], x: s => s['p' + k], cls: 'n' }]),
         { k: 'lid', t: 'Vence', h: s => s.lider ? `<span class="chip-l" style="background:${CAND[s.lider].cor}">${CAND[s.lider].nome.split(' ')[0]}</span>` : '', v: s => s.lider ? (s.lider === 'L' ? 1 : 0) : NaN, cls: 'c' },
         { k: 'B', t: 'Brancos', h: s => s.ok ? fInt(s.B) : '', v: s => s.B, cls: 'n sec' }, { k: 'N', t: 'Nulos', h: s => s.ok ? fInt(s.N) : '', v: s => s.N, cls: 'n sec' },

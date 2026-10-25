@@ -1,5 +1,5 @@
 // Modelo de dados do painel: combina a base do 1º turno (por município) com o snapshot do 2º turno.
-import { UF_IDS, REGIOES, UF_REGIAO, sdiv } from './util.js?v=d55cb036';
+import { UF_IDS, REGIOES, UF_REGIAO, sdiv } from './util.js?v=70ccdf5a';
 
 const ROW = { uf: 0, cd: 1, nome: 2, cdi: 3, ts: 4, te: 5, c: 6, a: 7, vb: 8, tvn: 9, L: 10, F: 11, vv: 12 };
 
