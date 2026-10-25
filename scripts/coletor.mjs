@@ -47,8 +47,13 @@ async function ciclo(out, B, estado) {
   const prev = estado.prev;
   const snap = await montarSnapshot({ cfg, prev, log });
   log(`snapshot montado: st=${snap.br.st} hg=${snap.hg} avisos=${snap.diag.length}${snap.diag.length ? ' ' + snap.diag[0] : ''}`);
-  const mudou = !prev || snap.br.st !== prev.br.st || snap.hg !== prev.hg || snap.br.L !== prev.br.L;
-  log(`mudou=${mudou} prev.st=${prev?.br?.st} prev.hg=${prev?.hg} snap.hg=${snap.hg}`);
+  // O arquivo do Brasil do TSE às vezes fica parado enquanto os de estado/município continuam sendo atualizados
+  // (e o TSE reescreve arquivos mantendo a mesma hora). Por isso a mudança considera também estados e municípios.
+  const assin = x => Object.entries(x.uf || {}).map(([k, v]) => `${k}${v.st}.${v.L}.${v.F}`).join(',') + '|' +
+    Object.entries(x.mun || {}).map(([k, r]) => `${k}${r.length}.${r.reduce((a, m) => a + m[2] + m[9] + m[10], 0)}`).join(',');
+  const mudouBr = !prev || snap.br.st !== prev.br.st || snap.hg !== prev.hg || snap.br.L !== prev.br.L;
+  const mudou = mudouBr || assin(snap) !== assin(prev);
+  log(`mudou=${mudou} (brasil=${mudouBr}) prev.st=${prev?.br?.st} prev.hg=${prev?.hg} snap.hg=${snap.hg}`);
   const meta = { checado: new Date().toISOString(), tse: cfg.base, turno: cfg.turno, ele: cfg.ele[cfg.turno], diag: snap.diag, ok: snap.br.ok !== false };
   if (!mudou) { gravar(path.join(out, 'meta.json'), { ...meta, ultimaMudanca: estado.ultima }); return false; }
   log('projetando…');
@@ -57,7 +62,7 @@ async function ciclo(out, B, estado) {
   snap.proj = { pL: P.br.pL, pF: P.br.pF, band: P.br.band.pL, pw: P.br.pWinL };
   const h = estado.hist;
   const ht = String(snap.hg).slice(0, 5);
-  h.push({ t: new Date().toISOString(), dg: snap.dg, hg: snap.hg, ht, pst: 100 * snap.br.st / (snap.br.ts || 1), st: snap.br.st, ts: snap.br.ts, L: snap.br.L, F: snap.br.F, vv: snap.br.vv, c: snap.br.c, a: snap.br.a, vb: snap.br.vb, tvn: snap.br.tvn, te: snap.br.te, est: snap.br.est,
+  if (mudouBr || !h.length) h.push({ t: new Date().toISOString(), dg: snap.dg, hg: snap.hg, ht, pst: 100 * snap.br.st / (snap.br.ts || 1), st: snap.br.st, ts: snap.br.ts, L: snap.br.L, F: snap.br.F, vv: snap.br.vv, c: snap.br.c, a: snap.br.a, vb: snap.br.vb, tvn: snap.br.tvn, te: snap.br.te, est: snap.br.est,
     pL: +P.br.pL.toFixed(3), lo: +P.br.band.pL[0].toFixed(3), hi: +P.br.band.pL[1].toFixed(3), pw: +P.br.pWinL.toFixed(3) });
   snap.gerado = new Date().toISOString();
   gravar(path.join(out, 'snap.json'), snap);
