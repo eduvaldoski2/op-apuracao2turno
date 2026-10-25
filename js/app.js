@@ -1,22 +1,22 @@
-import { CONFIG } from './config.js?v=94f14732';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=94f14732';
-import { calcular } from './model.js?v=94f14732';
-import { projetar, PARAMS } from './proj.js?v=94f14732';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=94f14732';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=94f14732';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=94f14732';
-import { iniciarExportSecoes } from './expsec.js?v=94f14732';
-import { eventosEntre } from './avisos.js?v=94f14732';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=94f14732';
-import { abrirTelao, iniciarTV } from './tv.js?v=94f14732';
-import { iniciarConsentimento } from './consentimento.js?v=94f14732';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=94f14732';
-import { lerCard } from './card.js?v=94f14732';
-import { abrirCompartilhar } from './compartilhar.js?v=94f14732';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=94f14732';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=94f14732';
-import { esc } from './ui.js?v=94f14732';
-import { getFoco, setFoco, comFoco } from './foco.js?v=94f14732';
+import { CONFIG } from './config.js?v=2d29bcf2';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=2d29bcf2';
+import { calcular } from './model.js?v=2d29bcf2';
+import { projetar, PARAMS } from './proj.js?v=2d29bcf2';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=2d29bcf2';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=2d29bcf2';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=2d29bcf2';
+import { iniciarExportSecoes } from './expsec.js?v=2d29bcf2';
+import { eventosEntre } from './avisos.js?v=2d29bcf2';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=2d29bcf2';
+import { abrirTelao, iniciarTV } from './tv.js?v=2d29bcf2';
+import { iniciarConsentimento } from './consentimento.js?v=2d29bcf2';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=2d29bcf2';
+import { lerCard } from './card.js?v=2d29bcf2';
+import { abrirCompartilhar } from './compartilhar.js?v=2d29bcf2';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=2d29bcf2';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=2d29bcf2';
+import { esc } from './ui.js?v=2d29bcf2';
+import { getFoco, setFoco, comFoco } from './foco.js?v=2d29bcf2';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -217,3 +217,4 @@ iniciar().then(iniciarTV);
 // v6
 // v7
 // v8
+// v9

@@ -1,5 +1,5 @@
 // Gráficos de linha em SVG puro (sem dependências): avanço da apuração, placar e projeção ao longo da apuração.
-import { CAND, fNum, fPct, fInt } from './util.js?v=94f14732';
+import { CAND, fNum, fPct, fInt } from './util.js?v=2d29bcf2';
 
 const M0 = { l: 46, r: 18, t: 20, b: 36 };
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -59,6 +59,19 @@ const minutos = h => { const [a, b] = String(h).split(':'); return (+a) * 60 + (
 const hhmm = m => String(Math.floor(m / 60) % 24).padStart(2, '0') + ':' + String(Math.round(m % 60)).padStart(2, '0');
 
 
+
+// escala vertical adaptativa: acompanha as curvas (corrida apertada = zoom), com graduação "redonda"
+function escalaY(vals, minimo = 4) {
+  const v = vals.filter(Number.isFinite); if (!v.length) return { y: [40, 60], yt: [40, 50, 60] };
+  let lo = Math.min(...v), hi = Math.max(...v); if (hi - lo < minimo) { const m = (hi + lo) / 2; lo = m - minimo / 2; hi = m + minimo / 2; }
+  const pad = (hi - lo) * 0.12; lo -= pad; hi += pad;
+  const passo = [0.5, 1, 2, 2.5, 5, 10, 20, 25].find(p => (hi - lo) / p <= 6) || 25;
+  lo = Math.max(0, Math.floor(lo / passo) * passo); hi = Math.min(100, Math.ceil(hi / passo) * passo);
+  const yt = []; for (let t = lo; t <= hi + 1e-9; t += passo) yt.push(+t.toFixed(2));
+  return { y: [lo, hi], yt };
+}
+const fPctY = v => (Number.isInteger(v) ? v : String(v).replace('.', ',')) + '%';
+
 // Evolução da apuração no tempo: % dos votos válidos de cada candidato × horário da parcial do TSE
 const segs = h => { const [a, b, c] = String(h).split(':'); return (+a) * 3600 + (+b || 0) * 60 + (+c || 0); };
 const hhmmSeg = t => { const m = Math.round(t / 60) % 1440; return String(Math.floor(m / 60)).padStart(2, '0') + 'h' + String(m % 60).padStart(2, '0'); };
@@ -72,10 +85,10 @@ function graficoTempo(el, hist) {
   const L = pts.map(p => ({ x: p.t, y: 100 * p.h.L / p.h.vv, tip: tip(p.h) })), F = pts.map(p => ({ x: p.t, y: 100 * p.h.F / p.h.vv, tip: tip(p.h) }));
   let t0 = pts[0].t, t1 = pts[pts.length - 1].t; if (t1 - t0 < 120) { t0 -= 60; t1 += 60; }
   const n = (el.clientWidth || 900) < 600 ? 4 : 6, xt = Array.from({ length: n }, (_, i) => Math.round((t0 + (t1 - t0) * i / (n - 1)) / 60) * 60);
-  const vmax = Math.max(...L.map(p => p.y), ...F.map(p => p.y)), alto = vmax > 75;
+  const esc2 = escalaY([...L.map(p => p.y), ...F.map(p => p.y), 50]);
   const series = [{ cor: CAND.L.cor, pts: L, w: 3.4 }, { cor: CAND.F.cor, pts: F, w: 3.4 }];
   const ponta = (X, Y) => [[L, CAND.L.cor], [F, CAND.F.cor]].map(([a, c]) => { const p = a[a.length - 1]; return `<circle cx="${X(p.x).toFixed(1)}" cy="${Y(p.y).toFixed(1)}" r="7.5" fill="${c}"/>`; }).join('');
-  linhas(el, { x: [t0, t1], y: [0, alto ? 100 : 75], yt: alto ? [0, 25, 50, 75, 100] : [0, 25, 50, 75], xt, xf: hhmmSeg, yf: v => v + '%', series, extra: ponta, h: 300,
+  linhas(el, { x: [t0, t1], y: esc2.y, yt: esc2.yt, refY: [{ y: 50, txt: '50%' }], xt, xf: hhmmSeg, yf: fPctY, series, extra: ponta, h: 300,
     aria: 'Evolução da apuração: percentual de votos válidos de cada candidato ao longo do horário das parciais do TSE' });
   el.insertAdjacentHTML('beforeend', `<div class="g-leg"><span><b style="background:${CAND.L.cor}">${CAND.L.partido}</b>${esc(CAND.L.nome)}</span><span><b style="background:${CAND.F.cor}">${CAND.F.partido}</b>${esc(CAND.F.nome)}</span></div>`);
 }
@@ -84,6 +97,8 @@ function graficoTempo(el, hist) {
 export function graficoPlacar(el, hist, { projecao = false } = {}) {
   if (!hist.length) { el.innerHTML = '<p class="vazio">Aguardando a primeira divulgação do TSE…</p>'; return; }
   if (!projecao) return graficoTempo(el, hist);
+  hist = hist.filter(h => h.vv > 0 && Number.isFinite(h.pst));
+  if (!hist.length) { el.innerHTML = '<p class="vazio">Aguardando a primeira divulgação do TSE…</p>'; return; }
   const L = hist.map(h => ({ x: h.pst, y: 100 * h.L / h.vv, h })), F = hist.map(h => ({ x: h.pst, y: 100 * h.F / h.vv, h }));
   const tipo = (p, extra = '') => `<b>${fNum(p.h.pst, 2)}%</b> apurado (${p.h.ht})<br><span style="color:${CAND.L.cor}">${CAND.L.nome} ${fNum(100 * p.h.L / p.h.vv, 2)}%</span> · <span style="color:${CAND.F.cor}">${CAND.F.nome} ${fNum(100 * p.h.F / p.h.vv, 2)}%</span>${extra}`;
   L.forEach(p => p.tip = tipo(p, projecao ? `<br>Projeção final ${CAND.L.nome}: <b>${fNum(p.h.pL, 2)}%</b> (${fNum(p.h.lo, 2)}–${fNum(p.h.hi, 2)})` : ''));
@@ -91,12 +106,12 @@ export function graficoPlacar(el, hist, { projecao = false } = {}) {
   const series = [{ cor: CAND.L.cor, pts: L, w: 2.4, marker: hist.length < 40 ? 2.8 : 0 }, { cor: CAND.F.cor, pts: F, w: 2.4, marker: hist.length < 40 ? 2.8 : 0 }];
   let vals = L.map(p => p.y).concat(F.map(p => p.y));
   if (projecao) {
-    const pr = hist.filter(h => h.pL != null);
+    const pr = hist.filter(h => Number.isFinite(h.pL) && Number.isFinite(h.lo) && Number.isFinite(h.hi));
     series.push({ cor: CAND.L.cor, dash: '5 4', w: 1.8, pts: pr.map(h => ({ x: h.pst, y: h.pL, tip: L[hist.indexOf(h)].tip })), faixa: pr.map(h => ({ x: h.pst, lo: h.lo, hi: h.hi })) });
     series.push({ cor: CAND.F.cor, dash: '5 4', w: 1.8, pts: pr.map(h => ({ x: h.pst, y: 100 - h.pL, tip: L[hist.indexOf(h)].tip })), faixa: pr.map(h => ({ x: h.pst, lo: 100 - h.hi, hi: 100 - h.lo })) });
     vals = vals.concat(pr.flatMap(h => [h.pL, 100 - h.pL, h.lo, h.hi, 100 - h.lo, 100 - h.hi]));
   }
-  let lo = Math.min(...vals, 47), hi = Math.max(...vals, 53); lo = Math.floor((lo - 1) / 2) * 2; hi = Math.ceil((hi + 1) / 2) * 2;
-  linhas(el, { x: [0, 100], y: [Math.max(0, lo), Math.min(100, hi)], xt: [0, 20, 40, 60, 80, 100], xf: v => v + '%', yf: v => v + '%', xTitulo: '% das seções apuradas (sob cada ponto, o horário da parcial do TSE)', refY: [{ y: 50, txt: '50%' }], series, h: 350, mb: 78, horas: hist.map(h => ({ x: h.pst, t: h.ht })),
+  const ey = escalaY(vals.concat(50), 6);
+  linhas(el, { x: [0, 100], y: ey.y, yt: ey.yt, xt: [0, 20, 40, 60, 80, 100], xf: v => v + '%', yf: fPctY, xTitulo: '% das seções apuradas (sob cada ponto, o horário da parcial do TSE)', refY: [{ y: 50, txt: '50%' }], series, h: 350, mb: 78, horas: hist.map(h => ({ x: h.pst, t: h.ht })),
     aria: 'Marcha da apuração: percentual de votos válidos de cada candidato conforme avança a apuração, com o horário de cada parcial' });
 }
