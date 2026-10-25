@@ -1,18 +1,18 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=d08a3f4d';
-import { CONFIG, RAIZ } from './config.js?v=d08a3f4d';
-import { getJSON } from './tse.js?v=d08a3f4d';
-import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=d08a3f4d';
-import { comFoco } from './foco.js?v=d08a3f4d';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=d08a3f4d';
-import { listaMunicipios } from './model.js?v=d08a3f4d';
-import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=d08a3f4d';
-import { projetarMunicipios } from './proj.js?v=d08a3f4d';
-import { criarMapaPontos } from './mapapontos.js?v=d08a3f4d';
-import { criarMapaBairros } from './mapabairros.js?v=d08a3f4d';
-import { legendaMapa } from './map.js?v=d08a3f4d';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=94f14732';
+import { CONFIG, RAIZ } from './config.js?v=94f14732';
+import { getJSON } from './tse.js?v=94f14732';
+import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=94f14732';
+import { comFoco } from './foco.js?v=94f14732';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=94f14732';
+import { listaMunicipios } from './model.js?v=94f14732';
+import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=94f14732';
+import { projetarMunicipios } from './proj.js?v=94f14732';
+import { criarMapaPontos } from './mapapontos.js?v=94f14732';
+import { criarMapaBairros } from './mapabairros.js?v=94f14732';
+import { legendaMapa } from './map.js?v=94f14732';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 10000);
@@ -129,7 +129,7 @@ const rotaMun = (m, uf, cd) => `${pref(m)}mun/${uf}/${cd}`;
 const chaveB = n => 'n:' + encodeURIComponent(n);
 export const somar = locais => { const u = Object.assign(novo(), { locais: locais.length }); for (const l of locais) soma(u, l); return derivar(u); };
 const unidadeR = u => ({ pst: u.pst, st: u.st, ts: u.ts, L: u.L, F: u.F, pL: u.pL, pF: u.pF, dL: u.dL, dF: u.dF, lider: u.lider });
-const placar = (u, titulo, modo, ap, vazio) => { const r = unidadeR(u); return `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false, semLink: true })}<div class="centro"><div class="centro-t">${esc(titulo)}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : vazio}</div></div>${cartaoCand('F', r, { modo, conf: false, semLink: true })}</section>`; };
+const placar = (u, titulo, modo, ap, vazio) => { const r = unidadeR(u); return `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false, semLink: true })}<div class="centro"><div class="centro-t">${esc(titulo)}</div>${ap && u.ts ? `<div class="cobertura"><b>${fNum(u.pst, 2)}%</b> das seções</div><div class="cob-bar"><i style="width:${Math.max(0, Math.min(100, u.pst))}%"></i></div><div class="cob-s">${fInt(u.st)} de ${fInt(u.ts)} seções apuradas</div>` : ''}${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : vazio}</div></div>${cartaoCand('F', r, { modo, conf: false, semLink: true })}</section>`; };
 const dec1 = u => ({ pAb: u.pAb, c: u.c, te: u.ap, ab: u.ap - u.c, pBr: u.pBr, vb: u.B, pNu: u.pNu, tvn: u.N });
 // topo das telas de distrito/bairro/local: no 1º turno, fichas de todos os candidatos; nos demais, placar Lula × Flávio
 const topo = (ctx, u, titulo, ap, vazio) => ctx.modo === 't1' && u.V ? topoT1(ctx.T1, unidadeV(ctx.T1, u.V), titulo) + kpisT1(dec1(u)) : placar(u, titulo, ctx.modo, ap, vazio) + kpisUnidade(u);
@@ -208,7 +208,7 @@ export function viewMun(ctx, uf, cd) {
   else if (ap && m?.apurado) r = linhaAp(cd, m);
   else if (m && (m.L + m.F > 0)) r = { pst: m.pst, st: 0, ts: 0, L: m.L, F: m.F, pL: m.pL, pF: m.pF, dL: m.pL - m.p1L, dF: m.pF - m.p1F, lider: m.L > m.F ? 'L' : 'F', pAb: m.pAb, dAb: m.dAb, pBr: m.pBr, pNu: m.pNu, ali: m.ali, dAli: m.dAli };
   else r = { pst: 0, L: NaN, F: NaN, pL: NaN, pF: NaN, lider: null };
-  const cartoes = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo: t1 ? 'ap' : modo, conf: false, semLink: t1 })}<div class="centro"><div class="centro-t">${esc(nomeMun)} · ${uf.toUpperCase()}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : (ap ? 'Aguardando a apuração das seções' : '')}</div></div>${cartaoCand('F', r, { modo: t1 ? 'ap' : modo, conf: false, semLink: t1 })}</section>`;
+  const cartoes = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo: t1 ? 'ap' : modo, conf: false, semLink: t1 })}<div class="centro"><div class="centro-t">${esc(nomeMun)} · ${uf.toUpperCase()}</div>${ap && !t1 && r.ts ? `<div class="cobertura"><b>${fNum(r.pst, 2)}%</b> das seções</div><div class="cob-bar"><i style="width:${Math.max(0, Math.min(100, r.pst))}%"></i></div><div class="cob-s">${fInt(r.st)} de ${fInt(r.ts)} seções apuradas</div>` : ''}${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : (ap ? 'Aguardando a apuração das seções' : '')}</div></div>${cartaoCand('F', r, { modo: t1 ? 'ap' : modo, conf: false, semLink: t1 })}</section>`;
   const kp = ap && m?.apurado ? `<section class="kpis k4">${kpi('Apurado', fNum(r.pst, 2) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}</section>` : '';
   const html = `${t1 && uT1 ? topoT1(ctx.T1, uT1, nomeMun) + kpisT1(uT1) : cartoes + kp}
   ${ap ? '' : `<div class="aviso proj">Projeção estatística por município. O detalhamento por bairro abaixo mostra apenas o que já foi apurado nas seções (não é projeção).</div>`}

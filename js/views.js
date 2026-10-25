@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=d08a3f4d';
-import { listaMunicipios, rankingUfs } from './model.js?v=d08a3f4d';
-import { projetarMunicipios } from './proj.js?v=d08a3f4d';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=d08a3f4d';
-import { graficoPlacar } from './charts.js?v=d08a3f4d';
-import { criarMapa, legendaMapa } from './map.js?v=d08a3f4d';
-import { criarMapaMun } from './mapamun.js?v=d08a3f4d';
-import { getJSON } from './tse.js?v=d08a3f4d';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=94f14732';
+import { listaMunicipios, rankingUfs } from './model.js?v=94f14732';
+import { projetarMunicipios } from './proj.js?v=94f14732';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=94f14732';
+import { graficoPlacar } from './charts.js?v=94f14732';
+import { criarMapa, legendaMapa } from './map.js?v=94f14732';
+import { criarMapaMun } from './mapamun.js?v=94f14732';
+import { getJSON } from './tse.js?v=94f14732';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -395,7 +395,7 @@ export function viewRegiao(ctx, reg) {
   if (!nome) return { html: `<div class="aviso">Região não encontrada.</div>`, titulo: 'Região', montar() {} };
   const ufs = UF_IDS.filter(u => UF_REGIAO[u] === reg && (ap ? V.uf[u] : P.uf[u])).map(u => ap ? linhaAp(u, V.uf[u]) : linhaPr(u, P.uf[u], B, snap));
   const base = ap && V.reg[reg] ? linhaAp(reg, V.reg[reg]) : null;
-  const placar = base ? `<section class="placar uf">${cartaoCand('L', base, { modo, conf: false, semLink: true })}<div class="centro"><div class="centro-t">${esc(nome)}</div>${barraDupla(base.pL, base.pF)}<div class="margem">${base.lider ? `<b style="color:${CAND[base.lider].cor}">${CAND[base.lider].nome}</b> à frente por <b>${fInt(Math.abs(base.L - base.F))}</b> votos` : 'Aguardando a apuração'}</div></div>${cartaoCand('F', base, { modo, conf: false, semLink: true })}</section>` : '';
+  const placar = base ? `<section class="placar uf">${cartaoCand('L', base, { modo, conf: false, semLink: true })}<div class="centro"><div class="centro-t">${esc(nome)}</div>${base.ts ? `<div class="cobertura"><b>${fNum(base.pst, 2)}%</b> das seções</div><div class="cob-bar"><i style="width:${clamp(base.pst, 0, 100)}%"></i></div><div class="cob-s">${fInt(base.st)} de ${fInt(base.ts)} seções apuradas</div>` : ''}${barraDupla(base.pL, base.pF)}<div class="margem">${base.lider ? `<b style="color:${CAND[base.lider].cor}">${CAND[base.lider].nome}</b> à frente por <b>${fInt(Math.abs(base.L - base.F))}</b> votos` : 'Aguardando a apuração'}</div></div>${cartaoCand('F', base, { modo, conf: false, semLink: true })}</section>` : '';
   const html = `${placar}<section class="painel"><h2>Estados — ${esc(nome)}</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um estado</b> para abrir os municípios.</p><div id="tab-uf"></div></section>`;
   return { html, titulo: `${nome} · estados`, trilha: [['Brasil', ap ? '#/' : '#/p/'], [nome]], montar(root) {
     tabela(root.querySelector('#tab-uf'), { cols: colsUF(ap ? 'ap' : 'pr'), rows: ufs, sort: 'nome', dir: 'asc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
@@ -426,7 +426,7 @@ export function viewUf(ctx, uf, kOrd) {
   const kp = ap
     ? `${kpi('Apurado', fNum(r.pst, 2) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}`
     : `${kpi('Já apurado', fNum(r.pst, 2) + '%', null, '')}${kpi('Abstenção (proj.)', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), '')}${kpi('Brancos + nulos (proj.)', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), '')}${kpi('Chance de Lula vencer', `${Math.round(100 * r.pw)}%`, null, 'modelo estatístico')}`;
-  const html = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false })}<div class="centro"><div class="centro-t">${esc(UF_NOME[uf])}</div>${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : ''}</div></div>${cartaoCand('F', r, { modo, conf: false })}</section>
+  const html = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false })}<div class="centro"><div class="centro-t">${esc(UF_NOME[uf])}</div>${ap ? `<div class="cobertura"><b>${fNum(r.pst, 2)}%</b> das seções</div><div class="cob-bar"><i style="width:${clamp(r.pst, 0, 100)}%"></i></div><div class="cob-s">${fInt(r.st)} de ${fInt(r.ts)} seções apuradas</div>` : `<div class="cobertura"><b>${fNum(r.pst, 2)}%</b> já apurado</div><div class="cob-bar"><i style="width:${clamp(r.pst, 0, 100)}%"></i></div>`}${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : ''}</div></div>${cartaoCand('F', r, { modo, conf: false })}</section>
   <section class="kpis k4">${kp}</section>
   ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Clique em um município para ver os bairros.</p>${entenda('Cor = quem lidera no município; tom mais escuro = maior percentual dos votos válidos. Use + / − ou a roda do mouse para aproximar.')}${seletorMapa()}<div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div></div></div></section>`}
   <section class="painel"><h2>Municípios de ${esc(UF_NOME[uf])}${ap ? '' : ' (projeção)'}</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um município</b> para ver os bairros.</p>${entenda(ap ? 'Municípios sem urnas apuradas aparecem como “aguardando”. Variações em p.p. comparam com o 1º turno no mesmo recorte apurado.' : 'Municípios ainda não apurados mostram a projeção a partir do 1º turno.')}<div id="tab-m"></div></section>`;
