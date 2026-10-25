@@ -1,14 +1,14 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=0f1e012a';
-import { esc, tabela, sem, entenda } from './ui.js?v=0f1e012a';
-import { getFoco } from './foco.js?v=0f1e012a';
-import { kpi } from './views.js?v=0f1e012a';
-import { criarMapa } from './map.js?v=0f1e012a';
-import { criarMapaMun } from './mapamun.js?v=0f1e012a';
-import { getJSON } from './tse.js?v=0f1e012a';
-import { leitura, balao } from './insights.js?v=0f1e012a';
-import { dispersao } from './dispersao.js?v=0f1e012a';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=ed3e6178';
+import { esc, tabela, sem, entenda } from './ui.js?v=ed3e6178';
+import { getFoco } from './foco.js?v=ed3e6178';
+import { kpi } from './views.js?v=ed3e6178';
+import { criarMapa } from './map.js?v=ed3e6178';
+import { criarMapaMun } from './mapamun.js?v=ed3e6178';
+import { getJSON } from './tse.js?v=ed3e6178';
+import { leitura, balao } from './insights.js?v=ed3e6178';
+import { dispersao } from './dispersao.js?v=ed3e6178';
 
 let cache = null, formaMapa = 'areas', eixoDisp = 'abst';
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
