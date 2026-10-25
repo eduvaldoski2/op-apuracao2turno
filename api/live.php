@@ -7,7 +7,7 @@ $p = (string)($_GET['p'] ?? ''); $b = (int)($_GET['b'] ?? 0);
 $ok = $b === 0 ? preg_match('#^(meta|snap|hist)\.json$#', $p) : ($b >= 1 && $b <= 5 && preg_match('#^bairros/[a-z]{2}/[0-9]{1,6}\.json$#', $p));
 if (!$ok) { http_response_code(400); exit; }
 $ramo = $b === 0 ? (getenv('OP_RAMO_LIVE') ?: 'dados') : 'dados-b' . $b;
-$url = "https://raw.githubusercontent.com/$REPO/$ramo/live/$p";
+$url = "https://raw.githubusercontent.com/$REPO/$ramo/live/$p";   // (+ ?t=... na hora de buscar: o raw.githubusercontent guarda cópias por até 5 min; com parâmetro novo vem sempre a versão atual)
 $ttl = 20;                         // segundos que uma cópia vale
 $dir = __DIR__ . '/dados/cache'; if (!is_dir($dir)) @mkdir($dir, 0775, true);
 $arq = $dir . '/' . md5($ramo . '/' . $p) . '.json';
@@ -20,7 +20,7 @@ if ($idade > $ttl) {
     if (!$pega && $trava) flock($trava, LOCK_EX);
     clearstatcache(true, $arq); $idade = is_file($arq) ? $agora - filemtime($arq) : PHP_INT_MAX;
     if ($idade > $ttl) {
-      $ch = curl_init($url);
+      $ch = curl_init($url . '?t=' . time() . mt_rand(10, 99));
       curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 8, CURLOPT_CONNECTTIMEOUT => 4, CURLOPT_ENCODING => '', CURLOPT_USERAGENT => 'op-apuracao-proxy']);
       $r = curl_exec($ch); $cod = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE); curl_close($ch);
       if ($r !== false && $cod === 200 && $r !== '') { file_put_contents($arq . '.tmp', $r); rename($arq . '.tmp', $arq); }
