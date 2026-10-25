@@ -66,8 +66,11 @@ async function montarBase(destino) {
 async function ciclo(out, B, estado) {
   const prev = estado.prev;
   const tIni = Date.now();
-  const snap = await montarSnapshot({ cfg, prev, log, suprir: dosBoletins, conc: 40 });
-  log(`leitura do TSE em ${Date.now() - tIni} ms`);
+  const notas = [];
+  const logN = (...a) => { const t = a.join(' '); notas.push(t); log(t); };
+  const snap = await montarSnapshot({ cfg, prev, log: logN, suprir: dosBoletins, conc: 80 });
+  const msLeitura = Date.now() - tIni;
+  log(`leitura do TSE em ${msLeitura} ms`);
   log(`snapshot montado: st=${snap.br.st} hg=${snap.hg} avisos=${snap.diag.length}${snap.diag.length ? ' ' + snap.diag[0] : ''}`);
   // O arquivo do Brasil do TSE às vezes fica parado enquanto os de estado/município continuam sendo atualizados
   // (e o TSE reescreve arquivos mantendo a mesma hora). Por isso a mudança considera também estados e municípios.
@@ -76,7 +79,7 @@ async function ciclo(out, B, estado) {
   const mudouBr = !prev || snap.br.st !== prev.br.st || snap.hg !== prev.hg || snap.br.L !== prev.br.L;
   const mudou = mudouBr || assin(snap) !== assin(prev);
   log(`mudou=${mudou} (brasil=${mudouBr}) prev.st=${prev?.br?.st} prev.hg=${prev?.hg} snap.hg=${snap.hg}`);
-  const meta = { checado: new Date().toISOString(), tse: cfg.base, turno: cfg.turno, ele: cfg.ele[cfg.turno], diag: snap.diag, ok: snap.br.ok !== false };
+  const meta = { checado: new Date().toISOString(), leituraMs: msLeitura, notas: notas.filter(x => /municípios/.test(x)).slice(0, 3), tse: cfg.base, turno: cfg.turno, ele: cfg.ele[cfg.turno], diag: snap.diag, ok: snap.br.ok !== false };
   if (!mudou) { gravar(path.join(out, 'meta.json'), { ...meta, ultimaMudanca: estado.ultima }); return false; }
   log('projetando…');
   const t0 = Date.now(); const P = projetar(B, snap);
