@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=afe89857';
-import { listaMunicipios, rankingUfs } from './model.js?v=afe89857';
-import { projetarMunicipios } from './proj.js?v=afe89857';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=afe89857';
-import { graficoPlacar } from './charts.js?v=afe89857';
-import { criarMapa, legendaMapa } from './map.js?v=afe89857';
-import { criarMapaMun } from './mapamun.js?v=afe89857';
-import { getJSON } from './tse.js?v=afe89857';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=e3df0da3';
+import { listaMunicipios, rankingUfs } from './model.js?v=e3df0da3';
+import { projetarMunicipios } from './proj.js?v=e3df0da3';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=e3df0da3';
+import { graficoPlacar } from './charts.js?v=e3df0da3';
+import { criarMapa, legendaMapa } from './map.js?v=e3df0da3';
+import { criarMapaMun } from './mapamun.js?v=e3df0da3';
+import { getJSON } from './tse.js?v=e3df0da3';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -422,6 +422,7 @@ export function viewUf(ctx, uf, kOrd) {
       { k: 'p' + k, t: `${cabCand(k)} %`, h: m => isNaN(m['p' + k]) ? '' : pcel(m['p' + k], m['d' + k]), v: m => m['p' + k], x: m => m['p' + k], cls: 'n' },
     ]),
     { k: 'lid', t: 'Vence', h: m => m.lider ? `<span class="chip-l" style="background:${CAND[m.lider].cor}">${CAND[m.lider].nome.split(' ')[0]}</span>` : '', v: m => m.lider ? (m.lider === 'L' ? 1 : 0) : NaN, cls: 'c' },
+    { k: 'dif', t: 'Vantagem', h: m => m.lider && !isNaN(m.L) && !isNaN(m.F) ? `<b style="color:${CAND[m.lider].cor}">+${fInt(Math.abs(m.L - m.F))}</b> <small>votos</small>` : '', v: m => (m.apurado || !ap) ? m.L - m.F : NaN, cls: 'n' },
   ];
   const kp = ap
     ? `${kpi('Apurado', fNum(r.pst, 1) + '%', null, `${fInt(r.st)} de ${fInt(r.ts)} seções`)}${kpi('Abstenção', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), fInt(r.a) + ' eleitores')}${kpi('Brancos + nulos', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), `${fInt(r.vb + r.tvn)} votos`)}${kpi('Alienação', fNum(r.ali, 2) + '%', dlt(r.dAli, 2), 'abst. + brancos + nulos', { cls: 'destaque' })}`

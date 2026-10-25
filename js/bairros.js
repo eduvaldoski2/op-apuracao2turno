@@ -1,18 +1,18 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=afe89857';
-import { CONFIG, RAIZ } from './config.js?v=afe89857';
-import { getJSON } from './tse.js?v=afe89857';
-import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=afe89857';
-import { comFoco } from './foco.js?v=afe89857';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=afe89857';
-import { listaMunicipios } from './model.js?v=afe89857';
-import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=afe89857';
-import { projetarMunicipios } from './proj.js?v=afe89857';
-import { criarMapaPontos } from './mapapontos.js?v=afe89857';
-import { criarMapaBairros } from './mapabairros.js?v=afe89857';
-import { legendaMapa } from './map.js?v=afe89857';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=e3df0da3';
+import { CONFIG, RAIZ } from './config.js?v=e3df0da3';
+import { getJSON } from './tse.js?v=e3df0da3';
+import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=e3df0da3';
+import { comFoco } from './foco.js?v=e3df0da3';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=e3df0da3';
+import { listaMunicipios } from './model.js?v=e3df0da3';
+import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=e3df0da3';
+import { projetarMunicipios } from './proj.js?v=e3df0da3';
+import { criarMapaPontos } from './mapapontos.js?v=e3df0da3';
+import { criarMapaBairros } from './mapabairros.js?v=e3df0da3';
+import { legendaMapa } from './map.js?v=e3df0da3';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 20000);
@@ -168,6 +168,7 @@ function colunas(tipo, ap, uf, cd, rot = 'Bairro', T1 = null) {
       { k: 'v' + k, t: `${cabCand(k)} votos`, h: x => x.st ? `<span class="num">${fInt(x[k])}</span>` : '', v: x => x.st ? x[k] : NaN, cls: 'n' },
       { k: 'p' + k, t: `${cabCand(k)} %`, h: x => x.st ? pcel(x['p' + k], x['d' + k]) : `<span class="t-s">1º t.: ${fNum(x['p1' + k + 'T'], 1)}%</span>`, v: x => x.st ? x['p' + k] : NaN, x: x => x['p' + k], cls: 'n' }]),
     { k: 'lid', t: 'Vence', h: x => x.lider ? `<span class="chip-l" style="background:${CAND[x.lider].cor}">${CAND[x.lider].nome.split(' ')[0]}</span>` : '', v: x => x.lider ? (x.lider === 'L' ? 1 : 0) : NaN, cls: 'c' },
+    { k: 'dif', t: 'Vantagem', h: x => x.lider && x.st ? `<b style="color:${CAND[x.lider].cor}">+${fInt(Math.abs(x.L - x.F))}</b> <small>votos</small>` : '', v: x => x.st ? x.L - x.F : NaN, cls: 'n' },
     { k: 'ab', t: 'Abstenção', h: x => x.st ? pcel(x.pAb, x.dAb, 1, true) : '', v: x => x.pAb, cls: 'n sec' },
     { k: 'apt', t: 'Eleitores', h: x => fInt(x.apT), v: x => x.apT, cls: 'n sec' }];
 }
@@ -366,6 +367,7 @@ export function viewLocal(ctx, uf, cd, id) {
           { k: 'v' + k, t: `${cabCand(k)} votos`, h: s => s.ok ? `<span class="num">${fInt(s[k])}</span>` : '', v: s => s[k], cls: 'n' },
           { k: 'p' + k, t: `${cabCand(k)} %`, h: s => s.ok ? pcel(s['p' + k], s['d' + k]) : `<span class="t-s">1º t.: ${fNum(s['p1' + k], 1)}%</span>`, v: s => s['p' + k], x: s => s['p' + k], cls: 'n' }]),
         { k: 'lid', t: 'Vence', h: s => s.lider ? `<span class="chip-l" style="background:${CAND[s.lider].cor}">${CAND[s.lider].nome.split(' ')[0]}</span>` : '', v: s => s.lider ? (s.lider === 'L' ? 1 : 0) : NaN, cls: 'c' },
+        { k: 'dif', t: 'Vantagem', h: s => s.ok && s.lider ? `<b style="color:${CAND[s.lider].cor}">+${fInt(Math.abs(s.L - s.F))}</b> <small>votos</small>` : '', v: s => s.ok ? s.L - s.F : NaN, cls: 'n' },
         { k: 'B', t: 'Brancos', h: s => s.ok ? fInt(s.B) : '', v: s => s.B, cls: 'n sec' }, { k: 'N', t: 'Nulos', h: s => s.ok ? fInt(s.N) : '', v: s => s.N, cls: 'n sec' },
         { k: 'ab', t: 'Abstenção', h: s => s.ok ? fNum(s.pAb, 1) + '%' : '', v: s => s.pAb, cls: 'n sec' }], rows: secs, sort: 'n', dir: 'asc' });
       ctx.csv = () => T1 ? ({ nome: `${uf}_${cd}_local_${id}_secoes_1turno`, cab: ['Seção', 'Eleitores', 'Abstenção %', 'Brancos', 'Nulos', ...T1.cands.flatMap((c, i) => [`${T1.nome(i)} votos`, `${T1.nome(i)} %`])], linhas: secs.map(s => [s.n, s.ap, s.pAb, s.B, s.N, ...T1.cands.flatMap((c, i) => [s.u.v[i], s.u.p[i]])]) }) : ({ nome: `${uf}_${cd}_local_${id}_secoes`, cab: ['Seção', 'Eleitores', 'Lula votos', 'Lula %', 'Flávio votos', 'Flávio %', 'Brancos', 'Nulos', 'Abstenção %'], linhas: secs.map(s => [s.n, s.ap, s.L, s.pL, s.F, s.pF, s.B, s.N, s.pAb]) });
