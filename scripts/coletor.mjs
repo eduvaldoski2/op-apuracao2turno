@@ -24,6 +24,11 @@ async function dosBoletins(uf, cd, base) {
   return [cd, base[1], v.length, base[3], t.ap, c, Math.max(0, t.ap - c), t.B, t.N, t.L, t.F, t.L + t.F + t.O];
 }
 
+// O TSE serve os arquivos por uma CDN que, para o servidor do coletor, às vezes devolve cópias velhas (horas atrás).
+// Por isso toda leitura do TSE leva um parâmetro único na URL, que força a cópia mais nova.
+const fetchOrig = globalThis.fetch;
+globalThis.fetch = (u, o = {}) => { const s = String(u); return fetchOrig(/tse\.jus\.br\//.test(s) ? s + (s.includes('?') ? '&' : '?') + 'cb=' + Date.now() + Math.floor(Math.random() * 1000) : u, { ...o, headers: { 'Cache-Control': 'no-cache', Pragma: 'no-cache', ...(o.headers || {}) } }); };
+
 const arg = (k, d) => { const i = process.argv.indexOf('--' + k); return i > 0 ? (process.argv[i + 1]?.startsWith('--') ? true : process.argv[i + 1]) : d; };
 const cfg = { ...TSE, base: arg('tse', process.env.TSE_BASE || TSE.base), ele: { ...TSE.ele } };
 if (arg('ele', null)) cfg.ele[2] = +arg('ele');   // ensaio: ex. --ele 6257 lê o 1º turno como se fosse o 2º
