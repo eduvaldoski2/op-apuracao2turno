@@ -1,5 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=d06ef744';
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=f0623a7c';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=f0623a7c';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -10,12 +11,40 @@ export function baixarCSV(nome, cabecalho, linhas, rodape = []) {
   baixar(new Blob(['\uFEFF' + txt], { type: 'text/csv;charset=utf-8' }), nome + '.csv');
 }
 
+// ---- Paginação do PDF: corta só entre linhas de tabela e blocos, e repete o cabeçalho da tabela na página seguinte ----
+function medeCortes(alvo, esc) {
+  const r0 = alvo.getBoundingClientRect().top, yb = n => Math.round((n.getBoundingClientRect().bottom - r0) * esc), set = new Set();
+  alvo.querySelectorAll('tbody tr, li, .painel > *, :scope > *').forEach(n => { if (n.getClientRects().length && !n.matches('h1,h2,h3,p.sub,.sub,.nota,.entenda')) set.add(yb(n)); });   // nunca corta logo depois de um título
+  const tabelas = [...alvo.querySelectorAll('table')].filter(t => t.tHead && t.getClientRects().length).map(t => { const r = t.getBoundingClientRect(), h = t.tHead.getBoundingClientRect(); return { top: Math.round((h.top - r0) * esc), hb: Math.round((h.bottom - r0) * esc), fim: Math.round((r.bottom - r0) * esc) }; });
+  return { cortes: [...set].sort((a, b) => a - b), tabelas };
+}
+function fatiasPdf(c, altPag) {
+  const info = c.info || {}, out = []; let y = 0, cab = null;
+  while (y < c.height - 1) {
+    const hc = cab ? cab.hb - cab.top : 0, disp = altPag - hc, lim = y + disp; let fim = Math.min(c.height, lim);
+    if (lim < c.height && info.cortes?.length) { const cand = info.cortes.filter(p => p > y + disp * 0.5 && p <= lim); if (cand.length) fim = cand[cand.length - 1]; }
+    if (fim <= y) fim = Math.min(c.height, y + Math.max(1, Math.floor(disp)));
+    out.push({ y0: y, y1: fim, cab });
+    y = fim; cab = (info.tabelas || []).find(t => y > t.hb + 4 && y < t.fim - 30) || null;
+  }
+  return out;
+}
+function canvasFatia(c, f) {
+  const hc = f.cab ? f.cab.hb - f.cab.top : 0, h = f.y1 - f.y0, pc = document.createElement('canvas'); pc.width = c.width; pc.height = Math.ceil(hc + h);
+  const g = pc.getContext('2d'); g.fillStyle = '#fff'; g.fillRect(0, 0, pc.width, pc.height);
+  if (f.cab) g.drawImage(c, 0, f.cab.top, c.width, hc, 0, 0, c.width, hc);
+  g.drawImage(c, 0, f.y0, c.width, h, 0, hc, c.width, h);
+  return pc;
+}
+
 async function capturar(el, titulo, sub, cadeia = '', omitir = '') {
   await carregaScript('vendor/html2canvas.min.js');
-  return window.html2canvas(el, {
+  let info = null;
+  const cv = await window.html2canvas(el, {
     scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: Math.max(1100, el.scrollWidth),
     onclone: doc => {
       doc.querySelectorAll('.sem-export').forEach(n => n.remove());
+      doc.querySelectorAll('details > summary').forEach(n => n.remove());   // o "Entenda" é dica de tela; o texto fica aberto
       doc.querySelectorAll('.mapa-tip,.g-tip').forEach(n => n.remove());
       doc.querySelectorAll('.tela-topo').forEach(n => n.remove());
       if (omitir) doc.querySelectorAll(omitir).forEach(n => n.remove());
@@ -32,8 +61,10 @@ async function capturar(el, titulo, sub, cadeia = '', omitir = '') {
       rod.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:10px;padding:26px 18px 18px;margin-top:22px;border-top:2px solid #e4dfee;font-family:system-ui,sans-serif;color:#6f6888;font-size:11.5px;line-height:1.45;text-align:center';
       rod.innerHTML = `<div style="display:flex;align-items:center;gap:14px"><img src="img/icone.svg" alt="" style="width:60px;height:60px"><div style="font-weight:700;font-size:28px;color:#3E347E">oficinapolitica.com.br</div></div><div style="max-width:900px">Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.</div>`;
       alvo.appendChild(rod);
+      info = medeCortes(alvo, 2);
     },
   });
+  cv.info = info; return cv;
 }
 // PNG do card (peça de redes: margens, proporção fixa, hierarquia entre candidatos)
 export const blobCard = async (dados, fmt = FORMATOS['3x5'], escala = 1) => { const c = await cardCanvas(dados, fmt, escala); return new Promise(ok => c.toBlob(ok, 'image/png')); };
@@ -53,14 +84,11 @@ export async function baixarPDF(el, nome, titulo, sub, cadeia, dadosCard = null,
   const rodape = n => { pdf.setFontSize(7); pdf.setTextColor(120); pdf.text(`oficinapolitica.com.br · ${sub} · pág. ${n}`, m, ph - 4); };
   const c = await capturar(el, titulo, sub, cadeia, dadosCard ? '.resumo,.fichas,.kpis,.placar,.foco-aviso,.nota-base,.comp-toggle,.aviso.t1' : '');
   const larg = pw - 2 * m, escala = larg / c.width, altPag = (ph - 2 * m - 6) / escala;
-  let y = 0;
-  while (y < c.height - 1) {
-    const h = Math.min(altPag, c.height - y), pc = document.createElement('canvas'); pc.width = c.width; pc.height = Math.ceil(h);
-    pc.getContext('2d').drawImage(c, 0, y, c.width, h, 0, 0, c.width, h);
+  for (const f of fatiasPdf(c, altPag)) {
+    const pc = canvasFatia(c, f);
     if (pag) pdf.addPage();
-    pdf.addImage(pc.toDataURL('image/jpeg', 0.92), 'JPEG', m, m, larg, h * escala);
-    rodape(pag + 1);
-    y += h; pag++;
+    pdf.addImage(pc.toDataURL('image/jpeg', 0.92), 'JPEG', m, m, larg, pc.height * escala);
+    rodape(pag + 1); pag++;
   }
   // páginas extras (ex.: seções de cada local de votação): blocos agrupados por página, sem cortar um local ao meio quando possível
   if (extra?.blocos?.length) {
@@ -134,7 +162,8 @@ async function capturarSecao(el, sub, topo) {
   await carregaScript('vendor/html2canvas.min.js');
   el.setAttribute('data-exp-alvo', '1');
   try {
-    return await window.html2canvas(el, {
+    let info = null;
+    const cv = await window.html2canvas(el, {
       scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: 1320,
       onclone: doc => {
         const alvo = doc.querySelector('[data-exp-alvo]'); if (!alvo) return;
@@ -145,7 +174,7 @@ async function capturarSecao(el, sub, topo) {
         }
         alvo.querySelectorAll('.sem-export').forEach(n => n.remove());
         doc.querySelectorAll('.mapa-tip,.g-tip').forEach(n => n.remove());
-        alvo.querySelectorAll('details').forEach(d => { d.open = true; });
+        alvo.querySelectorAll('details').forEach(d => { d.open = true; d.querySelector(':scope > summary')?.remove(); });
         alvo.querySelectorAll('.tab-scroll').forEach(n => { n.style.overflow = 'visible'; n.style.maxHeight = 'none'; });
         alvo.querySelectorAll('th,thead,.tab th').forEach(n => { n.style.position = 'static'; n.style.top = 'auto'; });
         alvo.querySelectorAll('table.tab tr > :first-child').forEach(c => { c.style.cssText += ';width:1%;white-space:nowrap;min-width:0'; });
@@ -158,8 +187,10 @@ async function capturarSecao(el, sub, topo) {
         rod.style.cssText = 'margin-top:14px;padding-top:10px;border-top:2px solid #e4dfee;font:11.5px/1.45 system-ui,sans-serif;color:#6f6888;text-align:center';
         rod.innerHTML = '<b style="color:#3E347E;font-size:15px">oficinapolitica.com.br</b><br>Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.';
         alvo.appendChild(rod);
+        info = medeCortes(alvo, 2);
       },
     });
+    cv.info = info; return cv;
   } finally { el.removeAttribute('data-exp-alvo'); }
 }
 
@@ -172,6 +203,37 @@ export const FORMATOS_SEC = {
 const carregaImg = src => new Promise((ok, no) => { const i = new Image(); i.onload = () => ok(i); i.onerror = () => no(new Error('imagem ' + src)); i.src = src; });
 const quebra = (ctx, txt, larg) => { const pal = String(txt).split(/\s+/).filter(Boolean), lin = []; let at = ''; for (const p of pal) { const t = at ? at + ' ' + p : p; if (ctx.measureText(t).width > larg && at) { lin.push(at); at = p; } else at = t; } if (at) lin.push(at); return lin; };
 const retArred = (ctx, x, y, w, h, r) => { ctx.beginPath(); ctx.moveTo(x + r, y); ctx.arcTo(x + w, y, x + w, y + h, r); ctx.arcTo(x + w, y + h, x, y + h, r); ctx.arcTo(x, y + h, x, y, r); ctx.arcTo(x, y, x + w, y, r); ctx.closePath(); };
+
+// o html2canvas copia o estilo calculado para dentro dos SVG antes do onclone; o que é criado ou mudado aqui precisa levar o estilo junto
+const PROPS_SVG = ['font-family', 'font-size', 'font-weight', 'font-style', 'fill', 'stroke', 'stroke-width', 'stroke-dasharray', 'stroke-linecap', 'stroke-linejoin', 'opacity', 'paint-order', 'text-anchor'];
+function estilizaSvg(raiz) {
+  const win = raiz.ownerDocument.defaultView; raiz.querySelectorAll('*').forEach(n => { const cs = win.getComputedStyle(n); PROPS_SVG.forEach(pr => { const v = cs.getPropertyValue(pr); if (v) n.style.setProperty(pr, v); }); });
+}
+const setFs = (t, v) => { t.setAttribute('font-size', v); t.style.setProperty('font-size', v + 'px'); };
+// mapa do Brasil nas imagens: um rótulo por estado (UF + percentual de quem lidera), em letra maior; o quadro lateral idem
+function afinaMapaUF(alvo) {
+  const NS = 'http://www.w3.org/2000/svg', fs = t => parseFloat(t.getAttribute('font-size')) || 8;
+  const val = t => parseFloat((t.querySelector('tspan')?.textContent || '').replace(',', '.'));
+  const vencedor = (ts) => (val(ts[1]) >= val(ts[2]) || isNaN(val(ts[2]))) ? ts[1] : ts[2];
+  alvo.querySelectorAll('svg.mapa g.rot').forEach(g => {
+    const ts = [...g.querySelectorAll('text')]; if (ts.length !== 3) return;
+    const uf = ts[0], w = vencedor(ts), f = fs(uf), x = uf.getAttribute('x'), y = parseFloat(uf.getAttribute('y'));
+    g.querySelectorAll('rect').forEach(r => r.remove()); ts.forEach(t => { if (t !== uf && t !== w) t.remove(); });
+    w.querySelectorAll('tspan').forEach((t, i) => { if (i) t.remove(); });
+    setFs(uf, (f * 1.6).toFixed(1)); uf.setAttribute('y', (y - 2).toFixed(1));
+    w.setAttribute('x', x); w.setAttribute('text-anchor', 'middle'); w.setAttribute('y', (y + f * 1.55).toFixed(1)); setFs(w, (f * 1.5).toFixed(1));
+    const tw = w.querySelector('tspan'); if (tw) { tw.removeAttribute('dx'); setFs(tw, (f * 1.5).toFixed(1)); tw.style.setProperty('font-weight', '700'); }
+  });
+  alvo.querySelectorAll('svg.mapa g.callout').forEach(g => {
+    const ts = [...g.querySelectorAll('text')]; if (ts.length !== 3) return;
+    const uf = ts[0], w = vencedor(ts), bx = parseFloat(uf.getAttribute('x')) - 12, by = parseFloat(uf.getAttribute('y')) - 11;
+    g.querySelectorAll('rect').forEach(r => { if (parseFloat(r.getAttribute('height')) < 10) r.remove(); }); ts.forEach(t => { if (t !== uf && t !== w) t.remove(); });
+    w.querySelectorAll('tspan').forEach((t, i) => { if (i) t.remove(); });
+    setFs(uf, 14); uf.setAttribute('y', (by + 25).toFixed(1)); uf.setAttribute('x', (bx + 14).toFixed(1));
+    w.setAttribute('x', (bx + 58).toFixed(1)); w.setAttribute('y', (by + 25).toFixed(1)); setFs(w, 15); w.setAttribute('text-anchor', 'start');
+    const tw = w.querySelector('tspan'); if (tw) { tw.removeAttribute('dx'); setFs(tw, 15); tw.style.setProperty('font-weight', '700'); }
+  });
+}
 
 export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub }) {
   await carregaScript('vendor/html2canvas.min.js');
@@ -201,13 +263,20 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub }) {
         alvo.style.cssText += `;box-shadow:none;margin:0;padding:0;border:0;width:${innerW}px;max-width:${innerW}px;background:#fff`;
         alvo.classList.add('exp-social', 'exp-' + fmt.id);   // o CSS do painel tem regras de letra maior para as imagens
         alvo.querySelectorAll(':scope > p.sub').forEach(n => n.remove());   // dicas de clique e ordenação só valem na tela
+        // gráficos de linha: a legenda de traços sai (a de cores já está) e o desenho é refeito mais alto, para ocupar o corpo da imagem
+        alvo.querySelectorAll('.leg-linhas').forEach(n => n.remove());
+        const gws = [...alvo.querySelectorAll('.grafico-wrap[id]')].filter(w => REG_GRAFICOS.has(w.id));
+        if (gws.length) {
+          const sobra = Math.max(0, innerH - alvo.getBoundingClientRect().height - 24);
+          gws.forEach(w => { const cfg = REG_GRAFICOS.get(w.id), leg = w.querySelector('.g-leg'); desenhaLinhas(w, { ...cfg, h: Math.min(1100, (cfg.h || 300) + sobra / gws.length / 1.12), mb: Math.max(cfg.mb || 0, 54), mr: 40, xo: 30 }); estilizaSvg(w.querySelector('svg')); if (leg) w.appendChild(leg); });
+        }
         // mapa: ocupa a largura toda, com a legenda embaixo; sem a dica de clique (só vale na tela)
         if (alvo.classList.contains('mapa-sec')) {
           const gr = alvo.querySelector('.mapa-grid'); if (gr) { gr.style.cssText += ';display:block'; }
           alvo.querySelectorAll('.mapa-wrap').forEach(n => { n.style.cssText += ';width:100%;max-width:100%'; });
           alvo.querySelectorAll('.mapa-wrap > svg').forEach(n => { n.style.cssText += ';width:100%;height:auto;display:block'; });
           alvo.querySelectorAll('.mapa-lado').forEach(n => { n.style.cssText += ';width:100%;margin-top:10px'; });
-          alvo.querySelectorAll('.leg-mapa').forEach(n => { n.style.cssText += ';display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;font-size:17px'; });
+          alvo.querySelectorAll('.leg-mapa').forEach(n => { n.style.cssText += ';display:flex;flex-wrap:wrap;gap:6px 26px;justify-content:center;font-size:23px'; });
         }
         // tabela: coluna do nome só do tamanho do conteúdo, letras maiores (a imagem é vista no celular)
         alvo.querySelectorAll('table.tab').forEach(t => {
@@ -216,6 +285,14 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub }) {
           t.querySelectorAll('td').forEach(td => { td.style.padding = '8px 9px'; });
           t.querySelectorAll('tr > :first-child').forEach(c => { c.style.cssText += ';width:1%;white-space:nowrap;min-width:0'; });
         });
+        // mapa do Brasil: rótulos maiores; a tabela por região só fica quando sobra espaço (num quadrado ela não cabe legível)
+        if (alvo.querySelector('svg.mapa')) {
+          afinaMapaUF(alvo);
+          alvo.querySelectorAll('.mapa-lado p.nota, .mapa-lado h3 + p').forEach(n => n.remove());
+          if (alvo.getBoundingClientRect().height > innerH - 150) alvo.querySelectorAll('.mapa-lado').forEach(l => [...l.children].forEach(ch => { if (!ch.matches('.leg-slot,.leg-mapa') && !ch.querySelector('.leg-mapa')) ch.remove(); }));
+        }
+        // mapas de município e de bairro: rótulos um pouco maiores
+        alvo.querySelectorAll('.mapa-wrap svg:not(.mapa) text, #mapa-bm svg text').forEach(t => { const f = parseFloat(t.style.fontSize) || parseFloat(t.getAttribute('font-size')) || 0; if (f) setFs(t, (f * 1.3).toFixed(2)); });
         const tb = alvo.querySelector('table tbody');
         if (tb) {
           const linhas = [...tb.querySelectorAll('tr')]; let n = linhas.length;
@@ -261,14 +338,13 @@ export async function baixarPDFSecao(el, nome, sub, topo) {
   const { jsPDF } = window.jspdf, pdf = new jsPDF('p', 'mm', 'a4');
   const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight(), m = 8;
   const larg = pw - 2 * m, escala = larg / c.width, altPag = (ph - 2 * m - 6) / escala;
-  let y = 0, pag = 0;
-  while (y < c.height - 1) {
-    const h = Math.min(altPag, c.height - y), pc = document.createElement('canvas'); pc.width = c.width; pc.height = Math.ceil(h);
-    pc.getContext('2d').drawImage(c, 0, y, c.width, h, 0, 0, c.width, h);
+  let pag = 0;
+  for (const f of fatiasPdf(c, altPag)) {
+    const pc = canvasFatia(c, f);
     if (pag) pdf.addPage();
-    pdf.addImage(pc.toDataURL('image/jpeg', 0.92), 'JPEG', m, m, larg, h * escala);
+    pdf.addImage(pc.toDataURL('image/jpeg', 0.92), 'JPEG', m, m, larg, pc.height * escala);
     pdf.setFontSize(7); pdf.setTextColor(120); pdf.text(`oficinapolitica.com.br · ${sub} · pág. ${pag + 1}`, m, ph - 4);
-    y += h; pag++;
+    pag++;
   }
   pdf.save(nome + '.pdf');
 }

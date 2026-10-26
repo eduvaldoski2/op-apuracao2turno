@@ -603,3 +603,17 @@ body.tl-aberto{overflow:hidden}
 .gov-t1 td small{color:var(--tx2);margin-left:4px}.gov-t1 td small.vt{display:block;margin:0}
 
 .faixa-teste{background:#f08a24;color:#2b1a05;text-align:center;font:700 .8rem/1.3 'Space Grotesk',system-ui,sans-serif;padding:.35rem .75rem;position:sticky;top:0;z-index:60}
+/* imagens para redes (1:1, 4:5, 9:16): letras maiores, o desenho é visto no celular */
+.exp-social .grafico .eixo{font-size:17px}.exp-social .grafico .tit{font-size:18px}.exp-social .grafico .ref-t{font-size:16px}.exp-social .grafico .hora{font-size:14px}.exp-social .grafico .hora-tit{font-size:15px}.exp-social .grafico .rot-pt{font-size:17px}
+.exp-social .grafico path{stroke-width:4.4px}.exp-social .grafico circle{r:6px}
+.exp-social .g-leg{font-size:21px;gap:18px;margin-top:10px}.exp-social .g-leg b{font-size:16px;padding:3px 8px}
+.exp-social .gv-c{margin-top:22px}.exp-social .gv-n{font-size:26px}.exp-social .gv-n small{font-size:18px}.exp-social .gv-sel{font-size:16px;padding:3px 12px}
+.exp-social .gv-p{font-size:56px}.exp-social .gv-b{height:20px;border-radius:10px;margin:10px 0 6px}.exp-social .gv-v{font-size:20px}.exp-social .gv-f{font-size:19px;margin-top:22px;line-height:1.5}
+.exp-4x5 .gv-n{font-size:34px}.exp-4x5 .gv-p{font-size:76px}.exp-4x5 .gv-b{height:28px}.exp-4x5 .gv-v{font-size:26px}.exp-4x5 .gv-f{font-size:25px}.exp-4x5 .gv-c{margin-top:46px}.exp-4x5 .gv-card{padding:24px 26px}.exp-4x5 .gv-card b{font-size:32px}.exp-4x5 .gv-card small{font-size:23px}.exp-4x5 .gv-uf{font-size:19px}
+.exp-9x16 .gv-n{font-size:40px}.exp-9x16 .gv-n small{font-size:26px}.exp-9x16 .gv-sel{font-size:22px}.exp-9x16 .gv-p{font-size:98px}.exp-9x16 .gv-b{height:36px;border-radius:18px}.exp-9x16 .gv-v{font-size:32px}.exp-9x16 .gv-f{font-size:30px}.exp-9x16 .gv-c{margin-top:90px}
+.exp-social .gv-grid{grid-template-columns:repeat(2,1fr);gap:16px;margin-top:6px}
+.exp-social .gv-card{padding:18px 20px;border-radius:16px;gap:4px}.exp-social .gv-uf{font-size:17px}.exp-social .gv-card b{font-size:27px}.exp-social .gv-card small{font-size:19px;line-height:1.35}
+.exp-9x16 .gv-card{padding:34px 30px}.exp-9x16 .gv-card b{font-size:40px}.exp-9x16 .gv-card small{font-size:28px}.exp-9x16 .gv-uf{font-size:24px}.exp-9x16 .gv-grid{gap:22px}
+.exp-1x1 .gv-grid{gap:10px}.exp-1x1 .gv-card{padding:12px 16px}.exp-1x1 .gv-card b{font-size:23px}.exp-1x1 .gv-card small{font-size:16px}
+.exp-4x5 .gv-card{padding:24px 26px}.exp-4x5 .gv-card b{font-size:32px}.exp-4x5 .gv-card small{font-size:23px}.exp-4x5 .gv-uf{font-size:19px}
+.exp-9x16 .gv-card{padding:34px 30px}.exp-9x16 .gv-card b{font-size:40px}.exp-9x16 .gv-card small{font-size:28px}.exp-9x16 .gv-uf{font-size:24px}.exp-9x16 .gv-grid{gap:22px}

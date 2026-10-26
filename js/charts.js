@@ -1,7 +1,8 @@
 // Gráficos de linha em SVG puro (sem dependências): avanço da apuração, placar e projeção ao longo da apuração.
-import { CAND, fNum, fPct, fInt } from './util.js?v=d06ef744';
+import { CAND, fNum, fPct, fInt } from './util.js?v=f0623a7c';
 
 const M0 = { l: 46, r: 18, t: 20, b: 36 };
+export const REG_GRAFICOS = new Map();   // configuração de cada gráfico pelo id do elemento (a imagem para redes refaz o gráfico mais alto)
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
 function eixo(dom, n) { const [a, b] = dom; const passo = (b - a) / n; return Array.from({ length: n + 1 }, (_, i) => a + i * passo); }
@@ -12,13 +13,14 @@ function bonito(a, b, n = 5) { // passo "redondo"
 
 // cfg: { x:[min,max], y:[min,max], xt:[ticks], yt:[ticks], xf, yf, series:[{nome,cor,pts:[{x,y,tip}],dash,marker,w,faixa:[{x,lo,hi}],rotulos:fn}], refY:[{y,txt}], extra: svg string, tipTitulo }
 export function linhas(el, cfg) {
-  const W = (el.clientWidth || 900) < 600 ? 440 : 820, H = cfg.h || 300, M = { ...M0, b: cfg.mb || M0.b };
+  if (el.id) REG_GRAFICOS.set(el.id, cfg);
+  const W = (el.clientWidth || 900) < 600 ? 440 : 820, H = cfg.h || 300, M = { ...M0, b: cfg.mb || M0.b, r: cfg.mr ?? M0.r }, XO = cfg.xo || 16;
   const iw = W - M.l - M.r, ih = H - M.t - M.b;
   const X = v => M.l + (v - cfg.x[0]) / (cfg.x[1] - cfg.x[0]) * iw, Y = v => M.t + ih - (v - cfg.y[0]) / (cfg.y[1] - cfg.y[0]) * ih;
   let g = '';
   const yt = cfg.yt || bonito(cfg.y[0], cfg.y[1], 5), xt = cfg.xt || bonito(cfg.x[0], cfg.x[1], W < 600 ? 4 : 6);
   for (const v of yt) g += `<line x1="${M.l}" x2="${W - M.r}" y1="${Y(v)}" y2="${Y(v)}" class="grade"/><text x="${M.l - 7}" y="${Y(v) + 3.5}" text-anchor="end" class="eixo">${cfg.yf ? cfg.yf(v) : v}</text>`;
-  for (const v of xt) g += `<line x1="${X(v)}" x2="${X(v)}" y1="${M.t}" y2="${H - M.b}" class="grade v"/><text x="${X(v)}" y="${H - M.b + 16}" text-anchor="middle" class="eixo">${cfg.xf ? cfg.xf(v) : v}</text>`;
+  for (const v of xt) g += `<line x1="${X(v)}" x2="${X(v)}" y1="${M.t}" y2="${H - M.b}" class="grade v"/><text x="${X(v)}" y="${H - M.b + XO}" text-anchor="middle" class="eixo">${cfg.xf ? cfg.xf(v) : v}</text>`;
   for (const r of cfg.refY || []) g += `<line x1="${M.l}" x2="${W - M.r}" y1="${Y(r.y)}" y2="${Y(r.y)}" class="ref"/><text x="${W - M.r - 3}" y="${Y(r.y) - 4}" text-anchor="end" class="eixo ref-t">${esc(r.txt)}</text>`;
   if (cfg.horas) { // horário de cada parcial, sob o eixo (rotacionado, com espaçamento mínimo)
     let ult = -1e9; const gap = W < 600 ? 15 : 13;
