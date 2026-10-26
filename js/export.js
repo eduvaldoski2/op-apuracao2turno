@@ -1,5 +1,5 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=f8e454de';
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=cd860694';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -199,6 +199,7 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub }) {
         alvo.querySelectorAll('.tab-scroll').forEach(n => { n.style.overflow = 'visible'; n.style.maxHeight = 'none'; });
         alvo.querySelectorAll('th,thead,.tab th').forEach(n => { n.style.position = 'static'; n.style.top = 'auto'; });
         alvo.style.cssText += `;box-shadow:none;margin:0;padding:0;border:0;width:${innerW}px;max-width:${innerW}px;background:#fff`;
+        alvo.classList.add('exp-social', 'exp-' + fmt.id);   // o CSS do painel tem regras de letra maior para as imagens
         alvo.querySelectorAll(':scope > p.sub').forEach(n => n.remove());   // dicas de clique e ordenação só valem na tela
         // mapa: ocupa a largura toda, com a legenda embaixo; sem a dica de clique (só vale na tela)
         if (alvo.classList.contains('mapa-sec')) {
@@ -245,7 +246,8 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub }) {
   const yr = H - hRod + 22; g.textAlign = 'center';
   try { const ic = await carregaImg('img/icone.svg'); g.font = '700 34px "Space Grotesk", system-ui, sans-serif'; const sw = g.measureText('oficinapolitica.com.br').width, tot = 46 + 14 + sw; g.drawImage(ic, W / 2 - tot / 2, yr, 46, 46); g.fillStyle = '#3E347E'; g.textAlign = 'left'; g.fillText('oficinapolitica.com.br', W / 2 - tot / 2 + 60, yr + 35); } catch { g.fillStyle = '#3E347E'; g.font = '700 34px "Space Grotesk", sans-serif'; g.fillText('oficinapolitica.com.br', W / 2, yr + 35); }
   g.textAlign = 'center'; g.fillStyle = '#6f6888'; g.font = '500 16px "Space Grotesk", system-ui, sans-serif';
-  quebra(g, 'Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.', W - 2 * M - 40).forEach((l, i) => g.fillText(l, W / 2, yr + 78 + i * 22));
+  const notaIA = el.dataset.exportNota ? ' ' + el.dataset.exportNota + '.' : '';
+  quebra(g, 'Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.' + notaIA, W - 2 * M - 40).forEach((l, i) => g.fillText(l, W / 2, yr + 78 + i * 22));
   return cv;
 }
 export async function baixarPNGSecaoSocial(el, nome, fmtId, ctx) {

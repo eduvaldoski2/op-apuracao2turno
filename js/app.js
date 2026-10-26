@@ -1,23 +1,25 @@
-import { CONFIG } from './config.js?v=f8e454de';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=f8e454de';
-import { calcular } from './model.js?v=f8e454de';
-import { projetar, PARAMS } from './proj.js?v=f8e454de';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=f8e454de';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=f8e454de';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=f8e454de';
-import { iniciarExportSecoes } from './expsec.js?v=f8e454de';
-import { eventosEntre } from './avisos.js?v=f8e454de';
-import { mostrarEleito } from './eleito.js?v=f8e454de';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=f8e454de';
-import { abrirTelao, iniciarTV } from './tv.js?v=f8e454de';
-import { iniciarConsentimento } from './consentimento.js?v=f8e454de';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=f8e454de';
-import { lerCard } from './card.js?v=f8e454de';
-import { abrirCompartilhar } from './compartilhar.js?v=f8e454de';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=f8e454de';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=f8e454de';
-import { esc } from './ui.js?v=f8e454de';
-import { getFoco, setFoco, comFoco } from './foco.js?v=f8e454de';
+import { CONFIG } from './config.js?v=cd860694';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=cd860694';
+import { calcular } from './model.js?v=cd860694';
+import { projetar, PARAMS } from './proj.js?v=cd860694';
+import { viewComparar, hashComparar } from './comparar.js?v=cd860694';
+import { viewPerguntar } from './ia.js?v=cd860694';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=cd860694';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=cd860694';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=cd860694';
+import { iniciarExportSecoes } from './expsec.js?v=cd860694';
+import { eventosEntre } from './avisos.js?v=cd860694';
+import { mostrarEleito } from './eleito.js?v=cd860694';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=cd860694';
+import { abrirTelao, iniciarTV } from './tv.js?v=cd860694';
+import { iniciarConsentimento } from './consentimento.js?v=cd860694';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=cd860694';
+import { lerCard } from './card.js?v=cd860694';
+import { abrirCompartilhar } from './compartilhar.js?v=cd860694';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=cd860694';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=cd860694';
+import { esc } from './ui.js?v=cd860694';
+import { getFoco, setFoco, comFoco } from './foco.js?v=cd860694';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -39,6 +41,8 @@ function rota() { const r = rota0(); if (r.modo === 't1') r.c = new URLSearchPar
 function rota0() {
   const h = location.hash.replace(/^#\/?/, ''), [caminho, qs] = h.split('?'), p = caminho.split('/').filter(Boolean), q = new URLSearchParams(qs || '');
   let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; p.shift(); } else if (p[0] === 't1') { modo = 't1'; p.shift(); }
+  if (p[0] === 'comparar' && modo === 'ap') return { modo, tela: 'comparar', q };
+  if (p[0] === 'perguntar' && modo === 'ap') return { modo, tela: 'perguntar' };
   if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
   if (p[0] === 'cand' && CAND[p[1]]) return { modo, tela: 'cand', k: p[1] };
   if (p[0] === 'mun' && p[1] && p[2]) {
@@ -59,7 +63,7 @@ function render(manterScroll = false, forcar = false) {
   const r = rota(), y = window.scrollY;
   { const fAnt = getFoco(); setFoco(r.modo === 't1' ? r.c : null); metTela(r); if (r.modo === 't1' && r.c && r.c !== fAnt) evento('candidato_foco', { cand: r.c }); }
   const bs = document.getElementById('barra-status'); if (bs) bs.hidden = r.modo === 't1';
-  document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.modo === r.modo));
+  document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.tela ? a.dataset.tela === r.tela : (a.dataset.modo === r.modo && !['comparar', 'perguntar'].includes(r.tela))));
   if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS }, r.modo); return pintar(v, r, {}); }
   const faixa = document.getElementById('sim'), demoBar = document.getElementById('demo-bar');
   if (faixa) faixa.hidden = r.modo === 't1' || !S.simulado; if (demoBar) demoBar.hidden = r.modo === 't1' || !S.demo;
@@ -71,6 +75,8 @@ function render(manterScroll = false, forcar = false) {
   if (r.tela === 'geral') v = viewGeral(ctx);
   else if (r.tela === 'cand') v = viewCand(ctx, r.k);
   else if (r.tela === 'regiao') v = viewRegiao(ctx, r.reg);
+  else if (r.tela === 'comparar') v = viewComparar(ctx, r.q);
+  else if (r.tela === 'perguntar') v = viewPerguntar(ctx);
   else if (r.tela === 'mun') v = viewMun(ctx, r.uf, r.cd);
   else if (r.tela === 'bairro') v = viewBairro(ctx, r.uf, r.cd, r.chave, r.di);
   else if (r.tela === 'distrito') v = viewDistrito(ctx, r.uf, r.cd, r.di);
@@ -103,9 +109,11 @@ async function renderT1(r, manterScroll, forcar) {
 function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
   const sub = r.tela === 'geral' && r.modo !== 't1' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
-  const exp = `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><button class="exp-comp" data-exp="compartilhar" title="Compartilhar no WhatsApp, Instagram e outras redes">⤴ Compartilhar</button><button class="exp-tv" data-exp="tv" title="Modo telão: slides em tela cheia para projetar ou exibir na TV" aria-label="Modo telão"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3v2H7v-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 2v9h16V6H4z"/></svg><span>Telão</span></button><span>⬇ Baixar</span><button data-exp="pdf" title="PDF: página de resumo + mapas e tabelas">PDF</button><button data-exp="png" title="Imagem para redes sociais (card)">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' ? 'disabled' : ''} title="Planilha do Excel (.xlsx)">Excel</button></div>`;
+  const exp = ['comparar', 'perguntar'].includes(r.tela) ? '' : `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><button class="exp-comp" data-exp="compartilhar" title="Compartilhar no WhatsApp, Instagram e outras redes">⤴ Compartilhar</button><button class="exp-tv" data-exp="tv" title="Modo telão: slides em tela cheia para projetar ou exibir na TV" aria-label="Modo telão"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="currentColor" d="M3 4h18a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1h-7v2h3v2H7v-2h3v-2H3a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm1 2v9h16V6H4z"/></svg><span>Telão</span></button><span>⬇ Baixar</span><button data-exp="pdf" title="PDF: página de resumo + mapas e tabelas">PDF</button><button data-exp="png" title="Imagem para redes sociais (card)">PNG</button><button data-exp="csv" ${r.tela === 'criterios' ? 'disabled' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' ? 'disabled' : ''} title="Planilha do Excel (.xlsx)">Excel</button></div>`;
+  const refCmp = r.modo !== 'ap' ? null : r.tela === 'geral' ? 'br' : r.tela === 'uf' ? 'uf:' + r.uf : r.tela === 'regiao' ? 'reg:' + r.reg : r.tela === 'mun' ? `mun:${r.uf}:${r.cd}` : r.tela === 'bairro' && /^n:/.test(r.chave || '') ? `bai:${r.uf}:${r.cd}:${r.chave.slice(2)}` : null;
+  const linkCmp = refCmp ? `<a class="criterios sem-export" href="${hashComparar([refCmp])}" title="Comparar com outros estados, municípios ou bairros">⇄ Comparar</a>` : '';
   const trilha = v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : '';
-  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${exp}</div><div id="vista">${v.html}</div></div>`;
+  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${linkCmp}${exp}</div><div id="vista">${v.html}</div></div>`;
   v.montar(root);
   iniciarExportSecoes(root.querySelector('#vista'), contextoExport, { toast, evento });
   root.querySelector('[data-voltar]')?.addEventListener('click', e => { e.preventDefault(); if (history.length > 1) history.back(); else ir(r.modo === 'pr' ? '#/projecao' : r.modo === 't1' ? '#/t1' : '#/'); });
