@@ -32,6 +32,15 @@ if ($fmt === 'contas' || $fmt === 'uso_ia') {   // contas da "Pergunte à IA" (a
   foreach ($cd->query("SELECT criado,nome,canal,contato,confirmado,c_msgs,c_ts,c_versao FROM usuarios WHERE status='ativo' ORDER BY id") as $r) fputcsv($o, array_values($r));
   exit;
 }
+if ($fmt === 'eventos') {   // contagem de uso (api/evento.php): linhas por dia/evento/detalhe dos últimos 90 dias
+  header('Content-Type: application/json; charset=utf-8');
+  try {
+    $ed = new PDO('sqlite:' . __DIR__ . '/dados/eventos.sqlite'); $ed->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); $ed->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $s = $ed->prepare('SELECT dia, evento, chave, n FROM cont WHERE dia >= ? ORDER BY dia DESC, n DESC'); $s->execute([date('Y-m-d', time() - 90 * 86400)]);
+    echo json_encode(['linhas' => $s->fetchAll()], JSON_UNESCAPED_UNICODE);
+  } catch (Throwable $e) { echo '{"linhas":[]}'; }
+  exit;
+}
 if ($fmt === 'json') {   // usado pela página admin.html
   header('Content-Type: application/json; charset=utf-8');
   try {

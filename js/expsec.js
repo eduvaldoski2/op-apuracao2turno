@@ -1,5 +1,5 @@
 // Botão "Baixar" em cada seção (painel) da tela: PNG, PDF, CSV e Excel só daquela seção.
-import { baixarPNGSecaoSocial, baixarPDFSecao, baixarCSV, baixarXLSX, tabelaDaSecao, slug } from './export.js?v=2b279aa5';
+import { baixarPNGSecaoSocial, baixarPDFSecao, baixarCSV, baixarXLSX, tabelaDaSecao, slug } from './export.js?v=57272660';
 
 const MENU = (tab) => `<div class="exp-sec sem-export"><button type="button" class="exp-sec-b" aria-haspopup="true" aria-expanded="false" title="Baixar esta seção">⬇ Baixar</button><div class="exp-sec-m" role="menu" hidden><button type="button" role="menuitem" data-es="png-1x1">Imagem 1:1 · WhatsApp</button><button type="button" role="menuitem" data-es="png-4x5">Imagem 4:5 · Feed</button><button type="button" role="menuitem" data-es="png-9x16">Imagem 9:16 · Stories</button><button type="button" role="menuitem" data-es="pdf">PDF</button>${tab ? '<button type="button" role="menuitem" data-es="csv">Planilha (CSV)</button><button type="button" role="menuitem" data-es="xlsx">Excel (XLSX)</button>' : ''}</div></div>`;
 
@@ -43,7 +43,7 @@ document.addEventListener('click', async e => {
   const tipo = a.dataset.es, c = ctxFn();
   const h2 = (sec.querySelector(':scope > h2')?.innerText || 'secao').replace(/\s+/g, ' ').trim();
   const nome = `${c.nome}_${slug(h2)}`.slice(0, 120);
-  medir?.('exportar', { tipo: 'sec-' + tipo, aba: c.r?.modo || 'ap' });
+  medir?.('exportar', { tipo: 'sec-' + tipo, aba: c.r?.modo || 'ap', secao: slug(h2).slice(0, 40) });
   const alvo = sec.querySelector(':scope > .exp-sec .exp-sec-b');
   const txt = alvo?.textContent; if (alvo) { alvo.disabled = true; alvo.textContent = '…'; }
   try {

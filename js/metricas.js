@@ -1,8 +1,8 @@
 // Métricas de uso, anônimas e sem cookies: quantos acessaram, de onde vieram (referência/UTM/país, pelo provedor), o que mais usam.
 // Provedor configurável em js/config.js (CONFIG.metricas). Sem provedor configurado, nada é enviado.
 // Respeita "Do Not Track" / Global Privacy Control e o opt-out local (?semmetricas=1 neste navegador; ?metricas=1 reativa).
-import { CONFIG } from './config.js?v=2b279aa5';
-import { rastrearTela } from './consentimento.js?v=2b279aa5';
+import { CONFIG } from './config.js?v=57272660';
+import { rastrearTela } from './consentimento.js?v=57272660';
 
 const KEY = 'op_sem_metricas';
 const q = new URLSearchParams(location.search);
@@ -30,24 +30,40 @@ const ADAPT = {
 };
 const ad = () => ADAPT[cfg.provedor];
 
+// Contador próprio (api/evento.php): soma por dia quantas vezes cada ação aconteceu, sem cookies, IP nem dado pessoal. Independe do provedor acima e do consentimento de cookies.
+// Respeita Do Not Track/GPC, o opt-out local e o modo demonstração; no computador local só conta com ?testecontagem=1.
+const PROPRIO = cfg.proprio === undefined ? '/api/evento.php' : cfg.proprio;
+export const contagemAtiva = () => !!PROPRIO && !optOut() && !dnt() && !q.has('demo') && (!/^(localhost|127\.0\.0\.1)$/.test(location.hostname) || q.has('testecontagem'));
+let telaAtual = '';
+const COM_TELA = new Set(['compartilhar', 'compartilhar_abrir', 'compartilhar_formato', 'exportar', 'tv']);
+function contar(nome, props) {
+  if (!contagemAtiva()) return;
+  try {
+    const p = { ...(props || {}) }; if (COM_TELA.has(nome) && telaAtual && !p.tela) p.tela = telaAtual;
+    const corpo = JSON.stringify({ e: nome, p });
+    if (!(navigator.sendBeacon && navigator.sendBeacon(PROPRIO, new Blob([corpo], { type: 'text/plain' })))) fetch(PROPRIO, { method: 'POST', body: corpo, keepalive: true }).catch(() => {});
+  } catch { /* contar nunca pode quebrar o painel */ }
+}
+
 export function iniciarMetricas() {
+  if (contagemAtiva()) ligaGlobais();
   if (!metricasAtivas() || !ad()) return;
   const s = document.createElement('script'); s.defer = true; s.src = ad().src();
   Object.entries(ad().attrs()).forEach(([k, v]) => s.setAttribute(k, v));
   s.onload = () => { pronto = true; fila.splice(0).forEach(f => f()); };
   document.head.appendChild(s);
-  ligaGlobais();
 }
 const quando = f => { if (!metricasAtivas() || !ad()) return; try { pronto ? f() : fila.push(f); } catch { /* métrica nunca pode quebrar o painel */ } };
 
 // evento personalizado: nome em minúsculas_com_underscore, propriedades simples (sem dados pessoais)
-export function evento(nome, props) { quando(() => ad().evento(nome, props)); }
+export function evento(nome, props) { contar(nome, props); quando(() => ad().evento(nome, props)); }
 
 // visualização de "tela" (as rotas são hash): chamada quando a rota muda
 let ultima = '';
 export function tela(r) {
   const chave = [r.modo, r.tela, r.uf || '', r.cd || '', r.reg || '', r.id || ''].join('|'); if (chave === ultima) return; ultima = chave;
   const url = `/${r.modo || 'ap'}/${r.tela || 'geral'}${r.uf ? '/' + r.uf : ''}${r.cd ? '/' + r.cd : ''}`;
+  telaAtual = url; contar('tela', { tela: url });
   rastrearTela(url, document.title);
   quando(() => ad().tela(url, document.title));
 }

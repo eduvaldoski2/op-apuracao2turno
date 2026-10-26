@@ -22,7 +22,7 @@ export const CONFIG = {
   // painel = endereço do painel de resultados do provedor (aparece em admin.html). Vazio = métricas desligadas.
   // pareamento com TV (PeerJS): vazio = servidor público de sinalização do PeerJS; ou { host, port, path, secure } de um servidor próprio
   pareamento: {},
-  metricas: { provedor: '', id: '', host: '', painel: '' },
+  metricas: { provedor: '', id: '', host: '', painel: '' },   // proprio: endereço do contador próprio (api/evento.php); padrão '/api/evento.php'; '' desliga
   // Google Analytics 4 (só carrega com o consentimento do visitante; vazio = desligado). ga4: ID da métrica, no formato 'G-XXXXXXXXXX'.
   analytics: { ga4: 'G-DE3VNZ3VWH' },
   // anúncios (só são carregados com o consentimento do visitante; vazio = desligado). Veja admin.html.
