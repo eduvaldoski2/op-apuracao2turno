@@ -230,3 +230,4 @@ button{font:inherit;color:inherit}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
 .so-mob{display:none}
 @media(max-width:480px){.so-desk{display:none}.so-mob{display:inline}}
+.livre{margin:8px 0 0;font-size:14px;font-weight:600;color:var(--roxo)}

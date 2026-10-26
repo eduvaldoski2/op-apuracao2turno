@@ -1,6 +1,6 @@
 // Cards do 2º turno para compartilhar: catálogo navegável (sem dependências, rotas por hash).
-import { iniciarConsentimento, conversaoLead } from '../js/consentimento.js?v=732dfcf0';
-import { evento } from '../js/metricas.js?v=732dfcf0';
+import { iniciarConsentimento, conversaoLead } from '../js/consentimento.js?v=ccbeea40';
+import { evento } from '../js/metricas.js?v=ccbeea40';
 
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -58,6 +58,7 @@ function paginaInicio() {
         <button type="button" class="limpa" id="limpa" aria-label="Limpar busca" hidden>✕</button></div>
       <ul class="res" id="res" role="listbox" aria-label="Resultados da busca" hidden></ul>
       <p class="dica">Experimente: <button type="button" data-q="Niterói">Niterói</button> <button type="button" data-q="São Paulo">São Paulo</button> <button type="button" data-q="Recife">Recife</button> <button type="button" data-q="Paraná">Paraná</button></p>
+      <p class="livre">Baixar é livre: não precisa de cadastro.</p>
     </div>
   </section>
   <div class="trilhas" role="list">
@@ -193,6 +194,7 @@ async function acao(a) {
   } catch { toast('Não foi possível agora. Tente de novo.'); }
 }
 function posAcao() {
+  return; // cadastro é opcional: sem pedido após o download
   acoes++; if (jaCadastrado() || LS.get('op_cards_pos') === '1' || acoes < 1) return; const el = $('#pos-acao', dlg); if (!el || el.innerHTML) return;
   el.innerHTML = `<div class="pos"><b>Gostou? Receba os próximos cards.</b><p>Avisamos por e-mail e WhatsApp quando sair a análise pós-eleição e cards de novas cidades.</p><button type="button" class="bt" data-abrir-cadastro>Quero receber</button><button type="button" class="dp" data-dispensar>Agora não</button></div>`;
 }
@@ -230,7 +232,7 @@ async function baixarZip(alvo, btn) {
 const TEXTO_VERSAO = 'c1', ENDPOINT = '../api/lead.php';
 const origem = (() => { const o = {}; try { const q = new URLSearchParams(location.search); ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(k => { if (q.get(k)) o[k] = q.get(k).slice(0, 80); }); if (document.referrer && !document.referrer.startsWith(location.origin)) o.ref = new URL(document.referrer).hostname; } catch { /* ok */ } return o; })();
 const leadHTML = id => `<form class="lf" novalidate autocomplete="on" data-lf>
-  <label class="c" for="${id}-n">Nome completo <small>(todos os campos são obrigatórios)</small><input id="${id}-n" type="text" name="nome" autocomplete="name" required maxlength="120" placeholder="Seu nome"></label>
+  <label class="c" for="${id}-n">Nome completo <small>(obrigatório só para se cadastrar)</small><input id="${id}-n" type="text" name="nome" autocomplete="name" required maxlength="120" placeholder="Seu nome"></label>
   <label class="c" for="${id}-e">E-mail<input id="${id}-e" type="email" name="email" autocomplete="email" inputmode="email" required maxlength="160" placeholder="voce@exemplo.com.br"></label>
   <label class="c" for="${id}-t">WhatsApp <small>(com DDD)</small><input id="${id}-t" type="tel" name="telefone" autocomplete="tel-national" inputmode="tel" required maxlength="20" placeholder="(21) 99999-9999"></label>
   <div class="hp" aria-hidden="true"><label>Não preencha este campo<input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>
