@@ -1,12 +1,12 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=cd860694';
-import { listaMunicipios, rankingUfs } from './model.js?v=cd860694';
-import { projetarMunicipios } from './proj.js?v=cd860694';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=cd860694';
-import { graficoPlacar } from './charts.js?v=cd860694';
-import { criarMapa, legendaMapa } from './map.js?v=cd860694';
-import { criarMapaMun } from './mapamun.js?v=cd860694';
-import { getJSON } from './tse.js?v=cd860694';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=9d03049b';
+import { listaMunicipios, rankingUfs } from './model.js?v=9d03049b';
+import { projetarMunicipios } from './proj.js?v=9d03049b';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=9d03049b';
+import { graficoPlacar } from './charts.js?v=9d03049b';
+import { criarMapa, legendaMapa } from './map.js?v=9d03049b';
+import { criarMapaMun } from './mapamun.js?v=9d03049b';
+import { getJSON } from './tse.js?v=9d03049b';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -31,7 +31,7 @@ export const barraDupla = (pL, pF) => `<div class="barra2" role="img" aria-label
 export function cartaoCand(k, r, { modo, conf, projecao, semLink }) {
   const c = CAND[k], p = k === 'L' ? r.pL : r.pF, d = k === 'L' ? r.dL : r.dF, v = r[k];
   let selo = '';
-  if (modo === 'ap') selo = conf ? `<span class="selo ok">ELEITO · confirmado pelo TSE</span>` : (r.lider === k && r.pst > 0 ? `<span class="selo parcial">Lidera na parcial</span>` : '');
+  if (modo === 'ap') selo = conf ? `<span class="selo ok">ELEITO · confirmado pelo TSE</span>` : (r.lider === k && r.pst > 0 ? (r.pst >= 99.995 ? `<span class="selo parcial">Vence · 100% apurado</span>` : `<span class="selo parcial">Lidera na parcial</span>`) : '');
   else selo = r.lider === k ? `<span class="selo proj">Projeção: à frente</span>` : '';
   const faixa = modo === 'pr' && r.band ? `<div class="faixa">faixa de 90%: ${fNum(k === 'L' ? r.band.pL[0] : r.band.pF[0], 2)}% a ${fNum(k === 'L' ? r.band.pL[1] : r.band.pF[1], 2)}%</div>` : '';
   const tag = semLink ? 'div' : 'a';
@@ -481,7 +481,7 @@ export function viewCriterios(ctx, modo) {
    <li><b>Percentuais dos candidatos:</b> sobre os votos válidos (no 2º turno, votos nominais nos dois candidatos). <b>Brancos e nulos:</b> sobre os votos dados (comparecimento). <b>Abstenção:</b> sobre o eleitorado. <b>Alienação eleitoral:</b> (abstenção + brancos + nulos) ÷ eleitorado.</li>
    <li><b>Comparação com o 1º turno:</b> por padrão, "mesmo recorte" — o 1º turno só dos municípios/eleitorado já apurados no 2º (para comparar o que é comparável durante a apuração). É possível trocar para o 1º turno final. Variações em pontos percentuais (p.p.); "crescimento de votos" é a variação relativa do número de votos.</li>
    <li><b>Marcha da apuração:</b> cada ponto é uma parcial divulgada pelo TSE, no eixo do % apurado, com o horário da divulgação sob o ponto.</li>
-   <li><b>Selo "ELEITO":</b> só aparece quando o TSE confirma. "Lidera na parcial" não é resultado final.</li>
+   <li><b>Selo "ELEITO":</b> só aparece quando o TSE confirma. "Lidera na parcial" não é resultado final; "Vence · 100% apurado" aparece quando todas as seções do recorte (estado ou município) foram apuradas.</li>
    <li><b>Mapa:</b> cor = quem lidera no estado; tom mais escuro = maior percentual. Estados pequenos têm o resultado no quadro lateral. Na página de cada estado há o mapa por município (use + / − ou a roda do mouse para aproximar).</li>
    <li><b>Município → bairro:</b> o TSE não divulga resultado por bairro. O painel soma o <b>boletim de urna de cada seção</b> e agrupa pelo bairro cadastrado do <b>local de votação</b> (cadastro do TSE, 2026). O mapa do município é um só, por bairro: onde existe malha de limites (IBGE, Censo 2022; em São Paulo capital, os 96 distritos da Prefeitura/GeoSampa), cada local de votação é ligado à área em que fica e a área é colorida; nos demais municípios, cada local aparece como ponto colorido com o resultado do seu bairro. Nos bairros, percentuais e variações consideram só as seções já apuradas, comparadas com o 1º turno nessas mesmas seções. Os resultados por seção chegam alguns minutos depois do total do município.</li>
    <li><b>Seções agregadas:</b> seções com poucos eleitores votam na urna de uma seção principal; o resultado é atribuído ao local da seção principal.</li>

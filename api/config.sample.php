@@ -6,4 +6,15 @@ $SAL = 'troque-por-uma-frase-aleatoria';   // usado só para gerar o hash do IP 
 // "Pergunte à IA" (api/ia.php). Sem a chave, a aba mostra "IA não ativada" e as consultas rápidas continuam funcionando.
 $IA_CHAVE = '';   // chave da API da Anthropic (console.anthropic.com). Fica só aqui, nunca no navegador.
 $IA_MODELO = 'claude-haiku-5-5';   // mais barato e rápido; use 'claude-sonnet-5-5' para respostas mais elaboradas
-$IA_LIMITES = ['hora' => 12, 'dia' => 40, 'global_dia' => 2000, 'continuacao_hora' => 90];   // perguntas por visitante/hora, por visitante/dia e total/dia
+// Cota da IA. Orçamento: o custo real de cada chamada (tokens × preço) é somado; ao chegar a 98% do teto mensal a IA pausa até o mês seguinte.
+// Preços em US$ por milhão de tokens (Claude Haiku 5.5: US$ 0,10 entrada / US$ 0,50 saída). Se trocar o modelo, atualize os preços.
+// Uma pergunta típica custa cerca de US$ 0,002 e uma pesada, cerca de US$ 0,01. Com 15 perguntas/mês por usuário, 270 usuários usando a cota inteira ainda cabem em US$ 20.
+$IA_COTA = ['usuario_mes' => 15, 'usuario_dia' => 5, 'orcamento_mes_usd' => 20.0, 'preco_in_usd_mtok' => 0.10, 'preco_out_usd_mtok' => 0.50];
+// Contas (api/conta.php). O cadastro exige confirmar o contato por código de 6 dígitos.
+$CONTA = [
+  'email_de' => 'nao-responda@oficinapolitica.com.br',   // remetente dos códigos por e-mail (use um endereço do próprio domínio; configure SPF/DKIM na Hostinger para não cair no spam)
+  'sessao_dias' => 30,
+  'teste' => false,   // true = NÃO envia nada e grava os códigos em api/dados/codigos_teste.log (só para testar; nunca deixe true no ar)
+  // Confirmação por WhatsApp (opcional): WhatsApp Business Cloud API da Meta, com um modelo de mensagem de AUTENTICAÇÃO aprovado. Em branco = só e-mail.
+  'whatsapp' => ['token' => '', 'phone_id' => '', 'template' => '', 'idioma' => 'pt_BR'],
+];

@@ -2,6 +2,8 @@
 // Exportação protegida por token (api/config.php). Exemplos:
 //   exportar.php?token=SEU_TOKEN&formato=csv        -> todos os contatos ativos (CSV)
 //   exportar.php?token=SEU_TOKEN&formato=audiencia  -> e-mail/telefone com hash SHA-256, só de quem autorizou anúncios (Meta/Google)
+//   exportar.php?token=SEU_TOKEN&formato=contas     -> contas confirmadas da "Pergunte à IA" (CSV, com a prova do aceite de mensagens)
+//   exportar.php?token=SEU_TOKEN&formato=uso_ia     -> gasto do mês com a IA, perguntas e usuários (JSON)
 //   exportar.php?token=SEU_TOKEN&excluir=email@x.com -> marca o contato como excluído e apaga os dados pessoais (pedido do titular, LGPD art. 18)
 require __DIR__ . '/config.php';
 // o token pode vir no cabeçalho X-Token (usado pela página admin.html, não aparece nos registros de acesso), em POST ou na URL (?token=)
@@ -15,6 +17,21 @@ if ($excl !== '') {
   exit('excluídos: ' . $s->rowCount());
 }
 $fmt = (string)($_POST['formato'] ?? $_GET['formato'] ?? 'csv');
+if ($fmt === 'contas' || $fmt === 'uso_ia') {   // contas da "Pergunte à IA" (api/conta.php) e gasto do mês (custo real somado das chamadas)
+  require __DIR__ . '/_conta.php'; $cd = conta_db();
+  if ($fmt === 'uso_ia') {
+    header('Content-Type: application/json; charset=utf-8'); $c = ia_cota_cfg();
+    $n = fn($q) => (int)$cd->query($q)->fetchColumn(); $ini = mes_ini();
+    echo json_encode(['mes_desde' => date('c', $ini), 'gasto_usd' => round(gasto_mes_usd(), 4), 'orcamento_usd' => (float)$c['orcamento_mes_usd'],
+      'perguntas_mes' => $n("SELECT COUNT(*) FROM ia_uso WHERE nova=1 AND ts >= $ini"), 'chamadas_mes' => $n("SELECT COUNT(*) FROM ia_uso WHERE ts >= $ini"),
+      'usuarios_ativos' => $n("SELECT COUNT(*) FROM usuarios WHERE status='ativo'"), 'usuarios_pendentes' => $n("SELECT COUNT(*) FROM usuarios WHERE status='pendente'"),
+      'usuarios_que_perguntaram_no_mes' => $n("SELECT COUNT(DISTINCT uid) FROM ia_uso WHERE nova=1 AND uid>0 AND ts >= $ini"), 'cota_usuario_mes' => (int)$c['usuario_mes']]); exit;
+  }
+  header('Content-Type: text/csv; charset=utf-8'); header('Content-Disposition: attachment; filename="contas_' . date('Ymd') . '.csv"');
+  $o = fopen('php://output', 'w'); fwrite($o, "\xEF\xBB\xBF"); fputcsv($o, ['criado', 'nome', 'canal', 'contato', 'confirmado_em', 'aceitou_mensagens', 'aceite_em', 'texto_versao']);
+  foreach ($cd->query("SELECT criado,nome,canal,contato,confirmado,c_msgs,c_ts,c_versao FROM usuarios WHERE status='ativo' ORDER BY id") as $r) fputcsv($o, array_values($r));
+  exit;
+}
 if ($fmt === 'json') {   // usado pela página admin.html
   header('Content-Type: application/json; charset=utf-8');
   try {

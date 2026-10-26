@@ -3,25 +3,23 @@
 // O navegador manda só a conversa; o prompt do sistema e a lista de ferramentas ficam AQUI (ninguém usa o endereço como chat livre),
 // a chave fica em api/config.php (nunca no navegador) e há limite de uso por visitante e por dia.
 // As ferramentas (consulta aos números) rodam no navegador; este arquivo apenas repassa a conversa e devolve a resposta do modelo.
-// Configuração em api/config.php:  $IA_CHAVE = 'sk-ant-...';  (obrigatório)   $IA_MODELO = 'claude-haiku-5-5';   $IA_LIMITES = ['hora' => 12, 'dia' => 40, 'global_dia' => 2000];
+// Só responde a quem tem conta confirmada (conta.php). Cota por usuário/mês e por dia + teto de gasto mensal da plataforma ($IA_COTA em config.php).
+// Configuração em api/config.php:  $IA_CHAVE = 'sk-ant-...';  (obrigatório)   $IA_MODELO = 'claude-haiku-5-5';   $IA_COTA = [...]
 require __DIR__ . '/config.php';
-header('Content-Type: application/json; charset=utf-8'); header('Cache-Control: no-store');
-$origem = $_SERVER['HTTP_ORIGIN'] ?? '';
-if ($origem && in_array($origem, $ORIGENS_PERMITIDAS, true)) { header('Access-Control-Allow-Origin: ' . $origem); header('Vary: Origin'); }
-header('Access-Control-Allow-Methods: GET, POST, OPTIONS'); header('Access-Control-Allow-Headers: Content-Type');
+require __DIR__ . '/_conta.php';
+$origem = cabecalhos_api();
 $metodo = $_SERVER['REQUEST_METHOD'] ?? '';
-if ($metodo === 'OPTIONS') { http_response_code(204); exit; }
-function sai($dados, $cod = 200) { http_response_code($cod); echo json_encode($dados, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES); exit; }
-function erro($cod, $codigoErro, $msg) { sai(['ok' => false, 'erro' => $codigoErro, 'mensagem' => $msg], $cod); }
 
 $CHAVE = isset($IA_CHAVE) ? trim((string)$IA_CHAVE) : '';
 $MODELO = isset($IA_MODELO) && $IA_MODELO ? (string)$IA_MODELO : 'claude-haiku-5-5';
 $BASE = isset($IA_BASE_URL) && $IA_BASE_URL ? rtrim((string)$IA_BASE_URL, '/') : 'https://api.anthropic.com';
-$LIM = array_merge(['hora' => 12, 'dia' => 40, 'global_dia' => 2000, 'continuacao_hora' => 90], isset($IA_LIMITES) && is_array($IA_LIMITES) ? $IA_LIMITES : []);
+$COTA = ia_cota_cfg();
 if ($metodo === 'GET') sai(['ok' => true, 'ativo' => $CHAVE !== '']);   // o painel pergunta se a IA está ligada antes de mostrar o campo
 if ($metodo !== 'POST') erro(405, 'metodo', 'Método inválido.');
 if ($origem && !in_array($origem, $ORIGENS_PERMITIDAS, true)) erro(403, 'origem', 'Origem não permitida.');
 if ($CHAVE === '') erro(503, 'indisponivel', 'A IA ainda não foi ativada neste site.');
+$usuario = usuario_atual();
+if (!$usuario) erro(401, 'login', 'Para fazer perguntas à IA é preciso entrar ou criar uma conta gratuita.');
 
 $bruto = file_get_contents('php://input');
 if ($bruto === false || strlen($bruto) > 90000) erro(413, 'tamanho', 'Conversa grande demais.');
@@ -62,17 +60,17 @@ $nova = false; foreach ($ult->content as $b) if ($b->type === 'text') $nova = tr
 if ($nTool > 24 || $nAssistTool > 10) erro(400, 'passos', 'A consulta ficou longa demais.');
 
 // ---------- limites de uso (SQLite; sem guardar o texto das perguntas) ----------
-$ip = $_SERVER['HTTP_CF_CONNECTING_IP'] ?? ($_SERVER['REMOTE_ADDR'] ?? ''); $iph = hash('sha256', ($SAL ?? '') . $ip);
-$db = new PDO('sqlite:' . __DIR__ . '/dados/ia.sqlite'); $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-$db->exec('CREATE TABLE IF NOT EXISTS ia_uso (ts INTEGER, iph TEXT, nova INTEGER, tin INTEGER, tout INTEGER, passo INTEGER)');
-$db->exec('CREATE INDEX IF NOT EXISTS ia_uso_i ON ia_uso (iph, ts)');
-$agora = time();
-$cnt = function ($where, $args) use ($db) { $s = $db->prepare("SELECT COUNT(*) FROM ia_uso WHERE $where"); $s->execute($args); return (int)$s->fetchColumn(); };
+$uid = (int)$usuario['id']; $iph = ip_hash(); $db = conta_db(); $agora = time();
+$cnt = function ($where, $args) use ($db) { $st = $db->prepare("SELECT COUNT(*) FROM ia_uso WHERE $where"); $st->execute($args); return (int)$st->fetchColumn(); };
+if (gasto_mes_usd() >= (float)$COTA['orcamento_mes_usd'] * 0.98) erro(429, 'orcamento', 'A IA atingiu o limite de uso deste mês e volta no início do próximo. As consultas rápidas continuam funcionando.');
+$cota = cota_info($uid);
 if ($nova) {
-  if ($cnt('iph = ? AND nova = 1 AND ts > ?', [$iph, $agora - 3600]) >= (int)$LIM['hora']) erro(429, 'limite', 'Você fez muitas perguntas na última hora. Tente de novo mais tarde ou use as consultas rápidas.');
-  if ($cnt('iph = ? AND nova = 1 AND ts > ?', [$iph, $agora - 86400]) >= (int)$LIM['dia']) erro(429, 'limite', 'Limite diário de perguntas atingido. Volte amanhã ou use as consultas rápidas.');
-  if ($cnt('nova = 1 AND ts > ?', [$agora - 86400]) >= (int)$LIM['global_dia']) erro(429, 'limite', 'A IA atingiu o limite de uso de hoje. Tente amanhã ou use as consultas rápidas.');
-} elseif ($cnt('iph = ? AND nova = 0 AND ts > ?', [$iph, $agora - 3600]) >= (int)$LIM['continuacao_hora']) erro(429, 'limite', 'Muitas consultas seguidas. Tente de novo mais tarde.');
+  if ($cota['usadas'] >= $cota['limite']) erro(429, 'cota', 'Você usou as ' . $cota['limite'] . ' perguntas deste mês. Elas renovam em ' . date('d/m', strtotime($cota['reinicia'])) . '. As consultas rápidas continuam disponíveis.', ['cota' => $cota]);
+  if ($cota['dia_usadas'] >= $cota['dia_limite']) erro(429, 'cota_dia', 'Você atingiu o limite de ' . $cota['dia_limite'] . ' perguntas por dia. Volte amanhã ou use as consultas rápidas.', ['cota' => $cota]);
+} else {   // continuação (resultado de ferramenta): só vale dentro de uma pergunta recente, com no máximo N chamadas por pergunta
+  $n1 = $cnt('uid = ? AND nova = 1 AND ts > ?', [$uid, $agora - 900]); $n0 = $cnt('uid = ? AND nova = 0 AND ts > ?', [$uid, $agora - 900]);
+  if ($n1 < 1 || $n0 >= $n1 * (int)$COTA['chamadas_por_pergunta']) erro(429, 'limite', 'Muitas consultas seguidas. Faça uma nova pergunta.');
+}
 
 // ---------- prompt do sistema e ferramentas ----------
 $SISTEMA = <<<TXT
@@ -116,13 +114,14 @@ if ($cod !== 200 || !is_array($resp) || !isset($resp['content'])) {
   if ($cod === 429 || $cod === 529) erro(503, 'sobrecarga', 'A IA está muito requisitada agora. Tente novamente em instantes.');
   erro(502, 'falha', 'A IA não conseguiu responder agora.');
 }
-$tin = (int)($resp['usage']['input_tokens'] ?? 0); $tout = (int)($resp['usage']['output_tokens'] ?? 0);
-$st = $db->prepare('INSERT INTO ia_uso (ts, iph, nova, tin, tout, passo) VALUES (?,?,?,?,?,?)'); $st->execute([$agora, $iph, $nova ? 1 : 0, $tin, $tout, $nAssistTool]);
-if (mt_rand(1, 40) === 1) $db->exec('DELETE FROM ia_uso WHERE ts < ' . ($agora - 8 * 86400));
+$tin = (int)($resp['usage']['input_tokens'] ?? 0) + (int)($resp['usage']['cache_creation_input_tokens'] ?? 0) + (int)($resp['usage']['cache_read_input_tokens'] ?? 0); $tout = (int)($resp['usage']['output_tokens'] ?? 0);
+$custo = ($tin * (float)$COTA['preco_in_usd_mtok'] + $tout * (float)$COTA['preco_out_usd_mtok']) / 1e6;   // dólares (arredonda para cima: conta cache como entrada cheia)
+$st = $db->prepare('INSERT INTO ia_uso (ts, uid, iph, nova, tin, tout, passo, custo) VALUES (?,?,?,?,?,?,?,?)'); $st->execute([$agora, $uid, $iph, $nova ? 1 : 0, $tin, $tout, $nAssistTool, $custo]);
+if (mt_rand(1, 40) === 1) $db->exec('DELETE FROM ia_uso WHERE ts < ' . ($agora - 70 * 86400));
 // devolve só o necessário (blocos de texto e de uso de ferramenta)
 $saida = [];
 foreach ($resp['content'] as $b) {
   if (($b['type'] ?? '') === 'text') $saida[] = ['type' => 'text', 'text' => (string)$b['text']];
   elseif (($b['type'] ?? '') === 'tool_use') $saida[] = ['type' => 'tool_use', 'id' => $b['id'], 'name' => $b['name'], 'input' => (object)($b['input'] ?? [])];
 }
-sai(['ok' => true, 'content' => $saida, 'stop_reason' => $resp['stop_reason'] ?? 'end_turn']);
+sai(['ok' => true, 'content' => $saida, 'stop_reason' => $resp['stop_reason'] ?? 'end_turn', 'cota' => cota_info($uid)]);

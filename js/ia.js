@@ -1,8 +1,9 @@
 // "Pergunte aos dados": a pessoa pergunta, a IA consulta os números do painel (ferramentas em iatools.js) e responde; quando faz sentido, a resposta
 // vem com um gráfico que pode ser baixado em 1:1, 4:5 e 9:16. O servidor (api/ia.php) só guarda a chave e repassa a conversa ao provedor de IA.
-import { CONFIG, RAIZ } from './config.js?v=cd860694';
-import { esc } from './ui.js?v=cd860694';
-import { FERRAMENTAS, novaSessao, graficoHtml, resumo } from './iatools.js?v=cd860694';
+import { CONFIG, RAIZ } from './config.js?v=9d03049b';
+import { esc } from './ui.js?v=9d03049b';
+import { FERRAMENTAS, novaSessao, graficoHtml, resumo } from './iatools.js?v=9d03049b';
+import { CONTA, montarConta, atualizarCota, sessaoExpirou } from './conta.js?v=9d03049b';
 
 const ENDPOINT = () => (CONFIG.ia?.endpoint ?? (RAIZ + 'api/ia.php'));
 const MAX_PASSOS = 8;
@@ -37,9 +38,10 @@ const md = t => {   // markdown mínimo e seguro: **negrito**, listas com "- " e
 
 async function chamar(mensagens) {
   let r, j = null;
-  try { r = await fetch(ENDPOINT(), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mensagens }) }); j = await r.json().catch(() => null); }
+  try { r = await fetch(ENDPOINT(), { method: 'POST', credentials: 'same-origin', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ mensagens }) }); j = await r.json().catch(() => null); }
   catch { throw Object.assign(new Error('Sem conexão com o servidor da IA.'), { codigo: 'rede' }); }
   if (!r.ok || !j?.ok) throw Object.assign(new Error(j?.mensagem || (r.status === 404 ? 'A IA ainda não foi ativada neste site.' : 'Não foi possível consultar a IA agora.')), { codigo: j?.erro || ('http_' + r.status) });
+  atualizarCota(j.cota);
   return j;
 }
 
@@ -89,12 +91,13 @@ export function viewPerguntar(ctx) {
   const html = `
   <section class="painel ia-box sem-export">
     <h2>Pergunte aos dados</h2>
-    <p class="sub">Faça uma pergunta sobre o resultado do 2º turno: a IA consulta os números do painel, responde e, se quiser, monta um gráfico para compartilhar (1:1, 4:5 ou 9:16).</p>
+    <p class="sub">Faça uma pergunta sobre o resultado do 2º turno: a IA consulta os números do painel, responde e, se quiser, monta um gráfico para compartilhar (1:1, 4:5 ou 9:16). <b>É preciso ter uma conta gratuita para usar a pergunta livre.</b></p>
+    <div id="ia-conta" class="ia-conta"></div>
     <form id="ia-form" class="ia-form"><textarea id="ia-q" rows="2" maxlength="400" placeholder="Ex.: Quais os 10 municípios onde o Lula foi melhor em Minas Gerais?" aria-label="Sua pergunta"></textarea>
       <div class="ia-acoes"><button type="submit" class="btn" id="ia-go">Perguntar</button><span class="ia-cont" id="ia-cont">0/400</span></div></form>
     <div class="ia-ex"><span>Experimente:</span>${EXEMPLOS.map((e, i) => `<button type="button" data-ex="${i}">${esc(e)}</button>`).join('')}</div>
     <div class="ia-ex ia-at"><span>Consultas rápidas (sem IA):</span>${ATALHOS.map((a, i) => `<button type="button" data-at="${i}">${esc(a.t)}</button>`).join('')}</div>
-    <p class="ia-aviso">A IA pode errar na interpretação da pergunta. Ela só usa números do painel (TSE) e mostra, em “Dados consultados”, o que foi buscado. Não escreva dados pessoais: a pergunta é enviada a um provedor de IA. <a href="privacidade.html">Privacidade</a></p>
+    <p class="ia-aviso">A IA pode errar na interpretação da pergunta. Ela só usa números do painel (TSE) e mostra, em “Dados consultados”, o que foi buscado. Não escreva dados pessoais: a pergunta é enviada a um provedor de IA. Cada conta tem um número de perguntas por mês e por dia, para manter o serviço gratuito. <a href="privacidade.html">Privacidade</a></p>
   </section>
   <div id="ia-lista"></div>`;
   return { html, titulo: 'Pergunte à IA', trilha: [['Brasil', '#/'], ['Pergunte à IA']], montar(root) {
@@ -113,9 +116,10 @@ export function viewPerguntar(ctx) {
         it.carregando = false; it.texto = r.texto; it.trace = r.trace;
         it.imagens = S.imagens.map(im => blocoImagem(S, im, true)).join('');
       } catch (e) {
-        it.carregando = false; it.erro = e.codigo === 'limite' ? (e.message || 'Você atingiu o limite de perguntas por enquanto. Tente mais tarde ou use as consultas rápidas.') : (e.message || 'Não foi possível responder agora.');
+        if (e.codigo === 'login') { sessaoExpirou(); ctl?.mostrarLogin('Sua sessão expirou. Entre de novo para continuar.'); aplica(); }
+        it.carregando = false; it.erro = ['limite', 'cota', 'cota_dia', 'orcamento'].includes(e.codigo) ? (e.message || 'Você atingiu o limite de perguntas por enquanto. Tente mais tarde ou use as consultas rápidas.') : (e.message || 'Não foi possível responder agora.');
         if (e.codigo === 'indisponivel' || /^http_404/.test(e.codigo || '')) it.erro += ' As consultas rápidas continuam funcionando.';
-      } finally { ESTADO.ocupado = false; go.disabled = false; pinta(); }
+      } finally { ESTADO.ocupado = false; ctl?.atualizar(); aplica(); pinta(); }
     }
     form.addEventListener('submit', e => { e.preventDefault(); const t = q.value; q.value = ''; root.querySelector('#ia-cont').textContent = '0/400'; rodar(t); });
     root.querySelector('.ia-ex').addEventListener('click', e => { const b = e.target.closest('[data-ex]'); if (b) rodar(EXEMPLOS[+b.dataset.ex]); });
@@ -130,13 +134,16 @@ export function viewPerguntar(ctx) {
       } catch (er) { it.carregando = false; it.erro = 'Não foi possível consultar os dados: ' + (er.message || er); }
       pinta();
     });
-    // a IA só aparece como disponível se o servidor tiver a chave configurada
-    fetch(ENDPOINT(), { headers: { Accept: 'application/json' } }).then(r => r.ok ? r.json() : null).catch(() => null).then(j => {
-      if (j?.ativo === true) return;
-      const av = root.querySelector('.ia-aviso'); if (!av) return;
-      av.insertAdjacentHTML('beforebegin', '<p class="ia-off">A pergunta livre à IA ainda não está ativada neste site. As <b>consultas rápidas</b> abaixo funcionam normalmente.</p>');
-      go.disabled = true; q.disabled = true; root.querySelectorAll('[data-ex]').forEach(b => { b.disabled = true; });
-    });
+    // a pergunta livre só libera para quem tem conta confirmada (e se o servidor tiver a chave da IA configurada)
+    const aplica = () => {
+      const livre = CONTA.carregado && CONTA.logado && CONTA.ia_ativa && (!CONTA.cota || CONTA.cota.restantes > 0);
+      q.disabled = !livre; go.disabled = !livre || ESTADO.ocupado; root.querySelectorAll('[data-ex]').forEach(b => { b.disabled = !livre; });
+      q.placeholder = !CONTA.logado ? 'Crie sua conta gratuita (ou entre) para fazer perguntas à IA' : (CONTA.cota && CONTA.cota.restantes <= 0 ? 'Suas perguntas deste mês acabaram. Use as consultas rápidas.' : 'Ex.: Quais os 10 municípios onde o Lula foi melhor em Minas Gerais?');
+      root.querySelector('.ia-off')?.remove();
+      if (CONTA.carregado && !CONTA.erro && !CONTA.ia_ativa) root.querySelector('.ia-aviso')?.insertAdjacentHTML('beforebegin', '<p class="ia-off">A pergunta livre à IA ainda não está ativada neste site. As <b>consultas rápidas</b> abaixo funcionam normalmente.</p>');
+    };
+    const ctl = montarConta(root.querySelector('#ia-conta'), aplica);
+    aplica();
     pinta();
   } };
 }
