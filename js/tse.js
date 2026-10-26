@@ -1,14 +1,16 @@
 // Leitura dos arquivos estáticos de divulgação do TSE (navegador e Node).
 // O esquema do 2º turno (eleição 6258) foi mapeado a partir do 1º turno (6257); os leitores são tolerantes
 // (procuram os campos por nome em qualquer nível) e o coletor registra um diagnóstico quando algo não bate.
-import { cnt, pct, UF_IDS } from './util.js?v=9d03049b';
+import { cnt, pct, UF_IDS } from './util.js?v=9bea7f94';
 
 export const TSE = {
   base: 'https://resultados.tse.jus.br/oficial',
   ciclo: 'ele2026',
   turno: 2,
   ele: { 1: 6257, 2: 6258 },   // eleição presidente 1º e 2º turno (ele-c.json)
+  eleGov: { 1: 6259, 2: 6260 },   // eleição estadual (governador, senador, deputados): o 2º turno de governador só existe nos estados com disputa
   cargo: '0001',
+  cargoGov: '0003',
   numL: '13', numF: '22',
 };
 const pad6 = n => String(n).padStart(6, '0');
@@ -19,6 +21,7 @@ export function urls(cfg = TSE, turno = cfg.turno) {
     br: () => `${raiz}/dados/br/br-c${cfg.cargo}-e${e6}-u.json`,
     uf: uf => `${raiz}/dados/${uf}/${uf}-c${cfg.cargo}-e${e6}-u.json`,
     mun: (uf, cd) => `${raiz}/dados/${uf}/${uf}${cd}-c${cfg.cargo}-e${e6}-u.json`,
+    govUf: uf => { const g = cfg.eleGov?.[turno]; return g ? `${cfg.base}/${cfg.ciclo}/${g}/dados/${uf}/${uf}-c${cfg.cargoGov || '0003'}-e${pad6(g)}-u.json` : null; },
     abBr: () => `${raiz}/dados/br/br-e${e6}-ab.json`,
     abUf: uf => `${raiz}/dados/${uf}/${uf}-e${e6}-ab.json`,
     cm: () => `${raiz}/config/mun-e${e6}-cm.json`,
@@ -104,6 +107,37 @@ export function parseAb(j) {
 const linhaMun = (cd, p) => [cd, p.ts, p.st, p.te, p.est, p.c, p.a, p.vb, p.tvn, p.L, p.F, p.vv];
 const blocoUF = p => ({ ts: p.ts, st: p.st, te: p.te, est: p.est, c: p.c, a: p.a, vb: p.vb, tvn: p.tvn, vv: p.vv, L: p.L, F: p.F, eL: p.eleito?.L ? 1 : 0, eF: p.eleito?.F ? 1 : 0 });
 
+// governador (arquivo de UF da eleição estadual): candidatos com partido (vem do nó da legenda), votos nominais e andamento da apuração
+export function parseGov(j) {
+  const cs = [];
+  (function w(n, par) {
+    if (Array.isArray(n)) return n.forEach(x => w(x, par));
+    if (!n || typeof n !== 'object') return;
+    if (n.cand && n.sg) par = n.sg;
+    if (n.vap != null && n.n != null && !n.cand) cs.push({ n: String(n.n), nm: n.nmu || n.nm || '', sg: par || '', v: cnt(n.vap), e: n.e === 's' || /^eleit/i.test(n.st || '') ? 1 : 0, st: String(n.st || '').slice(0, 20) });
+    for (const k in n) if (n[k] && typeof n[k] === 'object') w(n[k], par);
+  })(j.carg || j, '');
+  const S = j.s || {}, E = j.e || {}, V = j.v || {};
+  const vv = V.vv != null ? cnt(V.vv) : cs.reduce((a, c) => a + c.v, 0);
+  cs.sort((a, b) => b.v - a.v);
+  return { hg: j.hg || '', ht: j.ht || '', ts: cnt(S.ts), st: cnt(S.st), te: cnt(E.te), c: cnt(E.c), a: cnt(E.a), vv, vb: cnt(V.vb), tvn: cnt(V.tvn), cand: cs.map(c => ({ ...c, p: vv ? 100 * c.v / vv : 0 })) };
+}
+// Resultado do 2º turno para governador. Só há arquivo nos estados com segundo turno (os demais respondem 404); a lista é
+// revista a cada 10 minutos e, entre uma revisão e outra, só os estados que já têm disputa são lidos de novo.
+export async function montarGov({ cfg = TSE, prev = null, ufs = UF_IDS, conc = 8, diag = [] } = {}) {
+  const U = urls(cfg); if (!U.govUf(ufs[0])) return null;
+  const agora = Date.now(), rever = !prev || !prev.scan || agora - prev.scan > 600000;
+  const alvo = rever ? ufs : Object.keys(prev.uf || {});
+  const uf = {};
+  const res = await pool(alvo, conc, async u => parseGov(await getJSON(U.govUf(u), { retries: 1 })));
+  res.forEach((r, i) => {
+    const u = alvo[i];
+    if (r.erro) { if (r.erro.status !== 404) { diag.push(`gov ${u}: ${r.erro.message}`); if (prev?.uf?.[u]) uf[u] = prev.uf[u]; } return; }
+    if (r.cand.length >= 2) uf[u] = r;
+  });
+  return { ele: cfg.eleGov[cfg.turno], scan: rever ? agora : prev.scan, uf };
+}
+
 // Monta o snapshot completo. `prev` = snapshot anterior (reaproveita municípios/UFs que não mudaram).
 export async function montarSnapshot({ cfg = TSE, prev = null, conc = 12, log = () => {}, ufs = UF_IDS, municipios = true, suprir = null } = {}) {
   const U = urls(cfg);
@@ -147,6 +181,9 @@ export async function montarSnapshot({ cfg = TSE, prev = null, conc = 12, log = 
     });
     if (suprir) log(`municípios completados pelos boletins: ${supridos}`);
     res.forEach((r, i) => { if (r.erro) diag.push(`mun ${tarefas[i].uf}${tarefas[i].cd}: ${r.erro.message}`); else snap.mun[tarefas[i].uf].push(r); });
+  }
+  if (cfg.eleGov?.[cfg.turno]) {   // governador: se falhar, o painel de presidente segue normalmente
+    try { snap.gov = await montarGov({ cfg, prev: prev?.gov, ufs, conc, diag }); } catch (e) { diag.push('gov: ' + e.message); if (prev?.gov) snap.gov = prev.gov; }
   }
   delete snap._ab;
   // Totais nunca ficam abaixo da soma do que está nos municípios (quando o TSE atrasa o arquivo do estado/Brasil)

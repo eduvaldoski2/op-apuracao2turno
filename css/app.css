@@ -590,3 +590,14 @@ body.tl-aberto{overflow:hidden}
 .ct-dest{color:var(--tx2);font-size:13px}.ct-cota{font-size:13.5px;color:var(--tx2)}.ct-cota b{color:var(--roxo);font-size:15px}
 .ct-bar-a{display:flex;gap:10px;flex-wrap:wrap}.ct-excl{margin-top:10px;padding:12px 14px;border:1.5px solid #e7b9b9;border-radius:12px;background:#fff}
 .ia-form textarea:disabled{background:#f1eef8;color:var(--tx2);cursor:not-allowed}
+/* governador (2º turno) */
+.gv-c{margin:12px 0 0}.gv-t{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.gv-n{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:16px}.gv-n i{width:12px;height:12px;border-radius:3px;display:inline-block;flex:none}.gv-n small{color:var(--tx2);font-size:13px}
+.gv-sel{font-size:11.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#14683a;background:#e3f4e9;border-radius:999px;padding:2px 9px}
+.gv-p{font:400 30px 'DM Serif Display',Georgia,serif;line-height:1}.gv-b{height:12px;background:#eeeaf6;border-radius:6px;overflow:hidden;margin:6px 0 3px}.gv-b i{display:block;height:100%;border-radius:6px}
+.gv-v{font-size:13px;color:var(--tx2)}.gv-f{margin:14px 0 0;font-size:13.5px;line-height:1.5;color:var(--tx2)}.gv-f b{color:var(--tx)}
+.gv-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:12px}
+.gv-card{display:flex;flex-direction:column;gap:2px;background:#faf8ff;border:1.5px solid #e1dbf1;border-radius:12px;padding:11px 13px;text-decoration:none;color:var(--tx)}.gv-card:hover{border-color:var(--roxo-3)}
+.gv-uf{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--laranja-2)}.gv-card b{font-size:16px;color:var(--roxo)}.gv-card small{color:var(--tx2);font-size:13px}.gv-vs{font-size:12.5px;color:var(--tx2);margin-top:2px}
+.gv-t{flex-wrap:nowrap;align-items:flex-start}.gv-n{flex:1;min-width:0}.gv-p{flex:none}.gv-2t{color:#8a4a06;background:#fdebd6}
+.gov-t1 td small{color:var(--tx2);margin-left:4px}.gov-t1 td small.vt{display:block;margin:0}

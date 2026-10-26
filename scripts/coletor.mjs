@@ -76,8 +76,9 @@ async function ciclo(out, B, estado) {
   // (e o TSE reescreve arquivos mantendo a mesma hora). Por isso a mudança considera também estados e municípios.
   const assin = x => Object.entries(x.uf || {}).map(([k, v]) => `${k}${v.st}.${v.L}.${v.F}`).join(',') + '|' +
     Object.entries(x.mun || {}).map(([k, r]) => `${k}${r.length}.${r.reduce((a, m) => a + m[2] + m[9] + m[10], 0)}`).join(',');
+  const assinGov = x => Object.entries(x?.gov?.uf || {}).map(([k, v]) => `${k}${v.st}.${(v.cand || []).map(c => c.v).join('.')}`).join(',');
   const mudouBr = !prev || snap.br.st !== prev.br.st || snap.hg !== prev.hg || snap.br.L !== prev.br.L;
-  const mudou = mudouBr || assin(snap) !== assin(prev);
+  const mudou = mudouBr || assin(snap) !== assin(prev) || assinGov(snap) !== assinGov(prev);
   log(`mudou=${mudou} (brasil=${mudouBr}) prev.st=${prev?.br?.st} prev.hg=${prev?.hg} snap.hg=${snap.hg}`);
   const meta = { checado: new Date().toISOString(), leituraMs: msLeitura, notas: notas.filter(x => /municípios/.test(x)).slice(0, 3), tse: cfg.base, turno: cfg.turno, ele: cfg.ele[cfg.turno], diag: snap.diag, ok: snap.br.ok !== false };
   if (!mudou) { gravar(path.join(out, 'meta.json'), { ...meta, ultimaMudanca: estado.ultima }); return false; }

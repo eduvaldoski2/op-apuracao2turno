@@ -1,25 +1,26 @@
-import { CONFIG } from './config.js?v=9d03049b';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=9d03049b';
-import { calcular } from './model.js?v=9d03049b';
-import { projetar, PARAMS } from './proj.js?v=9d03049b';
-import { viewComparar, hashComparar } from './comparar.js?v=9d03049b';
-import { viewPerguntar } from './ia.js?v=9d03049b';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=9d03049b';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=9d03049b';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=9d03049b';
-import { iniciarExportSecoes } from './expsec.js?v=9d03049b';
-import { eventosEntre } from './avisos.js?v=9d03049b';
-import { mostrarEleito } from './eleito.js?v=9d03049b';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=9d03049b';
-import { abrirTelao, iniciarTV } from './tv.js?v=9d03049b';
-import { iniciarConsentimento } from './consentimento.js?v=9d03049b';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=9d03049b';
-import { lerCard } from './card.js?v=9d03049b';
-import { abrirCompartilhar } from './compartilhar.js?v=9d03049b';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=9d03049b';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=9d03049b';
-import { esc } from './ui.js?v=9d03049b';
-import { getFoco, setFoco, comFoco } from './foco.js?v=9d03049b';
+import { CONFIG } from './config.js?v=9bea7f94';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=9bea7f94';
+import { getJSON } from './tse.js?v=9bea7f94';
+import { calcular } from './model.js?v=9bea7f94';
+import { projetar, PARAMS } from './proj.js?v=9bea7f94';
+import { viewComparar, hashComparar } from './comparar.js?v=9bea7f94';
+import { viewPerguntar } from './ia.js?v=9bea7f94';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=9bea7f94';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=9bea7f94';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=9bea7f94';
+import { iniciarExportSecoes } from './expsec.js?v=9bea7f94';
+import { eventosEntre } from './avisos.js?v=9bea7f94';
+import { mostrarEleito } from './eleito.js?v=9bea7f94';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=9bea7f94';
+import { abrirTelao, iniciarTV } from './tv.js?v=9bea7f94';
+import { iniciarConsentimento } from './consentimento.js?v=9bea7f94';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=9bea7f94';
+import { lerCard } from './card.js?v=9bea7f94';
+import { abrirCompartilhar } from './compartilhar.js?v=9bea7f94';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=9bea7f94';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=9bea7f94';
+import { esc } from './ui.js?v=9bea7f94';
+import { getFoco, setFoco, comFoco } from './foco.js?v=9bea7f94';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -94,7 +95,8 @@ async function renderT1(r, manterScroll, forcar) {
     try { S.T1 = prepT1(await carregarT1()); } catch (e) { root.innerHTML = `<div class="aviso">O resultado do 1º turno ainda não está disponível (${esc(e.message || e)}).</div>`; return; }
     if (rota().modo !== 't1') return;
   }
-  const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, T1: S.T1, ir, csv: null, demo: !!S.demo };
+  if (S.G1 === undefined) S.G1 = await getJSON('data/gov_1t.json', { retries: 1 }).catch(() => null);   // governador, 1º turno (arquivo estático; se faltar, a seção some)
+  const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, T1: S.T1, G1: S.G1, ir, csv: null, demo: !!S.demo };
   setEscala(25, 65);
   let v;
   if (r.tela === 'uf') v = viewT1Uf(ctx, r.uf);
