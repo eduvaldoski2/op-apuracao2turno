@@ -1,7 +1,7 @@
 // Leitura dos arquivos estáticos de divulgação do TSE (navegador e Node).
 // O esquema do 2º turno (eleição 6258) foi mapeado a partir do 1º turno (6257); os leitores são tolerantes
 // (procuram os campos por nome em qualquer nível) e o coletor registra um diagnóstico quando algo não bate.
-import { cnt, pct, UF_IDS } from './util.js?v=9bea7f94';
+import { cnt, pct, UF_IDS } from './util.js?v=f1ad880d';
 
 export const TSE = {
   base: 'https://resultados.tse.jus.br/oficial',
@@ -114,7 +114,7 @@ export function parseGov(j) {
     if (Array.isArray(n)) return n.forEach(x => w(x, par));
     if (!n || typeof n !== 'object') return;
     if (n.cand && n.sg) par = n.sg;
-    if (n.vap != null && n.n != null && !n.cand) cs.push({ n: String(n.n), nm: n.nmu || n.nm || '', sg: par || '', v: cnt(n.vap), e: n.e === 's' || /^eleit/i.test(n.st || '') ? 1 : 0, st: String(n.st || '').slice(0, 20) });
+    if (n.vap != null && n.n != null && !n.cand) cs.push({ n: String(n.n), nm: n.nmu || n.nm || '', sg: par || '', v: cnt(n.vap), e: /^eleit/i.test(n.st || '') || (!n.st && n.e === 's') ? 1 : 0, st: String(n.st || '').slice(0, 20) });   // e = eleito (no 1º turno, "e":"s" também marca quem vai ao 2º turno; por isso vale o texto de st)
     for (const k in n) if (n[k] && typeof n[k] === 'object') w(n[k], par);
   })(j.carg || j, '');
   const S = j.s || {}, E = j.e || {}, V = j.v || {};

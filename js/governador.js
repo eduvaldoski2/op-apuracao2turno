@@ -1,20 +1,22 @@
 // Governador: resultado por estado no 1º turno (data/gov_1t.json) e no 2º turno (snap.gov, só nos estados com disputa).
 // Os dados vêm do TSE (eleição estadual 6259/6260, cargo 3) e são independentes da disputa presidencial.
-import { UF_NOME, fInt, fNum, clamp } from './util.js?v=9bea7f94';
-import { esc } from './ui.js?v=9bea7f94';
+import { UF_NOME, fInt, fNum, clamp } from './util.js?v=f1ad880d';
+import { esc } from './ui.js?v=f1ad880d';
 
 const COR = ['#3E347E', '#D9741A', '#1b8a6b', '#b3367a', '#2b6cb0', '#8a6d00', '#6b7280', '#a3261a', '#4b5fa8', '#9a5b13', '#2f7d3a', '#7a3fa0'];
 export const nomeP = t => String(t || '').toLowerCase().replace(/(^|[\s\-(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
 export const govPst = g => (g.ts ? 100 * g.st / g.ts : 0);
 const ESTADOS_ORD = (a, b) => UF_NOME[a].localeCompare(UF_NOME[b], 'pt-BR');
-export const decidido = g => !!g.cand?.some(c => c.e);
+// eleito: pelo texto da situação ("Eleito"); no 1º turno o TSE também marca com e:"s" quem vai ao 2º turno
+export const eleitoC = c => (c.st ? /^eleit/i.test(c.st) : !!c.e);
+export const decidido = g => !!g.cand?.some(eleitoC);
 
 // painel de um estado: todos os candidatos (barra, %, votos), selo de eleito e rodapé com abstenção e brancos/nulos
 export function govPainel(g, uf, turno) {
   if (!g || !g.cand?.length) return '';
-  const pst = govPst(g), fim = pst >= 99.995, eleito = g.cand.find(c => c.e), vaiSegundo = turno === 1 && !eleito && fim;
+  const pst = govPst(g), fim = pst >= 99.995, eleito = g.cand.find(eleitoC), vaiSegundo = turno === 1 && !eleito && fim;
   const linhas = g.cand.map((c, i) => { const cor = COR[i % COR.length];
-    return `<div class="gv-c${c.e ? ' gv-w' : ''}"><div class="gv-t"><span class="gv-n"><i style="background:${cor}"></i><b>${esc(nomeP(c.nm))}</b> <small>${esc(c.sg)} · ${esc(c.n)}</small>${c.e ? '<span class="gv-sel">Eleito(a)</span>' : (vaiSegundo && i < 2 ? '<span class="gv-sel gv-2t">Vai ao 2º turno</span>' : '')}</span><span class="gv-p" style="color:${cor}">${fNum(c.p, 2)}%</span></div><div class="gv-b"><i style="width:${clamp(c.p, 0, 100)}%;background:${cor}"></i></div><div class="gv-v">${fInt(c.v)} votos</div></div>`; }).join('');
+    return `<div class="gv-c${eleitoC(c) ? ' gv-w' : ''}"><div class="gv-t"><span class="gv-n"><i style="background:${cor}"></i><b>${esc(nomeP(c.nm))}</b> <small>${esc(c.sg)} · ${esc(c.n)}</small>${eleitoC(c) ? '<span class="gv-sel">Eleito(a)</span>' : (vaiSegundo && i < 2 ? '<span class="gv-sel gv-2t">Vai ao 2º turno</span>' : '')}</span><span class="gv-p" style="color:${cor}">${fNum(c.p, 2)}%</span></div><div class="gv-b"><i style="width:${clamp(c.p, 0, 100)}%;background:${cor}"></i></div><div class="gv-v">${fInt(c.v)} votos</div></div>`; }).join('');
   const dif = g.cand.length > 1 ? g.cand[0].v - g.cand[1].v : 0, hora = String(g.ht || g.hg || '').slice(0, 5);
   const frase = eleito && fim ? (turno === 1 ? `<b>${esc(nomeP(eleito.nm))}</b> foi eleito(a) no 1º turno. ` : `<b>${esc(nomeP(eleito.nm))}</b> vence por <b>${fInt(Math.abs(dif))}</b> votos. `)
     : (!fim && dif ? `<b>${esc(nomeP(g.cand[0].nm))}</b> lidera por <b>${fInt(Math.abs(dif))}</b> votos. ` : (vaiSegundo ? 'Nenhum candidato passou de 50% dos votos válidos: a disputa foi para o 2º turno. ' : ''));
@@ -27,7 +29,7 @@ export function govResumo(snap) {
   const ent = Object.entries(snap.gov?.uf || {}).filter(([, g]) => g.cand?.length >= 2).sort((a, b) => ESTADOS_ORD(a[0], b[0])); if (!ent.length) return '';
   const todos = ent.every(([, g]) => decidido(g) && govPst(g) >= 99.995);
   const cards = ent.map(([u, g]) => { const [a, b] = g.cand;
-    return `<a class="gv-card" href="#/uf/${u}"><span class="gv-uf">${esc(UF_NOME[u])}</span><b>${esc(nomeP(a.nm))}</b><small>${esc(a.sg)} · ${fNum(a.p, 2)}%${a.e ? ' · eleito(a)' : ''}</small><span class="gv-vs">× ${esc(nomeP(b.nm))} (${esc(b.sg)}) ${fNum(b.p, 2)}%</span></a>`; }).join('');
+    return `<a class="gv-card" href="#/uf/${u}"><span class="gv-uf">${esc(UF_NOME[u])}</span><b>${esc(nomeP(a.nm))}</b><small>${esc(a.sg)} · ${fNum(a.p, 2)}%${eleitoC(a) ? ' · eleito(a)' : ''}</small><span class="gv-vs">× ${esc(nomeP(b.nm))} (${esc(b.sg)}) ${fNum(b.p, 2)}%</span></a>`; }).join('');
   return `<section class="painel gov-res"><h2>${todos ? 'Governadores eleitos no 2º turno' : 'Governadores · 2º turno'}</h2><p class="sub">${ent.length} estados tiveram segundo turno para governador. Clique no estado para ver o resultado completo.</p><div class="gv-grid">${cards}</div></section>`;
 }
 

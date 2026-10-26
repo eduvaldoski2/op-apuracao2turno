@@ -2,7 +2,7 @@ name: Resultado oficial do 1º turno para governador (por estado)
 on:
   workflow_dispatch:
   push:
-    paths: ['scripts/gov1t.mjs', '.github/workflows/gov1t.yml']
+    paths: ['scripts/gov1t.mjs', '.github/workflows/gov1t.yml', 'js/tse.js']
 permissions:
   contents: write
 jobs:
