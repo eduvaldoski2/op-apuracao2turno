@@ -1,6 +1,7 @@
 // Cards do 2º turno para compartilhar: catálogo navegável (sem dependências, rotas por hash).
-import { iniciarConsentimento, conversaoLead } from '../js/consentimento.js?v=ccbeea40';
-import { evento } from '../js/metricas.js?v=ccbeea40';
+// Consentimento e métricas são opcionais: carregam depois e, se falharem (rede, 503), os cards continuam funcionando.
+let evento = () => {}, conversaoLead = () => {}, iniciarConsentimento = () => {};
+const carregaExtras = async () => { try { const [c, m] = await Promise.all([import('../js/consentimento.js?v=570abf30'), import('../js/metricas.js?v=570abf30')]); iniciarConsentimento = c.iniciarConsentimento; conversaoLead = c.conversaoLead; evento = m.evento; iniciarConsentimento(); } catch { /* sem métricas/consentimento */ } };
 
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -21,7 +22,8 @@ const img = (c, fm) => `img/${c.s}/${fm}/${c.n}.jpg`, thumb = c => `img/${c.s}/t
 const corL = '#c8102e', corF = '#1d4ea8';
 
 async function carregar() {
-  const r = await fetch('data/catalogo.json?v=1'); if (!r.ok) throw new Error('catálogo');
+  let r; for (let i = 0; i < 3; i++) { try { r = await fetch('data/catalogo.json?v=1'); if (r.ok) break; } catch { /* tenta de novo */ } await new Promise(ok => setTimeout(ok, 700 * (i + 1))); }
+  if (!r || !r.ok) throw new Error('catálogo');
   CAT = await r.json();
   for (const c of CAT.cards) { POR_ID[c.id] = c; (POR_COL[c.c] ||= []).push(c); (POR_SET[c.s] ||= []).push(c); }
   for (const col of CAT.colecoes) col.n = col.id === 'cidades' ? CAT.cidades.length : (POR_COL[col.id] || []).length;
@@ -291,5 +293,5 @@ const fab = $('#fab'); const obs = () => { const rod = $('#cadastro').getBoundin
 
 (async () => {
   try { await carregar(); } catch { app.innerHTML = `<div class="wrap"><div class="cab-pg"><div><h1>Não foi possível carregar os cards</h1><p>Verifique sua conexão e tente de novo.</p></div><button class="bt" onclick="location.reload()">Tentar de novo</button></div></div>`; return; }
-  montaLeads(); rota(); obs(); iniciarConsentimento();
+  montaLeads(); rota(); obs(); carregaExtras();
 })();

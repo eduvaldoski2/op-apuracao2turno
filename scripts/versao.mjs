@@ -9,7 +9,7 @@ for (const f of arqs) {
   let s = base[f];
   if (f.endsWith('.js')) s = s.replace(/(from\s+'\.\/[\w.\-]+\.js)'/g, `$1?v=${v}'`).replace(/(import\(\s*'\.\/[\w.\-]+\.js)'/g, `$1?v=${v}'`);
   if (f === 'painel.html') s = s.replace(/(src="js\/app\.js)"/, `$1?v=${v}"`).replace(/(href="css\/app\.css)"/, `$1?v=${v}"`);
-  if (f === 'cartoes/cartoes.js') s = s.replace(/(from\s+'\.\.\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`);
+  if (f === 'cartoes/cartoes.js') s = s.replace(/(from\s+'\.\.\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`).replace(/(import\(\s*'\.\.\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`);
   if (f === 'cartoes/index.html') s = s.replace(/(href="cartoes\.css)"/, `$1?v=${v}"`).replace(/(src="cartoes\.js)"/, `$1?v=${v}"`);
   if (f === 'index.html') s = s.replace(/(from\s+'\.\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`).replace(/(href="css\/consent\.css)"/, `$1?v=${v}"`);
   if (s !== fs.readFileSync(f, 'utf8')) fs.writeFileSync(f, s);
