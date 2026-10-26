@@ -1,6 +1,6 @@
 // Cards do 2º turno para compartilhar: catálogo navegável (sem dependências, rotas por hash).
-import { iniciarConsentimento, conversaoLead } from '../js/consentimento.js?v=bf33160a';
-import { evento } from '../js/metricas.js?v=bf33160a';
+import { iniciarConsentimento, conversaoLead } from '../js/consentimento.js?v=732dfcf0';
+import { evento } from '../js/metricas.js?v=732dfcf0';
 
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -214,7 +214,7 @@ function zipControles(alvo, mostrar) {
   if (!mostrar) return ''; return `<label class="hp" for="zfm">Formato do arquivo ZIP</label><select class="sel" id="zfm" aria-label="Formato do ZIP">${FORMATOS.map(f => `<option value="${f.k}" ${f.k === fmAtual ? 'selected' : ''}>${f.nome} ${f.raz}</option>`).join('')}</select><button type="button" class="bt bt-roxo" data-zip="${esc(alvo)}">Baixar todos (ZIP)</button>`;
 }
 let zipLib = null;
-const carregaZip = () => zipLib || (zipLib = new Promise((ok, no) => { if (window.JSZip) return ok(window.JSZip); const s = document.createElement('script'); s.src = '../vendor/jszip.min.js?v=3.10.1'; s.onload = () => ok(window.JSZip); s.onerror = () => no(new Error('zip')); document.head.appendChild(s); }));
+const carregaZip = () => zipLib || (zipLib = new Promise((ok, no) => { if (window.JSZip) return ok(window.JSZip); const s = document.createElement('script'); s.src = '../vendor/jszip.min.js.10.1'; s.onload = () => ok(window.JSZip); s.onerror = () => no(new Error('zip')); document.head.appendChild(s); }));
 async function baixarZip(alvo, btn) {
   const [tipo, v] = alvo.split(':'); const cards = tipo === 'colecao' ? POR_COL[v] : cardsDe(v); const fm = $('#zfm')?.value || fmAtual; const nome = tipo === 'colecao' ? v : v.split('/').pop();
   btn.disabled = true; const rot = btn.textContent; let p = $('.prog'); if (!p) { p = document.createElement('p'); p.className = 'prog'; p.setAttribute('role', 'status'); btn.parentNode.after(p); }
