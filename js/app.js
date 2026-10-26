@@ -1,26 +1,26 @@
-import { CONFIG } from './config.js?v=665abd59';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=665abd59';
-import { getJSON } from './tse.js?v=665abd59';
-import { calcular } from './model.js?v=665abd59';
-import { projetar, PARAMS } from './proj.js?v=665abd59';
-import { viewComparar, hashComparar } from './comparar.js?v=665abd59';
-import { viewPerguntar } from './ia.js?v=665abd59';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=665abd59';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=665abd59';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=665abd59';
-import { iniciarExportSecoes } from './expsec.js?v=665abd59';
-import { eventosEntre } from './avisos.js?v=665abd59';
-import { mostrarEleito } from './eleito.js?v=665abd59';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=665abd59';
-import { abrirTelao, iniciarTV } from './tv.js?v=665abd59';
-import { iniciarConsentimento } from './consentimento.js?v=665abd59';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=665abd59';
-import { lerCard } from './card.js?v=665abd59';
-import { abrirCompartilhar } from './compartilhar.js?v=665abd59';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=665abd59';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=665abd59';
-import { esc } from './ui.js?v=665abd59';
-import { getFoco, setFoco, comFoco } from './foco.js?v=665abd59';
+import { CONFIG, TESTE } from './config.js?v=d06ef744';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=d06ef744';
+import { getJSON } from './tse.js?v=d06ef744';
+import { calcular } from './model.js?v=d06ef744';
+import { projetar, PARAMS } from './proj.js?v=d06ef744';
+import { viewComparar, hashComparar } from './comparar.js?v=d06ef744';
+import { viewPerguntar } from './ia.js?v=d06ef744';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=d06ef744';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=d06ef744';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=d06ef744';
+import { iniciarExportSecoes } from './expsec.js?v=d06ef744';
+import { eventosEntre } from './avisos.js?v=d06ef744';
+import { mostrarEleito } from './eleito.js?v=d06ef744';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=d06ef744';
+import { abrirTelao, iniciarTV } from './tv.js?v=d06ef744';
+import { iniciarConsentimento } from './consentimento.js?v=d06ef744';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=d06ef744';
+import { lerCard } from './card.js?v=d06ef744';
+import { abrirCompartilhar } from './compartilhar.js?v=d06ef744';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=d06ef744';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=d06ef744';
+import { esc } from './ui.js?v=d06ef744';
+import { getFoco, setFoco, comFoco } from './foco.js?v=d06ef744';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -43,7 +43,7 @@ function rota0() {
   const h = location.hash.replace(/^#\/?/, ''), [caminho, qs] = h.split('?'), p = caminho.split('/').filter(Boolean), q = new URLSearchParams(qs || '');
   let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; p.shift(); } else if (p[0] === 't1') { modo = 't1'; p.shift(); }
   if (p[0] === 'comparar' && modo === 'ap') return { modo, tela: 'comparar', q };
-  if (p[0] === 'perguntar' && modo === 'ap') return { modo, tela: 'perguntar' };
+  if (p[0] === 'perguntar' && modo === 'ap' && TESTE) return { modo, tela: 'perguntar' };
   if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
   if (p[0] === 'cand' && CAND[p[1]]) return { modo, tela: 'cand', k: p[1] };
   if (p[0] === 'mun' && p[1] && p[2]) {
@@ -201,7 +201,15 @@ async function exportar(tipo, btn) {
 document.addEventListener('click', e => { const b = e.target.closest('[data-exp]'); if (b) exportar(b.dataset.exp, b); });
 
 // ---------- início ----------
+function prepararVersao() {
+  if (!TESTE) { document.querySelector('.aba[data-tela=perguntar]')?.remove(); return; }   // endereço público: sem conta nem IA
+  document.title = '[TESTE] ' + document.title;
+  const m = document.createElement('meta'); m.name = 'robots'; m.content = 'noindex, nofollow'; document.head.appendChild(m);
+  const f = document.createElement('div'); f.className = 'faixa-teste'; f.textContent = 'VERSÃO DE TESTES — inclui recursos em acerto (conta e pergunta à IA). Não divulgue este endereço.';
+  document.body.prepend(f);
+}
 async function iniciar() {
+  prepararVersao();
   try {
     if (MODO_DEMO) {
       S.demo = await criarDemo(); S.B = S.demo.B; S.simulado = true;

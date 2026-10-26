@@ -9,6 +9,8 @@ $IA_MODELO = 'claude-haiku-5-5';   // mais barato e rápido; use 'claude-sonnet-
 // Cota da IA. Orçamento: o custo real de cada chamada (tokens × preço) é somado; ao chegar a 98% do teto mensal a IA pausa até o mês seguinte.
 // Preços em US$ por milhão de tokens (Claude Haiku 5.5: US$ 0,10 entrada / US$ 0,50 saída). Se trocar o modelo, atualize os preços.
 // Uma pergunta típica custa cerca de US$ 0,002 e uma pesada, cerca de US$ 0,01. Com 15 perguntas/mês por usuário, 270 usuários usando a cota inteira ainda cabem em US$ 20.
+// Contas e pergunta à IA (versão de testes em /apuracao-2t-2026/teste/). Deixe false para manter os dois endpoints desligados.
+$CONTA_ATIVA = false;
 $IA_COTA = ['usuario_mes' => 15, 'usuario_dia' => 5, 'orcamento_mes_usd' => 20.0, 'preco_in_usd_mtok' => 0.10, 'preco_out_usd_mtok' => 0.50];
 // Contas (api/conta.php). O cadastro exige confirmar o contato por código de 6 dígitos.
 $CONTA = [

@@ -6,6 +6,7 @@ mapa por estado, listas por candidato → estado → município, exportação (P
 ## Como funciona
 - `data/base_1t.json` — resultado final do 1º turno por município (gerado pelo workflow **Montar base do 1º turno**).
 - **Coletor** (`scripts/coletor.mjs`, workflow *Coletor da apuração*): lê os arquivos do TSE, calcula a projeção e publica `snap.json`, `hist.json`, `meta.json` na branch `dados`.
+- **Versão de testes** em `/apuracao-2t-2026/teste/` (mesmos arquivos; `TESTE` em `js/config.js`): inclui conta, cadastro e pergunta à IA. O endereço público não mostra esses recursos, e `api/conta.php` e `api/ia.php` só respondem com `$CONTA_ATIVA = true` no `api/config.php`.
 - **Painel** (`painel.html` + `js/`, servido em `/apuracao-2t-2026/`; a página inicial é `index.html`): lê a branch `dados` (se falhar, lê direto do TSE no nível de estado) e atualiza a cada 30 s.
 - `?demo=1` abre uma **demonstração com dados simulados** (reprodução acelerada de uma apuração fictícia).
 

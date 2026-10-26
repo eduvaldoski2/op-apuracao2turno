@@ -1,6 +1,8 @@
 // Configuração do painel. Pode ser sobrescrita por parâmetros na URL: ?fonte=URL  ?tse=URL  ?demo=1
 // O painel é servido em /apuracao-2t-2026/ (reescrita no .htaccess). Os caminhos do placar ao vivo usam a raiz do site, para que o cache (Cloudflare) enxergue um único endereço.
 export const RAIZ = (typeof location !== 'undefined' && /\/apuracao-2t-2026\//.test(location.pathname)) ? location.pathname.replace(/\/apuracao-2t-2026\/.*$/, '/') : '';
+// Versão de testes (/apuracao-2t-2026/teste/): inclui recursos ainda em acerto (conta, cadastro e pergunta livre à IA). O endereço público não os mostra.
+export const TESTE = typeof location !== 'undefined' && /\/apuracao-2t-2026\/teste(\/|$)/.test(location.pathname);
 export const CONFIG = {
   repo: 'eduvaldoski2/op-apuracao2turno',
   fontes: [   // onde o coletor publica snap.json / hist.json (na ordem de tentativa)

@@ -8,6 +8,7 @@
 require __DIR__ . '/config.php';
 require __DIR__ . '/_conta.php';
 $origem = cabecalhos_api();
+if (!cfg('CONTA_ATIVA', false)) erro(404, 'desligado', 'Este recurso ainda não está disponível.');   // contas e IA só funcionam na versão de testes, enquanto CONTA_ATIVA = true no config.php
 $metodo = $_SERVER['REQUEST_METHOD'] ?? '';
 
 $CHAVE = isset($IA_CHAVE) ? trim((string)$IA_CHAVE) : '';
