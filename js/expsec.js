@@ -1,5 +1,5 @@
 // Botão "Baixar" em cada seção (painel) da tela: PNG, PDF, CSV e Excel só daquela seção.
-import { baixarPNGSecaoSocial, baixarPDFSecao, baixarCSV, baixarXLSX, tabelaDaSecao, slug } from './export.js?v=f0623a7c';
+import { baixarPNGSecaoSocial, baixarPDFSecao, baixarCSV, baixarXLSX, tabelaDaSecao, slug } from './export.js?v=2b279aa5';
 
 const MENU = (tab) => `<div class="exp-sec sem-export"><button type="button" class="exp-sec-b" aria-haspopup="true" aria-expanded="false" title="Baixar esta seção">⬇ Baixar</button><div class="exp-sec-m" role="menu" hidden><button type="button" role="menuitem" data-es="png-1x1">Imagem 1:1 · WhatsApp</button><button type="button" role="menuitem" data-es="png-4x5">Imagem 4:5 · Feed</button><button type="button" role="menuitem" data-es="png-9x16">Imagem 9:16 · Stories</button><button type="button" role="menuitem" data-es="pdf">PDF</button>${tab ? '<button type="button" role="menuitem" data-es="csv">Planilha (CSV)</button><button type="button" role="menuitem" data-es="xlsx">Excel (XLSX)</button>' : ''}</div></div>`;
 
@@ -47,7 +47,10 @@ document.addEventListener('click', async e => {
   const alvo = sec.querySelector(':scope > .exp-sec .exp-sec-b');
   const txt = alvo?.textContent; if (alvo) { alvo.disabled = true; alvo.textContent = '…'; }
   try {
-    if (/^png-(1x1|4x5|9x16)$/.test(tipo)) await baixarPNGSecaoSocial(sec, nome, tipo.slice(4), { titulo: h2, topo: c.principal, sub: c.sub });
+    if (/^png-(1x1|4x5|9x16)$/.test(tipo)) {
+      const n = await baixarPNGSecaoSocial(sec, nome, tipo.slice(4), { titulo: h2, topo: c.principal, sub: c.sub });
+      if (n > 1) avisar?.(n > 5 ? `A tabela é grande: gerei ${n} imagens e juntei tudo em um arquivo ZIP.` : `A tabela é grande: gerei ${n} imagens, na ordem.`);
+    }
     else if (tipo === 'pdf') await baixarPDFSecao(sec, nome, c.sub, c.principal);
     else {
       const t = tabelaDaSecao(sec); if (!t) { avisar?.('Esta seção não tem tabela para baixar.', true); return; }

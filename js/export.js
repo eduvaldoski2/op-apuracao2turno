@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=f0623a7c';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=f0623a7c';
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=2b279aa5';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=2b279aa5';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -235,7 +235,7 @@ function afinaMapaUF(alvo) {
   });
 }
 
-export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub }) {
+export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, partes = false }) {
   await carregaScript('vendor/html2canvas.min.js');
   try { await document.fonts?.ready; await Promise.all(['400 40px "DM Serif Display"', '700 24px "Space Grotesk"', '500 24px "Space Grotesk"'].map(f => document.fonts?.load(f))); } catch { /* fonte reserva */ }
   const W = fmt.w, H = fmt.h, M = 56, PAD = 22, innerW = W - 2 * M - 2 * PAD;
@@ -249,7 +249,7 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub }) {
   const hRod = 150 + fmt.bot, topoCorpo = hCab + 22, hCorpo = H - topoCorpo - hRod, innerH = hCorpo - 2 * PAD;
   // 2) conteúdo da seção, na largura útil do corpo; tabelas longas são cortadas para caber (a tabela completa fica no CSV/Excel)
   el.setAttribute('data-exp-alvo', '1');
-  let c;
+  let c, infoTab = null;
   try {
     c = await window.html2canvas(el, {
       scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: 1000,
@@ -295,12 +295,16 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub }) {
         alvo.querySelectorAll('.mapa-wrap svg:not(.mapa) text, #mapa-bm svg text').forEach(t => { const f = parseFloat(t.style.fontSize) || parseFloat(t.getAttribute('font-size')) || 0; if (f) setFs(t, (f * 1.3).toFixed(2)); });
         const tb = alvo.querySelector('table tbody');
         if (tb) {
-          const linhas = [...tb.querySelectorAll('tr')]; let n = linhas.length;
+          // só as linhas visíveis (busca/filtro da tela); a imagem mostra as linhas a partir de "de" e para quando acabar o espaço
+          const win = doc.defaultView, todas = [...tb.querySelectorAll('tr')].filter(r => { if (win.getComputedStyle(r).display === 'none') { r.remove(); return false; } return true; });
+          const total = todas.length; todas.slice(0, de).forEach(r => r.remove());
+          const rest = todas.slice(de); let n = rest.length;
           const alt = () => alvo.getBoundingClientRect().height;
-          if (alt() > innerH - 40) {
-            for (let i = linhas.length - 1; i > 3 && alt() > innerH - 40; i--) { linhas[i].remove(); n = i; }
-            const nota = doc.createElement('div'); nota.style.cssText = 'margin-top:10px;font:600 15px system-ui,sans-serif;color:#6f6888;text-align:center';
-            nota.textContent = `Mostrando ${n} de ${linhas.length} linhas · a tabela completa está no painel`; alvo.appendChild(nota);
+          if (alt() > innerH - 40) for (let i = rest.length - 1; i > 2 && alt() > innerH - 40; i--) { rest[i].remove(); n = i; }
+          infoTab = { de, n, total };
+          if (de > 0 || n < rest.length) {
+            const nota = doc.createElement('div'); nota.style.cssText = 'margin-top:10px;font:600 16px system-ui,sans-serif;color:#6f6888;text-align:center';
+            nota.textContent = partes ? `Linhas ${de + 1} a ${de + n} de ${total}${de + n < total ? ' · continua na próxima imagem' : ''}` : `Mostrando ${n} de ${total} linhas · a tabela completa está no painel`; alvo.appendChild(nota);
           }
         }
       },
@@ -318,19 +322,35 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub }) {
   // corpo branco com o conteúdo ajustado (sem distorcer)
   g.save(); g.shadowColor = 'rgba(62,52,126,.12)'; g.shadowBlur = 24; g.shadowOffsetY = 8; g.fillStyle = '#fff'; retArred(g, M, topoCorpo, W - 2 * M, hCorpo, 24); g.fill(); g.restore();
   const esc = Math.min(innerW / c.width, innerH / c.height, 1.15 * innerW / c.width), dw = c.width * esc, dh = c.height * esc;
-  g.drawImage(c, M + PAD + (innerW - dw) / 2, topoCorpo + PAD + (innerH - dh) / 2, dw, dh);
+  g.drawImage(c, M + PAD + (innerW - dw) / 2, topoCorpo + PAD + (infoTab ? 0 : (innerH - dh) / 2), dw, dh);
   // rodapé
   const yr = H - hRod + 22; g.textAlign = 'center';
   try { const ic = await carregaImg('img/icone.svg'); g.font = '700 34px "Space Grotesk", system-ui, sans-serif'; const sw = g.measureText('oficinapolitica.com.br').width, tot = 46 + 14 + sw; g.drawImage(ic, W / 2 - tot / 2, yr, 46, 46); g.fillStyle = '#3E347E'; g.textAlign = 'left'; g.fillText('oficinapolitica.com.br', W / 2 - tot / 2 + 60, yr + 35); } catch { g.fillStyle = '#3E347E'; g.font = '700 34px "Space Grotesk", sans-serif'; g.fillText('oficinapolitica.com.br', W / 2, yr + 35); }
   g.textAlign = 'center'; g.fillStyle = '#6f6888'; g.font = '500 16px "Space Grotesk", system-ui, sans-serif';
   const notaIA = el.dataset.exportNota ? ' ' + el.dataset.exportNota + '.' : '';
   quebra(g, 'Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.' + notaIA, W - 2 * M - 40).forEach((l, i) => g.fillText(l, W / 2, yr + 78 + i * 22));
+  cv.info = infoTab;
   return cv;
 }
+// Devolve quantas imagens foram geradas. Tabela que não cabe legível em uma imagem sai completa, dividida em partes
+// (até 5 partes: arquivos separados; acima disso: um ZIP com todas).
 export async function baixarPNGSecaoSocial(el, nome, fmtId, ctx) {
   const fmt = FORMATOS_SEC[fmtId] || FORMATOS_SEC['4x5'];
-  const cv = await canvasSecaoSocial(el, fmt, ctx);
-  await new Promise(ok => cv.toBlob(b => { baixar(b, `${nome}_${fmt.id}.png`); ok(); }, 'image/png'));
+  const cvs = []; let de = 0;
+  for (let k = 0; k < 80; k++) {
+    const cv = await canvasSecaoSocial(el, fmt, { ...ctx, de, partes: true }); cvs.push(cv);
+    const inf = cv.info; if (!inf || inf.n < 1) break; de += inf.n; if (de >= inf.total) break;
+  }
+  const blobs = await Promise.all(cvs.map(cv => new Promise(ok => cv.toBlob(ok, 'image/png'))));
+  const N = blobs.length, pad = n => String(n).padStart(String(N).length, '0');
+  const arq = i => N === 1 ? `${nome}_${fmt.id}.png` : `${nome}_${fmt.id}_parte${pad(i + 1)}de${N}.png`;
+  if (N <= 5) { for (let i = 0; i < N; i++) { baixar(blobs[i], arq(i)); if (i < N - 1) await new Promise(r => setTimeout(r, 350)); } }
+  else {
+    await carregaScript('vendor/jszip.min.js');
+    const z = new window.JSZip(); blobs.forEach((b, i) => z.file(arq(i), b));
+    baixar(await z.generateAsync({ type: 'blob' }), `${nome}_${fmt.id}_${N}-imagens.zip`);
+  }
+  return N;
 }
 export async function baixarPDFSecao(el, nome, sub, topo) {
   await carregaScript('vendor/jspdf.umd.min.js');
