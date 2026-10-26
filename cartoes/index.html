@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cards do 2º turno para compartilhar · Oficina Política</title>
+<meta name="description" content="Cards prontos do resultado do 2º turno 2026, do Brasil ao seu bairro. Escolha sua cidade, baixe nos formatos WhatsApp (1:1), Feed (4:5) e Stories (9:16) e publique.">
+<link rel="canonical" href="https://oficinapolitica.com.br/cartoes/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oficina Política">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Cards do 2º turno para compartilhar">
+<meta property="og:description" content="Resultado do 2º turno 2026 em cards prontos: Brasil, estados, 102 cidades e muito mais. Baixe em 1:1, 4:5 e 9:16.">
+<meta property="og:url" content="https://oficinapolitica.com.br/cartoes/">
+<meta property="og:image" content="https://oficinapolitica.com.br/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#3E347E">
+<link rel="icon" type="image/svg+xml" href="../img/favicon.svg">
+<link rel="alternate icon" type="image/png" href="../img/favicon.png">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="preload" href="../fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../css/consent.css?v=bf33160a">
+<link rel="stylesheet" href="cartoes.css?v=1">
+</head>
+<body>
+<a class="pula" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="topo" id="topo">
+  <div class="topo-in">
+    <a class="marca" href="#/" aria-label="Oficina Política, início dos cards"><img src="../img/logo-cor.svg" width="1497" height="248" alt="Oficina Política"></a>
+    <nav class="topo-nav" aria-label="Atalhos">
+      <a href="../apuracao-2t-2026/" class="lk-painel">Painel de apuração</a>
+      <button type="button" class="bt bt-ghost bt-sm" data-abrir-cadastro><span class="so-desk">Receber novos cards</span><span class="so-mob">Receber</span></button>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo" tabindex="-1">
+  <nav class="trilha" id="trilha" aria-label="Você está em" hidden></nav>
+  <div id="app" aria-live="polite"></div>
+</main>
+
+<section class="cad" id="cadastro" aria-labelledby="cad-t">
+  <div class="cad-in">
+    <div class="cad-tx">
+      <p class="eyebrow">Fique por dentro</p>
+      <h2 id="cad-t">Receba os próximos cards e as novas ferramentas</h2>
+      <p>Deixe seu contato para ser avisado quando sair a análise pós-eleição, os cards de novas cidades e o lançamento das ferramentas da Oficina Política para quem faz política.</p>
+      <ul class="cad-li"><li>Sem custo e sem compromisso</li><li>Você pode sair da lista quando quiser</li></ul>
+    </div>
+    <div class="cad-fm" data-lead-slot="rodape"></div>
+  </div>
+</section>
+
+<footer class="rodape">
+  <p><a href="../">Página inicial</a> · <a href="../apuracao-2t-2026/">Painel de apuração</a> · <a href="../privacidade.html">Política de Privacidade</a> · <a href="../termos.html">Termos de Uso</a></p>
+  <p>Fonte dos dados: TSE, 2º turno de 2026. Cards da Oficina Política, iniciativa independente, sem vínculo com o TSE ou com candidaturas. Pode compartilhar citando a fonte.</p>
+</footer>
+
+<button type="button" class="fab" data-abrir-cadastro id="fab" aria-label="Receber novos cards">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+  <span>Receber novos cards</span>
+</button>
+
+<!-- janela do card -->
+<dialog id="dlg-card" class="dlg dlg-card" aria-labelledby="dc-t"></dialog>
+<!-- janela do cadastro -->
+<dialog id="dlg-cad" class="dlg dlg-cad" aria-labelledby="dcad-t">
+  <div class="dlg-cab"><h2 id="dcad-t">Receba os próximos cards</h2><button type="button" class="x" data-fechar aria-label="Fechar">✕</button></div>
+  <p class="dlg-p">Avisamos você por e-mail e WhatsApp quando sair a análise pós-eleição, novos cards e o lançamento das ferramentas.</p>
+  <div data-lead-slot="janela"></div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script type="module" src="cartoes.js?v=1"></script>
+</body>
+</html>

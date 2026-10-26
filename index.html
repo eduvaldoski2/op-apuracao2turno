@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://oficinapolitica.com.br/img/og.jpg">
 <meta name="theme-color" content="#3E347E">
-<link rel="stylesheet" href="css/consent.css?v=bf33160a">
+<link rel="stylesheet" href="css/consent.css?v=557d7c04">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -59,6 +59,10 @@ main{flex:1;width:100%;max-width:640px;margin:0 auto;padding:clamp(36px,8vh,84px
 .btn-ap:hover .seta{transform:translateX(4px)}
 .btn-ap:active{transform:translateY(0)}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
+.btn-cards{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;max-width:540px;margin:16px auto 0;min-height:68px;padding:12px 22px;border-radius:20px;background:#fff;color:var(--roxo);text-decoration:none;text-align:left;border:2px solid var(--lilas);font-size:22px;transition:border-color .15s,transform .15s}
+.btn-cards b{display:block;font-weight:700;font-size:clamp(14.5px,4vw,17px);line-height:1.2}
+.btn-cards small{display:block;margin-top:3px;font-weight:500;font-size:clamp(12px,3.3vw,13.5px);color:var(--tx2)}
+.btn-cards:hover{border-color:var(--roxo-3);transform:translateY(-2px)}
 .sep{display:flex;align-items:center;gap:14px;margin:clamp(40px,7vh,64px) auto 26px;max-width:360px;color:var(--roxo-3)}
 .sep::before,.sep::after{content:"";flex:1;height:1px;background:var(--linha)}
 .sep i{width:9px;height:9px;border-radius:3px;background:var(--laranja);transform:rotate(45deg)}
@@ -99,6 +103,7 @@ footer.rodape p{margin:4px 0}
     <p class="kick"><span class="t1"><i aria-hidden="true"></i>Eleição presidencial 2026</span><span id="kick-t" class="d">domingo, 25/10, a partir das 17h</span></p>
     <a class="btn-ap" href="apuracao-2t-2026/"><span><b>Apuração do segundo turno</b><small>Resultados por estado, município e bairro</small></span>
       <span class="seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="btn-cards" href="cartoes/"><span><b>Cards do resultado para compartilhar</b><small>Brasil, estados e 102 cidades, em 1:1, 4:5 e 9:16</small></span><span aria-hidden="true">→</span></a>
   </div>
 
   <div class="sep" aria-hidden="true"><i></i></div>
@@ -186,7 +191,7 @@ footer.rodape p{margin:4px 0}
 </script>
 <script type="module">
 // Aviso de cookies (só aparece se o Google Analytics ou anúncios estiverem configurados em js/config.js)
-import { iniciarConsentimento, conversaoLead } from './js/consentimento.js?v=bf33160a';
+import { iniciarConsentimento, conversaoLead } from './js/consentimento.js?v=557d7c04';
 document.addEventListener('op:lead', conversaoLead);
 iniciarConsentimento();
 </script>

@@ -16,8 +16,8 @@ $nome = trim((string)($j['nome'] ?? '')); $email = strtolower(trim((string)($j['
 if ($nome === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) sai(false, 422, 'nome ou e-mail inválido');
 if (empty($j['consentimento_contato'])) sai(false, 422, 'consentimento necessário');
 $tel = preg_replace('/\D+/', '', (string)($j['telefone'] ?? ''));
-// formulário da página inicial: WhatsApp com DDD é obrigatório (10 ou 11 dígitos)
-if (($j['formulario'] ?? '') === 'home' && (strlen($tel) < 10 || strlen($tel) > 13)) sai(false, 422, 'WhatsApp inválido');
+// formulários da página inicial e da página de cards: WhatsApp com DDD é obrigatório (10 ou 11 dígitos)
+if (in_array(($j['formulario'] ?? ''), ['home', 'cards'], true) && (strlen($tel) < 10 || strlen($tel) > 13)) sai(false, 422, 'WhatsApp inválido');
 if ($tel !== '' && strlen($tel) <= 11) $tel = '55' . $tel;
 $ip = $_SERVER['REMOTE_ADDR'] ?? ''; $iph = hash('sha256', $SAL . $ip);
 $db = new PDO('sqlite:' . __DIR__ . '/dados/leads.sqlite'); $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
