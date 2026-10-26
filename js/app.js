@@ -1,23 +1,23 @@
-import { CONFIG } from './config.js?v=1eeee487';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=1eeee487';
-import { calcular } from './model.js?v=1eeee487';
-import { projetar, PARAMS } from './proj.js?v=1eeee487';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=1eeee487';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=1eeee487';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPNGTela, baixarPDF, slug } from './export.js?v=1eeee487';
-import { iniciarExportSecoes } from './expsec.js?v=1eeee487';
-import { eventosEntre } from './avisos.js?v=1eeee487';
-import { mostrarEleito } from './eleito.js?v=1eeee487';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=1eeee487';
-import { abrirTelao, iniciarTV } from './tv.js?v=1eeee487';
-import { iniciarConsentimento } from './consentimento.js?v=1eeee487';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=1eeee487';
-import { lerCard } from './card.js?v=1eeee487';
-import { abrirCompartilhar } from './compartilhar.js?v=1eeee487';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=1eeee487';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=1eeee487';
-import { esc } from './ui.js?v=1eeee487';
-import { getFoco, setFoco, comFoco } from './foco.js?v=1eeee487';
+import { CONFIG } from './config.js?v=f8e454de';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=f8e454de';
+import { calcular } from './model.js?v=f8e454de';
+import { projetar, PARAMS } from './proj.js?v=f8e454de';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=f8e454de';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=f8e454de';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=f8e454de';
+import { iniciarExportSecoes } from './expsec.js?v=f8e454de';
+import { eventosEntre } from './avisos.js?v=f8e454de';
+import { mostrarEleito } from './eleito.js?v=f8e454de';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=f8e454de';
+import { abrirTelao, iniciarTV } from './tv.js?v=f8e454de';
+import { iniciarConsentimento } from './consentimento.js?v=f8e454de';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=f8e454de';
+import { lerCard } from './card.js?v=f8e454de';
+import { abrirCompartilhar } from './compartilhar.js?v=f8e454de';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=f8e454de';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=f8e454de';
+import { esc } from './ui.js?v=f8e454de';
+import { getFoco, setFoco, comFoco } from './foco.js?v=f8e454de';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -111,6 +111,7 @@ function pintar(v, r, ctx) {
   root.querySelector('[data-voltar]')?.addEventListener('click', e => { e.preventDefault(); if (history.length > 1) history.back(); else ir(r.modo === 'pr' ? '#/projecao' : r.modo === 't1' ? '#/t1' : '#/'); });
   root.querySelectorAll('[data-ref]').forEach(b => b.addEventListener('click', () => { S.refMode = b.dataset.ref; render(true); }));
   S.vCtx = ctx; S.vTitulo = v.titulo; S.vRota = r;
+  { const pb = document.querySelector('[data-exp=png]'); if (pb) pb.style.display = lerCard($('[data-export-raiz]')) ? '' : 'none'; }   // PNG do topo só existe onde há card; nas demais telas, as imagens saem por seção
 }
 
 function aguardando(r) {
@@ -182,7 +183,7 @@ async function exportar(tipo, btn) {
   const txt = btn.textContent; btn.disabled = true; btn.textContent = '…';
   try {
     if (tipo === 'csv' || tipo === 'xlsx') { const cs = S.vCtx?.csv?.(); if (!cs) return; const rod = [`Fonte: TSE. Oficina Política.${S.simulado ? ' DADOS SIMULADOS.' : ''}${r.modo === 'pr' ? ' Valores de projeção estatística, não oficiais.' : ''}`]; (tipo === 'csv' ? baixarCSV : baixarXLSX)(cs.nome || nome, cs.cab, cs.linhas, rod); }
-    else if (tipo === 'png') { if (dados) await baixarCardPNG(dados, nome); else await baixarPNGTela($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia)); }
+    else if (tipo === 'png') { if (dados) await baixarCardPNG(dados, nome); else toast('Esta tela não tem card. Use “⬇ Baixar” em cada seção para a imagem em 1:1, 4:5 ou 9:16.', true); }
     else await baixarPDF($('[data-export-raiz]'), nome, esc(principal), sub, esc(cadeia), dados, S.vCtx?.pdfExtra?.() || null);
   } catch (e) { toast('Não foi possível gerar o arquivo: ' + e.message, true); }
   finally { btn.disabled = false; btn.textContent = txt; }
