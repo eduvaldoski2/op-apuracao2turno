@@ -512,7 +512,7 @@ body.tl-aberto{overflow:hidden}
 .cmp-busca input:focus{outline:3px solid var(--laranja);outline-offset:1px}
 .cmp-sug{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:30;margin:0;padding:6px;list-style:none;background:#fff;border:1px solid #d9d3ec;border-radius:12px;box-shadow:0 10px 28px rgba(42,34,96,.2);max-height:320px;overflow:auto}
 .cmp-sug li{padding:9px 11px;border-radius:8px;cursor:pointer;font-size:15px;display:flex;justify-content:space-between;gap:10px}
-.cmp-sug li:hover,.cmp-sug li:focus{background:#f3f0fa}.cmp-sug li small{color:var(--tx2)}.cmp-sug li.nada{color:var(--tx2);cursor:default}
+.cmp-sug li:hover,.cmp-sug li:focus{background:#f3f0fa}.cmp-sug li small{color:var(--tx2);margin-left:.5em}.cmp-sug li.nada{color:var(--tx2);cursor:default}
 .cmp-dica{font-size:14px;color:var(--tx2);margin:8px 0 0}.cmp-troca{all:unset;cursor:pointer;color:var(--roxo);text-decoration:underline;font-size:13.5px;margin-left:6px}
 .cmp-presets{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px;font-size:14px;color:var(--tx2)}
 .cmp-presets button{font:inherit;font-size:13.5px;border:1px solid #d9d3ec;background:#f8f6fc;color:var(--roxo);border-radius:999px;padding:6px 12px;cursor:pointer}

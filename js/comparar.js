@@ -1,8 +1,8 @@
 // Comparador: Brasil, regiões, estados, municípios e bairros lado a lado (até 4), com leitura automática e imagem em 1:1, 4:5 e 9:16.
-import { MAX_COMPARAR, METRICAS, fmtMetrica, buscar, obter, bairrosDe, entradaPorRef } from './unidades.js?v=f1ad880d';
-import { esc, sem } from './ui.js?v=f1ad880d';
-import { CAND } from './util.js?v=f1ad880d';
-import { bonito } from './bairros.js?v=f1ad880d';
+import { MAX_COMPARAR, METRICAS, fmtMetrica, buscar, obter, bairrosDe, entradaPorRef } from './unidades.js?v=665abd59';
+import { esc, sem } from './ui.js?v=665abd59';
+import { CAND } from './util.js?v=665abd59';
+import { bonito } from './bairros.js?v=665abd59';
 
 const CHAVES = ['a', 'b', 'c', 'd'];
 export const refsDaRota = q => CHAVES.map(k => q.get(k)).filter(Boolean).slice(0, MAX_COMPARAR);
@@ -73,6 +73,7 @@ export function resultadoHtml(es) {
   <p class="cmp-nota">Variação = diferença, em pontos percentuais, para o 1º turno nas mesmas seções. Destaque = maior valor de cada candidato (percentuais) ou maior variação. Fonte: TSE.</p>`;
 }
 
+let ultMun = null;   // último município escolhido para buscar bairro (sobrevive à remontagem da tela)
 export function viewComparar(ctx, q) {
   const refs = refsDaRota(q), B = ctx.B;
   const rotRef = r => { const e = entradaPorRef(B, r); if (e) return e.rotulo; const [, uf, cd, ...n] = r.split(':'), m = B.byKey[uf + cd]; return `${bonito(decodeURIComponent(n.join(':')))} · ${m ? bonito(m.nome) : cd} (${String(uf).toUpperCase()})`; };
@@ -97,27 +98,35 @@ export function viewComparar(ctx, q) {
     const inp = root.querySelector('#cmp-in'), sug = root.querySelector('#cmp-sug'), dica = root.querySelector('#cmp-dica');
     const add = r => { if (sel.has(r) || refs.length >= MAX_COMPARAR) return; ir([...refs, r]); };
     const fecha = () => { sug.hidden = true; sug.innerHTML = ''; };
-    const mostra = itens => { sug.innerHTML = itens.map((u, i) => `<li role="option" data-i="${i}" tabindex="-1">${esc(u.rotulo)}${u.tipo === 'reg' ? '<small>região</small>' : u.tipo === 'br' ? '<small>país</small>' : ''}</li>`).join('') || '<li class="nada">Nada encontrado</li>'; sug._itens = itens; sug.hidden = false; };
+    const mostra = itens => { sug.innerHTML = itens.map((u, i) => `<li role="option" data-i="${i}" tabindex="-1">${esc(u.rotulo)}${u.tipo === 'reg' ? '<small>região</small>' : u.tipo === 'br' ? '<small>país</small>' : u.nota ? `<small>${u.nota}</small>` : ''}</li>`).join('') || '<li class="nada">Nada encontrado</li>'; sug._itens = itens; sug.hidden = false; };
+    const DICA1 = 'Passo 1 de 2: escolha o município; em seguida você escolhe o bairro dele.';
+    const escolheMun = u => { ultMun = u; munBai = { u, lista: bairrosDe(ctx, u.uf, u.cd) }; inp.value = ''; inp.placeholder = `Bairro de ${u.nome}…`; dica.innerHTML = `Passo 2 de 2: escolha o bairro. Município: <b>${esc(u.rotulo)}</b> <button type="button" class="cmp-troca" id="cmp-troca">trocar</button>`; };
+    const munPadrao = () => {
+      for (const r of [...refs].reverse()) { const [t, uf, cd] = r.split(':'); const e = t === 'mun' ? entradaPorRef(B, r) : t === 'bai' ? entradaPorRef(B, `mun:${uf}:${cd}`) : null; if (e) return e; }
+      return ultMun && entradaPorRef(B, ultMun.ref) ? ultMun : null;
+    };
     const atualiza = async () => {
       const t = inp.value.trim();
       if (tipo === 'uf') return mostra(buscar(B, t, { tipo: ['br', 'reg', 'uf'], max: 12 }));
       if (tipo === 'mun') { if (t.length < 2) return fecha(); return mostra(buscar(B, t, { tipo: 'mun', max: 10 })); }
-      if (!munBai) { if (t.length < 2) return fecha(); return mostra(buscar(B, t, { tipo: 'mun', max: 10 })); }
-      try { const lista = await munBai.lista; const q2 = sem(t); mostra(lista.filter(x => !q2 || sem(x.nome).includes(q2)).sort((a, b) => b.vv - a.vv).slice(0, 14).map(x => ({ ...x, rotulo: x.nome }))); } catch (e) { dica.textContent = 'Não consegui carregar os bairros desse município (' + (e.message || e) + ').'; }
+      if (!munBai) { if (t.length < 2) return fecha(); return mostra(buscar(B, t, { tipo: 'mun', max: 10 }).map(x => ({ ...x, nota: 'ver bairros' }))); }
+      try { const lista = await munBai.lista; const q2 = sem(t); mostra(lista.filter(x => !sel.has(x.ref) && (!q2 || sem(x.nome).includes(q2))).sort((a, b) => b.vv - a.vv).slice(0, 14).map(x => ({ ...x, rotulo: x.nome }))); } catch (e) { dica.textContent = 'Não consegui carregar os bairros desse município (' + (e.message || e) + ').'; }
     };
     inp.addEventListener('input', atualiza); inp.addEventListener('focus', atualiza);
     inp.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); sug.querySelector('li[data-i]')?.click(); } if (e.key === 'Escape') fecha(); });
     sug.addEventListener('click', e => {
       const li = e.target.closest('li[data-i]'); if (!li) return; const u = sug._itens[+li.dataset.i];
-      if (tipo === 'bai' && !munBai) { munBai = { u, lista: bairrosDe(ctx, u.uf, u.cd) }; inp.value = ''; inp.placeholder = `Bairro de ${u.nome}…`; dica.innerHTML = `Município: <b>${esc(u.rotulo)}</b> <button type="button" class="cmp-troca" id="cmp-troca">trocar</button>`; fecha(); atualiza(); inp.focus(); return; }
+      if (tipo === 'bai' && !munBai) { escolheMun(u); fecha(); atualiza(); inp.focus(); return; }
       fecha(); add(u.ref);
     });
     root.querySelector('.cmp-tabs').addEventListener('click', e => {
       const b = e.target.closest('button[data-t]'); if (!b) return; tipo = b.dataset.t; munBai = null; inp.value = ''; dica.textContent = '';
       root.querySelectorAll('.cmp-tabs button').forEach(x => x.classList.toggle('on', x === b));
-      inp.placeholder = tipo === 'uf' ? 'Digite o estado ou a região…' : tipo === 'mun' ? 'Digite o município…' : 'Primeiro, digite o município do bairro…'; fecha(); inp.focus(); atualiza();
+      inp.placeholder = tipo === 'uf' ? 'Digite o estado ou a região…' : tipo === 'mun' ? 'Digite o município…' : 'Primeiro, digite o município do bairro…';
+      if (tipo === 'bai') { const d = munPadrao(); if (d) escolheMun(d); else dica.textContent = DICA1; }
+      fecha(); inp.focus(); atualiza();
     });
-    dica.addEventListener('click', e => { if (e.target.id === 'cmp-troca') { munBai = null; inp.value = ''; inp.placeholder = 'Primeiro, digite o município do bairro…'; dica.textContent = ''; fecha(); inp.focus(); } });
+    dica.addEventListener('click', e => { if (e.target.id === 'cmp-troca') { munBai = null; ultMun = null; inp.value = ''; inp.placeholder = 'Primeiro, digite o município do bairro…'; dica.textContent = DICA1; fecha(); inp.focus(); } });
     document.addEventListener('click', e => { if (!e.target.closest('.cmp-busca') && sug.isConnected) fecha(); }, { capture: true });
     root.querySelector('#cmp-chips').addEventListener('click', e => { const b = e.target.closest('[data-rm]'); if (b) ir(refs.filter((_, i) => i !== +b.dataset.rm)); });
     root.querySelector('.cmp-presets').addEventListener('click', e => {
