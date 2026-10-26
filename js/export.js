@@ -1,5 +1,5 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=027eec07';
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=bf33160a';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -143,6 +143,11 @@ async function capturarSecao(el, sub, topo) {
       scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: 1320,
       onclone: doc => {
         const alvo = doc.querySelector('[data-exp-alvo]'); if (!alvo) return;
+        // seção de mapa: leva junto a tabela com o resultado de cada bairro (o mapa sozinho só mostra o percentual de quem lidera)
+        if (alvo.classList.contains('mapa-sec')) {
+          const ps = [...doc.querySelectorAll('.painel')].find(p => p !== alvo && p.querySelector('#tab-b table'));
+          if (ps) { const cp = ps.cloneNode(true); cp.removeAttribute('data-exp-alvo'); cp.querySelectorAll('.exp-sec').forEach(n => n.remove()); cp.style.cssText += ';box-shadow:none;margin:22px 0 0;padding:16px 0 0;border-top:2px solid #e4dfee;border-radius:0'; alvo.appendChild(cp); }
+        }
         alvo.querySelectorAll('.sem-export').forEach(n => n.remove());
         doc.querySelectorAll('.mapa-tip,.g-tip').forEach(n => n.remove());
         alvo.querySelectorAll('details').forEach(d => { d.open = true; });
