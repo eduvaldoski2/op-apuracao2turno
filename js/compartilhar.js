@@ -1,8 +1,8 @@
 // Painel "Compartilhar": prévia do card, escolha de formato e atalhos (WhatsApp, Instagram, Facebook, X, Telegram, link, imagem).
-import { FORMATOS } from './card.js?v=df178ac7';
-import { blobCard, baixar } from './export.js?v=df178ac7';
-import { evento } from './metricas.js?v=df178ac7';
-import { esc } from './ui.js?v=df178ac7';
+import { FORMATOS } from './card.js?v=a1e7f271';
+import { blobCard, baixar } from './export.js?v=a1e7f271';
+import { evento } from './metricas.js?v=a1e7f271';
+import { esc } from './ui.js?v=a1e7f271';
 
 const enc = encodeURIComponent;
 const ordemFormatos = ['4x5', '3x5', '9x16'];

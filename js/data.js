@@ -1,8 +1,8 @@
 // Carregamento dos dados: base do 1º turno, snapshot do 2º turno (fonte do coletor, TSE direto ou demonstração).
-import { CONFIG } from './config.js?v=df178ac7';
-import { TSE, montarSnapshot, getJSON } from './tse.js?v=df178ac7';
-import { projetar, PARAMS } from './proj.js?v=df178ac7';
-import { prepBase } from './model.js?v=df178ac7';
+import { CONFIG } from './config.js?v=a1e7f271';
+import { TSE, montarSnapshot, getJSON } from './tse.js?v=a1e7f271';
+import { projetar, PARAMS } from './proj.js?v=a1e7f271';
+import { prepBase } from './model.js?v=a1e7f271';
 
 const q = new URLSearchParams(location.search);
 export const MODO_DEMO = q.has('demo');
@@ -56,7 +56,7 @@ export async function lerAoVivo() {
 
 // carrega municípios de uma UF diretamente do TSE (modo direto)
 export async function municipiosDireto(uf, snap) {
-  const { urls, parseAb, parseResultado, pool } = await import('./tse.js?v=df178ac7');
+  const { urls, parseAb, parseResultado, pool } = await import('./tse.js?v=a1e7f271');
   const cfg = { ...TSE, base: q.get('tse') || TSE.base }, U = urls(cfg);
   const ab = parseAb(await getJSON(U.abUf(uf)));
   const cds = Object.entries(ab.mun).filter(([, m]) => m.st > 0).map(([cd]) => cd);
@@ -66,7 +66,7 @@ export async function municipiosDireto(uf, snap) {
 
 // ---- demonstração (dados simulados, reprodução acelerada) ----
 export async function criarDemo() {
-  const { simular } = await import('./sim.js?v=df178ac7');
+  const { simular } = await import('./sim.js?v=a1e7f271');
   let real = null;
   try { real = (await (await fetch('data/base_1t.json')).json()).rows; } catch { /* sem base real: usa o país sintético */ }
   const sim = simular({ seed: +q.get('seed') || 7, real });

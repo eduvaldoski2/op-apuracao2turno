@@ -478,3 +478,22 @@ body.tl-aberto{overflow:hidden}
 @media (max-width:520px){.painel.tem-exp>h2{padding-right:0;margin-top:30px}.exp-sec{top:10px;right:12px}}
 
 .g-leg{display:flex;flex-wrap:wrap;gap:10px 36px;padding:12px 4px 2px;font-size:14px;color:var(--tx)}.g-leg span{display:inline-flex;align-items:center;gap:9px}.g-leg b{color:#fff;font-size:12px;font-weight:800;padding:3px 9px;border-radius:6px;letter-spacing:.02em}
+
+/* tela cheia: candidato eleito (confirmado pelo TSE) */
+#eleito-tela{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:24px;text-align:center;color:#fff;overflow:auto;background:radial-gradient(circle at 50% 30%,color-mix(in srgb,var(--ec) 82%,#fff) 0,var(--ec) 45%,color-mix(in srgb,var(--ec) 55%,#000) 100%);animation:elEnt .6s ease-out}
+#eleito-tela .el-in{max-width:760px;width:100%;display:flex;flex-direction:column;align-items:center;gap:10px}
+#eleito-tela .el-sim{background:rgba(0,0,0,.35);padding:5px 14px;border-radius:99px;font-size:13px;font-weight:700;letter-spacing:.06em}
+#eleito-tela .el-kick{font-size:clamp(16px,3.4vw,24px);letter-spacing:.14em;text-transform:uppercase;opacity:.9;margin-top:6px}
+#eleito-tela .el-eleito{font-size:clamp(54px,17vw,150px);font-weight:900;line-height:1;letter-spacing:.04em;text-shadow:0 6px 28px rgba(0,0,0,.35);animation:elPop .8s cubic-bezier(.2,1.4,.4,1)}
+#eleito-tela .el-nome{font-size:clamp(26px,6.4vw,54px);font-weight:800;line-height:1.1}
+#eleito-tela .el-cargo{font-size:clamp(16px,3.4vw,24px);opacity:.92}
+#eleito-tela .el-num{margin-top:14px;font-size:clamp(16px,3.2vw,22px);display:flex;flex-direction:column;gap:2px}
+#eleito-tela .el-num b{font-size:clamp(40px,10vw,76px);line-height:1.05}
+#eleito-tela .el-num span{opacity:.9}
+#eleito-tela .el-nota{margin-top:8px;font-size:13.5px;opacity:.8}
+#eleito-tela .el-bt{margin-top:18px;background:#fff;color:#2a2060;border:0;border-radius:99px;padding:14px 28px;font-size:17px;font-weight:700;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#eleito-tela .el-bt:focus-visible{outline:3px solid #ffd35c;outline-offset:3px}
+@keyframes elEnt{from{opacity:0}to{opacity:1}}
+@keyframes elPop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){#eleito-tela,#eleito-tela .el-eleito{animation:none}}
+@media print{#eleito-tela{display:none}}
