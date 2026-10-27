@@ -4,6 +4,7 @@ Copiadas em 27/10/2026 de `eduvaldoski2/apuracao-4013` (pastas `hist/` e `script
 
 - `data/hist/` → `hist/` original (RJ 2018–2026 por bairro/zona; Brasil 2026 por local de votação em `uf/<UF>/`).
 - `scripts/apuracao-4013/` → `build_uf.py`, `build_resumo.py`, `bu_bairros.py`, `rj_secoes_bairros.json`.
+- `data/hist/SHA256SUMS.json` → SHA-256 de cada arquivo copiado (referência para conferir cópias e o deploy).
 - `scripts/verifica_hist.py` → confere JSON válidos, arquivos citados e totais do guia (`python3 scripts/verifica_hist.py`).
 
 **Atenção (correção ao guia abaixo):** em `idx.json`, os nomes em `cargos[].arq` vêm **sem extensão** (ex.: `c3t1`); o arquivo é `c3t1.json`.
