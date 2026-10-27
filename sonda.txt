@@ -1,0 +1,46 @@
+=== ipedf camadas
+geonode:CONSUMO_AGUA_RA
+geonode:Cobertura_do_Solo_1984
+geonode:Cobertura_do_Solo_1985
+geonode:Cobertura_do_Solo_1986
+geonode:Cobertura_do_Solo_1987
+geonode:Cobertura_do_Solo_1988
+geonode:Cobertura_do_Solo_1989
+geonode:Cobertura_do_Solo_1990
+geonode:Cobertura_do_Solo_1991
+geonode:Cobertura_do_Solo_1992
+geonode:Cobertura_do_Solo_1993
+geonode:Cobertura_do_Solo_1994
+geonode:Cobertura_do_Solo_1995
+geonode:Cobertura_do_Solo_1996
+geonode:Cobertura_do_Solo_1997
+geonode:Cobertura_do_Solo_1998
+geonode:Cobertura_do_Solo_1999
+geonode:Cobertura_do_Solo_2000
+geonode:Cobertura_do_Solo_2001
+geonode:Cobertura_do_Solo_2003
+geonode:Cobertura_do_Solo_2004
+geonode:Cobertura_do_Solo_2005
+geonode:Cobertura_do_Solo_2006
+geonode:Cobertura_do_Solo_2007
+geonode:Cobertura_do_Solo_2008
+geonode:Cobertura_do_Solo_2009
+geonode:Cobertura_do_Solo_2010
+geonode:Cobertura_do_Solo_2011
+geonode:Cobertura_do_Solo_2013
+geonode:Cobertura_do_Solo_2014
+geonode:Cobertura_do_Solo_2015
+geonode:Cobertura_do_Solo_2016
+geonode:Cobertura_do_Solo_2017
+geonode:Limite_RA_1965
+geonode:Limite_RA_19650
+geonode:Limite_RA_196500
+geonode:Limite_RA_1989
+geonode:Limite_RA_19890
+geonode:Limite_RA_1994
+geonode:Limite_RA_19940
+=== ipedf RAs (GeoJSON 4326)
+200 2938976
+35 [('fid', 1), ('ra_cira', 9), ('ra_codigo', 'RA-IX'), ('ra_nome', 'CEILÂNDIA'), ('ra_path', 'https://www.geoservicos.ide.df.gov.br/anexos/monografia/CEILANDIA.pdf'), ('ra_areakm2', 192.6569424), ('st_area_sh', 192656942.396), ('st_length_', 117499.507567)] MultiPolygon
+['AGUA QUENTE', 'ARAPOANGA', 'ARNIQUEIRA', 'BRAZLÂNDIA', 'CANDANGOLÂNDIA', 'CEILÂNDIA', 'CRUZEIRO', 'FERCAL', 'GAMA', 'GUARÁ', 'ITAPOÃ', 'JARDIM BOTÂNICO', 'LAGO NORTE', 'LAGO SUL', 'NÚCLEO BANDEIRANTE', 'PARANOÁ', 'PARK WAY', 'PLANALTINA', 'PLANO PILOTO', 'RECANTO DAS EMAS', 'RIACHO FUNDO', 'RIACHO FUNDO II', 'SAMAMBAIA', 'SANTA MARIA', 'SCIA', 'SIA', 'SOBRADINHO', 'SOBRADINHO II', 'SOL NASCENTE E POR DO SOL', 'SUDOESTE/OCTOGONAL', 'SÃO SEBASTIÃO', 'TAGUATINGA', 'VARJÃO', 'VICENTE PIRES', 'ÁGUAS CLARAS']
+=== goiania
