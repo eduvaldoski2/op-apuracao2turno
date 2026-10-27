@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=5f078210';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=5f078210';
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=3fbb69ff';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=3fbb69ff';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -270,6 +270,7 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
           const sobra = Math.max(0, innerH - alvo.getBoundingClientRect().height - 24);
           gws.forEach(w => { const cfg = REG_GRAFICOS.get(w.id), leg = w.querySelector('.g-leg'); desenhaLinhas(w, { ...cfg, h: Math.min(1100, (cfg.h || 300) + sobra / gws.length / 1.12), mb: Math.max(cfg.mb || 0, 54), mr: 40, xo: 30 }); estilizaSvg(w.querySelector('svg')); if (leg) w.appendChild(leg); });
         }
+        alvo.querySelectorAll('.so-export').forEach(n => { n.style.display = 'block'; });   // legenda e destaques que só existem na imagem
         // mapa: ocupa a largura toda, com a legenda embaixo; sem a dica de clique (só vale na tela)
         if (alvo.classList.contains('mapa-sec')) {
           const gr = alvo.querySelector('.mapa-grid'); if (gr) { gr.style.cssText += ';display:block'; }
@@ -289,11 +290,38 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
         if (alvo.querySelector('svg.mapa')) {
           afinaMapaUF(alvo);
           alvo.querySelectorAll('.mapa-lado p.nota, .mapa-lado h3 + p').forEach(n => n.remove());
-          if (alvo.getBoundingClientRect().height > innerH - 150) alvo.querySelectorAll('.mapa-lado').forEach(l => [...l.children].forEach(ch => { if (!ch.matches('.leg-slot,.leg-mapa') && !ch.querySelector('.leg-mapa')) ch.remove(); }));
+          if (alvo.getBoundingClientRect().height > innerH - 150) alvo.querySelectorAll('.mapa-lado').forEach(l => [...l.children].forEach(ch => { if (!ch.matches('.leg-slot,.leg-mapa,.exp-info') && !ch.querySelector('.leg-mapa')) ch.remove(); }));
+        }
+        // formatos altos (4:5 e 9:16): mapa em cima (o maior que couber) e, embaixo, legenda + o que o mapa mede + destaques em duas colunas
+        if (fmt.id !== '1x1' && alvo.querySelector('.exp-info')) {
+          const wrap = [...alvo.querySelectorAll('.mapa-wrap')].find(w => !w.closest('[hidden]')), gr = wrap?.closest('.mapa-grid'), lado = gr?.querySelector('.mapa-lado');
+          if (gr && lado && wrap && lado.querySelector('.exp-info')) {
+            gr.style.cssText += ';display:block'; lado.style.cssText += ';width:100%;margin-top:12px';
+            [...lado.children].forEach(ch => { if (!ch.matches('.leg-slot,.leg-mapa,.exp-info') && !ch.querySelector('.leg-mapa')) ch.remove(); });
+            alvo.classList.add('exp-stack');
+            alvo.querySelectorAll('.leg-slot .leg-mapa').forEach(n => { n.style.cssText += ';margin-bottom:6px'; });
+            const vb = (wrap.querySelector('svg.mapa').getAttribute('viewBox') || '').split(/\s+/).map(Number), asp = vb[3] && vb[2] ? vb[3] / vb[2] : 1;
+            wrap.style.cssText += ';width:100%;max-width:100%';
+            const fora = alvo.getBoundingClientRect().height - wrap.getBoundingClientRect().height;
+            const w = Math.max(320, Math.min(innerW, (innerH - fora - 56) / asp));
+            wrap.style.cssText += `;width:${Math.floor(w)}px;max-width:100%;margin:0 auto`;
+          }
+        }
+        // 1:1 de mapa com limites de bairro/distrito (o mapa é alto): mapa à esquerda, legenda + destaques à direita
+        if (fmt.id === '1x1' && alvo.querySelector('.exp-info')) {
+          const wrap = [...alvo.querySelectorAll('.mapa-wrap')].find(w => !w.closest('[hidden]')), gr = wrap?.closest('.mapa-grid'), lado = gr?.querySelector('.mapa-lado');
+          if (gr && lado && lado.querySelector('.exp-info')) {
+            const vb = (wrap.querySelector('svg.mapa, svg')?.getAttribute('viewBox') || '').split(/\s+/).map(Number), asp = vb[3] && vb[2] ? vb[3] / vb[2] : 1;
+            gr.style.cssText += ';display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:center';
+            lado.style.cssText += ';margin-top:0';
+            [...lado.children].forEach(ch => { if (!ch.matches('.leg-slot,.leg-mapa,.exp-info') && !ch.querySelector('.leg-mapa')) ch.remove(); });
+            alvo.querySelectorAll('.leg-mapa').forEach(n => { n.style.cssText += ';flex-direction:column;flex-wrap:nowrap;justify-content:flex-start;font-size:17px;gap:4px'; });
+            wrap.style.cssText += `;width:${Math.floor(Math.min(innerW * .56, (innerH - 10) / asp))}px;max-width:100%;margin:0 auto`;
+          }
         }
         // mapas de município e de bairro: rótulos um pouco maiores
         alvo.querySelectorAll('.mapa-wrap svg:not(.mapa) text, #mapa-bm svg text').forEach(t => { const f = parseFloat(t.style.fontSize) || parseFloat(t.getAttribute('font-size')) || 0; if (f) setFs(t, (f * 1.3).toFixed(2)); });
-        const tb = alvo.querySelector('table tbody');
+        const tb = [...alvo.querySelectorAll('table tbody')].find(t => !t.closest('[hidden]'));
         if (tb) {
           // só as linhas visíveis (busca/filtro da tela); a imagem mostra as linhas a partir de "de" e para quando acabar o espaço
           const win = doc.defaultView, todas = [...tb.querySelectorAll('tr')].filter(r => { if (win.getComputedStyle(r).display === 'none') { r.remove(); return false; } return true; });

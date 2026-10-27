@@ -1,8 +1,8 @@
 // Captação de contatos (leads) com consentimento específico. Os dados vão para o endpoint configurado (api/lead.php na hospedagem).
-import { CONFIG } from './config.js?v=5f078210';
-import { esc } from './ui.js?v=5f078210';
-import { evento } from './metricas.js?v=5f078210';
-import { conversaoLead, marketingOk } from './consentimento.js?v=5f078210';
+import { CONFIG } from './config.js?v=3fbb69ff';
+import { esc } from './ui.js?v=3fbb69ff';
+import { evento } from './metricas.js?v=3fbb69ff';
+import { conversaoLead, marketingOk } from './consentimento.js?v=3fbb69ff';
 
 const L = CONFIG.leads || {};
 export const leadsAtivos = () => !!L.endpoint;

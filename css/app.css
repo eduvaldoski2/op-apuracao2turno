@@ -641,3 +641,18 @@ body.tl-aberto{overflow:hidden}
 .exp-1x1 .gv-grid{gap:10px}.exp-1x1 .gv-card{padding:12px 16px}.exp-1x1 .gv-card b{font-size:23px}.exp-1x1 .gv-card small{font-size:16px}
 .exp-4x5 .gv-card{padding:24px 26px}.exp-4x5 .gv-card b{font-size:32px}.exp-4x5 .gv-card small{font-size:23px}.exp-4x5 .gv-uf{font-size:19px}
 .exp-9x16 .gv-card{padding:34px 30px}.exp-9x16 .gv-card b{font-size:40px}.exp-9x16 .gv-card small{font-size:28px}.exp-9x16 .gv-uf{font-size:24px}.exp-9x16 .gv-grid{gap:22px}
+
+/* quadro "só na imagem": de qual candidato é o mapa, o que mede e os maiores destaques (aparece só no PNG/PDF exportado) */
+.so-export{display:none}
+.exp-info{margin-top:12px;color:var(--tx)}.exp-info p{margin:0 0 8px}
+.ei-cap{font-size:15px;line-height:1.35}.ei-res{font-size:15px;line-height:1.35}.ei-nt{font-size:12px;color:var(--tx2)}
+.ei-b{margin:10px 0 0}.ei-t{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--tx2);border-bottom:2px solid var(--linha);padding-bottom:3px;margin-bottom:2px}
+.ei-l{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:0 10px;align-items:baseline;padding:4px 0;border-bottom:1px solid #f0ecf6;font-size:15px}
+.ei-n{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ei-n small{color:var(--tx2);font-size:.78em}.ei-p{color:var(--tx2);font-variant-numeric:tabular-nums}.ei-l b{font-variant-numeric:tabular-nums}
+.exp-social .ei-cap,.exp-social .ei-res{font-size:19px}.exp-social .ei-t{font-size:14px}.exp-social .ei-l{font-size:19px;padding:5px 0}.exp-social .ei-nt{font-size:14px}
+.exp-1x1 .ei-b .ei-l:nth-child(n+6){display:none}.exp-1x1 .ei-cap{font-size:16px}.exp-1x1 .ei-res{font-size:17px}.exp-1x1 .ei-l{font-size:16px;padding:3px 0}
+.exp-stack .ei-bs{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.exp-stack .ei-top{margin-bottom:4px}.exp-stack .exp-info{margin-top:6px}
+.exp-stack .ei-b:only-child{grid-column:1/-1}
+.exp-stack .leg-mapa{font-size:17px!important;gap:4px 22px!important}.exp-stack .leg-mapa .sw-esc,.exp-stack .leg-sw .sw-esc{font-size:15px}
+.exp-stack .ei-cap,.exp-stack .ei-res{font-size:17px;margin-bottom:5px}.exp-stack .ei-l{font-size:18px;padding:3px 0}
+.exp-4x5 .ei-b .ei-l:nth-child(n+6){display:none}

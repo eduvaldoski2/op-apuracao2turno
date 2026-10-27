@@ -1,13 +1,13 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=5f078210';
-import { listaMunicipios, rankingUfs } from './model.js?v=5f078210';
-import { projetarMunicipios } from './proj.js?v=5f078210';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=5f078210';
-import { graficoPlacar } from './charts.js?v=5f078210';
-import { criarMapa, legendaMapa } from './map.js?v=5f078210';
-import { criarMapaMun } from './mapamun.js?v=5f078210';
-import { getJSON } from './tse.js?v=5f078210';
-import { govPainel, govResumo } from './governador.js?v=5f078210';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=3fbb69ff';
+import { listaMunicipios, rankingUfs } from './model.js?v=3fbb69ff';
+import { projetarMunicipios } from './proj.js?v=3fbb69ff';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=3fbb69ff';
+import { graficoPlacar } from './charts.js?v=3fbb69ff';
+import { criarMapa, legendaMapa } from './map.js?v=3fbb69ff';
+import { criarMapaMun } from './mapamun.js?v=3fbb69ff';
+import { getJSON } from './tse.js?v=3fbb69ff';
+import { govPainel, govResumo } from './governador.js?v=3fbb69ff';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -65,17 +65,56 @@ function legendaSwing(mx, k) {
   return `<div class="leg-mapa leg-sw"><div class="sw-bar" style="background:${g}"></div><div class="sw-esc"><span>${CAND[o].nome.split(' ')[0]} +${mx} p.p.</span><span>0</span><span>${CAND[k].nome.split(' ')[0]} +${mx} p.p.</span></div><span><i style="background:#e4e1ea"></i>sem apuração</span>${entenda(`Cada área mostra <b>quantos pontos percentuais</b> a votação de ${CAND[k].nome} (% dos votos válidos) <b>subiu ou caiu</b> em relação ao 1º turno. Na cor de ${CAND[k].nome.split(' ')[0]}: ganhou terreno; na cor do adversário: perdeu. Como a apuração chega por partes, a comparação usa o 1º turno <b>nas mesmas urnas já apuradas</b>. A escala vai até ±${mx} p.p.; valores maiores ficam na cor máxima.`)}</div>`;
 }
 export const seletorMapa = () => `<div class="mapa-modo sem-export" role="group" aria-label="O que o mapa mostra">${[['venc', 'Geral', 'Quem lidera em cada área'], ['L', 'Lula', 'Variação da votação de Lula em relação ao 1º turno'], ['F', 'Flávio', 'Variação da votação de Flávio Bolsonaro em relação ao 1º turno']].map(([m, t, d]) => `<button data-mm="${m}" title="${d}" class="${modoMapa === m ? 'on' : ''}">${t}</button>`).join('')}</div>`;
+// ---- legenda e tabela que só aparecem na IMAGEM exportada (na tela ficam ocultas): dizem de qual candidato é o mapa,
+// o que ele mede e trazem os maiores destaques. Alimenta-se das mesmas linhas (itens) que pintam o mapa.
+const nomeUn = (r, opt) => { const n = opt.nome ? opt.nome(r.nome) : r.nome; return esc(n) + (opt.uf && r.uf ? ` <small>${esc(sigla(r.uf))}</small>` : ''); };
+function infoExport(s, modo) {
+  const opt = s.opt, [um, mais] = opt.un, itens = s.itens.filter(([, r]) => r && r.L + r.F > 0);
+  if (itens.length < 2) return '';
+  const vv = r => r.L + r.F;
+  let el = itens;
+  if (itens.length > 40) { const o = itens.map(([, r]) => vv(r)).sort((x, y) => y - x), cut = o[Math.floor(o.length * .2)]; el = itens.filter(([, r]) => vv(r) >= cut); }
+  const filtro = el.length < itens.length ? `Entre os 20% de ${mais} com mais votos válidos.` : '';
+  const lin = (r, v, pct, k) => `<div class="ei-l"><span class="ei-n">${nomeUn(r, opt)}</span><span class="ei-p">${fNum(pct, 1)}%</span><b style="color:${CAND[k].cor}">${v}</b></div>`;
+  const bloco = (tit, linhas) => linhas.length ? `<div class="ei-b"><div class="ei-t">${tit}</div>${linhas.join('')}</div>` : '';
+  let cap, resumo, blocos;
+  if (modo === 'venc') {
+    const nL = itens.filter(([, r]) => r.L >= r.F).length, nF = itens.length - nL;
+    cap = `<b>Mapa geral:</b> cada ${um} na cor de quem lidera; tom mais escuro = maior percentual dos votos válidos.`;
+    resumo = `<span style="color:${CAND.L.cor}"><b>${fInt(nL)}</b> com Lula na frente</span> · <span style="color:${CAND.F.cor}"><b>${fInt(nF)}</b> com Flávio na frente</span>`;
+    const marg = r => r.pL - r.pF, topo = k => el.filter(([, r]) => (k === 'L' ? marg(r) > 0 : marg(r) < 0)).sort((a, b) => k === 'L' ? marg(b[1]) - marg(a[1]) : marg(a[1]) - marg(b[1])).slice(0, 5)
+      .map(([, r]) => lin(r, `+${fNum(Math.abs(marg(r)), 1)} p.p.`, k === 'L' ? r.pL : r.pF, k));
+    blocos = bloco('Maior vantagem de Lula', topo('L')) + bloco('Maior vantagem de Flávio', topo('F'));
+  } else {
+    const k = modo, o = k === 'L' ? 'F' : 'L', c = CAND[k], d = r => r['d' + k], p = r => r['p' + k];
+    const v = itens.filter(([, r]) => isFinite(d(r))), sobe = v.filter(([, r]) => d(r) > 0).length, cai = v.filter(([, r]) => d(r) < 0).length;
+    cap = `<b>Mapa de ${esc(c.nome)}:</b> quanto a votação dele (% dos votos válidos) subiu ou caiu em cada ${um} em relação ao 1º turno, em pontos percentuais. Cor de ${esc(c.nome.split(' ')[0])} = ganhou; cor do adversário = perdeu.`;
+    resumo = `${esc(c.nome.split(' ')[0])} <b style="color:${c.cor}">subiu em ${fInt(sobe)}</b> de ${fInt(v.length)} ${mais} · <b style="color:${CAND[o].cor}">caiu em ${fInt(cai)}</b>`;
+    const ord = el.filter(([, r]) => isFinite(d(r)));
+    const altas = ord.slice().sort((a, b) => d(b[1]) - d(a[1])).filter(([, r]) => d(r) > 0).slice(0, 5).map(([, r]) => lin(r, '+' + fNum(d(r), 1) + ' p.p.', p(r), k));
+    const quedas = ord.slice().sort((a, b) => d(a[1]) - d(b[1])).filter(([, r]) => d(r) < 0).slice(0, 5).map(([, r]) => lin(r, '−' + fNum(Math.abs(d(r)), 1) + ' p.p.', p(r), o));
+    blocos = bloco('Maiores altas', altas) + bloco('Maiores quedas', quedas);
+  }
+  return `<div class="ei-top"><p class="ei-cap">${cap}</p><p class="ei-res">${resumo}</p></div><div class="ei-bs">${blocos}</div>${filtro ? `<p class="ei-nt">${filtro}</p>` : ''}`;
+}
+const TIT = { venc: 'Quem lidera', L: 'Lula: variação vs 1º turno', F: 'Flávio: variação vs 1º turno' };
 // liga o seletor (dentro de "escopo") ao mapa: dm = dados "quem lidera", itens = [[id, linha]] para as variações.
-// O clique é delegado ao escopo, então pode ser chamado de novo a cada atualização dos dados sem duplicar ouvintes.
+// opt: { leg, un: [singular, plural], nome, uf }. O clique é delegado ao escopo, então pode ser chamado de novo a cada
+// atualização dos dados sem duplicar ouvintes.
 function aplicaModoMapa(escopo) {
   const s = escopo._mm; if (!s) return;
   s.mp.atualizar(modoMapa === 'venc' ? s.dm : s.dsw[modoMapa]);
-  const slot = escopo.querySelector('.leg-slot'); if (slot) slot.innerHTML = modoMapa === 'venc' ? (s.leg ? s.leg() : legendaMapa()) : legendaSwing(s.mx, modoMapa);
+  const slot = escopo.querySelector('.leg-slot'); if (slot) slot.innerHTML = modoMapa === 'venc' ? (s.opt.leg ? s.opt.leg() : legendaMapa()) : legendaSwing(s.mx, modoMapa);
   escopo.querySelectorAll('[data-mm]').forEach(b => b.classList.toggle('on', b.dataset.mm === modoMapa));
+  // título e quadro de destaques da imagem exportada
+  const sec = escopo.closest('.painel'); if (sec) { sec.dataset.exportTitulo = `${TIT[modoMapa]} · ${s.opt.un[1]}`; }
+  const lado = escopo.querySelector('.mapa-lado');
+  if (lado) { let ex = lado.querySelector(':scope > .exp-info'); if (!ex) { ex = document.createElement('div'); ex.className = 'exp-info so-export'; lado.appendChild(ex); } ex.innerHTML = infoExport(s, modoMapa); }
 }
-export function ligaModoMapa(escopo, mp, dm, itens, leg) {
+export function ligaModoMapa(escopo, mp, dm, itens, opt = {}) {
   const mx = escalaSwing(itens.flatMap(([, r]) => [r.dL, r.dF]));
-  escopo._mm = { mp, dm, mx, leg, dsw: { L: swingMapa(itens, mx, 'L'), F: swingMapa(itens, mx, 'F') } };
+  opt = { un: ['área', 'áreas'], ...opt };
+  escopo._mm = { mp, dm, mx, opt, itens, dsw: { L: swingMapa(itens, mx, 'L'), F: swingMapa(itens, mx, 'F') } };
   if (!escopo._mmL) { escopo._mmL = true; escopo.addEventListener('click', ev => { const b = ev.target.closest('[data-mm]'); if (!b || !escopo.contains(b)) return; modoMapa = b.dataset.mm; aplicaModoMapa(escopo); }); }
   aplicaModoMapa(escopo);
 }
@@ -152,7 +191,7 @@ function montarMunBR(root, ctx, ap) {
   (geoBR ??= getJSON('data/mapa_br_mun.json', { retries: 2, timeout: 90000 })).then(geo => {
     for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome;
     const mp = criarMapaMun(alvo, geo, { onClick: id => { const m = porCdi[id]; if (m) ctx.ir(rota(m.uf, m.cd)); }, tooltip: tip });
-    ligaModoMapa(root.querySelector('#am-mun'), mp, dm, Object.entries(porCdi).map(([id, m]) => [id, m.ok ? m : { L: 0, F: 0 }]));
+    ligaModoMapa(root.querySelector('#am-mun'), mp, dm, Object.entries(porCdi).map(([id, m]) => [id, m.ok ? m : { L: 0, F: 0 }]), { un: ['município', 'municípios'], uf: true });
   }).catch(e => {
     geoBR = null; console.warn('mapa de municípios:', e);
     alvo.innerHTML = '<p class="aviso">Não consegui carregar o mapa dos municípios agora. A busca por nome continua funcionando. <button type="button" class="cmp-limpar" id="bm-de-novo">Tentar de novo</button></p>';
@@ -267,7 +306,7 @@ export function viewGeral(ctx) {
     montar(root) {
       graficoPlacar(root.querySelector('#g-placar'), hist, { projecao: !ap });
       const dm = dadosMapa(ufs), mp = criarMapa(root.querySelector('#mapa'), ctx.geo, { onClick: u => ctx.ir(`#/${ap ? '' : 'p/'}uf/${u}`), tooltip: u => tipUF(ufs.find(x => x.id === u), modo) });
-      ligaModoMapa(root.querySelector('#am-uf') || root, mp, dm, ufs.map(u => [u.id, u]));
+      ligaModoMapa(root.querySelector('#am-uf') || root, mp, dm, ufs.map(u => [u.id, u]), { un: ['estado', 'estados'] });
       abasMapa(root, ctx, ap);
       const t = tabela(root.querySelector('#tab-uf'), { cols: colsUF(modo), rows: ufs, sort: 'nome', dir: 'asc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
       ctx.csv = () => ({ nome: `${ap ? 'apuracao' : 'projecao'}_2t_estados`, ...csvUF(base, ufs, modo) });
@@ -456,7 +495,7 @@ export function viewUf(ctx, uf, kOrd) {
       const idPorCdi = new Map((B.byUf[uf] || []).map(b => [String(b.cdi), b.cd]));
       const mp = criarMapaMun(alvoMapa, geo, { onClick: id => { const cd = idPorCdi.get(id); if (cd) ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${cd}`); }, tooltip: tipM });
       for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome.replace(/\b(\p{L})(\p{L}*)/gu, (_, a, b) => (a + b.toLowerCase())).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
-      ligaModoMapa(root, mp, dm, rows.filter(m => cdi.get(m.id)).map(m => [cdi.get(m.id), m]));
+      ligaModoMapa(root, mp, dm, rows.filter(m => cdi.get(m.id)).map(m => [cdi.get(m.id), m]), { un: ['município', 'municípios'] });
     }).catch(() => { alvoMapa.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
     tabela(root.querySelector('#tab-m'), { cols, rows, onRow: m => ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${m.id}`), sort: 'nome', dir: 'asc', filtro: (m, q) => sem(m.nome).includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${slugn(UF_NOME[uf])}_municipios_${ap ? 'apuracao' : 'projecao'}`, cab: ['Município', '% apurado', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Lula cresc. votos %', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Flávio cresc. votos %'], linhas: rows.slice().sort((a, b) => (isNaN(b['p' + ord]) - isNaN(a['p' + ord])) || b['p' + ord] - a['p' + ord]).map(m => [m.nome, m.pst, m.L, m.pL, m.dL, m.gL, m.F, m.pF, m.dF, m.gF]) });
