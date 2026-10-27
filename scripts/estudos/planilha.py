@@ -14,7 +14,7 @@ CARGO = {6: 'Dep. federal', 7: 'Dep. estadual', 8: 'Dep. distrital (DF)'}
 FASE = {'QP': 'Quociente partidário', 'MÉDIA': 'Sobras (maior média)', 'MÉDIA (sem barreira)': 'Sobras (maior média, sem barreira)', 'MAIS VOTADOS': 'Mais votados (ninguém atingiu o QE)'}
 PARTIDOS = ['PT', 'PCdoB', 'PV', 'PSB', 'PDT', 'PSOL', 'REDE']
 PNOME = {'REDE': 'Rede'}
-CEN = {'A': 'PT/PCdoB/PV + PSB', 'B': 'PSB + PDT', 'C': 'PT/PCdoB/PV + PSB + PDT', 'D': 'PT/PCdoB/PV + PSB + PDT + PSOL/Rede'}
+CEN = {'A': 'PT/PCdoB/PV + PSB', 'B': 'PSB + PDT', 'C': 'PT/PCdoB/PV + PSB + PDT', 'D': 'PT/PCdoB/PV + PSB + PDT + PSOL/Rede', 'E': 'PT/PCdoB/PV + PSOL/Rede'}
 HIP = {'S': 'Simulação', 'T': 'Com teto'}
 FONT = 'Arial'
 f_norm = Font(name=FONT, size=10); f_b = Font(name=FONT, size=10, bold=True); f_h = Font(name=FONT, size=10, bold=True, color='FFFFFF')
@@ -71,7 +71,7 @@ titulo(ws, f'Oficina Política · Estudos sobre federações e distribuição de
 linhas = [
  ('ESCOPO', True),
  ('Estudo 1: deputados federais, estaduais (e distritais, no DF) eleitos em 2026 por PT/PCdoB/PV (federação), PSOL/Rede (federação), PSB e PDT, com votos nominais e votos de legenda.', False),
- ('Estudo 2: simulação do resultado de 2026 se houvesse as federações: A) PT/PCdoB/PV + PSB; B) PSB + PDT; C) PT/PCdoB/PV + PSB + PDT; D) PT/PCdoB/PV + PSB + PDT + PSOL/Rede.', False),
+ ('Estudo 2: simulação do resultado de 2026 se houvesse as federações: A) PT/PCdoB/PV + PSB; B) PSB + PDT; C) PT/PCdoB/PV + PSB + PDT; D) PT/PCdoB/PV + PSB + PDT + PSOL/Rede; E) PT/PCdoB/PV + PSOL/Rede (o PSOL é federado com a Rede e a federação não se divide).', False),
  ('', False), ('FONTES', True),
  ('TSE, dados abertos: votacao_candidato_munzona_2026 e votacao_partido_munzona_2026 (1º turno, gerados em 25/10/2026) e consulta_cand_2026. Dados no repositório, em data/vot/2026 e data/cand/2026.', False),
  ('"Votos de legenda" = votos de legenda válidos + votos nominais convertidos em legenda (QT_TOTAL_VOTOS_LEG_VALIDOS do TSE). Votos anulados (inclusive sub judice) não entram nos votos válidos.', False),
@@ -202,7 +202,7 @@ ws2e.freeze_panes = 'F5'; ws2e.auto_filter.ref = f'A4:K{ult_e2}'
 E2 = lambda col: f"E2_Eleitos!${col}$5:${col}${ult_e2}"
 
 # ------------------------------------------------------------------ E2_Resumo (Brasil) e E2_Var_* (por UF)
-cen_keys = ['A', 'B', 'C', 'D']
+cen_keys = ['A', 'B', 'C', 'D', 'E']
 def bloco_cabecalho(ws, r, primeira):
     heads = [primeira, 'Partido', 'Real 2026'] + sum([[f'{k}) {CEN[k]}', f'Δ {k}'] for k in cen_keys], [])
     for j, h in enumerate(heads, 1):
@@ -226,21 +226,21 @@ def linhas_partido(ws, r, cargo_txt, uf, hip):
             ws.cell(r, col, f)
             if col > 3: ws.cell(r, col + 1, f'={L(col)}{r}-$C{r}')
         if p in ('Soma dos 7', 'Demais partidos', 'Total de cadeiras'):
-            for c in range(1, 12): ws.cell(r, c).font = f_b; ws.cell(r, c).fill = fill_tot
+            for c in range(1, 14): ws.cell(r, c).font = f_b; ws.cell(r, c).fill = fill_tot
         r += 1
     return r
 def formata_var(ws, r0, r1):
     for rr in range(r0, r1):
-        for c in range(1, 12):
+        for c in range(1, 14):
             x = ws.cell(rr, c); x.border = box
             if not x.font.bold: x.font = f_norm
-            if c >= 3: x.number_format = '#,##0;[Red]-#,##0;-' if c in (5, 7, 9, 11) else '#,##0'
-            if c in (5, 7, 9, 11): x.number_format = '+#,##0;[Red]-#,##0;-'
-            if c in (5, 7, 9, 11) and x.value is not None: x.alignment = Alignment(horizontal='right')
+            if c >= 3: x.number_format = '#,##0;[Red]-#,##0;-' if c in (5, 7, 9, 11, 13) else '#,##0'
+            if c in (5, 7, 9, 11, 13): x.number_format = '+#,##0;[Red]-#,##0;-'
+            if c in (5, 7, 9, 11, 13) and x.value is not None: x.alignment = Alignment(horizontal='right')
         if ws.cell(rr, 2).value in ('Soma dos 7', 'Demais partidos', 'Total de cadeiras'):
-            for c in range(1, 12): ws.cell(rr, c).font = f_b
+            for c in range(1, 14): ws.cell(rr, c).font = f_b
 ws2r = sheet('E2_Resumo', 'C55A11'); titulo(ws2r, f'Estudo 2 · Cadeiras por partido, Brasil · cenários de federação ({ano})', 'Cadeiras pela regra do TSE com os votos de 2026 como foram. Δ = cenário menos resultado real. "Demais partidos" = total menos os sete.')
-for j, w in enumerate([22, 16, 11, 20, 8, 20, 8, 20, 8, 20, 8], 1): ws2r.column_dimensions[L(j)].width = w
+for j, w in enumerate([22, 16, 11, 20, 8, 20, 8, 20, 8, 20, 8, 20, 8], 1): ws2r.column_dimensions[L(j)].width = w
 r = 4
 for hip in ('Simulação',):
     for cargo in (6, 7, 8):
@@ -250,7 +250,7 @@ for hip in ('Simulação',):
 ws2r.freeze_panes = 'C4'
 for hip, nome in (('Simulação', 'E2_Var_UF'),):
     ws = sheet(nome, 'C55A11'); titulo(ws, 'Estudo 2 · Variação de cadeiras por estado e partido', 'Cada bloco soma o total de cadeiras do estado. Δ = cenário menos resultado real (verde: ganha; vermelho: perde).')
-    for j, w in enumerate([8, 16, 11, 20, 8, 20, 8, 20, 8, 20, 8], 1): ws.column_dimensions[L(j)].width = w
+    for j, w in enumerate([8, 16, 11, 20, 8, 20, 8, 20, 8, 20, 8, 20, 8], 1): ws.column_dimensions[L(j)].width = w
     r = 4
     for cargo in (6, 7, 8):
         ws.cell(r, 1, CARGO[cargo]).font = Font(name=FONT, size=11, bold=True); r += 1
@@ -261,10 +261,10 @@ for hip, nome in (('Simulação', 'E2_Var_UF'),):
         formata_var(ws, r0, r); r += 1
     ws.freeze_panes = 'C4'
     from openpyxl.formatting.rule import CellIsRule
-    for col in 'EGIK':
+    for col in 'EGIKM':
         ws.conditional_formatting.add(f'{col}4:{col}{r}', CellIsRule(operator='greaterThan', formula=['0'], fill=fill_pos))
         ws.conditional_formatting.add(f'{col}4:{col}{r}', CellIsRule(operator='lessThan', formula=['0'], fill=fill_neg))
-for col in 'EGIK':
+for col in 'EGIKM':
     ws2r.conditional_formatting.add(f'{col}4:{col}{r+200}', CellIsRule(operator='greaterThan', formula=['0'], fill=fill_pos))
     ws2r.conditional_formatting.add(f'{col}4:{col}{r+200}', CellIsRule(operator='lessThan', formula=['0'], fill=fill_neg))
 
@@ -296,8 +296,8 @@ wsm.freeze_panes = 'F5'; wsm.auto_filter.ref = f'A4:I{4+len(mud)}'
 # ------------------------------------------------------------------ E2_Teto
 wst = sheet('E2_Teto', 'C55A11'); titulo(wst, 'Estudo 2 · Aviso: limite de candidatos por lista (Lei 9.504, art. 10: vagas + 1)', 'Informativo, não altera as contas. Soma dos candidatos de 2026 dos partidos que se fundem contra o limite. Onde há excesso, a lista fundida teria de ter menos candidatos do que os partidos tiveram separados.')
 H = ['Cargo', 'UF', 'Vagas', 'Limite (vagas + 1)'] + sum([[f'{k}) candidaturas somadas', f'{k}) excesso'] for k in cen_keys], [])
-cab(wst, 4, H, [18, 6, 8, 12] + [14, 10] * 4)
-IDS = {'A': [F1, 'PSB'], 'B': ['PSB', 'PDT'], 'C': [F1, 'PSB', 'PDT'], 'D': [F1, 'PSB', 'PDT', F2]}
+cab(wst, 4, H, [18, 6, 8, 12] + [14, 10] * 5)
+IDS = {'A': [F1, 'PSB'], 'B': ['PSB', 'PDT'], 'C': [F1, 'PSB', 'PDT'], 'D': [F1, 'PSB', 'PDT', F2], 'E': [F1, F2]}
 r = 5
 for (cargo, uf) in ufs_cargo:
     b = vagas[(cargo, uf)]
@@ -307,10 +307,10 @@ for (cargo, uf) in ufs_cargo:
         vals += [n, f'=MAX(0,{L(5+2*i)}{r}-$D{r})']
     for j, v in enumerate(vals, 1): wst.cell(r, j, v)
     r += 1
-fmt(wst, 5, r - 1, 1, 12)
+fmt(wst, 5, r - 1, 1, 14)
 wst.cell(r, 1, 'UFs que excedem'); 
 for i, k in enumerate(cen_keys): wst.cell(r, 6 + 2 * i, f'=COUNTIF({L(6+2*i)}5:{L(6+2*i)}{r-1},">0")')
-for c in range(1, 13): wst.cell(r, c).font = f_b; wst.cell(r, c).fill = fill_tot
+for c in range(1, 15): wst.cell(r, c).font = f_b; wst.cell(r, c).fill = fill_tot
 wst.freeze_panes = 'C5'
 
 order = ['Leia_me', 'E1_Resumo', 'E1_UF', 'E1_Eleitos', 'E2_Resumo', 'E2_Var_UF', 'E2_Eleitos', 'E2_Mudancas', 'E2_Teto']

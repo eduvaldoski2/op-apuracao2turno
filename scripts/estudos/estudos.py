@@ -12,6 +12,7 @@ CEN = {  # nome -> (listas a fundir, rótulo da lista resultante)
     'B': ([PSB, PDT], 'PSB/PDT'),
     'C': ([F1, PSB, PDT], 'PT/PCdoB/PV/PSB/PDT'),
     'D': ([F1, PSB, PDT, F2], 'PT/PCdoB/PV/PSB/PDT/PSOL/Rede'),
+    'E': ([F1, F2], 'PT/PCdoB/PV/PSOL/Rede'),   # PSOL é federado com a Rede; a federação não se divide
 }
 def funde(listas, ids, novo, teto=None):
     out = {l: d for l, d in listas.items() if l not in ids}
