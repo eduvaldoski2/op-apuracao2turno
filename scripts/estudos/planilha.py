@@ -15,7 +15,7 @@ FASE = {'QP': 'Quociente partidário', 'MÉDIA': 'Sobras (maior média)', 'MÉDI
 PARTIDOS = ['PT', 'PCdoB', 'PV', 'PSB', 'PDT', 'PSOL', 'REDE']
 PNOME = {'REDE': 'Rede'}
 CEN = {'A': 'PT/PCdoB/PV + PSB', 'B': 'PSB + PDT', 'C': 'PT/PCdoB/PV + PSB + PDT', 'D': 'PT/PCdoB/PV + PSB + PDT + PSOL/Rede'}
-HIP = {'S': 'Sem teto', 'T': 'Com teto'}
+HIP = {'S': 'Simulação', 'T': 'Com teto'}
 FONT = 'Arial'
 f_norm = Font(name=FONT, size=10); f_b = Font(name=FONT, size=10, bold=True); f_h = Font(name=FONT, size=10, bold=True, color='FFFFFF')
 f_t = Font(name=FONT, size=14, bold=True); f_i = Font(name=FONT, size=9, italic=True, color='555555')
@@ -83,17 +83,16 @@ linhas = [
  ('5. Federação vale como um único partido: soma votos nominais e de legenda e tem uma só lista; as vagas vão aos mais votados da federação, de qualquer partido dela.', False),
  ('', False), ('VALIDAÇÃO', True),
  ('O simulador, aplicado às listas reais, reproduz os 1.572 eleitos de 2026 (513 federais, 1.035 estaduais, 24 distritais) e a fase de entrada de cada um (QP ou média), sem nenhuma divergência. Também reproduz os 1.572 eleitos de 2022.', False),
- ('', False), ('HIPÓTESES DO ESTUDO 2 (leia antes de usar os números)', True),
- ('Os votos e as candidaturas de 2026 são mantidos: o eleitor votaria igual, e só muda a forma de contar. Na prática, uma federação muda a estratégia de candidaturas e de votos.', False),
- ('SEM TETO: somam-se todas as candidaturas e todos os votos dos partidos fundidos. É o limite superior do efeito, mas ignora o limite legal de candidaturas (Lei 9.504, art. 10).', False),
- ('COM TETO: cada partido ou federação pode registrar no máximo vagas + 1 candidaturas. A lista fundida mantém as (vagas + 1) mais votadas e os votos das demais saem da conta. Ver aba E2_Teto: o teto é excedido em boa parte dos estados.', False),
- ('A realidade fica entre as duas hipóteses. O corte de candidaturas pode custar votos (hipótese COM TETO) ou ser compensado por votos que migrem para os mantidos (não modelado).', False),
- ('Não modelado: exigências estatutárias das federações (permanência mínima de 4 anos, programa e estatuto comuns), efeito sobre o fundo partidário e o tempo de TV, e a distribuição de candidaturas por gênero.', False),
+ ('', False), ('COMO O ESTUDO 2 FOI FEITO', True),
+ ('Os votos de 2026 ficam exatamente como foram, em cada candidato e em cada legenda. Só muda como eles são contados: nas federações simuladas, os votos dos partidos viram uma única lista e a divisão das cadeiras segue a regra do TSE acima.', False),
+ ('Na prática, uma federação muda a estratégia de candidaturas e o voto do eleitor; isso não é simulado.', False),
+ ('Aviso (aba E2_Teto): a lei limita cada lista a vagas + 1 candidatos. Em vários estados a soma dos candidatos dos partidos que se fundem passa desse limite, então a lista fundida teria de ter menos candidatos. Isso não entrou nas contas.', False),
+ ('Não modelado: exigências estatutárias das federações (permanência mínima de 4 anos, programa e estatuto comuns), fundo partidário, tempo de TV e cotas de gênero.', False),
  ('Deputado distrital (DF) aparece separado dos estaduais. O resultado distrital não muda em nenhum cenário.', False),
  ('', False), ('ABAS', True),
- ('E1_Resumo · E1_UF · E1_Eleitos: Estudo 1.   E2_Resumo: cadeiras por partido (Brasil).   E2_Var_SemTeto e E2_Var_ComTeto: variação por estado e partido.', False),
- ('E2_Eleitos: lista de eleitos de cada cenário, por estado.   E2_Mudancas: quem entra e quem sai em relação ao resultado real.   E2_Teto: candidaturas somadas versus limite legal.', False),
- ('As abas E1_Resumo, E2_Resumo e E2_Var_* são fórmulas sobre as listas (E1_UF, E1_Eleitos e E2_Eleitos).', False),
+ ('E1_Resumo · E1_UF · E1_Eleitos: Estudo 1.   E2_Resumo: cadeiras por partido (Brasil).   E2_Var_UF: variação por estado e partido.', False),
+ ('E2_Eleitos: lista de eleitos de cada cenário, por estado.   E2_Mudancas: quem entra e quem sai em relação ao resultado real.   E2_Teto: aviso sobre o limite de candidatos por lista.', False),
+ ('As abas E1_Resumo, E2_Resumo e E2_Var_UF são fórmulas sobre as listas (E1_UF, E1_Eleitos e E2_Eleitos).', False),
 ]
 for i, (t, b) in enumerate(linhas, 3):
     c = ws.cell(i, 1, t); c.font = f_b if b else f_norm; c.alignment = Alignment(wrap_text=True, vertical='top')
@@ -178,7 +177,7 @@ ws1.freeze_panes = 'C5'
 ws1.cell(r, 1, 'Votos válidos Brasil: soma dos votos válidos (nominais + legenda) das UFs em cada cargo, a partir de votacao_partido_munzona_2026 e votacao_candidato_munzona_2026 (TSE). O distrital é só do DF.').font = f_i
 
 # ------------------------------------------------------------------ E2_Eleitos
-ws2e = sheet('E2_Eleitos', 'C55A11'); titulo(ws2e, 'Estudo 2 · Eleitos em cada cenário, por estado', 'Real 2026 e cenários A a D, nas hipóteses sem teto e com teto de candidaturas. "Mudança" compara com o resultado real.')
+ws2e = sheet('E2_Eleitos', 'C55A11'); titulo(ws2e, 'Estudo 2 · Eleitos em cada cenário, por estado', 'Resultado real de 2026 e cenários A a D, pela regra do TSE. "Mudança" compara com o resultado real.')
 H = ['Hipótese', 'Cenário', 'Cargo', 'UF', 'Candidato', 'Partido', 'Lista', 'Votos nominais', 'Como foi eleito', 'Posição na lista', 'Mudança vs. real']
 cab(ws2e, 4, H, [11, 24, 18, 6, 28, 10, 30, 14, 32, 10, 14])
 rows = []
@@ -187,10 +186,11 @@ for e in real:
 NOMELISTA = lambda l: {F1: 'PT/PCdoB/PV', F2: 'PSOL/Rede'}.get(l, l)
 rows[:] = [[*x[:6], NOMELISTA(x[6]), *x[7:]] for x in rows]
 for key, cen in res['cenarios'].items():
+    if cen['hip'] != 'S': continue
     for e in cen['eleitos']:
         mud = 'Mantido' if e['sq'] in real_sq[(e['cargo'], e['uf'])] else 'Novo'
         rows.append([HIP[cen['hip']], f"{cen['cen']}) {CEN[cen['cen']]}", CARGO[e['cargo']], e['uf'], e['nome'], PNOME.get(e['partido'], e['partido']), NOMELISTA(e['lista']), e['votos'], FASE[e['fase']], e['pos_lista'], mud])
-ordem_h = {'Real': 0, 'Sem teto': 1, 'Com teto': 2}
+ordem_h = {'Real': 0, 'Simulação': 1}
 rows.sort(key=lambda x: (ordem_h[x[0]], x[1], x[2], x[3], x[6], -x[7]))
 for i, x in enumerate(rows, 5):
     for j, v in enumerate(x, 1): ws2e.cell(i, j, v)
@@ -239,17 +239,17 @@ def formata_var(ws, r0, r1):
             if c in (5, 7, 9, 11) and x.value is not None: x.alignment = Alignment(horizontal='right')
         if ws.cell(rr, 2).value in ('Soma dos 7', 'Demais partidos', 'Total de cadeiras'):
             for c in range(1, 12): ws.cell(rr, c).font = f_b
-ws2r = sheet('E2_Resumo', 'C55A11'); titulo(ws2r, f'Estudo 2 · Cadeiras por partido, Brasil · cenários de federação ({ano})', 'Contagens sobre a aba E2_Eleitos. Δ = cenário menos resultado real. "Demais partidos" = total menos os sete. Sem teto = todas as candidaturas e votos; com teto = limite de vagas + 1 candidaturas por lista fundida.')
+ws2r = sheet('E2_Resumo', 'C55A11'); titulo(ws2r, f'Estudo 2 · Cadeiras por partido, Brasil · cenários de federação ({ano})', 'Cadeiras pela regra do TSE com os votos de 2026 como foram. Δ = cenário menos resultado real. "Demais partidos" = total menos os sete.')
 for j, w in enumerate([22, 16, 11, 20, 8, 20, 8, 20, 8, 20, 8], 1): ws2r.column_dimensions[L(j)].width = w
 r = 4
-for hip in ('Sem teto', 'Com teto'):
+for hip in ('Simulação',):
     for cargo in (6, 7, 8):
-        ws2r.cell(r, 1, f'{CARGO[cargo]} · hipótese {hip.lower()}').font = Font(name=FONT, size=11, bold=True); r += 1
+        ws2r.cell(r, 1, f'{CARGO[cargo]}').font = Font(name=FONT, size=11, bold=True); r += 1
         bloco_cabecalho(ws2r, r, 'Âmbito'); r += 1
         r0 = r; r = linhas_partido(ws2r, r, CARGO[cargo], None, hip); formata_var(ws2r, r0, r); r += 1
 ws2r.freeze_panes = 'C4'
-for hip, nome in (('Sem teto', 'E2_Var_SemTeto'), ('Com teto', 'E2_Var_ComTeto')):
-    ws = sheet(nome, 'C55A11'); titulo(ws, f'Estudo 2 · Variação de cadeiras por estado e partido · hipótese {hip.lower()}', 'Cada bloco soma o total de cadeiras do estado. Δ = cenário menos resultado real (verde: ganha; vermelho: perde).')
+for hip, nome in (('Simulação', 'E2_Var_UF'),):
+    ws = sheet(nome, 'C55A11'); titulo(ws, 'Estudo 2 · Variação de cadeiras por estado e partido', 'Cada bloco soma o total de cadeiras do estado. Δ = cenário menos resultado real (verde: ganha; vermelho: perde).')
     for j, w in enumerate([8, 16, 11, 20, 8, 20, 8, 20, 8, 20, 8], 1): ws.column_dimensions[L(j)].width = w
     r = 4
     for cargo in (6, 7, 8):
@@ -276,6 +276,7 @@ real_por = {(e['cargo'], e['uf'], e['sq']): e for e in real}
 cand_nome = {}
 mud = []
 for key, cen in res['cenarios'].items():
+    if cen['hip'] != 'S': continue
     por = collections.defaultdict(set)
     for e in cen['eleitos']: por[(e['cargo'], e['uf'])].add(e['sq'])
     byk = {(e['cargo'], e['uf'], e['sq']): e for e in cen['eleitos']}
@@ -293,7 +294,7 @@ for i, x in enumerate(mud, 5):
 wsm.freeze_panes = 'F5'; wsm.auto_filter.ref = f'A4:I{4+len(mud)}'
 
 # ------------------------------------------------------------------ E2_Teto
-wst = sheet('E2_Teto', 'C55A11'); titulo(wst, 'Estudo 2 · Limite legal de candidaturas por lista (Lei 9.504, art. 10): vagas + 1', 'Candidaturas registradas na urna em 2026 (cadastro do TSE) somadas nas listas que se fundem, contra o limite. "Excede" = a lista fundida teria de cortar candidaturas.')
+wst = sheet('E2_Teto', 'C55A11'); titulo(wst, 'Estudo 2 · Aviso: limite de candidatos por lista (Lei 9.504, art. 10: vagas + 1)', 'Informativo, não altera as contas. Soma dos candidatos de 2026 dos partidos que se fundem contra o limite. Onde há excesso, a lista fundida teria de ter menos candidatos do que os partidos tiveram separados.')
 H = ['Cargo', 'UF', 'Vagas', 'Limite (vagas + 1)'] + sum([[f'{k}) candidaturas somadas', f'{k}) excesso'] for k in cen_keys], [])
 cab(wst, 4, H, [18, 6, 8, 12] + [14, 10] * 4)
 IDS = {'A': [F1, 'PSB'], 'B': ['PSB', 'PDT'], 'C': [F1, 'PSB', 'PDT'], 'D': [F1, 'PSB', 'PDT', F2]}
@@ -312,6 +313,6 @@ for i, k in enumerate(cen_keys): wst.cell(r, 6 + 2 * i, f'=COUNTIF({L(6+2*i)}5:{
 for c in range(1, 13): wst.cell(r, c).font = f_b; wst.cell(r, c).fill = fill_tot
 wst.freeze_panes = 'C5'
 
-order = ['Leia_me', 'E1_Resumo', 'E1_UF', 'E1_Eleitos', 'E2_Resumo', 'E2_Var_SemTeto', 'E2_Var_ComTeto', 'E2_Eleitos', 'E2_Mudancas', 'E2_Teto']
+order = ['Leia_me', 'E1_Resumo', 'E1_UF', 'E1_Eleitos', 'E2_Resumo', 'E2_Var_UF', 'E2_Eleitos', 'E2_Mudancas', 'E2_Teto']
 wb._sheets = [wb[n] for n in order]
 wb.save(out); print('salvo', out, 'E1_UF', ult_uf, 'E1_Eleitos', ult_e1, 'E2_Eleitos', ult_e2, 'Mudancas', len(mud))
