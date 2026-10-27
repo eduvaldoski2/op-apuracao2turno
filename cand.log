@@ -1,0 +1,21 @@
+/home/runner/work/op-apuracao2turno/op-apuracao2turno/scripts/build_cand.py:92: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  'gerado_em': datetime.datetime.utcnow().strftime('%Y-%m-%dT%H:%MZ'), 'cols': COLS, 'ufs': resumo, 'total': tot,
+candidaturas gravadas: 21017 | sem linha no complementar: 0 | chaves (sq,turno) duplicadas: 0 | duplicatas no complementar: 0
+bens: 77446 itens, 13918 candidatos | cassação: 1314 linhas
+
+TURNO 1 por cargo: {'1º SUPLENTE': 349, '2º SUPLENTE': 350, 'DEPUTADO DISTRITAL': 433, 'DEPUTADO ESTADUAL': 11295, 'DEPUTADO FEDERAL': 7803, 'GOVERNADOR': 201, 'PRESIDENTE': 14, 'SENADOR': 319, 'VICE-GOVERNADOR': 211, 'VICE-PRESIDENTE': 14}
+Situação do registro (turno 1): {'DEFERIDO': 18990, None: 1069, 'INDEFERIDO EM PRAZO RECURSAL OU COM RECURSO': 427, 'INDEFERIDO': 240, 'RENÚNCIA': 142, 'DEFERIDO COM RECURSO': 106, 'PENDENTE DE JULGAMENTO': 8, 'FALECIMENTO': 3, 'CANCELADO': 2, 'PEDIDO NÃO CONHECIDO': 1, 'PEDIDO NÃO CONHECIDO EM PRAZO RECURSAL OU COM RECURSO': 1}
+Na urna: {'SIM': 19920, 'NÃO': 1069}
+Destino dos votos: {'Válido': 18357, None: 1889, 'Anulado sub judice': 391, 'Nulo técnico': 255, 'Anulado': 96, 'Válido (legenda)': 1}
+Resultado: {'SUPLENTE': 11137, 'NÃO ELEITO': 6979, 'ELEITO POR QP': 1287, None: 1069, 'ELEITO POR MÉDIA': 285, 'ELEITO': 204, '2º TURNO': 28}
+
+Candidaturas a cargo titular (pres/gov/sen/dep): 20065 | inseridas na urna: 19100
+Titulares por situação do registro: {'DEFERIDO': 18261, None: 965, 'INDEFERIDO EM PRAZO RECURSAL OU COM RECURSO': 387, 'INDEFERIDO': 212, 'RENÚNCIA': 137, 'DEFERIDO COM RECURSO': 91, 'PENDENTE DE JULGAMENTO': 6, 'FALECIMENTO': 3, 'CANCELADO': 1, 'PEDIDO NÃO CONHECIDO': 1, 'PEDIDO NÃO CONHECIDO EM PRAZO RECURSAL OU COM RECURSO': 1}
+Titulares com sit_registro INDEFERIDO*/RENÚNCIA/etc e na urna=NÃO: 965
+Gênero (titulares): {'MASCULINO': 13004, 'FEMININO': 7060, None: 1}
+Cor/raça (titulares): {'BRANCA': 10047, 'PARDA': 7002, 'PRETA': 2723, 'INDÍGENA': 187, 'AMARELA': 105, None: 1}
+
+CONFERÊNCIA com data/hist (chave UF+cargo+número, exceto presidente por UF):
+  nos dois: 19072 (nome completo divergente em 623) | só no cadastro: 860 | só no hist (com votos): 1504
+  só no cadastro, por (situação, na urna, destino dos votos): {(None, 'NÃO', None): 849, ('DEFERIDO', 'SIM', 'Válido'): 5, ('INDEFERIDO', 'SIM', 'Nulo técnico'): 4, ('INDEFERIDO', 'SIM', 'Anulado'): 2}
+  só no hist, amostra: [('AC', 1, 55, 'RONALDO CAIADO', 'NÃO ELEITO', 8594), ('AC', 1, 21, 'EDMILSON COSTA', 'NÃO ELEITO', 140), ('AC', 1, 27, 'CLARIANA BARAO', 'NÃO ELEITO', 215), ('AC', 1, 80, 'SAMARA', 'NÃO ELEITO', 314), ('AC', 1, 28, '?', '', 23), ('AC', 1, 22, 'FLAVIO BOLSONARO', '2º TURNO', 302807), ('AC', 1, 70, 'ESCRITOR AUGUSTO CURY', 'NÃO ELEITO', 13523), ('AC', 1, 14, 'RENAN SANTOS', 'NÃO ELEITO', 7980), ('AC', 1, 16, 'HERTZ DIAS', 'NÃO ELEITO', 71), ('AC', 1, 29, 'RUI COSTA PIMENTA', 'NÃO ELEITO', 40), ('AC', 1, 13, 'LULA', '2º TURNO', 134770), ('AC', 1, 30, 'ZEMA', 'NÃO ELEITO', 573)]
