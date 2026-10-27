@@ -1,18 +1,18 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=0512f95d';
-import { CONFIG, RAIZ } from './config.js?v=0512f95d';
-import { getJSON } from './tse.js?v=0512f95d';
-import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=0512f95d';
-import { comFoco } from './foco.js?v=0512f95d';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp } from './views.js?v=0512f95d';
-import { listaMunicipios } from './model.js?v=0512f95d';
-import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=0512f95d';
-import { projetarMunicipios } from './proj.js?v=0512f95d';
-import { criarMapaPontos } from './mapapontos.js?v=0512f95d';
-import { criarMapaBairros } from './mapabairros.js?v=0512f95d';
-import { legendaMapa } from './map.js?v=0512f95d';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=5f078210';
+import { CONFIG, RAIZ } from './config.js?v=5f078210';
+import { getJSON } from './tse.js?v=5f078210';
+import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=5f078210';
+import { comFoco } from './foco.js?v=5f078210';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp, seletorMapa, ligaModoMapa } from './views.js?v=5f078210';
+import { listaMunicipios } from './model.js?v=5f078210';
+import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=5f078210';
+import { projetarMunicipios } from './proj.js?v=5f078210';
+import { criarMapaPontos } from './mapapontos.js?v=5f078210';
+import { criarMapaBairros } from './mapabairros.js?v=5f078210';
+import { legendaMapa } from './map.js?v=5f078210';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 10000);
@@ -214,10 +214,10 @@ export function viewMun(ctx, uf, cd) {
   ${ap ? '' : `<div class="aviso proj">Projeção estatística por município. O detalhamento por bairro abaixo mostra apenas o que já foi apurado nas seções (não é projeção).</div>`}
   <section class="painel mapa-sec" id="sec-geo" hidden><h2 id="geo-titulo">Mapa por bairro</h2><p class="sub"><b id="geo-clique">Clique numa área</b> para ver os locais de votação dela. <span id="geo-prog"></span> <span id="geo-aprox" class="geo-aprox"></span></p>
     ${entenda(`Cada área soma os locais de votação que ficam dentro dela. <span id="geo-fonte"></span> Os nomes e limites podem diferir do bairro cadastrado pelo TSE na tabela abaixo. Cor = ${t1 ? 'candidato mais votado (ou o candidato escolhido nas fichas)' : 'quem lidera'}; tom mais escuro = maior percentual. Use + / − ou a roda do mouse para aproximar. ${t1 ? '' : 'Áreas em cinza ainda não têm seções apuradas.'}`)}
-    <div class="mapa-grid"><div id="mapa-geo"></div><div class="mapa-lado">${legendaMapa()}</div></div></section>
+    ${t1 ? '' : seletorMapa()}<div class="mapa-grid"><div id="mapa-geo"></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div></div></div></section>
   <section class="painel mapa-sec" id="sec-pts"><h2>Mapa por bairro</h2><p class="sub"><b>Clique num ponto</b> para abrir o local de votação. <span id="mb-estado"></span></p>
     ${entenda(`Não há limites oficiais de bairros para este município; cada ponto é um local de votação (o tamanho é proporcional ao eleitorado) e a cor é a do resultado do <b>bairro</b> a que ele pertence. ${t1 ? '' : 'Pontos em cinza: bairro ainda sem seções apuradas.'}`)}
-    <div class="mapa-grid"><div id="mapa-pts"><p class="carregando">Carregando…</p></div><div class="mapa-lado">${legendaMapa()}</div></div></section>
+    ${t1 ? '' : seletorMapa()}<div class="mapa-grid"><div id="mapa-pts"><p class="carregando">Carregando…</p></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div></div></div></section>
   <section class="painel"><h2 id="tab-titulo">Bairros de ${esc(nomeMun)}</h2><p class="sub" id="tab-sub"><b>Clique num bairro</b> para ver os locais de votação.</p>${entenda(`Bairro conforme o cadastro do TSE para cada local de votação. ${nota(ctx)}`)}<div id="tab-b"></div></section>`;
   return { html, titulo: `${nomeMun} (${uf.toUpperCase()})`, trilha: [['Brasil', pref(ctx.modo)], [mun.ufn, `${pref(ctx.modo)}uf/${uf}`], [nomeMun]], montar(root) {
     const alvo = root.querySelector('#mapa-pts'); let mapa = null, mapaGeo = null;
@@ -228,7 +228,7 @@ export function viewMun(ctx, uf, cd) {
       if (!geo) {
         const dados = {}; for (const l of locais) dados[l.id] = { fill: corDeX(ctx, bmap.get(l.bairro) || l) };
         if (!mapa) mapa = criarMapaPontos(alvo, locais, { tooltip: id => { const l = porId.get(id), u = bmap.get(l.bairro); return tipX(ctx, bonito(l.nome), u, `Bairro ${bonito(u.nome)}`); }, onClick: id => ctx.ir(`${rotaMun(ctx.modo, uf, cd)}/l/${id}`) });
-        mapa.atualizar(dados);
+        if (t1) mapa.atualizar(dados); else ligaModoMapa(root.querySelector('#sec-pts'), mapa, dados, locais.map(l => [l.id, bmap.get(l.bairro) || l]));
       }
       root.querySelector('#sec-pts').hidden = !!geo;
       let linhasTab = bairros, rotTab = 'Bairro';
@@ -242,7 +242,7 @@ export function viewMun(ctx, uf, cd) {
           root.querySelector('#tab-sub').innerHTML = `<b>Clique ${nivelG(geo).um === 'uma' ? 'numa' : 'num'} ${nivelG(geo).min}</b> para ver os bairros e, depois, os locais de votação.`;
         }
         if (!mapaGeo) mapaGeo = criarMapaBairros(root.querySelector('#mapa-geo'), geo, { nome: bonito, onClick: ir, tooltip: i => { const u = por[i], f = geo.f[i]; return u ? tipX(ctx, bonito(f.n), u, `${fInt(u.locais)} locais`) : `<b>${esc(bonito(f.n))}</b><br><span class="t-s">sem local de votação dentro do limite</span>`; } });
-        const dg = {}; for (const [i, u] of Object.entries(por)) dg[i] = t1 && u.V ? dadoMapaT1(T1, unidadeV(T1, u.V)) : u.st ? { k: u.lider, pw: u.pw, pL: u.pL, pF: u.pF, dL: u.dL, dF: u.dF } : {}; mapaGeo.atualizar(dg);
+        const dg = {}; for (const [i, u] of Object.entries(por)) dg[i] = t1 && u.V ? dadoMapaT1(T1, unidadeV(T1, u.V)) : u.st ? { k: u.lider, pw: u.pw, pL: u.pL, pF: u.pF, dL: u.dL, dF: u.dF } : {}; if (t1) mapaGeo.atualizar(dg); else ligaModoMapa(root.querySelector('#sec-geo'), mapaGeo, dg, Object.entries(por));
       }
       const prog = t1 ? '' : tot.st ? `${fNum(tot.pst, 1)}% das seções do município já chegaram (${fInt(tot.st)} de ${fInt(tot.ts)}).` : 'Os resultados aparecem aqui conforme as seções forem totalizadas.';
       root.querySelector('#mb-estado').textContent = prog; const pg = root.querySelector('#geo-prog'); if (pg) pg.textContent = prog;

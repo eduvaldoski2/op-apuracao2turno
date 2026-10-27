@@ -1,5 +1,5 @@
 // Mapa por bairro (malha do IBGE, Censo 2022) de um município: cada polígono recebe a soma dos locais de votação que caem nele.
-import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=0512f95d';
+import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=5f078210';
 
 const W = 720, num = v => (v == null || isNaN(v)) ? '–' : fNum(v, 1), dl = v => (v == null || isNaN(v)) ? '' : fDelta(v, 1, '');
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
@@ -25,12 +25,12 @@ export function criarMapaBairros(el, geo, { tooltip, onClick, nome = s => s } = 
   function desenhar() {
     kpx = (svg.clientWidth || vw) / vw; const sw = (0.6 / z).toFixed(2); let p = '', t = '';
     for (const it of itens) {
-      const d = dados[it.i], fill = d && d.k ? corDoPct(d.k, d.pw) : (d ? '#d9d6e3' : '#ece9f4'), txt = corTexto(fill);
+      const d = dados[it.i], fill = d && d.k ? (d.fill || corDoPct(d.k, d.pw)) : (d ? '#d9d6e3' : '#ece9f4'), txt = corTexto(fill);
       p += `<path class="mun" data-p="${it.i}" d="${it.d}" fill="${fill}" fill-rule="evenodd" stroke="#fff" stroke-width="${sw}" stroke-linejoin="round"/>`;
       const px = it.r * z * kpx, fs = 8 / (z * kpx);
       if (d && d.k && px >= 11) {
         const nm = esc(nome(it.n)), nc = nm.length * fs * 0.5 > it.r * 2 ? nm.slice(0, Math.max(3, Math.floor(it.r * 2 / (fs * 0.5)) - 1)) + '.' : nm;
-        if (d.solo) t += px >= 22 ? `<g pointer-events="none"><text x="${it.lx}" y="${it.ly - 2 * fs / 8}" text-anchor="middle" font-size="${6.2 * fs / 8}" font-weight="800" fill="${txt}">${nc}</text><text x="${it.lx}" y="${it.ly + 6 * fs / 8}" text-anchor="middle" font-size="${8 * fs / 8}" font-weight="700" fill="${txt}">${num(d.pw)}</text></g>` : `<text pointer-events="none" x="${it.lx}" y="${it.ly + 2.4 * fs / 8}" text-anchor="middle" font-size="${6.6 * fs / 8}" font-weight="800" fill="${txt}">${num(d.pw)}</text>`;
+        if (d.solo) t += px >= 22 ? `<g pointer-events="none"><text x="${it.lx}" y="${it.ly - 2 * fs / 8}" text-anchor="middle" font-size="${6.2 * fs / 8}" font-weight="800" fill="${txt}">${nc}</text><text x="${it.lx}" y="${it.ly + 6 * fs / 8}" text-anchor="middle" font-size="${8 * fs / 8}" font-weight="700" fill="${txt}">${d.lab ?? num(d.pw)}</text></g>` : `<text pointer-events="none" x="${it.lx}" y="${it.ly + 2.4 * fs / 8}" text-anchor="middle" font-size="${6.6 * fs / 8}" font-weight="800" fill="${txt}">${d.lab ?? num(d.pw)}</text>`;
         else t += px >= 22 ? `<g pointer-events="none"><text x="${it.lx}" y="${it.ly - 7 * fs / 8}" text-anchor="middle" font-size="${6.2 * fs / 8}" font-weight="800" fill="${txt}">${nc}</text><text x="${it.lx}" y="${it.ly + 1 * fs / 8}" text-anchor="middle" font-size="${7.2 * fs / 8}" fill="${txt}"><tspan font-weight="700">${num(d.pL)}</tspan><tspan dx="1.5" font-size="${5.2 * fs / 8}" opacity=".9">${dl(d.dL)}</tspan></text><text x="${it.lx}" y="${it.ly + 8.4 * fs / 8}" text-anchor="middle" font-size="${7.2 * fs / 8}" fill="${txt}"><tspan font-weight="700">${num(d.pF)}</tspan><tspan dx="1.5" font-size="${5.2 * fs / 8}" opacity=".9">${dl(d.dF)}</tspan></text></g>`
           : `<text pointer-events="none" x="${it.lx}" y="${it.ly + 2.4 * fs / 8}" text-anchor="middle" font-size="${6.6 * fs / 8}" font-weight="800" fill="${txt}">${num(d.pw)}</text>`;
       }

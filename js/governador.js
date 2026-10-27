@@ -1,7 +1,7 @@
 // Governador: resultado por estado no 1º turno (data/gov_1t.json) e no 2º turno (snap.gov, só nos estados com disputa).
 // Os dados vêm do TSE (eleição estadual 6259/6260, cargo 3) e são independentes da disputa presidencial.
-import { UF_NOME, fInt, fNum, clamp } from './util.js?v=0512f95d';
-import { esc } from './ui.js?v=0512f95d';
+import { UF_NOME, fInt, fNum, clamp } from './util.js?v=5f078210';
+import { esc } from './ui.js?v=5f078210';
 
 const COR = ['#3E347E', '#D9741A', '#1b8a6b', '#b3367a', '#2b6cb0', '#8a6d00', '#6b7280', '#a3261a', '#4b5fa8', '#9a5b13', '#2f7d3a', '#7a3fa0'];
 export const nomeP = t => String(t || '').toLowerCase().replace(/(^|[\s\-(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());

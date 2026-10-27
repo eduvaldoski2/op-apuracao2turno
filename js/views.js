@@ -1,13 +1,13 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=0512f95d';
-import { listaMunicipios, rankingUfs } from './model.js?v=0512f95d';
-import { projetarMunicipios } from './proj.js?v=0512f95d';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=0512f95d';
-import { graficoPlacar } from './charts.js?v=0512f95d';
-import { criarMapa, legendaMapa } from './map.js?v=0512f95d';
-import { criarMapaMun } from './mapamun.js?v=0512f95d';
-import { getJSON } from './tse.js?v=0512f95d';
-import { govPainel, govResumo } from './governador.js?v=0512f95d';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=5f078210';
+import { listaMunicipios, rankingUfs } from './model.js?v=5f078210';
+import { projetarMunicipios } from './proj.js?v=5f078210';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=5f078210';
+import { graficoPlacar } from './charts.js?v=5f078210';
+import { criarMapa, legendaMapa } from './map.js?v=5f078210';
+import { criarMapaMun } from './mapamun.js?v=5f078210';
+import { getJSON } from './tse.js?v=5f078210';
+import { govPainel, govResumo } from './governador.js?v=5f078210';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -64,14 +64,20 @@ function legendaSwing(mx, k) {
   const o = k === 'L' ? 'F' : 'L', g = `linear-gradient(90deg,${SW[o][1]},${SW[o][0]},${SW.N},${SW[k][0]},${SW[k][1]})`;
   return `<div class="leg-mapa leg-sw"><div class="sw-bar" style="background:${g}"></div><div class="sw-esc"><span>${CAND[o].nome.split(' ')[0]} +${mx} p.p.</span><span>0</span><span>${CAND[k].nome.split(' ')[0]} +${mx} p.p.</span></div><span><i style="background:#e4e1ea"></i>sem apuração</span>${entenda(`Cada área mostra <b>quantos pontos percentuais</b> a votação de ${CAND[k].nome} (% dos votos válidos) <b>subiu ou caiu</b> em relação ao 1º turno. Na cor de ${CAND[k].nome.split(' ')[0]}: ganhou terreno; na cor do adversário: perdeu. Como a apuração chega por partes, a comparação usa o 1º turno <b>nas mesmas urnas já apuradas</b>. A escala vai até ±${mx} p.p.; valores maiores ficam na cor máxima.`)}</div>`;
 }
-const seletorMapa = () => `<div class="mapa-modo sem-export" role="group" aria-label="O que o mapa mostra">${[['venc', 'Geral', 'Quem lidera em cada área'], ['L', 'Lula', 'Variação da votação de Lula em relação ao 1º turno'], ['F', 'Flávio', 'Variação da votação de Flávio Bolsonaro em relação ao 1º turno']].map(([m, t, d]) => `<button data-mm="${m}" title="${d}" class="${modoMapa === m ? 'on' : ''}">${t}</button>`).join('')}</div>`;
-// liga o seletor ao mapa: dm = dados "quem lidera", itens = [[id, linha]] para as variações
-function ligaModoMapa(root, mp, dm, itens) {
-  const mx = escalaSwing(itens.flatMap(([, r]) => [r.dL, r.dF])), dsw = { L: swingMapa(itens, mx, 'L'), F: swingMapa(itens, mx, 'F') };
-  const slot = root.querySelector('.leg-slot'), bt = root.querySelectorAll('[data-mm]');
-  const aplica = () => { mp.atualizar(modoMapa === 'venc' ? dm : dsw[modoMapa]); if (slot) slot.innerHTML = modoMapa === 'venc' ? legendaMapa() : legendaSwing(mx, modoMapa); bt.forEach(b => b.classList.toggle('on', b.dataset.mm === modoMapa)); };
-  bt.forEach(b => b.addEventListener('click', () => { modoMapa = b.dataset.mm; aplica(); }));
-  aplica();
+export const seletorMapa = () => `<div class="mapa-modo sem-export" role="group" aria-label="O que o mapa mostra">${[['venc', 'Geral', 'Quem lidera em cada área'], ['L', 'Lula', 'Variação da votação de Lula em relação ao 1º turno'], ['F', 'Flávio', 'Variação da votação de Flávio Bolsonaro em relação ao 1º turno']].map(([m, t, d]) => `<button data-mm="${m}" title="${d}" class="${modoMapa === m ? 'on' : ''}">${t}</button>`).join('')}</div>`;
+// liga o seletor (dentro de "escopo") ao mapa: dm = dados "quem lidera", itens = [[id, linha]] para as variações.
+// O clique é delegado ao escopo, então pode ser chamado de novo a cada atualização dos dados sem duplicar ouvintes.
+function aplicaModoMapa(escopo) {
+  const s = escopo._mm; if (!s) return;
+  s.mp.atualizar(modoMapa === 'venc' ? s.dm : s.dsw[modoMapa]);
+  const slot = escopo.querySelector('.leg-slot'); if (slot) slot.innerHTML = modoMapa === 'venc' ? (s.leg ? s.leg() : legendaMapa()) : legendaSwing(s.mx, modoMapa);
+  escopo.querySelectorAll('[data-mm]').forEach(b => b.classList.toggle('on', b.dataset.mm === modoMapa));
+}
+export function ligaModoMapa(escopo, mp, dm, itens, leg) {
+  const mx = escalaSwing(itens.flatMap(([, r]) => [r.dL, r.dF]));
+  escopo._mm = { mp, dm, mx, leg, dsw: { L: swingMapa(itens, mx, 'L'), F: swingMapa(itens, mx, 'F') } };
+  if (!escopo._mmL) { escopo._mmL = true; escopo.addEventListener('click', ev => { const b = ev.target.closest('[data-mm]'); if (!b || !escopo.contains(b)) return; modoMapa = b.dataset.mm; aplicaModoMapa(escopo); }); }
+  aplicaModoMapa(escopo);
 }
 
 // ---------- abas do quadro do mapa: por estado | por municípios (Brasil inteiro, cor = quem lidera) ----------
@@ -146,8 +152,12 @@ function montarMunBR(root, ctx, ap) {
   (geoBR ??= getJSON('data/mapa_br_mun.json', { retries: 2, timeout: 90000 })).then(geo => {
     for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome;
     const mp = criarMapaMun(alvo, geo, { onClick: id => { const m = porCdi[id]; if (m) ctx.ir(rota(m.uf, m.cd)); }, tooltip: tip });
-    mp.atualizar(dm);
-  }).catch(() => { geoBR = null; alvo.innerHTML = '<p class="aviso">Mapa dos municípios indisponível no momento. A busca por nome continua funcionando.</p>'; });
+    ligaModoMapa(root.querySelector('#am-mun'), mp, dm, Object.entries(porCdi).map(([id, m]) => [id, m.ok ? m : { L: 0, F: 0 }]));
+  }).catch(e => {
+    geoBR = null; console.warn('mapa de municípios:', e);
+    alvo.innerHTML = '<p class="aviso">Não consegui carregar o mapa dos municípios agora. A busca por nome continua funcionando. <button type="button" class="cmp-limpar" id="bm-de-novo">Tentar de novo</button></p>';
+    alvo.querySelector('#bm-de-novo')?.addEventListener('click', () => { alvo.innerHTML = '<p class="carregando">Carregando mapa…</p>'; montarMunBR(root, ctx, ap); });
+  });
 }
 
 // ---------- mapa: dados ----------
@@ -243,7 +253,7 @@ export function viewGeral(ctx) {
   <div class="abas-mapa sem-export" role="tablist" aria-label="Escolha o mapa"><button type="button" role="tab" data-am="uf" class="on">${ap ? 'Resultado' : 'Projeção'} por estado</button><button type="button" role="tab" data-am="mun">${ap ? 'Resultado' : 'Projeção'} por municípios</button></div>
   <div id="am-uf">${seletorMapa()}<div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div>${tabelaRegioes(ctx, ap)}</div></div></div>
   <div id="am-mun" hidden><div class="busca-mun sem-export"><label for="bm-q">Buscar município</label><div class="bm-box"><input id="bm-q" type="search" placeholder="Digite o nome do município…" autocomplete="off" aria-controls="bm-lista" aria-autocomplete="list"><ul id="bm-lista" role="listbox" hidden></ul></div></div>
-  <div class="mapa-grid"><div id="mapa-bm"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado"><div class="leg-slot-bm">${legendaMapa()}</div><div id="bm-resumo"></div></div></div></div></section>`;
+  ${seletorMapa()}<div class="mapa-grid"><div id="mapa-bm"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div><div id="bm-resumo"></div></div></div></div></section>`;
 
   // tabela de UFs
   h += govResumo(snap);
@@ -257,7 +267,7 @@ export function viewGeral(ctx) {
     montar(root) {
       graficoPlacar(root.querySelector('#g-placar'), hist, { projecao: !ap });
       const dm = dadosMapa(ufs), mp = criarMapa(root.querySelector('#mapa'), ctx.geo, { onClick: u => ctx.ir(`#/${ap ? '' : 'p/'}uf/${u}`), tooltip: u => tipUF(ufs.find(x => x.id === u), modo) });
-      ligaModoMapa(root, mp, dm, ufs.map(u => [u.id, u]));
+      ligaModoMapa(root.querySelector('#am-uf') || root, mp, dm, ufs.map(u => [u.id, u]));
       abasMapa(root, ctx, ap);
       const t = tabela(root.querySelector('#tab-uf'), { cols: colsUF(modo), rows: ufs, sort: 'nome', dir: 'asc', onRow: r => ctx.ir(`#/${ap ? '' : 'p/'}uf/${r.id}`) });
       ctx.csv = () => ({ nome: `${ap ? 'apuracao' : 'projecao'}_2t_estados`, ...csvUF(base, ufs, modo) });
