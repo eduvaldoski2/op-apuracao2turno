@@ -7,10 +7,11 @@ from base import UFS
 res = json.load(open(sys.argv[1], encoding='utf-8')); OUT = sys.argv[2]
 
 # ------------------------------------------------------------------ dados
-CEN = ['A', 'B', 'C', 'D', 'E', 'F']
+OLD = ['A', 'B', 'C', 'D', 'E', 'F']          # ordem interna (checagens)
+CEN = ['D', 'C', 'A', 'B', 'E', 'F']          # ordem de exibição: da união mais ampla à mais restrita
 LAB = {'A': 'FBE + PSB', 'B': 'PSB + PDT', 'C': 'FBE + PSB + PDT', 'D': 'FBE + PSB + PDT + PSOL/Rede', 'E': 'FBE + PSOL/Rede', 'F': 'PSB + Cidadania'}
-EMO = {'A': '🟦', 'B': '🟧', 'C': '🟪', 'D': '🟨', 'E': '🟫', 'F': '⬛'}
-def CH(k): return f'{EMO[k]} {k} · {LAB[k]}'          # cabeçalho de cenário
+def CH(k): return LAB[k]          # cabeçalho de cenário (sem letras)
+N = LAB
 CARGO = {6: 'Deputado federal', 7: 'Deputado estadual/distrital'}
 def cargo_uf(cargo, uf): return 'Deputado federal' if cargo == 6 else ('Deputado distrital' if uf == 'DF' else 'Deputado estadual')
 def rot_uf(cargo, uf): return 'Federal' if cargo == 6 else ('Distrital' if uf == 'DF' else 'Estadual')
@@ -94,7 +95,7 @@ CENH = [CH(k) for k in CEN]
 tf = {k: campo(fed[k]) for k in ['real'] + CEN}; te = {k: campo(est[k]) for k in ['real'] + CEN}
 psbf = {k: fed[k]['PSB'] for k in ['real'] + CEN}; psbe = {k: est[k]['PSB'] for k in ['real'] + CEN}
 ent_n = {k: len(mud(k, 6)[0]) for k in CEN}
-assert all(len(mud(k, 6)[0]) == len(mud(k, 6)[1]) for k in CEN)
+assert all(len(mud(k, 6)[0]) == len(mud(k, 6)[1]) for k in OLD)
 print('federais esquerda', tf); print('estaduais+distritais esquerda', te); print('PSB fed', psbf, 'est', psbe); print('entram', ent_n)
 
 def rotulo(p, k):
@@ -131,8 +132,8 @@ add(P('A **Oficina Política** apresenta neste relatório o que teria acontecido
 add(LST(['**Para a esquerda como um todo:** quantas cadeiras teriam PT, PCdoB, PV, PSB, PDT, PSOL e Rede em cada cenário, e de quem elas sairiam.',
          '**Para cada partido:** quem ganha e quem perde com cada arranjo, dentro e fora do campo, e quais deputados entram ou saem.'], 'ordered'))
 add(P('São seis cenários, comparados com o resultado real de 2026. **FBE** é a Federação Brasil da Esperança (PT, PCdoB e PV). Deputados estaduais e distritais são tratados como um só cargo.'))
-add(TBL(['Cenário', 'Federação simulada', 'O que muda em relação a 2026'], [[CH(k), DESC[k][0], DESC[k][1]] for k in CEN]))
-add(P('**Como ler as cores.** Cada cenário tem um marcador de cor (🟦 A, 🟧 B, 🟪 C, 🟨 D, 🟫 E, ⬛ F). Nas tabelas, **verde** indica ganho de cadeiras ou candidato que entra; **vermelho**, perda de cadeiras ou candidato que sai. Os valores entre parênteses são a diferença em relação ao resultado real de 2026. O Capítulo 1 compara os cenários, o Capítulo 2 trata cada um separadamente e o Capítulo 3 reúne a metodologia.'))
+add(TBL(['Federação simulada', 'O que muda em relação a 2026'], [[LAB[k], DESC[k][1]] for k in CEN]))
+add(P('**Como ler as cores.** Nas tabelas, **verde** indica ganho de cadeiras ou candidato que entra; **vermelho**, perda de cadeiras de um partido ou candidato que sai; **amarelo**, cadeira que muda de partido ou de candidato sem ganho para a esquerda. Os valores entre parênteses são a diferença em relação ao resultado real de 2026. O Capítulo 1 compara os cenários, o Capítulo 2 trata cada um separadamente e o Capítulo 3 reúne a metodologia.'))
 add(Q('**Limite de candidatos por lista.** A lei limita cada partido ou federação a um número máximo de candidatos (vagas + 1). Este relatório trabalha com o número de candidatos que cada partido e cada federação efetivamente lançaram em 2026. Numa federação real, a lista única teria de ter menos candidatos do que a soma dos partidos que a formam, e esse número menor poderia alterar os resultados aqui apresentados. Em vários estados a soma passa do limite.'))
 add(P('¹ Jornalista e especialista em gestão de partidos políticos.'))
 
@@ -140,43 +141,43 @@ add(P('¹ Jornalista e especialista em gestão de partidos políticos.'))
 dem = {k: sum(fed[k][p] - fed['real'][p] for p in partidos if p not in CAMPO) for k in CEN}
 d = {k: tf[k] - tf['real'] for k in CEN}
 assert d == {'A': 8, 'B': 7, 'C': 13, 'D': 19, 'E': 5, 'F': 2}, d
-def dp(p): return [fed[k][p] - fed['real'][p] for k in CEN]
-def dpe(p): return [est[k][p] - est['real'][p] for k in CEN]
+def dp(p): return [fed[k][p] - fed['real'][p] for k in OLD]
+def dpe(p): return [est[k][p] - est['real'][p] for k in OLD]
 assert dp('PL') == [-2, -2, -2, -2, 0, 0] and dp('UNIÃO') == [-2, -1, -3, -4, -1, 0] and dp('PSD') == [-1, -1, -3, -3, -2, -1]
 assert dp('PP') == [-2, 0, -2, -2, 0, 0] and dp('REPUBLICANOS') == [-1, -2, -2, -3, -1, 0]
 assert dp('MDB') == [0, 0, 0, -2, -1, 0] and dp('PODE') == [0, -1, -1, -2, 0, 0] and dp('NOVO') == [0, 0, 0, -1, 0, 0]
-assert [-dem[k] for k in CEN] == [8, 7, 13, 19, 5, 2]
+assert [-dem[k] for k in OLD] == [8, 7, 13, 19, 5, 2]
 assert dp('PT') == [6, 0, 6, 8, 4, 0] and dp('PSB') == [2, 5, 4, 5, 0, 2] and dp('PDT') == [0, 3, 2, 3, 0, 0]
 assert dp('PCdoB') == [-1, -1, 0, 1, 0, 0] and dp('PV') == [1, 0, 1, 1, 0, 0] and dp('PSOL') == [0, 0, 0, 1, 1, 0] and dp('REDE') == [0] * 6
 assert dpe('PDT') == [0, 0, -2, -3, 0, 0] and dpe('PSB') == [1, 3, 2, 1, -1, -1]
-assert [te[k] - te['real'] for k in CEN] == [3, 2, 6, 11, 4, -1]
+assert [te[k] - te['real'] for k in OLD] == [3, 2, 6, 11, 4, -1]
 assert top['C'][0] == ('FBE + PSB + PDT', 122) and top['D'][0] == ('FBE + PSB + PDT + PSOL/Rede', 143)
-assert fed['real']['PL'] == 121 and [fed[k]['PL'] for k in CEN] == [119, 119, 119, 119, 121, 121]
+assert fed['real']['PL'] == 121 and [fed[k]['PL'] for k in OLD] == [119, 119, 119, 119, 121, 121]
 assert fed['F']['PSDB'] == 9 and fed['F']['CIDADANIA'] == 1 and fed['F']['PSD'] - fed['real']['PSD'] == -1
 psb_a = {u: conta(S['A']['eleitos'], 6, u)['PSB'] - conta(real, 6, u)['PSB'] for u in UFS}
 assert {u: v for u, v in psb_a.items() if v} == {'BA': -1, 'CE': 1, 'GO': 1, 'MA': 1, 'PB': 1, 'SP': -1}, psb_a
 
 # ------------------------------------------------------------------ Capítulo 1
 add(H(2, 'Capítulo 1 · Análise geral'))
-add(P('Em todos os seis cenários a esquerda elege mais deputados federais do que em 2026, de +2 (F) a +19 (D), mas nenhum chega perto da maioria de 257. Cada cadeira que a esquerda ganha sai de outro partido, e a maior parte do custo recai sobre partidos de fora do campo.'))
+add(P(f'Em todos os seis cenários a esquerda elege mais deputados federais do que em 2026, de +2 ({LAB["F"]}) a +19 ({LAB["D"]}), mas nenhum chega perto da maioria de 257. Cada cadeira que a esquerda ganha sai de outro partido, e a maior parte do custo recai sobre partidos de fora do campo.'))
 add(H(3, '1.1 Principais achados'))
 add(P('**A esquerda como um todo**'))
 add(LST([
-    '**A esquerda vai de 124 a, no máximo, 143 deputados federais** (27,9% da Câmara, cenário D); em F chega a 126. Nenhum cenário chega perto da maioria de 257.',
-    '**Nos cenários C e D, a federação vira a maior bancada da Câmara** (122 e 143 contra 119 do PL). Em A e E fica em segundo lugar; em F, o PL segue na frente.',
-    '**Nos estados, o efeito é menor:** a esquerda varia de −1 (F) a +11 deputados estaduais e distritais; os 7 distritais do DF não mudam em nenhum cenário.']))
+    f'**A esquerda vai de 124 a, no máximo, 143 deputados federais** (27,9% da Câmara, na {LAB['D']}); na {LAB['F']} chega a 126. Nenhum cenário chega perto da maioria de 257.',
+    f'**Na {LAB['C']} e na {LAB['D']}, a federação vira a maior bancada da Câmara** (122 e 143 contra 119 do PL). Nos demais cenários, o PL segue na frente (119 ou 121 federais).',
+    f'**Nos estados, o efeito é menor:** a esquerda varia de −1 ({LAB['F']}) a +11 ({LAB['D']}) deputados estaduais e distritais; os 7 distritais do DF não mudam em nenhum cenário.',]))
 add(P('**Por partido de esquerda (deputados federais)**'))
 add(LST([
-    '**PT:** cresce quando a FBE ganha parceiros: +6 em A e C, +8 em D e +4 em E; fica igual em B e F.',
-    '**PSB:** ganha em cinco cenários (+2 em A e F, +4 em C, +5 em B e D) e fica igual em E, em que não entra em federação. Em A, ganha no Ceará, em Goiás, no Maranhão e na Paraíba e perde na Bahia e em São Paulo. Nos estaduais e distritais, vai de +3 (B) a −1 (E e F).',
-    '**PDT:** ganha 3 em B e D e 2 em C, e fica igual em A, E e F. Nos estaduais e distritais, perde 2 em C e 3 em D.',
-    '**PCdoB, PV, PSOL e Rede:** o PCdoB perde 1 em A e em B e ganha 1 em D; o PV ganha 1 em A, C e D; o PSOL ganha 1 em D e E; a Rede não muda. Dentro de uma federação nem todo partido ganha, porque a vaga vai para o candidato mais votado da lista, de qualquer partido.']))
+    f'**PT:** cresce quando a FBE ganha parceiros: +8 na {LAB['D']}, +6 na {LAB['C']} e na {LAB['A']}, +4 na {LAB['E']}; fica igual nos outros dois.',
+    f'**PSB:** ganha em cinco cenários (+5 na {LAB['D']} e na {LAB['B']}, +4 na {LAB['C']}, +2 na {LAB['A']} e na {LAB['F']}) e fica igual na {LAB['E']}, em que não entra em federação. Na {LAB['A']}, ganha no Ceará, em Goiás, no Maranhão e na Paraíba e perde na Bahia e em São Paulo. Nos estaduais e distritais, vai de +3 ({LAB['B']}) a −1 ({LAB['E']} e {LAB['F']}).',
+    f'**PDT:** ganha 3 na {LAB['B']} e na {LAB['D']} e 2 na {LAB['C']}, e fica igual nos demais. Nos estaduais e distritais, perde 2 na {LAB['C']} e 3 na {LAB['D']}.',
+    f'**PCdoB, PV, PSOL e Rede:** o PCdoB perde 1 na {LAB['A']} e na {LAB['B']} e ganha 1 na {LAB['D']}; o PV ganha 1 na {LAB['A']}, na {LAB['C']} e na {LAB['D']}; o PSOL ganha 1 na {LAB['D']} e na {LAB['E']}; a Rede não muda. Dentro de uma federação nem todo partido ganha, porque a vaga vai para o candidato mais votado da lista, de qualquer partido.',]))
 add(P('**Demais partidos (deputados federais)**'))
 add(LST([
-    '**Toda cadeira que a esquerda ganha sai de outro partido.** Os demais partidos perdem 19 federais em D, 13 em C, 8 em A, 7 em B, 5 em E e 2 em F.',
-    '**Nos cenários A a E, quem paga são os partidos de fora do campo.** O PL perde 2 federais em A, B, C e D e fica igual em E e F. UNIÃO perde de 1 a 4 (4 em D); PSD, de 1 a 3; PP, 2 (em A, C e D); REPUBLICANOS, de 1 a 3.',
-    '**MDB, PODE e NOVO só perdem nos cenários mais amplos:** o MDB, 2 em D e 1 em E; o PODE, 1 em B e em C e 2 em D; o NOVO, 1 em D.',
-    '**Em F, quem paga é o PSDB, não o campo adversário:** o PSDB cai de 11 para 9 federais (MA e SP) e o PSD perde 1 (CE). O Cidadania passa de 0 a 1 federal (SP).']))
+    f'**Toda cadeira que a esquerda ganha sai de outro partido.** Os demais partidos perdem 19 federais na {LAB['D']}, 13 na {LAB['C']}, 8 na {LAB['A']}, 7 na {LAB['B']}, 5 na {LAB['E']} e 2 na {LAB['F']}.',
+    f'**Fora da {LAB['F']}, quem paga são os partidos de fora do campo.** O PL perde 2 federais na {LAB['A']}, na {LAB['B']}, na {LAB['C']} e na {LAB['D']} e fica igual nos outros dois. UNIÃO perde de 1 a 4 (4 na {LAB['D']}); PSD, de 1 a 3; PP, 2 (na {LAB['A']}, na {LAB['C']} e na {LAB['D']}); REPUBLICANOS, de 1 a 3.',
+    f'**MDB, PODE e NOVO só perdem nos cenários mais amplos:** o MDB, 2 na {LAB['D']} e 1 na {LAB['E']}; o PODE, 1 na {LAB['B']} e na {LAB['C']} e 2 na {LAB['D']}; o NOVO, 1 na {LAB['D']}.',
+    f'**Com a {LAB['F']}, quem paga é o PSDB, não o campo adversário:** o PSDB cai de 11 para 9 federais (MA e SP) e o PSD perde 1 (CE). O Cidadania passa de 0 a 1 federal (SP).',]))
 
 add(H(3, '1.2 A esquerda nos seis cenários'))
 add(P('Cadeiras em cada cenário; entre parênteses, a diferença para o resultado real de 2026. "Esquerda" = PT, PCdoB, PV, PSB, PDT, PSOL e Rede.'))
@@ -197,7 +198,7 @@ rows = [lin('Esquerda, deputados federais', tf['real'], [tf[k] for k in CEN], Tr
 add(TBL(HQ, rows))
 
 add(H(3, '1.3 Partido a partido: deputados federais'))
-add(P('A esquerda tem 124 deputados federais em 2026 (24,2% da Câmara) e chega a 143 (27,9%) no cenário D, o de maior alcance. O de menor alcance é o F, com 126 (24,6%).'))
+add(P(f'A esquerda tem 124 deputados federais em 2026 (24,2% da Câmara) e chega a 143 (27,9%) na {LAB["D"]}, o cenário de maior alcance. O de menor alcance é a {LAB["F"]}, com 126 (24,6%).'))
 assert (tf['real'], tf['D'], tf['F']) == (124, 143, 126) and pct(tf['real'], 513) == '24,2%' and pct(tf['D'], 513) == '27,9%' and pct(tf['F'], 513) == '24,6%'
 add(P('**Os sete partidos de esquerda**'))
 rows = [[pn(p), str(fed['real'][p])] + [cel(fed[k][p], fed['real'][p]) for k in CEN] for p in CAMPO]
@@ -211,10 +212,10 @@ for p in partidos:
     if any(ds): rows.append([f'{pn(p)} (2026: {fed["real"][p]})'] + [dcel(x) for x in ds])
 rows.append(['**Soma dos demais**'] + [dcel(dem[k], True) for k in CEN])
 add(TBL(['Partido'] + CENH, rows))
-add(P('Avante, PRD, Solidariedade, Missão e os demais não mudam em nenhum cenário. O PSDB e o Cidadania só mudam em F: o PSDB perde 2 federais (Juscelino Filho, no Maranhão, e Paulo Serra, em São Paulo) e o Cidadania ganha 1 (Alex Manente, em São Paulo).'))
+add(P(f'Avante, PRD, Solidariedade, Missão e os demais não mudam em nenhum cenário. O PSDB e o Cidadania só mudam na {LAB["F"]}: o PSDB perde 2 federais (Juscelino Filho, no Maranhão, e Paulo Serra, em São Paulo) e o Cidadania ganha 1 (Alex Manente, em São Paulo).'))
 
 add(H(3, '1.4 Partido a partido: deputados estaduais e distritais'))
-add(P(f'Nas assembleias legislativas e na Câmara Legislativa do DF, o efeito é menor: a esquerda tem {te["real"]} deputados em 2026 ({pct(te["real"], 1059)} das 1.059 cadeiras) e chega a {te["D"]} ({pct(te["D"], 1059)}) em D. Em F, cai para {te["F"]}.'))
+add(P(f'Nas assembleias legislativas e na Câmara Legislativa do DF, o efeito é menor: a esquerda tem {te["real"]} deputados em 2026 ({pct(te["real"], 1059)} das 1.059 cadeiras) e chega a {te["D"]} ({pct(te["D"], 1059)}) na {LAB["D"]}. Na {LAB["F"]}, cai para {te["F"]}.'))
 assert (te['real'], te['D'], te['F']) == (264, 275, 263)
 rows = [[pn(p), str(est['real'][p])] + [cel(est[k][p], est['real'][p]) for k in CEN] for p in CAMPO]
 rows.append(['**Esquerda**', f'**{te["real"]}**'] + [cel(te[k], te['real'], True) for k in CEN])
@@ -228,11 +229,11 @@ for p in partidos_e:
     ds = [est[k][p] - est['real'][p] for k in CEN]
     if any(ds): rows.append([f'{pn(p)} (2026: {est["real"][p]})'] + [dcel(x) for x in ds])
 rows.append(['**Soma dos demais**'] + [dcel(dem_e[k], True) for k in CEN])
-assert [-dem_e[k] for k in CEN] == [3, 2, 6, 11, 4, -1]
+assert [-dem_e[k] for k in OLD] == [3, 2, 6, 11, 4, -1]
 add(TBL(['Partido'] + CENH, rows))
 
 add(H(3, '1.5 Composição da Câmara dos Deputados'))
-add(P('O PL continua sendo a maior bancada nos cenários A, B, E e F; em C e D, a federação de esquerda passa à frente.'))
+add(P(f'O PL continua sendo a maior bancada na {LAB["A"]}, na {LAB["B"]}, na {LAB["E"]} e na {LAB["F"]}; na {LAB["C"]} e na {LAB["D"]}, a federação de esquerda passa à frente.'))
 rows = [[pn(p), str(fed['real'][p])] + [cel(fed[k][p], fed['real'][p]) for k in CEN] for p in partidos]
 rows.append(['**Total**', '**513**'] + [f'**{sum(fed[k].values())}**' for k in CEN])
 add(TBL(['Partido', '2026 (real)'] + CENH, rows))
@@ -240,7 +241,7 @@ add(P('Por lista (partido ou federação), as três maiores bancadas em cada cen
 rows = [['2026 (real)'] + [f'{a} · {v}' for a, v in top['real'][:3]]]
 for k in CEN: rows.append([CH(k)] + [f'{a} · {v}' for a, v in top[k][:3]])
 add(TBL(['Cenário', '1ª maior', '2ª maior', '3ª maior'], rows))
-add(P(f'UNIÃO/PP, PSDB/Cidadania e PRD/Solidariedade são federações que já existem; aqui UNIÃO e PP aparecem separados na primeira tabela e somados na segunda. Em B, PSB + PDT somam {fed["B"]["PSB"] + fed["B"]["PDT"]}. Em F, a PSDB/Cidadania é desfeita: PSDB ({fed["F"]["PSDB"]}) e Cidadania ({fed["F"]["CIDADANIA"]}) aparecem separados e PSB + Cidadania somam {fed["F"]["PSB"] + fed["F"]["CIDADANIA"]}.'))
+add(P(f'UNIÃO/PP, PSDB/Cidadania e PRD/Solidariedade são federações que já existem; aqui UNIÃO e PP aparecem separados na primeira tabela e somados na segunda. Na federação PSB + PDT, os dois partidos somam {fed["B"]["PSB"] + fed["B"]["PDT"]}. Com a PSB + Cidadania, a federação PSDB/Cidadania é desfeita: PSDB ({fed["F"]["PSDB"]}) e Cidadania ({fed["F"]["CIDADANIA"]}) aparecem separados e PSB + Cidadania somam {fed["F"]["PSB"] + fed["F"]["CIDADANIA"]}.'))
 
 # ---- mapa dos estados
 mudou = {}
@@ -263,9 +264,9 @@ def celmud(k, cargo, uf):
         its = sorted(ds.items(), key=lambda kv: (-kv[1], pn(kv[0])))
         txt = ', '.join(f'{pn(p)} {dl(v)}' for p, v in its)
     else: txt = f'troca {len(ent)} candidato' + ('s' if len(ent) > 1 else '') + ', mesmos partidos'
-    return (txt, GAIN if net > 0 else (LOSS if net < 0 else MIX))
+    return (txt, GAIN if net > 0 else MIX)      # nunca vermelho: é troca de partido/candidato dentro do campo
 add(H(3, '1.6 Onde muda: os estados'))
-add(P(f'Em {len(UFS_M)} estados ({", ".join(UFS_M)}) pelo menos um cenário muda quem é eleito, para deputado federal ou estadual. Nos outros {len(UFS_N)} ({", ".join(UFS_N)}) nenhum cenário muda nada. As tabelas mostram, em cada cenário, as cadeiras que mudam de partido (a diferença em relação a 2026). **Verde:** a esquerda ganha cadeiras. **Vermelho:** a esquerda perde. **Amarelo:** o total da esquerda não muda, mas muda quem é eleito. "—": nenhuma mudança.'))
+add(P(f'Em {len(UFS_M)} estados ({", ".join(UFS_M)}) pelo menos um cenário muda quem é eleito, para deputado federal ou estadual. Nos outros {len(UFS_N)} ({", ".join(UFS_N)}) nenhum cenário muda nada. As tabelas mostram, em cada cenário, as cadeiras que mudam de partido (a diferença em relação a 2026). **Verde:** a esquerda ganha cadeiras. **Amarelo:** a cadeira muda de partido ou de candidato sem ganho para a esquerda. "—": nenhuma mudança.'))
 for cargo, tit in ((6, 'Deputado federal'), (7, 'Deputado estadual')):
     add(P(f'**{tit}**'))
     rows = [[uf] + [celmud(k, cargo, uf) for k in CEN] for uf in UFS_M if (cargo, uf) in mudou]
@@ -288,18 +289,20 @@ def candrows(k, cargo):
     return rows
 def scen(k):
     ent6, sai6 = mud(k, 6); ent7_, sai7 = mud(k, 7)
-    add(H(3, f'{EMO[k]} Cenário {k} · {LAB[k]}'))
+    add(H(3, LAB[k]))
     add(P(f'**{DESC[k][0]}.** {DESC[k][1]}'))
-    add(P(f'**Em síntese:** a esquerda vai de {tf["real"]} para {tf[k]} deputados federais ({dl(tf[k] - tf["real"])}) e de {te["real"]} para {te[k]} estaduais e distritais ({dl(te[k] - te["real"])}). Entram {len(ent6)} federais e {len(ent7_)} estaduais, e saem o mesmo número. A composição muda em {len({u for (c, u), ks in mudou.items() if k in ks})} estados.'))
+    add(P(f'**Em síntese:** a esquerda vai de {tf["real"]} para {tf[k]} deputados federais ({dl(tf[k] - tf["real"])}) e de {te["real"]} para {te[k]} estaduais e distritais ({dl(te[k] - te["real"])}). Entram {len(ent6)} federais e {len(ent7_)} {'estadual' if len(ent7_) == 1 else 'estaduais'}, e saem o mesmo número. A composição muda em {len({u for (c, u), ks in mudou.items() if k in ks})} estados.'))
     # destaques
     dest = []
     perdem = sorted([(p, fed[k][p] - fed['real'][p]) for p in partidos if p not in CAMPO and fed[k][p] < fed['real'][p]], key=lambda x: (x[1], pn(x[0])))
     if perdem: dest.append('**Quem perde cadeira federal fora do campo:** ' + ', '.join(f'{pn(p)} {dl(v)}' for p, v in perdem) + f' (soma {dl(dem[k])}).')
     else: dest.append('Nenhum partido fora do campo perde cadeira federal.')
-    lost = [e for e in sai6 if e['partido'] in CAMPO]
-    if lost: dest.append('**Deputados federais de esquerda que perdem a vaga:** ' + '; '.join(f'{e["nome"].title()} ({pn(e["partido"])}-{e["uf"]})' for e in sorted(lost, key=lambda e: (e['uf'], -e['votos']))) + '. Dentro de uma lista fundida, a vaga vai pelo voto, não pelo partido.')
-    lost7 = [e for e in sai7 if e['partido'] in CAMPO]
-    if lost7: dest.append(f'**Deputados estaduais de esquerda que perdem a vaga:** {len(lost7)} ({", ".join(f"{pn(p)} {c}" for p, c in sorted(collections.Counter(e["partido"] for e in lost7).items(), key=lambda kv: (-kv[1], pn(kv[0]))))}).')
+    nm = lambda e: e['nome'].title()
+    trocas = []
+    for uf in sorted({e['uf'] for e in sai6 if e['partido'] in CAMPO}):
+        eu = sorted([e for e in ent6 if e['uf'] == uf], key=lambda e: -e['votos']); su = sorted([e for e in sai6 if e['uf'] == uf], key=lambda e: -e['votos'])
+        trocas.append(f'{uf}: entram ' + ', '.join(f'{nm(e)} ({pn(e["partido"])})' for e in eu) + '; saem ' + ', '.join(f'{nm(e)} ({pn(e["partido"])})' for e in su))
+    if trocas: dest.append('**Trocas de candidatos nos estados em que sai deputado de esquerda (federais):** ' + '; '.join(trocas) + '. Dentro de uma lista fundida, a vaga vai ao candidato mais votado, de qualquer partido.')
     add(LST(dest))
     add(H(4, 'Resultado por partido'))
     add(P('Cadeiras por partido em 2026 e no cenário; entre parênteses, a diferença. Aparecem os sete partidos de esquerda e os demais que mudam.'))
@@ -318,7 +321,7 @@ def scen(k):
         for cargo in (6, 7):
             if (cargo, uf) in mudou and k in mudou[(cargo, uf)]:
                 rows.append([f'{uf} · {UFNOME[uf]}', rot_uf(cargo, uf), str(info[(cargo, uf)]['vagas']), celmud(k, cargo, uf)])
-    add(P('Estados e cargos em que muda quem é eleito, com as cadeiras que mudam de partido. **Verde:** a esquerda ganha. **Vermelho:** a esquerda perde. **Amarelo:** o total da esquerda não muda, mas muda quem é eleito.'))
+    add(P('Estados e cargos em que muda quem é eleito, com as cadeiras que mudam de partido. **Verde:** a esquerda ganha cadeiras. **Amarelo:** a cadeira muda de partido ou de candidato sem ganho para a esquerda.'))
     add(TBL(['Estado', 'Cargo', 'Vagas', 'Cadeiras que mudam de partido'], rows))
     if k == 'F':
         notas = []
@@ -327,7 +330,7 @@ def scen(k):
             notas.append(t)
         assert {(c, u) for (c, u), ks in mudou.items() if 'F' in ks} == set(NOTA_F), {(c, u) for (c, u), ks in mudou.items() if 'F' in ks}
         add(H(4, 'Como acontece'))
-        add(P('Em F, a mudança vem do voto de legenda e da barreira de 80% do quociente, que passam a valer para listas diferentes quando a federação PSDB/Cidadania é desfeita.'))
+        add(P('Na PSB + Cidadania, a mudança vem do voto de legenda e da barreira de 80% do quociente, que passam a valer para listas diferentes quando a federação PSDB/Cidadania é desfeita.'))
         add(LST(notas))
     add(H(4, 'Quem entra e quem sai'))
     add(P(f'**Deputados federais:** {len(ent6)} entram e {len(sai6)} saem.'))
@@ -340,7 +343,7 @@ for k in CEN: scen(k)
 add(H(2, 'Capítulo 3 · Metodologia e notas'))
 add(P('Este capítulo reúne as regras de divisão de cadeiras usadas nas simulações, os dados e a validação, os limites do relatório, um exemplo passo a passo, o glossário, as fontes e a ficha técnica.'))
 add(H(3, 'Antes de usar estes números'))
-add(Q('**Confira as regras.** Confira as regras de divisão de cadeiras (como entram os eleitos por quociente partidário e por sobras, as barreiras de 10%, 80% e 20% do quociente e a decisão do STF sobre as sobras) com a legislação e as resoluções do TSE em vigor. A simulação não é previsão: mantém os votos de 2026 e ignora o limite de candidatos por lista.'))
+add(Q('**Atenção.** Confira as regras de divisão de cadeiras (como entram os eleitos por quociente partidário e por sobras, as barreiras de 10%, 80% e 20% do quociente e a decisão do STF sobre as sobras) com a legislação e as resoluções do TSE em vigor. A simulação não é previsão: mantém os votos de 2026 e ignora o limite de candidatos por lista.'))
 
 # ------------------------------------------------------------------ Regras e método
 add(P('As cadeiras de deputado são divididas por um sistema proporcional: cada partido ou federação conquista vagas conforme a soma de seus votos, e dentro dele são eleitos os candidatos mais votados. As regras abaixo foram aplicadas tal como descritas.'))
@@ -360,18 +363,18 @@ add(LST([
     '**Votos:** arquivos oficiais do TSE de votação por candidato e por partido, 1º turno de 2026, gerados em 25/10/2026. Cadastro de candidaturas também do TSE.',
     '**Cargos:** deputados estaduais (1.035 vagas) e distritais (24, no DF) são tratados como um só cargo, com 1.059 vagas. Os federais somam 513.',
     '**Validação:** aplicado às listas reais, o cálculo reproduz os **1.572 eleitos de 2026** (513 federais, 1.035 estaduais e 24 distritais), um a um, e a forma de eleição de cada um (por QP ou por sobra), sem nenhuma divergência. O mesmo cálculo reproduz os 1.572 eleitos de 2022. Um segundo cálculo, feito de forma independente a partir dos arquivos brutos do TSE, chegou aos mesmos eleitos nos seis cenários, em todos os estados.',
-    '**Nos cenários,** os votos de cada candidato e de cada legenda ficam exatamente como foram em 2026. Só muda a forma de contar: os votos dos partidos fundidos formam uma lista única e as cadeiras são divididas pelas regras acima. No cenário F, a federação PSDB/Cidadania é desfeita e cada partido leva seus candidatos e seu voto de legenda.']))
+    '**Nos cenários,** os votos de cada candidato e de cada legenda ficam exatamente como foram em 2026. Só muda a forma de contar: os votos dos partidos fundidos formam uma lista única e as cadeiras são divididas pelas regras acima. Na PSB + Cidadania, a federação PSDB/Cidadania é desfeita e cada partido leva seus candidatos e seu voto de legenda.']))
 add(H(3, 'Limites da simulação'))
 add(LST([
     '**Não é previsão.** Numa federação real, partidos escolhem candidatos de outro jeito e o eleitor pode votar de outro jeito.',
-    '**Limite de candidatos por lista:** a lei permite no máximo número de vagas + 1 candidatos por partido ou federação. Este relatório usa o número de candidatos que cada partido e federação lançaram em 2026. Em vários estados, a soma dos candidatos dos partidos que se fundem passa desse limite; a lista fundida teria de ter menos candidatos, e isso poderia mudar os resultados. No cenário F, cortar cada lista fundida nos mais votados até o limite não muda nenhum eleito.',
-    '**Cenário F e o voto de legenda:** na federação PSDB/Cidadania o voto de legenda vale para a lista única. Para desfazê-la, cada partido ficou com os votos de legenda que o TSE publica para ele. O resultado de F não muda se esse voto for dividido em proporção aos votos nominais de cada partido, nem se ficar todo com o PSDB. Só mudaria se ficasse todo com o Cidadania (cinco combinações de estado e cargo).',
+    '**Limite de candidatos por lista:** a lei permite no máximo número de vagas + 1 candidatos por partido ou federação. Este relatório usa o número de candidatos que cada partido e federação lançaram em 2026. Em vários estados, a soma dos candidatos dos partidos que se fundem passa desse limite; a lista fundida teria de ter menos candidatos, e isso poderia mudar os resultados. Na PSB + Cidadania, cortar cada lista fundida nos mais votados até o limite não muda nenhum eleito.',
+    '**PSB + Cidadania e o voto de legenda:** na federação PSDB/Cidadania o voto de legenda vale para a lista única. Para desfazê-la, cada partido ficou com os votos de legenda que o TSE publica para ele. O resultado não muda se esse voto for dividido em proporção aos votos nominais de cada partido, nem se ficar todo com o PSDB. Só mudaria se ficasse todo com o Cidadania (cinco combinações de estado e cargo).',
     '**Não modelado:** exigências estatutárias das federações (permanência mínima de 4 anos, programa e estatuto comuns), fundo partidário, tempo de rádio e TV, cotas de gênero e desempate por idade.',
-    '**"Esquerda"** neste relatório = PT, PCdoB, PV, PSB, PDT, PSOL e Rede. É uma escolha de análise, ajustável. O Cidadania não entra, nem em F, quando se junta ao PSB: seus deputados aparecem à parte.']))
+    '**"Esquerda"** neste relatório = PT, PCdoB, PV, PSB, PDT, PSOL e Rede. É uma escolha de análise, ajustável. O Cidadania não entra, nem quando se junta ao PSB: seus deputados aparecem à parte.']))
 
 # ------------------------------------------------------------------ Apêndice
 add(H(3, 'Exemplo passo a passo: Sergipe, deputado federal (8 vagas)'))
-add(P('O exemplo mostra, com um estado pequeno, como a divisão de cadeiras funciona e por que o cenário A (PSB na FBE, com PT/PCdoB/PV) elege Marcio Macedo (PT) no lugar de Gustinho Ribeiro (PP). Qualquer pessoa pode refazer as contas com uma calculadora.'))
+add(P('O exemplo mostra, com um estado pequeno, como a divisão de cadeiras funciona e por que a federação FBE + PSB (o PSB na FBE, com PT/PCdoB/PV) elege Marcio Macedo (PT) no lugar de Gustinho Ribeiro (PP). Qualquer pessoa pode refazer as contas com uma calculadora.'))
 add(P('**1. Quociente eleitoral.** Votos válidos: 1.283.700. Divididos por 8 vagas, dão 160.462,5. A fração é exatamente 0,5, e fração igual ou inferior a 0,5 é desprezada: QE = 160.462.'))
 add(P('**2. Quociente partidário, no resultado real de 2026.** Votos da lista ÷ QE, sem a fração.'))
 add(TBL(['Lista', 'Votos (nominais + legenda)', '÷ QE', 'QP'], [
@@ -384,14 +387,14 @@ add(TBL(['Rodada', 'Médias das listas', 'Vence'], [
     ['2ª sobra', 'UNIÃO/PP 315.092 ÷ 3 = 105.031; PSD 128.587', 'PSD (Delegada Katarina, 71.592)'],
     ['3ª sobra', 'UNIÃO/PP 105.031; PSD 257.174 ÷ 3 = 85.725', 'UNIÃO/PP (Gustinho Ribeiro, 58.289)']]))
 add(P('Resultado real: UNIÃO/PP 3, PSD 2, REPUBLICANOS 1, PSB 1, PT/PCdoB/PV 1, ou seja, 8 vagas.'))
-add(P('**4. Cenário A.** PT/PCdoB/PV e PSB viram uma lista só, com 173.171 + 193.321 = 366.492 votos. ÷ QE = 2,28, então QP = 2, e as duas vagas vão aos mais votados da lista, Claudio Mitidieri (PSB, 105.865) e Joao Daniel (PT, 88.900). Os QP dos demais ficam como antes (UNIÃO/PP 1, PSD 1, REPUBLICANOS 1), e restam 3 sobras.'))
+add(P('**4. FBE + PSB.** PT/PCdoB/PV e PSB viram uma lista só, com 173.171 + 193.321 = 366.492 votos. ÷ QE = 2,28, então QP = 2, e as duas vagas vão aos mais votados da lista, Claudio Mitidieri (PSB, 105.865) e Joao Daniel (PT, 88.900). Os QP dos demais ficam como antes (UNIÃO/PP 1, PSD 1, REPUBLICANOS 1), e restam 3 sobras.'))
 add(TBL(['Rodada', 'Médias das listas', 'Vence'], [
     ['1ª sobra', 'UNIÃO/PP 157.546; PSD 128.587; PT/PCdoB/PV/PSB 366.492 ÷ 3 = 122.164', 'UNIÃO/PP (Capitão Samuel)'],
     ['2ª sobra', 'PSD 128.587; UNIÃO/PP 105.031; fundida 122.164', 'PSD (Delegada Katarina)'],
     ['3ª sobra', 'fundida 122.164; UNIÃO/PP 105.031; PSD 85.725', 'Federação: Marcio Macedo (PT, 59.143), o 3º mais votado da lista']]))
 add(P('A federação fica com 3 vagas (2 por QP e 1 por sobra), a UNIÃO/PP com 2 e o PP perde Gustinho Ribeiro. Os votos são os mesmos; mudou a lista que os soma. Repare que, na lista única, o PSB continua com 1 deputado (Mitidieri) e o PT passa de 1 para 2.'))
 add(H(3, 'Pontos das regras a conferir'))
-add(P('A leitura das regras usada aqui reproduz os resultados oficiais de 2022 e 2026. Mas os cenários criam situações que a eleição real não criou, como uma federação de esquerda com mais candidatos do que o limite por lista, ou o voto de legenda de uma federação dividido entre dois partidos (cenário F). Por isso convém conferir com a legislação e as resoluções do TSE, em especial: (a) a ordem de preenchimento das vagas por QP e por sobra; (b) as barreiras de 10%, 80% e 20% do QE; (c) o tratamento das sobras após a decisão do STF; (d) o limite de candidatos por lista.'))
+add(P('A leitura das regras usada aqui reproduz os resultados oficiais de 2022 e 2026. Mas os cenários criam situações que a eleição real não criou, como uma federação de esquerda com mais candidatos do que o limite por lista, ou o voto de legenda de uma federação dividido entre dois partidos (PSB + Cidadania). Por isso convém conferir com a legislação e as resoluções do TSE, em especial: (a) a ordem de preenchimento das vagas por QP e por sobra; (b) as barreiras de 10%, 80% e 20% do QE; (c) o tratamento das sobras após a decisão do STF; (d) o limite de candidatos por lista.'))
 add(H(3, 'Glossário'))
 add(TBL(['Termo', 'Significado'], [
     ['FBE', 'Federação Brasil da Esperança: PT, PCdoB e PV'],
@@ -406,7 +409,7 @@ add(TBL(['Termo', 'Significado'], [
     ['Sub judice', 'Candidatura ainda em julgamento. Se for anulada, os votos não contam e o candidato não pode ser eleito'],
     ['Entra / Sai', 'Candidato que é eleito no cenário e não foi em 2026 / foi eleito em 2026 e não é no cenário'],
     ['Esquerda', 'Neste relatório, PT, PCdoB, PV, PSB, PDT, PSOL e Rede'],
-    ['Federação desfeita (cenário F)', 'PSDB e Cidadania voltam a ser listas separadas. Cada um leva seus candidatos e os votos de legenda que o TSE publica para o seu número; o Cidadania forma uma lista única com o PSB'],
+    ['Federação desfeita (PSB + Cidadania)', 'PSDB e Cidadania voltam a ser listas separadas. Cada um leva seus candidatos e os votos de legenda que o TSE publica para o seu número; o Cidadania forma uma lista única com o PSB'],
     ['Estaduais e distritais', 'Tratados como um só cargo: 1.035 deputados estaduais e 24 distritais (DF), 1.059 vagas']]))
 add(H(3, 'Fontes e dados'))
 add(P('Votos e candidaturas: dados abertos do TSE (dadosabertos.tse.jus.br), votação por candidato e por partido do 1º turno de 2026 e de 2022, e cadastro de candidaturas de 2026.'))
