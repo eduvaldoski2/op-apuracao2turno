@@ -1,10 +1,10 @@
 // Camada de dados compartilhada pelo comparador e pela IA: uma "unidade" é o Brasil, uma região, um estado, um município ou um bairro,
 // sempre no mesmo formato (resultado do 2º turno + o 1º turno do mesmo recorte). Referências: br · reg:SE · uf:rj · mun:rj:60011 · bai:rj:60011:NOME
-import { listaMunicipios } from './model.js?v=57272660';
-import { linhaAp } from './views.js?v=57272660';
-import { UF_IDS, UF_NOME, UF_REGIAO, REGIOES, sigla } from './util.js?v=57272660';
-import { estatico, aoVivo, agregar, bonito, setSemDelta, demoSecoes } from './bairros.js?v=57272660';
-import { sem } from './ui.js?v=57272660';
+import { listaMunicipios } from './model.js?v=0512f95d';
+import { linhaAp } from './views.js?v=0512f95d';
+import { UF_IDS, UF_NOME, UF_REGIAO, REGIOES, sigla } from './util.js?v=0512f95d';
+import { estatico, aoVivo, agregar, bonito, setSemDelta, demoSecoes } from './bairros.js?v=0512f95d';
+import { sem } from './ui.js?v=0512f95d';
 
 export const MAX_COMPARAR = 4;
 
@@ -43,7 +43,8 @@ function padrao(ref, tipo, nome, rotulo, uf, x) {
   return {
     ref, tipo, nome, rotulo, uf, L, F, vv, pL, pF,
     margem: L - F, margemPP: pL - pF, lider: x.lider ?? (L === F ? null : L > F ? 'L' : 'F'),
-    pAb: x.pAb, pBrNu: (x.pBr ?? NaN) + (x.pNu ?? NaN), dL: x.dL, dF: x.dF, p1L: pL - x.dL, p1F: pF - x.dF,
+    pAb: x.pAb, pBrNu: (x.pBr ?? NaN) + (x.pNu ?? NaN), dL: x.dL, dF: x.dF,
+    vgL: x.vgL ?? (isFinite(x.L1) ? x.L - x.L1 : NaN), vgF: x.vgF ?? (isFinite(x.F1) ? x.F - x.F1 : NaN), p1L: pL - x.dL, p1F: pF - x.dF,
     te: x.te ?? x.est ?? x.ap, pst: x.pst, apurado: x.pst > 0 || x.pst === undefined,
   };
 }

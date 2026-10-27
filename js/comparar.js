@@ -1,8 +1,8 @@
 // Comparador: Brasil, regiões, estados, municípios e bairros lado a lado (até 4), com leitura automática e imagem em 1:1, 4:5 e 9:16.
-import { MAX_COMPARAR, METRICAS, fmtMetrica, buscar, obter, bairrosDe, entradaPorRef } from './unidades.js?v=57272660';
-import { esc, sem } from './ui.js?v=57272660';
-import { CAND } from './util.js?v=57272660';
-import { bonito } from './bairros.js?v=57272660';
+import { MAX_COMPARAR, METRICAS, fmtMetrica, buscar, obter, bairrosDe, entradaPorRef } from './unidades.js?v=0512f95d';
+import { esc, sem } from './ui.js?v=0512f95d';
+import { CAND } from './util.js?v=0512f95d';
+import { bonito } from './bairros.js?v=0512f95d';
 
 const CHAVES = ['a', 'b', 'c', 'd'];
 export const refsDaRota = q => CHAVES.map(k => q.get(k)).filter(Boolean).slice(0, MAX_COMPARAR);
@@ -18,11 +18,6 @@ const CAPITAIS = [['Rio de Janeiro', 'rj'], ['São Paulo', 'sp'], ['Belo Horizon
 
 const cor = k => CAND[k].cor;
 const linhaBarra = x => `<div class="cmp-bar" role="img" aria-label="Lula ${fmtMetrica('pL', x.pL)} e Flávio ${fmtMetrica('pF', x.pF)}"><i style="width:${Math.max(0, Math.min(100, x.pL))}%;background:${cor('L')}"></i><i style="width:${Math.max(0, Math.min(100, x.pF))}%;background:${cor('F')}"></i></div>`;
-
-const LINHAS = [
-  { k: 'L' }, { k: 'F' }, { k: 'vv', baixa: 1 }, { k: 'pAb' }, { k: 'pBrNu', baixa: 1 },
-  { k: 'p1L', baixa: 1 }, { k: 'p1F', baixa: 1 }, { k: 'dL', best: 'max' }, { k: 'dF', best: 'max' },
-];
 
 function tipoRot(x) { return { br: 'País', reg: 'Região', uf: 'Estado', mun: 'Município', bai: 'Bairro' }[x.tipo] || ''; }
 
@@ -49,28 +44,41 @@ function leitura(es) {
   return p.join(' ');
 }
 
+// Tabela transposta: cada recorte é uma linha; os dados de cada candidato ficam em colunas com a cor dele.
+const sinal = v => (isFinite(v) ? fmtMetrica('margem', v) : '');
 export function resultadoHtml(es) {
   const n = es.length, parc = es.some(x => x.pst < 99.995);
-  const cab = es.map(x => {
+  const melhor = (k, modo = 'max') => { const v = es.map(x => x[k]).filter(isFinite); if (v.length < 2) return null; return modo === 'max' ? Math.max(...v) : Math.min(...v); };
+  const M = { pL: melhor('pL'), pF: melhor('pF'), dL: melhor('dL'), dF: melhor('dF') };
+  const top = (k, x) => (M[k] != null && x[k] === M[k] ? ' melhor' : '');
+  const temBrNu = es.some(x => isFinite(x.pBrNu));
+  const temAb = es.some(x => isFinite(x.pAb));
+  const cand = k => {
+    const c = CAND[k];
+    return `<div class="cmp-gh g-${k}" style="--c:${c.cor}">${esc(c.nome)}<small>${c.n} · ${esc(c.partido)}</small></div>`;
+  };
+  const sub = (cls, t, extra = '') => `<div class="cmp-sh ${cls}${extra}">${t}</div>`;
+  const cab = `<div class="cmp-r cmp-r-g"><div class="cmp-gl"></div>${cand('L')}${cand('F')}<div class="cmp-gh g-G">Geral</div></div>
+    <div class="cmp-r cmp-r-s"><div class="cmp-sh cmp-sl">Local</div>${sub('g-L', '% válidos')}${sub('g-L', 'Votos')}${sub('g-L', 'vs 1º turno')}${sub('g-F', '% válidos')}${sub('g-F', 'Votos')}${sub('g-F', 'vs 1º turno')}${sub('g-G', 'Abstenção')}${temBrNu ? sub('g-G cmp-tela', 'Brancos e nulos') : ''}</div>`;
+  const delta = (k, d, vg, x) => `<div class="cmp-c g-${k} cmp-dl${top('d' + k, x)}" style="--c:${cor(k)}"><span class="cmp-d1">${fmtMetrica('d' + k, x['d' + k])}</span>${isFinite(x[vg]) ? `<span class="cmp-d2">(${sinal(x[vg])})</span>` : ''}</div>`;
+  const linhas = es.map(x => {
     const w = x.lider ? CAND[x.lider] : null;
-    return `<div class="cmp-c cmp-h"><div class="cmp-nome">${esc(x.nome)}</div><div class="cmp-tipo">${esc(tipoRot(x))}${x.uf && x.tipo !== 'uf' ? ' · ' + x.uf.toUpperCase() : ''}</div>
-      ${w ? `<div class="cmp-venc" style="--c:${w.cor}">${esc(w.nome.split(' ')[0])} +${fmtMetrica('margemPP', Math.abs(x.margemPP)).replace(/^\+/, '')}</div>` : '<div class="cmp-venc">Empate</div>'}</div>`;
+    const ref = `${esc(tipoRot(x))}${x.uf && x.tipo !== 'uf' ? ' · ' + x.uf.toUpperCase() : ''}`;
+    const apu = parc && isFinite(x.pst) && x.pst < 99.995 ? ` · ${new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(x.pst)}% apurado` : '';
+    const venc = w ? `<span class="cmp-venc" style="--c:${w.cor}">${esc(w.nome.split(' ')[0])} +${fmtMetrica('margemPP', Math.abs(x.margemPP)).replace(/^\+/, '')}</span>` : '<span class="cmp-venc">Empate</span>';
+    return `<div class="cmp-r cmp-r-d"><div class="cmp-loc"><div class="cmp-nome">${esc(x.nome)}</div><div class="cmp-tipo">${ref}${apu}</div>${venc}${linhaBarra(x)}</div>
+      <div class="cmp-c g-L cmp-pc${top('pL', x)}" style="--c:${cor('L')}">${fmtMetrica('pL', x.pL)}</div>
+      <div class="cmp-c g-L cmp-vt" style="--c:${cor('L')}">${fmtMetrica('L', x.L)}</div>
+      ${delta('L', 'dL', 'vgL', x)}
+      <div class="cmp-c g-F cmp-pc${top('pF', x)}" style="--c:${cor('F')}">${fmtMetrica('pF', x.pF)}</div>
+      <div class="cmp-c g-F cmp-vt" style="--c:${cor('F')}">${fmtMetrica('F', x.F)}</div>
+      ${delta('F', 'dF', 'vgF', x)}
+      <div class="cmp-c g-G">${temAb ? fmtMetrica('pAb', x.pAb) : '–'}</div>
+      ${temBrNu ? `<div class="cmp-c g-G cmp-tela">${fmtMetrica('pBrNu', x.pBrNu)}</div>` : ''}</div>`;
   }).join('');
-  const mxL = Math.max(...es.map(x => x.pL)), mxF = Math.max(...es.map(x => x.pF));
-  const pcts = es.map(x => `<div class="cmp-c cmp-p"><div class="cmp-pp"><b class="${es.length > 1 && x.pL === mxL ? 'top' : ''}" style="color:${cor('L')}">${fmtMetrica('pL', x.pL)}</b><b class="${es.length > 1 && x.pF === mxF ? 'top' : ''}" style="color:${cor('F')}">${fmtMetrica('pF', x.pF)}</b></div>${linhaBarra(x)}</div>`).join('');
-  const melhor = (k, modo) => { const v = es.map(x => x[k]).filter(isFinite); if (v.length < 2) return null; return modo === 'max' ? Math.max(...v) : Math.min(...v); };
-  const linhas = LINHAS.filter(l => es.some(x => isFinite(x[l.k]))).map(l => {
-    const m = l.best ? melhor(l.k, l.best) : null;
-    return `<div class="cmp-r${l.baixa ? ' baixa' : ''}"><div class="cmp-l">${esc(METRICAS[l.k].rot)}</div>${es.map(x => `<div class="cmp-c${m != null && x[l.k] === m ? ' melhor' : ''}">${fmtMetrica(l.k, x[l.k])}</div>`).join('')}</div>`;
-  }).join('');
-  const ap = parc ? `<div class="cmp-r"><div class="cmp-l">Apurado (seções)</div>${es.map(x => `<div class="cmp-c">${isFinite(x.pst) ? new Intl.NumberFormat('pt-BR', { maximumFractionDigits: 1 }).format(x.pst) + '%' : '–'}</div>`).join('')}</div>` : '';
-  return `<div class="cmp-grid n${n}" style="--n:${n}">
-    <div class="cmp-r cmp-r-h"><div class="cmp-l"></div>${cab}</div>
-    <div class="cmp-r cmp-r-p"><div class="cmp-l">Votos válidos (%)</div>${pcts}</div>
-    ${linhas}${ap}
-  </div>
+  return `<p class="cmp-rolica">← deslize para o lado para ver todas as colunas →</p><div class="cmp-rol"><div class="cmp-grid n${n}${temBrNu ? ' tem-bn' : ''}" style="--n:${n}">${cab}${linhas}</div></div>
   <p class="cmp-leit"><b>Leitura:</b> ${leitura(es)}</p>
-  <p class="cmp-nota">Variação = diferença, em pontos percentuais, para o 1º turno nas mesmas seções. Destaque = maior valor de cada candidato (percentuais) ou maior variação. Fonte: TSE.</p>`;
+  <p class="cmp-nota">“vs 1º turno” = diferença, em pontos percentuais, nas mesmas seções; entre parênteses, os votos a mais (+) ou a menos (−) que o candidato teve em relação ao 1º turno. Contorno = maior valor entre os recortes. Fonte: TSE.</p>`;
 }
 
 let ultMun = null;   // último município escolhido para buscar bairro (sobrevive à remontagem da tela)
