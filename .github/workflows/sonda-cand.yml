@@ -1,0 +1,28 @@
+name: Sonda consulta_cand 2026 (estrutura e contagens)
+on:
+  workflow_dispatch:
+  push:
+    paths: ['scripts/sonda_cand.py', '.github/workflows/sonda-cand.yml']
+permissions:
+  contents: write
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Baixar e sondar
+        run: |
+          mkdir -p /tmp/tse
+          B=https://cdn.tse.jus.br/estatistica/sead/odsele
+          {
+            for u in consulta_cand/consulta_cand_2026.zip consulta_cand_complementar/consulta_cand_complementar_2026.zip bem_candidato/bem_candidato_2026.zip rede_social_candidato/rede_social_candidato_2026.zip motivo_cassacao/motivo_cassacao_2026.zip; do
+              echo "== $u"; curl -sS -I -L --http1.1 -m 30 "$B/$u" 2>&1 | grep -iE "^HTTP|content-length|last-modified" | tr '\r\n' '  '; echo
+            done
+            curl -sS -f -L --http1.1 --retry 5 --retry-all-errors -o /tmp/tse/cand.zip "$B/consulta_cand/consulta_cand_2026.zip" && ls -la /tmp/tse
+            python3 scripts/sonda_cand.py /tmp/tse/cand.zip
+          } 2>&1 | tee sonda_cand.log
+      - name: Publicar log
+        run: |
+          git config user.name "coletor"; git config user.email "coletor@users.noreply.github.com"
+          git checkout --orphan sonda-c; git rm -rf -q . 2>/dev/null; git add -f sonda_cand.log; git commit -q -m "log sonda_cand"; git push -f origin HEAD:sonda-cand
