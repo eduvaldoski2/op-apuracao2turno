@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=5f078210';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=5f078210';
+import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=a6a1983f';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=a6a1983f';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -235,17 +235,28 @@ function afinaMapaUF(alvo) {
   });
 }
 
-export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, partes = false }) {
+export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, cadeia, de = 0, partes = false }) {
   await carregaScript('vendor/html2canvas.min.js');
   try { await document.fonts?.ready; await Promise.all(['400 40px "DM Serif Display"', '700 24px "Space Grotesk"', '500 24px "Space Grotesk"'].map(f => document.fonts?.load(f))); } catch { /* fonte reserva */ }
   const W = fmt.w, H = fmt.h, M = 56, PAD = 22, innerW = W - 2 * M - 2 * PAD;
   const cv = document.createElement('canvas'); cv.width = W; cv.height = H; const g = cv.getContext('2d');
   // 1) cabeçalho (mede para saber a altura que sobra ao corpo)
-  const tam = String(titulo).length > 46 ? fmt.t - 12 : fmt.t;
-  g.font = `400 ${tam}px "DM Serif Display", Georgia, serif`; const linT = quebra(g, titulo, W - 2 * M).slice(0, 3);
+  // hierarquia: o lugar (cidade, estado ou Brasil) é o título grande e o nome da seção vem logo abaixo; se o título da seção já cita o lugar, fica como está.
+  // A etiqueta do canto mostra o nível acima do lugar (ex.: o estado de uma cidade).
+  const lugar = topo ? String(topo) : '', slugL = slug(lugar);
+  const trocar = !!slugL && !!cadeia && !new RegExp('(^|-)' + slugL + '(-|$)').test(slug(titulo));
+  const tit = trocar ? lugar : String(titulo), secao = trocar ? String(titulo) : '';
+  const pai = cadeia ? String(cadeia).split('›').pop().trim() : '', etiqueta = pai || (trocar ? '' : lugar);
+  // mapas com seletor Geral/Lula/Flávio: o card diz de quem é o mapa e o que a cor mede
+  const modo = [...el.querySelectorAll('.mapa-modo')].find(m => m.offsetParent)?.querySelector('[data-mm].on')?.dataset.mm;   // o seletor da aba visível (a aba escondida mantém o dela)
+  const medida = { L: 'Variação de Lula vs 1º turno, em p.p. dos votos válidos', F: 'Variação de Flávio Bolsonaro vs 1º turno, em p.p. dos votos válidos', venc: 'Cor = candidato à frente · tom mais escuro = maior % dos votos válidos' }[modo] || '';
+  const tam = tit.length > 46 ? fmt.t - 12 : fmt.t;
+  g.font = `400 ${tam}px "DM Serif Display", Georgia, serif`; const linT = quebra(g, tit, W - 2 * M).slice(0, 3);
+  g.font = '600 30px "Space Grotesk", system-ui, sans-serif'; const linSec = secao ? quebra(g, secao, W - 2 * M).slice(0, 2) : [];
   g.font = '600 25px "Space Grotesk", system-ui, sans-serif'; const linS = quebra(g, sub || '', W - 2 * M).slice(0, 2);
-  const hT = linT.length * Math.round(tam * 1.08), hS = linS.length * 32;
-  const hCab = fmt.top + 30 + 44 + 20 + hT + (hS ? 12 + hS : 0) + 28;
+  g.font = '500 26px "Space Grotesk", system-ui, sans-serif'; const linMed = medida ? quebra(g, medida, W - 2 * M).slice(0, 2) : [];
+  const hT = linT.length * Math.round(tam * 1.08), hSec = linSec.length * 38, hMed = linMed.length * 34, hS = linS.length * 32;
+  const hCab = fmt.top + 30 + 44 + 20 + hT + (hSec ? 12 + hSec : 0) + (hMed ? (hSec ? 6 : 12) + hMed : 0) + (hS ? (hSec || hMed ? 10 : 12) + hS : 0) + 28;
   const hRod = 150 + fmt.bot, topoCorpo = hCab + 22, hCorpo = H - topoCorpo - hRod, innerH = hCorpo - 2 * PAD;
   // 2) conteúdo da seção, na largura útil do corpo; tabelas longas são cortadas para caber (a tabela completa fica no CSV/Excel)
   el.setAttribute('data-exp-alvo', '1');
@@ -315,9 +326,11 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
   const gr = g.createLinearGradient(0, 0, W, hCab); gr.addColorStop(0, '#2A2260'); gr.addColorStop(1, '#3E347E'); g.fillStyle = gr; g.fillRect(0, 0, W, hCab);
   try { const lg = await carregaImg('img/logo-negativo.svg'); const lh = 44; g.drawImage(lg, M, fmt.top + 30, lh * lg.width / lg.height, lh); } catch { /* sem logo */ }
   g.textBaseline = 'alphabetic';
-  if (topo) { g.font = '700 19px "Space Grotesk", system-ui, sans-serif'; const tw = g.measureText(String(topo).toUpperCase()).width + 36; g.strokeStyle = 'rgba(255,255,255,.4)'; g.lineWidth = 2; retArred(g, W - M - tw, fmt.top + 30 + 2, tw, 40, 20); g.stroke(); g.fillStyle = '#fff'; g.fillText(String(topo).toUpperCase(), W - M - tw + 18, fmt.top + 30 + 28); }
+  if (etiqueta) { g.font = '700 19px "Space Grotesk", system-ui, sans-serif'; const tw = g.measureText(String(etiqueta).toUpperCase()).width + 36; cv.topoX = W - M - tw; g.strokeStyle = 'rgba(255,255,255,.4)'; g.lineWidth = 2; retArred(g, W - M - tw, fmt.top + 30 + 2, tw, 40, 20); g.stroke(); g.fillStyle = '#fff'; g.fillText(String(etiqueta).toUpperCase(), W - M - tw + 18, fmt.top + 30 + 28); }
   let y = fmt.top + 30 + 44 + 20; g.fillStyle = '#fff'; g.font = `400 ${tam}px "DM Serif Display", Georgia, serif`;
   const lt = Math.round(tam * 1.08); linT.forEach((l, i) => g.fillText(l, M, y + tam * .86 + i * lt)); y += hT + 12;
+  if (linSec.length) { g.fillStyle = '#fff'; g.font = '600 30px "Space Grotesk", system-ui, sans-serif'; linSec.forEach((l, i) => g.fillText(l, M, y + 28 + i * 38)); y += hSec + 10; }
+  if (linMed.length) { g.fillStyle = 'rgba(255,255,255,.9)'; g.font = '500 26px "Space Grotesk", system-ui, sans-serif'; linMed.forEach((l, i) => g.fillText(l, M, y + (linSec.length ? -4 : 0) + 24 + i * 34)); y += hMed + (linSec.length ? 6 : 10); }
   g.fillStyle = '#F08A24'; g.font = '600 25px "Space Grotesk", system-ui, sans-serif'; linS.forEach((l, i) => g.fillText(l, M, y + 24 + i * 32));
   // corpo branco com o conteúdo ajustado (sem distorcer)
   g.save(); g.shadowColor = 'rgba(62,52,126,.12)'; g.shadowBlur = 24; g.shadowOffsetY = 8; g.fillStyle = '#fff'; retArred(g, M, topoCorpo, W - 2 * M, hCorpo, 24); g.fill(); g.restore();
@@ -332,8 +345,18 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
   cv.info = infoTab;
   return cv;
 }
+// Selo de página ("2/4") no cabeçalho de cada imagem de uma tabela dividida em partes: fica à esquerda da etiqueta do recorte
+// (ou no canto direito, se não houver etiqueta), na mesma linha do logo, longe da margem que os Stories cobrem.
+function marcaPagina(cv, i, N, fmt) {
+  const g = cv.getContext('2d'), M = 56, txt = `${i}/${N}`;
+  g.save(); g.font = '700 24px "Space Grotesk", system-ui, sans-serif'; g.textAlign = 'left'; g.textBaseline = 'alphabetic';
+  const w = Math.round(g.measureText(txt).width) + 40, h = 40, x = (cv.topoX ? cv.topoX - 14 : cv.width - M) - w, y = fmt.top + 30 + 2;
+  g.fillStyle = '#F08A24'; retArred(g, x, y, w, h, 20); g.fill();
+  g.fillStyle = '#fff'; g.fillText(txt, x + 20, y + 28); g.restore();
+}
 // Devolve quantas imagens foram geradas. Tabela que não cabe legível em uma imagem sai completa, dividida em partes
-// (até 5 partes: arquivos separados; acima disso: um ZIP com todas).
+// numeradas ("2/4" na imagem e no nome do arquivo). Mais de uma imagem sai SEMPRE em um único ZIP: o navegador bloqueia vários
+// downloads automáticos disparados por um só clique, e o aviso de "imagens geradas" aparecia sem que os arquivos chegassem.
 export async function baixarPNGSecaoSocial(el, nome, fmtId, ctx) {
   const fmt = FORMATOS_SEC[fmtId] || FORMATOS_SEC['4x5'];
   const cvs = []; let de = 0;
@@ -341,14 +364,15 @@ export async function baixarPNGSecaoSocial(el, nome, fmtId, ctx) {
     const cv = await canvasSecaoSocial(el, fmt, { ...ctx, de, partes: true }); cvs.push(cv);
     const inf = cv.info; if (!inf || inf.n < 1) break; de += inf.n; if (de >= inf.total) break;
   }
+  const N = cvs.length, pad = n => String(n).padStart(String(N).length, '0');
+  if (N > 1) cvs.forEach((cv, i) => marcaPagina(cv, i + 1, N, fmt));
   const blobs = await Promise.all(cvs.map(cv => new Promise(ok => cv.toBlob(ok, 'image/png'))));
-  const N = blobs.length, pad = n => String(n).padStart(String(N).length, '0');
   const arq = i => N === 1 ? `${nome}_${fmt.id}.png` : `${nome}_${fmt.id}_parte${pad(i + 1)}de${N}.png`;
-  if (N <= 5) { for (let i = 0; i < N; i++) { baixar(blobs[i], arq(i)); if (i < N - 1) await new Promise(r => setTimeout(r, 350)); } }
+  if (N === 1) baixar(blobs[0], arq(0));
   else {
     await carregaScript('vendor/jszip.min.js');
     const z = new window.JSZip(); blobs.forEach((b, i) => z.file(arq(i), b));
-    baixar(await z.generateAsync({ type: 'blob' }), `${nome}_${fmt.id}_${N}-imagens.zip`);
+    baixar(await z.generateAsync({ type: 'blob', compression: 'STORE' }), `${nome}_${fmt.id}_${N}-imagens.zip`);   // PNG já é comprimido
   }
   return N;
 }
