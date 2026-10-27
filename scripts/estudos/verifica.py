@@ -9,6 +9,7 @@ UFS="AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE 
 # grupos por SIGLA de partido (não por rótulo de federação)
 G={'F1':{'PT','PCDOB','PV'},'F2':{'PSOL','REDE'},'PSB':{'PSB'},'PDT':{'PDT'}}
 SC={'A':['F1','PSB'],'B':['PSB','PDT'],'C':['F1','PSB','PDT'],'D':['F1','PSB','PDT','F2'],'E':['F1','F2']}
+SCF='F'   # PSB + Cidadania, com a federação PSDB/Cidadania desfeita (tratado à parte)
 def rq(x):  # x Fraction
     f=x.numerator//x.denominator; r=x-f
     return f if r<=Fr(1,2) else f+1
@@ -47,13 +48,13 @@ def aloca(L, vagas):
     return out,QE
 bad=0; n=0
 # esperado
-exp_real=defaultdict(set); exp_sc={s:defaultdict(set) for s in SC}
+exp_real=defaultdict(set); exp_sc={s:defaultdict(set) for s in list(SC)+[SCF]}
 for e in EST['eleitos_real']: exp_real[(e['cargo'],e['uf'])].add(e['sq'])
-for s in SC:
+for s in list(SC)+[SCF]:
     for e in EST['cenarios']['S'+s]['eleitos']: exp_sc[s][(e['cargo'],e['uf'])].add(e['sq'])
 qe_exp={(b['cargo'],b['uf']):b['QE'] for b in EST['base_info']}
 fase_exp_real={(e['cargo'],e['uf'],e['sq']):e['fase'] for e in EST['eleitos_real']}
-fase_exp={s:{(e['cargo'],e['uf'],e['sq']):e['fase'] for e in EST['cenarios']['S'+s]['eleitos']} for s in SC}
+fase_exp={s:{(e['cargo'],e['uf'],e['sq']):e['fase'] for e in EST['cenarios']['S'+s]['eleitos']} for s in list(SC)+[SCF]}
 FM={'QP':'QP','MÉDIA':'ME','MÉDIA (sem barreira)':'ME','MAIS VOTADOS':'MV'}
 sit_ok=0
 for uf in UFS:
@@ -102,4 +103,23 @@ for uf in UFS:
             if g2!=exp_sc[s][(cargo,uf)]: bad+=1; print('CEN diff',s,uf,cargo,sorted(g2^exp_sc[s][(cargo,uf)]))
             for sq,f,k in res2:
                 if FM[fase_exp[s][(cargo,uf,sq)]]!=f: bad+=1; print('fase cen diff',s,uf,cargo,sq)
+        # cenário F: desfaz a federação que contém o Cidadania (cada partido leva seus candidatos e o seu voto de legenda por partido)
+        legp=defaultdict(int)
+        for p in parts: legp[p['sigla']]+=p['totleg']
+        L={}; PSBl=(0,[]); CIDl=(0,[])
+        for k,(lg,cs) in L0.items():
+            if 'CIDADANIA' in sigs[k]:
+                assert sigs[k]=={'PSDB','CIDADANIA'}, (uf,cargo,sigs[k])
+                for sg in ('PSDB','CIDADANIA'):
+                    cs_=[c for c in cs if next(x for x in cands if x['sq']==c[1])['sigla']==sg]
+                    if sg=='CIDADANIA': CIDl=(legp[sg],cs_)
+                    else: L[('P','PSDB')]=(legp[sg],cs_)
+            elif sigs[k]=={'PSB'}: PSBl=(lg,cs)
+            else: L[k]=(lg,cs)
+        L[('M','F')]=(PSBl[0]+CIDl[0],PSBl[1]+CIDl[1])
+        res2,QE2=aloca(L,vagas); g2={sq for sq,_,_ in res2}
+        if QE2!=QE: bad+=1; print('QE cen F diff')
+        if g2!=exp_sc['F'][(cargo,uf)]: bad+=1; print('CEN diff F',uf,cargo,sorted(g2^exp_sc['F'][(cargo,uf)]))
+        for sq,f,k in res2:
+            if FM[fase_exp['F'][(cargo,uf,sq)]]!=f: bad+=1; print('fase cen diff F',uf,cargo,sq)
 print('UF/cargo checados:',n,'| iguais ao resultado oficial (sit):',sit_ok,'| divergências:',bad)

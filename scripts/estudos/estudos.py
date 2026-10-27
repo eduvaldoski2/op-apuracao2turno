@@ -13,7 +13,19 @@ CEN = {  # nome -> (listas a fundir, rótulo da lista resultante)
     'C': ([F1, PSB, PDT], 'PT/PCdoB/PV/PSB/PDT'),
     'D': ([F1, PSB, PDT, F2], 'PT/PCdoB/PV/PSB/PDT/PSOL/Rede'),
     'E': ([F1, F2], 'PT/PCdoB/PV/PSOL/Rede'),   # PSOL é federado com a Rede; a federação não se divide
+    'F': ([PSB, 'CIDADANIA'], 'PSB/Cidadania'),  # desfaz a federação PSDB/Cidadania; o PSDB segue sozinho
 }
+FED_PSDB = 'PSDB/CIDADANIA'
+def desfaz_psdb_cidadania(listas, cand):
+    """Separa a federação PSDB/Cidadania em duas listas. Cada partido leva seus candidatos e os votos de legenda que o TSE
+    registra para o seu número (leg_partes). Retorna novas listas (a original não é alterada)."""
+    if FED_PSDB not in listas: return listas
+    out = {l: d for l, d in listas.items() if l != FED_PSDB}
+    d = listas[FED_PSDB]
+    for sig in ('PSDB', 'CIDADANIA'):
+        cs = [c for c in d['cands'] if cand[c[1]]['sigla'] == sig]
+        out[sig] = {'cands': cs, 'leg': d['leg_partes'].get(sig, 0), 'partes': {sig: sum(c[0] for c in cs)}, 'leg_partes': {sig: d['leg_partes'].get(sig, 0)}}
+    return out
 def funde(listas, ids, novo, teto=None):
     out = {l: d for l, d in listas.items() if l not in ids}
     M = {'cands': [], 'leg': 0, 'partes': {}, 'leg_partes': {}}
@@ -49,9 +61,10 @@ for cargo in (6, 7, 8):
             res['eleitos_real'].append({'cargo': cargo, 'uf': uf, 'sq': sq, 'nome': c['urna'], 'nome_civil': c['nome'], 'partido': sg(c['sigla']), 'lista': l, 'votos': v, 'fase': fase, 'fase_oficial': c['sit'], 'pos_lista': pos_na_lista(l, sq, listas)})
         for h in ('S', 'T'):
             for k, (ids, novo) in CEN.items():
-                L2 = funde(listas, ids, novo, teto=(vagas + 1) if h == 'T' else None)
+                base_l = desfaz_psdb_cidadania(listas, cand) if k == 'F' else listas
+                L2 = funde(base_l, ids, novo, teto=(vagas + 1) if h == 'T' else None)
                 e2, i2 = distribui(L2, vagas)
-                n_cand = sum(len(listas[l]['cands']) for l in ids if l in listas)
+                n_cand = sum(len(base_l[l]['cands']) for l in ids if l in base_l)
                 res['cenarios'][h + k]['info'].append({'cargo': cargo, 'uf': uf, 'QE': i2['QE'], 'validos': i2['validos'], 'qp_fundida': i2['qp'].get(novo, 0), 'total_fundida': i2['tot'].get(novo, 0), 'cands_soma': n_cand, 'teto': vagas + 1})
                 for l, sq, v, fase in e2:
                     c = cand[sq]
