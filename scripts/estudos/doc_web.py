@@ -134,6 +134,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,.tw:focus-visible{out
 .hero .meta{margin:22px 0 0;font-size:14px;color:var(--lilas)}.hero .meta b{color:#fff}
 .hero .acoes{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:28px}
 .hero .acoes small{color:var(--lilas);font-size:13.5px}
+.hero .acoes2{margin-top:14px}.btn.ghost{background:transparent;color:#fff;border:2px solid rgba(217,212,240,.6);padding:9px 16px}.btn.ghost:hover{background:rgba(255,255,255,.08);filter:none}
 .hero .barra{width:72px;height:5px;border-radius:3px;background:var(--laranja);margin:24px 0 0}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px;display:block}
 .toc-m{margin:20px 0 0;background:#fff;border:1px solid var(--linha);border-radius:14px}
@@ -219,6 +220,23 @@ dl.ficha dt{font:700 12px/1.5 'Space Grotesk',sans-serif;letter-spacing:.1em;tex
 @media(max-width:560px){dl.ficha{grid-template-columns:1fr;gap:2px}dl.ficha dd{margin-bottom:12px}.caph{padding:20px 18px;gap:14px}.topo .btn span.t{display:none}}
 .cta{margin:40px 0 0;display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;background:linear-gradient(120deg,var(--roxo-2),var(--roxo));color:#fff;border-radius:18px;padding:22px 26px;border-bottom:5px solid var(--laranja)}
 .cta b{display:block;font:400 24px/1.2 'DM Serif Display',serif;font-weight:400}.cta small{color:var(--lilas);font-size:14px}
+
+/* cadastro */
+.cad{margin:46px 0 0;scroll-margin-top:80px}
+.cad .chamada{margin:0 0 6px;font:400 clamp(26px,4vw,34px)/1.2 'DM Serif Display',Georgia,serif;color:var(--roxo)}.cad .chamada b{display:block;font-weight:400;color:var(--laranja-2)}
+.cad p.sub{margin:6px 0 0;color:var(--tx2);max-width:56ch}
+.cad form{margin:22px 0 0;max-width:520px;background:#fff;border:1px solid var(--linha);border-radius:20px;padding:24px 22px 22px;box-shadow:0 18px 40px -26px rgba(42,34,96,.45)}
+.cad label.c{display:block;font-weight:600;font-size:14px;color:var(--roxo-2);margin:0 0 14px}.cad label.c small{font-weight:400;color:var(--tx2)}
+.cad input[type=text],.cad input[type=email],.cad input[type=tel]{display:block;width:100%;margin-top:6px;padding:13px 14px;font:inherit;font-size:16px;color:var(--tx);background:#fdfcff;border:1.5px solid var(--linha);border-radius:12px;transition:border-color .15s,box-shadow .15s}
+.cad input::placeholder{color:#a39dbb}.cad input:hover{border-color:#cfc8e6}
+.cad input:focus{outline:none;border-color:var(--roxo-3);box-shadow:0 0 0 4px rgba(90,78,166,.16)}.cad input[aria-invalid=true]{border-color:var(--erro);background:#fff8f7}
+.cad .ck2{display:flex;gap:11px;align-items:flex-start;margin:6px 0 4px;font-size:13.5px;line-height:1.45;color:var(--tx2);cursor:pointer}.cad .ck2 input{flex:none;width:20px;height:20px;margin:1px 0 0;accent-color:var(--roxo);cursor:pointer}
+.cad .nt{margin:12px 0 0;font-size:12.5px;color:var(--tx2)}.cad .nt a{font-weight:600}
+.cad .enviar{display:block;width:100%;margin-top:18px;min-height:54px;border:0;border-radius:14px;background:var(--laranja);color:#2a1700;font:700 16px 'Space Grotesk',system-ui,sans-serif;cursor:pointer;transition:filter .15s,transform .15s}
+.cad .enviar:hover{filter:brightness(.96);transform:translateY(-1px)}.cad .enviar:disabled{opacity:.6;cursor:progress;transform:none}
+.cad .msg{min-height:20px;margin:12px 0 0;font-size:14px;font-weight:600;color:var(--erro)}
+.cad .ok-box{margin:22px 0 0;max-width:520px;background:#fff;border:1px solid #bfe3cd;border-radius:20px;padding:26px 22px}.cad .ok-box h4{margin:0 0 6px;padding:0;border:0;font:400 26px 'DM Serif Display',Georgia,serif;color:var(--ok)}.cad .ok-box p{margin:0;color:var(--tx2)}
+.hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
 footer.rodape{padding:26px 20px 34px;text-align:center;font-size:13px;color:var(--tx2);border-top:1px solid var(--linha);margin-top:36px}footer.rodape p{margin:4px 0}footer.rodape a{font-weight:600}
 @media print{.topo,aside.lat,.toc-m{display:none}details.det>*{display:block}.hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
@@ -257,6 +275,7 @@ PAGE = f'''<!doctype html>
 <p class="sub">{esc(SUB)}</p>
 <p class="meta"><b>Eduardo Valdoski</b> · Oficina Política · {esc(DATA)}</p>
 <div class="acoes"><a class="btn" href="{PDF_NOME}" download>{SETA}Baixar o relatório em PDF</a><small>{PDF_TXT}</small></div>
+<div class="acoes2"><a class="btn ghost" href="#cadastro">Receber as próximas análises</a></div>
 <div class="barra"></div></div></section>
 <div class="wrap">
 <details class="toc-m"><summary>Neste relatório</summary>{tocl("toc")}</details>
@@ -265,6 +284,25 @@ PAGE = f'''<!doctype html>
 {BODY}
 <section class="cap" id="ficha-tecnica"><h3 class="x">Ficha técnica</h3>{FICHA}
 <div class="cta"><div><b>Leia no seu ritmo, guarde para consultar</b><small>Relatório completo em PDF, com os mesmos números desta página.</small></div><a class="btn" href="{PDF_NOME}" download>{SETA}Baixar o PDF</a></div></section>
+<section class="cad" id="cadastro" aria-labelledby="t-cad">
+<h3 class="x" id="t-cad">Receba as próximas análises</h3>
+<p class="chamada">Em breve, um conjunto de ferramentas para quem é profissional da política.<b>Seja o primeiro a conhecer.</b></p>
+<form id="f" novalidate autocomplete="on" aria-label="Cadastro para conhecer as novas ferramentas">
+<label class="c">Nome completo <small>(todos os campos são obrigatórios)</small>
+<input type="text" name="nome" autocomplete="name" required maxlength="120" placeholder="Seu nome"></label>
+<label class="c">E-mail
+<input type="email" name="email" autocomplete="email" inputmode="email" required maxlength="160" placeholder="voce@exemplo.com.br"></label>
+<label class="c">WhatsApp <small>(com DDD)</small>
+<input type="tel" name="telefone" autocomplete="tel-national" inputmode="tel" required maxlength="20" placeholder="(21) 99999-9999"></label>
+<div class="hp" aria-hidden="true"><label>Não preencha este campo<input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>
+<label class="ck2"><input type="checkbox" name="c_contato" required>
+<span>Autorizo a Oficina Política a entrar em contato comigo por e-mail e WhatsApp para avisar sobre o lançamento e as novidades de suas ferramentas para profissionais da política. Posso revogar esta autorização a qualquer momento.</span></label>
+<p class="nt">Seus dados não são vendidos nem usados para outra finalidade. Saiba mais na <a href="../privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>, que explica também como pedir a exclusão dos seus dados.</p>
+<p class="msg" id="msg" role="alert" aria-live="polite"></p>
+<button class="enviar" type="submit">Quero ser o primeiro a conhecer</button>
+</form>
+<div id="ok" class="ok-box" hidden tabindex="-1"><h4>Cadastro recebido!</h4><p id="ok-t">Obrigado. Avisaremos você assim que as ferramentas estiverem no ar.</p></div>
+</section>
 </article>
 </div>
 <footer class="rodape">
@@ -277,6 +315,52 @@ PAGE = f'''<!doctype html>
   var map={{}}; links.forEach(function(a){{map[a.getAttribute('href').slice(1)]=a;}});
   var io=new IntersectionObserver(function(es){{es.forEach(function(e){{ if(e.isIntersecting){{ links.forEach(function(a){{a.classList.remove('on');}}); var a=map[e.target.id]; if(a){{a.classList.add('on'); try{{a.scrollIntoView({{block:'nearest'}});}}catch(x){{}}}} }} }});}},{{rootMargin:'-20% 0px -70% 0px'}});
   Object.keys(map).forEach(function(id){{var el=document.getElementById(id); if(el) io.observe(el);}});
+}})();
+</script>
+
+<script>
+(function () {{
+  'use strict';
+  var TEXTO_VERSAO = 'h1', ENDPOINT = '../api/lead.php';
+  var f = document.getElementById('f'), msg = document.getElementById('msg'); if (!f) return;
+  var origem = {{}};
+  try {{
+    var q = new URLSearchParams(location.search);
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) {{ if (q.get(k)) origem[k] = q.get(k).slice(0, 80); }});
+    if (document.referrer && document.referrer.indexOf(location.origin) !== 0) origem.ref = new URL(document.referrer).hostname;
+  }} catch (e) {{}}
+  var tel = f.telefone;
+  tel.addEventListener('input', function () {{
+    var d = tel.value.replace(/\D+/g, '');
+    if (d.indexOf('55') === 0 && d.length > 11) d = d.slice(2);
+    d = d.slice(0, 11);
+    tel.value = d.length > 10 ? '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7)
+          : d.length > 6 ? '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6)
+          : d.length > 2 ? '(' + d.slice(0, 2) + ') ' + d.slice(2)
+          : d.length ? '(' + d : '';
+  }});
+  function erro(campo, texto) {{ msg.textContent = texto; if (campo) {{ campo.setAttribute('aria-invalid', 'true'); campo.focus(); }} }}
+  Array.prototype.forEach.call(f.elements, function (el) {{ el.addEventListener('input', function () {{ el.removeAttribute('aria-invalid'); msg.textContent = ''; }}); }});
+  f.addEventListener('submit', function (e) {{
+    e.preventDefault();
+    if (f.site.value) return;
+    msg.textContent = '';
+    var nome = f.nome.value.trim().replace(/\s+/g, ' '), email = f.email.value.trim().toLowerCase(), dig = f.telefone.value.replace(/\D+/g, '');
+    if (nome.length < 3 || nome.indexOf(' ') < 0) return erro(f.nome, 'Informe seu nome completo.');
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{{2,}}$/.test(email)) return erro(f.email, 'Informe um e-mail válido.');
+    if (dig.length < 10 || dig.length > 11 || /^(\d)\1+$/.test(dig)) return erro(f.telefone, 'Informe o WhatsApp com DDD, por exemplo (21) 99999-9999.');
+    if (!f.c_contato.checked) return erro(f.c_contato, 'Para se cadastrar, marque a caixa de autorização para receber nossas mensagens.');
+    var bt = f.querySelector('.enviar'); bt.disabled = true; bt.textContent = 'Enviando…';
+    var corpo = {{ formulario: 'home', nome: nome, email: email, telefone: dig, consentimento_contato: true, texto_versao: TEXTO_VERSAO, pagina: 'relatorio-federacao', origem: origem }};
+    fetch(ENDPOINT, {{ method: 'POST', headers: {{ 'Content-Type': 'application/json' }}, body: JSON.stringify(corpo) }})
+      .then(function (r) {{ return r.json().catch(function () {{ return {{}}; }}).then(function (j) {{ if (!r.ok || !j.ok) throw new Error(j.erro || 'falha'); }}); }})
+      .then(function () {{
+        var ok = document.getElementById('ok');
+        document.getElementById('ok-t').textContent = 'Obrigado, ' + nome.split(' ')[0] + '. Avisaremos você por e-mail e WhatsApp assim que as ferramentas estiverem no ar.';
+        f.hidden = true; ok.hidden = false; ok.focus();
+      }})
+      .catch(function () {{ bt.disabled = false; bt.textContent = 'Quero ser o primeiro a conhecer'; msg.textContent = 'Não foi possível enviar agora. Tente de novo em instantes.'; }});
+  }});
 }})();
 </script>
 </body>
