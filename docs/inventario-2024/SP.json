@@ -1,0 +1,156 @@
+{
+  "ano": 2024,
+  "lote": "SP",
+  "iniciado_em": "2026-10-28T16:32:51.749705+00:00",
+  "run_id": "40721672249",
+  "commit": "2e454d0027cb09fdd5099729a63f1d54e5540bb3",
+  "recursos": [
+    {
+      "id": "b0c63e15-eca4-476a-a6d0-f4d28ceb5edb",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2024_SP.zip",
+      "familia": "relatorio_resultado_totalizacao",
+      "iniciado_em": "2026-10-28T16:32:51.750501+00:00",
+      "arquivos": [],
+      "status": "sem_csv",
+      "zip_bytes": 583589630,
+      "zip_sha256": "f19d6feab037c5cbf799c7249b777f35a2bb3b5980e41c5631758e7424db5dbb",
+      "http_last_modified": "Wed, 28 Oct 2026 05:20:16 GMT",
+      "http_etag": "\"22c8defe-65edfb7eae408\"",
+      "url_final": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2024_SP.zip",
+      "outros_membros_por_extensao": {
+        ".pdf": 678
+      },
+      "observacao_contagem": "Contagens por membro; possíveis réplicas BRASIL/UF não somadas",
+      "concluido_em": "2026-10-28T16:44:30.079496+00:00"
+    },
+    {
+      "id": "655a5e7f-08d7-4a21-8a5f-0c851e21b670",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2024_SP.zip",
+      "familia": "votacao_secao",
+      "iniciado_em": "2026-10-28T16:44:30.079919+00:00",
+      "arquivos": [
+        {
+          "arquivo": "votacao_secao_2024_SP.csv",
+          "bytes_descompactados": 2699814783,
+          "crc32_declarado_zip": "49ac7b64",
+          "status": "inspecionado",
+          "encoding": "iso-8859-1",
+          "colunas": [
+            "DT_GERACAO",
+            "HH_GERACAO",
+            "ANO_ELEICAO",
+            "CD_TIPO_ELEICAO",
+            "NM_TIPO_ELEICAO",
+            "NR_TURNO",
+            "CD_ELEICAO",
+            "DS_ELEICAO",
+            "DT_ELEICAO",
+            "TP_ABRANGENCIA",
+            "SG_UF",
+            "SG_UE",
+            "NM_UE",
+            "CD_MUNICIPIO",
+            "NM_MUNICIPIO",
+            "NR_ZONA",
+            "NR_SECAO",
+            "CD_CARGO",
+            "DS_CARGO",
+            "NR_VOTAVEL",
+            "NM_VOTAVEL",
+            "QT_VOTOS",
+            "NR_LOCAL_VOTACAO",
+            "SQ_CANDIDATO",
+            "NM_LOCAL_VOTACAO",
+            "DS_LOCAL_VOTACAO_ENDERECO"
+          ],
+          "linhas": 9611258,
+          "contagem": "exata; registros CSV sem cabeçalho e linhas vazias",
+          "geracoes": [
+            {
+              "DT_GERACAO": "04/08/2025",
+              "HH_GERACAO": "10:00:32",
+              "HORA_GERACAO": null
+            },
+            {
+              "DT_GERACAO": "07/04/2025",
+              "HH_GERACAO": "10:00:41",
+              "HORA_GERACAO": null
+            },
+            {
+              "DT_GERACAO": "08/12/2025",
+              "HH_GERACAO": "10:00:29",
+              "HORA_GERACAO": null
+            },
+            {
+              "DT_GERACAO": "09/06/2025",
+              "HH_GERACAO": "10:00:38",
+              "HORA_GERACAO": null
+            },
+            {
+              "DT_GERACAO": "15/06/2026",
+              "HH_GERACAO": "10:00:31",
+              "HORA_GERACAO": null
+            },
+            {
+              "DT_GERACAO": "15/09/2025",
+              "HH_GERACAO": "10:00:30",
+              "HORA_GERACAO": null
+            },
+            {
+              "DT_GERACAO": "22/06/2026",
+              "HH_GERACAO": "10:01:46",
+              "HORA_GERACAO": null
+            },
+            {
+              "DT_GERACAO": "28/10/2024",
+              "HH_GERACAO": "11:46:22",
+              "HORA_GERACAO": null
+            }
+          ],
+          "dimensoes": {
+            "CD_CARGO": [
+              "11",
+              "13"
+            ],
+            "NR_TURNO": [
+              "1",
+              "2"
+            ],
+            "CD_ELEICAO": [
+              "619",
+              "620",
+              "6041",
+              "6042",
+              "6160",
+              "6161",
+              "6180",
+              "6236",
+              "6238",
+              "6249",
+              "6272",
+              "6280",
+              "6281"
+            ],
+            "ANO_ELEICAO": [
+              "2024"
+            ]
+          },
+          "crc_verificado": true
+        }
+      ],
+      "status": "inspecionado",
+      "zip_bytes": 475770264,
+      "zip_sha256": "3d7063c453ca4d2e16b37618c43019eb7c73d3fe729ee75d71e57f5102d31797",
+      "http_last_modified": "Mon, 22 Jun 2026 14:46:41 GMT",
+      "http_etag": "\"1c5bad98-654d8b5e79ff4\"",
+      "url_final": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2024_SP.zip",
+      "outros_membros_por_extensao": {
+        ".pdf": 1
+      },
+      "observacao_contagem": "Contagens por membro; possíveis réplicas BRASIL/UF não somadas",
+      "concluido_em": "2026-10-28T16:51:50.807033+00:00"
+    }
+  ],
+  "conferencias_votos_executadas": false,
+  "concluido_em": "2026-10-28T16:51:50.807631+00:00"
+}

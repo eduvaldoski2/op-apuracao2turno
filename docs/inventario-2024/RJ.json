@@ -1,0 +1,116 @@
+{
+  "ano": 2024,
+  "lote": "RJ",
+  "iniciado_em": "2026-10-28T16:23:30.321128+00:00",
+  "run_id": "40721672249",
+  "commit": "2e454d0027cb09fdd5099729a63f1d54e5540bb3",
+  "recursos": [
+    {
+      "id": "2a672cf4-fe0d-4457-81a2-f68d321ae093",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2024_RJ.zip",
+      "familia": "relatorio_resultado_totalizacao",
+      "iniciado_em": "2026-10-28T16:23:30.321730+00:00",
+      "arquivos": [],
+      "status": "sem_csv",
+      "zip_bytes": 104554774,
+      "zip_sha256": "82a1f96e44001ad3fdd191dbac7a6a025cb5ecc0ae31ac386ba41bf3528af91d",
+      "http_last_modified": "Wed, 28 Oct 2026 05:20:06 GMT",
+      "http_etag": "\"63b6116-65edfb74f11dc\"",
+      "url_final": "https://cdn.tse.jus.br/estatistica/sead/odsele/relatorio_resultado_totalizacao/Relatorio_Resultado_Totalizacao_2024_RJ.zip",
+      "outros_membros_por_extensao": {
+        ".pdf": 97
+      },
+      "observacao_contagem": "Contagens por membro; possíveis réplicas BRASIL/UF não somadas",
+      "concluido_em": "2026-10-28T16:25:34.316259+00:00"
+    },
+    {
+      "id": "5fb638aa-f29d-454d-9872-38fd84f51b3f",
+      "url": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2024_RJ.zip",
+      "familia": "votacao_secao",
+      "iniciado_em": "2026-10-28T16:25:34.316551+00:00",
+      "arquivos": [
+        {
+          "arquivo": "votacao_secao_2024_RJ.csv",
+          "bytes_descompactados": 987091197,
+          "crc32_declarado_zip": "63fdaff7",
+          "status": "inspecionado",
+          "encoding": "iso-8859-1",
+          "colunas": [
+            "DT_GERACAO",
+            "HH_GERACAO",
+            "ANO_ELEICAO",
+            "CD_TIPO_ELEICAO",
+            "NM_TIPO_ELEICAO",
+            "NR_TURNO",
+            "CD_ELEICAO",
+            "DS_ELEICAO",
+            "DT_ELEICAO",
+            "TP_ABRANGENCIA",
+            "SG_UF",
+            "SG_UE",
+            "NM_UE",
+            "CD_MUNICIPIO",
+            "NM_MUNICIPIO",
+            "NR_ZONA",
+            "NR_SECAO",
+            "CD_CARGO",
+            "DS_CARGO",
+            "NR_VOTAVEL",
+            "NM_VOTAVEL",
+            "QT_VOTOS",
+            "NR_LOCAL_VOTACAO",
+            "SQ_CANDIDATO",
+            "NM_LOCAL_VOTACAO",
+            "DS_LOCAL_VOTACAO_ENDERECO"
+          ],
+          "linhas": 3384471,
+          "contagem": "exata; registros CSV sem cabeçalho e linhas vazias",
+          "geracoes": [
+            {
+              "DT_GERACAO": "06/10/2025",
+              "HH_GERACAO": "10:00:29",
+              "HORA_GERACAO": null
+            },
+            {
+              "DT_GERACAO": "28/10/2024",
+              "HH_GERACAO": "11:46:22",
+              "HORA_GERACAO": null
+            }
+          ],
+          "dimensoes": {
+            "CD_CARGO": [
+              "11",
+              "13"
+            ],
+            "NR_TURNO": [
+              "1",
+              "2"
+            ],
+            "CD_ELEICAO": [
+              "619",
+              "620",
+              "6240"
+            ],
+            "ANO_ELEICAO": [
+              "2024"
+            ]
+          },
+          "crc_verificado": true
+        }
+      ],
+      "status": "inspecionado",
+      "zip_bytes": 156836604,
+      "zip_sha256": "c956615e39ecc4abd1121c5e7add14d94482653728627363e368f3bcec3a9522",
+      "http_last_modified": "Mon, 22 Jun 2026 14:47:24 GMT",
+      "http_etag": "\"95922fc-654d8b870389f\"",
+      "url_final": "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2024_RJ.zip",
+      "outros_membros_por_extensao": {
+        ".pdf": 1
+      },
+      "observacao_contagem": "Contagens por membro; possíveis réplicas BRASIL/UF não somadas",
+      "concluido_em": "2026-10-28T16:25:56.099966+00:00"
+    }
+  ],
+  "conferencias_votos_executadas": false,
+  "concluido_em": "2026-10-28T16:25:56.100485+00:00"
+}

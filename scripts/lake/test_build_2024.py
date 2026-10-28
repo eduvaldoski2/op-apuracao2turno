@@ -49,7 +49,7 @@ class BuildTests(unittest.TestCase):
             'DT_NASCIMENTO','NR_CPF_CANDIDATO','DS_EMAIL','NM_SOCIAL_CANDIDATO',
             'ANO_ELEICAO','NM_TIPO_ELEICAO','CD_ELEICAO','DT_GERACAO','HH_GERACAO']
         row = dict.fromkeys(fields,'TESTE')
-        row.update(SG_UF='AC',NR_TURNO='1',CD_CARGO='11',DT_NASCIMENTO='11/10/1982',
+        row.update(SG_UF='AC',NR_TURNO='1',CD_CARGO='11',DT_NASCIMENTO='01/01/1900',
             NR_CPF_CANDIDATO='SEGREDO',DS_EMAIL='SEGREDO',NM_SOCIAL_CANDIDATO='SEGREDO',
             ANO_ELEICAO='2024',NM_TIPO_ELEICAO='Eleição Ordinária',CD_ELEICAO='619',
             DT_GERACAO='28/10/2026',HH_GERACAO='12:00:00')
@@ -67,7 +67,7 @@ class BuildTests(unittest.TestCase):
                 b.ingest(c,'candidato','AC',root,m)
             columns=[d[0] for d in c.execute('DESCRIBE raw_candidato').fetchall()]
             self.assertNotIn('DT_NASCIMENTO',columns);self.assertNotIn('NR_CPF_CANDIDATO',columns)
-            self.assertEqual(c.execute('SELECT ANO_NASCIMENTO FROM raw_candidato').fetchall(),[('1982',)])
+            self.assertEqual(c.execute('SELECT ANO_NASCIMENTO FROM raw_candidato').fetchall(),[('1900',)])
             self.assertNotIn('SEGREDO',json.dumps(c.execute('SELECT * FROM raw_candidato').fetchall()))
             self.assertEqual(m['fontes'][0]['linhas_outras_eleicoes_na_uf'],1)
             self.assertFalse((root/'fonte.zip').exists());self.assertFalse((root/'candidato.csv').exists())
@@ -85,9 +85,9 @@ class BuildTests(unittest.TestCase):
 
     def test_privacy_and_election_filter(self):
         row = {field: "TESTE" for field in b.FIELDS["candidato"] if field != "ANO_NASCIMENTO"}
-        row.update(DT_NASCIMENTO="11/10/1982",NR_CPF_CANDIDATO="SEGREDO",DS_EMAIL="SEGREDO",NM_SOCIAL_CANDIDATO="SEGREDO")
+        row.update(DT_NASCIMENTO="01/01/1900",NR_CPF_CANDIDATO="SEGREDO",DS_EMAIL="SEGREDO",NM_SOCIAL_CANDIDATO="SEGREDO")
         result = b.sanitize(row,"candidato")
-        self.assertEqual(result["ANO_NASCIMENTO"],"1982")
+        self.assertEqual(result["ANO_NASCIMENTO"],"1900")
         self.assertNotIn("SEGREDO",json.dumps(result))
         self.assertNotIn("DT_NASCIMENTO",result)
         self.assertTrue(b.regular({"ANO_ELEICAO":"2024","NM_TIPO_ELEICAO":"Eleição Ordinária"},"secao"))

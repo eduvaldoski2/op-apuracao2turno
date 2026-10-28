@@ -87,6 +87,8 @@ def summarize(states):
               "", "As fontes podem ter gerações distintas; o manifesto preserva URL, SHA-256, geração e bytes de cada download. Sucesso de conferências não transforma fontes atualizadas em retrato imutável da noite da eleição."]
     report = ROOT / "docs/conferencia-2024.md"
     report.write_text("\n".join(lines) + "\n")
+    if any(p.stat().st_size > 90_000_000 for p in (report, root / "manifesto.json")):
+        raise ValueError("Relatório ou manifesto excede limite autorizado para git")
     return result
 
 

@@ -234,7 +234,7 @@ def reconciliation(c, m, out):
     check(c, m, "sigla_candidato", "SELECT turno,cargo,uf,sq_candidato,variantes FROM cad_join WHERE variantes<>1", out)
     check(c, m, "sigla_partido", "SELECT * FROM party_join WHERE variantes<>1", out)
     check(c, m, "candidato_sem_cadastro", "SELECT DISTINCT turno,cargo,uf,cd_municipio_tse,nr_votavel,sq_candidato FROM secao WHERE sq_candidato IS NOT NULL AND sigla_partido IS NULL", out)
-    check(c, m, "votavel_desconhecido", "SELECT DISTINCT turno,cargo,uf,nr_votavel FROM secao WHERE sq_candidato IS NULL AND nr_votavel NOT IN (95,96) AND sigla_partido IS NULL", out)
+    check(c, m, "votavel_desconhecido", "SELECT turno,cargo,uf,cd_municipio_tse,zona,secao,nr_votavel,qt_votos FROM secao WHERE sq_candidato IS NULL AND nr_votavel NOT IN (95,96) AND sigla_partido IS NULL", out)
     check(c, m, "local_ambiguo", "SELECT turno,uf,cd_municipio_tse,zona,nr_local,variantes FROM local_votacao_turno WHERE variantes>1", out)
     check(c, m, "secao_local_duplicada", "SELECT turno,uf,cd_municipio_tse,zona,secao,count(*) registros FROM local_secao GROUP BY ALL HAVING count(*)>1", out)
     check(c, m, "secao_sem_local", """SELECT DISTINCT s.turno,s.uf,s.cd_municipio_tse,s.zona,s.secao
