@@ -4,14 +4,16 @@ on:
     inputs:
       ano: { description: 'Ano', required: false, default: '2026' }
 permissions:
-  contents: read
+  contents: write
 jobs:
   sonda:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      - uses: actions/checkout@v4
       - name: Tamanhos e cabecalhos
         run: |
+          exec > >(tee /tmp/sonda.log) 2>&1
           B=https://cdn.tse.jus.br/estatistica/sead/odsele; A=${{ github.event.inputs.ano || '2026' }}
           for u in votacao_secao/votacao_secao_${A}_BR votacao_secao/votacao_secao_${A}_RJ votacao_secao/votacao_secao_${A}_AC detalhe_votacao_secao/detalhe_votacao_secao_${A} votacao_candidato_munzona/votacao_candidato_munzona_${A} eleitorado_locais_votacao/eleitorado_local_votacao_${A} perfil_eleitor_secao/perfil_eleitor_secao_${A}_BR consulta_cand/consulta_cand_${A} bweb/bweb_1t_AC_${A}; do
             echo "== $u"; curl -sSI -L --http1.1 "$B/$u.zip" | egrep -i "^HTTP|content-length|last-modified" | tr -d '\r' | tr '\n' ' '; echo
@@ -21,3 +23,7 @@ jobs:
           curl -sS -f -L --http1.1 --retry 3 -o d.zip "$B/detalhe_votacao_secao/detalhe_votacao_secao_${A}.zip" && unzip -l d.zip | head; 
           for f in $(unzip -Z1 d.zip | grep -i "_AC.csv"); do unzip -p d.zip "$f" | head -2 | iconv -f latin1 -t utf8; done
           python3 -c "import pyarrow,duckdb" 2>&1 | tail -1; df -h /tmp | tail -1
+      - name: Publicar log
+        if: always()
+        run: |
+          cd /tmp && rm -rf pub && mkdir pub && cp sonda.log pub/ && cd pub && git init -q -b sonda-lakeg && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log && git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" sonda-lakeg
