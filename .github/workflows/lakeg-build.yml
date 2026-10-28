@@ -15,6 +15,7 @@ jobs:
       - run: pip install -q duckdb==1.1.3
       - name: Construir
         run: |
+          set -o pipefail
           A=${{ github.event.inputs.ano || '2026' }}; U="${{ github.event.inputs.ufs }}"
           mkdir -p /tmp/lake
           python3 scripts/lake_gerais/build_lake.py $A /tmp/lake ${U:+--ufs=$U} 2>&1 | tee /tmp/lake/build.log
@@ -27,4 +28,8 @@ jobs:
       - name: Publicar log
         if: always()
         run: |
-          cd /tmp && rm -rf pub && mkdir pub && cp lake/build.log lake/conferencia.md lake/manifesto.json pub/ 2>/dev/null; cd pub && git init -q -b lakeg-log && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log && git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" lakeg-log
+          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub
+          for f in build.log conferencia.md manifesto.json; do [ -f /tmp/lake/$f ] && cp /tmp/lake/$f . ; done
+          ls -la /tmp/lake | head -40 > ls.txt; echo "run ${{ github.run_id }}" > run.txt
+          git init -q -b lakeg-log && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" lakeg-log
