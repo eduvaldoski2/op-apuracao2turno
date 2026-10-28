@@ -1,0 +1,266 @@
+{
+ "ano": "2018",
+ "gerado_em": "2026-10-28T18:47:02.814303+00:00Z",
+ "fonte": "https://cdn.tse.jus.br/estatistica/sead/odsele",
+ "arquivos": [
+  {
+   "arquivo": "secao_2018_BR.parquet",
+   "linhas": 6616660,
+   "bytes": 14213074,
+   "sha256": "0159918d55f3b6a53f86859e5523448d0e53762225f73c4813a1d880b1d543d7",
+   "fonte": "votacao_secao/votacao_secao_2018_BR.zip",
+   "last_modified_fonte": "Fri, 15 Aug 2025 14:15:53 GMT"
+  },
+  {
+   "arquivo": "secao_2018_AC.parquet",
+   "linhas": 260032,
+   "bytes": 816751,
+   "sha256": "b38e9513398f70fad7856acdba9c5d9d93dc3562129b77692b768ce42b06a4b4",
+   "fonte": "votacao_secao/votacao_secao_2018_AC.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:40 GMT"
+  },
+  {
+   "arquivo": "secao_2018_AL.parquet",
+   "linhas": 691067,
+   "bytes": 2026961,
+   "sha256": "f0e965aefe32a636535a0d356f44ee547ba497db8d4f6852bfb2f21f604cbf01",
+   "fonte": "votacao_secao/votacao_secao_2018_AL.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:33 GMT"
+  },
+  {
+   "arquivo": "secao_2018_AM.parquet",
+   "linhas": 1051283,
+   "bytes": 3402500,
+   "sha256": "4933862a016f63adbe5c54b60ef7ee3b59396f76d62055d3fee22a2fe11b0b85",
+   "fonte": "votacao_secao/votacao_secao_2018_AM.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:05 GMT"
+  },
+  {
+   "arquivo": "secao_2018_AP.parquet",
+   "linhas": 306362,
+   "bytes": 929382,
+   "sha256": "5cefaf2959f5f7f35bac0f9d234b73755ed6c693ca8e35bc57651ddb74a67260",
+   "fonte": "votacao_secao/votacao_secao_2018_AP.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:15 GMT"
+  },
+  {
+   "arquivo": "secao_2018_BA.parquet",
+   "linhas": 3709356,
+   "bytes": 12628642,
+   "sha256": "5afeae2e8f99f50ef9d61e4402fb36635c491e3470a3f60053d85c05db5c5421",
+   "fonte": "votacao_secao/votacao_secao_2018_BA.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:27:36 GMT"
+  },
+  {
+   "arquivo": "secao_2018_CE.parquet",
+   "linhas": 2386304,
+   "bytes": 7861373,
+   "sha256": "c5c42a1974302dd224fa04d7ec1813e6026da4366fc3119cbb8953dd50b59fb7",
+   "fonte": "votacao_secao/votacao_secao_2018_CE.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:20:31 GMT"
+  },
+  {
+   "arquivo": "secao_2018_DF.parquet",
+   "linhas": 1444474,
+   "bytes": 4688633,
+   "sha256": "78656ba495c0a3fe1a82e0171a327f9b19384c3dfe03cab688b2a6000ba2e26a",
+   "fonte": "votacao_secao/votacao_secao_2018_DF.zip",
+   "last_modified_fonte": "Fri, 15 Aug 2025 13:52:26 GMT"
+  },
+  {
+   "arquivo": "secao_2018_ES.parquet",
+   "linhas": 1169469,
+   "bytes": 3717388,
+   "sha256": "a5f90632ef07b1f13fc439396aa0c904ceb8d207a97115635d0dd5ee07f8d1ae",
+   "fonte": "votacao_secao/votacao_secao_2018_ES.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:38 GMT"
+  },
+  {
+   "arquivo": "secao_2018_GO.parquet",
+   "linhas": 1873887,
+   "bytes": 6178994,
+   "sha256": "2c8d75648f0c9fb9b2d3e3e039753036e87be4150081f33cead3cab763901145",
+   "fonte": "votacao_secao/votacao_secao_2018_GO.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:06 GMT"
+  },
+  {
+   "arquivo": "secao_2018_MA.parquet",
+   "linhas": 1637107,
+   "bytes": 5243058,
+   "sha256": "d3c290519dfce746c00e691d784ac8d4f8922d8cc7dafda349997dcea16ff20a",
+   "fonte": "votacao_secao/votacao_secao_2018_MA.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:20:58 GMT"
+  },
+  {
+   "arquivo": "secao_2018_MG.parquet",
+   "linhas": 6899766,
+   "bytes": 24341167,
+   "sha256": "6ea4ac595fff3b48bb8aef21383f5f1f102d716245284ac8eb1cf8655e508f46",
+   "fonte": "votacao_secao/votacao_secao_2018_MG.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:37:54 GMT"
+  },
+  {
+   "arquivo": "secao_2018_MS.parquet",
+   "linhas": 805090,
+   "bytes": 2386682,
+   "sha256": "6877925bcedf56e3610e48830aa74022bf2daa032c05f519d8a5c6ad04bc4af8",
+   "fonte": "votacao_secao/votacao_secao_2018_MS.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:10 GMT"
+  },
+  {
+   "arquivo": "secao_2018_MT.parquet",
+   "linhas": 954912,
+   "bytes": 2886667,
+   "sha256": "725f2008399560048cd3ab49e3ad64e74a2d07f88297ab3e3bdc40151b32a0b6",
+   "fonte": "votacao_secao/votacao_secao_2018_MT.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:40 GMT"
+  },
+  {
+   "arquivo": "secao_2018_PA.parquet",
+   "linhas": 2147894,
+   "bytes": 6638909,
+   "sha256": "a8f2310eb25a38b8e5e05d1d6baebfea24d41373d1191ee12236129bac364310",
+   "fonte": "votacao_secao/votacao_secao_2018_PA.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:26 GMT"
+  },
+  {
+   "arquivo": "secao_2018_PB.parquet",
+   "linhas": 1017194,
+   "bytes": 3165887,
+   "sha256": "1761ce9f05c8b4b1480844379327a684e94e618ec49af32a52d725fb1c8ad891",
+   "fonte": "votacao_secao/votacao_secao_2018_PB.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:29 GMT"
+  },
+  {
+   "arquivo": "secao_2018_PE.parquet",
+   "linhas": 2464650,
+   "bytes": 8016624,
+   "sha256": "867eaea4227accdebbd6eda151f27a287003fca9235f1aa7ac1ff34c6c2595a2",
+   "fonte": "votacao_secao/votacao_secao_2018_PE.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:11 GMT"
+  },
+  {
+   "arquivo": "secao_2018_PI.parquet",
+   "linhas": 864341,
+   "bytes": 2562181,
+   "sha256": "b477647cb2a3e2b44042c2bbca39a4dced70274478ca38bb4e7bdfd8c3ee372c",
+   "fonte": "votacao_secao/votacao_secao_2018_PI.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:18:55 GMT"
+  },
+  {
+   "arquivo": "secao_2018_PR.parquet",
+   "linhas": 3522097,
+   "bytes": 11742031,
+   "sha256": "d7e58c7b24ebaa0a6caeb6ee5d83ab7bf2ec9e088487f5b2341abd92ce9b37ad",
+   "fonte": "votacao_secao/votacao_secao_2018_PR.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:23 GMT"
+  },
+  {
+   "arquivo": "secao_2018_RJ.parquet",
+   "linhas": 7237466,
+   "bytes": 26660494,
+   "sha256": "4f23dd8af13eff7a8a4e1a02d18f1dcbf6f27c213bb91f840b6b636a2d4ca2a9",
+   "fonte": "votacao_secao/votacao_secao_2018_RJ.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:32:18 GMT"
+  },
+  {
+   "arquivo": "secao_2018_RN.parquet",
+   "linhas": 902590,
+   "bytes": 2718281,
+   "sha256": "ab793c23c6564cd5c3faea287f7fd2f70a913acf67e5726d6ebeda5f16a073b6",
+   "fonte": "votacao_secao/votacao_secao_2018_RN.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:00 GMT"
+  },
+  {
+   "arquivo": "secao_2018_RO.parquet",
+   "linhas": 537793,
+   "bytes": 1591391,
+   "sha256": "09f6197a018d68015fa7d5a1f1724189411b6b3bfbe85ab78e2218382f35b010",
+   "fonte": "votacao_secao/votacao_secao_2018_RO.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:15 GMT"
+  },
+  {
+   "arquivo": "secao_2018_RR.parquet",
+   "linhas": 210618,
+   "bytes": 660529,
+   "sha256": "b81fc802bf7c5d149481af61796f96ea0c5a208504a114491071cb28778ca538",
+   "fonte": "votacao_secao/votacao_secao_2018_RR.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:20 GMT"
+  },
+  {
+   "arquivo": "secao_2018_RS.parquet",
+   "linhas": 3983832,
+   "bytes": 13676488,
+   "sha256": "06ebf2f3f26edf597b7c001aa5b8bd5942b15c6d4ce159487c120c0a179e6805",
+   "fonte": "votacao_secao/votacao_secao_2018_RS.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:25:31 GMT"
+  },
+  {
+   "arquivo": "secao_2018_SC.parquet",
+   "linhas": 2094824,
+   "bytes": 6708689,
+   "sha256": "aeba10fcc2f765c94b6dac7c1229e1a86fbc1afbb5504e0c4a5b99508f940048",
+   "fonte": "votacao_secao/votacao_secao_2018_SC.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:18:53 GMT"
+  },
+  {
+   "arquivo": "secao_2018_SE.parquet",
+   "linhas": 630375,
+   "bytes": 1870855,
+   "sha256": "f356cf0559864dbee1cc6af45dd1fad7df4fac0fb26210e38eecfdcee92db448",
+   "fonte": "votacao_secao/votacao_secao_2018_SE.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:43 GMT"
+  },
+  {
+   "arquivo": "secao_2018_SP.parquet",
+   "linhas": 17834220,
+   "bytes": 63832269,
+   "sha256": "b4114f0b046d0473df93e72ae2bb871d08b692cc70e5eb8f36972fcba575be4c",
+   "fonte": "votacao_secao/votacao_secao_2018_SP.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 18:04:13 GMT"
+  },
+  {
+   "arquivo": "secao_2018_TO.parquet",
+   "linhas": 376522,
+   "bytes": 1107339,
+   "sha256": "f346c9105c06866f69afc728dd22cae189912a636d6e6ea459c02380ce78203d",
+   "fonte": "votacao_secao/votacao_secao_2018_TO.zip",
+   "last_modified_fonte": "Wed, 24 Apr 2024 17:19:35 GMT"
+  },
+  {
+   "arquivo": "local_secao_2018.parquet",
+   "linhas": 963726,
+   "bytes": 15767317,
+   "sha256": "bfe937abf4ac85580fb86aa7a4f0822f7b3fe5af3be58d1d330d4ff96fb93fb3",
+   "fonte": "eleitorado_local_votacao",
+   "last_modified_fonte": "Fri, 25 Apr 2025 20:35:33 GMT"
+  },
+  {
+   "arquivo": "detalhe_secao_2018.parquet",
+   "linhas": 3008743,
+   "bytes": 24712411,
+   "sha256": "90ac49874a968bfe3fe5400a3b19f1eb91f6c743a3f0aac309b282c42b139e45",
+   "fonte": "detalhe_votacao_secao",
+   "last_modified_fonte": "Thu, 09 Apr 2026 16:48:22 GMT"
+  },
+  {
+   "arquivo": "candidato_2018.parquet",
+   "linhas": 29287,
+   "bytes": 731320,
+   "sha256": "60641877406f975e90ee5f787bd6bfb6245410f7b0041610b0fbf4ad54df51f3",
+   "fonte": "consulta_cand",
+   "last_modified_fonte": "Wed, 13 Nov 2024 16:20:54 GMT"
+  },
+  {
+   "arquivo": "zona_2018.parquet",
+   "linhas": 8680108,
+   "bytes": 11236713,
+   "sha256": "fd77a854d7f57d85dd329a57c6142d969bc5de9e653935feb9fa6c0356c092d3",
+   "fonte": "votacao_candidato_munzona",
+   "last_modified_fonte": "Wed, 13 Nov 2024 16:25:44 GMT"
+  }
+ ],
+ "ausentes": [
+  "votacao_secao_2018_ZZ"
+ ]
+}
