@@ -24,7 +24,7 @@ jobs:
         run: |
           A=${{ github.event.inputs.ano || '2026' }}; T=lake-$A
           gh release view $T >/dev/null 2>&1 || gh release create $T --title "Lake eleitoral $A (TSE, por secao, Parquet)" --notes "Arquivos Parquet gerados por scripts/lake_gerais/build_lake.py a partir dos dados abertos do TSE. Ver conferencia.md e manifesto.json."
-          cd /tmp/lake && gh release upload $T *.parquet conferencia.md manifesto.json --clobber
+          cd /tmp/lake && gh release upload -R ${{ github.repository }} $T *.parquet conferencia.md manifesto.json --clobber
       - name: Publicar log
         if: always()
         run: |
