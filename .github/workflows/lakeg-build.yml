@@ -1,0 +1,30 @@
+name: Lake gerais - construir ano (TSE por seção -> Parquet -> Release)
+on:
+  workflow_dispatch:
+    inputs:
+      ano: { description: 'Ano', required: false, default: '2026' }
+      ufs: { description: 'Restringir UFs (ex.: AC,RJ) - vazio = todas', required: false, default: '' }
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q duckdb==1.1.3
+      - name: Construir
+        run: |
+          A=${{ github.event.inputs.ano || '2026' }}; U="${{ github.event.inputs.ufs }}"
+          mkdir -p /tmp/lake
+          python3 scripts/lake_gerais/build_lake.py $A /tmp/lake ${U:+--ufs=$U} 2>&1 | tee /tmp/lake/build.log
+      - name: Publicar release
+        env: { GH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
+        run: |
+          A=${{ github.event.inputs.ano || '2026' }}; T=lake-$A
+          gh release view $T >/dev/null 2>&1 || gh release create $T --title "Lake eleitoral $A (TSE, por secao, Parquet)" --notes "Arquivos Parquet gerados por scripts/lake_gerais/build_lake.py a partir dos dados abertos do TSE. Ver conferencia.md e manifesto.json."
+          cd /tmp/lake && gh release upload $T *.parquet conferencia.md manifesto.json --clobber
+      - name: Publicar log
+        if: always()
+        run: |
+          cd /tmp && rm -rf pub && mkdir pub && cp lake/build.log lake/conferencia.md lake/manifesto.json pub/ 2>/dev/null; cd pub && git init -q -b lakeg-log && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log && git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" lakeg-log
