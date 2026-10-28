@@ -400,25 +400,26 @@ def build(pages):
     contra = f'''<div class="contra"><div class="c"><img src="file://{IMG}/logo-negativo.svg"><div class="t">{esc(SLOGAN)}</div><div class="s">oficinapolitica.com.br</div></div></div>'''
     return f'<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><title>{esc(TITULO)}</title><style>{CSS}</style></head><body>{capa}{"".join(toc)}{BODY}{ficha_html()}{contra}</body></html>'
 
-from playwright.sync_api import sync_playwright
-work = tempfile.mkdtemp()
-def render(pages, path):
-    hp = os.path.join(work, 'pub.html'); open(hp, 'w', encoding='utf-8').write(build(pages))
-    with sync_playwright() as p:
-        b = p.chromium.launch(); pg = b.new_page(); pg.goto('file://' + hp); pg.evaluate('document.fonts.ready'); pg.wait_for_timeout(800)
-        pg.pdf(path=path, prefer_css_page_size=True, print_background=True, outline=True, tagged=True); b.close()
-    open(os.path.join(os.path.dirname(os.path.abspath(path)), 'pub.html'), 'w', encoding='utf-8').write(open(hp, encoding='utf-8').read())
-def paginas(path):
-    txt = subprocess.run(['pdftotext', '-layout', path, '-'], capture_output=True, text=True).stdout.split('\f')
-    start = next(i for i, t in enumerate(txt) if 'Sumário' in t and i > 0)
-    cursor = start + 1; res = {}
-    for lv, h, i, key in heads:
-        for pgi in range(cursor, len(txt)):
-            tt = re.sub(r'\s+', ' ', txt[pgi])
-            ok = key.search(tt) if hasattr(key, 'search') else (re.sub(r'\s+', ' ', key) in tt)
-            if ok: res[i] = pgi + 1; cursor = pgi + (1 if lv == 2 and h.startswith('Capítulo') else 0); break
-    return res
-tmp1 = os.path.join(work, 'p1.pdf'); render({}, tmp1)
-pages = paginas(tmp1); print('páginas do sumário:', len(pages), 'de', len(heads))
-render(pages, out_pdf)
-print('PDF', out_pdf, subprocess.run(['pdfinfo', out_pdf], capture_output=True, text=True).stdout.split('Pages:')[1].split()[0], 'páginas')
+if __name__ != 'op_lib':
+    from playwright.sync_api import sync_playwright
+    work = tempfile.mkdtemp()
+    def render(pages, path):
+        hp = os.path.join(work, 'pub.html'); open(hp, 'w', encoding='utf-8').write(build(pages))
+        with sync_playwright() as p:
+            b = p.chromium.launch(); pg = b.new_page(); pg.goto('file://' + hp); pg.evaluate('document.fonts.ready'); pg.wait_for_timeout(800)
+            pg.pdf(path=path, prefer_css_page_size=True, print_background=True, outline=True, tagged=True); b.close()
+        open(os.path.join(os.path.dirname(os.path.abspath(path)), 'pub.html'), 'w', encoding='utf-8').write(open(hp, encoding='utf-8').read())
+    def paginas(path):
+        txt = subprocess.run(['pdftotext', '-layout', path, '-'], capture_output=True, text=True).stdout.split('\f')
+        start = next(i for i, t in enumerate(txt) if 'Sumário' in t and i > 0)
+        cursor = start + 1; res = {}
+        for lv, h, i, key in heads:
+            for pgi in range(cursor, len(txt)):
+                tt = re.sub(r'\s+', ' ', txt[pgi])
+                ok = key.search(tt) if hasattr(key, 'search') else (re.sub(r'\s+', ' ', key) in tt)
+                if ok: res[i] = pgi + 1; cursor = pgi + (1 if lv == 2 and h.startswith('Capítulo') else 0); break
+        return res
+    tmp1 = os.path.join(work, 'p1.pdf'); render({}, tmp1)
+    pages = paginas(tmp1); print('páginas do sumário:', len(pages), 'de', len(heads))
+    render(pages, out_pdf)
+    print('PDF', out_pdf, subprocess.run(['pdfinfo', out_pdf], capture_output=True, text=True).stdout.split('Pages:')[1].split()[0], 'páginas')

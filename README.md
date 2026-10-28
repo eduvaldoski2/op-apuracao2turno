@@ -39,3 +39,7 @@ Iniciativa independente, sem vínculo com o TSE.
 
 ## Fontes de limites (mapas por bairro)
 IBGE (Censo 2022) → `scripts/build_geo_bairros.py`; São Paulo (GeoSampa, distritos) e Distrito Federal (IPEDF, regiões administrativas) via `data/fontes/`; demais grandes municípios sem malha do IBGE → OpenStreetMap (`scripts/osm_baixar.mjs` + `scripts/build_geo_osm.py`, workflow *Malhas de bairros do OpenStreetMap*; só entra a camada que cobre ≥ 60% dos locais de votação). Onde o limite é distrito/região, a navegação tem um nível a mais: Distrito › Bairro (TSE) › Local.
+
+## Relatório: Federação e os partidos de esquerda nas eleições 2026
+- Página em `/federacao-esquerda-2026/` (HTML estático, com o PDF para download na mesma pasta) e chamada na página inicial.
+- Gerada do mesmo conteúdo do PDF: `python3 scripts/estudos/doc_web.py <est2026.json> <relatorio.pdf> federacao-esquerda-2026` (usa `doc_json.py` e `doc_pdf.py`; o PDF sai de `doc_pdf.py <est2026.json> <saida.pdf>`).
