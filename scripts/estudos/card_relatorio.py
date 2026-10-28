@@ -25,7 +25,7 @@ assert sorted(tot) == sorted([real] + [tf[k] for k in CEN]), tot
 
 PCOL = {'PT': '#c8161d', 'PCdoB': '#9f1118', 'PV': '#3c9a3c', 'PSB': '#f58220', 'PDT': '#d4202a', 'PSOL': '#ffcc00', 'Rede': '#33a37a'}
 URL = 'https://oficinapolitica.com.br/federacao-esquerda-2026/'
-URL_TXT = 'oficinapolitica.com.br/federacao-esquerda-2026'
+URL_TXT = 'oficinapolitica.com.br'
 import segno
 buf = io.BytesIO(); segno.make(URL + '?utm_source=card&utm_medium=social', error='m').save(buf, kind='svg', scale=1, border=2, dark='#2A2260', light='#ffffff', xmldecl=False, svgns=True, nl=False)
 _svg = buf.getvalue().decode(); _w, _h = re.search(r'width="(\d+)" height="(\d+)"', _svg).groups()
@@ -100,7 +100,7 @@ tr.tot td{{border-top:3px solid #3E347E;border-bottom:0;background:#f3f1fa;font-
 <h1>{esc(TITULO)}</h1><div class="sub">{esc(SUBT)}</div>
 <div class="painel">{tabela()}</div>
 <div class="leg">{LEG}<em>Fonte: relatório <u>Federação e os partidos de esquerda nas eleições 2026</u>, da Oficina Política.</em></div>
-<div class="rod"><div class="qr">{QR}</div><div class="t"><div class="k">Leia o relatório completo</div><div class="h">Veja os seis cenários, estado por estado</div><div class="u">{URL_TXT}</div></div></div>
+<div class="rod"><div class="qr">{QR}</div><div class="t"><div class="k">Leia o relatório completo</div><div class="h">Veja os seis cenários, estado por estado</div><div class="u">Aponte a câmera para o QR code ou acesse {URL_TXT}</div></div></div>
 </div></body></html>'''
 
 from playwright.sync_api import sync_playwright
