@@ -22,6 +22,11 @@ manifest = {'ano': ano, 'gerado_em': datetime.datetime.now(datetime.timezone.utc
 con = duckdb.connect(); con.execute("SET memory_limit='5GB'; SET threads=4; SET preserve_insertion_order=false")
 
 def baixar(rel):
+    if isinstance(rel, (list, tuple)):
+        for r in rel:
+            z, lm = baixar(r)
+            if z: return z, lm
+        return None, None
     z = os.path.join(W, os.path.basename(rel)); h = z + '.hdr'
     r = subprocess.run(['curl', '-sS', '-f', '-L', '--http1.1', '--retry', '5', '--retry-all-errors', '-D', h, '-o', z, f'{B}/{rel}'])
     if r.returncode: return None, None
@@ -62,49 +67,55 @@ for uf in ['BR'] + UFS:
     p = extrair(z, f'_{uf}.csv'); os.remove(z)
     gravar(SEC(p), f'secao_{ano}_{uf}.parquet', f'votacao_secao/votacao_secao_{ano}_{uf}.zip', lm); os.remove(p)
 
-# ---------------- locais de votação / eleitorado por seção
-z, lm = baixar(f'eleitorado_locais_votacao/eleitorado_local_votacao_{ano}.zip'); p = extrair(z, '_BRASIL.csv'); os.remove(z)
+# ---------------- tabelas auxiliares (tolerantes a ausência de arquivo ou mudança de colunas)
 dec = lambda c: f"TRY_CAST(replace({c}, ',', '.') AS DOUBLE)"
-gravar(f"""SELECT TRY_CAST(AA_ELEICAO AS SMALLINT) ano, TRY_CAST(NR_TURNO AS TINYINT) turno, SG_UF uf, {I('CD_MUNICIPIO')} cd_municipio_tse, NM_MUNICIPIO municipio,
+nul = lambda c: f"nullif(nullif(nullif({c}, '#NULO'), '#NE'), 'NÃO DIVULGÁVEL')"
+def bloco(nome, rels, sqlf, fonte):
+    try:
+        z, lm = baixar(rels)
+        if not z: raise RuntimeError('arquivo inexistente no TSE')
+        p = extrair(z, '_BRASIL.csv'); os.remove(z)
+        if not p: raise RuntimeError('membro _BRASIL.csv ausente')
+        gravar(sqlf(p), nome, fonte, lm); os.remove(p)
+    except Exception as e:
+        print('FALHA', nome, str(e)[:300], flush=True); manifest.setdefault('falhas', []).append({'arquivo': nome, 'erro': str(e)[:300]})
+bloco(f'local_secao_{ano}.parquet', [f'eleitorado_locais_votacao/eleitorado_local_votacao_{ano}.zip', f'eleitorado_local_votacao/eleitorado_local_votacao_{ano}.zip'],
+  lambda p: f"""SELECT TRY_CAST(AA_ELEICAO AS SMALLINT) ano, TRY_CAST(NR_TURNO AS TINYINT) turno, SG_UF uf, {I('CD_MUNICIPIO')} cd_municipio_tse, NM_MUNICIPIO municipio,
   {I('NR_ZONA')} zona, {I('NR_SECAO')} secao, {I('CD_TIPO_SECAO_AGREGADA')} cd_tipo_secao_agregada, {I('NR_SECAO_PRINCIPAL')} secao_principal,
   {I('NR_LOCAL_VOTACAO')} nr_local, NM_LOCAL_VOTACAO nome_local, DS_TIPO_LOCAL tipo_local, DS_ENDERECO endereco, NM_BAIRRO bairro, NR_CEP cep,
   {dec('NR_LATITUDE')} latitude, {dec('NR_LONGITUDE')} longitude, DS_SITU_SECAO situacao_secao, DS_SITU_SECAO_ACESSIBILIDADE acessibilidade,
   {I('QT_ELEITOR_SECAO')} eleitores, {I('QT_ELEITOR_ELEICAO_FEDERAL')} eleitores_federal, {I('QT_ELEITOR_ELEICAO_ESTADUAL')} eleitores_estadual
-  FROM {csv(p)} ORDER BY turno, uf, cd_municipio_tse, zona, secao""", f'local_secao_{ano}.parquet', f'eleitorado_locais_votacao/eleitorado_local_votacao_{ano}.zip', lm); os.remove(p)
-
-# ---------------- detalhe da apuração por seção
-z, lm = baixar(f'detalhe_votacao_secao/detalhe_votacao_secao_{ano}.zip'); p = extrair(z, '_BRASIL.csv'); os.remove(z)
-gravar(f"""SELECT TRY_CAST(ANO_ELEICAO AS SMALLINT) ano, TRY_CAST(NR_TURNO AS TINYINT) turno, TRY_CAST(CD_ELEICAO AS INTEGER) cd_eleicao, TRY_CAST(CD_CARGO AS TINYINT) cargo,
+  FROM {csv(p)} ORDER BY turno, uf, cd_municipio_tse, zona, secao""", 'eleitorado_local_votacao')
+bloco(f'detalhe_secao_{ano}.parquet', f'detalhe_votacao_secao/detalhe_votacao_secao_{ano}.zip',
+  lambda p: f"""SELECT TRY_CAST(ANO_ELEICAO AS SMALLINT) ano, TRY_CAST(NR_TURNO AS TINYINT) turno, TRY_CAST(CD_ELEICAO AS INTEGER) cd_eleicao, TRY_CAST(CD_CARGO AS TINYINT) cargo,
   SG_UF uf, {I('CD_MUNICIPIO')} cd_municipio_tse, {I('NR_ZONA')} zona, {I('NR_SECAO')} secao, {I('NR_LOCAL_VOTACAO')} nr_local_votacao,
   {I('QT_APTOS')} aptos, {I('QT_COMPARECIMENTO')} comparecimento, {I('QT_ABSTENCOES')} abstencoes, {I('QT_VOTOS_NOMINAIS')} votos_nominais,
   {I('QT_VOTOS_BRANCOS')} brancos, {I('QT_VOTOS_NULOS')} nulos, {I('QT_VOTOS_LEGENDA')} legenda, {I('QT_VOTOS_ANULADOS_APU_SEP')} anulados_apu_sep,
   DS_ORIGEM_VOTO origem_voto, ST_SECAO_INSTALADA secao_instalada, ST_SECAO_ANULADA secao_anulada
-  FROM {csv(p)} ORDER BY turno, cargo, uf, cd_municipio_tse, zona, secao""", f'detalhe_secao_{ano}.parquet', f'detalhe_votacao_secao/detalhe_votacao_secao_{ano}.zip', lm); os.remove(p)
-
-# ---------------- candidatos (minimização LGPD)
-z, lm = baixar(f'consulta_cand/consulta_cand_{ano}.zip'); p = extrair(z, '_BRASIL.csv'); os.remove(z)
-nul = lambda c: f"nullif(nullif(nullif({c}, '#NULO'), '#NE'), 'NÃO DIVULGÁVEL')"
-gravar(f"""SELECT TRY_CAST(ANO_ELEICAO AS SMALLINT) ano, TRY_CAST(NR_TURNO AS TINYINT) turno, TRY_CAST(CD_ELEICAO AS INTEGER) cd_eleicao, SG_UF uf, SG_UE ue, NM_UE nm_ue,
+  FROM {csv(p)} ORDER BY turno, cargo, uf, cd_municipio_tse, zona, secao""", 'detalhe_votacao_secao')
+bloco(f'candidato_{ano}.parquet', f'consulta_cand/consulta_cand_{ano}.zip',
+  lambda p: f"""SELECT TRY_CAST(ANO_ELEICAO AS SMALLINT) ano, TRY_CAST(NR_TURNO AS TINYINT) turno, TRY_CAST(CD_ELEICAO AS INTEGER) cd_eleicao, SG_UF uf, SG_UE ue, NM_UE nm_ue,
   TRY_CAST(CD_CARGO AS TINYINT) cargo, DS_CARGO ds_cargo, TRY_CAST(SQ_CANDIDATO AS BIGINT) sq_candidato, {I('NR_CANDIDATO')} nr, NM_CANDIDATO nome, NM_URNA_CANDIDATO nome_urna,
   DS_SITUACAO_CANDIDATURA situacao_candidatura, {I('NR_PARTIDO')} nr_partido, SG_PARTIDO sigla, {nul('SG_FEDERACAO')} federacao, {nul('DS_COMPOSICAO_FEDERACAO')} composicao_federacao,
   NM_COLIGACAO coligacao, SG_UF_NASCIMENTO uf_nascimento, TRY_CAST(right(DT_NASCIMENTO, 4) AS SMALLINT) ano_nascimento, DS_GENERO genero, DS_GRAU_INSTRUCAO instrucao,
   DS_ESTADO_CIVIL estado_civil, DS_COR_RACA cor_raca, DS_OCUPACAO ocupacao, DS_SIT_TOT_TURNO situacao_final
-  FROM {csv(p)} ORDER BY turno, cargo, uf, ue, nr""", f'candidato_{ano}.parquet', f'consulta_cand/consulta_cand_{ano}.zip', lm); os.remove(p)
-
-# ---------------- votação por candidato, município e zona
-z, lm = baixar(f'votacao_candidato_munzona/votacao_candidato_munzona_{ano}.zip'); p = extrair(z, '_BRASIL.csv'); os.remove(z)
-gravar(f"""SELECT TRY_CAST(ANO_ELEICAO AS SMALLINT) ano, TRY_CAST(NR_TURNO AS TINYINT) turno, TRY_CAST(CD_ELEICAO AS INTEGER) cd_eleicao, SG_UF uf, {I('CD_MUNICIPIO')} cd_municipio_tse,
+  FROM {csv(p)} ORDER BY turno, cargo, uf, ue, nr""", 'consulta_cand')
+bloco(f'zona_{ano}.parquet', f'votacao_candidato_munzona/votacao_candidato_munzona_{ano}.zip',
+  lambda p: f"""SELECT TRY_CAST(ANO_ELEICAO AS SMALLINT) ano, TRY_CAST(NR_TURNO AS TINYINT) turno, TRY_CAST(CD_ELEICAO AS INTEGER) cd_eleicao, SG_UF uf, {I('CD_MUNICIPIO')} cd_municipio_tse,
   NM_MUNICIPIO municipio, {I('NR_ZONA')} zona, TRY_CAST(CD_CARGO AS TINYINT) cargo, TRY_CAST(SQ_CANDIDATO AS BIGINT) sq_candidato, {I('NR_CANDIDATO')} nr_votavel,
   NM_URNA_CANDIDATO nome_urna, SG_PARTIDO sigla, {I('QT_VOTOS_NOMINAIS')} qt_votos_nominais, {I('QT_VOTOS_NOMINAIS_VALIDOS')} qt_votos_nominais_validos,
   NM_TIPO_DESTINACAO_VOTOS destinacao, DS_SIT_TOT_TURNO situacao_final
-  FROM {csv(p)} ORDER BY turno, cargo, uf, cd_municipio_tse, zona, nr_votavel""", f'zona_{ano}.parquet', f'votacao_candidato_munzona/votacao_candidato_munzona_{ano}.zip', lm); os.remove(p)
+  FROM {csv(p)} ORDER BY turno, cargo, uf, cd_municipio_tse, zona, nr_votavel""", 'votacao_candidato_munzona')
 
 # ---------------- conferência
-R = lambda sql: con.execute(sql).fetchall()
+def R(sql):
+    try: return con.execute(sql).fetchall()
+    except Exception as e: md.append('(conferência indisponível: ' + str(e)[:160].replace(chr(10), ' ') + ')'); return []
 sec = f"read_parquet('{out}/secao_{ano}_*.parquet')"; det = f"read_parquet('{out}/detalhe_secao_{ano}.parquet')"; zon = f"read_parquet('{out}/zona_{ano}.parquet')"
 md = [f'# Conferência do lake {ano}', f'Gerado em {manifest["gerado_em"]}', '']
 md += ['## Arquivos', '| arquivo | linhas | MB | fonte | Last-Modified |', '|---|---:|---:|---|---|']
 for a in manifest['arquivos']: md.append(f"| {a['arquivo']} | {a['linhas']:,} | {a['bytes']/1e6:.1f} | {a['fonte']} | {a['last_modified_fonte']} |")
+if manifest.get('falhas'): md += ['', 'Falhas: ' + '; '.join(f['arquivo'] + ' (' + f['erro'] + ')' for f in manifest['falhas'])]
 if manifest.get('ausentes'): md += ['', 'Ausentes no TSE: ' + ', '.join(manifest['ausentes'])]
 md += ['', '## 1) Votos por seção x detalhe da apuração (por turno e cargo)', 'Soma de qt_votos (seção) vs nominais+brancos+nulos+legenda (detalhe). Diferença = seção − detalhe.',
        '| turno | cargo | votos seção | votos detalhe | diferença | seções seção | seções detalhe |', '|---:|---:|---:|---:|---:|---:|---:|']
@@ -124,7 +135,7 @@ q = R(f"""SELECT s.turno, count(*) FROM (SELECT DISTINCT turno, uf, cd_municipio
  LEFT JOIN read_parquet('{out}/local_secao_{ano}.parquet') l ON l.turno=s.turno AND l.uf=s.uf AND l.cd_municipio_tse=s.cd_municipio_tse AND l.zona=s.zona AND l.secao=s.secao WHERE l.secao IS NULL GROUP BY 1""")
 md.append('seções (turno, qtd) sem correspondência no cadastro de locais: ' + (str(q) if q else 'nenhuma'))
 q = R(f"SELECT count(*), count(*) FILTER (WHERE bairro IS NULL OR trim(bairro)=''), count(*) FILTER (WHERE latitude IS NULL OR latitude=0) FROM read_parquet('{out}/local_secao_{ano}.parquet')")
-md.append(f'locais-seção: {q[0][0]:,}; sem bairro: {q[0][1]:,}; sem coordenada: {q[0][2]:,}')
+md.append(f'locais-seção: {q[0][0]:,}; sem bairro: {q[0][1]:,}; sem coordenada: {q[0][2]:,}' if q else 'locais-seção: indisponível')
 open(os.path.join(out, 'conferencia.md'), 'w').write('\n'.join(md) + '\n')
 json.dump(manifest, open(os.path.join(out, 'manifesto.json'), 'w'), indent=1, ensure_ascii=False)
 print('\n'.join(md))
