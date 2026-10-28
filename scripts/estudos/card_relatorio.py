@@ -45,7 +45,7 @@ def tabela():
             else:
                 m = re.match(r'^(\d+)(?: \(([+−]\d+)\))?$', t.strip()); n, d = (m.group(1), m.group(2)) if m else (t, None)
                 cls = 'g' if bg == GAIN else ('l' if bg == LOSS else '')
-                tds.append(f'<td class="{cls}"><b>{n}</b>' + (f'<span>{d}</span>' if d else '') + '</td>')
+                tds.append(f'<td class="{cls}"><b>{n}</b>' + (f'<span>({d})</span>' if d else '') + '</td>')
         trs.append(f'<tr class="{"tot" if tot else ""}">' + ''.join(tds) + '</tr>')
     return f'<table><thead><tr>{th}</tr></thead><tbody>{"".join(trs)}</tbody></table>'
 
@@ -82,7 +82,7 @@ th{{font:700 {f['th']}px/1.15 "Space Grotesk";color:#2A2260;background:#D9D4F0;t
 th:first-child{{border-radius:10px 0 0 10px}}th:last-child{{border-radius:0 10px 10px 0}}
 th.p,td.p{{text-align:left;width:19%}}th.p{{padding-left:12px}}
 td{{height:{f['row']}px;text-align:center;border-bottom:1.5px solid #e4dfee;font-size:{f['td']}px;line-height:1.05;white-space:nowrap}}
-td b{{font-weight:700}}td span{{font-size:{f['td']*.62:.0f}px;font-weight:700;margin-left:5px}}
+td b{{font-weight:700}}td span{{font-size:{f['td']*.62:.0f}px;font-weight:700;margin-left:3px;letter-spacing:-.02em}}
 td.p{{font-weight:700;font-size:{f['td']*.95:.0f}px;padding-left:12px;color:#1b1530}}
 td.p i{{display:inline-block;width:{f['td']*.5:.0f}px;height:{f['td']*.5:.0f}px;border-radius:50%;margin-right:{f['td']*.35:.0f}px;vertical-align:{f['td']*-.04:.0f}px}}
 td.g{{background:#e1f2e6;color:#12602f}}td.l{{background:#fbe3df;color:#a3261a}}
