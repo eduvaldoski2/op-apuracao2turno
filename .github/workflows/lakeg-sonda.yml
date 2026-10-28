@@ -11,18 +11,17 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - name: Tamanhos e cabecalhos
+      - name: Cabecalhos
         run: |
           exec > >(tee /tmp/sonda.log) 2>&1
           B=https://cdn.tse.jus.br/estatistica/sead/odsele; A=${{ github.event.inputs.ano || '2026' }}
-          for u in votacao_secao/votacao_secao_${A}_BR votacao_secao/votacao_secao_${A}_RJ votacao_secao/votacao_secao_${A}_AC detalhe_votacao_secao/detalhe_votacao_secao_${A} votacao_candidato_munzona/votacao_candidato_munzona_${A} eleitorado_locais_votacao/eleitorado_local_votacao_${A} perfil_eleitor_secao/perfil_eleitor_secao_${A}_BR consulta_cand/consulta_cand_${A} bweb/bweb_1t_AC_${A}; do
-            echo "== $u"; curl -sSI -L --http1.1 "$B/$u.zip" | egrep -i "^HTTP|content-length|last-modified" | tr -d '\r' | tr '\n' ' '; echo
-          done
           mkdir -p /tmp/t && cd /tmp/t
-          curl -sS -f -L --http1.1 --retry 3 -o ac.zip "$B/votacao_secao/votacao_secao_${A}_AC.zip" && unzip -l ac.zip && for f in $(unzip -Z1 ac.zip | grep -i csv); do echo "-- $f"; unzip -p ac.zip "$f" | head -3 | iconv -f latin1 -t utf8; unzip -p ac.zip "$f" | wc -l; done
-          curl -sS -f -L --http1.1 --retry 3 -o d.zip "$B/detalhe_votacao_secao/detalhe_votacao_secao_${A}.zip" && unzip -l d.zip | head; 
-          for f in $(unzip -Z1 d.zip | grep -i "_AC.csv"); do unzip -p d.zip "$f" | head -2 | iconv -f latin1 -t utf8; done
-          python3 -c "import pyarrow,duckdb" 2>&1 | tail -1; df -h /tmp | tail -1
+          for u in eleitorado_locais_votacao/eleitorado_local_votacao_${A} consulta_cand/consulta_cand_${A} votacao_candidato_munzona/votacao_candidato_munzona_${A} votacao_secao/votacao_secao_${A}_BR; do
+            n=$(basename $u); curl -sS -f -L --http1.1 --retry 3 -o $n.zip "$B/$u.zip"; echo "== $n"; unzip -Z1 $n.zip | head -40 | tr '\n' ' '; echo
+            f=$(unzip -Z1 $n.zip | grep -i "csv" | egrep -i "BRASIL|_BR|_RJ" | head -1); [ -z "$f" ] && f=$(unzip -Z1 $n.zip | grep -i csv | head -1); echo "-- $f"; unzip -p $n.zip "$f" | head -3 | iconv -f latin1 -t utf8; echo "linhas BR/arq:"; unzip -p $n.zip "$f" | wc -l
+          done
+          unzip -p votacao_secao_${A}_BR.zip $(unzip -Z1 votacao_secao_${A}_BR.zip | grep -i "csv" | head -1) | cut -d';' -f6,7,19 | sort | uniq -c | head -30
+          pip install -q duckdb pyarrow 2>&1 | tail -1; python3 -c "import duckdb;print(duckdb.__version__)"
       - name: Publicar log
         if: always()
         run: |
