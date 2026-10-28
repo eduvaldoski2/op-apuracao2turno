@@ -93,14 +93,15 @@ tr.tot td{{border-top:3px solid #3E347E;border-bottom:0;background:#f3f1fa;font-
 .rod{{margin-top:auto;display:flex;align-items:center;gap:{f['gap']*1.2:.0f}px;background:#fff;border-radius:22px;padding:{f['gap']*.8:.0f}px {f['gap']*1.1:.0f}px;border-bottom:6px solid #F08A24}}
 .rod .qr{{flex:none;width:{f['qr']}px;height:{f['qr']}px}}
 .rod .t{{flex:1}}.rod .k{{font:700 {f['sm']+1}px/1.2 "Space Grotesk";letter-spacing:.16em;text-transform:uppercase;color:#b45f06}}
-.rod .h{{font:400 {f['rod']*1.28:.0f}px/1.12 "DM Serif Display";color:#3E347E;margin-top:6px}}
-.rod .u{{margin-top:8px;font:700 {f['rod']*.78:.0f}px/1.2 "Space Grotesk";color:#2A2260;word-break:break-all}}
+.rod .u{{margin-top:8px;font:700 {f['rod']*2.05:.0f}px/1.05 "Space Grotesk";letter-spacing:-.01em;color:#3E347E;white-space:nowrap}}
+.rod .h{{font:400 {f['rod']*1.0:.0f}px/1.2 "DM Serif Display";color:#2A2260;margin-top:8px}}
+.rod .a{{margin-top:6px;font:500 {f['rod']*.64:.0f}px/1.3 "Space Grotesk";color:#5d5675}}
 </style></head><body><div class="c">
 <div class="topo"><img src="file://{IMG}/logo-negativo.svg"><span class="sel">Dado do relatório</span></div>
 <h1>{esc(TITULO)}</h1><div class="sub">{esc(SUBT)}</div>
 <div class="painel">{tabela()}</div>
 <div class="leg">{LEG}<em>Fonte: relatório <u>Federação e os partidos de esquerda nas eleições 2026</u>, da Oficina Política.</em></div>
-<div class="rod"><div class="qr">{QR}</div><div class="t"><div class="k">Leia o relatório completo</div><div class="h">Veja os seis cenários, estado por estado</div><div class="u">Aponte a câmera para o QR code ou acesse {URL_TXT}</div></div></div>
+<div class="rod"><div class="qr">{QR}</div><div class="t"><div class="k">Leia o relatório completo</div><div class="u">{URL_TXT}</div><div class="h">Veja os seis cenários, estado por estado</div><div class="a">Aponte a câmera para o QR code e vá direto ao relatório</div></div></div>
 </div></body></html>'''
 
 from playwright.sync_api import sync_playwright
