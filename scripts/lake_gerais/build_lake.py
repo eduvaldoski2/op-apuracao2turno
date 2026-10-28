@@ -38,6 +38,8 @@ def baixar(rel):
 def extrair(z, sufixo):
     nomes = subprocess.run(['unzip', '-Z1', z], capture_output=True, text=True).stdout.split()
     m = [n for n in nomes if n.upper().endswith(sufixo.upper())]
+    if not m and sufixo.upper() == '_BRASIL.CSV':
+        m = [n for n in nomes if n.lower().endswith('.csv') and not re.search(r'_[A-Z]{2}\.csv$', n, re.I)]
     if not m: return None
     subprocess.run(['unzip', '-o', '-j', '-q', z, m[0], '-d', W], check=True)
     f = os.path.join(W, os.path.basename(m[0])); u = f + '.utf8'
