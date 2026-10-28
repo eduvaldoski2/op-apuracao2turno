@@ -18,7 +18,7 @@ UFS = [u for u in (ufs_arg.split(',') if ufs_arg else
        'AC AL AM AP BA CE DF ES GO MA MG MS MT PA PB PE PI PR RJ RN RO RR RS SC SE SP TO ZZ'.split()) if u]
 B = 'https://cdn.tse.jus.br/estatistica/sead/odsele'
 W = os.path.join(out, '_work'); os.makedirs(W, exist_ok=True)
-manifest = {'ano': ano, 'gerado_em': datetime.datetime.utcnow().isoformat() + 'Z', 'fonte': B, 'arquivos': []}
+manifest = {'ano': ano, 'gerado_em': datetime.datetime.now(datetime.timezone.utc).isoformat() + 'Z', 'fonte': B, 'arquivos': []}
 con = duckdb.connect(); con.execute("SET memory_limit='5GB'; SET threads=4; SET preserve_insertion_order=false")
 
 def baixar(rel):
@@ -35,10 +35,11 @@ def extrair(z, sufixo):
     m = [n for n in nomes if n.upper().endswith(sufixo.upper())]
     if not m: return None
     subprocess.run(['unzip', '-o', '-j', '-q', z, m[0], '-d', W], check=True)
-    return os.path.join(W, os.path.basename(m[0]))
+    f = os.path.join(W, os.path.basename(m[0])); u = f + '.utf8'
+    subprocess.run(f"iconv -f latin1 -t utf8 '{f}' > '{u}'", shell=True, check=True); os.remove(f); return u
 
 def csv(p):
-    return f"read_csv('{p}', delim=';', quote='\"', header=true, all_varchar=true, encoding='latin-1', ignore_errors=false, strict_mode=false)"
+    return f"read_csv('{p}', delim=';', quote='\"', header=true, all_varchar=true, ignore_errors=false)"
 
 def gravar(sql, nome, fonte, lm):
     dest = os.path.join(out, nome)
