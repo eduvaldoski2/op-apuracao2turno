@@ -20656,3 +20656,13 @@ O log inicial foi enviado como blob Git e seu SHA foi conferido contra git hash-
 Na investigação comparei HEAD, árvore-base, índice e SHA do log. Criei blobs individuais para os outros 20 arquivos e tentei nós somente por SHA e depois content nulo. A inspeção dos próprios nós mostrou que faltava o campo sha no nó do arquivo de log; portanto, a mensagem genérica do GitHub não comprovava presença simultânea de sha/content. A falha era na montagem da requisição. Corrigi explicitamente a referência e passei a verificar presença/formato dos 21 SHAs antes da chamada.
 A árvore foi então criada com sucesso e retornou exatamente 8803c3b80bb63e20dbf0c0bfc1cb23395b8e57a3, igual à árvore local. Este adendo altera somente o próprio log e requer novo blob/árvore. A entrega continua no branch lake-municipal, sem merge ou publicação de Parquets reais. O histórico do PR registra o commit de entrega.
 FIM DO LOG ATUALIZADO.
+
+==============================================================================
+VERIFICACAO POS-PUBLICACAO E ENTREGA
+Registrado em 2026-10-28T14:13:44.106588-03:00
+Publiquei o commit 17eda0cbb674b3b8d1a69c275b4941aad0f73f54, árvore 335fb31e735f471d0205087377521dc0199ca97b, com atualização de referência protegida por expected_sha=67f4219da9a30bc22c8d9f77c7f5627f43316982, sem force. O blob do log nessa versão era 54f38e3d1523cbce8687c5c77684a587386bf98a.
+Sincronizei o checkout por git fetch origin lake-municipal e git reset --mixed origin/lake-municipal. git diff --exit-code e git status --short ficaram limpos. Conferi os 42 arquivos do diff desde 220dc538: todos nas pastas autorizadas.
+A execução CI 40733298672 (https://github.com/eduvaldoski2/op-apuracao2turno/actions/runs/40733298672), job validar_codigo 122975054913, terminou success e confirmou novamente os cinco testes. As inspeções pesadas não foram repetidas nessa edição. O código testado corresponde integralmente aos arquivos de código copiados neste log; este adendo altera apenas o próprio log.
+Atualizei título e descrição do PR com o inventário concluído e todos os limites. Marquei o PR #1 como pronto para revisão (draft=false), aberto, mergeable=true e merged=false. Não executei merge, workflow_dispatch de conversão, criação de release nem mensagem a terceiros.
+Este adendo é enviado ao mesmo branch como revisão documental. Seu SHA e eventuais verificações repetidas de documentação ficam no histórico público do PR. Não há mudanças adicionais de código ou resultados eleitorais nesta revisão.
+FIM DA AUDITORIA DESTA ENTREGA.
