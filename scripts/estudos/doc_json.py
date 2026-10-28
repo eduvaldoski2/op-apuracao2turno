@@ -362,8 +362,14 @@ add(H(3, 'Dados e validação'))
 add(LST([
     '**Votos:** arquivos oficiais do TSE de votação por candidato e por partido, 1º turno de 2026, gerados em 25/10/2026. Cadastro de candidaturas também do TSE.',
     '**Cargos:** deputados estaduais (1.035 vagas) e distritais (24, no DF) são tratados como um só cargo, com 1.059 vagas. Os federais somam 513.',
-    '**Validação:** aplicado às listas reais, o cálculo reproduz os **1.572 eleitos de 2026** (513 federais, 1.035 estaduais e 24 distritais), um a um, e a forma de eleição de cada um (por QP ou por sobra), sem nenhuma divergência. O mesmo cálculo reproduz os 1.572 eleitos de 2022. Um segundo cálculo, feito de forma independente a partir dos arquivos brutos do TSE, chegou aos mesmos eleitos nos seis cenários, em todos os estados.',
+    '**Validação:** aplicado às listas reais, o cálculo reproduz os **1.572 eleitos de 2026** (513 federais, 1.035 estaduais e 24 distritais), um a um, e a forma de eleição de cada um (por QP ou por sobra), sem nenhuma divergência. Um segundo cálculo, escrito de forma independente e rodado a partir dos arquivos brutos do TSE, chegou aos mesmos eleitos nos seis cenários, em todos os estados. As duas execuções foram feitas com auxílio de inteligência artificial (ver a subseção seguinte); não houve conferência humana independente dos cálculos.',
     '**Nos cenários,** os votos de cada candidato e de cada legenda ficam exatamente como foram em 2026. Só muda a forma de contar: os votos dos partidos fundidos formam uma lista única e as cadeiras são divididas pelas regras acima. Na PSB + Cidadania, a federação PSDB/Cidadania é desfeita e cada partido leva seus candidatos e seu voto de legenda.']))
+add(H(3, 'Uso de inteligência artificial no processamento e nas simulações'))
+add(P('Este relatório foi concebido e orientado por Eduardo Valdoski, responsável pela definição do objeto de pesquisa, das questões investigadas e dos cenários eleitorais analisados.'))
+add(P('O processamento dos dados, a aplicação computacional das regras de distribuição de cadeiras e a execução dos cálculos e das simulações foram realizados com auxílio de ferramentas de inteligência artificial, a partir das diretrizes estabelecidas pelo autor.'))
+add(P('A inteligência artificial foi utilizada como instrumento de processamento e análise quantitativa, tendo como fontes primárias os dados oficiais disponibilizados pelo Tribunal Superior Eleitoral (TSE). Sua utilização não altera a responsabilidade autoral pelo estudo nem dispensa a verificação dos procedimentos, resultados e limitações metodológicas.'))
+add(P('Os resultados apresentados correspondem a simulações realizadas com base nas premissas e condições explicitadas neste relatório, não constituindo previsões eleitorais.'))
+add(P('**Ferramenta utilizada.** Claude, assistente de inteligência artificial da Anthropic, em sessão configurada com o modelo Claude Sonnet 5.5. O assistente escreveu e executou os programas (em Python) que leem os arquivos do TSE, aplicam as regras de divisão de cadeiras e geram as tabelas; os números do relatório vêm da execução desses programas, não de estimativa do modelo. Uma segunda versão do cálculo, escrita separadamente, foi usada para conferir os resultados. Ambas as execuções foram feitas por inteligência artificial e não substituem uma validação humana independente.'))
 add(H(3, 'Limites da simulação'))
 add(LST([
     '**Não é previsão.** Numa federação real, partidos escolhem candidatos de outro jeito e o eleitor pode votar de outro jeito.',
@@ -394,7 +400,7 @@ add(TBL(['Rodada', 'Médias das listas', 'Vence'], [
     ['3ª sobra', 'fundida 122.164; UNIÃO/PP 105.031; PSD 85.725', 'Federação: Marcio Macedo (PT, 59.143), o 3º mais votado da lista']]))
 add(P('A federação fica com 3 vagas (2 por QP e 1 por sobra), a UNIÃO/PP com 2 e o PP perde Gustinho Ribeiro. Os votos são os mesmos; mudou a lista que os soma. Repare que, na lista única, o PSB continua com 1 deputado (Mitidieri) e o PT passa de 1 para 2.'))
 add(H(3, 'Pontos das regras a conferir'))
-add(P('A leitura das regras usada aqui reproduz os resultados oficiais de 2022 e 2026. Mas os cenários criam situações que a eleição real não criou, como uma federação de esquerda com mais candidatos do que o limite por lista, ou o voto de legenda de uma federação dividido entre dois partidos (PSB + Cidadania). Por isso convém conferir com a legislação e as resoluções do TSE, em especial: (a) a ordem de preenchimento das vagas por QP e por sobra; (b) as barreiras de 10%, 80% e 20% do QE; (c) o tratamento das sobras após a decisão do STF; (d) o limite de candidatos por lista.'))
+add(P('A leitura das regras usada aqui reproduz os resultados oficiais de 2026. Mas os cenários criam situações que a eleição real não criou, como uma federação de esquerda com mais candidatos do que o limite por lista, ou o voto de legenda de uma federação dividido entre dois partidos (PSB + Cidadania). Por isso convém conferir com a legislação e as resoluções do TSE, em especial: (a) a ordem de preenchimento das vagas por QP e por sobra; (b) as barreiras de 10%, 80% e 20% do QE; (c) o tratamento das sobras após a decisão do STF; (d) o limite de candidatos por lista.'))
 add(H(3, 'Glossário'))
 add(TBL(['Termo', 'Significado'], [
     ['FBE', 'Federação Brasil da Esperança: PT, PCdoB e PV'],
@@ -412,7 +418,7 @@ add(TBL(['Termo', 'Significado'], [
     ['Federação desfeita (PSB + Cidadania)', 'PSDB e Cidadania voltam a ser listas separadas. Cada um leva seus candidatos e os votos de legenda que o TSE publica para o seu número; o Cidadania forma uma lista única com o PSB'],
     ['Estaduais e distritais', 'Tratados como um só cargo: 1.035 deputados estaduais e 24 distritais (DF), 1.059 vagas']]))
 add(H(3, 'Fontes e dados'))
-add(P('Votos e candidaturas: dados abertos do TSE (dadosabertos.tse.jus.br), votação por candidato e por partido do 1º turno de 2026 e de 2022, e cadastro de candidaturas de 2026.'))
+add(P('Votos e candidaturas: dados abertos do TSE (dadosabertos.tse.jus.br), votação por candidato e por partido do 1º turno de 2026, e cadastro de candidaturas de 2026.'))
 add(P('Regras: Código Eleitoral (Lei 4.737/1965), arts. 106 a 112; Lei 14.211/2021; Lei 9.504/1997, art. 10; decisão do STF nas ADIs 7228, 7263 e 7325 sobre as sobras. Matérias explicativas consultadas: Congresso em Foco, TRE-SP e O Povo.'))
 
 
@@ -425,6 +431,7 @@ add(TBL(['Item', 'Informação'], [
     ['Data', '27 de outubro de 2026'],
     ['Dados', 'TSE, dados abertos: votação por candidato e por partido, 1º turno de 2026 (gerados em 25/10/2026), e cadastro de candidaturas'],
     ['Método', 'Divisão de cadeiras pelas regras do Código Eleitoral e da Lei 14.211/2021 e pela decisão do STF nas ADIs 7228, 7263 e 7325, aplicada estado por estado, com os votos de 2026 mantidos'],
+    ['Processamento e simulações', 'Realizados com auxílio de inteligência artificial, a partir das diretrizes de pesquisa e dos cenários definidos pelo autor.'],
     ['Como citar', 'VALDOSKI, Eduardo. Federação e os partidos de esquerda nas eleições 2026. Oficina Política, 2026']]))
 
 
