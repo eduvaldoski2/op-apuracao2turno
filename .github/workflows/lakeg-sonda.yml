@@ -1,28 +1,26 @@
-name: Lake gerais - sonda TSE 2026 (arquivos por secao)
+name: Lake gerais - sonda (locais de votacao)
 on:
   workflow_dispatch:
     inputs:
-      ano: { description: 'Ano', required: false, default: '2026' }
+      ano: { description: 'Ano', required: false, default: '2022' }
 permissions:
   contents: write
 jobs:
   sonda:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - name: Cabecalhos
+      - name: Locais
         run: |
           exec > >(tee /tmp/sonda.log) 2>&1
-          B=https://cdn.tse.jus.br/estatistica/sead/odsele; A=${{ github.event.inputs.ano || '2026' }}
+          B=https://cdn.tse.jus.br/estatistica/sead/odsele; A=${{ github.event.inputs.ano || '2022' }}
           mkdir -p /tmp/t && cd /tmp/t
-          for u in eleitorado_locais_votacao/eleitorado_local_votacao_${A} consulta_cand/consulta_cand_${A} votacao_candidato_munzona/votacao_candidato_munzona_${A} votacao_secao/votacao_secao_${A}_BR; do
-            n=$(basename $u); curl -sS -f -L --http1.1 --retry 3 -o $n.zip "$B/$u.zip"; echo "== $n"; unzip -Z1 $n.zip | head -40 | tr '\n' ' '; echo
-            f=$(unzip -Z1 $n.zip | grep -i "csv" | egrep -i "BRASIL|_BR|_RJ" | head -1); [ -z "$f" ] && f=$(unzip -Z1 $n.zip | grep -i csv | head -1); echo "-- $f"; unzip -p $n.zip "$f" | head -3 | iconv -f latin1 -t utf8; echo "linhas BR/arq:"; unzip -p $n.zip "$f" | wc -l
+          for u in eleitorado_locais_votacao/eleitorado_local_votacao_$A eleitorado_local_votacao/eleitorado_local_votacao_$A; do
+            echo "== $u"; curl -sSI -L --http1.1 "$B/$u.zip" | egrep -i "^HTTP|content-length" | tr -d '\r' | tr '\n' ' '; echo
+            if curl -sS -f -L --http1.1 -o x.zip "$B/$u.zip"; then unzip -Z1 x.zip | head -40 | tr '\n' ' '; echo; f=$(unzip -Z1 x.zip | grep -i csv | head -1); echo "-- $f"; unzip -p x.zip "$f" | head -3 | iconv -f latin1 -t utf8; fi
           done
-          unzip -p votacao_secao_${A}_BR.zip $(unzip -Z1 votacao_secao_${A}_BR.zip | grep -i "csv" | head -1) | cut -d';' -f6,7,19 | sort | uniq -c | head -30
-          pip install -q duckdb pyarrow 2>&1 | tail -1; python3 -c "import duckdb;print(duckdb.__version__)"
       - name: Publicar log
         if: always()
         run: |
-          cd /tmp && rm -rf pub && mkdir pub && cp sonda.log pub/ && cd pub && git init -q -b sonda-lakeg && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log && git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" sonda-lakeg
+          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub && cp /tmp/sonda.log . && git init -q -b sonda-lakeg && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log && git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" sonda-lakeg
