@@ -1,0 +1,121 @@
+name: Lake municipal - teste 2024 (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      ufs:
+        description: UFs separadas por vírgula ou TODAS; piloto inicial AC
+        required: true
+        default: AC
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lake-municipal-2024-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  planejar:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.lotes.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts/lake
+      - id: lotes
+        env:
+          UFS_TSE: ${{ inputs.ufs }}
+        run: python3 scripts/lake/run_2024.py plan --ufs "$UFS_TSE"
+
+  construir:
+    needs: planejar
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix: ${{ fromJSON(needs.planejar.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts/lake
+            docs/inventario-municipal-fontes.json
+          sparse-checkout-cone-mode: false
+      - name: Instalar dependência fixada
+        run: |
+          python3 -m venv "$RUNNER_TEMP/lake-venv"
+          "$RUNNER_TEMP/lake-venv/bin/python" -m pip install -r scripts/lake/requirements.txt
+          echo "$RUNNER_TEMP/lake-venv/bin" >> "$GITHUB_PATH"
+      - name: Verificar lógica com dados sintéticos
+        run: python3 -m unittest discover -s scripts/lake -p 'test_*.py' -v
+      - name: Baixar, minimizar, converter e conferir a UF
+        env:
+          UF_TSE: ${{ matrix.uf }}
+        run: python3 scripts/lake/build_2024.py --uf "$UF_TSE"
+      - name: Preservar dados autorizados e divergências, inclusive em falha
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lake-municipal-2024-${{ matrix.uf }}
+          path: data/lake/municipal/2024/
+          retention-days: 7
+          if-no-files-found: error
+
+  relatorio_e_release:
+    needs: [planejar, construir]
+    if: always() && needs.planejar.result == 'success'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.ref }}
+          sparse-checkout: |
+            scripts/lake
+            docs
+            data/lake/municipal
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        continue-on-error: true
+        with:
+          pattern: lake-municipal-2024-*
+          path: data/lake/municipal/2024/
+          merge-multiple: true
+      - name: Gerar relatório e verificar integridade dos assets
+        id: relatorio
+        env:
+          UFS_TSE: ${{ inputs.ufs }}
+        run: python3 scripts/lake/run_2024.py summarize --ufs "$UFS_TSE"
+      - name: Registrar apenas relatório e manifesto no branch de execução
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/conferencia-2024.md data/lake/municipal/2024/manifesto.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Lake municipal 2024: relatório das conferências do teste'
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+      - name: Publicar release de teste somente se todas as UFs solicitadas passaram
+        if: steps.relatorio.outputs.validado == 'true' && needs.construir.result == 'success'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/lake/run_2024.py publish
+      - name: Preservar relatório de execução
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: lake-municipal-2024-relatorio
+          path: |
+            docs/conferencia-2024.md
+            data/lake/municipal/2024/manifesto.json
+          retention-days: 7
+          if-no-files-found: error
+      - name: Sinalizar conferências incompletas ou divergentes
+        if: steps.relatorio.outputs.validado != 'true' || needs.construir.result != 'success'
+        run: exit 1

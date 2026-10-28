@@ -5,21 +5,40 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - scripts/lake/inspect_2024.py
-      - .github/workflows/lake-inventario-2024.yml
+      - scripts/lake/**
+      - .github/workflows/lake-*.yml
 
 permissions:
   contents: read
 
 concurrency:
-  group: lake-inventario-2024-${{ github.event.pull_request.number || github.ref }}
+  group: lake-inventario-2024-${{ github.event.pull_request.number || github.ref }}-${{ github.event.action || 'manual' }}
   cancel-in-progress: false
 
 jobs:
-  inspecionar:
+  validar_codigo:
     if: >-
       github.event_name == 'workflow_dispatch' ||
       (github.head_ref == 'lake-municipal' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts/lake
+      - name: Testar código com dados sintéticos, sem downloads eleitorais
+        run: |
+          python3 -m venv "$RUNNER_TEMP/lake-tests"
+          "$RUNNER_TEMP/lake-tests/bin/python" -m pip install -r scripts/lake/requirements.txt
+          "$RUNNER_TEMP/lake-tests/bin/python" -m unittest discover -s scripts/lake -p 'test_*.py' -v
+
+  inspecionar:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      ((github.event.action == 'opened' || github.event.action == 'reopened') &&
+       github.head_ref == 'lake-municipal' &&
        github.event.pull_request.head.repo.full_name == github.repository)
     runs-on: ubuntu-latest
     timeout-minutes: 55
