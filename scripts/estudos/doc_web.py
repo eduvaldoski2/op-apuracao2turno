@@ -256,7 +256,12 @@ PAGE = f'''<!doctype html>
 <meta property="og:title" content="{esc(TITULO)}">
 <meta property="og:description" content="{esc(DESC)}">
 <meta property="og:url" content="{URL}">
-<meta property="og:image" content="https://oficinapolitica.com.br/img/og.jpg">
+<meta property="og:image" content="{URL}og-relatorio.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Relatório Federação e os partidos de esquerda nas eleições 2026: plenário da Câmara em pontos e a esquerda indo de 124 a 143 deputados federais">
+<meta name="twitter:image" content="{URL}og-relatorio.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="author" content="Eduardo Valdoski">
 <meta name="theme-color" content="#3E347E">
