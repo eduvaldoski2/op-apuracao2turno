@@ -1,8 +1,8 @@
 // Métricas de uso, anônimas e sem cookies: quantos acessaram, de onde vieram (referência/UTM/país, pelo provedor), o que mais usam.
 // Provedor configurável em js/config.js (CONFIG.metricas). Sem provedor configurado, nada é enviado.
 // Respeita "Do Not Track" / Global Privacy Control e o opt-out local (?semmetricas=1 neste navegador; ?metricas=1 reativa).
-import { CONFIG } from './config.js?v=68c766ee';
-import { rastrearTela } from './consentimento.js?v=68c766ee';
+import { CONFIG } from './config.js?v=6aea79b8';
+import { rastrearTela } from './consentimento.js?v=6aea79b8';
 
 const KEY = 'op_sem_metricas';
 const q = new URLSearchParams(location.search);

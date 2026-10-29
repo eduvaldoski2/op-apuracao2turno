@@ -1,7 +1,7 @@
 // Leitura dos arquivos estáticos de divulgação do TSE (navegador e Node).
 // O esquema do 2º turno (eleição 6258) foi mapeado a partir do 1º turno (6257); os leitores são tolerantes
 // (procuram os campos por nome em qualquer nível) e o coletor registra um diagnóstico quando algo não bate.
-import { cnt, pct, UF_IDS } from './util.js?v=68c766ee';
+import { cnt, pct, UF_IDS } from './util.js?v=6aea79b8';
 
 export const TSE = {
   base: 'https://resultados.tse.jus.br/oficial',
@@ -22,6 +22,7 @@ export function urls(cfg = TSE, turno = cfg.turno) {
     uf: uf => `${raiz}/dados/${uf}/${uf}-c${cfg.cargo}-e${e6}-u.json`,
     mun: (uf, cd) => `${raiz}/dados/${uf}/${uf}${cd}-c${cfg.cargo}-e${e6}-u.json`,
     govUf: uf => { const g = cfg.eleGov?.[turno]; return g ? `${cfg.base}/${cfg.ciclo}/${g}/dados/${uf}/${uf}-c${cfg.cargoGov || '0003'}-e${pad6(g)}-u.json` : null; },
+    senUf: uf => { const g = cfg.eleGov?.[turno]; return g ? `${cfg.base}/${cfg.ciclo}/${g}/dados/${uf}/${uf}-c${cfg.cargoSen || '0005'}-e${pad6(g)}-u.json` : null; },   // senador: mesmo desenho do arquivo de governador
     abBr: () => `${raiz}/dados/br/br-e${e6}-ab.json`,
     abUf: uf => `${raiz}/dados/${uf}/${uf}-e${e6}-ab.json`,
     cm: () => `${raiz}/config/mun-e${e6}-cm.json`,

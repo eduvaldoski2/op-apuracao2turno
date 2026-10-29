@@ -1,0 +1,21 @@
+name: Resultado oficial do 1º turno para senador (por estado)
+on:
+  workflow_dispatch:
+  push:
+    paths: ['scripts/sen1t.mjs', '.github/workflows/sen1t.yml', 'js/tse.js']
+permissions:
+  contents: write
+jobs:
+  sen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: node scripts/sen1t.mjs data/sen_1t.json --amostra 2>&1 | tee sen1t.log
+      - name: Publicar
+        run: |
+          git config user.name coletor; git config user.email coletor@users.noreply.github.com
+          git add data/sen_1t.json && git commit -q -m "Resultado oficial do 1º turno para senador (TSE)" && git pull -q --rebase origin main && git push || echo FALHA >> sen1t.log
