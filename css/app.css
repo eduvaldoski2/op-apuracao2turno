@@ -656,3 +656,28 @@ body.tl-aberto{overflow:hidden}
 .exp-stack .leg-mapa{font-size:17px!important;gap:4px 22px!important}.exp-stack .leg-mapa .sw-esc,.exp-stack .leg-sw .sw-esc{font-size:15px}
 .exp-stack .ei-cap,.exp-stack .ei-res{font-size:17px;margin-bottom:5px}.exp-stack .ei-l{font-size:18px;padding:3px 0}
 .exp-4x5 .ei-b .ei-l:nth-child(n+6){display:none}
+
+/* seletor de eleição (ano · turno · cargo) */
+.eleicao{margin:10px 0 12px;background:#fff;border:1px solid var(--linha);border-radius:12px}
+.eleicao>summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:9px 12px;font-weight:700;color:var(--roxo);flex-wrap:wrap}
+.eleicao>summary::-webkit-details-marker{display:none}
+.eleicao .p{background:#f1eef9;border-radius:99px;padding:3px 10px;font-size:13px}
+.eleicao summary i{font-style:normal;margin-left:auto;color:var(--tx2);font-weight:500;font-size:12.5px}
+.eleicao[open] summary i{opacity:.6}
+.eleicao .fx{padding:2px 12px 12px;border-top:1px solid var(--linha)}
+.eleicao .l{display:flex;align-items:center;gap:8px;margin-top:10px}
+.eleicao small{flex:none;width:46px;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--tx2)}
+.eleicao .ch{display:flex;gap:5px;flex-wrap:wrap;flex:1}
+.eleicao .ch button,.eleicao .sg button{font:inherit;font-size:13px;font-weight:600;color:var(--roxo);background:#f1eef9;border:0;border-radius:99px;padding:5px 11px;cursor:pointer;white-space:nowrap}
+.eleicao .ch button.on,.eleicao .sg button.on{background:var(--roxo);color:#fff}
+.eleicao .off{opacity:.4;cursor:not-allowed}
+.eleicao .sg{display:flex;background:#e8e4f3;border-radius:9px;padding:3px;gap:2px;max-width:190px;flex:1}
+.eleicao .sg button{flex:1;border-radius:7px;background:transparent}
+.eleicao .sg button.on{background:#fff;color:var(--roxo);box-shadow:0 1px 3px rgba(45,20,80,.2)}
+.el-nota{font-size:11.5px;color:var(--tx2);margin:10px 0 0}
+.el-ov{position:fixed;inset:0;background:rgba(20,12,50,.55);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
+.el-box{position:relative;background:#fff;border-radius:16px;max-width:440px;width:100%;max-height:92vh;overflow:auto;padding:20px 18px}
+.el-box h2{margin:0 24px 6px 0;font:400 21px 'DM Serif Display',Georgia,serif;color:var(--roxo)}
+.el-box p{margin:0 0 10px;color:var(--tx2);font-size:14px}
+.el-x{position:absolute;top:10px;right:10px;border:0;background:#f1eef9;border-radius:50%;width:30px;height:30px;cursor:pointer;color:var(--roxo);font-size:14px}
+@media print{.eleicao{display:none}}
