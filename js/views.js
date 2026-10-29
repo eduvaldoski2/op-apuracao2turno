@@ -1,13 +1,14 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=519ef240';
-import { listaMunicipios, rankingUfs } from './model.js?v=519ef240';
-import { projetarMunicipios } from './proj.js?v=519ef240';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=519ef240';
-import { graficoPlacar } from './charts.js?v=519ef240';
-import { criarMapa, legendaMapa } from './map.js?v=519ef240';
-import { criarMapaMun } from './mapamun.js?v=519ef240';
-import { getJSON } from './tse.js?v=519ef240';
-import { govPainel, govResumo } from './governador.js?v=519ef240';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=68c766ee';
+import { listaMunicipios, rankingUfs } from './model.js?v=68c766ee';
+import { projetarMunicipios } from './proj.js?v=68c766ee';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=68c766ee';
+import { graficoPlacar } from './charts.js?v=68c766ee';
+import { criarMapa, legendaMapa } from './map.js?v=68c766ee';
+import { criarMapaMun } from './mapamun.js?v=68c766ee';
+import { getJSON } from './tse.js?v=68c766ee';
+import { govPainel, govResumo } from './governador.js?v=68c766ee';
+import { secaoRegioesUf, montarRegioesUf } from './regioes_uf.js?v=68c766ee';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -481,6 +482,7 @@ export function viewUf(ctx, uf, kOrd) {
   <section class="kpis k4">${kp}</section>
   ${govPainel(snap.gov?.uf?.[uf], uf, 2)}
   ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Clique em um município para ver os bairros.</p>${entenda('Cor = quem lidera no município; tom mais escuro = maior percentual dos votos válidos. Use + / − ou a roda do mouse para aproximar.')}${seletorMapa()}<div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div></div></div></section>`}
+  ${secaoRegioesUf(uf, UF_NOME[uf])}
   <section class="painel"><h2>Municípios de ${esc(UF_NOME[uf])}${ap ? '' : ' (projeção)'}</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um município</b> para ver os bairros.</p>${entenda(ap ? 'Municípios sem urnas apuradas aparecem como “aguardando”. Variações em p.p. comparam com o 1º turno no mesmo recorte apurado.' : 'Municípios ainda não apurados mostram a projeção a partir do 1º turno.')}<div id="tab-m"></div></section>`;
   const cdi = new Map((B.byUf[uf] || []).map(b => [b.cd, String(b.cdi)]));
   const dm = {}, porCdi = {};
@@ -497,6 +499,7 @@ export function viewUf(ctx, uf, kOrd) {
       for (const [id, g] of Object.entries(geo.muns)) if (porCdi[id]) g.n = porCdi[id].nome.replace(/\b(\p{L})(\p{L}*)/gu, (_, a, b) => (a + b.toLowerCase())).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
       ligaModoMapa(root, mp, dm, rows.filter(m => cdi.get(m.id)).map(m => [cdi.get(m.id), m]), { un: ['município', 'municípios'] });
     }).catch(() => { alvoMapa.innerHTML = '<p class="aviso">Mapa municipal indisponível no momento.</p>'; });
+    montarRegioesUf(root, uf, rows, ap);
     tabela(root.querySelector('#tab-m'), { cols, rows, onRow: m => ctx.ir(`#/${ap ? '' : 'p/'}mun/${uf}/${m.id}`), sort: 'nome', dir: 'asc', filtro: (m, q) => sem(m.nome).includes(q), limite: 1000 });
     ctx.csv = () => ({ nome: `${slugn(UF_NOME[uf])}_municipios_${ap ? 'apuracao' : 'projecao'}`, cab: ['Município', '% apurado', 'Lula votos', 'Lula %', 'Lula var. p.p.', 'Lula cresc. votos %', 'Flávio votos', 'Flávio %', 'Flávio var. p.p.', 'Flávio cresc. votos %'], linhas: rows.slice().sort((a, b) => (isNaN(b['p' + ord]) - isNaN(a['p' + ord])) || b['p' + ord] - a['p' + ord]).map(m => [m.nome, m.pst, m.L, m.pL, m.dL, m.gL, m.F, m.pF, m.dF, m.gF]) });
   } };
