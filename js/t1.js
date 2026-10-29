@@ -1,15 +1,15 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=6aea79b8';
-import { esc, tabela, sem, entenda } from './ui.js?v=6aea79b8';
-import { getFoco } from './foco.js?v=6aea79b8';
-import { kpi } from './views.js?v=6aea79b8';
-import { criarMapa } from './map.js?v=6aea79b8';
-import { criarMapaMun } from './mapamun.js?v=6aea79b8';
-import { getJSON } from './tse.js?v=6aea79b8';
-import { govPainel, govTabelaHtml, govTabelaMontar } from './governador.js?v=6aea79b8';
-import { leitura, balao } from './insights.js?v=6aea79b8';
-import { dispersao } from './dispersao.js?v=6aea79b8';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=5cb12aaf';
+import { esc, tabela, sem, entenda } from './ui.js?v=5cb12aaf';
+import { getFoco } from './foco.js?v=5cb12aaf';
+import { kpi } from './views.js?v=5cb12aaf';
+import { criarMapa } from './map.js?v=5cb12aaf';
+import { criarMapaMun } from './mapamun.js?v=5cb12aaf';
+import { getJSON } from './tse.js?v=5cb12aaf';
+import { govPainel, govTabelaHtml, govTabelaMontar, senPainel, senTabelaHtml, senTabelaMontar } from './governador.js?v=5cb12aaf';
+import { leitura, balao } from './insights.js?v=5cb12aaf';
+import { dispersao } from './dispersao.js?v=5cb12aaf';
 
 let cache = null, formaMapa = 'areas', eixoDisp = 'abst';
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
@@ -106,6 +106,7 @@ export function viewT1Geral(ctx) {
   <section class="painel mapa-sec"><h2>${fi >= 0 ? `${esc(T.nome(fi))} por estado` : 'Resultado por estado'}</h2><p class="sub">Clique em um estado para ver os municípios.</p><div class="mapa-grid"><div id="mapa"></div><div class="mapa-lado">${legendaT1(T, br)}</div></div></section>
   <section class="painel"><h2>Todos os estados</h2><p class="sub">Clique nos títulos para ordenar. Clique em um estado para abrir os municípios.</p><div id="tab-uf"></div></section>
   ${govTabelaHtml(ctx.G1, ctx.snap)}
+  ${senTabelaHtml(ctx.S1)}
   ${balao(frasesBr)}`;
   return { html, titulo: 'Brasil — 1º turno', montar(root) {
     aplicaEscala(T, ufs.map(x => fi >= 0 ? x.u.p[fi] : NaN));
@@ -116,6 +117,7 @@ export function viewT1Geral(ctx) {
     const cols = colsTop(T, br, { k: 'nome', t: 'Estado', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, ini: 'asc' });
     tabela(root.querySelector('#tab-uf'), { cols, rows: ufs, onRow: x => ctx.ir(`#/t1/uf/${x.id}`), sort: 'nome', dir: 'asc' });
     govTabelaMontar(root.querySelector('#tab-gov'), ctx.G1, ctx.snap, tabela, ctx.ir);
+    senTabelaMontar(root.querySelector('#tab-sen'), ctx.S1, tabela, ctx.ir);
     ctx.csv = () => ({ nome: 'brasil_1turno_estados', cab: cols.map(c => c.t.replace(/<[^>]+>/g, '')), linhas: ufs.map(x => cols.map(c => (c.x || c.v)(x))) });
   } };
 }
@@ -133,6 +135,7 @@ export function viewT1Uf(ctx, uf) {
   const html = `${topoT1(T, u, nomeUf)}
   ${kpisT1(u)}
   ${govPainel(ctx.G1?.uf?.[uf], uf, 1)}
+  ${senPainel(ctx.S1?.uf?.[uf], uf)}
   ${mapa ? `<section class="painel mapa-sec"><h2>${fi >= 0 ? `${esc(T.nome(fi))} em ` : 'Mapa de '}${esc(nomeUf)} por município</h2><p class="sub">Clique em um município para ver os bairros.</p><div class="mapa-modo sem-export" role="group" aria-label="Forma do mapa"><button data-forma="areas" class="${formaMapa === 'areas' ? 'on' : ''}">Áreas</button><button data-forma="bolhas" class="${formaMapa === 'bolhas' ? 'on' : ''}">Bolhas (peso do eleitorado)</button></div><div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado">${legendaT1(T, u)}</div></div></section>` : ''}
   ${unid.length >= 8 ? `<section class="painel disp-sec"><h2>Relações entre os dados</h2><p class="sub">Cada bolha é um município; o tamanho é o eleitorado e a cor é o candidato mais votado. Clique numa bolha para abri-lo.</p><div class="mapa-modo sem-export" role="group" aria-label="Eixo horizontal"><button data-eixo="abst" class="${eixoDisp === 'abst' ? 'on' : ''}">Abstenção</button><button data-eixo="tam" class="${eixoDisp === 'tam' ? 'on' : ''}">Tamanho do eleitorado</button></div><div id="disp"></div>${balao(frasesUf)}</section>` : ''}
   <section class="painel"><h2>Municípios de ${esc(nomeUf)}</h2><p class="sub">Clique em um município para ver os bairros e os locais de votação.</p><div id="tab-m"></div></section>`;

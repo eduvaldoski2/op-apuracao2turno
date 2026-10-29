@@ -1,7 +1,7 @@
 // Conta do usuário (necessária para a "Pergunte à IA"): criar conta com confirmação por código (e-mail ou WhatsApp), entrar, sair, redefinir a senha e excluir a conta.
 // Quem fala com o servidor é api/conta.php; a sessão fica num cookie HttpOnly (o navegador nunca vê o token).
-import { CONFIG, RAIZ } from './config.js?v=6aea79b8';
-import { esc } from './ui.js?v=6aea79b8';
+import { CONFIG, RAIZ } from './config.js?v=5cb12aaf';
+import { esc } from './ui.js?v=5cb12aaf';
 
 const ENDPOINT = () => (CONFIG.conta?.endpoint ?? (RAIZ + 'api/conta.php'));
 export const CONTA = { carregado: false, logado: false, usuario: null, cota: null, canais: ['email'], ia_ativa: false, erro: false };
@@ -27,7 +27,7 @@ export function sessaoExpirou() { CONTA.logado = false; CONTA.usuario = null; CO
 const TEXTO_ACEITE = 'Aceito receber mensagens da Oficina Política neste e-mail ou WhatsApp: o código de confirmação, avisos sobre a plataforma e conteúdos sobre as eleições. Posso cancelar quando quiser.';
 const dataBr = iso => { const [a, m, d] = String(iso || '').split('-'); return d ? `${d}/${m}` : ''; };
 
-export function montarConta(el, aoMudar = () => {}) {
+export function montarConta(el, aoMudar = () => {}, op = {}) {
   let aba = 'criar', etapa = 'form', contatoAtual = '', destino = '', msg = '', msgOk = '', ocupado = false, espera = 0, timer = null, canalSel = 'email';
   const mudou = () => { try { aoMudar(CONTA); } catch { /* ok */ } };
   const avisoIn = () => (msg ? `<p class="ct-msg ct-erro" role="alert">${esc(msg)}</p>` : '') + (msgOk ? `<p class="ct-msg ct-ok" role="status">${esc(msgOk)}</p>` : '');
@@ -43,14 +43,14 @@ export function montarConta(el, aoMudar = () => {}) {
         ${etapa === 'excluir' ? `<form class="ct-form ct-excl" data-f="excluir"><p>Isto apaga sua conta e seus dados de cadastro. Confirme com sua senha.</p><label>Senha<input type="password" name="senha" autocomplete="current-password" required></label>${aviso()}<div class="ct-bt"><button class="btn" type="submit" ${ocupado ? 'disabled' : ''}>Excluir definitivamente</button><button type="button" class="ct-link" data-a="cancelar">Cancelar</button></div></form>` : ''}`;
       return;
     }
-    const chamada = `<p class="ct-chamada"><b>Para liberar a pergunta livre à IA é preciso criar uma conta gratuita</b> (leva um minuto) e confirmar seu e-mail${CONTA.canais.includes('whatsapp') ? ' ou WhatsApp' : ''}. Para concluir o cadastro, é necessário aceitar receber mensagens da Oficina Política. As consultas rápidas não exigem cadastro.</p>`;
+    const chamada = `<p class="ct-chamada"><b>${op.alvo ? `Para ver ${esc(op.alvo)} é preciso ter uma conta gratuita` : 'Para liberar a pergunta livre à IA é preciso criar uma conta gratuita'}</b> (leva um minuto) e confirmar seu e-mail${CONTA.canais.includes('whatsapp') ? ' ou WhatsApp' : ''}. Para concluir o cadastro, é necessário aceitar receber mensagens da Oficina Política. ${op.alvo ? 'Presidente, governador e senador continuam abertos a todos.' : 'As consultas rápidas não exigem cadastro.'}</p>`;
     let corpo = '';
     if (etapa === 'confirmar' || etapa === 'redefinir') {
       const red = etapa === 'redefinir';
       corpo = `<form class="ct-form" data-f="${etapa}"><p>${red && !destino ? 'Se houver uma conta com este contato, enviamos um código de 6 dígitos.' : `Enviamos um código de 6 dígitos para <b>${esc(destino || contatoAtual)}</b>. Ele vale por 15 minutos.`}</p>
         <label>Código<input name="codigo" inputmode="numeric" autocomplete="one-time-code" maxlength="6" pattern="\\d{6}" required autofocus placeholder="000000"></label>
         ${red ? '<label>Nova senha<input type="password" name="senha" autocomplete="new-password" minlength="8" maxlength="72" required placeholder="mín. 8 caracteres, com letras e números"></label>' : ''}
-        ${aviso()}<div class="ct-bt"><button class="btn" type="submit" ${ocupado ? 'disabled' : ''}>${red ? 'Salvar nova senha e entrar' : 'Confirmar e liberar a IA'}</button>
+        ${aviso()}<div class="ct-bt"><button class="btn" type="submit" ${ocupado ? 'disabled' : ''}>${red ? 'Salvar nova senha e entrar' : (op.alvo ? 'Confirmar e liberar o acesso' : 'Confirmar e liberar a IA')}</button>
         ${red ? '' : `<button type="button" class="ct-link" data-a="reenviar" ${espera > 0 ? 'disabled' : ''}>${espera > 0 ? `Reenviar código (${espera}s)` : 'Reenviar código'}</button>`}<button type="button" class="ct-link" data-a="voltar">Voltar</button></div></form>`;
     } else if (etapa === 'esqueci') {
       corpo = `<form class="ct-form" data-f="esqueci"><p>Informe o e-mail ou WhatsApp do cadastro. Vamos enviar um código para criar uma nova senha.</p><label>E-mail ou WhatsApp<input name="contato" autocomplete="username" required value="${esc(contatoAtual)}"></label>${aviso()}

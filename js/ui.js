@@ -1,5 +1,5 @@
 // Componentes de interface: tabela ordenável, cartões, formatação de variações.
-import { fDelta, fGrowth, fNum } from './util.js?v=6aea79b8';
+import { fDelta, fGrowth, fNum } from './util.js?v=5cb12aaf';
 // texto sem acentos e em minúsculas (busca "sao" acha "São")
 export const sem = t => String(t ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 export const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));

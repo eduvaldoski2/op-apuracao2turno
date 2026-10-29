@@ -1,27 +1,27 @@
-import { CONFIG, TESTE } from './config.js?v=6aea79b8';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=6aea79b8';
-import { getJSON } from './tse.js?v=6aea79b8';
-import { calcular } from './model.js?v=6aea79b8';
-import { projetar, PARAMS } from './proj.js?v=6aea79b8';
-import { viewComparar, hashComparar } from './comparar.js?v=6aea79b8';
-import { viewPerguntar } from './ia.js?v=6aea79b8';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=6aea79b8';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=6aea79b8';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=6aea79b8';
-import { iniciarExportSecoes } from './expsec.js?v=6aea79b8';
-import { eventosEntre } from './avisos.js?v=6aea79b8';
-import { mostrarEleito } from './eleito.js?v=6aea79b8';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=6aea79b8';
-import { abrirTelao, iniciarTV } from './tv.js?v=6aea79b8';
-import { iniciarConsentimento } from './consentimento.js?v=6aea79b8';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=6aea79b8';
-import { lerCard } from './card.js?v=6aea79b8';
-import { abrirCompartilhar } from './compartilhar.js?v=6aea79b8';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=6aea79b8';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=6aea79b8';
-import { esc } from './ui.js?v=6aea79b8';
-import { getFoco, setFoco, comFoco } from './foco.js?v=6aea79b8';
-import { barraEleicao, ligarEleicao } from './eleicao.js?v=6aea79b8';
+import { CONFIG, TESTE } from './config.js?v=5cb12aaf';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=5cb12aaf';
+import { getJSON } from './tse.js?v=5cb12aaf';
+import { calcular } from './model.js?v=5cb12aaf';
+import { projetar, PARAMS } from './proj.js?v=5cb12aaf';
+import { viewComparar, hashComparar } from './comparar.js?v=5cb12aaf';
+import { viewPerguntar } from './ia.js?v=5cb12aaf';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=5cb12aaf';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=5cb12aaf';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=5cb12aaf';
+import { iniciarExportSecoes } from './expsec.js?v=5cb12aaf';
+import { eventosEntre } from './avisos.js?v=5cb12aaf';
+import { mostrarEleito } from './eleito.js?v=5cb12aaf';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=5cb12aaf';
+import { abrirTelao, iniciarTV } from './tv.js?v=5cb12aaf';
+import { iniciarConsentimento } from './consentimento.js?v=5cb12aaf';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=5cb12aaf';
+import { lerCard } from './card.js?v=5cb12aaf';
+import { abrirCompartilhar } from './compartilhar.js?v=5cb12aaf';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=5cb12aaf';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=5cb12aaf';
+import { esc } from './ui.js?v=5cb12aaf';
+import { getFoco, setFoco, comFoco } from './foco.js?v=5cb12aaf';
+import { barraEleicao, ligarEleicao } from './eleicao.js?v=5cb12aaf';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -97,7 +97,8 @@ async function renderT1(r, manterScroll, forcar) {
     if (rota().modo !== 't1') return;
   }
   if (S.G1 === undefined) S.G1 = await getJSON('data/gov_1t.json', { retries: 1 }).catch(() => null);   // governador, 1º turno (arquivo estático; se faltar, a seção some)
-  const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, T1: S.T1, G1: S.G1, ir, csv: null, demo: !!S.demo };
+  if (S.S1 === undefined) S.S1 = await getJSON('data/sen_1t.json', { retries: 1 }).catch(() => null);   // senador, 1º turno
+  const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, T1: S.T1, G1: S.G1, S1: S.S1, ir, csv: null, demo: !!S.demo };
   setEscala(25, 65);
   let v;
   if (r.tela === 'uf') v = viewT1Uf(ctx, r.uf);
