@@ -1,9 +1,9 @@
 // Ferramentas que a IA (ou os atalhos) usam para consultar os dados do painel. Rodam no navegador, sobre os mesmos números que a pessoa vê na tela:
 // assim a resposta nunca usa um número que não esteja no painel, e os gráficos saem direto dos dados (não do texto da IA).
-import { METRICAS, fmtMetrica, buscar, obter, bairrosDe, municipiosDe, todosMunicipios, ufs, regioesDe, ordenar, entradaPorRef, UF_NOME, sigla } from './unidades.js?v=d0105bac';
-import { esc } from './ui.js?v=d0105bac';
-import { CAND } from './util.js?v=d0105bac';
-import { resultadoHtml } from './comparar.js?v=d0105bac';
+import { METRICAS, fmtMetrica, buscar, obter, bairrosDe, municipiosDe, todosMunicipios, ufs, regioesDe, ordenar, entradaPorRef, UF_NOME, sigla } from './unidades.js?v=3e0c8414';
+import { esc } from './ui.js?v=3e0c8414';
+import { CAND } from './util.js?v=3e0c8414';
+import { resultadoHtml } from './comparar.js?v=3e0c8414';
 
 const num = (v, d = 2) => (v == null || !isFinite(v) ? null : Math.round(v * 10 ** d) / 10 ** d);
 const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
