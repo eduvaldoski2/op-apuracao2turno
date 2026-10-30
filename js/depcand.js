@@ -1,12 +1,12 @@
 // Página do candidato (deputado): descida estado > região > município > região do município > bairro > local de votação > seção.
 // Os quadros de números acompanham o nível em que a pessoa está. Dados: data/dep_mun (por município), data/dep_sec (por seção),
 // data/bairros (locais de votação), data/bairros_geo (limites), data/regioes_uf (regiões do estado).
-import { fInt, fNum } from './util.js?v=625ef1e1';
-import { esc, tabela, sem } from './ui.js?v=625ef1e1';
-import { getJSON } from './tse.js?v=625ef1e1';
-import { criarMapaMun } from './mapamun.js?v=625ef1e1';
-import { criarMapaBairros } from './mapabairros.js?v=625ef1e1';
-import { criarMapaPontos } from './mapapontos.js?v=625ef1e1';
+import { fInt, fNum } from './util.js?v=6a3e94fc';
+import { esc, tabela, sem } from './ui.js?v=6a3e94fc';
+import { getJSON } from './tse.js?v=6a3e94fc';
+import { criarMapaMun } from './mapamun.js?v=6a3e94fc';
+import { criarMapaBairros } from './mapabairros.js?v=6a3e94fc';
+import { criarMapaPontos } from './mapapontos.js?v=6a3e94fc';
 
 const cache = new Map(), pega = (u, o) => { if (!cache.has(u)) cache.set(u, getJSON(u, o).catch(e => { cache.delete(u); throw e; })); return cache.get(u); };
 
@@ -98,8 +98,10 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
       if (lSel) lista = `<h3>Seções · ${esc(bonito(lSel.nome))}</h3><p class="sub">${esc(bonito(lSel.end))}</p>${lSel.secoes.slice().sort((a, b) => b.v - a.v).map(x => `<div class="dsc-l fim"><span class="dsc-n">Zona ${x.zona} · seção ${x.sec}</span><span class="dsc-v">${fInt(x.v)}<small>${pcDe(x.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * x.v / Math.max(1, ...lSel.secoes.map(y => y.v))}%;background:${cor}"></i></i></div>`).join('')}`;
       else if (bSel) { const ls = bSel.locais.slice().sort((a, b) => b.v - a.v); lista = `<h3>Locais de votação em ${esc(bonito(bSel.nome))}</h3><div id="cd-locs">${ls.map((L, i) => itemLista(i, bonito(L.nome), bonito(L.end), L.v, `${L.secoes.length} seções`, ls[0].v)).join('')}</div>`; }
       else {
-        if (geoD && nav.d == null) { const ds = geoD.f.map((f, i) => ({ i, nome: bonito(f.n), v: mun.locais.filter(L => L.gi === i).reduce((t, L) => t + L.v, 0), nl: mun.locais.filter(L => L.gi === i).length })).filter(d => d.v > 0).sort((a, b) => b.v - a.v); lista += `<h3>${'Distritos'}</h3><div id="cd-dists">${ds.map(d => itemLista(d.i, d.nome, `${d.nl} locais`, d.v, pcDe(d.v, mun.soma), ds[0].v)).join('')}</div>`; }
-        lista += `<h3>Bairros${dSel ? ' · ' + esc(bonito(dSel.n)) : ''}</h3><div id="cd-bairros">${gruposB.map((g, i) => itemLista(i, bonito(g.nome), `${g.locais.length} ${g.locais.length === 1 ? 'local' : 'locais'}`, g.v, pcDe(g.v, mun.soma), gruposB[0]?.v)).join('')}</div>`;
+        if (geoD && nav.d == null) {
+          const ds = geoD.f.map((f, i) => { const ls = mun.locais.filter(L => L.gi === i); return { i, nome: bonito(f.n), v: ls.reduce((t, L) => t + L.v, 0), ls }; }).filter(d => d.v > 0).sort((a, b) => b.v - a.v);
+          lista += `<h3>Distritos e bairros</h3><p class="sub">Toque no distrito para ver os bairros dentro dele; no mapa, toque num distrito para abri-lo.</p><div id="cd-dists">${ds.map(d => { const gb = grupos(d.ls, false, null); return `<details class="dsc-d"><summary><span class="dsc-l dsc-dl" data-i="${d.i}"><span class="dsc-n">${esc(d.nome)}<small>${d.ls.length} locais · ${gb.length} bairros</small></span><span class="dsc-v">${fInt(d.v)}<small>${pcDe(d.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * d.v / ds[0].v}%;background:${cor}"></i></i></span></summary><div class="dsc-bs"><button type="button" class="dsc-go" data-i="${d.i}">Ver só este distrito no mapa →</button>${gb.map(g => `<button type="button" class="dsc-l dsc-bl" data-d="${d.i}" data-b="${esc(g.k)}"><span class="dsc-n">${esc(bonito(g.nome))}<small>${g.locais.length} ${g.locais.length === 1 ? 'local' : 'locais'}</small></span><span class="dsc-v">${fInt(g.v)}<small>${pcDe(g.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * g.v / gb[0].v}%;background:${cor}"></i></i></button>`).join('')}</div></details>`; }).join('')}</div>`;
+        } else lista += `<h3>Bairros${dSel ? ' · ' + esc(bonito(dSel.n)) : ''}</h3><div id="cd-bairros">${gruposB.map((g, i) => itemLista(i, bonito(g.nome), `${g.locais.length} ${g.locais.length === 1 ? 'local' : 'locais'}`, g.v, pcDe(g.v, mun.soma), gruposB[0]?.v)).join('')}</div>`;
       }
       corpo = `<div id="cd-mapa"></div>${lista}`;
       pos = { gruposB, locais, geoD, geoB, geo };
@@ -150,7 +152,8 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
         const dados = {}; for (const L of mun.locais) { const dentro = !selB || selB.locais.includes(L) && (nav.l == null || nav.l === L.k); dados[L.k] = { fill: dentro ? mix(.2 + .8 * Math.sqrt(L.v / max)) : '#e0dde9' }; } mp.atualizar(dados); }
       else alvo.remove();
     }
-    el.querySelectorAll('#cd-dists .dsc-l').forEach(b => b.addEventListener('click', () => ir({ d: +b.dataset.i, b: null, l: null })));
+    el.querySelectorAll('#cd-dists .dsc-go').forEach(b => b.addEventListener('click', () => ir({ d: +b.dataset.i, b: null, l: null })));
+    el.querySelectorAll('#cd-dists .dsc-bl').forEach(b => b.addEventListener('click', () => ir({ d: +b.dataset.d, b: b.dataset.b, l: null })));
     el.querySelectorAll('#cd-bairros .dsc-l').forEach(b => b.addEventListener('click', () => ir({ b: gruposB[+b.dataset.i].k, l: null })));
     const bSel = nav.b != null ? gruposB.find(g => g.k === nav.b) : null;
     el.querySelectorAll('#cd-locs .dsc-l').forEach(b => b.addEventListener('click', () => ir({ l: bSel.locais.slice().sort((a, b2) => b2.v - a.v)[+b.dataset.i].k })));
