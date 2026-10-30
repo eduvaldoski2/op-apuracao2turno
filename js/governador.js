@@ -1,7 +1,7 @@
 // Governador: resultado por estado no 1º turno (data/gov_1t.json) e no 2º turno (snap.gov, só nos estados com disputa).
 // Os dados vêm do TSE (eleição estadual 6259/6260, cargo 3) e são independentes da disputa presidencial.
-import { UF_NOME, fInt, fNum, clamp } from './util.js?v=594c6fcf';
-import { esc } from './ui.js?v=594c6fcf';
+import { UF_NOME, fInt, fNum, clamp } from './util.js?v=e7b28838';
+import { esc } from './ui.js?v=e7b28838';
 
 const COR = ['#3E347E', '#D9741A', '#1b8a6b', '#b3367a', '#2b6cb0', '#8a6d00', '#6b7280', '#a3261a', '#4b5fa8', '#9a5b13', '#2f7d3a', '#7a3fa0'];
 export const nomeP = t => String(t || '').toLowerCase().replace(/(^|[\s\-(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
@@ -68,8 +68,7 @@ export function senTabelaMontar(el, S, tabela, ir) {
   const cel = c => c ? `<b>${esc(nomeP(c.nm))}</b> <small>${esc(c.sg)}</small><small class="vt">${fNum(c.p, 2)}% · ${fInt(c.v)} votos</small>` : '';
   const cols = [
     { k: 'nome', t: 'Estado', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, ini: 'asc' },
-    { k: 'a', t: '1º eleito(a)', h: x => cel(x.a), v: x => x.a?.p ?? 0, x: x => x.a?.nm || '' },
-    { k: 'b', t: '2º eleito(a)', h: x => cel(x.b), v: x => x.b?.p ?? 0, x: x => x.b?.nm || '', cls: 'sec' },
+    { k: 'a', t: 'Senadores eleitos', h: x => [x.a, x.b].filter(Boolean).map((c, i) => `<div class="sen-dois">${cel(c).replace('<b>', `<b>${i + 1}º · `)}</div>`).join(''), v: x => x.a?.p ?? 0, x: x => [x.a, x.b].filter(Boolean).map(c => `${c.nm} (${c.sg}) ${fNum(c.p, 2)}%`).join(' | ') },
   ];
   tabela(el, { cols, rows, onRow: x => ir(`#/t1/uf/${x.id}?cargo=sen`), sort: 'nome', dir: 'asc' });
 }

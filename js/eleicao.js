@@ -1,8 +1,8 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
 // O resto aparece esmaecido ("em breve"). Deputados federal e estadual exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta } from './conta.js?v=594c6fcf';
-import { esc } from './ui.js?v=594c6fcf';
+import { CONTA, carregarConta, montarConta } from './conta.js?v=e7b28838';
+import { esc } from './ui.js?v=e7b28838';
 
 const ANOS = [2026, 2024, 2022, 2020, 2018];
 const DISPONIVEL = { 2026: true };
