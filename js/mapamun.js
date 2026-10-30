@@ -1,7 +1,7 @@
 // Mapa de um estado por município (SVG), no mesmo padrão do mapa do Brasil: cor = quem lidera, tom = % do líder,
 // rótulos dentro dos municípios grandes (sigla do nome + % de cada candidato e variação). Sem caixas laterais.
 // Suporta zoom (roda do mouse / botões / pinça) e arraste; os rótulos reaparecem conforme o zoom.
-import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=5cb12aaf';
+import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=a8ea6030';
 
 const num = v => (v == null || isNaN(v)) ? '–' : fNum(v, 1);
 const dl = v => (v == null || isNaN(v)) ? '' : fDelta(v, 1, '');

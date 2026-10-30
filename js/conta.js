@@ -1,10 +1,10 @@
 // Conta do usuário (necessária para a "Pergunte à IA"): criar conta com confirmação por código (e-mail ou WhatsApp), entrar, sair, redefinir a senha e excluir a conta.
 // Quem fala com o servidor é api/conta.php; a sessão fica num cookie HttpOnly (o navegador nunca vê o token).
-import { CONFIG, RAIZ } from './config.js?v=5cb12aaf';
-import { esc } from './ui.js?v=5cb12aaf';
+import { CONFIG, RAIZ } from './config.js?v=a8ea6030';
+import { esc } from './ui.js?v=a8ea6030';
 
 const ENDPOINT = () => (CONFIG.conta?.endpoint ?? (RAIZ + 'api/conta.php'));
-export const CONTA = { carregado: false, logado: false, usuario: null, cota: null, canais: ['email'], ia_ativa: false, erro: false };
+export const CONTA = { carregado: false, logado: false, usuario: null, cota: null, canais: ['email'], ia_ativa: false, erro: false, google_id: null };
 
 async function chamar(acao, dados = {}) {
   let r, j = null;
@@ -17,7 +17,7 @@ export async function carregarConta() {
   try {
     const r = await fetch(ENDPOINT(), { credentials: 'same-origin', headers: { Accept: 'application/json' }, cache: 'no-store' }), j = r.ok ? await r.json() : null;
     if (!j?.ok) throw new Error('indisponivel');
-    Object.assign(CONTA, { carregado: true, erro: false, logado: !!j.logado, usuario: j.usuario || null, cota: j.cota || null, canais: j.canais || ['email'], ia_ativa: !!j.ia_ativa });
+    Object.assign(CONTA, { carregado: true, erro: false, logado: !!j.logado, usuario: j.usuario || null, cota: j.cota || null, canais: j.canais || ['email'], ia_ativa: !!j.ia_ativa, google_id: j.google_id || null });
   } catch { Object.assign(CONTA, { carregado: true, erro: true, logado: false, usuario: null, cota: null, ia_ativa: false }); }
   return CONTA;
 }
@@ -40,7 +40,7 @@ export function montarConta(el, aoMudar = () => {}, op = {}) {
     if (CONTA.logado) {
       el.innerHTML = `<div class="ct-bar"><div><b>Olá, ${esc((CONTA.usuario?.nome || '').split(' ')[0])}!</b> <span class="ct-dest">${esc(CONTA.usuario?.contato || '')}</span><br>${cotaHtml(CONTA.cota)}</div>
         <div class="ct-bar-a"><button type="button" class="ct-link" data-a="sair">Sair</button><button type="button" class="ct-link" data-a="excluir-abrir">Excluir minha conta</button></div></div>
-        ${etapa === 'excluir' ? `<form class="ct-form ct-excl" data-f="excluir"><p>Isto apaga sua conta e seus dados de cadastro. Confirme com sua senha.</p><label>Senha<input type="password" name="senha" autocomplete="current-password" required></label>${aviso()}<div class="ct-bt"><button class="btn" type="submit" ${ocupado ? 'disabled' : ''}>Excluir definitivamente</button><button type="button" class="ct-link" data-a="cancelar">Cancelar</button></div></form>` : ''}`;
+        ${etapa === 'excluir' ? `<form class="ct-form ct-excl" data-f="excluir">${CONTA.usuario?.sem_senha ? '<p>Isto apaga sua conta e seus dados de cadastro. Para confirmar, digite EXCLUIR.</p><label>Confirmação<input name="confirmacao" autocomplete="off" required placeholder="EXCLUIR"></label>' : '<p>Isto apaga sua conta e seus dados de cadastro. Confirme com sua senha.</p><label>Senha<input type="password" name="senha" autocomplete="current-password" required></label>'}${aviso()}<div class="ct-bt"><button class="btn" type="submit" ${ocupado ? 'disabled' : ''}>Excluir definitivamente</button><button type="button" class="ct-link" data-a="cancelar">Cancelar</button></div></form>` : ''}`;
       return;
     }
     const chamada = `<p class="ct-chamada"><b>${op.alvo ? `Para ver ${esc(op.alvo)} é preciso ter uma conta gratuita` : 'Para liberar a pergunta livre à IA é preciso criar uma conta gratuita'}</b> (leva um minuto) e confirmar seu e-mail${CONTA.canais.includes('whatsapp') ? ' ou WhatsApp' : ''}. Para concluir o cadastro, é necessário aceitar receber mensagens da Oficina Política. ${op.alvo ? 'Presidente, governador e senador continuam abertos a todos.' : 'As consultas rápidas não exigem cadastro.'}</p>`;
@@ -69,7 +69,29 @@ export function montarConta(el, aoMudar = () => {}, op = {}) {
         ${aviso()}<div class="ct-bt"><button class="btn" type="submit" ${ocupado ? 'disabled' : ''}>Criar conta e receber o código</button></div></form>`;
     }
     const abas = etapa === 'form' ? `<div class="ct-abas" role="tablist"><button type="button" role="tab" aria-selected="${aba === 'criar'}" data-a="aba-criar" class="${aba === 'criar' ? 'on' : ''}">Criar conta</button><button type="button" role="tab" aria-selected="${aba === 'entrar'}" data-a="aba-entrar" class="${aba === 'entrar' ? 'on' : ''}">Já tenho conta</button></div>` : '';
-    el.innerHTML = `<div class="ct-box">${chamada}${abas}${corpo}</div>`;
+    const goo = CONTA.google_id && (etapa === 'form') ? `<div class="ct-goo"><div class="ct-g" data-g></div><div class="ct-ou"><span>ou use seu e-mail</span></div></div>` : '';
+    el.innerHTML = `<div class="ct-box">${chamada}${abas}${goo}${corpo}</div>`;
+    botaoGoogle();
+  }
+  // Entrar com o Google (Google Identity Services): o botão é desenhado pelo Google; o servidor confere o token em api/conta.php (acao "google")
+  let gsiPronto = null;
+  function carregaGsi() {
+    if (window.google?.accounts?.id) return Promise.resolve(true);
+    return (gsiPronto ||= new Promise(res => { const s = document.createElement('script'); s.src = 'https://accounts.google.com/gsi/client'; s.async = true; s.onload = () => res(true); s.onerror = () => res(false); document.head.appendChild(s); }));
+  }
+  async function botaoGoogle() {
+    const alvo = el.querySelector('[data-g]'); if (!alvo || !CONTA.google_id) return;
+    if (!(await carregaGsi())) { alvo.closest('.ct-goo')?.remove(); return; }
+    const g = window.google.accounts.id;
+    g.initialize({ client_id: CONTA.google_id, callback: async r => {
+      const aceite = !!el.querySelector('[name="aceite"]')?.checked; limpa();
+      const j = await chamar('google', { credencial: r.credential, aceite_mensagens: aceite });
+      if (j.ok) { sucessoLogin(j); return; }
+      msg = j.mensagem || 'Não foi possível entrar com o Google.'; if (j.erro === 'aceite') aba = 'criar'; pinta();
+    }, ux_mode: 'popup', auto_select: false });
+    const larg = Math.max(220, Math.min(400, Math.floor(alvo.parentElement.clientWidth || 320)));
+    g.renderButton(alvo, { theme: 'outline', size: 'large', text: 'continue_with', shape: 'pill', locale: 'pt-BR', width: larg });
+    const av = el.querySelector('.ct-goo'); if (av && msg && !av.querySelector('.ct-msg')) av.insertAdjacentHTML('beforeend', `<p class="ct-msg ct-erro" role="alert">${esc(msg)}</p>`);
   }
   const limpa = () => { msg = ''; msgOk = ''; };
   function iniciaEspera(s = 45) { espera = s; clearInterval(timer); timer = setInterval(() => { espera--; if (espera <= 0) { clearInterval(timer); espera = 0; } if (etapa === 'confirmar') { const b = el.querySelector('[data-a="reenviar"]'); if (b) { b.disabled = espera > 0; b.textContent = espera > 0 ? `Reenviar código (${espera}s)` : 'Reenviar código'; } } }, 1000); }
@@ -110,7 +132,7 @@ export function montarConta(el, aoMudar = () => {}, op = {}) {
         const j = await chamar('redefinir', { contato: contatoAtual, codigo: d.codigo, senha: d.senha });
         if (j.ok) { sucessoLogin(j); return; } msg = j.mensagem || 'Não foi possível redefinir a senha.';
       } else if (t === 'excluir') {
-        const j = await chamar('excluir', { senha: d.senha });
+        const j = await chamar('excluir', { senha: d.senha, confirmacao: d.confirmacao });
         if (j.ok) { sessaoExpirou(); etapa = 'form'; aba = 'criar'; msgOk = 'Sua conta foi excluída.'; pinta(); mudou(); ocupado = false; return; } msg = j.mensagem || 'Não foi possível excluir.';
       }
     } finally { ocupado = false; }

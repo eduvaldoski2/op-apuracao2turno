@@ -9,14 +9,14 @@ $metodo = $_SERVER['REQUEST_METHOD'] ?? '';
 $ia_ativa = trim((string)cfg('IA_CHAVE', '')) !== '';
 function estado() {
   global $ia_ativa; $u = usuario_atual();
-  $e = ['ok' => true, 'ia_ativa' => $ia_ativa, 'canais' => canais_ativos(), 'texto_versao' => OP_TEXTO_VERSAO, 'logado' => (bool)$u];
+  $e = ['ok' => true, 'ia_ativa' => $ia_ativa, 'canais' => canais_ativos(), 'texto_versao' => OP_TEXTO_VERSAO, 'logado' => (bool)$u, 'google_id' => trim((string)cfg('GOOGLE_CLIENT_ID', '')) ?: null];
   if ($u) { $e['usuario'] = usuario_publico($u); $e['cota'] = cota_info($u['id']); }
   return $e;
 }
 if ($metodo === 'GET') sai(estado());
 if ($metodo !== 'POST') erro(405, 'metodo', 'Método inválido.');
 if ($origem && !in_array($origem, cfg('ORIGENS_PERMITIDAS', []), true)) erro(403, 'origem', 'Origem não permitida.');
-$bruto = file_get_contents('php://input'); if ($bruto === false || strlen($bruto) > 4000) erro(413, 'tamanho', 'Pedido grande demais.');
+$bruto = file_get_contents('php://input'); if ($bruto === false || strlen($bruto) > 6000) erro(413, 'tamanho', 'Pedido grande demais.');
 $j = json_decode($bruto, true); if (!is_array($j)) erro(400, 'formato', 'Pedido inválido.');
 $acao = (string)($j['acao'] ?? '');
 $agora = date('c'); $iph = ip_hash(); $db = conta_db();
@@ -99,6 +99,24 @@ if ($acao === 'entrar') {
   sai(['ok' => true, 'logado' => true, 'usuario' => usuario_publico($u), 'cota' => cota_info($u['id'])]);
 }
 
+if ($acao === 'google') {
+  if (!taxa_ok('goo:' . $iph, 20, 900)) erro(429, 'limite', 'Muitas tentativas. Aguarde alguns minutos.');
+  $g = google_confere($j['credencial'] ?? null);
+  if (!$g) erro(401, 'google', 'Não foi possível confirmar sua conta Google. Tente de novo ou use o cadastro por e-mail.');
+  $u = acha_usuario($g['email']);
+  if (!$u) {   // conta nova: precisa do aceite de mensagens, como no cadastro comum
+    if (empty($j['aceite_mensagens'])) erro(422, 'aceite', 'Esta conta Google ainda não tem cadastro. Marque a caixa de aceite em “Criar conta” e clique de novo em “Continuar com Google”.');
+    $db->prepare('INSERT INTO usuarios (criado, nome, canal, contato, senha_hash, status, confirmado, c_msgs, c_ts, c_versao, c_iph, ultimo_login, google_sub) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)')
+       ->execute([$agora, mb_substr($g['nome'], 0, 80), 'email', $g['email'], '', 'ativo', $agora, 1, $agora, OP_TEXTO_VERSAO, $iph, $agora, $g['sub']]);
+    $s2 = $db->prepare('SELECT * FROM usuarios WHERE id = ?'); $s2->execute([(int)$db->lastInsertId()]); $u = $s2->fetch();
+  } else {   // o Google já confirmou o e-mail: ativa conta pendente e vincula o Google
+    $db->prepare("UPDATE usuarios SET status='ativo', confirmado=COALESCE(confirmado, ?), ultimo_login=?, google_sub=COALESCE(google_sub, ?) WHERE id=?")->execute([$agora, $agora, $g['sub'], $u['id']]);
+    $u['status'] = 'ativo';
+  }
+  sessao_criar($u['id']);
+  sai(['ok' => true, 'logado' => true, 'usuario' => usuario_publico($u), 'cota' => cota_info($u['id'])]);
+}
+
 if ($acao === 'sair') { sessao_encerrar(); sai(['ok' => true, 'logado' => false]); }
 
 if ($acao === 'esqueci') {
@@ -122,7 +140,8 @@ if ($acao === 'redefinir') {
 if ($acao === 'excluir') {   // direito de exclusão (LGPD): apaga a conta e os dados pessoais; o uso da IA fica só como contagem anônima de custo
   $u = usuario_atual(); if (!$u) erro(401, 'login', 'Entre na sua conta para excluí-la.');
   if (!taxa_ok('exc:' . $u['id'], 5, 900)) erro(429, 'limite', 'Muitas tentativas. Aguarde alguns minutos.');
-  if (!password_verify((string)($j['senha'] ?? ''), $u['senha_hash'])) erro(401, 'credenciais', 'Senha incorreta.');
+  if (($u['senha_hash'] ?? '') === '') { if (strtoupper(trim((string)($j['confirmacao'] ?? ''))) !== 'EXCLUIR') erro(422, 'confirmacao', 'Digite EXCLUIR para confirmar.'); }   // conta criada só com o Google não tem senha
+  elseif (!password_verify((string)($j['senha'] ?? ''), $u['senha_hash'])) erro(401, 'credenciais', 'Senha incorreta.');
   $db->prepare('UPDATE ia_uso SET uid = 0, iph = \'\' WHERE uid = ?')->execute([$u['id']]);
   foreach (['sessoes', 'codigos'] as $t) $db->prepare("DELETE FROM $t WHERE uid = ?")->execute([$u['id']]);
   $db->prepare('DELETE FROM usuarios WHERE id = ?')->execute([$u['id']]);

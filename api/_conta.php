@@ -28,6 +28,7 @@ function conta_db() {
   $db->exec('PRAGMA busy_timeout = 5000');
   $db->exec("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, criado TEXT, nome TEXT, canal TEXT, contato TEXT, senha_hash TEXT, status TEXT DEFAULT 'pendente', confirmado TEXT,
     c_msgs INTEGER DEFAULT 0, c_ts TEXT, c_versao TEXT, c_iph TEXT, ultimo_login TEXT, UNIQUE (canal, contato))");
+  try { $db->exec('ALTER TABLE usuarios ADD COLUMN google_sub TEXT'); } catch (Throwable $e) { /* coluna já existe */ }
   $db->exec('CREATE TABLE IF NOT EXISTS codigos (id INTEGER PRIMARY KEY AUTOINCREMENT, uid INTEGER, finalidade TEXT, hash TEXT, expira INTEGER, tentativas INTEGER DEFAULT 0, criado INTEGER)');
   $db->exec('CREATE INDEX IF NOT EXISTS codigos_u ON codigos (uid, finalidade)');
   $db->exec('CREATE TABLE IF NOT EXISTS sessoes (hash TEXT PRIMARY KEY, uid INTEGER, criado INTEGER, expira INTEGER)');
@@ -136,7 +137,23 @@ function usuario_atual() {
   $s = conta_db()->prepare("SELECT u.* FROM sessoes s JOIN usuarios u ON u.id = s.uid WHERE s.hash = ? AND s.expira > ? AND u.status = 'ativo'"); $s->execute([hash('sha256', $t), time()]);
   $r = $s->fetch(); if ($r) $u = $r; return $u;
 }
-function usuario_publico($u) { return ['nome' => $u['nome'], 'canal' => $u['canal'], 'contato' => mascara($u['canal'], $u['contato'])]; }
+function usuario_publico($u) { return ['nome' => $u['nome'], 'canal' => $u['canal'], 'contato' => mascara($u['canal'], $u['contato']), 'sem_senha' => ($u['senha_hash'] ?? '') === '']; }
+
+// ---------- entrada com o Google (Google Identity Services): o navegador manda o ID token e o servidor o confere com o Google ----------
+function google_confere($credencial) {
+  $id = trim((string)cfg('GOOGLE_CLIENT_ID', '')); if ($id === '') return null;
+  if (!is_string($credencial) || !preg_match('/^[\w-]+\.[\w-]+\.[\w-]+$/', $credencial) || strlen($credencial) > 3500) return null;
+  $url = cfg('GOOGLE_TOKENINFO_URL', 'https://oauth2.googleapis.com/tokeninfo') . '?id_token=' . rawurlencode($credencial); $txt = false;
+  if (function_exists('curl_init')) { $c = curl_init($url); curl_setopt_array($c, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 8, CURLOPT_CONNECTTIMEOUT => 5]); $txt = curl_exec($c); $cod = curl_getinfo($c, CURLINFO_HTTP_CODE); curl_close($c); if ($cod !== 200) $txt = false; }
+  else $txt = @file_get_contents($url, false, stream_context_create(['http' => ['timeout' => 8]]));
+  $t = $txt ? json_decode($txt, true) : null; if (!is_array($t)) return null;
+  if (($t['aud'] ?? '') !== $id) return null;
+  if (!in_array($t['iss'] ?? '', ['accounts.google.com', 'https://accounts.google.com'], true)) return null;
+  if ((int)($t['exp'] ?? 0) < time()) return null;
+  if (!in_array($t['email_verified'] ?? false, [true, 'true'], true)) return null;
+  $e = strtolower(trim((string)($t['email'] ?? ''))); if (!filter_var($e, FILTER_VALIDATE_EMAIL) || empty($t['sub'])) return null;
+  return ['email' => $e, 'sub' => (string)$t['sub'], 'nome' => trim((string)($t['name'] ?? '')) ?: explode('@', $e)[0]];
+}
 
 // ---------- cota de uso da IA ----------
 // Orçamento: US$ 20/mês de tokens para toda a plataforma. Custo real de cada chamada (tokens × preço) é gravado; ao chegar no teto, a IA pausa até o mês seguinte.

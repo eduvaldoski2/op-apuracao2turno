@@ -1,6 +1,6 @@
 // Tela cheia de "eleito": aparece quando o TSE confirma o vencedor do 2º turno (campo "Eleito" do candidato nos dados do TSE).
 // Cada visitante vê uma vez (guarda no navegador); "?teste-eleito=L" ou "=F" mostra uma prévia sem gravar nada.
-import { CAND, fNum, fInt } from './util.js?v=5cb12aaf';
+import { CAND, fNum, fInt } from './util.js?v=a8ea6030';
 
 const KEY = 'op_eleito_visto';
 const lido = () => { try { return localStorage.getItem(KEY) || ''; } catch { return ''; } };
