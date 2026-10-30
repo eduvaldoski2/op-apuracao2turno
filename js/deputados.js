@@ -1,10 +1,10 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=2349f143';
-import { esc, tabela, sem } from './ui.js?v=2349f143';
-import { getJSON } from './tse.js?v=2349f143';
-import { nomeP } from './governador.js?v=2349f143';
-import { criarMapaMun } from './mapamun.js?v=2349f143';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=2349f143';
+import { UF_NOME, fInt, fNum } from './util.js?v=eee85439';
+import { esc, tabela, sem } from './ui.js?v=eee85439';
+import { getJSON } from './tse.js?v=eee85439';
+import { nomeP } from './governador.js?v=eee85439';
+import { criarMapaMun } from './mapamun.js?v=eee85439';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=eee85439';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -132,20 +132,53 @@ function candidato(ctx, el, { g, uf, tipo, cargo, nomeUf, base, vv, sit, todos, 
     const v = M.c?.[c.n]; const sec = el.querySelector('#cd-mun');
     if (!v) { sec.innerHTML = '<h2>Votação por região e município</h2><p class="aviso">A votação por município deste candidato ainda não está disponível.</p>'; return; }
     const rows = Object.entries(v).map(([cd, n]) => ({ cd, nome: bonito(M.m[cd] || cd), v: n, pc: c.v ? 100 * n / c.v : 0 })).sort((a, b) => b.v - a.v);
-    sec.innerHTML = `<h2>Votação por município</h2><p class="sub">${fInt(rows.length)} municípios com votos · ${fInt(c.v)} votos no estado. Quanto mais escuro, mais votos o candidato teve no município.</p><div id="cd-mapa"></div><div id="cd-tab"></div>`;
+    sec.innerHTML = `<h2>Votação por município</h2><p class="sub">${fInt(rows.length)} municípios com votos · ${fInt(c.v)} votos no estado. Quanto mais escuro, mais votos o candidato teve no município.</p><div id="cd-mapa"></div><div id="cd-desc"></div><div id="cd-tab"></div>`;
     const bm = ctx.B?.byUf?.[uf] || [], cdi = new Map(bm.map(b => [b.cd, String(b.cdi)])), max = Math.max(1, ...rows.map(r => r.v));
     const mix = (t) => { const a = [238, 240, 247], b = [parseInt(cor.slice(1, 3), 16), parseInt(cor.slice(3, 5), 16), parseInt(cor.slice(5, 7), 16)]; return '#' + a.map((x, i) => Math.round(x + (b[i] - x) * t).toString(16).padStart(2, '0')).join(''); };
     if (uf !== 'df') getJSON(`data/mapa_mun/${uf}.json`, { retries: 1 }).then(geo => {
       const porIbge = new Map(rows.map(r => [cdi.get(r.cd), r])), alvo = sec.querySelector('#cd-mapa'); if (!alvo) return;
       for (const [id, gm] of Object.entries(geo.muns)) { const r = porIbge.get(id); if (r) gm.n = r.nome; }
-      const mp = criarMapaMun(alvo, geo, { tooltip: id => { const r = porIbge.get(id); return r ? `<b>${esc(r.nome)}</b><br>${fInt(r.v)} votos` : ''; } });
+      const mp = criarMapaMun(alvo, geo, { onClick: id => { const r = porIbge.get(id); if (r) abre(r); }, tooltip: id => { const r = porIbge.get(id); return r ? `<b>${esc(r.nome)}</b><br>${fInt(r.v)} votos` : ''; } });
       mp.atualizar(Object.fromEntries(rows.filter(r => cdi.get(r.cd)).map(r => [cdi.get(r.cd), { k: 1, pw: 1, fill: mix(.12 + .88 * Math.sqrt(r.v / max)), lab: '' }])));
     }).catch(() => {});
-    tabela(sec.querySelector('#cd-tab'), { cols: [
+    const abre = x => desce(sec.querySelector('#cd-desc'), { uf, tipo, c, cd: x.cd, nome: x.nome, total: x.v, cor });
+    tabela(sec.querySelector('#cd-tab'), { onRow: abre, cols: [
       { k: 'pos', t: '#', h: (x, i) => '', v: x => 0, cls: 'n' },
       { k: 'nome', t: 'Município', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, x: x => x.nome, ini: 'asc' },
       { k: 'v', t: 'Votos', h: x => fInt(x.v), v: x => x.v, cls: 'n' },
       { k: 'pc', t: '% dos votos dele', h: x => fNum(x.pc, 1) + '%', v: x => x.pc, x: x => x.pc, cls: 'n sec' },
     ].slice(1), rows, sort: 'v', dir: 'desc', filtro: (x, q) => sem(x.nome).includes(q), limite: 1000 });
   }).catch(() => { el.querySelector('#cd-mun').innerHTML = '<h2>Votação por região e município</h2><p class="aviso">A votação por município deste candidato ainda não está disponível.</p>'; });
+}
+
+// descida dentro do município: bairro > local de votação > seção (votos do candidato; dados por seção do TSE)
+async function desce(el, { uf, tipo, c, cd, nome, total, cor }) {
+  el.innerHTML = `<div class="painel dsc"><p class="carregando">Carregando a votação de ${esc(nome)} por seção…</p></div>`; el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  const arq = ARQ[tipo][0];
+  try {
+    const [cand, z, loc] = await Promise.all([getJSON(`data/dep_sec/${arq}/${uf}/${c.n}.json`, { retries: 2 }), getJSON(`data/dep_sec/z/${uf}/${cd}.json`, { retries: 2 }), getJSON(`data/bairros/${uf}/${cd}.json`, { retries: 1 }).catch(() => null)]);
+    const flat = cand[cd] || [], secoes = []; let idx = 0;
+    for (let i = 0; i < flat.length; i += 2) { idx += flat[i]; const [zona, sec, lc] = z[idx]; secoes.push({ zona, sec, lc, v: flat[i + 1] }); }
+    const info = new Map(); for (const r of loc?.l || []) info.set(`${r[0]}-${r[1]}`, { nome: r[2], end: r[3], bairro: r[4] });
+    const locais = new Map();
+    for (const x of secoes) { const k = `${x.zona}-${x.lc}`, i = info.get(k) || { nome: `Local ${x.lc} (zona ${x.zona})`, end: '', bairro: 'Sem bairro informado' }; let L = locais.get(k); if (!L) locais.set(k, L = { k, ...i, v: 0, secoes: [] }); L.v += x.v; L.secoes.push(x); }
+    const bairros = new Map(); for (const L of locais.values()) { let b = bairros.get(L.bairro); if (!b) bairros.set(L.bairro, b = { nome: L.bairro, v: 0, locais: [] }); b.v += L.v; b.locais.push(L); }
+    const soma = secoes.reduce((a, x) => a + x.v, 0), pc = v => fNum(soma ? 100 * v / soma : 0, 1) + '%';
+    const barra = (v, mx) => `<i class="dsc-b"><i style="width:${mx ? 100 * v / mx : 0}%;background:${cor}"></i></i>`;
+    const topo = (extra = '') => `<h2>${esc(nome)} · ${esc(nomeP(c.nm))}</h2><p class="sub">${fInt(soma)} votos nas seções${soma !== total ? ` (o total do município é ${fInt(total)}; a diferença são votos de urnas sem seção identificada)` : ''}.${extra}</p>`;
+    const nav = [];
+    const lista = (itens, mx, cls, fn) => itens.map((it, i) => `<button type="button" class="dsc-l" data-i="${i}"><span class="dsc-n">${fn(it)}</span><span class="dsc-v">${fInt(it.v)}<small>${pc(it.v)}</small></span>${barra(it.v, mx)}</button>`).join('');
+    const mostra = (nivel, ctx) => {
+      const trilha = `<div class="dsc-t"><button type="button" data-t="0">${esc(nome)}</button>${ctx.b ? ` › <button type="button" data-t="1">${esc(bonito(ctx.b.nome))}</button>` : ''}${ctx.L ? ` › <b>${esc(bonito(ctx.L.nome))}</b>` : ''}</div>`;
+      let corpo, itens;
+      if (nivel === 0) { itens = [...bairros.values()].sort((a, b) => b.v - a.v); corpo = `<h3>Bairros</h3>${lista(itens, itens[0]?.v, '', b => `${esc(bonito(b.nome))}<small>${b.locais.length} ${b.locais.length === 1 ? 'local' : 'locais'}</small>`)}`; }
+      else if (nivel === 1) { itens = ctx.b.locais.slice().sort((a, b) => b.v - a.v); corpo = `<h3>Locais de votação em ${esc(bonito(ctx.b.nome))}</h3>${lista(itens, itens[0]?.v, '', L => `${esc(bonito(L.nome))}<small>${esc(bonito(L.end))}</small>`)}`; }
+      else { itens = ctx.L.secoes.slice().sort((a, b) => b.v - a.v); corpo = `<h3>Seções · ${esc(bonito(ctx.L.nome))}</h3><p class="sub">${esc(bonito(ctx.L.end))}</p>${itens.map(x => `<div class="dsc-l fim"><span class="dsc-n">Zona ${x.zona} · seção ${x.sec}</span><span class="dsc-v">${fInt(x.v)}<small>${pc(x.v)}</small></span>${barra(x.v, itens[0]?.v)}</div>`).join('')}`; }
+      el.innerHTML = `<div class="painel dsc">${topo()}${trilha}${corpo}</div>`;
+      el.querySelectorAll('[data-t]').forEach(b => b.addEventListener('click', () => (b.dataset.t === '0' ? mostra(0, {}) : mostra(1, { b: ctx.b }))));
+      if (nivel < 2) el.querySelectorAll('.dsc-l[data-i]').forEach(b => b.addEventListener('click', () => { const it = itens[+b.dataset.i]; nivel === 0 ? mostra(1, { b: it }) : mostra(2, { b: ctx.b, L: it }); }));
+    };
+    if (!secoes.length) { el.innerHTML = `<div class="painel dsc"><p class="aviso">Sem votos por seção deste candidato em ${esc(nome)}.</p></div>`; return; }
+    mostra(0, {});
+  } catch (e) { console.error('dep seção', e); el.innerHTML = `<div class="painel dsc"><p class="aviso">A votação por seção deste candidato ainda não está disponível.</p></div>`; }
 }
