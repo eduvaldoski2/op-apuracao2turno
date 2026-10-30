@@ -1,0 +1,37 @@
+== https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_2026_RR.zip
+HTTP/1.1 200 OK
+Last-Modified: Mon, 26 Oct 2026 17:39:58 GMT
+ETag: "5355c4-65ec1d196c99b"
+Accept-Ranges: bytes
+Content-Length: 5461444
+Access-Control-Allow-Origin: *
+Content-Type: application/zip
+Access-Control-Allow-Headers: *
+Access-Control-Allow-Methods: POST, GET, OPTIONS, DELETE
+Access-Control-Allow-Origin: *
+Cache-Control: max-age=31492
+Date: Fri, 30 Oct 2026 12:25:25 GMT
+-rw-r--r-- 1 runner runner 5461444 Oct 30 12:25 /tmp/s/v.zip
+Archive:  /tmp/s/v.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+ 55140972  2026-10-26 17:15   votacao_secao_2026_RR.csv
+   192420  2026-10-26 15:05   leiame.pdf
+---------                     -------
+ 55333392                     2 files
+arquivo: votacao_secao_2026_RR.csv
+"DT_GERACAO";"HH_GERACAO";"ANO_ELEICAO";"CD_TIPO_ELEICAO";"NM_TIPO_ELEICAO";"NR_TURNO";"CD_ELEICAO";"DS_ELEICAO";"DT_ELEICAO";"TP_ABRANGENCIA";"SG_UF";"SG_UE";"NM_UE";"CD_MUNICIPIO";"NM_MUNICIPIO";"NR_ZONA";"NR_SECAO";"CD_CARGO";"DS_CARGO";"NR_VOTAVEL";"NM_VOTAVEL";"QT_VOTOS";"NR_LOCAL_VOTACAO";"SQ_CANDIDATO";"NM_LOCAL_VOTACAO";"DS_LOCAL_VOTACAO_ENDERECO"
+"26/10/2026";"12:07:25";2026;2;"Eleição Ordinária";1;6259;"Eleições Gerais Estaduais 2026";"04/10/2026";"E";"RR";"RR";"RORAIMA";3085;"RORAINÓPOLIS";8;11;6;"Deputado Federal";1033;"ITALO OTAVIO TEIXEIRA PINTO";6;1031;230002549297;"ESCOLA ESTADUAL JOSÉ DE ALENCAR";"AVENIDA DRA. YANDARA DE CARVALHO, S/N, CENTRO"
+"26/10/2026";"12:07:25";2026;2;"Eleição Ordinária";1;6259;"Eleições Gerais Estaduais 2026";"04/10/2026";"E";"RR";"RR";"RORAIMA";3085;"RORAINÓPOLIS";8;44;6;"Deputado Federal";1033;"ITALO OTAVIO TEIXEIRA PINTO";15;1147;230002549297;"SESC-SERVIÇO SOCIAL DO COMÉRCIO";"AVENIDA AYRTON SENNA, 3623, CAMPOLANDIA"
+iconv: conversion stopped due to problem in writing the output
+--- cargos
+   5074 "ALTO ALEGRE";3
+   2864 "AMAJARI";7
+  66475 "BOA VISTA";1
+  56627 "BOA VISTA";5
+   4297 "BONFIM";9
+   7319 "CANTÁ";5
+   5680 "CARACARAÍ";2
+   2684 "CAROEBE";4
+   2819 "IRACEMA";6
+   5907 "MUCAJAÍ";6
