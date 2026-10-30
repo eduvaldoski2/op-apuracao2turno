@@ -29,10 +29,25 @@ await new Promise((ok, err) => {
   rl.on('close', ok); p.on('error', err);
 });
 console.log('linhas', linhas, 'usadas', usadas, 'ruins', ruins);
-let bytes = 0;
+let bytes = 0, arquivos = 0;
+// seções de cada município (comuns aos dois cargos), ordenadas por zona e seção
+const secs = new Map();
+for (const mapa of Object.values(dados)) for (const [cd, m] of mapa) { const t = secs.get(cd) ?? new Map(); for (const [k, i] of m.sec) t.set(k, m.z[i]); secs.set(cd, t); }
+const ordem = new Map(), dirZ = `${saida}/z/${uf}`; fs.mkdirSync(dirZ, { recursive: true });
+for (const [cd, t] of secs) { const lst = [...t.entries()].sort((a, b) => a[0] - b[0]); ordem.set(cd, new Map(lst.map(([k], i) => [k, i]))); const s2 = JSON.stringify(lst.map(([, z]) => z)); bytes += s2.length; fs.writeFileSync(`${dirZ}/${cd}.json`, s2); arquivos++; }
+// um arquivo por candidato: { cd5: [delta do índice da seção, votos, ...] }
 for (const [tipo, mapa] of Object.entries(dados)) {
   const dir = `${saida}/${tipo}/${uf}`; fs.mkdirSync(dir, { recursive: true });
-  for (const [cd, m] of mapa) { const s = JSON.stringify({ z: m.z, c: Object.fromEntries(m.c) }); bytes += s.length; fs.writeFileSync(`${dir}/${cd}.json`, s); }
-  console.log(tipo, uf, 'municípios', mapa.size);
+  const porCand = new Map();
+  for (const [cd, m] of mapa) {
+    const novo = ordem.get(cd), inv = m.z.map(z => novo.get(z[0] * 100000 + z[1]));
+    for (const [n, a] of m.c) {
+      const pares = []; for (let i = 0; i < a.length; i += 2) pares.push([inv[a[i]], a[i + 1]]); pares.sort((x, y) => x[0] - y[0]);
+      const flat = []; let ant = 0; for (const [i, v] of pares) { flat.push(i - ant, v); ant = i; }
+      (porCand.get(n) ?? porCand.set(n, {}).get(n))[cd] = flat;
+    }
+  }
+  for (const [n, o] of porCand) { const s2 = JSON.stringify(o); bytes += s2.length; arquivos++; fs.writeFileSync(`${dir}/${n}.json`, s2); }
+  console.log(tipo, uf, 'municípios', mapa.size, 'candidatos', porCand.size);
 }
-console.log('bytes', bytes);
+console.log('arquivos', arquivos, 'bytes', bytes);
