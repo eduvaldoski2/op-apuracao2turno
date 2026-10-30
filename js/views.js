@@ -1,14 +1,14 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=e7b28838';
-import { listaMunicipios, rankingUfs } from './model.js?v=e7b28838';
-import { projetarMunicipios } from './proj.js?v=e7b28838';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=e7b28838';
-import { graficoPlacar } from './charts.js?v=e7b28838';
-import { criarMapa, legendaMapa } from './map.js?v=e7b28838';
-import { criarMapaMun } from './mapamun.js?v=e7b28838';
-import { getJSON } from './tse.js?v=e7b28838';
-import { govPainel, govResumo } from './governador.js?v=e7b28838';
-import { secaoRegioesUf, montarRegioesUf } from './regioes_uf.js?v=e7b28838';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=1df2c59c';
+import { listaMunicipios, rankingUfs } from './model.js?v=1df2c59c';
+import { projetarMunicipios } from './proj.js?v=1df2c59c';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=1df2c59c';
+import { graficoPlacar } from './charts.js?v=1df2c59c';
+import { criarMapa, legendaMapa } from './map.js?v=1df2c59c';
+import { criarMapaMun } from './mapamun.js?v=1df2c59c';
+import { getJSON } from './tse.js?v=1df2c59c';
+import { govPainel, govResumo } from './governador.js?v=1df2c59c';
+import { secaoRegioesUf, montarRegioesUf } from './regioes_uf.js?v=1df2c59c';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -246,8 +246,9 @@ export function viewGeral(ctx) {
   let h = '';
 
   // aviso de contexto
+  h += ap ? `<div class="proj-btn sem-export"><a class="btn-proj" href="#/projecao">Ver projeção do resultado final ›</a></div>` : `<div class="proj-btn sem-export"><a class="btn-proj" href="#/">‹ Voltar à apuração oficial</a></div>`;
   if (ap) {
-    if (base.pst < 98) h += `<div class="aviso">Apuração parcial: as urnas chegam por regiões em horários diferentes, então o placar de agora ainda não é o resultado final. Veja a aba <a href="#/projecao">Projeção</a>.</div>`;
+    if (base.pst < 98) h += `<div class="aviso">Apuração parcial: as urnas chegam por regiões em horários diferentes, então o placar de agora ainda não é o resultado final. Veja a <a href="#/projecao">projeção do resultado final</a>.</div>`;
   } else {
     h += `<div class="aviso proj">Projeção estatística — <b>não é resultado oficial</b>. Baseada nas seções já apuradas e no 1º turno de cada município (<a href="#/p/criterios">critérios</a>).</div>`;
   }
