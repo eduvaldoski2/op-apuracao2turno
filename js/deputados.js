@@ -1,13 +1,13 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=8b975ef5';
-import { esc, tabela, sem } from './ui.js?v=8b975ef5';
-import { getJSON } from './tse.js?v=8b975ef5';
-import { nomeP } from './governador.js?v=8b975ef5';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=8b975ef5';
+import { UF_NOME, fInt, fNum } from './util.js?v=e3dbaa5b';
+import { esc, tabela, sem } from './ui.js?v=e3dbaa5b';
+import { getJSON } from './tse.js?v=e3dbaa5b';
+import { nomeP } from './governador.js?v=e3dbaa5b';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=e3dbaa5b';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
-export const carregarDep = tipo => (cache[tipo] ??= getJSON(`data/dep_1t/${ARQ[tipo][0]}.json`, { retries: 2 }));
+export const carregarDep = tipo => (cache[tipo] ??= getJSON(`data/dep_1t/${ARQ[tipo][0]}.json`, { retries: 3 }).catch(e => { delete cache[tipo]; throw e; }));
 const qs = () => new URLSearchParams(location.hash.split('?')[1] || '');
 const eleitosDe = x => (x.par ? x.par.reduce((a, p) => a + eleitosDe(p), 0) : x.cand.filter(c => c.e).length);
 const candDe = x => (x.par ? x.par.flatMap(candDe) : x.cand);
@@ -15,18 +15,18 @@ const todosCand = g => g.grupos.flatMap(gr => gr.par.flatMap(p => p.cand.map(c =
 
 export function viewDepBrasil(ctx, tipo) {
   const [, cargo, plural] = ARQ[tipo];
-  const html = `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 · ${esc(cargo)} · TSE</div><section class="painel"><h2>${plural} · 1º turno</h2><p class="sub">Escolha um estado para ver federações, partidos e candidatos.</p><div id="tab-dep"><p class="carregando">Carregando…</p></div></section>`;
+  const html = `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 · ${esc(cargo)} · TSE</div><section class="painel"><h2>${plural} · 1º turno</h2><p class="sub">Não há votação nacional de ${esc(cargo.toLowerCase())}: escolha um estado para ver federações, partidos e candidatos.</p><div id="tab-dep"><p class="carregando">Carregando…</p></div></section>`;
   return { html, titulo: `Brasil — ${cargo}`, montar(root) {
+    // não há votação nacional de deputado: a tela é só a escolha do estado (botões aparecem na hora; os números chegam com os dados)
+    const REG = [['Norte', ['ac', 'am', 'ap', 'pa', 'ro', 'rr', 'to']], ['Nordeste', ['al', 'ba', 'ce', 'ma', 'pb', 'pe', 'pi', 'rn', 'se']], ['Centro-Oeste', ['df', 'go', 'mt', 'ms']], ['Sudeste', ['es', 'mg', 'rj', 'sp']], ['Sul', ['pr', 'rs', 'sc']]];
+    const el = root.querySelector('#tab-dep');
+    el.innerHTML = REG.map(([r, ufs]) => `<div class="dep-reg"><h3>${r}</h3><div class="dep-ufs">${ufs.map(u => `<a class="dep-uf" data-uf="${u}" href="#/t1/uf/${u}?cargo=${tipo}"><b>${u.toUpperCase()}</b><span>${esc(UF_NOME[u] || u)}</span><small class="dep-n"></small></a>`).join('')}</div></div>`).join('');
     carregarDep(tipo).then(D => {
-      const rows = Object.entries(D.uf).map(([u, g]) => { const t = todosCand(g).sort((a, b) => b.v - a.v)[0]; return { id: u, nome: UF_NOME[u], n: g.grupos.reduce((a, x) => a + eleitosDe(x), 0), nc: todosCand(g).length, t }; });
-      const cols = [
-        { k: 'nome', t: 'Estado', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, ini: 'asc' },
-        { k: 'n', t: 'Eleitos', h: x => fInt(x.n), v: x => x.n, cls: 'n' },
-        { k: 't', t: 'Mais votado', h: x => x.t ? `<b>${esc(nomeP(x.t.nm))}</b> <small>${esc(x.t.sg)}</small><small class="vt">${fInt(x.t.v)} votos</small>` : '', v: x => x.t?.v ?? 0, x: x => x.t?.nm || '' },
-        { k: 'nc', t: 'Candidatos', h: x => fInt(x.nc), v: x => x.nc, cls: 'n sec' },
-      ];
-      tabela(root.querySelector('#tab-dep'), { cols, rows, onRow: x => ctx.ir(`#/t1/uf/${x.id}?cargo=${tipo}`), sort: 'nome', dir: 'asc' });
-    }).catch(() => { root.querySelector('#tab-dep').innerHTML = '<p class="aviso">Dados ainda indisponíveis. Tente de novo em instantes.</p>'; });
+      for (const [u, g] of Object.entries(D.uf)) {
+        const a = el.querySelector(`[data-uf="${u}"] .dep-n`); if (!a) continue;
+        const n = g.grupos.reduce((x, gr) => x + eleitosDe(gr), 0); a.textContent = `${fInt(n)} eleitos`;
+      }
+    }).catch(() => { el.insertAdjacentHTML('afterbegin', '<p class="aviso">Os números ainda não carregaram; o estado abre normalmente.</p>'); });
   } };
 }
 
