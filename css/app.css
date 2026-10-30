@@ -686,3 +686,7 @@ body.tl-aberto{overflow:hidden}
 .proj-btn { margin: 0 0 10px; }
 .btn-proj { display: inline-block; padding: 9px 16px; border-radius: 999px; background: var(--roxo, #3E347E); color: #fff; font-weight: 700; font-size: .9rem; text-decoration: none; }
 .btn-proj:hover { filter: brightness(1.12); }
+.chips-p { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip-p { padding: 6px 12px; border-radius: 999px; background: #efecf7; color: #3E347E; font-weight: 700; font-size: .85rem; text-decoration: none; }
+.chip-p small { opacity: .7; margin-left: 2px; }
+.chip-p.on { background: #3E347E; color: #fff; }

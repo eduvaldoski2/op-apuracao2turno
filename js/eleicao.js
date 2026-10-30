@@ -1,8 +1,8 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
 // O resto aparece esmaecido ("em breve"). Deputados federal e estadual exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta } from './conta.js?v=1df2c59c';
-import { esc } from './ui.js?v=1df2c59c';
+import { CONTA, carregarConta, montarConta } from './conta.js?v=2e93d5d9';
+import { esc } from './ui.js?v=2e93d5d9';
 
 const ANOS = [2026, 2024, 2022, 2020, 2018];
 const DISPONIVEL = { 2026: true };
@@ -17,7 +17,7 @@ export const telasComSeletor = r => ['ap', 't1'].includes(r.modo) && !['comparar
 
 const qs = () => new URLSearchParams(location.hash.split('?')[1] || '');
 export function estadoEleicao(r) {
-  const turno = r.modo === 't1' ? 1 : 2, c = qs().get('cargo'), cargo = c === 'gov' ? 'governador' : c === 'sen' ? 'senador' : 'presidente';
+  const turno = r.modo === 't1' ? 1 : 2, c = qs().get('cargo'), cargo = c === 'gov' ? 'governador' : c === 'sen' ? 'senador' : c === 'depf' ? 'dep-federal' : c === 'depe' ? 'dep-estadual' : 'presidente';
   return { ano: 2026, turno, cargo };
 }
 // caminho da tela atual, sem o prefixo do modo
@@ -33,6 +33,7 @@ function caminho(r) {
 }
 export function hashEleicao(r, turno, cargo = 'presidente') {
   const c = caminho(r);
+  if (cargo === 'dep-federal' || cargo === 'dep-estadual') return '#/t1' + (r.uf ? `/uf/${r.uf}` : '') + (cargo === 'dep-federal' ? '?cargo=depf' : '?cargo=depe');
   if (cargo === 'governador' || cargo === 'senador') return '#/t1' + (r.uf ? `/uf/${r.uf}` : '') + (cargo === 'senador' ? '?cargo=sen' : '?cargo=gov');
   return turno === 1 ? '#/t1' + (c ? '/' + c : '') : '#/' + c;
 }
@@ -50,7 +51,7 @@ export function barraEleicao(r) {
     <div class="fx"><div class="l"><small>Ano</small><div class="ch">${anos}</div></div>
     <div class="l"><small>Turno</small><div class="sg">${turnos}</div></div>
     <div class="l"><small>Cargo</small><div class="ch">${cargos}</div></div>
-    <p class="el-nota">Em breve: anos anteriores, deputados e eleições municipais.</p></div></details>`;
+    <p class="el-nota">Em breve: anos anteriores e eleições municipais.</p></div></details>`;
 }
 
 // ---------- cadastro para os cargos de deputado ----------
@@ -70,7 +71,8 @@ function abrirCadastro(cargoNome, { toast }) {
     montarConta(ov.querySelector('#el-conta'), c => { if (c.logado) { fechar(); document.querySelectorAll('.eleicao [data-cargo^="dep-"]').forEach(b => { b.textContent = b.textContent.replace('🔒 ', ''); }); avisoLogado(cargoNome, toast); } }, { alvo: `os resultados de ${cargoNome}` });
   });
 }
-const avisoLogado = (nome, toast) => toast(`Cadastro confirmado. Os dados de ${nome} por município, bairro e local de votação estão em preparação e serão liberados aqui.`, true);
+let irPara = null;
+const avisoLogado = (nome, toast) => { if (irPara) irPara(); else toast(`Cadastro confirmado. Abrindo ${nome}.`, true); };
 
 export function ligarEleicao(root, r, { ir, toast, evento }) {
   const el = root.querySelector('.eleicao'); if (!el) return;
@@ -84,7 +86,7 @@ export function ligarEleicao(root, r, { ir, toast, evento }) {
     if (k === e.cargo) return;
     const c = CARGOS.find(x => x.k === k);
     if (c.breve) { toast(`${c.nome}: em breve no painel.`, true); return; }
-    if (c.cadastro) { evento?.('eleicao_cadastro', { cargo: k }); if (CONTA.logado) { avisoLogado(c.nome, toast); return; } abrirCadastro(c.nome, { toast }); return; }
+    if (c.cadastro) { evento?.('eleicao_cadastro', { cargo: k }); irPara = () => ir(hashEleicao(r, 1, k)); if (CONTA.logado) { avisoLogado(c.nome, toast); return; } abrirCadastro(c.nome, { toast }); return; }
     evento?.('eleicao', { cargo: k }); ir(hashEleicao(r, e.turno, k));
     if (k === 'governador' || k === 'senador') setTimeout(() => document.querySelector(k === 'senador' ? '.sen' + ', .sen-t1' : '.gov:not(.sen), .gov-t1:not(.sen-t1)')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 700);
   });
