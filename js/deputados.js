@@ -1,9 +1,9 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=ae52dca0';
-import { esc, tabela, sem } from './ui.js?v=ae52dca0';
-import { getJSON } from './tse.js?v=ae52dca0';
-import { nomeP } from './governador.js?v=ae52dca0';
-import { corPartido, corTextoSobre } from './partidos.js?v=ae52dca0';
+import { UF_NOME, fInt, fNum } from './util.js?v=9b085892';
+import { esc, tabela, sem } from './ui.js?v=9b085892';
+import { getJSON } from './tse.js?v=9b085892';
+import { nomeP } from './governador.js?v=9b085892';
+import { corPartido, corTextoSobre } from './partidos.js?v=9b085892';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -50,7 +50,7 @@ export function viewDepUf(ctx, uf, tipo) {
         const on = grDoP?.n === x.n, cor = x.tp === 'f' ? corPartido(x.par[0].sg) : corPartido(x.par[0].sg), bg = x.tp === 'f' ? gcor(x) : cor;
         return `<a class="chip-p${on ? ' on' : ''}${x.tp === 'f' ? ' fed' : ''}" href="${base}&f=${encodeURIComponent(x.n)}" style="--pc:${cor};--pt:${corTextoSobre(cor)};--bg:${bg}" title="${esc(x.nm)}">${x.tp === 'f' ? 'Fed. ' : ''}${esc(x.tp === 'f' ? x.com.replace(/ \/ /g, '/') : x.par[0].sg)} <small>${eleitosDe(x)}</small></a>`; })].join('');
       // 2ª fila: partidos da federação escolhida
-      const chipsP = grDoP && grDoP.tp === 'f' ? `<div class="chips-p sem-export" style="margin-top:10px"><span class="chips-t">Partidos da federação:</span>${chipP(`${base}&f=${encodeURIComponent(grDoP.n)}`, 'Federação inteira', eleitosDe(grDoP), !pt, '#3E347E')}${grDoP.par.map(p => chipP(`${base}&f=${encodeURIComponent(grDoP.n)}&p=${encodeURIComponent(p.sg)}`, p.sg, eleitosDe(p), pt === p, corPartido(p.sg))).join('')}</div>` : '';
+      const chipsP = grDoP && grDoP.tp === 'f' ? `<div class="chips-p" style="margin-top:10px"><span class="chips-t">Partidos da federação:</span>${chipP(`${base}&f=${encodeURIComponent(grDoP.n)}`, 'Federação inteira', eleitosDe(grDoP), !pt, '#3E347E')}${grDoP.par.map(p => chipP(`${base}&f=${encodeURIComponent(grDoP.n)}&p=${encodeURIComponent(p.sg)}`, p.sg, eleitosDe(p), pt === p, corPartido(p.sg))).join('')}</div>` : '';
       // painel de votação do recorte
       const alvo = pt || grDoP, lista = (alvo ? candDe(alvo) : todosCand(g)).map(c => ({ ...c, sg: c.sg || pt?.sg })).sort((a, b) => b.v - a.v);
       let painel;
@@ -66,7 +66,7 @@ export function viewDepUf(ctx, uf, tipo) {
         painel = `<section class="painel resumo"><div class="centro-t">${esc(nomeUf)} · ${esc(cargo)} · 1º turno</div><div class="resumo-t"><span><b>${fInt(ele)}</b> eleitos · <b>${fInt(lista.length)}</b> candidatos</span><span>${fInt(vv)} votos válidos</span></div><p class="sub" style="margin:6px 0 0">Nominais: <b>${fInt(tn)}</b> · Legenda: <b>${fInt(tl)}</b>${g.qe ? ` · Quociente eleitoral: <b>${fInt(g.qe)}</b>` : ''}</p></section>`;
       }
       const titulo = pt ? `Candidatos de ${esc(pt.sg)}` : grDoP ? `Candidatos ${grDoP.tp === 'f' ? 'da federação' : 'de ' + esc(grDoP.par[0].sg)}` : 'Todos os candidatos';
-      el.innerHTML = `<section class="painel"><h2>Federações e partidos</h2><p class="sub">O número ao lado da sigla é a quantidade de eleitos. Federações têm a faixa com as cores dos partidos; escolha uma para ver cada partido dela.</p><div class="chips-p sem-export">${chipsG}</div>${chipsP}</section>
+      el.innerHTML = `<section class="painel"><h2>Federações e partidos</h2><p class="sub">O número ao lado da sigla é a quantidade de eleitos. Federações têm a faixa com as cores dos partidos; escolha uma para ver cada partido dela.</p><div class="chips-p">${chipsG}</div>${chipsP}</section>
       ${painel}
       <section class="painel"><h2>${titulo}: ${fInt(lista.length)}</h2><p class="sub">Ordenados por votos. Clique nos títulos para reordenar.</p><div id="tab-dc"></div></section>`;
       const pos = new Map(todosCand(g).sort((a, b) => b.v - a.v).map((c, i) => [c.n + c.sg, i + 1]));

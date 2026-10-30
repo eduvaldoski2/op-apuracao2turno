@@ -9,7 +9,7 @@ const T = {
   PDT: ['Partido Democrático Trabalhista'], PSOL: ['Partido Socialismo e Liberdade'], REDE: ['Rede Sustentabilidade'], PV: ['Partido Verde (Brasil)'], PCDOB: ['Partido Comunista do Brasil'],
   REPUBLICANOS: ['Republicanos (partido político)'], PODE: ['Podemos (Brasil)'], AVANTE: ['Avante (partido político)'], SOLIDARIEDADE: ['Solidariedade (partido político)'],
   PRD: ['Partido Renovação Democrática', 'Partido Renovação Democrática (2023)'], NOVO: ['Partido Novo'], 'MISSÃO': ['Partido Missão'], CIDADANIA: ['Cidadania (partido político)'],
-  MOBILIZA: ['Mobiliza (partido político)', 'Mobiliza', 'Partido Mobiliza'], UP: ['Unidade Popular'], PSTU: ['Partido Socialista dos Trabalhadores Unificado'], DC: ['Democracia Cristã (Brasil)'],
+  MOBILIZA: ['Partido da Mobilização Nacional'], UP: ['Unidade Popular pelo Socialismo', 'Unidade Popular (Brasil)', 'Unidade Popular'], PSTU: ['Partido Socialista dos Trabalhadores Unificado'], DC: ['Democracia Cristã (Brasil)'],
   PCO: ['Partido da Causa Operária'], PMB: ['Partido da Mulher Brasileira'], AGIR: ['Agir (partido político)', 'Agir (Brasil)'], PRTB: ['Partido Renovador Trabalhista Brasileiro'],
   PMN: ['Partido da Mobilização Nacional'], PCB: ['Partido Comunista Brasileiro (1996)'],
 };
@@ -30,7 +30,8 @@ const rel = [];
 for (const [sg, tit] of Object.entries(T)) {
   try {
     const nome = await arquivo(tit); if (!nome) { rel.push(`${sg}\tSEM ARQUIVO`); continue; }
-    const r = await fetch('https://commons.wikimedia.org/wiki/Special:FilePath/' + encodeURIComponent(nome.replace(/ /g, '_')) + '?width=240', { headers: UA, redirect: 'follow' });
+    const fp = h => fetch(`https://${h}/wiki/Special:FilePath/` + encodeURIComponent(nome.replace(/ /g, '_')) + '?width=240', { headers: UA, redirect: 'follow' });
+    let r = await fp('commons.wikimedia.org'); if (!r.ok) r = await fp('pt.wikipedia.org');
     if (!r.ok) { rel.push(`${sg}\tERRO ${r.status} ${nome}`); continue; }
     const buf = Buffer.from(await r.arrayBuffer()); fs.writeFileSync(`img/partidos/${sg}.png`, buf); rel.push(`${sg}\tok\t${nome}\t${buf.length}`);
   } catch (e) { rel.push(`${sg}\tFALHA ${e.message}`); }
