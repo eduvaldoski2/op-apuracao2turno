@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=1e51e44f';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=1e51e44f';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=2792a339';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=2792a339';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -282,9 +282,12 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
         }
         // tabela: coluna do nome só do tamanho do conteúdo, letras maiores (a imagem é vista no celular)
         alvo.querySelectorAll('table.tab').forEach(t => {
-          t.style.cssText += ';width:100%;font-size:19px';
+          { const ths = [...t.querySelectorAll('thead th')], ix = ths.findIndex(h => /apurado/i.test(h.textContent)); if (ix > 0 && ths.length >= 8) t.querySelectorAll('tr').forEach(r => r.children[ix]?.remove()); }   // "% apurado" não cabe em tabela larga na imagem
+          { const n0 = t.querySelectorAll('thead th').length; if (n0 > 7) t.querySelectorAll("tr").forEach(r => [...r.children].slice(7).forEach(c => c.remove())); }   // tabela muito larga: a imagem leva as 7 primeiras colunas (a completa fica no painel)
+          const nc = t.querySelectorAll('thead th').length;   // muitas colunas (ex.: 2º turno por estado): letra menor para a última coluna não ser cortada
+          t.style.cssText += `;width:100%;font-size:${nc >= 7 ? 16 : 19}px`;
           t.querySelectorAll('th').forEach(th => { th.style.fontSize = '14px'; });
-          t.querySelectorAll('td').forEach(td => { td.style.padding = '8px 9px'; });
+          t.querySelectorAll('td').forEach(td => { td.style.padding = nc >= 7 ? '8px 5px' : '8px 9px'; });
           t.querySelectorAll('tr > :first-child').forEach(c => { c.style.cssText += ';width:1%;white-space:nowrap;min-width:0'; });
         });
         // mapa do Brasil: rótulos maiores; a tabela por região só fica quando sobra espaço (num quadrado ela não cabe legível)

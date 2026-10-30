@@ -789,3 +789,5 @@ body.tl-aberto{overflow:hidden}
 .exp-social .gv-lista.xl-2 ~ .gv-f{font-size:16px!important;line-height:1.4;margin-top:14px}
 /* imagens: a janela de captura é estreita e esconderia as colunas secundárias; na imagem elas aparecem */
 .exp-social .tab .sec,.exp-social .tab th.sec{display:table-cell!important}
+.exp-social .gv-vs{font-size:20px;line-height:1.35}.exp-9x16 .gv-vs{font-size:27px}
+.exp-social .tab small{white-space:nowrap}

@@ -1,7 +1,7 @@
 // Cards do 2º turno para compartilhar: catálogo navegável (sem dependências, rotas por hash).
 // Consentimento e métricas são opcionais: carregam depois e, se falharem (rede, 503), os cards continuam funcionando.
 let evento = () => {}, conversaoLead = () => {}, iniciarConsentimento = () => {};
-const carregaExtras = async () => { try { const [c, m] = await Promise.all([import('../js/consentimento.js?v=1e51e44f'), import('../js/metricas.js?v=1e51e44f')]); iniciarConsentimento = c.iniciarConsentimento; conversaoLead = c.conversaoLead; evento = m.evento; iniciarConsentimento(); } catch { /* sem métricas/consentimento */ } };
+const carregaExtras = async () => { try { const [c, m] = await Promise.all([import('../js/consentimento.js?v=2792a339'), import('../js/metricas.js?v=2792a339')]); iniciarConsentimento = c.iniciarConsentimento; conversaoLead = c.conversaoLead; evento = m.evento; iniciarConsentimento(); } catch { /* sem métricas/consentimento */ } };
 
 const $ = (s, r = document) => r.querySelector(s), $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
