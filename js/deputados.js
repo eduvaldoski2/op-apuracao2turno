@@ -1,9 +1,9 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=e3dbaa5b';
-import { esc, tabela, sem } from './ui.js?v=e3dbaa5b';
-import { getJSON } from './tse.js?v=e3dbaa5b';
-import { nomeP } from './governador.js?v=e3dbaa5b';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=e3dbaa5b';
+import { UF_NOME, fInt, fNum } from './util.js?v=48a02361';
+import { esc, tabela, sem } from './ui.js?v=48a02361';
+import { getJSON } from './tse.js?v=48a02361';
+import { nomeP } from './governador.js?v=48a02361';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=48a02361';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -79,6 +79,6 @@ export function viewDepUf(ctx, uf, tipo) {
       ];
       tabela(el.querySelector('#tab-dc'), { cols, rows, sort: 'pos', dir: 'asc', filtro: (x, q) => sem(x.nm).includes(q), limite: 300 });
       ctx.csv = () => ({ nome: `${uf}_${tipo}_1turno`, cab: ['Posição', 'Candidato', 'Partido', 'Número', 'Votos', '% votos válidos', 'Situação'], linhas: rows.map(x => [x.pos, x.nm, x.sg, x.n, x.v, x.pc.toFixed(2), x.st]) });
-    }).catch(() => { root.querySelector('#dep-corpo').innerHTML = '<p class="aviso">Dados ainda indisponíveis. Tente de novo em instantes.</p>'; });
+    }).catch(e => { console.error('dep', e); root.querySelector('#dep-corpo').innerHTML = '<p class="aviso">Dados ainda indisponíveis. Tente de novo em instantes.</p>'; });
   } };
 }
