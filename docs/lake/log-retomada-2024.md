@@ -19,3 +19,9 @@ Não foram enviadas mensagens a terceiros. Nenhuma decisão técnica pendente fo
 - Criei branch remoto divisoes; publiquei seis arquivos no commit 9739336e3d87c8e869745af215321bbc0a82aa88 e abri o PR #3: https://github.com/eduvaldoski2/op-apuracao2turno/pull/3. Árvore API/local idêntica: 72a1bcffae86ba168412081beabdaf600a32a3fa. Nenhum PR foi mesclado.
 - Validação textual: git diff --check nos documentos; CSVs preservaram CRLF e passaram git -c core.whitespace=cr-at-eol diff --cached --check. O check padrão havia sinalizado CRLF como espaço final, sem mudança de valores.
 - Este adendo registra a publicação via GitHub (create_branch/create_tree/create_commit/update_ref/create_pull_request); a revisão que inclui o próprio adendo fica no histórico do PR. Não houve novos testes, CI eleitoral ou Actions. Próximo bloqueio: obter confirmação direta para merge do PR #1. Os PRs #2/#3 também permanecem para revisão, sem autorização de merge.
+
+## Verificação final e preservação local
+
+- Reconfirmei os 129 pares de colunas contra os 162 cabeçalhos reais de todas as sete famílias nas 27 fichas de inspeção, sem baixar ZIPs. Nenhuma coluna do mapa ausente.
+- Uma sincronização local proposta com git reset --mixed foi bloqueada pela revisão automática por possível perda de estado do índice. Não repeti o reset nem usei alternativa destrutiva; conferi status/log em leitura. Os worktrees permanecem no main de origem a15d7c30, com os documentos preparados/modificados preservados. As cópias publicadas nos branches remotos estão nos PRs #2/#3.
+- Consulta final ao PR #1: aberto, não mesclado, head f5be31293539de40887fd2888ed7048031244c3e. Não houve dispatch.
