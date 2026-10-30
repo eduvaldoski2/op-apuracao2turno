@@ -1,8 +1,21 @@
 // Card de compartilhamento (PNG/PDF): peça própria, com margem, proporção fixa e hierarquia entre candidatos.
 // Lê os dados que a tela já exibe (fichas do 1º turno ou placar Lula × Flávio) e monta um layout de redes sociais.
-import { esc } from './ui.js?v=8fd6bd1b';
+import { esc } from './ui.js?v=8b975ef5';
 
 export const carregaScript = src => new Promise((ok, err) => { if (document.querySelector(`script[data-v="${src}"]`)) return ok(); const s = document.createElement('script'); s.src = src; s.dataset.v = src; s.onload = ok; s.onerror = () => err(new Error('falha ao carregar ' + src)); document.head.appendChild(s); });
+
+// QR da página em exibição (qrcode-generator, vendor/qrcode.js). Devolve o objeto qr ou null se a biblioteca não carregar.
+export const urlPagina = () => location.href.split('?v=')[0];
+export async function criaQR(url = urlPagina()) {
+  try { await carregaScript('vendor/qrcode.js'); const q = window.qrcode(0, 'M'); q.addData(url); q.make(); return q; } catch { return null; }
+}
+// desenha o QR num canvas (quadro branco com margem) — x, y, tam = lado total em px
+export function desenhaQR(g, q, x, y, tam) {
+  g.fillStyle = '#fff'; g.beginPath(); g.roundRect ? g.roundRect(x, y, tam, tam, tam * .1) : g.rect(x, y, tam, tam); g.fill();
+  if (!q) return;
+  const n = q.getModuleCount(), m = tam * .08, c = (tam - 2 * m) / n; g.fillStyle = '#000';
+  for (let r = 0; r < n; r++) for (let k = 0; k < n; k++) if (q.isDark(r, k)) g.fillRect(Math.floor(x + m + k * c), Math.floor(y + m + r * c), Math.ceil(c), Math.ceil(c));
+}
 
 // formatos: w × h em pixels. "livre" = quanto couber (a altura é calculada pelo conteúdo)
 export const FORMATOS = {
@@ -101,10 +114,13 @@ const CSS = `
 .opcard .oc-kpi .oc-kv{font-size:calc(38px*var(--k));font-weight:700;color:#3E347E;margin-top:calc(4px*var(--k));white-space:nowrap}
 .opcard .oc-kpi .oc-kd{font-size:calc(19px*var(--k));font-weight:700;color:#6f6888;white-space:nowrap}.opcard .oc-kd.pos{color:#1b8a5a}.opcard .oc-kd.neg{color:#c0392b}
 .opcard .oc-kpi .oc-ks{font-size:calc(18px*var(--k));color:#6f6888;margin-top:2px;line-height:1.25}
-.opcard .oc-rod{flex:none;display:flex;flex-direction:column;align-items:center;gap:calc(12px*var(--k));padding-top:calc(18px*var(--k));border-top:2px solid #e4dfee;text-align:center}
-.opcard .oc-rod .oc-site{display:flex;align-items:center;gap:calc(18px*var(--k));font-weight:700;font-size:calc(40px*var(--k));color:#3E347E}
-.opcard .oc-rod .oc-site img{width:calc(72px*var(--k));height:calc(72px*var(--k))}
-.opcard .oc-rod p{font-size:calc(17px*var(--k));line-height:1.4;color:#8a85a0;max-width:88%}
+.opcard .oc-rod{flex:none;display:flex;flex-direction:column;gap:calc(10px*var(--k))}
+.opcard .oc-rod .oc-qr{display:flex;align-items:center;gap:calc(26px*var(--k));padding:calc(16px*var(--k)) calc(24px*var(--k));background:#3E347E;border-radius:calc(24px*var(--k));color:#fff}
+.opcard .oc-rod .oc-qr .oc-qrimg{flex:none;width:calc(136px*var(--k));height:calc(136px*var(--k));background:#fff;border-radius:calc(14px*var(--k));padding:calc(9px*var(--k))}
+.opcard .oc-rod .oc-qr .oc-qrimg svg{width:100%;height:100%;display:block}
+.opcard .oc-rod .oc-qr .oc-q1{font-weight:700;font-size:calc(34px*var(--k));line-height:1.1}.opcard .oc-rod .oc-qr .oc-q1 u{text-decoration:none;color:#F28C1E}
+.opcard .oc-rod .oc-qr .oc-q2{font-weight:700;font-size:calc(42px*var(--k));margin-top:calc(8px*var(--k));color:#F28C1E;white-space:nowrap;letter-spacing:-.01em}
+.opcard .oc-rod p{font-size:calc(16px*var(--k));line-height:1.35;color:#8a85a0;text-align:center}
 `;
 
 function css() { if (!document.getElementById('opcard-css')) { const s = document.createElement('style'); s.id = 'opcard-css'; s.textContent = CSS; document.head.appendChild(s); } }
@@ -139,7 +155,7 @@ export function montarCard(d, fmt = FORMATOS['3x5']) {
     ${peq.length ? `<div><div class="oc-lt">${medios.length ? 'Demais candidatos' : 'Outros candidatos'}</div><div class="oc-lista${cols === 2 ? ' c2' : ''}">${peq.map(c => row(c, maxv * 0 + Math.max(...peq.map(x => x.v), 1))).join('')}</div></div>` : ''}
   </div>
   ${d.kpis?.length ? `<div class="oc-kpis">${d.kpis.map(x => `<div class="oc-kpi"><div>${esc(x.t)}</div><div class="oc-kv">${esc(x.v)}</div>${x.d ? `<div class="oc-kd ${x.dcls || ''}">${esc(x.d)}</div>` : ''}<div class="oc-ks">${esc(x.s)}</div></div>`).join('')}</div>` : ''}
-  <div class="oc-rod"><div class="oc-site"><img src="img/icone.svg" alt=""><span>oficinapolitica.com.br</span></div><p>Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.</p></div>`;
+  <div class="oc-rod"><div class="oc-qr"><div class="oc-qrimg">${d.qr ? d.qr.createSvgTag({ cellSize: 4, margin: 0, scalable: true }) : ''}</div><div><div class="oc-q1">Quer ver <u>mais dados</u>?</div><div class="oc-q2">oficinapolitica.com.br ›</div></div></div><p>Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.</p></div>`;
   return el;
 }
 
@@ -148,6 +164,7 @@ const aguardaImgs = el => Promise.all([...el.querySelectorAll('img')].map(i => i
 // gera o canvas do card (escala 1 = largura de 1080 px; use 1.5–2 para PDF)
 export async function cardCanvas(d, fmt = FORMATOS['3x5'], escala = 1) {
   await carregaScript('vendor/html2canvas.min.js');
+  if (d.qr === undefined) d = { ...d, qr: await criaQR() };
   try { await document.fonts?.ready; await Promise.all(['700 40px "Space Grotesk"', '400 40px "DM Serif Display"'].map(f => document.fonts?.load(f))); } catch { /* segue com a fonte reserva */ }
   const wrap = document.createElement('div');
   wrap.id = 'opcard-wrap'; wrap.style.cssText = 'position:fixed;left:0;top:0;opacity:0;pointer-events:none;z-index:-1'; document.body.appendChild(wrap);

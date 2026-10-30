@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS } from './card.js?v=8fd6bd1b';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=8fd6bd1b';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=8b975ef5';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=8b975ef5';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -246,7 +246,7 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
   g.font = '600 25px "Space Grotesk", system-ui, sans-serif'; const linS = quebra(g, sub || '', W - 2 * M).slice(0, 2);
   const hT = linT.length * Math.round(tam * 1.08), hS = linS.length * 32;
   const hCab = fmt.top + 30 + 44 + 20 + hT + (hS ? 12 + hS : 0) + 28;
-  const hRod = 150 + fmt.bot, topoCorpo = hCab + 22, hCorpo = H - topoCorpo - hRod, innerH = hCorpo - 2 * PAD;
+  const hRod = 236 + fmt.bot, topoCorpo = hCab + 22, hCorpo = H - topoCorpo - hRod, innerH = hCorpo - 2 * PAD;
   // 2) conteúdo da seção, na largura útil do corpo; tabelas longas são cortadas para caber (a tabela completa fica no CSV/Excel)
   el.setAttribute('data-exp-alvo', '1');
   let c, infoTab = null;
@@ -328,7 +328,22 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
           const total = todas.length; todas.slice(0, de).forEach(r => r.remove());
           const rest = todas.slice(de); let n = rest.length;
           const alt = () => alvo.getBoundingClientRect().height;
-          if (alt() > innerH - 40) for (let i = rest.length - 1; i > 2 && alt() > innerH - 40; i--) { rest[i].remove(); n = i; }
+          const tabela = tb.closest('table'), ncol = tabela.querySelectorAll('thead th').length;
+          if (rest.length > 12 && ncol <= 8) {
+            // lista longa (ex.: municípios): linhas menores e duas colunas; 1, 2, 3… descem pela esquerda e a continuação vem na direita
+            // cabem em meia largura: município, mais votado e os dois primeiros percentuais; sem a linha de votos de cada célula
+            const enxuga = r => [...r.children].slice(4).forEach(c => c.remove());
+            tabela.querySelectorAll('thead tr').forEach(enxuga); rest.forEach(enxuga); tabela.querySelectorAll('small').forEach(x => x.remove());
+            tabela.style.cssText += ';font-size:15px'; tabela.querySelectorAll('th').forEach(th => { th.style.fontSize = '12px'; th.style.padding = '5px 7px'; }); tabela.querySelectorAll('td').forEach(td => { td.style.padding = '3px 7px'; td.style.lineHeight = '1.15'; });
+            const stl = doc.createElement('style'); stl.textContent = '.dc2 table{table-layout:fixed!important;width:100%!important}.dc2 td,.dc2 th{overflow:hidden;text-overflow:ellipsis;white-space:nowrap!important}.dc2 tr>:nth-child(1){width:37%!important}.dc2 tr>:nth-child(2){width:23%!important}'; doc.head.appendChild(stl);
+            const wrapD = doc.createElement('div'); wrapD.className = 'dc2'; wrapD.style.cssText = 'display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:26px;align-items:start'; tabela.style.width = '100%';
+            tabela.style.cssText += ';width:100%;min-width:0';
+            const tabB = tabela.cloneNode(true), tbB = tabB.querySelector('tbody'); tbB.replaceChildren();
+            tabela.parentNode.insertBefore(wrapD, tabela); wrapD.append(tabela, tabB);
+            const poe = k => { const h = Math.ceil(k / 2); tb.replaceChildren(...rest.slice(0, h)); tbB.replaceChildren(...rest.slice(h, k)); };
+            n = rest.length; poe(n);
+            while (alt() > innerH - 40 && n > 4) { n -= 2; poe(n); }
+          } else if (alt() > innerH - 40) for (let i = rest.length - 1; i > 2 && alt() > innerH - 40; i--) { rest[i].remove(); n = i; }
           infoTab = { de, n, total };
           if (de > 0 || n < rest.length) {
             const nota = doc.createElement('div'); nota.style.cssText = 'margin-top:10px;font:600 16px system-ui,sans-serif;color:#6f6888;text-align:center';
@@ -351,12 +366,17 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
   g.save(); g.shadowColor = 'rgba(62,52,126,.12)'; g.shadowBlur = 24; g.shadowOffsetY = 8; g.fillStyle = '#fff'; retArred(g, M, topoCorpo, W - 2 * M, hCorpo, 24); g.fill(); g.restore();
   const esc = Math.min(innerW / c.width, innerH / c.height, 1.15 * innerW / c.width), dw = c.width * esc, dh = c.height * esc;
   g.drawImage(c, M + PAD + (innerW - dw) / 2, topoCorpo + PAD + (infoTab ? 0 : (innerH - dh) / 2), dw, dh);
-  // rodapé
-  const yr = H - hRod + 22; g.textAlign = 'center';
-  try { const ic = await carregaImg('img/icone.svg'); g.font = '700 34px "Space Grotesk", system-ui, sans-serif'; const sw = g.measureText('oficinapolitica.com.br').width, tot = 46 + 14 + sw; g.drawImage(ic, W / 2 - tot / 2, yr, 46, 46); g.fillStyle = '#3E347E'; g.textAlign = 'left'; g.fillText('oficinapolitica.com.br', W / 2 - tot / 2 + 60, yr + 35); } catch { g.fillStyle = '#3E347E'; g.font = '700 34px "Space Grotesk", sans-serif'; g.fillText('oficinapolitica.com.br', W / 2, yr + 35); }
+  // rodapé: faixa roxa com QR da página, chamada "Quer ver mais dados?" e o endereço do site em destaque
+  const qr = await criaQR(), by = H - hRod + 16, bh = 150;
+  g.fillStyle = '#3E347E'; retArred(g, M, by, W - 2 * M, bh, 26); g.fill();
+  desenhaQR(g, qr, M + 20, by + 13, bh - 26);
+  const tx = M + 20 + bh - 26 + 30; g.textAlign = 'left'; g.fillStyle = '#fff'; g.font = '700 38px "Space Grotesk", system-ui, sans-serif';
+  const q1 = 'Quer ver ', q2 = 'mais dados', q3 = '?'; g.fillText(q1, tx, by + 62); let xx = tx + g.measureText(q1).width; g.fillStyle = '#F28C1E'; g.fillText(q2, xx, by + 62); xx += g.measureText(q2).width; g.fillStyle = '#fff'; g.fillText(q3, xx, by + 62);
+  g.fillStyle = '#F28C1E'; let fz = 50; g.font = `700 ${fz}px "Space Grotesk", system-ui, sans-serif`; while (g.measureText('oficinapolitica.com.br ›').width > W - M - 20 - tx - 20 && fz > 30) { fz -= 2; g.font = `700 ${fz}px "Space Grotesk", system-ui, sans-serif`; }
+  g.fillText('oficinapolitica.com.br ›', tx, by + 122);
   g.textAlign = 'center'; g.fillStyle = '#6f6888'; g.font = '500 16px "Space Grotesk", system-ui, sans-serif';
   const notaIA = el.dataset.exportNota ? ' ' + el.dataset.exportNota + '.' : '';
-  quebra(g, 'Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.' + notaIA, W - 2 * M - 40).forEach((l, i) => g.fillText(l, W / 2, yr + 78 + i * 22));
+  quebra(g, 'Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.' + notaIA, W - 2 * M - 40).forEach((l, i) => g.fillText(l, W / 2, by + bh + 30 + i * 21));
   cv.info = infoTab;
   return cv;
 }

@@ -1,7 +1,7 @@
 // Regiões do estado (agrupamentos de municípios). Hoje só o RJ tem a lista de municípios por região confirmada.
-import { CAND, fInt, fNum } from './util.js?v=8fd6bd1b';
-import { esc, pcel, tabela, sem } from './ui.js?v=8fd6bd1b';
-import { getJSON } from './tse.js?v=8fd6bd1b';
+import { CAND, fInt, fNum } from './util.js?v=8b975ef5';
+import { esc, pcel, tabela, sem } from './ui.js?v=8b975ef5';
+import { getJSON } from './tse.js?v=8b975ef5';
 
 export const UF_COM_REGIOES = new Set(['rj']);
 export const secaoRegioesUf = (uf, titulo) => UF_COM_REGIOES.has(uf)
