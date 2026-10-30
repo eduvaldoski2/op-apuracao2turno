@@ -12,3 +12,10 @@
 - Preparei documentos de migração, limites e pendências. A refatoração de código ainda NÃO foi implementada; não houve workflow novo, dispatch, download TSE, Parquet real, reconciliação de votos ou Release nesta retomada.
 
 Não foram enviadas mensagens a terceiros. Nenhuma decisão técnica pendente foi apresentada como validação executada. Histórico integral anterior: PR #1, docs/log-municipal-2024.log, SHA-256 e2ab69e1a65f4e4fa9407898bb6f84683147981e74291e36a3980cb51ff29b34. Transferência desse histórico à Release ainda pendente; não foi apagado antes de haver cópia publicada.
+
+## Publicação desta preparação
+
+- Criei branch remoto lake-aquisicao a partir de a15d7c30; publiquei os quatro documentos no commit 475ab7c9faee792b91193b6fd382627a104d6cc5 e abri o PR #2: https://github.com/eduvaldoski2/op-apuracao2turno/pull/2. Árvore API/local idêntica: d2ea06fd0b6ccd3dc9ae334f14bdbfd5a877a672.
+- Criei branch remoto divisoes; publiquei seis arquivos no commit 9739336e3d87c8e869745af215321bbc0a82aa88 e abri o PR #3: https://github.com/eduvaldoski2/op-apuracao2turno/pull/3. Árvore API/local idêntica: 72a1bcffae86ba168412081beabdaf600a32a3fa. Nenhum PR foi mesclado.
+- Validação textual: git diff --check nos documentos; CSVs preservaram CRLF e passaram git -c core.whitespace=cr-at-eol diff --cached --check. O check padrão havia sinalizado CRLF como espaço final, sem mudança de valores.
+- Este adendo registra a publicação via GitHub (create_branch/create_tree/create_commit/update_ref/create_pull_request); a revisão que inclui o próprio adendo fica no histórico do PR. Não houve novos testes, CI eleitoral ou Actions. Próximo bloqueio: obter confirmação direta para merge do PR #1. Os PRs #2/#3 também permanecem para revisão, sem autorização de merge.
