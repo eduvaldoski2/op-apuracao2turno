@@ -1,15 +1,15 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=a8ea6030';
-import { esc, tabela, sem, entenda } from './ui.js?v=a8ea6030';
-import { getFoco } from './foco.js?v=a8ea6030';
-import { kpi } from './views.js?v=a8ea6030';
-import { criarMapa } from './map.js?v=a8ea6030';
-import { criarMapaMun } from './mapamun.js?v=a8ea6030';
-import { getJSON } from './tse.js?v=a8ea6030';
-import { govPainel, govTabelaHtml, govTabelaMontar, senPainel, senTabelaHtml, senTabelaMontar } from './governador.js?v=a8ea6030';
-import { leitura, balao } from './insights.js?v=a8ea6030';
-import { dispersao } from './dispersao.js?v=a8ea6030';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=594c6fcf';
+import { esc, tabela, sem, entenda } from './ui.js?v=594c6fcf';
+import { getFoco } from './foco.js?v=594c6fcf';
+import { kpi } from './views.js?v=594c6fcf';
+import { criarMapa } from './map.js?v=594c6fcf';
+import { criarMapaMun } from './mapamun.js?v=594c6fcf';
+import { getJSON } from './tse.js?v=594c6fcf';
+import { govTopo, govPainel, govTabelaHtml, govTabelaMontar, senPainel, senTabelaHtml, senTabelaMontar } from './governador.js?v=594c6fcf';
+import { leitura, balao } from './insights.js?v=594c6fcf';
+import { dispersao } from './dispersao.js?v=594c6fcf';
 
 let cache = null, formaMapa = 'areas', eixoDisp = 'abst';
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
@@ -96,6 +96,10 @@ function colsTop(T, ref, nomeCol) {
 }
 
 export function viewT1Geral(ctx) {
+  const cg = new URLSearchParams(location.hash.split('?')[1] || '').get('cargo');
+  if (cg === 'gov' || cg === 'sen') { const sen = cg === 'sen';
+    return { html: `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 · ${sen ? 'Senador' : 'Governador'} · TSE</div>${sen ? senTabelaHtml(ctx.S1) : govTabelaHtml(ctx.G1, ctx.snap)}`, titulo: `Brasil — ${sen ? 'Senador' : 'Governador'}`,
+      montar(root) { if (sen) senTabelaMontar(root.querySelector('#tab-sen'), ctx.S1, tabela, ctx.ir); else govTabelaMontar(root.querySelector('#tab-gov'), ctx.G1, ctx.snap, tabela, ctx.ir); } }; }
   const T = ctx.T1, br = dec(T, T.br), fi = idxFoco(T);
   const ufs = UFS.filter(u => T.uf[u[0]]).map(u => ({ id: u[0], nome: UF_NOME[u[0]] || u[0].toUpperCase(), u: dec(T, T.uf[u[0]]) }));
   const cB = fi >= 0 ? fi : T.iL, nomeCB = fi >= 0 ? T.nome(fi) : 'Lula';
@@ -125,6 +129,8 @@ export function viewT1Geral(ctx) {
 export function viewT1Uf(ctx, uf) {
   const T = ctx.T1, B = ctx.B, nomeUf = UF_NOME[uf] || uf.toUpperCase(), fi = idxFoco(T);
   if (!T.uf[uf]) return { html: `<div class="aviso">Estado não encontrado.</div>`, titulo: 'Estado', montar() {} };
+  const cg = new URLSearchParams(location.hash.split('?')[1] || '').get('cargo');
+  if (cg === 'gov' || cg === 'sen') { const sen = cg === 'sen'; return { html: govTopo((sen ? ctx.S1 : ctx.G1)?.uf?.[uf], uf, 1, sen), titulo: `${nomeUf} — ${sen ? 'Senador' : 'Governador'}`, trilha: [['Brasil', `#/t1?cargo=${cg}`], [nomeUf]], montar() {} }; }
   const u = dec(T, T.uf[uf]);
   const nomes = new Map((B.byUf[uf] || []).map(b => [b.cd, b])), cdi = new Map((B.byUf[uf] || []).map(b => [b.cd, String(b.cdi)]));
   const muns = (T.mun[uf] || []).map(r => ({ id: r[0], nome: bonitoNome(nomes.get(r[0])?.nome || r[0]), u: dec(T, r, 1) }));

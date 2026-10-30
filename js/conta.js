@@ -1,7 +1,7 @@
 // Conta do usuário (necessária para a "Pergunte à IA"): criar conta com confirmação por código (e-mail ou WhatsApp), entrar, sair, redefinir a senha e excluir a conta.
 // Quem fala com o servidor é api/conta.php; a sessão fica num cookie HttpOnly (o navegador nunca vê o token).
-import { CONFIG, RAIZ } from './config.js?v=a8ea6030';
-import { esc } from './ui.js?v=a8ea6030';
+import { CONFIG, RAIZ } from './config.js?v=594c6fcf';
+import { esc } from './ui.js?v=594c6fcf';
 
 const ENDPOINT = () => (CONFIG.conta?.endpoint ?? (RAIZ + 'api/conta.php'));
 export const CONTA = { carregado: false, logado: false, usuario: null, cota: null, canais: ['email'], ia_ativa: false, erro: false, google_id: null };

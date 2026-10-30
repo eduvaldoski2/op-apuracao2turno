@@ -1,7 +1,7 @@
 // Governador: resultado por estado no 1º turno (data/gov_1t.json) e no 2º turno (snap.gov, só nos estados com disputa).
 // Os dados vêm do TSE (eleição estadual 6259/6260, cargo 3) e são independentes da disputa presidencial.
-import { UF_NOME, fInt, fNum, clamp } from './util.js?v=a8ea6030';
-import { esc } from './ui.js?v=a8ea6030';
+import { UF_NOME, fInt, fNum, clamp } from './util.js?v=594c6fcf';
+import { esc } from './ui.js?v=594c6fcf';
 
 const COR = ['#3E347E', '#D9741A', '#1b8a6b', '#b3367a', '#2b6cb0', '#8a6d00', '#6b7280', '#a3261a', '#4b5fa8', '#9a5b13', '#2f7d3a', '#7a3fa0'];
 export const nomeP = t => String(t || '').toLowerCase().replace(/(^|[\s\-(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
@@ -52,7 +52,7 @@ export function govTabelaMontar(el, G, snap, tabela, ir) {
     { k: 'pb', t: '%', h: x => `${fNum(x.b.p, 2)}%`, v: x => x.b.p, cls: 'n sec' },
     { k: 'sit', t: 'Situação', h: x => x.dec ? '<span class="gv-sel">Eleito no 1º turno</span>' : `<span class="gv-sel gv-2t">${esc(x.sit)}</span>`, v: x => x.dec, x: x => x.sit },
   ];
-  tabela(el, { cols, rows, onRow: x => ir(`#/t1/uf/${x.id}`), sort: 'nome', dir: 'asc' });
+  tabela(el, { cols, rows, onRow: x => ir(`#/t1/uf/${x.id}?cargo=gov`), sort: 'nome', dir: 'asc' });
 }
 
 // Senador, 1º turno (2026: duas vagas por estado; os dois mais votados são eleitos, não há 2º turno)
@@ -72,4 +72,18 @@ export function senTabelaMontar(el, S, tabela, ir) {
     { k: 'b', t: '2º eleito(a)', h: x => cel(x.b), v: x => x.b?.p ?? 0, x: x => x.b?.nm || '', cls: 'sec' },
   ];
   tabela(el, { cols, rows, onRow: x => ir(`#/t1/uf/${x.id}?cargo=sen`), sort: 'nome', dir: 'asc' });
+}
+
+// Topo no estilo das fichas do presidente, mas com os candidatos ao governo (ou ao Senado) do estado
+export function govTopo(g, uf, turno, sen = false) {
+  if (!g || !g.cand?.length) return `<div class="aviso">Sem dados de ${sen ? 'senador' : 'governador'} para este estado.</div>`;
+  const cargo = sen ? 'Senador' : 'Governador', cand = g.cand, vv = cand.reduce((a, c) => a + c.v, 0);
+  const rotulo = `${UF_NOME[uf]} · ${cargo} · ${turno}º turno`;
+  const barra = cand.map((c, i) => `<i style="width:${clamp(c.p, 0, 100)}%;background:${COR[i % COR.length]}" title="${esc(nomeP(c.nm))} ${fNum(c.p, 2)}%"></i>`).join('');
+  const fichas = cand.map((c, i) => { const cor = COR[i % COR.length], sel = eleitoC(c) ? 'Eleito(a)' : (/2º turno/i.test(c.st || '') ? 'Foi ao 2º turno' : '');
+    return `<div class="ficha" style="--c:${cor}"><span class="pos-rank">${i + 1}º</span><div class="ficha-topo"><span class="ficha-num">${esc(c.n)}</span><div class="ficha-id"><div class="ficha-nome">${esc(nomeP(c.nm))}</div><div class="ficha-part">${esc(c.sg)}</div></div></div><div class="ficha-pct">${fNum(c.p, 2)}%</div><div class="ficha-votos"><b>${fInt(c.v)}</b> votos</div><div class="ficha-rodape">${sel ? `<span class="selo-2t">${sel}</span>` : '<span></span>'}<span></span></div></div>`; }).join('');
+  const pst = govPst(g), fim = pst >= 99.995, ab = g.te ? 100 * g.a / g.te : 0, bn = g.c ? 100 * (g.vb + g.tvn) / g.c : 0;
+  return `<section class="painel resumo"><div class="centro-t">${esc(rotulo)}</div><div class="barra2" role="img" aria-label="Votos válidos por candidato">${barra}</div><div class="resumo-t"><span><b>${fInt(g.vv || vv)}</b> votos válidos</span><span>${fim ? '100% das seções apuradas' : fNum(pst, 2) + '% das seções apuradas (parcial)'}</span></div></section>
+  <section class="fichas" aria-label="Candidatos">${fichas}</section>
+  <p class="sub" style="margin:8px 4px">Abstenção: ${fNum(ab, 2)}% · Brancos e nulos: ${fNum(bn, 2)}%.${sen ? ' Eleição de 2 vagas: cada eleitor votou em até dois candidatos; os percentuais são sobre o total de votos válidos para senador.' : ''} Mapa e tabelas por município deste cargo estão em preparação.</p>`;
 }
