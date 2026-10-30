@@ -8,7 +8,7 @@ const destino = process.argv[2] || 'data/dep_1t';
 const cnt = x => { const n = Number(String(x ?? '').replace(/\./g, '').replace(',', '.')); return Number.isFinite(n) ? n : 0; };
 const ufs = UF_IDS.filter(u => u !== 'zz');
 const pad6 = n => String(n).padStart(6, '0'), ele = TSE.eleGov[1];
-const url = (uf, cargo) => `${TSE.base}/${TSE.ciclo}/${ele}/dados/${uf}/${uf}-c${cargo}-e${pad6(ele)}-u.json`;
+const url = (uf, cargo) => `${TSE.base}/${TSE.ciclo}/${ele}/dados/${uf}/${uf}-c${uf === 'df' && cargo === '0007' ? '0008' : cargo}-e${pad6(ele)}-u.json`;   // no DF o cargo estadual é Deputado Distrital (0008)
 function parse(j) {
   const grupos = [];
   (function w(n) {
