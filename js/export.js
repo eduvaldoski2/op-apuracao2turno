@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=2792a339';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=2792a339';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=152c678e';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=152c678e';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -340,7 +340,7 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
           const poe1 = k => lst.replaceChildren(...rest.slice(0, k));
           poe1(n1); if (!forca2) while (!cabe() && n1 > 3) { n1--; poe1(n1); }
           n = n1;
-          if (forca2 || (n1 < rest.length && rest.length > 8)) {
+          if (forca2 || (n1 < rest.length && (rest.length > 8 || lst.classList.contains('gv-lista')))) {
             lst.classList.add('xl-2'); lst.style.display = 'grid'; const A = doc.createElement('div'), B = doc.createElement('div');
             const poe2 = k => { const h = Math.ceil(k / 2); A.replaceChildren(...rest.slice(0, h)); B.replaceChildren(...rest.slice(h, k)); lst.replaceChildren(A, B); };
             let n2 = rest.length; poe2(n2); while (!cabe() && n2 > 4) { n2 -= 2; poe2(n2); }
