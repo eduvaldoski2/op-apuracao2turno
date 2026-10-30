@@ -1,9 +1,10 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=0372e8a8';
-import { esc, tabela, sem } from './ui.js?v=0372e8a8';
-import { getJSON } from './tse.js?v=0372e8a8';
-import { nomeP } from './governador.js?v=0372e8a8';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=0372e8a8';
+import { UF_NOME, fInt, fNum } from './util.js?v=2349f143';
+import { esc, tabela, sem } from './ui.js?v=2349f143';
+import { getJSON } from './tse.js?v=2349f143';
+import { nomeP } from './governador.js?v=2349f143';
+import { criarMapaMun } from './mapamun.js?v=2349f143';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=2349f143';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -30,6 +31,7 @@ export function viewDepBrasil(ctx, tipo) {
   } };
 }
 
+const bonito = s => String(s || '').toLowerCase().replace(/(^|[\s\-\/(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E|Em) /g, x => x.toLowerCase());
 const SIGLA = { PCDOB: 'PCdoB' };
 const sgTxt = sg => SIGLA[String(sg).toUpperCase()] || sg;
 // ordem de exibição dos partidos de uma federação (a PT/PCdoB/PV é sempre nessa ordem)
@@ -129,8 +131,16 @@ function candidato(ctx, el, { g, uf, tipo, cargo, nomeUf, base, vv, sit, todos, 
   getJSON(`data/dep_mun/${ARQ[tipo][0]}/${uf}.json`, { retries: 1 }).then(M => {
     const v = M.c?.[c.n]; const sec = el.querySelector('#cd-mun');
     if (!v) { sec.innerHTML = '<h2>Votação por região e município</h2><p class="aviso">A votação por município deste candidato ainda não está disponível.</p>'; return; }
-    const rows = Object.entries(v).map(([cd, n]) => ({ cd, nome: M.m[cd] || cd, v: n, pc: c.v ? 100 * n / c.v : 0 })).sort((a, b) => b.v - a.v);
-    sec.innerHTML = `<h2>Votação por município</h2><p class="sub">${fInt(rows.length)} municípios com votos · ${fInt(c.v)} votos no estado.</p><div id="cd-tab"></div>`;
+    const rows = Object.entries(v).map(([cd, n]) => ({ cd, nome: bonito(M.m[cd] || cd), v: n, pc: c.v ? 100 * n / c.v : 0 })).sort((a, b) => b.v - a.v);
+    sec.innerHTML = `<h2>Votação por município</h2><p class="sub">${fInt(rows.length)} municípios com votos · ${fInt(c.v)} votos no estado. Quanto mais escuro, mais votos o candidato teve no município.</p><div id="cd-mapa"></div><div id="cd-tab"></div>`;
+    const bm = ctx.B?.byUf?.[uf] || [], cdi = new Map(bm.map(b => [b.cd, String(b.cdi)])), max = Math.max(1, ...rows.map(r => r.v));
+    const mix = (t) => { const a = [238, 240, 247], b = [parseInt(cor.slice(1, 3), 16), parseInt(cor.slice(3, 5), 16), parseInt(cor.slice(5, 7), 16)]; return '#' + a.map((x, i) => Math.round(x + (b[i] - x) * t).toString(16).padStart(2, '0')).join(''); };
+    if (uf !== 'df') getJSON(`data/mapa_mun/${uf}.json`, { retries: 1 }).then(geo => {
+      const porIbge = new Map(rows.map(r => [cdi.get(r.cd), r])), alvo = sec.querySelector('#cd-mapa'); if (!alvo) return;
+      for (const [id, gm] of Object.entries(geo.muns)) { const r = porIbge.get(id); if (r) gm.n = r.nome; }
+      const mp = criarMapaMun(alvo, geo, { tooltip: id => { const r = porIbge.get(id); return r ? `<b>${esc(r.nome)}</b><br>${fInt(r.v)} votos` : ''; } });
+      mp.atualizar(Object.fromEntries(rows.filter(r => cdi.get(r.cd)).map(r => [cdi.get(r.cd), { k: 1, pw: 1, fill: mix(.12 + .88 * Math.sqrt(r.v / max)), lab: '' }])));
+    }).catch(() => {});
     tabela(sec.querySelector('#cd-tab'), { cols: [
       { k: 'pos', t: '#', h: (x, i) => '', v: x => 0, cls: 'n' },
       { k: 'nome', t: 'Município', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, x: x => x.nome, ini: 'asc' },
