@@ -12,7 +12,7 @@ $IA_MODELO = 'claude-haiku-5-5';   // mais barato e rápido; use 'claude-sonnet-
 // Entrar com o Google (opcional): ID do cliente OAuth criado em console.cloud.google.com (APIs e serviços > Credenciais > ID do cliente OAuth > Aplicativo da Web),
 // com as origens JavaScript autorizadas https://oficinapolitica.com.br e https://www.oficinapolitica.com.br. Em branco = o botão não aparece.
 $GOOGLE_CLIENT_ID = '';
-// Contas e pergunta à IA (versão de testes em /apuracao-2t-2026/teste/). Deixe false para manter os dois endpoints desligados.
+// Contas e pergunta à IA (versão de testes em /resultados/teste/). Deixe false para manter os dois endpoints desligados.
 $CONTA_ATIVA = false;
 $IA_COTA = ['usuario_mes' => 15, 'usuario_dia' => 5, 'orcamento_mes_usd' => 20.0, 'preco_in_usd_mtok' => 0.10, 'preco_out_usd_mtok' => 0.50];
 // Contas (api/conta.php). O cadastro exige confirmar o contato por código de 6 dígitos.

@@ -1,10 +1,10 @@
 // Consentimento de cookies (LGPD): Google Analytics 4, Meta Pixel e Google Ads só são carregados depois do "aceitar" do visitante.
 // Sem GA4/pixel/ID configurado em CONFIG (analytics.ga4, anuncios) e sem formulário de leads, este módulo não faz nada (nenhum banner aparece).
 // A medição de uso do painel (js/metricas.js) é anônima e sem cookies, e não depende deste consentimento.
-import { CONFIG } from './config.js?v=6a3e94fc';
+import { CONFIG } from './config.js?v=d3d04002';
 
 const KEY = 'op_consent', VERSAO = 1;
-const RAIZ_PAG = /\/apuracao-2t-2026\//.test(location.pathname) ? '/' : '';   // a política fica na raiz do site
+const RAIZ_PAG = /\/(resultados|apuracao-2t-2026)\//.test(location.pathname) ? '/' : '';   // a política fica na raiz do site
 const A = CONFIG.anuncios || {}, meta = A.meta?.pixel || '', goog = A.google?.id || '', GA = CONFIG.analytics?.ga4 || '';
 const q = new URLSearchParams(location.search);
 const gpc = () => navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';

@@ -3,7 +3,7 @@
   "short_name": "OP Apuração",
   "description": "Apuração do 2º turno 2026 (presidente) ao vivo, com mapas, projeção e comparação com o 1º turno.",
   "lang": "pt-BR",
-  "start_url": "/apuracao-2t-2026/?origem=app",
+  "start_url": "/resultados/?origem=app",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",
@@ -29,5 +29,5 @@
       "purpose": "maskable"
     }
   ],
-  "id": "/apuracao-2t-2026/"
+  "id": "/resultados/"
 }

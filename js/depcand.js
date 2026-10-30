@@ -1,12 +1,12 @@
 // Página do candidato (deputado): descida estado > região > município > região do município > bairro > local de votação > seção.
 // Os quadros de números acompanham o nível em que a pessoa está. Dados: data/dep_mun (por município), data/dep_sec (por seção),
 // data/bairros (locais de votação), data/bairros_geo (limites), data/regioes_uf (regiões do estado).
-import { fInt, fNum } from './util.js?v=6a3e94fc';
-import { esc, tabela, sem } from './ui.js?v=6a3e94fc';
-import { getJSON } from './tse.js?v=6a3e94fc';
-import { criarMapaMun } from './mapamun.js?v=6a3e94fc';
-import { criarMapaBairros } from './mapabairros.js?v=6a3e94fc';
-import { criarMapaPontos } from './mapapontos.js?v=6a3e94fc';
+import { fInt, fNum } from './util.js?v=d3d04002';
+import { esc, tabela, sem } from './ui.js?v=d3d04002';
+import { getJSON } from './tse.js?v=d3d04002';
+import { criarMapaMun } from './mapamun.js?v=d3d04002';
+import { criarMapaBairros } from './mapabairros.js?v=d3d04002';
+import { criarMapaPontos } from './mapapontos.js?v=d3d04002';
 
 const cache = new Map(), pega = (u, o) => { if (!cache.has(u)) cache.set(u, getJSON(u, o).catch(e => { cache.delete(u); throw e; })); return cache.get(u); };
 
