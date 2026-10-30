@@ -1,9 +1,9 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=e9d27821';
-import { esc, tabela, sem } from './ui.js?v=e9d27821';
-import { getJSON } from './tse.js?v=e9d27821';
-import { nomeP } from './governador.js?v=e9d27821';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=e9d27821';
+import { UF_NOME, fInt, fNum } from './util.js?v=0372e8a8';
+import { esc, tabela, sem } from './ui.js?v=0372e8a8';
+import { getJSON } from './tse.js?v=0372e8a8';
+import { nomeP } from './governador.js?v=0372e8a8';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=0372e8a8';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -30,55 +30,112 @@ export function viewDepBrasil(ctx, tipo) {
   } };
 }
 
-const chipP = (href, sg, n, on, cor, logo = '') => `<a class="chip-p${on ? ' on' : ''}" href="${href}" style="--pc:${cor};--pt:${corTextoSobre(cor)}">${logo}${esc(sg)} <small>${n}</small></a>`;
+const SIGLA = { PCDOB: 'PCdoB' };
+const sgTxt = sg => SIGLA[String(sg).toUpperCase()] || sg;
+// ordem de exibição dos partidos de uma federação (a PT/PCdoB/PV é sempre nessa ordem)
+const ORDEM_FED = [['PT', 'PCDOB', 'PV']];
+const ordenaPar = par => { const ch = par.map(p => String(p.sg).toUpperCase()); const o = ORDEM_FED.find(l => l.length === ch.length && l.every(x => ch.includes(x))); return o ? o.map(x => par[ch.indexOf(x)]) : par; };
+const nomeGrupo = x => x.tp === 'f' ? ordenaPar(x.par).map(p => sgTxt(p.sg)).join('/') : sgTxt(x.par[0].sg);
+const chipP = (href, rot, n, on, cor, bg = '', extra = '') => `<a class="chip-p${on ? ' on' : ''}${extra}" href="${href}" style="--pc:${cor};--pt:${corTextoSobre(cor)}${bg ? `;--bg:${bg}` : ''}">${rot}${n != null ? ` <small>${n}</small>` : ''}</a>`;
 const stat = (t, v, s = '') => `<div class="dp-k"><div>${esc(t)}</div><b>${v}</b>${s ? `<small>${s}</small>` : ''}</div>`;
+const ordinal = n => `${n}º`;
+
+// situação de cada candidato: eleito; suplente na ordem de votos do agrupamento (1º, 2º…); sem cadeira no agrupamento = não eleito
+function situacoes(g) {
+  const mapa = new Map();
+  for (const gr of g.grupos) {
+    const ele = eleitosDe(gr), todos = gr.par.flatMap(p => p.cand.map(c => ({ c, sg: p.sg }))).sort((a, b) => b.c.v - a.c.v);
+    let sup = 0;
+    for (const { c, sg } of todos) {
+      let t;
+      if (c.e) t = c.st && /m[eé]dia/i.test(c.st) ? 'Eleito(a) por média' : 'Eleito(a)';
+      else if (ele > 0 && /suplente/i.test(c.st)) t = `${++sup}º suplente`;
+      else t = 'Não eleito';
+      mapa.set(c.n + '|' + sg, { t, k: c.e ? 'e' : /suplente/.test(t) ? 's' : 'n' });
+    }
+  }
+  return mapa;
+}
+const seloSit = s => `<span class="sit sit-${s.k}">${esc(s.t)}</span>`;
 
 export function viewDepUf(ctx, uf, tipo) {
-  const [, cargo] = ARQ[tipo], nomeUf = UF_NOME[uf] || uf.toUpperCase(), F = qs().get('f') || '', P = qs().get('p') || '';
+  const [, cargo] = ARQ[tipo], nomeUf = UF_NOME[uf] || uf.toUpperCase(), F = qs().get('f') || '', P = qs().get('p') || '', C = qs().get('c') || '';
   const html = `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 · ${esc(cargo)} · ${esc(nomeUf)} · TSE</div><div id="dep-corpo"><p class="carregando">Carregando…</p></div>`;
-  return { html, titulo: `${nomeUf} — ${cargo}`, trilha: [['Brasil', `#/t1?cargo=${tipo}`], [nomeUf]], montar(root) {
+  return { html, titulo: `${nomeUf} — ${cargo}`, trilha: [['Brasil', `#/t1?cargo=${tipo}`], [nomeUf, C ? `#/t1/uf/${uf}?cargo=${tipo}` : undefined].filter(x => x !== undefined)], montar(root) {
     carregarDep(tipo).then(D => {
       const g = D.uf[uf], el = root.querySelector('#dep-corpo');
       if (!g) { el.innerHTML = `<div class="aviso">Sem dados de ${esc(cargo.toLowerCase())} para este estado.</div>`; return; }
       const base = `#/t1/uf/${uf}?cargo=${tipo}`, vv = g.vv || g.grupos.reduce((a, x) => a + x.tn + x.tl, 0);
+      const sit = situacoes(g), todos = todosCand(g).sort((a, b) => b.v - a.v), posG = new Map(todos.map((c, i) => [c.n + '|' + c.sg, i + 1]));
+      if (C) return candidato(ctx, el, { g, uf, tipo, cargo, nomeUf, base, vv, sit, todos, posG, C });
       const grupos = g.grupos.slice().sort((a, b) => eleitosDe(b) - eleitosDe(a) || (b.tn + b.tl) - (a.tn + a.tl));
       const gr = grupos.find(x => x.n === F), pt = gr?.par.find(x => x.sg === P) || (P && !gr ? g.grupos.flatMap(x => x.par).find(x => x.sg === P) : null);
       const grDoP = pt && !gr ? g.grupos.find(x => x.par.includes(pt)) : gr;
-      // 1ª fila: Todos + federações e partidos isolados
-      const gcor = x => x.tp === 'f' ? `linear-gradient(90deg,${x.par.map(p => corPartido(p.sg)).join(',')})` : corPartido(x.par[0].sg);
-      const chipsG = [`<a class="chip-p${!grDoP ? ' on' : ''}" href="${base}" style="--pc:#3E347E;--pt:#fff">Todos</a>`, ...grupos.map(x => {
-        const on = grDoP?.n === x.n, cor = x.tp === 'f' ? corPartido(x.par[0].sg) : corPartido(x.par[0].sg), bg = x.tp === 'f' ? gcor(x) : cor;
-        return `<a class="chip-p${on ? ' on' : ''}${x.tp === 'f' ? ' fed' : ''}" href="${base}&f=${encodeURIComponent(x.n)}" style="--pc:${cor};--pt:${corTextoSobre(cor)};--bg:${bg}" title="${esc(x.nm)}">${x.par.map(p => logoP(p.sg)).join('')}${x.tp === 'f' ? 'Fed. ' : ''}${esc(x.tp === 'f' ? x.com.replace(/ \/ /g, '/') : x.par[0].sg)} <small>${eleitosDe(x)}</small></a>`; })].join('');
+      // quadro do estado (no começo)
+      const eleTot = grupos.reduce((a, x) => a + eleitosDe(x), 0), tn = grupos.reduce((a, x) => a + x.tn, 0), tl = grupos.reduce((a, x) => a + x.tl, 0), comp = g.c || 0;
+      const quadro = `<section class="painel resumo"><div class="centro-t">${esc(nomeUf)} · ${esc(cargo)} · 1º turno</div><div class="dp-ks dp-ks6">${stat('Cadeiras', fInt(g.vagas || eleTot), `${fInt(todos.length)} candidatos`)}${stat('Votos válidos', fInt(vv), comp ? `${fNum(100 * vv / comp, 1)}% dos comparecidos` : '')}${stat('Nominais', fInt(tn), `${fNum(vv ? 100 * tn / vv : 0, 1)}% dos válidos`)}${stat('Legenda', fInt(tl), `${fNum(vv ? 100 * tl / vv : 0, 1)}% dos válidos`)}${stat('Brancos', fInt(g.vb || 0), comp ? `${fNum(100 * (g.vb || 0) / comp, 1)}%` : '')}${stat('Nulos', fInt(g.tvn || 0), comp ? `${fNum(100 * (g.tvn || 0) / comp, 1)}%` : '')}</div>${g.qe ? `<p class="sub" style="margin:8px 0 0">Quociente eleitoral: <b>${fInt(g.qe)}</b> votos por cadeira.</p>` : ''}</section>`;
+      // 1ª fila: Todos + federações e partidos isolados (cores dos partidos, sem logos)
+      const gcor = x => x.tp === 'f' ? `linear-gradient(90deg,${ordenaPar(x.par).map(p => corPartido(p.sg)).join(',')})` : corPartido(x.par[0].sg);
+      const chipsG = [chipP(base, 'Todos', null, !grDoP, '#3E347E'), ...grupos.map(x => {
+        const cor = corPartido(ordenaPar(x.par)[0].sg);
+        return chipP(`${base}&f=${encodeURIComponent(x.n)}`, `${x.tp === 'f' ? 'Fed. ' : ''}${esc(nomeGrupo(x))}`, eleitosDe(x), grDoP?.n === x.n, cor, x.tp === 'f' ? gcor(x) : cor, x.tp === 'f' ? ' fed' : '');
+      })].join('');
       // 2ª fila: partidos da federação escolhida
-      const chipsP = grDoP && grDoP.tp === 'f' ? `<div class="chips-p" style="margin-top:10px"><span class="chips-t">Partidos da federação:</span>${chipP(`${base}&f=${encodeURIComponent(grDoP.n)}`, 'Federação inteira', eleitosDe(grDoP), !pt, '#3E347E')}${grDoP.par.map(p => chipP(`${base}&f=${encodeURIComponent(grDoP.n)}&p=${encodeURIComponent(p.sg)}`, p.sg, eleitosDe(p), pt === p, corPartido(p.sg), logoP(p.sg))).join('')}</div>` : '';
-      // painel de votação do recorte
-      const alvo = pt || grDoP, lista = (alvo ? candDe(alvo) : todosCand(g)).map(c => ({ ...c, sg: c.sg || pt?.sg })).sort((a, b) => b.v - a.v);
-      let painel;
+      const chipsP = grDoP && grDoP.tp === 'f' ? `<div class="chips-p" style="margin-top:10px"><span class="chips-t">Partidos da federação:</span>${chipP(`${base}&f=${encodeURIComponent(grDoP.n)}`, 'Todos da federação', eleitosDe(grDoP), !pt, '#3E347E')}${ordenaPar(grDoP.par).map(p => chipP(`${base}&f=${encodeURIComponent(grDoP.n)}&p=${encodeURIComponent(p.sg)}`, esc(sgTxt(p.sg)), eleitosDe(p), pt === p, corPartido(p.sg))).join('')}</div>` : '';
+      // painel do recorte (partido ou federação)
+      const alvo = pt || grDoP;
+      let lista = todos;
+      if (grDoP) lista = todos.filter(c => (pt ? c.sg === pt.sg : c.gr === grDoP.n));
+      let painel = '';
       if (alvo) {
-        const tn = alvo.tn, tl = alvo.tl, tot = tn + tl, ele = eleitosDe(alvo), nome = alvo.par ? (alvo.tp === 'f' ? `Federação ${alvo.com}` : alvo.par[0].nm || alvo.par[0].sg) : (alvo.nm || alvo.sg);
-        const vagas = alvo.par ? alvo.vag : null;
-        painel = `<section class="painel dp-pn"><div class="dp-logos">${(alvo.par || [alvo]).map(p => logoP(p.sg, 'lg-g')).join('')}</div><h2>${esc(nome)}</h2><p class="sub">${esc(nomeUf)} · ${esc(cargo)} · votação do ${alvo.par && alvo.tp === 'f' ? 'agrupamento' : pt ? 'partido' : 'partido'}</p>
-          <div class="dp-bar"><i style="width:${tot ? 100 * tn / tot : 0}%;background:${corPartido((pt || alvo.par?.[0] || alvo).sg)}"></i><i style="width:${tot ? 100 * tl / tot : 0}%;background:${corPartido((pt || alvo.par?.[0] || alvo).sg)};opacity:.4"></i></div>
-          <div class="dp-leg"><span><i></i>Nominais</span><span><i class="l"></i>Legenda</span></div>
-          <div class="dp-ks">${stat('Votos totais', fInt(tot), `${fNum(vv ? 100 * tot / vv : 0, 2)}% dos válidos`)}${stat('Nominais', fInt(tn), `${fNum(tot ? 100 * tn / tot : 0, 1)}% do total`)}${stat('Legenda', fInt(tl), `${fNum(tot ? 100 * tl / tot : 0, 1)}% do total`)}${stat('Eleitos', fInt(ele), vagas != null && alvo.tp === 'f' ? `cadeiras da federação: ${fInt(vagas)}` : `de ${fInt(lista.length)} candidatos`)}</div>${g.qe ? `<p class="sub" style="margin-top:6px">Quociente eleitoral do estado: ${fInt(g.qe)} votos por cadeira (${fInt(g.vagas)} cadeiras).</p>` : ''}</section>`;
-      } else {
-        const ele = grupos.reduce((a, x) => a + eleitosDe(x), 0), tn = grupos.reduce((a, x) => a + x.tn, 0), tl = grupos.reduce((a, x) => a + x.tl, 0);
-        painel = `<section class="painel resumo"><div class="centro-t">${esc(nomeUf)} · ${esc(cargo)} · 1º turno</div><div class="resumo-t"><span><b>${fInt(ele)}</b> eleitos · <b>${fInt(lista.length)}</b> candidatos</span><span>${fInt(vv)} votos válidos</span></div><p class="sub" style="margin:6px 0 0">Nominais: <b>${fInt(tn)}</b> · Legenda: <b>${fInt(tl)}</b>${g.qe ? ` · Quociente eleitoral: <b>${fInt(g.qe)}</b>` : ''}</p></section>`;
+        const tn2 = alvo.tn, tl2 = alvo.tl, tot = tn2 + tl2, ele = eleitosDe(alvo), ehFed = !!alvo.par;
+        const nome = ehFed ? (alvo.tp === 'f' ? `Federação ${nomeGrupo(alvo)}` : alvo.par[0].nm || sgTxt(alvo.par[0].sg)) : (alvo.nm || sgTxt(alvo.sg));
+        const logos = ehFed ? ordenaPar(alvo.par).map(p => `<a href="${base}&f=${encodeURIComponent(alvo.n)}&p=${encodeURIComponent(p.sg)}" title="Ver só ${esc(sgTxt(p.sg))}">${logoP(p.sg, 'lg-g')}</a>`).join('') : logoP(alvo.sg, 'lg-g');
+        painel = `<section class="painel dp-pn"><div class="dp-logos">${logos}</div><h2>${esc(nome)}</h2><p class="sub">${esc(nomeUf)} · ${esc(cargo)} · votação ${ehFed && alvo.tp === 'f' ? 'da federação' : 'do partido'}</p>
+          <div class="dp-ks">${stat('Votos totais', fInt(tot), `${fNum(vv ? 100 * tot / vv : 0, 2)}% dos válidos`)}${stat('Nominais', fInt(tn2), `${fNum(tot ? 100 * tn2 / tot : 0, 1)}% do total`)}${stat('Legenda', fInt(tl2), `${fNum(tot ? 100 * tl2 / tot : 0, 1)}% do total`)}${stat('Eleitos', fInt(ele), ehFed && alvo.tp === 'f' ? `cadeiras da federação: ${fInt(alvo.vag)}` : `de ${fInt(lista.length)} candidatos`)}</div></section>`;
       }
-      const titulo = pt ? `Candidatos de ${esc(pt.sg)}` : grDoP ? `Candidatos ${grDoP.tp === 'f' ? 'da federação' : 'de ' + esc(grDoP.par[0].sg)}` : 'Todos os candidatos';
-      el.innerHTML = `<section class="painel"><h2>Federações e partidos</h2><p class="sub">O número ao lado da sigla é a quantidade de eleitos. Federações têm a faixa com as cores dos partidos; escolha uma para ver cada partido dela.</p><div class="chips-p">${chipsG}</div>${chipsP}</section>
+      const titulo = pt ? `Candidatos de ${esc(sgTxt(pt.sg))}` : grDoP ? `Candidatos ${grDoP.tp === 'f' ? 'da federação' : 'de ' + esc(sgTxt(grDoP.par[0].sg))}` : 'Todos os candidatos';
+      el.innerHTML = `${quadro}
+      <section class="painel"><h2>Federações e partidos</h2><p class="sub">O número ao lado da sigla é a quantidade de eleitos. Federações têm a faixa com as cores dos partidos; escolha uma para ver cada partido dela.</p><div class="chips-p">${chipsG}</div>${chipsP}</section>
       ${painel}
-      <section class="painel"><h2>${titulo}: ${fInt(lista.length)}</h2><p class="sub">Ordenados por votos. Clique nos títulos para reordenar.</p><div id="tab-dc"></div></section>`;
-      const pos = new Map(todosCand(g).sort((a, b) => b.v - a.v).map((c, i) => [c.n + c.sg, i + 1]));
-      const rows = lista.map(c => ({ ...c, pos: pos.get(c.n + c.sg), pc: vv ? 100 * c.v / vv : 0 }));
+      <section class="painel"><h2>${titulo}: ${fInt(lista.length)}</h2><p class="sub">Ordenados por votos. Toque no nome para ver a votação do candidato.</p><div id="tab-dc"></div></section>`;
+      const rows = lista.map(c => ({ ...c, pos: posG.get(c.n + '|' + c.sg), pc: vv ? 100 * c.v / vv : 0, sit: sit.get(c.n + '|' + c.sg) }));
+      const href = x => `${base}&c=${encodeURIComponent(x.n)}${x.gr && grDoP ? '' : ''}`;
       const cols = [
-        { k: 'pos', t: '#', h: x => `${x.pos}º`, v: x => x.pos, cls: 'n' },
-        { k: 'nm', t: 'Candidato', h: x => `<b>${esc(nomeP(x.nm))}</b> <small><span class="dot-p" style="background:${corPartido(x.sg)}"></span>${logoP(x.sg, 'lg-m')}${esc(x.sg)} · ${esc(x.n)}</small>${x.e ? ' <span class="gv-sel">Eleito(a)</span>' : ''}`, v: x => x.nm, x: x => x.nm },
+        { k: 'pos', t: '#', h: x => ordinal(x.pos), v: x => x.pos, cls: 'n' },
+        { k: 'nm', t: 'Candidato', h: x => `<a class="dc-nome" href="${href(x)}"><b>${esc(nomeP(x.nm))}</b></a><small class="dc-n">${esc(x.n)}<span class="dc-pm"> · <span class="dc-p" style="--pc:${corPartido(x.sg)};--pt:${corTextoSobre(corPartido(x.sg))}">${esc(sgTxt(x.sg))}</span></span></small>`, v: x => x.nm, x: x => x.nm },
+        { k: 'sg', t: 'Partido', cls: 'sec', h: x => `<span class="dc-p" style="--pc:${corPartido(x.sg)};--pt:${corTextoSobre(corPartido(x.sg))}">${esc(sgTxt(x.sg))}</span>`, v: x => x.sg, x: x => x.sg },
         { k: 'v', t: 'Votos', h: x => fInt(x.v), v: x => x.v, cls: 'n' },
         { k: 'pc', t: '%', h: x => fNum(x.pc, 2) + '%', v: x => x.pc, x: x => x.pc, cls: 'n sec' },
+        { k: 'sit', t: 'Situação', h: x => seloSit(x.sit), v: x => x.sit.k === 'e' ? 0 : x.sit.k === 's' ? 1 : 2, x: x => x.sit.t },
       ];
-      tabela(el.querySelector('#tab-dc'), { cols, rows, sort: 'pos', dir: 'asc', filtro: (x, q) => sem(x.nm).includes(q), limite: 300 });
-      ctx.csv = () => ({ nome: `${uf}_${tipo}_1turno`, cab: ['Posição', 'Candidato', 'Partido', 'Número', 'Votos', '% votos válidos', 'Situação'], linhas: rows.map(x => [x.pos, x.nm, x.sg, x.n, x.v, x.pc.toFixed(2), x.st]) });
+      tabela(el.querySelector('#tab-dc'), { cols, rows, onRow: x => ctx.ir(href(x)), sort: 'pos', dir: 'asc', filtro: (x, q) => sem(x.nm).includes(q) || x.n.includes(q) || sem(x.sg).includes(q), limite: 300 });
+      ctx.csv = () => ({ nome: `${uf}_${tipo}_1turno`, cab: ['Posição', 'Candidato', 'Partido', 'Número', 'Votos', '% votos válidos', 'Situação'], linhas: rows.map(x => [x.pos, x.nm, x.sg, x.n, x.v, x.pc.toFixed(2), x.sit.t]) });
     }).catch(e => { console.error('dep', e); root.querySelector('#dep-corpo').innerHTML = '<p class="aviso">Dados ainda indisponíveis. Tente de novo em instantes.</p>'; });
   } };
+}
+
+// página do candidato: posição geral, posição no partido/federação e votação por município (quando coletada)
+function candidato(ctx, el, { g, uf, tipo, cargo, nomeUf, base, vv, sit, todos, posG, C }) {
+  const c = todos.find(x => x.n === C);
+  if (!c) { el.innerHTML = `<div class="aviso">Candidato não encontrado neste estado. <a href="${base}">Voltar à lista</a></div>`; return; }
+  const gr = g.grupos.find(x => x.n === c.gr), mesmoGr = todos.filter(x => x.gr === c.gr), mesmoP = todos.filter(x => x.sg === c.sg);
+  const pGr = mesmoGr.findIndex(x => x.n === c.n && x.sg === c.sg) + 1, pP = mesmoP.findIndex(x => x.n === c.n) + 1, s = sit.get(c.n + '|' + c.sg), cor = corPartido(c.sg);
+  const ehFed = gr.tp === 'f';
+  el.innerHTML = `<section class="painel cd-topo" style="--pc:${cor}"><div class="cd-id">${logoP(c.sg, 'lg-g')}<div><h2>${esc(nomeP(c.nm))}</h2><p class="sub">${esc(sgTxt(c.sg))} · nº ${esc(c.n)} · ${esc(cargo)} · ${esc(nomeUf)}</p>${seloSit(s)}</div></div>
+    <div class="dp-ks">${stat('Votos', fInt(c.v), `${fNum(vv ? 100 * c.v / vv : 0, 2)}% dos válidos`)}${stat('Posição no estado', `${posG.get(c.n + '|' + c.sg)}º`, `entre ${fInt(todos.length)} candidatos`)}${stat(ehFed ? 'Posição na federação' : 'Posição no partido', `${pGr}º`, `entre ${fInt(mesmoGr.length)} · ${esc(ehFed ? nomeGrupo(gr) : sgTxt(c.sg))}`)}${ehFed ? stat('Posição no partido', `${pP}º`, `entre ${fInt(mesmoP.length)} do ${esc(sgTxt(c.sg))}`) : stat('Cadeiras do partido', fInt(eleitosDe(gr)), `votos do partido: ${fInt(gr.tn + gr.tl)}`)}</div>
+    <p class="sub" style="margin-top:10px"><a href="${base}&f=${encodeURIComponent(gr.n)}${ehFed ? `&p=${encodeURIComponent(c.sg)}` : ''}">← Ver a lista de ${esc(ehFed ? sgTxt(c.sg) : nomeGrupo(gr))}</a></p></section>
+  <section class="painel" id="cd-mun"><h2>Votação por região e município</h2><p class="carregando">Carregando…</p></section>`;
+  getJSON(`data/dep_mun/${ARQ[tipo][0]}/${uf}.json`, { retries: 1 }).then(M => {
+    const v = M.c?.[c.n]; const sec = el.querySelector('#cd-mun');
+    if (!v) { sec.innerHTML = '<h2>Votação por região e município</h2><p class="aviso">A votação por município deste candidato ainda não está disponível.</p>'; return; }
+    const rows = Object.entries(v).map(([cd, n]) => ({ cd, nome: M.m[cd] || cd, v: n, pc: c.v ? 100 * n / c.v : 0 })).sort((a, b) => b.v - a.v);
+    sec.innerHTML = `<h2>Votação por município</h2><p class="sub">${fInt(rows.length)} municípios com votos · ${fInt(c.v)} votos no estado.</p><div id="cd-tab"></div>`;
+    tabela(sec.querySelector('#cd-tab'), { cols: [
+      { k: 'pos', t: '#', h: (x, i) => '', v: x => 0, cls: 'n' },
+      { k: 'nome', t: 'Município', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, x: x => x.nome, ini: 'asc' },
+      { k: 'v', t: 'Votos', h: x => fInt(x.v), v: x => x.v, cls: 'n' },
+      { k: 'pc', t: '% dos votos dele', h: x => fNum(x.pc, 1) + '%', v: x => x.pc, x: x => x.pc, cls: 'n sec' },
+    ].slice(1), rows, sort: 'v', dir: 'desc', filtro: (x, q) => sem(x.nome).includes(q), limite: 1000 });
+  }).catch(() => { el.querySelector('#cd-mun').innerHTML = '<h2>Votação por região e município</h2><p class="aviso">A votação por município deste candidato ainda não está disponível.</p>'; });
 }
