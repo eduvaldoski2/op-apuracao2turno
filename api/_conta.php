@@ -67,7 +67,7 @@ function canais_ativos() { $w = cfg('CONTA', [])['whatsapp'] ?? []; $c = ['email
 
 // ---------- envio de códigos ----------
 function envia_email($para, $codigo, $finalidade) {
-  $c = cfg('CONTA', []); $de = $c['email_de'] ?? 'nao-responda@oficinapolitica.com.br';
+  $c = cfg('CONTA', []); $de = $c['email_de'] ?? 'contato@oficinapolitica.com.br';
   if (!filter_var($de, FILTER_VALIDATE_EMAIL)) return false;
   $assunto = ($finalidade === 'redefinir' ? 'Redefinir sua senha' : 'Confirme seu cadastro') . ' · Oficina Política: código ' . $codigo;
   $acao = $finalidade === 'redefinir' ? 'redefinir a senha' : 'confirmar o cadastro';

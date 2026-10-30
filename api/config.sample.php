@@ -17,9 +17,9 @@ $CONTA_ATIVA = false;
 $IA_COTA = ['usuario_mes' => 15, 'usuario_dia' => 5, 'orcamento_mes_usd' => 20.0, 'preco_in_usd_mtok' => 0.10, 'preco_out_usd_mtok' => 0.50];
 // Contas (api/conta.php). O cadastro exige confirmar o contato por código de 6 dígitos.
 $CONTA = [
-  'email_de' => 'nao-responda@oficinapolitica.com.br',   // remetente dos códigos por e-mail (use um endereço do próprio domínio; configure SPF/DKIM na Hostinger para não cair no spam)
-  // Envio autenticado (recomendado): crie a caixa nao-responda@oficinapolitica.com.br na Hostinger e preencha. Sem isso usa mail(), que na hospedagem compartilhada costuma não entregar.
-  'smtp' => ['host' => 'smtp.hostinger.com', 'porta' => 465, 'user' => 'nao-responda@oficinapolitica.com.br', 'pass' => ''],
+  'email_de' => 'contato@oficinapolitica.com.br',   // remetente dos códigos por e-mail (use um endereço do próprio domínio; configure SPF/DKIM na Hostinger para não cair no spam)
+  // Envio autenticado (recomendado): use a caixa contato@oficinapolitica.com.br e preencha a senha dela. Sem isso usa mail(), que na hospedagem compartilhada costuma não entregar.
+  'smtp' => ['host' => 'smtp.hostinger.com', 'porta' => 465, 'user' => 'contato@oficinapolitica.com.br', 'pass' => ''],
   'sessao_dias' => 30,
   'teste' => false,   // true = NÃO envia nada e grava os códigos em api/dados/codigos_teste.log (só para testar; nunca deixe true no ar)
   // Confirmação por WhatsApp (opcional): WhatsApp Business Cloud API da Meta, com um modelo de mensagem de AUTENTICAÇÃO aprovado. Em branco = só e-mail.
