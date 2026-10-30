@@ -1,8 +1,8 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
 // O resto aparece esmaecido ("em breve"). Deputados federal e estadual exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta } from './conta.js?v=2e93d5d9';
-import { esc } from './ui.js?v=2e93d5d9';
+import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=f9f6d1d8';
+import { esc } from './ui.js?v=f9f6d1d8';
 
 const ANOS = [2026, 2024, 2022, 2020, 2018];
 const DISPONIVEL = { 2026: true };
@@ -90,4 +90,30 @@ export function ligarEleicao(root, r, { ir, toast, evento }) {
     evento?.('eleicao', { cargo: k }); ir(hashEleicao(r, e.turno, k));
     if (k === 'governador' || k === 'senador') setTimeout(() => document.querySelector(k === 'senador' ? '.sen' + ', .sen-t1' : '.gov:not(.sen), .gov-t1:not(.sen-t1)')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 700);
   });
+}
+
+// ---------- Entrar / Sair no topo ----------
+function abrirLogin(toast, depois) {
+  const ov = document.createElement('div'); ov.className = 'el-ov'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-label', 'Entrar na Oficina Política');
+  ov.innerHTML = `<div class="el-box"><button class="el-x" type="button" aria-label="Fechar">✕</button><h2>Entrar na Oficina Política</h2><p>Entre com o Google ou com o seu e-mail. Quem ainda não tem conta cria uma, grátis.</p><div id="el-conta"></div></div>`;
+  document.body.appendChild(ov);
+  const fechar = () => { ov.remove(); document.removeEventListener('keydown', esc_); };
+  const esc_ = ev => { if (ev.key === 'Escape') fechar(); };
+  document.addEventListener('keydown', esc_);
+  ov.addEventListener('click', ev => { if (ev.target === ov || ev.target.closest('.el-x')) fechar(); });
+  carregarConta().then(() => { if (!ov.isConnected) return; if (CONTA.logado) { fechar(); depois(); return; } montarConta(ov.querySelector('#el-conta'), c => { if (c.logado) { fechar(); depois(); } }, { alvo: 'a sua conta' }); });
+}
+export function ligarTopoConta({ toast }) {
+  const topo = document.querySelector('.topo-in'); if (!topo) return;
+  const box = document.createElement('div'); box.className = 'topo-conta sem-export'; topo.appendChild(box);
+  const pinta = () => {
+    if (!CONTA.carregado || CONTA.erro) { box.innerHTML = ''; return; }
+    box.innerHTML = CONTA.logado ? `<button type="button" class="tc-b" data-tc="sair" title="${esc(CONTA.usuario?.email || '')}">Sair</button>` : `<button type="button" class="tc-b tc-on" data-tc="entrar">Entrar</button>`;
+  };
+  box.addEventListener('click', async ev => {
+    const b = ev.target.closest('[data-tc]'); if (!b) return;
+    if (b.dataset.tc === 'sair') { await sairConta(); pinta(); document.querySelectorAll('.eleicao [data-cargo^="dep-"]').forEach(x => { if (!x.textContent.includes('🔒')) x.textContent = '🔒 ' + x.textContent; }); toast('Você saiu da sua conta.', true); return; }
+    abrirLogin(toast, () => { pinta(); toast('Você está logado.', true); });
+  });
+  carregarConta().then(pinta);
 }

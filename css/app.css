@@ -690,3 +690,7 @@ body.tl-aberto{overflow:hidden}
 .chip-p { padding: 6px 12px; border-radius: 999px; background: #efecf7; color: #3E347E; font-weight: 700; font-size: .85rem; text-decoration: none; }
 .chip-p small { opacity: .7; margin-left: 2px; }
 .chip-p.on { background: #3E347E; color: #fff; }
+.topo-conta { margin-left: auto; }
+.tc-b { border: 1.5px solid rgba(255,255,255,.55); background: transparent; color: #fff; font: inherit; font-weight: 700; font-size: 14px; padding: 7px 16px; border-radius: 999px; cursor: pointer; }
+.tc-b.tc-on { background: #D9741A; border-color: #D9741A; }
+.tc-b:hover { filter: brightness(1.12); }

@@ -1,27 +1,27 @@
-import { CONFIG, TESTE } from './config.js?v=2e93d5d9';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=2e93d5d9';
-import { getJSON } from './tse.js?v=2e93d5d9';
-import { calcular } from './model.js?v=2e93d5d9';
-import { projetar, PARAMS } from './proj.js?v=2e93d5d9';
-import { viewComparar, hashComparar } from './comparar.js?v=2e93d5d9';
-import { viewPerguntar } from './ia.js?v=2e93d5d9';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=2e93d5d9';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=2e93d5d9';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=2e93d5d9';
-import { iniciarExportSecoes } from './expsec.js?v=2e93d5d9';
-import { eventosEntre } from './avisos.js?v=2e93d5d9';
-import { mostrarEleito } from './eleito.js?v=2e93d5d9';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=2e93d5d9';
-import { abrirTelao, iniciarTV } from './tv.js?v=2e93d5d9';
-import { iniciarConsentimento } from './consentimento.js?v=2e93d5d9';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=2e93d5d9';
-import { lerCard } from './card.js?v=2e93d5d9';
-import { abrirCompartilhar } from './compartilhar.js?v=2e93d5d9';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=2e93d5d9';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=2e93d5d9';
-import { esc } from './ui.js?v=2e93d5d9';
-import { getFoco, setFoco, comFoco } from './foco.js?v=2e93d5d9';
-import { barraEleicao, ligarEleicao } from './eleicao.js?v=2e93d5d9';
+import { CONFIG, TESTE } from './config.js?v=f9f6d1d8';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=f9f6d1d8';
+import { getJSON } from './tse.js?v=f9f6d1d8';
+import { calcular } from './model.js?v=f9f6d1d8';
+import { projetar, PARAMS } from './proj.js?v=f9f6d1d8';
+import { viewComparar, hashComparar } from './comparar.js?v=f9f6d1d8';
+import { viewPerguntar } from './ia.js?v=f9f6d1d8';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=f9f6d1d8';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=f9f6d1d8';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=f9f6d1d8';
+import { iniciarExportSecoes } from './expsec.js?v=f9f6d1d8';
+import { eventosEntre } from './avisos.js?v=f9f6d1d8';
+import { mostrarEleito } from './eleito.js?v=f9f6d1d8';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=f9f6d1d8';
+import { abrirTelao, iniciarTV } from './tv.js?v=f9f6d1d8';
+import { iniciarConsentimento } from './consentimento.js?v=f9f6d1d8';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=f9f6d1d8';
+import { lerCard } from './card.js?v=f9f6d1d8';
+import { abrirCompartilhar } from './compartilhar.js?v=f9f6d1d8';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=f9f6d1d8';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=f9f6d1d8';
+import { esc } from './ui.js?v=f9f6d1d8';
+import { getFoco, setFoco, comFoco } from './foco.js?v=f9f6d1d8';
+import { barraEleicao, ligarEleicao, ligarTopoConta } from './eleicao.js?v=f9f6d1d8';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -213,6 +213,7 @@ function prepararVersao() {
 }
 async function iniciar() {
   prepararVersao();
+  ligarTopoConta({ toast });
   try {
     if (MODO_DEMO) {
       S.demo = await criarDemo(); S.B = S.demo.B; S.simulado = true;

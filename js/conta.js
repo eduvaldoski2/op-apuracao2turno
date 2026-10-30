@@ -1,7 +1,7 @@
 // Conta do usuário (necessária para a "Pergunte à IA"): criar conta com confirmação por código (e-mail ou WhatsApp), entrar, sair, redefinir a senha e excluir a conta.
 // Quem fala com o servidor é api/conta.php; a sessão fica num cookie HttpOnly (o navegador nunca vê o token).
-import { CONFIG, RAIZ } from './config.js?v=2e93d5d9';
-import { esc } from './ui.js?v=2e93d5d9';
+import { CONFIG, RAIZ } from './config.js?v=f9f6d1d8';
+import { esc } from './ui.js?v=f9f6d1d8';
 
 const ENDPOINT = () => (CONFIG.conta?.endpoint ?? (RAIZ + 'api/conta.php'));
 export const CONTA = { carregado: false, logado: false, usuario: null, cota: null, canais: ['email'], ia_ativa: false, erro: false, google_id: null };
@@ -22,6 +22,7 @@ export async function carregarConta() {
   return CONTA;
 }
 export function atualizarCota(c) { if (c) CONTA.cota = c; }
+export async function sairConta() { await chamar('sair'); sessaoExpirou(); }
 export function sessaoExpirou() { CONTA.logado = false; CONTA.usuario = null; CONTA.cota = null; }
 
 const TEXTO_ACEITE = 'Aceito receber mensagens da Oficina Política neste e-mail ou WhatsApp: o código de confirmação, avisos sobre a plataforma e conteúdos sobre as eleições. Posso cancelar quando quiser.';

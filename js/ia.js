@@ -1,9 +1,9 @@
 // "Pergunte aos dados": a pessoa pergunta, a IA consulta os números do painel (ferramentas em iatools.js) e responde; quando faz sentido, a resposta
 // vem com um gráfico que pode ser baixado em 1:1, 4:5 e 9:16. O servidor (api/ia.php) só guarda a chave e repassa a conversa ao provedor de IA.
-import { CONFIG, RAIZ } from './config.js?v=2e93d5d9';
-import { esc } from './ui.js?v=2e93d5d9';
-import { FERRAMENTAS, novaSessao, graficoHtml, resumo } from './iatools.js?v=2e93d5d9';
-import { CONTA, montarConta, atualizarCota, sessaoExpirou } from './conta.js?v=2e93d5d9';
+import { CONFIG, RAIZ } from './config.js?v=f9f6d1d8';
+import { esc } from './ui.js?v=f9f6d1d8';
+import { FERRAMENTAS, novaSessao, graficoHtml, resumo } from './iatools.js?v=f9f6d1d8';
+import { CONTA, montarConta, atualizarCota, sessaoExpirou } from './conta.js?v=f9f6d1d8';
 
 const ENDPOINT = () => (CONFIG.ia?.endpoint ?? (RAIZ + 'api/ia.php'));
 const MAX_PASSOS = 8;
