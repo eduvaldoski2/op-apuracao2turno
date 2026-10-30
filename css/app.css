@@ -737,3 +737,8 @@ body.tl-aberto{overflow:hidden}
 .dpn-c:hover{background:#f6f4fa}.dpn-c small{color:#6f6888}.dpn-c .sit{grid-column:1/-1;justify-self:start}
 .dpn-resto>summary{cursor:pointer;padding:10px 2px;color:#3E347E;font-weight:700}
 .dp-pn .dp-logos{padding-right:96px}.dp-pn .dp-logos a{display:inline-flex}
+
+#tab-dc .tab td:first-child,#tab-dc .tab th:first-child{min-width:0;width:44px;padding-left:6px;padding-right:2px}
+#tab-dc .tab td:nth-child(2){min-width:0;width:100%}
+.dc-sm{display:none;margin-top:5px}
+@media (max-width:760px){#tab-dc .tab .sec7,#tab-dc .tab th.sec7{display:none}.dc-sm{display:block}#tab-dc .tab td.n{padding-left:4px}}

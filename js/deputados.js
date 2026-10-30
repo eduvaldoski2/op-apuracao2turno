@@ -1,10 +1,10 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=29933334';
-import { esc, tabela, sem } from './ui.js?v=29933334';
-import { getJSON } from './tse.js?v=29933334';
-import { nomeP } from './governador.js?v=29933334';
-import { criarMapaMun } from './mapamun.js?v=29933334';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=29933334';
+import { UF_NOME, fInt, fNum } from './util.js?v=625ef1e1';
+import { esc, tabela, sem } from './ui.js?v=625ef1e1';
+import { getJSON } from './tse.js?v=625ef1e1';
+import { nomeP } from './governador.js?v=625ef1e1';
+import { criarMapaMun } from './mapamun.js?v=625ef1e1';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=625ef1e1';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -139,11 +139,11 @@ export function viewDepUf(ctx, uf, tipo) {
       const href = x => `${base}&c=${encodeURIComponent(x.n)}${x.gr && grDoP ? '' : ''}`;
       const cols = [
         { k: 'pos', t: '#', h: x => ordinal(x.pos), v: x => x.pos, cls: 'n' },
-        { k: 'nm', t: 'Candidato', h: x => `<a class="dc-nome" href="${href(x)}"><b>${esc(nomeP(x.nm))}</b></a><small class="dc-n">${esc(x.n)}<span class="dc-pm"> · <span class="dc-p" style="--pc:${corPartido(x.sg)};--pt:${corTextoSobre(corPartido(x.sg))}">${esc(sgTxt(x.sg))}</span></span></small>`, v: x => x.nm, x: x => x.nm },
+        { k: 'nm', t: 'Candidato', h: x => `<a class="dc-nome" href="${href(x)}"><b>${esc(nomeP(x.nm))}</b></a><small class="dc-n">${esc(x.n)}<span class="dc-pm"> · <span class="dc-p" style="--pc:${corPartido(x.sg)};--pt:${corTextoSobre(corPartido(x.sg))}">${esc(sgTxt(x.sg))}</span></span></small><span class="dc-sm">${seloSit(x.sit)}</span>`, v: x => x.nm, x: x => x.nm },,
         { k: 'sg', t: 'Partido', cls: 'sec', h: x => `<span class="dc-p" style="--pc:${corPartido(x.sg)};--pt:${corTextoSobre(corPartido(x.sg))}">${esc(sgTxt(x.sg))}</span>`, v: x => x.sg, x: x => x.sg },
         { k: 'v', t: 'Votos', h: x => fInt(x.v), v: x => x.v, cls: 'n' },
         { k: 'pc', t: '%', h: x => fNum(x.pc, 2) + '%', v: x => x.pc, x: x => x.pc, cls: 'n sec' },
-        { k: 'sit', t: 'Situação', h: x => seloSit(x.sit), v: x => x.sit.k === 'e' ? 0 : x.sit.k === 's' ? 1 : 2, x: x => x.sit.t },
+        { k: 'sit', t: 'Situação', cls: 'sec7', h: x => seloSit(x.sit), v: x => x.sit.k === 'e' ? 0 : x.sit.k === 's' ? 1 : 2, x: x => x.sit.t },
       ];
       tabela(el.querySelector('#tab-dc'), { cols, rows, onRow: x => ctx.ir(href(x)), sort: 'pos', dir: 'asc', filtro: (x, q) => sem(x.nm).includes(q) || x.n.includes(q) || sem(x.sg).includes(q), limite: 300 });
       ctx.csv = () => ({ nome: `${uf}_${tipo}_1turno`, cab: ['Posição', 'Candidato', 'Partido', 'Número', 'Votos', '% votos válidos', 'Situação'], linhas: rows.map(x => [x.pos, x.nm, x.sg, x.n, x.v, x.pc.toFixed(2), x.sit.t]) });
