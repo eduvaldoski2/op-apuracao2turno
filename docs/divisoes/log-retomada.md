@@ -10,3 +10,5 @@
 8. Validei estrutura/contagens/unicidade dos CSVs e ausência de alteração de rio_regioes.json e campos originais eleitorais. Pesquisa nacional segue parcial; 25 UFs e 98 municípios ainda não revalidados, Rio excluído da tarefa municipal.
 
 Sem dados pessoais, alterações no painel ou Downloads TSE. Nenhuma mensagem a terceiros. PR preparado para revisão; não mesclar sem solicitação do Edu.
+
+Publicação: branch remoto divisoes, commit inicial 9739336e3d87c8e869745af215321bbc0a82aa88; PR #3 https://github.com/eduvaldoski2/op-apuracao2turno/pull/3. Árvore Git local e da API conferidas: 72a1bcffae86ba168412081beabdaf600a32a3fa. Preservado CRLF dos CSVs existentes; git diff --check padrão sinalizou CRLF e o check com core.whitespace=cr-at-eol passou. Publicação via create_branch/create_tree/create_commit/update_ref/create_pull_request. Sem merge. A revisão com este recibo está no histórico do PR.
