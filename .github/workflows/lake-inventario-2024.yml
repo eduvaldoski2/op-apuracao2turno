@@ -1,0 +1,70 @@
+name: Lake municipal - inventário de conteúdo 2024 (etapa 0)
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - scripts/lake/**
+      - .github/workflows/lake-*.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: lake-inventario-2024-${{ github.event.pull_request.number || github.ref }}-${{ github.event.action || 'manual' }}
+  cancel-in-progress: false
+
+jobs:
+  validar_codigo:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.head_ref == 'lake-municipal' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          sparse-checkout: scripts/lake
+      - name: Testar código com dados sintéticos, sem downloads eleitorais
+        run: |
+          python3 -m venv "$RUNNER_TEMP/lake-tests"
+          "$RUNNER_TEMP/lake-tests/bin/python" -m pip install -r scripts/lake/requirements.txt
+          "$RUNNER_TEMP/lake-tests/bin/python" -m unittest discover -s scripts/lake -p 'test_*.py' -v
+
+  inspecionar:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      ((github.event.action == 'opened' || github.event.action == 'reopened') &&
+       github.head_ref == 'lake-municipal' &&
+       github.event.pull_request.head.repo.full_name == github.repository)
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    strategy:
+      fail-fast: false
+      max-parallel: 3
+      matrix:
+        lote: [NACIONAL, AC, AL, AM, AP, BA, CE, ES, GO, MA, MG, MS, MT, PA, PB, PE, PI, PR, RJ, RN, RO, RR, RS, SC, SE, SP, TO]
+    steps:
+      - name: Ler somente scripts e inventário
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+          sparse-checkout: |
+            scripts/lake
+            docs/inventario-municipal-fontes.json
+          sparse-checkout-cone-mode: false
+      - name: Inspecionar ZIPs oficiais, sem converter ou publicar dados
+        env:
+          LOTE_TSE: ${{ matrix.lote }}
+        run: python3 scripts/lake/inspect_2024.py --batch "$LOTE_TSE"
+      - name: Guardar apenas metadados sem valores de registros
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: inventario-municipal-2024-${{ matrix.lote }}
+          path: docs/inventario-2024/${{ matrix.lote }}.json
+          if-no-files-found: error
+          retention-days: 7
