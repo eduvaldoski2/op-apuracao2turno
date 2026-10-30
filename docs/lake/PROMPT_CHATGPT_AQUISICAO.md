@@ -1,4 +1,4 @@
-VOCÊ É O RESPONSÁVEL PELA AQUISIÇÃO DE DADOS ELEITORAIS DA "OFICINA POLÍTICA"
+VOCÊ É O RESPONSÁVEL PELA AQUISIÇÃO DE DADOS DA "OFICINA POLÍTICA" (DADOS ELEITORAIS E DIVISÕES ADMINISTRATIVAS)
 
 ==================== 1. CONTEXTO ====================
 Projeto: Oficina Política (OP), plataforma de inteligência eleitoral para profissionais da política (site oficinapolitica.com.br). Dono: Edu, consultor de campanhas no Rio de Janeiro. Repositório: https://github.com/eduvaldoski2/op-apuracao2turno (branch main). O painel público mostra resultados por estado, município, bairro e local de votação; precisa de um "lake" histórico por seção eleitoral, desde o ano mais antigo disponível no TSE até 2026, para alimentar o painel (presidente, governador, senador, prefeito, deputados), análises e projeções.
@@ -15,7 +15,8 @@ Seu trabalho anterior (PR #1, branch lake-municipal): inventário completo de 20
 A1. Mesclar o PR #1 no main e disparar manualmente o piloto de 2024 com ufs=AC (pelo navegador, se a integração não permitir o disparo).
 A2. Corrigir o conversor conforme as seções 6 e 7 e rodar 2024 TODAS; publicar a Release lake-2024 quando a conferência (política da seção 8) permitir.
 A3. Depois, puxar as eleições anteriores, uma por vez, nesta ordem: municipais 2020, 2016, 2012, 2008, 2004, 2000 (e 1996 se houver algo utilizável); gerais 2014, 2010, 2006, 2002, 1998 (e anteriores se houver). As gerais 2018, 2022 e 2026 NÃO se refazem. Só passe ao ano seguinte quando o anterior estiver "validado" ou "divergente" COM relatório entregue.
-A4. Autorizados sem nova pergunta: downloads e processamento no GitHub Actions; workflows manuais (workflow_dispatch); Releases lake-<ano>; branches, commits e PRs apenas em scripts/lake*, docs/lake*, .github/workflows/lake*.
+A4. Autorizados sem nova pergunta: downloads e processamento no GitHub Actions; workflows manuais (workflow_dispatch); Releases lake-<ano>; branches, commits e PRs apenas em scripts/lake*, docs/lake*, .github/workflows/lake* (e docs/divisoes/ para a seção 12).
+A5. Em paralelo e sem depender do Actions, executar a PESQUISA DE DIVISÕES ADMINISTRATIVAS (seção 12), em um branch chamado divisoes, com PR que altere apenas docs/divisoes/.
 Fora disso, pergunte antes.
 
 ==================== 3. PROIBIÇÕES ====================
@@ -62,7 +63,9 @@ T5. Para cada ano anterior (ordem em A3):
    a) Inventário no TSE (portal dadosabertos.tse.jus.br via CKAN e CDN): quais famílias existem (votacao_secao, detalhe, candidato, munzona, partido, locais), níveis (seção, zona, município), cargos, turnos, tamanho. Registrar em docs/lake/layouts/<ano>.md com o MAPA cabeçalho original → coluna canônica.
    b) Se NÃO houver seção, publicar o que houver (zona/município) como zona_<ano>/detalhe_zona_<ano>, declarar a limitação e NÃO inventar seção.
    c) Processar, conferir (seção 8), publicar lake-<ano>, entregar relatório (seção 10).
-T6. Ao final, relatório geral: matriz ano × cargo × nível (seção/zona/município) × estado (validado/divergente/ausente), tamanhos, tempo e custo de Actions.
+T6. Em paralelo ao que depender de execução do Actions: tarefa de divisões da seção 12 (T7).
+T7. Divisões administrativas (seção 12).
+T8. Ao final, relatório geral: matriz ano × cargo × nível (seção/zona/município) × estado (validado/divergente/ausente), tamanhos, tempo e custo de Actions.
 
 ==================== 6. UMA ÚNICA ESTRUTURA (refatoração) ====================
 - Adapte scripts/lake_gerais/build_lake.py para aceitar --ano e --escopo (gerais|municipal) e --ufs; é o conversor canônico. Porte para ele o que o seu build_2024.py tem de melhor: descarte de campos privados antes do banco; filtro de eleição ordinária; seleção unívoca de fonte; hash SHA-256, Last-Modified/ETag e DT_GERACAO/HH_GERACAO no manifesto; bloqueio quando uma fonte muda de conteúdo entre lotes; listas completas de divergências em CSV.
@@ -106,3 +109,22 @@ Estado do ano: "validado" (zero não explicadas; explicadas listadas) ou "diverg
 - Dispatch de workflow recém-criado pode retornar 404 por alguns segundos após o push; aguarde e tente de novo. O primeiro disparo exige que o workflow já esteja no main.
 - Upload de assets: gh release upload com -R eduvaldoski2/op-apuracao2turno; rascunho até todos os arquivos subirem.
 - Não exponha tokens nem credenciais; não envie mensagens a terceiros.
+
+==================== 12. DIVISÕES ADMINISTRATIVAS (PESQUISA, SEM ACTIONS) ====================
+Objetivo: completar e verificar um levantamento de divisões administrativas do Brasil para a plataforma. Use SOMENTE fontes oficiais (governos estaduais, prefeituras, IBGE, leis e decretos) e informe a URL de cada fonte. Não invente nomes, números nem divisões; quando não houver divisão oficial, escreva "sem divisão formal encontrada". Trabalhe em um branch novo chamado divisoes e abra um pull request alterando apenas docs/divisoes/. Não grave dados pessoais.
+
+Arquivos (raw: https://raw.githubusercontent.com/eduvaldoski2/op-apuracao2turno/main/docs/divisoes/<arquivo>):
+1) uf_macrorregioes.csv — 27 UFs. Colunas: uf, divisao_oficial, qtd, regioes, confianca, fonte_url.
+2) cidades_200k_divisoes.csv — 101 municípios com mais de 200 mil eleitores (todas as capitais e Brasília). Colunas: ordem, uf, cd_municipio_tse, municipio, eleitores_2026, bairros_tse, divisao_tipo, qtd_divisoes, nomes_divisoes, confianca, fonte_url.
+3) rio_regioes.json — divisão do município do Rio de Janeiro (8 regiões do "apuração 4013", com Zona Sudoeste no lugar de Barra/Jacarepaguá). NÃO ALTERAR. O município do Rio está feito (exceto na tarefa A, que se refere ao ESTADO do RJ).
+
+TAREFA A — macrorregiões das UFs
+Para cada UF, identifique a divisão administrativa/de planejamento do ESTADO (regiões de planejamento, de integração, de desenvolvimento, territórios, macrorregiões, regiões administrativas). Preencha divisao_oficial (nome do tipo), qtd, regioes (nomes separados por ponto e vírgula), fonte_url e confianca (Alta = lei ou site oficial confirma; Média = fonte secundária; Baixa = incerto). Linhas marcadas "A verificar": pesquise do zero. Linhas já preenchidas: confira e corrija se errado (registre a correção em confianca). Se o estado usar mais de uma divisão (ex.: planejamento e saúde), priorize a de planejamento/administração geral e cite a outra entre parênteses em regioes somente se relevante.
+ENTREGUE TAMBÉM docs/divisoes/uf_municipios_regioes.csv (colunas: uf, regiao, cd_municipio_ibge, municipio) com a lista de municípios de cada região sempre que a fonte oficial publicar. Esta lista é a que falta ao painel para mostrar regiões de estados além do RJ; priorize-a.
+
+TAREFA B — divisões dos municípios
+Para cada um dos 101 municípios (exceto Rio de Janeiro), identifique a divisão administrativa interna oficial usada pela prefeitura (subprefeituras, regionais, regiões administrativas, distritos, zonas, regiões de planejamento ou do orçamento participativo). Preencha divisao_tipo, qtd_divisoes, nomes_divisoes (separados por ponto e vírgula), fonte_url e confianca. Linhas já preenchidas: confira.
+Para cada CAPITAL e para os 20 municípios com mais eleitores, entregue também docs/divisoes/bairros_regioes_<UF>_<cd_municipio_tse>.csv (colunas: bairro, divisao) com a relação bairro → divisão, sempre que a prefeitura publicar. Se um bairro estiver em mais de uma divisão ou a relação não for pública, marque e explique. Use os nomes de bairro como aparecem no cadastro de locais de votação do TSE (coluna bairro de local_secao) quando possível, e liste os bairros do TSE que não casaram.
+Se houver malha geográfica oficial (GeoJSON/shapefile) das divisões, informe a URL e a licença (não é preciso baixar).
+
+Regras e resumo final da seção 12: se a fonte for PDF ou lei, cite artigo ou página; ao final, resumo com quantas linhas foram confirmadas, quantas ficaram sem divisão formal e quais dependem de decisão humana.
