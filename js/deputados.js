@@ -1,10 +1,10 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=1c927173';
-import { esc, tabela, sem } from './ui.js?v=1c927173';
-import { getJSON } from './tse.js?v=1c927173';
-import { nomeP } from './governador.js?v=1c927173';
-import { criarMapaMun } from './mapamun.js?v=1c927173';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=1c927173';
+import { UF_NOME, fInt, fNum } from './util.js?v=d0105bac';
+import { esc, tabela, sem } from './ui.js?v=d0105bac';
+import { getJSON } from './tse.js?v=d0105bac';
+import { nomeP } from './governador.js?v=d0105bac';
+import { criarMapaMun } from './mapamun.js?v=d0105bac';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=d0105bac';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -162,5 +162,5 @@ function candidato(ctx, el, { g, uf, tipo, cargo, nomeUf, base, vv, sit, todos, 
     <div class="dp-ks">${stat('Votos', fInt(c.v), `${fNum(vv ? 100 * c.v / vv : 0, 2)}% dos válidos`)}${stat('Posição no estado', `${posG.get(c.n + '|' + c.sg)}º`, `entre ${fInt(todos.length)} candidatos`)}${stat(ehFed ? 'Posição na federação' : 'Posição no partido', `${pGr}º`, `entre ${fInt(mesmoGr.length)} · ${esc(ehFed ? nomeGrupo(gr) : sgTxt(c.sg))}`)}${ehFed ? stat('Posição no partido', `${pP}º`, `entre ${fInt(mesmoP.length)} do ${esc(sgTxt(c.sg))}`) : stat('Cadeiras do partido', fInt(eleitosDe(gr)), `votos do partido: ${fInt(gr.tn + gr.tl)}`)}</div>
     <p class="sub" style="margin-top:10px"><a href="${base}&f=${encodeURIComponent(gr.n)}${ehFed ? `&p=${encodeURIComponent(c.sg)}` : ''}">← Ver a lista de ${esc(ehFed ? sgTxt(c.sg) : nomeGrupo(gr))}</a></p></section>
   <section class="painel" id="cd-mun"><h2>Votação por região e município</h2><p class="carregando">Carregando…</p></section>`;
-  import('./depcand.js?v=' + Date.now().toString(36).slice(0, 4)).then(m => m.candidatoDin(ctx, el.querySelector('#cd-mun'), { uf, tipo, arq: ARQ[tipo][0], c, cor, todos, sit, nomeUf, vv, H: { bonito, stat, nomeGrupo, sgTxt, ehFed } })).catch(e => { console.error('cand', e); el.querySelector('#cd-mun').innerHTML = '<h2>Votação por região e município</h2><p class="aviso">Não foi possível carregar a votação detalhada. Tente de novo.</p>'; });
+  import('./depcand.js?v=d0105bac').then(m => m.candidatoDin(ctx, el.querySelector('#cd-mun'), { uf, tipo, arq: ARQ[tipo][0], c, cor, todos, sit, nomeUf, vv, H: { bonito, stat, nomeGrupo, sgTxt, ehFed } })).catch(e => { console.error('cand', e); el.querySelector('#cd-mun').innerHTML = '<h2>Votação por região e município</h2><p class="aviso">Não foi possível carregar a votação detalhada. Tente de novo.</p>'; });
 }

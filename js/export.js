@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=1c927173';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=1c927173';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=d0105bac';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=d0105bac';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -39,9 +39,9 @@ function canvasFatia(c, f) {
 
 async function capturar(el, titulo, sub, cadeia = '', omitir = '') {
   await carregaScript('vendor/html2canvas.min.js');
-  let info = null;
+  let info = null; const ESC = Math.max(0.6, Math.min(2, 13000 / Math.max(1, el.scrollHeight)));
   const cv = await window.html2canvas(el, {
-    scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: Math.max(1100, el.scrollWidth),
+    scale: ESC, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: Math.max(1100, el.scrollWidth),   // telas muito altas: reduz a escala (acima de ~16 mil px o navegador devolve canvas em branco)
     onclone: doc => {
       doc.querySelectorAll('.sem-export').forEach(n => n.remove());
       doc.querySelectorAll('details > summary').forEach(n => n.remove());   // o "Entenda" é dica de tela; o texto fica aberto
@@ -61,7 +61,7 @@ async function capturar(el, titulo, sub, cadeia = '', omitir = '') {
       rod.style.cssText = 'display:flex;flex-direction:column;align-items:center;gap:10px;padding:26px 18px 18px;margin-top:22px;border-top:2px solid #e4dfee;font-family:system-ui,sans-serif;color:#6f6888;font-size:11.5px;line-height:1.45;text-align:center';
       rod.innerHTML = `<div style="display:flex;align-items:center;gap:14px"><img src="img/icone.svg" alt="" style="width:60px;height:60px"><div style="font-weight:700;font-size:28px;color:#3E347E">oficinapolitica.com.br</div></div><div style="max-width:900px">Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.</div>`;
       alvo.appendChild(rod);
-      info = medeCortes(alvo, 2);
+      info = medeCortes(alvo, ESC);
     },
   });
   cv.info = info; return cv;
@@ -162,9 +162,9 @@ async function capturarSecao(el, sub, topo) {
   await carregaScript('vendor/html2canvas.min.js');
   el.setAttribute('data-exp-alvo', '1');
   try {
-    let info = null;
+    let info = null; const ESC = Math.max(0.6, Math.min(2, 13000 / Math.max(1, el.scrollHeight)));
     const cv = await window.html2canvas(el, {
-      scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: 1320,
+      scale: ESC, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: 1320,
       onclone: doc => {
         const alvo = doc.querySelector('[data-exp-alvo]'); if (!alvo) return;
         // seção de mapa: leva junto a tabela com o resultado de cada bairro (o mapa sozinho só mostra o percentual de quem lidera)
@@ -187,7 +187,7 @@ async function capturarSecao(el, sub, topo) {
         rod.style.cssText = 'margin-top:14px;padding-top:10px;border-top:2px solid #e4dfee;font:11.5px/1.45 system-ui,sans-serif;color:#6f6888;text-align:center';
         rod.innerHTML = '<b style="color:#3E347E;font-size:15px">oficinapolitica.com.br</b><br>Fonte: TSE — Divulgação de Resultados. Iniciativa independente da Oficina Política, sem vínculo com o TSE; o resultado oficial é o do TSE.';
         alvo.appendChild(rod);
-        info = medeCortes(alvo, 2);
+        info = medeCortes(alvo, ESC);
       },
     });
     cv.info = info; return cv;
