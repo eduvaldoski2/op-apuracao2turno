@@ -1,5 +1,5 @@
 // Gráficos de linha em SVG puro (sem dependências): avanço da apuração, placar e projeção ao longo da apuração.
-import { CAND, fNum, fPct, fInt } from './util.js?v=c6f95a49';
+import { CAND, fNum, fPct, fInt } from './util.js?v=c113e764';
 
 const M0 = { l: 46, r: 18, t: 20, b: 36 };
 export const REG_GRAFICOS = new Map();   // configuração de cada gráfico pelo id do elemento (a imagem para redes refaz o gráfico mais alto)
