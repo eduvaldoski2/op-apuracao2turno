@@ -1,14 +1,34 @@
 // Página do candidato (deputado): descida estado > região > município > região do município > bairro > local de votação > seção.
 // Os quadros de números acompanham o nível em que a pessoa está. Dados: data/dep_mun (por município), data/dep_sec (por seção),
 // data/bairros (locais de votação), data/bairros_geo (limites), data/regioes_uf (regiões do estado).
-import { fInt, fNum } from './util.js?v=d3d04002';
-import { esc, tabela, sem } from './ui.js?v=d3d04002';
-import { getJSON } from './tse.js?v=d3d04002';
-import { criarMapaMun } from './mapamun.js?v=d3d04002';
-import { criarMapaBairros } from './mapabairros.js?v=d3d04002';
-import { criarMapaPontos } from './mapapontos.js?v=d3d04002';
+import { fInt, fNum } from './util.js?v=1c927173';
+import { esc, tabela, sem } from './ui.js?v=1c927173';
+import { getJSON } from './tse.js?v=1c927173';
+import { criarMapaMun } from './mapamun.js?v=1c927173';
+import { criarMapaBairros } from './mapabairros.js?v=1c927173';
+import { criarMapaPontos } from './mapapontos.js?v=1c927173';
 
 const cache = new Map(), pega = (u, o) => { if (!cache.has(u)) cache.set(u, getJSON(u, o).catch(e => { cache.delete(u); throw e; })); return cache.get(u); };
+
+
+// lista com busca por nome e ordenação (setas) — usada em toda lista geográfica da página
+function listaBusca(host, { itens, render, filtro, bind, inicial = 'v' }) {
+  let k = inicial, d = k === 'nome' ? 'asc' : 'desc', q = '';
+  host.classList.add('lb');
+  host.innerHTML = `<div class="lb-ctl sem-export"><input type="search" placeholder="Buscar pelo nome…" aria-label="Buscar pelo nome"><span class="lb-n"></span></div><div class="lb-ord sem-export" role="group" aria-label="Ordenar"><button type="button" data-k="nome">Nome <i></i></button><button type="button" data-k="v">Votos <i></i></button></div><div class="lb-corpo"></div>`;
+  const corpo = host.querySelector('.lb-corpo');
+  const ordena = arr => arr.slice().sort((a, b) => (k === 'nome' ? String(a.nome).localeCompare(String(b.nome), 'pt-BR') : (a.v - b.v)) * (d === 'asc' ? 1 : -1));
+  const desenha = () => {
+    const rs = ordena(itens.filter(x => !q || filtro(x, q)));
+    corpo.innerHTML = rs.length ? rs.map(x => render(x, q, ordena)).join('') : '<p class="aviso">Nada encontrado com esse nome.</p>';
+    host.querySelector('.lb-n').textContent = `${rs.length} de ${itens.length}`;
+    host.querySelectorAll('.lb-ord button').forEach(b => { const on = b.dataset.k === k; b.classList.toggle('on', on); b.querySelector('i').textContent = on ? (d === 'asc' ? '▲' : '▼') : '↕'; b.setAttribute('aria-pressed', String(on)); });
+    bind?.(corpo);
+  };
+  host.querySelector('input').addEventListener('input', e => { q = sem(e.target.value.trim()); desenha(); });
+  host.querySelector('.lb-ord').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; if (b.dataset.k === k) d = d === 'asc' ? 'desc' : 'asc'; else { k = b.dataset.k; d = k === 'nome' ? 'asc' : 'desc'; } desenha(); });
+  desenha();
+}
 
 export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit, nomeUf, vv, H }) {
   const { bonito, stat, nomeGrupo, sgTxt } = H;
@@ -66,7 +86,7 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
   async function render() {
     el.querySelector('.carregando')?.remove();
     const regSel = nav.reg != null ? regioes[nav.reg] : null;
-    let titulo = nomeUf, quadros = '', corpo = '', pos = null, mun = null;
+    let titulo = nomeUf, quadros = '', corpo = '', pos = null, mun = null; const jobs = [];
     const trilha = [`<button type="button" data-n="estado">${esc(nomeUf)}</button>`];
     if (regSel) trilha.push(nav.cd ? `<button type="button" data-n="reg">${esc(regSel.nome)}</button>` : `<b>${esc(regSel.nome)}</b>`);
     if (nav.cd) { try { mun = await carregaMun(nav.cd); } catch { mun = null; } }
@@ -75,8 +95,9 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
       const cds = regSel ? regSel.cds.filter(cd => M.m[cd]) : todosCds, r = rank(cds), minha = r.meu;
       titulo = regSel ? regSel.nome : nomeUf;
       quadros = caixas([stat(regSel ? `Votos em ${regSel.nome}` : 'Votos no estado', fInt(minha), regSel ? `${pcDe(minha, c.v)} dos votos dele` : `${fNum(vv ? 100 * c.v / vv : 0, 2)}% dos válidos`), stat(regSel ? 'Posição na região' : 'Posição no estado', `${r.geral.p}º`, `entre ${fInt(r.geral.de)} candidatos`), stat(ehFed ? 'Posição na federação' : 'Posição no partido', `${r.gr.p}º`, `entre ${fInt(r.gr.de)}`), ehFed ? stat('Posição no partido', `${r.pt.p}º`, `entre ${fInt(r.pt.de)} do ${esc(sgTxt(c.sg))}`) : stat('Total de votos nominais', fInt(r.tot), `${pcDe(minha, r.tot)} são dele`)]);
-      const regs = regioes.map((g, i) => ({ i, nome: g.nome, n: g.cds.length, v: g.cds.reduce((t, cd) => t + (meu[cd] || 0), 0) })).sort((a, b) => b.v - a.v);
-      corpo = (!regSel && regs.length ? `<h3>Regiões do estado</h3><div id="cd-regs">${regs.map(g => itemLista(g.i, g.nome, `${fInt(g.n)} municípios`, g.v, pcDe(g.v, c.v), regs[0].v)).join('')}</div>` : '') + `<h3>Municípios${regSel ? ' da região' : ''}</h3><div id="cd-mapa"></div><div id="cd-tab"></div>`;
+      const regs = regioes.map((g, i) => ({ i, nome: g.nome, n: g.cds.length, v: g.cds.reduce((t, cd) => t + (meu[cd] || 0), 0) })), rmax = Math.max(1, ...regs.map(g => g.v));
+      if (!regSel && regs.length) jobs.push({ sel: '#cd-regs', itens: regs, filtro: (g, q) => sem(g.nome).includes(q), render: g => itemLista(g.i, g.nome, `${fInt(g.n)} municípios`, g.v, pcDe(g.v, c.v), rmax), bind: h => h.querySelectorAll('.dsc-l').forEach(b => b.addEventListener('click', () => ir({ reg: +b.dataset.i }))) });
+      corpo = (!regSel && regs.length ? `<h3>Regiões do estado</h3><div id="cd-regs"></div>` : '') + `<h3>Municípios${regSel ? ' da região' : ''}</h3><div id="cd-mapa"></div><div id="cd-tab"></div>`;
     } else if (mun) {
       const cd = nav.cd, r = rank([cd]), geoD = mun.geoD, geoB = mun.geoB, geo = mun.geo;
       const dSel = nav.d != null ? geoD?.f[nav.d] : null;
@@ -95,19 +116,33 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
       else quadros = caixas([stat(`Votos em ${nm(cd)}`, fInt(r.meu), `${pcDe(r.meu, c.v)} dos votos dele no estado`), stat('Posição no município', `${r.geral.p}º`, `entre ${fInt(r.geral.de)} candidatos`), stat(ehFed ? 'Posição na federação' : 'Posição no partido', `${r.gr.p}º`, `entre ${fInt(r.gr.de)}`), stat('% dos votos nominais', pcDe(r.meu, r.tot), `${fInt(r.tot)} votos nominais no município`)]);
       // corpo
       let lista = '';
-      if (lSel) lista = `<h3>Seções · ${esc(bonito(lSel.nome))}</h3><p class="sub">${esc(bonito(lSel.end))}</p>${lSel.secoes.slice().sort((a, b) => b.v - a.v).map(x => `<div class="dsc-l fim"><span class="dsc-n">Zona ${x.zona} · seção ${x.sec}</span><span class="dsc-v">${fInt(x.v)}<small>${pcDe(x.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * x.v / Math.max(1, ...lSel.secoes.map(y => y.v))}%;background:${cor}"></i></i></div>`).join('')}`;
-      else if (bSel) { const ls = bSel.locais.slice().sort((a, b) => b.v - a.v); lista = `<h3>Locais de votação em ${esc(bonito(bSel.nome))}</h3><div id="cd-locs">${ls.map((L, i) => itemLista(i, bonito(L.nome), bonito(L.end), L.v, `${L.secoes.length} seções`, ls[0].v)).join('')}</div>`; }
-      else {
-        if (geoD && nav.d == null) {
-          const ds = geoD.f.map((f, i) => { const ls = mun.locais.filter(L => L.gi === i); return { i, nome: bonito(f.n), v: ls.reduce((t, L) => t + L.v, 0), ls }; }).filter(d => d.v > 0).sort((a, b) => b.v - a.v);
-          lista += `<h3>Distritos e bairros</h3><p class="sub">Toque no distrito para ver os bairros dentro dele; no mapa, toque num distrito para abri-lo.</p><div id="cd-dists">${ds.map(d => { const gb = grupos(d.ls, false, null); return `<details class="dsc-d"><summary><span class="dsc-l dsc-dl" data-i="${d.i}"><span class="dsc-n">${esc(d.nome)}<small>${d.ls.length} locais · ${gb.length} bairros</small></span><span class="dsc-v">${fInt(d.v)}<small>${pcDe(d.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * d.v / ds[0].v}%;background:${cor}"></i></i></span></summary><div class="dsc-bs"><button type="button" class="dsc-go" data-i="${d.i}">Ver só este distrito no mapa →</button>${gb.map(g => `<button type="button" class="dsc-l dsc-bl" data-d="${d.i}" data-b="${esc(g.k)}"><span class="dsc-n">${esc(bonito(g.nome))}<small>${g.locais.length} ${g.locais.length === 1 ? 'local' : 'locais'}</small></span><span class="dsc-v">${fInt(g.v)}<small>${pcDe(g.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * g.v / gb[0].v}%;background:${cor}"></i></i></button>`).join('')}</div></details>`; }).join('')}</div>`;
-        } else lista += `<h3>Bairros${dSel ? ' · ' + esc(bonito(dSel.n)) : ''}</h3><div id="cd-bairros">${gruposB.map((g, i) => itemLista(i, bonito(g.nome), `${g.locais.length} ${g.locais.length === 1 ? 'local' : 'locais'}`, g.v, pcDe(g.v, mun.soma), gruposB[0]?.v)).join('')}</div>`;
+      if (lSel) {
+        const mx = Math.max(1, ...lSel.secoes.map(y => y.v));
+        lista = `<h3>Seções · ${esc(bonito(lSel.nome))}</h3><p class="sub">${esc(bonito(lSel.end))}</p><div id="cd-secs"></div>`;
+        jobs.push({ sel: '#cd-secs', itens: lSel.secoes.map(x => ({ ...x, nome: `Zona ${x.zona} · seção ${x.sec}` })), filtro: (x, q) => sem(x.nome).includes(q) || String(x.sec).includes(q), render: x => `<div class="dsc-l fim"><span class="dsc-n">${esc(x.nome)}</span><span class="dsc-v">${fInt(x.v)}<small>${pcDe(x.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * x.v / mx}%;background:${cor}"></i></i></div>` });
+      } else if (bSel) {
+        const mx = Math.max(1, ...bSel.locais.map(L => L.v));
+        lista = `<h3>Locais de votação em ${esc(bonito(bSel.nome))}</h3><div id="cd-locs"></div>`;
+        jobs.push({ sel: '#cd-locs', itens: bSel.locais.map(L => ({ ...L, nome: bonito(L.nome) })), filtro: (L, q) => sem(L.nome).includes(q) || sem(L.end || '').includes(q), render: L => `<button type="button" class="dsc-l" data-k="${esc(L.k)}"><span class="dsc-n">${esc(L.nome)}<small>${esc(bonito(L.end))}</small></span><span class="dsc-v">${fInt(L.v)}<small>${L.secoes.length} seções</small></span><i class="dsc-b"><i style="width:${100 * L.v / mx}%;background:${cor}"></i></i></button>`, bind: h => h.querySelectorAll('.dsc-l').forEach(b => b.addEventListener('click', () => ir({ l: b.dataset.k }))) });
+      } else if (geoD && nav.d == null) {
+        const ds = geoD.f.map((f, i) => { const ls = mun.locais.filter(L => L.gi === i); const gb = grupos(ls, false, null).map(g => ({ ...g, nome: bonito(g.nome) })); return { i, nome: bonito(f.n), v: ls.reduce((t, L) => t + L.v, 0), nl: ls.length, gb }; }).filter(d => d.v > 0), dmax = Math.max(1, ...ds.map(d => d.v));
+        lista = `<h3>Distritos e bairros</h3><p class="sub">Busque pelo nome do distrito ou do bairro. Toque no distrito para ver os bairros dentro dele; no mapa, toque num distrito para abri-lo.</p><div id="cd-dists"></div>`;
+        jobs.push({ sel: '#cd-dists', itens: ds, filtro: (d, q) => sem(d.nome).includes(q) || d.gb.some(g => sem(g.nome).includes(q)), render: (d, q, ordena) => {
+          const casaD = q && sem(d.nome).includes(q), bs = ordena(q && !casaD ? d.gb.filter(g => sem(g.nome).includes(q)) : d.gb), bm = Math.max(1, ...d.gb.map(g => g.v));
+          return `<details class="dsc-d"${q && !casaD ? ' open' : ''}><summary><span class="dsc-l dsc-dl"><span class="dsc-n">${esc(d.nome)}<small>${d.nl} locais · ${d.gb.length} bairros</small></span><span class="dsc-v">${fInt(d.v)}<small>${pcDe(d.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * d.v / dmax}%;background:${cor}"></i></i></span></summary><div class="dsc-bs"><button type="button" class="dsc-go" data-i="${d.i}">Ver só este distrito no mapa →</button>${bs.map(g => `<button type="button" class="dsc-l dsc-bl" data-d="${d.i}" data-b="${esc(g.k)}"><span class="dsc-n">${esc(g.nome)}<small>${g.locais.length} ${g.locais.length === 1 ? 'local' : 'locais'}</small></span><span class="dsc-v">${fInt(g.v)}<small>${pcDe(g.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * g.v / bm}%;background:${cor}"></i></i></button>`).join('')}</div></details>`;
+        }, bind: h => { h.querySelectorAll('.dsc-go').forEach(b => b.addEventListener('click', () => ir({ d: +b.dataset.i, b: null, l: null }))); h.querySelectorAll('.dsc-bl').forEach(b => b.addEventListener('click', () => ir({ d: +b.dataset.d, b: b.dataset.b, l: null }))); } });
+      } else {
+        const bmx = Math.max(1, ...gruposB.map(g => g.v));
+        lista = `<h3>Bairros${dSel ? ' · ' + esc(bonito(dSel.n)) : ''}</h3><div id="cd-bairros"></div>`;
+        jobs.push({ sel: '#cd-bairros', itens: gruposB.map(g => ({ ...g, nome: bonito(g.nome) })), filtro: (g, q) => sem(g.nome).includes(q), render: g => `<button type="button" class="dsc-l" data-k="${esc(g.k)}"><span class="dsc-n">${esc(g.nome)}<small>${g.locais.length} ${g.locais.length === 1 ? 'local' : 'locais'}</small></span><span class="dsc-v">${fInt(g.v)}<small>${pcDe(g.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * g.v / bmx}%;background:${cor}"></i></i></button>`, bind: h => h.querySelectorAll('.dsc-l').forEach(b => b.addEventListener('click', () => ir({ b: b.dataset.k, l: null }))) });
       }
-      corpo = `<div id="cd-mapa"></div>${lista}`;
+      corpo = (lSel || bSel ? '' : '<div id="cd-mapa"></div>') + lista;
       pos = { gruposB, locais, geoD, geoB, geo };
     } else corpo = `<p class="aviso">A votação por seção deste candidato não está disponível para ${esc(nm(nav.cd))}.</p>`;
+    delete el.dataset.expSec; el.classList.remove('tem-exp');
     el.innerHTML = `<h2>Votação de ${esc(bonito(c.nm))} · ${esc(titulo)}</h2><div class="dsc-t">${trilha.join(' › ')}</div>${quadros}${corpo}`;
     el.querySelectorAll('[data-n]').forEach(b => b.addEventListener('click', () => { const t = b.dataset.n; if (t === 'estado') Object.assign(nav, { reg: null, cd: null, d: null, b: null, l: null }); else if (t === 'reg') Object.assign(nav, { cd: null, d: null, b: null, l: null }); else if (t === 'mun') Object.assign(nav, { d: null, b: null, l: null }); else if (t === 'dist') Object.assign(nav, { b: null, l: null }); else if (t === 'bairro') Object.assign(nav, { l: null }); render(); topo(); }));
+    for (const j of jobs) { const h = el.querySelector(j.sel); if (h) listaBusca(h, j); }
     if (!nav.cd) desenhaEstado(regSel);
     else if (mun && pos) desenhaMun(mun, pos);
   }
@@ -116,7 +151,6 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
 
   function desenhaEstado(regSel) {
     const regs = regioes;
-    el.querySelectorAll('#cd-regs .dsc-l').forEach(b => b.addEventListener('click', () => { const nomeR = [...el.querySelectorAll('#cd-regs .dsc-l')].indexOf(b); ir({ reg: +b.dataset.i }); }));
     const cds = (regSel ? regSel.cds : todosCds).filter(cd => M.m[cd]), set = new Set(cds);
     const rows = cds.filter(cd => meu[cd]).map(cd => ({ cd, nome: nm(cd), v: meu[cd], pc: c.v ? 100 * meu[cd] / c.v : 0, pt: (porMun[cd] && Object.values(porMun[cd]).reduce((a, b) => a + b, 0)) ? 100 * meu[cd] / Object.values(porMun[cd]).reduce((a, b) => a + b, 0) : 0 })).sort((a, b) => b.v - a.v);
     const max = Math.max(1, ...rows.map(r => r.v));
@@ -138,7 +172,7 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
   const abrir = cd => ir({ cd, d: null, b: null, l: null });
 
   function desenhaMun(mun, { gruposB, locais, geoD, geoB, geo }) {
-    const alvo = el.querySelector('#cd-mapa'), max = Math.max(1, ...mun.locais.map(L => L.v));
+    const alvo = el.querySelector('#cd-mapa'); if (!alvo) return; const max = Math.max(1, ...mun.locais.map(L => L.v));
     // mapa do município: regiões/distritos, bairros (malha do IBGE) ou, sem malha, um ponto por local de votação
     if (geo) {
       const soma = {}; for (const L of mun.locais) if (L.gi != null) soma[L.gi] = (soma[L.gi] || 0) + L.v;
@@ -152,11 +186,6 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
         const dados = {}; for (const L of mun.locais) { const dentro = !selB || selB.locais.includes(L) && (nav.l == null || nav.l === L.k); dados[L.k] = { fill: dentro ? mix(.2 + .8 * Math.sqrt(L.v / max)) : '#e0dde9' }; } mp.atualizar(dados); }
       else alvo.remove();
     }
-    el.querySelectorAll('#cd-dists .dsc-go').forEach(b => b.addEventListener('click', () => ir({ d: +b.dataset.i, b: null, l: null })));
-    el.querySelectorAll('#cd-dists .dsc-bl').forEach(b => b.addEventListener('click', () => ir({ d: +b.dataset.d, b: b.dataset.b, l: null })));
-    el.querySelectorAll('#cd-bairros .dsc-l').forEach(b => b.addEventListener('click', () => ir({ b: gruposB[+b.dataset.i].k, l: null })));
-    const bSel = nav.b != null ? gruposB.find(g => g.k === nav.b) : null;
-    el.querySelectorAll('#cd-locs .dsc-l').forEach(b => b.addEventListener('click', () => ir({ l: bSel.locais.slice().sort((a, b2) => b2.v - a.v)[+b.dataset.i].k })));
   }
   await render();
 }

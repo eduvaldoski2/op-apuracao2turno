@@ -1,10 +1,10 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=d3d04002';
-import { esc, tabela, sem } from './ui.js?v=d3d04002';
-import { getJSON } from './tse.js?v=d3d04002';
-import { nomeP } from './governador.js?v=d3d04002';
-import { criarMapaMun } from './mapamun.js?v=d3d04002';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=d3d04002';
+import { UF_NOME, fInt, fNum } from './util.js?v=1c927173';
+import { esc, tabela, sem } from './ui.js?v=1c927173';
+import { getJSON } from './tse.js?v=1c927173';
+import { nomeP } from './governador.js?v=1c927173';
+import { criarMapaMun } from './mapamun.js?v=1c927173';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=1c927173';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
