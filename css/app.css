@@ -703,3 +703,8 @@ body.tl-aberto{overflow:hidden}
 .tc-b { border: 1.5px solid rgba(255,255,255,.55); background: transparent; color: #fff; font: inherit; font-weight: 700; font-size: 14px; padding: 7px 16px; border-radius: 999px; cursor: pointer; }
 .tc-b.tc-on { background: #D9741A; border-color: #D9741A; }
 .tc-b:hover { filter: brightness(1.12); }
+.lg-p { height: 22px; max-width: 54px; width: auto; object-fit: contain; background: #fff; border-radius: 6px; padding: 2px 4px; vertical-align: middle; margin-right: 5px; }
+.lg-m { height: 18px; max-width: 40px; object-fit: contain; vertical-align: middle; margin-right: 4px; }
+.lg-m ~ * { } .dot-p:has(+ .lg-m) { display: none; }
+.dp-logos { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin-bottom: 8px; }
+.lg-g { height: 64px; max-width: 150px; width: auto; object-fit: contain; }

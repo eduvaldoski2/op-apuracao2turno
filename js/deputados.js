@@ -1,9 +1,9 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=9b085892';
-import { esc, tabela, sem } from './ui.js?v=9b085892';
-import { getJSON } from './tse.js?v=9b085892';
-import { nomeP } from './governador.js?v=9b085892';
-import { corPartido, corTextoSobre } from './partidos.js?v=9b085892';
+import { UF_NOME, fInt, fNum } from './util.js?v=a9fb3f56';
+import { esc, tabela, sem } from './ui.js?v=a9fb3f56';
+import { getJSON } from './tse.js?v=a9fb3f56';
+import { nomeP } from './governador.js?v=a9fb3f56';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=a9fb3f56';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -30,7 +30,7 @@ export function viewDepBrasil(ctx, tipo) {
   } };
 }
 
-const chipP = (href, sg, n, on, cor) => `<a class="chip-p${on ? ' on' : ''}" href="${href}" style="--pc:${cor};--pt:${corTextoSobre(cor)}">${esc(sg)} <small>${n}</small></a>`;
+const chipP = (href, sg, n, on, cor, logo = '') => `<a class="chip-p${on ? ' on' : ''}" href="${href}" style="--pc:${cor};--pt:${corTextoSobre(cor)}">${logo}${esc(sg)} <small>${n}</small></a>`;
 const stat = (t, v, s = '') => `<div class="dp-k"><div>${esc(t)}</div><b>${v}</b>${s ? `<small>${s}</small>` : ''}</div>`;
 
 export function viewDepUf(ctx, uf, tipo) {
@@ -48,16 +48,16 @@ export function viewDepUf(ctx, uf, tipo) {
       const gcor = x => x.tp === 'f' ? `linear-gradient(90deg,${x.par.map(p => corPartido(p.sg)).join(',')})` : corPartido(x.par[0].sg);
       const chipsG = [`<a class="chip-p${!grDoP ? ' on' : ''}" href="${base}" style="--pc:#3E347E;--pt:#fff">Todos</a>`, ...grupos.map(x => {
         const on = grDoP?.n === x.n, cor = x.tp === 'f' ? corPartido(x.par[0].sg) : corPartido(x.par[0].sg), bg = x.tp === 'f' ? gcor(x) : cor;
-        return `<a class="chip-p${on ? ' on' : ''}${x.tp === 'f' ? ' fed' : ''}" href="${base}&f=${encodeURIComponent(x.n)}" style="--pc:${cor};--pt:${corTextoSobre(cor)};--bg:${bg}" title="${esc(x.nm)}">${x.tp === 'f' ? 'Fed. ' : ''}${esc(x.tp === 'f' ? x.com.replace(/ \/ /g, '/') : x.par[0].sg)} <small>${eleitosDe(x)}</small></a>`; })].join('');
+        return `<a class="chip-p${on ? ' on' : ''}${x.tp === 'f' ? ' fed' : ''}" href="${base}&f=${encodeURIComponent(x.n)}" style="--pc:${cor};--pt:${corTextoSobre(cor)};--bg:${bg}" title="${esc(x.nm)}">${x.par.map(p => logoP(p.sg)).join('')}${x.tp === 'f' ? 'Fed. ' : ''}${esc(x.tp === 'f' ? x.com.replace(/ \/ /g, '/') : x.par[0].sg)} <small>${eleitosDe(x)}</small></a>`; })].join('');
       // 2ª fila: partidos da federação escolhida
-      const chipsP = grDoP && grDoP.tp === 'f' ? `<div class="chips-p" style="margin-top:10px"><span class="chips-t">Partidos da federação:</span>${chipP(`${base}&f=${encodeURIComponent(grDoP.n)}`, 'Federação inteira', eleitosDe(grDoP), !pt, '#3E347E')}${grDoP.par.map(p => chipP(`${base}&f=${encodeURIComponent(grDoP.n)}&p=${encodeURIComponent(p.sg)}`, p.sg, eleitosDe(p), pt === p, corPartido(p.sg))).join('')}</div>` : '';
+      const chipsP = grDoP && grDoP.tp === 'f' ? `<div class="chips-p" style="margin-top:10px"><span class="chips-t">Partidos da federação:</span>${chipP(`${base}&f=${encodeURIComponent(grDoP.n)}`, 'Federação inteira', eleitosDe(grDoP), !pt, '#3E347E')}${grDoP.par.map(p => chipP(`${base}&f=${encodeURIComponent(grDoP.n)}&p=${encodeURIComponent(p.sg)}`, p.sg, eleitosDe(p), pt === p, corPartido(p.sg), logoP(p.sg))).join('')}</div>` : '';
       // painel de votação do recorte
       const alvo = pt || grDoP, lista = (alvo ? candDe(alvo) : todosCand(g)).map(c => ({ ...c, sg: c.sg || pt?.sg })).sort((a, b) => b.v - a.v);
       let painel;
       if (alvo) {
         const tn = alvo.tn, tl = alvo.tl, tot = tn + tl, ele = eleitosDe(alvo), nome = alvo.par ? (alvo.tp === 'f' ? `Federação ${alvo.com}` : alvo.par[0].nm || alvo.par[0].sg) : (alvo.nm || alvo.sg);
         const vagas = alvo.par ? alvo.vag : null;
-        painel = `<section class="painel dp-pn"><h2>${esc(nome)}</h2><p class="sub">${esc(nomeUf)} · ${esc(cargo)} · votação do ${alvo.par && alvo.tp === 'f' ? 'agrupamento' : pt ? 'partido' : 'partido'}</p>
+        painel = `<section class="painel dp-pn"><div class="dp-logos">${(alvo.par || [alvo]).map(p => logoP(p.sg, 'lg-g')).join('')}</div><h2>${esc(nome)}</h2><p class="sub">${esc(nomeUf)} · ${esc(cargo)} · votação do ${alvo.par && alvo.tp === 'f' ? 'agrupamento' : pt ? 'partido' : 'partido'}</p>
           <div class="dp-bar"><i style="width:${tot ? 100 * tn / tot : 0}%;background:${corPartido((pt || alvo.par?.[0] || alvo).sg)}"></i><i style="width:${tot ? 100 * tl / tot : 0}%;background:${corPartido((pt || alvo.par?.[0] || alvo).sg)};opacity:.4"></i></div>
           <div class="dp-leg"><span><i></i>Nominais</span><span><i class="l"></i>Legenda</span></div>
           <div class="dp-ks">${stat('Votos totais', fInt(tot), `${fNum(vv ? 100 * tot / vv : 0, 2)}% dos válidos`)}${stat('Nominais', fInt(tn), `${fNum(tot ? 100 * tn / tot : 0, 1)}% do total`)}${stat('Legenda', fInt(tl), `${fNum(tot ? 100 * tl / tot : 0, 1)}% do total`)}${stat('Eleitos', fInt(ele), vagas != null && alvo.tp === 'f' ? `cadeiras da federação: ${fInt(vagas)}` : `de ${fInt(lista.length)} candidatos`)}</div>${g.qe ? `<p class="sub" style="margin-top:6px">Quociente eleitoral do estado: ${fInt(g.qe)} votos por cadeira (${fInt(g.vagas)} cadeiras).</p>` : ''}</section>`;
@@ -73,7 +73,7 @@ export function viewDepUf(ctx, uf, tipo) {
       const rows = lista.map(c => ({ ...c, pos: pos.get(c.n + c.sg), pc: vv ? 100 * c.v / vv : 0 }));
       const cols = [
         { k: 'pos', t: '#', h: x => `${x.pos}º`, v: x => x.pos, cls: 'n' },
-        { k: 'nm', t: 'Candidato', h: x => `<b>${esc(nomeP(x.nm))}</b> <small><span class="dot-p" style="background:${corPartido(x.sg)}"></span>${esc(x.sg)} · ${esc(x.n)}</small>${x.e ? ' <span class="gv-sel">Eleito(a)</span>' : ''}`, v: x => x.nm, x: x => x.nm },
+        { k: 'nm', t: 'Candidato', h: x => `<b>${esc(nomeP(x.nm))}</b> <small><span class="dot-p" style="background:${corPartido(x.sg)}"></span>${logoP(x.sg, 'lg-m')}${esc(x.sg)} · ${esc(x.n)}</small>${x.e ? ' <span class="gv-sel">Eleito(a)</span>' : ''}`, v: x => x.nm, x: x => x.nm },
         { k: 'v', t: 'Votos', h: x => fInt(x.v), v: x => x.v, cls: 'n' },
         { k: 'pc', t: '%', h: x => fNum(x.pc, 2) + '%', v: x => x.pc, x: x => x.pc, cls: 'n sec' },
       ];

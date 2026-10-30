@@ -9,3 +9,5 @@ const FALL = ['#6D4C9F', '#00838F', '#8D6E63', '#5C6BC0', '#7CB342', '#AD1457'];
 export const corPartido = sg => { const k = String(sg || '').toUpperCase().replace(/\./g, ''); if (COR[k]) return COR[k]; let h = 0; for (const c of k) h = (h * 31 + c.charCodeAt(0)) >>> 0; return FALL[h % FALL.length]; };
 // texto branco ou escuro conforme o fundo
 export function corTextoSobre(hex) { const n = parseInt(hex.slice(1), 16), r = n >> 16, g = (n >> 8) & 255, b = n & 255; return (0.299 * r + 0.587 * g + 0.114 * b) > 170 ? '#2a2540' : '#fff'; }
+// logotipo do partido (img/partidos/<SIGLA>.png); se o arquivo não existir, a imagem some e fica só a sigla
+export const logoP = (sg, cls = 'lg-p') => `<img class="${cls}" src="img/partidos/${encodeURIComponent(String(sg || '').toUpperCase().replace(/\./g, ''))}.png" alt="" loading="lazy" onerror="this.remove()">`;
