@@ -736,3 +736,4 @@ body.tl-aberto{overflow:hidden}
 .dpn-c{display:grid;grid-template-columns:1fr auto auto;gap:8px;align-items:center;padding:9px 2px;border-top:1px solid #eee9f4;color:inherit;text-decoration:none}
 .dpn-c:hover{background:#f6f4fa}.dpn-c small{color:#6f6888}.dpn-c .sit{grid-column:1/-1;justify-self:start}
 .dpn-resto>summary{cursor:pointer;padding:10px 2px;color:#3E347E;font-weight:700}
+.dp-pn .dp-logos{padding-right:96px}.dp-pn .dp-logos a{display:inline-flex}
