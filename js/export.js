@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=152c678e';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=152c678e';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=11bc0810';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=11bc0810';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -384,6 +384,15 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
               if (alt() > innerH - 40) { const f0 = fs - 1, pad0 = Math.round(3 + (f0 - 15) * 1.6); tabela.style.fontSize = tabB.style.fontSize = f0 + 'px'; [tabela, tabB].forEach(t => t.querySelectorAll('td').forEach(td => { td.style.padding = pad0 + 'px 7px'; })); break; }
             }
           } else if (alt() > innerH - 40) for (let i = rest.length - 1; i > 2 && alt() > innerH - 40; i--) { rest[i].remove(); n = i; }
+          else {
+            // tabela curta que sobra no quadro: aumenta a letra e o respiro das linhas enquanto couber, sem estourar a largura
+            const ok = () => alt() <= innerH - 40 && tabela.scrollWidth <= alvo.clientWidth + 1;
+            let fs0 = parseFloat(tabela.style.fontSize) || 16;
+            for (let fs = Math.ceil(fs0) + 1; fs <= 26; fs++) {
+              const pad = Math.round(6 + (fs - 16) * 1.4); tabela.style.fontSize = fs + 'px'; tabela.querySelectorAll('td').forEach(td => { td.style.padding = pad + 'px 8px'; }); tabela.querySelectorAll('th').forEach(th => { th.style.fontSize = Math.min(16, fs - 4) + 'px'; });
+              if (!ok()) { const f0 = fs - 1, pad0 = Math.round(6 + (f0 - 16) * 1.4); tabela.style.fontSize = f0 + 'px'; tabela.querySelectorAll('td').forEach(td => { td.style.padding = pad0 + 'px 8px'; }); break; }
+            }
+          }
           infoTab = { de, n, total };
           if (de > 0 || n < rest.length) {
             const nota = doc.createElement('div'); nota.style.cssText = 'margin-top:10px;font:600 16px system-ui,sans-serif;color:#6f6888;text-align:center';

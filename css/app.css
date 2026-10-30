@@ -790,4 +790,6 @@ body.tl-aberto{overflow:hidden}
 /* imagens: a janela de captura é estreita e esconderia as colunas secundárias; na imagem elas aparecem */
 .exp-social .tab .sec,.exp-social .tab th.sec{display:table-cell!important}
 .exp-social .gv-vs{font-size:20px;line-height:1.35}.exp-9x16 .gv-vs{font-size:27px}
-.exp-social .tab small{white-space:nowrap}
+.exp-social .tab td:not(:first-child) small{white-space:nowrap}
+.exp-social .tab td:first-child small{white-space:normal}
+.exp-social .leg-mapa{font-size:21px}.exp-4x5 .leg-mapa,.exp-9x16 .leg-mapa{font-size:24px}

@@ -1,7 +1,7 @@
 // Leitura dos arquivos estáticos de divulgação do TSE (navegador e Node).
 // O esquema do 2º turno (eleição 6258) foi mapeado a partir do 1º turno (6257); os leitores são tolerantes
 // (procuram os campos por nome em qualquer nível) e o coletor registra um diagnóstico quando algo não bate.
-import { cnt, pct, UF_IDS } from './util.js?v=152c678e';
+import { cnt, pct, UF_IDS } from './util.js?v=11bc0810';
 
 export const TSE = {
   base: 'https://resultados.tse.jus.br/oficial',
