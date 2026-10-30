@@ -1,12 +1,12 @@
 // Página do candidato (deputado): descida estado > região > município > região do município > bairro > local de votação > seção.
 // Os quadros de números acompanham o nível em que a pessoa está. Dados: data/dep_mun (por município), data/dep_sec (por seção),
 // data/bairros (locais de votação), data/bairros_geo (limites), data/regioes_uf (regiões do estado).
-import { fInt, fNum } from './util.js?v=788aabb6';
-import { esc, tabela, sem } from './ui.js?v=788aabb6';
-import { getJSON } from './tse.js?v=788aabb6';
-import { criarMapaMun } from './mapamun.js?v=788aabb6';
-import { criarMapaBairros } from './mapabairros.js?v=788aabb6';
-import { criarMapaPontos } from './mapapontos.js?v=788aabb6';
+import { fInt, fNum } from './util.js?v=5520a3ee';
+import { esc, tabela, sem } from './ui.js?v=5520a3ee';
+import { getJSON } from './tse.js?v=5520a3ee';
+import { criarMapaMun } from './mapamun.js?v=5520a3ee';
+import { criarMapaBairros } from './mapabairros.js?v=5520a3ee';
+import { criarMapaPontos } from './mapapontos.js?v=5520a3ee';
 
 const cache = new Map(), pega = (u, o) => { if (!cache.has(u)) cache.set(u, getJSON(u, o).catch(e => { cache.delete(u); throw e; })); return cache.get(u); };
 
@@ -98,7 +98,7 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
       if (lSel) lista = `<h3>Seções · ${esc(bonito(lSel.nome))}</h3><p class="sub">${esc(bonito(lSel.end))}</p>${lSel.secoes.slice().sort((a, b) => b.v - a.v).map(x => `<div class="dsc-l fim"><span class="dsc-n">Zona ${x.zona} · seção ${x.sec}</span><span class="dsc-v">${fInt(x.v)}<small>${pcDe(x.v, mun.soma)}</small></span><i class="dsc-b"><i style="width:${100 * x.v / Math.max(1, ...lSel.secoes.map(y => y.v))}%;background:${cor}"></i></i></div>`).join('')}`;
       else if (bSel) { const ls = bSel.locais.slice().sort((a, b) => b.v - a.v); lista = `<h3>Locais de votação em ${esc(bonito(bSel.nome))}</h3><div id="cd-locs">${ls.map((L, i) => itemLista(i, bonito(L.nome), bonito(L.end), L.v, `${L.secoes.length} seções`, ls[0].v)).join('')}</div>`; }
       else {
-        if (geoD && nav.d == null) { const ds = geoD.f.map((f, i) => ({ i, nome: bonito(f.n), v: mun.locais.filter(L => L.gi === i).reduce((t, L) => t + L.v, 0), nl: mun.locais.filter(L => L.gi === i).length })).filter(d => d.v > 0).sort((a, b) => b.v - a.v); lista += `<h3>${esc(geoD.rotuloPlural || 'Regiões')}</h3><div id="cd-dists">${ds.map(d => itemLista(d.i, d.nome, `${d.nl} locais`, d.v, pcDe(d.v, mun.soma), ds[0].v)).join('')}</div>`; }
+        if (geoD && nav.d == null) { const ds = geoD.f.map((f, i) => ({ i, nome: bonito(f.n), v: mun.locais.filter(L => L.gi === i).reduce((t, L) => t + L.v, 0), nl: mun.locais.filter(L => L.gi === i).length })).filter(d => d.v > 0).sort((a, b) => b.v - a.v); lista += `<h3>${'Distritos'}</h3><div id="cd-dists">${ds.map(d => itemLista(d.i, d.nome, `${d.nl} locais`, d.v, pcDe(d.v, mun.soma), ds[0].v)).join('')}</div>`; }
         lista += `<h3>Bairros${dSel ? ' · ' + esc(bonito(dSel.n)) : ''}</h3><div id="cd-bairros">${gruposB.map((g, i) => itemLista(i, bonito(g.nome), `${g.locais.length} ${g.locais.length === 1 ? 'local' : 'locais'}`, g.v, pcDe(g.v, mun.soma), gruposB[0]?.v)).join('')}</div>`;
       }
       corpo = `<div id="cd-mapa"></div>${lista}`;
