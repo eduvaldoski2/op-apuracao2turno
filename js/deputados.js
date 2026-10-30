@@ -1,14 +1,14 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=c113e764';
-import { esc, tabela, sem } from './ui.js?v=c113e764';
-import { getJSON } from './tse.js?v=c113e764';
-import { nomeP } from './governador.js?v=c113e764';
-import { criarMapaMun } from './mapamun.js?v=c113e764';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=c113e764';
+import { UF_NOME, fInt, fNum } from './util.js?v=29933334';
+import { esc, tabela, sem } from './ui.js?v=29933334';
+import { getJSON } from './tse.js?v=29933334';
+import { nomeP } from './governador.js?v=29933334';
+import { criarMapaMun } from './mapamun.js?v=29933334';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=29933334';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
-export const carregarDep = tipo => (cache[tipo] ??= getJSON(`data/dep_1t/${ARQ[tipo][0]}.json`, { retries: 3 }).catch(e => { delete cache[tipo]; throw e; }));
+export const carregarDep = tipo => (cache[tipo] ??= getJSON(`data/dep_1t/${ARQ[tipo][0]}.json`, { retries: 3, timeout: 60000 }).catch(e => { delete cache[tipo]; throw e; }));
 const qs = () => new URLSearchParams(location.hash.split('?')[1] || '');
 const eleitosDe = x => (x.par ? x.par.reduce((a, p) => a + eleitosDe(p), 0) : x.cand.filter(c => c.e).length);
 const candDe = x => (x.par ? x.par.flatMap(candDe) : x.cand);
@@ -17,7 +17,7 @@ const todosCand = g => g.grupos.flatMap(gr => gr.par.flatMap(p => p.cand.map(c =
 export function viewDepBrasil(ctx, tipo) {
   const [, cargo, plural] = ARQ[tipo];
   const html = `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 · ${esc(cargo)} · TSE</div><section class="painel"><h2>${plural} · 1º turno</h2><p class="sub">Não há votação nacional de ${esc(cargo.toLowerCase())}: escolha um estado ou um partido/federação para ver os candidatos.</p><div id="tab-dep"><p class="carregando">Carregando…</p></div></section>`;
-  return { html, titulo: `Brasil — ${cargo}`, montar(root) {
+  return { html, titulo: `Brasil — ${cargo}`, montar: function montar(root) {
     // não há votação nacional de deputado: a tela é só a escolha do estado (botões aparecem na hora; os números chegam com os dados)
     const REG = [['Norte', ['ac', 'am', 'ap', 'pa', 'ro', 'rr', 'to']], ['Nordeste', ['al', 'ba', 'ce', 'ma', 'pb', 'pe', 'pi', 'rn', 'se']], ['Centro-Oeste', ['df', 'go', 'mt', 'ms']], ['Sudeste', ['es', 'mg', 'rj', 'sp']], ['Sul', ['pr', 'rs', 'sc']]];
     const el = root.querySelector('#tab-dep'), Q = qs(), modo = Q.get('m') === 'p' ? 'p' : 'e', gSel = Q.get('g');
@@ -61,7 +61,7 @@ export function viewDepBrasil(ctx, tipo) {
           const li = c => `<a class="dpn-c" href="#/t1/uf/${x.u}?cargo=${tipo}&c=${encodeURIComponent(c.n)}"><span class="dpn-n">${esc(bonito(c.nm))}</span>${sel.fed && !pSel ? `<small>${esc(sgTxt(c.sg))}</small>` : ''}<b>${fInt(c.v)}</b>${c.e ? '<i class="sit sit-e">Eleito(a)</i>' : ''}</a>`;
           return `<details class="painel dpn-uf"${x.ele ? ' open' : ''}><summary><b>${esc(nUf(x))}</b><span>${fInt(x.ele)} eleitos · ${fInt(x.tot)} votos · ${fInt(cs.length)} candidatos</span></summary>${mostra.map(li).join('')}${cs.length > mostra.length ? `<details class="dpn-resto"><summary>Ver os demais ${fInt(cs.length - mostra.length)} candidatos</summary>${cs.filter(c => !c.e).map(li).join('')}</details>` : ''}<p class="sub"><a href="#/t1/uf/${x.u}?cargo=${tipo}&f=${encodeURIComponent(x.gr.n)}${pSel ? `&p=${encodeURIComponent(pSel.sg)}` : ''}">Abrir a lista completa em ${esc(nUf(x))} →</a></p></details>`;
         }).join('');
-    }).catch(() => { el.innerHTML = abas + '<p class="aviso">Os números ainda não carregaram. Tente de novo em instantes.</p>'; });
+    }).catch(e => { console.error('dep-partidos', e); el.innerHTML = abas + '<p class="aviso">Os números ainda não carregaram. <a href="#" class="dep-retry">Tentar de novo</a></p>'; el.querySelector('.dep-retry')?.addEventListener('click', ev => { ev.preventDefault(); delete cache[tipo]; montar(root); }); });
   } };
 }
 
