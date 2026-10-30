@@ -779,3 +779,13 @@ body.tl-aberto{overflow:hidden}
 .exp-social .xl-2 .sit{display:none}
 .exp-social #cd-mapa{max-height:560px;overflow:hidden;display:flex;justify-content:center}.exp-social #cd-mapa svg{max-height:560px;width:auto;max-width:100%}
 .exp-social #cd-mun .dp-ks,.exp-social#cd-mun .dp-ks{grid-template-columns:repeat(4,minmax(0,1fr))}.exp-4x5 .dp-ks .dp-k b,.exp-1x1 .dp-ks .dp-k b{font-size:30px}
+
+/* candidatos do governador/senador em imagem: muitos candidatos → duas colunas compactas */
+.exp-social .gv-lista.xl-2{column-gap:34px;align-items:start}
+.exp-social .gv-lista.xl-2 .gv-c{margin-top:18px}
+.exp-social .gv-lista.xl-2 .gv-n{font-size:23px}.exp-social .gv-lista.xl-2 .gv-n small{font-size:15px}.exp-social .gv-lista.xl-2 .gv-sel{font-size:13px;padding:2px 9px}
+.exp-social .gv-lista.xl-2 .gv-p{font-size:42px}.exp-social .gv-lista.xl-2 .gv-b{height:14px;border-radius:7px;margin:6px 0 4px}.exp-social .gv-lista.xl-2 .gv-v{font-size:17px}
+.exp-social .gv-lista.xl-2 .gv-n small{display:inline}
+.exp-social .gv-lista.xl-2 ~ .gv-f{font-size:16px!important;line-height:1.4;margin-top:14px}
+/* imagens: a janela de captura é estreita e esconderia as colunas secundárias; na imagem elas aparecem */
+.exp-social .tab .sec,.exp-social .tab th.sec{display:table-cell!important}

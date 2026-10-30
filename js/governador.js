@@ -1,7 +1,7 @@
 // Governador: resultado por estado no 1º turno (data/gov_1t.json) e no 2º turno (snap.gov, só nos estados com disputa).
 // Os dados vêm do TSE (eleição estadual 6259/6260, cargo 3) e são independentes da disputa presidencial.
-import { UF_NOME, fInt, fNum, clamp } from './util.js?v=36167889';
-import { esc } from './ui.js?v=36167889';
+import { UF_NOME, fInt, fNum, clamp } from './util.js?v=1e51e44f';
+import { esc } from './ui.js?v=1e51e44f';
 
 const COR = ['#3E347E', '#D9741A', '#1b8a6b', '#b3367a', '#2b6cb0', '#8a6d00', '#6b7280', '#a3261a', '#4b5fa8', '#9a5b13', '#2f7d3a', '#7a3fa0'];
 export const nomeP = t => String(t || '').toLowerCase().replace(/(^|[\s\-(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
@@ -20,7 +20,7 @@ export function govPainel(g, uf, turno, sen = false) {
   const dif = g.cand.length > 1 ? g.cand[0].v - g.cand[1].v : 0, hora = String(g.ht || g.hg || '').slice(0, 5);
   const frase = sen ? (eleitos.length ? `${eleitos.length === 2 ? 'Os dois mais votados foram eleitos' : 'Eleito(a)'}: ${eleitos.map(c => `<b>${esc(nomeP(c.nm))}</b> (${esc(c.sg)})`).join(' e ')}. ` : (!fim && dif ? `<b>${esc(nomeP(g.cand[0].nm))}</b> lidera. ` : '')) : eleito && fim ? (turno === 1 ? `<b>${esc(nomeP(eleito.nm))}</b> foi eleito(a) no 1º turno. ` : `<b>${esc(nomeP(eleito.nm))}</b> vence por <b>${fInt(Math.abs(dif))}</b> votos. `)
     : (!fim && dif ? `<b>${esc(nomeP(g.cand[0].nm))}</b> lidera por <b>${fInt(Math.abs(dif))}</b> votos. ` : (vaiSegundo ? 'Nenhum candidato passou de 50% dos votos válidos: a disputa foi para o 2º turno. ' : ''));
-  return `<section class="painel gov${sen ? ' sen' : ''}"><h2>${sen ? 'Senador' : 'Governador'} · ${turno}º turno</h2><p class="sub">${esc(UF_NOME[uf])} · ${fim ? '100% das seções apuradas' : `${fNum(pst, 2)}% das seções apuradas (parcial)`}${hora ? ` · TSE ${esc(hora)}` : ''}</p>${linhas}
+  return `<section class="painel gov${sen ? ' sen' : ''}"><h2>${sen ? 'Senador' : 'Governador'} · ${turno}º turno</h2><p class="sub">${esc(UF_NOME[uf])} · ${fim ? '100% das seções apuradas' : `${fNum(pst, 2)}% das seções apuradas (parcial)`}${hora ? ` · TSE ${esc(hora)}` : ''}</p><div class="gv-lista" data-export-lista>${linhas}</div>
     <p class="gv-f">${frase}Votos válidos: ${fInt(g.vv)} · Abstenção: ${fNum(g.te ? 100 * g.a / g.te : 0, 2)}% · Brancos e nulos: ${fNum(sen ? (g.vv + g.vb + g.tvn ? 100 * (g.vb + g.tvn) / (g.vv + g.vb + g.tvn) : 0) : (g.c ? 100 * (g.vb + g.tvn) / g.c : 0), 2)}%${sen ? ' dos votos' : ''}. ${sen ? 'Eleição de 2 vagas: cada eleitor votou em até dois candidatos, e os percentuais são sobre o total de votos válidos para senador.' : ''} Resultado ${sen ? 'do senador' : 'do governador'}, separado da disputa presidencial.</p></section>`;
 }
 

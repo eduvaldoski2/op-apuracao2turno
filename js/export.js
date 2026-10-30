@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=36167889';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=36167889';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=1e51e44f';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=1e51e44f';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -325,22 +325,23 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
         // listas em linhas (mais votados, eleitos, distritos, bairros…): paginam como as tabelas; muitas linhas viram duas colunas (1, 2, 3… descem pela esquerda)
         const lst = [...alvo.querySelectorAll('[data-export-lista]')].find(l => !l.closest('[hidden]') && l.children.length);
         if (lst && !alvo.querySelector('table tbody')) {
-          if (de > 0) alvo.querySelectorAll('.dp-logos,.dp-ks,.dsc-t,#cd-mapa,.mapa-wrap,.leg-mapa,.exp-info').forEach(n => n.remove());   // continuação: só a lista
+          if (de > 0) alvo.querySelectorAll('.dp-logos,.dp-ks,.dsc-t,#cd-mapa,.mapa-wrap,.leg-mapa,.exp-info,.gv-f').forEach(n => n.remove());   // continuação: só a lista
           const win = doc.defaultView; lst.parentElement?.classList.contains('so-export') && (lst.parentElement.style.display = 'block');
           const todas = [...lst.children].filter(r => { if (win.getComputedStyle(r).display === 'none') { r.remove(); return false; } return true; });
           const total = todas.length; todas.slice(0, de).forEach(r => r.remove());
           const rest = todas.slice(de); let n = rest.length; const alt = () => alvo.getBoundingClientRect().height;
           // 1ª tentativa: uma coluna (letra maior); se não couber tudo, tenta duas colunas e fica com a que mostra mais linhas
           const cabe = () => alt() <= innerH - 40;
-          let n1 = rest.length; { const ref = lst.cloneNode(false); void ref; }
+          let n1 = rest.length;
+          const forca2 = lst.classList.contains('gv-lista') && total > 8;   // candidatos de governador/senador: todas as partes no mesmo desenho compacto de duas colunas
           const poe1 = k => lst.replaceChildren(...rest.slice(0, k));
-          poe1(n1); while (!cabe() && n1 > 3) { n1--; poe1(n1); }
+          poe1(n1); if (!forca2) while (!cabe() && n1 > 3) { n1--; poe1(n1); }
           n = n1;
-          if (n1 < rest.length && rest.length > 8) {
+          if (forca2 || (n1 < rest.length && rest.length > 8)) {
             lst.classList.add('xl-2'); lst.style.display = 'grid'; const A = doc.createElement('div'), B = doc.createElement('div');
             const poe2 = k => { const h = Math.ceil(k / 2); A.replaceChildren(...rest.slice(0, h)); B.replaceChildren(...rest.slice(h, k)); lst.replaceChildren(A, B); };
             let n2 = rest.length; poe2(n2); while (!cabe() && n2 > 4) { n2 -= 2; poe2(n2); }
-            if (n2 > n1) n = n2; else { lst.classList.remove('xl-2'); lst.style.display = 'block'; poe1(n1); n = n1; }
+            if (forca2 || n2 > n1) n = n2; else { lst.classList.remove('xl-2'); lst.style.display = 'block'; poe1(n1); n = n1; }
           }
           infoTab = { de, n, total };
           if (de > 0 || n < rest.length) {
@@ -356,7 +357,10 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
           const rest = todas.slice(de); let n = rest.length;
           const alt = () => alvo.getBoundingClientRect().height;
           const tabela = tb.closest('table'), ncol = tabela.querySelectorAll('thead th').length;
-          if (rest.length > 12 && ncol <= 8) {
+          // duas colunas só quando as células são curtas (município + selo + percentuais); com nomes de candidatos corta o texto, então pagina em uma coluna de letra grande
+          const medTxt = j => { const v = rest.slice(0, 40).map(r => (r.children[j]?.textContent || '').trim().length); return v.length ? v.reduce((a, b) => a + b, 0) / v.length : 0; };
+          const curtas = Math.max(medTxt(0), medTxt(1)) <= 17;
+          if (rest.length > 12 && ncol <= 8 && curtas) {
             // lista longa (ex.: municípios): linhas menores e duas colunas; 1, 2, 3… descem pela esquerda e a continuação vem na direita
             // cabem em meia largura: município, mais votado e os dois primeiros percentuais; sem a linha de votos de cada célula
             const enxuga = r => [...r.children].slice(4).forEach(c => c.remove());
@@ -370,6 +374,12 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
             const poe = k => { const h = Math.ceil(k / 2); tb.replaceChildren(...rest.slice(0, h)); tbB.replaceChildren(...rest.slice(h, k)); };
             n = rest.length; poe(n);
             while (alt() > innerH - 40 && n > 4) { n -= 2; poe(n); }
+            // sobrou espaço: aumenta a letra e o respiro das linhas enquanto couber (imagem vista no celular)
+            if (alt() < innerH - 40) for (let fs = 16; fs <= 22; fs++) {
+              const pad = Math.round(3 + (fs - 15) * 1.6); tabela.style.fontSize = tabB.style.fontSize = fs + 'px';
+              [tabela, tabB].forEach(t => { t.querySelectorAll('td').forEach(td => { td.style.padding = pad + 'px 7px'; }); t.querySelectorAll('th').forEach(th => { th.style.fontSize = Math.min(15, fs - 3) + 'px'; }); });
+              if (alt() > innerH - 40) { const f0 = fs - 1, pad0 = Math.round(3 + (f0 - 15) * 1.6); tabela.style.fontSize = tabB.style.fontSize = f0 + 'px'; [tabela, tabB].forEach(t => t.querySelectorAll('td').forEach(td => { td.style.padding = pad0 + 'px 7px'; })); break; }
+            }
           } else if (alt() > innerH - 40) for (let i = rest.length - 1; i > 2 && alt() > innerH - 40; i--) { rest[i].remove(); n = i; }
           infoTab = { de, n, total };
           if (de > 0 || n < rest.length) {
