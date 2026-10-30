@@ -73,7 +73,24 @@ function envia_email($para, $codigo, $finalidade) {
   $acao = $finalidade === 'redefinir' ? 'redefinir a senha' : 'confirmar o cadastro';
   $texto = "Seu código para $acao na Oficina Política: $codigo\n\nEle vale por 15 minutos. Se não foi você que pediu, ignore esta mensagem; nada será alterado.\n\nOficina Política · oficinapolitica.com.br\n";
   $h = 'From: ' . mb_encode_mimeheader('Oficina Política', 'UTF-8', 'B') . " <$de>\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\nX-Auto-Response-Suppress: All\r\n";
+  $sm = $c['smtp'] ?? [];
+  if (!empty($sm['host']) && !empty($sm['user']) && !empty($sm['pass'])) return smtp_envia($sm, $de, $para, mb_encode_mimeheader($assunto, 'UTF-8', 'B', "\r\n"), $h, $texto);
   return @mail($para, mb_encode_mimeheader($assunto, 'UTF-8', 'B', "\r\n"), $texto, $h, '-f' . $de);
+}
+// envio autenticado (SMTP com SSL, porta 465 por padrão): bem mais confiável que mail() em hospedagem compartilhada
+function smtp_envia($sm, $de, $para, $assunto, $cabecalhos, $texto) {
+  $porta = (int)($sm['porta'] ?? 465); $host = ($porta === 465 ? 'ssl://' : '') . $sm['host'];
+  $f = @stream_socket_client($host . ':' . $porta, $en, $es, 15); if (!$f) { error_log("conta.php: SMTP sem conexão $en $es"); return false; }
+  stream_set_timeout($f, 15);
+  $le = function () use ($f) { $r = ''; while (($l = fgets($f, 515)) !== false) { $r .= $l; if (strlen($l) < 4 || $l[3] === ' ') break; } return $r; };
+  $cmd = function ($c, $ok) use ($f, $le) { if ($c !== null) fwrite($f, $c . "\r\n"); $r = $le(); if (!str_starts_with($r, (string)$ok)) { error_log('conta.php: SMTP ' . trim(substr($r, 0, 200))); return false; } return true; };
+  $dom = parse_url('http://' . ($_SERVER['HTTP_HOST'] ?? 'oficinapolitica.com.br'), PHP_URL_HOST) ?: 'oficinapolitica.com.br';
+  $ok = $cmd(null, 220) && $cmd('EHLO ' . $dom, 250);
+  if ($ok && $porta !== 465) { $ok = $cmd('STARTTLS', 220) && stream_socket_enable_crypto($f, true, STREAM_CRYPTO_METHOD_TLS_CLIENT) && $cmd('EHLO ' . $dom, 250); }
+  $ok = $ok && $cmd('AUTH LOGIN', 334) && $cmd(base64_encode($sm['user']), 334) && $cmd(base64_encode($sm['pass']), 235)
+    && $cmd('MAIL FROM:<' . $de . '>', 250) && $cmd('RCPT TO:<' . $para . '>', 250) && $cmd('DATA', 354);
+  if ($ok) { $msg = 'To: <' . $para . ">\r\nSubject: " . $assunto . "\r\nDate: " . date('r') . "\r\n" . $cabecalhos . "\r\n" . preg_replace('/^\./m', '..', str_replace("\n", "\r\n", str_replace("\r\n", "\n", $texto))) . "\r\n."; $ok = $cmd($msg, 250); }
+  @fwrite($f, "QUIT\r\n"); @fclose($f); return $ok;
 }
 // WhatsApp Business Cloud API (Meta): mensagem de modelo de autenticação aprovado, com o código no corpo e no botão "copiar código"
 function envia_whatsapp($para, $codigo) {
