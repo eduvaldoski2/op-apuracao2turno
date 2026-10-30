@@ -1,10 +1,10 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=5520a3ee';
-import { esc, tabela, sem } from './ui.js?v=5520a3ee';
-import { getJSON } from './tse.js?v=5520a3ee';
-import { nomeP } from './governador.js?v=5520a3ee';
-import { criarMapaMun } from './mapamun.js?v=5520a3ee';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=5520a3ee';
+import { UF_NOME, fInt, fNum } from './util.js?v=832adcbc';
+import { esc, tabela, sem } from './ui.js?v=832adcbc';
+import { getJSON } from './tse.js?v=832adcbc';
+import { nomeP } from './governador.js?v=832adcbc';
+import { criarMapaMun } from './mapamun.js?v=832adcbc';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=832adcbc';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -16,18 +16,47 @@ const todosCand = g => g.grupos.flatMap(gr => gr.par.flatMap(p => p.cand.map(c =
 
 export function viewDepBrasil(ctx, tipo) {
   const [, cargo, plural] = ARQ[tipo];
-  const html = `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 · ${esc(cargo)} · TSE</div><section class="painel"><h2>${plural} · 1º turno</h2><p class="sub">Não há votação nacional de ${esc(cargo.toLowerCase())}: escolha um estado para ver federações, partidos e candidatos.</p><div id="tab-dep"><p class="carregando">Carregando…</p></div></section>`;
+  const html = `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 · ${esc(cargo)} · TSE</div><section class="painel"><h2>${plural} · 1º turno</h2><p class="sub">Não há votação nacional de ${esc(cargo.toLowerCase())}: escolha um estado ou um partido/federação para ver os candidatos.</p><div id="tab-dep"><p class="carregando">Carregando…</p></div></section>`;
   return { html, titulo: `Brasil — ${cargo}`, montar(root) {
     // não há votação nacional de deputado: a tela é só a escolha do estado (botões aparecem na hora; os números chegam com os dados)
     const REG = [['Norte', ['ac', 'am', 'ap', 'pa', 'ro', 'rr', 'to']], ['Nordeste', ['al', 'ba', 'ce', 'ma', 'pb', 'pe', 'pi', 'rn', 'se']], ['Centro-Oeste', ['df', 'go', 'mt', 'ms']], ['Sudeste', ['es', 'mg', 'rj', 'sp']], ['Sul', ['pr', 'rs', 'sc']]];
-    const el = root.querySelector('#tab-dep');
-    el.innerHTML = REG.map(([r, ufs]) => `<div class="dep-reg"><h3>${r}</h3><div class="dep-ufs">${ufs.map(u => `<a class="dep-uf" data-uf="${u}" href="#/t1/uf/${u}?cargo=${tipo}"><b>${u.toUpperCase()}</b><span>${esc(UF_NOME[u] || u)}</span><small class="dep-n"></small></a>`).join('')}</div></div>`).join('');
+    const el = root.querySelector('#tab-dep'), Q = qs(), modo = Q.get('m') === 'p' ? 'p' : 'e', gSel = Q.get('g');
+    const ab = (m, rot) => `<a class="chip-p${modo === m ? ' on' : ''}" href="#/t1?cargo=${tipo}${m === 'p' ? '&m=p' : ''}">${rot}</a>`;
+    const abas = `<div class="dep-abas">${ab('e', 'Por estado')}${ab('p', 'Partidos e federações')}</div>`;
+    if (modo === 'e') {
+      el.innerHTML = abas + REG.map(([r, ufs]) => `<div class="dep-reg"><h3>${r}</h3><div class="dep-ufs">${ufs.map(u => `<a class="dep-uf" data-uf="${u}" href="#/t1/uf/${u}?cargo=${tipo}"><b>${u.toUpperCase()}</b><span>${esc(UF_NOME[u] || u)}</span><small class="dep-n"></small></a>`).join('')}</div></div>`).join('');
+      carregarDep(tipo).then(D => {
+        for (const [u, g] of Object.entries(D.uf)) {
+          const a = el.querySelector(`[data-uf="${u}"] .dep-n`); if (!a) continue;
+          const n = g.grupos.reduce((x, gr) => x + eleitosDe(gr), 0); a.textContent = `${fInt(n)} eleitos`;
+        }
+      }).catch(() => { el.insertAdjacentHTML('afterbegin', '<p class="aviso">Os números ainda não carregaram; o estado abre normalmente.</p>'); });
+      return;
+    }
+    el.innerHTML = abas + '<p class="carregando">Carregando partidos e federações…</p>';
     carregarDep(tipo).then(D => {
-      for (const [u, g] of Object.entries(D.uf)) {
-        const a = el.querySelector(`[data-uf="${u}"] .dep-n`); if (!a) continue;
-        const n = g.grupos.reduce((x, gr) => x + eleitosDe(gr), 0); a.textContent = `${fInt(n)} eleitos`;
+      // agrupa por federação/partido em todo o país
+      const G = new Map();
+      for (const [u, g] of Object.entries(D.uf)) for (const gr of g.grupos) {
+        const k = nomeGrupo(gr); let o = G.get(k); if (!o) G.set(k, o = { k, fed: gr.tp === 'f', par: ordenaPar(gr.par), tot: 0, ele: 0, ufs: [] });
+        const tot = gr.tn + gr.tl, ele = eleitosDe(gr); o.tot += tot; o.ele += ele; o.ufs.push({ u, gr, tot, ele });
       }
-    }).catch(() => { el.insertAdjacentHTML('afterbegin', '<p class="aviso">Os números ainda não carregaram; o estado abre normalmente.</p>'); });
+      const L = [...G.values()].sort((a, b) => b.ele - a.ele || b.tot - a.tot);
+      const sel = gSel && G.get(gSel);
+      if (!sel) {
+        el.innerHTML = abas + `<p class="sub">Escolha um partido ou federação para ver os candidatos de todo o país, separados por estado.</p><div class="dep-ufs dep-gs">${L.map(o => `<a class="dep-uf dep-g" href="#/t1?cargo=${tipo}&m=p&g=${encodeURIComponent(o.k)}" style="--pc:${corPartido(o.par[0].sg)}"><span class="dp-logos">${o.par.map(p => logoP(p.sg, 'lg-m')).join('')}</span><span><b>${esc(o.fed ? 'Federação ' + o.k : o.k)}</b><small>${fInt(o.ele)} eleitos · ${fInt(o.tot)} votos</small></span></a>`).join('')}</div>`;
+        return;
+      }
+      const cor = corPartido(sel.par[0].sg), ufs = sel.ufs.slice().sort((a, b) => b.ele - a.ele || b.tot - a.tot);
+      const nUf = u => UF_NOME[u.u] || u.u.toUpperCase();
+      el.innerHTML = abas + `<section class="painel dp-pn" style="--pc:${cor}"><div class="dp-logos">${sel.par.map(p => logoP(p.sg, 'lg-g')).join('')}</div><h2>${esc(sel.fed ? 'Federação ' + sel.k : sel.k)}</h2><p class="sub"><a href="#/t1?cargo=${tipo}&m=p">← Todos os partidos e federações</a></p>
+        <div class="dp-ks">${stat('Eleitos no país', fInt(sel.ele), `${fInt(ufs.filter(x => x.ele).length)} estados com cadeira`)}${stat('Votos totais', fInt(sel.tot))}${stat('Estados com candidatos', fInt(ufs.length))}</div></section>` +
+        ufs.map(x => {
+          const cs = x.gr.par.flatMap(p => p.cand.map(c => ({ ...c, sg: p.sg }))).sort((a, b) => b.v - a.v), mostra = cs.filter(c => c.e);
+          const li = c => `<a class="dpn-c" href="#/t1/uf/${x.u}?cargo=${tipo}&c=${encodeURIComponent(c.n)}"><span class="dpn-n">${esc(bonito(c.nm))}</span>${sel.fed ? `<small>${esc(sgTxt(c.sg))}</small>` : ''}<b>${fInt(c.v)}</b>${c.e ? '<i class="sit sit-e">Eleito(a)</i>' : ''}</a>`;
+          return `<details class="painel dpn-uf"${x.ele ? ' open' : ''}><summary><b>${esc(nUf(x))}</b><span>${fInt(x.ele)} eleitos · ${fInt(x.tot)} votos · ${fInt(cs.length)} candidatos</span></summary>${mostra.map(li).join('')}${cs.length > mostra.length ? `<details class="dpn-resto"><summary>Ver os demais ${fInt(cs.length - mostra.length)} candidatos</summary>${cs.filter(c => !c.e).map(li).join('')}</details>` : ''}<p class="sub"><a href="#/t1/uf/${x.u}?cargo=${tipo}&f=${encodeURIComponent(x.gr.n)}">Abrir a lista completa em ${esc(nUf(x))} →</a></p></details>`;
+        }).join('');
+    }).catch(() => { el.innerHTML = abas + '<p class="aviso">Os números ainda não carregaram. Tente de novo em instantes.</p>'; });
   } };
 }
 
