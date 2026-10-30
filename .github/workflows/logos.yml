@@ -1,0 +1,21 @@
+name: Logotipos dos partidos
+on:
+  workflow_dispatch:
+  push:
+    paths: ['scripts/logos_partidos.mjs', '.github/workflows/logos.yml']
+permissions:
+  contents: write
+jobs:
+  logos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: main }
+      - uses: actions/setup-node@v4
+        with: { node-version: '22' }
+      - run: node scripts/logos_partidos.mjs 2>&1 | tee logos.log
+      - name: Publicar
+        run: |
+          git config user.name coletor; git config user.email coletor@users.noreply.github.com
+          git add img/partidos && git commit -q -m "Logotipos dos partidos (Wikimedia Commons)" && git pull -q --rebase origin main && git push || echo FALHA
