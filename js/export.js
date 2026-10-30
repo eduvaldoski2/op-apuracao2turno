@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=3e0c8414';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=3e0c8414';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=36167889';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=36167889';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -255,6 +255,7 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
       scale: 2, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: 1000,
       onclone: doc => {
         const alvo = doc.querySelector('[data-exp-alvo]'); if (!alvo) return;
+        alvo.querySelectorAll('details.dsc-d').forEach(d => { const l = d.querySelector('summary .dsc-dl'); if (l) { const r = l.cloneNode(true); r.classList.add('dsc-l'); d.replaceWith(r); } });   // distritos: só a linha do distrito
         alvo.querySelectorAll('.sem-export,details').forEach(n => n.remove());
         doc.querySelectorAll('.mapa-tip,.g-tip').forEach(n => n.remove());
         alvo.querySelectorAll(':scope > h2').forEach(n => n.remove());
@@ -321,6 +322,32 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
         }
         // mapas de município e de bairro: rótulos um pouco maiores
         alvo.querySelectorAll('.mapa-wrap svg:not(.mapa) text, #mapa-bm svg text').forEach(t => { const f = parseFloat(t.style.fontSize) || parseFloat(t.getAttribute('font-size')) || 0; if (f) setFs(t, (f * 1.3).toFixed(2)); });
+        // listas em linhas (mais votados, eleitos, distritos, bairros…): paginam como as tabelas; muitas linhas viram duas colunas (1, 2, 3… descem pela esquerda)
+        const lst = [...alvo.querySelectorAll('[data-export-lista]')].find(l => !l.closest('[hidden]') && l.children.length);
+        if (lst && !alvo.querySelector('table tbody')) {
+          if (de > 0) alvo.querySelectorAll('.dp-logos,.dp-ks,.dsc-t,#cd-mapa,.mapa-wrap,.leg-mapa,.exp-info').forEach(n => n.remove());   // continuação: só a lista
+          const win = doc.defaultView; lst.parentElement?.classList.contains('so-export') && (lst.parentElement.style.display = 'block');
+          const todas = [...lst.children].filter(r => { if (win.getComputedStyle(r).display === 'none') { r.remove(); return false; } return true; });
+          const total = todas.length; todas.slice(0, de).forEach(r => r.remove());
+          const rest = todas.slice(de); let n = rest.length; const alt = () => alvo.getBoundingClientRect().height;
+          // 1ª tentativa: uma coluna (letra maior); se não couber tudo, tenta duas colunas e fica com a que mostra mais linhas
+          const cabe = () => alt() <= innerH - 40;
+          let n1 = rest.length; { const ref = lst.cloneNode(false); void ref; }
+          const poe1 = k => lst.replaceChildren(...rest.slice(0, k));
+          poe1(n1); while (!cabe() && n1 > 3) { n1--; poe1(n1); }
+          n = n1;
+          if (n1 < rest.length && rest.length > 8) {
+            lst.classList.add('xl-2'); lst.style.display = 'grid'; const A = doc.createElement('div'), B = doc.createElement('div');
+            const poe2 = k => { const h = Math.ceil(k / 2); A.replaceChildren(...rest.slice(0, h)); B.replaceChildren(...rest.slice(h, k)); lst.replaceChildren(A, B); };
+            let n2 = rest.length; poe2(n2); while (!cabe() && n2 > 4) { n2 -= 2; poe2(n2); }
+            if (n2 > n1) n = n2; else { lst.classList.remove('xl-2'); lst.style.display = 'block'; poe1(n1); n = n1; }
+          }
+          infoTab = { de, n, total };
+          if (de > 0 || n < rest.length) {
+            const nota = doc.createElement('div'); nota.style.cssText = 'margin-top:10px;font:600 16px system-ui,sans-serif;color:#6f6888;text-align:center';
+            nota.textContent = partes ? `Posições ${de + 1} a ${de + n} de ${total}${de + n < total ? ' · continua na próxima imagem' : ''}` : `Mostrando ${n} de ${total} · a lista completa está no painel`; alvo.appendChild(nota);
+          }
+        }
         const tb = [...alvo.querySelectorAll('table tbody')].find(t => !t.closest('[hidden]'));
         if (tb) {
           // só as linhas visíveis (busca/filtro da tela); a imagem mostra as linhas a partir de "de" e para quando acabar o espaço

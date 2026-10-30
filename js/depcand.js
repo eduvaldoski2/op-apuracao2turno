@@ -1,22 +1,22 @@
 // Página do candidato (deputado): descida estado > região > município > região do município > bairro > local de votação > seção.
 // Os quadros de números acompanham o nível em que a pessoa está. Dados: data/dep_mun (por município), data/dep_sec (por seção),
 // data/bairros (locais de votação), data/bairros_geo (limites), data/regioes_uf (regiões do estado).
-import { fInt, fNum } from './util.js?v=3e0c8414';
-import { esc, tabela, sem } from './ui.js?v=3e0c8414';
-import { getJSON } from './tse.js?v=3e0c8414';
-import { criarMapaMun } from './mapamun.js?v=3e0c8414';
-import { criarMapaBairros } from './mapabairros.js?v=3e0c8414';
-import { criarMapaPontos } from './mapapontos.js?v=3e0c8414';
+import { fInt, fNum } from './util.js?v=36167889';
+import { esc, tabela, sem } from './ui.js?v=36167889';
+import { getJSON } from './tse.js?v=36167889';
+import { criarMapaMun } from './mapamun.js?v=36167889';
+import { criarMapaBairros } from './mapabairros.js?v=36167889';
+import { criarMapaPontos } from './mapapontos.js?v=36167889';
 
 const cache = new Map(), pega = (u, o) => { if (!cache.has(u)) cache.set(u, getJSON(u, o).catch(e => { cache.delete(u); throw e; })); return cache.get(u); };
 
 
 // lista com busca por nome e ordenação (setas) — usada em toda lista geográfica da página
-export function listaBusca(host, { itens, render, filtro, bind, inicial = 'v' }) {
+export function listaBusca(host, { itens, render, filtro, bind, inicial = 'v', exporta = true }) {
   let k = inicial, d = k === 'nome' ? 'asc' : 'desc', q = '';
   host.classList.add('lb');
   host.innerHTML = `<div class="lb-ctl sem-export"><input type="search" placeholder="Buscar pelo nome…" aria-label="Buscar pelo nome"><span class="lb-n"></span></div><div class="lb-ord sem-export" role="group" aria-label="Ordenar"><button type="button" data-k="nome">Nome <i></i></button><button type="button" data-k="v">Votos <i></i></button></div><div class="lb-corpo"></div>`;
-  const corpo = host.querySelector('.lb-corpo');
+  const corpo = host.querySelector('.lb-corpo'); if (exporta) corpo.setAttribute('data-export-lista', '');
   const ordena = arr => arr.slice().sort((a, b) => (k === 'nome' ? String(a.nome).localeCompare(String(b.nome), 'pt-BR') : (a.v - b.v)) * (d === 'asc' ? 1 : -1));
   const desenha = () => {
     const rs = ordena(itens.filter(x => !q || filtro(x, q)));
@@ -96,7 +96,7 @@ export async function candidatoDin(ctx, sec, { uf, tipo, arq, c, cor, todos, sit
       titulo = regSel ? regSel.nome : nomeUf;
       quadros = caixas([stat(regSel ? `Votos em ${regSel.nome}` : 'Votos no estado', fInt(minha), regSel ? `${pcDe(minha, c.v)} dos votos dele` : `${fNum(vv ? 100 * c.v / vv : 0, 2)}% dos válidos`), stat(regSel ? 'Posição na região' : 'Posição no estado', `${r.geral.p}º`, `entre ${fInt(r.geral.de)} candidatos`), stat(ehFed ? 'Posição na federação' : 'Posição no partido', `${r.gr.p}º`, `entre ${fInt(r.gr.de)}`), ehFed ? stat('Posição no partido', `${r.pt.p}º`, `entre ${fInt(r.pt.de)} do ${esc(sgTxt(c.sg))}`) : stat('Total de votos nominais', fInt(r.tot), `${pcDe(minha, r.tot)} são dele`)]);
       const regs = regioes.map((g, i) => ({ i, nome: g.nome, n: g.cds.length, v: g.cds.reduce((t, cd) => t + (meu[cd] || 0), 0) })), rmax = Math.max(1, ...regs.map(g => g.v));
-      if (!regSel && regs.length) jobs.push({ sel: '#cd-regs', itens: regs, filtro: (g, q) => sem(g.nome).includes(q), render: g => itemLista(g.i, g.nome, `${fInt(g.n)} municípios`, g.v, pcDe(g.v, c.v), rmax), bind: h => h.querySelectorAll('.dsc-l').forEach(b => b.addEventListener('click', () => ir({ reg: +b.dataset.i }))) });
+      if (!regSel && regs.length) jobs.push({ exporta: false, sel: '#cd-regs', itens: regs, filtro: (g, q) => sem(g.nome).includes(q), render: g => itemLista(g.i, g.nome, `${fInt(g.n)} municípios`, g.v, pcDe(g.v, c.v), rmax), bind: h => h.querySelectorAll('.dsc-l').forEach(b => b.addEventListener('click', () => ir({ reg: +b.dataset.i }))) });
       corpo = (!regSel && regs.length ? `<h3>Regiões do estado</h3><div id="cd-regs"></div>` : '') + `<h3>Municípios${regSel ? ' da região' : ''}</h3><div id="cd-mapa"></div><div id="cd-tab"></div>`;
     } else if (mun) {
       const cd = nav.cd, r = rank([cd]), geoD = mun.geoD, geoB = mun.geoB, geo = mun.geo;

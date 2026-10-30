@@ -1,10 +1,10 @@
 // Deputado federal e estadual, 1º turno de 2026 (data/dep_1t/*.json, scripts/dep1t.mjs): por estado, com federações, partidos e candidatos.
-import { UF_NOME, fInt, fNum } from './util.js?v=3e0c8414';
-import { esc, tabela, sem } from './ui.js?v=3e0c8414';
-import { getJSON } from './tse.js?v=3e0c8414';
-import { nomeP } from './governador.js?v=3e0c8414';
-import { criarMapaMun } from './mapamun.js?v=3e0c8414';
-import { corPartido, corTextoSobre, logoP } from './partidos.js?v=3e0c8414';
+import { UF_NOME, fInt, fNum } from './util.js?v=36167889';
+import { esc, tabela, sem } from './ui.js?v=36167889';
+import { getJSON } from './tse.js?v=36167889';
+import { nomeP } from './governador.js?v=36167889';
+import { criarMapaMun } from './mapamun.js?v=36167889';
+import { corPartido, corTextoSobre, logoP } from './partidos.js?v=36167889';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -55,7 +55,7 @@ export function viewDepBrasil(ctx, tipo) {
       const logos = sel.fed ? sel.par.map(p => `<a href="${base}${pSel && pSel === p ? '' : '&p=' + encodeURIComponent(p.sg)}" title="${pSel === p ? 'Voltar à federação' : 'Ver só ' + esc(sgTxt(p.sg))}" style="${pSel && pSel !== p ? 'opacity:.35' : ''}">${logoP(p.sg, 'lg-g')}</a>`).join('') : logoP(sel.par[0].sg, 'lg-g');
       const chips = sel.fed ? `<div class="dep-abas">${chipP(base, 'Federação inteira', null, !pSel, cor)}${sel.par.map(p => chipP(`${base}&p=${encodeURIComponent(p.sg)}`, esc(sgTxt(p.sg)), null, pSel === p, corPartido(p.sg))).join('')}</div>` : '';
       el.innerHTML = abas + `<section class="painel dp-pn" style="--pc:${cor}"><div class="dp-logos">${logos}</div><h2>${esc(nome)}</h2><p class="sub">${pSel ? `Partido da federação ${esc(sel.k)} · ` : ''}<a href="#/t1?cargo=${tipo}&m=p">← Todos os partidos e federações</a></p>${chips}
-        <div class="dp-ks">${stat('Eleitos no país', fInt(eleT), `${fInt(ufs.filter(x => x.ele).length)} estados com cadeira`)}${stat('Votos totais', fInt(totT))}${stat('Estados com candidatos', fInt(ufs.length))}</div></section>` +
+        <div class="dp-ks">${stat('Eleitos no país', fInt(eleT), `${fInt(ufs.filter(x => x.ele).length)} estados com cadeira`)}${stat('Votos totais', fInt(totT))}${stat('Estados com candidatos', fInt(ufs.length))}</div>${blocoEleitos(ufs.flatMap(x => x.ps.flatMap(p => p.cand.filter(c => c.e).map(c => ({ ...c, sg: p.sg, uf: x.u })))).sort((a, b) => b.v - a.v), 0, c => ` · ${esc(c.uf.toUpperCase())}`)}</section>` +
         ufs.map(x => {
           const vistos = new Set(), cs = x.ps.flatMap(p => p.cand.map(c => ({ ...c, sg: p.sg }))).filter(c => { const k = c.n + '|' + c.sg; if (vistos.has(k)) return false; vistos.add(k); return true; }).sort((a, b) => b.v - a.v), mostra = cs.filter(c => c.e);
           const li = c => `<a class="dpn-c" href="#/t1/uf/${x.u}?cargo=${tipo}&c=${encodeURIComponent(c.n)}"><span class="dpn-n">${esc(bonito(c.nm))}</span>${sel.fed && !pSel ? `<small>${esc(sgTxt(c.sg))}</small>` : ''}<b>${fInt(c.v)}</b>${c.e ? '<i class="sit sit-e">Eleito(a)</i>' : ''}</a>`;
@@ -94,6 +94,11 @@ function situacoes(g) {
 }
 const seloSit = s => `<span class="sit sit-${s.k}">${esc(s.t)}</span>`;
 
+
+// linha de ranking usada na tela e nas imagens (rank, nome, partido, votos e %)
+export const linhaRank = (i, nome, sg, v, pc, extra = '') => { const cor = corPartido(sg); return `<div class="dtr-c"><b class="dtr-p">${i + 1}º</b><span class="dtr-n">${esc(nome)}<small><span class="dc-p" style="--pc:${cor};--pt:${corTextoSobre(cor)}">${esc(sgTxt(sg))}</span>${extra}</small></span><span class="dtr-v">${fInt(v)}<small>${pc}</small></span></div>`; };
+const blocoEleitos = (lista, vv, sufixo = () => '') => lista.length ? `<div class="so-export dp-eleitos"><h3>Eleitos${lista.length > 1 ? ` (${lista.length})` : ''}</h3><div data-export-lista>${lista.map((c, i) => linhaRank(i, bonito(c.nm), c.sg, c.v, vv ? fNum(100 * c.v / vv, 2) + '%' : '', sufixo(c))).join('')}</div></div>` : '';
+
 export function viewDepUf(ctx, uf, tipo) {
   const [, cargo] = ARQ[tipo], nomeUf = UF_NOME[uf] || uf.toUpperCase(), F = qs().get('f') || '', P = qs().get('p') || '', C = qs().get('c') || '';
   const html = `<div class="aviso t1">Resultado <b>oficial</b> do 1º turno de 2026 · ${esc(cargo)} · ${esc(nomeUf)} · TSE</div><div id="dep-corpo"><p class="carregando">Carregando…</p></div>`;
@@ -128,7 +133,7 @@ export function viewDepUf(ctx, uf, tipo) {
         const nome = ehFed ? (alvo.tp === 'f' ? `Federação ${nomeGrupo(alvo)}` : alvo.par[0].nm || sgTxt(alvo.par[0].sg)) : (alvo.nm || sgTxt(alvo.sg));
         const logos = ehFed ? ordenaPar(alvo.par).map(p => `<a href="${base}&f=${encodeURIComponent(alvo.n)}&p=${encodeURIComponent(p.sg)}" title="Ver só ${esc(sgTxt(p.sg))}">${logoP(p.sg, 'lg-g')}</a>`).join('') : logoP(alvo.sg, 'lg-g');
         painel = `<section class="painel dp-pn"><div class="dp-logos">${logos}</div><h2>${esc(nome)}</h2><p class="sub">${esc(nomeUf)} · ${esc(cargo)} · votação ${ehFed && alvo.tp === 'f' ? 'da federação' : 'do partido'}</p>
-          <div class="dp-ks">${stat('Votos totais', fInt(tot), `${fNum(vv ? 100 * tot / vv : 0, 2)}% dos válidos`)}${stat('Nominais', fInt(tn2), `${fNum(tot ? 100 * tn2 / tot : 0, 1)}% do total`)}${stat('Legenda', fInt(tl2), `${fNum(tot ? 100 * tl2 / tot : 0, 1)}% do total`)}${stat('Eleitos', fInt(ele), ehFed && alvo.tp === 'f' ? `cadeiras da federação: ${fInt(alvo.vag)}` : `de ${fInt(lista.length)} candidatos`)}</div></section>`;
+          <div class="dp-ks">${stat('Votos totais', fInt(tot), `${fNum(vv ? 100 * tot / vv : 0, 2)}% dos válidos`)}${stat('Nominais', fInt(tn2), `${fNum(tot ? 100 * tn2 / tot : 0, 1)}% do total`)}${stat('Legenda', fInt(tl2), `${fNum(tot ? 100 * tl2 / tot : 0, 1)}% do total`)}${stat('Eleitos', fInt(ele), ehFed && alvo.tp === 'f' ? `cadeiras da federação: ${fInt(alvo.vag)}` : `de ${fInt(lista.length)} candidatos`)}</div>${blocoEleitos(lista.filter(c => c.e).sort((a, b) => b.v - a.v), vv)}</section>`;
       }
       const titulo = pt ? `Candidatos de ${esc(sgTxt(pt.sg))}` : grDoP ? `Candidatos ${grDoP.tp === 'f' ? 'da federação' : 'de ' + esc(sgTxt(grDoP.par[0].sg))}` : 'Todos os candidatos';
       el.innerHTML = `${quadro}
@@ -136,7 +141,7 @@ export function viewDepUf(ctx, uf, tipo) {
       ${painel}
       <section class="painel" id="dep-terr"></section>
       <section class="painel"><h2>${titulo}: ${fInt(lista.length)}</h2><p class="sub">Ordenados por votos. Toque no nome para ver a votação do candidato.</p><div id="tab-dc"></div></section>`;
-      import('./depterr.js?v=3e0c8414').then(m => m.territorioTop(ctx, el.querySelector('#dep-terr'), { uf, tipo, arq: ARQ[tipo][0], todos, lista, base, nomeUf, H: { bonito, sgTxt }, rotuloRecorte: pt ? sgTxt(pt.sg) : grDoP ? (grDoP.tp === 'f' ? 'Federação ' : '') + nomeGrupo(grDoP) : '' })).catch(e => { console.error('terr', e); const h = el.querySelector('#dep-terr'); if (h) h.remove(); });
+      import('./depterr.js?v=36167889').then(m => m.territorioTop(ctx, el.querySelector('#dep-terr'), { uf, tipo, arq: ARQ[tipo][0], todos, lista, base, nomeUf, H: { bonito, sgTxt }, rotuloRecorte: pt ? sgTxt(pt.sg) : grDoP ? (grDoP.tp === 'f' ? 'Federação ' : '') + nomeGrupo(grDoP) : '' })).catch(e => { console.error('terr', e); const h = el.querySelector('#dep-terr'); if (h) h.remove(); });
       const rows = lista.map(c => ({ ...c, pos: posG.get(c.n + '|' + c.sg), pc: vv ? 100 * c.v / vv : 0, sit: sit.get(c.n + '|' + c.sg) }));
       const href = x => `${base}&c=${encodeURIComponent(x.n)}${x.gr && grDoP ? '' : ''}`;
       const cols = [
@@ -164,5 +169,5 @@ function candidato(ctx, el, { g, uf, tipo, cargo, nomeUf, base, vv, sit, todos, 
     <div class="dp-ks">${stat('Votos', fInt(c.v), `${fNum(vv ? 100 * c.v / vv : 0, 2)}% dos válidos`)}${stat('Posição no estado', `${posG.get(c.n + '|' + c.sg)}º`, `entre ${fInt(todos.length)} candidatos`)}${stat(ehFed ? 'Posição na federação' : 'Posição no partido', `${pGr}º`, `entre ${fInt(mesmoGr.length)} · ${esc(ehFed ? nomeGrupo(gr) : sgTxt(c.sg))}`)}${ehFed ? stat('Posição no partido', `${pP}º`, `entre ${fInt(mesmoP.length)} do ${esc(sgTxt(c.sg))}`) : stat('Cadeiras do partido', fInt(eleitosDe(gr)), `votos do partido: ${fInt(gr.tn + gr.tl)}`)}</div>
     <p class="sub" style="margin-top:10px"><a href="${base}&f=${encodeURIComponent(gr.n)}${ehFed ? `&p=${encodeURIComponent(c.sg)}` : ''}">← Ver a lista de ${esc(ehFed ? sgTxt(c.sg) : nomeGrupo(gr))}</a></p></section>
   <section class="painel" id="cd-mun"><h2>Votação por região e município</h2><p class="carregando">Carregando…</p></section>`;
-  import('./depcand.js?v=3e0c8414').then(m => m.candidatoDin(ctx, el.querySelector('#cd-mun'), { uf, tipo, arq: ARQ[tipo][0], c, cor, todos, sit, nomeUf, vv, H: { bonito, stat, nomeGrupo, sgTxt, ehFed } })).catch(e => { console.error('cand', e); el.querySelector('#cd-mun').innerHTML = '<h2>Votação por região e município</h2><p class="aviso">Não foi possível carregar a votação detalhada. Tente de novo.</p>'; });
+  import('./depcand.js?v=36167889').then(m => m.candidatoDin(ctx, el.querySelector('#cd-mun'), { uf, tipo, arq: ARQ[tipo][0], c, cor, todos, sit, nomeUf, vv, H: { bonito, stat, nomeGrupo, sgTxt, ehFed } })).catch(e => { console.error('cand', e); el.querySelector('#cd-mun').innerHTML = '<h2>Votação por região e município</h2><p class="aviso">Não foi possível carregar a votação detalhada. Tente de novo.</p>'; });
 }

@@ -1,10 +1,10 @@
 // "Mais votados por território": ranking de candidatos em qualquer nível (estado > região > município > distrito > bairro > local de votação),
 // respeitando o partido/federação escolhido na página. Reaproveita os dados da página do candidato (dep_mun, bairros, bairros_geo) e dep_top (mais votados por local).
-import { fInt, fNum } from './util.js?v=3e0c8414';
-import { esc, sem } from './ui.js?v=3e0c8414';
-import { getJSON } from './tse.js?v=3e0c8414';
-import { listaBusca } from './depcand.js?v=3e0c8414';
-import { corPartido, corTextoSobre } from './partidos.js?v=3e0c8414';
+import { fInt, fNum } from './util.js?v=36167889';
+import { esc, sem } from './ui.js?v=36167889';
+import { getJSON } from './tse.js?v=36167889';
+import { listaBusca } from './depcand.js?v=36167889';
+import { corPartido, corTextoSobre } from './partidos.js?v=36167889';
 
 const cache = new Map(), pega = (u, o) => { if (!cache.has(u)) cache.set(u, getJSON(u, o).catch(e => { cache.delete(u); throw e; })); return cache.get(u); };
 
@@ -41,7 +41,7 @@ export async function territorioTop(ctx, host, { uf, tipo, arq, todos, lista, ba
   const agrupaBairros = (ls, geoB) => { const mp = new Map(); for (const L of ls) { const poli = geoB && L.gi != null, k = poli ? 'g' + L.gi : 't' + L.bairro; let g = mp.get(k); if (!g) mp.set(k, g = { k, nome: bonito(poli ? geoB.f[L.gi].n : L.bairro), locais: [] }); g.locais.push(L); } return [...mp.values()]; };
 
   const chipC = n => { const c = meta.get(n), cor = corPartido(c.sg); return `<span class="dc-p" style="--pc:${cor};--pt:${corTextoSobre(cor)}">${esc(sgTxt(c.sg))}</span>`; };
-  const linhaCand = (n, v, tot, i) => { const c = meta.get(n); return `<a class="dtr-c" href="${base}&c=${encodeURIComponent(n)}"><b class="dtr-p">${i + 1}º</b><span class="dtr-n">${esc(bonito(c.nm))}<small>${chipC(n)} ${c.e ? '<i class="sit sit-e">Eleito(a)</i>' : ''}</small></span><span class="dtr-v">${fInt(v)}<small>${tot ? fNum(100 * v / tot, 1) + '%' : ''}</small></span></a>`; };
+  const linhaCand = (n, v, tot, i, extra = false) => { const c = meta.get(n); return `<a class="dtr-c${extra ? ' dtr-extra' : ''}" href="${base}&c=${encodeURIComponent(n)}"><b class="dtr-p">${i + 1}º</b><span class="dtr-n">${esc(bonito(c.nm))}<small>${chipC(n)} ${c.e ? '<i class="sit sit-e">Eleito(a)</i>' : ''}</small></span><span class="dtr-v">${fInt(v)}<small>${tot ? fNum(100 * v / tot, 1) + '%' : ''}</small></span></a>`; };
 
   async function render() {
     const regSel = nav.reg != null ? regioes[nav.reg] : null;
@@ -80,9 +80,11 @@ export async function territorioTop(ctx, host, { uf, tipo, arq, todos, lista, ba
     delete host.dataset.expSec; host.classList.remove('tem-exp');
     host.innerHTML = `<h2>Mais votados por território</h2><p class="sub">Escolha um território na lista abaixo para ver quem mais teve votos nele${rotuloRecorte ? ` · <b>${esc(rotuloRecorte)}</b>` : ''}.</p>
       <div class="dsc-t">${trilha.join(' › ')}</div>
-      <h3>Mais votados · ${esc(titulo)}</h3><div id="dtr-rk">${rk.arr.length ? rk.arr.slice(0, N).map(([n, v], i) => linhaCand(n, v, rk.tot, i)).join('') : '<p class="aviso">Sem votos para este recorte neste território.</p>'}</div>
-      ${rk.arr.length > N ? `<details class="dtr-mais"><summary>Ver mais candidatos (${Math.min(rk.arr.length, 100) - N})</summary>${rk.arr.slice(N, 100).map(([n, v], i) => linhaCand(n, v, rk.tot, i + N)).join('')}</details>` : ''}
-      ${nota ? `<p class="sub">${nota}</p>` : ''}${filhos ? `<h3>${filhosTit}</h3><div id="dtr-f"></div>` : ''}`;
+      <h3 class="dtr-t">Mais votados · ${esc(titulo)}</h3><div id="dtr-rk" data-export-lista>${rk.arr.length ? rk.arr.slice(0, 100).map(([n, v], i) => linhaCand(n, v, rk.tot, i, i >= N)).join('') : '<p class="aviso">Sem votos para este recorte neste território.</p>'}</div>
+      ${rk.arr.length > N ? `<button type="button" class="dtr-mais sem-export" aria-expanded="false">Ver mais candidatos (${Math.min(rk.arr.length, 100) - N})</button>` : ''}
+      ${nota ? `<p class="sub">${nota}</p>` : ''}${filhos ? `<h3 class="sem-export">${filhosTit}</h3><div id="dtr-f" class="sem-export"></div>` : ''}`;
+    host.dataset.exportTitulo = `Mais votados · ${titulo}${rotuloRecorte ? ' · ' + rotuloRecorte : ''}`;
+    host.querySelector('.dtr-mais')?.addEventListener('click', e => { const a = host.classList.toggle('dtr-aberto'); e.currentTarget.setAttribute('aria-expanded', String(a)); e.currentTarget.textContent = a ? 'Ver menos' : `Ver mais candidatos (${Math.min(rk.arr.length, 100) - N})`; });
     host.querySelectorAll('[data-n]').forEach(b => b.addEventListener('click', () => { const t = b.dataset.n; if (t === 'estado') Object.assign(nav, { reg: null, cd: null, d: null, b: null, l: null }); else if (t === 'reg') Object.assign(nav, { cd: null, d: null, b: null, l: null }); else if (t === 'mun') Object.assign(nav, { d: null, b: null, l: null }); else if (t === 'dist') Object.assign(nav, { b: null, l: null }); else if (t === 'bairro') Object.assign(nav, { l: null }); render(); }));
     if (filhos) {
       const max = Math.max(1, ...filhos.itens.map(x => x.v));
