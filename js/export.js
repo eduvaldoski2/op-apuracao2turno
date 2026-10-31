@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=11bc0810';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=11bc0810';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=472774c2';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=472774c2';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -434,9 +434,9 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
 export async function baixarPNGSecaoSocial(el, nome, fmtId, ctx) {
   const fmt = FORMATOS_SEC[fmtId] || FORMATOS_SEC['4x5'];
   const cvs = []; let de = 0;
-  for (let k = 0; k < 80; k++) {
+  for (let k = 0; k < (window.__exMax || 80); k++) {   // __exMax: só para gerar amostras rápidas
     const cv = await canvasSecaoSocial(el, fmt, { ...ctx, de, partes: true }); cvs.push(cv);
-    const inf = cv.info; if (!inf || inf.n < 1) break; de += inf.n; if (de >= inf.total) break;
+    const inf = cv.info; if (window.__exMax && inf) window.__exTotal = inf.total; if (!inf || inf.n < 1) break; de += inf.n; if (de >= inf.total) break;
   }
   const blobs = await Promise.all(cvs.map(cv => new Promise(ok => cv.toBlob(ok, 'image/png'))));
   const N = blobs.length, pad = n => String(n).padStart(String(N).length, '0');

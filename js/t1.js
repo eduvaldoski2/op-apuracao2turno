@@ -1,16 +1,16 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=11bc0810';
-import { esc, tabela, sem, entenda } from './ui.js?v=11bc0810';
-import { getFoco } from './foco.js?v=11bc0810';
-import { kpi } from './views.js?v=11bc0810';
-import { criarMapa } from './map.js?v=11bc0810';
-import { criarMapaMun } from './mapamun.js?v=11bc0810';
-import { getJSON } from './tse.js?v=11bc0810';
-import { govTopo, govPainel, govTabelaHtml, govTabelaMontar, senPainel, senTabelaHtml, senTabelaMontar } from './governador.js?v=11bc0810';
-import { viewDepBrasil, viewDepUf } from './deputados.js?v=11bc0810';
-import { leitura, balao } from './insights.js?v=11bc0810';
-import { dispersao } from './dispersao.js?v=11bc0810';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=472774c2';
+import { esc, tabela, sem, entenda } from './ui.js?v=472774c2';
+import { getFoco } from './foco.js?v=472774c2';
+import { kpi } from './views.js?v=472774c2';
+import { criarMapa } from './map.js?v=472774c2';
+import { criarMapaMun } from './mapamun.js?v=472774c2';
+import { getJSON } from './tse.js?v=472774c2';
+import { govTopo, govPainel, govTabelaHtml, govTabelaMontar, senPainel, senTabelaHtml, senTabelaMontar } from './governador.js?v=472774c2';
+import { viewDepBrasil, viewDepUf } from './deputados.js?v=472774c2';
+import { leitura, balao } from './insights.js?v=472774c2';
+import { dispersao } from './dispersao.js?v=472774c2';
 
 let cache = null, formaMapa = 'areas', eixoDisp = 'abst';
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
@@ -51,8 +51,22 @@ function ficha(T, i, u, { selo, ativa, rk }) {
     <div class="ficha-rodape">${selo ? `<span class="selo-2t">${selo}</span>` : '<span></span>'}<span class="ficha-dica sem-export">${ativa ? '✓ ativo · limpar' : 'acompanhar ›'}</span></div></a>`;
 }
 // topo padrão das telas do 1º turno: resumo (barra com todos os candidatos) + uma ficha por candidato
+// candidato selecionado: página do candidato (cartão grande com posição, votos e diferença para os vizinhos) e atalho para trocar de candidato
+function heroCand(T, u, i, ord, rk, rotulo, brasil) {
+  const c = T.cands[i], pos = ord.indexOf(i), lider = ord[0], prox = pos === 0 ? ord[1] : ord[pos - 1], abaixo = ord[pos + 1];
+  const difLider = pos === 0 ? null : u.v[lider] - u.v[i], selo = brasil && /2º turno/i.test(c.st || '') ? '<span class="selo-2t">Foi ao 2º turno</span>' : '';
+  const dif = pos === 0 ? `Lidera com <b>${fInt(u.v[i] - u.v[ord[1]])}</b> votos a mais que ${esc(T.nome(ord[1]))}` : `<b>${fInt(difLider)}</b> votos atrás de ${esc(T.nome(lider))} (${fNum(u.p[lider] - u.p[i], 2)} p.p.)`;
+  const kp = [['Posição', `${rk[i]}º lugar`], ['Votos', fInt(u.v[i])], ['Número', esc(c.n)]].map(([t, v]) => `<div class="hc-k"><span>${t}</span><b>${v}</b></div>`).join('');
+  const outros = ord.filter(j => j !== i).map(j => `<a class="hc-o" href="${baseHash()}?c=${encodeURIComponent(T.chave[j])}" style="--c:${T.cor(j)}"><i></i>${esc(T.curto(j))} <b>${fNum(u.p[j], 1)}%</b></a>`).join('');
+  return `<section class="painel hero-cand" style="--c:${T.cor(i)}"><a class="hc-volta sem-export" href="${baseHash()}">‹ Todos os candidatos</a>
+    <div class="hc-topo"><span class="ficha-num">${esc(c.n)}</span><div><h2 class="hc-nome">${esc(T.nome(i))}</h2><div class="hc-part">${esc(T.part(i))} · ${esc(rotulo)} · 1º turno ${selo}</div></div></div>
+    <div class="hc-pct">${fNum(u.p[i], 2)}%</div><div class="hc-dif">${dif}</div>
+    <div class="hc-ks">${kp}</div>
+    <div class="hc-outros sem-export"><span>Ver outro candidato:</span>${outros}</div></section>`;
+}
 export function topoT1(T, u, rotulo, { brasil } = {}) {
   const fi = idxFoco(T), ord = u.v.map((x, i) => i).sort((a, b) => u.v[b] - u.v[a]), rk = ranks(u.v);
+  if (fi >= 0) return heroCand(T, u, fi, ord, rk, rotulo, brasil);
   const resumo = `<section class="painel resumo"><div class="centro-t">${esc(rotulo)} · 1º turno</div><div class="barra2" role="img" aria-label="Votos válidos por candidato">${ord.map(i => `<i style="width:${isFinite(u.p[i]) ? u.p[i] : 0}%;background:${T.cor(i)}" title="${esc(T.nome(i))} ${fNum(u.p[i], 2)}%"></i>`).join('')}</div><div class="resumo-t"><span><b>${fInt(u.vv)}</b> votos válidos</span><span class="sem-export">Clique numa ficha para acompanhar o candidato no mapa e nas tabelas</span></div></section>`;
   const aviso = fi >= 0 ? `<div class="foco-aviso sem-export"><span>O mapa e as tabelas mostram o desempenho de <b style="color:${T.cor(fi)}">${esc(T.nome(fi))}</b>.</span><a href="${baseHash()}">Limpar seleção ✕</a></div>` : '';
   return resumo + aviso + `<section class="fichas" aria-label="Candidatos">${ord.map(i => ficha(T, i, u, { selo: brasil && /2º turno/i.test(T.cands[i].st) ? 'Foi ao 2º turno' : '', ativa: i === fi, rk: rk[i] })).join('')}</section>`;

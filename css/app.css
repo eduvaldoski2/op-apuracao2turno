@@ -793,3 +793,14 @@ body.tl-aberto{overflow:hidden}
 .exp-social .tab td:not(:first-child) small{white-space:nowrap}
 .exp-social .tab td:first-child small{white-space:normal}
 .exp-social .leg-mapa{font-size:21px}.exp-4x5 .leg-mapa,.exp-9x16 .leg-mapa{font-size:24px}
+/* página do candidato (1º turno) */
+.hero-cand{border-top:6px solid var(--c);margin:14px 0}
+.hc-volta{display:inline-block;font-weight:700;font-size:14px;margin-bottom:10px;color:var(--roxo-3)}
+.hc-topo{display:flex;align-items:center;gap:12px}.hc-topo .ficha-num{font-size:20px;padding:6px 11px}
+.hc-nome{margin:0;font-size:26px;line-height:1.1}.hc-part{font-size:13.5px;color:var(--tx2);margin-top:3px;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.hc-pct{font:400 56px 'DM Serif Display',Georgia,serif;color:var(--c);line-height:1;margin:14px 0 4px}
+.hc-dif{font-size:14.5px;color:var(--tx2)}.hc-dif b{color:var(--tx)}
+.hc-ks{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:14px}
+.hc-k{background:#faf8ff;border:1px solid #e6e0f3;border-radius:10px;padding:9px 12px;display:flex;flex-direction:column;gap:2px}.hc-k span{font-size:11.5px;color:var(--tx2);text-transform:uppercase;letter-spacing:.04em;font-weight:700}.hc-k b{font-size:19px}
+.hc-outros{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px;padding-top:12px;border-top:1px solid var(--linha);font-size:13px;color:var(--tx2)}
+.hc-o{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--c);border-radius:99px;padding:3px 11px;color:var(--tx);text-decoration:none;font-size:13px}.hc-o i{width:9px;height:9px;border-radius:50%;background:var(--c)}

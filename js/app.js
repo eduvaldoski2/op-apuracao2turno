@@ -1,27 +1,27 @@
-import { CONFIG, TESTE } from './config.js?v=11bc0810';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=11bc0810';
-import { getJSON } from './tse.js?v=11bc0810';
-import { calcular } from './model.js?v=11bc0810';
-import { projetar, PARAMS } from './proj.js?v=11bc0810';
-import { viewComparar, hashComparar } from './comparar.js?v=11bc0810';
-import { viewPerguntar } from './ia.js?v=11bc0810';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=11bc0810';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=11bc0810';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=11bc0810';
-import { iniciarExportSecoes } from './expsec.js?v=11bc0810';
-import { eventosEntre } from './avisos.js?v=11bc0810';
-import { mostrarEleito } from './eleito.js?v=11bc0810';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=11bc0810';
-import { abrirTelao, iniciarTV } from './tv.js?v=11bc0810';
-import { iniciarConsentimento } from './consentimento.js?v=11bc0810';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=11bc0810';
-import { lerCard } from './card.js?v=11bc0810';
-import { abrirCompartilhar } from './compartilhar.js?v=11bc0810';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=11bc0810';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=11bc0810';
-import { esc } from './ui.js?v=11bc0810';
-import { getFoco, setFoco, comFoco } from './foco.js?v=11bc0810';
-import { barraEleicao, ligarEleicao, ligarTopoConta } from './eleicao.js?v=11bc0810';
+import { CONFIG, TESTE } from './config.js?v=472774c2';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=472774c2';
+import { getJSON } from './tse.js?v=472774c2';
+import { calcular } from './model.js?v=472774c2';
+import { projetar, PARAMS } from './proj.js?v=472774c2';
+import { viewComparar, hashComparar } from './comparar.js?v=472774c2';
+import { viewPerguntar } from './ia.js?v=472774c2';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=472774c2';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=472774c2';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=472774c2';
+import { iniciarExportSecoes } from './expsec.js?v=472774c2';
+import { eventosEntre } from './avisos.js?v=472774c2';
+import { mostrarEleito } from './eleito.js?v=472774c2';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=472774c2';
+import { abrirTelao, iniciarTV } from './tv.js?v=472774c2';
+import { iniciarConsentimento } from './consentimento.js?v=472774c2';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=472774c2';
+import { lerCard } from './card.js?v=472774c2';
+import { abrirCompartilhar } from './compartilhar.js?v=472774c2';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=472774c2';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=472774c2';
+import { esc } from './ui.js?v=472774c2';
+import { getFoco, setFoco, comFoco } from './foco.js?v=472774c2';
+import { barraEleicao, ligarEleicao, ligarTopoConta } from './eleicao.js?v=472774c2';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -63,7 +63,7 @@ const ir = h => { location.hash = comFoco(h); };
 let ultimoCtx = null;
 function render(manterScroll = false, forcar = false) {
   const r = rota(), y = window.scrollY;
-  { const fAnt = getFoco(); setFoco(r.modo === 't1' ? r.c : null); metTela(r); if (r.modo === 't1' && r.c && r.c !== fAnt) evento('candidato_foco', { cand: r.c }); }
+  { const fAnt = getFoco(); setFoco(r.modo === 't1' ? r.c : null); metTela(r); if (r.modo === 't1' && r.c && r.c !== fAnt) { evento('candidato_foco', { cand: r.c }); manterScroll = false; } }   // abriu a página de um candidato: volta ao topo
   const bs = document.getElementById('barra-status'); if (bs) bs.hidden = r.modo === 't1';
   document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.tela ? a.dataset.tela === r.tela : (a.dataset.modo === (r.modo === 'pr' ? 'ap' : r.modo) && !['comparar', 'perguntar'].includes(r.tela))));
   if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS }, r.modo); return pintar(v, r, {}); }

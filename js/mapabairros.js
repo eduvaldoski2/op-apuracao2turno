@@ -1,5 +1,5 @@
 // Mapa por bairro (malha do IBGE, Censo 2022) de um município: cada polígono recebe a soma dos locais de votação que caem nele.
-import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=11bc0810';
+import { corDoPct, corTexto, fNum, fDelta, CAND } from './util.js?v=472774c2';
 
 const W = 720, num = v => (v == null || isNaN(v)) ? '–' : fNum(v, 1), dl = v => (v == null || isNaN(v)) ? '' : fDelta(v, 1, '');
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
