@@ -1,10 +1,10 @@
 // "Mais votados por território": ranking de candidatos em qualquer nível (estado > região > município > distrito > bairro > local de votação),
 // respeitando o partido/federação escolhido na página. Reaproveita os dados da página do candidato (dep_mun, bairros, bairros_geo) e dep_top (mais votados por local).
-import { fInt, fNum } from './util.js?v=73836e53';
-import { esc, sem } from './ui.js?v=73836e53';
-import { getJSON } from './tse.js?v=73836e53';
-import { listaBusca } from './depcand.js?v=73836e53';
-import { corPartido, corTextoSobre } from './partidos.js?v=73836e53';
+import { fInt, fNum } from './util.js?v=e5d1d349';
+import { esc, sem } from './ui.js?v=e5d1d349';
+import { getJSON } from './tse.js?v=e5d1d349';
+import { listaBusca } from './depcand.js?v=e5d1d349';
+import { corPartido, corTextoSobre } from './partidos.js?v=e5d1d349';
 
 const cache = new Map(), pega = (u, o) => { if (!cache.has(u)) cache.set(u, getJSON(u, o).catch(e => { cache.delete(u); throw e; })); return cache.get(u); };
 
