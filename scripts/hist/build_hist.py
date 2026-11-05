@@ -50,12 +50,17 @@ municipal = ano % 4 == 0
 log('ordinária', ordin, 'municipal' if municipal else 'geral')
 
 # ---------- candidatos (situação final: a do último turno em que aparecem) ----------
-cands_rows = con.execute(f"""SELECT cargo, uf, ue, sq_candidato, nr, nome_urna, sigla, coalesce(federacao, ''), situacao_final, turno, nr_partido
+cands_rows = con.execute(f"""SELECT cargo, uf, ue, sq_candidato, nr, nome_urna, sigla, coalesce(federacao, ''), situacao_final, turno, nr_partido, coalesce(coligacao, ''), coalesce(composicao_federacao, '')
   FROM '{cand_pq}' WHERE cd_eleicao IN ({','.join(str(v) for v in set(ordin.values()))}) ORDER BY turno""").fetchall()
 CAND = {}; SIT = {}   # SIT[(sq, turno)] = situação naquele turno
-for cg, uf, ue, sq, nr, nm, sg, fed, st, t, npart in cands_rows:
+import re
+limpa_fed = lambda x: re.sub(r'\b\d+-', '', str(x or '')).strip()
+for cg, uf, ue, sq, nr, nm, sg, fed, st, t, npart, col, comp in cands_rows:
     st = '' if st in (None, '#NULO', '#NE') else st
-    CAND[sq] = {'n': nr, 'nm': nm, 'sg': sg, 'fed': fed, 'st': st, 'np': npart, 'cg': cg, 'ue': ue}
+    vazio = lambda x: not x or str(x).startswith('#') or str(x).strip().upper() in ('PARTIDO ISOLADO', 'FEDERAÇÃO', 'FEDERACAO')
+    fed = '' if vazio(fed) and vazio(comp) else limpa_fed(comp if not vazio(comp) else fed)
+    col = '' if vazio(col) else col.strip()
+    CAND[sq] = {'n': nr, 'nm': nm, 'sg': sg, 'fed': fed, 'col': col, 'st': st, 'np': npart, 'cg': cg, 'ue': ue}
     SIT[(sq, t)] = st
 TURNO = 1
 def sit(sq):   # situação no turno que está sendo gerado (no 1º turno, quem foi ao 2º aparece como "2º TURNO")
@@ -183,11 +188,15 @@ def proporcional(e):
             for nr in cands_n:
                 c = CAND.get(sq_por_nr.get(nr), {})
                 cands.append({'n': nr, 'nm': c.get('nm') or f'Candidato {nr}', 'sg': c.get('sg', ''), 'st': sit(sq_por_nr.get(nr)), 'v': cv[nr]})
-            sg_por_np = {}
+            sg_por_np, grupo = {}, {}
             for c in CAND.values():
-                if c['cg'] == cg and str(c['ue']).lstrip('0') == str(chave).lstrip('0'): sg_por_np[c['np']] = c['sg']
+                if c['cg'] == cg and str(c['ue']).lstrip('0') == str(chave).lstrip('0'):
+                    sg_por_np[c['np']] = c['sg']
+                    # federação (2022 em diante) ou coligação proporcional (até 2018): é ela que disputa as cadeiras
+                    if c['fed']: grupo[c['np']] = ('F', c['fed'])
+                    elif c['col'] and ano <= 2018: grupo.setdefault(c['np'], ('C', c['col']))
             par_n = [p for p, _ in pv.most_common()]
-            par = [{'n': p, 'sg': sg_por_np.get(p, str(p)), 'fed': FED_POR_SG.get(sg_por_np.get(p, ''), ''), 'v': pv[p], 'leg': leg[p], 'ele': sum(1 for c in cands if c['sg'] == sg_por_np.get(p) and c['st'].startswith('ELEITO'))} for p in par_n]
+            par = [{'n': p, 'sg': sg_por_np.get(p, str(p)), 'tg': grupo.get(p, ('', ''))[0], 'fed': grupo.get(p, ('', ''))[1], 'v': pv[p], 'leg': leg[p], 'ele': sum(1 for c in cands if c['sg'] == sg_por_np.get(p) and c['st'].startswith('ELEITO'))} for p in par_n]
             return cands, par
         partido_de = lambda nr: nr if nr < 100 else nr // 1000 if cg == 13 else nr // (1000 if nr >= 10000 else 100)
         por_mun = collections.defaultdict(list)
@@ -196,7 +205,9 @@ def proporcional(e):
             cands, par = monta(rows, uf)
             ci = {c['n']: i for i, c in enumerate(cands)}; pi = {p['n']: i for i, p in enumerate(par)}
         out_uf = {'mun': {}}; tot_uf = [0, 0, 0, 0, 0]
+        porcand = collections.defaultdict(lambda: {'m': {}, 's': {}})   # deputados: votos de cada candidato por município e seção
         for m, rm in por_mun.items():
+            csec = collections.defaultdict(list)                          # vereador: candidato -> [zona, seção, votos, ...]
             if cg == 13:
                 cands, par = monta(rm, str(m))
                 ci = {c['n']: i for i, c in enumerate(cands)}; pi = {p['n']: i for i, p in enumerate(par)}
@@ -210,14 +221,19 @@ def proporcional(e):
                     if nr in (95, 96, 97, 98): continue
                     p = pi.get(partido_de(nr))
                     if p is not None: pvv[p] += v
-                    if nr >= 100 and nr in ci: cl.append((ci[nr], v)); cm[ci[nr]] += v
+                    if nr >= 100 and nr in ci:
+                        k = ci[nr]; cl.append((k, v)); cm[k] += v
+                        if cg == 13: csec[k] += [z, s, v]
+                        else: pc_ = porcand[k]; pc_['s'].setdefault(cd5(m), []).extend((z, s, v))
                 cl.sort(key=lambda x: -x[1])
                 lin = [a, c, vv.get(95, 0), vv.get(96, 0) + vv.get(97, 0) + vv.get(98, 0)]
                 S[f'{z}-{s}'] = lin + [pvv, [list(x) for x in cl[:TOP]]]
                 soma(tm, lin); soma(pm, pvv)
             cvl = [[i, v] for i, v in cm.most_common()]
             arq = {'cv': cvl, 's': S}
-            if cg == 13: arq.update(cands=cands, par=par)
+            if cg == 13: arq.update(cands=cands, par=par); grava(f'{eid}/{uf.lower()}/{cd5(m)}/cs.json', {str(k): v for k, v in csec.items()})
+            else:
+                for k, v in cm.items(): porcand[k]['m'][cd5(m)] = v
             grava(f'{eid}/{uf.lower()}/{cd5(m)}.json', arq)
             if cg == 13:
                 top = [[cands[i]['nm'], cands[i]['sg'], v, cands[i]['st']] for i, v in cm.most_common(3)]
@@ -225,7 +241,9 @@ def proporcional(e):
             else:
                 out_uf['mun'][cd5(m)] = tm + [pm, [[i, v] for i, v in cm.most_common(TOP)]]
             soma(tot_uf, tm + [0])
-        if cg != 13: out_uf.update(cands=cands, par=par)
+        if cg != 13:
+            out_uf.update(cands=cands, par=par)
+            for k, d in porcand.items(): grava(f'{eid}/{uf.lower()}/c/{cands[k]["n"]}.json', d)
         out_uf['tot'] = tot_uf[:4]
         grava(f'{eid}/{uf.lower()}.json', out_uf)
         log(eid, uf, len(por_mun), 'municípios')

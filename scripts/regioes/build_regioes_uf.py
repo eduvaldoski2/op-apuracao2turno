@@ -50,8 +50,11 @@ for uf, ms in sorted(ibge_por_uf.items()):
     # regiões intermediárias; nos estados em que elas são poucas (menos de 5), as imediatas, mais úteis para análise
     nivel = 'rgint' if len({m['rgint'] for m in ms}) >= 5 else 'rgi'
     rot = 'intermediárias' if nivel == 'rgint' else 'imediatas'
+    # nome da região: "Região de <cidade-polo>", com a grafia do município (o IBGE escreve "Juíz de Fora")
+    grafia = {norm(m['nome']): m['nome'] for m in ms}
+    rotulo = lambda n: 'Região de ' + ' - '.join(grafia.get(norm(x.strip()), x.strip()) for x in n.split(' - '))
     regs = {}
-    for m in ms: regs.setdefault(m[nivel], []).append(tse_por_ibge.get(m['ibge'], m['nome'].upper()))
+    for m in ms: regs.setdefault(rotulo(m[nivel]), []).append(tse_por_ibge.get(m['ibge'], m['nome'].upper()))
     grava(uf, {'titulo': f'Regiões do estado de {NOME_UF[uf]}', 'divisao': f'Regiões geográficas {rot} (IBGE)', 'fonte': f'IBGE, Divisão Territorial Brasileira 2024 (regiões geográficas {rot})', 'url': 'https://www.ibge.gov.br/geociencias/organizacao-do-territorio/divisao-regional/15778-divisoes-regionais-do-brasil.html', 'regioes': regs})
     rel.append((uf, 'IBGE ' + rot, len(regs)))
 for x in rel: print(*x)
