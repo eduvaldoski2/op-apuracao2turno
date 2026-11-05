@@ -63,13 +63,15 @@ td.ac{white-space:nowrap}
   <div class="grid" id="cards">
     <div class="card"><b id="c-tempo">—</b><span id="c-tempo-r">para a apuração do 2º turno</span></div>
     <div class="card"><b id="c-total">🔒</b><span>cadastros (entre com o token)</span></div>
+    <div class="card"><b id="c-ativos">🔒</b><span>com login ativo</span></div>
+    <div class="card"><b id="c-sem">🔒</b><span>só cadastro, sem login</span></div>
     <div class="card"><b id="c-hoje">🔒</b><span>cadastros hoje</span></div>
     <div class="card"><b id="c-7">🔒</b><span>cadastros nos últimos 7 dias</span></div>
   </div>
 </section>
 
 <section id="cadastros">
-  <h2>Cadastros da página inicial</h2>
+  <h2>Cadastros e logins</h2>
   <p class="sub">Quem preencheu o formulário (nome, e-mail e WhatsApp). Os dados ficam no seu servidor da Hostinger. Para ver, cole o token de administração (a senha longa que está em <code>public_html/api/config.php</code>). Ele fica guardado só nesta aba do navegador e é apagado ao fechá-la.</p>
   <form id="f-tok" autocomplete="off" style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
     <input type="password" id="tok" placeholder="Token de administração" autocomplete="off" aria-label="Token de administração">
@@ -87,7 +89,7 @@ td.ac{white-space:nowrap}
     </p>
     <p class="sub" id="l-res"></p>
     <div class="tab-scroll"><table>
-      <thead><tr><th>Data</th><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Origem</th><th></th></tr></thead>
+      <thead><tr><th>Data</th><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Origem</th><th>Situação</th><th></th></tr></thead>
       <tbody id="l-corpo"></tbody>
     </table></div>
     <p class="sub">Pedido de exclusão (LGPD): use “Excluir” na linha da pessoa; o nome, o e-mail e o telefone são apagados de forma definitiva.</p>
@@ -289,13 +291,14 @@ async function chama(corpo) {
 }
 const fmtData = iso => { try { return new Date(iso).toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' }); } catch { return iso; } };
 const fmtTel = t => { const d = String(t || '').replace(/\D/g, '').replace(/^55/, ''); return d.length >= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}` : t; };
+const SIT = { ativo: 'Login ativo', pendente: 'Login a confirmar', cadastro: 'Só cadastro' };
 const origemTxt = o => { try { const j = JSON.parse(o || '{}'); return j.utm_source ? [j.utm_source, j.utm_medium, j.utm_campaign].filter(Boolean).join(' / ') : (j.ref || 'direto'); } catch { return 'direto'; } };
 function desenha() {
   const q = $('busca').value.trim().toLowerCase();
   const vis = leads.filter(l => !q || (l.nome + ' ' + l.email).toLowerCase().includes(q));
   const corpo = $('l-corpo'); corpo.replaceChildren();
   vis.forEach(l => {
-    const tr = el('tr'); tr.append(el('td', fmtData(l.criado)), el('td', l.nome), el('td', l.email), el('td', fmtTel(l.telefone)), el('td', origemTxt(l.origem)));
+    const tr = el('tr'); tr.append(el('td', fmtData(l.criado)), el('td', l.nome), el('td', l.email), el('td', fmtTel(l.telefone)), el('td', origemTxt(l.origem)), el('td', SIT[l.situacao] || l.situacao || ''));
     const ac = el('td', null, 'ac');
     const wa = el('a', 'WhatsApp', 'btn peq sec'); wa.href = 'https://wa.me/' + String(l.telefone).replace(/\D/g, ''); wa.target = '_blank'; wa.rel = 'noopener'; wa.style.marginRight = '6px';
     const ex = el('button', 'Excluir', 'btn peq perigo'); ex.type = 'button';
@@ -310,6 +313,8 @@ function desenha() {
 function resumo() {
   const agora = Date.now(), ini = new Date(); ini.setHours(0, 0, 0, 0);
   $('c-total').textContent = leads.length;
+  $('c-ativos').textContent = leads.filter(l => l.situacao === 'ativo').length;
+  $('c-sem').textContent = leads.filter(l => l.situacao !== 'ativo').length;
   $('c-hoje').textContent = leads.filter(l => new Date(l.criado) >= ini).length;
   $('c-7').textContent = leads.filter(l => agora - new Date(l.criado) <= 7 * 864e5).length;
 }
@@ -322,7 +327,7 @@ async function carrega() {
     if (e.tok) { msg('Token incorreto.'); sair(true); } else msg('Não foi possível carregar os cadastros agora. Tente de novo.');
   }
 }
-function sair(manter) { tok = ''; try { sessionStorage.removeItem('op_admin_tok'); } catch {} leads = []; $('uso').hidden = true; $('lista').hidden = true; $('sair').hidden = true; ['c-total', 'c-hoje', 'c-7'].forEach(i => { $(i).textContent = '🔒'; }); if (!manter) msg(''); }
+function sair(manter) { tok = ''; try { sessionStorage.removeItem('op_admin_tok'); } catch {} leads = []; $('uso').hidden = true; $('lista').hidden = true; $('sair').hidden = true; ['c-total', 'c-ativos', 'c-sem', 'c-hoje', 'c-7'].forEach(i => { $(i).textContent = '🔒'; }); if (!manter) msg(''); }
 $('f-tok').addEventListener('submit', e => { e.preventDefault(); const v = $('tok').value.trim(); if (!v) return; tok = v; try { sessionStorage.setItem('op_admin_tok', tok); } catch {} carrega(); });
 $('sair').addEventListener('click', () => sair());
 $('busca').addEventListener('input', desenha);

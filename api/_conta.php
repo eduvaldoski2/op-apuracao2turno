@@ -36,7 +36,61 @@ function conta_db() {
   $db->exec('CREATE TABLE IF NOT EXISTS taxa (ts INTEGER, chave TEXT)'); $db->exec('CREATE INDEX IF NOT EXISTS taxa_c ON taxa (chave, ts)');
   $db->exec('CREATE TABLE IF NOT EXISTS ia_uso (ts INTEGER, uid INTEGER, iph TEXT, nova INTEGER, tin INTEGER, tout INTEGER, passo INTEGER, custo REAL)');
   $db->exec('CREATE INDEX IF NOT EXISTS ia_uso_u ON ia_uso (uid, ts)');
+  // ---- cadastro único: os contatos do formulário (antes em leads.sqlite) ficam na mesma tabela das contas ----
+  // status 'cadastro' = deixou os dados no formulário e ainda não criou login; 'pendente' = criou e não confirmou; 'ativo' = tem login; 'excluido' = apagado a pedido
+  $tem = array_column($db->query('PRAGMA table_info(usuarios)')->fetchAll(), 'name');
+  foreach (['telefone TEXT', 'email TEXT', 'cidade TEXT', 'perfil TEXT', 'c_contato INTEGER DEFAULT 0', 'c_anuncios INTEGER DEFAULT 0', 'lead_texto TEXT', 'pagina TEXT', 'origem TEXT', 'agente TEXT', 'lead_criado TEXT', 'excluido INTEGER DEFAULT 0'] as $col) {
+    if (!in_array(strtok($col, ' '), $tem, true)) { try { $db->exec('ALTER TABLE usuarios ADD COLUMN ' . $col); } catch (Throwable $e) { /* outra requisição já criou */ } }
+  }
+  $db->exec('CREATE TABLE IF NOT EXISTS meta (chave TEXT PRIMARY KEY, valor TEXT)');
+  try { unifica_leads($db); } catch (Throwable $e) { @file_put_contents(__DIR__ . '/dados/unificacao.log', date('c') . ' ERRO ' . $e->getMessage() . "\n", FILE_APPEND); }
   return $db;
+}
+
+// grava (ou atualiza) um contato do formulário em `usuarios`. Nunca mexe em senha, status nem sessões de quem já tem conta.
+function lead_gravar($db, $d) {
+  $email = $d['email']; $tel = $d['telefone'] ?? '';
+  $s = $db->prepare("SELECT id FROM usuarios WHERE status <> 'excluido' AND ((canal = 'email' AND contato = ?) OR email = ?" . ($tel !== '' ? " OR (canal = 'whatsapp' AND contato = ?)" : '') . ') ORDER BY id LIMIT 1');
+  $s->execute($tel !== '' ? [$email, $email, $tel] : [$email, $email]); $id = $s->fetchColumn();
+  $campos = [$d['telefone'] ?? '', $d['cidade'] ?? '', $d['perfil'] ?? '', (int)($d['c_contato'] ?? 1), (int)($d['c_anuncios'] ?? 0), $d['texto_versao'] ?? '', $d['pagina'] ?? '', $d['origem'] ?? '', $d['agente'] ?? ''];
+  if ($id) {
+    $db->prepare("UPDATE usuarios SET telefone = ?, cidade = ?, perfil = ?, c_contato = ?, c_anuncios = ?, lead_texto = ?, pagina = ?, origem = ?, agente = ?, excluido = 0,
+      email = COALESCE(email, ?), lead_criado = COALESCE(lead_criado, ?), nome = CASE WHEN COALESCE(nome, '') = '' OR status = 'cadastro' THEN ? ELSE nome END WHERE id = ?")
+       ->execute(array_merge($campos, [$email, $d['criado'], $d['nome'], $id]));
+    return ['id' => (int)$id, 'novo' => false];
+  }
+  $db->prepare("INSERT INTO usuarios (criado, nome, canal, contato, senha_hash, status, c_msgs, email, lead_criado, telefone, cidade, perfil, c_contato, c_anuncios, lead_texto, pagina, origem, agente, excluido)
+    VALUES (?, ?, 'email', ?, '', 'cadastro', 0, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)")
+     ->execute(array_merge([$d['criado'], $d['nome'], $email, $email, $d['criado']], $campos));
+  return ['id' => (int)$db->lastInsertId(), 'novo' => true];
+}
+
+// migração única: copia os contatos de api/dados/leads.sqlite para `usuarios`, com backup antes e sem apagar nada (leads.sqlite fica como está)
+function unifica_leads($db) {
+  $f = $db->query("SELECT valor FROM meta WHERE chave = 'leads_unificados'")->fetchColumn(); if ($f) return;
+  $dir = __DIR__ . '/dados'; $origem = $dir . '/leads.sqlite'; $log = $dir . '/unificacao.log';
+  if (!is_file($origem)) { $db->prepare("INSERT OR REPLACE INTO meta VALUES ('leads_unificados', ?)")->execute([date('c') . ' sem leads.sqlite']); return; }
+  $db->exec('BEGIN IMMEDIATE');
+  try {
+    $f = $db->query("SELECT valor FROM meta WHERE chave = 'leads_unificados'")->fetchColumn(); if ($f) { $db->exec('COMMIT'); return; }
+    $bk = $dir . '/backup-unificacao-' . date('Ymd-His'); @mkdir($bk, 0755);
+    foreach (['leads.sqlite', 'contas.sqlite'] as $a) if (is_file($dir . '/' . $a)) { if (!@copy($dir . '/' . $a, $bk . '/' . $a)) throw new Exception('backup falhou: ' . $a); }
+    @file_put_contents($bk . '/.htaccess', "Require all denied\n");
+    $antes = (int)$db->query('SELECT COUNT(*) FROM usuarios')->fetchColumn();
+    $lead = new PDO('sqlite:' . $origem); $lead->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); $lead->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $n = 0; $novos = 0; $junta = 0; $pulados = 0;
+    foreach ($lead->query('SELECT * FROM leads WHERE excluido = 0 ORDER BY id') as $r) {
+      $email = strtolower(trim((string)$r['email']));
+      if (!filter_var($email, FILTER_VALIDATE_EMAIL) || str_ends_with($email, '.invalid')) { $pulados++; continue; }
+      $res = lead_gravar($db, ['email' => $email, 'nome' => (string)$r['nome'], 'telefone' => (string)$r['telefone'], 'cidade' => (string)$r['cidade'], 'perfil' => (string)$r['perfil'],
+        'c_contato' => (int)$r['c_contato'], 'c_anuncios' => (int)$r['c_anuncios'], 'texto_versao' => (string)$r['texto_versao'], 'pagina' => (string)$r['pagina'], 'origem' => (string)$r['origem'], 'agente' => (string)($r['agente'] ?? ''), 'criado' => (string)$r['criado']]);
+      $n++; $res['novo'] ? $novos++ : $junta++;
+    }
+    $depois = (int)$db->query('SELECT COUNT(*) FROM usuarios')->fetchColumn();
+    $db->prepare("INSERT OR REPLACE INTO meta VALUES ('leads_unificados', ?)")->execute([date('c')]);
+    $db->exec('COMMIT');
+    @file_put_contents($log, date('c') . " OK leads lidos=$n novos_cadastros=$novos ja_existiam_como_conta=$junta ignorados=$pulados usuarios_antes=$antes usuarios_depois=$depois backup=" . basename($bk) . "\n", FILE_APPEND);
+  } catch (Throwable $e) { try { $db->exec('ROLLBACK'); } catch (Throwable $e2) {} throw $e; }
 }
 
 // limite de frequência: devolve false quando a chave já fez $max ações nos últimos $janela segundos (e registra a ação quando permitido)

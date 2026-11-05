@@ -10,21 +10,28 @@ require __DIR__ . '/config.php';
 $tok = (string)($_SERVER['HTTP_X_TOKEN'] ?? $_POST['token'] ?? $_GET['token'] ?? '');
 if ($TOKEN_ADMIN === '' || strlen($TOKEN_ADMIN) < 20 || !hash_equals($TOKEN_ADMIN, $tok)) { http_response_code(403); exit('acesso negado'); }
 header('Cache-Control: no-store');
-$db = new PDO('sqlite:' . __DIR__ . '/dados/leads.sqlite'); $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+require __DIR__ . '/_conta.php'; $db = conta_db();   // cadastro único: contatos do formulário e contas de login ficam na mesma tabela (usuarios)
+$EMAIL = "CASE WHEN canal = 'email' THEN contato ELSE COALESCE(email, '') END"; $LEAD = "status <> 'excluido' AND excluido = 0";   // todo mundo que deixou contato ou criou conta
 $excl = (string)($_POST['excluir'] ?? $_GET['excluir'] ?? '');
 if ($excl !== '') {
-  $s = $db->prepare("UPDATE leads SET nome='', telefone='', cidade='', perfil='', pagina='', origem='', agente='', excluido=1, email='excluido-' || id || '@excluido.invalid' WHERE email = ?"); $s->execute([strtolower(trim($excl))]);
-  exit('excluídos: ' . $s->rowCount());
+  $em = strtolower(trim($excl));   // apaga os dados pessoais (cadastro e login) e encerra as sessões
+  $ids = $db->prepare("SELECT id FROM usuarios WHERE status <> 'excluido' AND ((canal = 'email' AND contato = ?) OR email = ?)"); $ids->execute([$em, $em]); $ids = $ids->fetchAll(PDO::FETCH_COLUMN);
+  foreach ($ids as $id) {
+    $db->prepare('UPDATE ia_uso SET uid = 0, iph = \'\' WHERE uid = ?')->execute([$id]);
+    foreach (['sessoes', 'codigos'] as $t) $db->prepare("DELETE FROM $t WHERE uid = ?")->execute([$id]);
+    $db->prepare("UPDATE usuarios SET nome='', canal='email', contato='excluido-' || id || '@excluido.invalid', senha_hash='', google_sub=NULL, telefone='', email=NULL, cidade='', perfil='', pagina='', origem='', agente='', status='excluido', excluido=1, c_contato=0, c_anuncios=0 WHERE id = ?")->execute([$id]);
+  }
+  exit('excluídos: ' . count($ids));
 }
 $fmt = (string)($_POST['formato'] ?? $_GET['formato'] ?? 'csv');
 if ($fmt === 'contas' || $fmt === 'uso_ia') {   // contas da "Pergunte à IA" (api/conta.php) e gasto do mês (custo real somado das chamadas)
-  require __DIR__ . '/_conta.php'; $cd = conta_db();
+  $cd = $db;
   if ($fmt === 'uso_ia') {
     header('Content-Type: application/json; charset=utf-8'); $c = ia_cota_cfg();
     $n = fn($q) => (int)$cd->query($q)->fetchColumn(); $ini = mes_ini();
     echo json_encode(['mes_desde' => date('c', $ini), 'gasto_usd' => round(gasto_mes_usd(), 4), 'orcamento_usd' => (float)$c['orcamento_mes_usd'],
       'perguntas_mes' => $n("SELECT COUNT(*) FROM ia_uso WHERE nova=1 AND ts >= $ini"), 'chamadas_mes' => $n("SELECT COUNT(*) FROM ia_uso WHERE ts >= $ini"),
-      'usuarios_ativos' => $n("SELECT COUNT(*) FROM usuarios WHERE status='ativo'"), 'usuarios_pendentes' => $n("SELECT COUNT(*) FROM usuarios WHERE status='pendente'"),
+      'usuarios_ativos' => $n("SELECT COUNT(*) FROM usuarios WHERE status='ativo'"), 'usuarios_pendentes' => $n("SELECT COUNT(*) FROM usuarios WHERE status='pendente'"), 'cadastros_sem_login' => $n("SELECT COUNT(*) FROM usuarios WHERE status='cadastro'"),
       'usuarios_que_perguntaram_no_mes' => $n("SELECT COUNT(DISTINCT uid) FROM ia_uso WHERE nova=1 AND uid>0 AND ts >= $ini"), 'cota_usuario_mes' => (int)$c['usuario_mes']]); exit;
   }
   header('Content-Type: text/csv; charset=utf-8'); header('Content-Disposition: attachment; filename="contas_' . date('Ymd') . '.csv"');
@@ -44,7 +51,7 @@ if ($fmt === 'eventos') {   // contagem de uso (api/evento.php): linhas por dia/
 if ($fmt === 'json') {   // usado pela página admin.html
   header('Content-Type: application/json; charset=utf-8');
   try {
-    echo json_encode(['leads' => $db->query('SELECT id,criado,nome,email,telefone,c_contato,c_anuncios,texto_versao,pagina,origem FROM leads WHERE excluido=0 ORDER BY id DESC')->fetchAll()], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['leads' => $db->query("SELECT id, COALESCE(lead_criado, criado) AS criado, nome, $EMAIL AS email, COALESCE(telefone, CASE WHEN canal = 'whatsapp' THEN contato END, '') AS telefone, c_contato, c_anuncios, lead_texto AS texto_versao, pagina, origem, status AS situacao FROM usuarios WHERE $LEAD ORDER BY id DESC")->fetchAll()], JSON_UNESCAPED_UNICODE);
   } catch (Throwable $e) { echo '{"leads":[]}'; }   // ainda não há cadastros (a tabela é criada no primeiro)
   exit;
 }
@@ -53,11 +60,11 @@ $o = fopen('php://output', 'w'); fwrite($o, "\xEF\xBB\xBF");
 if ($fmt === 'audiencia') {
   // Meta (Públicos personalizados) e Google (Customer Match) aceitam SHA-256 de e-mail/telefone normalizados. Confira os nomes das colunas no assistente de cada plataforma.
   fputcsv($o, ['email', 'phone', 'fn']);
-  foreach ($db->query('SELECT nome,email,telefone FROM leads WHERE excluido=0 AND c_anuncios=1') as $r) {
+  foreach ($db->query("SELECT nome, $EMAIL AS email, COALESCE(telefone, '') AS telefone FROM usuarios WHERE $LEAD AND c_anuncios = 1") as $r) {
     $fn = strtolower(trim(explode(' ', $r['nome'])[0]));
     fputcsv($o, [hash('sha256', $r['email']), $r['telefone'] ? hash('sha256', $r['telefone']) : '', $fn ? hash('sha256', $fn) : '']);
   }
 } else {
-  fputcsv($o, ['criado', 'nome', 'email', 'telefone', 'cidade', 'perfil', 'autoriza_contato', 'autoriza_anuncios', 'texto_versao', 'pagina', 'origem']);
-  foreach ($db->query('SELECT criado,nome,email,telefone,cidade,perfil,c_contato,c_anuncios,texto_versao,pagina,origem FROM leads WHERE excluido=0 ORDER BY id') as $r) fputcsv($o, array_values($r));
+  fputcsv($o, ['criado', 'nome', 'email', 'telefone', 'cidade', 'perfil', 'autoriza_contato', 'autoriza_anuncios', 'texto_versao', 'pagina', 'origem', 'situacao']);
+  foreach ($db->query("SELECT COALESCE(lead_criado, criado), nome, $EMAIL, COALESCE(telefone, ''), COALESCE(cidade, ''), COALESCE(perfil, ''), c_contato, c_anuncios, COALESCE(lead_texto, ''), COALESCE(pagina, ''), COALESCE(origem, ''), status FROM usuarios WHERE $LEAD ORDER BY id") as $r) fputcsv($o, array_values($r));
 }

@@ -23,7 +23,9 @@ $agora = date('c'); $iph = ip_hash(); $db = conta_db();
 
 function acha_usuario($valor) {
   $p = contato_parse($valor); if (!$p) return null;
-  $s = conta_db()->prepare('SELECT * FROM usuarios WHERE canal = ? AND contato = ?'); $s->execute($p); return $s->fetch() ?: null;
+  $s = conta_db()->prepare("SELECT * FROM usuarios WHERE canal = ? AND contato = ? AND status <> 'excluido'"); $s->execute($p); $u = $s->fetch();
+  if (!$u && $p[0] === 'email') { $s = conta_db()->prepare("SELECT * FROM usuarios WHERE email = ? AND status <> 'excluido' ORDER BY id LIMIT 1"); $s->execute([$p[1]]); $u = $s->fetch(); }   // quem deixou o e-mail no formulário e tem o WhatsApp como contato da conta
+  return $u ?: null;
 }
 function senha_valida($s) {
   if (!is_string($s) || strlen($s) < 8) erro(422, 'senha', 'A senha precisa ter pelo menos 8 caracteres.');
@@ -56,7 +58,7 @@ if ($acao === 'cadastrar') {
   if ($ex && $ex['status'] === 'ativo') erro(409, 'existe', 'Já existe uma conta com este contato. Entre com sua senha ou use “Esqueci a senha”.');
   $hash = password_hash((string)$j['senha'], PASSWORD_DEFAULT);
   if ($ex) {   // cadastro iniciado e não confirmado: refaz com os dados novos
-    $db->prepare('UPDATE usuarios SET nome=?, senha_hash=?, c_msgs=1, c_ts=?, c_versao=?, c_iph=? WHERE id=?')->execute([$nome, $hash, $agora, OP_TEXTO_VERSAO, $iph, $ex['id']]); $uid = $ex['id'];
+    $db->prepare('UPDATE usuarios SET nome=?, senha_hash=?, status=\'pendente\', c_msgs=1, c_ts=?, c_versao=?, c_iph=? WHERE id=?')->execute([$nome, $hash, $agora, OP_TEXTO_VERSAO, $iph, $ex['id']]); $uid = $ex['id'];
   } else {
     $db->prepare('INSERT INTO usuarios (criado, nome, canal, contato, senha_hash, status, c_msgs, c_ts, c_versao, c_iph) VALUES (?,?,?,?,?,?,?,?,?,?)')->execute([$agora, $nome, $p[0], $p[1], $hash, 'pendente', 1, $agora, OP_TEXTO_VERSAO, $iph]); $uid = (int)$db->lastInsertId();
   }
@@ -88,7 +90,7 @@ if ($acao === 'entrar') {
   if (!taxa_ok('ent:' . $iph, 15, 900) || !taxa_ok('entc:' . $ch, 8, 900)) erro(429, 'limite', 'Muitas tentativas de entrada. Aguarde alguns minutos.');
   $u = acha_usuario($j['contato'] ?? ''); $senha = (string)($j['senha'] ?? '');
   $ok = password_verify($senha, $u['senha_hash'] ?? '$2y$10$WuHZHiT53we9X5vl8a1jKepOvKhYwMHGCoLkNgLyWrjfaaGPY4d1a');   // sempre verifica, para não revelar se a conta existe pelo tempo de resposta
-  if (!$u || !$ok) erro(401, 'credenciais', 'Contato ou senha incorretos.');
+  if (!$u || !$ok) erro(401, 'credenciais', 'Contato ou senha incorretos. Se você já se cadastrou no site mas ainda não criou senha, use “Esqueci a senha” para ativar seu acesso.');
   if ($u['status'] !== 'ativo') {   // cadastro sem confirmação: manda um novo código
     $r = emite_codigo($u, 'confirmar'); if (in_array($r, ['falha'], true)) resposta_envio($r, $u);
     sai(['ok' => false, 'erro' => 'pendente', 'etapa' => 'confirmar', 'canal' => $u['canal'], 'destino' => mascara($u['canal'], $u['contato']), 'mensagem' => 'Falta confirmar seu contato. Enviamos um código para ' . mascara($u['canal'], $u['contato']) . '.'], 403);
