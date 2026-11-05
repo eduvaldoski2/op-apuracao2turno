@@ -56,7 +56,18 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .tab{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:4px solid var(--brand);padding-top:8px;margin-bottom:14px}
 .tab h2{margin:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--brand)}
 .tab a{font-size:13px;color:var(--ink-soft)}
-.flag{display:inline-block;margin-left:8px;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.1em;line-height:1.3;vertical-align:1px;text-transform:uppercase}.flag.n{background:#F08A24;color:#2a1f55}.flag.a{background:#3E347E;color:#fff}.arqbar{margin:0 0 18px;padding:10px 14px;border-left:4px solid #F08A24;background:rgba(240,138,36,.12);font-size:14px}.arqlist a{display:block;padding:10px 0;border-bottom:1px solid var(--line,#ddd)}
+.flag{display:inline-block;margin-left:8px;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.1em;line-height:1.3;vertical-align:1px;text-transform:uppercase}.flag.n{background:#F08A24;color:#2a1f55}.flag.a{background:#3E347E;color:#fff}.arqbar{margin:0 0 18px;padding:10px 14px;border-left:4px solid #F08A24;background:rgba(240,138,36,.12);font-size:14px}.arqlist a{display:block;padding:10px 0;border-bottom:1px solid var(--line,#ddd)}.row4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);padding-top:18px}
+.row4 .hl{font-size:20px}
+.filler{justify-content:center;align-items:flex-start;border:1.5px dashed var(--brand);padding:18px;border-radius:4px}
+.filler .hl a{color:var(--brand)}
+.pg.wide{max-width:1180px}
+.list.cols2{display:block}
+@media (min-width:900px){.list.cols2{columns:2;column-gap:44px}.list.cols2 .item{break-inside:avoid;border-top:0;border-bottom:1px solid var(--line);padding:18px 0}.list.cols2 .hl{font-size:25px}}
+.giro-more{display:none;width:100%;margin-top:10px;padding:11px 14px;border:1.5px solid var(--brand);background:transparent;color:var(--brand);font:700 13.5px/1 inherit;letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.giro-more:hover{background:var(--brand);color:var(--on-brand)}
+@media (min-width:900px){.giro-more.on{display:block}}
+@media (max-width:1000px){.row4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.row4{grid-template-columns:minmax(0,1fr)}}
 .kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
 .meta{font-size:13px;color:var(--ink-soft)}
 .hl{font-family:var(--serif);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
@@ -64,7 +75,7 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .hl a:hover{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;text-decoration-thickness:2px}
 .sub{color:var(--ink-soft);margin:6px 0 0;font-size:16px;max-width:64ch}
 
-.top{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px}
+.top{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px;align-items:start}
 .lead{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-content:start}
 .lead .hl{font-size:clamp(32px,4.6vw,52px)}
 .lead .sub{font-size:19px}
@@ -98,7 +109,7 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .trend b{display:block;color:var(--brand);font-size:15px}
 
 /* Blocos de editoria */
-.ed{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px}
+.ed{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start}
 .ed .main .hl{font-size:clamp(26px,3.4vw,36px)}
 .ed.solo{grid-template-columns:minmax(0,1fr)}
 .ed .main{display:flex;flex-direction:column;gap:0}
@@ -234,7 +245,7 @@ function edOf(id){return ED.filter(function(e){return e.id===id})[0]}
 function shareUrl(id){return BASE_URL+'#materia-'+id}
 
 function flag(id){var f=typeof FLAGS!=='undefined'&&FLAGS[id];return f?'<span class="flag '+(f==='novo'?'n':'a')+'">'+(f==='novo'?'NOVO':'ATUALIZADA')+'</span>':''}
-function dadoTile(d){return d?'<div class="tile"><div class="n">'+esc(d.n)+'</div><div class="l">'+esc(d.l)+'</div></div>':''}
+function dadoTile(d){return ''&&d?'<div class="tile"><div class="n">'+esc(d.n)+'</div><div class="l">'+esc(d.l)+'</div></div>':''}
 function item(id,big){var s=S[id];return '<div class="item"><span class="kicker">'+esc(s.k)+'</span>'+flag(id)+'<h3 class="hl" style="font-size:'+(big?'clamp(26px,3.4vw,36px)':'21px')+'"><a href="'+href(id)+'">'+esc(s.t)+'</a></h3><p class="sub">'+esc(s.sub)+'</p></div>'}
 function srcLink(f){return f[1]?'<a href="'+esc(f[1])+'" target="_blank" rel="noopener">'+esc(f[0])+'</a>':'<span class="s">'+esc(f[0])+'</span>'}
 
@@ -248,7 +259,7 @@ function giroItems(){
   }).join('');
 }
 function giroBox(){
-  return '<div class="box"><button type="button" class="giro-btn" id="giroBtn" aria-expanded="'+giroOpen+'" aria-controls="giroList"><h2>Giro OP</h2><span>'+GIRO.length+' notas<i class="chev"></i></span></button><ul class="notes" id="giroList"'+(giroOpen?'':' hidden')+'>'+giroItems()+'</ul></div>';
+  return '<div class="box"><button type="button" class="giro-btn" id="giroBtn" aria-expanded="'+giroOpen+'" aria-controls="giroList"><h2>Giro OP</h2><span>'+GIRO.length+' notas<i class="chev"></i></span></button><ul class="notes" id="giroList"'+(giroOpen?'':' hidden')+'>'+giroItems()+'</ul><button type="button" class="giro-more" id="giroMore"></button></div>';
 }
 var trendsOpen=false;
 function trendLink(t){
@@ -282,9 +293,9 @@ function homeView(){
   var used=[HOME_LEAD].concat(HOME_ROW).concat(more);
   ED.forEach(function(e){
     if(e.subs){
-      h+='<section><div class="tab"><h2>'+esc(e.nome)+'</h2><a href="#editoria-'+e.id+'">Todas de '+esc(e.nome)+'</a></div><div class="chips">'+e.subs.map(function(s){return '<a href="#regiao-'+s[0]+'">'+esc(s[1])+'</a>'}).join('')+'</div><div class="row3">';
+      h+='<section><div class="tab"><h2>'+esc(e.nome)+'</h2><a href="#editoria-'+e.id+'">Todas de '+esc(e.nome)+'</a></div><div class="chips">'+e.subs.map(function(s){return '<a href="#regiao-'+s[0]+'">'+esc(s[1])+'</a>'}).join('')+'</div><div class="row4">';
       e.subs.forEach(function(s){var ids=idsOf(e.id,s[0]);if(!ids.length)return;var id=ids[0];h+='<div class="item"><span class="kicker">'+esc(s[1])+(ids.length>1?' · +'+(ids.length-1):'')+'</span>'+flag(id)+'<h3 class="hl" style="font-size:21px"><a href="'+href(id)+'">'+esc(S[id].t)+'</a></h3><p class="sub">'+esc(S[id].sub)+'</p></div>'});
-      h+='</div>'+colsFor(e.id)+'</section>';
+      h+='<div class="item filler"><span class="kicker">Todas as regiões</span><h3 class="hl"><a href="#editoria-regioes">Veja as matérias de cada região →</a></h3></div></div>'+colsFor(e.id)+'</section>';
       return;
     }
     var ids=ORDER[e.id].filter(function(x){return used.indexOf(x)<0});
@@ -341,13 +352,13 @@ function storyRow(id){return '<div class="item"><span class="kicker">'+esc(S[id]
 function edView(eid,sub){
   var e=edOf(eid); if(!e) return homeView();
   var subName=''; if(e.subs&&sub){e.subs.forEach(function(s){if(s[0]===sub)subName=s[1]})}
-  var h='<div class="pg"><div class="crumb"><a href="#">Radar</a> / '+(subName?'<a href="#editoria-'+e.id+'">'+esc(e.nome)+'</a> / '+esc(subName):esc(e.nome))+'</div><h1>'+esc(subName||e.nome)+'</h1>';
+  var h='<div class="pg wide"><div class="crumb"><a href="#">Radar</a> / '+(subName?'<a href="#editoria-'+e.id+'">'+esc(e.nome)+'</a> / '+esc(subName):esc(e.nome))+'</div><h1>'+esc(subName||e.nome)+'</h1>';
   if(e.subs){
     h+='<div class="chips"><a href="#editoria-'+e.id+'"'+(!subName?' aria-current="true"':'')+'>Todas</a>'+e.subs.map(function(s){return '<a href="#regiao-'+s[0]+'"'+(s[0]===sub?' aria-current="true"':'')+'>'+esc(s[1])+'</a>'}).join('')+'</div>';
-    if(subName){h+='<div class="list">'+idsOf(eid,sub).map(storyRow).join('')+'</div>'}
-    else e.subs.forEach(function(s){var ids=idsOf(eid,s[0]);if(!ids.length)return;h+='<div class="subh"><h2>'+esc(s[1])+'</h2><a href="#regiao-'+s[0]+'">Ver '+(ids.length>1?'as '+ids.length+' matérias':'a matéria')+'</a></div><div class="list">'+ids.map(storyRow).join('')+'</div>'});
+    if(subName){h+='<div class="list cols2">'+idsOf(eid,sub).map(storyRow).join('')+'</div>'}
+    else e.subs.forEach(function(s){var ids=idsOf(eid,s[0]);if(!ids.length)return;h+='<div class="subh"><h2>'+esc(s[1])+'</h2><a href="#regiao-'+s[0]+'">Ver '+(ids.length>1?'as '+ids.length+' matérias':'a matéria')+'</a></div><div class="list cols2">'+ids.map(storyRow).join('')+'</div>'});
   } else {
-    h+='<div class="list">'+ORDER[eid].map(storyRow).join('')+(BRIEFS[eid]||[]).map(briefRow).join('')+'</div>';
+    h+='<div class="list cols2">'+ORDER[eid].map(storyRow).join('')+(BRIEFS[eid]||[]).map(briefRow).join('')+'</div>';
   }
   return h+colsFor(eid)+'</div>';
 }
@@ -382,7 +393,46 @@ function route(){
   document.getElementById('nav').innerHTML=menuHtml(cur);
   window.scrollTo(0,0);
   sizeHdr();
+  layoutFix();
 }
+/* Ajustes de layout no desktop: Giro com altura da coluna da capa e editorias equilibradas */
+var giroAll=false;
+function isDesk(){return window.matchMedia&&window.matchMedia('(min-width:900px)').matches}
+function fitGiro(){
+  var ul=document.getElementById('giroList'),btn=document.getElementById('giroMore'),lead=document.querySelector('.top .lead');
+  if(!ul||!btn) return;
+  var lis=[].slice.call(ul.children);lis.forEach(function(li){li.hidden=false});btn.className='giro-more';
+  if(!isDesk()||!lead) return;
+  var box=ul.parentNode,n=lis.length,limit=lead.offsetHeight;
+  if(!giroAll){
+    btn.className='giro-more on';btn.textContent='+';
+    while(n>3&&box.offsetHeight>limit){lis[--n].hidden=true}
+    if(n===lis.length){btn.className='giro-more';return}
+    btn.textContent='+ Mais '+(lis.length-n)+' notas';
+    while(n>3&&box.offsetHeight>limit){lis[--n].hidden=true;btn.textContent='+ Mais '+(lis.length-n)+' notas'}
+  } else {btn.className='giro-more on';btn.textContent='− Recolher'}
+}
+function balanceEd(){
+  if(!isDesk()) return;
+  [].forEach.call(document.querySelectorAll('.ed'),function(ed){
+    var m=ed.querySelector('.main'),s=ed.querySelector('.side');if(!m||!s) return;
+    for(var g=0;g<14;g++){
+      var d=s.offsetHeight-m.offsetHeight,items=s.querySelectorAll(':scope > .item');
+      if(d>150&&items.length>1){
+        var it=items[0],w=document.createElement('div');w.className='mainx';s.removeChild(it);w.appendChild(it);m.appendChild(w);
+        if(m.offsetHeight-s.offsetHeight>d){m.removeChild(w);s.insertBefore(it,s.firstChild);break}
+      } else if(d<-150){
+        var xs=m.querySelectorAll(':scope > .mainx');if(!xs.length) break;
+        var x=xs[xs.length-1],it2=x.firstElementChild;if(!it2) break;m.removeChild(x);s.insertBefore(it2,s.firstChild);
+        if(s.offsetHeight-m.offsetHeight>-d){s.removeChild(it2);var w2=document.createElement('div');w2.className='mainx';w2.appendChild(it2);m.appendChild(w2);break}
+      } else break;
+    }
+  });
+}
+function layoutFix(){balanceEd();fitGiro()}
+if(window.matchMedia){var mq=window.matchMedia('(min-width:900px)');var onMq=function(){giroAll=false;route()};if(mq.addEventListener)mq.addEventListener('change',onMq);else if(mq.addListener)mq.addListener(onMq)}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){layoutFix()});
+window.addEventListener('load',function(){layoutFix()});
 
 /* Compartilhar */
 function shareText(id){var s=S[id];return s.t+'\n\n'+s.resumo+'\n\nLeia mais no Radar Oficina Política: '+shareUrl(id)}
@@ -512,6 +562,7 @@ async function openCards(id){
 /* Eventos */
 document.addEventListener('click',function(e){
   var t=e.target;
+  if(t.closest('#giroMore')){giroAll=!giroAll;fitGiro();return}
   var gb=t.closest('#giroBtn');if(gb){giroOpen=!giroOpen;gb.setAttribute('aria-expanded',String(giroOpen));document.getElementById('giroList').hidden=!giroOpen;return}
   var tb=t.closest('#trBtn');if(tb){trendsOpen=!trendsOpen;tb.setAttribute('aria-expanded',String(trendsOpen));document.getElementById('trList').hidden=!trendsOpen;return}
   var dt=t.closest('[data-det]');if(dt){var el=document.getElementById('det'+dt.dataset.det);el.hidden=!el.hidden;dt.textContent=el.hidden?'Mais detalhes':'Menos detalhes';return}
