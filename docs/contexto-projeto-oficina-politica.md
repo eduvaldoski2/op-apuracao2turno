@@ -1,6 +1,6 @@
 # Oficina Política · Contexto do projeto, história técnica e inventário da plataforma
 
-Versão estendida, de 05/11/2026 (quinta-feira). Origem: chat "apuração/painel" do projeto Oficina Política, de 23/10 a 05/11/2026.
+Versão estendida, de 05/11/2026 (quinta-feira), atualizada às 17h com a fase 8 (anos anteriores até a seção, regiões dos estados, Painel Eleições). Origem: chat "apuração/painel" do projeto Oficina Política, de 23/10 a 05/11/2026.
 
 **Para quem é:** qualquer chat novo do projeto. Depois de ler isto, o chat deve conseguir (1) saber o que existe e onde está, (2) saber por que as coisas são como são, (3) repetir os caminhos que funcionaram e evitar os que falharam, (4) criar uma ação nova coerente com o que já foi feito.
 
@@ -150,6 +150,16 @@ Problema central: **latência e cópia velha**. Percurso:
 - **Cadastro único** (leads + logins) — ver 9.3.
 - **Login do Radar** corrigido (dois defeitos encadeados) — ver 9.5.
 
+### Fase 8 · 05/11, tarde — Painel Eleições: todos os anos até a seção
+- **Acesso:** só **presidente 2026** é aberto. Governador, senador, deputados de 2026 e **todos os anos anteriores** exigem cadastro/login, inclusive por link direto (`rotaExigeConta()` em `js/eleicao.js`; blocos embutidos com `soConta(html, nome)` e classe `logado` no `<html>`). Portão "suave": os JSON são públicos; o portão é de interface.
+- **Dados por seção de todos os anos:** o lake já tinha seção (TSE `votacao_secao`, equivalente ao boletim de urna) para 2018, 2022 e 2026; foram construídos `lake-2020` e `lake-2024` (municipais). Novo construtor `scripts/hist/build_hist.py` + workflow `hist-build.yml` geram JSON do painel e publicam nos **branches `hist-2018`, `hist-2020`, `hist-2022`, `hist-2024`, `hist-2026`** (≈175–470 MB cada; lidos pelo navegador em `raw.githubusercontent.com`, cache de até 5 min).
+- **Tela nova `js/hist.js`** (rotas `#/h/<ano>/<eleição>/...`): Brasil > Estado > **Região do estado** > Município > Região/distrito do município > Bairro > Local > **Seção**. Eleições: c1 presidente, c3 governador, c5 senador, c6/c7/c8 deputados, c11 prefeito, c13 vereador, com 1º e 2º turno. Governador e senador 2026 passaram a abrir aqui; deputados 2026 têm atalho para cá; presidente 2026 também existe aqui (aberto) para a navegação por região.
+- **Regiões dos estados** (`data/regioes/uf-<uf>.json`, gerados por `scripts/regioes/build_regioes_uf.py`): divisão oficial do governo estadual onde a lista completa foi encontrada e validada (RJ Regiões de Governo/CEPERJ com a Metropolitana em 3; SP 16 regiões administrativas; CE 14 regiões de planejamento; RS 28 COREDEs; PI 12 territórios de desenvolvimento, com Barras e São Francisco do Piauí sem território na fonte). Demais estados: regiões geográficas do IBGE (DTB 2024): intermediárias, ou imediatas quando há menos de 5 intermediárias. MA e PB tentados pela Wikipédia e descartados (listas incompletas/contraditórias). DF sem regiões estaduais.
+- **Fontes que o Claude não alcança:** workflow `baixar.yml` busca arquivos públicos (IBGE geoftp, Wikipédia API) e grava no branch `fontes-brutas`. A API `servicodados.ibge.gov.br` não responde nem do GitHub Actions; o geoftp responde.
+- **Marca:** topo centralizado com logo + "PAINEL ELEIÇÕES" + selo "beta" pequeno; o topo encolhe ao rolar (como no Radar); Entrar/Sair virou link discreto no canto. Sem a barra "atualizado há X s"; a data da última divulgação do TSE está em Critérios da apuração, cujo link foi para o fim da página. Capa: box "Painel Eleições — Acesse os resultados do Brasil à seção eleitoral. Compare candidatos e desempenho em diferentes eleições."; pergunta do relatório com "?".
+- **Deu errado e foi corrigido:** (1) o código da eleição ordinária era escolhido por turno, e nas gerais o presidente tem código próprio (544/545 em 2022) — presidente sumiu; agora é por turno e cargo, a partir do detalhe da apuração. (2) situação do candidato vinha do último turno ("Eleito" na página do 1º turno); agora é a do turno exibido. (3) hook `pre-commit` local (roda `versao.mjs` e adiciona os arquivos) não incluía as páginas do Radar; incluído. (4) selo beta ao lado do logo empurrava o botão Sair para fora da tela no celular.
+- **Limitações conhecidas:** no proporcional, abaixo do município os "mais votados" somam só os 10 primeiros de cada seção (aviso na tela); votos de candidatos sub judice entram na soma por seção (diferença pequena em relação ao total oficial, ver `docs/lake/conferencia-*`); bairro de anos anteriores pela malha de bairros (ponto no polígono) ou, sem malha, o bairro informado pelo TSE.
+
 ### Quadro-resumo: o que funcionou / o que não funcionou
 | Funcionou | Não funcionou (e o que veio no lugar) |
 |---|---|
@@ -175,6 +185,7 @@ Problema central: **latência e cópia velha**. Percurso:
 - **`/admin.html`** administração (pede o token na tela; ele fica só na cabeça do Edu): cards "Cadastros e logins" (total, com login ativo, só cadastro, hoje, 7 dias), tabela com coluna "Situação", exportação CSV/audiência/e-mails, aba "Uso do painel", atalhos, pendências, instruções de anúncios.
 - **`/privacidade.html`**, **`/termos.html`**.
 - **Telão:** `?tv=1` (sem botão visível). Não verificado se `tv.html` ainda existe na raiz (não está).
+- **Eleições anteriores e demais cargos:** `#/h/<ano>/<c><cargo>t<turno>[/uf/<uf>[/r/<i>|/m/<cd>[/d/<i>|/b/<bairro>|/l/<zona-local>|/s/<zona-seção>]]]` (ver fase 8).
 
 ## 7. Inventário: front-end (`js/`, `css/`)
 
@@ -203,7 +214,9 @@ Módulos principais (todos ES modules):
 | `b1t/`, `bairros/`, `bairros_geo/` | 1º turno por seção, locais de votação, malhas de bairro | `secoes`, `bairros`, `geo*` |
 | `mapa_uf.json`, `mapa_br_mun.json`, `mapa_mun/` | geometrias | `build_map*.py` |
 | `regioes/`, `regioes_uf/` | regiões (Rio: 8/10; demais UFs: regiões intermediárias IBGE) | `regioes_ibge.yml` |
-| `hist/` | histórico 2018–2026 **só RJ** + "Brasil 2026 por local de votação"; manifesto SHA-256 | migrado de `apuracao-4013` |
+| `hist/` | histórico 2018–2026 **só RJ** + "Brasil 2026 por local de votação"; manifesto SHA-256 (legado; o painel usa os branches `hist-<ano>`) | migrado de `apuracao-4013` |
+| `regioes/uf-<uf>.json` | regiões de cada estado (nomes dos municípios como no TSE) | `scripts/regioes/build_regioes_uf.py` |
+| Branches `hist-<ano>` (fora da main) | `idx.json`, `<eleição>/br.json`, `<eleição>/<uf>.json`, `<eleição>/<uf>/<cd>.json` (seções), `locais/<uf>/<cd>.json` | `hist-build.yml` |
 | `vot/` | votação proporcional 2026/2022 por UF (munzona agregado) | `votos.yml` |
 | `live/` | placar ao vivo (ignorado pelo git; vive no branch `dados`) | `coletor.yml` |
 | Lake (fora do repo) | Releases `lake-2018/2022/2026` (Parquet) | `lakeg-build.yml` |
@@ -301,7 +314,8 @@ Bancos (`api/dados/`, negados externamente): `contas.sqlite` (tabela `usuarios`,
 - Cards de deputados com **mapa do estado e logo do partido**; capturas de modais e do telão faltam no documento de UX.
 - Teste de ponta a ponta do login Google com cadastro real.
 - `conta.js`: textos configuráveis por destino (pedido do Radar).
-- Histórico 2018–2024 **sem interface** (só RJ nos dados); regiões IBGE só fora do RJ via intermediárias; filtro de partido em vereadores; lake municipal 2024.
+- Divisões oficiais dos governos estaduais que faltam (hoje IBGE): MG, BA, PE, PR, SC, GO, PA, MA, PB etc. Precisam de fonte com lista completa de municípios (de preferência o governo do estado).
+- Histórico: página do candidato com mapa (como `depcand.js`) para anos anteriores; comparação entre eleições na mesma tela; servir os branches `hist-*` pelo `api/live.php` se o `raw.githubusercontent` limitar acessos.
 - Tamanho do repositório (~1,3 GB somando `data/` e `.git`): decidir estratégia (Releases/LFS/branch de dados).
 - Textos que ainda citam "apuração" ou "2º turno": título de `resultados/index.html`, título de `cartoes/index.html`, `alt` da imagem de compartilhamento do painel.
 - WhatsApp como canal de código; IA (chave, custo e política) — decisão de produto pendente.
