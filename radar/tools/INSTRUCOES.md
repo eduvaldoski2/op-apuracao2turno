@@ -12,8 +12,8 @@ Você é o editor do **Radar da Oficina Política** (curadoria de notícias de E
 4. Publique: `node radar/tools/publicar.cjs AAAA-MM-DD HHh` (valida ids, ORDER, reg, GIRO/COLUNAS/TRENDS; calcula as etiquetas; grava a cópia em `radar/arquivo/AAAA-MM-DD-HHh.php`). Se der ERRO, corrija e rode de novo. Rode também `php -l radar/_edicao.php` se houver php.
 5. `git add -A radar`, commit "Radar HHh dd/mm" terminado com as linhas de atribuição do ambiente, `git pull --rebase origin main` e `git push origin HEAD:main`. Se o push falhar, não invente alternativa: relate a falha e deixe o conteúdo pronto no resumo.
 
-## Edição das 19h: "De olho amanhã"
-Só na edição das 19h, preencha `AMANHA=[[quando, tipo, título, nota, url, idRel], ...]` (mín. 3, ideal 5–8; nas outras edições deixe `[]`). Liste o que será importante no dia seguinte (America/Sao_Paulo), em ordem cronológica:
+## Edição das 19h: "Para ficar de olho amanhã"
+Só na edição das 19h, preencha `AMANHA=[[quando, tipo, título, nota, url, idRel], ...]` (mín. 3, ideal 5–8; nas outras edições é opcional (só se houver algo confirmado)). Liste o que será importante no dia seguinte (America/Sao_Paulo), em ordem cronológica:
 - votações e pautas do Congresso (plenário, CCJ, CPIs, comissões) e do STF/TSE/TCU;
 - agenda de figuras públicas (presidente, ministros, governadores, presidentes das Casas, candidatos);
 - reuniões do Copom e de outros conselhos e comitês (CMN, Fed/FOMC, BCE), divulgações econômicas (IPCA, PIB, emprego);

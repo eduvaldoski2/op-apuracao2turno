@@ -15,6 +15,7 @@ function radar_db() {
       CREATE TABLE IF NOT EXISTS conversoes (uid INTEGER PRIMARY KEY, ts INTEGER, code TEXT);
       CREATE TABLE IF NOT EXISTS leituras (id INTEGER PRIMARY KEY, ts INTEGER, uid INTEGER, materia TEXT, editoria TEXT, regiao TEXT);
       CREATE TABLE IF NOT EXISTS optout_email (hash TEXT PRIMARY KEY, ts INTEGER);
+      CREATE TABLE IF NOT EXISTS boletim (uid INTEGER PRIMARY KEY, ativo INTEGER DEFAULT 0, ed TEXT, reg TEXT, c_ts INTEGER, c_versao TEXT, atualizado INTEGER);
       CREATE INDEX IF NOT EXISTS i_lei_uid ON leituras(uid); CREATE INDEX IF NOT EXISTS i_vis_code ON visitas(code); CREATE INDEX IF NOT EXISTS i_cmp_code ON compartilhamentos(code);");
     // prazos de guarda da política de privacidade: leituras, compartilhamentos e conversões 24 meses; visitas 12 meses (roda no máximo 1x por dia)
     $mk = $dir . '/limpeza.txt';
@@ -81,15 +82,35 @@ function radar_leitura($uid, $materia, $editoria, $regiao) {
 // Direitos do titular: apaga tudo do Radar ligado a esta conta (leituras, códigos e compartilhamentos). Chamar na exclusão da conta.
 function radar_apagar_usuario($uid) {
   $db = radar_db(); if (!$db) return false;
-  try { foreach (['leituras', 'compartilhamentos', 'conversoes', 'codigos'] as $t) $db->prepare("DELETE FROM $t WHERE uid = ?")->execute([(int)$uid]); return true; } catch (Throwable $e) { return false; }
+  try { foreach (['leituras', 'compartilhamentos', 'conversoes', 'codigos', 'boletim'] as $t) $db->prepare("DELETE FROM $t WHERE uid = ?")->execute([(int)$uid]); return true; } catch (Throwable $e) { return false; }
 }
 // Descadastro de e-mails do Radar (compartilhar por e-mail e boletim): guarda só o hash do endereço, para nunca mais enviar.
-function radar_optout_email($email) {
-  $db = radar_db(); if (!$db) return false; $h = hash('sha256', strtolower(trim($email)) . radar_segredo());
+function radar_email_hash($email) { return hash('sha256', strtolower(trim($email)) . radar_segredo()); }
+function radar_optout_hash($h) {
+  $db = radar_db(); if (!$db || !preg_match('/^[a-f0-9]{64}$/', $h)) return false;
   try { $db->prepare('INSERT OR IGNORE INTO optout_email (hash, ts) VALUES (?,?)')->execute([$h, time()]); return true; } catch (Throwable $e) { return false; }
 }
+function radar_optout_email($email) { return radar_optout_hash(radar_email_hash($email)); }
 function radar_email_bloqueado($email) {
-  $db = radar_db(); if (!$db) return true; $h = hash('sha256', strtolower(trim($email)) . radar_segredo());
-  try { $s = $db->prepare('SELECT 1 FROM optout_email WHERE hash = ?'); $s->execute([$h]); return (bool)$s->fetchColumn(); } catch (Throwable $e) { return true; }
+  $db = radar_db(); if (!$db) return true;
+  try { $s = $db->prepare('SELECT 1 FROM optout_email WHERE hash = ?'); $s->execute([radar_email_hash($email)]); return (bool)$s->fetchColumn(); } catch (Throwable $e) { return true; }
 }
-
+// Boletim: preferências de quem pediu (opt-in). ed = editorias (politica, economia, mundo); reg = regiões (rj, sp, mg, ne, sul, norte, co)
+function radar_boletim_get($uid) {
+  $db = radar_db(); if (!$db) return null;
+  try { $s = $db->prepare('SELECT * FROM boletim WHERE uid = ?'); $s->execute([(int)$uid]); $r = $s->fetch(PDO::FETCH_ASSOC);
+    if (!$r) return ['ativo' => false, 'ed' => ['politica', 'economia', 'mundo'], 'reg' => []];
+    return ['ativo' => (bool)$r['ativo'], 'ed' => array_values(array_filter(explode(',', (string)$r['ed']))), 'reg' => array_values(array_filter(explode(',', (string)$r['reg'])))];
+  } catch (Throwable $e) { return null; }
+}
+function radar_boletim_set($uid, $ativo, $ed, $reg) {
+  $db = radar_db(); if (!$db) return false;
+  $ed = array_values(array_intersect(['politica', 'economia', 'mundo'], (array)$ed)); $reg = array_values(array_intersect(['rj', 'sp', 'mg', 'ne', 'sul', 'norte', 'co'], (array)$reg));
+  if ($ativo && !$ed && !$reg) return false;
+  try {
+    $db->prepare('INSERT INTO boletim (uid, ativo, ed, reg, c_ts, c_versao, atualizado) VALUES (?,?,?,?,?,?,?) ON CONFLICT(uid) DO UPDATE SET ativo=excluded.ativo, ed=excluded.ed, reg=excluded.reg, c_ts=CASE WHEN excluded.ativo=1 AND boletim.ativo=0 THEN excluded.c_ts ELSE boletim.c_ts END, c_versao=CASE WHEN excluded.ativo=1 AND boletim.ativo=0 THEN excluded.c_versao ELSE boletim.c_versao END, atualizado=excluded.atualizado')
+       ->execute([(int)$uid, $ativo ? 1 : 0, implode(',', $ed), implode(',', $reg), time(), 'b1', time()]);
+    return true;
+  } catch (Throwable $e) { return false; }
+}
+function radar_boletim_cancelar($uid) { $db = radar_db(); if (!$db) return false; try { $db->prepare('UPDATE boletim SET ativo = 0, atualizado = ? WHERE uid = ?')->execute([time(), (int)$uid]); return true; } catch (Throwable $e) { return false; } }

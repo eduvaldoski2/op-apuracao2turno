@@ -31,11 +31,11 @@ Object.keys(d.S).forEach(i => { const s = d.S[i];
 d.GIRO.forEach(g => { if (g[5] && !d.S[g[5]]) erros.push('GIRO relacionado: ' + g[5]); });
 d.COLUNAS.forEach(g => { if (g[5] && !d.S[g[5]]) erros.push('COLUNAS relacionado: ' + g[5]); });
 d.TRENDS.forEach(g => { if (g[3] && !d.S[g[3]]) erros.push('TRENDS relacionado: ' + g[3]); });
-if (hh === '19h') {
+if (hh === '19h' || (d.AMANHA && d.AMANHA.length)) {
   const tp = ['congresso', 'agenda', 'economia', 'justica', 'eleicao', 'mundo'];
-  if (!Array.isArray(d.AMANHA) || d.AMANHA.length < 3) erros.push('edição das 19h exige a seção AMANHA (De olho amanhã) com ao menos 3 itens: [quando, tipo, título, nota, url, idRel]');
+  if (hh === '19h' && (!Array.isArray(d.AMANHA) || d.AMANHA.length < 3)) erros.push('edição das 19h exige a seção AMANHA (Para ficar de olho amanhã) com ao menos 3 itens: [quando, tipo, título, nota, url, idRel]');
   else d.AMANHA.forEach((a, n) => { if (!a[0] || !a[2] || !a[3] || String(a[3]).length < 30) erros.push('AMANHA[' + n + ']: faltam quando, título ou nota (mín. 30 caracteres)'); if (!tp.includes(a[1])) erros.push('AMANHA[' + n + ']: tipo deve ser ' + tp.join('|')); if (a[5] && !d.S[a[5]]) erros.push('AMANHA[' + n + ']: idRel inexistente'); });
-} else if (d.AMANHA && d.AMANHA.length) erros.push('AMANHA só vale na edição das 19h; deixe [] nas demais');
+}
 if (erros.length) die('\n - ' + erros.join('\n - '));
 
 // edição anterior = a mais recente do arquivo, anterior a esta
@@ -67,5 +67,9 @@ fs.writeFileSync(path.join(arq, nome + '.php'), novo);
 // versão por matéria, usada para abrir ao visitante a matéria que alguém compartilhou (só com código de quem enviou)
 const pub = {}; Object.keys(d.S).forEach(i => { const s = d.S[i]; pub[i] = { k: s.k, t: s.t, sub: s.sub, resumo: s.resumo, fundo: s.fundo, fontes: s.fontes, hora: s.hora }; });
 fs.writeFileSync(path.join(raiz, '_publico.php'), "<?php if (!defined('RADAR_OK')) { http_response_code(404); exit; } ?>\n" + JSON.stringify(pub).replace(/</g, '\\u003c'));
+// dados para o boletim por e-mail (lidos pelo cron em PHP): só o necessário
+const mail = { dia: data, hora: hh, data: d.EDICAO.data, lead: d.HOME_LEAD, order: d.ORDER, amanha: d.AMANHA || [], stories: {} };
+Object.keys(d.S).forEach(i => { const s = d.S[i]; mail.stories[i] = { ed: s.ed, reg: s.reg || '', t: s.t, sub: s.sub }; });
+fs.writeFileSync(path.join(raiz, '_dados_email.php'), "<?php if (!defined('RADAR_OK')) { http_response_code(404); exit; } ?>\n" + JSON.stringify(mail).replace(/</g, '\\u003c'));
 const n = Object.values(flags).filter(v => v === 'novo').length, a = Object.values(flags).filter(v => v === 'atualizada').length;
 console.log('OK ' + nome + ': ' + Object.keys(d.S).length + ' matérias, ' + n + ' NOVO, ' + a + ' ATUALIZADA' + (ant ? ' (vs ' + ant + ')' : ' (sem edição anterior)'));
