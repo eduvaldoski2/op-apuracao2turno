@@ -3,14 +3,14 @@
 // Tudo é clicável: candidato (?c=<número>) e partido/federação/coligação (?p=<chave>) abrem a votação deles em qualquer nível.
 // Dados: branch hist-<ano> (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]][?c=<n> | ?p=<chave>]
-import { CONFIG } from './config.js?v=1e21146b';
-import { UF_NOME, fInt, fNum, mix } from './util.js?v=1e21146b';
-import { esc, tabela, sem } from './ui.js?v=1e21146b';
-import { getJSON } from './tse.js?v=1e21146b';
-import { corPartido, corTextoSobre } from './partidos.js?v=1e21146b';
-import { criarMapa } from './map.js?v=1e21146b';
-import { criarMapaMun } from './mapamun.js?v=1e21146b';
-import { criarMapaPontos } from './mapapontos.js?v=1e21146b';
+import { CONFIG } from './config.js?v=7c857f3f';
+import { UF_NOME, fInt, fNum, mix } from './util.js?v=7c857f3f';
+import { esc, tabela, sem } from './ui.js?v=7c857f3f';
+import { getJSON } from './tse.js?v=7c857f3f';
+import { corPartido, corTextoSobre } from './partidos.js?v=7c857f3f';
+import { criarMapa } from './map.js?v=7c857f3f';
+import { criarMapaMun } from './mapamun.js?v=7c857f3f';
+import { criarMapaPontos } from './mapapontos.js?v=7c857f3f';
 
 export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;
@@ -121,10 +121,13 @@ function barrasCand(r, E, cands, u, extra, max = 12) {
 // partidos agrupados por federação/coligação (proporcional) — grupo e partidos clicáveis
 function barrasGrupos(r, par, u, extra, { ele = false } = {}) {
   const G = grupos(par), gv = vetG(u, G), ord = G.map((g, i) => i).filter(i => gv[i] > 0).sort((a, b) => gv[b] - gv[a]);
+  const temEle = ele && G.some(g => g.ele > 0), semEle = temEle ? ord.filter(gi => !G[gi].ele).length : 0;
   const lin = ord.map((gi, k) => { const g = G[gi], p = pc(gv[gi], u.vv);
     const membros = g.membros.length > 1 || g.tipo !== 'P' ? `<span class="h-memb">${g.membros.filter(i => u.v[i] > 0 || g.membros.length < 4).map(i => `${chipP(par[i].sg, pLink(r, 'P:' + par[i].sg, extra))}<small>${fInt(u.v[i])}</small>`).join(' ')}</span>` : '';
-    return barra(k + 1, `<a class="h-bar-n" href="${pLink(r, g.k, extra)}">${esc(g.nome)}</a>`, `${ele && g.ele ? `<small class="h-sit">${g.ele} eleito${g.ele > 1 ? 's' : ''}</small>` : ''}${membros}`, p, gv[gi], corPartido(g.sg)); }).join('');
-  return `<section class="painel"><h2>Votos por partido, federação e coligação</h2><p class="sub">Votos nominais dos candidatos mais votos de legenda. Partidos da mesma federação (ou coligação) disputam as cadeiras juntos. Clique para ver a votação e os candidatos.</p>${lin || '<p class="sub">Sem votos.</p>'}</section>`;
+    const b = barra(k + 1, `<a class="h-bar-n" href="${pLink(r, g.k, extra)}">${esc(g.nome)}</a>`, `${ele && g.ele ? `<small class="h-sit h-ele">${g.ele} eleito${g.ele > 1 ? 's' : ''}</small>` : ''}${membros}`, p, gv[gi], corPartido(g.sg));
+    return temEle && !g.ele ? b.replace('class="h-bar"', 'class="h-bar sem-export"') : b; }).join('');
+  // na imagem para redes: só quem elegeu (quando há eleitos), em duas colunas e paginado
+  return `<section class="painel"><h2>Votos por partido, federação e coligação</h2><p class="sub">Votos nominais dos candidatos mais votos de legenda. Partidos da mesma federação (ou coligação) disputam as cadeiras juntos. Clique para ver a votação e os candidatos.</p>${temEle ? '<p class="so-export h-nota">Partidos e federações que elegeram</p>' : ''}<div class="h-bars" data-export-lista>${lin || '<p class="sub">Sem votos.</p>'}</div>${semEle ? `<p class="so-export h-nota">Outros ${semEle} partidos ou federações não elegeram · lista completa no painel</p>` : ''}</section>`;
 }
 function listaCands(r, cands, cvMap, extra, { titulo = 'Candidatos mais votados', n = 40, aprox = false, filtro } = {}) {
   let ord = [...cvMap].filter(([ci]) => !filtro || filtro(cands[ci])).sort((a, b) => b[1] - a[1]); const tot = ord.length; ord = ord.slice(0, n);

@@ -840,3 +840,21 @@ a.h-bar-n,a.h-rank-n{color:var(--roxo);text-decoration:none;font-weight:700}a.h-
 .h-memb{display:inline-flex;flex-wrap:wrap;gap:4px 6px;align-items:center}.h-memb small{color:var(--tx2);font-size:11px;margin-left:2px}
 .h-foco{border-top:5px solid var(--fc)}.h-foco-k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tx2)}.h-foco h2{margin:2px 0 6px}.h-foco-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px}
 .kpis.k3{grid-template-columns:repeat(3,minmax(0,1fr))}@media (max-width:560px){.kpis.k3{grid-template-columns:1fr 1fr}}
+/* imagem para redes: votos por partido/federação legíveis (duas colunas, só quem elegeu) */
+.exp-social .h-bars .h-bar{margin:14px 0}.exp-social .h-bar-t{font-size:22px;gap:4px 10px}.exp-social .h-bar-f{height:12px;border-radius:6px}
+.exp-social .h-bar-v small{font-size:16px}.exp-social .h-memb small{display:none}.exp-social .h-p{font-size:14px;padding:2px 8px}.exp-social .h-sit{font-size:15px}
+.exp-social .h-bars.xl-2{column-gap:36px}.exp-social .h-bars.xl-2 .h-bar{margin:8px 0}.exp-social .h-bars.xl-2 .h-bar-t{font-size:18px;gap:2px 8px}.exp-social .h-bars.xl-2 .h-bar-v small{display:none}.exp-social .h-bars.xl-2 .h-p{font-size:12px;padding:1px 6px}.exp-social .h-bars.xl-2 .h-sit{font-size:13px}.exp-social .h-bars.xl-2 .h-bar-f{height:9px;margin-top:3px}
+.exp-social .h-nota{font:600 18px system-ui,sans-serif;color:#6f6888;margin:4px 0 8px}
+.exp-social.exp-9x16 .h-bars:not(.xl-2) .h-bar,.exp-social.exp-4x5 .h-bars:not(.xl-2) .h-bar{margin:20px 0}
+.exp-social.exp-9x16 .h-bars:not(.xl-2) .h-bar-t,.exp-social.exp-4x5 .h-bars:not(.xl-2) .h-bar-t{font-size:27px}
+.exp-social.exp-9x16 .h-bars:not(.xl-2) .h-p,.exp-social.exp-4x5 .h-bars:not(.xl-2) .h-p{font-size:16px}
+.exp-social.exp-9x16 .h-bars:not(.xl-2) .h-sit,.exp-social.exp-4x5 .h-bars:not(.xl-2) .h-sit{font-size:18px}
+.exp-social.exp-9x16 .h-bars:not(.xl-2) .h-bar-v small,.exp-social.exp-4x5 .h-bars:not(.xl-2) .h-bar-v small{font-size:19px}
+.exp-social.exp-9x16 .h-bars:not(.xl-2) .h-bar-f,.exp-social.exp-4x5 .h-bars:not(.xl-2) .h-bar-f{height:14px;margin-top:6px}
+.exp-social.exp-9x16 .h-nota,.exp-social.exp-4x5 .h-nota{font-size:21px}
+.exp-social.exp-9x16 .h-bars.xl-2 .h-bar,.exp-social.exp-4x5 .h-bars.xl-2 .h-bar{margin:18px 0}
+.exp-social.exp-9x16 .h-bars.xl-2 .h-bar-t,.exp-social.exp-4x5 .h-bars.xl-2 .h-bar-t{font-size:22px}
+.exp-social.exp-9x16 .h-bars.xl-2 .h-bar-f,.exp-social.exp-4x5 .h-bars.xl-2 .h-bar-f{height:12px;margin-top:5px}
+.exp-social.exp-9x16 .h-bars.xl-2 .h-p,.exp-social.exp-4x5 .h-bars.xl-2 .h-p{font-size:14px}
+.exp-social.exp-9x16 .h-bars.xl-2 .h-sit,.exp-social.exp-4x5 .h-bars.xl-2 .h-sit{font-size:15px}
+.exp-social.exp-9x16 .h-bars.xl-2 .h-bar{margin:30px 0}.exp-social.exp-9x16 .h-bars.xl-2 .h-bar-t{font-size:24px}
