@@ -7,16 +7,35 @@ header('Pragma: no-cache');
 header('X-Robots-Tag: noindex, nofollow');
 header('Referrer-Policy: strict-origin-when-cross-origin');
 
-$logado = false; $contasAtivas = false;
+$logado = false; $contasAtivas = false; $uAtual = null;
 try {
   $cfg = __DIR__ . '/../api/config.php';
   if (is_file($cfg)) {
     require $cfg;
     require __DIR__ . '/../api/_conta.php';
     $contasAtivas = (bool)cfg('CONTA_ATIVA', false);
-    if ($contasAtivas) $logado = (bool)usuario_atual();
+    if ($contasAtivas) { $uAtual = usuario_atual(); $logado = (bool)$uAtual; }
   }
 } catch (Throwable $e) { $logado = false; }
+
+// rastreio de compartilhamento: link com ?r=CODIGO (quem enviou), m=matéria e utm_medium=canal. Nunca derruba a página.
+$meuCodigo = '';
+try {
+  require_once __DIR__ . '/_track.php';
+  $ref = (isset($_GET['r']) && preg_match('/^[a-f0-9]{8}$/', (string)$_GET['r'])) ? (string)$_GET['r'] : '';
+  $mat = (isset($_GET['m']) && preg_match('/^[a-z0-9_]{1,40}$/i', (string)$_GET['m'])) ? (string)$_GET['m'] : '';
+  $can = (isset($_GET['utm_medium']) && preg_match('/^[a-z0-9_]{1,20}$/', (string)$_GET['utm_medium'])) ? (string)$_GET['utm_medium'] : '';
+  $ck = ['expires' => time() + 30 * 86400, 'path' => '/radar', 'secure' => !empty($_SERVER['HTTPS']), 'httponly' => true, 'samesite' => 'Lax'];
+  if ($uAtual) $meuCodigo = radar_codigo((int)$uAtual['id']);
+  if ($ref !== '' && $ref !== $meuCodigo) {
+    radar_visita($ref, $mat, $can, $uAtual ? 1 : 0);
+    if (!$uAtual) setcookie('op_ref', $ref, $ck);               // guarda por 30 dias só para creditar quem enviou
+  }
+  if ($uAtual && isset($_COOKIE['op_ref']) && preg_match('/^[a-f0-9]{8}$/', (string)$_COOKIE['op_ref'])) {
+    radar_conversao((int)$uAtual['id'], (string)$_COOKIE['op_ref']);
+    setcookie('op_ref', '', ['expires' => 1] + $ck);
+  }
+} catch (Throwable $e) {}
 
 if ($logado) {
   $shell = @file_get_contents(__DIR__ . '/_shell.html');
@@ -30,7 +49,7 @@ if ($logado) {
   if ($pedido !== '' && in_array($pedido, $lista, true)) { $arq = $pedido; $arquivoEd = __DIR__ . '/arquivo/' . $pedido . '.php'; }
   ob_start(); $okd = @include $arquivoEd; $dados = ob_get_clean();
   if ($shell === false || !$okd || trim((string)$dados) === '') { http_response_code(503); echo 'Radar temporariamente indisponível.'; exit; }
-  $extra = 'var ARQUIVO=' . json_encode($lista) . ';var ARQ_ATUAL=' . json_encode($arq) . ";\n";
+  $extra = 'var SHARE_REF=' . json_encode($meuCodigo) . ';var ARQUIVO=' . json_encode($lista) . ';var ARQ_ATUAL=' . json_encode($arq) . ";\n";
   echo str_replace('/*__EDICAO__*/', $extra . $dados, $shell);
   exit;
 }

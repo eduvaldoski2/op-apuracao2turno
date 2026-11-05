@@ -41,7 +41,7 @@ body{margin:0;min-height:100vh;display:flex;flex-direction:column;color:var(--tx
   background-image:radial-gradient(900px 420px at 50% -120px,rgba(62,52,126,.10),transparent 70%),radial-gradient(520px 320px at 100% 100%,rgba(240,138,36,.09),transparent 70%)}
 .pula{position:absolute;left:-999px;top:8px;background:var(--roxo);color:#fff;padding:8px 14px;border-radius:8px;z-index:9}
 .pula:focus{left:8px}
-main{flex:1;width:100%;max-width:640px;margin:0 auto;padding:clamp(36px,8vh,84px) 20px 28px;text-align:center}
+main{flex:1;width:100%;max-width:1040px;margin:0 auto;padding:clamp(36px,8vh,84px) 20px 28px;text-align:center}
 .marca{margin:0;font-weight:inherit}
 .logo{display:block;margin:0 auto;width:min(100%,560px);height:auto}
 .slogan{display:block;margin:16px auto 0;font:600 clamp(11.5px,3.1vw,15px)/1.35 'Space Grotesk',system-ui,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--roxo-3);padding-left:.26em}
@@ -68,6 +68,21 @@ main{flex:1;width:100%;max-width:640px;margin:0 auto;padding:clamp(36px,8vh,84px
 .btn-ap:hover{filter:brightness(1.12);transform:translateY(-3px);box-shadow:0 28px 44px -18px rgba(42,34,96,.85),0 0 0 8px rgba(240,138,36,.18)}
 .btn-ap:hover .seta{transform:translateX(4px)}
 .btn-ap:active{transform:translateY(0)}
+
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:clamp(30px,5vh,46px) 0 0;text-align:center}
+.cx{display:flex;flex-direction:column;align-items:center;gap:12px;min-width:0;padding:22px 20px 20px;border-radius:22px;background:#fff;border:2px solid var(--lilas);color:var(--tx);text-decoration:none;box-shadow:0 18px 36px -26px rgba(42,34,96,.55);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.cx:hover{transform:translateY(-3px);border-color:var(--roxo-3);box-shadow:0 24px 40px -22px rgba(42,34,96,.7)}
+.cx .k{font:700 11.5px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--laranja-2);display:flex;align-items:center;gap:8px;justify-content:center;min-height:14px}
+.cx .k i{flex:none;width:9px;height:9px;border-radius:50%;background:var(--laranja);animation:pulso 1.9s ease-out infinite}
+.cx .viz{display:flex;align-items:center;justify-content:center;width:100%;min-height:76px}
+.cx .viz img{display:block;width:min(100%,250px);height:auto}
+.cx .viz b{font:400 clamp(26px,2.6vw,32px)/1.08 'DM Serif Display',Georgia,serif;color:var(--roxo-2);text-wrap:balance}
+.cx p{margin:0;font-size:14.5px;line-height:1.42;color:var(--tx2);text-wrap:balance}
+.cx .seta2{margin-top:auto;display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--laranja);color:#2a1700;transition:transform .18s ease}
+.cx:hover .seta2{transform:translateX(4px)}
+.cx svg{width:20px;height:20px}
+.cx.radar2{border-color:var(--roxo)}
+@media (max-width:860px){.trio{grid-template-columns:minmax(0,1fr);max-width:520px;margin-left:auto;margin-right:auto}.cx .viz{min-height:64px}}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--laranja);outline-offset:3px}
 .rel{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;max-width:540px;margin:22px auto 0;padding:14px 18px 14px 22px;border-radius:18px;background:#fff;border:1.5px solid var(--lilas);color:var(--tx);text-decoration:none;text-align:left;box-shadow:0 12px 26px -20px rgba(42,34,96,.5);transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
 .rel .k{display:block;margin:0 0 5px;font:700 11px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--laranja-2)}
@@ -112,21 +127,17 @@ footer.rodape p{margin:4px 0}
 <main id="conteudo">
   <h1 class="marca"><img class="logo" src="img/logo-cor.svg" width="1497" height="248" alt="Oficina Política"><span class="slogan">Para quem faz política sem improviso</span></h1>
 
-  <section class="bloco" aria-labelledby="h-radar">
-    <h2 class="bt" id="h-radar">Notícias</h2>
-    <a class="radar" href="radar/"><img src="img/radar-cor.svg" width="1235" height="304" alt="Radar Oficina Política">
-      <span class="rtxt"><b>As principais notícias do dia em quatro boletins diários para você ficar bem informado</b></span>
-      <span class="seta2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-  </section>
-
-  <section class="bloco acao" aria-labelledby="h-eleicoes">
-    <h2 class="bt" id="h-eleicoes">Eleições 2026</h2>
-    <p class="kick"><span class="t1"><i aria-hidden="true"></i>Eleição presidencial 2026</span><span id="kick-t" class="d">domingo, 25/10, a partir das 17h</span></p>
-    <a class="btn-ap" href="resultados/"><span><b>Resultados eleitorais</b><small>Do Brasil até a seção</small></span>
-      <span class="seta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-    <a class="rel" href="federacao-esquerda-2026/"><span><span class="k">Relatório</span><b>Federação e os partidos de esquerda nas eleições 2026</b><small>Quantas cadeiras a esquerda teria se unida em federações, na Câmara e nas Assembleias</small></span>
-      <span class="seta2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-  </section>
+  <nav class="trio" aria-label="Conteúdos do site">
+    <a class="cx radar2" href="radar/"><span class="k">Notícias</span>
+      <span class="viz"><img src="img/radar-cor.svg" width="1235" height="304" alt="Radar Oficina Política"></span>
+      <p>As principais notícias do dia, reescritas e com as fontes à vista, em quatro boletins diários.</p><span class="seta2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="cx" href="resultados/"><span class="k">Eleições 2026</span>
+      <span class="viz"><b>Resultados eleitorais</b></span>
+      <p>Presidente, governador e senador, do Brasil até a seção.</p><span class="seta2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="cx" href="federacao-esquerda-2026/"><span class="k">Relatório</span>
+      <span class="viz"><b>Federação e a esquerda em 2026</b></span>
+      <p>Quantas cadeiras a esquerda teria se unida em federações, na Câmara e nas Assembleias.</p><span class="seta2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  </nav>
 
   <div class="sep" aria-hidden="true"><i></i></div>
 

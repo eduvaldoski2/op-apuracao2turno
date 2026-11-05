@@ -12,6 +12,13 @@ Você é o editor do **Radar Oficina Política** (curadoria de notícias de Edu,
 4. Publique: `node radar/tools/publicar.cjs AAAA-MM-DD HHh` (valida ids, ORDER, reg, GIRO/COLUNAS/TRENDS; calcula as etiquetas; grava a cópia em `radar/arquivo/AAAA-MM-DD-HHh.php`). Se der ERRO, corrija e rode de novo. Rode também `php -l radar/_edicao.php` se houver php.
 5. `git add -A radar`, commit "Radar HHh dd/mm" terminado com as linhas de atribuição do ambiente, `git pull --rebase origin main` e `git push origin HEAD:main`. Se o push falhar, não invente alternativa: relate a falha e deixe o conteúdo pronto no resumo.
 
+## Atualização de verdade (regra principal)
+O leitor volta ao Radar para saber o que aconteceu desde a edição anterior. Uma edição igual à anterior é falha.
+- Antes de escrever, descubra o horário da edição anterior (`git log -3 --format='%ad %s' -- radar/_edicao.php`). Procure ativamente o que foi publicado DEPOIS dele: ao menos 3 buscas por editoria e 1 a 2 por sub-região (inclusive cada estado do Nordeste e do Norte), abrindo as páginas para conferir data e hora.
+- Cada edição precisa trazer, no mínimo, 5 matérias NOVO e 10 NOVO+ATUALIZADA (o `publicar.cjs` recusa a edição se não for o caso). Atualize matérias com desdobramentos (novos números, decisões, reações, prazos).
+- A capa muda: escolha `HOME_LEAD` e `HOME_ROW` entre as mais recentes e relevantes; coloque no topo de cada editoria o que é novo. Renove o Giro OP com notas novas (retire as já velhas). Mesmo em edição mais fraca, não republique texto idêntico para parecer novidade.
+- Se, depois de pesquisar a fundo, o dia estiver realmente parado, use `--aceitar-poucas` e diga isso no resumo, listando o que foi pesquisado.
+
 ## Estrutura editorial
 **Política** (a maior: 12–20 matérias), **Economia** (4–6), **Regiões** (2–4 por sub-região: Rio de Janeiro, São Paulo, Minas Gerais, Nordeste, Sul, Norte, Centro-Oeste; cubra os estados do Nordeste e do Norte e traga sites de bastidores locais), **Mundo** (3–5, o que toca Brasil/política). Colunistas não são seção: vão em `COLUNAS`. Giro OP: 12–20 notas, só com link verificado. TRENDS: só com link e contexto confirmado; pode ser `[]`.
 

@@ -242,7 +242,13 @@ function wordsOf(blocks){var n=0;blocks.forEach(function(b){if(b[0]==='p'||b[0]=
 function minutes(id,m){var s=S[id];var n=m==='resumo'?words(s.resumo):wordsOf(s.fundo);return Math.max(1,Math.round(n/190))}
 function href(id){return '#materia-'+id}
 function edOf(id){return ED.filter(function(e){return e.id===id})[0]}
-function shareUrl(id){return BASE_URL+'#materia-'+id}
+var shareId='';
+function shareUrl(id,canal){
+  var q='m='+encodeURIComponent(id)+'&utm_source=radar&utm_medium='+(canal||'link')+'&utm_campaign=compartilhar';
+  if(typeof SHARE_REF!=='undefined'&&SHARE_REF) q='r='+SHARE_REF+'&'+q;
+  return BASE_URL+'/?'+q+'#materia-'+id;
+}
+function trackShare(canal){try{var fd=new FormData();fd.append('m',shareId);fd.append('c',canal);navigator.sendBeacon('/radar/track.php',fd)}catch(e){}}
 
 function flag(id){var f=typeof FLAGS!=='undefined'&&FLAGS[id];return f?'<span class="flag '+(f==='novo'?'n':'a')+'">'+(f==='novo'?'NOVO':'ATUALIZADA')+'</span>':''}
 function dadoTile(d){return ''&&d?'<div class="tile"><div class="n">'+esc(d.n)+'</div><div class="l">'+esc(d.l)+'</div></div>':''}
@@ -435,18 +441,18 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){lay
 window.addEventListener('load',function(){layoutFix()});
 
 /* Compartilhar */
-function shareText(id){var s=S[id];return s.t+'\n\n'+s.resumo+'\n\nLeia mais no Radar Oficina Política: '+shareUrl(id)}
+function shareText(id,canal){var s=S[id];return s.t+'\n\n'+s.resumo+'\n\nLeia mais no Radar Oficina Política: '+shareUrl(id,canal)}
 function closeModal(){document.getElementById('modal').innerHTML=''}
 function openShare(id){
-  var s=S[id], u=shareUrl(id), t=s.t, full=shareText(id);
+  var s=S[id], t=s.t, full=shareText(id,'copiar'), fullW=shareText(id,'whatsapp'); shareId=id;
   var enc=encodeURIComponent;
   var h='<div class="modal" id="mod"><div class="sheet" role="dialog" aria-modal="true" aria-label="Compartilhar"><button class="x" type="button" data-close>×</button><h3>Compartilhar</h3><div class="meta">'+esc(s.t)+'</div><div class="opts">'
-   +'<a class="opt wa" target="_blank" rel="noopener" href="https://wa.me/?text='+enc(full)+'">WhatsApp</a>'
-   +'<a class="opt" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text='+enc(t)+'&url='+enc(u)+'">X (Twitter)</a>'
-   +'<a class="opt" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u='+enc(u)+'">Facebook</a>'
-   +'<a class="opt" target="_blank" rel="noopener" href="https://t.me/share/url?url='+enc(u)+'&text='+enc(t)+'">Telegram</a>'
-   +'<a class="opt" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url='+enc(u)+'">LinkedIn</a>'
-   +'<button class="opt" type="button" id="cp">Copiar texto</button>'
+   +'<a class="opt wa" target="_blank" rel="noopener" data-canal="whatsapp" href="https://wa.me/?text='+enc(fullW)+'">WhatsApp</a>'
+   +'<a class="opt" data-canal="x" target="_blank" rel="noopener" href="https://twitter.com/intent/tweet?text='+enc(t)+'&url='+enc(shareUrl(id,'x'))+'">X (Twitter)</a>'
+   +'<a class="opt" data-canal="facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u='+enc(shareUrl(id,'facebook'))+'">Facebook</a>'
+   +'<a class="opt" data-canal="telegram" target="_blank" rel="noopener" href="https://t.me/share/url?url='+enc(shareUrl(id,'telegram'))+'&text='+enc(t)+'">Telegram</a>'
+   +'<a class="opt" data-canal="linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url='+enc(shareUrl(id,'linkedin'))+'">LinkedIn</a>'
+   +'<button class="opt" type="button" id="cp" data-canal="copiar">Copiar texto</button>'
    +'</div><div class="sharetxt" id="stxt">'+esc(full)+'</div><div class="msg" id="cmsg">Para Instagram e Stories, use “Baixar card” e publique a imagem.</div></div></div>';
   document.getElementById('modal').innerHTML=h;
 }
@@ -481,7 +487,7 @@ async function drawCard(id,fmt){
   g.globalAlpha=1;g.textAlign='left';
   y+=bh+gap;
   // rodapé roxo (leia mais)
-  var q=null;try{if(window.qrcode){q=window.qrcode(0,'M');q.addData(shareUrl(id));q.make()}}catch(e){q=null}
+  var q=null;try{if(window.qrcode){q=window.qrcode(0,'M');q.addData(shareUrl(id,'card'));q.make()}}catch(e){q=null}
   var fh=Math.round(168*k), fy=H-bot-Math.round(26*k)-fh;
   // nota de fontes
   var note='Radar Oficina Política · Fontes: '+s.fontes.map(function(f){return f[0].replace(/\s*\(.*\)/,'')}).filter(function(v,i,a){return a.indexOf(v)===i}).slice(0,5).join(', ');
@@ -562,6 +568,7 @@ async function openCards(id){
 /* Eventos */
 document.addEventListener('click',function(e){
   var t=e.target;
+  var cn=t.closest('[data-canal]');if(cn)trackShare(cn.dataset.canal);
   if(t.closest('#giroMore')){giroAll=!giroAll;fitGiro();return}
   var gb=t.closest('#giroBtn');if(gb){giroOpen=!giroOpen;gb.setAttribute('aria-expanded',String(giroOpen));document.getElementById('giroList').hidden=!giroOpen;return}
   var tb=t.closest('#trBtn');if(tb){trendsOpen=!trendsOpen;tb.setAttribute('aria-expanded',String(trendsOpen));document.getElementById('trList').hidden=!trendsOpen;return}
