@@ -4,10 +4,10 @@ ordem,uf,cd_municipio_tse,municipio,eleitores_2026,bairros_tse,divisao_tipo,qtd_
 3,DF,97012,BRASÍLIA,2253132,69,35 Regiões Administrativas (RAs),,,Alta,
 4,MG,41238,BELO HORIZONTE,1961282,201,9 regionais (Barreiro. Centro-Sul. Leste. Nordeste. Noroeste. Norte. Oeste. Pampulha. Venda Nova),,,Alta,
 5,BA,38490,SALVADOR,1951716,151,12 Prefeituras-Bairro,,,Alta,
-6,CE,13897,FORTALEZA,1790337,110,12 regionais (Centro e Regionais I a XII),,,Média,
+6,CE,13897,FORTALEZA,1790337,110,Regionais,12,Regional 1; Regional 2; Regional 3; Regional 4; Regional 5; Regional 6; Regional 7; Regional 8; Regional 9; Regional 10; Regional 11; Regional 12,Alta (corrigido: 12 no total; Centro não é uma 13ª regional),https://fortaleza.ce.gov.br/noticias/entenda-a-nova-territorializacao-administrativa-de-fortaleza
 7,AM,2550,MANAUS,1472138,63,6 zonas (Centro-Sul. Sul. Centro-Oeste. Oeste. Norte. Leste) + zona rural,,,Média,
 8,PR,75353,CURITIBA,1410995,69,10 regionais (Boa Vista. Boqueirão. Bairro Novo. Cajuru. CIC. Matriz. Pinheirinho. Portão. Santa Felicidade. Tatuquara),,,Alta,
-9,PE,25313,RECIFE,1228592,92,6 Regiões Político-Administrativas (RPAs),,,Alta,
+9,PE,25313,RECIFE,1228592,92,Regiões Político-Administrativas (RPAs),6,RPA 1; RPA 2; RPA 3; RPA 4; RPA 5; RPA 6,"Alta (tipo, número e relação municipal; correspondência TSE ainda não conferida)",https://www.legiscidade.recife.pe.gov.br/lei/16293/?keyword=rpa
 10,RS,88013,PORTO ALEGRE,1061485,96,17 regiões do Orçamento Participativo (e 8 Regiões de Gestão do Planejamento),,,Alta,
 11,PA,4278,BELÉM,1047264,63,8 distritos administrativos,,,Média,
 12,GO,93734,GOIÂNIA,1016153,174,,,,A verificar,
