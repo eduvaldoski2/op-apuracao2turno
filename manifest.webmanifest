@@ -1,7 +1,7 @@
 {
   "name": "Oficina Política",
   "short_name": "Oficina Política",
-  "description": "Apuração do 2º turno 2026 (presidente) ao vivo, com mapas, projeção e comparação com o 1º turno.",
+  "description": "Dados e ferramentas eleitorais para quem faz política sem improviso.",
   "lang": "pt-BR",
   "start_url": "/resultados/?origem=app",
   "scope": "/",
