@@ -49,10 +49,14 @@ log('ordinária', ordin, 'municipal' if municipal else 'geral')
 # ---------- candidatos (situação final: a do último turno em que aparecem) ----------
 cands_rows = con.execute(f"""SELECT cargo, uf, ue, sq_candidato, nr, nome_urna, sigla, coalesce(federacao, ''), situacao_final, turno, nr_partido
   FROM '{cand_pq}' WHERE cd_eleicao IN ({','.join(str(v) for v in ordin.values())}) ORDER BY turno""").fetchall()
-CAND = {}
+CAND = {}; SIT = {}   # SIT[(sq, turno)] = situação naquele turno
 for cg, uf, ue, sq, nr, nm, sg, fed, st, t, npart in cands_rows:
     st = '' if st in (None, '#NULO', '#NE') else st
     CAND[sq] = {'n': nr, 'nm': nm, 'sg': sg, 'fed': fed, 'st': st, 'np': npart, 'cg': cg, 'ue': ue}
+    SIT[(sq, t)] = st
+TURNO = 1
+def sit(sq):   # situação no turno que está sendo gerado (no 1º turno, quem foi ao 2º aparece como "2º TURNO")
+    return SIT.get((sq, TURNO), (CAND.get(sq) or {}).get('st', ''))
 FED_POR_SG = {}
 for c in CAND.values():
     if c['fed'] and c['fed'] != 'PARTIDO ISOLADO': FED_POR_SG[c['sg']] = c['fed']
@@ -104,7 +108,7 @@ def majoritario(e, br_acc):
             if nr not in (95, 96, 97, 98): nrs_mun[m][nr] += v; sq_de[(m if cg == 11 else 0, nr)] = sq
         def lista_cands(cont, chave_m):
             ordem = [nr for nr, _ in cont.most_common()]
-            return ordem, [dict(n=nr, **{k: (CAND.get(sq_de.get((chave_m, nr)), {}) or {}).get(k, '') for k in ('nm', 'sg', 'st')}) for nr in ordem]
+            return ordem, [dict(n=nr, **{k: (CAND.get(sq_de.get((chave_m, nr)), {}) or {}).get(k, '') for k in ('nm', 'sg')}, st=sit(sq_de.get((chave_m, nr)))) for nr in ordem]
         if cg != 11:
             tot_nr = collections.Counter()
             for c in nrs_mun.values(): tot_nr.update(c)
@@ -173,7 +177,7 @@ def proporcional(e):
             cands = []
             for nr in cands_n:
                 c = CAND.get(sq_por_nr.get(nr), {})
-                cands.append({'n': nr, 'nm': c.get('nm') or f'Candidato {nr}', 'sg': c.get('sg', ''), 'st': c.get('st', ''), 'v': cv[nr]})
+                cands.append({'n': nr, 'nm': c.get('nm') or f'Candidato {nr}', 'sg': c.get('sg', ''), 'st': sit(sq_por_nr.get(nr)), 'v': cv[nr]})
             sg_por_np = {}
             for c in CAND.values():
                 if c['cg'] == cg and str(c['ue']).lstrip('0') == str(chave).lstrip('0'): sg_por_np[c['np']] = c['sg']
@@ -262,7 +266,7 @@ def locais():
 if __name__ == '__main__':
     os.makedirs(OUT, exist_ok=True)
     for e in els:
-        log('==', e['id'], datetime.datetime.now().isoformat(timespec='seconds'))
+        log('==', e['id'], datetime.datetime.now().isoformat(timespec='seconds')); TURNO = e['t']
         if e['prop']: proporcional(e)
         else:
             acc = {}; majoritario(e, acc)

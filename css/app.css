@@ -816,3 +816,11 @@ html:not(.logado) .so-conta-av{display:flex}
 @media (max-width:760px){.beta{font-size:10px;padding:2px 7px;margin-left:8px}}
 .aviso-beta{max-width:1148px;width:calc(100% - 32px);box-sizing:border-box;margin:8px auto 0;padding:8px 14px;font-size:13px;color:var(--tx2);background:#fff7ee;border:1px solid #f6d3ad;border-radius:10px}
 .marca-g{display:flex;align-items:center}
+/* eleições anteriores e demais cargos (js/hist.js) */
+.h-bar{margin:8px 0}.h-bar-t{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:14px}.h-bar-n{font-weight:600}.h-bar-v{margin-left:auto;white-space:nowrap}.h-bar-v small{color:var(--tx2);margin-left:4px}
+.h-bar-f{height:8px;background:#eeebf5;border-radius:6px;overflow:hidden;margin-top:4px}.h-bar-f i{display:block;height:100%;border-radius:6px}
+.h-p{display:inline-block;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:700;line-height:1.5;white-space:nowrap}
+.h-sel{display:inline-block;padding:1px 7px;border-radius:999px;font-size:11px;font-weight:700;background:#1f8a4c;color:#fff}.h-sel.h-2t{background:#F28C28}.h-sit{color:var(--tx2);font-size:11px}
+.h-lid{display:inline-flex;align-items:center;gap:6px}.h-lid i{width:10px;height:10px;border-radius:3px;background:var(--c);flex:none}
+.h-rank{margin:6px 0 0;padding-left:26px;columns:2 280px;column-gap:28px}.h-rank li{break-inside:avoid;padding:4px 0;border-bottom:1px solid #f0edf6;display:flex;align-items:center;gap:6px;flex-wrap:wrap}.h-rank li b{margin-left:auto}.h-rank-n{font-weight:600}
+.h-leg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13px;color:var(--tx2)}.h-leg span{display:inline-flex;align-items:center;gap:6px}.h-leg i{width:12px;height:12px;border-radius:3px}

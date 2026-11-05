@@ -1,28 +1,29 @@
-import { CONFIG, TESTE } from './config.js?v=c06043cb';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=c06043cb';
-import { getJSON } from './tse.js?v=c06043cb';
-import { calcular } from './model.js?v=c06043cb';
-import { projetar, PARAMS } from './proj.js?v=c06043cb';
-import { viewComparar, hashComparar } from './comparar.js?v=c06043cb';
-import { viewPerguntar } from './ia.js?v=c06043cb';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=c06043cb';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=c06043cb';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=c06043cb';
-import { iniciarExportSecoes } from './expsec.js?v=c06043cb';
-import { eventosEntre } from './avisos.js?v=c06043cb';
-import { mostrarEleito } from './eleito.js?v=c06043cb';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=c06043cb';
-import { abrirTelao, iniciarTV } from './tv.js?v=c06043cb';
-import { iniciarConsentimento } from './consentimento.js?v=c06043cb';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=c06043cb';
-import { lerCard } from './card.js?v=c06043cb';
-import { abrirCompartilhar } from './compartilhar.js?v=c06043cb';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=c06043cb';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=c06043cb';
-import { esc } from './ui.js?v=c06043cb';
-import { getFoco, setFoco, comFoco } from './foco.js?v=c06043cb';
-import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=c06043cb';
-import { CONTA, carregarConta } from './conta.js?v=c06043cb';
+import { CONFIG, TESTE } from './config.js?v=af83e3a5';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=af83e3a5';
+import { getJSON } from './tse.js?v=af83e3a5';
+import { calcular } from './model.js?v=af83e3a5';
+import { projetar, PARAMS } from './proj.js?v=af83e3a5';
+import { viewComparar, hashComparar } from './comparar.js?v=af83e3a5';
+import { viewPerguntar } from './ia.js?v=af83e3a5';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=af83e3a5';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=af83e3a5';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=af83e3a5';
+import { iniciarExportSecoes } from './expsec.js?v=af83e3a5';
+import { eventosEntre } from './avisos.js?v=af83e3a5';
+import { mostrarEleito } from './eleito.js?v=af83e3a5';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=af83e3a5';
+import { abrirTelao, iniciarTV } from './tv.js?v=af83e3a5';
+import { iniciarConsentimento } from './consentimento.js?v=af83e3a5';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=af83e3a5';
+import { lerCard } from './card.js?v=af83e3a5';
+import { abrirCompartilhar } from './compartilhar.js?v=af83e3a5';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=af83e3a5';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=af83e3a5';
+import { esc } from './ui.js?v=af83e3a5';
+import { getFoco, setFoco, comFoco } from './foco.js?v=af83e3a5';
+import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=af83e3a5';
+import { rotaHist, viewHist } from './hist.js?v=af83e3a5';
+import { CONTA, carregarConta } from './conta.js?v=af83e3a5';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -43,6 +44,7 @@ function toast(msg, forcar = false) {
 function rota() { const r = rota0(); if (r.modo === 't1') r.c = new URLSearchParams((location.hash.split('?')[1]) || '').get('c'); return r; }
 function rota0() {
   const h = location.hash.replace(/^#\/?/, ''), [caminho, qs] = h.split('?'), p = caminho.split('/').filter(Boolean), q = new URLSearchParams(qs || '');
+  if (p[0] === 'h' && p[1]) return { modo: 'h', tela: 'hist', p: p.slice(1), q };
   let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; p.shift(); } else if (p[0] === 't1') { modo = 't1'; p.shift(); }
   if (p[0] === 'comparar' && modo === 'ap') return { modo, tela: 'comparar', q };
   if (p[0] === 'perguntar' && modo === 'ap' && TESTE) return { modo, tela: 'perguntar' };
@@ -65,12 +67,13 @@ let ultimoCtx = null;
 function render(manterScroll = false, forcar = false) {
   const r = rota(), y = window.scrollY;
   { const fAnt = getFoco(); setFoco(r.modo === 't1' ? r.c : null); metTela(r); if (r.modo === 't1' && r.c && r.c !== fAnt) { evento('candidato_foco', { cand: r.c }); manterScroll = false; } }   // abriu a página de um candidato: volta ao topo
-  const bs = document.getElementById('barra-status'); if (bs) bs.hidden = r.modo === 't1';
+  const bs = document.getElementById('barra-status'); if (bs) bs.hidden = r.modo === 't1' || r.modo === 'h';
   document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.tela ? a.dataset.tela === r.tela : (a.dataset.modo === (r.modo === 'pr' ? 'ap' : r.modo) && !['comparar', 'perguntar'].includes(r.tela))));
   if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS }, r.modo); return pintar(v, r, {}); }
   const faixa = document.getElementById('sim'), demoBar = document.getElementById('demo-bar');
   if (faixa) faixa.hidden = r.modo === 't1' || !S.simulado; if (demoBar) demoBar.hidden = r.modo === 't1' || !S.demo;
   if (r.modo === 't1') return renderT1(r, manterScroll, forcar);
+  if (r.modo === 'h') return renderHist(r, manterScroll, forcar);
   setEscala(50, 78);
   if (!S.snap) return aguardando(r);
   const ctx = { ...r, B: S.B, geo: S.geo, snap: S.snap, hist: S.hist, V: getV(), P: r.modo === 'pr' ? getP() : null, ir, csv: null, demo: !!S.demo };
@@ -113,6 +116,19 @@ async function renderT1(r, manterScroll, forcar) {
   const y0 = window.scrollY; pintar(v, r, ctx); window.scrollTo(0, manterScroll ? y0 : 0);
 }
 
+// eleições anteriores e cargos de 2026 além do presidente (dados por seção do branch hist-<ano>)
+async function renderHist(r, manterScroll, forcar) {
+  if (manterScroll && !forcar && S.vRota?.modo === 'h') return;
+  if (!CONTA.carregado) { await carregarConta().catch(() => {}); marcarLogado(); }
+  if (rota().modo !== 'h') return;
+  const hr = rotaHist(r.p), ctx = { ...r, B: S.B, geo: S.geo, ir, csv: null };
+  if (!CONTA.logado) return pintar({ titulo: 'Eleições com cadastro', html: telaConta(`Resultados de ${hr.ano}`), montar() {} }, r, ctx);
+  root.innerHTML = `<div data-export-raiz><div class="tela-topo"><h1>Carregando…</h1></div><p class="carregando">Carregando os resultados por seção…</p></div>`;
+  let v; try { v = await viewHist(hr, ctx); } catch (e) { v = { titulo: 'Resultado indisponível', html: `<div class="aviso">Ainda não temos esse resultado no painel (${esc(e.message || e)}). Os dados de ${hr.ano} estão sendo preparados.</div>`, montar() {} }; }
+  if (location.hash.replace(/^#\/?/, '').split('/')[0] !== 'h') return;
+  const y0 = window.scrollY; pintar(v, r, ctx); window.scrollTo(0, manterScroll ? y0 : 0);
+}
+
 function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
   const sub = r.tela === 'geral' && r.modo !== 't1' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
@@ -120,7 +136,7 @@ function pintar(v, r, ctx) {
   const refCmp = r.modo !== 'ap' ? null : r.tela === 'geral' ? 'br' : r.tela === 'uf' ? 'uf:' + r.uf : r.tela === 'regiao' ? 'reg:' + r.reg : r.tela === 'mun' ? `mun:${r.uf}:${r.cd}` : r.tela === 'bairro' && /^n:/.test(r.chave || '') ? `bai:${r.uf}:${r.cd}:${r.chave.slice(2)}` : null;
   const linkCmp = refCmp ? `<a class="criterios sem-export" href="${hashComparar([refCmp])}" title="Comparar com outros estados, municípios ou bairros">⇄ Comparar</a>` : '';
   const trilha = v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : '';
-  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${linkCmp}${exp}</div>${barraEleicao(r)}<div id="vista">${v.html}</div></div>`;
+  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${linkCmp}${exp}</div>${v.sel ?? barraEleicao(r)}<div id="vista">${v.html}</div></div>`;
   v.montar(root);
   ligarEleicao(root, r, { ir, toast, evento });
   iniciarExportSecoes(root.querySelector('#vista'), contextoExport, { toast, evento });

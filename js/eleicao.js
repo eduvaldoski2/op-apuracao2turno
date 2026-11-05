@@ -1,11 +1,12 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
 // O resto aparece esmaecido ("em breve"). Só o presidente de 2026 é aberto: os demais cargos e anos exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=c06043cb';
-import { esc } from './ui.js?v=c06043cb';
+import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=af83e3a5';
+import { esc } from './ui.js?v=af83e3a5';
 
 const ANOS = [2026, 2024, 2022, 2020, 2018];
-const DISPONIVEL = { 2026: true };
+const DISPONIVEL = { 2026: true, 2024: true, 2022: true, 2020: true, 2018: true };
+const PADRAO_ANO = { 2024: 'c11t1', 2022: 'c1t1', 2020: 'c11t1', 2018: 'c1t1' };   // eleição aberta ao trocar de ano (dados no branch hist-<ano>)
 const CARGOS = [
   { k: 'presidente', nome: 'Presidente' },
   { k: 'governador', nome: 'Governador', cadastro: true },
@@ -34,7 +35,7 @@ function caminho(r) {
 export function hashEleicao(r, turno, cargo = 'presidente') {
   const c = caminho(r);
   if (cargo === 'dep-federal' || cargo === 'dep-estadual') return '#/t1' + (r.uf ? `/uf/${r.uf}` : '') + (cargo === 'dep-federal' ? '?cargo=depf' : '?cargo=depe');
-  if (cargo === 'governador' || cargo === 'senador') return '#/t1' + (r.uf ? `/uf/${r.uf}` : '') + (cargo === 'senador' ? '?cargo=sen' : '?cargo=gov');
+  if (cargo === 'governador' || cargo === 'senador') return '#/h/2026/' + (cargo === 'senador' ? 'c5t1' : 'c3t1') + (r.uf ? `/uf/${r.uf}` : '');
   return turno === 1 ? '#/t1' + (c ? '/' + c : '') : '#/' + c;
 }
 
@@ -44,14 +45,14 @@ const chip = (attrs, txt, { on, off, lock, tit } = {}) =>
 export function barraEleicao(r) {
   if (!telasComSeletor(r)) return '';
   const e = estadoEleicao(r), cargoNome = CARGOS.find(c => c.k === e.cargo).nome;
-  const anos = ANOS.map(a => chip(`data-ano="${a}"`, a, { on: a === e.ano, off: !DISPONIVEL[a], tit: DISPONIVEL[a] ? '' : 'Em breve: já temos os dados, falta levá-los ao painel' })).join('');
+  const anos = ANOS.map(a => chip(`data-ano="${a}"`, a, { on: a === e.ano, off: !DISPONIVEL[a], lock: a !== 2026 && !CONTA.logado, tit: a === 2026 ? '' : 'Disponível com cadastro gratuito' })).join('');
   const turnos = [1, 2].map(t => chip(`data-turno="${t}"`, `${t}º`, { on: t === e.turno, off: e.cargo !== 'presidente' && t === 2, tit: e.cargo === 'governador' && t === 2 ? 'Governador: por enquanto só o 1º turno' : e.cargo === 'senador' && t === 2 ? 'Senador: eleito no 1º turno (não há 2º turno)' : '' })).join('');
   const cargos = CARGOS.map(c => chip(`data-cargo="${c.k}"`, c.nome, { on: c.k === e.cargo, off: !!c.breve, lock: c.cadastro && !CONTA.logado, tit: c.breve ? 'Em breve' : c.cadastro && !CONTA.logado ? 'Disponível com cadastro gratuito' : '' })).join('');
   return `<details class="eleicao sem-export"><summary><span class="p">${e.ano}</span><span class="p">${e.turno}º turno</span><span class="p">${cargoNome}</span><i>Alterar ▾</i></summary>
     <div class="fx"><div class="l"><small>Ano</small><div class="ch">${anos}</div></div>
     <div class="l"><small>Turno</small><div class="sg">${turnos}</div></div>
     <div class="l"><small>Cargo</small><div class="ch">${cargos}</div></div>
-    <p class="el-nota">Em breve: anos anteriores e eleições municipais.</p></div></details>`;
+    <p class="el-nota">Anos anteriores, governador e senador vão até a seção eleitoral (com cadastro gratuito).</p></div></details>`;
 }
 
 // ---------- cadastro para os cargos de deputado ----------
@@ -77,10 +78,10 @@ const avisoLogado = (nome, toast) => { if (irPara) irPara(); else toast(`Cadastr
 export function ligarEleicao(root, r, { ir, toast, evento }) {
   const el = root.querySelector('.eleicao'); if (!el) return;
   const e = estadoEleicao(r);
-  carregarConta().then(() => { if (!CONTA.logado) return; el.querySelectorAll('[data-cargo]').forEach(b => { b.textContent = b.textContent.replace('🔒 ', ''); b.title = ''; }); });
+  carregarConta().then(() => { if (!CONTA.logado) return; el.querySelectorAll('[data-cargo], [data-ano]').forEach(b => { b.textContent = b.textContent.replace('🔒 ', ''); b.title = ''; }); });
   el.addEventListener('click', ev => {
     const b = ev.target.closest('button'); if (!b) return;
-    if (b.dataset.ano) { if (b.classList.contains('off')) toast('Esse ano ainda não está no painel: já temos os dados e vamos liberá-los em breve.', true); return; }
+    if (b.dataset.ano) { const a = +b.dataset.ano; if (a === 2026) return; evento?.('eleicao', { ano: a }); irPara = () => ir(`#/h/${a}/${PADRAO_ANO[a]}`); if (CONTA.logado) { irPara(); return; } abrirCadastro(`Eleições de ${a}`, { toast }); return; }
     if (b.dataset.turno) { const t = +b.dataset.turno; if (b.classList.contains('off') || t === e.turno) return; evento?.('eleicao', { turno: t }); ir(hashEleicao(r, t, 'presidente')); return; }
     const k = b.dataset.cargo; if (!k) return;
     if (k === e.cargo) return;
@@ -130,6 +131,6 @@ export function avisarConta() { marcarLogado(); window.dispatchEvent(new Event('
 const convite = nome => `<div class="so-conta-av sem-export"><b>🔒 ${esc(nome)}</b><span>Disponível com cadastro gratuito. O resultado de presidente continua aberto.</span><button type="button" class="btn" data-so-conta>Entrar ou criar conta</button></div>`;
 export const soConta = (html, nome) => html ? `<div class="so-conta"><div class="so-conta-in">${html}</div>${convite(nome)}</div>` : '';
 // rota inteira que exige cadastro (cargo diferente de presidente ou ano anterior)
-export function rotaExigeConta() { const q = qs(), c = q.get('cargo'), a = q.get('ano'); return ['gov', 'sen', 'depf', 'depe'].includes(c) || (a && a !== '2026'); }
+export function rotaExigeConta() { if (/^#\/h\//.test(location.hash)) return true; const q = qs(), c = q.get('cargo'), a = q.get('ano'); return ['gov', 'sen', 'depf', 'depe'].includes(c) || (a && a !== '2026'); }
 export function nomeRotaConta() { const q = qs(), c = q.get('cargo'), a = q.get('ano'); const n = { gov: 'Governador', sen: 'Senador', depf: 'Deputado federal', depe: 'Deputado estadual' }[c] || 'Esta eleição'; return a && a !== '2026' ? `${n} ${a}` : n; }
 export const telaConta = nome => `<section class="painel so-conta-tela">${convite(nome)}</section>`;
