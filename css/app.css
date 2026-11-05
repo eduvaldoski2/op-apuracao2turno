@@ -835,3 +835,8 @@ html:not(.logado) .so-conta-av{display:flex}
 .h-rank{margin:6px 0 0;padding-left:26px;columns:2 280px;column-gap:28px}.h-rank li{break-inside:avoid;padding:4px 0;border-bottom:1px solid #f0edf6;display:flex;align-items:center;gap:6px;flex-wrap:wrap}.h-rank li b{margin-left:auto}.h-rank-n{font-weight:600}
 .h-leg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13px;color:var(--tx2)}.h-leg span{display:inline-flex;align-items:center;gap:6px}.h-leg i{width:12px;height:12px;border-radius:3px}
 .h-regs{display:flex;flex-wrap:wrap;gap:8px}
+.h-lk{text-decoration:none}.h-lk:hover{filter:brightness(1.1)}
+a.h-bar-n,a.h-rank-n{color:var(--roxo);text-decoration:none;font-weight:700}a.h-bar-n:hover,a.h-rank-n:hover{text-decoration:underline}
+.h-memb{display:inline-flex;flex-wrap:wrap;gap:4px 6px;align-items:center}.h-memb small{color:var(--tx2);font-size:11px;margin-left:2px}
+.h-foco{border-top:5px solid var(--fc)}.h-foco-k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--tx2)}.h-foco h2{margin:2px 0 6px}.h-foco-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px}
+.kpis.k3{grid-template-columns:repeat(3,minmax(0,1fr))}@media (max-width:560px){.kpis.k3{grid-template-columns:1fr 1fr}}

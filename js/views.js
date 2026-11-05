@@ -1,15 +1,15 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=9ebeba9b';
-import { listaMunicipios, rankingUfs } from './model.js?v=9ebeba9b';
-import { projetarMunicipios } from './proj.js?v=9ebeba9b';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=9ebeba9b';
-import { graficoPlacar } from './charts.js?v=9ebeba9b';
-import { criarMapa, legendaMapa } from './map.js?v=9ebeba9b';
-import { criarMapaMun } from './mapamun.js?v=9ebeba9b';
-import { getJSON } from './tse.js?v=9ebeba9b';
-import { govPainel, govResumo } from './governador.js?v=9ebeba9b';
-import { soConta } from './eleicao.js?v=9ebeba9b';
-import { secaoRegioesUf, montarRegioesUf } from './regioes_uf.js?v=9ebeba9b';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=1e21146b';
+import { listaMunicipios, rankingUfs } from './model.js?v=1e21146b';
+import { projetarMunicipios } from './proj.js?v=1e21146b';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=1e21146b';
+import { graficoPlacar } from './charts.js?v=1e21146b';
+import { criarMapa, legendaMapa } from './map.js?v=1e21146b';
+import { criarMapaMun } from './mapamun.js?v=1e21146b';
+import { getJSON } from './tse.js?v=1e21146b';
+import { govPainel, govResumo } from './governador.js?v=1e21146b';
+import { soConta } from './eleicao.js?v=1e21146b';
+import { secaoRegioesUf, montarRegioesUf } from './regioes_uf.js?v=1e21146b';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
