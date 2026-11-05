@@ -1,0 +1,9 @@
+curl: (28) Failed to connect to servicodados.ibge.gov.br port 443 after 30001 ms: Timeout was reached
+curl: (28) Failed to connect to servicodados.ibge.gov.br port 443 after 30002 ms: Timeout was reached
+curl: (28) Failed to connect to servicodados.ibge.gov.br port 443 after 30000 ms: Timeout was reached
+curl: (28) Failed to connect to servicodados.ibge.gov.br port 443 after 30002 ms: Timeout was reached
+curl: (28) Failed to connect to servicodados.ibge.gov.br port 443 after 30000 ms: Timeout was reached
+000ERR 0 ibge_municipios.json https://servicodados.ibge.gov.br/api/v1/localidades/municipios
+200 1867011 dtb_2024.zip https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2024/DTB_2024.zip
+200 1536464 dtb_2023.zip https://geoftp.ibge.gov.br/organizacao_do_territorio/estrutura_territorial/divisao_territorial/2023/DTB_2023.zip
+200 396 wiki_teste.json https://pt.wikipedia.org/w/api.php?action=parse&page=Regi%C3%B5es_administrativas_do_estado_de_S%C3%A3o_Paulo&prop=wikitext&format=json
