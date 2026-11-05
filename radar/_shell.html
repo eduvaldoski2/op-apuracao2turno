@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#3E347E"><title>Radar Oficina Política</title><link rel="icon" type="image/svg+xml" href="/img/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#3E347E"><title>Radar da Oficina Política</title><link rel="icon" type="image/svg+xml" href="/img/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="preload" href="/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/css/consent.css?v=6547ed30">
 <style>
@@ -213,13 +213,22 @@ footer small{color:#5a5670;font-size:12.5px}
   .act span.t{display:none}
   .act{padding:8px 11px}
 }
+.amanha{margin-top:34px}
+.amanha .tab{border-bottom-color:var(--accent)}
+.amanha-g{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-top:14px}
+.am{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);padding:14px 16px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.am .q{font:700 12px/1.2 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-ink)}
+.am .q i{font-style:normal;color:var(--ink-soft);margin-left:6px}
+.am h3{font:400 20px/1.2 var(--serif);margin:0;color:var(--brand)}
+.am p{margin:0;font-size:14.5px;line-height:1.45;color:var(--ink-soft)}
+.am a.go{font-size:13.5px;font-weight:600;color:var(--brand);margin-top:auto;padding-top:4px}
 </style>
 
 </head><body>
 <header class="hdr" id="hdr">
   <div class="wrap hdrin">
     <a class="voltar" href="/">← oficinapolitica.com.br</a>
-    <a class="logo" href="#" aria-label="Radar Oficina Política, página inicial"><img alt="Radar Oficina Política" src="/img/radar-cor.svg"></a>
+    <a class="logo" href="#" aria-label="Radar da Oficina Política, página inicial"><img alt="Radar da Oficina Política" src="/img/radar-cor.svg"></a>
     <div class="edicao" id="edicao"></div>
   </div>
   <nav class="nav" id="nav" aria-label="Seções"></nav>
@@ -294,6 +303,14 @@ function colsFor(eid){
 function idsOf(eid,sub){return ORDER[eid].filter(function(id){return !sub||S[id].reg===sub})}
 function briefRow(b){return '<div class="item"><a class="mini" href="'+esc(b[1])+'" target="_blank" rel="noopener">'+esc(b[0])+'</a><span class="meta">'+esc(b[2])+'</span></div>'}
 
+var AM_TIPOS={congresso:'Congresso',agenda:'Agenda',economia:'Economia',justica:'Justiça',eleicao:'Eleição',mundo:'Mundo'};
+function amanhaBox(){
+  if(typeof AMANHA==='undefined'||!AMANHA.length||EDICAO.hora!=='19h') return '';
+  return '<section class="amanha"><div class="tab"><h2>De olho amanhã</h2></div><div class="amanha-g">'+AMANHA.map(function(a){
+    var go=a[4]?'<a class="go" href="'+esc(a[4])+'" target="_blank" rel="noopener">Saiba mais ↗</a>':(a[5]&&S[a[5]]?'<a class="go" href="'+href(a[5])+'">Ver a matéria</a>':'');
+    return '<div class="am"><span class="q">'+esc(a[0])+'<i>'+esc(AM_TIPOS[a[1]]||'')+'</i></span><h3>'+esc(a[2])+'</h3><p>'+esc(a[3])+'</p>'+go+'</div>';
+  }).join('')+'</div></section>';
+}
 function homeView(){
   var L=S[HOME_LEAD];
   var more=(ORDER.politica||[]).filter(function(id){return id!==HOME_LEAD&&HOME_ROW.indexOf(id)<0}).slice(0,6);
@@ -322,7 +339,7 @@ function homeView(){
     }
     h+=colsFor(e.id)+'</section>';
   });
-  return h;
+  return h+amanhaBox();
 }
 
 function actionsBar(id){
@@ -404,7 +421,7 @@ function route(){
   window.scrollTo(0,0);
   sizeHdr();
   layoutFix();
-  try{var mm=location.hash.match(/^#materia-(.+)$/);document.title=(mm&&S[mm[1]]?S[mm[1]].t+' · ':'')+'Radar Oficina Política';if(window.__op)window.__op.rastrearTela('/radar/'+location.hash,document.title)}catch(e){}
+  try{var mm=location.hash.match(/^#materia-(.+)$/);document.title=(mm&&S[mm[1]]?S[mm[1]].t+' · ':'')+'Radar da Oficina Política';if(window.__op)window.__op.rastrearTela('/radar/'+location.hash,document.title)}catch(e){}
 }
 /* Ajustes de layout no desktop: Giro com altura da coluna da capa e editorias equilibradas */
 var giroAll=false;
@@ -446,7 +463,7 @@ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){lay
 window.addEventListener('load',function(){layoutFix()});
 
 /* Compartilhar */
-function shareText(id,canal){var s=S[id];return s.t+'\n\n'+s.resumo+'\n\nLeia mais no Radar Oficina Política: '+shareUrl(id,canal)}
+function shareText(id,canal){var s=S[id];return s.t+'\n\n'+s.resumo+'\n\nLeia mais no Radar da Oficina Política: '+shareUrl(id,canal)}
 function closeModal(){document.getElementById('modal').innerHTML=''}
 function openShare(id){
   var s=S[id], t=s.t, full=shareText(id,'copiar'), fullW=shareText(id,'whatsapp'); shareId=id;
@@ -495,7 +512,7 @@ async function drawCard(id,fmt){
   var q=null;try{if(window.qrcode){q=window.qrcode(0,'M');q.addData(shareUrl(id,'card'));q.make()}}catch(e){q=null}
   var fh=Math.round(168*k), fy=H-bot-Math.round(26*k)-fh;
   // nota de fontes
-  var note='Radar Oficina Política · Fontes: '+s.fontes.map(function(f){return f[0].replace(/\s*\(.*\)/,'')}).filter(function(v,i,a){return a.indexOf(v)===i}).slice(0,5).join(', ');
+  var note='Radar da Oficina Política · Fontes: '+s.fontes.map(function(f){return f[0].replace(/\s*\(.*\)/,'')}).filter(function(v,i,a){return a.indexOf(v)===i}).slice(0,5).join(', ');
   g.font='400 '+Math.round(16*k)+'px "Space Grotesk",system-ui,sans-serif';
   var noteLines=wrap(g,note,cw);if(noteLines.length>2){noteLines=noteLines.slice(0,2);noteLines[1]=noteLines[1].replace(/,?\s*\S*$/,'')+'…'}
   var noteH=noteLines.length*Math.round(21*k);

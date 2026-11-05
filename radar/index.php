@@ -1,5 +1,5 @@
 <?php
-// Radar Oficina Política: página protegida por conta gratuita (a mesma conta do painel). O conteúdo da edição (_edicao.js)
+// Radar da Oficina Política: página protegida por conta gratuita (a mesma conta do painel). O conteúdo da edição (_edicao.js)
 // só é entregue a quem tem sessão válida. Qualquer falha (sem config, contas desligadas, erro no banco) cai na tela de entrada: nunca abre o conteúdo.
 header('Content-Type: text/html; charset=utf-8');
 header('Cache-Control: private, no-store, max-age=0');
@@ -74,7 +74,7 @@ try {
       $prevHtml = '<article class="prev"><span class="kk">' . $e($s['k'] ?? 'Radar') . '</span><h2>' . $e($s['t'] ?? '') . '</h2><p class="sub">' . $e($s['sub'] ?? '') . '</p>' . $corpo
         . ($fontes ? '<p class="fts"><b>Fontes:</b> ' . $fontes . '</p>' : '')
         . '<div class="cta"><b>Gostou? Crie sua conta gratuita e leia o Radar completo.</b><br>Política, economia, regiões e mundo, em quatro edições por dia, com as fontes à vista.</div></article>';
-      $og = '<meta property="og:type" content="article"><meta property="og:site_name" content="Radar Oficina Política"><meta property="og:title" content="' . $e($s['t'] ?? '') . '"><meta property="og:description" content="' . $e($s['sub'] ?? '') . '"><meta property="og:image" content="https://oficinapolitica.com.br/img/og.jpg"><meta name="twitter:card" content="summary_large_image">';
+      $og = '<meta property="og:type" content="article"><meta property="og:site_name" content="Radar da Oficina Política"><meta property="og:title" content="' . $e($s['t'] ?? '') . '"><meta property="og:description" content="' . $e($s['sub'] ?? '') . '"><meta property="og:image" content="https://oficinapolitica.com.br/img/og.jpg"><meta name="twitter:card" content="summary_large_image">';
     }
   }
 } catch (Throwable $e2) { $prevHtml = ''; $og = ''; }

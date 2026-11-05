@@ -1499,6 +1499,10 @@ var GIRO = [
 /* Em debate nas redes: só com link. [título, texto, url, id relacionado] */
 var TRENDS = [];
 
+/* De olho amanhã: só na edição das 19h. [quando, tipo, título, nota, url, id relacionado]
+   tipo: congresso | agenda | economia | justica | eleicao | mundo. Nas outras edições deixe []. */
+var AMANHA = [];
+
 /* Colunas e análises, exibidas dentro das editorias: [autor, veículo, título, nota, url, id relacionado, editoria] */
 var COLUNAS = [
  ['Igor Gadelha','Metrópoles','Em aceno à direita, Alcolumbre indica que protegerá mandato de Flávio','Bolsonaristas ouvidos nos bastidores avaliam que o presidente do Senado não dará andamento a pedidos de cassação, e a coluna liga o gesto à disputa pelo comando da Casa em fevereiro.','https://www.metropoles.com/colunas/igor-gadelha/em-aceno-a-direita-alcolumbre-indica-que-protegera-mandato-de-flavio','flavio','politica'],
