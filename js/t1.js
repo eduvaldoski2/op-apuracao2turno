@@ -1,17 +1,17 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=c995c959';
-import { esc, tabela, sem, entenda } from './ui.js?v=c995c959';
-import { getFoco } from './foco.js?v=c995c959';
-import { kpi } from './views.js?v=c995c959';
-import { criarMapa } from './map.js?v=c995c959';
-import { criarMapaMun } from './mapamun.js?v=c995c959';
-import { getJSON } from './tse.js?v=c995c959';
-import { govTopo, govPainel, govTabelaHtml, govTabelaMontar, senPainel, senTabelaHtml, senTabelaMontar } from './governador.js?v=c995c959';
-import { viewDepBrasil, viewDepUf } from './deputados.js?v=c995c959';
-import { soConta } from './eleicao.js?v=c995c959';
-import { leitura, balao } from './insights.js?v=c995c959';
-import { dispersao } from './dispersao.js?v=c995c959';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=f841636b';
+import { esc, tabela, sem, entenda } from './ui.js?v=f841636b';
+import { getFoco } from './foco.js?v=f841636b';
+import { kpi } from './views.js?v=f841636b';
+import { criarMapa } from './map.js?v=f841636b';
+import { criarMapaMun } from './mapamun.js?v=f841636b';
+import { getJSON } from './tse.js?v=f841636b';
+import { govTopo, govPainel, govTabelaHtml, govTabelaMontar, senPainel, senTabelaHtml, senTabelaMontar } from './governador.js?v=f841636b';
+import { viewDepBrasil, viewDepUf } from './deputados.js?v=f841636b';
+import { soConta } from './eleicao.js?v=f841636b';
+import { leitura, balao } from './insights.js?v=f841636b';
+import { dispersao } from './dispersao.js?v=f841636b';
 
 let cache = null, formaMapa = 'areas', eixoDisp = 'abst';
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));
@@ -158,6 +158,7 @@ export function viewT1Uf(ctx, uf) {
   const frasesUf = unid.length >= 8 ? leitura(unid, { cand: nomeC, plural: 'municípios', artigo: 'do estado' }) : [];
   const html = `${topoT1(T, u, nomeUf)}
   ${kpisT1(u)}
+  <section class="painel" id="sec-reg-t1" hidden><h2>Regiões</h2><p class="sub"></p><div class="h-regs"></div></section>
   ${soConta(govPainel(ctx.G1?.uf?.[uf], uf, 1), 'Governador')}
   ${soConta(senPainel(ctx.S1?.uf?.[uf], uf), 'Senador')}
   ${mapa ? `<section class="painel mapa-sec"><h2>${fi >= 0 ? `${esc(T.nome(fi))} em ` : 'Mapa de '}${esc(nomeUf)} por município</h2><p class="sub">Clique em um município para ver os bairros.</p><div class="mapa-modo sem-export" role="group" aria-label="Forma do mapa"><button data-forma="areas" class="${formaMapa === 'areas' ? 'on' : ''}">Áreas</button><button data-forma="bolhas" class="${formaMapa === 'bolhas' ? 'on' : ''}">Bolhas (peso do eleitorado)</button></div><div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado">${legendaT1(T, u)}</div></div></section>` : ''}
@@ -166,6 +167,9 @@ export function viewT1Uf(ctx, uf) {
   return { html, titulo: `${nomeUf} — 1º turno`, trilha: [['Brasil', '#/t1'], [nomeUf]], montar(root) {
     aplicaEscala(T, muns.map(m => fi >= 0 ? m.u.p[fi] : NaN));
     root.querySelector('.mapa-lado') && (root.querySelector('.mapa-lado').innerHTML = legendaT1(T, u));
+    getJSON(`data/regioes/uf-${uf}.json`, { retries: 1 }).then(def => { const sec = root.querySelector('#sec-reg-t1'); if (!sec) return; sec.hidden = false;
+      sec.querySelector('.sub').textContent = `${Object.keys(def.regioes).length} regiões · ${def.divisao || ''} · fonte: ${def.fonte}. Clique numa região para ver o resultado e os municípios.`;
+      sec.querySelector('.h-regs').innerHTML = Object.keys(def.regioes).map((n, i) => `<a class="chip-p" href="#/h/2026/c1t1/uf/${uf}/r/${i}">${esc(n)}</a>`).join(' '); }).catch(() => {});
     const alvo = root.querySelector('#mapa-mun');
     if (alvo) getJSON(`data/mapa_mun/${uf}.json`, { retries: 1 }).then(geo => {
       const idCd = new Map([...cdi].map(([cd, i]) => [i, cd])), porCd = new Map(muns.map(m => [m.id, m]));

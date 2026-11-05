@@ -811,11 +811,11 @@ body.tl-aberto{overflow:hidden}
 html:not(.logado) .so-conta-in{display:none}
 html:not(.logado) .so-conta-av{display:flex}
 .so-conta-tela .so-conta-av{display:flex;border:0;margin:0;padding:6px 2px}
-/* selo de versão beta no topo */
-.beta{display:inline-block;margin-left:10px;padding:3px 9px;border-radius:999px;background:#F28C28;color:#fff;font:700 12px/1.2 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;align-self:center}
-@media (max-width:760px){.beta{font-size:10px;padding:2px 7px;margin-left:8px}}
-.aviso-beta{max-width:1148px;width:calc(100% - 32px);box-sizing:border-box;margin:8px auto 0;padding:8px 14px;font-size:13px;color:var(--tx2);background:#fff7ee;border:1px solid #f6d3ad;border-radius:10px}
-.marca-g{display:flex;align-items:center}
+/* marca do topo: logo + "Resultados eleitorais" + selo beta */
+.marca-g{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
+.marca-sub{display:flex;align-items:center;gap:6px;color:#fff;font:700 12px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding-left:2px}
+.beta{display:inline-block;padding:2px 6px;border-radius:999px;background:#F28C28;color:#fff;font:700 9px/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+@media (max-width:760px){.marca-sub{font-size:10px;letter-spacing:.12em}.beta{font-size:8px;padding:2px 5px}}
 /* eleições anteriores e demais cargos (js/hist.js) */
 .h-bar{margin:8px 0}.h-bar-t{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:14px}.h-bar-n{font-weight:600}.h-bar-v{margin-left:auto;white-space:nowrap}.h-bar-v small{color:var(--tx2);margin-left:4px}
 .h-bar-f{height:8px;background:#eeebf5;border-radius:6px;overflow:hidden;margin-top:4px}.h-bar-f i{display:block;height:100%;border-radius:6px}
@@ -824,3 +824,4 @@ html:not(.logado) .so-conta-av{display:flex}
 .h-lid{display:inline-flex;align-items:center;gap:6px}.h-lid i{width:10px;height:10px;border-radius:3px;background:var(--c);flex:none}
 .h-rank{margin:6px 0 0;padding-left:26px;columns:2 280px;column-gap:28px}.h-rank li{break-inside:avoid;padding:4px 0;border-bottom:1px solid #f0edf6;display:flex;align-items:center;gap:6px;flex-wrap:wrap}.h-rank li b{margin-left:auto}.h-rank-n{font-weight:600}
 .h-leg{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13px;color:var(--tx2)}.h-leg span{display:inline-flex;align-items:center;gap:6px}.h-leg i{width:12px;height:12px;border-radius:3px}
+.h-regs{display:flex;flex-wrap:wrap;gap:8px}

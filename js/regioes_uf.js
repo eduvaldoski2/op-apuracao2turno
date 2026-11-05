@@ -1,7 +1,7 @@
 // Regiões do estado (agrupamentos de municípios): divisão oficial do governo estadual ou, na falta, regiões intermediárias do IBGE (scripts/regioes/build_regioes_uf.py).
-import { CAND, fInt, fNum } from './util.js?v=c995c959';
-import { esc, pcel, tabela, sem } from './ui.js?v=c995c959';
-import { getJSON } from './tse.js?v=c995c959';
+import { CAND, fInt, fNum } from './util.js?v=f841636b';
+import { esc, pcel, tabela, sem } from './ui.js?v=f841636b';
+import { getJSON } from './tse.js?v=f841636b';
 
 export const UF_COM_REGIOES = new Set(['ac','al','am','ap','ba','ce','es','go','ma','mg','ms','mt','pa','pb','pe','pi','pr','rj','rn','ro','rr','rs','sc','se','sp','to']);
 export const secaoRegioesUf = (uf, titulo) => UF_COM_REGIOES.has(uf)
@@ -19,16 +19,16 @@ export function montarRegioesUf(root, uf, rows, ap) {
   if (!UF_COM_REGIOES.has(uf)) return;
   getJSON(`data/regioes/uf-${uf}.json`, { retries: 1 }).then(def => {
     const porNome = new Map(rows.map(m => [sem(m.nome), m]));
-    const lin = Object.entries(def.regioes).map(([nome, muns]) => {
+    const lin = Object.entries(def.regioes).map(([nome, muns], i) => {
       const ms = muns.map(n => porNome.get(sem(n))).filter(Boolean), s = soma(ms);
-      return { id: nome, nome, nm: ms.length, ...(s || { L: NaN, F: NaN, pL: NaN, pF: NaN, dL: NaN, dF: NaN, n: 0, lider: null }) };
+      return { id: nome, i, nome, nm: ms.length, ...(s || { L: NaN, F: NaN, pL: NaN, pF: NaN, dL: NaN, dF: NaN, n: 0, lider: null }) };
     });
     const sec = root.querySelector('#sec-reg-uf'); if (!sec) return;
     sec.hidden = false;
-    root.querySelector('#reg-uf-sub').textContent = `${lin.length} regiões${def.divisao ? ' · ' + def.divisao : ''} · fonte: ${def.fonte}. Soma dos municípios ${ap ? 'já apurados' : '(projeção)'} de cada uma.`;
+    root.querySelector('#reg-uf-sub').textContent = `${lin.length} regiões${def.divisao ? ' · ' + def.divisao : ''} · fonte: ${def.fonte}. Soma dos municípios ${ap ? 'já apurados' : '(projeção)'} de cada uma. Clique numa região para ver os municípios.`;
     const cel = (k, m) => isNaN(m['p' + k]) ? '' : pcel(m['p' + k], m['d' + k]);
     tabela(sec.querySelector('#tab-reg-uf'), {
-      rows: lin, sort: 'nome', dir: 'asc',
+      rows: lin, sort: 'nome', dir: 'asc', onRow: m => { location.hash = `#/h/2026/c1t2/uf/${uf}/r/${m.i}`; },
       cols: [
         { k: 'nome', t: 'Região', h: m => `<b>${esc(m.nome)}</b>`, v: m => m.nome, ini: 'asc' },
         { k: 'n', t: 'Municípios', h: m => `${m.n}/${m.nm}`, v: m => m.n, cls: 'n' },

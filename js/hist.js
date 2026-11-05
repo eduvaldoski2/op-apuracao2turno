@@ -2,14 +2,14 @@
 // Brasil > Estado > Região do estado > Município > Região/distrito do município > Bairro > Local de votação > Seção.
 // Dados: branch hist-<ano> do repositório (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]]
-import { CONFIG } from './config.js?v=c995c959';
-import { UF_NOME, UFS, fInt, fNum } from './util.js?v=c995c959';
-import { esc, tabela, sem } from './ui.js?v=c995c959';
-import { getJSON } from './tse.js?v=c995c959';
-import { corPartido, corTextoSobre } from './partidos.js?v=c995c959';
-import { criarMapa } from './map.js?v=c995c959';
-import { criarMapaMun } from './mapamun.js?v=c995c959';
-import { criarMapaPontos } from './mapapontos.js?v=c995c959';
+import { CONFIG } from './config.js?v=f841636b';
+import { UF_NOME, UFS, fInt, fNum } from './util.js?v=f841636b';
+import { esc, tabela, sem } from './ui.js?v=f841636b';
+import { getJSON } from './tse.js?v=f841636b';
+import { corPartido, corTextoSobre } from './partidos.js?v=f841636b';
+import { criarMapa } from './map.js?v=f841636b';
+import { criarMapaMun } from './mapamun.js?v=f841636b';
+import { criarMapaPontos } from './mapapontos.js?v=f841636b';
 
 export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;
@@ -125,7 +125,7 @@ async function seletor(r, E) {
   const cargos = [...new Map(E.idx.el.map(e => [e.c, e])).values()];
   const cg = cargos.map(e => `<button type="button" data-h-el="${e.c}" class="${e.c === E.el.c ? 'on' : ''}">${esc(e.nome)}</button>`).join('');
   const turnos = E.idx.el.filter(e => e.c === E.el.c).map(e => `<button type="button" data-h-t="${e.id}" class="${e.id === E.el.id ? 'on' : ''}">${e.t}º turno</button>`).join('');
-  const pres = r.ano === 2026 ? `<button type="button" data-h-pres="1">Presidente</button>` : '';
+  const pres = r.ano === 2026 && !E.idx.el.some(e => e.c === 1) ? `<button type="button" data-h-pres="1">Presidente</button>` : '';
   return `<details class="eleicao sem-export"><summary><span class="p">${r.ano}</span><span class="p">${E.el.t}º turno</span><span class="p">${esc(E.el.nome)}</span><i>Alterar ▾</i></summary>
     <div class="fx"><div class="l"><small>Ano</small><div class="ch">${anos}</div></div>
     <div class="l"><small>Cargo</small><div class="ch">${pres}${cg}</div></div>

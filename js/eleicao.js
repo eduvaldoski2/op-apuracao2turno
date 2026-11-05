@@ -1,8 +1,8 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
 // O resto aparece esmaecido ("em breve"). Só o presidente de 2026 é aberto: os demais cargos e anos exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=c995c959';
-import { esc } from './ui.js?v=c995c959';
+import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=f841636b';
+import { esc } from './ui.js?v=f841636b';
 
 const ANOS = [2026, 2024, 2022, 2020, 2018];
 const DISPONIVEL = { 2026: true, 2024: true, 2022: true, 2020: true, 2018: true };
@@ -131,6 +131,6 @@ export function avisarConta() { marcarLogado(); window.dispatchEvent(new Event('
 const convite = nome => `<div class="so-conta-av sem-export"><b>🔒 ${esc(nome)}</b><span>Disponível com cadastro gratuito. O resultado de presidente continua aberto.</span><button type="button" class="btn" data-so-conta>Entrar ou criar conta</button></div>`;
 export const soConta = (html, nome) => html ? `<div class="so-conta"><div class="so-conta-in">${html}</div>${convite(nome)}</div>` : '';
 // rota inteira que exige cadastro (cargo diferente de presidente ou ano anterior)
-export function rotaExigeConta() { if (/^#\/h\//.test(location.hash)) return true; const q = qs(), c = q.get('cargo'), a = q.get('ano'); return ['gov', 'sen', 'depf', 'depe'].includes(c) || (a && a !== '2026'); }
+export function rotaExigeConta() { if (/^#\/h\/2026\/c1t/.test(location.hash)) return false; if (/^#\/h\//.test(location.hash)) return true; const q = qs(), c = q.get('cargo'), a = q.get('ano'); return ['gov', 'sen', 'depf', 'depe'].includes(c) || (a && a !== '2026'); }
 export function nomeRotaConta() { const q = qs(), c = q.get('cargo'), a = q.get('ano'); const n = { gov: 'Governador', sen: 'Senador', depf: 'Deputado federal', depe: 'Deputado estadual' }[c] || 'Esta eleição'; return a && a !== '2026' ? `${n} ${a}` : n; }
 export const telaConta = nome => `<section class="painel so-conta-tela">${convite(nome)}</section>`;

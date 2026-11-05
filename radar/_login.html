@@ -42,14 +42,14 @@ if (!ativo) {
   box.innerHTML = '<p class="msg">O acesso ao Radar está sendo liberado. Volte em breve.</p>';
 } else {
   try {
-    var cfg = await import('/js/config.js?v=c995c959'), ct = await import('/js/conta.js?v=c995c959');
+    var cfg = await import('/js/config.js?v=f841636b'), ct = await import('/js/conta.js?v=f841636b');
     cfg.CONFIG.conta = Object.assign({}, cfg.CONFIG.conta, { endpoint: '/api/conta.php' });
     // o texto padrão do cadastro cita outros recursos do painel; aqui só vale o Radar
     var limpa = function () { box.querySelectorAll('.ct-erro').forEach(function (p) { if (/pergunta livre/.test(p.textContent)) p.textContent = 'O cadastro não está disponível no momento. Tente novamente em alguns minutos.'; }); box.querySelectorAll('.ct-chamada').forEach(function (p) { var t = p.innerHTML; var n = t.replace(' Presidente, governador e senador continuam abertos a todos.', ''); if (n !== t) p.innerHTML = n; }); };
     new MutationObserver(limpa).observe(box, { childList: true, subtree: true });
     var aj = document.createElement('p'); aj.className = 'msg'; aj.style.marginTop = '14px'; aj.textContent = 'Já se cadastrou no site? Clique em “Esqueci a senha” para ativar seu acesso.'; box.parentNode.insertBefore(aj, box.nextSibling);
     var ck = document.createElement('p'); ck.className = 'msg'; ck.style.cssText = 'margin-top:10px;font-size:12.5px;opacity:.85'; ck.innerHTML = 'Usamos cookies estritamente necessários para manter você conectado. Se você chegou por um link compartilhado, guardamos também, por 30 dias, um cookie que registra quem enviou o link. Detalhes na <a href="/privacidade.html">Política de Privacidade</a>.'; aj.parentNode.insertBefore(ck, aj.nextSibling);
-    try { var cs = await import('/js/consentimento.js?v=c995c959'); cs.iniciarConsentimento(); } catch (e2) {}
+    try { var cs = await import('/js/consentimento.js?v=f841636b'); cs.iniciarConsentimento(); } catch (e2) {}
     await ct.carregarConta();
     ct.montarConta(box, function (c) { if (c.logado) location.reload(); }, { alvo: 'o Radar da Oficina Política' });
   } catch (e) {
