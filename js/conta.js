@@ -1,7 +1,7 @@
 // Conta do usuário (necessária para a "Pergunte à IA"): criar conta com confirmação por código (e-mail ou WhatsApp), entrar, sair, redefinir a senha e excluir a conta.
 // Quem fala com o servidor é api/conta.php; a sessão fica num cookie HttpOnly (o navegador nunca vê o token).
-import { CONFIG, RAIZ } from './config.js?v=6547ed30';
-import { esc } from './ui.js?v=6547ed30';
+import { CONFIG, RAIZ } from './config.js?v=7fb8b353';
+import { esc } from './ui.js?v=7fb8b353';
 
 // /radar/ não está sob /resultados/: o endereço da API é sempre a raiz do site (não depende de a página ter ajustado CONFIG, que pode ser outra cópia do módulo por causa do ?v=)
 const ENDPOINT = () => (CONFIG.conta?.endpoint ?? (/^\/radar(\/|$)/.test(location.pathname) ? '/api/conta.php' : RAIZ + 'api/conta.php'));
