@@ -1,9 +1,9 @@
-// Regiões do estado (agrupamentos de municípios). Hoje só o RJ tem a lista de municípios por região confirmada.
-import { CAND, fInt, fNum } from './util.js?v=af83e3a5';
-import { esc, pcel, tabela, sem } from './ui.js?v=af83e3a5';
-import { getJSON } from './tse.js?v=af83e3a5';
+// Regiões do estado (agrupamentos de municípios): divisão oficial do governo estadual ou, na falta, regiões intermediárias do IBGE (scripts/regioes/build_regioes_uf.py).
+import { CAND, fInt, fNum } from './util.js?v=01464424';
+import { esc, pcel, tabela, sem } from './ui.js?v=01464424';
+import { getJSON } from './tse.js?v=01464424';
 
-export const UF_COM_REGIOES = new Set(['rj']);
+export const UF_COM_REGIOES = new Set(['ac','al','am','ap','ba','ce','es','go','ma','mg','ms','mt','pa','pb','pe','pi','pr','rj','rn','ro','rr','rs','sc','se','sp','to']);
 export const secaoRegioesUf = (uf, titulo) => UF_COM_REGIOES.has(uf)
   ? `<section class="painel" id="sec-reg-uf" hidden><h2>Regiões</h2><p class="sub" id="reg-uf-sub"></p><div id="tab-reg-uf"></div></section>` : '';
 
@@ -25,7 +25,7 @@ export function montarRegioesUf(root, uf, rows, ap) {
     });
     const sec = root.querySelector('#sec-reg-uf'); if (!sec) return;
     sec.hidden = false;
-    root.querySelector('#reg-uf-sub').textContent = `${lin.length} regiões (${def.fonte}). Soma dos municípios ${ap ? 'já apurados' : '(projeção)'} de cada uma.`;
+    root.querySelector('#reg-uf-sub').textContent = `${lin.length} regiões${def.divisao ? ' · ' + def.divisao : ''} · fonte: ${def.fonte}. Soma dos municípios ${ap ? 'já apurados' : '(projeção)'} de cada uma.`;
     const cel = (k, m) => isNaN(m['p' + k]) ? '' : pcel(m['p' + k], m['d' + k]);
     tabela(sec.querySelector('#tab-reg-uf'), {
       rows: lin, sort: 'nome', dir: 'asc',

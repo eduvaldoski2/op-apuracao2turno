@@ -2,14 +2,14 @@
 // Brasil > Estado > Região do estado > Município > Região/distrito do município > Bairro > Local de votação > Seção.
 // Dados: branch hist-<ano> do repositório (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]]
-import { CONFIG } from './config.js?v=af83e3a5';
-import { UF_NOME, UFS, fInt, fNum } from './util.js?v=af83e3a5';
-import { esc, tabela, sem } from './ui.js?v=af83e3a5';
-import { getJSON } from './tse.js?v=af83e3a5';
-import { corPartido, corTextoSobre } from './partidos.js?v=af83e3a5';
-import { criarMapa } from './map.js?v=af83e3a5';
-import { criarMapaMun } from './mapamun.js?v=af83e3a5';
-import { criarMapaPontos } from './mapapontos.js?v=af83e3a5';
+import { CONFIG } from './config.js?v=01464424';
+import { UF_NOME, UFS, fInt, fNum } from './util.js?v=01464424';
+import { esc, tabela, sem } from './ui.js?v=01464424';
+import { getJSON } from './tse.js?v=01464424';
+import { corPartido, corTextoSobre } from './partidos.js?v=01464424';
+import { criarMapa } from './map.js?v=01464424';
+import { criarMapaMun } from './mapamun.js?v=01464424';
+import { criarMapaPontos } from './mapapontos.js?v=01464424';
 
 export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;

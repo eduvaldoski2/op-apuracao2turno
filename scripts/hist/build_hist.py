@@ -42,13 +42,16 @@ def log(*a): print(*a, flush=True)
 
 # ---------- eleição ordinária: o código de eleição com mais candidaturas em cada turno (exclui suplementares) ----------
 cand_pq = P(f'candidato_{ano}.parquet')
-ordin = dict(con.execute(f"""SELECT turno, arg_max(cd_eleicao, n) FROM (SELECT turno, cd_eleicao, count(*) n FROM '{cand_pq}' GROUP BY ALL) GROUP BY turno""").fetchall())
+# eleição ordinária por (turno, cargo): o código com mais seções no detalhe da apuração (suplementares são poucas seções).
+# Nas gerais, presidente e cargos estaduais têm códigos diferentes.
+ordin = {(t, cg): e for t, cg, e in con.execute(f"""SELECT turno, cargo, arg_max(cd_eleicao, n) FROM (SELECT turno, cargo, cd_eleicao, count(*) n
+  FROM '{P(f'detalhe_secao_{ano}.parquet')}' GROUP BY ALL) GROUP BY ALL""").fetchall()}
 municipal = ano % 4 == 0
 log('ordinária', ordin, 'municipal' if municipal else 'geral')
 
 # ---------- candidatos (situação final: a do último turno em que aparecem) ----------
 cands_rows = con.execute(f"""SELECT cargo, uf, ue, sq_candidato, nr, nome_urna, sigla, coalesce(federacao, ''), situacao_final, turno, nr_partido
-  FROM '{cand_pq}' WHERE cd_eleicao IN ({','.join(str(v) for v in ordin.values())}) ORDER BY turno""").fetchall()
+  FROM '{cand_pq}' WHERE cd_eleicao IN ({','.join(str(v) for v in set(ordin.values()))}) ORDER BY turno""").fetchall()
 CAND = {}; SIT = {}   # SIT[(sq, turno)] = situação naquele turno
 for cg, uf, ue, sq, nr, nm, sg, fed, st, t, npart in cands_rows:
     st = '' if st in (None, '#NULO', '#NE') else st
@@ -80,15 +83,17 @@ def fonte_secao(uf, cg):
 # ---------- detalhe por seção (aptos, comparecimento) ----------
 def detalhe(uf, cg, t):
     rows = con.execute(f"""SELECT cd_municipio_tse, zona, secao, max(aptos), max(comparecimento) FROM '{P(f'detalhe_secao_{ano}.parquet')}'
-      WHERE uf = ? AND cargo = ? AND turno = ? AND cd_eleicao = ? GROUP BY ALL""", [uf, cg, t, ordin[t]]).fetchall()
+      WHERE uf = ? AND cargo = ? AND turno = ? AND cd_eleicao = ? GROUP BY ALL""", [uf, cg, t, cod(t, cg)]).fetchall()
     return {(m, z, s): (a or 0, c or 0) for m, z, s, a, c in rows}
 
 def votos(uf, cg, t):
     f = fonte_secao(uf, cg)
     if not f: return []
     return con.execute(f"""SELECT cd_municipio_tse, zona, secao, nr_votavel, sq_candidato, sum(qt_votos) FROM '{f}'
-      WHERE uf = ? AND cargo = ? AND turno = ? AND cd_eleicao = ? GROUP BY ALL ORDER BY 1, 2, 3""", [uf, cg, t, ordin[t]]).fetchall()
+      WHERE uf = ? AND cargo = ? AND turno = ? AND cd_eleicao = ? GROUP BY ALL ORDER BY 1, 2, 3""", [uf, cg, t, cod(t, cg)]).fetchall()
 
+# código da eleição ordinária do turno/cargo; deputados distritais (8) e estaduais seguem o código do governador
+def cod(t, cg): return ordin[(t, cg)]
 cd5 = lambda m: f'{m:05d}'
 def soma(a, b):
     for i in range(len(b)): a[i] += b[i]
