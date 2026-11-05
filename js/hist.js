@@ -2,14 +2,14 @@
 // Brasil > Estado > Região do estado > Município > Região/distrito do município > Bairro > Local de votação > Seção.
 // Dados: branch hist-<ano> do repositório (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]]
-import { CONFIG } from './config.js?v=86d5946e';
-import { UF_NOME, UFS, fInt, fNum } from './util.js?v=86d5946e';
-import { esc, tabela, sem } from './ui.js?v=86d5946e';
-import { getJSON } from './tse.js?v=86d5946e';
-import { corPartido, corTextoSobre } from './partidos.js?v=86d5946e';
-import { criarMapa } from './map.js?v=86d5946e';
-import { criarMapaMun } from './mapamun.js?v=86d5946e';
-import { criarMapaPontos } from './mapapontos.js?v=86d5946e';
+import { CONFIG } from './config.js?v=f66fb7c7';
+import { UF_NOME, UFS, fInt, fNum } from './util.js?v=f66fb7c7';
+import { esc, tabela, sem } from './ui.js?v=f66fb7c7';
+import { getJSON } from './tse.js?v=f66fb7c7';
+import { corPartido, corTextoSobre } from './partidos.js?v=f66fb7c7';
+import { criarMapa } from './map.js?v=f66fb7c7';
+import { criarMapaMun } from './mapamun.js?v=f66fb7c7';
+import { criarMapaPontos } from './mapapontos.js?v=f66fb7c7';
 
 export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;
@@ -82,8 +82,8 @@ async function regioesUf(ctx, uf) {
 }
 
 // ---------- blocos de interface ----------
-function kpis(u) {
-  return `<div class="kpis k4"><div class="kpi"><div class="kpi-t">Eleitores aptos</div><div class="kpi-v">${fInt(u.ap)}</div><div class="kpi-s">${fInt(u.ns)} seções</div></div>
+function kpis(u, rot = 'seções') {
+  return `<div class="kpis k4"><div class="kpi"><div class="kpi-t">Eleitores aptos</div><div class="kpi-v">${fInt(u.ap)}</div><div class="kpi-s">${rot ? `${fInt(u.ns)} ${rot}` : '&nbsp;'}</div></div>
     <div class="kpi"><div class="kpi-t">Comparecimento</div><div class="kpi-v">${fNum(pc(u.c, u.ap), 1)}%</div><div class="kpi-s">${fInt(u.c)} eleitores</div></div>
     <div class="kpi"><div class="kpi-t">Abstenção</div><div class="kpi-v">${fNum(u.pAb, 1)}%</div><div class="kpi-s">${fInt(u.ap - u.c)}</div></div>
     <div class="kpi"><div class="kpi-t">Brancos e nulos</div><div class="kpi-v">${fNum(pc(u.br + u.nu, u.c), 1)}%</div><div class="kpi-s">${fInt(u.br)} brancos · ${fInt(u.nu)} nulos</div></div></div>`;
@@ -168,7 +168,7 @@ async function telaBrasil(r, E, ctx, nomeEl) {
   if (E.ab === 'BR') {
     const d = await arq(r.ano, `${r.id}/br.json`), its = d.cands, n = its.length, br = fecha(somaLinha(novaU(n), d.tot, false));
     const ufs = Object.entries(d.uf).map(([uf, l]) => ({ id: uf, nome: nomeUf(uf), u: fecha(somaLinha(novaU(n), l, false)) }));
-    return { titulo: `Brasil — ${nomeEl}`, trilha, html: `${barras(E, its, br)}${kpis(br)}${secMapa('h-mapa-br', 'Mais votado por estado', 'Clique em um estado para ver os municípios.')}<section class="painel"><h2>Estados</h2><div id="h-tab"></div></section>`,
+    return { titulo: `Brasil — ${nomeEl}`, trilha, html: `${barras(E, its, br)}${kpis(br, '')}${secMapa('h-mapa-br', 'Mais votado por estado', 'Clique em um estado para ver os municípios.')}<section class="painel"><h2>Estados</h2><div id="h-tab"></div></section>`,
       montar(root) {
         const por = Object.fromEntries(ufs.map(x => [x.id, x]));
         const mp = criarMapa(root.querySelector('#h-mapa-br'), ctx.geo, { onClick: id => ctx.ir(hUf(r, id)), tooltip: id => por[id] ? tipU(E, its, por[id].nome, por[id].u) : '' });
@@ -259,7 +259,7 @@ async function telaUf(r, E, ctx, nomeEl) {
     else blocoCand = maisVotados(d.cands, tot.cv, { titulo: 'Mais votados na região', aprox: true });
   }
   const sub = E.prop ? 'Clique em um município para ver bairros, locais de votação e seções.' : 'Clique em um município para ver bairros, locais de votação e seções.';
-  return { titulo, trilha, html: `${barras(E, its, tot)}${kpis(tot)}${blocoCand}${mapaUf ? secMapa('h-mapa-mun', E.prop ? 'Partido mais votado por município' : 'Mais votado por município', 'Clique em um município.') : ''}${blocoRegs()}<section class="painel"><h2>Municípios${titReg ? ' da região' : ''}</h2><p class="sub">${sub}</p><div id="h-tab"></div></section>`,
+  return { titulo, trilha, html: `${barras(E, its, tot)}${kpis(tot, 'municípios')}${blocoCand}${mapaUf ? secMapa('h-mapa-mun', E.prop ? 'Partido mais votado por município' : 'Mais votado por município', 'Clique em um município.') : ''}${blocoRegs()}<section class="painel"><h2>Municípios${titReg ? ' da região' : ''}</h2><p class="sub">${sub}</p><div id="h-tab"></div></section>`,
     montar(root) {
       if (E.prop && r.nivel === 'uf') tabela(root.querySelector('#h-tab-c'), { cols: [{ k: 'nm', t: 'Candidato', h: c => `<b>${esc(bonito(c.nm))}</b> ${situ(c.st)}`, v: c => c.nm }, { k: 'sg', t: 'Partido', h: c => chipP(c.sg), v: c => c.sg }, { k: 'v', t: 'Votos', h: c => fInt(c.v), v: c => c.v, cls: 'n' }, { k: 'pv', t: '% válidos', h: c => `${fNum(pc(c.v, tot.vv), 2)}%`, v: c => c.v, cls: 'n' }], rows: d.cands, sort: 'v', dir: 'desc', filtro: (c, q) => sem(c.nm).includes(q) || sem(c.sg).includes(q), limite: 200 });
       if (regs && r.nivel === 'uf') tabela(root.querySelector('#h-tab-reg'), { cols: colsUnid(E, its, tot, { k: 'nome', t: 'Região', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, ini: 'asc' }), rows: rowsReg, onRow: x => ctx.ir(H(r, `/uf/${uf}/r/${x.i}`)), sort: 'nome', dir: 'asc' });

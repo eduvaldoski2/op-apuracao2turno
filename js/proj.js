@@ -8,8 +8,8 @@
 //  peso do chute inicial (swing zero) só some conforme a apuração avança. O que falta apurar de cada município é
 //  projetado com a distribuição do 1º turno do próprio município + o swing da sua UF. A faixa de incerteza vem de
 //  simulação (Monte Carlo) que propaga: incerteza do swing nacional, regional e estadual + ruído municipal.
-import { UF_IDS, UF_REGIAO, logit, expit, clamp } from './util.js?v=86d5946e';
-import { linhaParaObj } from './model.js?v=86d5946e';
+import { UF_IDS, UF_REGIAO, logit, expit, clamp } from './util.js?v=f66fb7c7';
+import { linhaParaObj } from './model.js?v=f66fb7c7';
 
 export const PARAMS = {
   // desvios-padrão (escala logit para o swing; proporções para as demais)
