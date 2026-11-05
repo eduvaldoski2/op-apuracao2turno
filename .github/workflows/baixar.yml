@@ -1,0 +1,30 @@
+name: Baixar fontes (arquivos públicos para o branch fontes-brutas)
+# Busca arquivos públicos que o ambiente do Claude não alcança (IBGE, governos estaduais, Wikipedia)
+# e os grava no branch "fontes-brutas", em <pasta>/<nome>. Só dados; nada aqui é executado.
+on:
+  workflow_dispatch:
+    inputs:
+      pasta: { description: 'Pasta de destino', required: true, default: 'regioes' }
+      lista: { description: 'Linhas "nome URL" separadas por ;', required: true }
+permissions: { contents: write }
+concurrency: { group: baixar-fontes, cancel-in-progress: false }
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Baixar
+        env: { LISTA: '${{ github.event.inputs.lista }}', PASTA: '${{ github.event.inputs.pasta }}' }
+        run: |
+          mkdir -p /tmp/out/$PASTA; cd /tmp/out/$PASTA; : > _log.txt
+          echo "$LISTA" | tr ';' '\n' | while read -r nome url; do
+            [ -z "$nome" ] && continue
+            code=$(curl -sS -L --retry 4 --retry-all-errors --connect-timeout 30 -m 600 -A 'Mozilla/5.0 (X11; Linux x86_64) OficinaPolitica-coleta' -o "$nome" -w '%{http_code}' "$url" 2>>_log.txt || echo ERR)
+            echo "$code $(stat -c %s "$nome" 2>/dev/null || echo 0) $nome $url" >> _log.txt
+          done
+          cat _log.txt
+      - name: Publicar no branch fontes-brutas
+        run: |
+          cd /tmp && git clone -q --depth 1 -b fontes-brutas "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" rep 2>/dev/null || (mkdir rep && cd rep && git init -q -b fontes-brutas && git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git")
+          cd /tmp/rep && cp -r /tmp/out/* . && git config user.name coletor && git config user.email coletor@users.noreply.github.com
+          git add -A && git commit -q -m "fontes: ${{ github.event.inputs.pasta }}" && git push -q origin HEAD:fontes-brutas
