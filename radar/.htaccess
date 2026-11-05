@@ -1,0 +1,6 @@
+# O conteúdo do Radar só sai pelo index.php (que confere a sessão). Arquivos internos (_*) não são públicos.
+DirectoryIndex index.php
+Options -Indexes
+<FilesMatch "^_">
+Require all denied
+</FilesMatch>
