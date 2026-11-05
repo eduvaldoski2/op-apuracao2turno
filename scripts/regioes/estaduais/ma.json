@@ -1,0 +1,224 @@
+{
+ "divisao": "Regiões de planejamento (Lei Complementar 108/2007)",
+ "fonte": "Governo do Maranhão (SEPLAN/IMESC), Lei Complementar nº 108/2007, conforme páginas das regiões na Wikipédia",
+ "url": "https://pt.wikipedia.org/wiki/Regionaliza%C3%A7%C3%A3o_do_Maranh%C3%A3o",
+ "regioes": {
+  "Alpercatas": [
+   "Buriti Bravo",
+   "Colinas",
+   "Fortuna",
+   "Jatobá",
+   "Mirador",
+   "Sucupira do Norte"
+  ],
+  "Baixada Maranhense": [],
+  "Carajás": [
+   "Açailândia",
+   "Bom Jesus das Selvas",
+   "Buriticupu",
+   "Cidelândia",
+   "Itinga do Maranhão",
+   "São Francisco do Brejão",
+   "São Pedro da Água Branca",
+   "Vila Nova dos Martírios"
+  ],
+  "Cocais": [
+   "Alto Alegre do Maranhão",
+   "Codó",
+   "Coroatá",
+   "Peritoró",
+   "Timbiras"
+  ],
+  "Eixos Rodoferroviários": [
+   "Arari",
+   "Cantanhede",
+   "Matões do Norte",
+   "Miranda do Norte",
+   "Pirapemas",
+   "São Mateus do Maranhão",
+   "Vitória do Mearim"
+  ],
+  "Gerais de Balsas": [
+   "Alto Parnaíba",
+   "Balsas",
+   "Fortaleza dos Nogueiras",
+   "Nova Colinas",
+   "Riachão",
+   "Tasso Fragoso"
+  ],
+  "Guajajaras": [
+   "Barra do Corda",
+   "Fernando Falcão",
+   "Jenipapo dos Vieiras"
+  ],
+  "Imigrantes": [],
+  "Lagos": [
+   "Cajari",
+   "Matinha",
+   "Olinda Nova do Maranhão",
+   "Penalva",
+   "Viana"
+  ],
+  "Lençóis Maranhenses": [
+   "Barreirinhas",
+   "Humberto de Campos",
+   "Paulino Neves",
+   "Primeira Cruz",
+   "Santo Amaro do Maranhão",
+   "Tutóia"
+  ],
+  "Mearim": [
+   "Altamira do Maranhão",
+   "Bacabal",
+   "Bom Lugar",
+   "Brejo de Areia",
+   "Conceição do Lago Açu",
+   "Lago Verde",
+   "Olho d'Água das Cunhãs",
+   "São Luís Gonzaga do Maranhão",
+   "Vitorino Freire"
+  ],
+  "Médio Mearim": [],
+  "Médio Parnaíba": [],
+  "Pericumã": [
+   "Alcântara",
+   "Bequimão",
+   "Peri Mirim",
+   "Pinheiro",
+   "Pedro do Rosário",
+   "Presidente Sarney",
+   "Santa Helena",
+   "Turiaçu",
+   "Turilândia"
+  ],
+  "Pindaré": [],
+  "Pré-Amazônia": [
+   "Governador Eugênio Barros",
+   "Governador Luiz Rocha",
+   "Graça Aranha",
+   "Presidente Dutra",
+   "Santa Filomena do Maranhão",
+   "São Domingos do Maranhão",
+   "Senador Alexandre Costa",
+   "Tuntum"
+  ],
+  "Chapada das Mesas": [
+   "Campestre do Maranhão",
+   "Carolina",
+   "Estreito",
+   "Feira Nova do Maranhão",
+   "Lajeado Novo",
+   "Porto Franco",
+   "São João do Paraíso",
+   "São Pedro dos Crentes"
+  ],
+  "Ilha do Maranhão": [
+   "Paço do Lumiar",
+   "Raposa",
+   "São José de Ribamar",
+   "São Luís"
+  ],
+  "Alto Munim": [
+   "Afonso Cunha",
+   "Anapurus",
+   "Belágua",
+   "Buriti",
+   "Chapadinha",
+   "Mata Roma",
+   "São Benedito do Rio Preto",
+   "Urbano Santos"
+  ],
+  "Alto Turi": [
+   "Araguanã",
+   "Governador Newton Bello",
+   "Nova Olinda do Maranhão",
+   "Presidente Médici",
+   "Santa Luzia do Paruá",
+   "Zé Doca"
+  ],
+  "Baixo Itapecuru": [
+   "Anajatuba",
+   "Itapecuru-Mirim",
+   "Nina Rodrigues",
+   "Presidente Vargas",
+   "Santa Rita",
+   "Vargem Grande"
+  ],
+  "Baixo Munim": [
+   "Axixá",
+   "Bacabeira",
+   "Cachoeira Grande",
+   "Icatu",
+   "Morros",
+   "Presidente Juscelino",
+   "Rosário"
+  ],
+  "Baixo Turi": [
+   "Boa Vista do Gurupi",
+   "Centro do Guilherme",
+   "Centro Novo do Maranhão",
+   "Governador Nunes Freire",
+   "Junco do Maranhão",
+   "Maracaçumé",
+   "Maranhãozinho"
+  ],
+  "Delta do Parnaíba": [
+   "Água Doce do Maranhão",
+   "Araioses",
+   "Brejo",
+   "Magalhães de Almeida",
+   "Milagres do Maranhão",
+   "Santa Quitéria do Maranhão",
+   "Santana do Maranhão",
+   "São Bernardo",
+   "Regionalização do Maranhão"
+  ],
+  "Flores": [
+   "Capinzal do Norte",
+   "Dom Pedro",
+   "Gonçalves Dias",
+   "Governador Archer",
+   "Joselândia",
+   "Santo Antônio dos Lopes",
+   "São José dos Basílios"
+  ],
+  "Gurupi": [
+   "Amapá do Maranhão",
+   "Cândido Mendes",
+   "Carutapera",
+   "Godofredo Viana",
+   "Luís Domingues",
+   "Boa Vista do Gurupi"
+  ],
+  "Litoral Ocidental": [
+   "Apicum-Açu",
+   "Bacuri",
+   "Cedral",
+   "Central do Maranhão",
+   "Cururupu",
+   "Guimarães",
+   "Mirinzal",
+   "Porto Rico do Maranhão",
+   "Serrano do Maranhão"
+  ],
+  "Sertão Maranhense": [],
+  "Timbiras": [
+   "Aldeias Altas",
+   "Caxias",
+   "Coelho Neto",
+   "Duque Bacelar",
+   "São João do Soter"
+  ],
+  "Tocantins": [
+   "Amarante do Maranhão",
+   "Buritirana",
+   "Davinópolis",
+   "Governador Edison Lobão",
+   "Imperatriz",
+   "João Lisboa",
+   "Montes Altos",
+   "Ribamar Fiquene",
+   "Senador La Rocque"
+  ]
+ }
+}
