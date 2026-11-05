@@ -1,7 +1,7 @@
 // Governador: resultado por estado no 1º turno (data/gov_1t.json) e no 2º turno (snap.gov, só nos estados com disputa).
 // Os dados vêm do TSE (eleição estadual 6259/6260, cargo 3) e são independentes da disputa presidencial.
-import { UF_NOME, fInt, fNum, clamp } from './util.js?v=01464424';
-import { esc } from './ui.js?v=01464424';
+import { UF_NOME, fInt, fNum, clamp } from './util.js?v=c995c959';
+import { esc } from './ui.js?v=c995c959';
 
 const COR = ['#3E347E', '#D9741A', '#1b8a6b', '#b3367a', '#2b6cb0', '#8a6d00', '#6b7280', '#a3261a', '#4b5fa8', '#9a5b13', '#2f7d3a', '#7a3fa0'];
 export const nomeP = t => String(t || '').toLowerCase().replace(/(^|[\s\-(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E) /g, x => x.toLowerCase());
@@ -52,7 +52,7 @@ export function govTabelaMontar(el, G, snap, tabela, ir) {
     { k: 'pb', t: '%', h: x => `${fNum(x.b.p, 2)}%`, v: x => x.b.p, cls: 'n sec' },
     { k: 'sit', t: 'Situação', h: x => x.dec ? '<span class="gv-sel">Eleito no 1º turno</span>' : `<span class="gv-sel gv-2t">${esc(x.sit)}</span>`, v: x => x.dec, x: x => x.sit },
   ];
-  tabela(el, { cols, rows, onRow: x => ir(`#/t1/uf/${x.id}?cargo=gov`), sort: 'nome', dir: 'asc' });
+  tabela(el, { cols, rows, onRow: x => ir(`#/h/2026/c3t1/uf/${x.id}`), sort: 'nome', dir: 'asc' });
 }
 
 // Senador, 1º turno (2026: duas vagas por estado; os dois mais votados são eleitos, não há 2º turno)
@@ -70,7 +70,7 @@ export function senTabelaMontar(el, S, tabela, ir) {
     { k: 'nome', t: 'Estado', h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, ini: 'asc' },
     { k: 'a', t: 'Senadores eleitos', h: x => [x.a, x.b].filter(Boolean).map((c, i) => `<div class="sen-dois">${cel(c).replace('<b>', `<b>${i + 1}º · `)}</div>`).join(''), v: x => x.a?.p ?? 0, x: x => [x.a, x.b].filter(Boolean).map(c => `${c.nm} (${c.sg}) ${fNum(c.p, 2)}%`).join(' | ') },
   ];
-  tabela(el, { cols, rows, onRow: x => ir(`#/t1/uf/${x.id}?cargo=sen`), sort: 'nome', dir: 'asc' });
+  tabela(el, { cols, rows, onRow: x => ir(`#/h/2026/c5t1/uf/${x.id}`), sort: 'nome', dir: 'asc' });
 }
 
 // Topo no estilo das fichas do presidente, mas com os candidatos ao governo (ou ao Senado) do estado

@@ -1,17 +1,17 @@
 // Aba "Resultados 1º Turno": resultado oficial do TSE por candidato (Brasil › estado › município; bairro e local em bairros.js).
 // Dados: data/res_1t.json (scripts/res1t.mjs). Linha de unidade: [ts, st, te, c, a, vb, tvn, ...votos por candidato]; município tem o código na frente.
-import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=01464424';
-import { esc, tabela, sem, entenda } from './ui.js?v=01464424';
-import { getFoco } from './foco.js?v=01464424';
-import { kpi } from './views.js?v=01464424';
-import { criarMapa } from './map.js?v=01464424';
-import { criarMapaMun } from './mapamun.js?v=01464424';
-import { getJSON } from './tse.js?v=01464424';
-import { govTopo, govPainel, govTabelaHtml, govTabelaMontar, senPainel, senTabelaHtml, senTabelaMontar } from './governador.js?v=01464424';
-import { viewDepBrasil, viewDepUf } from './deputados.js?v=01464424';
-import { soConta } from './eleicao.js?v=01464424';
-import { leitura, balao } from './insights.js?v=01464424';
-import { dispersao } from './dispersao.js?v=01464424';
+import { CAND, PAL, UF_NOME, UFS, fInt, fNum, setEscala, corDoPct, corTexto, ESC } from './util.js?v=c995c959';
+import { esc, tabela, sem, entenda } from './ui.js?v=c995c959';
+import { getFoco } from './foco.js?v=c995c959';
+import { kpi } from './views.js?v=c995c959';
+import { criarMapa } from './map.js?v=c995c959';
+import { criarMapaMun } from './mapamun.js?v=c995c959';
+import { getJSON } from './tse.js?v=c995c959';
+import { govTopo, govPainel, govTabelaHtml, govTabelaMontar, senPainel, senTabelaHtml, senTabelaMontar } from './governador.js?v=c995c959';
+import { viewDepBrasil, viewDepUf } from './deputados.js?v=c995c959';
+import { soConta } from './eleicao.js?v=c995c959';
+import { leitura, balao } from './insights.js?v=c995c959';
+import { dispersao } from './dispersao.js?v=c995c959';
 
 let cache = null, formaMapa = 'areas', eixoDisp = 'abst';
 export const carregarT1 = () => (cache ??= getJSON('data/res_1t.json', { retries: 2 }));

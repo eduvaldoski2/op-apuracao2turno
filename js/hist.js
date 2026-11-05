@@ -2,14 +2,14 @@
 // Brasil > Estado > Região do estado > Município > Região/distrito do município > Bairro > Local de votação > Seção.
 // Dados: branch hist-<ano> do repositório (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]]
-import { CONFIG } from './config.js?v=01464424';
-import { UF_NOME, UFS, fInt, fNum } from './util.js?v=01464424';
-import { esc, tabela, sem } from './ui.js?v=01464424';
-import { getJSON } from './tse.js?v=01464424';
-import { corPartido, corTextoSobre } from './partidos.js?v=01464424';
-import { criarMapa } from './map.js?v=01464424';
-import { criarMapaMun } from './mapamun.js?v=01464424';
-import { criarMapaPontos } from './mapapontos.js?v=01464424';
+import { CONFIG } from './config.js?v=c995c959';
+import { UF_NOME, UFS, fInt, fNum } from './util.js?v=c995c959';
+import { esc, tabela, sem } from './ui.js?v=c995c959';
+import { getJSON } from './tse.js?v=c995c959';
+import { corPartido, corTextoSobre } from './partidos.js?v=c995c959';
+import { criarMapa } from './map.js?v=c995c959';
+import { criarMapaMun } from './mapamun.js?v=c995c959';
+import { criarMapaPontos } from './mapapontos.js?v=c995c959';
 
 export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;
@@ -92,7 +92,7 @@ function kpis(u) {
 function barras(E, its, u, { max = 12, titulo } = {}) {
   const ord = u.v.map((x, i) => i).filter(i => u.v[i] > 0).sort((a, b) => u.v[b] - u.v[a]).slice(0, max);
   const lin = ord.map((i, k) => { const it = its[i] || {}, cor = corItem(E, it);
-    return `<div class="h-bar"><div class="h-bar-t"><b>${k + 1}º</b> <span class="h-bar-n">${esc(nomeItem(E, it))}</span> ${E.prop ? (it.fed ? `<small class="h-sit">${esc(sgTxt(it.fed))}</small>` : '') : chipP(it.sg)} ${E.prop ? '' : situ(it.st)}<span class="h-bar-v"><b>${fNum(u.p[i], 2)}%</b> <small>${fInt(u.v[i])}</small></span></div><div class="h-bar-f"><i style="width:${Math.max(0.5, u.p[i])}%;background:${cor}"></i></div></div>`; }).join('');
+    return `<div class="h-bar"><div class="h-bar-t"><b>${k + 1}º</b> <span class="h-bar-n">${esc(nomeItem(E, it))}</span> ${E.prop ? (it.fed ? `<small class="h-sit">Federação ${esc(sgTxt(String(it.fed).replace(/\b\d+-/g, '')))}</small>` : '') : chipP(it.sg)} ${E.prop ? '' : situ(it.st)}<span class="h-bar-v"><b>${fNum(u.p[i], 2)}%</b> <small>${fInt(u.v[i])}</small></span></div><div class="h-bar-f"><i style="width:${Math.max(0.5, u.p[i])}%;background:${cor}"></i></div></div>`; }).join('');
   return `<section class="painel"><h2>${titulo || (E.prop ? 'Votos por partido' : 'Candidatos')}</h2><p class="sub">${E.prop ? 'Votos nominais dos candidatos do partido mais votos de legenda' : 'Percentual dos votos válidos'}.</p>${lin || '<p class="sub">Sem votos registrados.</p>'}</section>`;
 }
 // mais votados (proporcional): lista de candidatos com votos

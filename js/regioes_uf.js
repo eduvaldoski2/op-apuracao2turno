@@ -1,7 +1,7 @@
 // Regiões do estado (agrupamentos de municípios): divisão oficial do governo estadual ou, na falta, regiões intermediárias do IBGE (scripts/regioes/build_regioes_uf.py).
-import { CAND, fInt, fNum } from './util.js?v=01464424';
-import { esc, pcel, tabela, sem } from './ui.js?v=01464424';
-import { getJSON } from './tse.js?v=01464424';
+import { CAND, fInt, fNum } from './util.js?v=c995c959';
+import { esc, pcel, tabela, sem } from './ui.js?v=c995c959';
+import { getJSON } from './tse.js?v=c995c959';
 
 export const UF_COM_REGIOES = new Set(['ac','al','am','ap','ba','ce','es','go','ma','mg','ms','mt','pa','pb','pe','pi','pr','rj','rn','ro','rr','rs','sc','se','sp','to']);
 export const secaoRegioesUf = (uf, titulo) => UF_COM_REGIOES.has(uf)
