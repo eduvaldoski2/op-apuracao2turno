@@ -1,6 +1,6 @@
 <?php if (!defined('RADAR_OK')) { http_response_code(404); exit; } ?>
 /* ===== DADOS DA EDIÇÃO (trocar este bloco a cada atualização) ===== */
-var EDICAO = {hora:'04h', data:'Quinta, 05 de novembro de 2026'};
+var EDICAO = {hora:'07h', data:'Quinta, 05 de novembro de 2026'};
 var ED = [
  {id:'politica', nome:'Política'},
  {id:'economia', nome:'Economia'},
@@ -9,7 +9,7 @@ var ED = [
 ];
 var S = {};
 
-S.flavio = {ed:'politica', k:'Política', hora:'4/11',
+S.flavio = {ed:'politica', k:'Política', hora:'5/11',
  t:'Flávio vota por celular de fora do país, e Randolfe pede a anulação do voto',
  sub:'Alcolumbre manda a assessoria técnica analisar o caso. Nos bastidores, indica que não dará andamento a pedidos de cassação.',
  dado:{n:'3/11', l:'Voto remoto de Flávio, com o senador nos Estados Unidos'},
@@ -40,9 +40,12 @@ S.flavio = {ed:'politica', k:'Política', hora:'4/11',
    'Em julho de 2026, o ministro suspendeu por 90 dias as visitas de Flávio ao pai, por entender que publicações do senador contornavam a proibição de manifestação política por terceiros. As visitas foram retomadas em meados de outubro.',
    'Eduardo Bolsonaro, que está nos Estados Unidos, foi condenado pelo STF por coação no curso do processo, com mandado de prisão de quatro anos e dois meses, suspensão de direitos políticos e cancelamento de passaportes.',
    'O ministro André Mendonça encerrou o processo sobre o desafio de Lula e Flávio para abrir os próprios sigilos, segundo a coluna de Manoela Alcântara, no Metrópoles.']],
+  ['h','Mandato e salário'],
+  ['p','A Revista Fórum, que cita a coluna de Igor Gadelha no Metrópoles, informa que Alcolumbre não pretende criar obstáculos à permanência de Flávio no mandato, que termina em 31 de janeiro de 2027, nem ao pagamento do salário de R$ 46.366,19 mensais. Um aliado do presidente do Senado disse ao Metrópoles que não há processo de cassação nem decisão judicial que impeça o exercício do mandato. Alcolumbre busca a reeleição para a presidência da Casa e, segundo a reportagem, conta com ao menos quatro votos do PL.'],
+  ['p','A Fórum registra ainda que, em 31 de outubro, os advogados Leonardo Marinho e Rodrigo da Silva Roma ajuizaram ação popular na Justiça Federal do Rio pedindo a suspensão de salário, auxílio-moradia e verbas de gabinete do senador, e que o gabinete mantém 21 funcionários. A reportagem não informa decisão sobre a ação. Segundo O Tempo, o voto de Flávio foi relevante: a separação das propostas sobre maioridade penal foi rejeitada por 38 a 36, e sem o voto dele o placar seria 38 a 35.'],
   ['h','O que vem a seguir'],
   ['p','Dois pontos seguem abertos: o resultado da análise da assessoria técnica do Senado e eventuais decisões de Moraes sobre os pedidos do PT. Nas matérias consultadas, não havia decisão sobre nenhum dos dois.']],
- fontes:[['Metrópoles (Igor Gadelha)','https://www.metropoles.com/colunas/igor-gadelha/em-aceno-a-direita-alcolumbre-indica-que-protegera-mandato-de-flavio'],['Plantão Brasil','https://www.plantaobrasil.net/noticias/161854-randolfe-contesta-voto-de-flavio-bolsonaro-apos-viagem-nao-comunicada-aos-eua'],['Brasil 247','https://www.brasil247.com/brasil/randolfe-pede-anulacao-de-voto-de-flavio-bolsonaro-no-senado-apos-fuga-para-os-eua/'],['Senado Notícias','https://www12.senado.leg.br/noticias/materias/2026/11/04/davi-vai-analisar-questoes-de-randolfe-sobre-situacao-de-flavio-bolsonaro'],['Gazeta do Povo','https://www.gazetadopovo.com.br/republica/lula-chama-viagem-de-flavio-de-vergonhosa-e-lembra-da-propria-prisao-na-lava-jato/'],['Movimento Econômico','https://movimentoeconomico.com.br/politica/2026/10/28/de-miami-flavio-se-diz-verdadeiro-presidente-eleito-e-promete-guiar-oposicao/'],['Metrópoles (Manoela Alcântara)','https://www.metropoles.com/colunas/manoela-alcantara/mendonca-encerra-processo-sobre-desafio-de-lula-e-flavio-para-abrir-sigilos']]};
+ fontes:[['Revista Fórum (5/11)','https://revistaforum.com.br/politica/flavio-bolsonaro-salario-eua'],['O Tempo (Karen Couto)','https://www.otempo.com.br/politica/congresso/2026/11/4/randolfe-acusa-flavio-bolsonaro-de-fuga-e-pede-anulacao-de-voto-dado-dos-eua'],['Coluna Política (Agência Senado)','https://colunapolitica.com.br/politica/alcolumbre-vai-analisar-questoes-de-randolfe-sobre-situacao-de-flavio-bolsonaro/'],['Metrópoles (Igor Gadelha)','https://www.metropoles.com/colunas/igor-gadelha/em-aceno-a-direita-alcolumbre-indica-que-protegera-mandato-de-flavio'],['Plantão Brasil','https://www.plantaobrasil.net/noticias/161854-randolfe-contesta-voto-de-flavio-bolsonaro-apos-viagem-nao-comunicada-aos-eua'],['Brasil 247','https://www.brasil247.com/brasil/randolfe-pede-anulacao-de-voto-de-flavio-bolsonaro-no-senado-apos-fuga-para-os-eua/'],['Senado Notícias','https://www12.senado.leg.br/noticias/materias/2026/11/04/davi-vai-analisar-questoes-de-randolfe-sobre-situacao-de-flavio-bolsonaro'],['Gazeta do Povo','https://www.gazetadopovo.com.br/republica/lula-chama-viagem-de-flavio-de-vergonhosa-e-lembra-da-propria-prisao-na-lava-jato/'],['Movimento Econômico','https://movimentoeconomico.com.br/politica/2026/10/28/de-miami-flavio-se-diz-verdadeiro-presidente-eleito-e-promete-guiar-oposicao/'],['Metrópoles (Manoela Alcântara)','https://www.metropoles.com/colunas/manoela-alcantara/mendonca-encerra-processo-sobre-desafio-de-lula-e-flavio-para-abrir-sigilos']]};
 
 S.senado = {ed:'politica', k:'Política', hora:'4/11',
  t:'Corrida pelo comando da Câmara e do Senado já redesenha alianças',
@@ -68,7 +71,7 @@ S.senado = {ed:'politica', k:'Política', hora:'4/11',
    'Na Assembleia Legislativa de São Paulo, o coordenador da campanha de Haddad quer um cargo na Mesa Diretora, e o autor do modelo de escolas cívico-militares do estado quer a presidência da Casa, conforme o Metrópoles.']]],
  fontes:[['Correio da Manhã','https://www.correiodamanha.com.br/politica/2026/10/330984-motta-e-alcolumbre-costuram-apoios-para-seguir-no-comando.html'],['g1','https://g1.globo.com/politica/noticia/2026/11/04/com-marinho-na-disputa-a-presidencia-do-senado-pl-se-divide-sobre-lancar-nome-para-camara.ghtml'],['Metrópoles (Igor Gadelha)','https://www.metropoles.com/colunas/igor-gadelha/em-aceno-a-direita-alcolumbre-indica-que-protegera-mandato-de-flavio'],['Brasil 247 (LDO)','https://www.brasil247.com/brasil/alcolumbre-entrega-relatoria-da-ldo-a-senador-do-pl-e-amplia-poder-da-oposicao-sobre-orcamento/'],['Brasil 247 (PSB)','https://www.brasil247.com/brasil/psb-abre-dialogo-com-alcolumbre-sobre-apoio-a-reeleicao-no-senado-afirma-casagrande/'],['Brasil 247 (STF)','https://www.brasil247.com/poder/senadores-do-pl-repensam-impeachment-de-ministros-do-stf/'],['Blog do Magno','https://blogdomagno.com.br/lula-delega-contato-com-centrao-a-edinho-que-inicia-conversas-pelo-mdb'],['Itatiaia','https://www.itatiaia.com.br/politica/vitoria-de-lula-fortalece-motta-e-alcolumbre-na-disputa-pelo-congresso/']]};
 
-S.pronunciamento = {ed:'politica', k:'Política', hora:'4/11',
+S.pronunciamento = {ed:'politica', k:'Política', hora:'5/11',
  t:'Lula grava pronunciamento sobre responsabilidade fiscal, com exibição no domingo',
  sub:'Primeira fala em rede nacional depois da reeleição deve agradecer o apoio e dar um recado ao mercado.',
  resumo:'Lula grava nesta quinta (5) o primeiro pronunciamento em rede nacional depois da reeleição, que vai ao ar no domingo (8). Segundo a apuração do ICL atribuída à Folha, ele dirá que políticas sociais duradouras dependem de contas equilibradas, agradecerá os eleitores e tentará acalmar o mercado, sem anunciar medidas concretas.',
@@ -79,10 +82,11 @@ S.pronunciamento = {ed:'politica', k:'Política', hora:'4/11',
   ['h','Recado ao mercado'],
   ['p','O pronunciamento chega depois de um período de pressão nos mercados. Segundo o g1, depois de confirmada a vitória de Lula para o quarto mandato, o mercado elevou consideravelmente as projeções de inflação, reduziu as de crescimento e passou a prever juros mais altos. Na quarta (4), o Copom manteve a Selic em 13,75% ao ano e citou expectativas de inflação desancoradas.'],
   ['p','No mesmo dia, o presidente do Santander disse, segundo o Brasil 247, que Lula deu “demonstrações importantíssimas de confiança para os mercados”. O dólar comercial fechou a R$ 5,45, em queda de 0,64%, e o Ibovespa subiu, em movimento também ligado ao resultado das eleições americanas.'],
+  ['p','O InfoMoney, em sua agenda desta quinta (5) e com base no Estadão/Broadcast, registra que a fala em cadeia nacional será no domingo (8) e dirá que o governo seguirá perseguindo as metas fiscais sem deixar de cumprir promessas de campanha.'],
   ['h','O que ainda não se sabe'],
   ['p','O texto do pronunciamento não foi divulgado, e o conteúdo descrito vem de apuração de bastidores. Veículos de linhas editoriais distintas interpretam a gravação de modo diferente. A apuração atribuída à Folha descreve um discurso que busca alinhar a gestão econômica às expectativas do mercado, enquanto o Blog do BG, crítico ao governo, vê a fala como tentativa de acalmar investidores diante das contas públicas, sem apresentar números.'],
   ['p','O mercado deve medir a recepção do discurso já na segunda-feira (9). Nas reportagens consultadas, não há indicação de metas, medidas ou prazos para o ajuste fiscal.']],
- fontes:[['ICL Notícias (via Plantão Brasil)','https://www.plantaobrasil.net/noticias/161828-em-primeiro-pronunciamento-apos-reeleicao-lula-deve-reforcar-compromisso-com-responsabilidade-fiscal'],['Jornal de Brasília','https://jornaldebrasilia.com.br/noticias/politica-e-poder/lula-grava-pronunciamento-sobre-ajuste-fiscal-e-pacificacao-nacional/'],['Tribuna do Sertão','https://www.tribunadosertao.com.br/financas/2026/11/04/1013525-lula-dara-recado-sobre-contas-publicas-em-pronunciamento-na-tv'],['Brasil 247 (Santander)','https://www.brasil247.com/economia/presidente-do-santander-diz-que-lula-deu-demonstracoes-importantissimas-de-confianca-para-os-mercados/'],['g1 (Copom)','https://g1.globo.com/economia/noticia/2026/11/04/copom-mantem-taxa-basica-de-juros-da-economia-em-1375percent-ao-ano.ghtml']]};
+ fontes:[['InfoMoney (agenda de 5/11)','https://www.infomoney.com.br/mercados/copom-industria-balancos-boe-agenda-05112026/'],['ICL Notícias (via Plantão Brasil)','https://www.plantaobrasil.net/noticias/161828-em-primeiro-pronunciamento-apos-reeleicao-lula-deve-reforcar-compromisso-com-responsabilidade-fiscal'],['Jornal de Brasília','https://jornaldebrasilia.com.br/noticias/politica-e-poder/lula-grava-pronunciamento-sobre-ajuste-fiscal-e-pacificacao-nacional/'],['Tribuna do Sertão','https://www.tribunadosertao.com.br/financas/2026/11/04/1013525-lula-dara-recado-sobre-contas-publicas-em-pronunciamento-na-tv'],['Brasil 247 (Santander)','https://www.brasil247.com/economia/presidente-do-santander-diz-que-lula-deu-demonstracoes-importantissimas-de-confianca-para-os-mercados/'],['g1 (Copom)','https://g1.globo.com/economia/noticia/2026/11/04/copom-mantem-taxa-basica-de-juros-da-economia-em-1375percent-ao-ano.ghtml']]};
 
 S.bets = {ed:'politica', k:'Política', hora:'4/11',
  t:'Fachin sinaliza julgamento conjunto de bets, loterias e jogos de azar no STF',
@@ -99,7 +103,7 @@ S.bets = {ed:'politica', k:'Política', hora:'4/11',
  fontes:[['CNN Brasil','https://www.cnnbrasil.com.br/politica/stf-quer-julgamento-conjunto-de-acoes-sobre-bets-loterias-e-jogos-de-azar/'],['Metrópoles (Manoela Alcântara)',''],['Jornal do Comércio','https://www.jornaldocomercio.com/politica/2026/07/1255766-stf-preve-julgar-acoes-contra-legalizacao-das-bets-no-segundo-semestre.html']]};
 
 
-S.copom = {ed:'economia', k:'Economia', hora:'4/11',
+S.copom = {ed:'economia', k:'Economia', hora:'5/11',
  t:'Copom interrompe cortes e mantém a Selic em 13,75% ao ano',
  sub:'Decisão unânime vem na primeira reunião depois da reeleição de Lula. Brasil segue com o maior juro real entre 40 países.',
  dado:{n:'13,75%', l:'Selic ao ano · juro real de 8,45%, o maior entre 40 países'},
@@ -121,9 +125,11 @@ S.copom = {ed:'economia', k:'Economia', hora:'4/11',
   ['h','O debate sobre os juros'],
   ['p','A indústria avalia que a manutenção dos juros em patamar tão alto é injustificável, segundo o Metrópoles. Na Folha, a colunista Adriana Fernandes escreve que a cruzada contra juros altos não muda a necessidade de ajuste fiscal. No Metrópoles, Reinaldo Azevedo compara o debate sobre juros a um dogma e cita o economista Lara Resende como o “herege” do cenário.'],
   ['p','Outros indicadores do dia: o Caged contabilizou 121 mil vagas formais em setembro, e a procura por crédito cresceu 49,56% no mês, segundo levantamento de CNDL e SPC. O Brasil 247 destaca a declaração do presidente do Santander, para quem Lula deu “demonstrações importantíssimas de confiança para os mercados”.'],
+  ['h','Nesta quinta (5)'],
+  ['p','Segundo o InfoMoney, o Ibovespa interrompeu a sequência de quedas registrada desde a reeleição de Lula e fechou em alta na quarta. O Money Times relata que entidades da indústria e do comércio criticaram a manutenção dos juros, apontando efeitos sobre atividade, crédito e investimentos, e que o deputado Lindbergh Farias (PT-RJ) também criticou a decisão. Na agenda de hoje, o IBGE divulga às 9h a Pesquisa Industrial Mensal de setembro, com projeção de queda de 0,1% na comparação mensal.'],
   ['h','O que vem a seguir'],
   ['p','O pronunciamento de Lula, gravado nesta quinta e previsto para domingo, deve tratar de responsabilidade fiscal. O Boletim Focus das próximas segundas-feiras mostrará se as expectativas para 2026 e 2027 recuam. Nas matérias consultadas, o comunicado não detalha sinais para a próxima reunião do Copom.']],
- fontes:[['g1 (Copom)','https://g1.globo.com/economia/noticia/2026/11/04/copom-mantem-taxa-basica-de-juros-da-economia-em-1375percent-ao-ano.ghtml'],['O Tempo','https://www.otempo.com.br/economia/2026/11/4/copom-mantem-taxa-selic-em-13-75-e-interrompe-sequencia-de-cortes'],['Brasil 247 (Santander)','https://www.brasil247.com/economia/presidente-do-santander-diz-que-lula-deu-demonstracoes-importantissimas-de-confianca-para-os-mercados/'],['Metrópoles',''],['Folha de S.Paulo',''],['O Globo','']]};
+ fontes:[['Money Times (tempo real, 5/11)','https://www.moneytimes.com.br/tempo-real-5-11-26-lils-davs/'],['InfoMoney (agenda de 5/11)','https://www.infomoney.com.br/mercados/copom-industria-balancos-boe-agenda-05112026/'],['g1 (Copom)','https://g1.globo.com/economia/noticia/2026/11/04/copom-mantem-taxa-basica-de-juros-da-economia-em-1375percent-ao-ano.ghtml'],['O Tempo','https://www.otempo.com.br/economia/2026/11/4/copom-mantem-taxa-selic-em-13-75-e-interrompe-sequencia-de-cortes'],['Brasil 247 (Santander)','https://www.brasil247.com/economia/presidente-do-santander-diz-que-lula-deu-demonstracoes-importantissimas-de-confianca-para-os-mercados/'],['Metrópoles',''],['Folha de S.Paulo',''],['O Globo','']]};
 
 S.seletivo = {ed:'economia', k:'Economia', hora:'4/11',
  t:'Governo publica MP do “imposto do pecado” e fixa alíquotas a partir de 2027',
@@ -189,24 +195,6 @@ S.paes = {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro', hora:'4/11',
   ['p','Estão pendentes a decisão de Zanin sobre a ADPF 1362 e o prazo de 6 de dezembro para eventual votação suplementar, a admissão da ação no TRE-RJ e a resposta formal de Ruas e do PL, que as matérias consultadas ainda não registram.']],
  fontes:[['Tempo Real RJ','https://temporealrj.com/eleicoes-paes-acusa-campanha-ruas-fraude-eleitoral/'],['Conjur','https://conjur.com.br/2026-nov-04/eduardo-paes-pede-cassacao-de-douglas-ruas-por-panfletos-falsos-e-compra-de-votos/'],['Gazeta do Povo','https://www.gazetadopovo.com.br/republica/douglas-ruas-se-reune-com-zanin-para-tratar-de-acao-que-pede-segundo-turno-no-rio-de-janeiro/'],['Agência Brasil','https://agenciabrasil.ebc.com.br/justica/noticia/2026-10/zanin-nega-pedido-feito-por-paes-de-determinar-segundo-turno-no-rio'],['O Povo','https://mais.opovo.com.br/jornal/farol/2026/10/16/tre-rj-proclama-douglas-ruas-eleito-para-o-governo-do-rio.html'],['A Crítica','https://acritica.net/eleicoes-2026/paes-reconhece-fim-da-disputa-no-rio-apos-decisoes-do-tse-e-do-stf/'],['Jovem Pan','https://jovempan.com.br/politica/paes-defende-2o-turno-no-rj-ninguem-alcancou-a-maioria/']]};
 
-S.transicao = {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro', hora:'3/11',
- t:'Ruas anuncia secretariado e tenta equilibrar base na Alerj, centrão e relação com Lula',
- sub:'Governador eleito toma posse em janeiro. Aliados querem mais autonomia em relação a Flávio e diálogo com o Planalto.',
- resumo:'O governador eleito do Rio, Douglas Ruas (PL), anunciou nomes do secretariado: Maria Gabriela Bessa na Casa Civil, Anderson Monteze no Planejamento e a vice, Fernanda Louback, na pasta da Mulher. O PL quer reunir cerca de 40 dos 70 deputados da Alerj, e aliados defendem que ele mantenha diálogo com Lula para atrair investimentos federais.',
- fundo:[
-  ['p','O governador eleito do Rio, Douglas Ruas (PL), anunciou na terça-feira (3), na sede da Firjan, no Centro, novos nomes do secretariado que assumirá em janeiro. Segundo o Tempo Real RJ, Maria Gabriela Bessa, atual secretária das Cidades e coordenadora da transição, ficará com a Casa Civil e Governança, e Anderson Monteze, que atua na área de Orçamento e Finanças da Alerj, com Planejamento, Gestão e Inovação. A vice-governadora eleita, Fernanda Louback (PL), ficará à frente da Secretaria de Políticas Inclusivas e da Mulher.'],
-  ['p','O Diário do Rio informa que Jair Bittencourt (PL), deputado estadual com quatro mandatos e base no Noroeste Fluminense, foi convidado para a Secretaria de Governo, responsável pela articulação com a Assembleia. O nome de Fábio Araújo, o Fabinho, é citado para a chefia de gabinete, e Bruno Bonetti (PL), presidente municipal do partido no Rio, é cotado para a área de comunicação e relações institucionais. Para a Saúde, segundo o Tempo Real RJ, foi convidado o presidente do Cremerj, Antônio Braga, mas a indicação ainda não foi confirmada. A Secretaria de Segurança segue sem titular definido.'],
-  ['h','A conta da Alerj'],
-  ['p','O Diário do Rio informa que o PL elegeu 21 deputados estaduais e quer reunir cerca de 40 dos 70 integrantes da Alerj, o que daria folga para eleger a Mesa Diretora e aprovar projetos do Executivo. O primeiro passo é a aliança com a federação União Brasil-PP, que tem nove cadeiras, e o partido projeta 31 votos com a federação. Nove deputados independentes estariam em conversa, o que levaria o grupo a 40, mas as adesões dependem de acordos. As contas do jornal não fecham exatamente: a federação aparece com nove cadeiras, mas a projeção soma dez.'],
-  ['p','Em 28 de outubro, Ruas confirmou o deputado Anderson Moraes (PL) como candidato do governo à presidência da Alerj, cuja eleição ocorre com a nova legislatura, em fevereiro de 2027. Ele precisa deixar a Assembleia, que hoje preside, para assumir o governo. União Brasil, PP, Republicanos e MDB negociam espaço na futura gestão, segundo o jornal, e o nome de André Ceciliano (PT) foi citado como possível candidato ao comando da Casa.'],
-  ['h','Autonomia em relação a Flávio, diálogo com Lula'],
-  ['p','Depois da derrota de Flávio Bolsonaro na eleição presidencial, aliados de Ruas defendem que ele escolha os secretários com autonomia e preserve uma relação de trabalho com o governo Lula, para garantir recursos federais, segundo o Diário do Rio. Entre os projetos que dependem de dinheiro de Brasília estão um metrô ligando Rio, Niterói e São Gonçalo, possivelmente com parcerias público-privadas, obras viárias e de ônibus na Baixada Fluminense, unidades de saúde no interior e a conclusão do hospital do câncer de Nova Friburgo.'],
-  ['p','Ruas diz que se dá bem com todas as correntes políticas e que tratará o governo federal de forma institucional, mas afirma que continuará leal a Flávio, a quem chama de liderança com a qual sempre esteve. O PL quer manter canais abertos com Brasília porque Lula fica no cargo até 2030 e o partido segue como principal força de oposição, segundo a reportagem. O deputado federal Altineu Côrtes, presidente estadual do PL, atua como conselheiro na montagem do gabinete, mas descartou assumir cargo no Executivo, conforme O Globo, citado pelo Diário do Rio.'],
-  ['p','A reportagem registra ainda que Ruas propôs acabar com a independência das secretarias de Polícia Civil e Polícia Militar, que passariam a responder à Segurança Pública. A transição também prepara o estado para eventos climáticos extremos ligados ao El Niño, com atualização de dados de risco de enchentes e revisão de investimentos em prevenção.'],
-  ['h','TCE e governo em exercício'],
-  ['p','O Globo informa que Flávio Bolsonaro pode indicar seu ex-advogado Victor Gramado Alves a uma das vagas de conselheiro do Tribunal de Contas do Estado. Uma vaga foi aberta com a condenação de Domingos Brazão pelo STF, e outras duas dependem de decisões do STJ. As indicações são feitas pela Assembleia.'],
-  ['p','Enquanto isso, o governo estadual segue sob o governador em exercício, Ricardo Couto. O Diário Oficial desta quarta publicou 16 nomeações, 11 exonerações, duas dispensas e duas designações, segundo o Tempo Real RJ, entre elas quatro nomeações na Subsecretaria de Políticas Inclusivas da Secretaria da Mulher, atos assinados pela gestão atual, e não pela equipe eleita. A posse de Ruas está marcada para 6 de janeiro de 2027.']],
- fontes:[['Diário do Rio (secretariado)','https://diariodorio.com/politica/2026/11/02/douglas-ruas-anuncia-novos-secretarios-nesta-terca-feira-veja-os-nomes-cotados.html'],['Diário do Rio (Alerj)','https://diariodorio.com/politica/2026/10/28/douglas-ruas-confirma-anderson-moraes-para-presidencia-da-alerj-e-jair-bittencourt-para-secretaria-de-governo.html'],['Diário do Rio (autonomia)','https://diariodorio.com/politica/2026/10/27/aliados-querem-douglas-ruas-mais-independente-de-flavio-bolsonaro-e-com-dialogo-com-lula-ruas-para-o-governo-do-rio.html'],['Tempo Real RJ','https://temporealrj.com/nomeacoes-cargos-governo-estado-secretaria-mulher/'],['O Globo','']]};
 
 S.guandu = {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro', hora:'4/11',
  t:'Cedae religa o Guandu depois de atraso de concessionárias; abastecimento normaliza até sexta',
@@ -1443,13 +1431,34 @@ S.eua_pioneiros = {
  ]
 };
 
+S.mei = {ed:'economia', k:'Economia', hora:'4/11',
+ t:'Congresso aprova ampliação do teto do MEI para R$ 110 mil em 2027 e R$ 140 mil em 2028',
+ sub:'Proposta passou na Câmara por 461 a 4 e no Senado por unanimidade, com 78 votos.',
+ dado:{n:'R$ 140 mil', l:'Teto anual do MEI em 2028, ante R$ 81 mil hoje'},
+ resumo:'O Congresso aprovou a elevação do limite anual de faturamento do MEI, de R$ 81 mil para R$ 110 mil em 2027 e R$ 140 mil em 2028. Na Câmara, o placar foi de 461 a 4; no Senado, de 78 votos, sem contrários, segundo o InfoMoney. A votação integrou um conjunto de três pautas do governo com apoio de partidos de oposição.',
+ fundo:[
+  ['p','A ampliação do teto do Microempreendedor Individual (MEI) foi aprovada pelo Congresso na quarta-feira (4). De acordo com o InfoMoney, o limite anual de faturamento sobe de R$ 81 mil para R$ 110 mil em 2027 e para R$ 140 mil em 2028. Na Câmara, o texto recebeu 461 votos favoráveis e 4 contrários. No Senado, foi aprovado por unanimidade, com 78 votos.'],
+  ['p','A reportagem inclui o tema entre três votações em que o governo Lula obteve apoio de adversários na mesma semana, ao lado da PEC da Segurança e da PEC do fim da escala 6x1. Para o InfoMoney, o resultado cria um dilema para a oposição, que votou com o governo em pautas populares às vésperas de uma legislatura em que o PL terá as maiores bancadas.'],
+  ['p','O InfoMoney anota que as mesas da Câmara e do Senado serão eleitas em fevereiro de 2027 e que o próximo teste do governo será o ajuste fiscal. A matéria consultada não detalha impacto fiscal da mudança nem data de sanção.']],
+ fontes:[['InfoMoney (Marina Verenicz)','https://www.infomoney.com.br/politica/lula-consegue-apoio-da-direita-em-3-votacoes-no-congresso-e-cria-dilema-para-oposicao/']]};
+
+S.tarifas = {ed:'mundo', k:'Mundo', hora:'4/11',
+ t:'Governo espera proposta dos EUA sobre tarifas até a próxima semana, depois da derrota de Trump no Congresso',
+ sub:'Ministro Márcio Elias Rosa diz que "nada muda" no percurso brasileiro. Novo Congresso americano só toma posse em janeiro.',
+ resumo:'A derrota dos republicanos nas eleições legislativas dos EUA abre espaço para o Brasil negociar as tarifas, mas não as suspende automaticamente, segundo o InfoMoney. O governo espera receber até a próxima semana uma proposta americana indicando setores com possível redução. O novo Congresso toma posse em janeiro de 2027.',
+ fundo:[
+  ['p','Segundo o InfoMoney, a vitória democrata nas eleições de meio de mandato dos EUA abre uma nova frente para o Brasil negociar as tarifas impostas pelo governo Trump, sem significar suspensão automática. Os democratas poderão ampliar investigações, convocar integrantes do governo e propor limites às autorizações dadas ao Executivo, mas Trump mantém instrumentos legais próprios e mudanças legislativas podem enfrentar veto.'],
+  ['p','O novo Congresso americano toma posse em janeiro de 2027; até lá, os republicanos seguem no comando das duas Casas. O governo brasileiro espera receber até a próxima semana uma proposta americana apontando setores com possíveis reduções tarifárias. Em 3 de novembro, o ministro do Desenvolvimento, Indústria, Comércio e Serviços, Márcio Elias Rosa, afirmou: "Não, nada, não muda absolutamente. O Brasil segue no seu percurso".'],
+  ['p','A reportagem lembra que, em 30 de setembro, o chanceler Mauro Vieira e Elias Rosa se reuniram com o representante comercial americano, Jamieson Greer, em encontro do G20 em Milwaukee, e os dois países concordaram em criar um grupo de trabalho sobre barreiras tarifárias e não tarifárias. A professora Ana Carolina Marson, da FESPSP, avalia que pode haver melhora nas relações, mas "não significa uma mudança completa".']],
+ fontes:[['InfoMoney (Marina Verenicz)','https://infomoney.com.br/politica/derrota-de-trump-no-congresso-pode-abrir-espaco-para-brasil-negociar-tarifas']]};
+
 var HOME_LEAD = 'fuga';
 var HOME_ROW  = ['maioridade','vorcaro','seis1x1'];
 var ORDER = {
  politica: ['fuga','maioridade','vorcaro','darkhorse','seis1x1','marinho','flavio','congresso','senado','tse','pauta5','segmin','ldo','ministerio','pronunciamento','assedio','desinfo','meta','bets','lulasaude','psdb'],
- economia: ['orcamento','copom','fiscal','seletivo','betsaud'],
- regioes:  ['paes','sp','sp_barba','mg','mg_tce','mg_china','mg_ipva','ne','ce_mpe','ce_gastos','pe_emprestimo','ba_jeronimo','ba_blocos','ma_tce','al_trans','sul','sc_alesc','pr_cwb','rs_zucco','norte','pa_parau','co','ms_assoma','ms_senado','transicao','guandu','novoguandu','pj','prefeitura','light','reis'],
- mundo:    ['eua_pioneiros','imprensa','eua','argentina']
+ economia: ['orcamento','mei','copom','fiscal','seletivo','betsaud'],
+ regioes:  ['paes','sp','sp_barba','mg','mg_tce','mg_china','mg_ipva','ne','ce_mpe','ce_gastos','pe_emprestimo','ba_jeronimo','ba_blocos','ma_tce','al_trans','sul','sc_alesc','pr_cwb','rs_zucco','norte','pa_parau','co','ms_assoma','ms_senado','guandu','novoguandu','pj','prefeitura','light','reis'],
+ mundo:    ['tarifas','eua_pioneiros','imprensa','eua','argentina']
 };
 /* Notas curtas de fonte externa: [título, url, fonte] */
 var BRIEFS = {
@@ -1462,6 +1471,7 @@ var BRIEFS = {
 /* Giro OP: só entram notas com caminho para aprofundar.
    [título, nota, fonte, url, detalhe (opcional), id da matéria relacionada (opcional)] */
 var GIRO = [
+ ['Minerais críticos','Lula participa às 15h30 desta quinta da primeira reunião do Conselho Nacional de Minerais Críticos, segundo a agenda do InfoMoney.','InfoMoney','https://www.infomoney.com.br/mercados/copom-industria-balancos-boe-agenda-05112026/','',''],
  ['Alcolumbre e Flávio','Segundo bolsonaristas ouvidos pelo Metrópoles, o presidente do Senado não dará andamento a pedidos de cassação de Flávio. A bancada diz que não votará nele em fevereiro.','Metrópoles (Igor Gadelha)','https://www.metropoles.com/colunas/igor-gadelha/em-aceno-a-direita-alcolumbre-indica-que-protegera-mandato-de-flavio','','flavio'],
  ['Sigilos','O ministro André Mendonça encerrou o processo sobre o desafio de Lula e Flávio para abrir os sigilos de ambos, segundo a coluna de Manoela Alcântara.','Metrópoles (Manoela Alcântara)','https://www.metropoles.com/colunas/manoela-alcantara/mendonca-encerra-processo-sobre-desafio-de-lula-e-flavio-para-abrir-sigilos','O processo tratava do desafio mútuo de Lula e Flávio Bolsonaro para tornar públicos os respectivos sigilos. A coluna registra que Mendonça o encerrou, sem detalhar na chamada os fundamentos da decisão.',''],
  ['Mendonça e a Hapvida','Evento organizado por instituto fundado pelo ministro do STF reuniu empresários e lobistas antes de decisões favoráveis à Hapvida, segundo a Agência Pública.','Agência Pública','https://apublica.org/2026/10/mendonca-vota-a-favor-da-hapvida-apos-evento-na-alemanha/','',''],
