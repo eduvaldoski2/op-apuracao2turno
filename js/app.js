@@ -1,27 +1,28 @@
-import { CONFIG, TESTE } from './config.js?v=4c2f933b';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=4c2f933b';
-import { getJSON } from './tse.js?v=4c2f933b';
-import { calcular } from './model.js?v=4c2f933b';
-import { projetar, PARAMS } from './proj.js?v=4c2f933b';
-import { viewComparar, hashComparar } from './comparar.js?v=4c2f933b';
-import { viewPerguntar } from './ia.js?v=4c2f933b';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=4c2f933b';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=4c2f933b';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=4c2f933b';
-import { iniciarExportSecoes } from './expsec.js?v=4c2f933b';
-import { eventosEntre } from './avisos.js?v=4c2f933b';
-import { mostrarEleito } from './eleito.js?v=4c2f933b';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=4c2f933b';
-import { abrirTelao, iniciarTV } from './tv.js?v=4c2f933b';
-import { iniciarConsentimento } from './consentimento.js?v=4c2f933b';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=4c2f933b';
-import { lerCard } from './card.js?v=4c2f933b';
-import { abrirCompartilhar } from './compartilhar.js?v=4c2f933b';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=4c2f933b';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=4c2f933b';
-import { esc } from './ui.js?v=4c2f933b';
-import { getFoco, setFoco, comFoco } from './foco.js?v=4c2f933b';
-import { barraEleicao, ligarEleicao, ligarTopoConta } from './eleicao.js?v=4c2f933b';
+import { CONFIG, TESTE } from './config.js?v=4aa94af0';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=4aa94af0';
+import { getJSON } from './tse.js?v=4aa94af0';
+import { calcular } from './model.js?v=4aa94af0';
+import { projetar, PARAMS } from './proj.js?v=4aa94af0';
+import { viewComparar, hashComparar } from './comparar.js?v=4aa94af0';
+import { viewPerguntar } from './ia.js?v=4aa94af0';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=4aa94af0';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=4aa94af0';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=4aa94af0';
+import { iniciarExportSecoes } from './expsec.js?v=4aa94af0';
+import { eventosEntre } from './avisos.js?v=4aa94af0';
+import { mostrarEleito } from './eleito.js?v=4aa94af0';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=4aa94af0';
+import { abrirTelao, iniciarTV } from './tv.js?v=4aa94af0';
+import { iniciarConsentimento } from './consentimento.js?v=4aa94af0';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=4aa94af0';
+import { lerCard } from './card.js?v=4aa94af0';
+import { abrirCompartilhar } from './compartilhar.js?v=4aa94af0';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=4aa94af0';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=4aa94af0';
+import { esc } from './ui.js?v=4aa94af0';
+import { getFoco, setFoco, comFoco } from './foco.js?v=4aa94af0';
+import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=4aa94af0';
+import { CONTA, carregarConta } from './conta.js?v=4aa94af0';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -91,6 +92,7 @@ function render(manterScroll = false, forcar = false) {
 
 async function renderT1(r, manterScroll, forcar) {
   if (manterScroll && !forcar && S.vRota?.modo === 't1') return;   // dados estáticos: a atualização periódica não precisa redesenhar
+  if (rotaExigeConta() && !CONTA.carregado) { await carregarConta().catch(() => {}); marcarLogado(); if (rota().modo !== 't1') return; }
   if (!S.T1) {
     root.innerHTML = `<div data-export-raiz><div class="tela-topo"><h1>Resultados do 1º turno</h1></div><p class="carregando">Carregando resultado oficial do 1º turno…</p></div>`;
     try { S.T1 = prepT1(await carregarT1()); } catch (e) { root.innerHTML = `<div class="aviso">O resultado do 1º turno ainda não está disponível (${esc(e.message || e)}).</div>`; return; }
@@ -107,6 +109,7 @@ async function renderT1(r, manterScroll, forcar) {
   else if (r.tela === 'distrito') v = viewDistrito(ctx, r.uf, r.cd, r.di);
   else if (r.tela === 'local') v = viewLocal(ctx, r.uf, r.cd, r.id);
   else v = viewT1Geral(ctx);
+  if (rotaExigeConta() && !CONTA.logado) { const n = nomeRotaConta(); v = { ...v, html: telaConta(n), montar() {} }; }
   const y0 = window.scrollY; pintar(v, r, ctx); window.scrollTo(0, manterScroll ? y0 : 0);
 }
 
@@ -222,6 +225,7 @@ async function iniciar() {
   } catch (e) { root.innerHTML = `<div class="aviso">A base do 1º turno ainda não está publicada (${esc(e.message)}). Enquanto isso, veja a <a href="?demo=1">demonstração com dados simulados</a>.</div>`; return; }
   $('#sim').hidden = !S.simulado;
   let caminhoAnt = location.hash.split('?')[0];
+  window.addEventListener('op-conta', () => render(true, true));   // entrou ou saiu da conta: redesenha liberando (ou travando) o que exige cadastro
   window.addEventListener('hashchange', () => { const c = location.hash.split('?')[0], mesmo = c === caminhoAnt && /^#\/t1/.test(c); caminhoAnt = c; render(mesmo, mesmo); });
   if (MODO_DEMO) {
     $('#demo-bar').hidden = false; let rodando = true, vel = 1;

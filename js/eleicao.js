@@ -1,15 +1,15 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
-// O resto aparece esmaecido ("em breve"). Deputados federal e estadual exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=4c2f933b';
-import { esc } from './ui.js?v=4c2f933b';
+// O resto aparece esmaecido ("em breve"). Só o presidente de 2026 é aberto: os demais cargos e anos exigem cadastro (conta gratuita).
+import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=4aa94af0';
+import { esc } from './ui.js?v=4aa94af0';
 
 const ANOS = [2026, 2024, 2022, 2020, 2018];
 const DISPONIVEL = { 2026: true };
 const CARGOS = [
   { k: 'presidente', nome: 'Presidente' },
-  { k: 'governador', nome: 'Governador' },
-  { k: 'senador', nome: 'Senador' },
+  { k: 'governador', nome: 'Governador', cadastro: true },
+  { k: 'senador', nome: 'Senador', cadastro: true },
   { k: 'dep-federal', nome: 'Dep. Federal', cadastro: true },
   { k: 'dep-estadual', nome: 'Dep. Estadual', cadastro: true },
 ];
@@ -56,10 +56,10 @@ export function barraEleicao(r) {
 
 // ---------- cadastro para os cargos de deputado ----------
 function abrirCadastro(cargoNome, { toast }) {
-  const ov = document.createElement('div'); ov.className = 'el-ov'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-label', 'Cadastro para ver deputados');
+  const ov = document.createElement('div'); ov.className = 'el-ov'; ov.setAttribute('role', 'dialog'); ov.setAttribute('aria-modal', 'true'); ov.setAttribute('aria-label', 'Cadastro para ver ' + cargoNome);
   ov.innerHTML = `<div class="el-box"><button class="el-x" type="button" aria-label="Fechar">✕</button>
     <h2>Dados de ${esc(cargoNome)}: acesso com cadastro</h2>
-    <p>Os resultados de deputados são liberados para quem tem conta gratuita na Oficina Política. Crie a sua (ou entre) para continuar.</p><div id="el-conta"></div></div>`;
+    <p>O resultado de presidente é aberto. Os demais cargos e anos são liberados para quem tem conta gratuita na Oficina Política. Crie a sua (ou entre) para continuar.</p><div id="el-conta"></div></div>`;
   document.body.appendChild(ov);
   const fechar = () => { ov.remove(); document.removeEventListener('keydown', esc_); };
   const esc_ = ev => { if (ev.key === 'Escape') fechar(); };
@@ -68,7 +68,7 @@ function abrirCadastro(cargoNome, { toast }) {
   carregarConta().then(() => {
     if (!ov.isConnected) return;
     if (CONTA.logado) { fechar(); avisoLogado(cargoNome, toast); return; }
-    montarConta(ov.querySelector('#el-conta'), c => { if (c.logado) { fechar(); document.querySelectorAll('.eleicao [data-cargo^="dep-"]').forEach(b => { b.textContent = b.textContent.replace('🔒 ', ''); }); avisoLogado(cargoNome, toast); } }, { alvo: `os resultados de ${cargoNome}` });
+    montarConta(ov.querySelector('#el-conta'), c => { if (c.logado) { fechar(); avisarConta(); avisoLogado(cargoNome, toast); } }, { alvo: `os resultados de ${cargoNome}` });
   });
 }
 let irPara = null;
@@ -77,7 +77,7 @@ const avisoLogado = (nome, toast) => { if (irPara) irPara(); else toast(`Cadastr
 export function ligarEleicao(root, r, { ir, toast, evento }) {
   const el = root.querySelector('.eleicao'); if (!el) return;
   const e = estadoEleicao(r);
-  carregarConta().then(() => { if (!CONTA.logado) return; el.querySelectorAll('[data-cargo^="dep-"]').forEach(b => { b.textContent = b.textContent.replace('🔒 ', ''); b.title = ''; }); });
+  carregarConta().then(() => { if (!CONTA.logado) return; el.querySelectorAll('[data-cargo]').forEach(b => { b.textContent = b.textContent.replace('🔒 ', ''); b.title = ''; }); });
   el.addEventListener('click', ev => {
     const b = ev.target.closest('button'); if (!b) return;
     if (b.dataset.ano) { if (b.classList.contains('off')) toast('Esse ano ainda não está no painel: já temos os dados e vamos liberá-los em breve.', true); return; }
@@ -112,8 +112,24 @@ export function ligarTopoConta({ toast }) {
   };
   box.addEventListener('click', async ev => {
     const b = ev.target.closest('[data-tc]'); if (!b) return;
-    if (b.dataset.tc === 'sair') { await sairConta(); pinta(); document.querySelectorAll('.eleicao [data-cargo^="dep-"]').forEach(x => { if (!x.textContent.includes('🔒')) x.textContent = '🔒 ' + x.textContent; }); toast('Você saiu da sua conta.', true); return; }
-    abrirLogin(toast, () => { pinta(); toast('Você está logado.', true); });
+    if (b.dataset.tc === 'sair') { await sairConta(); pinta(); avisarConta(); toast('Você saiu da sua conta.', true); return; }
+    abrirLogin(toast, () => { pinta(); avisarConta(); toast('Você está logado.', true); });
   });
-  carregarConta().then(pinta);
+  // botões "Entrar" dos blocos e telas que exigem cadastro
+  document.addEventListener('click', ev => {
+    const b = ev.target.closest('[data-so-conta]'); if (!b) return;
+    ev.preventDefault(); abrirLogin(toast, () => { pinta(); avisarConta(); toast('Acesso liberado.', true); });
+  });
+  carregarConta().then(() => { pinta(); marcarLogado(); });
 }
+
+// ---------- conteúdo que exige cadastro (tudo menos o presidente de 2026) ----------
+// A classe "logado" no <html> mostra o conteúdo; sem ela, o bloco vira um convite para entrar.
+export function marcarLogado() { document.documentElement.classList.toggle('logado', !!CONTA.logado); }
+export function avisarConta() { marcarLogado(); window.dispatchEvent(new Event('op-conta')); }
+const convite = nome => `<div class="so-conta-av sem-export"><b>🔒 ${esc(nome)}</b><span>Disponível com cadastro gratuito. O resultado de presidente continua aberto.</span><button type="button" class="btn" data-so-conta>Entrar ou criar conta</button></div>`;
+export const soConta = (html, nome) => html ? `<div class="so-conta"><div class="so-conta-in">${html}</div>${convite(nome)}</div>` : '';
+// rota inteira que exige cadastro (cargo diferente de presidente ou ano anterior)
+export function rotaExigeConta() { const q = qs(), c = q.get('cargo'), a = q.get('ano'); return ['gov', 'sen', 'depf', 'depe'].includes(c) || (a && a !== '2026'); }
+export function nomeRotaConta() { const q = qs(), c = q.get('cargo'), a = q.get('ano'); const n = { gov: 'Governador', sen: 'Senador', depf: 'Deputado federal', depe: 'Deputado estadual' }[c] || 'Esta eleição'; return a && a !== '2026' ? `${n} ${a}` : n; }
+export const telaConta = nome => `<section class="painel so-conta-tela">${convite(nome)}</section>`;

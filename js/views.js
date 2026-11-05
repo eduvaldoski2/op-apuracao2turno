@@ -1,14 +1,15 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=4c2f933b';
-import { listaMunicipios, rankingUfs } from './model.js?v=4c2f933b';
-import { projetarMunicipios } from './proj.js?v=4c2f933b';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=4c2f933b';
-import { graficoPlacar } from './charts.js?v=4c2f933b';
-import { criarMapa, legendaMapa } from './map.js?v=4c2f933b';
-import { criarMapaMun } from './mapamun.js?v=4c2f933b';
-import { getJSON } from './tse.js?v=4c2f933b';
-import { govPainel, govResumo } from './governador.js?v=4c2f933b';
-import { secaoRegioesUf, montarRegioesUf } from './regioes_uf.js?v=4c2f933b';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=4aa94af0';
+import { listaMunicipios, rankingUfs } from './model.js?v=4aa94af0';
+import { projetarMunicipios } from './proj.js?v=4aa94af0';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=4aa94af0';
+import { graficoPlacar } from './charts.js?v=4aa94af0';
+import { criarMapa, legendaMapa } from './map.js?v=4aa94af0';
+import { criarMapaMun } from './mapamun.js?v=4aa94af0';
+import { getJSON } from './tse.js?v=4aa94af0';
+import { govPainel, govResumo } from './governador.js?v=4aa94af0';
+import { soConta } from './eleicao.js?v=4aa94af0';
+import { secaoRegioesUf, montarRegioesUf } from './regioes_uf.js?v=4aa94af0';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -297,7 +298,7 @@ export function viewGeral(ctx) {
   ${seletorMapa()}<div class="mapa-grid"><div id="mapa-bm"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div><div id="bm-resumo"></div></div></div></div></section>`;
 
   // tabela de UFs
-  h += govResumo(snap);
+  h += soConta(govResumo(snap), 'Governador');
   h += `<section class="painel"><h2>Todos os estados</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um estado</b> para abrir os municípios.</p><div id="tab-uf"></div></section>`;
   h += kp;
   // balanço (apuração) ou composição de pendentes (projeção)
@@ -481,7 +482,7 @@ export function viewUf(ctx, uf, kOrd) {
     : `${kpi('Já apurado', fNum(r.pst, 2) + '%', null, '')}${kpi('Abstenção (proj.)', fNum(r.pAb, 2) + '%', dlt(r.dAb, 2), '')}${kpi('Brancos + nulos (proj.)', fNum(r.pBr + r.pNu, 2) + '%', dlt(r.dBr + r.dNu, 2), '')}${kpi('Chance de Lula vencer', `${Math.round(100 * r.pw)}%`, null, 'modelo estatístico')}`;
   const html = `<section class="placar uf ${ap ? '' : 'proj'}">${cartaoCand('L', r, { modo, conf: false })}<div class="centro"><div class="centro-t">${esc(UF_NOME[uf])}</div>${ap ? `<div class="cobertura"><b>${fNum(r.pst, 2)}%</b> das seções</div><div class="cob-bar"><i style="width:${clamp(r.pst, 0, 100)}%"></i></div><div class="cob-s">${fInt(r.st)} de ${fInt(r.ts)} seções apuradas</div>` : `<div class="cobertura"><b>${fNum(r.pst, 2)}%</b> já apurado</div><div class="cob-bar"><i style="width:${clamp(r.pst, 0, 100)}%"></i></div>`}${barraDupla(r.pL, r.pF)}<div class="margem">${r.lider ? `<b style="color:${CAND[r.lider].cor}">${CAND[r.lider].nome}</b> à frente por <b>${fInt(Math.abs(r.L - r.F))}</b> votos` : ''}</div></div>${cartaoCand('F', r, { modo, conf: false })}</section>
   <section class="kpis k4">${kp}</section>
-  ${govPainel(snap.gov?.uf?.[uf], uf, 2)}
+  ${soConta(govPainel(snap.gov?.uf?.[uf], uf, 2), 'Governador')}
   ${uf === 'zz' || uf === 'df' ? '' : `<section class="painel mapa-sec"><h2>Mapa de ${esc(UF_NOME[uf])} por município${ap ? '' : ' (projeção)'}</h2><p class="sub">Clique em um município para ver os bairros.</p>${entenda('Cor = quem lidera no município; tom mais escuro = maior percentual dos votos válidos. Use + / − ou a roda do mouse para aproximar.')}${seletorMapa()}<div class="mapa-grid"><div id="mapa-mun"><p class="carregando">Carregando mapa…</p></div><div class="mapa-lado"><div class="leg-slot">${legendaMapa()}</div></div></div></section>`}
   ${secaoRegioesUf(uf, UF_NOME[uf])}
   <section class="painel"><h2>Municípios de ${esc(UF_NOME[uf])}${ap ? '' : ' (projeção)'}</h2><p class="sub">Ordem alfabética — altere clicando nos títulos. <b>Clique em um município</b> para ver os bairros.</p>${entenda(ap ? 'Municípios sem urnas apuradas aparecem como “aguardando”. Variações em p.p. comparam com o 1º turno no mesmo recorte apurado.' : 'Municípios ainda não apurados mostram a projeção a partir do 1º turno.')}<div id="tab-m"></div></section>`;
