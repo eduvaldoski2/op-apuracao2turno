@@ -1,7 +1,7 @@
 // Consentimento de cookies (LGPD): Google Analytics 4, Meta Pixel e Google Ads só são carregados depois do "aceitar" do visitante.
 // Sem GA4/pixel/ID configurado em CONFIG (analytics.ga4, anuncios) e sem formulário de leads, este módulo não faz nada (nenhum banner aparece).
 // A medição de uso do painel (js/metricas.js) é anônima e sem cookies, e não depende deste consentimento.
-import { CONFIG } from './config.js?v=7fb8b353';
+import { CONFIG } from './config.js?v=88e2debf';
 
 const KEY = 'op_consent', VERSAO = 1;
 const RAIZ_PAG = /\/(resultados|apuracao-2t-2026|radar)\//.test(location.pathname) ? '/' : '';   // a política fica na raiz do site
@@ -15,7 +15,10 @@ export const cookiesConfigurados = () => anunciosConfigurados() || analiseConfig
 export const moduloAtivo = () => cookiesConfigurados() || !!CONFIG.leads?.endpoint;
 
 export function lerConsent() { try { const c = JSON.parse(localStorage.getItem(KEY) || 'null'); return c && c.v === VERSAO ? c : null; } catch { return null; } }
-const gravar = c => { try { localStorage.setItem(KEY, JSON.stringify({ v: VERSAO, ts: new Date().toISOString(), marketing: !!c.marketing && anunciosConfigurados(), analise: !!c.analise && analiseConfigurada() })); } catch { /* sem armazenamento */ } };
+const noRadar = /\/radar\//.test(location.pathname);
+// 'perfil' = histórico de leitura e interesses de quem está logado no Radar (só pedido dentro do Radar; nas outras páginas preserva a escolha já feita)
+const gravar = c => { try { const ant = lerConsent(); localStorage.setItem(KEY, JSON.stringify({ v: VERSAO, ts: new Date().toISOString(), marketing: !!c.marketing && anunciosConfigurados(), analise: !!c.analise && analiseConfigurada(), perfil: noRadar ? !!c.perfil : ant?.perfil })); } catch { /* sem armazenamento */ } };
+export const perfilOk = () => !gpc() && noRadar && !!lerConsent()?.perfil;
 export const marketingOk = () => !gpc() && !!lerConsent()?.marketing && anunciosConfigurados() && !semAnuncios();
 export const analiseOk = () => !gpc() && !!lerConsent()?.analise && analiseConfigurada() && !semAnuncios();
 
@@ -74,6 +77,14 @@ export function rastrearTela(url, titulo) {
   if (marketingOk() && carregado) { try { window.fbq?.('track', 'PageView'); } catch { /* ok */ } }
   if (gtagCarregado && (analiseOk() || (marketingOk() && goog))) pageview();
 }
+// evento de produto com parâmetros (sem dado pessoal): vai ao GA4 com consentimento de estatística; Meta/Google Ads só com consentimento de publicidade
+export function evento(nome, params = {}, extra = {}) {
+  try {
+    if (gtagCarregado && (analiseOk() || (marketingOk() && goog))) gtag('event', nome, params);
+    if (marketingOk() && carregado && extra.meta) window.fbq?.(extra.metaCustom ? 'trackCustom' : 'track', extra.meta, extra.metaDados || {});
+    const l = marketingOk() && extra.ads ? A.google?.conversoes?.[extra.ads] : ''; if (l && gtagCarregado) gtag('event', 'conversion', { send_to: l });
+  } catch { /* ok */ }
+}
 export function conversaoLead() {   // chamada quando o formulário de leads é enviado com sucesso
   try {
     if (marketingOk() && carregado) window.fbq?.('track', 'Lead');
@@ -94,6 +105,7 @@ function ui(aberto) {
     <div class="ck-det" ${aberto ? '' : 'hidden'}>
       <label class="ck-l"><input type="checkbox" checked disabled> <span><b>Necessários</b> — funcionamento do painel e guarda desta escolha. Sempre ativos.</span></label>
       ${GA ? `<label class="ck-l"><input type="checkbox" data-ck="analise" ${atual?.analise ? 'checked' : ''}> <span><b>Estatística de uso</b> — Google Analytics: conta visitas, telas visitadas e origem do acesso, para melhorarmos o site. Desativado até você aceitar.</span></label>` : ''}
+      ${noRadar ? `<label class="ck-l"><input type="checkbox" data-ck="perfil" ${atual?.perfil ? 'checked' : ''}> <span><b>Interesses de leitura</b> — guardamos, ligado à sua conta, quais matérias e editorias você abre no Radar, para entender o que interessa a você e melhorar o conteúdo e o boletim. Desativado até você aceitar.</span></label>` : ''}
       ${anunciosConfigurados() ? `<label class="ck-l"><input type="checkbox" data-ck="marketing" ${atual?.marketing ? 'checked' : ''}> <span><b>Publicidade e remarketing</b> — Meta Pixel e Google Ads: medem conversões e permitem mostrar anúncios a quem já visitou o site. Desativados até você aceitar.</span></label>` : ''}
     </div>
     <div class="ck-bt"><button class="ck-b" data-ck-a="rejeitar">Rejeitar</button><button class="ck-b" data-ck-a="${aberto ? 'salvar' : 'personalizar'}">${aberto ? 'Salvar preferências' : 'Personalizar'}</button><button class="ck-b ck-p" data-ck-a="aceitar">Aceitar tudo</button></div></div>`;
@@ -102,7 +114,7 @@ function ui(aberto) {
     const a = e.target.closest('[data-ck-a]')?.dataset.ckA; if (!a) return;
     if (a === 'personalizar') return ui(true);
     const v = k => a === 'aceitar' ? true : a === 'salvar' ? !!ov.querySelector(`[data-ck=${k}]`)?.checked : false;
-    gravar({ marketing: v('marketing'), analise: v('analise') }); ov.remove(); aplicar();
+    gravar({ marketing: v('marketing'), analise: v('analise'), perfil: v('perfil') }); ov.remove(); aplicar();
   });
 }
 export const abrirPreferencias = () => ui(true);
@@ -113,5 +125,6 @@ export function iniciarConsentimento() {
   const alvo = document.querySelector('.rodape-in, .rodape'); if (alvo && !alvo.querySelector('.ck-link') && cookiesConfigurados()) { const b = document.createElement('button'); b.className = 'ck-link'; b.type = 'button'; b.textContent = 'Preferências de cookies'; b.addEventListener('click', abrirPreferencias); alvo.appendChild(b); }
   if (!cookiesConfigurados()) return;
   if (gpc()) return;                          // sinal de privacidade do navegador: nada de publicidade, sem insistir
-  if (lerConsent()) aplicar(); else ui(false);
+  const c0 = lerConsent();
+  if (c0 && !(noRadar && c0.perfil === undefined)) aplicar(); else ui(false);   // no Radar, quem ainda não respondeu sobre interesses de leitura vê o aviso
 }

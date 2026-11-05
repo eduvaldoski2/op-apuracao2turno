@@ -26,7 +26,7 @@ export const CONFIG = {
   // Google Analytics 4 (só carrega com o consentimento do visitante; vazio = desligado). ga4: ID da métrica, no formato 'G-XXXXXXXXXX'.
   analytics: { ga4: 'G-DE3VNZ3VWH' },
   // anúncios (só são carregados com o consentimento do visitante; vazio = desligado). Veja admin.html.
-  anuncios: { meta: { pixel: '' }, google: { id: '', conversaoLead: '' } },   // google.id: 'AW-XXXXXXXXX' ou 'G-XXXXXXXXXX'; conversaoLead: 'AW-XXXXXXXXX/rótulo'
+  anuncios: { meta: { pixel: '' }, google: { id: '', conversaoLead: '', conversoes: { cadastro: '', compartilhar: '', leitura: '' } } },   // google.id: 'AW-XXXXXXXXX' ou 'G-XXXXXXXXXX'; conversaoLead: 'AW-XXXXXXXXX/rótulo'
   // captação de contatos (leads): endpoint = endereço do api/lead.php publicado na hospedagem. Vazio = formulário desligado.
   leads: { endpoint: '', link: 'Receber a análise e os próximos painéis', titulo: 'Receba a análise e os próximos painéis', texto: 'Deixe seu contato para receber a análise pós-apuração da Oficina Política e novidades das nossas ferramentas de inteligência eleitoral.' },
   // dados do controlador exibidos em privacidade.html (preencher antes de ligar anúncios/leads)

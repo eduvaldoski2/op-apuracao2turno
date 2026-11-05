@@ -13,7 +13,18 @@ function radar_db() {
       CREATE TABLE IF NOT EXISTS compartilhamentos (id INTEGER PRIMARY KEY, ts INTEGER, uid INTEGER, code TEXT, materia TEXT, canal TEXT);
       CREATE TABLE IF NOT EXISTS visitas (id INTEGER PRIMARY KEY, ts INTEGER, code TEXT, materia TEXT, canal TEXT, visitante TEXT, logado INTEGER);
       CREATE TABLE IF NOT EXISTS conversoes (uid INTEGER PRIMARY KEY, ts INTEGER, code TEXT);
-      CREATE INDEX IF NOT EXISTS i_vis_code ON visitas(code); CREATE INDEX IF NOT EXISTS i_cmp_code ON compartilhamentos(code);");
+      CREATE TABLE IF NOT EXISTS leituras (id INTEGER PRIMARY KEY, ts INTEGER, uid INTEGER, materia TEXT, editoria TEXT, regiao TEXT);
+      CREATE TABLE IF NOT EXISTS optout_email (hash TEXT PRIMARY KEY, ts INTEGER);
+      CREATE INDEX IF NOT EXISTS i_lei_uid ON leituras(uid); CREATE INDEX IF NOT EXISTS i_vis_code ON visitas(code); CREATE INDEX IF NOT EXISTS i_cmp_code ON compartilhamentos(code);");
+    // prazos de guarda da política de privacidade: leituras, compartilhamentos e conversões 24 meses; visitas 12 meses (roda no máximo 1x por dia)
+    $mk = $dir . '/limpeza.txt';
+    if (!is_file($mk) || filemtime($mk) < time() - 86400) {
+      @file_put_contents($mk, date('c'));
+      $db->prepare('DELETE FROM leituras WHERE ts < ?')->execute([time() - 63072000]);
+      $db->prepare('DELETE FROM compartilhamentos WHERE ts < ?')->execute([time() - 63072000]);
+      $db->prepare('DELETE FROM conversoes WHERE ts < ?')->execute([time() - 63072000]);
+      $db->prepare('DELETE FROM visitas WHERE ts < ?')->execute([time() - 31536000]);
+    }
   } catch (Throwable $e) { $db = null; }
   return $db;
 }
@@ -52,10 +63,33 @@ function radar_visita($code, $materia, $canal, $logado) {
   } catch (Throwable $e) {}
 }
 function radar_conversao($uid, $code) {
-  $db = radar_db(); if (!$db) return;
+  $db = radar_db(); if (!$db) return false;
   try {
     $c = $db->prepare('SELECT uid FROM codigos WHERE code = ?'); $c->execute([$code]); $dono = (int)$c->fetchColumn();
-    if ($dono <= 0 || $dono === (int)$uid) return;
-    $db->prepare('INSERT OR IGNORE INTO conversoes (uid, ts, code) VALUES (?,?,?)')->execute([(int)$uid, time(), $code]);
-  } catch (Throwable $e) {}
+    if ($dono <= 0 || $dono === (int)$uid) return false;
+    $i = $db->prepare('INSERT OR IGNORE INTO conversoes (uid, ts, code) VALUES (?,?,?)'); $i->execute([(int)$uid, time(), $code]); return $i->rowCount() > 0;
+  } catch (Throwable $e) { return false; }
 }
+// Histórico de leitura de quem está logado. SÓ é chamado quando a pessoa aceitou "Interesses de leitura" no aviso de cookies.
+function radar_leitura($uid, $materia, $editoria, $regiao) {
+  $db = radar_db(); if (!$db) return false;
+  try {
+    $n = $db->prepare('SELECT COUNT(*) FROM leituras WHERE uid = ? AND ts > ?'); $n->execute([(int)$uid, time() - 86400]); if ((int)$n->fetchColumn() >= 500) return false;
+    $db->prepare('INSERT INTO leituras (ts, uid, materia, editoria, regiao) VALUES (?,?,?,?,?)')->execute([time(), (int)$uid, $materia, $editoria, $regiao]); return true;
+  } catch (Throwable $e) { return false; }
+}
+// Direitos do titular: apaga tudo do Radar ligado a esta conta (leituras, códigos e compartilhamentos). Chamar na exclusão da conta.
+function radar_apagar_usuario($uid) {
+  $db = radar_db(); if (!$db) return false;
+  try { foreach (['leituras', 'compartilhamentos', 'conversoes', 'codigos'] as $t) $db->prepare("DELETE FROM $t WHERE uid = ?")->execute([(int)$uid]); return true; } catch (Throwable $e) { return false; }
+}
+// Descadastro de e-mails do Radar (compartilhar por e-mail e boletim): guarda só o hash do endereço, para nunca mais enviar.
+function radar_optout_email($email) {
+  $db = radar_db(); if (!$db) return false; $h = hash('sha256', strtolower(trim($email)) . radar_segredo());
+  try { $db->prepare('INSERT OR IGNORE INTO optout_email (hash, ts) VALUES (?,?)')->execute([$h, time()]); return true; } catch (Throwable $e) { return false; }
+}
+function radar_email_bloqueado($email) {
+  $db = radar_db(); if (!$db) return true; $h = hash('sha256', strtolower(trim($email)) . radar_segredo());
+  try { $s = $db->prepare('SELECT 1 FROM optout_email WHERE hash = ?'); $s->execute([$h]); return (bool)$s->fetchColumn(); } catch (Throwable $e) { return true; }
+}
+

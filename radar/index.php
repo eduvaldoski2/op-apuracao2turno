@@ -32,7 +32,7 @@ try {
     if (!$uAtual) setcookie('op_ref', $ref, $ck);               // guarda por 30 dias só para creditar quem enviou
   }
   if ($uAtual && isset($_COOKIE['op_ref']) && preg_match('/^[a-f0-9]{8}$/', (string)$_COOKIE['op_ref'])) {
-    radar_conversao((int)$uAtual['id'], (string)$_COOKIE['op_ref']);
+    $convNova = radar_conversao((int)$uAtual['id'], (string)$_COOKIE['op_ref']);
     setcookie('op_ref', '', ['expires' => 1] + $ck);
   }
 } catch (Throwable $e) {}
@@ -49,7 +49,7 @@ if ($logado) {
   if ($pedido !== '' && in_array($pedido, $lista, true)) { $arq = $pedido; $arquivoEd = __DIR__ . '/arquivo/' . $pedido . '.php'; }
   ob_start(); $okd = @include $arquivoEd; $dados = ob_get_clean();
   if ($shell === false || !$okd || trim((string)$dados) === '') { http_response_code(503); echo 'Radar temporariamente indisponível.'; exit; }
-  $extra = 'var SHARE_REF=' . json_encode($meuCodigo) . ';var ARQUIVO=' . json_encode($lista) . ';var ARQ_ATUAL=' . json_encode($arq) . ";\n";
+  $extra = 'var CONV_NOVA=' . (!empty($convNova) ? 'true' : 'false') . ';var SHARE_REF=' . json_encode($meuCodigo) . ';var ARQUIVO=' . json_encode($lista) . ';var ARQ_ATUAL=' . json_encode($arq) . ";\n";
   echo str_replace('/*__EDICAO__*/', $extra . $dados, $shell);
   exit;
 }
