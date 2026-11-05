@@ -1,6 +1,6 @@
 // Leitura automática dos dados: frases geradas por regras estatísticas simples (sem IA ao vivo), exibidas num balão.
-import { fNum, fInt } from './util.js?v=e5d1d349';
-import { esc, entenda } from './ui.js?v=e5d1d349';
+import { fNum, fInt } from './util.js?v=0b4661a5';
+import { esc, entenda } from './ui.js?v=0b4661a5';
 
 export function pearson(xs, ys) {
   const n = xs.length; if (n < 8) return NaN;
