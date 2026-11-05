@@ -42,6 +42,7 @@ if (!ativo) {
     // o texto padrão do cadastro cita outros recursos do painel; aqui só vale o Radar
     var limpa = function () { box.querySelectorAll('.ct-erro').forEach(function (p) { if (/pergunta livre/.test(p.textContent)) p.textContent = 'O cadastro não está disponível no momento. Tente novamente em alguns minutos.'; }); box.querySelectorAll('.ct-chamada').forEach(function (p) { var t = p.innerHTML; var n = t.replace(' Presidente, governador e senador continuam abertos a todos.', ''); if (n !== t) p.innerHTML = n; }); };
     new MutationObserver(limpa).observe(box, { childList: true, subtree: true });
+    var aj = document.createElement('p'); aj.className = 'msg'; aj.style.marginTop = '14px'; aj.textContent = 'Já se cadastrou no site? Clique em “Esqueci a senha” para ativar seu acesso.'; box.parentNode.insertBefore(aj, box.nextSibling);
     await ct.carregarConta();
     ct.montarConta(box, function (c) { if (c.logado) location.reload(); }, { alvo: 'o Radar Oficina Política' });
   } catch (e) {

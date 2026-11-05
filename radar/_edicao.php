@@ -1,6 +1,6 @@
 <?php if (!defined('RADAR_OK')) { http_response_code(404); exit; } ?>
 /* ===== DADOS DA EDIÇÃO (trocar este bloco a cada atualização) ===== */
-var EDICAO = {hora:'03h', data:'Quinta, 05 de novembro de 2026'};
+var EDICAO = {hora:'04h', data:'Quinta, 05 de novembro de 2026'};
 var ED = [
  {id:'politica', nome:'Política'},
  {id:'economia', nome:'Economia'},
@@ -83,32 +83,6 @@ S.pronunciamento = {ed:'politica', k:'Política', hora:'4/11',
   ['p','O texto do pronunciamento não foi divulgado, e o conteúdo descrito vem de apuração de bastidores. Veículos de linhas editoriais distintas interpretam a gravação de modo diferente. A apuração atribuída à Folha descreve um discurso que busca alinhar a gestão econômica às expectativas do mercado, enquanto o Blog do BG, crítico ao governo, vê a fala como tentativa de acalmar investidores diante das contas públicas, sem apresentar números.'],
   ['p','O mercado deve medir a recepção do discurso já na segunda-feira (9). Nas reportagens consultadas, não há indicação de metas, medidas ou prazos para o ajuste fiscal.']],
  fontes:[['ICL Notícias (via Plantão Brasil)','https://www.plantaobrasil.net/noticias/161828-em-primeiro-pronunciamento-apos-reeleicao-lula-deve-reforcar-compromisso-com-responsabilidade-fiscal'],['Jornal de Brasília','https://jornaldebrasilia.com.br/noticias/politica-e-poder/lula-grava-pronunciamento-sobre-ajuste-fiscal-e-pacificacao-nacional/'],['Tribuna do Sertão','https://www.tribunadosertao.com.br/financas/2026/11/04/1013525-lula-dara-recado-sobre-contas-publicas-em-pronunciamento-na-tv'],['Brasil 247 (Santander)','https://www.brasil247.com/economia/presidente-do-santander-diz-que-lula-deu-demonstracoes-importantissimas-de-confianca-para-os-mercados/'],['g1 (Copom)','https://g1.globo.com/economia/noticia/2026/11/04/copom-mantem-taxa-basica-de-juros-da-economia-em-1375percent-ao-ano.ghtml']]};
-
-S.pec = {ed:'politica', k:'Política', hora:'3/11',
- t:'Senado aprova PEC da Segurança Pública sem voto contrário; texto vai à promulgação',
- sub:'Foram 73 votos no primeiro turno e 75 no segundo. A redução da maioridade penal ficou de fora, por 38 a 36.',
- dado:{n:'73 × 0', l:'1º turno no Senado · no 2º turno, 75 votos favoráveis e nenhum contrário'},
- resumo:'O Senado aprovou na terça (3) a PEC da Segurança Pública, com 73 votos no primeiro turno e 75 no segundo, sem voto contrário. O texto põe o Susp na Constituição, endurece regras para chefes de facções e milícias e autoriza polícias municipais. A redução da maioridade penal foi separada por 38 votos a 36. A promulgação ainda não tem data.',
- fundo:[
-  ['p','O Senado aprovou na terça-feira (3) a PEC da Segurança Pública (PEC 18/2025), com 73 votos favoráveis no primeiro turno e 75 no segundo, sem nenhum voto contrário. A proposta foi apresentada pelo governo Lula em 2025 e aprovada pela Câmara em março deste ano, em segundo turno, por 461 votos a 14, segundo o Sou Brasília. O texto segue para promulgação pelo Congresso, sem data informada.'],
-  ['p','A votação foi acelerada: a Comissão de Constituição e Justiça aprovou o texto em 14 de outubro, e o calendário juntou os dois turnos num único dia. Em votações anteriores no plenário, os senadores separaram, por 38 votos a 36, as emendas sobre redução da maioridade penal, que passam a tramitar de forma autônoma. Os 18 anos seguem, por ora, como idade de responsabilização penal. Foi nessas votações que Randolfe Rodrigues contestou o voto remoto de Flávio Bolsonaro.'],
-  ['h','O que muda'],
-  ['ul',[
-   'Susp: o Sistema Único de Segurança Pública entra na Constituição, com regras de integração entre União, estados e municípios, operações conjuntas e compartilhamento de informações e inteligência.',
-   'Facções e milícias: tratamento diferenciado conforme a posição na estrutura criminosa, cumprimento de pena em unidades de segurança máxima, restrição à progressão de regime e a benefícios penais, e mecanismos de confisco de patrimônio.',
-   'Polícia Federal: competência ampliada para investigar organizações criminosas e milícias com repercussão interestadual ou internacional. As polícias estaduais mantêm as atribuições.',
-   'Polícia Rodoviária Federal: passa a atuar também em ferrovias e hidrovias federais.',
-   'Polícias municipais: autorização para criar polícias municipais de natureza civil, voltadas ao policiamento ostensivo e comunitário, desde que cumpridos requisitos de formação, fiscalização e capacidade financeira.',
-   'Dinheiro: reforço do Fundo Nacional de Segurança Pública e do Fundo Penitenciário Nacional, com 10% do superávit financeiro do Fundo Social destinados à segurança. O relator, Rogério Carvalho (PT-SE), retirou a ideia de destinar 30% da arrecadação das apostas esportivas.',
-   'Garantia da Lei e da Ordem: emenda do senador Carlos Portinho (PL-RJ) permite ressarcir as Forças Armadas, com recursos do Fundo Nacional de Segurança Pública, por despesas em operações de GLO.']],
-  ['h','Efeito no Rio e nas cidades'],
-  ['p','Para o Rio, onde o combate a facções e milícias é um dos principais desafios, o Tempo Real RJ avalia que as mudanças poderão ampliar as possibilidades jurídicas e institucionais de cooperação entre as polícias estaduais, a PF e outras forças, mas que os efeitos práticos dependem de regulamentação, recursos e implementação pelos entes federados.'],
-  ['p','O efeito já aparece nas prefeituras. Segundo o Metrópoles, o prefeito de São Paulo, Ricardo Nunes, aproveita a PEC para renomear a Guarda Civil Metropolitana como Polícia Municipal, e um projeto em Belo Horizonte propõe transformar a Guarda Municipal em Polícia Municipal. No Congresso, a Câmara aprovou pena de até cinco anos para quem usar drones para sobrevoar presídios.'],
-  ['h','A moldura política'],
-  ['p','A aprovação vem nove dias depois do segundo turno presidencial, em que o crime organizado foi tema central da campanha. Lula havia dito que criaria um Ministério da Segurança Pública depois da aprovação da PEC, segundo o Correio da Manhã. A votação sem voto contrário contrasta com o clima de polarização, mas houve disputa nas votações que separaram trechos do texto, como a da maioridade penal.'],
-  ['h','O que vem a seguir'],
-  ['p','Faltam a data da promulgação, a tramitação autônoma das emendas sobre maioridade penal, a regulamentação das polícias municipais e os primeiros repasses dos fundos. Também está em aberto a criação do Ministério da Segurança Pública, anunciada por Lula.']],
- fontes:[['Tempo Real RJ','https://temporealrj.com/aprovacao-da-pec-da-seguranca-publica-no-congresso/'],['Correio da Manhã','https://www.correiodamanha.com.br/politica/2026/10/327150-senado-acelera-votacao-da-pec-da-seguranca-e-pode-aprovar-texto-antes-do-segundo-turno.html'],['Sou Brasília','https://soubrasilia.com/camara-aprova-pec-da-seguranca-publica-em-segundo-turno-por-461-votos-a-14/'],['Plantão Brasil','https://www.plantaobrasil.net/noticias/161854-randolfe-contesta-voto-de-flavio-bolsonaro-apos-viagem-nao-comunicada-aos-eua'],['Metrópoles','']]};
 
 S.bets = {ed:'politica', k:'Política', hora:'4/11',
  t:'Fachin sinaliza julgamento conjunto de bets, loterias e jogos de azar no STF',
@@ -575,13 +549,907 @@ S.argentina = {ed:'mundo', k:'Mundo', hora:'5/11',
  ],
  fontes:[['Correio da Manhã','https://www.correiodamanha.com.br/mundo/internacional/2026/10/330316-milei-se-recusa-a-reconhecer-vitoria-de-lula-e-fica-isolado-entre-lideres-sul-americanos.html'],['CNN Brasil: imprensa argentina','https://www.cnnbrasil.com.br/internacional/imprensa-argentina-repercute-tensao-com-o-brasil-crise-mais-profunda/']]};
 
+S.maioridade = {
+ "ed": "politica",
+ "k": "Política",
+ "hora": "4/11",
+ "t": "Alcolumbre tira a maioridade penal da pauta, e líder do PL rompe: “acabou o diálogo”",
+ "sub": "O presidente do Senado decidiu esperar a Câmara, onde tramita a PEC que fixa a idade em 16 anos. Governo e oposição trocam acusações.",
+ "resumo": "O presidente do Senado, Davi Alcolumbre (União-AP), retirou da pauta, na quarta (4), a votação da redução da maioridade penal e disse que vai aguardar a Câmara, onde tramita a PEC 32/2015, que fixa a idade em 16 anos. Segundo ele, o presidente da Câmara, Hugo Motta (Republicanos-PB), se comprometeu a votar o tema em novembro. O líder do PL, Carlos Portinho (RJ), afirmou que o acordo foi descumprido e ameaçou travar medidas do governo.",
+ "fundo": [
+  [
+   "p",
+   "A negociação foi fechada na terça (3), quando o Senado aprovou a PEC da Segurança Pública sem as emendas sobre maioridade penal. Pelo entendimento, as emendas seriam separadas do texto, que seguiria para promulgação sem voltar à Câmara, e o Senado votaria depois a redução para 16 anos, prevista em emenda do líder do PT, Camilo Santana (CE). A separação das emendas passou por 38 votos a 36, depois que Alcolumbre colocou os requerimentos do relator em votação antes do texto principal, segundo O Tempo."
+  ],
+  [
+   "p",
+   "Na quarta, Alcolumbre remeteu a discussão à Câmara. Ele pediu desculpas aos senadores que defendiam a votação e afirmou: “Eu preciso reconhecer que a Câmara dos Deputados saiu à frente da deliberação desta PEC”. Em outro momento, disse que, se a Câmara votar a redução, pautará a matéria no Senado “um dia depois”. A Folha de Pernambuco registrou que a decisão veio depois de um pedido do presidente Lula, que defendia o adiamento."
+  ],
+  [
+   "p",
+   "Portinho respondeu que o acordo foi descumprido: “Acabou o diálogo” e “Compromisso é para ser cumprido”. O líder do PL ameaçou travar a medida provisória que proíbe apostas online, a PEC da tarifa zero e mudanças na escala 6x1. A oposição, por sua vez, acusou o governo de “tentativa de enganar o eleitor”, segundo o Plantão publicado pela Folha de Pernambuco e pelo DGABC."
+  ],
+  [
+   "h",
+   "Próximos passos na Câmara"
+  ],
+  [
+   "p",
+   "O relator da PEC da Maioridade Penal na Câmara, Mendonça Filho (União-PE), afirmou que deve apresentar o parecer até o fim do mês, segundo o DGABC. De acordo com O Globo, citado por O Tempo, o relatório deve ser votado na comissão especial em novembro, e o plenário está previsto para o início de dezembro. O senador Rogério Marinho (PL-RN), autor de emenda sobre o tema, disse duvidar do avanço da proposta em 2026."
+  ]
+ ],
+ "fontes": [
+  [
+   "O Tempo",
+   "https://www.otempo.com.br/politica/congresso/2026/11/4/portinho-apos-alcolumbre-tirar-reducao-da-maioridade-penal-da-pauta-do-senado-acabou-o-dialogo"
+  ],
+  [
+   "Folha de Pernambuco",
+   "https://www.folhape.com.br/politica/alcolumbre-retira-maioridade-penal-da-pauta-e-vai-aguardar-camara/522487/"
+  ],
+  [
+   "DGABC",
+   "https://www.dgabc.com.br/Noticia/4366934/relator-da-pec-da-maioridade-penal-afirma-que-deve-apresentar-parecer-ate-final-do-mes"
+  ],
+  [
+   "O Povo",
+   "https://www.opovo.com.br/noticias/politica/2026/11/04/reducao-da-maioridade-penal-senado-vai-aguardar-votacao-de-pec-da-camara.html"
+  ]
+ ]
+};
+
+S.vorcaro = {
+ "ed": "politica",
+ "k": "Política · STF",
+ "hora": "4/11",
+ "t": "Fachin dá 15 dias à PGR para se manifestar sobre o indiciamento de Vorcaro",
+ "sub": "Relatório parcial da PF descreve o dono do Banco Master como líder de organização criminosa e liga o caso a R$ 17,5 bilhões em créditos vendidos ao BRB.",
+ "resumo": "O presidente do Supremo, Edson Fachin, deu 15 dias à Procuradoria-Geral da República para se manifestar sobre o relatório da Polícia Federal que indiciou Daniel Vorcaro e outros 14 investigados por fraudes envolvendo o Banco Master. A PF descreve Vorcaro como líder de organização criminosa e relaciona os crimes a R$ 17,5 bilhões em créditos vendidos ao BRB, dos quais R$ 12,2 bilhões seriam “créditos podres”. A polícia pede mais 60 dias de inquérito.",
+ "fundo": [
+  [
+   "p",
+   "Segundo a Agência O Globo, publicada pela Folha de Pernambuco, o parecer da PGR deve tratar das conclusões dos investigadores e de pedidos feitos pelos alvos da Operação Compliance Zero. Os crimes imputados são gestão fraudulenta de instituição financeira, induzimento a erro, fraude em fiscalização e lavagem de dinheiro. Os delitos se relacionam a créditos vendidos pelo Master ao BRB entre julho de 2024 e outubro de 2025. Segundo a PF, R$ 12,2 bilhões do total “não tinham a devida comprovação de sua existência”."
+  ],
+  [
+   "p",
+   "A PGR pode pedir novas diligências ou preparar uma primeira denúncia contra Vorcaro. A PF pediu prorrogação de 60 dias do inquérito, porque ainda estão em andamento perícias e análises bancárias, fiscais e patrimoniais, com o objetivo de medir o “proveito econômico” dos investigados."
+  ],
+  [
+   "p",
+   "A defesa de Vorcaro apresentou laudo de perito particular que afirma que o celular dele foi manuseado e teve arquivos alterados depois da apreensão, em 17 de novembro do ano passado. Os advogados pedem os dados brutos do aparelho e a substituição da prisão preventiva. Vorcaro está preso na Papudinha, em Brasília. O DGABC e O Povo chegaram a noticiar o prazo como decisão de Mendonça e publicaram correção atribuindo-o a Fachin."
+  ]
+ ],
+ "fontes": [
+  [
+   "Folha de Pernambuco",
+   "https://www.folhape.com.br/politica/fachin-da-15-dias-para-pgr-se-manifestar-sobre-relatorio-da-pf-que/522454/"
+  ]
+ ]
+};
+
+S.darkhorse = {
+ "ed": "politica",
+ "k": "Política · STF",
+ "hora": "4/11",
+ "t": "Gonet tem 15 dias para opinar sobre prorrogar o inquérito Dark Horse, que investiga Flávio e Eduardo Bolsonaro",
+ "sub": "A PF pede mais 90 dias para apurar US$ 12,3 milhões que Vorcaro teria repassado ao filme sobre Jair Bolsonaro.",
+ "resumo": "O procurador-geral da República, Paulo Gonet, tem 15 dias para se manifestar sobre o pedido da Polícia Federal de prorrogar por 90 dias o inquérito Dark Horse. A investigação apura suspeita de lavagem de dinheiro e evasão de divisas envolvendo o senador Flávio Bolsonaro (PL-RJ) e o ex-deputado Eduardo Bolsonaro (PL-SP), a partir de repasses de US$ 12,3 milhões, atribuídos a Daniel Vorcaro, para a cinebiografia de Jair Bolsonaro.",
+ "fundo": [
+  [
+   "p",
+   "Segundo O Tempo, o dono do extinto Banco Master teria repassado os recursos por meio da Entre Investimentos e Participações. Na época, o valor correspondia a cerca de R$ 69 milhões. O inquérito foi aberto em 23 de julho, e o prazo original venceria em 10 de outubro de 2026. O relator é o ministro André Mendonça. Como os autos estão na Presidência do STF desde a véspera de uma sessão sobre possível investigação contra o ministro Alexandre de Moraes, o presidente do tribunal, Edson Fachin, intimou Gonet."
+  ],
+  [
+   "p",
+   "A PF justifica a prorrogação com pendências: a perícia contábil-financeira do Instituto Nacional de Criminalística, ainda em andamento; a cooperação jurídica internacional com os Estados Unidos para obter registros da produtora GoUP Entertainment, que se recusou a enviar documentos sem essa formalização; e a análise de dados telemáticos de Fabiano Zettel e de Antônio Carlos Freixo Jr., que já firmou acordo de colaboração premiada com a PGR."
+  ]
+ ],
+ "fontes": [
+  [
+   "O Tempo",
+   "https://www.otempo.com.br/politica/judiciario/2026/11/4/gonet-tem-15-dias-para-opinar-se-prorroga-inquerito-do-dark-horse-por-90-dias"
+  ]
+ ]
+};
+
+S.marinho = {
+ "ed": "politica",
+ "k": "Política · Senado",
+ "hora": "4/11",
+ "t": "Marinho confirma candidatura à presidência do Senado e diz contar com 40 votos; Alcolumbre critica o PL",
+ "sub": "O senador do PL nega acordo com Tereza Cristina e defende voto aberto. O atual presidente ironiza quem questiona a urna.",
+ "resumo": "O senador Rogério Marinho (PL-RN) confirmou na quarta (4) que será candidato à presidência do Senado, após reunião com a bancada do PL. Ele disse acreditar em pelo menos 40 votos, um a menos que os 41 necessários no primeiro turno, e negou acordo com Tereza Cristina (PP-MS), que também deve concorrer. Alcolumbre, que pode ser reeleito, criticou o PL por questionar o resultado da eleição depois do lançamento de Marinho.",
+ "fundo": [
+  [
+   "p",
+   "Segundo o Correio do Estado, Marinho afirmou que “Tereza tem toda a legitimidade de ser candidata” e que os dois lançarão seus nomes e decidirão depois quem permanece. Ele evitou confirmar um revezamento, em que um disputaria em 2027 e o outro em 2029. Citou apoio do Novo e de integrantes do PP e do Republicanos. O PL avalia pressionar senadores eleitos na onda bolsonarista que poderiam votar pela reeleição de Alcolumbre, e defende a votação aberta, que Marinho considera “recomendável”. Hoje o voto é secreto."
+  ],
+  [
+   "p",
+   "Marinho defendeu ainda votar a anistia aos condenados pelos atos de 8 de janeiro, como qualquer outro projeto. Segundo a Itatiaia, ele avisou ao STF que “não será omisso” diante de denúncias contra a Corte."
+  ],
+  [
+   "p",
+   "Em discurso no plenário, Alcolumbre disse que parte dos eleitos venceu com “ofensas, agressões e ameaças” e questionou quem aceita a urna eletrônica no primeiro turno e duvida dela depois de uma derrota no segundo. Segundo a Folha de Pernambuco, ele afirmou ainda que avaliará a situação de Flávio Bolsonaro no Senado. O Congresso em Foco registrou o discurso. A eleição da Mesa será em fevereiro de 2027."
+  ]
+ ],
+ "fontes": [
+  [
+   "Correio do Estado",
+   "https://correiodoestado.com.br/2026/11/04/rogerio-marinho-diz-que-acordo-com-tereza-sera-fechado-no-futuro-e-evita-falar-em-rodizio.html"
+  ],
+  [
+   "Itatiaia",
+   "https://www.itatiaia.com.br/politica/marinho-se-lanca-candidato-a-presidencia-do-senado-e-avisa-stf-que-nao-sera-omisso-sobre-denuncias-contra-corte/"
+  ],
+  [
+   "Congresso em Foco",
+   "https://www.congressoemfoco.com.br/noticia/131317/alcolumbre-ironiza-ataques-a-urna-e-lamenta-eleitos-sem-proposta"
+  ],
+  [
+   "Folha de Pernambuco",
+   "https://www.folhape.com.br/politica/alcolumbre-critica-pl-por-questionar-resultado-da-eleicao-apos/522453/"
+  ]
+ ]
+};
+
+S.seis1x1 = {
+ "ed": "politica",
+ "k": "Política · Trabalho",
+ "hora": "4/11",
+ "t": "Governo prevê decreto da escala 6x1 para segunda; CNI e CNC vão ao STF contra o fim da jornada",
+ "sub": "Marinho diz que o texto será discutido com Lula nesta quinta. A CNI calcula alta de 11,1% no custo do trabalho formal na indústria.",
+ "resumo": "O ministro do Trabalho, Luiz Marinho, disse na quarta (4) que o decreto que regulamenta o fim da escala 6x1 deve ser publicado na segunda (9). No mesmo dia, a CNI e a CNC acionaram o Supremo para suspender a Emenda Constitucional 141/2026, promulgada em 16 de outubro. A CNI estima que a medida elevaria em 11,1% o custo do trabalho formal na indústria, cerca de R$ 88 bilhões.",
+ "fundo": [
+  [
+   "p",
+   "Segundo a Folha de Pernambuco, a publicação estava prevista para a semana anterior, mas foi adiada porque Lula não conseguiu assinar o despacho. O texto será discutido com o presidente nesta quinta (5). O decreto busca coordenar a adoção das escalas nos setores, e os trabalhadores terão no mínimo oito folgas em 30 dias. Marinho disse que não há lista de flexibilidades: a PEC exige dois descansos semanais, que podem ser consolidados dentro do mês. Acordos coletivos terão papel central, e setores de funcionamento contínuo, como saúde, transporte, segurança e limpeza urbana, devem ser contemplados."
+  ],
+  [
+   "p",
+   "O governo prevê início da implementação em 15 de dezembro, com a jornada caindo gradualmente de 44 para 40 horas semanais. A emenda extingue a escala 6x1 e estabelece cinco dias de trabalho para dois de descanso."
+  ],
+  [
+   "p",
+   "Na ação ao STF, segundo O Povo, a CNI alega que a emenda afeta a segurança jurídica, a livre iniciativa e a autonomia coletiva trabalhista, e que acordos coletivos vigentes deveriam manter seus efeitos até o fim do prazo ou até nova negociação. Indústrias de operação contínua dependem de folgas negociadas coletivamente. A CNC pretende adiar o início da redução da jornada para outubro de 2027. A Folha de Pernambuco informou que o ministro Flávio Dino foi sorteado relator da ação da CNC."
+  ]
+ ],
+ "fontes": [
+  [
+   "Folha de Pernambuco",
+   "https://www.folhape.com.br/politica/governo-preve-decreto-do-fim-da-escala-6x1-para-segunda-feira/522431/"
+  ],
+  [
+   "O Povo",
+   "https://www.opovo.com.br/noticias/politica/2026/11/04/entidades-da-industria-e-do-comercio-recorrem-ao-stf-contra-fim-da-6x1.html"
+  ],
+  [
+   "Folha de Pernambuco (relatoria)",
+   "https://www.folhape.com.br/politica/ministro-do-stf-flavio-dino-e-sorteado-relator-da-acao-da-cnc-que/522428/"
+  ]
+ ]
+};
+
+S.tse = {
+ "ed": "politica",
+ "k": "Política · Justiça Eleitoral",
+ "hora": "4/11",
+ "t": "Gilmar critica, sem citar o nome, a atuação de Nunes Marques no TSE no segundo turno",
+ "sub": "“Silêncios e hesitações não são neutros”, disse o decano do STF, em referência à prorrogação do horário de votação.",
+ "resumo": "O decano do Supremo, Gilmar Mendes, criticou a condução do presidente do TSE, Kassio Nunes Marques, no segundo turno, sem citar o nome do colega. Segundo ele, quem comanda a Corte Eleitoral deve manter a “postura de árbitro equidistante que a Constituição pressupõe”, e “silêncios e hesitações não são neutros”. A crítica refere-se ao pedido de prorrogação da votação, feito após denúncias de falta de ônibus e chuvas, sobre o qual Nunes Marques não se manifestou.",
+ "fundo": [
+  [
+   "p",
+   "De acordo com o Correio Braziliense, o PT recorreu ao STF, e o ministro Cristiano Zanin autorizou a extensão do horário, mas a decisão foi publicada quando grande parte das urnas já havia fechado. Gilmar disse que “a colegialidade cumpriu seu papel” e avaliou que a omissão pode levar outras instâncias a resolver problemas por conta própria e alimentar ataques ao sistema eleitoral. Até a publicação, Nunes Marques não respondeu às críticas."
+  ],
+  [
+   "p",
+   "O Em.com.br e O Liberal também registraram a fala do ministro, feita em evento, e a classificaram como crítica à condução do TSE."
+  ]
+ ],
+ "fontes": [
+  [
+   "Correio Braziliense",
+   "https://www.correiobraziliense.com.br/politica/2026/11/7532650-gilmar-critica-atuacao-de-nunes-marques-no-segundo-turno-das-eleicoes.html"
+  ],
+  [
+   "Estado de Minas",
+   "https://www.em.com.br/politica/2026/11/7532858-crise-no-stf-gilmar-mendes-questiona-postura-de-nunes-marques-no-tse.html"
+  ]
+ ]
+};
+
+S.pauta5 = {
+ "ed": "politica",
+ "k": "Política · Congresso",
+ "hora": "4/11",
+ "t": "Governo quer votar cinco pautas antes do recesso, com bets, tarifa zero e Orçamento",
+ "sub": "A articulação envolve Alcolumbre e Motta, antes da posse dos novos parlamentares em fevereiro de 2027.",
+ "resumo": "Depois da aprovação da PEC da Segurança no Senado, o governo Lula quer votar cinco pautas prioritárias antes do recesso: a conversão em lei da MP que proíbe apostas online, a PEC da tarifa zero no transporte aos fins de semana, a regulamentação da reforma tributária com foco na alíquota da CBS, o Orçamento de 2027 e indicações para agências reguladoras. A MP das bets perde a validade em 23 de novembro, segundo o Plantão Brasil.",
+ "fundo": [
+  [
+   "p",
+   "A estratégia é aproveitar a composição atual do Congresso, antes da posse dos novos parlamentares, em fevereiro. A articulação envolve os presidentes do Senado, Davi Alcolumbre (União-AP), e da Câmara, Hugo Motta (Republicanos-PB)."
+  ],
+  [
+   "p",
+   "O líder do PL no Senado, Carlos Portinho, ameaçou travar a MP das bets, a tarifa zero e mudanças na escala 6x1 depois da retirada da maioridade penal da pauta. Segundo O Tempo, a PEC 18/2026, da tarifa zero, reservaria ao menos 26,8% das emendas obrigatórias, cerca de R$ 12 bilhões por ano. Para o Correio Braziliense, o comando do Congresso e o ministro da Fazenda definirão o desenho do novo governo."
+  ]
+ ],
+ "fontes": [
+  [
+   "Plantão Brasil",
+   "https://www.plantaobrasil.net/noticias/161723-lula-articula-forca-tarefa-no-congresso-para-destravar-agenda-prioritaria-antes-do-recesso"
+  ],
+  [
+   "O Tempo",
+   "https://www.otempo.com.br/politica/congresso/2026/11/4/portinho-apos-alcolumbre-tirar-reducao-da-maioridade-penal-da-pauta-do-senado-acabou-o-dialogo"
+  ]
+ ]
+};
+
+S.segmin = {
+ "ed": "politica",
+ "k": "Política · Segurança",
+ "hora": "4/11",
+ "t": "PEC da Segurança abre caminho para o Ministério da Segurança Pública; Curitiba e São Paulo já falam em Polícia Municipal",
+ "sub": "O texto vai à promulgação sem sanção. Lula condicionou a criação da pasta à aprovação da PEC.",
+ "resumo": "A PEC da Segurança Pública, aprovada pelo Senado na terça (3), segue para promulgação pelo Congresso, sem necessidade de sanção. O texto endurece regras para integrantes de facções e milícias, inclui o Sistema Único de Segurança Pública na Constituição e amplia as atribuições da Polícia Rodoviária Federal. Lula comemorou e reafirmou que criará o Ministério da Segurança Pública. A prefeitura de Curitiba começou a estudar a transição da Guarda Municipal para Polícia Municipal.",
+ "fundo": [
+  [
+   "p",
+   "Segundo a Itatiaia, a PEC prevê transferência de presos para unidades de segurança máxima, restrição à progressão de regime, perda de bens ligados a atividades criminosas sem indenização, responsabilização de empresas envolvidas e proteção a denunciantes e familiares. Também permite forças-tarefas e compartilhamento de informações entre as polícias e autoriza a PRF a atuar em ferrovias e hidrovias federais. A redução da maioridade penal ficou de fora e será analisada separadamente."
+  ],
+  [
+   "p",
+   "Em outubro, na sabatina da TV Globo, Lula disse: “Aprovada a PEC, vou criar o Ministério da Segurança Pública”. A reportagem não informa prazo. No Senado, a PEC foi aprovada com 73 votos favoráveis, segundo o Diário do Nordeste."
+  ],
+  [
+   "p",
+   "Na Gazeta do Povo, a prefeitura de Curitiba, comandada por Eduardo Pimentel, determinou o início da transição da Guarda para Polícia Municipal, com estudos técnicos, jurídicos e administrativos conduzidos pela Secretaria de Defesa Social e Trânsito. Não há prazo, e a mudança depende da promulgação da PEC."
+  ]
+ ],
+ "fontes": [
+  [
+   "Itatiaia",
+   "https://www.itatiaia.com.br/politica/pec-da-seguranca-abre-caminho-para-lula-criar-novo-ministerio/"
+  ],
+  [
+   "Diário do Nordeste",
+   "https://diariodonordeste.verdesmares.com.br/pontopoder/pec-da-seguranca-e-aprovada-no-senado-com-73-votos-favoraveis-e-segue-para-promulgacao-1.3803214"
+  ],
+  [
+   "Gazeta do Povo",
+   "https://www.gazetadopovo.com.br/parana/curitiba-inicia-transicao-da-guarda-municipal-para-policia-municipal/"
+  ]
+ ]
+};
+
+S.assedio = {
+ "ed": "politica",
+ "k": "Política · Trabalho",
+ "hora": "4/11",
+ "t": "Ministério do Trabalho já recebeu mais de 7 mil denúncias de assédio eleitoral",
+ "sub": "Marinho diz não saber quantos casos são reais e afirma que o foco é proteger o trabalhador, não punir.",
+ "resumo": "O ministro do Trabalho, Luiz Marinho, informou na quarta (4) que a pasta recebeu mais de 7 mil denúncias de assédio eleitoral no trabalho. Ele disse não saber quantas são casos reais e concretos. Antes, o ministério havia registrado 4,3 mil denúncias em três dias de funcionamento do canal depois do segundo turno. Marinho afirmou que o Estado “não pretende punir absolutamente ninguém” e que o foco é proteger o trabalhador.",
+ "fundo": [
+  [
+   "p",
+   "Segundo o DGABC, o Ministério Público do Trabalho obteve liminares, e a Justiça do Trabalho determinou que a Meta removesse postagens que incentivavam demissões por voto. A reportagem não informa distribuição das denúncias por estado. Em Alagoas, o deputado Ronaldo Medeiros denunciou demissões de trabalhadores por voto em Lula, segundo a Gazeta de Alagoas."
+  ]
+ ],
+ "fontes": [
+  [
+   "DGABC",
+   "https://www.dgabc.com.br/Noticia/4366935/mte-recebeu-mais-de-7-000-denuncias-de-assedio-eleitoral-segundo-ministro"
+  ]
+ ]
+};
+
+S.meta = {
+ "ed": "politica",
+ "k": "Política · Plataformas",
+ "hora": "4/11",
+ "t": "Justiça de SP suspende novas regras da Meta para uso de conteúdo jornalístico",
+ "sub": "Liminar atende ANJ, Abert e Aner e fixa multa diária de R$ 1 milhão. Termos entrariam em vigor em 20 de novembro.",
+ "resumo": "A 44ª Vara Cível de São Paulo suspendeu, em liminar, partes dos Termos Comerciais da Meta que permitiriam o uso de programas automatizados para copiar e analisar conteúdo de veículos, inclusive para treinar sistemas de inteligência artificial. A decisão atende ação da ANJ, da Abert e da Aner. Em caso de descumprimento, a multa é de R$ 1 milhão por dia, limitada a R$ 100 milhões.",
+ "fundo": [
+  [
+   "p",
+   "Segundo o Correio Braziliense, o juiz Guilherme Madeira Dezem proibiu a Meta de coletar e usar os conteúdos sem autorização e determinou que a empresa mantenha as contas, páginas e ferramentas dos veículos associados, sem bloqueios ou punições por recusarem as novas condições. As regras entrariam em vigor em 20 de novembro, e a autorização abrangeria materiais publicados fora da Meta. A ordem vale até o julgamento definitivo da ação."
+  ],
+  [
+   "p",
+   "Em 28 de outubro, um tribunal da Noruega também suspendeu temporariamente as novas regras, após ação de 10 grupos de mídia do país."
+  ]
+ ],
+ "fontes": [
+  [
+   "Correio Braziliense",
+   "https://www.correiobraziliense.com.br/politica/2026/11/7532787-justica-suspende-novas-regras-da-meta-para-uso-de-conteudo-jornalistico.html"
+  ]
+ ]
+};
+
+S.lulasaude = {
+ "ed": "politica",
+ "k": "Política · Governo",
+ "hora": "4/11",
+ "t": "Lula faz avaliação de rotina no Sírio-Libanês e hospital diz que exames estão normais",
+ "sub": "Boletim divulgado na noite de terça aponta que “todos os resultados estão dentro da normalidade”.",
+ "resumo": "O presidente Lula fez na terça (3) uma avaliação médica de rotina, agendada previamente, no Hospital Sírio-Libanês, em São Paulo. Segundo o boletim divulgado às 23h, “todos os resultados estão dentro da normalidade”. Ele segue acompanhado pelos médicos Roberto Kalil Filho e Ana Helena Germoglio. A Itatiaia informou que, após os exames, Lula recebeu alta e voltou a Brasília, onde manteve a agenda de quarta.",
+ "fundo": [
+  [
+   "p",
+   "O boletim não detalha quais exames foram feitos. O Poder360 e o DGABC registraram o episódio. Na quarta (4), segundo a Itatiaia, o presidente reuniu-se com o vice, Geraldo Alckmin, e ministros para definir ações ambientais antes da COP31, conforme O Tempo. O Liberal informou que Lula viajará com Motta e Alcolumbre para a COP31 e as Filipinas."
+  ]
+ ],
+ "fontes": [
+  [
+   "DGABC",
+   "https://www.dgabc.com.br/Noticia/4366728/lula-passa-por-exames-medicos-em-sao-paulo-veja-o-resultado"
+  ],
+  [
+   "Itatiaia",
+   "https://www.itatiaia.com.br/politica/apos-exames-em-sp-lula-recebe-alta-e-retorna-a-brasilia/"
+  ],
+  [
+   "O Liberal",
+   "https://www.oliberal.com/politica/lula-viajara-com-motta-e-alcolumbre-para-a-cop-31-e-as-filipinas-1.1190034"
+  ]
+ ]
+};
+
+S.psdb = {
+ "ed": "politica",
+ "k": "Política · Partidos",
+ "hora": "4/11",
+ "t": "PSDB prepara 2028 com foco no Norte e Nordeste, a partir de Alagoas e Tocantins",
+ "sub": "Aécio Neves preside reunião com os governadores eleitos JHC e Vicentinho Júnior. Partido não elegeu prefeito de capital em 2024.",
+ "resumo": "O PSDB iniciou a preparação para as eleições municipais de 2028, com foco no Norte e no Nordeste. Em reunião ampliada da Executiva Nacional, presidida por Aécio Neves, a sigla decidiu usar as vitórias nos governos de Alagoas, com JHC, e do Tocantins, com Vicentinho Júnior, para ampliar suas bases. Em 2026, o partido elegeu dois governadores, dois senadores e 11 deputados federais, contra 13 antes.",
+ "fundo": [
+  [
+   "p",
+   "Segundo o Congresso em Foco, participaram da reunião os prefeitos Igor Normando (Belém) e Léo Bezerra (João Pessoa), que entraram no PSDB em 2026. Em 2024, o partido elegeu 273 prefeitos, contra 523 em 2020, e pela primeira vez desde a fundação, em 1988, não elegeu prefeito de capital. Os senadores eleitos são Plínio Valério (AM) e Marina Candia (AL), esposa de JHC. A federação PSDB-Cidadania superou a cláusula de desempenho e mantém acesso aos fundos Eleitoral e Partidário. O Tempo também registrou a fala de Aécio."
+  ]
+ ],
+ "fontes": [
+  [
+   "Congresso em Foco",
+   "https://www.congressoemfoco.com.br/noticia/131318/psdb-prepara-estrategia-eleitoral-de-2028-com-foco-no-norte-e-nordeste"
+  ]
+ ]
+};
+
+S.orcamento = {
+ "ed": "economia",
+ "k": "Economia",
+ "hora": "4/11",
+ "t": "Eduardo Braga será relator do Orçamento de R$ 7,4 trilhões para 2027",
+ "sub": "Votação em plenário está marcada para 17 de dezembro. Salário mínimo previsto é de R$ 1.741.",
+ "resumo": "O senador Eduardo Braga (MDB-AM) foi escolhido relator-geral do Orçamento da União de 2027, anunciou o Congresso na terça (3). O projeto prevê despesas de R$ 7,4 trilhões, incluindo o refinanciamento da dívida, limite de despesas primárias de R$ 2,576 trilhões e superávit primário de R$ 18,6 bilhões. O relator disse que a análise deve ser feita até 2 de dezembro.",
+ "fundo": [
+  [
+   "p",
+   "Segundo o Congresso em Foco, a indicação saiu após reunião de líderes com o presidente do Senado, Davi Alcolumbre, e com o presidente da Comissão Mista de Orçamento, deputado Domingos Neto (PSD-CE). Braga foi relator-geral em 2016. Ele prometeu priorizar saúde, educação, infraestrutura e segurança, com equilíbrio fiscal. A LDO de 2027 ainda não foi aprovada."
+  ],
+  [
+   "p",
+   "O projeto (PLN 24/2026), enviado em agosto, prevê salário mínimo de R$ 1.741, investimentos de R$ 133,8 bilhões e emendas individuais e de bancada de R$ 44,8 bilhões. O limite de despesas primárias representa alta de 7,7% sobre 2026."
+  ],
+  [
+   "tl",
+   [
+    [
+     "9 a 11/11",
+     "Audiências públicas"
+    ],
+    [
+     "16 a 27/11",
+     "Prazo para emendas"
+    ],
+    [
+     "até 9/12",
+     "LDO na CMO"
+    ],
+    [
+     "16/12",
+     "Relatório-geral"
+    ],
+    [
+     "17/12",
+     "Votação no plenário do Congresso"
+    ]
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Congresso em Foco (relator)",
+   "https://www.congressoemfoco.com.br/noticia/131287/eduardo-braga-sera-relator-do-orcamento-de-r-7-4-trilhoes-para-2027"
+  ],
+  [
+   "Congresso em Foco (prazo)",
+   "https://www.congressoemfoco.com.br/noticia/131316/analise-do-orcamento-deve-ser-feita-ate-2-de-dezembro-afirma-relator"
+  ]
+ ]
+};
+
+S.betsaud = {
+ "ed": "economia",
+ "k": "Economia · Apostas",
+ "hora": "3/11",
+ "t": "Em audiência no STF, governo defende a proibição das bets; clubes pedem transição",
+ "sub": "Fux diz estar convencido de que as apostas devem ser banidas. Flamengo estima perda de R$ 430 milhões.",
+ "resumo": "Na audiência pública do STF sobre a proibição das apostas online, o relator, ministro Luiz Fux, disse estar convencido de que as bets devem ser banidas, sem antecipar o entendimento do colegiado. O advogado-geral da União, Jorge Messias, pediu a manutenção integral da MP e citou pesquisa Datafolha segundo a qual 78% apoiam a proibição. Clubes de futebol criticaram a suspensão imediata e pediram um período de transição.",
+ "fundo": [
+  [
+   "p",
+   "Segundo o Correio Braziliense, a audiência foi convocada por Fux na ADI 8.027, ação de entidades do setor que pede a suspensão da MP. Dos 34 representantes convocados, pelo menos 22 eram contrários à proibição. Abras, CNC e CNI apoiam a medida. O ministro Alexandre Padilha citou 28 milhões de brasileiros que apostaram nos últimos 12 meses, 11 milhões deles com comportamento de risco. O ministro da Justiça, Wellington César de Lima e Silva, disse que o governo analisou alternativas de regulamentação antes de optar pela suspensão."
+  ],
+  [
+   "p",
+   "O vice-presidente do Flamengo, Flávio Willeman, estimou perda de R$ 430 milhões em receitas e cerca de 1,2 mil empregos afetados. Representantes de Fluminense, Botafogo, Corinthians, Cruzeiro e São Paulo pediram transição. A MP ainda precisa ser apreciada pelo Congresso. Na quarta (4), a Folha de Pernambuco informou que Fachin sinalizou pautar em conjunto o julgamento sobre bets no STF."
+  ]
+ ],
+ "fontes": [
+  [
+   "Correio Braziliense",
+   "https://www.correiobraziliense.com.br/politica/2026/11/7532729-proibicao-das-bets-divide-governo-e-clubes-em-audiencia-no-supremo.html"
+  ]
+ ]
+};
+
+S.sp_barba = {
+ "ed": "regioes",
+ "k": "Regiões · São Paulo",
+ "hora": "4/11",
+ "t": "Deputado Teonilio Barba defende “oxigenar o PT” após a vitória de Lula e cobra calma sobre 2026 em São Paulo",
+ "sub": "Petista, eleito para o quarto mandato na Alesp, diz que partido deve atuar de forma articulada como oposição a Tarcísio.",
+ "resumo": "O deputado estadual Teonilio Barba (PT), eleito para o quarto mandato na Assembleia Legislativa de São Paulo, defendeu que a vitória de Lula sobre Flávio Bolsonaro abre espaço para o PT rever seus rumos e renovar quadros: “Precisamos oxigenar o PT, trazer gente nova”. Em entrevista ao podcast Política em Cena, ele disse que a juventude foi decisiva e que o partido deve atuar de forma articulada como oposição ao governo Tarcísio de Freitas.",
+ "fundo": [
+  [
+   "p",
+   "Segundo o DGABC, Barba avaliou que o partido deve atrair novas gerações e dialogar com temas como a inteligência artificial. Sobre candidaturas ao governo paulista, como a do prefeito de Mauá, disse: “Temos que ter calma e cuidado”. Em São Bernardo, afirmou que a decisão sobre apoiar a reeleição de Marcelo Lima (Podemos) em 2028 será interna, mas que “na minha cabeça não passa apoiar o Marcelo Lima em 2028”. Sobre a Alesp: “Lá dentro, você vira apenas um voto e o mundo é outro”."
+  ],
+  [
+   "p",
+   "Em São Paulo, a capital e o Grande ABC também discutem a PEC da Segurança. O prefeito Ricardo Nunes (MDB) aproveita o texto para propor a mudança da GCM para Polícia Municipal, conforme o Metrópoles."
+  ]
+ ],
+ "fontes": [
+  [
+   "DGABC",
+   "https://www.dgabc.com.br/Noticia/4366918/barba-defende-oxigenacao-do-pt-apos-vitoria-de-lula"
+  ]
+ ],
+ "reg": "sp"
+};
+
+S.mg_tce = {
+ "ed": "regioes",
+ "k": "Regiões · Minas Gerais",
+ "hora": "4/11",
+ "t": "TCE-MG suspende R$ 32 milhões em patrocínios de estatais a Atlético, Cruzeiro e América",
+ "sub": "Liminar atende representação do governador eleito Cleitinho, que aponta desvio de finalidade.",
+ "resumo": "O Tribunal de Contas de Minas suspendeu, em liminar, patrocínios de R$ 32 milhões de estatais mineiras a clubes de futebol. Os contratos envolvem Cemig, Codemge, Codemig e Invest Minas e as sociedades anônimas do Atlético, do Cruzeiro e do América. A decisão atende representação do governador eleito, Cleitinho Azevedo (Republicanos), que aponta indícios de desvio de finalidade. O governo disse, segundo a Itatiaia, que não havia respondido até a publicação.",
+ "fundo": [
+  [
+   "p",
+   "Segundo a Itatiaia, o governo anunciou os patrocínios em 29 de setembro, para compensar os clubes pela perda de receita causada pela medida provisória federal que proibiu a publicidade de bets. A representação foi protocolada em 20 de outubro, e a liminar saiu em 3 de novembro. A representação aponta falta de estudos de viabilidade, de critérios objetivos para escolher beneficiários e definir preços, e descumprimento de regras de governança. Também questiona o gasto diante da situação fiscal do estado, com dívida de R$ 179,3 bilhões e caixa líquido negativo de R$ 11,3 bilhões no fim de 2025."
+  ],
+  [
+   "p",
+   "O relator, conselheiro em exercício Licurgo Mourão, entendeu, em análise preliminar, que a finalidade do patrocínio, fortalecer a marca da estatal, diverge da finalidade pública alegada, recompor receitas dos clubes. Cleitinho foi eleito governador no primeiro turno."
+  ]
+ ],
+ "fontes": [
+  [
+   "Itatiaia",
+   "https://www.itatiaia.com.br/politica/tce-suspende-patrocinio-de-r-32-milhoes-de-estatais-mineiras-a-clubes-de-futebol-de-bh/"
+  ]
+ ],
+ "reg": "mg"
+};
+
+S.mg_china = {
+ "ed": "regioes",
+ "k": "Regiões · Minas Gerais",
+ "hora": "4/11",
+ "t": "Mateus Simões leva missão à China com o ex-adversário Flávio Roscoe, da Fiemg",
+ "sub": "Governador participou em Xangai do Brazil China Business Forum e se reuniu com a mineradora CMOC.",
+ "resumo": "O governador Mateus Simões esteve em Xangai na quarta (4), em missão organizada pela Fiemg e pelo governo de Minas para ampliar negócios com o mercado chinês, com foco em mineração. Na comitiva estava o presidente da Fiemg, Flávio Roscoe, que foi adversário de Simões na disputa pelo governo, segundo O Tempo. A agenda incluiu a abertura do Brazil China Business Forum e encontro com a CMOC.",
+ "fundo": [
+  [
+   "p",
+   "Segundo O Tempo, a China respondeu por mais de 36% das exportações mineiras em 2026 até setembro, cerca de US$ 11,8 bilhões. Nos últimos quatro anos, investimentos chineses em Minas superaram R$ 500 milhões e geraram mais de 2 mil empregos diretos. Integraram a comitiva secretários estaduais e dirigentes da Codemge e da Invest Minas."
+  ]
+ ],
+ "fontes": [
+  [
+   "O Tempo",
+   "https://www.otempo.com.br/politica/aparte/2026/11/4/separados-pela-eleicao-mateus-simoes-e-flavio-roscoe-se-reencontram-na-china"
+  ]
+ ],
+ "reg": "mg"
+};
+
+S.mg_ipva = {
+ "ed": "regioes",
+ "k": "Regiões · Minas Gerais",
+ "hora": "4/11",
+ "t": "Projeto que isenta de IPVA pessoas com doenças raras e síndrome de Down está pronto para o plenário da ALMG",
+ "sub": "Comissão de Fiscalização Financeira deu parecer favorável em segundo turno ao PL 779/19, do deputado Cristiano Silveira (PT).",
+ "resumo": "A Comissão de Fiscalização Financeira e Orçamentária da Assembleia de Minas deu parecer favorável, em segundo turno, ao PL 779/19, que amplia a isenção de IPVA para pessoas com síndrome de Down e doenças raras. O projeto, do deputado Cristiano Silveira (PT), pode agora ser votado em definitivo pelo plenário. Para doenças raras, seria a primeira previsão do benefício em norma estadual.",
+ "fundo": [
+  [
+   "p",
+   "Segundo O Tempo, o relator, deputado João Magalhães (PSD), apresentou substitutivo que incorpora emenda de Carlos Henrique (Republicanos): a isenção poderá ser concedida mesmo quando o veículo estiver em nome do representante legal. A síndrome de Down já consta em decreto, mas passaria a estar expressamente na lei. A isenção para doenças raras só valeria 180 dias após a publicação, prazo de adaptação do estado."
+  ]
+ ],
+ "fontes": [
+  [
+   "O Tempo",
+   "https://www.otempo.com.br/politica/2026/11/4/isencao-de-ipva-para-pessoas-com-doencas-raras-e-sindrome-de-down"
+  ]
+ ],
+ "reg": "mg"
+};
+
+S.ba_blocos = {
+ "ed": "regioes",
+ "k": "Regiões · Nordeste · Bahia",
+ "hora": "4/11",
+ "t": "PDT e MDB negociam bloco de sete deputados na Assembleia da Bahia; grupo de Carletto avalia ir ao Podemos",
+ "sub": "Rearranjos partidários miram a cláusula de desempenho e as comissões da AL-BA a partir de fevereiro.",
+ "resumo": "PDT e MDB avançam nas conversas para formar um bloco parlamentar de sete deputados na Assembleia Legislativa da Bahia a partir de fevereiro, para ampliar a participação na Mesa e nas comissões, segundo o Bahia Notícias. Em outra frente, o grupo de Ronaldo Carletto, presidente estadual do Avante, negocia migrar para o Podemos, caso a federação Avante-PRD-Solidariedade não seja reconhecida.",
+ "fundo": [
+  [
+   "p",
+   "O deputado eleito Luciano Pinheiro (PDT) e o presidente de honra do MDB, Lúcio Vieira Lima, confirmaram a articulação. O PDT elegeu cinco deputados e o MDB, dois, o “número mágico” citado por Lúcio. Os dois partidos integram a base do governo estadual. O PDT não atingiu a cláusula de desempenho em 2026, e há discussões judiciais sobre federações."
+  ],
+  [
+   "p",
+   "No caso do Avante, dois dos três deputados federais eleitos, Elmo Vaz e Neto Carletto, acompanhariam a mudança. Em 29 de outubro, a Procuradoria-Geral Eleitoral se manifestou a favor de somar os votos da federação para a cláusula de desempenho, mas não para a distribuição de cadeiras. Se o TSE aceitar, o Avante mantém fundo partidário e tempo de TV. O Podemos elegeu 27 deputados federais."
+  ]
+ ],
+ "fontes": [
+  [
+   "Bahia Notícias (PDT e MDB)",
+   "https://www.bahianoticias.com.br/noticia/323303-pdt-e-mdb-negociam-formacao-de-bloco-com-sete-deputados-na-assembleia-legislativa"
+  ],
+  [
+   "Bahia Notícias (Carletto)",
+   "https://www.bahianoticias.com.br/noticia/323263-grupo-de-carletto-negocia-migrar-para-podemos-mas-federacao-avante-prd-e-solidariedade-pode-mudar-planos-entenda-cenario"
+  ]
+ ],
+ "reg": "ne"
+};
+
+S.ba_jeronimo = {
+ "ed": "regioes",
+ "k": "Regiões · Nordeste · Bahia",
+ "hora": "4/11",
+ "t": "Jerônimo: sucessor de Lula “não precisa ser necessariamente do PT” e Nordeste não quer ser “só fonte de voto”",
+ "sub": "Governador reeleito da Bahia cobra mais espaço para a região no PT e no governo do quarto mandato.",
+ "resumo": "O governador reeleito da Bahia, Jerônimo Rodrigues (PT), disse a O Globo que o sucessor de Lula “não precisa ser necessariamente do PT” e que deve vir de um campo que dê continuidade ao projeto do governo. Ele citou o vice Geraldo Alckmin (PSB) como exemplo de liderança fora do partido, mas afirmou que ainda é cedo para nomes. Cobrou mais espaço para o Nordeste: “Não queremos ser só fonte de voto.”",
+ "fundo": [
+  [
+   "p",
+   "Segundo a entrevista, republicada pela Folha de Pernambuco, Jerônimo lembrou que a região tem quatro governadores petistas e a maior parte dos senadores do partido. Também comentou a investigação sobre a redução da frota de ônibus em Salvador no segundo turno, defendeu a apuração de casos envolvendo o senador Jaques Wagner e citou ações de segurança pública. No Maranhão, o Imparcial registra que nomes do estado ganham força nas articulações para ministérios de Lula, entre eles Eliziane Gama (PT), cotada para Direitos Humanos."
+  ]
+ ],
+ "fontes": [
+  [
+   "Folha de Pernambuco",
+   "https://www.folhape.com.br/politica/sucessor-de-lula-nao-precisa-necessariamente-ser-do-pt-diz/522425/"
+  ],
+  [
+   "O Imparcial",
+   "https://oimparcial.com.br/politica/2026/11/nomes-do-maranhao-ganham-forca-nas-articulacoes-para-ministerios-de-lula/"
+  ]
+ ],
+ "reg": "ne"
+};
+
+S.pe_emprestimo = {
+ "ed": "regioes",
+ "k": "Regiões · Nordeste · Pernambuco",
+ "hora": "4/11",
+ "t": "Alepe autoriza Raquel Lyra a contratar empréstimo de até R$ 1,935 bilhão",
+ "sub": "Aprovação foi unânime, em dois turnos. Recursos financiariam obras hídricas, estradas, hospitais e escolas.",
+ "resumo": "A Assembleia Legislativa de Pernambuco autorizou, por unanimidade e em sessão extraordinária na quarta (4), o governo estadual a contratar empréstimo de até R$ 1,935 bilhão. O valor corresponde ao espaço fiscal do estado em 2027. O projeto, enviado pela governadora Raquel Lyra em 8 de outubro, tramitou em regime de urgência e segue para sanção.",
+ "fundo": [
+  [
+   "p",
+   "Segundo a Folha de Pernambuco, o deputado Diogo Moraes disse que os recursos financiariam projetos já previstos, como obras hídricas, estradas, reformas de hospitais e construção de escolas. O texto não indica o banco: fala apenas em instituições financeiras nacionais. A operação pode ser feita com ou sem garantia da União; sem ela, o estado pode oferecer receitas do ICMS e do FPE como contragarantia. A aprovação não libera os recursos de imediato."
+  ]
+ ],
+ "fontes": [
+  [
+   "Folha de Pernambuco",
+   "https://www.folhape.com.br/colunistas/blogdafolha/alepe-autoriza-governo-de-pernambuco-a-contratar-emprestimo-de-r-19-bilhao/60835/"
+  ]
+ ],
+ "reg": "ne"
+};
+
+S.ce_mpe = {
+ "ed": "regioes",
+ "k": "Regiões · Nordeste · Ceará",
+ "hora": "4/11",
+ "t": "MP Eleitoral pede cassação de Yury do Paredão e Davi de Raimundão, do MDB, por abuso de poder",
+ "sub": "Ação diz que carreta de saúde do Cariri foi usada como ferramenta eleitoral. Anulação dos votos pode mudar a bancada cearense.",
+ "resumo": "O Ministério Público Eleitoral pediu a cassação do deputado federal reeleito Yury do Paredão e do deputado estadual eleito Davi de Raimundão, ambos do MDB do Ceará, por abuso de poder político e econômico. Segundo a ação, o programa “Carreta Conectados pela Cura”, unidade móvel de saúde, foi usado como ferramenta eleitoral no Cariri. Os pedidos incluem a anulação dos votos e a inelegibilidade por oito anos.",
+ "fundo": [
+  [
+   "p",
+   "De acordo com O Povo, o procurador regional eleitoral Celso Costa Lima Verde Leal diz que o serviço era promovido pelo Instituto Dra. Yanny Brena, presidido pela mãe de Yury, e que o deputado destinou emendas à unidade. Os procedimentos saltaram de cerca de 300 por ano entre 2023 e 2025 para 3.773 até 1º de outubro de 2026; moradores de Juazeiro do Norte passaram de 2,6% dos atendimentos para 83,4%, e 62,7% da produção de 2026 ocorreu no período de campanha."
+  ],
+  [
+   "p",
+   "A anulação dos votos levaria à retotalização. Segundo cálculos citados por O Povo, o MDB poderia perder as duas cadeiras na Câmara, com Eduardo Bismarck (PV) e Renato Roseno (PSOL) podendo assumir. Yury afirmou, por nota, que mantém parceria com o instituto, que atua em ações sociais. Davi disse não ter sido notificado e confiar na Justiça Eleitoral."
+  ]
+ ],
+ "fontes": [
+  [
+   "O Povo",
+   "https://www.opovo.com.br/noticias/politica/eleicoes/2026/11/04/mp-eleitoral-pede-cassacao-e-anulacao-dos-votos-de-yury-do-paredao-e-de-davi-de-raimundao.html"
+  ]
+ ],
+ "reg": "ne"
+};
+
+S.ce_gastos = {
+ "ed": "regioes",
+ "k": "Regiões · Nordeste · Ceará",
+ "hora": "4/11",
+ "t": "Elmano e Ciro declararam mais de R$ 10 milhões cada em gastos de campanha no Ceará",
+ "sub": "Reeleito, Elmano gastou R$ 11,34 milhões. A maior despesa de ambos foi impulsionamento nas redes.",
+ "resumo": "Os candidatos ao governo do Ceará Elmano de Freitas (PT), reeleito, e Ciro Gomes (PSDB) declararam mais de R$ 10 milhões cada em gastos de campanha, segundo dados do TSE levantados por O Povo. Elmano arrecadou R$ 13,16 milhões e gastou R$ 11,34 milhões. Ciro declarou receitas de R$ 12,48 milhões.",
+ "fundo": [
+  [
+   "p",
+   "A maior despesa de Elmano foi R$ 5,89 milhões à DLocal Brasil, para impulsionamento nas redes, cerca de 52% do total. Ciro pagou R$ 4,5 milhões à Polis Propaganda & Marketing e R$ 2,6 milhões ao Facebook. As duas campanhas somaram mais de R$ 1,6 milhão em transporte aéreo."
+  ],
+  [
+   "p",
+   "Entre os doadores de Elmano estão Pedro Grendene Bartelle (R$ 5 milhões), Maria Consuelo Saraiva Leão Dias Branco (R$ 1,68 milhão) e o PT nacional (R$ 1,15 milhão). Ciro recebeu R$ 7,3 milhões do PSDB nacional, R$ 1 milhão de Manoel Salviano Sobrinho e R$ 1 milhão de Tasso Jereissati. A reportagem ressalta que os números da Biblioteca de Anúncios da Meta não coincidem com os declarados ao TSE."
+  ],
+  [
+   "p",
+   "Na Assembleia, segundo o Diário do Nordeste, a Alece aprovou projeto de transferência de armas a agentes de segurança aposentados e da reserva."
+  ]
+ ],
+ "fontes": [
+  [
+   "O Povo",
+   "https://www.opovo.com.br/noticias/politica/eleicoes/2026/11/04/elmano-e-ciro-gastam-cada-um-mais-de-rs-10-milhoes-na-campanha.html"
+  ]
+ ],
+ "reg": "ne"
+};
+
+S.ma_tce = {
+ "ed": "regioes",
+ "k": "Regiões · Nordeste · Maranhão",
+ "hora": "4/11",
+ "t": "Braide pode herdar três vagas no TCE do Maranhão",
+ "sub": "Impasse sobre as cadeiras pode ficar para a transição; Dino suspendeu nomeações.",
+ "resumo": "O governador eleito do Maranhão, Eduardo Braide (PSD), pode herdar a indicação de vagas no Tribunal de Contas do Estado, se o impasse seguir até o fim da gestão de Carlos Brandão (MDB). Há três cadeiras abertas: duas cabem à Assembleia e uma ao Executivo. A mais recente surgiu com a aposentadoria de João Jorge Pavão, em 30 de outubro, quatro dias antes de ele completar 75 anos.",
+ "fundo": [
+  [
+   "p",
+   "Segundo O Imparcial, Washington Oliveira saiu em 2024 e Álvaro César em 2025. A vaga de Álvaro cabe ao governador, e Brandão indicou o advogado Flávio Vinicius Araújo Costa, mas a nomeação foi suspensa pelo ministro Flávio Dino, do STF, em ação sobre as regras de preenchimento. O sobrinho do governador, Daniel Brandão, também está afastado por decisão de Dino desde agosto. Sem as indicações, o tribunal funciona com titulares reduzidos e conselheiros substitutos. A eleição da Mesa da Assembleia, em fevereiro, deve medir a articulação de Braide."
+  ]
+ ],
+ "fontes": [
+  [
+   "O Imparcial",
+   "https://oimparcial.com.br/politica/2026/11/braide-pode-herdar-tres-vagas-no-tce-ma/"
+  ]
+ ],
+ "reg": "ne"
+};
+
+S.al_trans = {
+ "ed": "regioes",
+ "k": "Regiões · Nordeste · Alagoas",
+ "hora": "4/11",
+ "t": "Em Alagoas, Paulo Dantas abre a transição para JHC: “Eleição acabou”",
+ "sub": "Governador eleito pede que a atual gestão evite novas despesas, nomeações e empréstimos. Decisão sobre a Arsal gera reação.",
+ "resumo": "O governador de Alagoas, Paulo Dantas, abriu a transição de governo e defendeu diálogo com o governador eleito, JHC (PSDB): “Eleição acabou”, segundo a Gazeta de Alagoas. JHC pediu que o governo evite novas despesas, nomeações e empréstimos durante a transição e indicou o ex-presidente do Iplam para a equipe. Dantas também reagiu a decisão sobre a Arsal e sustentou a legalidade da escolha de Otávio Lessa para comandar a agência reguladora.",
+ "fundo": [
+  [
+   "p",
+   "A matéria sobre a transição e as manchetes da Gazeta de Alagoas não detalham o conteúdo da decisão sobre a Arsal nem o valor de eventuais empréstimos. A Itatiaia registrou que o vice de Flávio Bolsonaro, sem mandato em 2027, mira a Prefeitura de Maceió em 2028. O PSDB de Aécio Neves quer usar o governo de Alagoas como vitrine para 2028."
+  ]
+ ],
+ "fontes": [
+  [
+   "Gazeta de Alagoas (transição)",
+   "https://www.gazetaweb.com/noticias/politica/paulo-dantas-abre-transicao-e-defende-dialogo-com-jhc-eleicao-acabou-946821"
+  ],
+  [
+   "Gazeta de Alagoas (JHC)",
+   "https://www.gazetaweb.com/noticias/politica/jhc-pede-que-governo-de-al-evite-novas-despesas-nomeacoes-e-emprestimos-durante-transicao-945970"
+  ],
+  [
+   "Gazeta de Alagoas (Arsal)",
+   "https://www.gazetaweb.com/noticias/politica/paulo-dantas-reage-a-decisao-sobre-arsal-e-sustenta-legalidade-da-escolha-de-otavio-lessa-946826"
+  ]
+ ],
+ "reg": "ne"
+};
+
+S.sc_alesc = {
+ "ed": "regioes",
+ "k": "Regiões · Sul · Santa Catarina",
+ "hora": "4/11",
+ "t": "Na Alesc, Mesa Diretora está “praticamente definida” e traições eleitorais seguem na memória",
+ "sub": "Deputados discutiram pauta final da legislatura. Dr. Vicente Caropreso defende destinar emendas a entidades de pessoas com deficiência.",
+ "resumo": "Na conversa informal que encerrou a sessão da terça (3), deputados da Assembleia Legislativa de Santa Catarina trataram da pauta final da legislatura e do resultado das urnas, segundo o ND Mais. A composição da Mesa Diretora está “praticamente definida”. O deputado Dr. Vicente Caropreso (União Brasil) defendeu destinar parte das emendas impositivas a instituições que atendem pessoas com deficiência e autismo e punir gestores que deixam de executar recursos para obras e serviços.",
+ "fundo": [
+  [
+   "p",
+   "Segundo a reportagem, há deputados cobrando explicações, outros fazendo contas e alguns insatisfeitos com traições eleitorais. A “ressaca eleitoral” deve durar mais algumas sessões. O ND Mais cita, em link relacionado, um acordo entre o governador Jorginho Mello (PL), reeleito, e a bancada do PL para o comando da Casa, sem detalhar o conteúdo."
+  ]
+ ],
+ "fontes": [
+  [
+   "ND Mais",
+   "https://ndmais.com.br/politica/roda-de-conversa-na-alesc-tem-projetos-na-pauta-e-traicoes-eleitorais-ainda-na-memoria/"
+  ]
+ ],
+ "reg": "sul"
+};
+
+S.pr_cwb = {
+ "ed": "regioes",
+ "k": "Regiões · Sul · Paraná",
+ "hora": "4/11",
+ "t": "Curitiba começa a transição da Guarda Municipal para Polícia Municipal, um dia após a PEC no Senado",
+ "sub": "Prefeitura de Eduardo Pimentel inicia estudos técnicos e jurídicos; não há prazo.",
+ "resumo": "A Prefeitura de Curitiba, comandada por Eduardo Pimentel, determinou o início da transição da Guarda Municipal para Polícia Municipal, um dia depois de o Senado aprovar a PEC da Segurança Pública. A Secretaria de Defesa Social e Trânsito conduzirá o planejamento, com estudos técnicos, jurídicos e administrativos para adequar a corporação às regras da PEC. Não há prazo, e a mudança depende da promulgação do texto.",
+ "fundo": [
+  [
+   "p",
+   "Segundo a Gazeta do Povo, até lá a Guarda mantém suas atribuições. O governo estadual, segundo a mesma publicação, planeja criar um parque estadual na região de praias de água doce do Rio Paraná, e a Ponte da Integração, na fronteira, tem novas regras de travessia de veículos. Em São Paulo, Ricardo Nunes propõe mudança semelhante para a GCM, segundo o Metrópoles."
+  ]
+ ],
+ "fontes": [
+  [
+   "Gazeta do Povo",
+   "https://www.gazetadopovo.com.br/parana/curitiba-inicia-transicao-da-guarda-municipal-para-policia-municipal/"
+  ]
+ ],
+ "reg": "sul"
+};
+
+S.rs_zucco = {
+ "ed": "regioes",
+ "k": "Regiões · Sul · Rio Grande do Sul",
+ "hora": "2/11",
+ "t": "Schirmer, do MDB, defende união de partidos no governo Zucco e vê “consagração” do centro-direita",
+ "sub": "Secretário de Porto Alegre coordenou a campanha do governador eleito mesmo com o MDB tendo candidato próprio.",
+ "resumo": "O secretário municipal de Planejamento e Gestão de Porto Alegre, Cezar Schirmer, hoje afastado do MDB, defende a união de vários partidos em torno do governo de Luciano Zucco (PL), eleito governador do Rio Grande do Sul. Schirmer coordenou a campanha de Zucco, mesmo com o MDB tendo lançado o vice-governador Gabriel Souza ao governo. Ele classificou a eleição como “consagradora” para o centro-direita.",
+ "fundo": [
+  [
+   "p",
+   "O texto do Jornal do Comércio está disponível apenas para assinantes, e só a introdução pôde ser lida, sem detalhes sobre os partidos ou as ações previstas. Em outubro, segundo o mesmo jornal, Zucco reuniu-se com os governadores eleitos do Sul, Jorginho Mello (SC) e Sergio Moro (PR), todos do PL, para debater pautas conjuntas da região."
+  ]
+ ],
+ "fontes": [
+  [
+   "Jornal do Comércio",
+   "https://www.jornaldocomercio.com/politica/2026/11/1268931-schirmer-defende-uniao-de-partidos-no-governo-zucco.html"
+  ],
+  [
+   "Jornal do Comércio (reunião)",
+   "https://www.jornaldocomercio.com/politica/2026/10/1266277-zucco-se-reune-com-governadores-eleitos-no-sul-para-articular-acoes-conjuntas.html"
+  ]
+ ],
+ "reg": "sul"
+};
+
+S.pa_parau = {
+ "ed": "regioes",
+ "k": "Regiões · Norte · Pará",
+ "hora": "3/11",
+ "t": "Câmara de Parauapebas aprova três denúncias contra o prefeito Aurélio Goiano, por 8 votos a 7",
+ "sub": "Comissões processantes terão 90 dias. Recebimento não significa cassação.",
+ "resumo": "A Câmara Municipal de Parauapebas (PA) aceitou três denúncias por supostas infrações político-administrativas contra o prefeito Aurélio Goiano. Cada denúncia foi aprovada por 8 votos a 7. Os vereadores já haviam analisado as matérias em agosto, mas decisão judicial de 28 de outubro anulou o recebimento anterior por questões procedimentais, sem julgar o mérito.",
+ "fundo": [
+  [
+   "p",
+   "Segundo O Liberal, as denúncias tratam de suposto racismo religioso, ligado a declarações sobre religiões de matriz africana; suposta omissão em responder pedidos de informação de vereadores; e suposta falta de publicação, no Diário Oficial Eletrônico, de decretos de crédito suplementar. Três comissões processantes vão instruir os processos e elaborar relatórios para o plenário, com prazo legal de 90 dias a partir da notificação do prefeito. A Prefeitura não respondeu ao pedido de manifestação até a publicação."
+  ]
+ ],
+ "fontes": [
+  [
+   "O Liberal",
+   "https://www.oliberal.com/politica/camara-de-parauapebas-aprova-tres-denuncias-contra-aurelio-goiano-1.1189983"
+  ]
+ ],
+ "reg": "norte"
+};
+
+S.ms_assoma = {
+ "ed": "regioes",
+ "k": "Regiões · Centro-Oeste · Mato Grosso do Sul",
+ "hora": "4/11",
+ "t": "Assomasul gastou R$ 596,6 mil com restaurantes e viagens no primeiro semestre, mostra levantamento",
+ "sub": "Entidade diz que as despesas são institucionais e constam de prestação de contas aprovada em assembleia.",
+ "resumo": "A Associação dos Municípios de Mato Grosso do Sul gastou R$ 596,6 mil com restaurantes, viagens e representações entre janeiro e junho de 2026, segundo levantamento do Correio do Estado. Com passagens da Marcha a Brasília e veículos, o total chega a R$ 896,6 mil. A Assomasul diz que os gastos são institucionais. O presidente, Thalles Tomazelli (PL), não quis comentar.",
+ "fundo": [
+  [
+   "p",
+   "Segundo o levantamento, R$ 159,1 mil foram para restaurantes e churrascarias, e R$ 437,5 mil para viagens e representações, dos quais R$ 424,5 mil em passagens aéreas. A receita total foi de R$ 11,17 milhões, com repasses de prefeituras de R$ 3,62 milhões, cerca de 32%. A despesa foi de R$ 10,67 milhões, com superávit de R$ 503 mil. A entidade afirma que as despesas ligam-se a reuniões com gestores e parlamentares e que as contas foram aprovadas pela Assembleia Geral; não apresentou a lista de beneficiários das viagens."
+  ]
+ ],
+ "fontes": [
+  [
+   "Correio do Estado",
+   "https://correiodoestado.com.br/politica/2026/11/04/bancada-por-prefeituras-assomasul-gasta-r-5966-mil-apenas-com-restaurantes-e-viagens.html"
+  ]
+ ],
+ "reg": "co"
+};
+
+S.ms_senado = {
+ "ed": "regioes",
+ "k": "Regiões · Centro-Oeste · Mato Grosso do Sul",
+ "hora": "4/11",
+ "t": "Azambuja, senador eleito pelo PL, e Nelsinho Trad, seu suplente, alinham atuação e debatem saúde em MS",
+ "sub": "Telemedicina e demandas dos municípios, como UTI móvel para Figueirão, foram pauta do encontro.",
+ "resumo": "O senador Nelsinho Trad (PSD) recebeu em seu gabinete o senador eleito Reinaldo Azambuja (PL) para tratar das prioridades de Mato Grosso do Sul e das demandas dos municípios. Saúde foi tema central, com destaque para a telemedicina e o pedido de Figueirão por uma UTI móvel. Azambuja assume o mandato como titular em fevereiro, e Nelsinho, que é seu primeiro suplente, voltará à suplência.",
+ "fundo": [
+  [
+   "p",
+   "Segundo o Correio do Estado, os dois falaram sobre atuação conjunta no Senado. Não foram informados valores, fontes de recursos nem prazos para atender a demanda de Figueirão. No mesmo dia, o jornal registrou a fala de Rogério Marinho sobre a disputa pela presidência do Senado, em que a senadora Tereza Cristina (PP-MS) também aparece como possível candidata."
+  ]
+ ],
+ "fontes": [
+  [
+   "Correio do Estado",
+   "https://correiodoestado.com.br/politica/2026/11/04/nelsinho-e-azambuja-alinham-atuacao-no-senado-e-debatem-saude-em-ms.html"
+  ]
+ ],
+ "reg": "co"
+};
+
+S.eua_pioneiros = {
+ "ed": "mundo",
+ "k": "Mundo",
+ "hora": "4/11",
+ "t": "Democratas elegem governadoras indígena e negra e senadores gay e muçulmano nos EUA",
+ "sub": "Midterms de 3 de novembro deram aos democratas a maioria na Câmara e no Senado. Brasileiro é eleito deputado estadual na Flórida.",
+ "resumo": "Os democratas conquistaram a maioria na Câmara dos Representantes e no Senado nas eleições de meio de mandato de terça (3), segundo o Congresso em Foco. A reportagem destaca vitórias inéditas: Keisha Lance Bottoms, primeira governadora negra, na Geórgia; Deb Haaland, primeira governadora indígena, no Novo México; Abdul El-Sayed, primeiro senador muçulmano, em Michigan; e Chris Pappas, primeiro senador abertamente gay, em New Hampshire.",
+ "fundo": [
+  [
+   "p",
+   "Entre os republicanos, Byron Donalds venceu na Flórida e será o primeiro governador negro do estado, e Marsha Blackburn será a primeira mulher a governar o Tennessee. No Texas, Gina Hinojosa (D) derrotou Greg Abbott (R) e será a primeira governadora latina do estado; o democrata James Talarico encerrou jejum de décadas no Senado pelo Texas, segundo o DGABC. Em Ohio, Amy Acton (D) derrotou Vivek Ramaswamy (R). Em Minnesota, Peggy Flanagan (D) será a primeira mulher indígena no Senado. Hakeem Jeffries pode se tornar presidente da Câmara em janeiro, se escolhido internamente."
+  ],
+  [
+   "p",
+   "Segundo o Poder360, Donald Trump reconheceu a vitória dos democratas e disse que “fizeram um bom trabalho”, depois de postar um boné com a palavra “veto”. O Brasil 247 destaca o peso da guerra contra o Irã na derrota. O brasileiro Felipe Sousa-Lazaballet foi eleito deputado estadual na Flórida depois de viver 15 anos sem documentos, e é filho de empregada doméstica cearense, segundo O Povo."
+  ]
+ ],
+ "fontes": [
+  [
+   "Congresso em Foco",
+   "https://www.congressoemfoco.com.br/noticia/131285/eua-elegem-governadoras-indigena-e-negra-e-senadores-gay-e-muculmano"
+  ]
+ ]
+};
+
 var HOME_LEAD = 'fuga';
-var HOME_ROW  = ['congresso','ministerio','imprensa'];
+var HOME_ROW  = ['maioridade','vorcaro','seis1x1'];
 var ORDER = {
- politica: ['fuga','flavio','congresso','senado','ldo','ministerio','pec','pronunciamento','desinfo','bets'],
- economia: ['copom','fiscal','seletivo'],
- regioes:  ['paes','sp','mg','ne','sul','norte','co','transicao','guandu','novoguandu','pj','prefeitura','light','reis'],
- mundo:    ['imprensa','eua','argentina']
+ politica: ['fuga','maioridade','vorcaro','darkhorse','seis1x1','marinho','flavio','congresso','senado','tse','pauta5','segmin','ldo','ministerio','pronunciamento','assedio','desinfo','meta','bets','lulasaude','psdb'],
+ economia: ['orcamento','copom','fiscal','seletivo','betsaud'],
+ regioes:  ['paes','sp','sp_barba','mg','mg_tce','mg_china','mg_ipva','ne','ce_mpe','ce_gastos','pe_emprestimo','ba_jeronimo','ba_blocos','ma_tce','al_trans','sul','sc_alesc','pr_cwb','rs_zucco','norte','pa_parau','co','ms_assoma','ms_senado','transicao','guandu','novoguandu','pj','prefeitura','light','reis'],
+ mundo:    ['eua_pioneiros','imprensa','eua','argentina']
 };
 /* Notas curtas de fonte externa: [título, url, fonte] */
 var BRIEFS = {
@@ -600,10 +1468,19 @@ var GIRO = [
  ['PSB e a reeleição de Alcolumbre','O PSB abriu diálogo com Alcolumbre sobre apoio à reeleição no Senado, afirma Renato Casagrande.','Brasil 247','https://www.brasil247.com/brasil/psb-abre-dialogo-com-alcolumbre-sobre-apoio-a-reeleicao-no-senado-afirma-casagrande/','','senado'],
  ['Edinho e o centrão','Lula delegou a Edinho Silva o contato com o centrão, a começar pelo MDB. O presidente do PT também busca União Brasil e PP.','Blog do Magno','https://blogdomagno.com.br/lula-delega-contato-com-centrao-a-edinho-que-inicia-conversas-pelo-mdb','O governo precisa formar base no Congresso para os próximos quatro anos. Segundo as reportagens, a interlocução com o centrão começa pelo MDB e passa por União Brasil e PP, que formam a federação União Progressista, hoje alinhada a Alcolumbre na disputa pelo Senado.','congresso'],
  ['Marinho e a Câmara','O PL colocou Rogério Marinho (PL-RN) na disputa pelo Senado e se divide sobre lançar candidato na Câmara, segundo o g1.','g1','https://g1.globo.com/politica/noticia/2026/11/04/com-marinho-na-disputa-a-presidencia-do-senado-pl-se-divide-sobre-lancar-nome-para-camara.ghtml','','congresso'],
- ['Polícia municipal','Ricardo Nunes aproveita a PEC da Segurança para renomear a GCM de São Paulo como Polícia Municipal, e um projeto em Belo Horizonte propõe o mesmo para a Guarda.','Metrópoles','','','pec'],
+ ['Polícia municipal','Ricardo Nunes aproveita a PEC da Segurança para renomear a GCM de São Paulo como Polícia Municipal, e um projeto em Belo Horizonte propõe o mesmo para a Guarda.','Metrópoles','','','segmin'],
  ['Emprego','O Caged contabilizou 121 mil vagas formais em setembro, segundo o Metrópoles.','Metrópoles','','O mercado de trabalho segue resiliente, mas com sinais de desaquecimento na margem, segundo o comunicado do Copom desta quarta.','copom'],
  ['Meta e os EUA','Bernie Sanders e outros 12 deputados americanos cobram a Meta por tratamento desigual a Lula, segundo a Agência Pública.','Agência Pública','https://apublica.org/2026/10/parlamentares-dos-eua-cobram-meta-por-tratamento-desigual-a-lula/','','desinfo'],
- ['Cleitinho e o TCE','O Tribunal de Contas de Minas suspendeu R$ 32 milhões em patrocínios a clubes mineiros depois de ação do senador Cleitinho, segundo o Brasil 247.','Brasil 247','https://www.brasil247.com/sudeste/tce-suspende-r-32-milhoes-em-patrocinios-a-clubes-de-minas-apos-acao-de-cleitinho/','','mg']
+ ['Cleitinho e o TCE','O Tribunal de Contas de Minas suspendeu R$ 32 milhões em patrocínios a clubes mineiros depois de ação do governador eleito Cleitinho, segundo o Brasil 247.','Brasil 247','https://www.brasil247.com/sudeste/tce-suspende-r-32-milhoes-em-patrocinios-a-clubes-de-minas-apos-acao-de-cleitinho/','','mg'],
+ ["Drones sobre presídios", "A Câmara aprovou pena de 1 a 5 anos de prisão para quem usar drones sobre presídios; o texto segue ao Senado.", "Congresso em Foco", "https://www.congressoemfoco.com.br/noticia/131313/camara-aprova-pena-de-prisao-para-uso-de-drones-sobre-presidios", "O PL 5.902/2023, de Kim Kataguiri, teve relatoria de Nikolas Ferreira e foi aprovado em votação simbólica. Segundo a reportagem, houve mais de 700 ocorrências em 20 estados desde 2018.", "segmin"],
+ ["Topless no STF", "Em voto no RE 1093553, Mendonça cita projetos de lei sobre topless para sustentar que o ato obsceno segue proibido.", "Congresso em Foco", "https://www.congressoemfoco.com.br/noticia/131319/projetos-sobre-topless-reforcam-proibicao-de-ato-obsceno-diz-mendonca", "", ""],
+ ["Magno Malta e Bolsonaro", "O senador Magno Malta pediu a Moraes autorização para orar por Bolsonaro, Braga Netto e Heleno.", "O Tempo", "https://www.otempo.com.br/politica/judiciario/2026/11/4/magno-malta-pede-autorizacao-a-moraes-para-orar-por-bolsonaro-braga-netto-e-heleno", "", ""],
+ ["Zambelli", "A comunidade paga criada por Carla Zambelli para se manter na Itália foi cancelada, segundo a Folha de Pernambuco.", "Folha de Pernambuco", "https://www.folhape.com.br/politica/comunidade-paga-criada-por-zambelli-para-se-manter-na-italia-e/522459/", "", ""],
+ ["Posse de Lula", "A posse de Lula para o novo mandato será em 5 de janeiro, informa a Agência Brasil.", "Agência Brasil", "https://agenciabrasil.ebc.com.br/politica/noticia/2026-10/posse-de-lula-sera-em-5-de-janeiro", "", ""],
+ ["CPI das big techs", "O deputado Amom (AM) afirmou que assinará a CPI para investigar a atuação das big techs nas eleições.", "A Crítica", "https://www.acritica.com/politica/amom-afirma-que-assinara-cpi-para-investigar-atuacao-das-big-techs-nas-eleicoes/", "", ""],
+ ["Transição no Amazonas", "Omar Aziz e Roberto Cidade iniciaram a transição de governo no Amazonas.", "A Crítica", "https://www.acritica.com/politica/omar-aziz-e-roberto-cidade-iniciam-transicao-de-governo-no-amazonas/", "", ""],
+ ["Senadores do MA e a PEC", "Senadores do Maranhão apoiam a PEC da Segurança e assinam proposta sobre maioridade penal.", "O Imparcial", "https://oimparcial.com.br/politica/2026/11/senadores-do-maranhao-apoiam-pec-da-seguranca-e-assinam-proposta-sobre-maioridade-penal/", "", "segmin"],
+ ["Fora da Câmara de Salvador", "Carlos Muniz deixa a presidência da Câmara de Salvador e deve atuar nos bastidores do mandato do filho.", "Bahia Notícias", "https://www.bahianoticias.com.br/noticia/323159-fora-da-presidencia-da-camara-muniz-deve-atuar-nos-bastidores-do-mandato-do-filho-e-mira-comando-de-partido-entenda", "", ""]
 ];
 
 /* Em debate nas redes: só com link. [título, texto, url, id relacionado] */
