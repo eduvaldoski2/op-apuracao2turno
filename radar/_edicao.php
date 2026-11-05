@@ -1,6 +1,6 @@
 <?php if (!defined('RADAR_OK')) { http_response_code(404); exit; } ?>
 /* ===== DADOS DA EDIÇÃO (trocar este bloco a cada atualização) ===== */
-var EDICAO = {hora:'11h', data:'Quinta, 05 de novembro de 2026'};
+var EDICAO = {hora:'13h', data:'Quinta, 05 de novembro de 2026'};
 var ED = [
  {id:'politica', nome:'Política'},
  {id:'economia', nome:'Economia'},
@@ -1452,13 +1452,299 @@ S.tarifas = {ed:'mundo', k:'Mundo', hora:'4/11',
   ['p','A reportagem lembra que, em 30 de setembro, o chanceler Mauro Vieira e Elias Rosa se reuniram com o representante comercial americano, Jamieson Greer, em encontro do G20 em Milwaukee, e os dois países concordaram em criar um grupo de trabalho sobre barreiras tarifárias e não tarifárias. A professora Ana Carolina Marson, da FESPSP, avalia que pode haver melhora nas relações, mas "não significa uma mudança completa".']],
  fontes:[['InfoMoney (Marina Verenicz)','https://infomoney.com.br/politica/derrota-de-trump-no-congresso-pode-abrir-espaco-para-brasil-negociar-tarifas']]};
 
+
+/* ---------- EDIÇÃO EXTRA 13h ---------- */
+S.industria = {
+ "ed": "economia",
+ "k": "Economia",
+ "hora": "5/11",
+ "t": "Produção industrial cai 0,8% em setembro, a quarta queda em cinco meses",
+ "sub": "Dado do IBGE mostra recuo em 17 dos 25 ramos. Derivados de petróleo e alimentos puxam a queda.",
+ "dado": {
+  "n": "−0,8%",
+  "l": "Produção industrial em setembro frente a agosto · IBGE"
+ },
+ "resumo": "A produção industrial brasileira recuou 0,8% em setembro na comparação com agosto, segundo a Pesquisa Industrial Mensal do IBGE divulgada nesta quinta (5). É a quarta queda em cinco meses. Em relação a setembro de 2025, a queda é de 2,5%, e no terceiro trimestre o acumulado é de −1,4%. Três das quatro grandes categorias e 17 dos 25 ramos pesquisados tiveram resultado negativo.",
+ "fundo": [
+  [
+   "p",
+   "A indústria brasileira produziu 0,8% menos em setembro do que em agosto, informou o IBGE nesta quinta-feira (5), segundo o Metrópoles. O resultado se soma a uma sequência de oscilações: maio (−0,2%), junho (−1,8%), julho (+0,2%) e agosto (−0,6%, dado anterior), o que faz de setembro a quarta queda em cinco meses."
+  ],
+  [
+   "nums",
+   [
+    [
+     "−0,8%",
+     "produção industrial em setembro, frente a agosto"
+    ],
+    [
+     "−2,5%",
+     "frente a setembro de 2025"
+    ],
+    [
+     "−1,4%",
+     "acumulado do terceiro trimestre contra o mesmo período do ano anterior"
+    ],
+    [
+     "17 de 25",
+     "ramos pesquisados com queda"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Onde caiu e onde subiu"
+  ],
+  [
+   "p",
+   "A maior queda foi de coque, derivados do petróleo e biocombustíveis (−4,2%). Também recuaram produtos alimentícios (−1,7%) e veículos, reboques e carrocerias (−1,2%). Entre as altas, aparecem produtos do fumo (+20,3%), indústrias extrativas (+1,7%) e produtos químicos (+1,7%)."
+  ],
+  [
+   "h",
+   "Por que importa agora"
+  ],
+  [
+   "p",
+   "O dado chega um dia depois de o Copom manter a Selic em 13,75%, decisão que entidades da indústria criticaram. O comunicado do comitê já apontava desaceleração mais acentuada da atividade doméstica."
+  ]
+ ],
+ "fontes": [
+  [
+   "Metrópoles (IBGE)",
+   "https://www.metropoles.com/brasil/producao-industrial-recua-08-em-setembro-diz-ibge"
+  ]
+ ]
+};
+
+S.durigan = {
+ "ed": "economia",
+ "k": "Economia",
+ "hora": "5/11",
+ "t": "Durigan diz que ajustes no Orçamento só seguem a Lula depois da viagem à COP31",
+ "sub": "Fazenda discute ampliar a parcela do Orçamento sujeita a contingenciamento, o que depende do Congresso. Superávit de setembro foi de R$ 4,8 bilhões.",
+ "dado": {
+  "n": "R$ 4,84 bi",
+  "l": "Superávit primário de setembro · a Fazenda esperava déficit de R$ 7,5 bi"
+ },
+ "resumo": "O ministro da Fazenda, Dario Durigan, afirmou nesta quinta (5) que enviará ao presidente Lula os ajustes no Orçamento depois da viagem à COP31, em Antalya, na Turquia, prevista para a próxima semana. A equipe econômica discute ampliar a parcela do Orçamento sujeita a contingenciamento, o que exige aprovação do Congresso. O governo registrou superávit de R$ 4,839 bilhões em setembro.",
+ "fundo": [
+  [
+   "p",
+   "Durigan disse que conversa diariamente com Lula, mas que não haverá novidades nos próximos dias. “Acho que quando o presidente voltar da viagem dele, a gente deve ter mais informações”, afirmou, segundo o Metrópoles, em texto publicado às 10h16."
+  ],
+  [
+   "h",
+   "Medidas em discussão"
+  ],
+  [
+   "p",
+   "Entre as ideias da equipe econômica está ampliar a parcela do Orçamento sujeita a contingenciamento. A mudança depende de aprovação do Congresso Nacional."
+  ],
+  [
+   "h",
+   "Resultado de setembro e juros"
+  ],
+  [
+   "p",
+   "O governo registrou superávit de R$ 4,839 bilhões em setembro, contra déficit de R$ 14,4 bilhões no mesmo mês de 2025, em valores correntes. A Fazenda esperava déficit de R$ 7,5 bilhões. Durigan reconheceu que o déficit acumulado ainda é alto, atribuiu-o ao governo anterior e disse que a gestão atual busca superávit a partir do próximo ano."
+  ],
+  [
+   "p",
+   "Sobre o Copom, que interrompeu cinco cortes seguidos e manteve a Selic em 13,75%, o ministro afirmou que o governo precisa criar condições para que os juros caiam de forma sustentável e estrutural."
+  ]
+ ],
+ "fontes": [
+  [
+   "Metrópoles (Durigan)",
+   "https://www.metropoles.com/brasil/durigan-diz-que-enviara-ajustes-no-orcamento-apos-viagem-de-lula-a-cop31"
+  ]
+ ]
+};
+
+S.ato_obsceno = {
+ "ed": "politica",
+ "k": "Política",
+ "hora": "5/11",
+ "t": "STF forma cinco votos para manter o crime de ato obsceno, com ressalvas à punição",
+ "sub": "Ministros propõem excluir manifestações culturais e artísticas e limitar o crime a condutas de conotação sexual. Julgamento foi suspenso.",
+ "dado": {
+  "n": "5 votos",
+  "l": "Pela validade do art. 233 do Código Penal · faltam 5 ministros"
+ },
+ "resumo": "O STF reuniu na quarta (4) cinco votos pela validade do crime de ato obsceno (art. 233 do Código Penal), mas com ressalvas: Fux, relator, Dino, Zanin, Mendonça e Nunes Marques aceitam a norma, e parte deles quer excluir manifestações culturais e artísticas, como a nudez no Carnaval. O julgamento, com repercussão geral, foi suspenso sem data para retomar.",
+ "fundo": [
+  [
+   "p",
+   "O Supremo analisa a constitucionalidade do crime de ato obsceno, previsto no artigo 233 do Código Penal, com pena de detenção de três meses a um ano ou multa. Votaram pela validade da norma o relator Luiz Fux, Flávio Dino, Cristiano Zanin, André Mendonça e Kassio Nunes Marques, segundo a CNN Brasil."
+  ],
+  [
+   "h",
+   "As ressalvas"
+  ],
+  [
+   "p",
+   "Dino e Zanin defenderam excluir expressamente manifestações culturais e artísticas, como a nudez no Carnaval. Zanin também quis deixar claro que a norma vale só para condutas de conotação sexual, e ele e Mendonça criticaram o uso do padrão local como critério, defendendo que prevaleça o contexto da conduta."
+  ],
+  [
+   "p",
+   "Para Fux, a expressão deve ser interpretada conforme os costumes e o padrão de pudor de cada época e lugar. Ele disse que manifestações políticas, artísticas ou literárias podem ultrapassar a liberdade de expressão quando há exposição obscena em local público sem proteção a crianças e adolescentes."
+  ],
+  [
+   "h",
+   "O que falta"
+  ],
+  [
+   "p",
+   "Faltam os votos de Dias Toffoli, Gilmar Mendes, Alexandre de Moraes, Edson Fachin e Cármen Lúcia, em data não definida. Como o caso tem repercussão geral, a tese fixada valerá para processos semelhantes em todo o país. A Cladem, admitida como amicus curiae, defendeu a inconstitucionalidade e pediu que protestos fiquem fora da punição."
+  ]
+ ],
+ "fontes": [
+  [
+   "CNN Brasil (STF e ato obsceno)",
+   "https://www.cnnbrasil.com.br/politica/stf-tem-5-votos-para-manter-crime-de-ato-obsceno-com-ressalvas-a-punicao/"
+  ]
+ ]
+};
+
+S.oea = {
+ "ed": "politica",
+ "k": "Política",
+ "hora": "5/11",
+ "t": "Brasil leva à OEA o debate sobre interferência estrangeira em eleições; EUA se opõem a regulação",
+ "sub": "Conselho Permanente incluiu o tema na pauta a pedido do governo. Uruguai, México e Canadá se mostraram abertos a discutir regras.",
+ "resumo": "A OEA incluiu na reunião do Conselho Permanente desta quarta (4) o tema da interferência estrangeira nas eleições, a pedido do Brasil. A secretária nacional de Justiça, Maria Rosa Loula, defendeu cooperação contra a manipulação estrangeira de informação. O representante dos EUA disse que governos autoritários usam a desinformação como pretexto para censura e rejeitou regulação com alcance extraterritorial.",
+ "fundo": [
+  [
+   "p",
+   "Em vídeo exibido na sessão, a secretária nacional de Justiça, Maria Rosa Loula, afirmou que o problema vai além de notícias falsas e defendeu que a OEA enfrente a Interferência e Manipulação Estrangeira de Informação (FIMI). O embaixador Benoni Belli, representante do Brasil, pediu a exibição do vídeo, segundo a CNN Brasil."
+  ],
+  [
+   "p",
+   "As propostas brasileiras incluem troca de alertas entre países, rastreamento transnacional de operações coordenadas, preservação de provas digitais e criação de pontos de contato entre autoridades."
+  ],
+  [
+   "h",
+   "Casos citados"
+  ],
+  [
+   "p",
+   "O Brasil mencionou o inquérito aberto pelo STF em 27 de outubro sobre manipulações algorítmicas, o relato de nove organizações sobre o bloqueio de cerca de 30 perfis jornalísticos no Instagram e a decisão do TSE por tratamento igualitário entre candidaturas depois de a Meta AI gerar propaganda para apenas uma delas no segundo turno."
+  ],
+  [
+   "h",
+   "Reações"
+  ],
+  [
+   "p",
+   "O representante dos EUA defendeu a liberdade de expressão, disse que informação e financiamento externos, por si só, não configuram interferência e se opôs a regulação extraterritorial. Uruguai, México e Canadá reconheceram a importância do debate e se disseram abertos a discutir regras."
+  ]
+ ],
+ "fontes": [
+  [
+   "CNN Brasil (OEA)",
+   "https://www.cnnbrasil.com.br/politica/brasil-leva-a-oea-debate-sobre-interferencia-estrangeira-nas-eleicoes/"
+  ]
+ ]
+};
+
+S.g20_trump = {
+ "ed": "mundo",
+ "k": "Mundo",
+ "hora": "5/11",
+ "t": "Governo espera reunião de Lula com Trump à margem do G20, em Miami, em dezembro",
+ "sub": "Nenhum dos lados fez pedido formal. Brasil avalia dar agrément a Daniel Perez, indicado por Trump para embaixador.",
+ "resumo": "Integrantes do governo Lula esperam uma reunião bilateral com Donald Trump ainda neste ano, à margem da cúpula do G20, marcada para 14 e 15 de dezembro em Miami, segundo a CNN Brasil. Ninguém pediu formalmente o encontro, e Trump ainda não reconheceu nem parabenizou a vitória de Lula. O Brasil avalia conceder agrément a Daniel Perez, indicado para embaixador dos EUA.",
+ "fundo": [
+  [
+   "p",
+   "A expectativa surgiu depois que Trump disse publicamente que falaria com Lula, ao ser questionado sobre a vitória eleitoral do brasileiro, segundo apuração da âncora Débora Bergamasco no CNN 360º. O governo brasileiro considera cedo formalizar o pedido, mas pode tomar a iniciativa se não houver sinal do lado americano."
+  ],
+  [
+   "p",
+   "Em paralelo, o Brasil avalia conceder neste ano o agrément a Daniel Perez, indicado por Trump para a embaixada em Brasília, como gesto de aproximação. A embaixada americana está sem embaixador desde o início do governo Trump, e a indicação ficou pendente depois de ser considerada mal conduzida pelo lado brasileiro."
+  ]
+ ],
+ "fontes": [
+  [
+   "CNN Brasil (Lula e Trump)",
+   "https://www.cnnbrasil.com.br/politica/lula-espera-ter-reuniao-bilateral-com-trump-durante-cupula-do-g20/"
+  ]
+ ]
+};
+
+S.sc_tornados = {
+ "ed": "regioes",
+ "reg": "sul",
+ "k": "Regiões · Sul",
+ "hora": "5/11",
+ "t": "Tornados e ventos de 126 km/h atingem 106 municípios de Santa Catarina e deixam 2 mortos",
+ "sub": "23 cidades decretaram emergência. Aeroporto de Chapecó teve parte da estrutura destruída e está fechado.",
+ "dado": {
+  "n": "5.358",
+  "l": "Residências com danos em Santa Catarina · Defesa Civil"
+ },
+ "resumo": "Dois tornados atingiram o oeste de Santa Catarina na quarta (4), em Chapecó e Xanxerê, com rajadas de até 126 km/h. Segundo a Defesa Civil, 106 municípios foram afetados, 23 decretaram emergência, 5.358 residências tiveram danos e há 2 mortos. Em Chapecó, cerca de 2.400 casas e indústrias perderam parte do telhado, e o aeroporto suspendeu pousos e decolagens.",
+ "fundo": [
+  [
+   "p",
+   "O primeiro tornado ocorreu em Chapecó, por volta das 10h30, e o segundo em Xanxerê, às 10h48, segundo o Metrópoles. Uma das mortes foi em Rio Negrinho, onde a estrutura de um posto de combustível desabou; a vítima foi identificada como Jonathan Oliveira da Cruz, de 20 anos. A segunda morte foi divulgada pela Defesa Civil sem detalhes."
+  ],
+  [
+   "nums",
+   [
+    [
+     "106",
+     "municípios afetados"
+    ],
+    [
+     "23",
+     "decretaram situação de emergência"
+    ],
+    [
+     "56 e 252",
+     "pessoas desabrigadas e desalojadas"
+    ],
+    [
+     "200",
+     "ocorrências atendidas pelos Bombeiros"
+    ]
+   ]
+  ],
+  [
+   "p",
+   "O Aeroporto Serafim Enoss Bertaso, em Chapecó, teve parte da estrutura destruída, e as operações foram suspensas por tempo indeterminado."
+  ]
+ ],
+ "fontes": [
+  [
+   "Metrópoles (tornados em SC)",
+   "https://www.metropoles.com/brasil/tornados-e-ventos-de-126-km-h-afetam-106-municipios-e-deixam-2-mortos-em-sc"
+  ]
+ ]
+};
+
+S.seletivo.upd = "Detalhamento publicado nesta quinta: alíquotas de aeronaves, barcos e apostas, PEC para manter o IPI até 2 de fevereiro de 2027 e prazos da CBS.";
+S.seletivo.fundo.push(['h','Atualização das 13h'],['p',"Segundo o Metrópoles, o Imposto Seletivo começa a ser cobrado em 2 de fevereiro de 2027. A Fazenda enviou ao Congresso uma PEC que permite manter temporariamente o IPI nesses setores até a vigência do novo tributo, e a ideia é manter a carga em 2027 e debater a permanência em 2028. Outras alíquotas de 2027: aeronaves 6,8%, barcos a motor 12%, demais embarcações de recreio 7,8%, concursos de prognósticos e apostas 0,5%, vermutes 12% e demais destilados 24%. Bens minerais extraídos ficam em 0% até 31 de dezembro de 2027. A CBS começa em 1º de janeiro de 2027; o TCU propôs 11,3%, o governo estima cerca de 8,5%, e o Senado tem até 15 de dezembro para decidir."]);
+S.seletivo.fontes.push(["Metrópoles (transição do imposto do pecado)","https://www.metropoles.com/brasil/fazenda-reforca-transicao-para-setores-afetados-pelo-imposto-do-pecado"]);
+S.fiscal.upd = "Durigan afirmou nesta quinta que os ajustes no Orçamento só seguem a Lula depois da COP31, e o governo teve superávit de R$ 4,8 bi em setembro.";
+S.fiscal.fundo.push(['h','Atualização das 13h'],['p',"O ministro da Fazenda, Dario Durigan, disse nesta quinta que enviará ajustes no Orçamento depois da viagem de Lula à COP31, na Turquia. A equipe econômica discute ampliar a parcela sujeita a contingenciamento, o que depende do Congresso. O resultado primário de setembro foi superávit de R$ 4,839 bilhões, contra expectativa da Fazenda de déficit de R$ 7,5 bilhões."]);
+S.fiscal.fontes.push(["Metrópoles (Durigan)","https://www.metropoles.com/brasil/durigan-diz-que-enviara-ajustes-no-orcamento-apos-viagem-de-lula-a-cop31"]);
+S.orcamento.upd = "Durigan disse nesta quinta que ajustes no Orçamento seguem a Lula só depois da COP31 e que a Fazenda discute ampliar o contingenciamento.";
+S.orcamento.fundo.push(['h','Atualização das 13h'],['p',"Segundo o Metrópoles, o ministro da Fazenda, Dario Durigan, afirmou que enviará ajustes no Orçamento da União ao presidente depois da viagem à COP31, prevista para a próxima semana. Entre as medidas em discussão está ampliar a parcela do Orçamento sujeita a contingenciamento, o que depende de aprovação do Congresso."]);
+S.orcamento.fontes.push(["Metrópoles (Durigan)","https://www.metropoles.com/brasil/durigan-diz-que-enviara-ajustes-no-orcamento-apos-viagem-de-lula-a-cop31"]);
+S.copom.upd = "Produção industrial caiu 0,8% em setembro (IBGE) e Durigan comentou a pausa nos cortes: juros precisam cair de forma sustentável.";
+S.copom.fundo.push(['h','Atualização das 13h'],['p',"Na quinta, o IBGE informou que a produção industrial recuou 0,8% em setembro, a quarta queda em cinco meses, dado que reforça o diagnóstico de desaceleração citado pelo Copom. O ministro Dario Durigan disse que o governo precisa criar condições para que a Selic caia de forma sustentável e estrutural."]);
+S.copom.fontes.push(["Metrópoles (IBGE)","https://www.metropoles.com/brasil/producao-industrial-recua-08-em-setembro-diz-ibge"]);
+S.desinfo.upd = "Brasil levou o tema da interferência estrangeira à OEA na quarta (4), citando o inquérito do STF, os perfis bloqueados no Instagram e a decisão do TSE sobre a Meta AI.";
+S.desinfo.fundo.push(['h','Atualização das 13h'],['p',"O governo brasileiro levou ao Conselho Permanente da OEA o debate sobre interferência estrangeira em eleições e citou, entre os casos, a decisão do TSE por tratamento igualitário depois de a Meta AI gerar propaganda para apenas uma candidatura no segundo turno. Os EUA se opuseram a regulação com alcance extraterritorial."]);
+S.desinfo.fontes.push(["CNN Brasil (OEA)","https://www.cnnbrasil.com.br/politica/brasil-leva-a-oea-debate-sobre-interferencia-estrangeira-nas-eleicoes/"]);
 var HOME_LEAD = 'fuga';
-var HOME_ROW  = ['maioridade','vorcaro','seis1x1'];
+var HOME_ROW  = ['ato_obsceno','durigan','sc_tornados'];
 var ORDER = {
- politica: ['fuga','maioridade','vorcaro','darkhorse','seis1x1','marinho','flavio','congresso','senado','tse','pauta5','segmin','ldo','ministerio','pronunciamento','assedio','desinfo','meta','bets','lulasaude','psdb'],
- economia: ['orcamento','mei','copom','fiscal','seletivo','betsaud'],
- regioes:  ['paes','sp','sp_barba','mg','mg_tce','mg_china','mg_ipva','ne','ce_mpe','ce_gastos','pe_emprestimo','ba_jeronimo','ba_blocos','ma_tce','al_trans','sul','sc_alesc','pr_cwb','rs_zucco','norte','pa_parau','co','ms_assoma','ms_senado','guandu','novoguandu','pj','prefeitura','light','reis'],
- mundo:    ['tarifas','eua_pioneiros','imprensa','eua','argentina']
+ politica: ['fuga','ato_obsceno','oea','maioridade','vorcaro','darkhorse','seis1x1','marinho','flavio','congresso','senado','tse','pauta5','segmin','ldo','ministerio','pronunciamento','assedio','desinfo','meta','bets','lulasaude','psdb'],
+ economia: ['durigan','industria','orcamento','mei','copom','fiscal','seletivo','betsaud'],
+ regioes:  ['sc_tornados','paes','sp','sp_barba','mg','mg_tce','mg_china','mg_ipva','ne','ce_mpe','ce_gastos','pe_emprestimo','ba_jeronimo','ba_blocos','ma_tce','al_trans','sul','sc_alesc','pr_cwb','rs_zucco','norte','pa_parau','co','ms_assoma','ms_senado','guandu','novoguandu','pj','prefeitura','light','reis'],
+ mundo:    ['g20_trump','tarifas','eua_pioneiros','imprensa','eua','argentina']
 };
 /* Notas curtas de fonte externa: [título, url, fonte] */
 var BRIEFS = {
@@ -1471,9 +1757,12 @@ var BRIEFS = {
 /* Giro OP: só entram notas com caminho para aprofundar.
    [título, nota, fonte, url, detalhe (opcional), id da matéria relacionada (opcional)] */
 var GIRO = [
+ ['Pronunciamento de domingo','Lula prepara pronunciamento para domingo (8), em que deve defender responsabilidade fiscal, segundo o g1 reproduzido pelo Portal Viu.','Portal Viu (g1)','https://www.portalviu.com.br/economia/lula-deve-defender-responsabilidade-fiscal-e-manutencao-de-programas-sociais-em-pronunciamento','','pronunciamento'],
+ ['Embaixador dos EUA','O Brasil avalia conceder agrément a Daniel Perez, indicado por Trump, como gesto de aproximação, segundo a CNN Brasil.','CNN Brasil','https://www.cnnbrasil.com.br/politica/lula-espera-ter-reuniao-bilateral-com-trump-durante-cupula-do-g20/','A embaixada americana está sem embaixador desde o início do governo Trump.','g20_trump'],
+ ['Casagrande e Alckmin','Para Renato Casagrande, Geraldo Alckmin é apto para a Fazenda, mas a decisão exige avaliação política, segundo a CNN Brasil.','CNN Brasil','https://www.cnnbrasil.com.br/politica/casagrande-alckmin-e-apto-a-fazenda-mas-decisao-exige-avaliacao-politica/','',''],
+ ['COP31','Lula viaja na próxima semana à COP31, em Antalya, na Turquia, e os ajustes do Orçamento aguardam a volta, segundo o Metrópoles.','Metrópoles','https://www.metropoles.com/brasil/durigan-diz-que-enviara-ajustes-no-orcamento-apos-viagem-de-lula-a-cop31','','durigan'],
  ['Imposto Seletivo','O governo estima arrecadar R$ 41,9 bilhões em 2027 com o Imposto Seletivo, regulamentado por medida provisória assinada por Lula na quarta (4), segundo o WSCOM, que cita o g1.','WSCOM (g1)','https://wscom.com.br/destaque/destaque-especial/2026/11/05/imposto-do-pecado-arrecadacao-2027-produtos-tributados/','A cobrança começa em 2027, respeitada a noventena, e alcança bebidas alcoólicas e açucaradas, cigarros, veículos poluentes, extração mineral e apostas.','seletivo'],
  ['Live com Janones','Lula faz live às 19h desta quinta, no próprio canal no YouTube, com o deputado André Janones (Rede-MG), numa conversa sobre o resultado da eleição, segundo A Crítica de Campo Grande.','A Crítica (MS)','https://acritica.net/politica/lula-agenda-quinta-5-minerais-estrategicos-live-janones/','A agenda do dia traz ainda reunião com Sidônio Palmeira (Secom) às 9h e encontros com Miriam Belchior (Casa Civil) e Wellington César Lima e Silva (Justiça e Segurança Pública) às 17h, sem pautas informadas.',''],
- ['Pronunciamento de domingo','Lula prepara pronunciamento para domingo (8), em que deve defender responsabilidade fiscal e a manutenção de programas sociais, segundo o g1 reproduzido pelo Portal Viu. A meta de 2027 é superávit primário de 0,5% do PIB.','Portal Viu (g1)','https://www.portalviu.com.br/economia/lula-deve-defender-responsabilidade-fiscal-e-manutencao-de-programas-sociais-em-pronunciamento','Fontes do governo ouvidas sob anonimato dizem que o texto agradecerá eleitores e pedirá menos polarização. O ministro da Fazenda, Dario Durigan, procurou Davi Alcolumbre e Hugo Motta para articular conversas.','pronunciamento'],
  ['Minerais críticos','Lula participa às 15h30 desta quinta da primeira reunião do Conselho Nacional de Minerais Críticos, segundo a agenda do InfoMoney.','InfoMoney','https://www.infomoney.com.br/mercados/copom-industria-balancos-boe-agenda-05112026/','',''],
  ['Alcolumbre e Flávio','Segundo bolsonaristas ouvidos pelo Metrópoles, o presidente do Senado não dará andamento a pedidos de cassação de Flávio. A bancada diz que não votará nele em fevereiro.','Metrópoles (Igor Gadelha)','https://www.metropoles.com/colunas/igor-gadelha/em-aceno-a-direita-alcolumbre-indica-que-protegera-mandato-de-flavio','','flavio'],
  ['Sigilos','O ministro André Mendonça encerrou o processo sobre o desafio de Lula e Flávio para abrir os sigilos de ambos, segundo a coluna de Manoela Alcântara.','Metrópoles (Manoela Alcântara)','https://www.metropoles.com/colunas/manoela-alcantara/mendonca-encerra-processo-sobre-desafio-de-lula-e-flavio-para-abrir-sigilos','O processo tratava do desafio mútuo de Lula e Flávio Bolsonaro para tornar públicos os respectivos sigilos. A coluna registra que Mendonça o encerrou, sem detalhar na chamada os fundamentos da decisão.',''],
@@ -1501,7 +1790,12 @@ var TRENDS = [];
 
 /* De olho amanhã: só na edição das 19h. [quando, tipo, título, nota, url, id relacionado]
    tipo: congresso | agenda | economia | justica | eleicao | mundo. Nas outras edições deixe []. */
-var AMANHA = [];
+var AMANHA = [
+ ['Dom, 08/11','agenda','Lula faz pronunciamento sobre responsabilidade fiscal','O presidente deve defender o compromisso fiscal e a manutenção de programas sociais no primeiro pronunciamento depois da reeleição. O mercado mede a recepção na segunda.','https://www.portalviu.com.br/economia/lula-deve-defender-responsabilidade-fiscal-e-manutencao-de-programas-sociais-em-pronunciamento','pronunciamento'],
+ ['Seg, 09/11 a qua, 11/11','congresso','Audiências públicas do Orçamento de 2027','A Comissão Mista de Orçamento abre a fase de audiências do projeto de R$ 7,4 trilhões, relatado por Eduardo Braga. A votação em plenário está marcada para 17 de dezembro.','https://www.congressoemfoco.com.br/noticia/131287/eduardo-braga-sera-relator-do-orcamento-de-r-7-4-trilhoes-para-2027','orcamento'],
+ ['Próxima semana','mundo','Lula viaja à COP31, em Antalya (Turquia)','Os ajustes do Orçamento só seguem ao presidente depois da viagem, segundo o ministro Dario Durigan. A volta destrava as medidas fiscais.','https://www.metropoles.com/brasil/durigan-diz-que-enviara-ajustes-no-orcamento-apos-viagem-de-lula-a-cop31','durigan'],
+ ['Sem data','justica','STF retoma julgamento sobre ato obsceno','Faltam os votos de Toffoli, Gilmar, Moraes, Fachin e Cármen Lúcia. A tese terá repercussão geral.','https://www.cnnbrasil.com.br/politica/stf-tem-5-votos-para-manter-crime-de-ato-obsceno-com-ressalvas-a-punicao/','ato_obsceno']
+];
 
 /* Colunas e análises, exibidas dentro das editorias: [autor, veículo, título, nota, url, id relacionado, editoria] */
 var COLUNAS = [
@@ -1512,5 +1806,5 @@ var COLUNAS = [
  ['Reinaldo Azevedo','Metrópoles','Segundo turno no Rio e o debate sobre os juros','O colunista sustenta que a Constituição exigiria segundo turno no Rio, porque ninguém teria alcançado a maioria dos votos, e compara o debate sobre juros a um dogma, com o economista Lara Resende no papel de “herege”.','','paes','regioes']
 ];
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {};
+var FLAGS = {"copom":"atualizada","seletivo":"atualizada","desinfo":"atualizada","fiscal":"atualizada","orcamento":"atualizada","industria":"novo","durigan":"novo","ato_obsceno":"novo","oea":"novo","g20_trump":"novo","sc_tornados":"novo"};
 /* ===== FIM DOS DADOS ===== */
