@@ -56,6 +56,7 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .tab{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:4px solid var(--brand);padding-top:8px;margin-bottom:14px}
 .tab h2{margin:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--brand)}
 .tab a{font-size:13px;color:var(--ink-soft)}
+.flag{display:inline-block;margin-left:8px;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.1em;line-height:1.3;vertical-align:1px;text-transform:uppercase}.flag.n{background:#F08A24;color:#2a1f55}.flag.a{background:#3E347E;color:#fff}.arqbar{margin:0 0 18px;padding:10px 14px;border-left:4px solid #F08A24;background:rgba(240,138,36,.12);font-size:14px}.arqlist a{display:block;padding:10px 0;border-bottom:1px solid var(--line,#ddd)}
 .kicker{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink)}
 .meta{font-size:13px;color:var(--ink-soft)}
 .hl{font-family:var(--serif);font-weight:400;line-height:1.12;margin:0;text-wrap:balance}
@@ -232,8 +233,9 @@ function href(id){return '#materia-'+id}
 function edOf(id){return ED.filter(function(e){return e.id===id})[0]}
 function shareUrl(id){return BASE_URL+'#materia-'+id}
 
+function flag(id){var f=typeof FLAGS!=='undefined'&&FLAGS[id];return f?'<span class="flag '+(f==='novo'?'n':'a')+'">'+(f==='novo'?'NOVO':'ATUALIZADA')+'</span>':''}
 function dadoTile(d){return d?'<div class="tile"><div class="n">'+esc(d.n)+'</div><div class="l">'+esc(d.l)+'</div></div>':''}
-function item(id,big){var s=S[id];return '<div class="item"><span class="kicker">'+esc(s.k)+'</span><h3 class="hl" style="font-size:'+(big?'clamp(26px,3.4vw,36px)':'21px')+'"><a href="'+href(id)+'">'+esc(s.t)+'</a></h3><p class="sub">'+esc(s.sub)+'</p></div>'}
+function item(id,big){var s=S[id];return '<div class="item"><span class="kicker">'+esc(s.k)+'</span>'+flag(id)+'<h3 class="hl" style="font-size:'+(big?'clamp(26px,3.4vw,36px)':'21px')+'"><a href="'+href(id)+'">'+esc(s.t)+'</a></h3><p class="sub">'+esc(s.sub)+'</p></div>'}
 function srcLink(f){return f[1]?'<a href="'+esc(f[1])+'" target="_blank" rel="noopener">'+esc(f[0])+'</a>':'<span class="s">'+esc(f[0])+'</span>'}
 
 function giroItems(){
@@ -275,13 +277,13 @@ function briefRow(b){return '<div class="item"><a class="mini" href="'+esc(b[1])
 function homeView(){
   var L=S[HOME_LEAD];
   var more=(ORDER.politica||[]).filter(function(id){return id!==HOME_LEAD&&HOME_ROW.indexOf(id)<0}).slice(0,6);
-  var h='<div class="top"><div class="lead"><span class="kicker">'+esc(L.k)+'</span><h1 class="hl"><a href="'+href(HOME_LEAD)+'">'+esc(L.t)+'</a></h1><p class="sub">'+esc(L.sub)+'</p>'+dadoTile(L.dado)+'<div class="row3">'+HOME_ROW.map(function(id){return item(id)}).join('')+'</div>'+(more.length?'<div class="row3 more">'+more.map(function(id){return item(id)}).join('')+'</div>':'')+'</div>';
+  var h='<div class="top"><div class="lead"><span class="kicker">'+esc(L.k)+'</span>'+flag(HOME_LEAD)+'<h1 class="hl"><a href="'+href(HOME_LEAD)+'">'+esc(L.t)+'</a></h1><p class="sub">'+esc(L.sub)+'</p>'+dadoTile(L.dado)+'<div class="row3">'+HOME_ROW.map(function(id){return item(id)}).join('')+'</div>'+(more.length?'<div class="row3 more">'+more.map(function(id){return item(id)}).join('')+'</div>':'')+'</div>';
   h+='<aside class="rail">'+giroBox()+trendsBox()+'</aside></div>';
   var used=[HOME_LEAD].concat(HOME_ROW).concat(more);
   ED.forEach(function(e){
     if(e.subs){
       h+='<section><div class="tab"><h2>'+esc(e.nome)+'</h2><a href="#editoria-'+e.id+'">Todas de '+esc(e.nome)+'</a></div><div class="chips">'+e.subs.map(function(s){return '<a href="#regiao-'+s[0]+'">'+esc(s[1])+'</a>'}).join('')+'</div><div class="row3">';
-      e.subs.forEach(function(s){var ids=idsOf(e.id,s[0]);if(!ids.length)return;var id=ids[0];h+='<div class="item"><span class="kicker">'+esc(s[1])+(ids.length>1?' · +'+(ids.length-1):'')+'</span><h3 class="hl" style="font-size:21px"><a href="'+href(id)+'">'+esc(S[id].t)+'</a></h3><p class="sub">'+esc(S[id].sub)+'</p></div>'});
+      e.subs.forEach(function(s){var ids=idsOf(e.id,s[0]);if(!ids.length)return;var id=ids[0];h+='<div class="item"><span class="kicker">'+esc(s[1])+(ids.length>1?' · +'+(ids.length-1):'')+'</span>'+flag(id)+'<h3 class="hl" style="font-size:21px"><a href="'+href(id)+'">'+esc(S[id].t)+'</a></h3><p class="sub">'+esc(S[id].sub)+'</p></div>'});
       h+='</div>'+colsFor(e.id)+'</section>';
       return;
     }
@@ -329,13 +331,13 @@ function articleView(id){
   var s=S[id], ed=edOf(s.ed);
   var more=ORDER[s.ed].filter(function(x){return x!==id&&(!s.reg||S[x].reg===s.reg)}).concat(ORDER[s.ed].filter(function(x){return x!==id&&s.reg&&S[x].reg!==s.reg})).concat(Object.keys(S).filter(function(x){return x!==id&&S[x].ed!==s.ed})).slice(0,3);
   return '<article class="art"><div class="crumb"><a href="#">Radar</a> / <a href="#editoria-'+ed.id+'">'+esc(ed.nome)+'</a>'+(s.reg?' / <a href="#regiao-'+s.reg+'">'+esc(s.k.replace(/^[^·]*·\s*/,''))+'</a>':'')+'</div>'
-   +'<h1>'+esc(s.t)+'</h1><p class="sub">'+esc(s.sub)+'</p>'
+   +'<h1>'+esc(s.t)+flag(id)+'</h1><p class="sub">'+esc(s.sub)+'</p>'
    +'<div class="meta">Edição das '+esc(EDICAO.hora)+' · '+esc(EDICAO.data)+' · com base em '+s.fontes.length+' fonte'+(s.fontes.length>1?'s':'')+'</div>'
    +actionsBar(id)+'<div class="body" id="abody">'+articleBody(id)+'</div>'
    +'<div class="fontes"><b>Fontes</b>'+s.fontes.map(srcLink).join('')+'</div>'
    +'<div class="more">'+more.map(function(x){return item(x)}).join('')+'</div></article>';
 }
-function storyRow(id){return '<div class="item"><span class="kicker">'+esc(S[id].k)+' · '+esc(S[id].hora)+'</span><h2 class="hl"><a href="'+href(id)+'">'+esc(S[id].t)+'</a></h2><p class="sub">'+esc(S[id].sub)+'</p></div>'}
+function storyRow(id){return '<div class="item"><span class="kicker">'+esc(S[id].k)+' · '+esc(S[id].hora)+'</span>'+flag(id)+'<h2 class="hl"><a href="'+href(id)+'">'+esc(S[id].t)+'</a></h2><p class="sub">'+esc(S[id].sub)+'</p></div>'}
 function edView(eid,sub){
   var e=edOf(eid); if(!e) return homeView();
   var subName=''; if(e.subs&&sub){e.subs.forEach(function(s){if(s[0]===sub)subName=s[1]})}
@@ -349,13 +351,20 @@ function edView(eid,sub){
   }
   return h+colsFor(eid)+'</div>';
 }
+function arquivoView(){
+  var L=(typeof ARQUIVO!=='undefined'&&ARQUIVO)||[],dias={},ord=[];
+  L.forEach(function(n,i){var d=n.slice(0,10);if(!dias[d]){dias[d]=[];ord.push(d)}dias[d].push([n,i===0])});
+  var M=['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
+  return '<div class="pg"><div class="crumb"><a href="#">Radar</a> / Arquivo</div><h1>Arquivo de edições</h1><p class="sub">Todas as edições publicadas, no estado em que saíram. As etiquetas NOVO e ATUALIZADA mostram o que mudou em relação à edição anterior.</p>'
+   +(ord.length?ord.map(function(d){var p=d.split('-');return '<div class="subh"><h2>'+parseInt(p[2],10)+' de '+M[parseInt(p[1],10)-1]+' de '+p[0]+'</h2></div><div class="arqlist">'+dias[d].map(function(x){return '<a href="/radar/'+(x[1]?'':'?ed='+x[0])+'">Edição das '+x[0].slice(11)+(x[1]?' · atual':'')+'</a>'}).join('')+'</div>'}).join(''):'<p>Ainda não há edições arquivadas.</p>')+'</div>';
+}
 function giroView(){
   return '<div class="pg"><div class="crumb"><a href="#">Radar</a> / Giro OP</div><h1>Giro OP</h1><ul class="notes">'+giroItems()+'</ul></div>';
 }
 
 /* Menu horizontal */
 function menuHtml(cur){
-  var items=[['','Capa','']].concat(ED.map(function(e){return ['editoria-'+e.id,e.nome,'']})).concat([['giro','Giro OP','']]);
+  var items=[['','Capa','']].concat(ED.map(function(e){return ['editoria-'+e.id,e.nome,'']})).concat([['giro','Giro OP',''],['arquivo','Arquivo','']]);
   return '<div class="navin">'+items.map(function(i){return '<a href="#'+i[0]+'"'+(i[0]===cur?' aria-current="page"':'')+'>'+esc(i[1])+'</a>'}).join('')+'</div>';
 }
 
@@ -366,6 +375,7 @@ function route(){
   closeModal();
   if(h.indexOf('materia-')===0 && S[h.slice(8)]){var id=h.slice(8);app.innerHTML=articleView(id);updateMins(id);cur='editoria-'+S[id].ed}
   else if(h==='giro'){app.innerHTML=giroView()}
+  else if(h==='arquivo'){app.innerHTML=arquivoView()}
   else if(h.indexOf('regiao-')===0){app.innerHTML=edView('regioes',h.slice(7));cur='editoria-regioes'}
   else if(h.indexOf('editoria-')===0 && edOf(h.slice(9))){app.innerHTML=edView(h.slice(9))}
   else {app.innerHTML=homeView();cur=''}
@@ -517,7 +527,7 @@ window.addEventListener('hashchange',route);
 function sizeHdr(){var h=document.getElementById('hdr');document.documentElement.style.setProperty('--hh',h.offsetHeight+'px')}
 window.addEventListener('scroll',function(){var h=document.getElementById('hdr'),app=document.getElementById('app'),was=h.classList.contains('compact'),y=window.scrollY;var c=was?y>40:y>120;if(c!==was){var h0=h.offsetHeight;h.classList.toggle('compact',c);var h1=h.offsetHeight;app.style.marginTop=c?(h0-h1)+'px':'';sizeHdr()}},{passive:true});
 window.addEventListener('resize',sizeHdr);
-document.getElementById('edicao').innerHTML='<b>Edição das '+esc(EDICAO.hora)+'</b> · '+esc(EDICAO.data);
+document.getElementById('edicao').innerHTML='<b>Edição das '+esc(EDICAO.hora)+'</b> · '+esc(EDICAO.data)+(typeof ARQ_ATUAL!=='undefined'&&ARQ_ATUAL?' · <b>ARQUIVO</b> · <a href="/radar/">ir para a edição atual</a>':'');
 route();sizeHdr();
 if(window.ResizeObserver)new ResizeObserver(sizeHdr).observe(document.getElementById('hdr'));
 </script>

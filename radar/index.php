@@ -21,9 +21,17 @@ try {
 if ($logado) {
   $shell = @file_get_contents(__DIR__ . '/_shell.html');
   define('RADAR_OK', 1);
-  ob_start(); $okd = @include __DIR__ . '/_edicao.php'; $dados = ob_get_clean();
+  // arquivo de edições: radar/arquivo/AAAA-MM-DD-HHh.php (a mais recente é a edição atual)
+  $lista = [];
+  foreach (glob(__DIR__ . '/arquivo/*.php') ?: [] as $f) { $n = basename($f, '.php'); if (preg_match('/^\d{4}-\d{2}-\d{2}-\d{2}h$/', $n)) $lista[] = $n; }
+  rsort($lista);
+  $arq = ''; $arquivoEd = __DIR__ . '/_edicao.php';
+  $pedido = isset($_GET['ed']) ? (string)$_GET['ed'] : '';
+  if ($pedido !== '' && in_array($pedido, $lista, true)) { $arq = $pedido; $arquivoEd = __DIR__ . '/arquivo/' . $pedido . '.php'; }
+  ob_start(); $okd = @include $arquivoEd; $dados = ob_get_clean();
   if ($shell === false || !$okd || trim((string)$dados) === '') { http_response_code(503); echo 'Radar temporariamente indisponível.'; exit; }
-  echo str_replace('/*__EDICAO__*/', $dados, $shell);
+  $extra = 'var ARQUIVO=' . json_encode($lista) . ';var ARQ_ATUAL=' . json_encode($arq) . ";\n";
+  echo str_replace('/*__EDICAO__*/', $extra . $dados, $shell);
   exit;
 }
 
