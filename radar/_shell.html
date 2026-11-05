@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#3E347E"><title>Radar da Oficina Política</title><link rel="icon" type="image/svg+xml" href="/img/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="preload" href="/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/consent.css?v=0062c285">
+<link rel="stylesheet" href="/css/consent.css?v=55e0943d">
 <style>
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/dm-serif-display-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/dm-serif-display-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -58,7 +58,7 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .tab h2{margin:0;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--brand)}
 .tab a{font-size:13px;color:var(--ink-soft)}
 .upd{margin:12px 0 0;padding:10px 14px;border-left:4px solid #3E347E;background:rgba(62,52,126,.09);font-size:15px;line-height:1.45}.upd b{color:#3E347E}
-.flag{display:inline-block;margin-left:8px;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.1em;line-height:1.3;vertical-align:1px;text-transform:uppercase}.flag.n{background:#F08A24;color:#2a1f55}.flag.a{background:#3E347E;color:#fff}.arqbar{margin:0 0 18px;padding:10px 14px;border-left:4px solid #F08A24;background:rgba(240,138,36,.12);font-size:14px}.arqlist a{display:block;padding:10px 0;border-bottom:1px solid var(--line,#ddd)}.row4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);padding-top:18px}
+.kk{display:flex;align-items:center;flex-wrap:wrap;gap:4px 0}.flag{display:inline-block;margin-left:8px;padding:2px 6px;border-radius:3px;font-size:10px;font-weight:700;letter-spacing:.1em;line-height:1.3;vertical-align:1px;text-transform:uppercase}.flag.n{background:#F08A24;color:#2a1f55}.flag.a{background:#3E347E;color:#fff}.arqbar{margin:0 0 18px;padding:10px 14px;border-left:4px solid #F08A24;background:rgba(240,138,36,.12);font-size:14px}.arqlist a{display:block;padding:10px 0;border-bottom:1px solid var(--line,#ddd)}.row4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px;border-top:1px solid var(--line);padding-top:18px}
 .row4 .hl{font-size:20px}
 .filler{justify-content:center;align-items:flex-start;border:1.5px dashed var(--brand);padding:18px;border-radius:4px}
 .filler .hl a{color:var(--brand)}
@@ -282,7 +282,7 @@ function trackShare(canal){gaEv('share',{method:canal,item_id:shareId,content_ty
 
 function flag(id){var f=typeof FLAGS!=='undefined'&&FLAGS[id];return f?'<span class="flag '+(f==='novo'?'n':'a')+'">'+(f==='novo'?'NOVO':'ATUALIZADA')+'</span>':''}
 function dadoTile(d){return ''&&d?'<div class="tile"><div class="n">'+esc(d.n)+'</div><div class="l">'+esc(d.l)+'</div></div>':''}
-function item(id,big){var s=S[id];return '<div class="item"><span class="kicker">'+esc(s.k)+'</span>'+flag(id)+'<h3 class="hl" style="font-size:'+(big?'clamp(26px,3.4vw,36px)':'21px')+'"><a href="'+href(id)+'">'+esc(s.t)+'</a></h3><p class="sub">'+esc(s.sub)+'</p></div>'}
+function item(id,big){var s=S[id];return '<div class="item"><div class="kk"><span class="kicker">'+esc(s.k)+'</span>'+flag(id)+'</div><h3 class="hl" style="font-size:'+(big?'clamp(26px,3.4vw,36px)':'21px')+'"><a href="'+href(id)+'">'+esc(s.t)+'</a></h3><p class="sub">'+esc(s.sub)+'</p></div>'}
 function srcLink(f){return f[1]?'<a href="'+esc(f[1])+'" target="_blank" rel="noopener">'+esc(f[0])+'</a>':'<span class="s">'+esc(f[0])+'</span>'}
 
 function giroItems(){
@@ -332,13 +332,13 @@ function amanhaBox(){
 function homeView(){
   var L=S[HOME_LEAD];
   var more=(ORDER.politica||[]).filter(function(id){return id!==HOME_LEAD&&HOME_ROW.indexOf(id)<0}).slice(0,6);
-  var h='<div class="top"><div class="lead"><span class="kicker">'+esc(L.k)+'</span>'+flag(HOME_LEAD)+'<h1 class="hl"><a href="'+href(HOME_LEAD)+'">'+esc(L.t)+'</a></h1><p class="sub">'+esc(L.sub)+'</p>'+dadoTile(L.dado)+'<div class="row3">'+HOME_ROW.map(function(id){return item(id)}).join('')+'</div>'+(more.length?'<div class="row3 more">'+more.map(function(id){return item(id)}).join('')+'</div>':'')+'</div>';
+  var h='<div class="top"><div class="lead"><div class="kk"><span class="kicker">'+esc(L.k)+'</span>'+flag(HOME_LEAD)+'</div><h1 class="hl"><a href="'+href(HOME_LEAD)+'">'+esc(L.t)+'</a></h1><p class="sub">'+esc(L.sub)+'</p>'+dadoTile(L.dado)+'<div class="row3">'+HOME_ROW.map(function(id){return item(id)}).join('')+'</div>'+(more.length?'<div class="row3 more">'+more.map(function(id){return item(id)}).join('')+'</div>':'')+'</div>';
   h+='<aside class="rail">'+giroBox()+trendsBox()+'</aside></div>';
   var used=[HOME_LEAD].concat(HOME_ROW).concat(more);
   ED.forEach(function(e){
     if(e.subs){
       h+='<section><div class="tab"><h2>'+esc(e.nome)+'</h2><a href="#editoria-'+e.id+'">Todas de '+esc(e.nome)+'</a></div><div class="chips">'+e.subs.map(function(s){return '<a href="#regiao-'+s[0]+'">'+esc(s[1])+'</a>'}).join('')+'</div><div class="row4">';
-      e.subs.forEach(function(s){var ids=idsOf(e.id,s[0]);if(!ids.length)return;var id=ids[0];h+='<div class="item"><span class="kicker">'+esc(s[1])+(ids.length>1?' · +'+(ids.length-1):'')+'</span>'+flag(id)+'<h3 class="hl" style="font-size:21px"><a href="'+href(id)+'">'+esc(S[id].t)+'</a></h3><p class="sub">'+esc(S[id].sub)+'</p></div>'});
+      e.subs.forEach(function(s){var ids=idsOf(e.id,s[0]);if(!ids.length)return;var id=ids[0];h+='<div class="item"><div class="kk"><span class="kicker">'+esc(s[1])+(ids.length>1?' · +'+(ids.length-1):'')+'</span>'+flag(id)+'</div><h3 class="hl" style="font-size:21px"><a href="'+href(id)+'">'+esc(S[id].t)+'</a></h3><p class="sub">'+esc(S[id].sub)+'</p></div>'});
       h+='<div class="item filler"><span class="kicker">Todas as regiões</span><h3 class="hl"><a href="#editoria-regioes">Veja as matérias de cada região →</a></h3></div></div>'+colsFor(e.id)+'</section>';
       return;
     }
@@ -393,7 +393,7 @@ function articleView(id){
    +'<div class="fontes"><b>Fontes</b>'+s.fontes.map(srcLink).join('')+'</div>'
    +'<div class="more">'+more.map(function(x){return item(x)}).join('')+'</div></article>';
 }
-function storyRow(id){return '<div class="item"><span class="kicker">'+esc(S[id].k)+' · '+esc(S[id].hora)+'</span>'+flag(id)+'<h2 class="hl"><a href="'+href(id)+'">'+esc(S[id].t)+'</a></h2><p class="sub">'+esc(S[id].sub)+'</p></div>'}
+function storyRow(id){return '<div class="item"><div class="kk"><span class="kicker">'+esc(S[id].k)+' · '+esc(S[id].hora)+'</span>'+flag(id)+'</div><h2 class="hl"><a href="'+href(id)+'">'+esc(S[id].t)+'</a></h2><p class="sub">'+esc(S[id].sub)+'</p></div>'}
 function edView(eid,sub){
   var e=edOf(eid); if(!e) return homeView();
   var subName=''; if(e.subs&&sub){e.subs.forEach(function(s){if(s[0]===sub)subName=s[1]})}
@@ -677,7 +677,7 @@ document.addEventListener('click',function(e){
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal()}});
 window.addEventListener('hashchange',route);
-(async function(){try{var c=await import('/js/consentimento.js?v=0062c285');window.__op=c;c.iniciarConsentimento();route2ga();var mm=location.hash.match(/^#materia-(.+)$/);if(mm&&S[mm[1]]){lidaId='';lerMateria(mm[1])}if(typeof CONV_NOVA!=='undefined'&&CONV_NOVA)gaEv('sign_up',{method:'link_compartilhado'},{meta:'CompleteRegistration',ads:'cadastro'})}catch(e){}})();
+(async function(){try{var c=await import('/js/consentimento.js?v=55e0943d');window.__op=c;c.iniciarConsentimento();route2ga();var mm=location.hash.match(/^#materia-(.+)$/);if(mm&&S[mm[1]]){lidaId='';lerMateria(mm[1])}if(typeof CONV_NOVA!=='undefined'&&CONV_NOVA)gaEv('sign_up',{method:'link_compartilhado'},{meta:'CompleteRegistration',ads:'cadastro'})}catch(e){}})();
 function route2ga(){try{window.__op.rastrearTela('/radar/'+location.hash,document.title)}catch(e){}}
 function sizeHdr(){var h=document.getElementById('hdr');document.documentElement.style.setProperty('--hh',h.offsetHeight+'px')}
 window.addEventListener('scroll',function(){var h=document.getElementById('hdr'),app=document.getElementById('app'),was=h.classList.contains('compact'),y=window.scrollY;var c=was?y>40:y>120;if(c!==was){var h0=h.offsetHeight;h.classList.toggle('compact',c);var h1=h.offsetHeight;app.style.marginTop=c?(h0-h1)+'px':'';sizeHdr()}},{passive:true});

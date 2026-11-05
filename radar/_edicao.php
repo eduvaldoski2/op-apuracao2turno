@@ -1738,13 +1738,225 @@ S.copom.fontes.push(["Metrópoles (IBGE)","https://www.metropoles.com/brasil/pro
 S.desinfo.upd = "Brasil levou o tema da interferência estrangeira à OEA na quarta (4), citando o inquérito do STF, os perfis bloqueados no Instagram e a decisão do TSE sobre a Meta AI.";
 S.desinfo.fundo.push(['h','Atualização das 13h'],['p',"O governo brasileiro levou ao Conselho Permanente da OEA o debate sobre interferência estrangeira em eleições e citou, entre os casos, a decisão do TSE por tratamento igualitário depois de a Meta AI gerar propaganda para apenas uma candidatura no segundo turno. Os EUA se opuseram a regulação com alcance extraterritorial."]);
 S.desinfo.fontes.push(["CNN Brasil (OEA)","https://www.cnnbrasil.com.br/politica/brasil-leva-a-oea-debate-sobre-interferencia-estrangeira-nas-eleicoes/"]);
+/* ---------- MUNDO (fatos de cada país) ---------- */
+S.paraguai = {
+ "ed": "mundo",
+ "k": "Mundo",
+ "hora": "5/11",
+ "t": "Presidente do Paraguai, Santiago Peña, anuncia renúncia em meio à quebra do Banco Ueno",
+ "sub": "Decisão vem horas depois de um pedido de impeachment. Renúncia depende do Congresso, e o vice, Pedro Alliana, também é alvo do processo.",
+ "dado": {
+  "n": "3 milhões",
+  "l": "Clientes do Banco Ueno sem acesso às contas · cerca de US$ 850 mi em depósitos"
+ },
+ "resumo": "Santiago Peña anunciou nesta quinta (5) a renúncia à Presidência do Paraguai, em meio à crise do Banco Ueno, o maior banco digital do país, declarado insolvente em 3 de novembro. Ele foi acionista do grupo controlador até março de 2025, e 35 deputados da oposição pediram o impeachment. A renúncia precisa ser aceita pelo Congresso. O vice, Pedro Alliana, deve assumir, mas também é alvo do processo.",
+ "fundo": [
+  [
+   "p",
+   "Peña publicou um vídeo nas redes sociais em que diz ter tomado a decisão de renunciar pensando na estabilidade do país e na preservação das instituições democráticas. Chamou o momento de “um dos mais difíceis” da sua vida e pediu desculpas às pessoas afetadas pela crise bancária, segundo o Correio Braziliense. Ele governava desde 2023, com mandato até 2028."
+  ],
+  [
+   "h",
+   "A crise do Banco Ueno"
+  ],
+  [
+   "p",
+   "O Banco Ueno, banco digital do Grupo Vázquez, fechou na terça (3), depois que o Banco Central do Paraguai (BCP) iniciou a liquidação ao constatar déficit nos índices de solvência ligado a empréstimos a empresas vinculadas, segundo a Reuters. Eram cerca de 3 milhões de clientes e aproximadamente US$ 850 milhões em depósitos, incluindo recursos do Instituto de Previdência Social."
+  ],
+  [
+   "nums",
+   [
+    [
+     "35",
+     "deputados assinaram o pedido de impeachment"
+    ],
+    [
+     "8",
+     "diretores do banco presos, entre eles o presidente-executivo, Miguel Vázquez"
+    ],
+    [
+     "27",
+     "pessoas acusadas formalmente pela Procuradoria, com bens bloqueados"
+    ],
+    [
+     "2/3",
+     "maioria exigida na Câmara para iniciar o processo, segundo a Reuters"
+    ]
+   ]
+  ],
+  [
+   "p",
+   "O presidente do BCP, Carlos Carvallo, que antes presidiu o Ueno, também renunciou. A oposição acusa Peña de conflito de interesses, já que ele foi acionista do grupo dono do banco até março de 2025, e o BCP de encobrir irregularidades. Antes de anunciar a saída, Peña promulgou uma lei para que os poupadores recuperem o dinheiro mais rapidamente."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "A renúncia precisa ser aceita pelo Legislativo, que deve convocar sessão. Se for recusada, o impeachment pode seguir; o Metrópoles informa que a Câmara aprovou a abertura do processo no mesmo dia, ponto que os demais textos consultados não detalham. Se a renúncia for aceita, o vice Pedro Alliana deve assumir, e Peña se tornaria senador vitalício, cargo previsto na Constituição para ex-presidentes que não foram destituídos."
+  ],
+  [
+   "p",
+   "A associação de bancos do país afirma que o sistema segue operando normalmente, apesar de falhas em aplicativos com a migração de clientes do Ueno."
+  ]
+ ],
+ "fontes": [
+  [
+   "Metrópoles (renúncia de Peña)",
+   "https://www.metropoles.com/mundo/presidente-do-paraguai-santiago-pena-renuncia-ao-cargo"
+  ],
+  [
+   "Correio Braziliense",
+   "https://www.correiobraziliense.com.br/mundo/2026/11/7533691-presidente-do-paraguai-santiago-pena-renuncia-apos-crise.html"
+  ],
+  [
+   "Estado de Minas",
+   "https://www.em.com.br/internacional/2026/11/7533684-presidente-do-paraguai-santiago-pena-anuncia-renuncia.html"
+  ],
+  [
+   "CNN Brasil (Reuters)",
+   "https://www.cnnbrasil.com.br/internacional/crise-bancaria-provoca-pedido-de-impeachment-contra-presidente-do-paraguai/"
+  ]
+ ]
+};
+
+S.franca = {
+ "ed": "mundo",
+ "k": "Mundo",
+ "hora": "5/11",
+ "t": "França tem novos protestos e greves nesta quinta, e Macron convoca reunião de crise",
+ "sub": "Sindicatos e estudantes saem às ruas por custo de vida e serviços públicos. 70 mil policiais serão mobilizados, a cinco meses da eleição presidencial.",
+ "dado": {
+  "n": "500–700 mil",
+  "l": "Manifestantes previstos fora de Paris, segundo a inteligência interna · BFM TV"
+ },
+ "resumo": "Sindicatos, entre eles a CGT, e grupos estudantis convocaram manifestações e greves em cidades francesas nesta quinta (5), com adesão de servidores e do setor de energia. O governo mobiliza cerca de 70 mil policiais, e Macron fez uma reunião de defesa e segurança na quarta (4), depois dos tumultos e saques de 17 de outubro. A eleição presidencial está a cerca de cinco meses.",
+ "fundo": [
+  [
+   "p",
+   "Os atos se somam a protestos sobre custo de vida, serviços públicos e educação. O Ministério da Educação estima que 17,5% dos professores do ensino fundamental público aderirão à greve, e sindicatos alertam para paralisações em ferrovias e no transporte público. A estatal EDF informou que sindicatos de energia também devem aderir, segundo a Reuters, reproduzida pela CNN Brasil."
+  ],
+  [
+   "h",
+   "Resposta do governo"
+  ],
+  [
+   "p",
+   "Cerca de 70 mil policiais serão mobilizados. A porta-voz Maud Bregeon disse que o governo está muito atento e que um novo 17 de outubro está fora de cogitação; um assessor de Macron afirmou que o objetivo é restabelecer a calma antes da eleição. Os tumultos e saques daquele dia pegaram as forças de segurança de surpresa e geraram críticas à gestão da crise."
+  ],
+  [
+   "p",
+   "Os atos do último sábado foram em geral pacíficos, com confrontos isolados, e há menos escolas de ensino médio bloqueadas do que na fase anterior. Partidos de oposição tentam capitalizar a insatisfação com o padrão de vida."
+  ],
+  [
+   "h",
+   "Outro caso na França"
+  ],
+  [
+   "p",
+   "O banco Crédit Mutuel Arkéa informou na noite de quarta (4) ter sido alvo de ataque hacker que desviou cerca de € 100 milhões (R$ 615 milhões), segundo o Metrópoles. O banco diz que a situação está controlada e que os ativos de clientes não foram afetados."
+  ]
+ ],
+ "fontes": [
+  [
+   "CNN Brasil (Reuters)",
+   "https://www.cnnbrasil.com.br/internacional/franca-se-prepara-para-novos-protestos-e-macron-convoca-gestao-de-crise/"
+  ],
+  [
+   "Metrópoles (ataque ao Arkéa)",
+   "https://www.metropoles.com/mundo/banco-frances-sofre-ataque-hacker-e-perde-cerca-de-r-615-milhoes"
+  ]
+ ]
+};
+
+S.israel = {
+ "ed": "mundo",
+ "k": "Mundo",
+ "hora": "5/11",
+ "t": "Israel: sem maioria clara, Herzog ouve partidos para escolher quem tenta formar governo",
+ "sub": "Netanyahu contesta o resultado e tende a cair de 64 para 53 cadeiras. Eisenkot depende de partidos árabes.",
+ "dado": {
+  "n": "120",
+  "l": "Cadeiras do Knesset · Eisenkot teria 67 com apoio externo dos partidos árabes"
+ },
+ "resumo": "O resultado da eleição de 27 de outubro foi certificado em 4 de novembro sem vencedor claro. O presidente Isaac Herzog ouve os líderes partidários até esta quinta (5) e depois indica um nome para formar governo. Netanyahu e o Likud contestam o resultado, e Gadi Eisenkot, do partido Yashar, parece ter apoio da maioria, mas depende dos partidos árabes. Há cerca de 100 dias para formar governo.",
+ "fundo": [
+  [
+   "p",
+   "Segundo a CNN Brasil, a coalizão de Netanyahu tinha 64 cadeiras e deve cair para 53. Há investigação de denúncias de fraude, sem indício de comprometimento sistemático da eleição. Herzog pediu paciência e que os partidos negociem com a mente aberta para evitar nova eleição."
+  ],
+  [
+   "nums",
+   [
+    [
+     "66",
+     "cadeiras de um governo de unidade Likud, Yashar, Lieberman e Bennett, visto como remoto"
+    ],
+    [
+     "48",
+     "cadeiras da coalizão de Eisenkot"
+    ],
+    [
+     "67",
+     "com apoio externo de Ra’am e Lista Conjunta, 19 cadeiras"
+    ],
+    [
+     "100",
+     "dias, aproximadamente, para formar governo"
+    ]
+   ]
+  ],
+  [
+   "p",
+   "Se nenhum candidato conseguir, o Knesset pode indicar outro nome e, se isso também falhar, será convocada nova eleição. A matéria ressalta que um governo de Eisenkot apoiado por partidos árabes seria difícil de vender a muitos israelenses e que a retomada de confrontos com o Irã poderia aproximar os lados."
+  ]
+ ],
+ "fontes": [
+  [
+   "CNN Brasil (Israel)",
+   "https://www.cnnbrasil.com.br/internacional/israel-continua-negociacoes-para-formacao-de-novo-governo-nesta-quinta/"
+  ]
+ ]
+};
+
+S.hongkong = {
+ "ed": "mundo",
+ "k": "Mundo",
+ "hora": "5/11",
+ "t": "Hong Kong: ativista Joshua Wong é condenado a mais 10 anos de prisão por segurança nacional",
+ "sub": "Ele se declarou culpado de conspirar para pedir sanções estrangeiras à China. Já cumpria 4 anos e 8 meses por outro caso.",
+ "resumo": "Um tribunal de Hong Kong ampliou em 10 anos a pena do ativista Joshua Wong, em segunda condenação por segurança nacional, nesta quinta (5). Em setembro, ele se declarou culpado de conspirar com outros ativistas para pedir sanções estrangeiras à China e a Hong Kong em 2020. Sua libertação estava prevista para janeiro.",
+ "fundo": [
+  [
+   "p",
+   "Segundo a CNN, os promotores afirmam que o grupo fez lobby nos EUA e em outros países, por redes sociais e reuniões com políticos americanos, incluindo Nancy Pelosi e Marco Rubio, então senador e hoje secretário de Estado. Dizem também que o lobby continuou depois da Lei de Segurança Nacional de 2020 e que os EUA sancionaram mais de uma dúzia de autoridades chinesas e de Hong Kong."
+  ],
+  [
+   "p",
+   "O governo de Hong Kong afirmou que a liberdade de expressão legítima não deve ser confundida com conluio com outro país. Líderes chineses já classificaram Wong e outros ativistas como “separatistas”. Wong foi preso pela primeira vez aos 23 anos e completou 30 em outubro."
+  ]
+ ],
+ "fontes": [
+  [
+   "CNN Brasil (Joshua Wong)",
+   "https://www.cnnbrasil.com.br/internacional/ativista-de-hong-kong-joshua-wong-e-condenado-a-mais-10-anos-de-prisao/"
+  ]
+ ]
+};
+
+S.imprensa.ed='politica';S.imprensa.k='Política';
+S.argentina.ed='politica';S.argentina.k='Política';
+S.g20_trump.ed='politica';S.g20_trump.k='Política';
+S.tarifas.ed='economia';S.tarifas.k='Economia';
+
 var HOME_LEAD = 'fuga';
-var HOME_ROW  = ['ato_obsceno','durigan','sc_tornados'];
+var HOME_ROW  = ['ato_obsceno','durigan','paraguai'];
 var ORDER = {
- politica: ['fuga','ato_obsceno','oea','maioridade','vorcaro','darkhorse','seis1x1','marinho','flavio','congresso','senado','tse','pauta5','segmin','ldo','ministerio','pronunciamento','assedio','desinfo','meta','bets','lulasaude','psdb'],
- economia: ['durigan','industria','orcamento','mei','copom','fiscal','seletivo','betsaud'],
+ politica: ['fuga','ato_obsceno','oea','g20_trump','imprensa','argentina','maioridade','vorcaro','darkhorse','seis1x1','marinho','flavio','congresso','senado','tse','pauta5','segmin','ldo','ministerio','pronunciamento','assedio','desinfo','meta','bets','lulasaude','psdb'],
+ economia: ['durigan','industria','orcamento','mei','copom','fiscal','seletivo','tarifas','betsaud'],
  regioes:  ['sc_tornados','paes','sp','sp_barba','mg','mg_tce','mg_china','mg_ipva','ne','ce_mpe','ce_gastos','pe_emprestimo','ba_jeronimo','ba_blocos','ma_tce','al_trans','sul','sc_alesc','pr_cwb','rs_zucco','norte','pa_parau','co','ms_assoma','ms_senado','guandu','novoguandu','pj','prefeitura','light','reis'],
- mundo:    ['g20_trump','tarifas','eua_pioneiros','imprensa','eua','argentina']
+ mundo:    ['paraguai','eua','franca','israel','eua_pioneiros','hongkong']
 };
 /* Notas curtas de fonte externa: [título, url, fonte] */
 var BRIEFS = {
@@ -1806,5 +2018,5 @@ var COLUNAS = [
  ['Reinaldo Azevedo','Metrópoles','Segundo turno no Rio e o debate sobre os juros','O colunista sustenta que a Constituição exigiria segundo turno no Rio, porque ninguém teria alcançado a maioria dos votos, e compara o debate sobre juros a um dogma, com o economista Lara Resende no papel de “herege”.','','paes','regioes']
 ];
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"copom":"atualizada","seletivo":"atualizada","desinfo":"atualizada","fiscal":"atualizada","orcamento":"atualizada","industria":"novo","durigan":"novo","ato_obsceno":"novo","oea":"novo","g20_trump":"novo","sc_tornados":"novo"};
+var FLAGS = {"copom":"atualizada","seletivo":"atualizada","desinfo":"atualizada","fiscal":"atualizada","orcamento":"atualizada","industria":"novo","durigan":"novo","ato_obsceno":"novo","oea":"novo","g20_trump":"novo","sc_tornados":"novo","paraguai":"novo","franca":"novo","israel":"novo","hongkong":"novo"};
 /* ===== FIM DOS DADOS ===== */
