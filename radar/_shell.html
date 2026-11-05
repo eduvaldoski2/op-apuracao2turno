@@ -75,6 +75,7 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .row3 .sub,.ed .sub{font-size:15px}
 .item{display:flex;flex-direction:column;gap:6px;min-width:0}
 .rail{display:flex;flex-direction:column;gap:22px;min-width:0}
+@media (min-width:900px){.rail{align-self:start}.rail .giro-btn{pointer-events:none;cursor:default}.rail .giro-btn .chev{display:none}}
 .box{background:var(--band);padding:14px 16px}
 .box .tab{border-top-color:var(--accent);margin-bottom:8px}
 
@@ -98,6 +99,7 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 /* Blocos de editoria */
 .ed{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px}
 .ed .main .hl{font-size:clamp(26px,3.4vw,36px)}
+.ed.solo{grid-template-columns:minmax(0,1fr)}
 .ed .main{display:flex;flex-direction:column;gap:0}
 .ed .mainx{padding:16px 0 0;margin-top:16px;border-top:1px solid var(--line)}
 .ed .mainx .hl{font-size:22px}
@@ -220,7 +222,7 @@ var BASE_URL = 'https://oficinapolitica.com.br/radar';
 var MODES = [['resumo','Resumo'],['fundo','Aprofundado']];
 var mode = 'resumo';
 try{var m=localStorage.getItem('radar-modo2'); if(m==='resumo'||m==='fundo') mode=m}catch(e){}
-var giroOpen=false;
+var giroOpen=window.matchMedia&&window.matchMedia('(min-width:900px)').matches;
 
 function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function words(s){return (String(s).match(/\S+/g)||[]).length}
@@ -272,9 +274,10 @@ function briefRow(b){return '<div class="item"><a class="mini" href="'+esc(b[1])
 
 function homeView(){
   var L=S[HOME_LEAD];
-  var h='<div class="top"><div class="lead"><span class="kicker">'+esc(L.k)+'</span><h1 class="hl"><a href="'+href(HOME_LEAD)+'">'+esc(L.t)+'</a></h1><p class="sub">'+esc(L.sub)+'</p>'+dadoTile(L.dado)+'<div class="row3">'+HOME_ROW.map(function(id){return item(id)}).join('')+'</div></div>';
+  var more=(ORDER.politica||[]).filter(function(id){return id!==HOME_LEAD&&HOME_ROW.indexOf(id)<0}).slice(0,6);
+  var h='<div class="top"><div class="lead"><span class="kicker">'+esc(L.k)+'</span><h1 class="hl"><a href="'+href(HOME_LEAD)+'">'+esc(L.t)+'</a></h1><p class="sub">'+esc(L.sub)+'</p>'+dadoTile(L.dado)+'<div class="row3">'+HOME_ROW.map(function(id){return item(id)}).join('')+'</div>'+(more.length?'<div class="row3 more">'+more.map(function(id){return item(id)}).join('')+'</div>':'')+'</div>';
   h+='<aside class="rail">'+giroBox()+trendsBox()+'</aside></div>';
-  var used=[HOME_LEAD].concat(HOME_ROW);
+  var used=[HOME_LEAD].concat(HOME_ROW).concat(more);
   ED.forEach(function(e){
     if(e.subs){
       h+='<section><div class="tab"><h2>'+esc(e.nome)+'</h2><a href="#editoria-'+e.id+'">Todas de '+esc(e.nome)+'</a></div><div class="chips">'+e.subs.map(function(s){return '<a href="#regiao-'+s[0]+'">'+esc(s[1])+'</a>'}).join('')+'</div><div class="row3">';
@@ -288,7 +291,7 @@ function homeView(){
     h+='<section><div class="tab"><h2>'+esc(e.nome)+'</h2><a href="#editoria-'+e.id+'">Todas de '+esc(e.nome)+'</a></div>';
     if(ids.length){
       var nl=ids.length>4?3:1;
-      h+='<div class="ed"><div class="main">'+item(ids[0],true)+ids.slice(1,nl).map(function(id){return '<div class="mainx">'+item(id)+'</div>'}).join('')+'</div><div class="side">';
+      h+='<div class="ed'+(ids.length<=nl&&!br.length?' solo':'')+'"><div class="main">'+item(ids[0],true)+ids.slice(1,nl).map(function(id){return '<div class="mainx">'+item(id)+'</div>'}).join('')+'</div><div class="side">';
       ids.slice(nl).forEach(function(id){h+=item(id)});
       br.forEach(function(b){h+=briefRow(b)});
       h+='</div></div>';
