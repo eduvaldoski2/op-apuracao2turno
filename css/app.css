@@ -811,3 +811,8 @@ body.tl-aberto{overflow:hidden}
 html:not(.logado) .so-conta-in{display:none}
 html:not(.logado) .so-conta-av{display:flex}
 .so-conta-tela .so-conta-av{display:flex;border:0;margin:0;padding:6px 2px}
+/* selo de versão beta no topo */
+.beta{display:inline-block;margin-left:10px;padding:3px 9px;border-radius:999px;background:#F28C28;color:#fff;font:700 12px/1.2 system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;vertical-align:middle;align-self:center}
+@media (max-width:760px){.beta{font-size:10px;padding:2px 7px;margin-left:8px}}
+.aviso-beta{max-width:1180px;margin:8px auto 0;padding:8px 14px;font-size:13px;color:var(--tx2);background:#fff7ee;border:1px solid #f6d3ad;border-radius:10px}
+.marca-g{display:flex;align-items:center}
