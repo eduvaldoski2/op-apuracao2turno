@@ -811,11 +811,21 @@ body.tl-aberto{overflow:hidden}
 html:not(.logado) .so-conta-in{display:none}
 html:not(.logado) .so-conta-av{display:flex}
 .so-conta-tela .so-conta-av{display:flex;border:0;margin:0;padding:6px 2px}
-/* marca do topo: logo + "Resultados eleitorais" + selo beta */
-.marca-g{display:flex;flex-direction:column;align-items:flex-start;gap:4px;min-width:0}
-.marca-sub{display:flex;align-items:center;gap:6px;color:#fff;font:700 12px/1 system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding-left:2px}
+/* topo: logo + "Painel Eleições" centralizados; encolhe ao rolar (como no Radar); conta discreta no canto */
+.topo{position:sticky;top:0;z-index:30}
+.topo .topo-in{position:relative;justify-content:center;padding:14px 16px 12px}
+.marca-g{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
+.marca-sub{display:flex;align-items:center;gap:8px;color:#fff;font:800 15px/1 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
 .beta{display:inline-block;padding:2px 6px;border-radius:999px;background:#F28C28;color:#fff;font:700 9px/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
-@media (max-width:760px){.marca-sub{font-size:10px;letter-spacing:.12em}.beta{font-size:8px;padding:2px 5px}}
+.topo.compact .topo-in{padding:7px 16px 6px}.topo.compact .marca-logo{height:30px}.topo.compact .marca-g{gap:3px}.topo.compact .marca-sub{font-size:11px}
+.abas{top:var(--hh,0px)}
+.topo-conta{position:absolute;top:8px;right:10px;margin:0}
+.tc-b{border:0;background:transparent;color:rgba(255,255,255,.8);font:600 12px/1 system-ui,sans-serif;padding:4px 6px;border-radius:6px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.tc-b.tc-on{background:transparent;border:0}
+.tc-b:hover{color:#fff;filter:none}
+.topo.compact .topo-conta{top:50%;transform:translateY(-50%)}
+.criterios-pe{margin:22px 0 4px;text-align:center}
+@media (max-width:760px){.marca-sub{font-size:13px;letter-spacing:.18em}.beta{font-size:8px;padding:2px 5px}.topo.compact .marca-logo{height:26px}.topo.compact .marca-sub{font-size:10px}}
 /* eleições anteriores e demais cargos (js/hist.js) */
 .h-bar{margin:8px 0}.h-bar-t{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:14px}.h-bar-n{font-weight:600}.h-bar-v{margin-left:auto;white-space:nowrap}.h-bar-v small{color:var(--tx2);margin-left:4px}
 .h-bar-f{height:8px;background:#eeebf5;border-radius:6px;overflow:hidden;margin-top:4px}.h-bar-f i{display:block;height:100%;border-radius:6px}

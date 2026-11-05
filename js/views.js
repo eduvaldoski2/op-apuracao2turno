@@ -1,15 +1,15 @@
 // Telas do painel (Apuração, Projeção, ranking por candidato, UF com municípios, método).
-import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=f841636b';
-import { listaMunicipios, rankingUfs } from './model.js?v=f841636b';
-import { projetarMunicipios } from './proj.js?v=f841636b';
-import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=f841636b';
-import { graficoPlacar } from './charts.js?v=f841636b';
-import { criarMapa, legendaMapa } from './map.js?v=f841636b';
-import { criarMapaMun } from './mapamun.js?v=f841636b';
-import { getJSON } from './tse.js?v=f841636b';
-import { govPainel, govResumo } from './governador.js?v=f841636b';
-import { soConta } from './eleicao.js?v=f841636b';
-import { secaoRegioesUf, montarRegioesUf } from './regioes_uf.js?v=f841636b';
+import { CAND, UF_NOME, REGIOES, UF_REGIAO, UF_IDS, fInt, fPct, fNum, fCompact, fDelta, sigla, corDoPct, corTexto, clamp, mix } from './util.js?v=86d5946e';
+import { listaMunicipios, rankingUfs } from './model.js?v=86d5946e';
+import { projetarMunicipios } from './proj.js?v=86d5946e';
+import { esc, dlt, grw, pcel, vcel, entenda, tabela, sem } from './ui.js?v=86d5946e';
+import { graficoPlacar } from './charts.js?v=86d5946e';
+import { criarMapa, legendaMapa } from './map.js?v=86d5946e';
+import { criarMapaMun } from './mapamun.js?v=86d5946e';
+import { getJSON } from './tse.js?v=86d5946e';
+import { govPainel, govResumo } from './governador.js?v=86d5946e';
+import { soConta } from './eleicao.js?v=86d5946e';
+import { secaoRegioesUf, montarRegioesUf } from './regioes_uf.js?v=86d5946e';
 
 const KS = ['L', 'F'];
 const pc = (a, b) => (b ? 100 * a / b : NaN);
@@ -533,6 +533,7 @@ export function viewCriterios(ctx, modo) {
    ${[['Swing entre candidatos (logit)', PARAMS.swing], ['Comparecimento (proporção)', PARAMS.turn], ['Votos brancos (proporção)', PARAMS.blank], ['Votos nulos (proporção)', PARAMS.nulo]].map(([n, s]) => `<tr><td>${n}</td><td class="n">${s.s0}</td><td class="n">${s.sr}</td><td class="n">${s.su}</td><td class="n">${s.sm}</td></tr>`).join('')}
   </tbody></table></div></section>`;
   const apu = `<section class="painel" id="apuracao"><h2>Critérios da apuração</h2>
+  ${ctx.ultima ? `<p class="sub"><b>Última divulgação do TSE:</b> ${esc(ctx.ultima)} (resultado final, 100% das seções apuradas).</p>` : ''}
   <ul>
    <li><b>Fonte:</b> arquivos de divulgação de resultados do TSE (eleição 6258, 2º turno de 25/10/2026). O painel consulta os arquivos continuamente e mostra o horário de cada divulgação (parcial).</li>
    <li><b>Percentuais dos candidatos:</b> sobre os votos válidos (no 2º turno, votos nominais nos dois candidatos). <b>Brancos e nulos:</b> sobre os votos dados (comparecimento). <b>Abstenção:</b> sobre o eleitorado. <b>Alienação eleitoral:</b> (abstenção + brancos + nulos) ÷ eleitorado.</li>

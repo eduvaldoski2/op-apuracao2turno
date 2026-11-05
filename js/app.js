@@ -1,29 +1,29 @@
-import { CONFIG, TESTE } from './config.js?v=f841636b';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=f841636b';
-import { getJSON } from './tse.js?v=f841636b';
-import { calcular } from './model.js?v=f841636b';
-import { projetar, PARAMS } from './proj.js?v=f841636b';
-import { viewComparar, hashComparar } from './comparar.js?v=f841636b';
-import { viewPerguntar } from './ia.js?v=f841636b';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=f841636b';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=f841636b';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=f841636b';
-import { iniciarExportSecoes } from './expsec.js?v=f841636b';
-import { eventosEntre } from './avisos.js?v=f841636b';
-import { mostrarEleito } from './eleito.js?v=f841636b';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=f841636b';
-import { abrirTelao, iniciarTV } from './tv.js?v=f841636b';
-import { iniciarConsentimento } from './consentimento.js?v=f841636b';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=f841636b';
-import { lerCard } from './card.js?v=f841636b';
-import { abrirCompartilhar } from './compartilhar.js?v=f841636b';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=f841636b';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=f841636b';
-import { esc } from './ui.js?v=f841636b';
-import { getFoco, setFoco, comFoco } from './foco.js?v=f841636b';
-import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=f841636b';
-import { rotaHist, viewHist } from './hist.js?v=f841636b';
-import { CONTA, carregarConta } from './conta.js?v=f841636b';
+import { CONFIG, TESTE } from './config.js?v=86d5946e';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=86d5946e';
+import { getJSON } from './tse.js?v=86d5946e';
+import { calcular } from './model.js?v=86d5946e';
+import { projetar, PARAMS } from './proj.js?v=86d5946e';
+import { viewComparar, hashComparar } from './comparar.js?v=86d5946e';
+import { viewPerguntar } from './ia.js?v=86d5946e';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=86d5946e';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=86d5946e';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=86d5946e';
+import { iniciarExportSecoes } from './expsec.js?v=86d5946e';
+import { eventosEntre } from './avisos.js?v=86d5946e';
+import { mostrarEleito } from './eleito.js?v=86d5946e';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=86d5946e';
+import { abrirTelao, iniciarTV } from './tv.js?v=86d5946e';
+import { iniciarConsentimento } from './consentimento.js?v=86d5946e';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=86d5946e';
+import { lerCard } from './card.js?v=86d5946e';
+import { abrirCompartilhar } from './compartilhar.js?v=86d5946e';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=86d5946e';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=86d5946e';
+import { esc } from './ui.js?v=86d5946e';
+import { getFoco, setFoco, comFoco } from './foco.js?v=86d5946e';
+import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=86d5946e';
+import { rotaHist, viewHist } from './hist.js?v=86d5946e';
+import { CONTA, carregarConta } from './conta.js?v=86d5946e';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -67,9 +67,9 @@ let ultimoCtx = null;
 function render(manterScroll = false, forcar = false) {
   const r = rota(), y = window.scrollY;
   { const fAnt = getFoco(); setFoco(r.modo === 't1' ? r.c : null); metTela(r); if (r.modo === 't1' && r.c && r.c !== fAnt) { evento('candidato_foco', { cand: r.c }); manterScroll = false; } }   // abriu a página de um candidato: volta ao topo
-  const bs = document.getElementById('barra-status'); if (bs) bs.hidden = r.modo === 't1' || r.modo === 'h';
+  const bs = document.getElementById('barra-status'); if (bs) bs.hidden = true;   // dados oficiais finais: a data da última divulgação do TSE fica nos critérios
   document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.tela ? a.dataset.tela === r.tela : (a.dataset.modo === (r.modo === 'pr' ? 'ap' : r.modo) && !['comparar', 'perguntar'].includes(r.tela))));
-  if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS }, r.modo); return pintar(v, r, {}); }
+  if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS, ultima: S.snap ? horaTSE(S.snap) : '' }, r.modo); return pintar(v, r, {}); }
   const faixa = document.getElementById('sim'), demoBar = document.getElementById('demo-bar');
   if (faixa) faixa.hidden = r.modo === 't1' || !S.simulado; if (demoBar) demoBar.hidden = r.modo === 't1' || !S.demo;
   if (r.modo === 't1') return renderT1(r, manterScroll, forcar);
@@ -136,7 +136,7 @@ function pintar(v, r, ctx) {
   const refCmp = r.modo !== 'ap' ? null : r.tela === 'geral' ? 'br' : r.tela === 'uf' ? 'uf:' + r.uf : r.tela === 'regiao' ? 'reg:' + r.reg : r.tela === 'mun' ? `mun:${r.uf}:${r.cd}` : r.tela === 'bairro' && /^n:/.test(r.chave || '') ? `bai:${r.uf}:${r.cd}:${r.chave.slice(2)}` : null;
   const linkCmp = refCmp ? `<a class="criterios sem-export" href="${hashComparar([refCmp])}" title="Comparar com outros estados, municípios ou bairros">⇄ Comparar</a>` : '';
   const trilha = v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : '';
-  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${sub}${linkCmp}${exp}</div>${v.sel ?? barraEleicao(r)}<div id="vista">${v.html}</div></div>`;
+  root.innerHTML = `<div data-export-raiz><div class="tela-topo">${voltar}<h1>${esc(v.titulo)}</h1></div><div class="barra-ferr sem-export">${trilha}${linkCmp}${exp}</div>${v.sel ?? barraEleicao(r)}<div id="vista">${v.html}</div>${sub ? `<p class="criterios-pe sem-export">${sub}</p>` : ''}</div>`;
   v.montar(root);
   ligarEleicao(root, r, { ir, toast, evento });
   iniciarExportSecoes(root.querySelector('#vista'), contextoExport, { toast, evento });
