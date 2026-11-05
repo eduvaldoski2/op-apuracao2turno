@@ -2057,6 +2057,153 @@ ORDER.politica = ['maioridade','messias','sucessao'].concat(ORDER.politica.filte
 ORDER.economia = ['reuniao_eco'].concat(ORDER.economia);
 ORDER.regioes = ['rj_pm','rj_teto'].concat(ORDER.regioes);
 ORDER.regioes.splice(ORDER.regioes.indexOf('ne')+1,0,'ce_oposicao','ce_arma');
+/* ===== Edição das 19h ===== */
+EDICAO.hora = '19h';
+S.paraguai.t = "Peña renuncia no Paraguai, Câmara aprova acusação contra ele e livra o vice, Alliana, que deve assumir";
+S.paraguai.sub = "Deputados aprovaram o juízo político de Peña, que segue ao Senado, e rejeitaram por 48 a 30 o processo contra o vice. A posse é esperada para as próximas horas.";
+S.paraguai.resumo = "Santiago Peña renunciou nesta quinta (5) à Presidência do Paraguai, em meio à quebra do Banco Ueno. Horas depois, a Câmara dos Deputados aprovou a acusação de mau desempenho contra ele, que segue ao Senado, e rejeitou por 48 votos a 30 o juízo político contra o vice, Pedro Alliana. O resultado abre caminho para Alliana assumir; a posse era esperada nas próximas horas, segundo a imprensa paraguaia e argentina.";
+S.paraguai.upd = "A Câmara paraguaia aprovou a acusação contra Peña, enviada ao Senado, e rejeitou por 48 a 30 o processo contra Alliana, o que o deixa a caminho da posse.";
+S.paraguai.fundo.push(["h","Atualização das 19h: a Câmara decide"]);
+S.paraguai.fundo.push(["p","Em sessão extraordinária nesta quinta, a Câmara dos Deputados do Paraguai rejeitou o juízo político contra o vice-presidente Pedro Alliana por 48 votos contra 30 a favor, entre 78 presentes, segundo a EFE publicada pela Infobae. Para a agência, o resultado abre o caminho de Alliana como sucessor. Segundo a Cadena 3, colorados governistas, dissidentes e afins apoiaram o vice, e as bancadas contrárias ao processo argumentaram que ele não tinha responsabilidade legal nem ingerência na crise financeira."]);
+S.paraguai.fundo.push(["p","Peña já havia renunciado, mas, segundo a EFE, os 78 deputados presentes aprovaram a acusação contra ele por “grave e sistemático mau desempenho de suas funções”, e o caso foi remetido ao Senado, que decidirá se haverá processo. A Constituição exige dois terços para a acusação ir ao Senado e dois terços ali para condená-lo. O ADN País informa que a posse de Alliana está prevista para as próximas horas; nenhuma das páginas consultadas informa hora nem formato da cerimônia."]);
+S.paraguai.fontes.push(["Infobae (EFE): Câmara rejeita juízo político contra Alliana","https://www.infobae.com/america/agencias/2026/11/05/diputados-rechazan-juicio-politico-a-vicepresidente-paraguayo-posible-sucesor-de-pena/"]);
+S.paraguai.fontes.push(["Cadena 3","https://www.cadena3.com/noticia/mundo/paraguay-la-camara-de-diputados-desestima-juicio-politico-contra-el-vicepresidente-alliana_610602"]);
+S.paraguai.fontes.push(["ADN País","https://adnpais.com/notas/104360-El-vicepresidente-de-Paraguay-asumira-la-presidencia-tras-quedar-afuera-del-juicio-politico"]);
+S.paraguai.fontes.push(["La Política Online","https://www.lapoliticaonline.com/paraguay/politica-py/acorralado-pena-renuncia-a-la-presidencia-y-alliana-da-un-paso-al-frente/"]);
+
+S.juicio = {ed:'mundo', k:'Mundo', hora:'5/11',
+ t:"Cartes abandona Peña, e o Partido Colorado vira o jogo que levou à renúncia",
+ sub:"O ex-presidente e chefe da ANR passou a apoiar o juízo político. Peña pediu desculpas em vídeo e deve ter o foro de senador vitalício discutido.",
+ resumo:"A renúncia de Santiago Peña foi precedida da perda de apoio do Partido Colorado. Horacio Cartes, presidente da ANR e padrinho político do presidente, escreveu no X que o partido acompanharia o juízo político e não ficaria “do lado do latrocínio” de fundos públicos, privados e de aposentados, segundo a Infobae. Peña pediu desculpas em vídeo. Ainda estão em aberto o futuro do foro de senador vitalício e uma denúncia penal.",
+ fundo:[
+  ["p","O juízo político foi apresentado na quarta (4) por 35 deputados, com base no artigo 225 da Constituição, e pedia sessão extraordinária para a quinta. Segundo a Infobae, a acusação também mirava Alliana. Eram necessários 53 dos 80 votos na Câmara e, depois, 30 dos 45 no Senado."],
+  ["p","O ponto de virada, segundo a Infobae, foi a posição de Horacio Cartes, presidente da ANR (Partido Colorado) e quem impulsionou a candidatura de Peña em 2023. Cartes escreveu no X: “Acompanhamos o juízo político ao presidente da República” e “não estaremos do lado do latrocínio dos fundos públicos, privados e dos aposentados”. A BioBioChile lista cinco causas da acusação, entre elas conflito de interesses e créditos de cerca de US$ 123 milhões a empresas relacionadas."],
+  ["p","No vídeo da renúncia, Peña disse ter “tomado a decisão de apresentar a renúncia à presidência da República” e pediu desculpas: “Nunca foi minha intenção defraudar a confiança que depositaram em mim”."],
+  ["h","O que está pendente"],
+  ["p","Segundo a La Política Online, o Congresso decidirá se Peña mantém o foro de senador vitalício, e o ministro do Interior, Enrique Riera, foi ao Legislativo notificar a renúncia. O senador Luis Pettengill (Fuerza Republicana) disse que, com ou sem blindagem, “isso não vai ser um problema”, e que podem votar para retirar os foros. O mesmo veículo diz que Alliana prepara uma troca completa de ministros e que o senador Antonio “Tony” Barrios, ligado a Cartes, seria o novo vice, informação que outras fontes não confirmam."],
+  ["nums",[["48 × 30","votos contra e a favor do juízo político a Alliana"],["35","deputados que assinaram o pedido contra Peña"],["2/3","maioria exigida em cada Casa para destituir"]]]
+ ],
+ fontes:[["Infobae: renúncia de Peña","https://www.infobae.com/america/america-latina/2026/11/05/santiago-pena-renuncio-a-la-presidencia-de-paraguay-por-el-escandalo-del-ueno-bank/"],["BioBioChile","https://www.biobiochile.cl/noticias/internacional/america-latina/2026/11/05/santiago-pena-renuncia-a-la-presidencia-de-paraguay-en-medio-de-crisis-por-ueno-bank.shtml"],["La Política Online","https://www.lapoliticaonline.com/paraguay/politica-py/acorralado-pena-renuncia-a-la-presidencia-y-alliana-da-un-paso-al-frente/"],["CNN Brasil","https://www.cnnbrasil.com.br/internacional/presidente-do-paraguai-apresenta-renuncia-em-meio-a-crise-em-banco-no-pais/"]]};
+
+S.ueno = {ed:'mundo', k:'Mundo', hora:'5/11',
+ t:"Ueno Bank: lei de emergência antecipa pagamentos a poupadores, e BC paraguaio troca de comando",
+ sub:"A Promotoria imputou 27 pessoas e pediu prisão preventiva do fundador. O Fundo de Garantia paga adiantamento de até 40 salários mínimos.",
+ dado:{n:'2,9 mi', l:'Clientes do Ueno · US$ 850 mi em depósitos públicos, incluindo o IPS'},
+ resumo:"O Banco Central do Paraguai mandou intervir e liquidar o Ueno na terça (3), depois de o índice de solvência cair a menos da metade do mínimo exigido. O Congresso aprovou em tempo recorde uma lei de emergência, promulgada por Peña na quarta (4), que antecipa do Fundo de Garantia de Depósitos até 40 salários mínimos por poupador. A Promotoria imputou 27 pessoas e Raúl Vera Bogado foi indicado para presidir o BCP.",
+ fundo:[
+  ["p","Segundo a Infobae, o banco tem cerca de 2,9 milhões de clientes num país de 6,1 milhões de habitantes, e guarda aproximadamente US$ 850 milhões em recursos públicos, incluindo o Instituto de Previsão Social (IPS). Houve filas nas agências e protestos noturnos em Assunção."],
+  ["p","A lei de emergência permite antecipar do Fundo de Garantia até 40 salários mínimos mensais (121,7 milhões de guaranis, cerca de US$ 19,8 mil), em até cinco dias úteis. O teto do fundo é de 75 salários mínimos por pessoa, e um primeiro pagamento de até 10 milhões de guaranis (cerca de US$ 1.675) foi anunciado para breve."],
+  ["p","Peña nomeou o economista Raúl Vera Bogado para a presidência do Banco Central, no lugar de Carlos Carvallo, que renunciou. A indicação precisa ser confirmada pelo Senado. A Promotoria imputou 27 pessoas por operações de 2025 e 2026 e pediu prisão preventiva do fundador e maior acionista, Miguel Vásquez, e domiciliar para os demais executivos, segundo a Infobae. Peña foi acionista do grupo dono do banco até março de 2025, de acordo com a CNN Brasil."]
+ ],
+ fontes:[["Infobae","https://www.infobae.com/america/america-latina/2026/11/05/santiago-pena-renuncio-a-la-presidencia-de-paraguay-por-el-escandalo-del-ueno-bank/"],["CNN Brasil","https://www.cnnbrasil.com.br/internacional/presidente-do-paraguai-apresenta-renuncia-em-meio-a-crise-em-banco-no-pais/"],["BioBioChile","https://www.biobiochile.cl/noticias/internacional/america-latina/2026/11/05/santiago-pena-renuncia-a-la-presidencia-de-paraguay-en-medio-de-crisis-por-ueno-bank.shtml"]]};
+
+S.maioridade.upd = "Planalto e PT intensificaram, segundo a CNN Brasil, o esforço para a PEC não avançar: a comissão especial da Câmara aprovou 12 pedidos de audiência, o que pode levar o debate a 2027.";
+S.maioridade.sub = "A comissão especial da Câmara aprovou 12 requerimentos de audiências, e Planalto e PT trabalham para esfriar o tema. O relator ainda busca votar em novembro.";
+S.maioridade.fundo.push(["h","Atualização das 19h: audiências e articulação do Planalto"]);
+S.maioridade.fundo.push(["p","Segundo o Diário Carioca, que cita a CNN Brasil, Planalto e PT intensificaram os esforços para impedir que a proposta avance, com entendimentos com Alcolumbre e Hugo Motta para que o tema não seja prioridade. Na Câmara, a comissão especial aprovou 12 requerimentos de audiências públicas, o que, se todas ocorrerem, pode estender a discussão até a próxima legislatura, em fevereiro de 2027, informa a BNews. Interlocutores do governo dizem que a proposta não tem apoio da maioria dos petistas nem do Executivo."]);
+S.maioridade.fundo.push(["p","O Terra Brasil Notícias registra que Lula defende reduzir a idade de 18 para 16 anos apenas em crimes hediondos, enquanto a oposição quer 16 para todos os crimes e 14 nos hediondos. O Senado havia aprovado a PEC da Segurança na terça (3) e retirado, por 38 votos a 36, as emendas sobre maioridade, que seguem em tramitação separada. Um ponto levantado pela BNews é o impacto sobre o sistema prisional."]);
+S.maioridade.fontes.push(["Diário Carioca (Planalto e PT)","https://www.diariocarioca.com/2026/11/05/politica/plano-pt-adiam-maioridade-penal-congresso/"]);
+S.maioridade.fontes.push(["BNews São Paulo","https://www.bnewssaopaulo.com.br/noticias/politica/governo-e-pt-tentam-esfriar-debate-sobre-maioridade-penal.html"]);
+S.maioridade.fontes.push(["Terra Brasil Notícias","https://terrabrasilnoticias.com/2026/11/lula-atua-nos-bastidores-e-alcolumbre-adia-votacao-da-maioridade-penal/"]);
+
+S.fuga.t = "NYT: assessor de Milei ajudou Flávio a embarcar para Miami; Itamaraty pediu explicações a Buenos Aires";
+S.fuga.sub = "Santiago Caputo teria ido a Puerto Iguazú e acelerado documentos, diz o jornal americano. Flávio e o governo argentino negam participação.";
+S.fuga.upd = "O New York Times reportou que Santiago Caputo, assessor de Milei, esteve em Puerto Iguazú e ajudou na saída de Flávio; ele e a chancelaria argentina negam.";
+S.fuga.fundo.push(["h","Atualização das 19h: o papel de um assessor de Milei"]);
+S.fuga.fundo.push(["p","Segundo reportagem do New York Times resumida pelo Diário Carioca, três pessoas disseram que Santiago Caputo, assessor de Javier Milei, encontrou Flávio no aeroporto de Puerto Iguazú em 27 de outubro e ajudou a acelerar passaportes e documentos. Duas fontes dizem que Caputo chegou na noite de 26 de outubro em jato particular. A aeronave pertence à Baires Fly e foi fretada por um intermediário por US$ 150 mil. Flávio, a mulher e as duas filhas embarcaram pouco depois da meia-noite rumo a Miami, e, segundo as fontes, Caputo pediu a um policial que apagasse vídeos do pátio."]);
+S.fuga.fundo.push(["p","Flávio negou ajuda do governo argentino: “vários argentinos estavam ao meu lado, não sei se um deles era esse cara”. Caputo disse não ter tido “nenhum papel”, e a chancelaria argentina rejeitou participação do governo. O jornal diz que não havia mandado de prisão contra o senador quando ele cruzou a fronteira, e que o Itamaraty convocou o encarregado de negócios argentino em Brasília para pedir explicações."]);
+S.fuga.fontes.push(["Diário Carioca (NYT)","https://www.diariocarioca.com/2026/11/05/mundo/americas/assessor-milei-ajudou-flavio-fuga-miami/"]);
+
+S.argentina.upd = "A reportagem do NYT sobre o papel de um assessor de Milei na saída de Flávio, e o pedido de explicações do Itamaraty, aprofundam a crise entre Brasília e Buenos Aires.";
+S.argentina.fundo.push(["h","Atualização das 19h"]);
+S.argentina.fundo.push(["p","O New York Times relatou que Santiago Caputo, assessor de Milei, teria ajudado Flávio Bolsonaro a embarcar em Puerto Iguazú rumo a Miami; a chancelaria argentina nega participação do governo, segundo o Diário Carioca. A matéria diz que o Itamaraty convocou o encarregado de negócios da Argentina em Brasília para pedir explicações."]);
+S.argentina.fontes.push(["Diário Carioca (NYT)","https://www.diariocarioca.com/2026/11/05/mundo/americas/assessor-milei-ajudou-flavio-fuga-miami/"]);
+
+S.cpac = {ed:'politica', k:'Política · Bastidores', hora:'5/11',
+ t:"Flávio e Eduardo buscam aliados estrangeiros na CPAC da Flórida; oposição quer voto aberto na eleição do Senado",
+ sub:"Segundo o programa Sem Rodeios, da Gazeta do Povo, o grupo quer pressionar Lula e o STF e impedir a reeleição de Alcolumbre em fevereiro de 2027.",
+ resumo:"Flávio Bolsonaro e Eduardo Bolsonaro buscam alianças com conservadores estrangeiros na CPAC, na Flórida, para fortalecer a oposição a Lula e ao STF, segundo o programa Sem Rodeios, da Gazeta do Povo. No Senado, a direita quer voto aberto para disputar a presidência da Casa em fevereiro de 2027, com Rogério Marinho (PL-RN) como candidato. É conteúdo de programa de opinião, tratado aqui como bastidor.",
+ fundo:[
+  ["p","O resumo do programa, publicado na manhã desta quinta, diz que Flávio e Eduardo Bolsonaro tentam fechar apoios externos na CPAC, nos Estados Unidos. Segundo o mesmo texto, a oposição de direita quer que o voto na eleição para a presidência do Senado seja aberto, para impedir a reeleição de Davi Alcolumbre, e Marinho defende que os parlamentares declarem publicamente o voto."],
+  ["p","O programa também cita o adiamento da maioridade penal no Senado a pedido de Hugo Motta, que frustrou um acordo entre governistas e oposição, e menciona mensagens entre Daniel Vorcaro e Márcio Chaer, do ConJur, sobre um evento em Londres em abril de 2024 patrocinado pelo Banco Master. Nenhuma dessas afirmações foi verificada de forma independente pelo Radar."]
+ ],
+ fontes:[["Gazeta do Povo (Sem Rodeios)","https://www.gazetadopovo.com.br/sem-rodeios/flavio-busca-apoio-externo-contra-lula/"]]};
+
+S.marinho.upd = "A oposição de direita quer voto aberto na eleição do Senado, de fevereiro de 2027, para barrar a reeleição de Alcolumbre, segundo o programa Sem Rodeios.";
+S.marinho.fundo.push(["h","Atualização das 19h"]);
+S.marinho.fundo.push(["p","Segundo o Sem Rodeios, da Gazeta do Povo, a direita quer que a eleição para a presidência do Senado, em fevereiro de 2027, tenha voto aberto, e Marinho defende que os parlamentares declarem publicamente o voto."]);
+S.marinho.fontes.push(["Gazeta do Povo (Sem Rodeios)","https://www.gazetadopovo.com.br/sem-rodeios/flavio-busca-apoio-externo-contra-lula/"]);
+
+S.vorcaro.upd = "Mensagens entre Vorcaro e Márcio Chaer, do ConJur, citadas pelo programa Sem Rodeios, ligam um evento em Londres em 2024, patrocinado pelo Master, a convites de Moraes a colegas.";
+S.vorcaro.fundo.push(["h","Atualização das 19h"]);
+S.vorcaro.fundo.push(["p","O programa Sem Rodeios, da Gazeta do Povo, afirma que mensagens entre Daniel Vorcaro e Márcio Chaer indicam que Alexandre de Moraes convidou colegas para um evento em Londres, em abril de 2024, patrocinado pelo Banco Master; entre os convidados estariam Gilmar Mendes e Luís Felipe Salomão. Vorcaro teria pedido que o nome do banco fosse retirado dos convites. A informação vem de programa de opinião e não foi confirmada por outras fontes consultadas."]);
+S.vorcaro.fontes.push(["Gazeta do Povo (Sem Rodeios)","https://www.gazetadopovo.com.br/sem-rodeios/flavio-busca-apoio-externo-contra-lula/"]);
+
+S.eua.upd = "Trump disse à Fox que parabenizava os democratas e que não via a derrota como golpe contra ele; o novo Congresso passa a controlar comissões e a poder convocar integrantes do governo.";
+S.eua.fundo.push(["h","Atualização das 19h"]);
+S.eua.fundo.push(["p","Em entrevista por telefone à Fox News, segundo o Metrópoles, Trump disse: “Parabéns aos democratas. Eles fizeram um bom trabalho”, e afirmou que os adversários esperavam isso havia 11 anos, mas que não encarava o resultado como “um golpe contra mim”. Com o controle da Câmara, a oposição passa a presidir comissões e pode convocar integrantes do governo e abrir investigações; um impeachment exigiria maioria na Câmara e dois terços do Senado para condenar. No Senado, a oposição também pode dificultar indicações. Os números do Metrópoles, de 4/11, eram de 54 a 44 no Senado e 225 a 138 na Câmara, ainda parciais."]);
+S.eua.fontes.push(["Metrópoles (apuração)","https://www.metropoles.com/mundo/eleicoes-nos-eua-apuracao-de-votos-midterms"]);
+
+S.franca.t = "França para com greve geral: 260 atos, Torre Eiffel fechada, e Parlamento rejeita parte do orçamento de 2027";
+S.franca.sub = "Autoridades estimam até 700 mil manifestantes fora de Paris. Os sindicatos da SNCF mantêm paralisação até a manhã de sexta, e os coletes amarelos convocam ato para sábado.";
+S.franca.upd = "Os atos ocorreram: cerca de 260 manifestações, gás lacrimogêneo em Paris, Torre Eiffel fechada, e o Parlamento rejeitou na quarta a primeira parte do orçamento de 2027.";
+S.franca.fundo.push(["h","Atualização das 19h: o dia dos protestos"]);
+S.franca.fundo.push(["p","Segundo a NC News, foram convocadas cerca de 260 manifestações, e as autoridades estimavam até 700 mil pessoas fora da capital e entre 40 mil e 80 mil em Paris, com 70 mil policiais mobilizados. Em Paris, a polícia usou gás lacrimogêneo contra estudantes que bloqueavam escolas, centenas de escolas foram afetadas e a Torre Eiffel fechou ao público. A CGT defende reajuste de 10% no salário mínimo."]);
+S.franca.fundo.push(["p","Na quarta (4), o Parlamento rejeitou a primeira parte do orçamento de 2027. O primeiro-ministro, Sébastien Lecornu, se reuniu com sindicatos sem acordo, e o ministro do Interior, Laurent Nuñez, anunciou reforço do policiamento. Os quatro principais sindicatos da SNCF convocaram paralisação da noite de quarta até a manhã de sexta (6), os coletes amarelos chamaram ato em Paris no sábado (7), e os sindicatos avaliam novas paralisações."]);
+S.franca.fontes.push(["NC News","https://ncnews.com.br/2026/11/05/franca-greve-geral-protestos-macron/"]);
+S.franca.fontes.push(["Folha de Curitiba","https://folhadecuritiba.com.br/franca-mobiliza-70-mil-policiais-para-protestos-e-macron-convoca-reuniao-de-crise/"]);
+
+S.mercado = {ed:'economia', k:'Economia', hora:'5/11',
+ t:"Ibovespa sobe e dólar fica perto de R$ 5,45 um dia depois de o Copom parar os cortes",
+ sub:"Na quarta, o índice interrompeu seis quedas seguidas. Na manhã desta quinta, avançava cerca de 0,8%, e os juros longos tinham viés de alta.",
+ dado:{n:'167,5 mil', l:'Ibovespa no fechamento de quarta (4), alta de 1,23% · Money Times'},
+ resumo:"O Ibovespa fechou a quarta (4) em alta de 1,23%, a 167.563 pontos, e interrompeu seis quedas seguidas. Na manhã desta quinta (5), subia cerca de 0,8% e o dólar oscilava perto de R$ 5,45, depois de o Copom manter a Selic em 13,75%. Os dados são parciais, de antes do fechamento de quinta.",
+ fundo:[
+  ["p","Segundo o Money Times, o dólar à vista fechou quarta a R$ 5,4518 (-0,65%). Na quinta, de acordo com a Suno, a moeda chegou à mínima de R$ 5,427 antes das 11h e, às 11h40, valia R$ 5,453, com máxima de R$ 5,473. O Ibovespa abriu perto de 167,9 mil pontos e, às 11h25, subia 0,79%, a 168.888 pontos."],
+  ["p","A Suno atribui parte do movimento à vitória democrata nas eleições dos EUA, que reforçou a expectativa de fim da guerra EUA-Irã. Entre as ações, C&A subia 10,13%, Cosan 8,79% e Hapvida 7,13%, enquanto Tenda caía 10,03%."],
+  ["p","Nos juros futuros, conforme a CNN Brasil, na manhã de quinta o DI para janeiro de 2029 ia a 14,855% (de 14,785%) e o de janeiro de 2031 a 15,130% (de 14,975% no ajuste anterior), com viés de alta nos vencimentos longos. O Citi avalia que o Copom “indicou que há alguma margem antes de iniciar um possível ciclo de alta de juros” e projeta Selic inalterada nas próximas reuniões; o Itaú BBA vê tom “um pouco menos duro” do que esperava."],
+  ["h","Agenda econômica de quinta"],
+  ["p","O Money Times lista a divulgação da balança comercial de outubro, às 15h, e de produção industrial de setembro, esperada em queda de 0,3% pela mediana do Broadcast. Nos EUA, saem o payroll e falas de dirigentes do Fed."]
+ ],
+ fontes:[["Suno Notícias","https://www.suno.com.br/noticias/dolar-ibovespa-05112026-selic-copom-go/"],["CNN Brasil (juros futuros)","https://www.cnnbrasil.com.br/economia/money/mercado/juros-futuros-hoje-5-novembro-2026/"],["Money Times","https://www.moneytimes.com.br/copom-pausa-cortes-e-bolsa-ainda-surfa-onda-azul-nos-eua-ibovespa-em-dolar-sobe-nesta-quinta-feira-5-rens/"]]};
+
+S.copom.upd = "Citi e Itaú BBA avaliam que o tom do comunicado foi menos duro que o esperado e projetam Selic estável, enquanto os juros futuros longos têm viés de alta.";
+S.copom.fundo.push(["h","Atualização das 19h: leitura dos bancos"]);
+S.copom.fundo.push(["p","Segundo a CNN Brasil, o Citi disse que o Copom “indicou que há alguma margem antes de iniciar um possível ciclo de alta de juros, conforme atualmente precificado pelos mercados”, e o Itaú BBA afirmou que “o tom foi um pouco menos duro do que esperávamos”; ambos esperam estabilidade nas próximas reuniões. O ministro Dario Durigan disse que não faria comentários valorativos, mas que o juro alto prejudica todos os setores."]);
+S.copom.fontes.push(["CNN Brasil (juros futuros)","https://www.cnnbrasil.com.br/economia/money/mercado/juros-futuros-hoje-5-novembro-2026/"]);
+
+S.tse_name = {ed:'regioes', reg:'co', k:'Centro-Oeste', hora:'5/11',
+ t:"TSE julga a partir de sexta o recurso de Jamilson Name, deputado do PP de MS com 35 mil votos",
+ sub:"A sessão virtual da Segunda Turma vai de 6 a 12 de novembro. Se o registro continuar indeferido, os votos seguem anulados para a federação.",
+ dado:{n:'35.211', l:'Votos de Jamilson Name no 1º turno · Correio do Estado'},
+ resumo:"A Segunda Turma do TSE julga em sessão virtual, prevista entre 6 e 12 de novembro, o recurso do deputado estadual Jamilson Name (PP-MS) contra o indeferimento do registro de candidatura. Ele teve 35.211 votos. Se o recurso for acolhido, os votos podem ser validados para a Federação União Progressista; se não, seguem anulados. A inclusão em pauta não garante decisão no dia.",
+ fundo:[
+  ["p","Segundo o Correio do Estado, o registro foi indeferido em 2 de outubro pelo ministro Sebastião Reis Júnior, relator, que acolheu recurso do Ministério Público Eleitoral e reformou decisão do TRE-MS, que havia autorizado a candidatura por 5 votos a 1. O MPE cita investigações da Operação Omertà; a defesa diz que o parlamentar não integra organização paramilitar ou armada."],
+  ["p","Name integra a Federação União Progressista (PP e União Brasil), que conquistou quatro vagas na disputa proporcional em Mato Grosso do Sul, e estava entre os 12 deputados estaduais mais votados. O processo é o 0600455-63.2026.6.12.0000. A própria matéria ressalva que a inclusão na pauta não significa decisão definitiva na data, e sessões virtuais podem ser afetadas por pedido de vista ou destaque."]
+ ],
+ fontes:[["Correio do Estado","https://correiodoestado.com.br/politica/2026/10/30/tse-marca-para-6-de-novembro-julgamento-que-pode-definir-futuro-de-jamilson-name.html"]]};
+
+HOME_LEAD = 'fuga';
+HOME_ROW = ['paraguai','copom','rj_pm'];
+var _mv=function(arr,ids){return ids.concat(arr.filter(function(i){return ids.indexOf(i)<0;}));};
+ORDER.politica = _mv(ORDER.politica,['fuga','cpac','maioridade','argentina']);
+ORDER.economia = _mv(ORDER.economia,['mercado','copom']);
+ORDER.mundo = _mv(ORDER.mundo,['paraguai','juicio','ueno']);
+ORDER.regioes.splice(ORDER.regioes.indexOf('co')+1,0,'tse_name');
+GIRO = GIRO.filter(function(g){return ["Reunião sobre a dívida","Maioridade na Câmara","“Fazer Lula sangrar”","Oposição no Ceará","Ministérios e o PT"].indexOf(g[0])<0;}).concat([
+ ["Caputo em Iguazú","O NYT diz que um assessor de Milei ajudou Flávio a embarcar para Miami; Flávio e Buenos Aires negam, segundo o Diário Carioca.","Diário Carioca (NYT)","https://www.diariocarioca.com/2026/11/05/mundo/americas/assessor-milei-ajudou-flavio-fuga-miami/","","fuga"],
+ ["Esfriar a maioridade","Planalto e PT buscam acordos com Alcolumbre e Motta para o tema não ser prioridade, segundo o Diário Carioca, que cita a CNN Brasil.","Diário Carioca","https://www.diariocarioca.com/2026/11/05/politica/plano-pt-adiam-maioridade-penal-congresso/","","maioridade"],
+ ["Voto aberto no Senado","A oposição quer voto aberto para tentar barrar a reeleição de Alcolumbre, diz o programa Sem Rodeios.","Gazeta do Povo","https://www.gazetadopovo.com.br/sem-rodeios/flavio-busca-apoio-externo-contra-lula/","","cpac"],
+ ["Bolsa sobe após o Copom","Ibovespa avançava cerca de 0,8% na manhã de quinta, e o dólar rondava R$ 5,45, segundo a Suno.","Suno Notícias","https://www.suno.com.br/noticias/dolar-ibovespa-05112026-selic-copom-go/","","mercado"],
+ ["Greve na França","A SNCF mantém paralisação até a manhã de sexta, e os coletes amarelos convocam ato em Paris no sábado, diz a NC News.","NC News","https://ncnews.com.br/2026/11/05/franca-greve-geral-protestos-macron/","","franca"],
+ ["Votos de Name no TSE","A Segunda Turma julga a partir de sexta o recurso do deputado Jamilson Name, com 35.211 votos, segundo o Correio do Estado.","Correio do Estado","https://correiodoestado.com.br/politica/2026/10/30/tse-marca-para-6-de-novembro-julgamento-que-pode-definir-futuro-de-jamilson-name.html","","tse_name"]
+]);
+AMANHA = AMANHA.filter(function(a){return a[5]!=='ato_obsceno';});
+AMANHA.unshift(
+ ["Sex, 06/11","justica","TSE começa a julgar o recurso de Jamilson Name","A Segunda Turma analisa em sessão virtual, de 6 a 12 de novembro, o registro do deputado do PP de MS, que teve 35.211 votos. Está em jogo a validação desses votos para a federação; a inclusão em pauta não garante decisão no dia.","https://correiodoestado.com.br/politica/2026/10/30/tse-marca-para-6-de-novembro-julgamento-que-pode-definir-futuro-de-jamilson-name.html","tse_name"],
+ ["Sex, 06/11 · manhã","mundo","Termina a paralisação da SNCF na França","Os quatro principais sindicatos da estatal ferroviária pararam da noite de quarta até a manhã de sexta, no fim da greve geral contra Macron. A retomada dos trens e a decisão sobre novas paralisações medem o fôlego do movimento.","https://ncnews.com.br/2026/11/05/franca-greve-geral-protestos-macron/","franca"],
+ ["Sáb, 07/11","mundo","Coletes amarelos convocam ato em Paris","O grupo chamou manifestação na capital francesa no sábado, dois dias depois da greve geral. O governo teme repetir os tumultos de 17 de outubro.","https://ncnews.com.br/2026/11/05/franca-greve-geral-protestos-macron/","franca"]
+);
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"copom":"atualizada","congresso":"atualizada","ministerio":"atualizada","fiscal":"atualizada","maioridade":"atualizada","messias":"novo","sucessao":"novo","reuniao_eco":"novo","rj_pm":"novo","rj_teto":"novo","ce_oposicao":"novo","ce_arma":"novo"};
+var FLAGS = {"copom":"atualizada","eua":"atualizada","fuga":"atualizada","argentina":"atualizada","maioridade":"atualizada","vorcaro":"atualizada","marinho":"atualizada","paraguai":"atualizada","franca":"atualizada","juicio":"novo","ueno":"novo","cpac":"novo","mercado":"novo","tse_name":"novo"};
 /* ===== FIM DOS DADOS ===== */
