@@ -37,7 +37,7 @@ if (!ativo) {
   box.innerHTML = '<p class="msg">O acesso ao Radar está sendo liberado. Volte em breve.</p>';
 } else {
   try {
-    var cfg = await import('/js/config.js?v=472774c2'), ct = await import('/js/conta.js?v=472774c2');
+    var cfg = await import('/js/config.js?v=6547ed30'), ct = await import('/js/conta.js?v=6547ed30');
     cfg.CONFIG.conta = Object.assign({}, cfg.CONFIG.conta, { endpoint: '/api/conta.php' });
     // o texto padrão do cadastro cita outros recursos do painel; aqui só vale o Radar
     var limpa = function () { box.querySelectorAll('.ct-erro').forEach(function (p) { if (/pergunta livre/.test(p.textContent)) p.textContent = 'O cadastro não está disponível no momento. Tente novamente em alguns minutos.'; }); box.querySelectorAll('.ct-chamada').forEach(function (p) { var t = p.innerHTML; var n = t.replace(' Presidente, governador e senador continuam abertos a todos.', ''); if (n !== t) p.innerHTML = n; }); };

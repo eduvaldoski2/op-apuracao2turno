@@ -2,7 +2,7 @@
 // Uso: node scripts/versao.mjs   (rodar antes de cada commit; é idempotente)
 import fs from 'node:fs'; import crypto from 'node:crypto'; import path from 'node:path';
 const limpa = s => s.replace(/(\.(?:js|css|svg))\?v=[0-9a-f]+/g, '$1');
-const arqs = fs.readdirSync('js').filter(f => f.endsWith('.js')).map(f => 'js/' + f).concat(['css/app.css', 'css/consent.css', 'painel.html', 'index.html', 'cartoes/cartoes.js', 'cartoes/cartoes.css', 'cartoes/index.html']);
+const arqs = fs.readdirSync('js').filter(f => f.endsWith('.js')).map(f => 'js/' + f).concat(['css/app.css', 'css/consent.css', 'painel.html', 'index.html', 'radar/_login.html', 'cartoes/cartoes.js', 'cartoes/cartoes.css', 'cartoes/index.html']);
 const base = Object.fromEntries(arqs.map(f => [f, limpa(fs.readFileSync(f, 'utf8'))]));
 const h = crypto.createHash('sha1'); for (const f of arqs.sort()) h.update(f + base[f]); const v = h.digest('hex').slice(0, 8);
 for (const f of arqs) {
@@ -11,6 +11,7 @@ for (const f of arqs) {
   if (f === 'painel.html') s = s.replace(/(src="js\/app\.js)"/, `$1?v=${v}"`).replace(/(href="css\/app\.css)"/, `$1?v=${v}"`);
   if (f === 'cartoes/cartoes.js') s = s.replace(/(from\s+'\.\.\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`).replace(/(import\(\s*'\.\.\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`);
   if (f === 'cartoes/index.html') s = s.replace(/(href="cartoes\.css)"/, `$1?v=${v}"`).replace(/(src="cartoes\.js)"/, `$1?v=${v}"`);
+  if (f === 'radar/_login.html') s = s.replace(/(import\(\s*'\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`);
   if (f === 'index.html') s = s.replace(/(from\s+'\.\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`).replace(/(href="css\/consent\.css)"/, `$1?v=${v}"`);
   if (s !== fs.readFileSync(f, 'utf8')) fs.writeFileSync(f, s);
 }
