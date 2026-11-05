@@ -19,6 +19,11 @@ O leitor volta ao Radar para saber o que aconteceu desde a edição anterior. Um
 - A capa muda: escolha `HOME_LEAD` e `HOME_ROW` entre as mais recentes e relevantes; coloque no topo de cada editoria o que é novo. Renove o Giro OP com notas novas (retire as já velhas). Mesmo em edição mais fraca, não republique texto idêntico para parecer novidade.
 - Se, depois de pesquisar a fundo, o dia estiver realmente parado, use `--aceitar-poucas` e diga isso no resumo, listando o que foi pesquisado.
 
+## Matéria que continua e matéria atualizada
+- Notícia muito relevante pode continuar na edição seguinte. Sempre que houver fato novo no intervalo, atualize: incorpore o desdobramento ao `fundo`, ajuste `resumo`, `sub` e, se a novidade mudar o centro da notícia, a manchete `t`; acrescente as fontes novas; mantenha o mesmo id.
+- Toda matéria que ficar ATUALIZADA precisa do campo `upd`: 1 a 2 frases dizendo o que mudou desde a edição anterior (ex.: `upd:'A PGR recebeu o relatório e o prazo de 15 dias começou a correr.'`). O texto de `upd` não pode repetir o da edição anterior; o `publicar.cjs` recusa a edição sem isso. A etiqueta ATUALIZADA e a faixa com o `upd` aparecem sozinhas.
+- Se a matéria continua sem fato novo, não mexa no texto: ela segue sem etiqueta.
+
 ## Estrutura editorial
 **Política** (a maior: 12–20 matérias), **Economia** (4–6), **Regiões** (2–4 por sub-região: Rio de Janeiro, São Paulo, Minas Gerais, Nordeste, Sul, Norte, Centro-Oeste; cubra os estados do Nordeste e do Norte e traga sites de bastidores locais), **Mundo** (3–5, o que toca Brasil/política). Colunistas não são seção: vão em `COLUNAS`. Giro OP: 12–20 notas, só com link verificado. TRENDS: só com link e contexto confirmado; pode ser `[]`.
 

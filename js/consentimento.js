@@ -4,7 +4,7 @@
 import { CONFIG } from './config.js?v=7fb8b353';
 
 const KEY = 'op_consent', VERSAO = 1;
-const RAIZ_PAG = /\/(resultados|apuracao-2t-2026)\//.test(location.pathname) ? '/' : '';   // a política fica na raiz do site
+const RAIZ_PAG = /\/(resultados|apuracao-2t-2026|radar)\//.test(location.pathname) ? '/' : '';   // a política fica na raiz do site
 const A = CONFIG.anuncios || {}, meta = A.meta?.pixel || '', goog = A.google?.id || '', GA = CONFIG.analytics?.ga4 || '';
 const q = new URLSearchParams(location.search);
 const gpc = () => navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';

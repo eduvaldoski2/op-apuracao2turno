@@ -54,6 +54,31 @@ if ($logado) {
   exit;
 }
 
+// matéria compartilhada: quem chega por um link com código de quem enviou lê a matéria sem conta, com convite para criar a conta
+$prevHtml = ''; $og = '';
+try {
+  if (!empty($ref) && !empty($mat) && radar_codigo_existe($ref)) {
+    define('RADAR_OK', 1); ob_start(); $okp = @include __DIR__ . '/_publico.php'; $pj = ob_get_clean();
+    $pub = $okp ? json_decode((string)$pj, true) : null;
+    if (is_array($pub) && isset($pub[$mat]) && is_array($pub[$mat])) {
+      $s = $pub[$mat]; $e = fn($x) => htmlspecialchars((string)$x, ENT_QUOTES, 'UTF-8');
+      $corpo = '';
+      foreach ((array)($s['fundo'] ?? []) as $b) {
+        if (!is_array($b) || !isset($b[0])) continue;
+        if ($b[0] === 'p') $corpo .= '<p>' . $e($b[1] ?? '') . '</p>';
+        elseif ($b[0] === 'h') $corpo .= '<h3>' . $e($b[1] ?? '') . '</h3>';
+        elseif ($b[0] === 'ul') { $corpo .= '<ul>'; foreach ((array)($b[1] ?? []) as $li) $corpo .= '<li>' . $e($li) . '</li>'; $corpo .= '</ul>'; }
+        elseif ($b[0] === 'tl') { $corpo .= '<ul>'; foreach ((array)($b[1] ?? []) as $li) if (is_array($li)) $corpo .= '<li><b>' . $e($li[0] ?? '') . '</b> ' . $e($li[1] ?? '') . '</li>'; $corpo .= '</ul>'; }
+      }
+      $fontes = ''; foreach ((array)($s['fontes'] ?? []) as $f) if (is_array($f) && !empty($f[1]) && preg_match('#^https?://#', $f[1])) $fontes .= '<a href="' . $e($f[1]) . '" target="_blank" rel="noopener nofollow">' . $e($f[0] ?? 'Fonte') . '</a> ';
+      $prevHtml = '<article class="prev"><span class="kk">' . $e($s['k'] ?? 'Radar') . '</span><h2>' . $e($s['t'] ?? '') . '</h2><p class="sub">' . $e($s['sub'] ?? '') . '</p>' . $corpo
+        . ($fontes ? '<p class="fts"><b>Fontes:</b> ' . $fontes . '</p>' : '')
+        . '<div class="cta"><b>Gostou? Crie sua conta gratuita e leia o Radar completo.</b><br>Política, economia, regiões e mundo, em quatro edições por dia, com as fontes à vista.</div></article>';
+      $og = '<meta property="og:type" content="article"><meta property="og:site_name" content="Radar Oficina Política"><meta property="og:title" content="' . $e($s['t'] ?? '') . '"><meta property="og:description" content="' . $e($s['sub'] ?? '') . '"><meta property="og:image" content="https://oficinapolitica.com.br/img/og.jpg"><meta name="twitter:card" content="summary_large_image">';
+    }
+  }
+} catch (Throwable $e2) { $prevHtml = ''; $og = ''; }
 $login = @file_get_contents(__DIR__ . '/_login.html');
 if ($login === false) { http_response_code(503); echo 'Radar temporariamente indisponível.'; exit; }
+$login = str_replace(['<!--__MATERIA__-->', '<!--__OG__-->', '__PREVIEW__', '__INTRO__'], [$prevHtml, $og, $prevHtml !== '' ? '1' : '0', $prevHtml !== '' ? 'display:none' : 'display:contents'], $login);
 echo str_replace('__CONTAS__', $contasAtivas ? '1' : '0', $login);

@@ -46,6 +46,12 @@ const nN = Object.values(flags).filter(v => v === 'novo').length, nA = Object.va
 if (ant && !process.argv.includes('--aceitar-poucas') && (nN < 5 || nN + nA < 10)) {
   die('edição quase igual à anterior (' + nN + ' NOVO, ' + nA + ' ATUALIZADA). Exigido: ao menos 5 NOVO e 10 NOVO+ATUALIZADA. Busque mais notícias publicadas depois de ' + ant + ' em TODAS as editorias e sub-regiões. Só use --aceitar-poucas se tiver pesquisado de verdade e realmente não houver mais nada (e diga isso no resumo).');
 }
+// matéria ATUALIZADA precisa dizer o que mudou (campo upd) e o texto não pode repetir o da edição anterior
+if (ant) {
+  const pa = carregar(fs.readFileSync(path.join(arq, ant + '.php'), 'utf8'));
+  const semUpd = Object.keys(flags).filter(i => flags[i] === 'atualizada' && (!d.S[i].upd || String(d.S[i].upd).length < 12 || d.S[i].upd === (pa.S[i] || {}).upd));
+  if (semUpd.length) die('matérias ATUALIZADAS sem o campo upd novo (1–2 frases dizendo o que mudou desde a edição anterior): ' + semUpd.join(', '));
+}
 const bloco = '/* FLAGS (gerado por publicar.js; não editar) */\nvar FLAGS = ' + JSON.stringify(flags) + ';\n';
 let novo = txt.replace(/\/\* FLAGS \(gerado[^\n]*\nvar FLAGS = [^\n]*\n/, '');
 if (!novo.includes('/* ===== FIM DOS DADOS ===== */')) die('marcador FIM DOS DADOS ausente');
@@ -53,5 +59,8 @@ novo = novo.replace('/* ===== FIM DOS DADOS ===== */', bloco + '/* ===== FIM DOS
 fs.mkdirSync(arq, { recursive: true });
 fs.writeFileSync(fonte, novo);
 fs.writeFileSync(path.join(arq, nome + '.php'), novo);
+// versão por matéria, usada para abrir ao visitante a matéria que alguém compartilhou (só com código de quem enviou)
+const pub = {}; Object.keys(d.S).forEach(i => { const s = d.S[i]; pub[i] = { k: s.k, t: s.t, sub: s.sub, resumo: s.resumo, fundo: s.fundo, fontes: s.fontes, hora: s.hora }; });
+fs.writeFileSync(path.join(raiz, '_publico.php'), "<?php if (!defined('RADAR_OK')) { http_response_code(404); exit; } ?>\n" + JSON.stringify(pub).replace(/</g, '\\u003c'));
 const n = Object.values(flags).filter(v => v === 'novo').length, a = Object.values(flags).filter(v => v === 'atualizada').length;
 console.log('OK ' + nome + ': ' + Object.keys(d.S).length + ' matérias, ' + n + ' NOVO, ' + a + ' ATUALIZADA' + (ant ? ' (vs ' + ant + ')' : ' (sem edição anterior)'));

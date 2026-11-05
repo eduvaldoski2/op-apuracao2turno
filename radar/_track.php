@@ -29,6 +29,10 @@ function radar_codigo($uid) {
   try { $db->prepare('INSERT OR IGNORE INTO codigos (code, uid) VALUES (?, ?)')->execute([$c, $uid]); } catch (Throwable $e) { return ''; }
   return $c;
 }
+function radar_codigo_existe($code) {
+  $db = radar_db(); if (!$db || !preg_match('/^[a-f0-9]{8}$/', (string)$code)) return false;
+  try { $s = $db->prepare('SELECT 1 FROM codigos WHERE code = ?'); $s->execute([$code]); return (bool)$s->fetchColumn(); } catch (Throwable $e) { return false; }
+}
 function radar_compartilhou($uid, $materia, $canal) {
   $db = radar_db(); $c = radar_codigo($uid); if (!$db || $c === '') return false;
   try {
