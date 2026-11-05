@@ -30,6 +30,7 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-off
 .wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 
 /* Cabeçalho */
+html,body{overflow-anchor:none}
 .hdr{background:var(--hdr);color:var(--hdr-ink);border-bottom:1px solid #e3ddd0;position:sticky;top:env(safe-area-inset-top,0px);z-index:50;text-align:center}
 .hdrin{display:flex;flex-direction:column;align-items:center;gap:6px;padding-block:16px 6px}
 .logo{display:block;line-height:0;text-decoration:none;min-width:0;max-width:100%}
@@ -511,7 +512,7 @@ document.addEventListener('click',function(e){
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal()}});
 window.addEventListener('hashchange',route);
 function sizeHdr(){var h=document.getElementById('hdr');document.documentElement.style.setProperty('--hh',h.offsetHeight+'px')}
-window.addEventListener('scroll',function(){var h=document.getElementById('hdr');var c=window.scrollY>90;if(c!==h.classList.contains('compact')){h.classList.toggle('compact',c);sizeHdr()}},{passive:true});
+window.addEventListener('scroll',function(){var h=document.getElementById('hdr'),app=document.getElementById('app'),was=h.classList.contains('compact'),y=window.scrollY;var c=was?y>40:y>120;if(c!==was){var h0=h.offsetHeight;h.classList.toggle('compact',c);var h1=h.offsetHeight;app.style.marginTop=c?(h0-h1)+'px':'';sizeHdr()}},{passive:true});
 window.addEventListener('resize',sizeHdr);
 document.getElementById('edicao').innerHTML='<b>Edição das '+esc(EDICAO.hora)+'</b> · '+esc(EDICAO.data);
 route();sizeHdr();
