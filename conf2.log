@@ -1,0 +1,69 @@
+seções com sq_candidato: True
+
+## Totais (turno, cargo, votos seção, votos munzona nominais, votos munzona válidos, diferença seção-nominais, células divergentes)
+1 | 11 | 108,292,315 | 105,726,233 | 105,726,233 | 2,566,082 | 730
+1 | 13 | 100,115,474 | 98,395,774 | 98,395,774 | 1,719,700 | 25,746
+2 | 11 | 22,178,276 | 22,178,276 | 22,178,276 | 0 | 0
+
+## Divergência por tipo 
+candidato so nas secoes (ausente na munzona) | 1 | 11 | 730 | 2,566,082
+candidato so nas secoes (ausente na munzona) | 1 | 13 | 25,746 | 1,719,700
+
+## Divergência por destinação dos votos na munzona
+(candidato fora da munzona) | 1 | 11 | 730 | 2,566,082 | 0
+(candidato fora da munzona) | 1 | 13 | 25,746 | 1,719,700 | 0
+
+## Divergência por situação final do candidato
+(sem) | 26,476 | 4,285,782
+
+## Diferença residual (votos seção - votos munzona) APÓS excluir destinação anulada (anulado/ sub judice)
+1 | 11 | 2,566,082
+1 | 13 | 1,719,700
+2 | 11 | 0
+
+## Maiores divergências (amostra)
+1 | 11 | PE | 24,430 | 16 | 170,000,003,932 | 32,496 | 0 |  | 
+1 | 11 | SP | 61,654 | 14 | 250,000,629,848 | 31,107 | 0 |  | 
+1 | 11 | SP | 61,654 | 14 | 250,000,076,699 | 28,788 | 0 |  | 
+1 | 11 | MG | 46,256 | 131 | 130,000,040,659 | 28,588 | 0 |  | 
+1 | 11 | PA | 4,251 | 65 | 140,000,018,387 | 28,484 | 0 |  | 
+1 | 11 | SP | 61,654 | 14 | 250,000,628,873 | 28,467 | 0 |  | 
+1 | 11 | SP | 62,855 | 354 | 250,000,049,123 | 27,874 | 0 |  | 
+1 | 11 | CE | 14,559 | 4 | 60,000,002,193 | 26,688 | 0 |  | 
+1 | 11 | RS | 86,835 | 173 | 210,000,006,828 | 25,894 | 0 |  | 
+1 | 11 | SE | 31,950 | 34 | 260,000,003,221 | 25,487 | 0 |  | 
+1 | 11 | MG | 46,256 | 130 | 130,000,040,659 | 21,368 | 0 |  | 
+1 | 11 | SE | 31,690 | 12 | 260,000,006,870 | 21,120 | 0 |  | 
+1 | 11 | SP | 64,017 | 391 | 250,000,022,173 | 20,793 | 0 |  | 
+1 | 11 | RJ | 59,153 | 195 | 190,000,005,791 | 20,373 | 0 |  | 
+1 | 11 | SP | 66,079 | 63 | 250,000,085,944 | 20,198 | 0 |  | 
+
+## Candidatos que só aparecem nas seções: situação da candidatura (consulta_cand) - células e votos
+INAPTO | 1 | 11 | 466 | 1,413,736
+APTO | 1 | 11 | 260 | 1,125,123
+APTO | 1 | 13 | 10,342 | 986,515
+INAPTO | 1 | 13 | 15,404 | 733,185
+(sq fora do consulta_cand) | 1 | 11 | 4 | 27,223
+
+## Idem: situação final do candidato (consulta_cand)
+NÃO ELEITO | 18,139 | 3,270,593
+#NULO# | 8,333 | 987,966
+(sem) | 4 | 27,223
+
+## Divergências restantes quando se desconta quem só aparece nas seções (deve ser 0 se tudo estiver explicado)
+1 | 11 | 0
+1 | 13 | 0
+2 | 11 | 0
+
+## Agregando por MUNICÍPIO (sem zona): se a divergência por zona some, a diferença é de codificação de zona entre arquivos, não de votos
+1 | 11 | 613 | 2,566,082 | 2,566,082
+1 | 13 | 9,892 | 1,719,700 | 1,719,700
+2 | 11 | 0 | 0 | 0
+
+## Agregando por UF e candidato
+1 | 11 | 613 | 2,566,082
+1 | 13 | 9,892 | 1,719,700
+2 | 11 | 0 | 0
+
+## Zonas que existem só em um dos arquivos (município, zona) nos dois arquivos
+1 | 0
