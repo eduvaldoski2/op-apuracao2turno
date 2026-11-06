@@ -16,7 +16,7 @@ try {
   if (!is_array($pub) || !isset($pub[$m])) rsai(false, 'Matéria não encontrada.', 404);
   if (radar_email_bloqueado($para)) rsai(false, 'Esse endereço pediu para não receber e-mails do Radar.', 409);
   if (!taxa_ok('rmail:' . (int)$u['id'], 10, 86400) || !taxa_ok('rmailip:' . ip_hash(), 30, 86400)) rsai(false, 'Limite diário de envios atingido. Tente amanhã.', 429);
-  $nome = trim(explode(' ', trim((string)$u['nome']))[0]) ?: 'Alguém';
+  $nome = mb_convert_case(trim(explode(' ', trim((string)$u['nome']))[0]), MB_CASE_TITLE, 'UTF-8') ?: 'Alguém';
   $cod = radar_codigo((int)$u['id']);
   $link = RADAR_SITE . '/radar/?' . ($cod !== '' ? 'r=' . $cod . '&' : '') . 'm=' . rawurlencode($m) . '&utm_source=radar&utm_medium=email&utm_campaign=compartilhar#materia-' . rawurlencode($m);
   $urlSair = radar_url_sair(['t' => 'opt', 'h' => radar_email_hash($para)]);

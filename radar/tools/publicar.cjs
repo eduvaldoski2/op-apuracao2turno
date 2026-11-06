@@ -73,6 +73,12 @@ if (ant) {
     if (paradas.length) die('matérias paradas há 3 edições sem fato novo (' + paradas.length + '): ' + paradas.join(', ') + '. Para cada uma: acrescente o desdobramento novo (vira ATUALIZADA, com upd) ou marque velha:true (sai das editorias e continua acessível por link compartilhado).');
   }
 }
+// cada sub-região precisa de ao menos 5 matérias ativas (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste)
+{
+  const nomes = { rj: 'Rio de Janeiro', sp: 'São Paulo', mg: 'Minas Gerais', ne: 'Nordeste', sul: 'Sul', norte: 'Norte', co: 'Centro-Oeste' };
+  const falta = Object.keys(nomes).map(r => [r, (d.ORDER.regioes || []).filter(i => d.S[i] && !d.S[i].velha && d.S[i].reg === r).length]).filter(x => x[1] < 5);
+  if (falta.length && !process.argv.includes('--aceitar-poucas')) die('regiões com menos de 5 matérias: ' + falta.map(x => nomes[x[0]] + ' (' + x[1] + ')').join(', ') + '. Cada sub-região exige ao menos 5 matérias (Nordeste e Norte: cubra vários estados, não só um). Pesquise mais; só use --aceitar-poucas se realmente não houver mais nada.');
+}
 const bloco = '/* FLAGS (gerado por publicar.js; não editar) */\nvar FLAGS = ' + JSON.stringify(flags) + ';\nvar GIRO_FLAGS = ' + JSON.stringify(giroFlags) + ';\n';
 let novo = txt.replace(/\/\* FLAGS \(gerado[^\n]*\nvar FLAGS = [^\n]*\n(var GIRO_FLAGS = [^\n]*\n)?/, '');
 if (!novo.includes('/* ===== FIM DOS DADOS ===== */')) die('marcador FIM DOS DADOS ausente');

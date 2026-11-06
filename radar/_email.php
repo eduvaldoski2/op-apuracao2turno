@@ -19,7 +19,7 @@ function radar_mail($para, $assunto, $texto, $html, $urlSair) {
   $c = cfg('CONTA', []); $de = $c['email_de'] ?? 'contato@oficinapolitica.com.br';
   if (!filter_var($de, FILTER_VALIDATE_EMAIL) || !filter_var($para, FILTER_VALIDATE_EMAIL)) return false;
   $b = '=_op' . bin2hex(random_bytes(8));
-  $h = 'From: ' . mb_encode_mimeheader('Radar da Oficina Política', 'UTF-8', 'B') . " <$de>\r\nReply-To: $de\r\nMIME-Version: 1.0\r\nContent-Type: multipart/alternative; boundary=\"$b\"\r\n"
+  $h = 'From: ' . mb_encode_mimeheader('Oficina Política', 'UTF-8', 'B') . " <$de>\r\nReply-To: $de\r\nMIME-Version: 1.0\r\nContent-Type: multipart/alternative; boundary=\"$b\"\r\n"
      . "List-Unsubscribe: <$urlSair>, <mailto:$de?subject=SAIR>\r\nList-Unsubscribe-Post: List-Unsubscribe=One-Click\r\nPrecedence: bulk\r\nX-Auto-Response-Suppress: OFResponse\r\n";
   $corpo = "--$b\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($texto))
          . "--$b\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($html)) . "--$b--";
