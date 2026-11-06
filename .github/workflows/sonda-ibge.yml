@@ -1,0 +1,25 @@
+name: Sonda IBGE - divisoes intramunicipais (distritos/subdistritos) de um municipio
+on:
+  workflow_dispatch:
+    inputs:
+      ibge: { description: 'Codigo IBGE (7 digitos)', required: true, default: '3518800' }
+permissions:
+  contents: write
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Consultar
+        run: |
+          exec > >(tee /tmp/ibge.log) 2>&1
+          M=${{ github.event.inputs.ibge }}; A=https://servicodados.ibge.gov.br/api
+          echo "== distritos"; curl -sS -m 40 "$A/v1/localidades/municipios/$M/distritos" | python3 -c "import json,sys;d=json.load(sys.stdin);[print(x['id'],x['nome']) for x in d];print(len(d),'distritos')"
+          echo "== subdistritos"; curl -sS -m 40 "$A/v1/localidades/municipios/$M/subdistritos" | python3 -c "import json,sys;d=json.load(sys.stdin);[print(x['id'],x['nome']) for x in d];print(len(d),'subdistritos')"
+          echo "== malha por distrito"; curl -sS -m 60 "$A/v3/malhas/municipios/$M?intrarregiao=distrito&formato=application/vnd.geo+json&qualidade=minima" | python3 -c "import json,sys;d=json.load(sys.stdin);print(len(d.get('features',[])),'poligonos',[f['properties'] for f in d.get('features',[])][:5])" 2>&1 | head -5
+          echo "== malha por subdistrito"; curl -sS -m 60 "$A/v3/malhas/municipios/$M?intrarregiao=subdistrito&formato=application/vnd.geo+json&qualidade=minima" | python3 -c "import json,sys;d=json.load(sys.stdin);print(len(d.get('features',[])),'poligonos',[f['properties'] for f in d.get('features',[])][:5])" 2>&1 | head -5
+      - name: Publicar log
+        if: always()
+        run: |
+          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub && cp /tmp/ibge.log . && git init -q -b sonda-ibge && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" sonda-ibge
