@@ -1,0 +1,65 @@
+
+## Totais (turno, cargo, votos seção, votos munzona nominais, votos munzona válidos, diferença seção-nominais, células divergentes)
+1 | 1 | 0 | 104,023,802 | 0 | -104,023,802 | 62,267
+1 | 3 | 0 | 99,581,885 | 0 | -99,581,885 | 40,838
+1 | 5 | 0 | 89,351,604 | 0 | -89,351,604 | 38,441
+1 | 6 | 0 | 89,147,333 | 0 | -89,147,333 | 866,088
+1 | 7 | 0 | 87,315,271 | 0 | -87,315,271 | 1,234,519
+1 | 8 | 0 | 1,439,955 | 0 | -1,439,955 | 17,550
+2 | 1 | 0 | 105,542,273 | 0 | -105,542,273 | 12,791
+2 | 3 | 0 | 36,949,549 | 0 | -36,949,549 | 4,668
+
+## Divergência por tipo (so_secao = candidato só nas seções; so_zona = só na munzona; ambos = em ambos)
+so_secao | 1 | 1 | 62,267 | -104,023,802
+so_secao | 1 | 3 | 40,838 | -99,581,885
+so_secao | 1 | 5 | 38,441 | -89,351,604
+so_secao | 1 | 6 | 866,088 | -89,147,333
+so_secao | 1 | 7 | 1,234,519 | -87,315,271
+so_secao | 1 | 8 | 17,550 | -1,439,955
+so_secao | 2 | 1 | 12,791 | -105,542,273
+so_secao | 2 | 3 | 4,668 | -36,949,549
+
+## Divergência por destinação dos votos na munzona
+(candidato fora da munzona) | 1 | 1 | 62,267 | -104,023,802 | 0
+(candidato fora da munzona) | 1 | 3 | 40,838 | -99,581,885 | 0
+(candidato fora da munzona) | 1 | 5 | 38,441 | -89,351,604 | 0
+(candidato fora da munzona) | 1 | 6 | 866,088 | -89,147,333 | 0
+(candidato fora da munzona) | 1 | 7 | 1,234,519 | -87,315,271 | 0
+(candidato fora da munzona) | 1 | 8 | 17,550 | -1,439,955 | 0
+(candidato fora da munzona) | 2 | 1 | 12,791 | -105,542,273 | 0
+(candidato fora da munzona) | 2 | 3 | 4,668 | -36,949,549 | 0
+
+## Divergência por situação final do candidato
+ELEITO POR MÉDIA | 46,893 | -8,517,427
+SUPLENTE | 1,484,905 | -65,913,151
+ELEITO POR QP | 369,935 | -98,692,011
+2º TURNO | 16,933 | -104,529,972
+ELEITO | 19,402 | -161,832,646
+NÃO ELEITO | 339,094 | -173,866,465
+
+## Diferença residual (votos seção - votos munzona) APÓS excluir destinação anulada (anulado/ sub judice)
+1 | 1 | -104,023,802
+1 | 3 | -99,581,885
+1 | 5 | -89,351,604
+1 | 6 | -89,147,333
+1 | 7 | -87,315,271
+1 | 8 | -1,439,955
+2 | 1 | -105,542,273
+2 | 3 | -36,949,549
+
+## Maiores divergências (amostra)
+2 | 1 | SP | 71,072 | 253 | 280,000,000,085 | 0 | 131,292 |  | NÃO ELEITO
+2 | 1 | SP | 71,072 | 258 | 280,000,000,085 | 0 | 128,039 |  | NÃO ELEITO
+2 | 1 | SP | 71,072 | 374 | 280,000,000,085 | 0 | 109,576 |  | NÃO ELEITO
+1 | 1 | SP | 71,072 | 258 | 280,000,000,085 | 0 | 105,947 |  | 2º TURNO
+2 | 1 | SP | 71,072 | 257 | 280,000,000,085 | 0 | 103,019 |  | NÃO ELEITO
+2 | 1 | SP | 71,072 | 372 | 280,000,000,083 | 0 | 102,732 |  | ELEITO
+2 | 1 | SP | 71,072 | 255 | 280,000,000,085 | 0 | 102,501 |  | NÃO ELEITO
+2 | 1 | CE | 13,897 | 118 | 280,000,000,083 | 0 | 102,223 |  | ELEITO
+1 | 3 | SP | 71,072 | 258 | 250,000,001,672 | 0 | 101,545 |  | ELEITO
+2 | 1 | SP | 71,072 | 2 | 280,000,000,085 | 0 | 100,246 |  | NÃO ELEITO
+2 | 1 | SP | 71,072 | 6 | 280,000,000,085 | 0 | 100,173 |  | NÃO ELEITO
+2 | 1 | SP | 71,072 | 250 | 280,000,000,085 | 0 | 97,210 |  | NÃO ELEITO
+2 | 1 | SP | 71,072 | 4 | 280,000,000,085 | 0 | 96,790 |  | NÃO ELEITO
+2 | 1 | SP | 71,072 | 259 | 280,000,000,085 | 0 | 95,533 |  | NÃO ELEITO
+2 | 1 | PR | 75,353 | 3 | 280,000,000,085 | 0 | 95,377 |  | NÃO ELEITO
