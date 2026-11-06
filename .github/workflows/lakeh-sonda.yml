@@ -1,0 +1,43 @@
+name: Lake historico - sonda de disponibilidade no TSE (todos os anos e suplementares)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Sondar CDN e CKAN
+        run: |
+          exec > >(tee /tmp/sonda.log) 2>&1
+          B=https://cdn.tse.jus.br/estatistica/sead/odsele
+          echo "== CDN (HEAD): ano familia arquivo -> HTTP bytes"
+          for A in 2024 2022 2020 2018 2016 2014 2012 2010 2008 2006 2004 2002 2000 1998 1996 1994; do
+            for F in "votacao_secao/votacao_secao_${A}_AC" "votacao_secao/votacao_secao_${A}_BRASIL" "detalhe_votacao_secao/detalhe_votacao_secao_${A}" "votacao_candidato_munzona/votacao_candidato_munzona_${A}" "votacao_partido_munzona/votacao_partido_munzona_${A}" "detalhe_votacao_munzona/detalhe_votacao_munzona_${A}" "consulta_cand/consulta_cand_${A}" "eleitorado_locais_votacao/eleitorado_local_votacao_${A}" "eleitorado_local_votacao/eleitorado_local_votacao_${A}" "perfil_eleitorado/perfil_eleitorado_${A}" "bem_candidato/bem_candidato_${A}"; do
+              r=$(curl -sSI -L -m 25 --http1.1 "$B/$F.zip" | tr -d '\r' | egrep -i "^HTTP|^content-length" | tr '\n' ' ')
+              echo "$A | $F | $r"
+            done
+          done
+          echo; echo "== CKAN: recursos que citam suplementar/extraordinaria"
+          for S in resultados-2024 resultados-2022 resultados-2020 resultados-2018 resultados-2016 resultados-2014 resultados-2012 resultados-2010 resultados-2008 resultados-2006 resultados-2004 resultados-2002 resultados-2000 resultados-1998 resultados-1996 resultados-1994 eleicoes-suplementares resultados-eleicoes-suplementares; do
+            echo "-- $S"; curl -sS -m 40 "https://dadosabertos.tse.jus.br/api/3/action/package_show?id=$S" | python3 -c "
+import json,sys,re
+try: d=json.load(sys.stdin)
+except Exception as e: print('erro',e); sys.exit()
+if not d.get('success'): print('nao encontrado'); sys.exit()
+r=d['result']; print(r.get('title'), '| recursos:', len(r['resources']))
+for x in r['resources']:
+    n=(x.get('name') or '')+' '+(x.get('url') or '')
+    if re.search('suplement|extraordin',n,re.I): print('  SUPL:',n[:200])
+"
+          done
+          echo; echo "== CKAN: busca por suplementares"
+          curl -sS -m 40 "https://dadosabertos.tse.jus.br/api/3/action/package_search?q=suplementar&rows=40" | python3 -c "
+import json,sys
+d=json.load(sys.stdin)
+for p in d.get('result',{}).get('results',[]): print(p['name'],'|',p['title'])"
+      - name: Publicar log
+        if: always()
+        run: |
+          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub && cp /tmp/sonda.log . && git init -q -b sonda-lakeh && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log && git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" sonda-lakeh
