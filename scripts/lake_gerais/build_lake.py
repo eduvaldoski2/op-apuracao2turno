@@ -40,6 +40,9 @@ def extrair(z, sufixo):
     m = [n for n in nomes if n.upper().endswith(sufixo.upper())]
     if not m and sufixo.upper() == '_BRASIL.CSV':
         m = [n for n in nomes if n.lower().endswith('.csv') and not re.search(r'_[A-Z]{2}\.csv$', n, re.I)]
+    if not m:
+        print('SEM MEMBRO', sufixo, 'em', os.path.basename(z), '->', nomes[:6], flush=True)
+        m = [n for n in nomes if re.search(r'\.(csv|txt)$', n, re.I) and sufixo.upper().replace('.CSV', '') in n.upper()]
     if not m: return None
     subprocess.run(['unzip', '-o', '-j', '-q', z, m[0], '-d', W], check=True)
     f = os.path.join(W, os.path.basename(m[0])); u = f + '.utf8'
@@ -77,6 +80,7 @@ for uf in ['BR'] + UFS:
     z, lm = baixar(f'votacao_secao/votacao_secao_{ano}_{uf}.zip')
     if not z: print('SEM ARQUIVO', uf, flush=True); manifest.setdefault('ausentes', []).append(f'votacao_secao_{ano}_{uf}'); continue
     p = extrair(z, f'_{uf}.csv'); os.remove(z)
+    if not p: print('SEM CSV NO ZIP', uf, flush=True); manifest.setdefault('ausentes', []).append(f'votacao_secao_{ano}_{uf}(zip sem csv)'); continue
     gravar(SEC(p), f'secao_{ano}_{uf}.parquet', f'votacao_secao/votacao_secao_{ano}_{uf}.zip', lm); os.remove(p)
 
 # ---------------- tabelas auxiliares (tolerantes a ausência de arquivo ou mudança de colunas)
