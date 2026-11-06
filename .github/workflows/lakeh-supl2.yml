@@ -13,19 +13,12 @@ jobs:
           exec > >(tee /tmp/supl2.log) 2>&1
           B=https://cdn.tse.jus.br/estatistica/sead/eleicoes
           for A in 2024 2022 2020; do
-            echo "######## $A"
-            for P in "listaelesuplem/lista_eleicoes_suplementares_$A" "correspesp/cesp_ele_suplementares_$A" "correspefet/ceft_ele_suplementares_$A" "buweb/buweb_ele_suplementares_$A"; do
-              u="$B/eleicoes$A/$P.zip"
-              echo "== $P"; curl -sSI -L -m 30 --http1.1 "$u" | tr -d '\r' | egrep -i "^HTTP|^content-length|^last-mod" | tr '\n' ' '; echo
-              sz=$(curl -sSI -L -m 30 --http1.1 "$u" | tr -d '\r' | awk 'tolower($1)=="content-length:"{print $2}' | tail -1)
-              if [ -n "$sz" ] && [ "$sz" -lt 400000000 ]; then
-                mkdir -p /tmp/s && rm -rf /tmp/s/* && curl -sS -f -L --retry 3 -o /tmp/s/x.zip "$u" && (cd /tmp/s && unzip -o -q x.zip; ls -la; for f in *.csv *.txt; do [ -f "$f" ] || continue; echo "-- $f linhas: $(wc -l < "$f")"; iconv -f latin1 -t utf8 "$f" | head -4 | cut -c1-600; done)
-              fi
+            for P in "buweb/buweb_ele_suplementares_$A" "correspefet/ceft_ele_suplementares_$A" "correspesp/cesp_ele_suplementares_$A"; do
+              echo "######## $A $P"; rm -rf /tmp/s && mkdir -p /tmp/s && curl -sS -f -L --retry 3 -o /tmp/s/x.zip "$B/eleicoes$A/$P.zip" && (cd /tmp/s && unzip -Z1 x.zip | awk -F/ '{n[$1]++; if(!(($1) in ex)){ex[$1]=$0}} END{for(d in n)print d, n[d], ex[d]}' | sort | head -40; unzip -Z1 x.zip | sed 's/.*\.//' | sort | uniq -c)
             done
           done
-          echo "######## votacao_secao 2024/2022/2020 contem suplementar? (cd_eleicao distintos por UF AC)"
-          for A in 2024 2022 2020; do
-            curl -sS -f -L -o /tmp/v.zip "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_${A}_AC.zip" && unzip -o -q -d /tmp/v /tmp/v.zip && for f in /tmp/v/*.csv; do iconv -f latin1 -t utf8 "$f" | awk -F';' 'NR==1{for(i=1;i<=NF;i++)h[$i]=i} NR>1{c[$(h["\"CD_ELEICAO\""])" "$(h["\"DS_ELEICAO\""])]++} END{for(k in c)print "'$A' AC",k,c[k]}' | head; done; rm -rf /tmp/v
+          for A in 2024 2020; do
+            rm -rf /tmp/s && mkdir -p /tmp/s && curl -sS -f -L -o /tmp/s/x.zip "$B/eleicoes$A/buweb/buweb_ele_suplementares_$A.zip" && cd /tmp/s && unzip -o -q x.zip && f=$(ls -d */ | head -1) && echo "#### conteudo $A/$f" && ls -la "$f" | head && for g in $(ls $f | head -2); do echo "-- $g"; (iconv -f latin1 -t utf8 "$f$g" | head -5 | cut -c1-500) 2>/dev/null; done; cd /
           done
       - name: Publicar log
         if: always()
