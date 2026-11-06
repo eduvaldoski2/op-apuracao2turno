@@ -139,12 +139,14 @@ md += ['', '## 2) Votos nominais por seção x votação por município e zona (
        '| turno | cargo | votos seção | votos munzona | diferença | células com diferença |', '|---:|---:|---:|---:|---:|---:|']
 # anos antigos (ex.: 2014) não trazem sq_candidato nas seções: a conferência cruza por número do votável (candidato = nr compatível com o cargo)
 _tem_sq = (R(f"SELECT count(sq_candidato) FROM {sec}") or [[0]])[0][0] > 0
-if _tem_sq: _ka, _kb, _fa, _fb = 'sq_candidato', 'sq_candidato', 'sq_candidato > 0', 'sq_candidato > 0'
+if _tem_sq:
+    _ka = _kb = 'sq_candidato'; _fa = _fb = 'sq_candidato > 0'; _fromA = sec
 else:
-    _ka = _kb = 'nr_votavel'
-    _fa = _fb = "((cargo IN (1,3) AND nr_votavel NOT IN (95,96,97,98)) OR (cargo = 5 AND nr_votavel >= 100) OR (cargo IN (6,7,8) AND nr_votavel >= 1000))"
-    md.append('(seções deste ano não trazem sq_candidato: conferência cruzada por nr_votavel)')
-q = R(f"""WITH a AS (SELECT turno, cargo, cd_municipio_tse m, zona z, {_ka} c, sum(qt_votos) v FROM {sec} WHERE {_fa} GROUP BY ALL),
+    # anos sem sq_candidato nas seções: candidato = votável cujo número consta (mesmo turno, cargo e UF) na votação nominal por zona
+    _ka = _kb = 'nr_votavel'; _fb = 'sq_candidato > 0'; _fa = 'TRUE'
+    _fromA = f"(SELECT s.* FROM {sec} s WHERE EXISTS (SELECT 1 FROM {zon} z0 WHERE z0.turno = s.turno AND z0.cargo = s.cargo AND z0.uf = s.uf AND z0.nr_votavel = s.nr_votavel))"
+    md.append('(seções deste ano não trazem sq_candidato: conferência cruzada por nr_votavel, só para números que são candidatos na votação por zona)')
+q = R(f"""WITH a AS (SELECT turno, cargo, cd_municipio_tse m, zona z, {_ka} c, sum(qt_votos) v FROM {_fromA} WHERE {_fa} GROUP BY ALL),
  b AS (SELECT turno, cargo, cd_municipio_tse m, zona z, {_kb} c, sum(qt_votos_nominais) v FROM {zon} WHERE {_fb} GROUP BY ALL),
  j AS (SELECT coalesce(a.turno,b.turno) turno, coalesce(a.cargo,b.cargo) cargo, coalesce(a.v,0) va, coalesce(b.v,0) vb FROM a FULL JOIN b USING (turno, cargo, m, z, c))
  SELECT turno, cargo, sum(va), sum(vb), sum(va)-sum(vb), count(*) FILTER (WHERE va<>vb) FROM j GROUP BY 1,2 ORDER BY 1,2""")
