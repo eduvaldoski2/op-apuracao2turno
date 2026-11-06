@@ -1,12 +1,19 @@
 // Box "O que você está sentindo falta?" + formulário de sugestões do Painel (envia para api/sugestao.php).
 // Autônomo: injeta o próprio estilo e funciona na capa e no painel. Se o envio falhar, o painel segue normal.
 const CSS = `
-.sg-box{max-width:1100px;margin:28px auto;padding:22px 26px;border-radius:18px;background:#3E347E;color:#FBF9F5;display:flex;gap:18px 28px;align-items:center;justify-content:space-between;flex-wrap:wrap;font-family:'Space Grotesk',system-ui,sans-serif}
-.sg-box h2{color:#FBF9F5!important;font:400 26px/1.1 'DM Serif Display',Georgia,serif;margin:0 0 6px;letter-spacing:.01em;text-transform:uppercase}
-.sg-box p{margin:0;max-width:62ch;font-size:15px;line-height:1.45;opacity:.92}
-.sg-box button,.sg-f button.sg-env{font:inherit;font-weight:700;border:0;border-radius:10px;padding:11px 20px;cursor:pointer;background:#F08A24;color:#fff}
-.sg-box button:hover,.sg-f button.sg-env:hover{background:#d9771a}
-.sg-box button:focus-visible,.sg-x:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.sg-box{max-width:1100px;margin:22px auto;padding:0 16px;font-family:'Space Grotesk',system-ui,sans-serif;color:#1b1530}
+.sg-box details{border:1px solid #e4dfee;border-radius:12px;background:#fff}
+.sg-box summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:11px 16px;font:700 13px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#3E347E}
+.sg-box summary::-webkit-details-marker{display:none}
+.sg-box summary::after{content:'+';margin-left:auto;font-size:18px;font-weight:400;color:#F08A24}
+.sg-box details[open] summary::after{content:'–'}
+.sg-box summary:focus-visible{outline:3px solid #3E347E;outline-offset:2px;border-radius:12px}
+.sg-box .sg-c{padding:0 16px 14px;font-size:14px;line-height:1.5;color:#5d5675}
+.sg-box .sg-c p{margin:0;max-width:70ch}
+.sg-box .sg-c a{color:#3E347E;font-weight:700}
+.sg-f button.sg-env{font:inherit;font-weight:700;border:0;border-radius:10px;padding:11px 20px;cursor:pointer;background:#F08A24;color:#fff}
+.sg-f button.sg-env:hover{background:#d9771a}
+.sg-x:focus-visible{outline:3px solid #3E347E;outline-offset:2px}
 .sg-ov{position:fixed;inset:0;z-index:1100;background:rgba(30,24,60,.55);display:flex;align-items:center;justify-content:center;padding:16px;font-family:'Space Grotesk',system-ui,sans-serif}
 .sg-m{background:#fff;color:#1b1530;border-radius:18px;width:min(540px,100%);max-height:calc(100vh - 32px);overflow:auto;padding:20px 22px;box-shadow:0 20px 60px rgba(30,24,60,.35)}
 .sg-t{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
@@ -22,7 +29,7 @@ const CSS = `
 .sg-nota{font-size:12.5px;color:#5d5675;margin:0}.sg-nota a{color:#3E347E}
 .sg-msg{min-height:1.2em;margin:0;font-size:14px;font-weight:700;color:#a3261a}.sg-msg.ok{color:#1f7a4d}
 .sg-f button.sg-env{justify-self:start}.sg-f button[disabled]{opacity:.6;cursor:wait}
-@media (max-width:640px){.sg-box{margin:20px 12px;padding:18px}.sg-ov{align-items:flex-end;padding:0}.sg-m{border-radius:18px 18px 0 0;max-height:92vh;width:100%}}`;
+@media (max-width:640px){.sg-box{margin:16px auto}.sg-ov{align-items:flex-end;padding:0}.sg-m{border-radius:18px 18px 0 0;max-height:92vh;width:100%}}`;
 const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const ENDPOINT = new URL('api/sugestao.php', document.baseURI).pathname;
 
@@ -68,7 +75,7 @@ function abrir(origem) {
 function iniciar() {
   const alvo = document.getElementById('sugestao-box'); if (!alvo) return;
   if (!document.getElementById('sg-css')) { const s = document.createElement('style'); s.id = 'sg-css'; s.textContent = CSS; document.head.append(s); }
-  alvo.innerHTML = `<div class="sg-box"><div><h2>O que você está sentindo falta?</h2><p>O Painel Eleições está em constante atualização. Encontrou algum erro ou tem alguma funcionalidade que você gostaria de melhorar? Envie suas sugestões <a href="#" data-sg style="color:#F08A24;font-weight:700">clique aqui</a>.</p></div><button type="button" data-sg>Enviar sugestão</button></div>`;
+  alvo.innerHTML = `<div class="sg-box"><details><summary>O que você está sentindo falta?</summary><div class="sg-c"><p>O Painel Eleições está em constante atualização. Encontrou algum erro ou tem alguma funcionalidade que você gostaria de melhorar? Envie suas sugestões <a href="#" data-sg>clique aqui</a>.</p></div></details></div>`;
   alvo.addEventListener('click', e => { const b = e.target.closest('[data-sg]'); if (!b) return; e.preventDefault(); abrir(b); });
 }
 iniciar();
