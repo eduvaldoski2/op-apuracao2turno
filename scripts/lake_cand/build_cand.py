@@ -14,7 +14,7 @@ out = sys.argv[1]; anos = [a for a in sys.argv[2:]] or [str(a) for a in range(19
 B = 'https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand'
 W = os.path.join(out, '_work'); os.makedirs(W, exist_ok=True)
 SAL = os.urandom(16).hex()      # nunca gravado em disco nem publicado
-con = duckdb.connect(); con.execute("SET memory_limit='5GB'; SET threads=4; SET preserve_insertion_order=false")
+con = duckdb.connect(); con.execute("SET memory_limit='4GB'; SET threads=2; SET preserve_insertion_order=false; SET temp_directory='/tmp/duck_tmp'")
 man = {'gerado_em': datetime.datetime.now(datetime.timezone.utc).isoformat() + 'Z', 'fonte': B, 'anos': {}}
 
 def baixar(ano):
