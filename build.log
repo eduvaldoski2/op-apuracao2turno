@@ -1,0 +1,34 @@
+zips internos: 29
+OK buweb_1_011120231542.csv latin-1 42
+OK buweb_1_011120231539.csv latin-1 1060
+OK buweb_1_011120231538.csv latin-1 1479
+OK buweb_1_011120231534.csv latin-1 3131
+OK buweb_1_011120231530.csv latin-1 3743
+OK buweb_1_011120231526.csv latin-1 6898
+OK buweb_1_011120231527.csv latin-1 8689
+OK buweb_1_011120231525.csv latin-1 10411
+OK buweb_1_011120231518.csv latin-1 10940
+OK buweb_1_011120231516.csv latin-1 11376
+OK buweb_1_011120231510.csv latin-1 11538
+OK buweb_1_011120231508.csv latin-1 12304
+OK buweb_1_011120231506.csv latin-1 16389
+OK buweb_1_011120231459.csv latin-1 17692
+OK buweb_1_011120231456.csv latin-1 20446
+OK buweb_1_011120231454.csv latin-1 21096
+OK buweb_1_011120231449.csv latin-1 21543
+OK buweb_1_011120231717.csv latin-1 21977
+OK buweb_1_011120231716.csv latin-1 22021
+OK buweb_1t_suplementar_260720231505.csv latin-1 22105
+OK buweb_1t_suplementar_070820231720.csv latin-1 22286
+OK buweb_1t_suplementar_040920231000.csv latin-1 24740
+OK buweb_1t_suplementar_131120231000.csv latin-1 26295
+OK buweb_1t_suplementar_041220231000.csv latin-1 28385
+OK buweb_1t_suplementar_040320241000.csv latin-1 29324
+OK buweb_1t_suplementar_080420241000.csv latin-1 29418
+OK buweb_1t_suplementar_290420241000.csv latin-1 29859
+OK buweb_1t_suplementar_100620241000.csv latin-1 32364
+OK buweb_1t_suplementar_111120241000.csv latin-1 32647
+OK secao_sup_2020.parquet 32647
+OK detalhe_secao_sup_2020.parquet 6017
+OK lista_sup_2020.parquet 117
+FIM
