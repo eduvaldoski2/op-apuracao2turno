@@ -70,7 +70,8 @@ for c in CAND.values():
     if c['fed'] and c['fed'] != 'PARTIDO ISOLADO': FED_POR_SG[c['sg']] = c['fed']
 
 # ---------- lista de eleições do ano ----------
-UFS = sorted({r[0] for r in con.execute(f"SELECT DISTINCT uf FROM '{P(f'local_secao_{ano}.parquet')}'").fetchall()})
+TEM_LOCAL = os.path.exists(P(f'local_secao_{ano}.parquet'))   # antes de 2010 o TSE não tem o cadastro de locais (sem coordenadas/bairro): o resultado por seção sai igual, sem a camada locais/
+UFS = sorted({r[0] for r in con.execute(f"SELECT DISTINCT uf FROM '{P(f'local_secao_{ano}.parquet')}'").fetchall()}) if TEM_LOCAL else sorted({os.path.basename(f)[len(f'secao_{ano}_'):-8] for f in glob.glob(P(f'secao_{ano}_*.parquet'))} - {'BR', 'ZZ'})
 if UFS_ARG: UFS = [u for u in UFS if u in UFS_ARG]
 arqs_sec = {os.path.basename(f)[len(f'secao_{ano}_'):-8]: f for f in glob.glob(P(f'secao_{ano}_*.parquet'))}
 els = []
@@ -294,7 +295,8 @@ if __name__ == '__main__':
         else:
             acc = {}; majoritario(e, acc)
             if e['c'] == 1 and acc: fecha_presidente(e['id'], acc)
-    if not arg('sem-locais'): locais()
+    if not arg('sem-locais') and TEM_LOCAL: locais()
+    elif not TEM_LOCAL: log('locais: cadastro de locais ausente neste ano (sem coordenadas), camada não gerada')
     feitos = [e for e in els if os.path.isdir(os.path.join(OUT, e['id']))]
     antigo = json.load(open(os.path.join(OUT, 'idx.json'))) if os.path.exists(os.path.join(OUT, 'idx.json')) else {'el': []}
     ids = {e['id'] for e in feitos}
