@@ -1,0 +1,32 @@
+name: Candidatos - construir lista unificada (TSE consulta_cand 1994-2026 -> Parquet -> Release)
+on:
+  workflow_dispatch:
+    inputs:
+      anos: { description: 'Anos separados por espaço (vazio = 1994 a 2026)', required: false, default: '' }
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q duckdb==1.1.3
+      - name: Construir
+        run: |
+          set -o pipefail
+          mkdir -p /tmp/lakec
+          python3 scripts/lake_cand/build_cand.py /tmp/lakec ${{ github.event.inputs.anos }} 2>&1 | tee /tmp/lakec/build.log
+      - name: Publicar release
+        env: { GH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
+        run: |
+          T=lake-candidatos
+          gh release view $T >/dev/null 2>&1 || gh release create $T --title "Candidaturas do TSE 1994-2026 (Parquet)" --notes "candidaturas.parquet e pessoas.parquet gerados por scripts/lake_cand/build_cand.py a partir de consulta_cand do TSE. Sem CPF, titulo, e-mail ou nascimento completo; pessoa_id e um codigo irreversivel para cruzar eleicoes."
+          cd /tmp/lakec && gh release upload -R ${{ github.repository }} $T candidaturas.parquet pessoas.parquet conferencia.md manifesto.json --clobber
+      - name: Publicar log
+        if: always()
+        run: |
+          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub
+          for f in build.log conferencia.md manifesto.json; do [ -f /tmp/lakec/$f ] && cp /tmp/lakec/$f . ; done
+          git init -q -b cand-log && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log
+          git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" cand-log
