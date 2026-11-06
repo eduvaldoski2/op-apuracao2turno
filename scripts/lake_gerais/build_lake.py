@@ -46,7 +46,7 @@ def extrair(z, sufixo):
     subprocess.run(f"iconv -f latin1 -t utf8 '{f}' > '{u}'", shell=True, check=True); os.remove(f); return u
 
 import re as _re
-_CONHECIDAS = sorted(set(_re.findall(r'\b(?:ANO|NR|CD|SG|NM|DS|QT|ST|DT|AA)_[A-Z0-9_]+\b', open(__file__, encoding='utf-8').read())))
+_CONHECIDAS = sorted(set(_re.findall(r'\b(?:ANO|NR|CD|SG|NM|DS|QT|ST|DT|AA|SQ)_[A-Z0-9_]+\b', open(__file__, encoding='utf-8').read())))
 AUSENTES = {}   # arquivo -> colunas esperadas que o TSE não trazia naquele ano (viram NULL; nunca inventadas)
 
 def csv(p):
