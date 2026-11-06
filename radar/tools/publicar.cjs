@@ -23,7 +23,7 @@ const regs = ['rj', 'sp', 'mg', 'ne', 'sul', 'norte', 'co'], erros = [];
 if (d.EDICAO.hora !== hh) erros.push('EDICAO.hora (' + d.EDICAO.hora + ') difere de ' + hh);
 Object.keys(d.ORDER).forEach(k => d.ORDER[k].forEach(i => { if (!d.S[i]) erros.push('ORDER.' + k + ': id inexistente ' + i); else if (d.S[i].ed !== k) erros.push(i + ': ed ≠ ' + k); }));
 Object.keys(d.S).forEach(i => { const s = d.S[i];
-  if (!Object.values(d.ORDER).some(l => l.includes(i))) erros.push('matéria fora do ORDER: ' + i);
+  if (!d.S[i].velha && !Object.values(d.ORDER).some(l => l.includes(i))) erros.push('matéria fora do ORDER: ' + i);
   if (s.reg && !regs.includes(s.reg)) erros.push(i + ': reg inválido');
   ['t', 'sub', 'resumo', 'hora'].forEach(c => { if (!s[c]) erros.push(i + ': falta ' + c); });
   if (!Array.isArray(s.fundo) || !Array.isArray(s.fontes) || !s.fontes.length) erros.push(i + ': fundo/fontes'); });
@@ -33,7 +33,7 @@ d.COLUNAS.forEach(g => { if (g[5] && !d.S[g[5]]) erros.push('COLUNAS relacionado
 d.TRENDS.forEach(g => { if (g[3] && !d.S[g[3]]) erros.push('TRENDS relacionado: ' + g[3]); });
 if (hh === '19h' || (d.AMANHA && d.AMANHA.length)) {
   const tp = ['congresso', 'agenda', 'economia', 'justica', 'eleicao', 'mundo'];
-  if (hh === '19h' && (!Array.isArray(d.AMANHA) || d.AMANHA.length < 3)) erros.push('edição das 19h exige a seção AMANHA (Para ficar de olho amanhã) com ao menos 3 itens: [quando, tipo, título, nota, url, idRel]');
+  if (hh === '19h' && (!Array.isArray(d.AMANHA) || d.AMANHA.length < 3)) erros.push('edição das 19h exige a seção AMANHA (Para ficar de olho) com ao menos 3 itens: [quando, tipo, título, nota, url, idRel]');
   else d.AMANHA.forEach((a, n) => { if (!a[0] || !a[2] || !a[3] || String(a[3]).length < 30) erros.push('AMANHA[' + n + ']: faltam quando, título ou nota (mín. 30 caracteres)'); if (!tp.includes(a[1])) erros.push('AMANHA[' + n + ']: tipo deve ser ' + tp.join('|')); if (a[5] && !d.S[a[5]]) erros.push('AMANHA[' + n + ']: idRel inexistente'); });
 }
 if (erros.length) die('\n - ' + erros.join('\n - '));
@@ -52,14 +52,26 @@ if (ant) {
   Object.keys(d.S).forEach(i => { if (!p.S[i]) flags[i] = 'novo'; else if (hash(p.S[i]) !== hash(d.S[i])) flags[i] = 'atualizada'; });
 }
 const nN = Object.values(flags).filter(v => v === 'novo').length, nA = Object.values(flags).filter(v => v === 'atualizada').length;
-if (ant && !process.argv.includes('--aceitar-poucas') && (nN < 5 || nN + nA < 10)) {
-  die('edição quase igual à anterior (' + nN + ' NOVO, ' + nA + ' ATUALIZADA). Exigido: ao menos 5 NOVO e 10 NOVO+ATUALIZADA. Busque mais notícias publicadas depois de ' + ant + ' em TODAS as editorias e sub-regiões. Só use --aceitar-poucas se tiver pesquisado de verdade e realmente não houver mais nada (e diga isso no resumo).');
+if (ant && !process.argv.includes('--aceitar-poucas') && (nN < (hh === '07h' ? 15 : 5) || nN + nA < (hh === '07h' ? 25 : 10))) {
+  die('edição quase igual à anterior (' + nN + ' NOVO, ' + nA + ' ATUALIZADA). Exigido: ao menos '+(hh === '07h' ? '15 NOVO e 25' : '5 NOVO e 10')+' NOVO+ATUALIZADA (a edição das 7h é a primeira do dia e precisa de mais novidades: pesquise o que saiu à noite e de madrugada). Busque mais notícias publicadas depois de ' + ant + ' em TODAS as editorias e sub-regiões. Só use --aceitar-poucas se tiver pesquisado de verdade e realmente não houver mais nada (e diga isso no resumo).');
 }
 // matéria ATUALIZADA precisa dizer o que mudou (campo upd) e o texto não pode repetir o da edição anterior
 if (ant) {
   const pa = carregar(fs.readFileSync(path.join(arq, ant + '.php'), 'utf8'));
   const semUpd = Object.keys(flags).filter(i => flags[i] === 'atualizada' && (!d.S[i].upd || String(d.S[i].upd).length < 12 || d.S[i].upd === (pa.S[i] || {}).upd));
   if (semUpd.length) die('matérias ATUALIZADAS sem o campo upd novo (1–2 frases dizendo o que mudou desde a edição anterior): ' + semUpd.join(', '));
+}
+// a capa só pode ter matéria NOVA ou ATUALIZADA nesta edição
+if (ant) {
+  const naCapa = [d.HOME_LEAD].concat(d.HOME_ROW || []).filter(i => !flags[i]);
+  if (naCapa.length) die('capa com matéria que não é nova nem atualizada nesta edição: ' + naCapa.join(', ') + '. Troque HOME_LEAD/HOME_ROW por matérias NOVAS ou ATUALIZADAS.');
+  // matéria idêntica em 3 edições seguidas está parada: aposente (velha:true) para sair das editorias, ou atualize com fato novo
+  const ant2 = lista.filter(n => n < ant).pop();
+  if (ant2) {
+    const p1 = carregar(fs.readFileSync(path.join(arq, ant + '.php'), 'utf8')), p2 = carregar(fs.readFileSync(path.join(arq, ant2 + '.php'), 'utf8'));
+    const paradas = Object.keys(d.S).filter(i => !d.S[i].velha && !flags[i] && p1.S[i] && p2.S[i] && hash(p1.S[i]) === hash(d.S[i]) && hash(p2.S[i]) === hash(d.S[i]));
+    if (paradas.length) die('matérias paradas há 3 edições sem fato novo (' + paradas.length + '): ' + paradas.join(', ') + '. Para cada uma: acrescente o desdobramento novo (vira ATUALIZADA, com upd) ou marque velha:true (sai das editorias e continua acessível por link compartilhado).');
+  }
 }
 const bloco = '/* FLAGS (gerado por publicar.js; não editar) */\nvar FLAGS = ' + JSON.stringify(flags) + ';\nvar GIRO_FLAGS = ' + JSON.stringify(giroFlags) + ';\n';
 let novo = txt.replace(/\/\* FLAGS \(gerado[^\n]*\nvar FLAGS = [^\n]*\n(var GIRO_FLAGS = [^\n]*\n)?/, '');

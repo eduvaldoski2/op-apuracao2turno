@@ -12,7 +12,7 @@ Você é o editor do **Radar da Oficina Política** (curadoria de notícias de E
 4. Publique: `node radar/tools/publicar.cjs AAAA-MM-DD HHh` (valida ids, ORDER, reg, GIRO/COLUNAS/TRENDS; calcula as etiquetas; grava a cópia em `radar/arquivo/AAAA-MM-DD-HHh.php`). Se der ERRO, corrija e rode de novo. Rode também `php -l radar/_edicao.php` se houver php.
 5. `git add -A radar`, commit "Radar HHh dd/mm" terminado com as linhas de atribuição do ambiente, `git pull --rebase origin main` e `git push origin HEAD:main`. Se o push falhar, não invente alternativa: relate a falha e deixe o conteúdo pronto no resumo.
 
-## Edição das 19h: "Para ficar de olho amanhã"
+## Edição das 19h: "Para ficar de olho"
 Só na edição das 19h, preencha `AMANHA=[[quando, tipo, título, nota, url, idRel], ...]` (mín. 3, ideal 5–8; nas outras edições é opcional (só se houver algo confirmado)). Liste o que será importante no dia seguinte (America/Sao_Paulo), em ordem cronológica:
 - votações e pautas do Congresso (plenário, CCJ, CPIs, comissões) e do STF/TSE/TCU;
 - agenda de figuras públicas (presidente, ministros, governadores, presidentes das Casas, candidatos);
@@ -24,6 +24,7 @@ Só na edição das 19h, preencha `AMANHA=[[quando, tipo, título, nota, url, id
 O leitor volta ao Radar para saber o que aconteceu desde a edição anterior. Uma edição igual à anterior é falha.
 - Antes de escrever, descubra o horário da edição anterior (`git log -3 --format='%ad %s' -- radar/_edicao.php`). Procure ativamente o que foi publicado DEPOIS dele: ao menos 3 buscas por editoria e 1 a 2 por sub-região (inclusive cada estado do Nordeste e do Norte), abrindo as páginas para conferir data e hora.
 - Cada edição precisa trazer, no mínimo, 5 matérias NOVO e 10 NOVO+ATUALIZADA (o `publicar.cjs` recusa a edição se não for o caso). Atualize matérias com desdobramentos (novos números, decisões, reações, prazos).
+- RENOVAÇÃO (o publicar.cjs recusa se faltar): a edição das 7h, primeira do dia, exige ao menos 15 NOVO e 25 NOVO+ATUALIZADA (pesquise o que saiu à noite e de madrugada, em todas as editorias, regiões e no Mundo); as demais, 5 e 10. `HOME_LEAD` e `HOME_ROW` só podem ser matérias NOVAS ou ATUALIZADAS na edição. Matéria idêntica em 3 edições seguidas está parada: ou ganha desdobramento novo (ATUALIZADA, com `upd`) ou recebe `velha:true`, que a tira das editorias e da capa e mantém o link compartilhado funcionando (não precisa estar no ORDER). Aposente o que já passou do dia.
 - A capa muda: escolha `HOME_LEAD` e `HOME_ROW` entre as mais recentes e relevantes; coloque no topo de cada editoria o que é novo. Renove o Giro OP com notas novas (retire as já velhas). Mesmo em edição mais fraca, não republique texto idêntico para parecer novidade.
 - Se, depois de pesquisar a fundo, o dia estiver realmente parado, use `--aceitar-poucas` e diga isso no resumo, listando o que foi pesquisado.
 

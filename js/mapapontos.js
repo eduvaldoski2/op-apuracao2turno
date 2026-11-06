@@ -1,6 +1,6 @@
 // Mapa de pontos dos locais de votação de um município (SVG, com zoom e arraste).
 // Cada ponto = um local de votação; cor = quem lidera (tom = % do líder); tamanho = eleitorado.
-import { corDoPct } from './util.js?v=be312586';
+import { corDoPct } from './util.js?v=a32929f5';
 
 const W = 720;
 export function criarMapaPontos(el, pontos, { tooltip, onClick } = {}) {
