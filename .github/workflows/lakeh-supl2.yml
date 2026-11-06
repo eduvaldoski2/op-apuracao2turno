@@ -1,0 +1,34 @@
+name: Lake historico - amostra dos arquivos das eleicoes suplementares
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Amostra
+        run: |
+          exec > >(tee /tmp/supl2.log) 2>&1
+          B=https://cdn.tse.jus.br/estatistica/sead/eleicoes
+          for A in 2024 2022 2020; do
+            echo "######## $A"
+            for P in "listaelesuplem/lista_eleicoes_suplementares_$A" "correspesp/cesp_ele_suplementares_$A" "correspefet/ceft_ele_suplementares_$A" "buweb/buweb_ele_suplementares_$A"; do
+              u="$B/eleicoes$A/$P.zip"
+              echo "== $P"; curl -sSI -L -m 30 --http1.1 "$u" | tr -d '\r' | egrep -i "^HTTP|^content-length|^last-mod" | tr '\n' ' '; echo
+              sz=$(curl -sSI -L -m 30 --http1.1 "$u" | tr -d '\r' | awk 'tolower($1)=="content-length:"{print $2}' | tail -1)
+              if [ -n "$sz" ] && [ "$sz" -lt 400000000 ]; then
+                mkdir -p /tmp/s && rm -rf /tmp/s/* && curl -sS -f -L --retry 3 -o /tmp/s/x.zip "$u" && (cd /tmp/s && unzip -o -q x.zip; ls -la; for f in *.csv *.txt; do [ -f "$f" ] || continue; echo "-- $f linhas: $(wc -l < "$f")"; iconv -f latin1 -t utf8 "$f" | head -4 | cut -c1-600; done)
+              fi
+            done
+          done
+          echo "######## votacao_secao 2024/2022/2020 contem suplementar? (cd_eleicao distintos por UF AC)"
+          for A in 2024 2022 2020; do
+            curl -sS -f -L -o /tmp/v.zip "https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_secao/votacao_secao_${A}_AC.zip" && unzip -o -q -d /tmp/v /tmp/v.zip && for f in /tmp/v/*.csv; do iconv -f latin1 -t utf8 "$f" | awk -F';' 'NR==1{for(i=1;i<=NF;i++)h[$i]=i} NR>1{c[$(h["\"CD_ELEICAO\""])" "$(h["\"DS_ELEICAO\""])]++} END{for(k in c)print "'$A' AC",k,c[k]}' | head; done; rm -rf /tmp/v
+          done
+      - name: Publicar log
+        if: always()
+        run: |
+          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub && cp /tmp/supl2.log . && git init -q -b sonda-supl2 && git config user.name coletor && git config user.email coletor@users.noreply.github.com
+          git add -A && git commit -q -m "amostra suplementares" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" sonda-supl2
