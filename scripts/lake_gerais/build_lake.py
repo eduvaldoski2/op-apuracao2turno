@@ -45,15 +45,25 @@ def extrair(z, sufixo):
     f = os.path.join(W, os.path.basename(m[0])); u = f + '.utf8'
     subprocess.run(f"iconv -f latin1 -t utf8 '{f}' > '{u}'", shell=True, check=True); os.remove(f); return u
 
+import re as _re
+_CONHECIDAS = sorted(set(_re.findall(r'\b(?:ANO|NR|CD|SG|NM|DS|QT|ST|DT|AA)_[A-Z0-9_]+\b', open(__file__, encoding='utf-8').read())))
+AUSENTES = {}   # arquivo -> colunas esperadas que o TSE não trazia naquele ano (viram NULL; nunca inventadas)
+
 def csv(p):
-    return f"read_csv('{p}', delim=';', quote='\"', header=true, all_varchar=true, ignore_errors=false)"
+    """Lê o CSV do TSE; coluna esperada que não existe naquele ano entra como NULL e é registrada no manifesto."""
+    base = f"read_csv('{p}', delim=';', quote='\"', header=true, all_varchar=true, ignore_errors=false)"
+    cols = {r[0] for r in con.execute(f"DESCRIBE SELECT * FROM {base}").fetchall()}
+    falt = [c for c in _CONHECIDAS if c not in cols]
+    AUSENTES[os.path.basename(p)] = falt
+    if not falt: return base
+    return f"(SELECT *, {', '.join(f'NULL::VARCHAR AS {c}' for c in falt)} FROM {base})"
 
 def gravar(sql, nome, fonte, lm):
     dest = os.path.join(out, nome)
     con.execute(f"COPY ({sql}) TO '{dest}' (FORMAT PARQUET, COMPRESSION ZSTD, ROW_GROUP_SIZE 500000)")
     n = con.execute(f"SELECT count(*) FROM read_parquet('{dest}')").fetchone()[0]
     sha = hashlib.sha256(open(dest, 'rb').read()).hexdigest() if os.path.getsize(dest) < 2e9 else ''
-    manifest['arquivos'].append({'arquivo': nome, 'linhas': n, 'bytes': os.path.getsize(dest), 'sha256': sha, 'fonte': fonte, 'last_modified_fonte': lm})
+    manifest['arquivos'].append({'colunas_origem_ausentes': (list(AUSENTES.values())[-1] if AUSENTES else []), 'arquivo': nome, 'linhas': n, 'bytes': os.path.getsize(dest), 'sha256': sha, 'fonte': fonte, 'last_modified_fonte': lm})
     print('OK', nome, n, os.path.getsize(dest), flush=True)
 
 I = lambda c: f"TRY_CAST({c} AS INTEGER)"
