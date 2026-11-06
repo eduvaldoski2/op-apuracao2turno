@@ -1,0 +1,221 @@
+== CDN (HEAD): ano familia arquivo -> HTTP bytes
+2024 | votacao_secao/votacao_secao_2024_AC | HTTP/1.1 200 OK Content-Length: 5583839 
+2024 | votacao_secao/votacao_secao_2024_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2024 | detalhe_votacao_secao/detalhe_votacao_secao_2024 | HTTP/1.1 200 OK Content-Length: 87340998 
+2024 | votacao_candidato_munzona/votacao_candidato_munzona_2024 | HTTP/1.1 200 OK Content-Length: 48022186 
+2024 | votacao_partido_munzona/votacao_partido_munzona_2024 | HTTP/1.1 200 OK Content-Length: 6146041 
+2024 | detalhe_votacao_munzona/detalhe_votacao_munzona_2024 | HTTP/1.1 200 OK Content-Length: 1507779 
+2024 | consulta_cand/consulta_cand_2024 | HTTP/1.1 200 OK Content-Length: 64794844 
+2024 | eleitorado_locais_votacao/eleitorado_local_votacao_2024 | HTTP/1.1 200 OK Content-Length: 45276803 
+2024 | eleitorado_local_votacao/eleitorado_local_votacao_2024 | HTTP/1.1 404 Not Found Content-Length: 1 
+2024 | perfil_eleitorado/perfil_eleitorado_2024 | HTTP/1.1 200 OK Content-Length: 333597149 
+2024 | bem_candidato/bem_candidato_2024 | HTTP/1.1 200 OK Content-Length: 45809987 
+2022 | votacao_secao/votacao_secao_2022_AC | HTTP/1.1 200 OK Content-Length: 6680201 
+2022 | votacao_secao/votacao_secao_2022_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2022 | detalhe_votacao_secao/detalhe_votacao_secao_2022 | HTTP/1.1 200 OK Content-Length: 243822213 
+2022 | votacao_candidato_munzona/votacao_candidato_munzona_2022 | HTTP/1.1 200 OK Content-Length: 596794117 
+2022 | votacao_partido_munzona/votacao_partido_munzona_2022 | HTTP/1.1 200 OK Content-Length: 26478977 
+2022 | detalhe_votacao_munzona/detalhe_votacao_munzona_2022 | HTTP/1.1 200 OK Content-Length: 4425800 
+2022 | consulta_cand/consulta_cand_2022 | HTTP/1.1 200 OK Content-Length: 4442235 
+2022 | eleitorado_locais_votacao/eleitorado_local_votacao_2022 | HTTP/1.1 200 OK Content-Length: 24028146 
+2022 | eleitorado_local_votacao/eleitorado_local_votacao_2022 | HTTP/1.1 404 Not Found Content-Length: 1 
+2022 | perfil_eleitorado/perfil_eleitorado_2022 | HTTP/1.1 200 OK Content-Length: 76699889 
+2022 | bem_candidato/bem_candidato_2022 | HTTP/1.1 200 OK Content-Length: 5389459 
+2020 | votacao_secao/votacao_secao_2020_AC | HTTP/1.1 200 OK Content-Length: 6505612 
+2020 | votacao_secao/votacao_secao_2020_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2020 | detalhe_votacao_secao/detalhe_votacao_secao_2020 | HTTP/1.1 200 OK Content-Length: 88177739 
+2020 | votacao_candidato_munzona/votacao_candidato_munzona_2020 | HTTP/1.1 200 OK Content-Length: 57815640 
+2020 | votacao_partido_munzona/votacao_partido_munzona_2020 | HTTP/1.1 200 OK Content-Length: 6104460 
+2020 | detalhe_votacao_munzona/detalhe_votacao_munzona_2020 | HTTP/1.1 200 OK Content-Length: 1538312 
+2020 | consulta_cand/consulta_cand_2020 | HTTP/1.1 200 OK Content-Length: 85384126 
+2020 | eleitorado_locais_votacao/eleitorado_local_votacao_2020 | HTTP/1.1 200 OK Content-Length: 32394603 
+2020 | eleitorado_local_votacao/eleitorado_local_votacao_2020 | HTTP/1.1 404 Not Found Content-Length: 1 
+2020 | perfil_eleitorado/perfil_eleitorado_2020 | HTTP/1.1 200 OK Content-Length: 38674086 
+2020 | bem_candidato/bem_candidato_2020 | HTTP/1.1 200 OK Content-Length: 81675261 
+2018 | votacao_secao/votacao_secao_2018_AC | HTTP/1.1 200 OK Content-Length: 5867939 
+2018 | votacao_secao/votacao_secao_2018_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2018 | detalhe_votacao_secao/detalhe_votacao_secao_2018 | HTTP/1.1 200 OK Content-Length: 256133172 
+2018 | votacao_candidato_munzona/votacao_candidato_munzona_2018 | HTTP/1.1 200 OK Content-Length: 395389280 
+2018 | votacao_partido_munzona/votacao_partido_munzona_2018 | HTTP/1.1 200 OK Content-Length: 27920768 
+2018 | detalhe_votacao_munzona/detalhe_votacao_munzona_2018 | HTTP/1.1 200 OK Content-Length: 4269741 
+2018 | consulta_cand/consulta_cand_2018 | HTTP/1.1 200 OK Content-Length: 4722704 
+2018 | eleitorado_locais_votacao/eleitorado_local_votacao_2018 | HTTP/1.1 200 OK Content-Length: 84041372 
+2018 | eleitorado_local_votacao/eleitorado_local_votacao_2018 | HTTP/1.1 404 Not Found Content-Length: 1 
+2018 | perfil_eleitorado/perfil_eleitorado_2018 | HTTP/1.1 200 OK Content-Length: 34851376 
+2018 | bem_candidato/bem_candidato_2018 | HTTP/1.1 200 OK Content-Length: 5098559 
+2016 | votacao_secao/votacao_secao_2016_AC | HTTP/1.1 200 OK Content-Length: 3406402 
+2016 | votacao_secao/votacao_secao_2016_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2016 | detalhe_votacao_secao/detalhe_votacao_secao_2016 | HTTP/1.1 200 OK Content-Length: 86635611 
+2016 | votacao_candidato_munzona/votacao_candidato_munzona_2016 | HTTP/1.1 200 OK Content-Length: 60594613 
+2016 | votacao_partido_munzona/votacao_partido_munzona_2016 | HTTP/1.1 200 OK Content-Length: 11391563 
+2016 | detalhe_votacao_munzona/detalhe_votacao_munzona_2016 | HTTP/1.1 200 OK Content-Length: 1553165 
+2016 | consulta_cand/consulta_cand_2016 | HTTP/1.1 200 OK Content-Length: 140136131 
+2016 | eleitorado_locais_votacao/eleitorado_local_votacao_2016 | HTTP/1.1 200 OK Content-Length: 45690110 
+2016 | eleitorado_local_votacao/eleitorado_local_votacao_2016 | HTTP/1.1 404 Not Found Content-Length: 1 
+2016 | perfil_eleitorado/perfil_eleitorado_2016 | HTTP/1.1 200 OK Content-Length: 41603530 
+2016 | bem_candidato/bem_candidato_2016 | HTTP/1.1 200 OK Content-Length: 72862941 
+2014 | votacao_secao/votacao_secao_2014_AC | HTTP/1.1 200 OK Content-Length: 3205247 
+2014 | votacao_secao/votacao_secao_2014_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2014 | detalhe_votacao_secao/detalhe_votacao_secao_2014 | HTTP/1.1 200 OK Content-Length: 73594893 
+2014 | votacao_candidato_munzona/votacao_candidato_munzona_2014 | HTTP/1.1 200 OK Content-Length: 494100168 
+2014 | votacao_partido_munzona/votacao_partido_munzona_2014 | HTTP/1.1 200 OK Content-Length: 12141261 
+2014 | detalhe_votacao_munzona/detalhe_votacao_munzona_2014 | HTTP/1.1 200 OK Content-Length: 3937094 
+2014 | consulta_cand/consulta_cand_2014 | HTTP/1.1 200 OK Content-Length: 4530527 
+2014 | eleitorado_locais_votacao/eleitorado_local_votacao_2014 | HTTP/1.1 200 OK Content-Length: 76300968 
+2014 | eleitorado_local_votacao/eleitorado_local_votacao_2014 | HTTP/1.1 404 Not Found Content-Length: 1 
+2014 | perfil_eleitorado/perfil_eleitorado_2014 | HTTP/1.1 200 OK Content-Length: 32269026 
+2014 | bem_candidato/bem_candidato_2014 | HTTP/1.1 200 OK Content-Length: 6280980 
+2012 | votacao_secao/votacao_secao_2012_AC | HTTP/1.1 200 OK Content-Length: 1550223 
+2012 | votacao_secao/votacao_secao_2012_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2012 | detalhe_votacao_secao/detalhe_votacao_secao_2012 | HTTP/1.1 200 OK Content-Length: 25326135 
+2012 | votacao_candidato_munzona/votacao_candidato_munzona_2012 | HTTP/1.1 200 OK Content-Length: 57792613 
+2012 | votacao_partido_munzona/votacao_partido_munzona_2012 | HTTP/1.1 200 OK Content-Length: 3993821 
+2012 | detalhe_votacao_munzona/detalhe_votacao_munzona_2012 | HTTP/1.1 200 OK Content-Length: 1101167 
+2012 | consulta_cand/consulta_cand_2012 | HTTP/1.1 200 OK Content-Length: 116046656 
+2012 | eleitorado_locais_votacao/eleitorado_local_votacao_2012 | HTTP/1.1 200 OK Content-Length: 44027545 
+2012 | eleitorado_local_votacao/eleitorado_local_votacao_2012 | HTTP/1.1 404 Not Found Content-Length: 1 
+2012 | perfil_eleitorado/perfil_eleitorado_2012 | HTTP/1.1 200 OK Content-Length: 30583725 
+2012 | bem_candidato/bem_candidato_2012 | HTTP/1.1 200 OK Content-Length: 49986124 
+2010 | votacao_secao/votacao_secao_2010_AC | HTTP/1.1 200 OK Content-Length: 2151806 
+2010 | votacao_secao/votacao_secao_2010_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2010 | detalhe_votacao_secao/detalhe_votacao_secao_2010 | HTTP/1.1 200 OK Content-Length: 67345754 
+2010 | votacao_candidato_munzona/votacao_candidato_munzona_2010 | HTTP/1.1 200 OK Content-Length: 132565895 
+2010 | votacao_partido_munzona/votacao_partido_munzona_2010 | HTTP/1.1 200 OK Content-Length: 7875767 
+2010 | detalhe_votacao_munzona/detalhe_votacao_munzona_2010 | HTTP/1.1 200 OK Content-Length: 3354480 
+2010 | consulta_cand/consulta_cand_2010 | HTTP/1.1 200 OK Content-Length: 4939410 
+2010 | eleitorado_locais_votacao/eleitorado_local_votacao_2010 | HTTP/1.1 200 OK Content-Length: 70976425 
+2010 | eleitorado_local_votacao/eleitorado_local_votacao_2010 | HTTP/1.1 404 Not Found Content-Length: 1 
+2010 | perfil_eleitorado/perfil_eleitorado_2010 | HTTP/1.1 200 OK Content-Length: 35907120 
+2010 | bem_candidato/bem_candidato_2010 | HTTP/1.1 200 OK Content-Length: 5051219 
+2008 | votacao_secao/votacao_secao_2008_AC | HTTP/1.1 200 OK Content-Length: 1181036 
+2008 | votacao_secao/votacao_secao_2008_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2008 | detalhe_votacao_secao/detalhe_votacao_secao_2008 | HTTP/1.1 200 OK Content-Length: 23125768 
+2008 | votacao_candidato_munzona/votacao_candidato_munzona_2008 | HTTP/1.1 200 OK Content-Length: 42670412 
+2008 | votacao_partido_munzona/votacao_partido_munzona_2008 | HTTP/1.1 200 OK Content-Length: 3647188 
+2008 | detalhe_votacao_munzona/detalhe_votacao_munzona_2008 | HTTP/1.1 200 OK Content-Length: 1427766 
+2008 | consulta_cand/consulta_cand_2008 | HTTP/1.1 200 OK Content-Length: 86953836 
+2008 | eleitorado_locais_votacao/eleitorado_local_votacao_2008 | HTTP/1.1 404 Not Found Content-Length: 1 
+2008 | eleitorado_local_votacao/eleitorado_local_votacao_2008 | HTTP/1.1 404 Not Found Content-Length: 1 
+2008 | perfil_eleitorado/perfil_eleitorado_2008 | HTTP/1.1 200 OK Content-Length: 27986228 
+2008 | bem_candidato/bem_candidato_2008 | HTTP/1.1 200 OK Content-Length: 39556999 
+2006 | votacao_secao/votacao_secao_2006_AC | HTTP/1.1 200 OK Content-Length: 2141595 
+2006 | votacao_secao/votacao_secao_2006_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2006 | detalhe_votacao_secao/detalhe_votacao_secao_2006 | HTTP/1.1 200 OK Content-Length: 63608788 
+2006 | votacao_candidato_munzona/votacao_candidato_munzona_2006 | HTTP/1.1 200 OK Content-Length: 130940089 
+2006 | votacao_partido_munzona/votacao_partido_munzona_2006 | HTTP/1.1 200 OK Content-Length: 8894538 
+2006 | detalhe_votacao_munzona/detalhe_votacao_munzona_2006 | HTTP/1.1 200 OK Content-Length: 3893736 
+2006 | consulta_cand/consulta_cand_2006 | HTTP/1.1 200 OK Content-Length: 4044252 
+2006 | eleitorado_locais_votacao/eleitorado_local_votacao_2006 | HTTP/1.1 404 Not Found Content-Length: 1 
+2006 | eleitorado_local_votacao/eleitorado_local_votacao_2006 | HTTP/1.1 404 Not Found Content-Length: 1 
+2006 | perfil_eleitorado/perfil_eleitorado_2006 | HTTP/1.1 200 OK Content-Length: 2268213 
+2006 | bem_candidato/bem_candidato_2006 | HTTP/1.1 200 OK Content-Length: 4779461 
+2004 | votacao_secao/votacao_secao_2004_AC | HTTP/1.1 200 OK Content-Length: 950497 
+2004 | votacao_secao/votacao_secao_2004_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2004 | detalhe_votacao_secao/detalhe_votacao_secao_2004 | HTTP/1.1 200 OK Content-Length: 20633231 
+2004 | votacao_candidato_munzona/votacao_candidato_munzona_2004 | HTTP/1.1 200 OK Content-Length: 41242913 
+2004 | votacao_partido_munzona/votacao_partido_munzona_2004 | HTTP/1.1 200 OK Content-Length: 3320160 
+2004 | detalhe_votacao_munzona/detalhe_votacao_munzona_2004 | HTTP/1.1 200 OK Content-Length: 1400835 
+2004 | consulta_cand/consulta_cand_2004 | HTTP/1.1 200 OK Content-Length: 84193616 
+2004 | eleitorado_locais_votacao/eleitorado_local_votacao_2004 | HTTP/1.1 404 Not Found Content-Length: 1 
+2004 | eleitorado_local_votacao/eleitorado_local_votacao_2004 | HTTP/1.1 404 Not Found Content-Length: 1 
+2004 | perfil_eleitorado/perfil_eleitorado_2004 | HTTP/1.1 200 OK Content-Length: 2235993 
+2004 | bem_candidato/bem_candidato_2004 | HTTP/1.1 404 Not Found Content-Length: 1 
+2002 | votacao_secao/votacao_secao_2002_AC | HTTP/1.1 200 OK Content-Length: 2192674 
+2002 | votacao_secao/votacao_secao_2002_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2002 | detalhe_votacao_secao/detalhe_votacao_secao_2002 | HTTP/1.1 200 OK Content-Length: 58040971 
+2002 | votacao_candidato_munzona/votacao_candidato_munzona_2002 | HTTP/1.1 200 OK Content-Length: 120264128 
+2002 | votacao_partido_munzona/votacao_partido_munzona_2002 | HTTP/1.1 200 OK Content-Length: 8391346 
+2002 | detalhe_votacao_munzona/detalhe_votacao_munzona_2002 | HTTP/1.1 200 OK Content-Length: 3625552 
+2002 | consulta_cand/consulta_cand_2002 | HTTP/1.1 200 OK Content-Length: 3615898 
+2002 | eleitorado_locais_votacao/eleitorado_local_votacao_2002 | HTTP/1.1 404 Not Found Content-Length: 1 
+2002 | eleitorado_local_votacao/eleitorado_local_votacao_2002 | HTTP/1.1 404 Not Found Content-Length: 1 
+2002 | perfil_eleitorado/perfil_eleitorado_2002 | HTTP/1.1 200 OK Content-Length: 2244531 
+2002 | bem_candidato/bem_candidato_2002 | HTTP/1.1 404 Not Found Content-Length: 1 
+2000 | votacao_secao/votacao_secao_2000_AC | HTTP/1.1 200 OK Content-Length: 731847 
+2000 | votacao_secao/votacao_secao_2000_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+2000 | detalhe_votacao_secao/detalhe_votacao_secao_2000 | HTTP/1.1 200 OK Content-Length: 16559112 
+2000 | votacao_candidato_munzona/votacao_candidato_munzona_2000 | HTTP/1.1 200 OK Content-Length: 40216594 
+2000 | votacao_partido_munzona/votacao_partido_munzona_2000 | HTTP/1.1 200 OK Content-Length: 2695129 
+2000 | detalhe_votacao_munzona/detalhe_votacao_munzona_2000 | HTTP/1.1 200 OK Content-Length: 1370004 
+2000 | consulta_cand/consulta_cand_2000 | HTTP/1.1 200 OK Content-Length: 75880065 
+2000 | eleitorado_locais_votacao/eleitorado_local_votacao_2000 | HTTP/1.1 404 Not Found Content-Length: 1 
+2000 | eleitorado_local_votacao/eleitorado_local_votacao_2000 | HTTP/1.1 404 Not Found Content-Length: 1 
+2000 | perfil_eleitorado/perfil_eleitorado_2000 | HTTP/1.1 200 OK Content-Length: 2212679 
+2000 | bem_candidato/bem_candidato_2000 | HTTP/1.1 404 Not Found Content-Length: 1 
+1998 | votacao_secao/votacao_secao_1998_AC | HTTP/1.1 200 OK Content-Length: 1548251 
+1998 | votacao_secao/votacao_secao_1998_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+1998 | detalhe_votacao_secao/detalhe_votacao_secao_1998 | HTTP/1.1 200 OK Content-Length: 38623857 
+1998 | votacao_candidato_munzona/votacao_candidato_munzona_1998 | HTTP/1.1 200 OK Content-Length: 106050738 
+1998 | votacao_partido_munzona/votacao_partido_munzona_1998 | HTTP/1.1 200 OK Content-Length: 7525027 
+1998 | detalhe_votacao_munzona/detalhe_votacao_munzona_1998 | HTTP/1.1 200 OK Content-Length: 3356350 
+1998 | consulta_cand/consulta_cand_1998 | HTTP/1.1 200 OK Content-Length: 2887535 
+1998 | eleitorado_locais_votacao/eleitorado_local_votacao_1998 | HTTP/1.1 404 Not Found Content-Length: 1 
+1998 | eleitorado_local_votacao/eleitorado_local_votacao_1998 | HTTP/1.1 404 Not Found Content-Length: 1 
+1998 | perfil_eleitorado/perfil_eleitorado_1998 | HTTP/1.1 200 OK Content-Length: 290215 
+1998 | bem_candidato/bem_candidato_1998 | HTTP/1.1 404 Not Found Content-Length: 1 
+1996 | votacao_secao/votacao_secao_1996_AC | HTTP/1.1 404 Not Found Content-Length: 1 
+1996 | votacao_secao/votacao_secao_1996_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+1996 | detalhe_votacao_secao/detalhe_votacao_secao_1996 | HTTP/1.1 404 Not Found Content-Length: 1 
+1996 | votacao_candidato_munzona/votacao_candidato_munzona_1996 | HTTP/1.1 200 OK Content-Length: 19437416 
+1996 | votacao_partido_munzona/votacao_partido_munzona_1996 | HTTP/1.1 200 OK Content-Length: 11073155 
+1996 | detalhe_votacao_munzona/detalhe_votacao_munzona_1996 | HTTP/1.1 200 OK Content-Length: 752177 
+1996 | consulta_cand/consulta_cand_1996 | HTTP/1.1 200 OK Content-Length: 26156815 
+1996 | eleitorado_locais_votacao/eleitorado_local_votacao_1996 | HTTP/1.1 404 Not Found Content-Length: 1 
+1996 | eleitorado_local_votacao/eleitorado_local_votacao_1996 | HTTP/1.1 404 Not Found Content-Length: 1 
+1996 | perfil_eleitorado/perfil_eleitorado_1996 | HTTP/1.1 200 OK Content-Length: 291191 
+1996 | bem_candidato/bem_candidato_1996 | HTTP/1.1 404 Not Found Content-Length: 1 
+1994 | votacao_secao/votacao_secao_1994_AC | HTTP/1.1 404 Not Found Content-Length: 1 
+1994 | votacao_secao/votacao_secao_1994_BRASIL | HTTP/1.1 404 Not Found Content-Length: 1 
+1994 | detalhe_votacao_secao/detalhe_votacao_secao_1994 | HTTP/1.1 404 Not Found Content-Length: 1 
+1994 | votacao_candidato_munzona/votacao_candidato_munzona_1994 | HTTP/1.1 200 OK Content-Length: 42301735 
+1994 | votacao_partido_munzona/votacao_partido_munzona_1994 | HTTP/1.1 200 OK Content-Length: 9409623 
+1994 | detalhe_votacao_munzona/detalhe_votacao_munzona_1994 | HTTP/1.1 200 OK Content-Length: 1594934 
+1994 | consulta_cand/consulta_cand_1994 | HTTP/1.1 200 OK Content-Length: 1266048 
+1994 | eleitorado_locais_votacao/eleitorado_local_votacao_1994 | HTTP/1.1 404 Not Found Content-Length: 1 
+1994 | eleitorado_local_votacao/eleitorado_local_votacao_1994 | HTTP/1.1 404 Not Found Content-Length: 1 
+1994 | perfil_eleitorado/perfil_eleitorado_1994 | HTTP/1.1 200 OK Content-Length: 260619 
+1994 | bem_candidato/bem_candidato_1994 | HTTP/1.1 404 Not Found Content-Length: 1 
+
+== CKAN
+-- resultados-2024
+  Resultados - 2024 | recursos: 56
+-- resultados-2022
+  Resultados - 2022 | recursos: 34
+-- resultados-2020
+  Resultados - 2020 | recursos: 30
+-- resultados-2018
+  Resultados - 2018 | recursos: 32
+-- resultados-2016
+  Resultados - 2016 | recursos: 30
+-- resultados-2014
+  Resultados - 2014 | recursos: 32
+-- resultados-2012
+  Resultados - 2012 | recursos: 31
+-- resultados-2010
+  Resultados - 2010 | recursos: 34
+-- resultados-2008
+  Resultados - 2008 | recursos: 30
+-- resultados-2006
+  Resultados - 2006 | recursos: 32
+-- resultados-2004
+  Resultados - 2004 | recursos: 30
+-- resultados-2002
+  Resultados - 2002 | recursos: 32
+-- resultados-2000
+  Resultados - 2000 | recursos: 30
+-- resultados-1998
+  Resultados - 1998 | recursos: 32
+-- resultados-1996
+  Resultados - 1996 | recursos: 3
+-- resultados-1994
+  Resultados - 1994 | recursos: 3
+-- eleicoes-suplementares
+  erro HTTP Error 404: Not Found
+-- resultados-eleicoes-suplementares
+  erro HTTP Error 404: Not Found
+== busca por suplementares
+resultados-eleicoes-suplementares-2024 | Resultados - Eleições suplementares 2024
+resultados-eleicoes-suplementares-2022 | Resultados - Eleições suplementares 2022
+resultados-2020-suplementares | Resultados - Eleições suplementares 2020
+prestacao-de-contas-eleitorais-2016 | Prestação de Contas Eleitorais - 2016
+prestacao-de-contas-eleitorais-2014 | Prestação de Contas Eleitorais - 2014
