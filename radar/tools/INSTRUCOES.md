@@ -61,3 +61,6 @@ Desempate: o fato mais verificável e com número. Não use cliques nem populari
 
 ## Entrega
 Resumo curto: matérias por editoria/sub-região, quantas NOVO e ATUALIZADA (saída do publicar.cjs), o que foi retirado e QUALQUER limitação (sub-região fraca, fonte indisponível, push falhou). Sem notícia suficiente ou com passo falho que comprometa a edição, não publique conteúdo inventado: mantenha a edição anterior e explique.
+
+
+**Fontes regionais:** use a lista por estado em `radar/tools/FONTES_REGIONAIS.md` (jornais, portais, blogs de política local, agências, assembleias, TCEs), com recorte do campo progressista e imprensa profissional; nunca sites conhecidos por divulgar desinformação. Percorra pelo menos 3 veículos por sub-região antes de dar a região por vazia.
