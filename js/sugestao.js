@@ -1,7 +1,7 @@
 // Box "O que você está sentindo falta?" + formulário de sugestões do Painel (envia para api/sugestao.php).
 // Autônomo: injeta o próprio estilo e funciona na capa e no painel. Se o envio falhar, o painel segue normal.
 const CSS = `
-.sg-box{max-width:1100px;margin:22px auto;padding:0 16px;font-family:'Space Grotesk',system-ui,sans-serif;color:#1b1530}
+.sg-box{max-width:1100px;margin:12px auto 0;padding:0 16px;font-family:'Space Grotesk',system-ui,sans-serif;color:#1b1530}
 .sg-box details{border:1px solid #e4dfee;border-radius:12px;background:#fff}
 .sg-box summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;padding:11px 16px;font:700 13px/1.2 'Space Grotesk',system-ui,sans-serif;letter-spacing:.06em;text-transform:uppercase;color:#3E347E}
 .sg-box summary::-webkit-details-marker{display:none}
