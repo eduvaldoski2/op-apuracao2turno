@@ -73,8 +73,7 @@ con.execute("""CREATE OR REPLACE TABLE chaves AS SELECT chave_nome, count(DISTIN
 con.execute(f"""CREATE OR REPLACE TABLE c AS SELECT t.* EXCLUDE (_cpf, id_cpf, nome_norm),
   coalesce(t.id_cpf, CASE WHEN k.n_cpf = 1 THEN k.id_unico END, 'n' || left(sha256(coalesce(t.chave_nome, t.nome_norm || '|' || coalesce(t.uf_nascimento, '') || '|' || t.sq_candidato || '|' || t.ano)), 16)) AS pessoa_id,
   CASE WHEN t.id_cpf IS NOT NULL THEN 'cpf' WHEN k.n_cpf = 1 THEN 'nome_ligada_ao_cpf'
-       WHEN t.chave_nome IS NULL THEN 'nome_incerta' WHEN k.n_cpf > 1 THEN 'nome_incerta' ELSE 'nome' END AS pessoa_via,
-  t.chave_nome
+       WHEN t.chave_nome IS NULL THEN 'nome_incerta' WHEN k.n_cpf > 1 THEN 'nome_incerta' ELSE 'nome' END AS pessoa_via
   FROM t LEFT JOIN chaves k ON k.chave_nome = t.chave_nome""")
 # candidaturas sem CPF e sem chave inequívoca recebem id único por candidatura (não se liga a ninguém): evita ligar homônimos por engano
 con.execute("""CREATE OR REPLACE TABLE c AS SELECT * EXCLUDE (pessoa_id), CASE WHEN pessoa_via = 'nome_incerta' AND pessoa_id NOT LIKE 'p%' THEN 'n' || left(sha256(coalesce(chave_nome, '') || '|' || sq_candidato || '|' || ano), 16) ELSE pessoa_id END AS pessoa_id FROM c""")
