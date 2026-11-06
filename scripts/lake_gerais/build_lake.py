@@ -45,15 +45,25 @@ def extrair(z, sufixo):
     f = os.path.join(W, os.path.basename(m[0])); u = f + '.utf8'
     subprocess.run(f"iconv -f latin1 -t utf8 '{f}' > '{u}'", shell=True, check=True); os.remove(f); return u
 
+import re as _re
+_CONHECIDAS = sorted(set(_re.findall(r'\b(?:ANO|NR|CD|SG|NM|DS|QT|ST|DT|AA|SQ)_[A-Z0-9_]+\b', open(__file__, encoding='utf-8').read())))
+AUSENTES = {}   # arquivo -> colunas esperadas que o TSE não trazia naquele ano (viram NULL; nunca inventadas)
+
 def csv(p):
-    return f"read_csv('{p}', delim=';', quote='\"', header=true, all_varchar=true, ignore_errors=false)"
+    """Lê o CSV do TSE; coluna esperada que não existe naquele ano entra como NULL e é registrada no manifesto."""
+    base = f"read_csv('{p}', delim=';', quote='\"', header=true, all_varchar=true, ignore_errors=false)"
+    cols = {r[0] for r in con.execute(f"DESCRIBE SELECT * FROM {base}").fetchall()}
+    falt = [c for c in _CONHECIDAS if c not in cols]
+    AUSENTES[os.path.basename(p)] = falt
+    if not falt: return base
+    return f"(SELECT *, {', '.join(f'NULL::VARCHAR AS {c}' for c in falt)} FROM {base})"
 
 def gravar(sql, nome, fonte, lm):
     dest = os.path.join(out, nome)
     con.execute(f"COPY ({sql}) TO '{dest}' (FORMAT PARQUET, COMPRESSION ZSTD, ROW_GROUP_SIZE 500000)")
     n = con.execute(f"SELECT count(*) FROM read_parquet('{dest}')").fetchone()[0]
     sha = hashlib.sha256(open(dest, 'rb').read()).hexdigest() if os.path.getsize(dest) < 2e9 else ''
-    manifest['arquivos'].append({'arquivo': nome, 'linhas': n, 'bytes': os.path.getsize(dest), 'sha256': sha, 'fonte': fonte, 'last_modified_fonte': lm})
+    manifest['arquivos'].append({'colunas_origem_ausentes': (list(AUSENTES.values())[-1] if AUSENTES else []), 'arquivo': nome, 'linhas': n, 'bytes': os.path.getsize(dest), 'sha256': sha, 'fonte': fonte, 'last_modified_fonte': lm})
     print('OK', nome, n, os.path.getsize(dest), flush=True)
 
 I = lambda c: f"TRY_CAST({c} AS INTEGER)"
@@ -127,8 +137,15 @@ q = R(f"""WITH a AS (SELECT turno, cargo, sum(qt_votos) v, count(DISTINCT (uf, c
 for r in q: md.append('| ' + ' | '.join('' if x is None else f'{x:,}' for x in r) + ' |')
 md += ['', '## 2) Votos nominais por seção x votação por município e zona (TSE)', 'Por turno e cargo: soma dos votos de candidatos (sq_candidato>0) nas seções vs QT_VOTOS_NOMINAIS do arquivo munzona; e nº de células (município, zona, candidato) com diferença.',
        '| turno | cargo | votos seção | votos munzona | diferença | células com diferença |', '|---:|---:|---:|---:|---:|---:|']
-q = R(f"""WITH a AS (SELECT turno, cargo, cd_municipio_tse m, zona z, sq_candidato c, sum(qt_votos) v FROM {sec} WHERE sq_candidato > 0 GROUP BY ALL),
- b AS (SELECT turno, cargo, cd_municipio_tse m, zona z, sq_candidato c, sum(qt_votos_nominais) v FROM {zon} WHERE sq_candidato > 0 GROUP BY ALL),
+# anos antigos (ex.: 2014) não trazem sq_candidato nas seções: a conferência cruza por número do votável (candidato = nr compatível com o cargo)
+_tem_sq = (R(f"SELECT count(sq_candidato) FROM {sec}") or [[0]])[0][0] > 0
+if _tem_sq: _ka, _kb, _fa, _fb = 'sq_candidato', 'sq_candidato', 'sq_candidato > 0', 'sq_candidato > 0'
+else:
+    _ka = _kb = 'nr_votavel'
+    _fa = _fb = "((cargo IN (1,3) AND nr_votavel NOT IN (95,96,97,98)) OR (cargo = 5 AND nr_votavel >= 100) OR (cargo IN (6,7,8) AND nr_votavel >= 1000))"
+    md.append('(seções deste ano não trazem sq_candidato: conferência cruzada por nr_votavel)')
+q = R(f"""WITH a AS (SELECT turno, cargo, cd_municipio_tse m, zona z, {_ka} c, sum(qt_votos) v FROM {sec} WHERE {_fa} GROUP BY ALL),
+ b AS (SELECT turno, cargo, cd_municipio_tse m, zona z, {_kb} c, sum(qt_votos_nominais) v FROM {zon} WHERE {_fb} GROUP BY ALL),
  j AS (SELECT coalesce(a.turno,b.turno) turno, coalesce(a.cargo,b.cargo) cargo, coalesce(a.v,0) va, coalesce(b.v,0) vb FROM a FULL JOIN b USING (turno, cargo, m, z, c))
  SELECT turno, cargo, sum(va), sum(vb), sum(va)-sum(vb), count(*) FILTER (WHERE va<>vb) FROM j GROUP BY 1,2 ORDER BY 1,2""")
 for r in q: md.append('| ' + ' | '.join('' if x is None else f'{x:,}' for x in r) + ' |')
