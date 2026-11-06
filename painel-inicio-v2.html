@@ -24,10 +24,12 @@ h3{margin:0;font:400 20px/1.2 'DM Serif Display',Georgia,serif;color:var(--roxo-
 .busca button{border:0;background:var(--roxo);color:#fff;font:700 15px 'Space Grotesk';padding:0 24px;cursor:pointer}
 .ex{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:13.5px;color:var(--tx2);align-items:center}
 .ex a{padding:5px 11px;border-radius:99px;background:#fff;border:1px solid var(--linha);text-decoration:none;color:var(--roxo-2);font-weight:500}
-.vivo{margin-top:22px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;padding:16px 20px;border-radius:18px;background:var(--roxo);color:#fff}
-.vivo b{font:400 22px/1.2 'DM Serif Display',Georgia,serif;display:block}
-.vivo span{color:var(--lilas);font-size:14px}
-.vivo .pt{display:inline-block;width:9px;height:9px;border-radius:50%;background:#ff5a5a;margin-right:8px;box-shadow:0 0 0 4px rgba(255,90,90,.25)}
+.vivo{margin-top:16px;display:inline-flex;flex-wrap:wrap;gap:8px 10px;align-items:center;padding:7px 8px 7px 14px;border-radius:99px;background:var(--roxo);color:#fff;font-size:13.5px}
+.vivo b{font-weight:700;font-size:13.5px}
+.vivo .sep{color:var(--lilas);padding-right:2px}
+.vivo a{padding:5px 12px;border-radius:99px;background:var(--laranja);color:#2a1700;font-weight:700;text-decoration:none;font-size:13px}
+.vivo a:hover{background:#fff}
+.vivo .pt{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ff5a5a;box-shadow:0 0 0 3px rgba(255,90,90,.25)}
 .btn{display:inline-block;padding:12px 22px;border-radius:99px;background:var(--laranja);color:#2a1700;font-weight:700;text-decoration:none;border:0;cursor:pointer;font-family:inherit;font-size:15px}
 .btn.sec{background:var(--roxo);color:#fff}
 section{padding-block:28px 4px}
@@ -75,6 +77,8 @@ select,.inp{width:100%;max-width:340px;padding:11px 12px;border-radius:12px;bord
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:12px}
 .cd{position:relative;padding:16px;border-radius:16px;background:var(--lilas-2);border:1px solid var(--linha);text-decoration:none;display:block}
 .cd:hover{border-color:var(--roxo)}.cd b{display:block;font:400 18px/1.2 'DM Serif Display';color:var(--roxo-2);margin-bottom:4px;padding-right:56px}.cd span{font-size:14px;color:var(--tx2)}
+.atalhos{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-top:26px;font-size:13px;color:var(--tx2)}
+.atalhos a{color:var(--roxo);text-decoration:underline;text-underline-offset:3px}
 .perg{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px}
 .perg a{padding:14px 16px;border-radius:14px;background:#fff;border:1.5px solid var(--linha);text-decoration:none;color:var(--roxo-2);font-weight:500}
 .perg a:hover{border-color:var(--roxo)}.perg small{display:block;color:var(--tx2);font-weight:400;margin-top:2px}
@@ -117,7 +121,7 @@ footer{margin-top:40px;padding-block:22px 30px;border-top:1px solid var(--linha)
   <p class="lede">Da eleição nacional à seção eleitoral. Escolha o território no mapa e depois a eleição: pesquise candidatos e partidos, compare eleições e leve o resultado em imagem ou planilha. Dados do TSE, de 2018 a 2026.</p>
   <form class="busca" role="search" onsubmit="return soon('A busca única por candidato, partido e município está em desenvolvimento')">
     <input aria-label="Buscar" placeholder="Ou busque direto: candidato, partido, município, bairro ou seção…"><button>Buscar</button></form>
-  <div class="vivo"><div><b><span class="pt"></span>Apuração do 2º turno de 2026</b><span>Presidente: resultado, comparação com o 1º turno e mapa por estado, município e bairro.</span></div><a class="btn" href="painel.html#/">Acompanhar →</a></div>
+  <div class="vivo"><span class="pt"></span><b>Apuração 2026 ao vivo</b><span class="sep">Presidente</span><a href="painel.html#/t1">1º turno</a><a href="painel.html#/">2º turno</a></div>
 </div>
 
 <div class="wrap">
@@ -191,15 +195,7 @@ footer{margin-top:40px;padding-block:22px 30px;border-top:1px solid var(--linha)
   </div>
 </section>
 
-<section aria-labelledby="h-perg"><h2 id="h-perg">Perguntas que o Painel responde</h2><p class="sub">Atalhos para consultas frequentes.</p>
-  <div class="perg">
-    <a href="painel.html#/h/2024/c11t1/uf/rj">Quem ganhou em cada município do RJ em 2024?<small>Prefeito · mapa por município</small></a>
-    <a href="painel.html#/h/2022/c6t1/uf/rj?p=P%3APSOL">Como foi o PSOL no RJ em 2022?<small>Deputado federal · por município</small></a>
-    <a href="painel.html#/comparar">Como dois municípios votaram, lado a lado?<small>Comparar territórios</small></a>
-    <a href="painel.html#/h/2022/c1t1">Presidente 2022 por estado<small>1º turno · até a seção eleitoral</small></a>
-    <a href="#" onclick="return soon('Em desenvolvimento')">Onde a esquerda cresceu de 2018 a 2022?<small>Comparar eleições · por partido</small></a>
-    <a href="#" onclick="return soon('Em desenvolvimento')">Quais bairros viraram de voto?<small>Rankings · viradas</small></a>
-  </div></section>
+<nav class="atalhos" aria-label="Atalhos"><span>Atalhos:</span><a href="painel.html#/h/2024/c11t1/uf/rj">Prefeitos do RJ em 2024</a><a href="painel.html#/h/2022/c1t1">Presidente 2022 por estado</a><a href="painel.html#/comparar">Comparar dois municípios</a></nav>
 
 <section aria-labelledby="h-sai"><h2 id="h-sai">Leve o resultado com você</h2><p class="sub">Em qualquer tela.</p>
   <div class="saida"><div><b>Imagem para redes</b><span>Cards em 1:1, 4:5 e 9:16, com a marca.</span></div><div><b>Planilha (CSV)</b><span>A tabela que você está vendo, pronta para análise.</span></div><div><b>Link da consulta</b><span>Compartilhe exatamente o que você configurou.</span></div><div><b>Relatório</b><span>Em breve: relatório pronto de um território ou candidato.</span></div></div></section>
@@ -217,15 +213,15 @@ var REG={Norte:['ac','am','ap','pa','ro','rr','to'],Nordeste:['al','ba','ce','ma
 var T={uf:'',multi:false,sel:[]};   // território: uf único ou lista (comparação)
 var CORM=['#3E347E','#F08A24','#1f7a4d','#2b7fc4'],LET=['A','B','C','D'];
 var ANOS=[[2026,'Gerais'],[2024,'Municipais'],[2022,'Gerais'],[2020,'Municipais'],[2018,'Gerais']];
-var GER=[['Presidente','c1t1'],['Governador','c3t1'],['Senador','c5t1'],['Dep. federal','c6t1'],['Dep. estadual','c7t1'],['Dep. distrital','c8t1']];
+var GER=[['Presidente','c1t1'],['Governador','c3t1'],['Senador','c5t1'],['Dep. federal','c6t1'],['Dep. estadual / distrital','c7t1']];
 var MUN=[['Prefeito','c11t1'],['Vereador','c13t1']];
-var C26=[['Presidente · 1º turno','t1'],['Presidente · 2º turno','t2'],['Governador','c3t1'],['Senador','c5t1'],['Dep. federal','depf'],['Dep. estadual','depe']];
-var P1={2018:['PT','PSB','PSOL','PDT','PC do B','PV','REDE','PSDB','MDB','PP','PSD','PR','PRB','DEM','PODE','PSL','NOVO','SOLIDARIEDADE'],2020:['PT','PSB','PSOL','PDT','PC do B','PV','REDE','PSDB','MDB','PP','PSD','PL','REPUBLICANOS','DEM','PODE','PSL','NOVO','CIDADANIA'],2022:['PT','PSB','PSOL','PDT','PC do B','PV','REDE','CIDADANIA','PSDB','MDB','PP','PSD','PL','REPUBLICANOS','UNIÃO','PODE','NOVO','SOLIDARIEDADE']};P1[2024]=P1[2022];P1[2026]=P1[2022];
+var C26=[['Presidente · 1º turno','t1'],['Presidente · 2º turno','t2'],['Governador','c3t1'],['Senador','c5t1'],['Dep. federal','depf'],['Dep. estadual / distrital','depe']];
+/* Em produção, a lista de partidos vem do índice da eleição escolhida (idx.json); a capa não nomeia nenhum partido. */
 function cargos(a){return a===2026?C26:(a===2024||a===2020)?MUN:GER}
 function rd(el,nome,it,sel,fn){el.innerHTML='';it.forEach(function(x){var l=document.createElement('label'),i=document.createElement('input'),s=document.createElement('span');i.type='radio';i.name=nome;i.value=x[1];i.checked=String(x[1])===String(sel);i.onchange=function(){fn(x[1])};s.innerHTML=x[0]+(x[2]?'<small>'+x[2]+'</small>':'');l.appendChild(i);l.appendChild(s);el.appendChild(l)})}
 function nome(a,c){var l=cargos(a);for(var i=0;i<l.length;i++)if(l[i][1]===c)return l[i][0];return ''}
 function terrTxt(){return T.uf?UFS[T.uf]:'Brasil'}
-function hash(a,c,uf,extra){var u=uf?'/uf/'+uf:'';if(a===2026){if(c==='t2')return '#/'+(uf?'uf/'+uf:'');if(c==='t1')return '#/t1'+(uf?'/uf/'+uf:'');if(c==='depf'||c==='depe')return '#/t1'+(uf?'/uf/'+uf:'')+'?cargo='+c;return '#/h/2026/'+c+u+(extra||'')}return '#/h/'+a+'/'+c+u+(extra||'')}
+function hash(a,c,uf,extra){if(c==='c7t1'&&uf==='df')c='c8t1';var u=uf?'/uf/'+uf:'';if(a===2026){if(c==='t2')return '#/'+(uf?'uf/'+uf:'');if(c==='t1')return '#/t1'+(uf?'/uf/'+uf:'');if(c==='depf'||c==='depe')return '#/t1'+(uf?'/uf/'+uf:'')+'?cargo='+c;return '#/h/2026/'+c+u+(extra||'')}return '#/h/'+a+'/'+c+u+(extra||'')}
 // ---- mapa
 var svg=$('mapa');
 svg.innerHTML=Object.keys(MAPA.ufs).map(function(k){return '<path data-uf="'+k+'" tabindex="0" role="button" aria-label="'+UFS[k]+'" d="'+MAPA.ufs[k].d+'"><title>'+UFS[k]+'</title></path>'}).join('');
@@ -248,7 +244,7 @@ $('uf-lista').onchange=function(){if(T.multi){var k=this.value;if(k&&T.sel.index
 var E={ano:2026,cargo:'t2',ver:'cand',p:''},P={ano:2022,cargo:'c6t1',agr:'part',mos:'votos'},C={tipo:'cand'};
 function eDraw(){rd($('e-ano'),'ea',ANOS.map(function(a){return [a[0],a[0],a[1]]}),E.ano,function(v){E.ano=+v;if(!cargos(E.ano).some(function(x){return x[1]===E.cargo}))E.cargo=cargos(E.ano)[0][1];E.p='';eDraw()});
  rd($('e-cargo'),'ec',cargos(E.ano),E.cargo,function(v){E.cargo=v;eUp()});
- var s=$('e-p');s.innerHTML='<option value="">Todos os partidos</option>'+P1[E.ano].map(function(k){return '<option value="'+k+'">'+k.replace('PC do B','PCdoB')+'</option>'}).join('');s.value=E.p;s.onchange=function(){E.p=s.value;eUp()};
+ var s=$('e-p');s.innerHTML='<option value="">Todos os partidos</option>';s.value=E.p;s.onchange=function(){E.p=s.value;eUp()};
  rd($('e-ver'),'ev',[['Candidatos','cand'],['Partidos','part'],['Mapa','mapa'],['Tabela','tab']],E.ver,function(v){E.ver=v;eUp()});eUp()}
 function eUp(){var pOk=!(E.ano===2026&&['t1','t2','depf','depe'].indexOf(E.cargo)>=0);$('e-p').disabled=!pOk;if(!pOk)E.p='';
  $('e-res').textContent=E.ano+' · '+nome(E.ano,E.cargo)+' · '+terrTxt()+(E.p?' · '+E.p:'')+' · '+({cand:'candidatos',part:'partidos',mapa:'mapa',tab:'tabela'})[E.ver];
@@ -265,7 +261,7 @@ function cDraw(){var prev=T.multi;T.multi=(C.tipo==='terr'&&document.querySelect
  rd($('c-tipo'),'ct',TIPOS,C.tipo,function(v){C.tipo=v;cDraw();upAll()});var h='';
  var terr='<div class="fase"><p class="rot"><b>2</b> Território</p><div class="terr" style="margin:0">'+terrTxt()+' <button onclick="document.getElementById(\'mapa\').scrollIntoView({behavior:\'smooth\',block:\'center\'})">mudar no mapa</button></div></div>';
  if(C.tipo==='cand')h=terr+'<div class="fase"><p class="rot"><b>3</b> Eleição</p><div class="op"><label><input type="radio" checked><span>2022 · Presidente</span></label></div></div><div class="fase"><p class="rot"><b>4</b> Candidatos (até 4)</p><div class="slots">'+slot('Candidato 1','Busque pelo nome ou número',1)+slot('Candidato 2','Busque pelo nome ou número',1)+slot('+ Adicionar','Até 4 candidatos')+'</div></div><p class="sub">Resultado: barras lado a lado, mapa de quem venceu onde e diferença em pontos.</p>';
- if(C.tipo==='tempo')h=terr+'<div class="fase"><p class="rot"><b>3</b> Quem</p><div class="slots">'+slot('Candidato ou partido','Ex.: PSOL, PT, um candidato',1)+slot('+ Adicionar','Para comparar com outro')+'</div></div><div class="fase"><p class="rot"><b>4</b> Anos</p><div class="op"><label><input type="checkbox" checked><span>2018</span></label><label><input type="checkbox"><span>2020</span></label><label><input type="checkbox" checked><span>2022</span></label><label><input type="checkbox"><span>2024</span></label></div></div><p class="sub">Resultado: linha do tempo de votos e % e mapa de ganho e perda.</p>';
+ if(C.tipo==='tempo')h=terr+'<div class="fase"><p class="rot"><b>3</b> Quem</p><div class="slots">'+slot('Candidato ou partido','Busque pelo nome ou sigla',1)+slot('+ Adicionar','Para comparar com outro')+'</div></div><div class="fase"><p class="rot"><b>4</b> Anos</p><div class="op"><label><input type="checkbox" checked><span>2018</span></label><label><input type="checkbox"><span>2020</span></label><label><input type="checkbox" checked><span>2022</span></label><label><input type="checkbox"><span>2024</span></label></div></div><p class="sub">Resultado: linha do tempo de votos e % e mapa de ganho e perda.</p>';
  if(C.tipo==='terr'){var sl='';for(var i=0;i<4;i++){var k=T.sel[i];sl+=k?'<div class="slot on"><b><span class="chipt" style="background:'+CORM[i]+'">'+LET[i]+'</span> '+UFS[k]+'</b>clique de novo no mapa para tirar</div>':'<div class="slot"><b>'+LET[i]+'</b>'+(i<2?'Clique em um estado no mapa':'Opcional')+'</div>'}
   h='<p class="sub" style="margin-top:0">O mapa agora escolhe vários territórios (até 4). Município e bairro entram na tela de comparação.</p><div class="slots">'+sl+'</div><div class="fase" style="margin-top:14px"><p class="rot"><b>2</b> Eleição</p><div class="op"><label><input type="radio" checked><span>2024 · Prefeito</span></label></div></div>'}
  if(C.tipo==='elei')h=terr+'<div class="vs"><div class="slot on"><b>Eleição A</b>2018 · Presidente</div><em>×</em><div class="slot on"><b>Eleição B</b>2022 · Presidente</div></div><p class="sub">Resultado: diferença em pontos, municípios que mudaram de vencedor, abstenção.</p>';
