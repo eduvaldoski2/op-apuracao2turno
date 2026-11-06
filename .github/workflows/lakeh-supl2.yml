@@ -13,12 +13,11 @@ jobs:
           exec > >(tee /tmp/supl2.log) 2>&1
           B=https://cdn.tse.jus.br/estatistica/sead/eleicoes
           for A in 2024 2022 2020; do
-            for P in "buweb/buweb_ele_suplementares_$A" "correspefet/ceft_ele_suplementares_$A" "correspesp/cesp_ele_suplementares_$A"; do
-              echo "######## $A $P"; rm -rf /tmp/s && mkdir -p /tmp/s && curl -sS -f -L --retry 3 -o /tmp/s/x.zip "$B/eleicoes$A/$P.zip" && (cd /tmp/s && unzip -Z1 x.zip | awk -F/ '{n[$1]++; if(!(($1) in ex)){ex[$1]=$0}} END{for(d in n)print d, n[d], ex[d]}' | sort | head -40; unzip -Z1 x.zip | sed 's/.*\.//' | sort | uniq -c)
-            done
-          done
-          for A in 2024 2020; do
-            rm -rf /tmp/s && mkdir -p /tmp/s && curl -sS -f -L -o /tmp/s/x.zip "$B/eleicoes$A/buweb/buweb_ele_suplementares_$A.zip" && cd /tmp/s && unzip -o -q x.zip && f=$(ls -d */ | head -1) && echo "#### conteudo $A/$f" && ls -la "$f" | head && for g in $(ls $f | head -2); do echo "-- $g"; (iconv -f latin1 -t utf8 "$f$g" | head -5 | cut -c1-500) 2>/dev/null; done; cd /
+            rm -rf /tmp/s && mkdir -p /tmp/s && cd /tmp/s && curl -sS -f -L --retry 3 -o x.zip "$B/eleicoes$A/buweb/buweb_ele_suplementares_$A.zip" && unzip -o -q x.zip
+            d=$(ls -d 20*/ | head -1); echo "######## $A primeira data $d"; ls -la "$d"
+            for z in $d*.zip; do echo "== $z"; unzip -Z1 "$z" | head -20; n=$(unzip -Z1 "$z" | head -1); unzip -o -q "$z" -d u; for g in $(ls u | head -2); do echo "-- $g linhas: $(wc -l < u/$g)"; iconv -f latin1 -t utf8 "u/$g" | head -4 | cut -c1-700; done; done
+            for z in $(ls -d 20*/ | head -3); do ls "$z" | head -5; done
+            cd /
           done
       - name: Publicar log
         if: always()
