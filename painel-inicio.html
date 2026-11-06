@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Painel Eleições · Oficina Política</title>
-<meta name="description" content="Resultados eleitorais por candidato, partido e território: do Brasil ao estado, ao município e à seção eleitoral, em várias eleições. Em ampliação.">
+<meta name="description" content="Resultados eleitorais por candidato, partido e território: do Brasil ao estado, ao município e à seção eleitoral, nas eleições de 2018 a 2026. Em ampliação.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Oficina Política">
 <meta property="og:locale" content="pt_BR">
@@ -74,6 +74,31 @@ footer{margin-top:40px;padding-block:24px 32px;border-top:1px solid var(--linha)
 footer p{margin:4px 0}
 footer a{color:var(--roxo)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+.fase{margin:0 0 22px;padding:0;border:0;min-width:0}
+.fase legend{display:flex;align-items:center;gap:10px;padding:0;margin-bottom:10px;font:700 13px/1.2 'Space Grotesk',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo-2)}
+.fase legend b{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--laranja);color:#2a1700;font-size:13px;letter-spacing:0}
+.opcoes{display:flex;flex-wrap:wrap;gap:8px}
+.opcoes label{position:relative}
+.opcoes input{position:absolute;opacity:0;inset:0;cursor:pointer}
+.opcoes span{display:inline-block;padding:9px 15px;border-radius:999px;border:1.5px solid var(--linha);background:var(--branco);font-weight:500;font-size:15px;color:var(--roxo-2);transition:background .15s,border-color .15s}
+.opcoes input:hover+span{border-color:var(--roxo)}
+.opcoes input:checked+span{background:var(--roxo);border-color:var(--roxo);color:#fff}
+.opcoes input:focus-visible+span{outline:3px solid var(--laranja);outline-offset:2px}
+.opcoes small{display:block;font-size:11px;font-weight:400;opacity:.75;line-height:1.1}
+.selo{font-size:12px;color:var(--tx2);margin:8px 0 0}
+select{width:100%;max-width:340px;padding:11px 12px;border-radius:12px;border:1.5px solid var(--linha);background:var(--branco);font:500 15px 'Space Grotesk',sans-serif;color:var(--roxo-2)}
+select:focus-visible{outline:3px solid var(--laranja);outline-offset:2px}
+.duas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:22px}
+.montar{padding:clamp(18px,3vw,28px);border-radius:22px;background:var(--branco);border:1.5px solid var(--linha);box-shadow:0 20px 40px -32px rgba(42,34,96,.55)}
+.resumo{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;margin-top:6px;padding:16px 18px;border-radius:16px;background:var(--roxo)}
+.resumo p{margin:0;color:var(--lilas);font-size:14px}
+.resumo p b{display:block;margin-top:2px;font:400 clamp(20px,3.6vw,26px)/1.2 'DM Serif Display',Georgia,serif;color:#fff}
+.abrir{display:inline-block;padding:13px 22px;border-radius:999px;background:var(--laranja);color:#2a1700;font-weight:700;text-decoration:none}
+.abrir:hover{background:#ffa043}
+.abrir:focus-visible{outline:3px solid #fff;outline-offset:3px}
+.atalhos{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;font-size:14px;color:var(--tx2)}
+.atalhos a{color:var(--roxo);font-weight:700}
 </style>
 </head>
 <body>
@@ -87,55 +112,32 @@ footer a{color:var(--roxo)}
   <div class="wrap hero">
     <p class="k">Dados eleitorais <i>Em ampliação</i></p>
     <h1>Painel Eleições</h1>
-    <p class="lede">Pesquise resultados eleitorais por candidato, por partido e por território: do Brasil ao estado, ao município e até a seção eleitoral, em diferentes eleições.</p>
-    <ul class="chips" aria-label="O que dá para pesquisar">
-      <li>Candidato</li><li>Partido</li><li>Brasil</li><li>Estado</li><li>Município</li><li>Seção eleitoral</li><li>2018 a 2026</li>
-    </ul>
+    <p class="lede">Resultados eleitorais por candidato, por partido e por território: do Brasil ao estado, ao município e até a seção eleitoral. Eleições de 2018 a 2026.</p>
   </div>
 
   <div class="wrap">
-    <section aria-labelledby="h-2026">
-      <h2 id="h-2026">O que você quer pesquisar?</h2>
-      <p class="sub">Escolha a eleição. Dentro de cada uma, você muda o território, o candidato ou o partido.</p>
-      <div class="grade">
-        <a class="op dest" href="painel.html#/"><span class="tag">2026 · Presidente</span><span class="t">2º turno</span><span class="d">Apuração e resultado, com comparação ao 1º turno, mapa por estado, município e bairro.</span><span class="go">Abrir</span></a>
-        <a class="op" href="painel.html#/t1"><span class="tag">2026 · Presidente</span><span class="t">1º turno</span><span class="d">Resultado oficial por candidato, estado, município e local de votação.</span><span class="go">Abrir</span></a>
-        <a class="op" href="painel.html#/h/2026/c3t1"><span class="tag cad">2026 · Cadastro gratuito</span><span class="t">Governador</span><span class="d">Resultado do 1º turno em cada estado, até a seção eleitoral.</span><span class="go">Abrir</span></a>
-        <a class="op" href="painel.html#/h/2026/c5t1"><span class="tag cad">2026 · Cadastro gratuito</span><span class="t">Senador</span><span class="d">Resultado do 1º turno por estado, município e seção.</span><span class="go">Abrir</span></a>
-        <a class="op" href="painel.html#/t1?cargo=depf"><span class="tag cad">2026 · Cadastro gratuito</span><span class="t">Deputado federal</span><span class="d">Candidatos e partidos por estado e território.</span><span class="go">Abrir</span></a>
-        <a class="op" href="painel.html#/t1?cargo=depe"><span class="tag cad">2026 · Cadastro gratuito</span><span class="t">Deputado estadual</span><span class="d">Candidatos e partidos por estado e território.</span><span class="go">Abrir</span></a>
+    <section aria-labelledby="h-monte">
+      <div class="montar">
+        <h2 id="h-monte" class="sr" style="position:absolute;left:-999px">Monte sua consulta</h2>
+        <fieldset class="fase"><legend><b>1</b> Ano da eleição</legend>
+          <div class="opcoes" id="o-ano"></div></fieldset>
+        <fieldset class="fase"><legend><b>2</b> Cargo</legend>
+          <div class="opcoes" id="o-cargo"></div>
+          <p class="selo" id="selo"></p></fieldset>
+        <div class="duas">
+          <div class="fase"><label for="s-uf" class="lg"><span style="display:flex;align-items:center;gap:10px;margin-bottom:10px;font:700 13px/1.2 'Space Grotesk',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo-2)"><b style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--laranja);color:#2a1700;font-size:13px;letter-spacing:0">3</b> Território</span></label>
+            <select id="s-uf"></select></div>
+          <div class="fase"><label for="s-p" class="lg"><span style="display:flex;align-items:center;gap:10px;margin-bottom:10px;font:700 13px/1.2 'Space Grotesk',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo-2)"><b style="display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--laranja);color:#2a1700;font-size:13px;letter-spacing:0">4</b> Partido <small style="text-transform:none;letter-spacing:0;font-weight:400;color:var(--tx2)">(opcional)</small></span></label>
+            <select id="s-p"></select></div>
+        </div>
+        <div class="resumo"><p>Sua consulta<b id="res">…</b></p><a class="abrir" id="go" href="painel.html#/">Abrir resultado →</a></div>
+        <p class="selo">Depois de abrir, clique em qualquer candidato, partido ou território para aprofundar:
+          <span class="trilha" style="display:inline-flex;margin:0 0 0 6px">Brasil <em>›</em> Estado <em>›</em> Município <em>›</em> Bairro <em>›</em> Local de votação <em>›</em> Seção</span></p>
+        <p class="atalhos"><span>Atalhos:</span> <a href="painel.html#/">Presidente 2026 · apuração do 2º turno</a> <a href="painel.html#/comparar">Comparar territórios</a></p>
       </div>
     </section>
 
-    <section aria-labelledby="h-ant">
-      <h2 id="h-ant">Eleições anteriores</h2>
-      <p class="sub">Compare o desempenho de candidatos e partidos ao longo do tempo. Disponível com cadastro gratuito.</p>
-      <div class="grade">
-        <a class="op" href="painel.html#/h/2024/c11t1"><span class="tag cad">2024 · Municipais</span><span class="t">Prefeito 2024</span><span class="d">Resultado por município, zona e seção eleitoral.</span><span class="go">Abrir</span></a>
-        <a class="op" href="painel.html#/h/2022/c1t1"><span class="tag cad">2022 · Gerais</span><span class="t">Presidente 2022</span><span class="d">Resultado do 1º turno por estado, município e seção.</span><span class="go">Abrir</span></a>
-        <a class="op" href="painel.html#/h/2020/c11t1"><span class="tag cad">2020 · Municipais</span><span class="t">Prefeito 2020</span><span class="d">Resultado por município, zona e seção eleitoral.</span><span class="go">Abrir</span></a>
-        <a class="op" href="painel.html#/h/2018/c1t1"><span class="tag cad">2018 · Gerais</span><span class="t">Presidente 2018</span><span class="d">Resultado do 1º turno por estado, município e seção.</span><span class="go">Abrir</span></a>
-      </div>
-    </section>
-
-    <section aria-labelledby="h-com">
-      <h2 id="h-com">Como pesquisar</h2>
-      <p class="sub">Em qualquer eleição, o resultado pode ser lido de três jeitos.</p>
-      <div class="como">
-        <div><b>Por candidato</b><span>Veja onde cada candidato foi mais forte e mais fraco, e como se saiu em relação a outras eleições.</span></div>
-        <div><b>Por partido</b><span>Acompanhe o desempenho de partidos e do conjunto dos candidatos de cada legenda.</span></div>
-        <div><b>Por território</b><span>Navegue do mapa do país até o local de votação.<span class="trilha" aria-label="Níveis de território">Brasil <em>›</em> Estado <em>›</em> Município <em>›</em> Zona <em>›</em> Seção</span></span></div>
-      </div>
-    </section>
-
-    <section aria-labelledby="h-cmp">
-      <h2 id="h-cmp">Ferramentas de análise</h2>
-      <div class="grade" style="margin-top:12px">
-        <a class="op" href="painel.html#/comparar"><span class="tag">Comparar</span><span class="t">Comparar territórios</span><span class="d">Coloque estados, regiões e municípios lado a lado e veja as diferenças de votação.</span><span class="go">Abrir</span></a>
-      </div>
-    </section>
-
-    <div class="ampl" role="note"><span aria-hidden="true" style="font-size:22px">🛠️</span><div><b>Em ampliação</b><p>O Painel Eleições está em crescimento: novos cargos, anos e recursos entram aos poucos. Os dados são do TSE; esta é uma iniciativa independente da Oficina Política.</p></div></div>
+    <div class="ampl" role="note"><span aria-hidden="true" style="font-size:22px">🛠️</span><div><b>Em ampliação</b><p>O Painel Eleições está em crescimento: novos cargos, anos e recursos entram aos poucos. Consulta com cadastro gratuito.</p></div></div>
   </div>
 </main>
 
@@ -143,6 +145,49 @@ footer a{color:var(--roxo)}
   <p><a href="https://oficinapolitica.com.br/">oficinapolitica.com.br</a> · <a href="privacidade.html">Política de privacidade</a> · <a href="termos.html">Termos de uso</a></p>
   <p>Fonte dos dados: <a href="https://resultados.tse.jus.br" target="_blank" rel="noopener">TSE · Divulgação de Resultados</a>. Sem vínculo com o TSE; o resultado oficial é o do TSE.</p>
 </div></footer>
+<script>
+(function(){
+var ANOS=[[2026,'Gerais'],[2024,'Municipais'],[2022,'Gerais'],[2020,'Municipais'],[2018,'Gerais']];
+var GER=[['Presidente · 1º turno','c1t1'],['Presidente · 2º turno','c1t2'],['Governador · 1º turno','c3t1'],['Governador · 2º turno','c3t2'],['Senador','c5t1'],['Deputado federal','c6t1'],['Deputado estadual','c7t1'],['Deputado distrital','c8t1']];
+var MUN=[['Prefeito · 1º turno','c11t1'],['Prefeito · 2º turno','c11t2'],['Vereador','c13t1']];
+var C26=[['Presidente · 1º turno','t1'],['Presidente · 2º turno','t2'],['Governador · 1º turno','c3t1'],['Senador','c5t1'],['Deputado federal','depf'],['Deputado estadual','depe']];
+var UFS={ac:'Acre',al:'Alagoas',am:'Amazonas',ap:'Amapá',ba:'Bahia',ce:'Ceará',df:'Distrito Federal',es:'Espírito Santo',go:'Goiás',ma:'Maranhão',mg:'Minas Gerais',ms:'Mato Grosso do Sul',mt:'Mato Grosso',pa:'Pará',pb:'Paraíba',pe:'Pernambuco',pi:'Piauí',pr:'Paraná',rj:'Rio de Janeiro',rn:'Rio Grande do Norte',ro:'Rondônia',rr:'Roraima',rs:'Rio Grande do Sul',sc:'Santa Catarina',se:'Sergipe',sp:'São Paulo',to:'Tocantins'};
+var P1={2018:['PT','PSB','PSOL','PDT','PC do B','PV','REDE','PSDB','MDB','PP','PSD','PR','PRB','DEM','PODE','PSL','NOVO','SOLIDARIEDADE'],
+2020:['PT','PSB','PSOL','PDT','PC do B','PV','REDE','PSDB','MDB','PP','PSD','PL','REPUBLICANOS','DEM','PODE','PSL','NOVO','CIDADANIA'],
+2022:['PT','PSB','PSOL','PDT','PC do B','PV','REDE','CIDADANIA','PSDB','MDB','PP','PSD','PL','REPUBLICANOS','UNIÃO','PODE','NOVO','SOLIDARIEDADE']};
+P1[2024]=P1[2022];P1[2026]=P1[2022];
+var st={ano:2026,cargo:'t2',uf:'',p:''};
+var $=function(i){return document.getElementById(i)};
+function lista(a){return a===2026?C26:(a===2024||a===2020)?MUN:GER}
+function radios(el,nome,itens,sel,fn){el.innerHTML='';itens.forEach(function(it){var l=document.createElement('label'),i=document.createElement('input'),s=document.createElement('span');i.type='radio';i.name=nome;i.value=it[1];i.checked=String(it[1])===String(sel);i.onchange=function(){fn(it[1])};s.innerHTML=it[0];l.appendChild(i);l.appendChild(s);el.appendChild(l)})}
+function pinta(){
+  radios($('o-ano'),'ano',ANOS.map(function(a){return ['<b style="font-weight:700">'+a[0]+'</b><small>'+a[1]+'</small>',a[0]]}),st.ano,function(v){st.ano=+v;var l=lista(st.ano);if(!l.some(function(x){return x[1]===st.cargo}))st.cargo=l[0][1];st.p='';pinta()});
+  var l=lista(st.ano);radios($('o-cargo'),'cargo',l,st.cargo,function(v){st.cargo=v;atualiza()});
+  var u=$('s-uf');u.innerHTML='<option value="">Brasil (todos os estados)</option>'+Object.keys(UFS).map(function(k){return '<option value="'+k+'">'+UFS[k]+'</option>'}).join('');u.value=st.uf;u.onchange=function(){st.uf=u.value;atualiza()};
+  var p=$('s-p');p.innerHTML='<option value="">Todos os partidos</option>'+P1[st.ano].map(function(k){return '<option value="'+k+'">'+k.replace('PC do B','PCdoB')+'</option>'}).join('');p.value=st.p;p.onchange=function(){st.p=p.value;atualiza()};
+  atualiza();
+}
+function nomeCargo(){var l=lista(st.ano);for(var i=0;i<l.length;i++)if(l[i][1]===st.cargo)return l[i][0].replace('<br>',' ');return ''}
+function hash(){
+  var a=st.ano,c=st.cargo,uf=st.uf,u=uf?'/uf/'+uf:'';
+  if(a===2026){
+    if(c==='t2')return '#/'+(uf?'uf/'+uf:'');
+    if(c==='t1')return '#/t1'+(uf?'/uf/'+uf:'');
+    if(c==='depf'||c==='depe')return '#/t1'+(uf?'/uf/'+uf:'')+'?cargo='+c;
+    return '#/h/2026/'+c+u+(st.p?'?p='+encodeURIComponent('P:'+st.p):'');
+  }
+  return '#/h/'+a+'/'+c+u+(st.p?'?p='+encodeURIComponent('P:'+st.p):'');
+}
+function atualiza(){
+  var pOk=!(st.ano===2026&&['t1','t2','depf','depe'].indexOf(st.cargo)>=0);
+  $('s-p').disabled=!pOk;if(!pOk&&st.p){st.p='';$('s-p').value=''}
+  $('selo').textContent=st.ano===2026&&st.cargo==='t2'?'Apuração e resultado do 2º turno, com comparação ao 1º turno.':(st.ano===2026&&(st.cargo==='depf'||st.cargo==='depe')?'Em 2026, escolha o partido dentro da tela de resultado.':(st.ano===2026&&(st.cargo==='t1')?'Em 2026, escolha o partido dentro da tela de resultado.':'Anos anteriores exigem cadastro gratuito.'));
+  $('res').textContent=st.ano+' · '+nomeCargo()+' · '+(st.uf?UFS[st.uf]:'Brasil')+(st.p?' · '+st.p.replace('PC do B','PCdoB'):'');
+  $('go').href='painel.html'+hash();
+}
+pinta();
+})();
+</script>
 <script type="module">
 import { iniciarConsentimento } from './js/consentimento.js?v=a32929f5';
 try { iniciarConsentimento(); } catch (e) {}
