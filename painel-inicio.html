@@ -37,6 +37,8 @@ a{color:inherit}
 .topo a.sair:hover{color:#fff;text-decoration:underline}
 .topo .dir{display:flex;align-items:center;gap:14px}
 .tc-b{display:inline-block;border:1.5px solid rgba(255,255,255,.75);background:transparent;color:#fff;font:700 13px/1 'Space Grotesk',system-ui,sans-serif;padding:7px 14px;border-radius:999px;cursor:pointer;text-decoration:none}
+.topo .wrap>a{min-width:0;flex:0 1 auto}.topo img{max-width:100%}
+@media(max-width:520px){.topo .wrap{gap:10px}.topo img{height:28px}.topo .dir{gap:10px}.topo a.sair .lg{display:none}.topo a.sair .s{text-transform:capitalize}.tc-b{padding:7px 12px}}
 .tc-b.tc-on{background:var(--laranja);border-color:var(--laranja);color:#2a1700}
 .tc-b:hover{background:#fff;color:var(--roxo-2)}
 h1{margin:0;font:400 clamp(32px,7vw,54px)/1.08 'DM Serif Display',Georgia,serif;color:var(--roxo-2);text-wrap:balance}
@@ -147,15 +149,13 @@ footer{margin-top:40px;padding-block:22px 30px;border-top:1px solid var(--linha)
 <a class="pula" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo"><div class="wrap">
   <a href="https://oficinapolitica.com.br/" aria-label="Oficina Política, página inicial"><img src="img/logo-negativo.svg" width="360" height="60" alt="Oficina Política"></a>
-  <div class="dir"><a class="sair" href="https://oficinapolitica.com.br/">← Voltar ao site</a><span id="conta-topo"></span></div>
+  <div class="dir"><a class="sair" href="https://oficinapolitica.com.br/" aria-label="Voltar ao site">← <span class="lg">Voltar ao </span><span class="s">site</span></a><span id="conta-topo"></span></div>
 </div></header>
 <main id="conteudo">
 <div class="wrap hero">
   <p class="k">Dados eleitorais <i>Em ampliação</i></p>
   <h1>Painel Eleições</h1>
   <p class="lede">Da eleição nacional à seção eleitoral. Escolha o território no mapa e depois a eleição: pesquise candidatos e partidos, compare eleições e leve o resultado em imagem ou planilha. Dados do TSE, de 2018 a 2026.</p>
-  <form class="busca" role="search" onsubmit="return soon('A busca única por candidato, partido e município está em desenvolvimento')">
-    <input aria-label="Buscar" placeholder="Ou busque direto: candidato, partido, município, bairro ou seção…"><button>Buscar</button></form>
   <div class="vivo"><span class="pt"></span><b>Apuração 2026 ao vivo</b><span class="sep">Presidente</span><a href="painel.html#/t1">1º turno</a><a href="painel.html#/">2º turno</a></div>
 </div>
 
@@ -170,7 +170,6 @@ footer{margin-top:40px;padding-block:22px 30px;border-top:1px solid var(--linha)
      <div class="tip" id="tip" aria-live="polite"></div>
      <div class="regs" id="regs"></div>
      <select id="uf-lista" aria-label="Escolher estado na lista" style="max-width:none"></select>
-     <div class="munic"><input id="mun" placeholder="Município (opcional)" aria-label="Município"><button type="button" onclick="return soon('Busca de município direto na capa: em desenvolvimento. Hoje, escolha o estado e abra o município no resultado.')">Ir</button></div>
    </aside>
 
    <div>

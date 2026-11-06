@@ -824,6 +824,7 @@ html:not(.logado) .so-conta-av{display:flex}
 .tc-b.tc-on{background:var(--laranja,#F08A24);border-color:var(--laranja,#F08A24);color:#2a1700}
 .tc-b:hover{background:#fff;color:var(--roxo-2,#2A2260);filter:none}
 .topo.compact .topo-conta{top:50%;transform:translateY(-50%)}
+@media (max-width:520px){.topo .topo-in{padding-left:12px;padding-right:78px}.topo .marca-logo,.topo.compact .marca-logo{height:32px}.topo-conta{right:8px}.tc-b{padding:7px 12px}}
 .criterios-pe{margin:22px 0 4px;text-align:center}
 @media (max-width:760px){.marca-sub{font-size:13px;letter-spacing:.18em}.beta{font-size:8px;padding:2px 5px}.topo.compact .marca-logo{height:26px}.topo.compact .marca-sub{font-size:10px}}
 /* eleições anteriores e demais cargos (js/hist.js) */
