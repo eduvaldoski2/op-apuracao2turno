@@ -1,0 +1,32 @@
+{
+ "ano_conjunto": "2024",
+ "gerado_em": "2026-11-06T16:50:50.691724+00:00Z",
+ "fonte": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2024",
+ "arquivos": [
+  {
+   "arquivo": "secao_sup_2024.parquet",
+   "linhas": 12800,
+   "bytes": 56093,
+   "sha256": "2ffc539660f6b9e95889166e9012ba1802d1d9ba433efe2ac487933ab3739afe",
+   "fonte": "buweb/buweb_ele_suplementares_2024.zip",
+   "last_modified_fonte": "Wed, 28 Oct 2026 21:24:11 GMT"
+  },
+  {
+   "arquivo": "detalhe_secao_sup_2024.parquet",
+   "linhas": 2492,
+   "bytes": 18133,
+   "sha256": "bd5fa9990aa7f3cf363b997e1621d60fe4a86d4840b20cc841b97813ebe173bb",
+   "fonte": "buweb/buweb_ele_suplementares_2024.zip",
+   "last_modified_fonte": "Wed, 28 Oct 2026 21:24:11 GMT"
+  },
+  {
+   "arquivo": "lista_sup_2024.parquet",
+   "linhas": 43,
+   "bytes": 2911,
+   "sha256": "b593fa05a5f6fbe2aa688d3b912e815c60520f63bd44c5282f09dc8b2e93481b",
+   "fonte": "listaelesuplem/lista_eleicoes_suplementares_2024.zip",
+   "last_modified_fonte": "Wed, 28 Oct 2026 21:19:05 GMT"
+  }
+ ],
+ "avisos": []
+}

@@ -1,0 +1,19 @@
+zips internos: 14
+OK buweb_1t_suplementar_070420251000.csv latin-1 745
+OK buweb_1t_suplementar_050520251000.csv latin-1 1531
+OK buweb_1t_suplementar_090620251000.csv latin-1 2447
+OK buweb_1t_suplementar_070720251000.csv latin-1 2731
+OK buweb_1t_suplementar_040820251000.csv latin-1 2896
+OK buweb_1t_suplementar_150920251000.csv latin-1 3016
+OK buweb_1t_suplementar_061020251000.csv latin-1 4643
+OK buweb_1t_suplementar_271020251000.csv latin-1 5251
+OK buweb_1t_suplementar_081220251000.csv latin-1 5601
+OK buweb_1t_suplementar_020320261000.csv latin-1 5914
+OK buweb_1t_suplementar_130420261038.csv latin-1 8532
+OK buweb_1t_suplementar_150620261000.csv latin-1 9901
+OK buweb_1t_suplementar_220620261001.csv latin-1 10328
+OK buweb_1t_suplementar_281020261048.csv latin-1 12800
+OK secao_sup_2024.parquet 12800
+OK detalhe_secao_sup_2024.parquet 2492
+OK lista_sup_2024.parquet 43
+FIM
