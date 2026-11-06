@@ -21,9 +21,20 @@ if ($excl !== '') {
     foreach (['sessoes', 'codigos'] as $t) $db->prepare("DELETE FROM $t WHERE uid = ?")->execute([$id]);
     $db->prepare("UPDATE usuarios SET nome='', canal='email', contato='excluido-' || id || '@excluido.invalid', senha_hash='', google_sub=NULL, telefone='', email=NULL, cidade='', perfil='', pagina='', origem='', agente='', status='excluido', excluido=1, c_contato=0, c_anuncios=0 WHERE id = ?")->execute([$id]);
   }
+  try { sugestoes_tabela($db); $db->prepare('DELETE FROM sugestoes WHERE lower(email) = ?')->execute([$em]); } catch (Throwable $e) { /* sem tabela */ }
   exit('excluídos: ' . count($ids));
 }
 $fmt = (string)($_POST['formato'] ?? $_GET['formato'] ?? 'csv');
+if ($fmt === 'sugestoes') {   // sugestões do Painel (api/sugestao.php); ações: lida=ID, apagar=ID
+  header('Content-Type: application/json; charset=utf-8');
+  try {
+    sugestoes_tabela($db);
+    if (isset($_POST['lida'])) $db->prepare('UPDATE sugestoes SET lida = ? WHERE id = ?')->execute([empty($_POST['valor']) ? 0 : 1, (int)$_POST['lida']]);
+    if (isset($_POST['apagar'])) $db->prepare('DELETE FROM sugestoes WHERE id = ?')->execute([(int)$_POST['apagar']]);
+    echo json_encode(['sugestoes' => $db->query('SELECT id, criado, nome, email, telefone, mensagem, pagina, lida, aviso FROM sugestoes ORDER BY id DESC LIMIT 500')->fetchAll()], JSON_UNESCAPED_UNICODE);
+  } catch (Throwable $e) { echo '{"sugestoes":[]}'; }
+  exit;
+}
 if ($fmt === 'contas' || $fmt === 'uso_ia') {   // contas da "Pergunte à IA" (api/conta.php) e gasto do mês (custo real somado das chamadas)
   $cd = $db;
   if ($fmt === 'uso_ia') {

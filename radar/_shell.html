@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#3E347E"><title>Radar da Oficina Política</title><link rel="icon" type="image/svg+xml" href="/img/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><link rel="manifest" href="/manifest.webmanifest?v=3"><meta name="application-name" content="Oficina Política"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Oficina Política"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preload" href="/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/consent.css?v=02b92cb4">
+<link rel="stylesheet" href="/css/consent.css?v=733db7e2">
 <style>
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/dm-serif-display-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/dm-serif-display-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -683,7 +683,7 @@ document.addEventListener('click',function(e){
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal()}});
 window.addEventListener('hashchange',route);
-(async function(){try{var c=await import('/js/consentimento.js?v=02b92cb4');window.__op=c;c.iniciarConsentimento();route2ga();var mm=location.hash.match(/^#materia-(.+)$/);if(mm&&S[mm[1]]){lidaId='';lerMateria(mm[1])}if(typeof CONV_NOVA!=='undefined'&&CONV_NOVA)gaEv('sign_up',{method:'link_compartilhado'},{meta:'CompleteRegistration',ads:'cadastro'})}catch(e){}})();
+(async function(){try{var c=await import('/js/consentimento.js?v=733db7e2');window.__op=c;c.iniciarConsentimento();route2ga();var mm=location.hash.match(/^#materia-(.+)$/);if(mm&&S[mm[1]]){lidaId='';lerMateria(mm[1])}if(typeof CONV_NOVA!=='undefined'&&CONV_NOVA)gaEv('sign_up',{method:'link_compartilhado'},{meta:'CompleteRegistration',ads:'cadastro'})}catch(e){}})();
 function route2ga(){try{window.__op.rastrearTela('/radar/'+location.hash,document.title)}catch(e){}}
 function sizeHdr(){var h=document.getElementById('hdr');document.documentElement.style.setProperty('--hh',h.offsetHeight+'px')}
 window.addEventListener('scroll',function(){var h=document.getElementById('hdr'),app=document.getElementById('app'),was=h.classList.contains('compact'),y=window.scrollY;var c=was?y>40:y>120;if(c!==was){var h0=h.offsetHeight;h.classList.toggle('compact',c);var h1=h.offsetHeight;app.style.marginTop=c?(h0-h1)+'px':'';sizeHdr()}},{passive:true});

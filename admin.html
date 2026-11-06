@@ -96,6 +96,16 @@ td.ac{white-space:nowrap}
   </div>
 </section>
 
+<section id="sugestoes" hidden>
+  <h2>Sugestões do Painel</h2>
+  <p class="sub">Mensagens enviadas pelo box “O que você está sentindo falta?”. Cada envio também gera um aviso por e-mail para contato@oficinapolitica.com.br.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:8px 0">
+    <label style="display:flex;gap:6px;align-items:center"><input type="checkbox" id="sg-nl"> só não lidas</label>
+    <button class="btn peq sec" type="button" id="sg-atualizar">Atualizar</button>
+    <span class="sub" id="sg-res"></span>
+  </div>
+  <div class="tab-scroll"><table><thead><tr><th>Data</th><th>Nome</th><th>Contato</th><th>Sugestão</th><th>Ações</th></tr></thead><tbody id="sg-corpo"></tbody></table></div>
+</section>
 <section id="uso" hidden>
   <h2>Uso do painel (cards e downloads)</h2>
   <p class="sub">Contador próprio, anônimo e sem cookies: soma quantas vezes cada ação aconteceu (não guarda IP nem dado pessoal). Conta todos os visitantes, não só quem aceitou cookies. Seus acessos não contam se você usar “Não contar meus acessos neste navegador”.</p>
@@ -322,12 +332,12 @@ async function carrega() {
   msg('');
   try {
     const r = await chama({ formato: 'json' }); leads = (await r.json()).leads || [];
-    $('lista').hidden = false; $('sair').hidden = false; $('tok').value = ''; resumo(); desenha(); carregaUso();
+    $('lista').hidden = false; $('sair').hidden = false; $('tok').value = ''; resumo(); desenha(); carregaUso(); carregaSug();
   } catch (e) {
     if (e.tok) { msg('Token incorreto.'); sair(true); } else msg('Não foi possível carregar os cadastros agora. Tente de novo.');
   }
 }
-function sair(manter) { tok = ''; try { sessionStorage.removeItem('op_admin_tok'); } catch {} leads = []; $('uso').hidden = true; $('lista').hidden = true; $('sair').hidden = true; ['c-total', 'c-ativos', 'c-sem', 'c-hoje', 'c-7'].forEach(i => { $(i).textContent = '🔒'; }); if (!manter) msg(''); }
+function sair(manter) { tok = ''; try { sessionStorage.removeItem('op_admin_tok'); } catch {} leads = []; $('uso').hidden = true; $('sugestoes').hidden = true; $('lista').hidden = true; $('sair').hidden = true; ['c-total', 'c-ativos', 'c-sem', 'c-hoje', 'c-7'].forEach(i => { $(i).textContent = '🔒'; }); if (!manter) msg(''); }
 $('f-tok').addEventListener('submit', e => { e.preventDefault(); const v = $('tok').value.trim(); if (!v) return; tok = v; try { sessionStorage.setItem('op_admin_tok', tok); } catch {} carrega(); });
 $('sair').addEventListener('click', () => sair());
 $('busca').addEventListener('input', desenha);
@@ -338,6 +348,28 @@ async function baixa(formato, nome) {
 }
 $('b-csv').addEventListener('click', () => baixa('csv', 'cadastros_oficina_politica'));
 $('b-aud').addEventListener('click', () => baixa('audiencia', 'audiencia_anuncios'));
+
+// ---------- sugestões do Painel ----------
+let sugs = [];
+function desenhaSug() {
+  const nl = $('sg-nl').checked, vis = sugs.filter(x => !nl || !+x.lida), tb = $('sg-corpo'); tb.replaceChildren();
+  if (!vis.length) { const tr = el('tr'), td = el('td', 'Nenhuma sugestão ainda.'); td.colSpan = 5; tr.append(td); tb.append(tr); }
+  vis.forEach(x => {
+    const tr = el('tr'); if (!+x.lida) tr.style.background = '#fff8ec';
+    const ct = el('td'); ct.append(el('div', x.email)); if (x.telefone) { const wa = el('a', fmtTel(x.telefone)); wa.href = 'https://wa.me/' + String(x.telefone).replace(/\D/g, ''); wa.target = '_blank'; wa.rel = 'noopener'; ct.append(wa); }
+    const tm = el('td', x.mensagem); tm.style.whiteSpace = 'pre-wrap'; tm.style.minWidth = '260px'; if (x.pagina) tm.append(el('div', x.pagina, 'sub'));
+    const ac = el('td', null, 'ac');
+    const b1 = el('button', +x.lida ? 'Marcar como não lida' : 'Marcar como lida', 'btn peq sec'); b1.type = 'button'; b1.style.marginRight = '6px';
+    b1.addEventListener('click', async () => { try { sugs = (await (await chama({ formato: 'sugestoes', lida: x.id, valor: +x.lida ? '' : '1' })).json()).sugestoes || []; desenhaSug(); } catch { msg('Não foi possível atualizar agora.'); } });
+    const b2 = el('button', 'Apagar', 'btn peq perigo'); b2.type = 'button';
+    b2.addEventListener('click', async () => { if (!confirm(`Apagar a sugestão de ${x.nome}?`)) return; try { sugs = (await (await chama({ formato: 'sugestoes', apagar: x.id })).json()).sugestoes || []; desenhaSug(); } catch { msg('Não foi possível apagar agora.'); } });
+    ac.append(b1, b2); tr.append(el('td', fmtData(x.criado)), el('td', x.nome), ct, tm, ac); tb.append(tr);
+  });
+  const novas = sugs.filter(x => !+x.lida).length; $('sg-res').textContent = `${sugs.length} sugestões, ${novas} não lidas`;
+  if (sugs.some(x => !+x.aviso)) $('sg-res').textContent += ` · ${sugs.filter(x => !+x.aviso).length} sem aviso por e-mail (confira o envio de e-mails em api/config.php)`;
+}
+async function carregaSug() { try { sugs = (await (await chama({ formato: 'sugestoes' })).json()).sugestoes || []; $('sugestoes').hidden = false; desenhaSug(); } catch { /* o aviso de token já aparece em carrega() */ } }
+$('sg-nl').addEventListener('change', desenhaSug); $('sg-atualizar').addEventListener('click', carregaSug);
 
 // ---------- uso do painel (contador próprio) ----------
 let usoLinhas = [];

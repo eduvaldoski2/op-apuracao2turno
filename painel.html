@@ -22,7 +22,7 @@
 <meta name="theme-color" content="#3E347E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="css/app.css?v=02b92cb4">
+<link rel="stylesheet" href="css/app.css?v=733db7e2">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="manifest" href="/manifest.webmanifest?v=3">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
@@ -50,6 +50,7 @@
 <div id="sim" class="faixa-sim" hidden>DADOS SIMULADOS — municípios e 1º turno reais; a apuração do 2º turno é fictícia, só para demonstração. Não são resultados reais.</div>
 <div id="demo-bar" class="demo-bar" hidden><b>Demonstração</b> <button id="demo-play" class="tg">⏸ Pausar</button> velocidade <input id="demo-vel" type="range" min="0.5" max="6" step="0.5" value="1" aria-label="Velocidade da demonstração"></div>
 <main id="conteudo" tabindex="-1"><p class="carregando">Carregando…</p></main>
+<div id="sugestao-box"></div>
 <div id="toasts" class="toasts" aria-live="polite"></div>
 <footer class="rodape">
   <div class="rodape-in">
@@ -62,7 +63,8 @@
     </div></details>
   </div>
 </footer>
-<script type="module" src="js/app.js?v=02b92cb4"></script>
+<script type="module" src="js/sugestao.js"></script>
+<script type="module" src="js/app.js?v=733db7e2"></script>
 <script>(function(){var t=document.getElementById('topo');if(!t)return;var r=document.documentElement;function hh(){r.style.setProperty('--hh',t.offsetHeight+'px')}
 window.addEventListener('scroll',function(){var was=t.classList.contains('compact'),y=window.scrollY,c=was?y>30:y>90;if(c!==was){t.classList.toggle('compact',c);hh()}},{passive:true});window.addEventListener('resize',hh);t.addEventListener('transitionend',hh);hh();})();</script>
 </body>

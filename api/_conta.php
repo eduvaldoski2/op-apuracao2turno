@@ -146,6 +146,22 @@ function smtp_envia($sm, $de, $para, $assunto, $cabecalhos, $texto) {
   if ($ok) { $msg = 'To: <' . $para . ">\r\nSubject: " . $assunto . "\r\nDate: " . date('r') . "\r\n" . $cabecalhos . "\r\n" . preg_replace('/^\./m', '..', str_replace("\n", "\r\n", str_replace("\r\n", "\n", $texto))) . "\r\n."; $ok = $cmd($msg, 250); }
   @fwrite($f, "QUIT\r\n"); @fclose($f); return $ok;
 }
+// ---------- sugestões do Painel (formulário "O que você está sentindo falta?") ----------
+function sugestoes_tabela($db) {
+  $db->exec('CREATE TABLE IF NOT EXISTS sugestoes (id INTEGER PRIMARY KEY AUTOINCREMENT, criado TEXT, nome TEXT, email TEXT, telefone TEXT, mensagem TEXT, pagina TEXT, agente TEXT, lida INTEGER DEFAULT 0, aviso INTEGER DEFAULT 0)');
+}
+// e-mail simples (texto) para a equipe; usa o SMTP configurado ou mail(). $responder: endereço de quem enviou (Reply-To).
+function envia_aviso($para, $assunto, $texto, $responder = '') {
+  $c = cfg('CONTA', []); $de = $c['email_de'] ?? 'contato@oficinapolitica.com.br';
+  if (!filter_var($de, FILTER_VALIDATE_EMAIL) || !filter_var($para, FILTER_VALIDATE_EMAIL)) return false;
+  if (!empty($c['teste'])) { @file_put_contents(__DIR__ . '/dados/codigos_teste.log', date('c') . " aviso $para $assunto\n", FILE_APPEND); return true; }
+  $h = 'From: ' . mb_encode_mimeheader('Oficina Política', 'UTF-8', 'B') . " <$de>\r\n";
+  if ($responder !== '' && filter_var($responder, FILTER_VALIDATE_EMAIL)) $h .= "Reply-To: <$responder>\r\n";
+  $h .= "MIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: 8bit\r\nX-Auto-Response-Suppress: All\r\n";
+  $ass = mb_encode_mimeheader($assunto, 'UTF-8', 'B', "\r\n"); $sm = $c['smtp'] ?? [];
+  if (!empty($sm['host']) && !empty($sm['user']) && !empty($sm['pass'])) return smtp_envia($sm, $de, $para, $ass, $h, $texto);
+  return @mail($para, $ass, $texto, $h, '-f' . $de);
+}
 // WhatsApp Business Cloud API (Meta): mensagem de modelo de autenticação aprovado, com o código no corpo e no botão "copiar código"
 function envia_whatsapp($para, $codigo) {
   $w = cfg('CONTA', [])['whatsapp'] ?? []; if (empty($w['token']) || empty($w['phone_id']) || empty($w['template'])) return false;
