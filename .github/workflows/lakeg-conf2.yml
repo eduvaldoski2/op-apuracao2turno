@@ -16,7 +16,7 @@ jobs:
         env: { GH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
         run: |
           A=${{ github.event.inputs.ano }}; mkdir -p /tmp/d
-          gh release download lake-$A -R ${{ github.repository }} -D /tmp/d -p "secao_${A}_*.parquet" -p "zona_${A}.parquet"
+          gh release download lake-$A -R ${{ github.repository }} -D /tmp/d -p "secao_${A}_*.parquet" -p "zona_${A}.parquet" -p "candidato_${A}.parquet"
           python3 scripts/lake_gerais/analisa_conf2.py $A /tmp/d 2>&1 | tee /tmp/conf2.log
       - name: Publicar log
         if: always()
