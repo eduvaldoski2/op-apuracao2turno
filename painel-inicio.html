@@ -38,6 +38,10 @@ a{color:inherit}
 .topo img{display:block;height:34px;width:auto}
 .topo a.sair{font-size:13px;color:var(--lilas);text-decoration:none;white-space:nowrap}
 .topo a.sair:hover{color:#fff;text-decoration:underline}
+.topo .dir{display:flex;align-items:center;gap:14px}
+.tc-b{display:inline-block;border:1.5px solid rgba(255,255,255,.75);background:transparent;color:#fff;font:700 13px/1 'Space Grotesk',system-ui,sans-serif;padding:7px 14px;border-radius:999px;cursor:pointer;text-decoration:none}
+.tc-b.tc-on{background:var(--laranja);border-color:var(--laranja);color:#2a1700}
+.tc-b:hover{background:#fff;color:var(--roxo-2)}
 .hero{padding-block:clamp(28px,6vw,56px) 8px}
 .k{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;font:700 12px/1.2 'Space Grotesk',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--roxo-3)}
 .k i{font-style:normal;padding:3px 8px;border-radius:999px;background:var(--laranja);color:#2a1700;letter-spacing:.08em;font-size:11px}
@@ -80,7 +84,7 @@ footer a{color:var(--roxo)}
 <a class="pula" href="#conteudo">Pular para o conteúdo</a>
 <header class="topo"><div class="wrap">
   <a href="https://oficinapolitica.com.br/" aria-label="Oficina Política, página inicial"><img src="img/logo-negativo.svg" width="360" height="60" alt="Oficina Política"></a>
-  <a class="sair" href="https://oficinapolitica.com.br/">← Voltar ao site</a>
+  <div class="dir"><a class="sair" href="https://oficinapolitica.com.br/">← Voltar ao site</a><span id="conta-topo"></span></div>
 </div></header>
 
 <main id="conteudo">
@@ -147,5 +151,8 @@ footer a{color:var(--roxo)}
 import { iniciarConsentimento } from './js/consentimento.js?v=a32929f5';
 try { iniciarConsentimento(); } catch (e) {}
 </script>
+<script>(function(){var b=document.getElementById('conta-topo');if(!b)return;var base=/\/(resultados|apuracao-2t-2026)\//.test(location.pathname)?location.pathname.replace(/\/(resultados|apuracao-2t-2026)\/.*$/,'/'):'';var u=base+'api/conta.php';
+function ent(){b.innerHTML='<a class="tc-b tc-on" href="painel.html?entrar=1">Entrar</a>'}
+fetch(u,{credentials:'same-origin',headers:{Accept:'application/json'},cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;if(!j.logado)return ent();b.innerHTML='<button type="button" class="tc-b">Sair</button>';b.firstChild.onclick=function(){fetch(u,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({acao:'sair'})}).then(function(){location.reload()},function(){location.reload()})}}).catch(ent)})();</script>
 </body>
 </html>

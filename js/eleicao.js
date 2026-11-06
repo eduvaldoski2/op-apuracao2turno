@@ -1,8 +1,8 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
 // O resto aparece esmaecido ("em breve"). Só o presidente de 2026 é aberto: os demais cargos e anos exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=a32929f5';
-import { esc } from './ui.js?v=a32929f5';
+import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=02b92cb4';
+import { esc } from './ui.js?v=02b92cb4';
 
 const ANOS = [2026, 2024, 2022, 2020, 2018];
 const DISPONIVEL = { 2026: true, 2024: true, 2022: true, 2020: true, 2018: true };
@@ -108,7 +108,7 @@ export function ligarTopoConta({ toast }) {
   const topo = document.querySelector('.topo-in'); if (!topo) return;
   const box = document.createElement('div'); box.className = 'topo-conta sem-export'; topo.appendChild(box);
   const pinta = () => {
-    if (!CONTA.carregado || CONTA.erro) { box.innerHTML = ''; return; }
+    if (!CONTA.carregado) { box.innerHTML = ''; return; }
     box.innerHTML = CONTA.logado ? `<button type="button" class="tc-b" data-tc="sair" title="${esc(CONTA.usuario?.email || '')}">Sair</button>` : `<button type="button" class="tc-b tc-on" data-tc="entrar">Entrar</button>`;
   };
   box.addEventListener('click', async ev => {
@@ -121,7 +121,11 @@ export function ligarTopoConta({ toast }) {
     const b = ev.target.closest('[data-so-conta]'); if (!b) return;
     ev.preventDefault(); abrirLogin(toast, () => { pinta(); avisarConta(); toast('Acesso liberado.', true); });
   });
-  carregarConta().then(() => { pinta(); marcarLogado(); });
+  carregarConta().then(() => {
+    pinta(); marcarLogado();
+    // vindo da capa (painel-inicio.html?entrar=1): abre direto a janela de entrada
+    if (/[?&]entrar=1(&|$)/.test(location.search) && !CONTA.logado) { try { history.replaceState(null, '', location.pathname + location.hash); } catch {} abrirLogin(toast, () => { pinta(); avisarConta(); toast('Você está logado.', true); }); }
+  });
 }
 
 // ---------- conteúdo que exige cadastro (tudo menos o presidente de 2026) ----------
