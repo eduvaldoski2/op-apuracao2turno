@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel Eleições · Oficina Política</title>
+<meta name="description" content="Resultados eleitorais por candidato, partido e território: do Brasil ao estado, ao município e à seção eleitoral, em várias eleições. Em ampliação.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Oficina Política">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Painel Eleições · Oficina Política">
+<meta property="og:description" content="Pesquise resultados por candidato, partido e território, do Brasil à seção eleitoral. Em ampliação.">
+<meta property="og:url" content="https://oficinapolitica.com.br/resultados/">
+<meta property="og:image" content="https://oficinapolitica.com.br/img/og-op.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://oficinapolitica.com.br/img/og-op.jpg">
+<link rel="canonical" href="https://oficinapolitica.com.br/resultados/">
+<meta name="theme-color" content="#3E347E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<script>
+// links antigos (ex.: /resultados/#/t1) continuam abrindo o painel direto
+if (location.hash && location.hash !== '#' && location.hash.indexOf('#/') === 0) location.replace('painel.html' + location.search + location.hash);
+</script>
+<style>
+:root{--roxo:#3E347E;--roxo-2:#2A2260;--roxo-3:#5a4ea6;--laranja:#F08A24;--laranja-2:#b45f06;--lilas:#D9D4F0;--creme:#FBF9F5;--branco:#fff;--tx:#1b1530;--tx2:#5d5675;--linha:#e4dfee}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--creme);color:var(--tx);font:16px/1.5 'Space Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+a{color:inherit}
+.pula{position:absolute;left:-999px;top:8px;background:var(--roxo);color:#fff;padding:8px 14px;border-radius:8px;z-index:9}
+.pula:focus{left:8px}
+.wrap{width:100%;max-width:1040px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.topo{background:var(--roxo);border-bottom:4px solid var(--laranja)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px}
+.topo img{display:block;height:34px;width:auto}
+.topo a.sair{font-size:13px;color:var(--lilas);text-decoration:none;white-space:nowrap}
+.topo a.sair:hover{color:#fff;text-decoration:underline}
+.hero{padding-block:clamp(28px,6vw,56px) 8px}
+.k{display:inline-flex;align-items:center;gap:8px;margin:0 0 12px;font:700 12px/1.2 'Space Grotesk',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--roxo-3)}
+.k i{font-style:normal;padding:3px 8px;border-radius:999px;background:var(--laranja);color:#2a1700;letter-spacing:.08em;font-size:11px}
+h1{margin:0;font:400 clamp(32px,7vw,54px)/1.08 'DM Serif Display',Georgia,serif;color:var(--roxo-2);text-wrap:balance}
+.lede{max-width:62ch;margin:14px 0 0;font-size:clamp(16px,2.6vw,19px);color:var(--tx2)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.chips li{padding:6px 12px;border-radius:999px;background:var(--branco);border:1px solid var(--linha);font-size:13.5px;font-weight:500;color:var(--roxo-2)}
+h2{margin:0 0 4px;font:400 clamp(22px,4.4vw,28px)/1.2 'DM Serif Display',Georgia,serif;color:var(--roxo-2)}
+section{padding-block:30px 6px}
+.sub{margin:0 0 16px;color:var(--tx2);font-size:15px}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px}
+.op{position:relative;display:flex;flex-direction:column;gap:6px;min-width:0;padding:18px 18px 16px;border-radius:18px;background:var(--branco);border:1.5px solid var(--linha);text-decoration:none;transition:transform .16s ease,box-shadow .16s ease,border-color .16s ease}
+.op:hover,.op:focus-visible{transform:translateY(-2px);border-color:var(--roxo);box-shadow:0 16px 28px -20px rgba(42,34,96,.65);outline:none}
+.op:focus-visible{outline:3px solid var(--laranja);outline-offset:2px}
+.op .t{font:400 22px/1.15 'DM Serif Display',Georgia,serif;color:var(--roxo-2)}
+.op .d{font-size:14.5px;color:var(--tx2)}
+.op .go{margin-top:auto;padding-top:8px;font-weight:700;font-size:14px;color:var(--roxo)}
+.op .go::after{content:" →"}
+.tag{align-self:flex-start;padding:2px 9px;border-radius:999px;font:700 11px/1.5 'Space Grotesk',sans-serif;letter-spacing:.08em;text-transform:uppercase;background:var(--lilas);color:var(--roxo-2)}
+.tag.cad{background:#fff2e2;color:var(--laranja-2)}
+.op.dest{background:var(--roxo);border-color:var(--roxo)}
+.op.dest .t{color:#fff}.op.dest .d{color:var(--lilas)}.op.dest .go{color:var(--laranja)}
+.op.dest .tag{background:var(--laranja);color:#2a1700}
+.como{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:14px}
+.como div{min-width:0;padding:16px 18px;border-radius:16px;background:#f1eef9;border:1px solid var(--linha)}
+.como b{display:block;margin-bottom:4px;font:400 19px/1.2 'DM Serif Display',Georgia,serif;color:var(--roxo-2)}
+.como span{font-size:14.5px;color:var(--tx2)}
+.trilha{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px;font-size:13px;font-weight:700;color:var(--roxo)}
+.trilha em{font-style:normal;color:var(--laranja)}
+.ampl{margin-block:34px 8px;padding:18px 20px;border-radius:18px;background:#fff6ea;border:1.5px solid #f6cf9d;display:flex;gap:14px;align-items:flex-start}
+.ampl b{display:block;margin-bottom:2px;color:var(--laranja-2)}
+.ampl p{margin:0;color:var(--tx);font-size:15px}
+footer{margin-top:40px;padding-block:24px 32px;border-top:1px solid var(--linha);font-size:13.5px;color:var(--tx2)}
+footer p{margin:4px 0}
+footer a{color:var(--roxo)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<a class="pula" href="#conteudo">Pular para o conteúdo</a>
+<header class="topo"><div class="wrap">
+  <a href="https://oficinapolitica.com.br/" aria-label="Oficina Política, página inicial"><img src="img/logo-negativo.svg" width="360" height="60" alt="Oficina Política"></a>
+  <a class="sair" href="https://oficinapolitica.com.br/">← Voltar ao site</a>
+</div></header>
+
+<main id="conteudo">
+  <div class="wrap hero">
+    <p class="k">Dados eleitorais <i>Em ampliação</i></p>
+    <h1>Painel Eleições</h1>
+    <p class="lede">Pesquise resultados eleitorais por candidato, por partido e por território: do Brasil ao estado, ao município e até a seção eleitoral, em diferentes eleições.</p>
+    <ul class="chips" aria-label="O que dá para pesquisar">
+      <li>Candidato</li><li>Partido</li><li>Brasil</li><li>Estado</li><li>Município</li><li>Seção eleitoral</li><li>2018 a 2026</li>
+    </ul>
+  </div>
+
+  <div class="wrap">
+    <section aria-labelledby="h-2026">
+      <h2 id="h-2026">O que você quer pesquisar?</h2>
+      <p class="sub">Escolha a eleição. Dentro de cada uma, você muda o território, o candidato ou o partido.</p>
+      <div class="grade">
+        <a class="op dest" href="painel.html#/"><span class="tag">2026 · Presidente</span><span class="t">2º turno</span><span class="d">Apuração e resultado, com comparação ao 1º turno, mapa por estado, município e bairro.</span><span class="go">Abrir</span></a>
+        <a class="op" href="painel.html#/t1"><span class="tag">2026 · Presidente</span><span class="t">1º turno</span><span class="d">Resultado oficial por candidato, estado, município e local de votação.</span><span class="go">Abrir</span></a>
+        <a class="op" href="painel.html#/h/2026/c3t1"><span class="tag cad">2026 · Cadastro gratuito</span><span class="t">Governador</span><span class="d">Resultado do 1º turno em cada estado, até a seção eleitoral.</span><span class="go">Abrir</span></a>
+        <a class="op" href="painel.html#/h/2026/c5t1"><span class="tag cad">2026 · Cadastro gratuito</span><span class="t">Senador</span><span class="d">Resultado do 1º turno por estado, município e seção.</span><span class="go">Abrir</span></a>
+        <a class="op" href="painel.html#/t1?cargo=depf"><span class="tag cad">2026 · Cadastro gratuito</span><span class="t">Deputado federal</span><span class="d">Candidatos e partidos por estado e território.</span><span class="go">Abrir</span></a>
+        <a class="op" href="painel.html#/t1?cargo=depe"><span class="tag cad">2026 · Cadastro gratuito</span><span class="t">Deputado estadual</span><span class="d">Candidatos e partidos por estado e território.</span><span class="go">Abrir</span></a>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-ant">
+      <h2 id="h-ant">Eleições anteriores</h2>
+      <p class="sub">Compare o desempenho de candidatos e partidos ao longo do tempo. Disponível com cadastro gratuito.</p>
+      <div class="grade">
+        <a class="op" href="painel.html#/h/2024/c11t1"><span class="tag cad">2024 · Municipais</span><span class="t">Prefeito 2024</span><span class="d">Resultado por município, zona e seção eleitoral.</span><span class="go">Abrir</span></a>
+        <a class="op" href="painel.html#/h/2022/c1t1"><span class="tag cad">2022 · Gerais</span><span class="t">Presidente 2022</span><span class="d">Resultado do 1º turno por estado, município e seção.</span><span class="go">Abrir</span></a>
+        <a class="op" href="painel.html#/h/2020/c11t1"><span class="tag cad">2020 · Municipais</span><span class="t">Prefeito 2020</span><span class="d">Resultado por município, zona e seção eleitoral.</span><span class="go">Abrir</span></a>
+        <a class="op" href="painel.html#/h/2018/c1t1"><span class="tag cad">2018 · Gerais</span><span class="t">Presidente 2018</span><span class="d">Resultado do 1º turno por estado, município e seção.</span><span class="go">Abrir</span></a>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-com">
+      <h2 id="h-com">Como pesquisar</h2>
+      <p class="sub">Em qualquer eleição, o resultado pode ser lido de três jeitos.</p>
+      <div class="como">
+        <div><b>Por candidato</b><span>Veja onde cada candidato foi mais forte e mais fraco, e como se saiu em relação a outras eleições.</span></div>
+        <div><b>Por partido</b><span>Acompanhe o desempenho de partidos e do conjunto dos candidatos de cada legenda.</span></div>
+        <div><b>Por território</b><span>Navegue do mapa do país até o local de votação.<span class="trilha" aria-label="Níveis de território">Brasil <em>›</em> Estado <em>›</em> Município <em>›</em> Zona <em>›</em> Seção</span></span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-cmp">
+      <h2 id="h-cmp">Ferramentas de análise</h2>
+      <div class="grade" style="margin-top:12px">
+        <a class="op" href="painel.html#/comparar"><span class="tag">Comparar</span><span class="t">Comparar territórios</span><span class="d">Coloque estados, regiões e municípios lado a lado e veja as diferenças de votação.</span><span class="go">Abrir</span></a>
+      </div>
+    </section>
+
+    <div class="ampl" role="note"><span aria-hidden="true" style="font-size:22px">🛠️</span><div><b>Em ampliação</b><p>O Painel Eleições está em crescimento: novos cargos, anos e recursos entram aos poucos. Os dados são do TSE; esta é uma iniciativa independente da Oficina Política.</p></div></div>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <p><a href="https://oficinapolitica.com.br/">oficinapolitica.com.br</a> · <a href="privacidade.html">Política de privacidade</a> · <a href="termos.html">Termos de uso</a></p>
+  <p>Fonte dos dados: <a href="https://resultados.tse.jus.br" target="_blank" rel="noopener">TSE · Divulgação de Resultados</a>. Sem vínculo com o TSE; o resultado oficial é o do TSE.</p>
+</div></footer>
+<script type="module">
+import { iniciarConsentimento } from './js/consentimento.js?v=a32929f5';
+try { iniciarConsentimento(); } catch (e) {}
+</script>
+</body>
+</html>

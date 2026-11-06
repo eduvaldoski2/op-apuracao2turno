@@ -13,7 +13,7 @@ RewriteRule ^resultados/teste$ /resultados/teste/ [R=301,L]
 RewriteRule ^resultados/teste/$ painel.html [L]
 RewriteRule ^resultados/teste/(.+)$ $1 [L]
 RewriteRule ^resultados$ /resultados/ [R=301,L]
-RewriteRule ^resultados/$ painel.html [L]
+RewriteRule ^resultados/$ painel-inicio.html [L]
 RewriteRule ^resultados/(.+)$ $1 [L]
 # Radar Oficina Política (conteúdo só para quem entrou; ver radar/index.php)
 RewriteRule ^radar$ /radar/ [R=301,L]
