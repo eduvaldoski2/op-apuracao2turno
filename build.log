@@ -1,0 +1,126 @@
+OK secao_2006_BR.parquet 3763942 7554723
+OK secao_2006_AC.parquet 148958 335617
+OK secao_2006_AL.parquet 546236 1160698
+OK secao_2006_AM.parquet 607352 1377925
+OK secao_2006_AP.parquet 141190 303130
+OK secao_2006_BA.parquet 2872223 7016162
+OK secao_2006_CE.parquet 1702981 4068568
+OK secao_2006_DF.parquet 798511 1861362
+OK secao_2006_ES.parquet 722819 1682614
+OK secao_2006_GO.parquet 1306701 2974300
+OK secao_2006_MA.parquet 1274776 3014989
+OK secao_2006_MG.parquet 4367140 11213650
+OK secao_2006_MS.parquet 452577 978297
+OK secao_2006_MT.parquet 518638 1179418
+OK secao_2006_PA.parquet 1330237 3110379
+OK secao_2006_PB.parquet 744233 1702585
+OK secao_2006_PE.parquet 1999474 4546007
+OK secao_2006_PI.parquet 581421 1316489
+OK secao_2006_PR.parquet 2403798 5817232
+OK secao_2006_RJ.parquet 5449726 13557342
+OK secao_2006_RN.parquet 590896 1296766
+OK secao_2006_RO.parquet 336249 755185
+OK secao_2006_RR.parquet 122365 284255
+OK secao_2006_RS.parquet 3024416 7445285
+OK secao_2006_SC.parquet 1240215 2887355
+OK secao_2006_SE.parquet 369192 803935
+OK secao_2006_SP.parquet 11253225 28965028
+OK secao_2006_TO.parquet 256700 610251
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+SEM ARQUIVO ZZ
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+curl: (22) The requested URL returned error: 404
+FALHA local_secao_2006.parquet arquivo inexistente no TSE
+OK detalhe_secao_2006.parquet 2323870 17437451
+OK candidato_2006.parquet 19303 463279
+OK zona_2006.parquet 2074249 8588515
+# Conferência do lake 2006
+Gerado em 2026-11-06T18:22:24.244008+00:00Z
+
+## Arquivos
+| arquivo | linhas | MB | fonte | Last-Modified |
+|---|---:|---:|---|---|
+| secao_2006_BR.parquet | 3,763,942 | 7.6 | votacao_secao/votacao_secao_2006_BR.zip | Fri, 13 May 2022 23:17:37 GMT |
+| secao_2006_AC.parquet | 148,958 | 0.3 | votacao_secao/votacao_secao_2006_AC.zip | Fri, 13 May 2022 23:18:30 GMT |
+| secao_2006_AL.parquet | 546,236 | 1.2 | votacao_secao/votacao_secao_2006_AL.zip | Fri, 13 May 2022 23:18:15 GMT |
+| secao_2006_AM.parquet | 607,352 | 1.4 | votacao_secao/votacao_secao_2006_AM.zip | Fri, 13 May 2022 23:18:12 GMT |
+| secao_2006_AP.parquet | 141,190 | 0.3 | votacao_secao/votacao_secao_2006_AP.zip | Fri, 13 May 2022 23:18:00 GMT |
+| secao_2006_BA.parquet | 2,872,223 | 7.0 | votacao_secao/votacao_secao_2006_BA.zip | Fri, 13 May 2022 23:17:42 GMT |
+| secao_2006_CE.parquet | 1,702,981 | 4.1 | votacao_secao/votacao_secao_2006_CE.zip | Fri, 13 May 2022 23:17:30 GMT |
+| secao_2006_DF.parquet | 798,511 | 1.9 | votacao_secao/votacao_secao_2006_DF.zip | Fri, 13 May 2022 23:17:15 GMT |
+| secao_2006_ES.parquet | 722,819 | 1.7 | votacao_secao/votacao_secao_2006_ES.zip | Fri, 13 May 2022 23:17:04 GMT |
+| secao_2006_GO.parquet | 1,306,701 | 3.0 | votacao_secao/votacao_secao_2006_GO.zip | Fri, 13 May 2022 23:16:49 GMT |
+| secao_2006_MA.parquet | 1,274,776 | 3.0 | votacao_secao/votacao_secao_2006_MA.zip | Fri, 13 May 2022 23:16:40 GMT |
+| secao_2006_MG.parquet | 4,367,140 | 11.2 | votacao_secao/votacao_secao_2006_MG.zip | Fri, 13 May 2022 23:16:28 GMT |
+| secao_2006_MS.parquet | 452,577 | 1.0 | votacao_secao/votacao_secao_2006_MS.zip | Fri, 13 May 2022 23:16:19 GMT |
+| secao_2006_MT.parquet | 518,638 | 1.2 | votacao_secao/votacao_secao_2006_MT.zip | Fri, 13 May 2022 23:38:06 GMT |
+| secao_2006_PA.parquet | 1,330,237 | 3.1 | votacao_secao/votacao_secao_2006_PA.zip | Fri, 13 May 2022 23:16:04 GMT |
+| secao_2006_PB.parquet | 744,233 | 1.7 | votacao_secao/votacao_secao_2006_PB.zip | Fri, 13 May 2022 23:15:47 GMT |
+| secao_2006_PE.parquet | 1,999,474 | 4.5 | votacao_secao/votacao_secao_2006_PE.zip | Fri, 13 May 2022 23:15:40 GMT |
+| secao_2006_PI.parquet | 581,421 | 1.3 | votacao_secao/votacao_secao_2006_PI.zip | Fri, 13 May 2022 23:38:40 GMT |
+| secao_2006_PR.parquet | 2,403,798 | 5.8 | votacao_secao/votacao_secao_2006_PR.zip | Fri, 13 May 2022 23:15:34 GMT |
+| secao_2006_RJ.parquet | 5,449,726 | 13.6 | votacao_secao/votacao_secao_2006_RJ.zip | Fri, 13 May 2022 23:15:13 GMT |
+| secao_2006_RN.parquet | 590,896 | 1.3 | votacao_secao/votacao_secao_2006_RN.zip | Fri, 13 May 2022 23:15:07 GMT |
+| secao_2006_RO.parquet | 336,249 | 0.8 | votacao_secao/votacao_secao_2006_RO.zip | Fri, 13 May 2022 23:14:09 GMT |
+| secao_2006_RR.parquet | 122,365 | 0.3 | votacao_secao/votacao_secao_2006_RR.zip | Fri, 13 May 2022 23:13:53 GMT |
+| secao_2006_RS.parquet | 3,024,416 | 7.4 | votacao_secao/votacao_secao_2006_RS.zip | Fri, 13 May 2022 23:14:22 GMT |
+| secao_2006_SC.parquet | 1,240,215 | 2.9 | votacao_secao/votacao_secao_2006_SC.zip | Fri, 13 May 2022 23:13:37 GMT |
+| secao_2006_SE.parquet | 369,192 | 0.8 | votacao_secao/votacao_secao_2006_SE.zip | Fri, 13 May 2022 23:14:48 GMT |
+| secao_2006_SP.parquet | 11,253,225 | 29.0 | votacao_secao/votacao_secao_2006_SP.zip | Fri, 13 May 2022 23:15:21 GMT |
+| secao_2006_TO.parquet | 256,700 | 0.6 | votacao_secao/votacao_secao_2006_TO.zip | Fri, 13 May 2022 23:14:35 GMT |
+| detalhe_secao_2006.parquet | 2,323,870 | 17.4 | detalhe_votacao_secao | Fri, 13 May 2022 23:58:16 GMT |
+| candidato_2006.parquet | 19,303 | 0.5 | consulta_cand | Wed, 01 Sep 2021 14:02:27 GMT |
+| zona_2006.parquet | 2,074,249 | 8.6 | votacao_candidato_munzona | Fri, 13 May 2022 23:19:55 GMT |
+
+Falhas: local_secao_2006.parquet (arquivo inexistente no TSE)
+
+Ausentes no TSE: votacao_secao_2006_ZZ
+
+## 1) Votos por seção x detalhe da apuração (por turno e cargo)
+Soma de qt_votos (seção) vs nominais+brancos+nulos+legenda (detalhe). Diferença = seção − detalhe.
+| turno | cargo | votos seção | votos detalhe | diferença | seções seção | seções detalhe |
+|---:|---:|---:|---:|---:|---:|---:|
+| 1 | 1 | 104,820,459 | 104,819,755 | 704 | 361,407 | 361,404 |
+| 1 | 3 | 104,779,071 | 104,778,367 | 704 | 361,115 | 361,112 |
+| 1 | 5 | 104,779,071 | 104,778,367 | 704 | 361,115 | 361,112 |
+| 1 | 6 | 104,779,065 | 104,778,361 | 704 | 361,115 | 361,112 |
+| 1 | 7 | 103,353,765 | 103,353,061 | 704 | 356,775 | 356,772 |
+| 1 | 8 | 1,425,300 | 1,425,300 | 0 | 4,340 | 4,340 |
+| 2 | 1 | 101,998,221 | 101,997,800 | 421 | 361,406 | 361,404 |
+| 2 | 3 | 42,611,285 | 42,611,078 | 207 | 156,615 | 156,614 |
+
+## 2) Votos nominais por seção x votação por município e zona (TSE)
+Por turno e cargo: soma dos votos de candidatos (sq_candidato>0) nas seções vs QT_VOTOS_NOMINAIS do arquivo munzona; e nº de células (município, zona, candidato) com diferença.
+| turno | cargo | votos seção | votos munzona | diferença | células com diferença |
+|---:|---:|---:|---:|---:|---:|
+(seções deste ano não trazem sq_candidato: conferência cruzada por nr_votavel, só para números que são candidatos na votação por zona)
+| 1 | 1 | 95,996,733 | 95,996,733 | 0 | 0 |
+| 1 | 3 | 93,287,386 | 93,287,386 | 0 | 0 |
+| 1 | 5 | 84,383,805 | 84,388,674 | -4,869 | 243 |
+| 1 | 6 | 84,550,875 | 84,550,875 | 0 | 0 |
+| 1 | 7 | 80,582,838 | 80,582,838 | 0 | 0 |
+| 1 | 8 | 1,239,348 | 1,239,348 | 0 | 0 |
+| 2 | 1 | 95,838,220 | 95,838,220 | 0 | 0 |
+| 2 | 3 | 38,244,618 | 38,244,618 | 0 | 0 |
+
+## 3) Seções sem local de votação
+
+(conferência indisponível: IO Error: No files found that match the pattern "/tmp/lake/local_secao_2006.parquet")
+seções (turno, qtd) sem correspondência no cadastro de locais: nenhuma
+(conferência indisponível: IO Error: No files found that match the pattern "/tmp/lake/local_secao_2006.parquet")
+locais-seção: indisponível
