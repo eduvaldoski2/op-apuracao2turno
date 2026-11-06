@@ -13,6 +13,10 @@ a{color:inherit}
 .topo img{display:block;height:34px;width:auto}
 .topo a.sair{font-size:13px;color:var(--lilas);text-decoration:none;white-space:nowrap}
 .topo a.sair:hover{color:#fff;text-decoration:underline}
+.topo .dir{display:flex;align-items:center;gap:14px}
+.tc-b{display:inline-block;border:1.5px solid rgba(255,255,255,.75);background:transparent;color:#fff;font:700 13px/1 'Space Grotesk',system-ui,sans-serif;padding:7px 14px;border-radius:999px;cursor:pointer;text-decoration:none}
+.tc-b.tc-on{background:var(--laranja);border-color:var(--laranja);color:#2a1700}
+.tc-b:hover{background:#fff;color:var(--roxo-2)}
 h1{margin:0;font:400 clamp(32px,7vw,54px)/1.08 'DM Serif Display',Georgia,serif;color:var(--roxo-2);text-wrap:balance}
 h2{margin:0;font:400 clamp(22px,4vw,28px)/1.2 'DM Serif Display',Georgia,serif;color:var(--roxo-2)}
 h3{margin:0;font:400 20px/1.2 'DM Serif Display',Georgia,serif;color:var(--roxo-2)}
@@ -116,7 +120,7 @@ footer{margin-top:40px;padding-block:22px 30px;border-top:1px solid var(--linha)
 </style></head><body>
 <header class="topo"><div class="wrap">
   <a href="https://oficinapolitica.com.br/" aria-label="Oficina Política, página inicial"><img src="img/logo-negativo.svg" width="360" height="60" alt="Oficina Política"></a>
-  <a class="sair" href="https://oficinapolitica.com.br/">← Voltar ao site</a>
+  <div class="dir"><a class="sair" href="https://oficinapolitica.com.br/">← Voltar ao site</a><span id="conta-topo"></span></div>
 </div></header>
 <main>
 <div class="wrap hero">
@@ -278,4 +282,7 @@ function upTerr(){var h;if(T.multi)h='Comparando: '+(T.sel.map(function(k,i){ret
 function upAll(){upTerr();pintaMapa();eUp();pUp();if(T.multi)cDraw()}
 var tabs=document.querySelectorAll('.modo');tabs.forEach(function(b){b.onclick=function(){tabs.forEach(function(x){x.setAttribute('aria-selected',x===b)});document.querySelectorAll('.painel').forEach(function(p){p.hidden=p.dataset.p!==b.dataset.m});var was=T.multi;cDraw();if(was!==T.multi){if(!T.multi&&T.sel.length)T.uf=T.sel[0]===T.uf?T.uf:'';upAll()}}});
 eDraw();pDraw();cDraw();upAll();
-</script></body></html>
+</script><script>(function(){var b=document.getElementById('conta-topo');if(!b)return;var base=/\/(resultados|apuracao-2t-2026)\//.test(location.pathname)?location.pathname.replace(/\/(resultados|apuracao-2t-2026)\/.*$/,'/'):'';var u=base+'api/conta.php';
+function ent(){b.innerHTML='<a class="tc-b tc-on" href="painel.html?entrar=1">Entrar</a>'}
+fetch(u,{credentials:'same-origin',headers:{Accept:'application/json'},cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;if(!j.logado)return ent();b.innerHTML='<button type="button" class="tc-b">Sair</button>';b.firstChild.onclick=function(){fetch(u,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({acao:'sair'})}).then(function(){location.reload()},function(){location.reload()})}}).catch(ent)})();</script>
+</body></html>
