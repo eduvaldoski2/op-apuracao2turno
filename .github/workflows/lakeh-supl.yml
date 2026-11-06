@@ -1,0 +1,19 @@
+name: Lake historico - inventario das eleicoes suplementares (CKAN do TSE)
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: scripts/lake_hist }
+      - name: Inventario
+        run: python3 scripts/lake_hist/ckan_supl.py 2>&1 | tee /tmp/supl.log
+      - name: Publicar log
+        if: always()
+        run: |
+          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub && cp /tmp/supl.log . && git init -q -b sonda-supl && git config user.name coletor && git config user.email coletor@users.noreply.github.com
+          git add -A && git commit -q -m "inventario suplementares" && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" sonda-supl
