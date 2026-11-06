@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#3E347E"><title>Radar da Oficina Política</title><link rel="icon" type="image/svg+xml" href="/img/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
 <link rel="preload" href="/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/consent.css?v=7c857f3f">
+<link rel="stylesheet" href="/css/consent.css?v=be312586">
 <style>
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/dm-serif-display-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/dm-serif-display-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -99,7 +99,7 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .giro-btn span{font-size:13px;color:var(--ink-soft)}
 .chev{display:inline-block;width:10px;height:10px;border-right:2.5px solid var(--brand);border-bottom:2.5px solid var(--brand);transform:rotate(45deg);margin-left:10px;transition:transform .2s;position:relative;top:-3px}
 [aria-expanded="true"] .chev{transform:rotate(-135deg);top:1px}
-.notes{list-style:none;margin:6px 0 0;padding:0}
+.opb{width:20px;height:20px;vertical-align:-5px;margin-right:8px;border-radius:5px}.opb.big{width:38px;height:38px;vertical-align:-6px;margin-right:12px;border-radius:9px}.gsub{margin:-4px 0 14px;color:var(--ink-soft);font-size:15px}.notes li .flag{margin:0 6px 0 2px}.notes{list-style:none;margin:6px 0 0;padding:0}
 .notes li{padding:11px 0;border-top:1px solid var(--line);font-size:15px;line-height:1.45}
 .notes b{color:var(--brand)}
 .nact{display:flex;gap:14px;flex-wrap:wrap;margin-top:6px;font-size:13px}
@@ -291,11 +291,13 @@ function giroItems(){
     if(g[4]) acts+='<button type="button" data-det="'+i+'">Mais detalhes</button>';
     if(g[5]) acts+='<a href="'+href(g[5])+'">Ler a matéria</a>';
     else if(g[3]) acts+='<a href="'+esc(g[3])+'" target="_blank" rel="noopener">Ler na fonte ↗</a>';
-    return '<li><b>'+esc(g[0])+'.</b> '+esc(g[1])+'<div class="nact">'+acts+'<span class="nsrc">'+esc(g[2])+'</span></div><div class="ndet" id="det'+i+'" hidden>'+esc(g[4])+'</div></li>';
+    var gf=typeof GIRO_FLAGS!=='undefined'&&GIRO_FLAGS[g[0]];
+    var gt=gf?'<span class="flag '+(gf==='novo'?'n':'a')+'">'+(gf==='novo'?'NOVA':'ATUALIZADA')+'</span>':'';
+    return '<li><b>'+esc(g[0])+'.</b>'+gt+' '+esc(g[1])+'<div class="nact">'+acts+'<span class="nsrc">'+esc(g[2])+'</span></div><div class="ndet" id="det'+i+'" hidden>'+esc(g[4])+'</div></li>';
   }).join('');
 }
 function giroBox(){
-  return '<div class="box"><button type="button" class="giro-btn" id="giroBtn" aria-expanded="'+giroOpen+'" aria-controls="giroList"><h2>Giro OP</h2><span>'+GIRO.length+' notas<i class="chev"></i></span></button><ul class="notes" id="giroList"'+(giroOpen?'':' hidden')+'>'+giroItems()+'</ul><button type="button" class="giro-more" id="giroMore"></button></div>';
+  return '<div class="box"><button type="button" class="giro-btn" id="giroBtn" aria-expanded="'+giroOpen+'" aria-controls="giroList"><h2><img class="opb" src="/img/op-giro.svg" alt="">Giro OP</h2><span>'+GIRO.length+' notas<i class="chev"></i></span></button><ul class="notes" id="giroList"'+(giroOpen?'':' hidden')+'>'+giroItems()+'</ul><button type="button" class="giro-more" id="giroMore"></button></div>';
 }
 var trendsOpen=false;
 function trendLink(t){
@@ -415,7 +417,7 @@ function arquivoView(){
    +(ord.length?ord.map(function(d){var p=d.split('-');return '<div class="subh"><h2>'+parseInt(p[2],10)+' de '+M[parseInt(p[1],10)-1]+' de '+p[0]+'</h2></div><div class="arqlist">'+dias[d].map(function(x){return '<a href="/radar/'+(x[1]?'':'?ed='+x[0])+'">Edição das '+x[0].slice(11)+(x[1]?' · atual':'')+'</a>'}).join('')+'</div>'}).join(''):'<p>Ainda não há edições arquivadas.</p>')+'</div>';
 }
 function giroView(){
-  return '<div class="pg"><div class="crumb"><a href="#">Radar</a> / Giro OP</div><h1>Giro OP</h1><ul class="notes">'+giroItems()+'</ul></div>';
+  return '<div class="pg"><div class="crumb"><a href="#">Radar</a> / Giro OP</div><h1 class="gh"><img class="opb big" src="/img/op-giro.svg" alt="">Giro OP</h1><p class="gsub">Notas rápidas do que se move na política, com a fonte à vista.</p><ul class="notes">'+giroItems()+'</ul></div>';
 }
 
 /* Menu horizontal */
@@ -677,7 +679,7 @@ document.addEventListener('click',function(e){
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal()}});
 window.addEventListener('hashchange',route);
-(async function(){try{var c=await import('/js/consentimento.js?v=7c857f3f');window.__op=c;c.iniciarConsentimento();route2ga();var mm=location.hash.match(/^#materia-(.+)$/);if(mm&&S[mm[1]]){lidaId='';lerMateria(mm[1])}if(typeof CONV_NOVA!=='undefined'&&CONV_NOVA)gaEv('sign_up',{method:'link_compartilhado'},{meta:'CompleteRegistration',ads:'cadastro'})}catch(e){}})();
+(async function(){try{var c=await import('/js/consentimento.js?v=be312586');window.__op=c;c.iniciarConsentimento();route2ga();var mm=location.hash.match(/^#materia-(.+)$/);if(mm&&S[mm[1]]){lidaId='';lerMateria(mm[1])}if(typeof CONV_NOVA!=='undefined'&&CONV_NOVA)gaEv('sign_up',{method:'link_compartilhado'},{meta:'CompleteRegistration',ads:'cadastro'})}catch(e){}})();
 function route2ga(){try{window.__op.rastrearTela('/radar/'+location.hash,document.title)}catch(e){}}
 function sizeHdr(){var h=document.getElementById('hdr');document.documentElement.style.setProperty('--hh',h.offsetHeight+'px')}
 window.addEventListener('scroll',function(){var h=document.getElementById('hdr'),app=document.getElementById('app'),was=h.classList.contains('compact'),y=window.scrollY;var c=was?y>40:y>120;if(c!==was){var h0=h.offsetHeight;h.classList.toggle('compact',c);var h1=h.offsetHeight;app.style.marginTop=c?(h0-h1)+'px':'';sizeHdr()}},{passive:true});

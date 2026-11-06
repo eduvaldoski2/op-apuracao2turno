@@ -43,7 +43,11 @@ const lista = fs.existsSync(arq) ? fs.readdirSync(arq).filter(f => /^\d{4}-\d{2}
 const ant = lista.filter(n => n < nome).pop();
 const hash = s => crypto.createHash('sha1').update(JSON.stringify([s.t, s.sub, s.resumo, s.fundo, (s.fontes || []).map(f => f[1])])).digest('hex');
 const flags = {};
+const giroFlags = {};
 if (ant) {
+  const pg = carregar(fs.readFileSync(path.join(arq, ant + '.php'), 'utf8')).GIRO || [];
+  const pm = {}; pg.forEach(g => { pm[g[0]] = g[1]; });
+  (d.GIRO || []).forEach(g => { if (!(g[0] in pm)) giroFlags[g[0]] = 'novo'; else if (pm[g[0]] !== g[1]) giroFlags[g[0]] = 'atualizada'; });
   const p = carregar(fs.readFileSync(path.join(arq, ant + '.php'), 'utf8'));
   Object.keys(d.S).forEach(i => { if (!p.S[i]) flags[i] = 'novo'; else if (hash(p.S[i]) !== hash(d.S[i])) flags[i] = 'atualizada'; });
 }
@@ -57,8 +61,8 @@ if (ant) {
   const semUpd = Object.keys(flags).filter(i => flags[i] === 'atualizada' && (!d.S[i].upd || String(d.S[i].upd).length < 12 || d.S[i].upd === (pa.S[i] || {}).upd));
   if (semUpd.length) die('matérias ATUALIZADAS sem o campo upd novo (1–2 frases dizendo o que mudou desde a edição anterior): ' + semUpd.join(', '));
 }
-const bloco = '/* FLAGS (gerado por publicar.js; não editar) */\nvar FLAGS = ' + JSON.stringify(flags) + ';\n';
-let novo = txt.replace(/\/\* FLAGS \(gerado[^\n]*\nvar FLAGS = [^\n]*\n/, '');
+const bloco = '/* FLAGS (gerado por publicar.js; não editar) */\nvar FLAGS = ' + JSON.stringify(flags) + ';\nvar GIRO_FLAGS = ' + JSON.stringify(giroFlags) + ';\n';
+let novo = txt.replace(/\/\* FLAGS \(gerado[^\n]*\nvar FLAGS = [^\n]*\n(var GIRO_FLAGS = [^\n]*\n)?/, '');
 if (!novo.includes('/* ===== FIM DOS DADOS ===== */')) die('marcador FIM DOS DADOS ausente');
 novo = novo.replace('/* ===== FIM DOS DADOS ===== */', bloco + '/* ===== FIM DOS DADOS ===== */');
 fs.mkdirSync(arq, { recursive: true });

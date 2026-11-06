@@ -2206,4 +2206,5 @@ AMANHA.unshift(
 );
 /* FLAGS (gerado por publicar.js; não editar) */
 var FLAGS = {"copom":"atualizada","eua":"atualizada","fuga":"atualizada","argentina":"atualizada","maioridade":"atualizada","vorcaro":"atualizada","marinho":"atualizada","paraguai":"atualizada","franca":"atualizada","juicio":"novo","ueno":"novo","cpac":"novo","mercado":"novo","tse_name":"novo"};
+var GIRO_FLAGS = {"Caputo em Iguazú":"novo","Esfriar a maioridade":"novo","Voto aberto no Senado":"novo","Bolsa sobe após o Copom":"novo","Greve na França":"novo","Votos de Name no TSE":"novo"};
 /* ===== FIM DOS DADOS ===== */
