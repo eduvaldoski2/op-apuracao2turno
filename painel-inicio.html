@@ -253,11 +253,11 @@ eDraw();upAll();
 function ent(){b.innerHTML='<a class="tc-b tc-on" href="painel.html?entrar=1">Entrar</a>'}
 function sair(){fetch(u,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({acao:'sair'})}).then(function(){location.reload()},function(){location.reload()})}
 fetch(u,{credentials:'same-origin',headers:{Accept:'application/json'},cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;if(!j.logado)return ent();
-import('./js/menuconta.js?v=1a0ad75b').then(function(m){m.montarMenuConta(b,{tema:'escuro',contaUrl:(base||'/')+'conta.html',aoSair:sair}).atualizar(j.usuario)},function(){b.innerHTML='<a class="tc-b" href="'+(base||'/')+'conta.html">Minha conta</a>'})}).catch(ent)})();</script>
+import('./js/menuconta.js?v=25fd32bc').then(function(m){m.montarMenuConta(b,{tema:'escuro',contaUrl:(base||'/')+'conta.html',aoSair:sair}).atualizar(j.usuario)},function(){b.innerHTML='<a class="tc-b" href="'+(base||'/')+'conta.html">Minha conta</a>'})}).catch(ent)})();</script>
 <script type="module">
 // busca de candidato + caixa de comparação: só carrega quando a pessoa chega perto ou clica (não pesa na abertura da capa)
 var cb = document.getElementById('cand-box');
-function carregaCb() { import('./js/capabusca.js?v=1a0ad75b').then(function (m) { m.montarBuscaCapa(cb, { painelUrl: 'painel.html' }); }, function () { cb.textContent = 'Não foi possível carregar a busca agora.'; }); }
+function carregaCb() { import('./js/capabusca.js?v=25fd32bc').then(function (m) { m.montarBuscaCapa(cb, { painelUrl: 'painel.html' }); }, function () { cb.textContent = 'Não foi possível carregar a busca agora.'; }); }
 if ('IntersectionObserver' in window) { new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); carregaCb(); } }, { rootMargin: '400px' }).observe(cb); } else carregaCb();
 </script>
 <script type="module" src="js/sugestao.js"></script>

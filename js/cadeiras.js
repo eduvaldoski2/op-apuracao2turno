@@ -1,6 +1,6 @@
 // Composição das cadeiras: hemiciclo em SVG (um ponto por cadeira, agrupado por partido) + legenda + imagem para redes (1:1, 4:5, 9:16).
 // Não classifica partidos em campos políticos: os grupos seguem do maior para o menor número de cadeiras.
-import { corPartido } from './partidos.js?v=1a0ad75b';
+import { corPartido } from './partidos.js?v=25fd32bc';
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sgTxt = s => String(s || '').replace(/PC do B/g, 'PCdoB');
@@ -48,7 +48,7 @@ export function cadeirasHTML({ titulo, sub, blocos, fonte = 'TSE' }) {
   const corpo = bs.map((b, i) => `<div class="cad-b${i ? ' peq' : ''}"><h3>${esc(b.rot)}</h3>${svgBloco(b.itens, b.total, b.rot)}${legenda(b.itens)}</div>`).join('');
   const ocup = bs[0].itens.reduce((a, x) => a + x.n, 0);
   return `<section class="painel cad sem-export" id="${id}" data-cad="${dados}"><div class="cad-top"><h2>${esc(titulo)}</h2><details class="cad-png"><summary>↓ PNG</summary><div role="group" aria-label="Formato da imagem"><button type="button" data-f="1:1">1:1 · WhatsApp</button><button type="button" data-f="4:5">4:5 · Instagram</button><button type="button" data-f="9:16">9:16 · Stories</button></div></details></div>
-    <p class="sub">${esc(sub || '')}${ocup < bs[0].total ? ' Cadeiras em cinza: ainda sem eleito na base do TSE (apuração em andamento ou candidatura cassada).' : ''}</p><div class="cad-corpo">${corpo}</div></section>`;
+    <p class="sub">${esc(sub || '')}${ocup < bs[0].total ? ' Cadeiras em cinza: sem eleito identificado na base do TSE (candidatura cassada ou indeferida, ou candidato ausente do cadastro).' : ''}</p><div class="cad-corpo">${corpo}</div></section>`;
 }
 
 // ---------- imagem para redes ----------

@@ -1,13 +1,13 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Sem CPF nem dados pessoais além do nome público e do ano de nascimento.
-import { CONFIG } from './config.js?v=1a0ad75b';
-import { getJSON } from './tse.js?v=1a0ad75b';
-import { esc, sem, tabela } from './ui.js?v=1a0ad75b';
-import { fNum, fInt } from './util.js?v=1a0ad75b';
-import { dispersao } from './dispersao.js?v=1a0ad75b';
-import { corPartido, corTextoSobre } from './partidos.js?v=1a0ad75b';
-import { baixarCSV } from './export.js?v=1a0ad75b';
+import { CONFIG } from './config.js?v=25fd32bc';
+import { getJSON } from './tse.js?v=25fd32bc';
+import { esc, sem, tabela } from './ui.js?v=25fd32bc';
+import { fNum, fInt } from './util.js?v=25fd32bc';
+import { dispersao } from './dispersao.js?v=25fd32bc';
+import { corPartido, corTextoSobre } from './partidos.js?v=25fd32bc';
+import { baixarCSV } from './export.js?v=25fd32bc';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];

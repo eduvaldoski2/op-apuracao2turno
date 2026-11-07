@@ -1,7 +1,7 @@
 // Capa do Painel: busca de candidato pelo nome + caixa "Comparar" (cartões com a trajetória, no formato do Apuração 4013).
 // Dados: branch cand-pessoas (busca s/<3 letras>.json e perfis p/<3 primeiros do id>.json), os mesmos de js/cmpcand.js.
 // Não importa o cmpcand.js (que puxa a tela inteira de comparação): só leva até ele, pelo endereço, as candidaturas escolhidas.
-import { CONFIG } from './config.js?v=1a0ad75b';
+import { CONFIG } from './config.js?v=25fd32bc';
 
 const RAW = `https://raw.githubusercontent.com/${CONFIG.repo}/`, MAX = 4;
 const SLOT = ['#3E347E', '#F08A24', '#1b8f6a', '#c8102e'];
