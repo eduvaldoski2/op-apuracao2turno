@@ -3,17 +3,17 @@
 // Tudo é clicável: candidato (?c=<número>) e partido/federação/coligação (?p=<chave>) abrem a votação deles em qualquer nível.
 // Dados: branch hist-<ano> (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]][?c=<n> | ?p=<chave>]
-import { CONFIG } from './config.js?v=7d90a61c';
-import { UF_NOME, fInt, fNum, mix } from './util.js?v=7d90a61c';
-import { esc, tabela, sem } from './ui.js?v=7d90a61c';
-import { getJSON } from './tse.js?v=7d90a61c';
-import { corPartido, corTextoSobre } from './partidos.js?v=7d90a61c';
-import { criarMapa } from './map.js?v=7d90a61c';
-import { criarMapaMun } from './mapamun.js?v=7d90a61c';
-import { criarMapaPontos } from './mapapontos.js?v=7d90a61c';
+import { CONFIG } from './config.js?v=eceea2b7';
+import { UF_NOME, fInt, fNum, mix } from './util.js?v=eceea2b7';
+import { esc, tabela, sem } from './ui.js?v=eceea2b7';
+import { getJSON } from './tse.js?v=eceea2b7';
+import { corPartido, corTextoSobre } from './partidos.js?v=eceea2b7';
+import { criarMapa } from './map.js?v=eceea2b7';
+import { criarMapaMun } from './mapamun.js?v=eceea2b7';
+import { criarMapaPontos } from './mapapontos.js?v=eceea2b7';
 
-import { cadeirasHTML, ligarCadeiras, agrupa } from './cadeiras.js?v=7d90a61c';
-export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018, 2016, 2014, 2012, 2010, 2008, 2006];
+import { cadeirasHTML, ligarCadeiras, agrupa } from './cadeiras.js?v=eceea2b7';
+export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018, 2016, 2014, 2012, 2010, 2008, 2006, 2004, 2002, 2000, 1998];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;
 const cache = new Map();
 const pega = (url, op = {}) => { if (!cache.has(url)) cache.set(url, getJSON(url, { retries: 2, timeout: 60000, ...op }).catch(e => { cache.delete(url); throw e; })); return cache.get(url); };
@@ -244,7 +244,9 @@ async function telaBrasil(r, E, ctx, nomeEl) {
       return { id: uf, nome: nomeUf(uf), ...t }; });
     const part = new Map(); rows.forEach(x => x.part.forEach((n, sg) => part.set(sg, (part.get(sg) || 0) + n)));
     const resumo = E.prop ? '' : `<section class="painel"><h2>${r.id.endsWith('t1') ? 'Prefeitos eleitos ou mais votados' : 'Prefeitos eleitos no 2º turno'}, por partido</h2><ol class="h-rank">${[...part].sort((a, b) => b[1] - a[1]).map(([sg, n]) => `<li>${chipP(sg)}<b>${fInt(n)}</b></li>`).join('')}</ol></section>`;
-    return { titulo: `Brasil — ${nomeEl}`, trilha, html: `${resumo}<section class="painel"><h2>Estados</h2><p class="sub">Escolha um estado para ver os municípios.</p><div id="h-tab"></div></section>`,
+    const semUf = ufsIdx.filter(u => !dados.some(([x]) => x === u)).map(u => nomeUf(u));
+    const avisoUf = semUf.length ? `<div class="aviso">O TSE não publicou o resultado por seção de ${esc(semUf.join(', '))} em ${r.ano}; ${semUf.length > 1 ? 'esses estados não aparecem' : 'este estado não aparece'} nesta lista.</div>` : '';
+    return { titulo: `Brasil — ${nomeEl}`, trilha, html: `${avisoUf}${resumo}<section class="painel"><h2>Estados</h2><p class="sub">Escolha um estado para ver os municípios.</p><div id="h-tab"></div></section>`,
       montar(root) { tabela(root.querySelector('#h-tab'), { cols: [colNome('Estado'), { k: 'n', t: 'Municípios', h: x => fInt(x.n), v: x => x.n, cls: 'n' }, ...(E.prop ? [{ k: 'ele', t: 'Vereadores eleitos', h: x => fInt(x.ele), v: x => x.ele, cls: 'n' }] : []), { k: 'ap', t: 'Aptos', h: x => fInt(x.ap), v: x => x.ap, cls: 'n' }], rows, onRow: x => ctx.ir(H(r, pUf(x.id), null)), sort: 'nome', dir: 'asc' }); } };
   }
   // governador, senador, deputados: um resumo por estado
