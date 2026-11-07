@@ -13,7 +13,7 @@ Saída (tudo JSON estático, servido por raw.githubusercontent.com a partir de b
   conferencia.md               votos nos arquivos x votos na tabela do TSE (por ano e cargo) e candidaturas sem votos casados
 Vereador entra só no perfil (total de votos e %), não nos arquivos por município. Pessoas só de vereador (ou só de vice/suplente) ficam fora desta versão.
 Votos: válidos nominais (QT_VOTOS_NOMINAIS_VALIDOS). Nos arquivos do TSE de 2006 a 2014 (e 2008, 2012) essa coluna não existe; usa-se QT_VOTOS_NOMINAIS (inclui, se houver, anulados sub judice).
-Sem CPF, título, e-mail ou nascimento completo (só ano de nascimento)."""
+Sem título, e-mail ou nascimento completo (só ano de nascimento). CPF só MASCARADO (***.456.789-**), para diferenciar homônimos; o completo nunca é gravado."""
 import sys, os, json, time, datetime, collections
 import duckdb
 
@@ -89,8 +89,10 @@ con.execute("""CREATE TABLE kv AS SELECT k.*, coalesce(t1.v, 0) v1, coalesce(t2.
   LEFT JOIN tot t2 ON t2.ano = k.ano AND t2.cargo = k.cargo AND t2.ufc = k.uf AND t2.ue = k.ue AND t2.sq = k.sq AND t2.turno = 2
   LEFT JOIN den d1 ON d1.ano = k.ano AND d1.cargo = k.cargo AND d1.turno = 1 AND d1.esc = CASE WHEN k.cargo IN (11, 13) THEN k.ue ELSE k.uf END
   LEFT JOIN den d2 ON d2.ano = k.ano AND d2.cargo = k.cargo AND d2.turno = 2 AND d2.esc = CASE WHEN k.cargo IN (11, 13) THEN k.ue ELSE k.uf END""")
+TEM_CPF = 'cpf_masc' in {r[0] for r in con.execute("DESCRIBE cand").fetchall()}
+log('coluna cpf_masc no lake:', TEM_CPF)
 con.execute(f"""CREATE TABLE pes AS SELECT pessoa_id pid, arg_max(nome, ano) nome, arg_max(nome_urna, ano) urna, any_value(ano_nascimento) nasc, arg_max(genero, ano) gen,
-  any_value(uf_nascimento) ufn, any_value(pessoa_via) via FROM cand WHERE pessoa_id IN (SELECT pid FROM k WHERE cargo IN {PRINC}) GROUP BY pessoa_id""")
+  any_value(uf_nascimento) ufn, CASE WHEN count_if(pessoa_via = 'cpf') > 0 THEN 'cpf' ELSE any_value(pessoa_via) END via, {'max(cpf_masc)' if TEM_CPF else 'NULL::VARCHAR'} cpf FROM cand WHERE pessoa_id IN (SELECT pid FROM k WHERE cargo IN {PRINC}) GROUP BY pessoa_id""")
 npes = R('SELECT count(*) FROM pes')[0][0]
 log('pessoas no recorte', npes)
 sem = R(f"SELECT ano, cargo, count(*) FROM kv WHERE cargo IN {PRINC} AND ano IN ({','.join(map(str, ANOS))}) AND v1 = 0 AND v2 = 0 GROUP BY ALL ORDER BY 1, 2")
@@ -99,7 +101,7 @@ for a, cg, n in sem: md.append(f'| {a} | {cg} | {n:,} |'.replace(',', '.'))
 
 SHARD = lambda pid: pid[:3]
 blocos = collections.defaultdict(dict)
-cur = con.execute("""SELECT p.pid, p.nome, p.urna, p.nasc, p.gen, p.ufn, p.via, kv.ano, kv.cargo, kv.uf, kv.nm_ue, kv.sigla, kv.nr, kv.sq, kv.sit, kv.v1, kv.p1, kv.v2, kv.p2
+cur = con.execute("""SELECT p.pid, p.nome, p.urna, p.nasc, p.gen, p.ufn, p.via, p.cpf, kv.ano, kv.cargo, kv.uf, kv.nm_ue, kv.sigla, kv.nr, kv.sq, kv.sit, kv.v1, kv.p1, kv.v2, kv.p2
   FROM pes p JOIN kv ON kv.pid = p.pid ORDER BY p.pid, kv.ano, kv.cargo, kv.uf, kv.nm_ue, kv.sq""")
 atual, reg = None, None
 def fecha():
@@ -107,10 +109,10 @@ def fecha():
 while True:
     rs = cur.fetchmany(200000)
     if not rs: break
-    for pid, nome, urna, nasc, gen, ufn, via, ano, cg, uf, nm_ue, sg, nr, sq, sit, v1, p1, v2, p2 in rs:
+    for pid, nome, urna, nasc, gen, ufn, via, cpf, ano, cg, uf, nm_ue, sg, nr, sq, sit, v1, p1, v2, p2 in rs:
         if pid != atual:
             fecha(); atual = pid
-            reg = {'n': nome, 'u': urna, 'a': nasc, 'g': (gen or '')[:1], 'o': ufn, 'v': via, 'c': []}
+            reg = {'n': nome, 'u': urna, 'a': nasc, 'g': (gen or '')[:1], 'o': ufn, 'v': via, 'f': cpf, 'c': []}   # f = CPF mascarado (***.456.789-**) ou null
         # [ano, cargo, uf, município (só cargos municipais), partido, número, situação, sq, votos1, %1, votos2, %2]
         reg['c'].append([ano, cg, uf, (nm_ue or '') if cg in (11, 12, 13) else '', sg, nr, sit, sq, v1 or None, p1, v2 or None, p2])
 fecha()
@@ -125,7 +127,7 @@ con.execute(r"""CREATE TABLE ult AS SELECT pid, arg_max(ano, CAST(ano AS INTEGER
 con.execute(r"""CREATE TABLE tok AS SELECT DISTINCT pid, t FROM (
   SELECT pid, unnest(string_split(trim(regexp_replace(upper(strip_accents(coalesce(nm, ''))), '[^A-Z0-9]+', ' ', 'g')), ' ')) t
   FROM (SELECT pid, urna nm FROM pes UNION ALL SELECT pid, nome FROM pes)) WHERE length(t) >= 3 AND t NOT IN ('DAS', 'DOS', 'DEL', 'DEZ')""")
-cur = con.execute("""SELECT lower(left(tok.t, 3)) b, p.pid, p.urna, p.nome, u.ano, u.cargo, u.uf, u.sigla, u.nanos, coalesce(u.vmax, 0)
+cur = con.execute("""SELECT lower(left(tok.t, 3)) b, p.pid, p.urna, p.nome, u.ano, u.cargo, u.uf, u.sigla, u.nanos, coalesce(u.vmax, 0), p.cpf
   FROM tok JOIN pes p ON p.pid = tok.pid JOIN ult u ON u.pid = p.pid ORDER BY b, coalesce(u.vmax, 0) DESC, p.pid""")
 os.makedirs(f'{out}/pessoas/s', exist_ok=True)
 atual, buf, nsh, nent = None, [], 0, 0
@@ -136,9 +138,9 @@ def grava():
 while True:
     rs = cur.fetchmany(200000)
     if not rs: break
-    for b, pid, urna, nome, ano, cg, uf, sg, na, vm in rs:
+    for b, pid, urna, nome, ano, cg, uf, sg, na, vm, cpf in rs:
         if b != atual: grava(); atual, buf = b, []
-        buf.append([pid, urna, nome, ano, cg, uf, sg, na]); nent += 1
+        buf.append([pid, urna, nome, ano, cg, uf, sg, na, cpf]); nent += 1   # [8] = CPF mascarado ou null
 grava()
 log('busca', nsh, 'blocos', nent, 'entradas')
 meta = {'gerado_em': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds'), 'anos': ANOS, 'pessoas': npes, 'blocos_perfil': len(blocos), 'blocos_busca': nsh, 'entradas_busca': nent}

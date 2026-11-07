@@ -1,13 +1,13 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
-// Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Sem CPF nem dados pessoais além do nome público e do ano de nascimento.
-import { CONFIG } from './config.js?v=25fd32bc';
-import { getJSON } from './tse.js?v=25fd32bc';
-import { esc, sem, tabela } from './ui.js?v=25fd32bc';
-import { fNum, fInt } from './util.js?v=25fd32bc';
-import { dispersao } from './dispersao.js?v=25fd32bc';
-import { corPartido, corTextoSobre } from './partidos.js?v=25fd32bc';
-import { baixarCSV } from './export.js?v=25fd32bc';
+// Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
+import { CONFIG } from './config.js?v=faa97392';
+import { getJSON } from './tse.js?v=faa97392';
+import { esc, sem, tabela } from './ui.js?v=faa97392';
+import { fNum, fInt } from './util.js?v=faa97392';
+import { dispersao } from './dispersao.js?v=faa97392';
+import { corPartido, corTextoSobre } from './partidos.js?v=faa97392';
+import { baixarCSV } from './export.js?v=faa97392';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];
@@ -101,7 +101,7 @@ export function viewCmpCand(ctx, q) {
       try {
         const bloco = await perfilBloco(pid), p = bloco[pid]; if (!p) throw new Error('não encontrado');
         const idade = p.a ? ` · nascimento: ${p.a}` : '';
-        pessoaEl.innerHTML = `<div class="cc-pessoa"><div class="cc-ph"><b>${esc(p.u || p.n)}</b><small>${esc(bonito(p.n))}${idade}${p.v === 'nome_incerta' || p.v === 'nome' ? ' · ligação entre eleições feita pelo nome (sem CPF): confira se é a mesma pessoa' : ''}</small></div>${linhasCand(pid, p)}</div>`;
+        pessoaEl.innerHTML = `<div class="cc-pessoa"><div class="cc-ph"><b>${esc(p.u || p.n)}</b><small>${esc(bonito(p.n))}${idade}${p.f ? ` · <span class="cpf-m" title="CPF parcialmente oculto: serve só para diferenciar homônimos">CPF ${esc(p.f)}</span>` : p.f === null ? ' · CPF não consta nos dados do TSE' : ''}${p.v === 'cpf' ? ' · eleições ligadas pelo CPF' : p.v === 'nome_incerta' || p.v === 'nome' ? ' · ligação entre eleições feita pelo nome (sem CPF): confira se é a mesma pessoa' : ''}</small></div>${linhasCand(pid, p)}</div>`;
       } catch (e) { pessoaEl.innerHTML = `<p class="aviso">Não foi possível carregar as candidaturas (${esc(e.message)}).</p>`; }
     };
     pessoaEl.addEventListener('click', e => { const b = e.target.closest('[data-add]'); if (b && !cheio()) ir([...refs, b.dataset.add]); });
@@ -120,7 +120,7 @@ export function viewCmpCand(ctx, q) {
         const exato = e => { const w = norm(e[1]).split(' '); return ts.every(t => w.includes(t)) ? 0 : 1; };
         const top = ach.map((e, i) => [e, i]).sort((a, b) => exato(a[0]) - exato(b[0]) || a[1] - b[1]).slice(0, 12).map(x => x[0]);
         sug._itens = top;
-        sug.innerHTML = top.length ? top.map((e, i) => `<li role="option" data-i="${i}" tabindex="-1"><span><b>${esc(e[1])}</b>${norm(e[1]) !== norm(e[2]) ? ` <small>${esc(bonito(e[2]))}</small>` : ''}</span><small>${esc(CARGO[e[4]] || '')} ${e[3]}${e[5] && e[5] !== 'BR' ? ' ' + esc(e[5]) : ''} · ${esc(sgTxt(e[6]))}${e[7] > 1 ? ` · ${e[7]} eleições` : ''}</small></li>`).join('') : '<li class="nada">Nenhum candidato encontrado. Confira a grafia ou use outra parte do nome.</li>';
+        sug.innerHTML = top.length ? top.map((e, i) => `<li role="option" data-i="${i}" tabindex="-1"><span><b>${esc(e[1])}</b>${norm(e[1]) !== norm(e[2]) ? ` <small>${esc(bonito(e[2]))}</small>` : ''}</span><small>${esc(CARGO[e[4]] || '')} ${e[3]}${e[5] && e[5] !== 'BR' ? ' ' + esc(e[5]) : ''} · ${esc(sgTxt(e[6]))}${e[7] > 1 ? ` · ${e[7]} eleições` : ''}${e[8] ? ` · <span class="cpf-m" title="CPF parcialmente oculto: serve só para diferenciar homônimos">CPF ${esc(e[8])}</span>` : ''}</small></li>`).join('') : '<li class="nada">Nenhum candidato encontrado. Confira a grafia ou use outra parte do nome.</li>';
         sug.hidden = false; dica.textContent = top.length ? 'Escolha o candidato para ver as candidaturas dele.' : '';
       } catch (e) { if (meu === seq) dica.textContent = 'Não foi possível buscar agora. Tente de novo em instantes.'; }
     };

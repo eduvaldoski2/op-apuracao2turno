@@ -21,7 +21,8 @@ jobs:
         env: { GH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
         run: |
           T=lake-candidatos
-          gh release view $T >/dev/null 2>&1 || gh release create $T --title "Candidaturas do TSE 1994-2026 (Parquet)" --notes "candidaturas.parquet e pessoas.parquet gerados por scripts/lake_cand/build_cand.py a partir de consulta_cand do TSE. Sem CPF, titulo, e-mail ou nascimento completo; pessoa_id e um codigo irreversivel para cruzar eleicoes."
+          gh release view $T >/dev/null 2>&1 || gh release create $T --title "Candidaturas do TSE 1994-2026 (Parquet)" --notes "candidaturas.parquet e pessoas.parquet gerados por scripts/lake_cand/build_cand.py a partir de consulta_cand do TSE. Sem titulo, e-mail ou nascimento completo; CPF so mascarado (***.456.789-**); pessoa_id e um codigo irreversivel para cruzar eleicoes."
+          gh release edit $T -R ${{ github.repository }} --notes "candidaturas.parquet e pessoas.parquet gerados por scripts/lake_cand/build_cand.py a partir de consulta_cand do TSE. Sem titulo, e-mail ou nascimento completo; CPF so mascarado (***.456.789-**); pessoa_id e um codigo irreversivel para cruzar eleicoes."
           cd /tmp/lakec && gh release upload -R ${{ github.repository }} $T candidaturas.parquet pessoas.parquet conferencia.md manifesto.json --clobber
       - name: Publicar log
         if: always()

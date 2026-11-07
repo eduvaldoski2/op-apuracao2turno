@@ -1,7 +1,7 @@
 // Capa do Painel: busca de candidato pelo nome + caixa "Comparar" (cartões com a trajetória, no formato do Apuração 4013).
 // Dados: branch cand-pessoas (busca s/<3 letras>.json e perfis p/<3 primeiros do id>.json), os mesmos de js/cmpcand.js.
 // Não importa o cmpcand.js (que puxa a tela inteira de comparação): só leva até ele, pelo endereço, as candidaturas escolhidas.
-import { CONFIG } from './config.js?v=25fd32bc';
+import { CONFIG } from './config.js?v=faa97392';
 
 const RAW = `https://raw.githubusercontent.com/${CONFIG.repo}/`, MAX = 4;
 const SLOT = ['#3E347E', '#F08A24', '#1b8f6a', '#c8102e'];
@@ -88,7 +88,7 @@ export function montarBuscaCapa(raiz, { painelUrl = 'painel.html' } = {}) {
       const chips = cs.map(c => { const r = refDe(p.id, c), ok = temVotos(c), on = S.has(r); const txt = `${c[0]} · ${esc(onde(c))}${c[4] ? ' · ' + esc(sgTxt(c[4])) : ''}`;
         return ok ? `<button type="button" class="cb-c" data-r="${esc(r)}" aria-pressed="${on}" ${!on && sel.length >= MAX ? 'disabled' : ''} title="${on ? 'Tirar da comparação' : 'Pôr na comparação'}">${txt}</button>` : `<span class="cb-c sem" title="Sem votos por município na base">${txt}</span>`; }).join('');
       return `<article class="cb-card" style="--c:${p.cor}"><button type="button" class="cb-x" data-rm="${i}" aria-label="Tirar ${esc(p.u || p.n)} da lista">✕</button>
-        <h3>${esc(p.u || bonito(p.n))}</h3><p class="cv">${esc(bonito(p.n))}${p.a ? ' · nasc. ' + esc(p.a) : ''}${p.v === 'nome_incerta' || p.v === 'nome' ? ' · ligação entre eleições pelo nome: confira se é a mesma pessoa' : ''}</p>
+        <h3>${esc(p.u || bonito(p.n))}</h3><p class="cv">${esc(bonito(p.n))}${p.a ? ' · nasc. ' + esc(p.a) : ''}${p.f ? ` · <span class="cpf-m" title="CPF parcialmente oculto: serve só para diferenciar homônimos">CPF ${esc(p.f)}</span>` : p.f === null ? ' · CPF não consta nos dados do TSE' : ''}${p.v === 'cpf' ? ' · eleições ligadas pelo CPF' : p.v === 'nome_incerta' || p.v === 'nome' ? ' · ligação entre eleições pelo nome: confira se é a mesma pessoa' : ''}</p>
         ${spark(p, S)}<div class="cb-ch">${chips}</div></article>`;
     }).join('') + (pessoas.length && pessoas.length < MAX ? '<button type="button" class="cb-add" id="cb-add">+ Adicionar candidatura</button>' : '');
     const go = $('#cb-go'); go.hidden = !sel.length;
@@ -106,7 +106,7 @@ export function montarBuscaCapa(raiz, { painelUrl = 'painel.html' } = {}) {
       const ach = lista.filter(e => { const w = norm(e[1] + ' ' + e[2]).split(' '); return ts.every(t => w.some(x => x.startsWith(t))); });
       const exato = e => { const w = norm(e[1]).split(' '); return ts.every(t => w.includes(t)) ? 0 : 1; };
       itens = ach.map((e, i) => [e, i]).sort((a, b) => exato(a[0]) - exato(b[0]) || a[1] - b[1]).slice(0, 12).map(x => x[0]);
-      sug.innerHTML = itens.length ? itens.map((e, i) => `<li role="option" tabindex="-1" data-i="${i}"><span><b>${esc(e[1])}</b>${norm(e[1]) !== norm(e[2]) ? ` <small>${esc(bonito(e[2]))}</small>` : ''}</span><small>${esc(CARGO[e[4]] || '')} ${e[3]}${e[5] && e[5] !== 'BR' ? ' ' + esc(e[5]) : ''} · ${esc(sgTxt(e[6]))}${e[7] > 1 ? ` · ${e[7]} eleições` : ''}</small></li>`).join('') : '<li class="nada">Nenhum candidato com esse nome na base. Tente outra grafia.</li>';
+      sug.innerHTML = itens.length ? itens.map((e, i) => `<li role="option" tabindex="-1" data-i="${i}"><span><b>${esc(e[1])}</b>${norm(e[1]) !== norm(e[2]) ? ` <small>${esc(bonito(e[2]))}</small>` : ''}</span><small>${esc(CARGO[e[4]] || '')} ${e[3]}${e[5] && e[5] !== 'BR' ? ' ' + esc(e[5]) : ''} · ${esc(sgTxt(e[6]))}${e[7] > 1 ? ` · ${e[7]} eleições` : ''}${e[8] ? ` · <span class="cpf-m" title="CPF parcialmente oculto: serve só para diferenciar homônimos">CPF ${esc(e[8])}</span>` : ''}</small></li>`).join('') : '<li class="nada">Nenhum candidato com esse nome na base. Tente outra grafia.</li>';
       sug.hidden = false; inp.setAttribute('aria-expanded', 'true'); dica.textContent = itens.length ? 'Escolha o candidato para ver as eleições dele.' : '';
     } catch { if (meu === seq) dica.textContent = 'Não foi possível buscar agora. Tente de novo em instantes.'; }
   }

@@ -3,7 +3,7 @@
 Uso: build_cand.py <saida> [anos...]   (padrão: 1994..2026, anos pares)
 Saídas: candidaturas.parquet (uma linha por candidatura), pessoas.parquet (uma linha por pessoa), manifesto.json, conferencia.md.
 
-Privacidade (LGPD): CPF, título, e-mail, nome social e data de nascimento completa NUNCA são gravados. O CPF só é usado dentro desta execução
+Privacidade (LGPD): CPF COMPLETO, título, e-mail, nome social e data de nascimento completa NUNCA são gravados. Só o CPF MASCARADO (***.456.789-**, os 6 dígitos do meio, como no Portal da Transparência) vai para `cpf_masc`, para diferenciar homônimos na tela. O CPF completo só é usado dentro desta execução
 para gerar `pessoa_id` = MD5 (14 caracteres) da chave pública da primeira candidatura da pessoa (estável entre reconstruções; a ligação entre candidaturas usa SHA-256(sal aleatório + CPF) só durante a execução, e o sal é descartado, então nada no resultado permite chegar ao CPF).
 Quem não tem CPF válido (1994/1996 e falhas) é ligado por nome civil normalizado + ano de nascimento, só quando a
 chave é inequívoca; os demais ficam marcados (pessoa_via = 'nome_incerta')."""
@@ -66,6 +66,7 @@ con.execute("""CREATE OR REPLACE TABLE t AS SELECT *,
   trim(regexp_replace(regexp_replace(upper(strip_accents(coalesce(nome, ''))), '[^A-Z0-9 ]', ' ', 'g'), ' +', ' ', 'g')) AS nome_norm FROM raw""")
 con.execute(f"""CREATE OR REPLACE TABLE t AS SELECT *,
   CASE WHEN _cpf IS NOT NULL THEN 'p' || left(sha256('{SAL}' || _cpf), 16) END AS id_cpf,
+  CASE WHEN _cpf IS NOT NULL THEN '***.' || substr(_cpf, 4, 3) || '.' || substr(_cpf, 7, 3) || '-**' END AS cpf_masc,
   CASE WHEN ano_nascimento IS NOT NULL AND nome_norm <> '' THEN nome_norm || '|' || ano_nascimento END AS chave_nome FROM t""")
 # chave de nome -> quantos CPFs distintos? (1 = inequívoca)
 con.execute("""CREATE OR REPLACE TABLE chaves AS SELECT chave_nome, count(DISTINCT id_cpf) n_cpf, any_value(id_cpf) id_unico
@@ -90,7 +91,7 @@ con.execute("COPY (SELECT * FROM c ORDER BY ano, turno, cargo, uf, ue, nr, sq_ca
 con.execute("""COPY (SELECT pessoa_id, arg_max(nome, ano) nome, arg_max(nome_urna, ano) nome_urna_ultimo, any_value(pessoa_via) pessoa_via_principal,
   min(ano) primeiro_ano, max(ano) ultimo_ano, count(*) candidaturas, count(DISTINCT ano) anos_disputados,
   list_sort(list(DISTINCT ano)) anos, list_sort(list(DISTINCT ds_cargo)) cargos, list_sort(list(DISTINCT sigla)) partidos,
-  any_value(ano_nascimento) ano_nascimento, any_value(uf_nascimento) uf_nascimento, arg_max(genero, ano) genero
+  any_value(ano_nascimento) ano_nascimento, any_value(uf_nascimento) uf_nascimento, arg_max(genero, ano) genero, max(cpf_masc) cpf_masc
   FROM c GROUP BY pessoa_id ORDER BY pessoa_id) TO '""" + out + "/pessoas.parquet' (FORMAT parquet, COMPRESSION zstd)")
 # conferência
 R = lambda s: con.execute(s).fetchall()
@@ -109,6 +110,8 @@ hom = R("SELECT count(*) FROM chaves WHERE n_cpf > 1")[0][0]
 md.append('- Chaves nome+ano de nascimento que pertencem a mais de um CPF (homônimos; esses nunca são ligados por nome): ' + f'{hom:,}'.replace(',', '.'))
 mult = R("SELECT count(*) FROM (SELECT pessoa_id FROM c WHERE pessoa_via='cpf' GROUP BY 1 HAVING count(DISTINCT nome) > 1)")[0][0]
 md.append('- Pessoas (por CPF) que aparecem com mais de um nome civil ao longo dos anos (mudança de nome ou grafia): ' + f'{mult:,}'.replace(',', '.'))
+cm = R("SELECT count(*), count(cpf_masc) FROM (SELECT pessoa_id, max(cpf_masc) cpf_masc FROM c GROUP BY 1)")[0]
+md.append('- Pessoas com CPF mascarado disponível (aparece na tela para diferenciar homônimos): ' + f'{cm[1]:,} de {cm[0]:,}'.replace(',', '.') + '. O TSE não divulga o CPF em 2024 e em 1994/1996; quem só disputou esses anos fica sem.')
 md += ['', '## 4) Como cruzar votos', '', 'A tabela de votos de cada ano (`zona_<ano>.parquet` dos releases `lake-<ano>`) traz `sq_candidato`. Junte por (`ano`, `sq_candidato`) com `candidaturas.parquet` e agrupe por `pessoa_id`.',
       '`pessoa_id` = MD5 (14 caracteres) da chave pública (ano|cargo|uf|ue|sq) da primeira candidatura da pessoa: estável entre reconstruções (só muda se o TSE alterar a ligação entre candidaturas).']
 open(out + '/conferencia.md', 'w').write('\n'.join(md) + '\n')
