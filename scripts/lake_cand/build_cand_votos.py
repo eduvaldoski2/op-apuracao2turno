@@ -12,6 +12,7 @@ Saída (tudo JSON estático, servido por raw.githubusercontent.com a partir de b
   pessoas/meta.json            versão, contagens e conferência
   conferencia.md               votos nos arquivos x votos na tabela do TSE (por ano e cargo) e candidaturas sem votos casados
 Vereador entra só no perfil (total de votos e %), não nos arquivos por município. Pessoas só de vereador (ou só de vice/suplente) ficam fora desta versão.
+Votos: válidos nominais (QT_VOTOS_NOMINAIS_VALIDOS). Nos arquivos do TSE de 2006 a 2014 (e 2008, 2012) essa coluna não existe; usa-se QT_VOTOS_NOMINAIS (inclui, se houver, anulados sub judice).
 Sem CPF, título, e-mail ou nascimento completo (só ano de nascimento)."""
 import sys, os, json, time, datetime, collections
 import duckdb
@@ -40,9 +41,9 @@ bruto = {}
 for a in ANOS:
     f = f'{src}/zona_{a}.parquet'
     if not os.path.exists(f): log('sem', f); continue
-    con.execute(f"""INSERT INTO v SELECT {a}, turno, cargo, uf, cd_municipio_tse, sq_candidato, sum(qt_votos_nominais_validos)::INTEGER
-      FROM read_parquet('{f}') WHERE sq_candidato > 0 AND qt_votos_nominais_validos > 0 GROUP BY ALL""")
-    for cg, tt, n in R(f"SELECT cargo, turno, sum(qt_votos_nominais_validos) FROM read_parquet('{f}') WHERE sq_candidato > 0 GROUP BY 1, 2"): bruto[(a, cg, tt)] = int(n or 0)
+    con.execute(f"""INSERT INTO v SELECT {a}, turno, cargo, uf, cd_municipio_tse, sq_candidato, sum(coalesce(qt_votos_nominais_validos, qt_votos_nominais))::INTEGER
+      FROM read_parquet('{f}') WHERE sq_candidato > 0 AND coalesce(qt_votos_nominais_validos, qt_votos_nominais) > 0 GROUP BY ALL""")
+    for cg, tt, n in R(f"SELECT cargo, turno, sum(coalesce(qt_votos_nominais_validos, qt_votos_nominais)) FROM read_parquet('{f}') WHERE sq_candidato > 0 GROUP BY 1, 2"): bruto[(a, cg, tt)] = int(n or 0)
     log('zona', a)
 
 # casa votos com a candidatura: presidente -> uf BR; gerais -> uf do município = uf da candidatura; municipais -> município = ue
