@@ -3,16 +3,16 @@
 // Tudo é clicável: candidato (?c=<número>) e partido/federação/coligação (?p=<chave>) abrem a votação deles em qualquer nível.
 // Dados: branch hist-<ano> (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]][?c=<n> | ?p=<chave>]
-import { CONFIG } from './config.js?v=faa97392';
-import { UF_NOME, fInt, fNum, mix } from './util.js?v=faa97392';
-import { esc, tabela, sem } from './ui.js?v=faa97392';
-import { getJSON } from './tse.js?v=faa97392';
-import { corPartido, corTextoSobre } from './partidos.js?v=faa97392';
-import { criarMapa } from './map.js?v=faa97392';
-import { criarMapaMun } from './mapamun.js?v=faa97392';
-import { criarMapaPontos } from './mapapontos.js?v=faa97392';
+import { CONFIG } from './config.js?v=00e6b9d2';
+import { UF_NOME, fInt, fNum, mix } from './util.js?v=00e6b9d2';
+import { esc, tabela, sem } from './ui.js?v=00e6b9d2';
+import { getJSON } from './tse.js?v=00e6b9d2';
+import { corPartido, corTextoSobre } from './partidos.js?v=00e6b9d2';
+import { criarMapa } from './map.js?v=00e6b9d2';
+import { criarMapaMun } from './mapamun.js?v=00e6b9d2';
+import { criarMapaPontos } from './mapapontos.js?v=00e6b9d2';
 
-import { cadeirasHTML, ligarCadeiras, agrupa } from './cadeiras.js?v=faa97392';
+import { cadeirasHTML, ligarCadeiras, agrupa } from './cadeiras.js?v=00e6b9d2';
 export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018, 2016, 2014, 2012, 2010, 2008, 2006];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;
 const cache = new Map();
@@ -382,6 +382,10 @@ async function telaMun(r, E, ctx, nomeEl) {
   const [ufd, sec, loc, geo, geoB] = await Promise.all([
     arq(r.ano, `${r.id}/${uf}.json`), arq(r.ano, `${r.id}/${uf}/${cd}.json`), arq(r.ano, `locais/${uf}/${cd}.json`).catch(() => ({ l: [] })),
     getJSON(`data/bairros_geo/${cd}.json`, { retries: 0 }).catch(() => null), getJSON(`data/regioes/${cd}_bairros.json`, { retries: 0 }).catch(() => null)]);
+  // anos sem cadastro de locais no TSE (até 2008): a descida é Município > Zona eleitoral > Seção (cada zona faz o papel de "local")
+  const semLoc = !(loc.l && loc.l.length);
+  if (semLoc) { const pz = new Map(); for (const k of Object.keys(sec.s || {})) { const [z, st] = k.split('-'); if (!pz.has(+z)) pz.set(+z, []); pz.get(+z).push(+st); }
+    loc.l = [...pz].sort((x, y) => x[0] - y[0]).map(([z, ss]) => [z, 0, `Zona ${z}`, '', '', null, null, ss.sort((x, y) => x - y), -1, -1]); }
   const bm = ctx.B?.byUf?.[uf] || [], nomeM = bonito(bm.find(b => b.cd === cd)?.nome || cd);
   const par = E.prop ? (E.mun ? sec.par : ufd.par) : null, cands = E.mun ? sec.cands : ufd.cands;
   const its = E.prop ? par : cands, n = its.length;
@@ -402,7 +406,7 @@ async function telaMun(r, E, ctx, nomeEl) {
   const nomeDist = i => geo?.f?.[i]?.n || '';
   const rotD = geo?.rotuloNome || 'Distrito', rotDp = geo?.rotuloPlural || 'Distritos';
   const L = loc.l.map(l => { const [z, nr, nome, end, baiTse, lat, lon, secs, g, b] = l; const gb = temDist ? b : g;
-    const bairro = geoBairro && gb >= 0 ? geoBairro.f[gb]?.n : (baiTse || '(sem bairro informado)');
+    const bairro = geoBairro && gb >= 0 ? geoBairro.f[gb]?.n : (baiTse || (semLoc ? '' : '(sem bairro informado)'));
     const u = novaU(n), ss = [];
     for (const s of secs) { const k = `${z}-${s}`, lin = sec.s[k]; if (!lin) continue; somaLinha(u, lin, E.prop); if (fSec) u.fv += fSec(k); ss.push([s, lin]); }
     return { id: `${z}-${nr}`, z, nr, nome: bonito(nome), end: bonito(end), bairro: bonito(bairro), di: temDist && g >= 0 ? g : -1, lat, lon, u: fecha(u), ss }; }).filter(x => x.ss.length);
@@ -413,14 +417,15 @@ async function telaMun(r, E, ctx, nomeEl) {
   const trilha0 = [['Brasil', H(r, '', null)], [nomeUf(uf), H(r, pUf(uf), E.mun && r.foco?.t === 'c' ? null : r.foco)]];
   const colsT = (nomeCol, uRef) => F ? colsFoco(nomeCol, uRef.fv) : colsGeral(E, its, uRef, nomeCol, par);
   const ordT = F ? ['fv', 'desc'] : ['nome', 'asc'];
-  const tabLocais = `<section class="painel"><h2>Locais de votação</h2><p class="sub">Clique em um local para ver as seções.</p><div id="h-tab-l"></div></section>`;
+  const tabLocais = `<section class="painel"><h2>${semLoc ? 'Zonas eleitorais' : 'Locais de votação'}</h2><p class="sub">${semLoc ? 'O TSE não tem o cadastro de locais de votação deste ano: o resultado desce por zona e seção. Clique em uma zona para ver as seções.' : 'Clique em um local para ver as seções.'}</p><div id="h-tab-l"></div></section>`;
   const montaLocais = (root, ls, uRef) => tabela(root.querySelector('#h-tab-l'), { cols: colsT({ k: 'nome', t: 'Local', h: x => `<b>${esc(x.nome)}</b><small class="vt">${esc(x.end)}${x.bairro ? ' · ' + esc(x.bairro) : ''}</small>`, v: x => x.nome, ini: 'asc' }, uRef), rows: ls, onRow: x => ctx.ir(H(r, `${base}/l/${encodeURIComponent(x.id)}`)), sort: ordT[0], dir: ordT[1], filtro: (x, q) => sem(x.nome + ' ' + x.bairro + ' ' + x.end).includes(q), limite: 300 });
   const mapaPontos = (root, ls) => { const el = root.querySelector('#h-mapa-pt'); if (!el) return; const pts = ls.filter(x => x.lat && x.lon).map(x => ({ id: x.id, lat: x.lat, lon: x.lon, ap: x.u.ap }));
     if (pts.length < 2) { el.closest('section').remove(); return; }
     const por = new Map(ls.map(x => [x.id, x])), pin = pintor(E, its, par, F, ls, F?.cor);
     const mp = criarMapaPontos(el, pts, { tooltip: id => { const x = por.get(id); return x ? tip(x, F, F?.nome) : ''; }, onClick: id => ctx.ir(H(r, `${base}/l/${encodeURIComponent(id)}`)) });
     mp.atualizar(Object.fromEntries(ls.map(x => [x.id, { fill: pin.fill(x).fill || '#c9c4d8' }]))); el.closest('section').querySelector('.h-leg').innerHTML = pin.leg; };
-  const secPts = secMapa('h-mapa-pt', 'Mapa dos locais de votação', F ? `Tom = % dos votos válidos de ${esc(F.nome)} no local; tamanho = eleitorado.` : 'Cor = mais votado no local; tamanho = eleitorado.');
+  const secPts0 = secMapa('h-mapa-pt', 'Mapa dos locais de votação', F ? `Tom = % dos votos válidos de ${esc(F.nome)} no local; tamanho = eleitorado.` : 'Cor = mais votado no local; tamanho = eleitorado.');
+  const secPts = semLoc ? '' : secPts0;
   // topo de cada nível: foco ou resultado geral
   const topo = (u, onde, extra, { aprox = true, titCands } = {}) => {
     if (F) { let h = cabFoco(r, F, u, extra, onde);
@@ -444,8 +449,8 @@ async function telaMun(r, E, ctx, nomeEl) {
     if (!l) return { titulo: 'Local não encontrado', trilha: trilha0, html: '<div class="aviso">Local de votação não encontrado.</div>', montar() {} };
     const rows = l.ss.map(([s, lin]) => { const u = unidade([lin], n, E.prop); if (fSec) u.fv = fSec(`${l.z}-${s}`); return { id: `${l.z}-${s}`, nome: `Seção ${s}`, s, u }; });
     const extra = `${base}/l/${encodeURIComponent(l.id)}`;
-    return { titulo: tituloF(F, l.nome, nomeEl), trilha: [...trilha0, [nomeM, H(r, base)], ...(l.di >= 0 ? [[nomeDist(l.di), H(r, `${base}/d/${l.di}`)]] : []), [l.bairro, H(r, `${base}/b/${encodeURIComponent(l.bairro)}`)], [l.nome]],
-      html: `<p class="sub">${esc(l.end)} · ${esc(l.bairro)} · zona ${l.z}</p>${topo(l.u, 'no local', extra)}<section class="painel"><h2>Seções</h2><p class="sub">Clique numa seção para ver o boletim completo.</p><div id="h-tab-s"></div></section>`,
+    return { titulo: tituloF(F, l.nome, nomeEl), trilha: [...trilha0, [nomeM, H(r, base)], ...(l.di >= 0 ? [[nomeDist(l.di), H(r, `${base}/d/${l.di}`)]] : []), ...(semLoc ? [] : [[l.bairro, H(r, `${base}/b/${encodeURIComponent(l.bairro)}`)]]), [l.nome]],
+      html: `<p class="sub">${semLoc ? `Zona ${l.z}` : `${esc(l.end)} · ${esc(l.bairro)} · zona ${l.z}`}</p>${topo(l.u, 'no local', extra)}<section class="painel"><h2>Seções</h2><p class="sub">Clique numa seção para ver o boletim completo.</p><div id="h-tab-s"></div></section>`,
       montar(root) { tabela(root.querySelector('#h-tab-s'), { cols: colsT({ k: 's', t: 'Seção', h: x => `<b>${x.s}</b>`, v: x => x.s, ini: 'asc' }, l.u), rows, onRow: x => ctx.ir(H(r, `${base}/s/${encodeURIComponent(x.id)}`)), sort: F ? 'fv' : 's', dir: F ? 'desc' : 'asc' });
         ctx.csv = () => ({ nome: `${r.ano}_${r.id}_${cd}_${l.id}_secoes`, cab: ['Seção', 'Aptos', 'Comparecimento', 'Brancos', 'Nulos', ...(F ? [F.nome] : its.map(it => E.prop ? it.sg : it.nm))], linhas: rows.map(x => [x.s, x.u.ap, x.u.c, x.u.br, x.u.nu, ...(F ? [x.u.fv] : x.u.v)]) }); } };
   }
@@ -470,11 +475,11 @@ async function telaMun(r, E, ctx, nomeEl) {
   return { titulo: tituloF(F, nomeM, nomeEl), trilha: [...trilha0, [nomeM]],
     html: `${topo(uMun, 'no município', base, { aprox: false })}
       ${dists.length ? `<section class="painel"><h2>${esc(rotDp)}</h2><p class="sub">${esc(geo.fonte || '')}</p><div id="h-tab-d"></div></section>` : ''}
-      <section class="painel"><h2>Bairros</h2><p class="sub">${geoBairro ? 'Bairro pela localização do local de votação (malha oficial).' : 'Bairro informado pelo TSE para o local de votação.'}</p><div id="h-tab-b"></div></section>
+      ${semLoc ? '' : `<section class="painel"><h2>Bairros</h2><p class="sub">${geoBairro ? 'Bairro pela localização do local de votação (malha oficial).' : 'Bairro informado pelo TSE para o local de votação.'}</p><div id="h-tab-b"></div></section>`}
       ${secPts}${tabLocais}`,
     montar(root) {
       if (dists.length) tabela(root.querySelector('#h-tab-d'), { cols: colsT({ k: 'nome', t: rotD, h: x => `<b>${esc(x.nome)}</b>`, v: x => x.nome, ini: 'asc' }, uMun), rows: dists, onRow: x => ctx.ir(H(r, `${base}/d/${x.id}`)), sort: ordT[0], dir: ordT[1] });
-      tabela(root.querySelector('#h-tab-b'), { cols: colsT(colB, uMun), rows: bairros, onRow: x => ctx.ir(H(r, `${base}/b/${encodeURIComponent(x.id)}`)), sort: ordT[0], dir: ordT[1], filtro: (x, q) => sem(x.nome).includes(q), limite: 1000 });
+      if (!semLoc) tabela(root.querySelector('#h-tab-b'), { cols: colsT(colB, uMun), rows: bairros, onRow: x => ctx.ir(H(r, `${base}/b/${encodeURIComponent(x.id)}`)), sort: ordT[0], dir: ordT[1], filtro: (x, q) => sem(x.nome).includes(q), limite: 1000 });
       mapaPontos(root, L); montaLocais(root, L, uMun);
       ctx.csv = () => ({ nome: `${r.ano}_${r.id}_${cd}_locais`, cab: ['Local', 'Bairro', 'Aptos', 'Comparecimento', 'Brancos', 'Nulos', ...(F ? [F.nome] : its.map(it => E.prop ? it.sg : it.nm))], linhas: L.map(x => [x.nome, x.bairro, x.u.ap, x.u.c, x.u.br, x.u.nu, ...(F ? [x.u.fv] : x.u.v)]) });
     } };
