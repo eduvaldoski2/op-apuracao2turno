@@ -52,7 +52,12 @@ log('ordinária', ordin, 'municipal' if municipal else 'geral')
 # ---------- candidatos (situação final: a do último turno em que aparecem) ----------
 cands_rows = con.execute(f"""SELECT cargo, uf, ue, sq_candidato, nr, nome_urna, sigla, coalesce(federacao, ''), situacao_final, turno, nr_partido, coalesce(coligacao, ''), coalesce(composicao_federacao, '')
   FROM '{cand_pq}' WHERE cd_eleicao IN ({','.join(str(v) for v in set(ordin.values()))}) ORDER BY turno""").fetchall()
-CAND = {}; SIT = {}   # SIT[(sq, turno)] = situação naquele turno
+CAND = {}; SIT = {}   # SIT[(chave, turno)] = situação naquele turno
+# Chave do candidato: o SQ_CANDIDATO só é confiável a partir de 2016 (nos arquivos por seção de 2014 e anteriores ele falta ou se repete entre
+# municípios/estados, o que trocava ou apagava nomes). Antes disso a chave é (cargo, circunscrição, número): o número é único no cargo e na circunscrição.
+USA_SQ = ano >= 2016
+def kc(cg, circ, nr, sq):
+    return sq if USA_SQ else (cg, str(circ).lstrip('0').upper(), nr)
 import re
 limpa_fed = lambda x: re.sub(r'\b\d+-', '', str(x or '')).strip()
 for cg, uf, ue, sq, nr, nm, sg, fed, st, t, npart, col, comp in cands_rows:
@@ -60,8 +65,9 @@ for cg, uf, ue, sq, nr, nm, sg, fed, st, t, npart, col, comp in cands_rows:
     vazio = lambda x: not x or str(x).startswith('#') or str(x).strip().upper() in ('PARTIDO ISOLADO', 'FEDERAÇÃO', 'FEDERACAO')
     fed = '' if vazio(fed) and vazio(comp) else limpa_fed(comp if not vazio(comp) else fed)
     col = '' if vazio(col) else col.strip()
-    CAND[sq] = {'n': nr, 'nm': nm, 'sg': sg, 'fed': fed, 'col': col, 'st': st, 'np': npart, 'cg': cg, 'ue': ue}
-    SIT[(sq, t)] = st
+    k = kc(cg, 'BR' if cg == 1 else (ue if cg in (11, 13) else uf), nr, sq)
+    CAND[k] = {'n': nr, 'nm': nm, 'sg': sg, 'fed': fed, 'col': col, 'st': st, 'np': npart, 'cg': cg, 'ue': ue}
+    SIT[(k, t)] = st
 TURNO = 1
 def sit(sq):   # situação no turno que está sendo gerado (no 1º turno, quem foi ao 2º aparece como "2º TURNO")
     return SIT.get((sq, TURNO), (CAND.get(sq) or {}).get('st', ''))
@@ -116,7 +122,7 @@ def majoritario(e, br_acc):
         sq_de = {}
         for m, z, s, nr, sq, v in rows:
             por_mun[m][(z, s)][nr] = por_mun[m][(z, s)].get(nr, 0) + v
-            if nr not in (95, 96, 97, 98): nrs_mun[m][nr] += v; sq_de[(m if cg == 11 else 0, nr)] = sq
+            if nr not in (95, 96, 97, 98): nrs_mun[m][nr] += v; sq_de[(m if cg == 11 else 0, nr)] = kc(cg, m if cg == 11 else ('BR' if cg == 1 else uf), nr, sq)
         def lista_cands(cont, chave_m):
             ordem = [nr for nr, _ in cont.most_common()]
             return ordem, [dict(n=nr, **{k: (CAND.get(sq_de.get((chave_m, nr)), {}) or {}).get(k, '') for k in ('nm', 'sg')}, st=sit(sq_de.get((chave_m, nr)))) for nr in ordem]
@@ -184,7 +190,7 @@ def proporcional(e):
             cands_n = [nr for nr, _ in cv.most_common()]
             sq_por_nr = {}
             for m, z, s, nr, sq, v in rows_m:
-                if sq and nr >= 100: sq_por_nr[nr] = sq
+                if nr >= 100 and (sq or not USA_SQ): sq_por_nr[nr] = kc(cg, chave, nr, sq)
             cands = []
             for nr in cands_n:
                 c = CAND.get(sq_por_nr.get(nr), {})
