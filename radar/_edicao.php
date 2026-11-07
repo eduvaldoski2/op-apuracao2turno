@@ -4318,7 +4318,313 @@ S.arg_china_telecom = {
  ]
 };
 
+/* ===== REESCRITA 18h (4) ===== */
+S.sp_bras_desabamento = {
+ "ed": "regioes",
+ "reg": "sp",
+ "k": "São Paulo · Capital",
+ "hora": "7/11",
+ "t": "Prédio de quatro andares desaba no Brás sem vistoria válida dos bombeiros, com 35 pessoas dentro; 27 são resgatadas, e Nunes cita suspeita de excesso de peso",
+ "sub": "Quatro feridos leves foram levados à UPA Mooca, a Polícia Civil abriu inquérito e a perícia vai apurar a causa. Os bombeiros dizem que nenhum dos 35 está desaparecido.",
+ "resumo": "Um prédio de quatro andares, com loja de roupas e depósito de tecidos, desabou na sexta (6), por volta das 18h40, na Rua Maria Joaquina, 192, no Brás. Havia 35 pessoas no local: oito saíram antes da chegada dos bombeiros e 27 foram resgatadas, entre elas quatro feridos leves levados à UPA Mooca. O imóvel não tinha AVCB válido. O prefeito Ricardo Nunes (MDB) aponta excesso de peso como principal suspeita, ainda por confirmar, e a Polícia Civil abriu inquérito.",
+ "upd": "A matéria foi reescrita como texto único, com Estadão Conteúdo, Metrópoles e Correio Braziliense: traz a falta de AVCB, o inquérito, a versão do secretário da Segurança sobre os contêineres, a suspensão das buscas e o caso da Penha.",
+ "fundo": [
+  [
+   "p",
+   "Um prédio de quatro andares desabou no início da noite de sexta-feira (6) na Rua Maria Joaquina, 192, no Brás, região central de São Paulo, quando cerca de 35 pessoas descarregavam e guardavam tecidos no imóvel, onde funcionava uma loja de roupas. Oito saíram antes de os bombeiros chegarem e 27 foram retiradas; quatro tiveram ferimentos leves e foram levados à UPA Mooca. Não há mortos registrados."
+  ],
+  [
+   "nums",
+   [
+    [
+     "35",
+     "pessoas no prédio no momento do desabamento"
+    ],
+    [
+     "27",
+     "resgatadas pelos bombeiros"
+    ],
+    [
+     "8",
+     "saíram antes da chegada do resgate"
+    ],
+    [
+     "4",
+     "feridos leves levados à UPA Mooca, estáveis"
+    ]
+   ]
+  ],
+  [
+   "p",
+   "O Corpo de Bombeiros foi acionado por volta das 18h40 e mobilizou 51 homens e 17 viaturas, informa o Estadão Conteúdo. No fim da noite, segundo o Correio Braziliense, eram cerca de 74 bombeiros e 24 viaturas. A capitã Karoline Magalhães, porta-voz da corporação, disse que nenhum dos 35 presentes está desaparecido e que a prioridade era confirmar que não havia outras vítimas, com cães farejadores."
+  ],
+  [
+   "p",
+   "Entre 22h15 e 22h30, conforme a fonte, as equipes suspenderam o trabalho no interior do prédio ao detectar estalos e movimentação nos escombros e por risco de novo desabamento. Foi instalado escoramento, e um engenheiro deveria avaliar a segurança antes de as buscas serem retomadas. À 0h21 de sábado, 13 viaturas ainda retiravam entulho, e o local seguia totalmente isolado."
+  ],
+  [
+   "h",
+   "O que se sabe sobre a causa"
+  ],
+  [
+   "p",
+   "O secretário da Segurança Pública, Osvaldo Nico Gonçalves, disse ter conversado com a dona da loja, uma mulher chinesa cuja identidade não foi divulgada. Segundo ele, ela recebeu dois contêineres: um foi descarregado pela manhã e levado ao andar superior, e o segundo começou a ser descarregado depois das 18h, o que explica o número de pessoas no local. O secretário afirmou que o desabamento começou no mezanino, onde havia muito peso, mas que a perícia é que vai determinar a causa. O prefeito Ricardo Nunes (MDB) disse que a principal suspeita, “a se confirmar ainda”, é de excesso de peso, porque vários caminhões chegaram ao local para armazenar tecido."
+  ],
+  [
+   "p",
+   "O Corpo de Bombeiros informou que o prédio não tinha Auto de Vistoria do Corpo de Bombeiros (AVCB) válido, segundo o Estadão Conteúdo, e os repórteres não localizaram os proprietários do imóvel. A Polícia Civil abriu inquérito, e a Defesa Civil avalia os riscos para os prédios vizinhos. A CET interditou a Rua Maria Joaquina e dois cruzamentos com a Rua Xavantes."
+  ],
+  [
+   "h",
+   "Os relatos de quem estava lá"
+  ],
+  [
+   "p",
+   "Wesley, trabalhador identificado apenas pelo primeiro nome, contou que o prédio começou a ceder da frente para os fundos e chegou até a metade enquanto ele estava na parte de trás, num intervalo de cerca de um segundo. Paulo Fernandes, de 25 anos, disse que os tecidos armazenados ajudaram a sustentar parte da estrutura enquanto ela caía e afirmou que, sem isso, “a gente tinha morrido”."
+  ],
+  [
+   "h",
+   "O caso da Penha, em setembro"
+  ],
+  [
+   "p",
+   "O Estadão Conteúdo lembra outro desabamento recente na cidade. Em 12 de setembro, um prédio em construção caiu sobre uma casa na Penha, na zona leste, e seis pessoas morreram, entre elas uma criança. O sócio oculto da construtora foi preso temporariamente, e outros dois mandados de prisão temporária foram expedidos contra representantes da empresa. O engenheiro Fábio José de Oliveira, que vistoriou a obra, relatou à Controladoria-Geral do Município, em 18 de setembro, falhas graves e risco de colapso, e a aprovação municipal do projeto é investigada. Os dois casos são distintos, e as fontes lidas não os ligam."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "A causa depende da perícia, para a qual as fontes lidas não informam prazo. A Polícia Civil conduz o inquérito, as buscas no interior dependem da avaliação de um engenheiro sobre o escoramento e a Defesa Civil vistoria os imóveis vizinhos; as ruas seguem interditadas. O governador Tarcísio de Freitas (Republicanos) disse que o governo estadual acompanha a situação e dará assistência aos atingidos, informa o Correio Braziliense."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "A causa: o excesso de peso é hipótese do prefeito e do secretário da Segurança, e a perícia ainda não se manifestou.",
+    "O número de bombeiros e de viaturas varia conforme o horário (51 homens e 17 viaturas no início; cerca de 74 e 24 depois).",
+    "O Metrópoles descreve o prédio com térreo e ao menos três pavimentos acima, enquanto o Estadão Conteúdo e o Correio Braziliense falam em quatro andares.",
+    "O Correio Braziliense registra que um cão de resgate sinalizou odor durante a operação, o que não significa necessariamente a presença de vítima; seria preciso remover material para nova avaliação.",
+    "Os proprietários do prédio não foram localizados pela reportagem do Estadão Conteúdo, e a mulher que o secretário identifica como dona da loja não teve o nome divulgado."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Estadão Conteúdo, via Jovem Pan",
+   "https://jovempan.com.br/mundo/predio-que-desabou-no-bras-nao-tinha-laudo-de-vistoria-diz-corpo-de-bombeiros/"
+  ],
+  [
+   "Estadão Conteúdo, via Terra",
+   "https://www.terra.com.br/noticias/brasil/cidades/predio-que-desabou-no-bras-nao-tinha-laudo-de-vistoria-diz-corpo-de-bombeiros,2dc0c27b40091d2e95c1ab3077a993d6b3zazszh.html"
+  ],
+  [
+   "Metrópoles",
+   "https://www.metropoles.com/sao-paulo/desabamento-no-bras-27-vitimas-sairam-sem-ferimentos-graves-diz-bombeiro"
+  ],
+  [
+   "Correio Braziliense",
+   "https://1news.correiobraziliense.com.br/noticia/906824/noticias/predio-desaba-no-bras-em-sao-paulo-e-bombeiros-resgatam-vitimas-35-pessoas-estavam-dentro-do-edificio-07112026"
+  ],
+  [
+   "Área VIP",
+   "https://www.areavip.com.br/noticias/brasil/apos-desabamento-de-predio-no-bras-nunes-e-tarcisio-se-pronunciam/"
+  ]
+ ]
+};
+S.sp_alesp_sucessao = {
+ "ed": "regioes",
+ "reg": "sp",
+ "k": "São Paulo · Alesp",
+ "hora": "7/11",
+ "t": "PL resiste a aliados de primeiro mandato de André do Prado na sucessão da Alesp; eleição da Mesa é em fevereiro",
+ "sub": "Bancada de 27 deputados eleitos é a maior da Casa; a maioria dos 15 presentes à reunião de terça (3) decidiu não apoiar nome novato. O PT discute o tema na terça (10).",
+ "resumo": "Eleito senador, o presidente da Alesp, André do Prado (PL), articula a sucessão com os ex-prefeitos Rogério Franco e Rodrigo Ashiuchi, ambos em primeiro mandato. A bancada do PL, que passou de 21 para 27 deputados, reagiu mal, segundo a Folhapress: na reunião de terça (3), a maioria dos 15 presentes decidiu não apoiar novato. O BNews lista sete nomes cotados, entre eles Alex de Madureira e Thiago Auricchio. A definição deve sair até o fim de novembro ou, no máximo, em meados de dezembro.",
+ "upd": "A matéria foi reescrita como texto único, com Folhapress (via Diário da Manhã) e BNews São Paulo: traz a lista de sete nomes, o tamanho das bancadas, o costume da Casa para a divisão dos cargos e o que ainda é bastidor.",
+ "fundo": [
+  [
+   "p",
+   "A bancada do PL na Assembleia Legislativa de São Paulo resiste à tentativa do presidente da Casa, André do Prado, eleito senador, de indicar como sucessor um deputado de primeiro mandato. Na reunião de terça (3), a maioria dos 15 deputados presentes decidiu não apoiar nome novato. Prado trabalha pelos ex-prefeitos Rogério Franco, de Cotia, e Rodrigo Ashiuchi, de Suzano, eleitos este ano. A eleição da Mesa será em fevereiro de 2027."
+  ],
+  [
+   "p",
+   "A Folhapress, em texto reproduzido pelo Diário da Manhã, relata que Prado, eleito senador com apoio do governador Tarcísio de Freitas (Republicanos), trabalha pelos dois aliados e que a iniciativa foi mal recebida no PL. Na reunião, foi sugerida uma lista de deputados reeleitos para pressionar pela escolha de um nome de dentro da bancada. Alguns parlamentares querem que Prado fique de fora da escolha, já que deixará a Assembleia em 2027, informa o BNews São Paulo."
+  ],
+  [
+   "nums",
+   [
+    [
+     "27",
+     "deputados do PL eleitos este ano, seis a mais que a bancada atual"
+    ],
+    [
+     "16",
+     "deputados do PT, segunda maior bancada, uma a menos que hoje"
+    ],
+    [
+     "15",
+     "deputados do PL presentes à reunião de terça (3)"
+    ],
+    [
+     "7",
+     "nomes cotados, segundo o BNews São Paulo"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Os nomes na mesa"
+  ],
+  [
+   "p",
+   "O BNews lista sete nomes. Alex de Madureira, atual líder do PL, e Thiago Auricchio, presidente da Comissão de Constituição, Justiça e Redação, são, segundo o colunista Vinícius Passarelli, os dois mais fortes até agora. Ricardo Madalena segue para o quarto mandato, e Tenente Coimbra, da Bancada da Bala, prepara-se para a terceira legislatura. Dani Alonso é a única mulher cotada e seria a primeira presidente da Alesp. Completam a lista os dois ex-prefeitos, Franco e Ashiuchi. A Folhapress inclui ainda Marcos Damasio entre os cotados."
+  ],
+  [
+   "p",
+   "Segundo a base ouvida pela Folhapress, Tarcísio prefere Gilmaci Santos (Republicanos) ou Madureira e só vai intervir se surgir um nome contrário ao governo. O líder do PL, Alex de Madureira, disse seguir a orientação do partido: “Vou remar na mesma direção”. Prado não respondeu à reportagem."
+  ],
+  [
+   "h",
+   "Como a Casa divide o comando"
+  ],
+  [
+   "p",
+   "O PL deve manter a presidência por ter a maior bancada: elegeu 27 deputados este ano, seis a mais do que tem hoje, informa o BNews. O PT é o segundo, com 16 cadeiras, uma a menos do que a bancada atual. Pelo costume descrito em coluna da Jovem Pan, o partido com a maior bancada fica com a presidência e o segundo maior, com o principal cargo da Mesa Diretora; nos últimos anos, governo e PT fecharam esse acerto. As fontes lidas não dizem se o PT repetirá o acordo desta vez."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "O PT discute a sucessão na terça (10). A definição do nome do PL é esperada até o fim de novembro ou, no máximo, em meados de dezembro, segundo a Folhapress, e a eleição da Mesa ocorre em fevereiro de 2027, quando tomam posse os deputados eleitos. Dois pontos pendentes são se Prado aceitará ficar fora da escolha e se Tarcísio, que só interviria diante de nome contrário ao governo, vai se manifestar."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Não há candidato oficial: a lista de nomes é de bastidor, e as fontes divergem sobre quem está cotado (Marcos Damasio aparece só na Folhapress; Dani Alonso, só no BNews).",
+    "A preferência de Tarcísio por Gilmaci Santos ou por Madureira é relatada por parlamentares da base, não pelo governador.",
+    "O BNews publicou o texto antes da reunião de terça (3); o resultado, com maioria contra novatos, vem da Folhapress.",
+    "Prado não respondeu à reportagem, e não há posição pública dele sobre a resistência da bancada."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Folhapress, via Diário da Manhã",
+   "https://www.dm.com.br/politica/andre-do-prado-enfrenta-resistencia-na-sucessao-da-alesp/"
+  ],
+  [
+   "BNews São Paulo",
+   "https://www.bnewssaopaulo.com.br/noticias/politica/bancada-do-pl-na-alesp-se-reune-em-meio-a-disputa-sobre-presidencia-da-casa.html"
+  ],
+  [
+   "Jovem Pan (coluna de Beatriz Manfredini, costume da Casa)",
+   "https://jovempan.com.br/colunistas/beatriz-manfredini/com-andre-do-prado-no-senado-alesp-comeca-a-movimentar-sucessao/"
+  ]
+ ]
+};
+S.sp_f1_2035 = {
+ "ed": "regioes",
+ "reg": "sp",
+ "k": "São Paulo · Capital",
+ "hora": "7/11",
+ "t": "Fórmula 1 e Prefeitura de São Paulo estendem o contrato de Interlagos até 2035; vínculo anterior ia até 2030",
+ "sub": "Nunes, Domenicali e o CEO do GP anunciaram a renovação neste sábado; evento gerou R$ 2,3 bilhões para a cidade em 2025.",
+ "resumo": "O prefeito Ricardo Nunes (MDB), o presidente da F1, Stefano Domenicali, e o CEO do GP, Alan Adler, anunciaram neste sábado (7) a extensão antecipada do contrato de Interlagos até 2035, cinco anos além do prazo atual, de 2030. A negociação havia sido noticiada em 30 de outubro, com promessa de modernizar o circuito e ampliar o atendimento médico e a segurança. O público de 2025 foi de 303.627 pessoas e o impacto, de R$ 2,3 bilhões, números da própria F1. O valor do contrato e o investimento não foram informados.",
+ "upd": "A matéria foi reescrita como texto único: junta o anúncio de sábado, o início da negociação noticiado em 30 de outubro, as melhorias prometidas pela Prefeitura, a disputa por vagas no calendário e o que as fontes não informam.",
+ "fundo": [
+  [
+   "p",
+   "A Fórmula 1 e a Prefeitura de São Paulo anunciaram neste sábado (7) a prorrogação por cinco anos do contrato do GP de São Paulo, que fica no Autódromo José Carlos Pace, em Interlagos, até 2035. O vínculo anterior terminaria em 2030. O prefeito Ricardo Nunes (MDB), o presidente da F1, Stefano Domenicali, e o CEO do GP, Alan Adler, fizeram o anúncio em plena etapa de 2026, que acontece de 6 a 8 de novembro, com a corrida no domingo, às 14h."
+  ],
+  [
+   "p",
+   "Segundo a categoria, o público do autódromo chegou a 303.627 pessoas em 2025, contra 291.717 no ano anterior, e o evento gerou R$ 2,3 bilhões para a cidade, alta de 9,7% sobre o recorde de 2024, informa o Estadão Conteúdo. Os números de público e de impacto são da própria F1."
+  ],
+  [
+   "nums",
+   [
+    [
+     "2035",
+     "novo fim do contrato; o anterior ia até 2030"
+    ],
+    [
+     "303.627",
+     "pessoas no autódromo em 2025, contra 291.717 em 2024"
+    ],
+    [
+     "R$ 2,3 bi",
+     "impacto na cidade em 2025, alta de 9,7%, segundo a F1"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "O que a Prefeitura prometeu"
+  ],
+  [
+   "p",
+   "A negociação já havia sido noticiada. Em 30 de outubro, o Times Brasil, parceiro da CNBC, informou que a Prefeitura abrira conversas para estender o contrato por cinco anos e que não havia confirmação oficial. Um representante do município disse, em entrevista coletiva, que o governo destacava os investimentos no autódromo e a relação construída com a F1 nos últimos anos, e listou melhorias: modernização do circuito e das instalações, ampliação do atendimento médico, com ambulâncias e helicópteros, reforço da segurança e dos sistemas de controle operacional, e obras e investimentos em transporte na cidade. Um representante da F1 reconheceu o trabalho feito em São Paulo e disse que muitas cidades querem a categoria, mas que tudo fica na promessa."
+  ],
+  [
+   "p",
+   "No anúncio deste sábado, Domenicali afirmou que a F1 quer tornar a pista mais atraente, com mais investimento e apoio da Prefeitura. Nunes disse que a renovação impulsiona a economia, cria empregos e fortalece o turismo."
+  ],
+  [
+   "h",
+   "A concorrência por vagas no calendário"
+  ],
+  [
+   "p",
+   "O Estadão Conteúdo lembra que a F1 anunciou uma prova em Ruanda a partir de 2030 e que a Cidade do México tem contrato apenas até 2028. Buenos Aires também quer uma vaga, e o prefeito Jorge Macri disse almejar um vínculo de cinco anos. A ideia de mudar a etapa paulistana para abril ou maio foi rejeitada por causa de contratos com outros eventos."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "A corrida de 2026 é neste domingo (8), às 14h. As melhorias prometidas ainda dependem de cronograma e de investimento que as fontes lidas não detalham, e a Prefeitura e a F1 devem apresentar o que será feito no autódromo até 2035."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "O valor do contrato e a taxa de realização paga pela cidade não foram informados nas fontes lidas.",
+    "O volume de investimento da Prefeitura no autódromo e os prazos das obras não foram detalhados; o Times Brasil não traz valor total.",
+    "Os números de público e de impacto econômico são da própria F1, segundo o Estadão Conteúdo, e não foram confirmados de forma independente."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Estadão Conteúdo, via O Liberal",
+   "https://www.oliberal.com/esportes/prefeitura-renova-contrato-com-a-formula-1-e-garante-gp-de-sao-paulo-em-interlagos-ate-2035-1.1191691"
+  ],
+  [
+   "VAVEL Brasil",
+   "https://www.vavel.com/br/motor/2026/11/07/formula1/1278473-formula-1-gp-de-sao-paulo-e-renovado-ate-2035.html"
+  ],
+  [
+   "Times Brasil, parceiro da CNBC (30/10)",
+   "https://timesbrasil.com.br/esportes/prefeitura-de-sao-paulo-busca-renovacao-com-a-formula-1-em-interlagos-ate-2035/"
+  ]
+ ]
+};
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","vr_va_interop":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","arg_china_telecom":"atualizada"};
+var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","vr_va_interop":"atualizada","sp_f1_2035":"atualizada","sp_bras_desabamento":"atualizada","sp_alesp_sucessao":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","arg_china_telecom":"atualizada"};
 var GIRO_FLAGS = {};
 /* ===== FIM DOS DADOS ===== */
