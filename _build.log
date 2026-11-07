@@ -1,6 +1,6 @@
 ordinária {(1, 11): 47, (1, 13): 47, (2, 11): 48} municipal
 eleições ['c11t1', 'c11t2', 'c13t1']
-== c11t1 2026-11-06T18:04:18
+== c11t1 2026-11-07T16:29:13
 c11t1 AC 22 municípios
 c11t1 AL 102 municípios
 c11t1 AM 62 municípios
@@ -27,7 +27,7 @@ c11t1 SC 295 municípios
 c11t1 SE 75 municípios
 c11t1 SP 645 municípios
 c11t1 TO 139 municípios
-== c11t2 2026-11-06T18:04:27
+== c11t2 2026-11-07T16:29:23
 c11t2 AC 1 municípios
 c11t2 AM 1 municípios
 c11t2 AP 1 municípios
@@ -48,7 +48,7 @@ c11t2 RO 1 municípios
 c11t2 RS 1 municípios
 c11t2 SC 3 municípios
 c11t2 SP 12 municípios
-== c13t1 2026-11-06T18:04:29
+== c13t1 2026-11-07T16:29:25
 c13t1 AC 22 municípios
 c13t1 AL 102 municípios
 c13t1 AM 62 municípios
