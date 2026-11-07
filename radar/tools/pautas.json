@@ -1,31 +1,248 @@
 {
-  "ajuda": "Livro de pautas do Radar. Toda edição lê este arquivo ANTES de pesquisar e o atualiza ANTES de publicar (o publicar.cjs recusa a edição se faltar). pautas: histórias que continuam. Para cada pauta aberta P0/P1: busque o fato mais recente, preencha verificada com o nome da edição (AAAA-MM-DD-HHh), reescreva ultimo_fato e proximo, marque fato_novo true/false; se true, ao menos uma matéria dela precisa ser NOVA ou ATUALIZADA na edição. Feche com aberta:false e motivo quando a história acabou. Crie pauta nova (P0 = muda governo, regime, guerra, mercado, resultado eleitoral, prisão ou queda de chefe de Estado; P1 = decisão relevante de poder, crise setorial, assunto que volta nas próximas edições; P2 = acompanhar). varredura: buscas obrigatórias de cada edição; preencha feita com o nome da edição e achado (o que apareceu, ou 'nada novo').",
-  "pautas": [
-    {"id":"paraguai-pena","tema":"Paraguai: queda e prisão de Peña, governo Alliana e quebra do Ueno Bank","prio":"P0","aberta":true,"materias":["paraguai","ueno_bank"],"verificada":"2026-11-07-15h","fato_novo":true,"ultimo_fato":"07/11, tarde: Peña interrogado na Procuradoria-Geral e acusado de lesão de confiança; promotores pedem prisão preventiva; EUA reconhecem Alliana; BC diz ter reembolsado 1,2 milhão de clientes.","proximo":"Decisão do juiz de garantias sobre prisão preventiva de Peña e Carvallo; Senado e a indicação para o Banco Central; pagamento a poupadores acima do teto; posição de Cartes."},
-    {"id":"transicao-lula","tema":"Quarto mandato de Lula: ministérios e equipe econômica","prio":"P1","aberta":true,"materias":["ministerio_40","lula_equipe_eco","ministerio_4mandato","ministerio"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"07/11: bastidor sobre sinal ao mercado antes da COP31, com Alckmin na Fazenda como hipótese; até 40 ministérios, segundo O Rio Branco. Lula viaja à COP31 na segunda (9).","proximo":"Definições de ministérios após a volta de Lula; resposta do mercado; negociação com Centrão."},
-    {"id":"tse-acoes","tema":"TSE: ação do Novo contra a chapa Lula-Alckmin e ações contra Flávio Bolsonaro","prio":"P1","aberta":true,"materias":["tse_novo","tse_aije9"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"06/11: corregedor admite ação do Novo e dá cinco dias para a defesa; TSE abre mais ações de investigação contra Flávio, somando nove.","proximo":"Prazo de defesa da chapa; novas decisões do corregedor."},
-    {"id":"flavio-senado","tema":"Flávio Bolsonaro: viagem aos EUA, voto remoto e resposta do Senado","prio":"P1","aberta":true,"materias":["flavio_senado","flavio","fuga"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"07/11: dez dias sem resposta do Senado sobre a situação de Flávio, que votou por celular de fora do país.","proximo":"Decisão da Mesa do Senado; pedido de anulação do voto."},
-    {"id":"congresso-novo","tema":"Novo Congresso: composição, reeleição de Motta e Alcolumbre","prio":"P1","aberta":true,"materias":["congresso_direita","alcolumbre_stf","sucessao","congresso"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"07/11: levantamento aponta 59% da Câmara e 63% do Senado na direita e centro-direita a partir de fevereiro; PL decide em 11/11 se adere à reeleição de Motta.","proximo":"Decisão do PL em 11/11; articulação da reeleição de Alcolumbre."},
-    {"id":"seguranca-publica","tema":"PEC da Segurança Pública e Ministério da Segurança","prio":"P1","aberta":true,"materias":["ms_seg","maioridade"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"03/11: Senado aprovou a PEC da Segurança Pública sem a redução da maioridade penal, e o texto segue para promulgação (Agência Senado). Lula anunciou MP para criar o Ministério da Segurança.","proximo":"Promulgação da PEC; edição da MP; reação do PL."},
-    {"id":"escala-6x1","tema":"Fim da escala 6x1: promulgação e ações no STF","prio":"P1","aberta":true,"materias":["dino_6x1"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"06/11: Dino marcou audiência no STF para 10/11 sobre as ações contra o fim da escala 6x1.","proximo":"Audiência de 10/11, às 14h."},
-    {"id":"economia-mercado","tema":"Fiscal, Selic, câmbio e bolsas","prio":"P1","aberta":true,"materias":["copom","fiscal","dolar_maxima","bolsas_ia"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"06/11: dólar fecha a R$ 5,5087, maior valor desde dezembro de 2025, e Ibovespa a 168,5 mil pontos; Nasdaq caiu 5,5% com receio sobre IA.","proximo":"Balanço da Petrobras (11/11); IPCA; leitura do mercado sobre a equipe econômica."},
-    {"id":"eua-meio-mandato","tema":"EUA: pós-eleição de meio de mandato e gabinete Trump","prio":"P1","aberta":true,"materias":["eua","rubio_gabinete"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"05/11: democratas vencem as eleições de meio de mandato; NPR registra reações do mundo.","proximo":"Mudanças no gabinete; pauta do novo Congresso americano."},
-    {"id":"ucrania-paz","tema":"Ucrânia: negociação de paz e ataques à energia","prio":"P1","aberta":true,"materias":["ucrania_acordo","ucrania_energia","zaporizhzhia"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"07/11: mísseis atingem Kiev e ucranianos se preparam para conversas com Rússia e EUA (Washington Post); 06/11: Trump fala em acordo de segurança europeu após reunião com emissário de Putin (CNN).","proximo":"Rodada de conversas anunciada; novos ataques à rede elétrica."},
-    {"id":"israel-governo","tema":"Israel: impasse pós-eleição e formação de governo","prio":"P1","aberta":true,"materias":["israel"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"07/11: Netanyahu pede governo de unidade nacional, e a oposição discute coalizão em torno de Eisenkot, segundo o Times of Israel.","proximo":"Indicação do presidente Herzog; negociações de coalizão."},
-    {"id":"ira-oriente-medio","tema":"Irã, Catar e Oriente Médio","prio":"P2","aberta":true,"materias":["ira_proposta_catar","iemen_houthis"],"verificada":"2026-11-07-15h","fato_novo":false,"ultimo_fato":"05/11: Trump diz que talvez precise destruir o resto do Irã; Teerã envia proposta nuclear via Catar. 07/11: bombardeios no Iêmen, segundo os houthis.","proximo":"Resposta dos EUA à proposta iraniana."}
-  ],
-  "varredura": [
-    {"tema":"Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)","feita":"","achado":""},
-    {"tema":"Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local","feita":"","achado":""},
-    {"tema":"Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia","feita":"","achado":""},
-    {"tema":"Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves","feita":"","achado":""},
-    {"tema":"Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)","feita":"","achado":""},
-    {"tema":"Política: Planalto (decisões, ministérios, viagens, pronunciamentos)","feita":"","achado":""},
-    {"tema":"Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado","feita":"","achado":""},
-    {"tema":"Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)","feita":"","achado":""},
-    {"tema":"Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores","feita":"","achado":""},
-    {"tema":"Economia: Banco Central, Fazenda, mercado, indicadores e balanços","feita":"","achado":""},
-    {"tema":"Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais","feita":"","achado":""},
-    {"tema":"Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima","feita":"","achado":""}
-  ]
+ "ajuda": "Livro de pautas do Radar. Toda edição lê este arquivo ANTES de pesquisar e o atualiza ANTES de publicar (o publicar.cjs recusa a edição se faltar). pautas: histórias que continuam. Para cada pauta aberta P0/P1: busque o fato mais recente, preencha verificada com o nome da edição (AAAA-MM-DD-HHh), reescreva ultimo_fato e proximo, marque fato_novo true/false; se true, ao menos uma matéria dela precisa ser NOVA ou ATUALIZADA na edição. Feche com aberta:false e motivo quando a história acabou. Crie pauta nova (P0 = muda governo, regime, guerra, mercado, resultado eleitoral, prisão ou queda de chefe de Estado; P1 = decisão relevante de poder, crise setorial, assunto que volta nas próximas edições; P2 = acompanhar). varredura: buscas obrigatórias de cada edição; preencha feita com o nome da edição e achado (o que apareceu, ou 'nada novo').",
+ "pautas": [
+  {
+   "id": "paraguai-pena",
+   "tema": "Paraguai: queda e prisão de Peña, governo Alliana e quebra do Ueno Bank",
+   "prio": "P0",
+   "aberta": true,
+   "materias": [
+    "paraguai",
+    "ueno_bank"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "07/11, fim da tarde: o juiz Humberto Otazú decretou a prisão preventiva de Peña por risco de fuga, depois da imputação por lesão de confiança e administração em proveito próprio (pena de até 15 anos); Peña cumpre no Regimento Escolta Presidencial e a Fiscalía pediu a prisão de Carvallo.",
+   "proximo": "Recurso da defesa contra a preventiva; decisão sobre Carvallo; indicação de Vera Bogado ao Banco Central no Senado; pagamento a poupadores acima do teto."
+  },
+  {
+   "id": "transicao-lula",
+   "tema": "Quarto mandato de Lula: ministérios e equipe econômica",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "ministerio_40",
+    "lula_equipe_eco",
+    "ministerio_4mandato",
+    "ministerio",
+    "lula_cop",
+    "fiscal"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "07/11: Lula embarca na segunda (9) para a COP31 e segue a Filipinas e ASEAN; Durigan diz que não há medida fiscal definida e que levará propostas a Lula após a viagem.",
+   "proximo": "Pronunciamento de Lula no domingo (8); definição de ministérios só após a volta; propostas fiscais a partir de 15/11."
+  },
+  {
+   "id": "tse-acoes",
+   "tema": "TSE: ação do Novo contra a chapa Lula-Alckmin e ações contra Flávio Bolsonaro",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "tse_novo",
+    "tse_aije9",
+    "tse_psol_se"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": false,
+   "ultimo_fato": "06/11: corregedor admite ação do Novo e dá cinco dias para a defesa; TSE abre mais ações de investigação contra Flávio, somando nove.",
+   "proximo": "Prazo de defesa da chapa; novas decisões do corregedor."
+  },
+  {
+   "id": "flavio-senado",
+   "tema": "Flávio Bolsonaro: viagem aos EUA, voto remoto e resposta do Senado",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "flavio_senado",
+    "flavio",
+    "fuga",
+    "flavio_pesquisa"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "06/11: pesquisa da FESPSP divide eleitores do segundo turno: 49,2% veem fuga e 47%, exílio (margem de 2,2 p.p.). O Senado segue sem resposta à questão de ordem de Randolfe.",
+   "proximo": "Decisão da Mesa do Senado; novas pesquisas de institutos maiores."
+  },
+  {
+   "id": "congresso-novo",
+   "tema": "Novo Congresso: composição, reeleição de Motta e Alcolumbre",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "congresso_direita",
+    "alcolumbre_stf",
+    "sucessao",
+    "congresso",
+    "pl_motta"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "07/11: Motta tem apoio de 15 partidos que elegeram 361 dos 513 deputados (Congresso em Foco); o PL, com 121, decide na quarta (11) entre acordo e candidatura própria.",
+   "proximo": "Reunião da bancada do PL em 11/11; eleição na Câmara em 01/02/2027."
+  },
+  {
+   "id": "seguranca-publica",
+   "tema": "PEC da Segurança Pública e Ministério da Segurança",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "ms_seg",
+    "maioridade"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "07/11: Lula diz que cria o Ministério da Segurança por MP, que não foi localizada no Diário Oficial; PEC aprovada no Senado com 73 votos em 03/11; maioridade penal adiada por Alcolumbre.",
+   "proximo": "Publicação da MP e nome do ministro; promulgação da PEC; maioridade na Câmara."
+  },
+  {
+   "id": "escala-6x1",
+   "tema": "Fim da escala 6x1: promulgação e ações no STF",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "dino_6x1"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "07/11: Dino confirma audiência de conciliação na terça (10), às 14h; CNI e CNC pedem mais prazo e Marinho prevê decreto na segunda (9).",
+   "proximo": "Decreto previsto para 09/11; audiência de 10/11; eventual calendário de transição proposto por Dino."
+  },
+  {
+   "id": "economia-mercado",
+   "tema": "Fiscal, Selic, câmbio e bolsas",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "copom",
+    "fiscal",
+    "dolar_maxima",
+    "bolsas_ia",
+    "ibov_semana"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "06/11: Ibovespa +1,39% a 168.498 pontos e dólar a R$ 5,508; payroll de 165 mil eleva a aposta em alta de juros do Fed em dezembro.",
+   "proximo": "CPI dos EUA (10/11); balanço da Petrobras entre 10 e 11/11; inflação do Brasil na quinta (12/11)."
+  },
+  {
+   "id": "eua-meio-mandato",
+   "tema": "EUA: pós-eleição de meio de mandato e gabinete Trump",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "eua",
+    "rubio_gabinete"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": false,
+   "ultimo_fato": "05/11: democratas vencem as eleições de meio de mandato; NPR registra reações do mundo.",
+   "proximo": "Mudanças no gabinete; pauta do novo Congresso americano."
+  },
+  {
+   "id": "ucrania-paz",
+   "tema": "Ucrânia: negociação de paz e ataques à energia",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "ucrania_acordo",
+    "ucrania_energia",
+    "zaporizhzhia",
+    "ucrania_abudhabi"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "07/11: mísseis russos atingem Kiev e a Ponte Norte; delegações de Ucrânia, Rússia e EUA devem se reunir em Abu Dhabi em 10 e 11/11, com Umerov à frente de Kiev.",
+   "proximo": "Rodada de Abu Dhabi (10-11/11); reunião da UE em 13/11."
+  },
+  {
+   "id": "israel-governo",
+   "tema": "Israel: impasse pós-eleição e formação de governo",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "israel"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "07/11: Herzog anuncia que entregará a Eisenkot o mandato para formar governo no domingo (8), às 17h; oposição tem 67 de 120 cadeiras, 19 delas árabes.",
+   "proximo": "Entrega do mandato em 08/11; 28 dias de negociação; presidência do Knesset."
+  },
+  {
+   "id": "ira-oriente-medio",
+   "tema": "Irã, Catar e Oriente Médio",
+   "prio": "P2",
+   "aberta": true,
+   "materias": [
+    "ira_proposta_catar",
+    "iemen_houthis"
+   ],
+   "verificada": "2026-11-07-19h",
+   "fato_novo": true,
+   "ultimo_fato": "06/11: EUA atacam defesas aéreas iranianas em Qeshm; Trump diz que o Irã quer acordo; Catar nega que a mediação tenha fracassado. Míssil atinge mercado em Taiz, no Iêmen.",
+   "proximo": "Resposta dos EUA à proposta iraniana; novos ataques em Ormuz."
+  }
+ ],
+ "varredura": [
+  {
+   "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
+   "feita": "2026-11-07-19h",
+   "achado": "Paraguai: Peña destituído (44 a 0), imputado e com preventiva decretada; Alliana no cargo. Israel: Herzog dará mandato a Eisenkot em 08/11. Colômbia: drones atacam base em Bolívar (fonte única). Nova Zelândia (eleição em 07/11) e Bélgica (rei recusou demissão) só em manchete."
+  },
+  {
+   "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
+   "feita": "2026-11-07-19h",
+   "achado": "Paraguai coberto no ABC Color, Última Hora e Infobae; Colômbia no El Tiempo; Peru: Keiko Fujimori com 100 dias de governo e Congresso dividido; Venezuela: Delcy Rodríguez promete eleições sem data (29/10); Argentina e Chile sem fato novo verificado; Bolívia sem fato de 07/11."
+  },
+  {
+   "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
+   "feita": "2026-11-07-19h",
+   "achado": "Ucrânia: ataque a Kiev e conversas em Abu Dhabi em 10-11/11; Irã: ataques a Qeshm e mediação do Catar; Iêmen: míssil em Taiz; Sudão sem varredura nova."
+  },
+  {
+   "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
+   "feita": "2026-11-07-19h",
+   "achado": "EUA: democratas controlam o Congresso (manchetes de NPR e CNN, textos bloqueados ao WebFetch); Europa e Ásia só em manchetes do Euronews e do SCMP (tiroteio em Cracóvia, protestos na França); nada novo verificado a incluir."
+  },
+  {
+   "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
+   "feita": "2026-11-07-19h",
+   "achado": "Mercado: Ibovespa +1,39% e dólar a R$ 5,508 na sexta; payroll forte; Brent a US$ 98,32; Selic mantida em 13,75% em 04/11."
+  },
+  {
+   "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
+   "feita": "2026-11-07-19h",
+   "achado": "Planalto: COP31, Filipinas e ASEAN; pronunciamento previsto no domingo; MP do Ministério da Segurança sem registro no Diário Oficial até a tarde de sábado; Enamed sancionado."
+  },
+  {
+   "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
+   "feita": "2026-11-07-19h",
+   "achado": "Congresso: pauta de 09-13/11 não localizada na Agência Câmara; PL decide sobre Motta em 11/11; meta do Senado de votar prioridades até 17/12."
+  },
+  {
+   "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
+   "feita": "2026-11-07-19h",
+   "achado": "STF: audiência 6x1 em 10/11, pauta de novembro e pedido da PGR sobre as bets; TSE: julgamento PSOL-Rede em Sergipe com vista; PF/PGR/Moraes sem fato novo além do já publicado."
+  },
+  {
+   "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
+   "feita": "2026-11-07-19h",
+   "achado": "Pesquisa FESPSP sobre a viagem de Flávio; Congresso em Foco sobre o mapa da Câmara e do Senado; Quaest/Datafolha: nada novo aberto."
+  },
+  {
+   "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
+   "feita": "2026-11-07-19h",
+   "achado": "Fechamento de sexta, agenda da semana (CPI dos EUA, balanços, inflação na quinta) e fiscal (Durigan, dívida bruta de 82,9% do PIB); data do balanço da Petrobras (10 ou 11/11) a conferir."
+  },
+  {
+   "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
+   "feita": "2026-11-07-19h",
+   "achado": "RJ (Volta Redonda), SP (tasers), MG (Aro-Vorcaro, ameaças na ALMG), RN, RS, RO. Poucos itens datados de 06 e 07/11: BA, PE, PB, SE, AL, PR, SC, GO, AP, RR, TO e ES sem item utilizável; O Povo, Correio 24 Horas, ND+, Tribuna do Norte e ALMG bloquearam a leitura."
+  },
+  {
+   "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
+   "feita": "2026-11-07-19h",
+   "achado": "Todas as pautas P0 e P1 verificadas em 07/11 19h; ver campo ultimo_fato de cada uma."
+  }
+ ]
 }

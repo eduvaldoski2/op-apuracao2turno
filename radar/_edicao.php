@@ -4936,7 +4936,562 @@ S.rs_alerta.velha = true; S.rs_alerta.velhaMotivo = "o aviso de tempestades vali
 S.ms_riedel.velha = true; S.ms_riedel.velhaMotivo = "fato encerrado: o governador, o vice e o presidente da Alems reassumiram em 7/11; volta com novo fato do governo estadual";
 Object.keys(ORDER).forEach(function(k){ ORDER[k] = ORDER[k].filter(function(i){ return !(S[i] && S[i].velha); }); });
 
+/* ===== EDIÇÃO 19h (07/11) ===== */
+EDICAO.hora = '19h';
+EDICAO.data = 'Sábado, 07 de novembro de 2026';
+var _rv = function(ids){ ids.forEach(function(i){ if (S[i]) { delete S[i].velha; delete S[i].velhaMotivo; } }); };
+
+S.dino_6x1 = {ed:'politica', k:'Política · STF', hora:'7/11',
+ t:'STF reúne confederações, centrais e governo na terça (10) para negociar a implementação do fim da escala 6x1; Marinho prevê decreto na segunda',
+ sub:'Dino diz que o corte da jornada não está em discussão e que a audiência trata só de prazos; CNI e CNC pedem adiar a mudança e proteger acordos coletivos.',
+ dado:{n:'10/11, 14h', l:'Audiência de conciliação na Primeira Turma do STF, convocada pelo ministro Flávio Dino'},
+ resumo:'O ministro Flávio Dino, do Supremo Tribunal Federal (STF), marcou para terça (10), às 14h, uma audiência de conciliação sobre a Emenda Constitucional 141/2026, que acabou com a escala 6x1. Foram intimadas confederações empresariais, centrais sindicais, a Advocacia-Geral da União, as advocacias do Senado e da Câmara e a Procuradoria-Geral da República. Dino afirma que a redução da jornada não está em debate; só a implementação. A CNI e a CNC pedem mais tempo e a preservação de acordos coletivos, e o ministro Luiz Marinho prevê um decreto regulamentador na segunda (9).',
+ upd:'Ao lado da audiência marcada, entram o pedido da CNI e da CNC por mais prazo e a previsão de decreto do ministro Marinho para segunda (9).',
+ fundo:[
+ ['p','O ministro Flávio Dino convocou para terça-feira (10), às 14h, na Sala de Sessões da Primeira Turma do Supremo Tribunal Federal, uma audiência de conciliação sobre a aplicação da Emenda Constitucional 141/2026, que extinguiu a escala 6x1 e fixou jornada de até 40 horas semanais com dois dias de repouso remunerado. A convocação, publicada pelo STF na quinta (5), está vinculada à Ação Direta de Inconstitucionalidade 8041, da Confederação Nacional do Comércio (CNC).'],
+ ['nums',[['10/11, 14h','audiência na Primeira Turma do STF'],['40 h','jornada semanal final prevista na emenda'],['42 h','primeira etapa, de 44 para 42 horas, em 60 dias'],['11,1%','alta do custo do trabalho formal na indústria, estimada pela CNI']]],
+ ['h','Quem foi chamado e o que está em jogo'],
+ ['p','Foram intimadas as confederações empresariais nacionais, as centrais sindicais, a Advocacia-Geral da União (AGU), as advocacias do Senado e da Câmara e a Procuradoria-Geral da República (PGR). O texto do STF descreve a primeira etapa da emenda em 60 dias, com queda de 44 para 42 horas semanais e duas folgas por semana, e a jornada de 40 horas em um ano.'],
+ ['p','Dino escreveu que a redução da jornada e a ampliação do repouso não estão em discussão. A audiência, afirma, trata só da implementação. Na análise inicial, o prazo de dois meses "não parece inviável", e a emenda exige negociação coletiva para ajustar a jornada diária ao limite de 42 horas, o que explica a busca de consenso antes de qualquer decisão. O ministro lembrou ainda que a declaração de inconstitucionalidade de uma emenda constitucional é "medida excepcional".'],
+ ['h','O pedido da indústria e do comércio'],
+ ['p','A Agência Brasil relata que a CNI e a CNC foram ao STF na quarta (4). A Confederação Nacional da Indústria (CNI), autora da ADI 8042, que contesta as regras de transição, estima alta de 11,1% no custo do trabalho formal da indústria, o equivalente a R$ 88 bilhões, e pede que acordos e convenções coletivas em vigor mantenham "plenos efeitos até o término regular de seus prazos de vigência". A CNC quer adiar o início da redução da jornada para outubro de 2027 e cita pesquisa Nexus de fevereiro em que 73% dos entrevistados apoiam o fim da 6x1.'],
+ ['h','O calendário da emenda e o pedido da CNC'],
+ ['p','Segundo a CNN Brasil, a emenda promulgada em outubro reduz a jornada de 44 para 42 horas em 16 de dezembro de 2026, com dois dias de descanso, e chega às 40 horas em dezembro de 2027. A CNC pede que a primeira etapa vá para outubro de 2027 e a de 40 horas, para outubro de 2028. Dino não concedeu liminar: deu cinco dias para Câmara e Senado informarem e três dias para a AGU e a PGR se manifestarem, antes da audiência.'],
+ ['h','O decreto e a regulamentação do governo'],
+ ['p','A Agência Brasil informa que o ministro do Trabalho, Luiz Marinho, prevê para segunda (9) a publicação de um decreto regulamentador, que deve garantir ao menos oito folgas por mês. A CNN Brasil, em reportagem de quarta (4), detalha que Marinho falou na coletiva do Caged: as oito folgas mensais viriam por convenção coletiva, com ao menos uma folga por semana, e haveria exceções para saúde, transporte, segurança e limpeza urbana, com escalas definidas por categoria. A vigência esperada é 15 de dezembro, data que outra reportagem da CNN trata como 16. O Planalto não confirmou o decreto nas matérias lidas.'],
+ ['h','O que vem agora'],
+ ['ul',['Segunda (9): data prevista para o decreto regulamentador, segundo Marinho.','Terça (10), 14h: audiência de conciliação no STF, com empresários, centrais, AGU, Congresso e PGR.','Depois da audiência, Dino decide se propõe um calendário de transição ou devolve as ações ao plenário.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['O resultado da audiência e a eventual mudança de prazos pelo STF.','Se o decreto sai na segunda e com que conteúdo; a previsão é do ministro Marinho.','A data exata de vigência da primeira etapa: 15 ou 16 de dezembro, conforme a reportagem da CNN Brasil.']]
+ ],
+ fontes:[['STF','https://noticias.stf.jus.br/postsnoticias/escala-6x1-stf-marca-audiencia-de-conciliacao-para-debater-implementacao-da-mudanca/'],['Agência Brasil','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/entidades-da-industria-e-do-comercio-recorrem-ao-stf-contra-fim-da-6x1'],['CNN Brasil (audiência)','https://www.cnnbrasil.com.br/politica/dino-marca-audiencia-para-discutir-prazo-para-implementar-fim-da-escala-6x1/'],['CNN Brasil (decreto)','https://www.cnnbrasil.com.br/economia/money/macroeconomia/governo-planeja-divulgar-decreto-do-fim-da-escala-6x1-na-proxima-segunda/']]};
+
+S.pl_motta = {ed:'politica', k:'Política · Câmara', hora:'7/11',
+ t:'PL decide na quarta (11) se negocia com Hugo Motta; reeleição do presidente da Câmara tem apoio de partidos que somam 70% da Casa',
+ sub:'Motta reúne 15 partidos e 361 dos 513 deputados, mas a bancada de 121 deputados do PL, a maior, está dividida entre acordo e candidatura própria.',
+ dado:{n:'361 de 513', l:'Deputados dos 15 partidos que apoiam a reeleição de Hugo Motta (Congresso em Foco)'},
+ resumo:'O presidente da Câmara, Hugo Motta (Republicanos-PB), tem apoio de 15 partidos que elegeram 361 dos 513 deputados, 70,4% da próxima legislatura, segundo o Congresso em Foco. Bastam 257 votos para vencer no primeiro turno, em 1º de fevereiro de 2027. O PL, com 121 deputados, decide na quarta (11) entre negociar com Motta ou lançar candidato. A ala pró-acordo teme perder a Mesa e as comissões; Nikolas Ferreira (PL-MG) defende candidatura própria. O voto é secreto, o que torna o apoio formal dos partidos uma garantia incompleta.',
+ upd:'A reunião da bancada do PL, marcada para quarta (11), e o mapa de votos dos 15 partidos pró-Motta passam a ser a base da matéria.',
+ fundo:[
+ ['p','O PL decide na quarta-feira (11), em reunião de bancada, se negocia um acordo com o presidente da Câmara, Hugo Motta (Republicanos-PB), ou lança candidato próprio à presidência da Casa na eleição de 1º de fevereiro de 2027. A decisão pesa porque o partido tem 121 deputados, a maior bancada da legislatura que começa, e Motta já reúne quase sete em cada dez votos.'],
+ ['nums',[['361 de 513','deputados dos partidos que apoiam Motta (70,4%)'],['257','votos necessários para vencer no primeiro turno'],['121','deputados do PL, a maior bancada'],['444','votos que elegeram Motta em 2025']]],
+ ['h','O mapa de apoios'],
+ ['p','Segundo o Congresso em Foco, 15 partidos que elegeram 361 dos 513 deputados declaram apoio à reeleição de Motta. A federação PT-PCdoB-PV soma 88 deputados e o União Brasil, 46; o Novo, com dez, lançará nome próprio, com Adriana Ventura, Luiz Lima e Jeffrey Chiquini entre os cogitados. PSOL e Rede ainda não definiram posição. A Gazeta do Povo, em 1º de novembro, já registrava que Motta negociava com ao menos 15 legendas e que o PT elegeu 70 deputados.'],
+ ['p','A articulação seguiu uma sequência curta: em 14 de outubro, a aproximação com o centro; em 26 de outubro, o apoio de Lula a Motta no Palácio da Alvorada; em 27, a oficialização pela federação PT-PCdoB-PV; em 4 de novembro, a reafirmação do União Brasil. O líder do União, Pedro Lucas Fernandes, disse que "o nosso campo político está aqui nas ideias que o Hugo Motta representa", e a deputada Jandira Feghali (PCdoB-RJ) afirmou que o grupo deve impedir que o PL vença na Câmara e no Senado.'],
+ ['h','A divisão dentro do PL'],
+ ['p','O presidente do partido, Valdemar Costa Neto, é apontado como articulador de um acordo, e o líder Sóstenes Cavalcanti (PL-RJ) disse que a bancada discute a posição na quarta. Nomes cogitados para uma candidatura própria incluem Altineu Côrtes (PL-RJ) e Luiz Philippe de Orléans e Bragança, e Zé Trovão admite concorrer por conta própria. Nikolas Ferreira (PL-MG) defende a candidatura própria: "há coisas maiores em jogo do que comissões".'],
+ ['p','A ala favorável ao acordo argumenta com o custo de ficar fora do bloco. Fora dele, o PL cairia para a 14ª a 16ª posição na escolha das comissões, ficaria com cerca de sete presidências e teria pouca chance de comandar a Comissão de Constituição e Justiça (CCJ), segundo o Congresso em Foco.'],
+ ['h','O que a CNN Brasil acrescenta'],
+ ['p','A CNN Brasil registrou que a bancada do PL se reuniu na terça (3), às 18h, para debater o apoio a Motta: a ala de Valdemar defende o acordo e a ala radical resiste. A emissora informa que o PT apoia formalmente a reeleição e ameaça deixar o bloco se o PL entrar nele, e que o PL terá 121 deputados em 2027. Zé Trovão (PL-SC) disse que lançará candidatura avulsa se o partido não tiver candidato. A CNN observa que, fora do bloco, o PL deixaria a primeira ou segunda escolha de comissões e passaria à 14ª, com a CCJ em risco.'],
+ ['h','Por que o apoio formal não decide'],
+ ['p','O voto para presidente da Câmara é secreto. A declaração de um partido, portanto, não garante que todos os deputados votem como a liderança indicou, e uma candidatura do PL poderia atrair dissidentes de outras bancadas. Em 2025, Motta foi eleito com 444 votos, margem que o bloco atual precisa manter para evitar disputa em segundo turno.'],
+ ['h','O que vem agora'],
+ ['ul',['Quarta (11): reunião da bancada do PL para decidir entre acordo e candidatura própria.','Novembro e dezembro: negociação das comissões e da composição da Mesa.','1º de fevereiro de 2027: eleição para a presidência da Câmara.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['O que o PL decidirá na quarta e se existe acordo fechado entre Valdemar e Motta.','O comportamento de PSOL e Rede, ainda indefinidos.','A fidelidade dos votos de cada partido, já que o escrutínio é secreto.']]
+ ],
+ fontes:[['Congresso em Foco','https://www.congressoemfoco.com.br/amp/noticia/131336/partidos-pro-reeleicao-de-hugo-motta-representam-70-da-nova-camara'],['Gazeta do Povo','https://www.gazetadopovo.com.br/republica/avanco-do-pl-pressiona-hugo-motta-e-leva-partidos-a-antecipar-disputa-pela-camara/'],['CNN Brasil','https://www.cnnbrasil.com.br/politica/pl-reune-bancada-nesta-terca-para-debater-apoio-a-hugo-no-comando-da-camara/']]};
+
+S.flavio_pesquisa = {ed:'politica', k:'Política · Pesquisa', hora:'6/11',
+ t:'Pesquisa da FESPSP divide eleitores sobre a viagem de Flávio Bolsonaro: 49,2% veem fuga e 47% veem exílio',
+ sub:'Levantamento online com 1.926 eleitores do segundo turno aponta empate técnico; 98% dos eleitores de Lula falam em fuga e 95% dos de Flávio, em perseguição.',
+ dado:{n:'49,2% x 47%', l:'Fuga para evitar prisão x exílio por perseguição, margem de 2,2 pontos (FESPSP)'},
+ resumo:'Pesquisa do Laboratório de Opinião Pública e Mídias Digitais da Fundação Escola de Sociologia e Política de São Paulo (FESPSP) mostra o eleitorado dividido sobre a saída de Flávio Bolsonaro do Brasil, em 27 de outubro. Entre 1.926 eleitores que votaram no segundo turno, 49,2% veem fuga para escapar de prisão no caso Master e 47% veem exílio por perseguição, diferença dentro da margem de 2,2 pontos. O levantamento é online, de instituto acadêmico, e foi feito de 27 a 29 de outubro.',
+ fundo:[
+ ['p','O eleitorado que foi às urnas no segundo turno está dividido ao meio sobre a saída do senador Flávio Bolsonaro (PL-RJ) do país: 49,2% dizem que ele fugiu para escapar de uma prisão no caso Master, e 47% dizem que se exilou por perseguição política. A diferença de 2,2 pontos coincide com a margem de erro, o que a CartaCapital descreve como empate técnico.'],
+ ['nums',[['49,2%','veem fuga para evitar prisão'],['47%','veem exílio por perseguição'],['1.926','eleitores ouvidos, 27 a 29/10'],['2,2 p.p.','margem de erro, com 95% de confiança']]],
+ ['h','Como a pesquisa foi feita'],
+ ['p','O levantamento é do Laboratório de Opinião Pública e Mídias Digitais da FESPSP, coordenado por Jairo Pimentel, e foi aplicado online de 27 a 29 de outubro a 1.926 pessoas que votaram no segundo turno. A única fonte lida pelo Radar é a CartaCapital, que não detalha o método de ponderação da amostra. Por ser uma pesquisa online de instituto acadêmico, e não de um dos grandes institutos de opinião, a leitura exige cuidado.'],
+ ['h','O corte por voto'],
+ ['p','A divisão acompanha o voto: 98% dos eleitores de Lula dizem que houve fuga, e 95% dos de Flávio aderem à tese do exílio. Entre os independentes, 47,3% falam em fuga e 42,8% em perseguição. Para Pimentel, "a polarização não termina quando termina a campanha".'],
+ ['h','O contexto institucional'],
+ ['p','Flávio deixou o Brasil em 27 de outubro e, segundo a Agência Brasil, o Senado está há cerca de dez dias sem se manifestar sobre a situação dele. O senador votou à distância na PEC da Segurança, em 3 de novembro; o senador Randolfe Rodrigues (PT-AP) pediu em 4 de novembro esclarecimento e a anulação do voto, e o presidente do Senado, Davi Alcolumbre, disse que analisará a questão de ordem. Há ainda uma ação popular na 6ª Vara Federal do Rio de Janeiro, de 31 de outubro, para suspender subsídios.'],
+ ['h','O que vem agora'],
+ ['ul',['Resposta da Mesa do Senado à questão de ordem de Randolfe.','Novas pesquisas de institutos maiores sobre o tema.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['O método de ponderação da amostra online, não detalhado no texto lido.','Se institutos tradicionais encontrarão divisão semelhante.']]
+ ],
+ fontes:[['CartaCapital','https://www.cartacapital.com.br/politica/pesquisa-fespsp-mostra-racha-no-eleitorado-sobre-fuga-de-flavio-bolsonaro/'],['Agência Brasil','https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/sem-posicao-do-senado-regras-sobre-flavio-seguem-indefinidas']]};
+
+S.bets_stf = {ed:'politica', k:'Política · STF', hora:'7/11',
+ t:'PGR pede a Fux a suspensão nacional de todas as ações contra a MP que proíbe as bets; TRF derrubou liminar de casas de apostas na quinta',
+ sub:'Paulo Gonet alega insegurança jurídica pela proliferação de decisões que liberam apostas; Portinho (PL-RJ) chama a MP de "eleitoreira" e teme que o STF "legisle".',
+ dado:{n:'MP 1.394/2026', l:'Medida provisória que proibiu o funcionamento das bets; PGR pede suspensão de todos os processos'},
+ resumo:'O procurador-geral da República, Paulo Gonet, pediu na sexta (6) ao ministro Luiz Fux, do STF, a suspensão nacional do andamento de todos os processos que discutem a constitucionalidade da Medida Provisória 1.394/2026, que proibiu as bets. Ele alega insegurança jurídica pela multiplicação de decisões que liberam casas de apostas. Na quinta (5), o Tribunal Regional Federal derrubou uma liminar que autorizava três casas a voltar a operar. Fux é relator de quatro ações contra a MP e ainda não decidiu o pedido.',
+ upd:'A PGR pediu a Fux, na sexta (6), a suspensão nacional dos processos sobre a MP 1.394/2026; antes, o TRF derrubou liminar a favor de três casas de apostas.',
+ fundo:[
+ ['p','O procurador-geral da República, Paulo Gonet, pediu na sexta-feira (6) ao ministro Luiz Fux, do Supremo Tribunal Federal, que suspenda em todo o país "o trâmite de todos os feitos que tenham por objeto a constitucionalidade da Medida Provisória 1.394/2026", que proibiu o funcionamento das casas de apostas on-line. Fux é relator de quatro ações contra a medida e ainda não decidiu.'],
+ ['nums',[['4','ações no STF contra a MP, sob relatoria de Fux'],['3','casas de apostas que perderam liminar no TRF na quinta (5)'],['MP 1.394/2026','norma que proíbe as bets']]],
+ ['h','O argumento da PGR'],
+ ['p','Segundo a Agência Brasil, Gonet sustenta que a proliferação de decisões judiciais que liberam casas de apostas gera insegurança jurídica e que os processos devem ficar parados até o Supremo decidir de vez a questão. A CartaCapital também registrou o pedido. O efeito prático, se Fux acolher, seria congelar as liminares em tribunais de primeira e segunda instâncias e concentrar a discussão no STF.'],
+ ['h','A derrota das casas de apostas no TRF'],
+ ['p','Na quinta (5), o Tribunal Regional Federal em São Paulo derrubou uma liminar que autorizava três casas de apostas a voltar a operar. Foi uma das decisões que a PGR cita como sintoma do problema: enquanto parte do Judiciário libera, outra parte mantém a proibição.'],
+ ['h','O debate no Congresso'],
+ ['p','A MP 1.394/2026 está na lista de urgências aceitas pela oposição no Senado em 3 de novembro, mas o senador Carlos Portinho (PL-RJ) a chamou de "eleitoreira" e disse temer que o STF "legisle" sobre as bets. Uma MP vale por 60 dias, prorrogáveis por mais 60, e precisa ser aprovada pelas duas Casas para virar lei, o que dá ao Congresso a palavra final sobre o tema.'],
+ ['h','O que vem agora'],
+ ['ul',['Decisão de Fux sobre o pedido de suspensão nacional.','Votação da MP pelo Congresso dentro do prazo de vigência.','Novas liminares em primeira e segunda instâncias, que o pedido da PGR busca barrar.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['Se Fux acolherá o pedido e em que prazo.','A posição da Advocacia-Geral da União, que, segundo títulos de busca não lidos pelo Radar, pediu em outubro que a manutenção da proibição aguardasse a PGR.']]
+ ],
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/pgr-pede-suspensao-de-acoes-contra-proibicao-de-bets'],['CartaCapital','https://www.cartacapital.com.br/justica/pgr-pede-suspensao-de-acoes-contra-proibicao-de-bets/']]};
+
+_rv(['ms_seg']);
+S.ms_seg = {ed:'politica', k:'Política · Segurança', hora:'7/11',
+ t:'Lula diz que cria o Ministério da Segurança Pública por medida provisória; PEC da Segurança passou no Senado com 73 votos e a maioridade penal ficou para depois',
+ sub:'O Radar não encontrou a publicação da MP no Diário Oficial até a tarde de sábado; Alcolumbre adiou a redução da maioridade até a PEC equivalente chegar da Câmara.',
+ dado:{n:'73 votos', l:'Placar da PEC da Segurança Pública no Senado, em 3 de novembro (Agência Brasil)'},
+ resumo:'Em transmissão ao vivo com o deputado André Janones (Rede-MG), na quinta (5), Lula disse que criará o Ministério da Segurança Pública por medida provisória, que seria enviada "amanhã". O Radar não localizou a publicação da MP no Diário Oficial até a tarde de sábado. A PEC da Segurança foi aprovada pelo Senado em 3 de novembro, com 73 votos, e a votação da redução da maioridade penal foi adiada por Davi Alcolumbre a pedido de Hugo Motta.',
+ upd:'Entram o placar de 73 votos da PEC, o adiamento da maioridade penal pelo Senado e a ausência, até agora, de confirmação da publicação da MP.',
+ fundo:[
+ ['p','O presidente Lula afirmou na quinta-feira (5) que criará o Ministério da Segurança Pública por medida provisória (MP), e que o texto seria enviado "amanhã", sexta (6). Até a tarde de sábado, o Radar não encontrou registro da publicação da MP no Diário Oficial da União nem a divulgação do nome do ministro. A declaração foi dada em transmissão ao vivo com o deputado André Janones (Rede-MG), no Palácio da Alvorada.'],
+ ['nums',[['73','votos pela PEC da Segurança no Senado, em 3/11'],['60 dias','vigência de uma MP, prorrogável por mais 60'],['17/12','meta do Senado para votar os textos prioritários']]],
+ ['h','A PEC da Segurança'],
+ ['p','O Senado aprovou na terça (3), com 73 votos, a PEC 18/2025. Segundo a Agência Senado, o texto põe o Sistema Único de Segurança Pública (Susp) na Constituição, amplia a integração entre as polícias, endurece o regime penal para chefes e membros de facções, paramilitares e milícias, prevê perdimento de bens sem indenização, responsabilização de pessoas jurídicas e proteção a delatores, e mantém 10% do excedente do Fundo Soberano do Pré-Sal para o setor. A comissão de Constituição e Justiça aprovou o texto em 14 de outubro, e o plenário usou calendário especial para dispensar sessões de discussão.'],
+ ['p','Lula disse na transmissão que Alcolumbre "cumpriu com a palavra dele". Citou como objetivos do ministério coordenar a política nacional com estados e municípios e integrar o combate ao crime organizado, em linha com o Programa Brasil contra o Crime Organizado, lançado em maio. A reportagem da Agência Brasil não traz orçamento, estrutura nem o nome do ministro.'],
+ ['h','A maioridade penal fica para depois'],
+ ['p','O Metrópoles informou na quarta (4) que Alcolumbre decidiu aguardar a Câmara e retirou da pauta a redução da maioridade penal, a pedido de Hugo Motta, depois que deputados reclamaram de o Senado votar duas propostas extraídas da PEC. O governo defende 16 anos para crimes hediondos, e bolsonaristas, 14. O senador Eduardo Braga (MDB-AM) pediu prazo para a Câmara votar. Alcolumbre disse precisar "manter uma relação pacífica, cuidadosa e atenciosa" com os deputados, e senadores de oposição e governo reclamaram de quebra de acordo de líderes.'],
+ ['p','Em reunião de líderes na terça, a senadora Teresa Leitão (PT-PE) apresentou a meta de votar os textos prioritários até 17 de dezembro, segundo a Agência Senado. O senador Carlos Portinho (PL-RJ) manteria emenda com 14 anos, e Marcelo Castro (MDB-PI) apoia ao menos 16 anos, em PEC separada.'],
+ ['h','O que vem agora'],
+ ['ul',['Publicação da MP e definição do ministro, ainda não confirmadas.','Se promulgada, a PEC passa a valer; o Radar não confirmou a data da promulgação.','Análise da MP pelas duas Casas dentro de 60 dias, prorrogáveis por mais 60.','Votação da maioridade penal na Câmara, sem data.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A publicação da MP, o nome do ministro e o custo da pasta; a única fonte lida é a Agência Brasil, e a segunda fonte oficial não foi localizada.','A promulgação da PEC e a possibilidade de ela voltar à Câmara; as fontes lidas divergem sobre a tramitação.']]
+ ],
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-vai-criar-ministerio-da-seguranca-publica-com-medida-provisoria'],['Agência Senado','https://www12.senado.leg.br/noticias/materias/2026/11/03/em-reuniao-no-senado-com-liderancas-governo-apresenta-prioridades-legislativas'],['Agência Senado','https://www12.senado.leg.br/noticias/materias/2026/10/30/davi-marca-para-terca-votacao-da-pec-da-seguranca'],['Metrópoles','https://www.metropoles.com/brasil/alcolumbre-decide-aguardar-camara-e-retira-reducao-da-maioridade-da-pauta']]};
+
+S.tse_psol_se = {ed:'politica', k:'Política · TSE', hora:'6/11',
+ t:'TSE adia julgamento que ameaça o mandato da deputada mais votada de Sergipe; Mendonça vota por manter o indeferimento da federação PSOL-Rede',
+ sub:'Sebastião Reis pediu vista na sexta (6); o prazo para as contas do segundo turno vence em 14 de novembro.',
+ dado:{n:'44,3 mil', l:'Votos de Linda Brasil (PSOL) em 2026, que ficariam fora da distribuição de vagas na Alese'},
+ fonteunica:false,
+ resumo:'O Tribunal Superior Eleitoral começou na sexta (6) a julgar o recurso contra o indeferimento do registro da federação PSOL-Rede em Sergipe. O relator, André Mendonça, votou por manter a decisão do TRE-SE, e Sebastião Reis pediu vista. Se a decisão for mantida, os votos da federação saem da distribuição de vagas na Assembleia e a deputada estadual Linda Brasil (PSOL), com mais de 44,3 mil votos, perde a vaga. O TSE também fixou em 14 de novembro o prazo de prestação de contas do segundo turno.',
+ upd:'O julgamento no TSE foi interrompido por pedido de vista; entra também o prazo de 14 de novembro para as contas do segundo turno.',
+ fundo:[
+ ['p','O Tribunal Superior Eleitoral (TSE) iniciou na sexta-feira (6) o julgamento do recurso contra o indeferimento do registro da federação PSOL-Rede em Sergipe. O relator, ministro André Mendonça, votou por manter a decisão do Tribunal Regional Eleitoral (TRE-SE), e o ministro Sebastião Reis pediu vista, o que suspende o julgamento. A data da retomada não foi informada.'],
+ ['nums',[['44,3 mil','votos de Linda Brasil (PSOL) em 2026'],['28.704','votos dela em 2022'],['14/11','prazo de contas do segundo turno']]],
+ ['h','O que está em jogo'],
+ ['p','A CartaCapital informa que, se a decisão do TRE for mantida, os votos da federação saem da distribuição de vagas na Assembleia Legislativa de Sergipe (Alese) e a deputada estadual Linda Brasil (PSOL), a mais votada do estado, ficaria "não eleita", com a situação sub judice. A vaga poderia ser ocupada por Fernandinho Franco, empresário do PL. A defesa vê o pedido de vista como possível sinal de divergência.'],
+ ['p','O processo trata de pendências da Rede: o diretório estadual perdeu a vigência em junho de 2025, as contas de 2018 foram julgadas não prestadas, houve acordo de R$ 15,5 mil com a União em parcelas de R$ 591 e a Rede apresentou comprovantes de pouco mais de R$ 27 mil.'],
+ ['h','Contas do segundo turno'],
+ ['p','Em nota de 4 de novembro, atualizada no dia 5, o TSE informou que candidatos e partidos que disputaram o segundo turno têm até 14 de novembro para prestar contas, devolver sobras do Fundo Especial de Financiamento de Campanha e transferir as sobras de campanha. Para o primeiro turno, o prazo terminou em 3 de novembro.'],
+ ['h','O que vem agora'],
+ ['ul',['Devolução do processo ao plenário pelo ministro Sebastião Reis, sem data.','14 de novembro: fim do prazo de contas do segundo turno.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A data da retomada do julgamento e o resultado.','O caso de Sergipe foi lido em uma só fonte jornalística, a CartaCapital; a defesa e o diretório da Rede não foram ouvidos nos textos lidos.']]
+ ],
+ fontes:[['CartaCapital','https://www.cartacapital.com.br/politica/pedido-de-vista-no-tse-adia-desfecho-de-julgamento-que-ameaca-mandato-da-deputada-mais-votada-em-sergipe/'],['TSE','https://www.tse.jus.br/comunicacao/radio/2026/Novembro/prestacao-de-contas-do-segundo-turno']]};
+
+S.stf_pauta_nov = {ed:'politica', k:'Política · STF', hora:'6/11',
+ t:'Fachin divulga a pauta de novembro do STF: anistia a partidos por cotas, piso do magistério, assédio judicial e porte de arma para guardas',
+ sub:'A sessão de quarta (11) trata de crimes patrimoniais contra mulheres, piso em São Paulo, lei cearense de veículos e assédio judicial à imprensa; bets e 6x1 não constam do plenário.',
+ dado:{n:'11 e 12/11', l:'Primeiras sessões do plenário com a pauta de novembro'},
+ resumo:'O STF divulgou na sexta (6) a pauta de novembro. Nos dias 11 e 12, o plenário trata de crimes patrimoniais contra mulheres, do piso do magistério em escolas estaduais de São Paulo, de lei cearense sobre registro em cartório na transferência de veículos e de assédio judicial à imprensa. Na terceira semana, entram a anistia a partidos que descumpriram cotas raciais e de gênero e o nepotismo em cargos políticos; na última, o porte de arma para guardas municipais. A pauta consta da nota do STF e de resumo da CartaCapital.',
+ fundo:[
+ ['p','O plenário do Supremo Tribunal Federal terá em novembro uma pauta que inclui a anistia a partidos que descumpriram as cotas raciais e de gênero, o piso do magistério em escolas estaduais de São Paulo e o porte de arma para guardas municipais. A pauta foi divulgada na sexta-feira (6) pelo tribunal, e a CartaCapital a resumiu às 16h40.'],
+ ['h','As sessões de 11 e 12 de novembro'],
+ ['p','Nos dias 11 e 12, o plenário trata, nas ADPFs 1185 e 1241, do artigo 181 do Código Penal, que prevê imunidade em crimes patrimoniais entre cônjuges e parentes e é questionado nos casos de crimes contra mulheres, com relatoria do ministro Dias Toffoli. Também entram o piso do magistério em escolas estaduais paulistas, em repercussão geral; a lei cearense que exige registro em cartório na transferência de veículos; e o assédio judicial à imprensa, a partir de caso de uma emissora do Paraná.'],
+ ['h','O restante do mês'],
+ ['p','Nos dias 18 e 19, a pauta traz a anistia a partidos que descumpriram as cotas, com relatoria de Gilmar Mendes e julgamento iniciado em março; as ações sobre honorários (ADIs 5405 e 7694); o nepotismo em cargos políticos do primeiro escalão; e a regra da reforma trabalhista sobre valor certo do pedido. Nos dias 25 e 26, aparecem a consulta a povos indígenas em obras de infraestrutura (ADI 5905); a ADI 7717, sobre porte de arma para guardas municipais; a Lei da Liberdade Econômica; e as emendas parlamentares impositivas estaduais.'],
+ ['h','O que não está na pauta'],
+ ['p','O resumo não menciona as ações sobre as bets, que dependem de decisão de Luiz Fux, nem a escala 6x1, que será tratada em audiência de conciliação convocada por Flávio Dino na terça (10), fora do plenário.'],
+ ['h','O que vem agora'],
+ ['ul',['11 e 12 de novembro: primeira sessão com os temas do mês.','18 e 19 e 25 e 26 de novembro: demais blocos da pauta.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A ordem dos julgamentos dentro de cada sessão e os horários, não informados na maioria dos itens.','O que o plenário decidirá em cada caso.']]
+ ],
+ fontes:[['CartaCapital','https://www.cartacapital.com.br/justica/anistia-a-partidos-piso-salarial-e-assedio-judicial-o-que-o-stf-vai-julgar-em-novembro/'],['STF','https://noticias.stf.jus.br/postsnoticias/confira-os-destaques-da-pauta-do-plenario-do-stf-para-novembro/']]};
+
+S.enamed = {ed:'politica', k:'Política · Saúde', hora:'6/11',
+ t:'Lula sanciona lei que torna o Enamed requisito para o registro de médicos e veta contrapartida de 2% das faculdades',
+ sub:'O exame terá três etapas, ao fim do 2º, do 4º e do 6º ano, e substitui a regra provisória de junho.',
+ dado:{n:'3 etapas', l:'Enamed ao fim do 2º, 4º e 6º anos do curso de Medicina'},
+ resumo:'Lula sancionou na sexta (6) a lei do Exame Nacional de Avaliação da Formação Médica (Enamed), que torna a aprovação com desempenho mínimo requisito para o registro profissional de médicos. O exame terá três etapas, ao fim do segundo, do quarto e do sexto ano, e torna permanente a regra de uma medida provisória de junho; o Congresso ampliou de duas para três as avaliações. Foi vetado o dispositivo que exigia contrapartida de 2% do faturamento líquido de faculdades que usam o SUS em estágios. A nota é a média dos três resultados, com peso maior na última.',
+ fundo:[
+ ['p','O presidente Lula sancionou na sexta-feira (6), em cerimônia no Palácio do Planalto, a lei que cria o Exame Nacional de Avaliação da Formação Médica (Enamed), apelidado de "OAB da Medicina", e torna a aprovação com desempenho mínimo condição para o registro profissional de médicos. A sanção foi noticiada pela CNN Brasil, pela Agência Brasil e pela CartaCapital.'],
+ ['h','Como será o exame'],
+ ['p','A avaliação ocorrerá em três etapas, ao fim do segundo, do quarto e do sexto ano do curso. O texto torna permanente a regra criada por medida provisória em 19 de junho de 2026, e o Congresso ampliou de duas para três as avaliações. O exame também mede a qualidade dos cursos.'],
+ ['h','Como a nota é calculada e quem fiscaliza'],
+ ['p','A CNN Brasil informa que a nota de aprovação é a média dos três resultados, com peso maior na última, e que a nota só é divulgada ao aluno e à instituição. Quem não atingir o nível proficiente na última avaliação pode refazer o exame em edições seguintes. Uma Comissão Nacional de Avaliação da Formação Médica terá quatro representantes do Conselho Federal de Medicina, dois do Ministério da Educação e dois do Ministério da Saúde. A Agência Brasil acrescenta que a regra vale para quem ingressou na faculdade a partir de 19 de junho de 2026, data da medida provisória, e que instituições com resultado insatisfatório ficam sujeitas a supervisão, com possível redução de vagas e suspensão do vestibular.'],
+ ['p','O Congresso aprovou a medida provisória em outubro, na forma do Projeto de Lei de Conversão nº 14/2026. Na cerimônia, o presidente do Conselho Federal de Medicina, José Hiran Gallo, chamou a lei de "marco histórico", e Lula disse que "a medicina ficou um pouco mercantilizada". O ministro Padilha afirmou que os efeitos levam cerca de dez anos, e o ministro da Educação, Barchini, disse que a União recebeu 360 decisões judiciais mandando abrir 60 mil vagas de medicina.'],
+ ['h','Quem fica de fora e o que foi vetado'],
+ ['p','A regra não vale para quem se formou com diploma reconhecido antes da medida provisória. Formados no exterior que foram aprovados na primeira etapa do Revalida até a MP ficam dispensados dessa fase e fazem a etapa de habilidades clínicas nas duas edições seguintes. Lula vetou o dispositivo que exigia contrapartida de 2% do faturamento líquido das faculdades de Medicina que usam o Sistema Único de Saúde (SUS) em estágios; o governo disse, segundo a CNN Brasil, que o valor era difícil de definir de forma objetiva.'],
+ ['h','O que vem agora'],
+ ['ul',['Regulamentação pelo Ministério da Educação e primeiras edições do exame.','Possível análise do veto pelo Congresso.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A data de vigência e o calendário das primeiras provas.','A reação das faculdades privadas, que não aparece nas fontes lidas.']]
+ ],
+ fontes:[['CartaCapital','https://www.cartacapital.com.br/politica/lula-sanciona-lei-que-cria-exame-obrigatorio-para-atuacao-de-medicos-no-brasil/'],['CNN Brasil','https://www.cnnbrasil.com.br/politica/oab-da-medicina-lula-sanciona-lei-que-obriga-provas-durante-o-curso/'],['Agência Brasil','https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-sanciona-exame-que-ira-avaliar-qualidade-de-alunos-de-medicina']]};
+
+S.lula_cop = {ed:'politica', k:'Política · Planalto', hora:'7/11',
+ t:'Lula embarca na segunda (9) para a COP31 na Turquia e segue às Filipinas e à cúpula da ASEAN; medidas fiscais ficam para depois da viagem',
+ sub:'O presidente fala duas vezes na cúpula de líderes (11 e 12) e visita Manila no dia 14; a Fazenda diz que apresentará propostas a Lula só quando ele voltar.',
+ dado:{n:'9 a 20/11', l:'COP31 em Antalya; Cúpula de Líderes nos dias 11 e 12'},
+ resumo:'Lula deixa Brasília na segunda (9) rumo a Antalya, na Turquia, para a COP31, que vai de 9 a 20 de novembro, com Cúpula de Líderes em 11 e 12. Discursa na abertura, no dia 11 ao meio-dia, e por cerca de três minutos às 17h; a pauta inclui o fundo de florestas tropicais TFFF. Na noite do dia 12 embarca para as Filipinas e a Cúpula da ASEAN em Manila; as fontes divergem entre 13 e 14 de novembro para a visita de Estado. O ministro da Fazenda, Dario Durigan, disse que as medidas fiscais serão levadas a Lula depois da viagem.',
+ upd:'Entram a agenda de discursos da COP31, o roteiro pelas Filipinas e pela ASEAN e a informação de que as medidas fiscais aguardam a volta do presidente.',
+ fundo:[
+ ['p','O presidente Lula deixa Brasília na manhã de segunda-feira (9) rumo a Antalya, na Turquia, para a COP31, que vai de 9 a 20 de novembro, com Cúpula de Líderes nos dias 11 e 12. Depois, segue às Filipinas e à Cúpula da ASEAN, em Manila. As datas da etapa asiática variam entre as fontes.'],
+ ['nums',[['11/11, 12h','discurso de abertura de Lula na COP31'],['US$ 500 mi','aporte que a Holanda formalizará ao TFFF'],['49,5%','renováveis na matriz energética em 2025, citada pelo governo'],['US$ 38 bi','comércio Brasil-ASEAN em 2025']]],
+ ['h','A agenda na Turquia'],
+ ['p','Segundo a Agência Brasil, Lula fará dois discursos: a abertura, em 11 de novembro ao meio-dia, reservada a poucos chefes de Estado, e cerca de três minutos às 17h na plenária geral. O Itamaraty vê o espaço como sinal do peso do Brasil, anfitrião da COP30 em Belém. Há reunião do Fundo Florestas Tropicais para Sempre (TFFF) com Noruega e Reino Unido, e a Holanda formalizará US$ 500 milhões.'],
+ ['p','Lula deve citar R$ 1,16 trilhão em ganho econômico atribuído à preservação, renováveis em 49,5% da matriz energética em 2025 contra média mundial de 14,5%, queda de 9% nas emissões líquidas de CO2 e a meta de corte de 59% a 67% até 2035. Mais de 15 líderes pediram reunião bilateral, e os encontros prováveis são na manhã de quinta (12), com possível conversa com o presidente turco, Recep Tayyip Erdoğan.'],
+ ['h','Filipinas e ASEAN'],
+ ['p','Na noite de 12 de novembro, Lula embarca de Antalya em voo de cerca de 14 horas. A Agência Brasil situa a visita de Estado às Filipinas em 14 de novembro, único bilateral confirmado, e a Cúpula da ASEAN em Manila em 15 de novembro, com discurso de abertura previsto, papel normalmente do anfitrião como convidado. A CNN Brasil dá datas diferentes: visita de Estado em 13 de novembro, cúpula em 14 e 15 e chegada a Brasília na manhã do dia 16. A ASEAN reúne 11 países e PIB estimado em US$ 4 trilhões. O Brasil pediu em janeiro a elevação a "Parceiro de Diálogo", pendente. O comércio com o bloco foi de US$ 3 bilhões em 2003 a US$ 38 bilhões em 2025, e o comércio com as Filipinas quadruplicou desde 2016.'],
+ ['h','A economia fica para depois'],
+ ['p','Em reportagem da Rádio Nacional de 5 de novembro, o ministro da Fazenda, Dario Durigan, disse que as medidas fiscais serão apresentadas a Lula depois da viagem. A agenda também inclui conversas do presidente com empresários e com o mercado. A CNN Brasil informou em 3 de novembro que Lula convidou o presidente da Câmara, Hugo Motta, e o do Senado, Davi Alcolumbre, para a viagem, e que eles avaliam o convite; o Planalto quer acelerar antes da renovação do Congresso a PEC da Segurança, a indicação ao STF para a vaga de Luís Roberto Barroso, o marco da inteligência artificial e a regulação concorrencial das big techs.'],
+ ['h','O que vem agora'],
+ ['ul',['Segunda (9): embarque para Antalya.','Quarta (11): discursos na COP31.','Entre 13 e 15 de novembro: visita de Estado às Filipinas e Cúpula da ASEAN, conforme a fonte.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A lista final de bilaterais e os horários.','As datas na Ásia (13 ou 14 para as Filipinas) e a volta ao Brasil, na manhã de 16 de novembro segundo a CNN Brasil.','Se Motta e Alcolumbre aceitarão acompanhar a viagem.']]
+ ],
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-11/lula-apresentara-avancos-ambientais-na-cop31-na-turquia'],['Agência Brasil (Filipinas e ASEAN)','https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/lula-vai-filipinas-buscando-estreitar-vinculo-com-bloco-asiatico'],['Agência Brasil (Rádio Nacional)','https://agenciabrasil.ebc.com.br/radioagencia-nacional/politica/audio/2026-11/equipe-economica-vai-discutir-medidas-fiscais-com-o-presidente-lula'],['CNN Brasil (primeira agenda externa)','https://www.cnnbrasil.com.br/politica/lula-prepara-ida-a-cop31-com-relevancia-de-1a-agenda-externa-apos-reeleicao/'],['CNN Brasil (convite a Motta e Alcolumbre)','https://www.cnnbrasil.com.br/politica/lula-convida-hugo-e-alcolumbre-para-viagens-a-turquia-e-as-filipinas/']]};
+_rv(['lula_cop']);
+
+_rv(['ibov_semana','fiscal']);
+S.ibov_semana = {ed:'economia', k:'Economia · Mercado', hora:'6/11',
+ t:'Ibovespa sobe 1,39% na sexta e fecha a 168,5 mil pontos na primeira alta semanal em quatro semanas; dólar fecha a R$ 5,508',
+ sub:'Payroll forte nos EUA elevou a aposta em alta de juros do Fed em dezembro; a semana que vem traz balanços de Petrobras, BTG e B3, inflação no Brasil na quinta e CPI americano na terça.',
+ dado:{n:'168.498 pts', l:'Ibovespa no fechamento de sexta (6), alta de 1,39% (InfoMoney)'},
+ resumo:'O Ibovespa fechou a sexta (6) em alta de 1,39%, aos 168.498,45 pontos, e acumulou ganho de 0,34% na semana, a primeira alta depois de três semanas negativas, segundo o InfoMoney. O dólar comercial subiu 0,36%, a R$ 5,508. O payroll americano de 165 mil vagas, contra cerca de 65 mil esperadas, aumentou para cerca de 80% a chance de alta de juros do Fed em dezembro. A Petrobras caiu 1,28% no dia e 14,13% na semana. O Brent fechou a US$ 98,32.',
+ upd:'Entram o fechamento de sexta, a leitura semanal, o payroll e a agenda de balanços e indicadores da semana de 9 a 13 de novembro.',
+ fundo:[
+ ['p','O Ibovespa fechou a sexta-feira (6) em alta de 1,39%, aos 168.498,45 pontos, com mínima de 165.909,74 e máxima de 169.073,04, e volume de R$ 31,80 bilhões. Na semana, o índice subiu 0,34%, a primeira alta depois de três semanas negativas, segundo o InfoMoney. O dólar comercial avançou 0,36% e fechou a R$ 5,508.'],
+ ['nums',[['+1,39%','Ibovespa na sexta, a 168.498 pontos'],['R$ 5,508','dólar comercial, alta de 0,36%'],['165 mil','vagas no payroll dos EUA, contra cerca de 65 mil esperadas'],['US$ 98,32','Brent para dezembro']]],
+ ['h','O que moveu o dia'],
+ ['p','O payroll americano de outubro veio em 165 mil vagas, com desemprego de 4,1%, e elevou para cerca de 80% a probabilidade, precificada no mercado, de alta de juros do Federal Reserve em dezembro. Mesmo assim, Wall Street se recuperou da liquidação de quinta em ações de inteligência artificial e chips: o S&P 500 subiu 0,35% e a Nasdaq, 1,06%, enquanto o Dow Jones caiu 0,44%. Na véspera, a Nasdaq tinha caído 5,52%.'],
+ ['p','No Brasil, a temporada de balanços do terceiro trimestre puxou as ações: Dasa subiu 10,51%, Sabesp 6,99%, Banco do Brasil 3,88%, Bradesco 3,12% e Vale 2,19%, enquanto Vivara caiu 1,49% e o Santander foi o único grande banco em queda. As taxas dos contratos de juros futuros caíram em toda a curva; o DI para janeiro de 2027 fechou em 13,662%. Lucas Xavier, da AW Capital, chamou o movimento de "repique técnico".'],
+ ['h','Petrobras e o petróleo'],
+ ['p','A Petrobras (PETR4) caiu 1,28% no dia e 14,13% na semana, segundo a tabela semanal do InfoMoney, que não atribui a queda a um motivo específico. O Brent para dezembro subiu 0,03%, a US$ 98,32, e o WTI, 0,34%, a US$ 90,83.'],
+ ['h','Juros e projeções'],
+ ['p','O Comitê de Política Monetária (Copom) manteve a Selic em 13,75% ao ano na quarta (4), interrompendo cinco cortes seguidos. A Research XP projeta Selic em 13,75% até o fim de 2027 e dólar a R$ 5,30 no fim de 2026 e R$ 5,50 no fim de 2027. Analistas reduziram as projeções de crescimento de 2027 por causa dos juros altos e da incerteza fiscal.'],
+ ['h','As leituras de outras fontes'],
+ ['p','O Money Times atribui o dia à recuperação da tecnologia em Wall Street e a sinais fiscais de Lula, e diz que o mercado aguarda o discurso do presidente no domingo (8) sobre o ajuste das contas. A Petrobras teve a pior semana desde fevereiro de 2021, segundo o site, e Cosan subiu 10,80%, BTG 3,04% e Natura caiu 3,36%. A Agência Brasil informa volume de R$ 29,04 bilhões, dólar a R$ 5,511 (alta de 0,44%) e, na semana, alta de 0,29% do Ibovespa e de 1,20% do dólar, e lembra que antes da eleição presidencial o índice operava acima de 205 mil pontos. Os números do dólar e da variação semanal diferem de uma fonte para outra (R$ 5,508, R$ 5,5087 e R$ 5,511), por causa dos horários e das metodologias de fechamento.'],
+ ['h','O que vem agora'],
+ ['ul',['Terça (10): CPI dos EUA; segundo o calendário do InfoMoney de 13 de outubro, a Petrobras divulga o balanço do terceiro trimestre nesta data, mas o Radar tinha registrado quarta (11), e a data deve ser conferida com a empresa.','Quarta (11): serviços no Brasil; balanços de Braskem, Hapvida e Azul, entre outros.','Quinta (12): dados de inflação do Brasil; balanços de B3 e Cemig.','Sexta (13): varejo no Brasil; PPI dos EUA.','Domingo (8): discurso de Lula, que o mercado acompanha em busca de sinais fiscais.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A data do balanço da Petrobras, entre terça (10) e quarta (11).','O fechamento exato do dólar, entre R$ 5,508 e R$ 5,511 conforme a fonte.','A projeção do IPCA de outubro, que o Radar não encontrou.','O motivo da queda de 14% da Petrobras na semana.']]
+ ],
+ fontes:[['InfoMoney (fechamento de 6/11)','https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-06112026/'],['InfoMoney (semana)','https://www.infomoney.com.br/onde-investir/manutencao-da-selic-dolar-balancos-do-3t26-veja-os-destaques-da-semana/'],['InfoMoney (calendário de balanços)','https://www.infomoney.com.br/mercados/calendario-de-resultados-terceiro-trimestre-2026-da-bolsa-brasileira/'],['Money Times','https://www.moneytimes.com.br/ibovespa-06-11-2026-davs/'],['Agência Brasil (fechamento)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-sobe-para-r-551-com-dados-de-emprego-nos-eua']]};
+
+S.fiscal = {ed:'economia', k:'Economia · Fiscal', hora:'7/11',
+ t:'Durigan diz que não há medida fiscal definida e que levará propostas a Lula só depois da COP31; dívida bruta está em 82,9% do PIB',
+ sub:'Lula deve falar à nação em rádio e TV no domingo (8) com ênfase em responsabilidade fiscal e programas sociais, sem anunciar medidas, prevê a Agência Brasil.',
+ dado:{n:'82,9% do PIB', l:'Dívida bruta do governo geral em setembro, contra 71,7% em dezembro de 2022'},
+ resumo:'Depois de reunião no Alvorada em 5 de novembro, o ministro da Fazenda, Dario Durigan, disse que nenhuma medida fiscal foi definida e que ele e Bruno Moretti prepararão propostas para Lula, a serem discutidas só depois da viagem à COP31 e às Filipinas. A dívida bruta do governo geral estava em 82,9% do PIB em setembro. Lula deve fazer pronunciamento em rádio e TV no domingo (8), com ênfase em responsabilidade fiscal e programas sociais e, provavelmente, sem medidas específicas.',
+ upd:'Durigan afirmou que nenhuma medida está definida e que a agenda fiscal só avança depois da viagem de Lula; surge a previsão de pronunciamento no domingo (8).',
+ fundo:[
+ ['p','O ministro da Fazenda, Dario Durigan, disse na quinta-feira (5), depois de reunião no Palácio da Alvorada, que nenhuma medida fiscal foi definida e que as propostas só serão discutidas com o presidente Lula depois da viagem à COP31, na Turquia, e às Filipinas, que vai até 15 de novembro. Segundo a Agência Brasil, ele e o ministro Bruno Moretti prepararão as propostas.'],
+ ['nums',[['82,9%','dívida bruta do governo geral, em % do PIB, em setembro'],['71,7%','mesmo indicador em dezembro de 2022'],['R$ 9,383 tri','Dívida Pública Federal em setembro'],['13,75%','Selic mantida pelo Copom na quarta (4)']]],
+ ['h','A reunião no Alvorada'],
+ ['p','Participaram Geraldo Alckmin, Miriam Belchior, Bruno Moretti, Esther Dweck, Aloizio Mercadante, Fernando Haddad, Guido Mantega, Luciano Coutinho, Eduardo Moreira e Laura Carvalho. O presidente do Banco Central, Gabriel Galípolo, foi convidado, mas está no período de silêncio do Copom. Durigan descreveu convergência no diagnóstico e disse que "a taxa de juros é um desafio", ao lado da guerra internacional e dos combustíveis e do custo de vida. "Não há fórmula mágica, mas manutenção dos compromissos fiscais", afirmou, dizendo querer superávits nos próximos anos.'],
+ ['h','Os números da dívida'],
+ ['p','A dívida bruta do governo geral chegou a 82,9% do PIB em setembro, cerca de R$ 11,1 trilhões, contra 71,7% em dezembro de 2022. A Dívida Pública Federal fechou setembro em R$ 9,383 trilhões, alta de 0,97% sobre agosto, segundo o Tesouro, e a projeção do Plano Anual de Financiamento revisado é de R$ 9,7 trilhões a R$ 10,3 trilhões no fim de 2026. Títulos ligados à Selic respondem por 51,6% da dívida.'],
+ ['h','O que o mercado discute'],
+ ['p','O InfoMoney registrou, em 5 de novembro, que a Folha de S.Paulo noticiou que o governo estuda tornar permanentes os bloqueios do Orçamento, e que o Santander avalia que, sem reformas, o PIB de 2027 pode crescer menos de 1,3%. A Agência Brasil prevê que Lula faça pronunciamento em rádio e TV no domingo (8), com ênfase em responsabilidade fiscal e programas sociais e, provavelmente, sem medidas específicas.'],
+ ['h','O que vem agora'],
+ ['ul',['Domingo (8): pronunciamento previsto de Lula em rádio e TV.','Depois de 15 de novembro: proposta fiscal levada a Lula por Durigan e Moretti; a Agência Brasil fala em "meados de novembro", sem data precisa.','Até 17 de dezembro: votação do Orçamento de 2027.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['Qualquer medida concreta ou data de apresentação.','A informação da Folha sobre bloqueios permanentes, repassada pelo InfoMoney e não lida na origem.']]
+ ],
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/durigan-discutira-medidas-fiscais-com-lula-apos-viagem-cop31'],['InfoMoney','https://www.infomoney.com.br/onde-investir/manutencao-da-selic-dolar-balancos-do-3t26-veja-os-destaques-da-semana/'],['Agência Brasil (dívida pública)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-10/divida-publica-sobe-097-em-setembro-e-encosta-em-r-94-trilhoes']]};
+
+/* Paraguai: prisão preventiva decretada */
+S.paraguai.t = 'Juiz decreta prisão preventiva de Peña, ex-presidente do Paraguai, por risco de fuga; Alliana governa e Banco Central paga poupadores do Ueno Bank';
+S.paraguai.sub = 'Humberto Otazú, juiz de garantias de delitos econômicos, acolheu o pedido da Fiscalía; Peña cumpre a medida no Regimento Escolta Presidencial e responde por lesão de confiança e administração em proveito próprio, com pena de até 15 anos.';
+S.paraguai.dado = {n:'Prisão preventiva', l:'Decretada neste sábado (7) pelo juiz Humberto Otazú; Peña é imputado por lesão de confiança e administração em proveito próprio'};
+S.paraguai.resumo = 'O juiz de garantias Humberto Otazú decretou neste sábado (7) a prisão preventiva do ex-presidente paraguaio Santiago Peña, destituído pelo Senado na sexta (6) por 44 votos a 0. A Fiscalía o imputa por lesão de confiança e administração em proveito próprio, com pena máxima de até 15 anos, e viu risco de fuga e, no caso do ex-presidente do Banco Central Carlos Carvallo, de ocultação de provas. Peña cumpre a medida no Regimento Escolta Presidencial. Pedro Alliana governa até agosto de 2028, e o Banco Central paga o segundo grupo de depositantes do Ueno Bank.';
+S.paraguai.upd = 'O juiz Humberto Otazú decretou a prisão preventiva de Peña no fim da tarde de sábado, depois da imputação formal e do depoimento de cerca de três horas; entram os fundamentos da Fiscalía e a posição da defesa.';
+S.paraguai.fundo[0] = ['p','O juiz de garantias especializado em delitos econômicos Humberto Otazú decretou neste sábado (7), por volta das 18h30 em Assunção, a prisão preventiva do ex-presidente Santiago Peña, destituído na sexta (6) pelo Senado. Segundo o ABC Color e a Última Hora, o magistrado viu perigo de fuga, e Peña cumprirá a medida no Regimento Escolta Presidencial. Pedro Alliana governa até agosto de 2028.'];
+S.paraguai.fundo.splice(4,0,
+ ['h','A imputação e o pedido de prisão'],
+ ['p','A Fiscalía imputou na tarde de sábado Peña e o ex-presidente do Banco Central Carlos Carvallo. Peña responde por lesão de confiança (artigo 192 do Código Penal) e administração em proveito próprio (artigo 8 da Lei 2523), com pena máxima, em concurso, de até 15 anos. Carvallo responde pelos mesmos crimes e também por produção imediata de documentos públicos de conteúdo falso (artigo 250), com pena de até 20 anos. A promotora adjunta Nancy Salomón disse que a associação criminosa "por ora não se configura" e que os elementos recolhidos "estão sendo analisados".'],
+ ['p','O pedido de prisão, assinado por quatro promotores, sustenta o risco de fuga de Peña com a ligação dele à holding U Holding S.à r.l., de Luxemburgo, em que o irmão, Francisco Peña Palacios, aparece com 58 ações em 22 contratos de cessão de 2024, e com cerca de US$ 200 mil em dinheiro entregues na residência Mburuvicha Róga em junho de 2025. Para Carvallo, a Fiscalía aponta risco de ocultação de provas: em 7 de outubro ele teria enviado ao Senado a nota BCP/P nº 016 sem relatórios técnicos que questionavam a solvência do banco. Os promotores pediram também a proibição de vender ou gravar bens e o bloqueio de contas de ambos.'],
+ ['p','A defesa, conduzida pelo advogado Ricardo Preda, afirma que Peña está "sereno", que não há risco de fuga e que pedirá medida menos severa, citando a integridade física do ex-presidente. Preda disse que os agentes entraram na casa sem ordem judicial, mas com autorização de Peña registrada em ata. O juiz estimou, segundo a Última Hora, dano preliminar de G. 3,6 trilhões e US$ 233,4 milhões, em valores de setembro.']);
+S.paraguai.fundo[S.paraguai.fundo.findIndex(function(f){return f[0]==='p' && /O primeiro passo é a decisão do juiz/.test(f[1]);})] = ['p','O primeiro passo é o recurso que a defesa de Peña anunciou contra a preventiva, em busca de medida menos severa; as fontes lidas não informam prazo nem a decisão sobre Carvallo, cuja prisão a Fiscalía também pediu. No Banco Central, a indicação de Raúl Vera Bogado à presidência depende do Senado, segundo a Infobae. O Banco Central começou às 6h30 deste sábado o pagamento do segundo grupo de depositantes pelo Fundo de Garantia, com saldos à vista entre G. 10 milhões e G. 121,76 milhões. Cerca de 87 mil poupadores têm saldos acima do teto e ficariam sem cobertura integral, segundo a Infobae.'];
+var _ul = S.paraguai.fundo[S.paraguai.fundo.length-1][1];
+_ul[0] = 'Os fundamentos do juiz Otazú e a situação de Carvallo na decisão: as fontes lidas dão a hora da decretação, mas não detalham a decisão sobre o ex-presidente do Banco Central.';
+S.paraguai.fontes.unshift(['Última Hora (juiz decreta a preventiva)','https://www.ultimahora.com/juez-da-prision-preventiva-al-ex-presidente-santiago-pena-por-escandalo-de-ueno-bank'],['ABC Color (Peña preso no Regimento Escolta)','https://www.abc.com.py/nacionales/2026/11/07/santiago-pena-queda-preso-en-el-regimiento-escolta-presidencial/'],['ABC Color (imputação e risco de fuga)','https://www.abc.com.py/nacionales/2026/11/07/ueno-bank-para-la-fiscalia-pena-se-puede-fugar-y-carvallo-ocultar-pruebas/'],['Infobae (Fiscalía pede prisão provisória)','https://www.infobae.com/america/america-latina/2026/11/07/la-fiscalia-de-paraguay-pidio-la-prision-preventiva-del-ex-presidente-santiago-pena-por-el-colapso-del-ueno-bank/']);
+
+S.ueno_bank.resumo = 'O Banco Central do Paraguai fechou o Ueno Bank na terça (3) depois de concluir que a solvência caiu abaixo da metade do mínimo legal. O banco tinha cerca de 3 milhões de clientes e mais de US$ 800 milhões em dinheiro público, e a quebra levou à destituição e à prisão preventiva do presidente Santiago Peña. A Fiscalía diz que 27 pessoas foram imputadas e que o Instituto de Previdência Social investiu cerca de US$ 355 milhões; neste sábado (7), o Banco Central começou a pagar o segundo grupo de depositantes pelo Fundo de Garantia.';
+S.ueno_bank.upd = 'A Fiscalía imputou Peña e Carvallo e o juiz decretou a prisão preventiva do ex-presidente; entram os números do IPS e o início do pagamento do segundo grupo de depositantes.';
+S.ueno_bank.fundo.splice(S.ueno_bank.fundo.findIndex(function(f){return f[0]==='h' && /Quem paga/.test(f[1]);}),0,
+ ['h','O avanço do processo'],
+ ['p','Segundo a Fiscalía, Peña foi acionista do Ueno Holding até março de 2025. O Instituto de Previdência Social (IPS) investiu cerca de US$ 355 milhões no banco, e aproximadamente 32 mil dos 91 mil aposentados do instituto tinham conta no Ueno. O cofundador Miguel Vázquez e outros cinco executivos estão em prisão preventiva. Neste sábado, o juiz Humberto Otazú decretou a preventiva de Peña, e a Fiscalía pediu a de Carvallo por suposta supressão de relatórios técnicos enviados ao Senado, o que ele ainda pode contestar.'],
+ ['p','A deputada Rocío Vallejo, que conduziu a acusação, fala em "buraco" de US$ 1,2 bilhão e chamou Peña de "o maior desfalcador da história do Paraguai", estimativa que não foi verificada por apuração oficial.']);
+S.ueno_bank.fontes.unshift(['Última Hora (juiz decreta a preventiva)','https://www.ultimahora.com/juez-da-prision-preventiva-al-ex-presidente-santiago-pena-por-escandalo-de-ueno-bank'],['ABC Color (imputação e risco de fuga)','https://www.abc.com.py/nacionales/2026/11/07/ueno-bank-para-la-fiscalia-pena-se-puede-fugar-y-carvallo-ocultar-pruebas/']);
+
+_rv(['israel','ira_proposta_catar']);
+S.israel = {ed:'mundo', k:'Mundo · Israel', hora:'7/11',
+ t:'Herzog entrega a Eisenkot o mandato para formar o governo de Israel no domingo (8); oposição tem 67 das 120 cadeiras, mas só com os partidos árabes',
+ sub:'Netanyahu propõe governo de unidade nacional, e Eisenkot, líder do Yashar, fala em "governo de emergência nacional" e pede coalizão sem extremistas.',
+ dado:{n:'67 de 120', l:'Cadeiras do bloco anti-Netanyahu, incluindo 19 dos partidos árabes (Times of Israel)'},
+ resumo:'O presidente de Israel, Isaac Herzog, anunciou neste sábado (7) que entregará no domingo (8), às 17h, o mandato para formar governo ao ex-chefe do Estado-Maior Gadi Eisenkot, líder do Yashar. Na eleição de 27 de outubro, o bloco anti-Netanyahu somou 67 das 120 cadeiras, 19 delas de partidos árabes, e o de Netanyahu, 53. Eisenkot terá 28 dias, com extensão possível de até 14, e quer um governo de emergência nacional. Netanyahu propõe unidade nacional. A informação vem do Times of Israel e da Al Jazeera.',
+ upd:'Herzog anunciou que entregará o mandato a Eisenkot no domingo (8), às 17h, e o Times of Israel detalha as consultas e as saídas possíveis para a oposição.',
+ fundo:[
+ ['p','O presidente de Israel, Isaac Herzog, anunciou neste sábado (7) que entregará no domingo (8), às 17h, em cerimônia na residência presidencial, o mandato para formar o governo a Gadi Eisenkot, líder do Yashar. A decisão veio depois de conversas de Herzog com Eisenkot e com o primeiro-ministro Benjamin Netanyahu, segundo o Times of Israel. A Al Jazeera confirma a decisão, comunicada na noite de sábado; o horário consta só do Times of Israel.'],
+ ['nums',[['67','recomendações a Eisenkot nas consultas; Netanyahu teve 46'],['28 dias','prazo para formar governo, prorrogável por até 14'],['27 / 21','cadeiras do Likud e do Yashar'],['120','cadeiras do Knesset']]],
+ ['h','O resultado da eleição'],
+ ['p','Na eleição de 27 de outubro, o bloco de oposição a Netanyahu somou 67 das 120 cadeiras, incluindo 19 dos partidos árabes, a Lista Conjunta com 11 e a Ra\'am com 8; os partidos opositores judeus têm 48. O bloco de Netanyahu tem 53. O Likud elegeu 27 deputados; o Yashar, de Eisenkot, 21; o Yisrael Beytenu, de Avigdor Liberman, 7; e o Judaísmo da Torá Unida (UTJ), 7. Nas consultas de quarta e quinta, Eisenkot recebeu 67 recomendações e Netanyahu, 46, e a UTJ não recomendou ninguém.'],
+ ['h','As saídas possíveis'],
+ ['p','Eisenkot quer um governo de emergência nacional e convidou "Likud e amigos" a entrar numa coalizão sem extremistas. O Yashar chamou de hipócrita a proposta de unidade nacional de Netanyahu. Em análise, o Times of Israel aponta três caminhos para a oposição: governo de minoria com apoio externo dos partidos árabes, governo de minoria com abstenção da UTJ, ou governo liderado por Liberman. Para Netanyahu, as opções seriam a unidade nacional, que Eisenkot descartou, novas eleições ou a deserção de oito deputados.'],
+ ['p','Em 3 de novembro, líderes da oposição, entre eles Eisenkot, Naftali Bennett, Yair Golan, Liberman e Yair Lapid, reuniram-se em Herzliya e combinaram iniciar negociações. Querem substituir o presidente do Knesset, Amir Ohana, do Likud, e o nome de Lapid foi cogitado. O Likud chamou o futuro governo de "perigoso", dependente de "apoiadores do terrorismo", e tentou adiar a certificação dos resultados, pedido que o juiz Sohlberg rejeitou. Apenas Golan defende abertamente cooperar com os árabes; Liberman rejeita, mas abriu a porta aos ultraortodoxos.'],
+ ['h','A aritmética da maioria'],
+ ['p','A Al Jazeera lembra que a maioria no Knesset exige 61 das 120 cadeiras e que o bloco de Netanyahu tem 53, contra 48 dos partidos opositores judeus e 19 dos partidos árabes, recorde histórico. Eisenkot descarta a participação dos partidos árabes; com a UTJ e o Shas, chegaria a exatamente 61. Netanyahu alertou que um governo apoiado pelos partidos árabes levaria Israel ao colapso. Eisenkot comandou o Exército de 2015 a 2019. Em reportagem de sexta, a Al Jazeera registrou Herzog afirmando que "vetos mútuos" dificultam a avaliação e que, sem coalizão, o país iria a nova eleição, com Netanyahu como primeiro-ministro interino.'],
+ ['h','O que vem agora'],
+ ['ul',['Domingo (8), 17h: Herzog entrega o mandato a Eisenkot.','Em seguida, 28 dias de negociação, com extensão possível de até 14.','Definição de quem presidirá o Knesset.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['Como a oposição teria maioria sem os partidos árabes e qual será a posição final da UTJ.','O horário das 17h, que consta só do Times of Israel.','O apoio do Shas a Netanyahu, relatado pela mídia hebraica e não verificado.']]
+ ],
+ fontes:[['Times of Israel (liveblog)','https://www.timesofisrael.com/liveblog_entry/herzog-announces-he-will-task-eisenkot-tomorrow-with-forming-new-government-after-meeting-him-and-netanyahu/'],['Times of Israel (reunião da oposição)','https://www.timesofisrael.com/opposition-chiefs-meet-agree-to-launch-coalition-talks-but-path-remains-unclear/'],['Times of Israel (análise)','https://www.timesofisrael.com/netanyahu-lost-his-majority-but-can-the-opposition-form-a-government-a-look-at-possible-paths-ahead/'],['Al Jazeera (Herzog escolhe Eisenkot)','https://www.aljazeera.com/news/2026/11/7/israels-president-picks-eisenkot-over-netanyahu-to-form-next-government'],['Al Jazeera (nomeação no domingo)','https://www.aljazeera.com/news/2026/11/6/israels-herzog-to-name-a-candidate-to-form-government-on-sunday']]};
+
+S.ucrania_abudhabi = {ed:'mundo', k:'Mundo · Ucrânia', hora:'7/11',
+ t:'Ucrânia, Rússia e EUA devem se reunir em Abu Dhabi na terça (10); Umerov chefia a delegação de Kiev, que aposta em maior ajuda dos EUA com Congresso democrata',
+ sub:'Mísseis russos atingiram Kiev na madrugada de sábado e a Ponte Norte; Budanov diz que as conversas "não são as últimas" e que não se espera grande avanço.',
+ dado:{n:'10 e 11/11', l:'Rodada de negociações trilaterais em Abu Dhabi, segundo Witkoff (Al Jazeera)'},
+ resumo:'Delegações da Ucrânia, da Rússia e dos Estados Unidos devem se reunir em Abu Dhabi nos dias 10 e 11 de novembro, segundo o enviado americano Steve Witkoff, citado pela Al Jazeera. O Kyiv Independent informa que Rustem Umerov chefia a delegação ucraniana e que os europeus não devem comparecer. O chefe de gabinete de Zelensky, Kyrylo Budanov, disse que as conversas não são as últimas e que não se espera grande avanço. Mísseis balísticos russos atingiram Kiev na madrugada de sábado (7), danificaram a Ponte Norte e feriram cinco pessoas.',
+ fundo:[
+ ['p','Delegações da Ucrânia, da Rússia e dos Estados Unidos devem se reunir em Abu Dhabi nos dias 10 e 11 de novembro, segundo o enviado americano Steve Witkoff, citado pela Al Jazeera. O Kyiv Independent informa que o secretário do Conselho de Segurança e Defesa, Rustem Umerov, chefia a delegação ucraniana, e que a data de 10 de novembro ainda é descrita como "esperada".'],
+ ['nums',[['10 e 11/11','rodada em Abu Dhabi, segundo Witkoff'],['5','feridos no ataque a Kiev na madrugada de sábado'],['13/11','reunião de líderes da UE sobre a representação do bloco']]],
+ ['h','Quem vai e o que Kiev quer'],
+ ['p','O negociador David Arakhamia confirmou que Umerov é o chefe das negociações, e esclareceu que Kyrylo Budanov, chefe de gabinete do presidente Volodymyr Zelensky, participa mas não chefia. A delegação inclui Arakhamia, Lytvyn, Budanov, Umerov e Kyslytsia. Kiev pretende levar os ataques russos recentes, inclusive o ataque ao centro de ajuda humanitária em Komyshuvakha. Budanov disse que as negociações "não são as últimas, não são finais" e, à CBS, que não se espera grande avanço. Os nomes dos delegados russos e americanos não foram divulgados nas fontes lidas.'],
+ ['h','Os EUA, o Congresso e a Europa'],
+ ['p','Zelensky falou com Witkoff e com Jared Kushner, segundo a Al Jazeera. Os democratas assumiram as duas Casas do Congresso americano e dizem que ajudar Kiev será prioridade em janeiro; Arakhamia disse que a eleição "dobrou" as chances de ajuda militar. Trump fez gestos pró-Rússia, como um acordo para importar diesel russo e a suspensão de sanções aprovadas pelo Congresso. O porta-voz do Kremlin, Dmitri Peskov, disse esperar que Trump "continue seus esforços de paz". Moscou continua rejeitando cessar-fogo incondicional e exigindo o Donbas.'],
+ ['p','Os europeus não devem comparecer. Houve reunião em Bruxelas em 5 de novembro, e os líderes da União Europeia discutem em 13 de novembro como o bloco será representado. O Euronews em português registrou neste sábado que a UE rejeita o "grande" acordo de segurança de Trump com a Rússia, informação lida apenas em manchete.'],
+ ['h','Os ataques'],
+ ['p','Segundo o Kyiv Independent, mísseis balísticos russos atingiram Kiev à 0h04 de sábado (7), danificaram a Ponte Norte e feriram cinco pessoas, uma delas criança. Na sexta, Zelensky alertou para um grande ataque russo contra a energia e as pontes do Dnipro. Canais de monitoramento disseram que a Ucrânia atingiu a refinaria de Saratov, o que não foi confirmado.'],
+ ['h','O que vem agora'],
+ ['ul',['10 e 11 de novembro: rodada em Abu Dhabi.','13 de novembro: líderes da UE discutem a representação do bloco nas conversas.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A data exata e os delegados russos e americanos.','O ataque à refinaria de Saratov.','A posição formal da UE sobre o acordo de segurança proposto por Trump.']]
+ ],
+ fontes:[['Kyiv Independent','https://kyivindependent.com/umerov-to-lead-ukraine-delegation-in-abu-dhabi-peace-talks-despite-media-confusion-top-official-confirms/'],['Al Jazeera','https://www.aljazeera.com/news/2026/11/5/zelenskyy-hopes-democratic-congress-will-bring-more-us-help-for-ukraine'],['Euronews em português','https://pt.euronews.com/video/2026/11/07/noticias-do-dia-7-de-novembro-2026-noite']]};
+
+S.ira_proposta_catar = {ed:'mundo', k:'Mundo · Oriente Médio', hora:'7/11',
+ t:'Trump confirma ataques "limitados" à ilha iraniana de Qeshm e diz que o Irã quer um acordo; Catar nega que as conversas tenham fracassado',
+ sub:'Foram os primeiros ataques americanos desde a derrota republicana de 3 de novembro; no Iêmen, um míssil atingiu um mercado em Taiz, e houthis e governo se acusam.',
+ dado:{n:'Qeshm', l:'Ilha no Estreito de Ormuz, alvo de ataque americano contra defesas aéreas na sexta (6)'},
+ resumo:'O presidente Donald Trump confirmou novos ataques americanos "limitados" contra defesas aéreas iranianas na ilha de Qeshm, no Estreito de Ormuz, na sexta (6). Ele disse que os EUA "estão lidando com eles agora" e que o Irã "quer um acordo". A mídia iraniana falou em dois mísseis na área de Suza e em um drone MQ-9 derrubado; o Comando Central (CENTCOM) disse que a situação estava "relativamente calma". O Catar nega que a mediação tenha fracassado. No Iêmen, um míssil atingiu o mercado al-Hadara, em Taiz, com dezenas de mortos e feridos.',
+ upd:'Entram os ataques americanos a Qeshm em 6 de novembro, a fala de Trump sobre um acordo e a resposta do Catar; o Iêmen ganha o ataque ao mercado de Taiz.',
+ fundo:[
+ ['p','O presidente dos Estados Unidos, Donald Trump, confirmou neste sábado (7) novos ataques americanos "limitados" contra defesas aéreas iranianas na ilha de Qeshm, no Estreito de Ormuz, ocorridos na sexta (6). Ele chamou a ação de "menor" e disse que um dispositivo antiaéreo foi destruído "em uns 15 minutos, talvez cinco", segundo a Al Jazeera. Foram os primeiros ataques americanos desde a derrota republicana nas eleições de meio de mandato, em 3 de novembro.'],
+ ['nums',[['US$ 20 mi','recompensa dos EUA por informação sobre o programa nuclear iraniano'],['323 mil','deslocados no Iêmen desde agosto, segundo a ONU'],['281','baixas civis contadas pela ONU no Iêmen: 69 mortos e 212 feridos']]],
+ ['h','A versão de Washington e a de Teerã'],
+ ['p','A mídia iraniana relatou dois mísseis na área de Suza e disse ter derrubado um drone MQ-9; o CENTCOM afirmou que a situação estava "relativamente calma". Trump disse: "Estamos lidando com eles agora. Eles querem fazer um acordo" e falou em "muito progresso". Na quinta (5), ele havia dito que os EUA poderiam precisar "destruir" o resto do Irã. O porta-voz da Guarda Revolucionária, Hossein Mohebbi, disse que a Guarda pode mudar a "doutrina nuclear" se o Estado mandar, e o Departamento de Estado oferece até US$ 20 milhões por informação sobre o programa nuclear.'],
+ ['h','A mediação do Catar'],
+ ['p','O Catar nega que as conversas tenham fracassado, diz que isso favorece quem quer prolongar a guerra e afirma que a mediação continua. O primeiro-ministro catari pediu que EUA e Irã não esperem "o momento perfeito". O Irã havia enviado uma proposta nuclear via Catar.'],
+ ['h','Iêmen: o mercado de Taiz'],
+ ['p','Na sexta (6), um míssil atingiu o mercado al-Hadara, em Taiz, e deixou "dezenas" de mortos e feridos, sem balanço exato, segundo a Al Jazeera. O governo, pela voz do coronel Majed al-Nazili, acusa os houthis; os houthis negam e culpam a Arábia Saudita. A ofensiva "Dawn of Yemen", lançada pelo governo de Rashad al-Alimi em 5 de outubro para retomar Sanaa, tem apoio aéreo saudita, e a Arábia Saudita bombardeia o Iêmen pela primeira vez desde 2022. A ONU conta mais de 323 mil deslocados desde agosto, e o cerco houthi a Taiz atinge cerca de 800 mil pessoas. Um ataque em Shabwah matou ao menos 70 recrutas do governo.'],
+ ['h','O que vem agora'],
+ ['ul',['Resposta dos EUA à proposta iraniana, via Catar.','Novos ataques em Ormuz, caso o CENTCOM decida repetir a ação.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['As perdas em Qeshm: a versão iraniana (drone abatido) não foi confirmada pelos EUA.','A autoria do míssil em Taiz e o número de mortos.','Relatos do New York Times e do Telegraph, citados pela Al Jazeera, sobre tropas americanas posicionadas e sobre compra de S-400 russos, não verificados.']]
+ ],
+ fontes:[['Al Jazeera (Qeshm)','https://www.aljazeera.com/news/2026/11/7/trump-confirms-new-us-strikes-on-irans-qeshm-island'],['Al Jazeera (ao vivo)','https://www.aljazeera.com/news/liveblog/2026/11/7/iran-war-live-qatar-says-us-iran-should-not-wait-to-reach-a-peace-deal'],['Al Jazeera (Iêmen)','https://www.aljazeera.com/news/2026/11/7/dozens-killed-as-humanitarian-crisis-mounts-in-yemen-what-next-for-war'],['Times of Israel (liveblog)','https://www.timesofisrael.com/liveblog-november-07-2026/']]};
+
+S.colombia_drones = {ed:'mundo', k:'Mundo · Colômbia', hora:'7/11',
+ t:'Drones com explosivos atingem refeitório de base militar no sul de Bolívar, na Colômbia; Exército fala em três soldados mortos e oito feridos graves',
+ sub:'O prefeito de Santa Rosa del Sur falou em 35 feridos; nenhum grupo assumiu o ataque, e a região tem presença do ELN, de dissidências das Farc e do Clã do Golfo.',
+ dado:{n:'3 mortos', l:'Soldados mortos, segundo o primeiro balanço da Primeira Divisão do Exército (Infobae)'},
+ resumo:'Drones carregados de explosivos atingiram por volta das 12h30 de sábado (7) o refeitório de um cantón militar em Santa Rosa del Sur, no sul do departamento de Bolívar, na Colômbia, durante o almoço da tropa. A Primeira Divisão do Exército informou, segundo a Infobae, três soldados mortos e oito gravemente feridos, além de outros feridos sem número definido. O prefeito Milton Olaya falou em 35 feridos. Ninguém reivindicou o ataque. O El Tiempo, que publicou antes um balanço de 14 feridos, descreve a base "praticamente em ruínas".',
+ upd:'Novo balanço da Primeira Divisão do Exército: três soldados mortos e oito feridos graves, contra os 14 feridos do primeiro relato.',
+ fundo:[
+ ['p','Drones carregados de explosivos atingiram por volta das 12h30 deste sábado (7) o refeitório de um cantón militar em Santa Rosa del Sur, no sul do departamento de Bolívar, na Colômbia, durante o almoço da tropa. A Primeira Divisão do Exército informou, segundo a Infobae, três soldados mortos e oito gravemente feridos, além de outros feridos sem número definido.'],
+ ['nums',[['3','soldados mortos, segundo o Exército'],['8','feridos graves'],['35','feridos, segundo o prefeito Milton Olaya, número não confirmado'],['14','feridos no primeiro balanço do El Tiempo']]],
+ ['h','O que se sabe'],
+ ['p','O cantón abriga o Batalhão de Infantaria de Selva nº 48. Vídeos divulgados pelo El Tiempo mostram a base "praticamente em ruínas". A Primeira Divisão "rechaça categoricamente esta ação criminosa" e abriu uma linha telefônica para familiares. O prefeito de Santa Rosa del Sur, Milton Olaya, falou em 35 feridos, cinco transferidos e três mortos, relato feito na hora e que a Infobae não confirma.'],
+ ['h','A autoria e a região'],
+ ['p','Ninguém reivindicou o ataque, e as Forças Armadas não apontaram suspeitos. A Infobae lembra que a área tem presença do Exército de Libertação Nacional (ELN), de dissidências das Farc e do Clã do Golfo. A reportagem afirma que o presidente condenou o ataque e ordenou intensificar as operações; o Radar transcreve a informação como consta da página, sem ter lido o comunicado oficial.'],
+ ['h','A divergência de números'],
+ ['p','O primeiro relato do El Tiempo falava em ao menos 14 feridos, e a manchete da mesma matéria citava três mortos e 35 feridos. O balanço do Exército, divulgado depois e reproduzido pela Infobae, é de três mortos e oito feridos graves. O Radar usa os números atribuídos ao Exército e trata os demais como relatos preliminares.'],
+ ['h','O que vem agora'],
+ ['ul',['Balanço final do Exército e do Ministério da Defesa.','Identificação do grupo responsável e resposta do governo às operações na região.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['O número total de feridos: 8 graves, 14 ou 35, conforme a fonte.','A autoria do ataque.']]
+ ],
+ fontes:[['Infobae','https://www.infobae.com/colombia/2026/11/07/ataque-terrorista-con-drones-contra-canton-militar-en-santa-rosa-del-sur-bolivar-3-uniformados-muertos-y-8-heridos/'],['El Tiempo','https://www.eltiempo.com/colombia/otras-ciudades/con-drones-atacaron-un-canton-militar-en-el-sur-de-bolivar-reportan-varios-heridos-esto-se-sabe-del-atentado-terrorista-3599270']]};
+
+S.rn_transicao = {ed:'regioes', reg:'ne', k:'Nordeste · Rio Grande do Norte', hora:'6/11',
+ upd:'A comissão começou a funcionar em Natal com prazo até 20 de dezembro, e a coordenadora defendeu alíquota patronal suplementar de 20% na previdência estadual.',
+ t:'Transição no RN começa a funcionar em Natal com prazo até 20 de dezembro; coordenadora defende alíquota patronal extra de 20% na previdência estadual',
+ sub:'O déficit previdenciário passou de R$ 2 bilhões em 2025, e o gasto de pessoal do Executivo está em 55,17% da receita, acima do limite de 49% da Lei de Responsabilidade Fiscal.',
+ dado:{n:'47%', l:'Alíquota patronal que resultaria da contribuição extra de 20 pontos sobre os 27% atuais'},
+ fonteunica:true,
+ resumo:'A comissão de transição do Rio Grande do Norte começou a funcionar na sexta (6), na Escola de Governo, em Natal, sob coordenação da controladora-geral Luciana Daltro, com prazo até 20 de dezembro para fechar o diagnóstico, anunciar a equipe e definir os projetos dos primeiros 100 dias. Daltro defende contribuição patronal suplementar e transitória de 20% para a previdência estadual, o que elevaria a alíquota de 27% para 47%. O governador eleito, Cadu Xavier (PT), toma posse em 6 de janeiro de 2027. As informações vêm do Agora RN.',
+ fundo:[
+ ['p','A comissão de transição do governo do Rio Grande do Norte começou a funcionar na manhã de sexta-feira (6), na Escola de Governo, no Centro Administrativo de Natal, com prazo até 20 de dezembro para fechar o diagnóstico, anunciar a equipe e definir os projetos dos primeiros 100 dias. O governador eleito, Cadu Xavier (PT), toma posse em 6 de janeiro de 2027. As informações vêm do Agora RN, única fonte lida pelo Radar.'],
+ ['nums',[['27% → 47%','alíquota patronal, com a contribuição extra de 20 pontos'],['> R$ 2 bi','déficit previdenciário em 2025'],['55,17%','gasto de pessoal do Executivo, contra limite de 49%'],['R$ 166 mi','aporte mensal do Tesouro']]],
+ ['h','Quem coordena e o que será feito'],
+ ['p','A comissão foi instituída por ato no Diário Oficial depois de reunião na Governadoria em 28 de outubro. A instalação estava prevista para quinta (5) e foi remarcada porque Cadu estava em Brasília, onde se encontrou com Lula. A coordenação é da controladora-geral Luciana Daltro, e o trabalho se divide em sete eixos, como fiscal, patrimônio e pessoal. Cadu despacha da Escola de Governo ao lado da vice eleita, Larissa Rosado (PSB). A governadora Fátima Bezerra (PT) indicou sete integrantes do comitê gestor e disse que fornecerá as informações.'],
+ ['h','A previdência estadual'],
+ ['p','Segundo o Agora RN, Daltro defendeu uma contribuição patronal suplementar de 20%, transitória, dentro de um plano de recuperação já apresentado à Justiça. A alíquota patronal atual é de 27% (Lei 11.109/2022), com previsão de 28% em 2027; com os 20 pontos iria a 47%. Os servidores pagam de 11% a 18%, e o governo quer manter esses percentuais. Em 2025, a receita previdenciária foi de R$ 3,537 bilhões contra despesa de R$ 5,559 bilhões, déficit acima de R$ 2 bilhões, com aporte do Tesouro de cerca de R$ 166 milhões por mês. O plano inclui fundo de ativos patrimoniais e comitê com representantes da Assembleia, do Tribunal de Justiça, do Ministério Público, do TCE e da Defensoria. O aumento de impostos foi descartado, e a meta é o equilíbrio até 2028.'],
+ ['p','O gasto de pessoal do Executivo está em 55,17% da receita, contra o limite de 49% da Lei de Responsabilidade Fiscal. Em julho, a 4ª Vara da Fazenda de Natal deu 90 dias ao Estado e ao Ipern para apresentar um programa conjunto. Cadu reafirmou a Lei Complementar 777/2025, que limita a 80% da receita corrente líquida o crescimento da despesa de pessoal, e disse que a proposta previdenciária será discutida no Legislativo.'],
+ ['h','O que vem agora'],
+ ['ul',['Diagnóstico, equipe e projetos dos primeiros 100 dias até 20 de dezembro.','Discussão da alíquota suplementar com Assembleia, Judiciário, TCE e Ministério Público.','Obras anunciadas por Lula: terceira ponte sobre o Potengi e cronograma da Reta Tabajara.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A alíquota final, que o texto descreve como "sendo construída e dialogada", e a aceitação dos demais Poderes.','A data de fechamento da transição: 20 de dezembro em uma matéria e 18 de dezembro em outra do mesmo veículo.']]
+ ],
+ fontes:[['Agora RN (instalação)','https://agorarn.com.br/politica/cadu-xavier-prazo-diagnostico-transicao-rn/'],['Agora RN (previdência)','https://agorarn.com.br/politica/previdencia-estadual-aliquota-suplementar-transicao/']]};
+
+S.mg_aro_vorcaro = {ed:'regioes', reg:'mg', k:'Minas Gerais · Belo Horizonte', hora:'6/11',
+ t:'Mensagens entre Marcelo Aro e Daniel Vorcaro agitam a Câmara de BH; vereadora registra boletim de ocorrência por calúnia',
+ sub:'Aro agradece apoio a vereadores aliados e diz ter eleito 15 dos 41; ele afirma que a mensagem era padrão e que alguns empresários apoiaram "financeiramente".',
+ dado:{n:'15 de 41', l:'Vereadores que Marcelo Aro diz ter eleito, em mensagem a Daniel Vorcaro'},
+ resumo:'Mensagens de WhatsApp entre o banqueiro preso Daniel Vorcaro e o ex-secretário de Governo de Minas Marcelo Aro (PP), líder da chamada Família Aro na Câmara Municipal de Belo Horizonte, vieram a público na quinta (5), segundo o jornal O Tempo. Aro agradece o apoio de Vorcaro a vereadores aliados e diz ter eleito 15 dos 41 vereadores. Ele afirmou ao jornal que a mensagem era padrão, enviada a empresários que foram a um jantar em 2024. Na sexta (6), a vereadora Janaína Cardoso (União) registrou boletim de ocorrência por calúnia.',
+ fundo:[
+ ['p','Mensagens de WhatsApp entre o banqueiro preso Daniel Vorcaro e o ex-secretário de Estado de Governo Marcelo Aro (PP) vieram a público na quinta-feira (5) e provocaram tumulto na Câmara Municipal de Belo Horizonte, informa o jornal O Tempo. A Rádio Itatiaia, que atribui a revelação ao Metrópoles, detalha o histórico das conversas. Na sexta (6), uma vereadora registrou boletim de ocorrência por calúnia.'],
+ ['h','O histórico das conversas'],
+ ['p','Segundo a Itatiaia, o contato começou em 4 de dezembro de 2023, quando Aro foi recebido na sede do banco em São Paulo e, dois dias depois, se colocou "100% à disposição". Em 2 de janeiro de 2025, ele agradeceu o apoio nas eleições de 2024, comemorou a eleição da mãe, a vereadora Marli (PP), e a de Juliano Lopes (Podemos) para a presidência da Câmara, e Vorcaro respondeu "vamos juntos". Em abril de 2025, Aro se ofereceu para ajudar o banqueiro em meio à polêmica da compra do Master pelo BRB, e em outubro houve uma ligação e o envio de um protocolo da Secretaria da Fazenda. Vorcaro foi preso em 17 de novembro de 2025, na Operação Compliance Zero. Vereadores aliados de Aro negaram, sob anonimato, ter recebido recursos de Vorcaro, segundo O Tempo.'],
+ ['p','A nota de Aro à Itatiaia diz que o jantar de 2024 em Belo Horizonte foi para pedir apoio financeiro, político e eleitoral, que a mesma mensagem foi enviada a todos os participantes e que Vorcaro era então um empresário respeitado.'],
+ ['h','O conteúdo das mensagens'],
+ ['p','Nas conversas, Aro agradece o apoio de Vorcaro a vereadores aliados, que segundo a reportagem pode ter sido financeiro, e diz ter eleito 15 dos 41 vereadores, "exatamente aquilo que prevíamos no começo da caminhada". Aro, líder da Família Aro na Câmara, disse ao jornal que a mensagem era padrão, enviada a empresários que foram a um jantar em 2024, e que alguns apoiaram "financeiramente", sem especificar Vorcaro. A assessoria dele não respondeu aos pedidos de comentário.'],
+ ['h','A reação na Câmara'],
+ ['p','Na sexta, uma postagem apócrifa circulou em um grupo de vereadores com fotos de integrantes da família, entre elas a da vereadora Janaína Cardoso (União), que não faz parte do grupo. Ela registrou boletim de ocorrência por calúnia na 4ª Delegacia de Polícia. O ex-presidente da Casa Gabriel Azevedo (MDB) protocolou requerimento perguntando quais seriam os 15 vereadores e se o atual presidente, Juliano Lopes (Podemos), da Família Aro, está entre eles. Lopes encaminhou o pedido ao jurídico e não quis se pronunciar.'],
+ ['h','O que vem agora'],
+ ['ul',['Resposta da Câmara ao requerimento de Azevedo.','Apuração da Polícia Civil sobre a postagem apócrifa.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['Quais vereadores receberam apoio, de quem e em que valor.','O autor da postagem apócrifa e o conteúdo integral das conversas.']]
+ ],
+ fontes:[['O Tempo (Aro e Vorcaro)','https://www.otempo.com.br/politica/2026/11/6/dialogos-de-aro-com-vorcaro-causam-rebulico-na-cmbh-com-direito-a-b-o-na-policia'],['Rádio Itatiaia (revelação do Metrópoles)','https://www.itatiaia.com.br/politica/mensagens-revelam-proximidade-entre-vorcaro-e-marcelo-aro-que-agradeceu-apoio-nas-eleicoes-de-2024-e-se-colocou-a-disposicao-do-ex-banqueiro/']]};
+
+S.mg_ameacas = {ed:'regioes', reg:'mg', k:'Minas Gerais · Assembleia', hora:'6/11',
+ t:'Homem que se diz policial militar ameaça de morte os 77 deputados da Assembleia de Minas; polícia, PM e Ministério Público são acionados',
+ sub:'Os e-mails também foram copiados a deputados federais; o deputado Cristiano Caporezzo (PL) registrou boletim de ocorrência.',
+ dado:{n:'77', l:'Deputados estaduais citados nas ameaças por e-mail'},
+ fonteunica:true,
+ resumo:'Um homem que se apresenta como policial militar e anexou uma carteira funcional, cuja identidade não foi verificada, enviou e-mails de ameaça aos 77 deputados da Assembleia Legislativa de Minas Gerais, com deputados federais em cópia, informa o jornal O Tempo. O deputado Cristiano Caporezzo (PL) registrou boletim de ocorrência, e a vice-presidente Leninha (PT), na presidência interina, pediu que os deputados se juntem a inquérito da Polícia Civil já aberto. Polícia Civil, PM e Ministério Público foram acionados.',
+ fundo:[
+ ['p','Um homem que se apresenta como policial militar enviou e-mails de ameaça de morte aos 77 deputados estaduais de Minas Gerais, informa o jornal O Tempo, única fonte lida pelo Radar. A identidade dele não foi verificada, e o texto da reportagem será atualizado.'],
+ ['h','O que dizem os e-mails'],
+ ['p','O autor anexou uma carteira funcional e escreveu: "A partir de agora, qualquer lugar, que qualquer um dos 77 deputados estaduais, pisarem, está sujeito a ataque". Os quatro e-mails mais recentes são ameaças diretas; antes, ele já havia enviado outros, cinco no mesmo dia em julho, dizendo ter pedido apuração ao Ministério Público e alegando "retaliações fraudulentas". Segundo a reportagem, ele teria uma lista de deputados que pretendia "matar" por não lhe darem retorno.'],
+ ['h','As providências'],
+ ['p','O deputado Cristiano Caporezzo (PL) registrou boletim de ocorrência. A vice-presidente da Assembleia, Leninha (PT), que exerce a presidência interinamente, pediu que a delegada oriente os deputados a se juntarem ao inquérito da Polícia Civil já em andamento. Polícia Civil, Polícia Militar e Ministério Público foram acionados.'],
+ ['h','O que vem agora'],
+ ['ul',['Resultado das apurações da Polícia Civil, da PM e do Ministério Público.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A identidade do autor e se ele é policial militar.','Qualquer prisão ou medida de proteção aos deputados.']]
+ ],
+ fontes:[['O Tempo','https://www.otempo.com.br/politica/2026/11/6/deputados-de-minas-recebem-ameacas-de-morte-matarei-os-77']]};
+
+S.rj_volta_redonda = {ed:'regioes', reg:'rj', k:'Rio de Janeiro · Segurança', hora:'6/11',
+ t:'Deputado Jari Oliveira cobra permanência das forças especiais da PM em Volta Redonda após guerra entre facções; seis PMs foram afastados',
+ sub:'O Comando Vermelho tentou invadir áreas do Terceiro Comando Puro em 25 de outubro; desde então, 12 pessoas foram presas e mais de 20 kg de drogas, apreendidos.',
+ dado:{n:'12 presos', l:'Entre 4 e 6 de novembro, em Volta Redonda, segundo o Diário do Rio'},
+ fonteunica:true,
+ resumo:'O deputado estadual Jari Oliveira (PSB) reuniu-se na sexta (6) com o comandante do 28º BPM, tenente-coronel Décio Keiji Takamine, e pediu que as forças especiais da PM permaneçam em Volta Redonda enquanto durarem os confrontos entre facções, informa o Diário do Rio. A crise começou em 25 de outubro, quando o Comando Vermelho tentou invadir áreas do Terceiro Comando Puro na Vila Brasília. Seis policiais foram afastados do serviço operacional, e há apuração sobre ajuda de PMs à invasão.',
+ fundo:[
+ ['p','O deputado estadual Jari Oliveira (PSB) reuniu-se na sexta-feira (6) com o comandante do 28º Batalhão da PM, tenente-coronel Décio Keiji Takamine, e pediu que as forças especiais da Polícia Militar permaneçam em Volta Redonda enquanto durarem os confrontos entre facções. Ele disse que pressionará o Comando-Geral da PM. A informação é do Diário do Rio, única fonte lida pelo Radar.'],
+ ['nums',[['25/10','início da crise na Vila Brasília'],['12','presos entre 4 e 6 de novembro'],['20 kg','de drogas apreendidos na Operação Ruptura, em 5/11'],['148','PMs na Operação Impacto']]],
+ ['h','A cronologia da crise'],
+ ['p','Em 25 de outubro, o Comando Vermelho tentou invadir áreas do Terceiro Comando Puro no Complexo da Vila Brasília, com tiroteios e veículos incendiados; oito escolas suspenderam as aulas. O governo estadual enviou equipes especiais, entre elas o Bope, com blindados e helicóptero. Em 28 de outubro, uma operação em Monte Castelo apreendeu um fuzil, munição e um rádio transmissor, e em 1º de novembro houve novos tiros. Entre 4 e o início de 6 de novembro, 12 pessoas foram presas, com armas e drogas apreendidas, entre elas mais de 20 quilos na Operação Ruptura, da Polícia Civil, em 5 de novembro. Na Operação Impacto, cerca de 148 policiais militares atuaram com blindados na Vila Brasília e em outros bairros.'],
+ ['h','O papel do deputado e a apuração interna'],
+ ['p','O mandato de Jari Oliveira já destinou emendas impositivas para viaturas e motos do batalhão, sem informar valores. A PM apura se policiais ajudaram a invasão, e seis foram afastados do serviço operacional. A permanência das forças especiais depende de decisões operacionais da corporação.'],
+ ['h','O que vem agora'],
+ ['ul',['Resposta do Comando-Geral da PM ao pedido de manter o reforço.','Resultado da apuração sobre os seis policiais afastados.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['O efetivo atual das forças especiais e se o reforço será mantido.','O valor das emendas e a data de início da Operação Impacto.','A reportagem não informa mortos ou feridos.']]
+ ],
+ fontes:[['Diário do Rio','https://diariodorio.com/seguranca/2026/11/06/apos-onda-de-violencia-deputado-cobra-permanencia-de-forcas-especiais-em-volta-redonda.html']]};
+
+S.rs_salarios = {ed:'regioes', reg:'sul', k:'Sul · Rio Grande do Sul', hora:'6/11',
+ t:'Relator do orçamento do RS admite parcelar salários do funcionalismo a partir de 2027 e sindicatos reagem; déficit previsto é de R$ 4,8 bilhões',
+ sub:'Claudio Branchieri (PL), cotado para a Fazenda de Luciano Zucco, diz que o novo governo não atrasará salários; o Estado retoma o pagamento da dívida com a União em maio de 2027.',
+ dado:{n:'R$ 4,8 bi', l:'Déficit projetado no "melhor cenário" para o orçamento de 2027 do RS'},
+ fonteunica:true,
+ resumo:'O deputado Claudio Branchieri (PL), relator do orçamento de 2027 do Rio Grande do Sul e citado como possível secretário da Fazenda do governador eleito Luciano Zucco (PL), disse que os salários do funcionalismo poderiam ser pagos em parcelas a partir de 2027. O déficit projetado é de R$ 4,8 bilhões no melhor cenário. Sindicatos criticaram, e Eduardo Leite afirmou que o novo governo deve governar "sem reclamar". O Estado suspendeu em 2024 o pagamento da dívida com a União e a retoma em maio de 2027. A informação vem do Brasil de Fato RS, com texto do Sul21.',
+ fundo:[
+ ['p','O deputado estadual Claudio Branchieri (PL), relator da Lei Orçamentária de 2027 do Rio Grande do Sul e citado como possível secretário da Fazenda do governador eleito Luciano Zucco (PL), disse que os salários do funcionalismo poderiam ser pagos em parcelas a partir de 2027. A informação foi publicada pelo Brasil de Fato RS, a partir de texto do Sul21, e o Radar não conseguiu abrir a versão original.'],
+ ['nums',[['R$ 4,8 bi','déficit projetado em 2027, no melhor cenário'],['R$ 12 bi','pagamento da dívida com a União não feito desde maio de 2024'],['maio/2027','retomada do pagamento da dívida'],['R$ 770 mi','perda anual com a taxa de licenciamento de veículos revogada']]],
+ ['h','O que disse o relator'],
+ ['p','Branchieri citou o Propag, programa de renegociação de dívidas dos estados, e também afirmou que o novo governo não atrasará salários, tratando o parcelamento como possibilidade e como hipótese improvável. O parecer do relator está previsto para "o dia 19", sem indicação de mês, presumivelmente novembro. O Estado suspendeu o pagamento da dívida com a União em maio de 2024, depois das enchentes, e o retoma em maio de 2027, tendo deixado de pagar quase R$ 12 bilhões. Os sindicatos falam em déficit de quase R$ 5 bilhões.'],
+ ['h','A reação'],
+ ['p','Fábio Castro, da Ugeirm, chamou a declaração de irresponsável e propôs rever isenções. Rosane Zan, do Cpers, falou em preocupação e possível pressão sobre a União. Érico Corrêa, do Sindicaixa, chamou os números de "mentirosos", disse que greves podem vir e que o gasto com pessoal é cerca de 40% da receita, contra limite de 49%. Os petistas Miguel Rossetto e Laura Sito criticaram: Sito disse que 52% dos investimentos previstos dependem de recursos federais.'],
+ ['p','O governador Eduardo Leite afirmou que o novo governo deve governar "sem reclamar" da falta de recursos e citou a revogação da taxa de licenciamento de veículos, que ele vetou e os deputados derrubaram, com perda estimada de R$ 770 milhões por ano. A Ugeirm lembrou que o Confaz aprovou em outubro aumento do ICMS de combustíveis, em vigor em fevereiro de 2027, sem estimativa de impacto.'],
+ ['h','O que vem agora'],
+ ['ul',['Parecer do relator sobre a LOA de 2027, previsto para o dia 19.','Retomada do pagamento da dívida com a União em maio de 2027.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['Se haverá atraso ou parcelamento de salários; o relator tratou como hipótese.','Os números do déficit, contestados pelos sindicatos, e a nomeação de Branchieri para a Fazenda.']]
+ ],
+ fontes:[['Brasil de Fato RS (texto do Sul21)','https://www.brasildefato.com.br/2026/11/06/sindicatos-criticam-manifestacao-de-aliado-de-zucco-sobre-atraso-de-salarios-do-funcionalismo/']]};
+
+
+S.mt_russi = {ed:'regioes', reg:'co', k:'Centro-Oeste · Mato Grosso', hora:'7/11',
+ t:'Max Russi assume o governo de Mato Grosso enquanto Pivetta vai à COP31 e se encontra com Lula; a data de volta do governador varia entre 18 e 19 de novembro',
+ sub:'O presidente da Assembleia deve levar aos deputados a reforma administrativa do governador, que viaja com recursos do próprio estado e busca licenças federais para a MT-251.',
+ dado:{n:'18 ou 19/11', l:'Volta de Pivetta ao estado, conforme a fonte'},
+ upd:'A posse interina de Russi e a data de volta de Pivetta passam a vir com a agenda do governador na Turquia e o encontro com Lula.',
+ resumo:'O presidente da Assembleia Legislativa de Mato Grosso, Max Russi, assumiu interinamente o governo no sábado (7), conforme documento assinado na sexta (6) pelo governador Otaviano Pivetta (Republicanos), que viaja à COP31, em Antália. O JB News aponta que o documento fixa o retorno em 19 de novembro, e a Secom previa o dia 18. Pivetta terá o primeiro encontro com Lula e quer licenças federais para a MT-251, na Chapada dos Guimarães. A viagem é paga com recursos do estado, segundo a Secom.',
+ fundo:[
+ ['p','O presidente da Assembleia Legislativa de Mato Grosso, Max Russi, assumiu interinamente o governo no sábado (7), no Palácio Paiaguás, conforme documento assinado na noite de sexta (6) pelo governador Otaviano Pivetta (Republicanos), com base no artigo 62 da Constituição estadual. Pivetta viaja à COP31, em Antália, na Turquia.'],
+ ['p','O interinato coincide com a viagem do governador à Turquia, e a reforma administrativa que Pivetta quer aprovar deve ser o principal assunto da Assembleia nas próximas semanas, segundo a coluna da Gazeta Digital.'],
+ ['h','A transmissão do cargo'],
+ ['p','Durante o período, o primeiro vice-presidente da Assembleia, Júlio Campos (União Brasil), comanda a Casa, segundo o JB News. É a segunda vez que Russi ocupa o Executivo; a primeira foi em junho de 2021. Em coletiva ao lado de Pivetta, Russi disse: "Vamos seguir as orientações do governador", conforme o Cenário MT. A Gazeta Digital informou que Russi deve apresentar aos deputados a reforma administrativa do governador.'],
+ ['h','A agenda de Pivetta na Turquia'],
+ ['p','A Gazeta Digital informa que Pivetta deixou o estado em 6 de novembro e volta no dia 18. O governador terá o primeiro encontro com Lula, a quem não apoiou na eleição presidencial: ele apoiou Flávio Bolsonaro e critica a política fiscal federal. O objetivo declarado é obter licenças federais para a rodovia MT-251, no Portão do Inferno, na Chapada dos Guimarães, além de apresentar ações de fiscalização ambiental e iniciativas de crédito de carbono. Os deputados do PT Lúdio Cabral e Valdir Barranco são citados na reportagem. A Secom diz que a viagem é paga com recursos do próprio estado.'],
+ ['h','O que vem agora'],
+ ['ul',['Apresentação da reforma administrativa aos deputados durante o interinato.','Encontro Pivetta-Lula na COP31.','Volta do governador, em 18 ou 19 de novembro.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A data de retorno: a Secom e a Gazeta Digital falam em 18 de novembro, e o JB News diz que o documento fixa 19.','O conteúdo da reforma administrativa e a data de envio à Assembleia.']]
+ ],
+ fontes:[['Gazeta Digital (Fogo Cruzado)','https://www.gazetadigital.com.br/colunas-e-opiniao/fogo-cruzado/max-assume-paiaguas-enquanto-pivetta-cumpre-agenda-na-turquia/864550'],['Gazeta Digital (encontro com Lula)','https://www.gazetadigital.com.br/editorias/politica-de-mt/encontro-na-turquia-cop31-reunira-lula-e-pivetta/864648'],['JB News','https://jbnews.com.br/max-russi-assume-governo-de-mt-neste-sabado-e-fica-no-paiaguas-ate-19-de-novembro/'],['Cenário MT','https://cenariomt.com.br/mato-grosso/max-russi-assume-governo-de-mato-grosso-nesta-sexta-6/'],['MidiaNews','https://www.midianews.com.br/fogo-amigo/troca-de-comando/533427']]};
+
+S.pe_exoneracoes = {ed:'regioes', reg:'ne', k:'Nordeste · Pernambuco', hora:'7/11',
+ t:'Raquel Lyra exonera mais de cem servidores da Casa Civil de Pernambuco, e indicados do PL de Anderson Ferreira estão no pacote',
+ sub:'O blog de Márcio Didier contou 139 atos no Diário Oficial; o Blog do Magno fala em mais de 100, com efeito retroativo a 1º de novembro.',
+ dado:{n:'139', l:'Atos de exoneração na Casa Civil no Diário Oficial de 7/11, segundo o blog de Márcio Didier'},
+ upd:'O Blog do Magno confirma as exonerações e liga o pacote aos indicados do PL de Anderson Ferreira, depois do acordo eleitoral.',
+ resumo:'O Diário Oficial de Pernambuco deste sábado (7) publicou 139 atos de exoneração na Casa Civil, em sua maioria retroativos a 1º de novembro, segundo o blog de Márcio Didier, que soma 150 considerando os demais órgãos. O Blog do Magno fala em mais de cem exonerados e diz que indicados de Anderson Ferreira, presidente estadual do PL, estão no pacote, cerca de 15 nomes indicados depois de um acordo pelo qual o PL não lançaria candidato ao governo. Não há manifestação oficial do governo.',
+ fundo:[
+ ['p','O Diário Oficial de Pernambuco deste sábado (7) publicou 139 atos de exoneração na Casa Civil da governadora Raquel Lyra (PSD), a maioria com efeito retroativo a 1º de novembro, segundo o blog de Márcio Didier. Indicados do PL, o partido de Anderson Ferreira, estão entre os atingidos, de acordo com o Blog do Magno, que fala em mais de cem exonerados.'],
+ ['h','Quem foi exonerado'],
+ ['p','Os atos atingem cargos DAS-1 a DAS-5, como assessores especiais e gestor de articulação governamental, e funções CAA-1 a CAA-5, de assessores técnicos, assistentes e auxiliares. O Diário Oficial traz também nomeações na própria Casa Civil, e alguns exonerados foram nomeados para outras funções, o que, segundo o blog de Márcio Didier, não ocorreu com os indicados da família Ferreira. O levantamento do blog identificou 150 atos de exoneração ao considerar os demais órgãos estaduais.'],
+ ['p','O caso importa porque expõe a distância entre o governo de Raquel Lyra e o PL de Anderson Ferreira depois da eleição, num estado em que o partido teve candidato ao Senado e rompeu com aliados locais.'],
+ ['h','O recado político'],
+ ['p','O Blog do Magno descreve o pacote como revés ao núcleo da família Ferreira: cerca de 15 nomes indicados por Anderson Ferreira, presidente estadual do PL, depois de um acordo pelo qual o partido não lançaria candidato ao governo. O grupo incluía parentes e ex-secretários de Jaboatão dos Guararapes. O blog lembra que o PL lançou Mendonça Filho ao Senado no penúltimo dia do prazo e que Anderson rompeu com o prefeito Mano Medeiros. Um integrante do grupo, não identificado, disse ao blog de Márcio Didier que os afastados seriam alocados em outros cargos, mas "não informou onde".'],
+ ['h','O que vem agora'],
+ ['ul',['Eventuais realocações dos exonerados em outros cargos.','Reação pública do PL e do governo estadual.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['O total de exonerados: 139 atos na Casa Civil, 150 no governo ou "mais de cem", conforme a fonte.','A motivação política do pacote, que vem da interpretação do Blog do Magno; o governo não se manifestou nos textos lidos.']]
+ ],
+ fontes:[['Márcio Didier','https://marciodidier.com.br/2026/11/07/governo-exoneracoes-ferreira/'],['Blog do Magno','https://blogdomagno.com.br/raquel-promove-exoneraco-na-casa-civil-e-indicados-de-anderson-estao-no-pacote/']]};
+
+S.rs_pelotas.velha = true; S.rs_pelotas.velhaMotivo = 'fato encerrado: o comitê foi criado na sexta (6); volta com o termo de referência ou nova portaria';
+
+ORDER.politica = ['alcolumbre_stf','dino_6x1','pl_motta','ms_seg','bets_stf','congresso_direita','flavio_senado','flavio_pesquisa','lula_cop','ministerio_40','lula_equipe_eco','tse_psol_se','stf_pauta_nov','enamed'];
+ORDER.economia = ['vr_va_interop','ibov_semana','fiscal'];
+ORDER.mundo = ['paraguai','ueno_bank','ucrania_abudhabi','israel','ira_proposta_catar','ucrania_energia','iemen_houthis','arg_china_telecom','papa_leao','colombia_drones'];
+ORDER.regioes = ['rj_volta_redonda','rs_salarios','rn_transicao','mg_aro_vorcaro','mg_ameacas'].concat(ORDER.regioes.filter(function(i){ return ['rj_volta_redonda','rs_salarios','rn_transicao','mg_aro_vorcaro','mg_ameacas'].indexOf(i)<0; }));
+HOME_LEAD = 'paraguai';
+HOME_ROW = ['dino_6x1','ibov_semana','pl_motta'];
+TRENDS = [];
+GIRO = [
+ ["Preventiva de Peña","O juiz Humberto Otazú decretou a prisão preventiva do ex-presidente paraguaio por risco de fuga, segundo a Última Hora.","Última Hora","https://www.ultimahora.com/juez-da-prision-preventiva-al-ex-presidente-santiago-pena-por-escandalo-de-ueno-bank","","paraguai"],
+ ["Holding em Luxemburgo","A Fiscalía cita 58 ações do irmão do ex-presidente numa holding de Luxemburgo e US$ 200 mil em dinheiro na residência oficial, segundo o ABC Color.","ABC Color","https://www.abc.com.py/nacionales/2026/11/07/ueno-bank-para-la-fiscalia-pena-se-puede-fugar-y-carvallo-ocultar-pruebas/","","paraguai"],
+ ["Mandato a Eisenkot","Herzog entrega o mandato para formar governo a Gadi Eisenkot no domingo, às 17h, segundo o Times of Israel.","Times of Israel","https://www.timesofisrael.com/liveblog_entry/herzog-announces-he-will-task-eisenkot-tomorrow-with-forming-new-government-after-meeting-him-and-netanyahu/","","israel"],
+ ["Abu Dhabi na terça","Umerov chefia a delegação ucraniana na rodada trilateral com Rússia e EUA, segundo o Kyiv Independent.","Kyiv Independent","https://kyivindependent.com/umerov-to-lead-ukraine-delegation-in-abu-dhabi-peace-talks-despite-media-confusion-top-official-confirms/","","ucrania_abudhabi"],
+ ["PGR e as bets","Gonet pede a Fux a suspensão nacional dos processos contra a MP 1.394/2026, segundo a Agência Brasil.","Agência Brasil","https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/pgr-pede-suspensao-de-acoes-contra-proibicao-de-bets","","bets_stf"],
+ ["Pesquisa sobre Flávio","Para 49,2% dos eleitores do segundo turno, o senador fugiu; para 47%, exilou-se, segundo a CartaCapital.","CartaCapital","https://www.cartacapital.com.br/politica/pesquisa-fespsp-mostra-racha-no-eleitorado-sobre-fuga-de-flavio-bolsonaro/","","flavio_pesquisa"],
+ ["Enamed sancionado","Lula sanciona o exame obrigatório para médicos e veta contrapartida de 2% das faculdades, segundo a CartaCapital.","CartaCapital","https://www.cartacapital.com.br/politica/lula-sanciona-lei-que-cria-exame-obrigatorio-para-atuacao-de-medicos-no-brasil/","","enamed"],
+ ["Pauta de novembro no STF","Fachin divulga a pauta, com anistia a partidos por cotas e porte de arma para guardas, segundo a CartaCapital.","CartaCapital","https://www.cartacapital.com.br/justica/anistia-a-partidos-piso-salarial-e-assedio-judicial-o-que-o-stf-vai-julgar-em-novembro/","","stf_pauta_nov"],
+ ["Roteiro de Lula","Lula vai a Antalya, às Filipinas e à ASEAN, segundo a Agência Brasil.","Agência Brasil","https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/lula-vai-filipinas-buscando-estreitar-vinculo-com-bloco-asiatico","","lula_cop"],
+ ["Fiscal fica para depois","Durigan diz que as propostas só vão a Lula após a viagem, segundo a Agência Brasil.","Agência Brasil","https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/durigan-discutira-medidas-fiscais-com-lula-apos-viagem-cop31","","fiscal"],
+ ["Repique da bolsa","O Ibovespa sobe 1,39% e fecha a 168,5 mil pontos, segundo o InfoMoney.","InfoMoney","https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-06112026/","","ibov_semana"],
+ ["Salários no RS","Relator do orçamento admite parcelar salários a partir de 2027, segundo o Brasil de Fato RS.","Brasil de Fato RS","https://www.brasildefato.com.br/2026/11/06/sindicatos-criticam-manifestacao-de-aliado-de-zucco-sobre-atraso-de-salarios-do-funcionalismo/","","rs_salarios"],
+ ["Previdência do RN","A coordenadora da transição defende alíquota patronal extra de 20%, segundo o Agora RN.","Agora RN","https://agorarn.com.br/politica/previdencia-estadual-aliquota-suplementar-transicao/","","rn_transicao"]
+].concat(GIRO).slice(0,22);
+AMANHA = [
+ ["Dom, 08/11 · 17h","mundo","Herzog entrega a Eisenkot o mandato para formar governo em Israel","O presidente israelense dá ao líder do Yashar 28 dias, com extensão possível de até 14, para montar uma coalizão. Está em jogo se a oposição, com 67 das 120 cadeiras, consegue governar sem depender dos partidos árabes.","https://www.timesofisrael.com/liveblog_entry/herzog-announces-he-will-task-eisenkot-tomorrow-with-forming-new-government-after-meeting-him-and-netanyahu/","israel"],
+ ["Dom, 08/11","agenda","Lula deve falar em rádio e TV sobre responsabilidade fiscal","A Agência Brasil prevê que o presidente enfatize o compromisso fiscal e os programas sociais, sem medidas específicas. O mercado reage na segunda.","https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/durigan-discutira-medidas-fiscais-com-lula-apos-viagem-cop31","fiscal"],
+ ["Seg, 09/11","agenda","Lula embarca para a COP31, na Turquia; Marinho prevê o decreto do fim da 6x1","O presidente parte para Antalya e depois segue às Filipinas e à ASEAN. O ministro do Trabalho prevê publicar na segunda o decreto que regulamenta a nova jornada.","https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-11/lula-apresentara-avancos-ambientais-na-cop31-na-turquia","lula_cop"],
+ ["Ter, 10/11 · 14h","justica","STF reúne empresas, centrais e governo sobre a escala 6x1","Na Primeira Turma, Dino conduz a audiência de conciliação sobre a Emenda Constitucional 141/2026. Estão em jogo prazos de transição e o efeito sobre acordos coletivos.","https://noticias.stf.jus.br/postsnoticias/escala-6x1-stf-marca-audiencia-de-conciliacao-para-debater-implementacao-da-mudanca/","dino_6x1"],
+ ["Ter, 10/11","mundo","Ucrânia, Rússia e EUA se reúnem em Abu Dhabi","A rodada trilateral deve ocorrer em 10 e 11 de novembro, segundo Witkoff; Kiev não espera grande avanço.","https://kyivindependent.com/umerov-to-lead-ukraine-delegation-in-abu-dhabi-peace-talks-despite-media-confusion-top-official-confirms/","ucrania_abudhabi"],
+ ["Qua, 11/11","congresso","PL decide se negocia com Hugo Motta ou lança candidato","A bancada de 121 deputados define a posição na eleição da Câmara de fevereiro, em que Motta já tem apoio de 15 partidos.","https://www.congressoemfoco.com.br/amp/noticia/131336/partidos-pro-reeleicao-de-hugo-motta-representam-70-da-nova-camara","pl_motta"],
+ ["Qua, 11/11","justica","Plenário do STF julga crimes patrimoniais contra mulheres e assédio judicial","A sessão abre a pauta de novembro, que traz ainda piso do magistério em São Paulo e lei cearense sobre transferência de veículos.","https://www.cartacapital.com.br/justica/anistia-a-partidos-piso-salarial-e-assedio-judicial-o-que-o-stf-vai-julgar-em-novembro/","stf_pauta_nov"],
+ ["Sáb, 14/11","eleicao","Prazo final das contas do segundo turno no TSE","Candidatos e partidos que disputaram o segundo turno devem prestar contas e devolver sobras do fundo eleitoral.","https://www.tse.jus.br/comunicacao/radio/2026/Novembro/prestacao-de-contas-do-segundo-turno","tse_psol_se"]
+];
+
+/* ===== RESUMO DOS PISOS ===== */
+Object.keys(ORDER).forEach(function(k){ ORDER[k] = ORDER[k].filter(function(i){ return !(S[i] && S[i].velha); }); });
+
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","vr_va_interop":"atualizada","sp_f1_2035":"atualizada","sp_bras_desabamento":"atualizada","sp_alesp_sucessao":"atualizada","sp_jem_pacaembu":"atualizada","ne_sertanejos":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","arg_china_telecom":"atualizada"};
-var GIRO_FLAGS = {};
+var FLAGS = {"fiscal":"atualizada","paraguai":"atualizada","israel":"atualizada","ms_seg":"atualizada","dino_6x1":"atualizada","lula_cop":"atualizada","ira_proposta_catar":"atualizada","ueno_bank":"atualizada","ibov_semana":"atualizada","mt_russi":"atualizada","bets_stf":"atualizada","rn_transicao":"atualizada","pe_exoneracoes":"atualizada","pl_motta":"novo","flavio_pesquisa":"novo","tse_psol_se":"novo","stf_pauta_nov":"novo","enamed":"novo","ucrania_abudhabi":"novo","colombia_drones":"novo","mg_aro_vorcaro":"novo","mg_ameacas":"novo","rj_volta_redonda":"novo","rs_salarios":"novo"};
+var GIRO_FLAGS = {"Preventiva de Peña":"novo","Holding em Luxemburgo":"novo","Mandato a Eisenkot":"novo","Abu Dhabi na terça":"novo","PGR e as bets":"novo","Pesquisa sobre Flávio":"novo","Enamed sancionado":"novo","Pauta de novembro no STF":"novo","Roteiro de Lula":"novo","Fiscal fica para depois":"novo","Repique da bolsa":"novo","Salários no RS":"novo","Previdência do RN":"novo"};
 /* ===== FIM DOS DADOS ===== */
