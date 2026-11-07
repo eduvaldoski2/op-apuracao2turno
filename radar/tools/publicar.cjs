@@ -93,10 +93,12 @@ const curtas = process.argv.includes('--aceitar-curtas');   // último recurso: 
 const CFG = {
   piso: { politica: 10, economia: 3, mundo: 6 },          // matérias ativas por editoria
   pisoDepois: { '2026-11-09-07h': { politica: 14, economia: 4, mundo: 6 } },
-  destaque: { palavras: 450, veiculos: 3 },                // capa + primeira de política/economia/mundo
-  tocada: { palavras: 200, veiculos: 2 },                  // toda matéria NOVA ou ATUALIZADA
-  fonteUnica: { palavras: 120, maxFracao: 0.25 },          // bastidor/exclusivo/local com um só veículo (campo fonteunica:true)
-  medianaTocadas: 280,
+  destaque: { palavras: 600, veiculos: 3 },                // capa + primeira de política/economia/mundo
+  tocada: { palavras: 300, veiculos: 2 },                  // toda matéria NOVA ou ATUALIZADA
+  fonteUnica: { palavras: 160, maxFracao: 0.25 },          // bastidor/exclusivo/local com um só veículo (campo fonteunica:true)
+  medianaTocadas: 380,
+  acervo: { palavras: 250, reducao: 6 },                   // dívida de profundidade: matéria ativa abaixo disso tem de ser ampliada, ao menos 6 por edição
+  lide: { min: 20, max: 85 }, paragrafoMax: 140, resumo: { min: 50, max: 120 },
   maxVelhasPorEdicao: 8,
   maxCascata: 0.4,                                         // parágrafos que começam por "Segundo X…"
   maxVeiculo: 0.25, minVeiculos: 12
@@ -130,13 +132,42 @@ if (NOVAS) {
       if (nv < minV) e2.push(rot + ': ' + nv + ' veículo(s) distinto(s) com link (mínimo ' + minV + ')');
     }
     const ps = s.fundo.filter(b => b[0] === 'p');
+    // lide, parágrafos e estrutura (padrão de redação)
+    if (ps.length) {
+      const lw = ps[0][1].split(/\s+/).filter(Boolean).length;
+      if (lw < CFG.lide.min || lw > CFG.lide.max) e2.push(rot + ': o lide (1º parágrafo) tem ' + lw + ' palavras; deve ter ' + CFG.lide.min + ' a ' + CFG.lide.max + ' e trazer o fato principal. O contexto vai nos parágrafos seguintes');
+      if (ATRIB.test(ps[0][1])) e2.push(rot + ': o lide começa pela fonte ("Segundo…"). Abra pelo fato: quem fez o quê, quando; a fonte entra na frase');
+      const longo = ps.find(b => b[1].split(/\s+/).filter(Boolean).length > CFG.paragrafoMax);
+      if (longo) e2.push(rot + ': parágrafo com mais de ' + CFG.paragrafoMax + ' palavras ("' + longo[1].slice(0, 40) + '…"). Quebre em parágrafos de 2 a 4 frases');
+    }
+    if (!(curtas && !ehD)) {
+      if (w >= 300 && ps.length < 4) e2.push(rot + ': ' + w + ' palavras em só ' + ps.length + ' parágrafo(s); escreva ao menos 4 (lide, por que importa, desenvolvimento, o que vem agora)');
+      if (w >= 450 && s.fundo.filter(b => b[0] === 'h').length < 2) e2.push(rot + ': matéria longa sem ao menos 2 intertítulos temáticos (h)');
+    }
+    const rw = String(s.resumo || '').split(/\s+/).filter(Boolean).length;
+    if (rw < CFG.resumo.min || rw > CFG.resumo.max) e2.push(rot + ': resumo com ' + rw + ' palavras; deve ter ' + CFG.resumo.min + ' a ' + CFG.resumo.max);
+    if (ps.length && String(s.resumo || '').trim() === ps[0][1].trim()) e2.push(rot + ': o resumo é igual ao 1º parágrafo; o resumo é a versão curta (fato, número central, o que está pendente), o lide é o começo do artigo');
+    if (ehD) {
+      const hs = s.fundo.filter(b => b[0] === 'h').map(b => b[1]);
+      if (!hs.some(x => /o que vem|pr[óo]ximos passos|e agora|o que esperar/i.test(x))) e2.push(rot + ': destaque sem intertítulo "O que vem agora" (próximos passos, prazos, quem decide)');
+      if (!hs.some(x => /n[ãa]o est[áa] confirmado|n[ãa]o se sabe|ainda n[ãa]o|em aberto|o que falta/i.test(x))) e2.push(rot + ': destaque sem intertítulo "O que ainda não está confirmado" (divergências e lacunas)');
+      if (!s.fundo.some(b => b[0] === 'nums' || b[0] === 'tl')) e2.push(rot + ': destaque sem bloco de números (nums) ou cronologia (tl)');
+    }
+    // estilo: clichês e adjetivação não entram; frase repetida é enchimento
+    const corpo = txtBlocos(s).join(' ');
+    const CLICHE = /(vale (a pena )?(destacar|ressaltar|lembrar|mencionar)|é importante (destacar|ressaltar|notar|frisar)|cabe (destacar|ressaltar|lembrar)|em suma|nesse sentido|no cen[áa]rio atual|sem sombra de d[úu]vida|bomb[áa]stic|esc[âa]ndalo (absurdo|total)|chocante|pol[êe]mica envolvendo|diante (disso|desse cen[áa]rio)|como j[áa] dito|ficou marcado|n[ãa]o poderia ser diferente)/i.exec(corpo);
+    if (CLICHE) e2.push(rot + ': expressão de enchimento ou adjetivação ("' + CLICHE[0] + '"). Escreva o fato, sem adjetivo nem muleta');
+    const frases = corpo.split(/(?<=[.!?])\s+/).map(x => x.trim()).filter(x => x.split(/\s+/).length >= 9);
+    const rep1 = frases.find((x, k) => frases.indexOf(x) !== k);
+    if (rep1) e2.push(rot + ': frase repetida no texto ("' + rep1.slice(0, 50) + '…"); é enchimento. Pesquise mais em vez de repetir');
     if (ps.length >= 4 && ps.filter(b => ATRIB.test(b[1])).length / ps.length > CFG.maxCascata) e2.push(rot + ': mais de 40% dos parágrafos começam por "Segundo X…": isso é resumo por fonte. Reescreva fato a fato, atribuindo dentro da frase');
     if (s.ed === 'mundo' && !comUrl(s).some(f => estrangeira(f[1]))) e2.push(rot + ': matéria de Mundo precisa de ao menos uma fonte fora da imprensa brasileira (agência, veículo internacional ou do país do fato)');
     if (flags[i]) {
       const dd = dia(s.hora);
       if (dd === null) e2.push(rot + ': hora deve ser "d/m" (ex.: 7/11)'); else if (dd < 0 || dd > 1) e2.push(rot + ': hora ' + s.hora + ' não é de hoje nem de ontem; matéria nova ou atualizada deve trazer a data do fato mais recente');
       const a = p2.S[i];
-      if (flags[i] === 'atualizada' && a && JSON.stringify(a.fundo) !== JSON.stringify(s.fundo) && a.resumo === s.resumo) e2.push(rot + ': o fundo mudou mas o resumo ficou igual: reescreva t, sub e resumo com o estado atual da matéria');
+      if (s.ampliada === true && a && palavras(s) < 1.4 * palavras(a)) e2.push(rot + ': ampliada:true exige o fundo ao menos 40% maior que o da edição anterior (' + palavras(a) + ' → ' + palavras(s) + ' palavras)');
+      if (flags[i] === 'atualizada' && a && !s.ampliada && JSON.stringify(a.fundo) !== JSON.stringify(s.fundo) && a.resumo === s.resumo) e2.push(rot + ': o fundo mudou mas o resumo ficou igual: reescreva t, sub e resumo com o estado atual da matéria');
     }
   });
   // conjunto da edição: mediana, concentração e variedade de fontes
@@ -148,6 +179,14 @@ if (NOVAS) {
     const top = Object.entries(cont).sort((a, b) => b[1] - a[1])[0];
     if (Object.keys(cont).length < CFG.minVeiculos) e2.push('só ' + Object.keys(cont).length + ' veículos diferentes nas matérias novas/atualizadas (mínimo ' + CFG.minVeiculos + '). Amplie as fontes (veja radar/tools/FONTES.md)');
     if (tot >= 20 && top && top[1] / tot > CFG.maxVeiculo) e2.push('concentração de fontes: ' + top[0] + ' responde por ' + Math.round(100 * top[1] / tot) + '% das citações (máx. ' + Math.round(100 * CFG.maxVeiculo) + '%)');
+  }
+  // dívida de profundidade: toda matéria ativa tem de chegar ao piso de palavras; ao menos 6 por edição saem da lista de rasas
+  if (!curtas) {
+    const rasa = (S, i) => S[i] && !S[i].velha && palavras(S[i]) < (S[i].fonteunica === true ? CFG.fonteUnica.palavras : CFG.acervo.palavras);
+    const ativas = (D) => [...new Set(Object.values(D.ORDER).flat())];
+    const antes = ant ? ativas(p2).filter(i => rasa(p2.S, i)).length : 0, agora = ativas(d).filter(i => rasa(d.S, i));
+    const alvo = Math.max(0, antes - CFG.acervo.reducao);
+    if (agora.length > alvo) e2.push('acervo raso: ' + agora.length + ' matéria(s) ativa(s) com menos de ' + CFG.acervo.palavras + ' palavras (a edição anterior tinha ' + antes + '; o máximo agora é ' + alvo + '). Amplie ao menos ' + (agora.length - alvo) + ' (pesquise mais fontes, escreva contexto, reações e o que vem a seguir; marque ampliada:true se não houver fato novo) ou aposente a que já esgotou: ' + agora.slice(0, 12).join(', '));
   }
   // retirada de matéria (velha): limitada, e matéria de ontem/hoje só sai com motivo
   const novasVelhas = Object.keys(d.S).filter(i => d.S[i].velha && p2.S[i] && !p2.S[i].velha);

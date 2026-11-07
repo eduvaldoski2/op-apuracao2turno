@@ -12,13 +12,13 @@ O padrão é o de uma redação: o leitor abre o Radar para saber **o que aconte
 ## Fluxo
 1. Anexe o repo (add_repo: owner eduvaldoski2, repo op-apuracao2turno, access push), clone e registre. Rode `git pull --rebase origin main`.
 2. Descubra o horário da edição anterior (`git log -3 --format='%ad %s' -- radar/_edicao.php`) e leia `pautas.json`.
-3. **Pesquise** (próxima seção). Se houver subagentes, divida a pesquisa por editoria (Política, Economia, Mundo, Regiões) e peça a cada um fatos com data, hora e link; você escreve e decide.
+3. **Pesquise** (próxima seção). Se houver subagentes, divida a pesquisa por editoria (Política, Economia, Mundo, Regiões) e peça a cada um fatos com data, hora e link; você escreve e decide. **Distribua o tempo**: pesquisa cerca de 40%, redação 50%, checagem e publicação 10%. Ordem de trabalho: pautas P0/P1 e destaques primeiro, depois as matérias novas, depois o acervo raso. Uma edição com poucas matérias bem escritas é melhor que muitas curtas, mas os pisos continuam valendo.
 4. **Escreva** (seção "Como escrever") no bloco de dados de `radar/_edicao.php` (entre `/* ===== DADOS DA EDIÇÃO` e `/* ===== FIM DOS DADOS`). Preserve a primeira linha (`<?php if (!defined('RADAR_OK')) ...?>`). NÃO mexa em `_shell.html`, `index.php`, `arquivo/`, CSS, logos, login nem `api/`. Não edite o bloco `FLAGS` (gerado).
 5. **Atualize `pautas.json`** (veja "Pautas em curso").
 6. Publique: `node radar/tools/publicar.cjs AAAA-MM-DD HHh`. Se der ERRO, corrija o conteúdo e rode de novo; não contorne a trava. Rode `php -l radar/_edicao.php` se houver php.
 7. `git add -A radar`, commit "Radar HHh dd/mm" com as linhas de atribuição do ambiente, `git pull --rebase origin main` e `git push origin HEAD:main`. Se o push falhar, relate a falha; não invente alternativa.
 
-Formato de dados: `EDICAO={hora:'HHh', data:'...'}`; `S.<id> = {ed, reg? (só em regioes: rj|sp|mg|ne|sul|norte|co), k, hora:'d/m', t, sub, dado?:{n,l}, resumo, fundo:[['p',txt],['h',txt],['ul',[..]],['tl',[[data,txt],..]],['nums',[[valor,rótulo],..]]], fontes:[[nome,url],..], upd?, velha?, velhaMotivo?, fonteunica?}`. Também `HOME_LEAD`, `HOME_ROW` (3 ids), `ORDER`, `BRIEFS`, `GIRO=[título, nota, fonte, url, detalhe, idRel]`, `TRENDS`, `COLUNAS`, `AMANHA` (19h).
+Formato de dados: `EDICAO={hora:'HHh', data:'...'}`; `S.<id> = {ed, reg? (só em regioes: rj|sp|mg|ne|sul|norte|co), k, hora:'d/m', t, sub, dado?:{n,l}, resumo, fundo:[['p',txt],['h',txt],['ul',[..]],['tl',[[data,txt],..]],['nums',[[valor,rótulo],..]]], fontes:[[nome,url],..], upd?, velha?, velhaMotivo?, fonteunica?, ampliada?}`. Também `HOME_LEAD`, `HOME_ROW` (3 ids), `ORDER`, `BRIEFS`, `GIRO=[título, nota, fonte, url, detalhe, idRel]`, `TRENDS`, `COLUNAS`, `AMANHA` (19h).
 
 ## Como pesquisar: varredura em camadas
 A pergunta que governa a edição é: **"o que aconteceu desde a última edição que um leitor bem informado precisaria saber?"** Um fato grande não pode depender de o agente ter esbarrado nele.
@@ -41,22 +41,43 @@ O livro existe para que uma história que continua nunca fique parada nem desapa
 - Preencha todas as varreduras (`feita` = nome da edição, `achado`). "Nada novo" é resposta válida; deixar em branco, não.
 
 ## Como escrever: texto jornalístico único, não resumo por fonte
-Cada matéria é **um artigo**, escrito por você, com a voz do jornal. As fontes alimentam o texto; não são o assunto dele.
-1. **Manchete (`t`) e subtítulo (`sub`)** dizem o estado atual da história, não o fato de ontem. Verbo no presente ou no pretérito perfeito, sem adjetivo.
-2. **`resumo`** (60–90 palavras): o lide corrigido. Quem fez o quê, quando, o número central e o que está pendente. É o que o leitor lê se parar ali; precisa estar certo **hoje**.
-3. **`fundo`** é o artigo completo:
-   - 1º bloco `p`: lide com o fato principal (o que, quem, quando, onde) e o que mudou.
-   - 2º bloco `p`: por que importa (contexto imediato, causa, quem ganha ou perde).
-   - Desenvolvimento em blocos curtos, com intertítulos `h` **temáticos** ("A prisão e o interrogatório", "O que diz a acusação e o que responde a defesa"), nunca por horário. Evite `ul` salvo no fecho.
-   - Contexto e antecedentes (como se chegou aqui, precedentes, números comparáveis).
-   - Reações dos envolvidos (de lados diferentes), com no máximo uma citação curta por matéria.
-   - **O que vem agora**: próximos passos, prazos, quem decide.
-   - **O que ainda não está confirmado**: divergências entre fontes, números não verificados, o que falta saber. Em `ul`, no fim.
-   - `nums` (3–5 números-chave) logo após o lide, `tl` (cronologia) perto do fim quando a história tiver mais de um dia.
-4. **Atribuição dentro da frase**, na hora em que o dado aparece ("a Procuradoria pediu prisão preventiva, informa a Al Jazeera"). Se mais de 40% dos parágrafos começam por "Segundo X…" ou "De acordo com…", é resumo por fonte e o `publicar.cjs` recusa. **Nunca** escreva "o que cada veículo disse" nem um parágrafo por veículo.
-5. **Cruze as fontes**: compare datas, números e versões; quando divergirem, escolha a versão mais bem apoiada (oficial ou de mais de uma fonte independente) e registre a divergência no "ainda não confirmado". Não repita número de uma fonte só como fato.
-6. **Tamanho**: destaques (capa e primeira matéria de Política, Economia e Mundo): 450 a 1.200 palavras (P0 pode chegar a 1.500), com ≥3 veículos. Demais matérias novas ou atualizadas: 200 a 600 palavras, ≥2 veículos. Fonte única (`fonteunica:true`, máx. 25%): mín. 120 palavras, diga de quem é a informação. Nunca encha de especulação para atingir o tamanho: pesquise mais.
-7. **Fontes** (`fontes`): só veículos cujo texto você leu, cada um com o link que apareceu em busca ou foi lido nesta execução. Nome do veículo + recorte quando útil, p. ex. `['Al Jazeera (Reuters)', url]`. Variedade: veja `FONTES.md`.
+Cada matéria é **um artigo**, escrito por você, com a voz de um jornal. As fontes alimentam o texto; não são o assunto dele. O leitor do Radar pediu **textos mais longos e mais aprofundados**: um parágrafo de resumo não é matéria. Se o leitor termina e ainda pergunta "e daí?", "por quê?" ou "e agora?", a matéria está incompleta.
+
+### Passo a passo (toda matéria nova ou ampliada)
+1. **Ficha de fatos** (no rascunho, não vai ao ar): o quê, quem, quando (data e hora), onde, quanto (número com unidade e base de comparação), por quê, e o que vem agora. Para cada fato, anote de qual fonte vem e se uma segunda fonte independente confirma. Leia **ao menos 3 fontes inteiras** (WebFetch no texto, não só o trecho da busca) e uma delas, sempre que existir, deve ser oficial ou primária (Agência Câmara/Senado, STF, TSE, nota do governo, balanço, IBGE, Banco Central).
+2. **Escreva do mais importante ao menos importante** (pirâmide invertida): lide, por que importa, desenvolvimento, contexto, reações, o que vem agora, o que não está confirmado.
+3. **Revise como editor** antes de gravar: corte adjetivo, muleta e repetição; confira cada número, nome, cargo, partido e data contra a fonte; veja se alguém que só lê essa matéria entende a história sem conhecer os capítulos anteriores.
+
+### Padrão de matéria
+- **Manchete (`t`) e subtítulo (`sub`)** dizem o estado atual da história, não o fato de ontem. Verbo no presente ou no pretérito perfeito, sem adjetivo. O `sub` traz o segundo fato mais importante (1–2 frases).
+- **`resumo`** (50–120 palavras): a versão curta e correta **hoje**: quem fez o quê, quando, o número central e o que está pendente. Não é cópia do 1º parágrafo.
+- **`fundo`** é o artigo, nesta ordem:
+  1. **Lide** (um parágrafo de 20 a 85 palavras): o fato principal e o que mudou, com quem, o quê, quando e onde. Não começa pela fonte ("Segundo…").
+  2. **Por que importa**: efeito prático, quem ganha e quem perde, o que muda na correlação de forças, no dinheiro ou na lei.
+  3. **Desenvolvimento**: parágrafos de 2 a 4 frases (no máximo 140 palavras), com intertítulos `h` **temáticos** ("A prisão e o interrogatório"), nunca por horário. Matéria de 450 palavras ou mais tem ao menos 2 intertítulos.
+  4. **Contexto**: como se chegou aqui, precedentes, números comparáveis (o mesmo indicador há um ano, a eleição anterior, o caso parecido).
+  5. **Reações** de lados diferentes (governo e oposição, empresa e regulador, acusação e defesa), com no máximo uma citação curta por matéria.
+  6. **O que vem agora** (intertítulo): próximos passos, prazos, quem decide e quando.
+  7. **O que ainda não está confirmado** (intertítulo, e `ul` no fim): divergências entre fontes, números não verificados, o que falta saber.
+  - `nums` (3–5 números-chave) logo depois do lide; `tl` (cronologia) perto do fim quando a história tiver mais de um dia. Destaques levam `nums` ou `tl`.
+- **Tamanho do `fundo`**: destaques (capa e primeira de Política, Economia e Mundo) 600 a 1.500 palavras (P0 até 2.000), com ≥3 veículos; demais matérias novas ou atualizadas 300 a 800, ≥2 veículos; fonte única (`fonteunica:true`, máx. 25%) 160 a 400, dizendo de quem é a informação; **toda matéria ativa fica com no mínimo 250** (veja "Acervo"). Não encha com especulação nem repetição: pesquise mais.
+- **Atribuição dentro da frase**, na hora em que o dado aparece ("a Procuradoria pediu prisão preventiva, informa a Al Jazeera"). Varie a forma; "Segundo X…" no começo de mais de 40% dos parágrafos é resumo por fonte e o `publicar.cjs` recusa. **Nunca** escreva "o que cada veículo disse" nem um parágrafo por veículo.
+- **Cruze as fontes**: compare datas, números e versões; quando divergirem, escolha a mais bem apoiada (oficial ou mais de uma fonte independente) e registre a divergência no "ainda não confirmado". Número de uma fonte só não é fato.
+- **Fontes** (`fontes`): só veículos cujo texto você leu, com o link que apareceu em busca ou foi lido nesta execução. Nome do veículo + recorte quando útil, p. ex. `['Al Jazeera (Reuters)', url]`. Variedade: veja `FONTES.md`.
+
+### Roteiro por tipo de matéria
+- **Decisão de poder** (STF, TSE, TCU, Congresso, Planalto, Banco Central): lide com a decisão (quem decidiu, o quê, placar, quando); efeito prático; o que dizem os dois lados; base legal e precedente; próximos passos e prazos.
+- **Bastidor ou exclusivo** (`fonteunica:true`): o lide diz de quem é a informação ("a coluna de X informa que…") e o que ela afirma; o que a sustenta; o que os citados responderam ou deixaram de responder; o que não foi confirmado; o que mudaria se fosse confirmado.
+- **Pesquisa ou levantamento**: lide com o número e a pergunta; instituto, datas, amostra, margem de erro e registro; comparação com a rodada anterior; recortes (região, renda, partido); o que explica a variação; limite da leitura.
+- **Economia e mercado**: lide com o dado (indicador, variação, nível); o que moveu; efeito para o bolso, a empresa ou o governo; o que analistas esperam; calendário do que sai a seguir.
+- **Crise ou evento** (acidente, desastre, ataque, operação): lide com o balanço (mortos, feridos, local, hora); causa apurada x suspeita; resposta das autoridades; o que se sabe e o que não se sabe; quem investiga.
+- **Regional**: lide com o fato local; quem decide e quantas pessoas são afetadas; dinheiro e prazos; contexto do estado; ligação com o debate nacional quando houver; próximos passos.
+- **Internacional**: lide com o fato e o país; o rito institucional; reação interna e externa; efeito para o Brasil quando houver; linha do tempo.
+- **Agenda e calendário**: o que acontece, onde e quando; por que importa; o que está em jogo e quem decide; o que foi decidido antes.
+
+### Estilo
+Frases curtas, voz ativa, uma ideia por frase. Passado para o que ocorreu, presente para o estado atual. "Disse", "afirmou", "informou", "apontou" sem adjetivo; o Radar não opina. Número com unidade e comparação ("alta de 1,39%, a primeira semanal depois de três quedas"). Nome completo e cargo na primeira menção ("senador Flávio Bolsonaro (PL-RJ)"), sigla explicada na primeira vez, data como "sexta (6)". O `publicar.cjs` recusa muletas e adjetivação ("vale destacar", "é importante ressaltar", "em suma", "nesse sentido", "bombástico", "chocante"…) e frase repetida.
+**Exemplares**: `paraguai` e `ueno_bank` em `radar/_edicao.php` mostram o padrão (lide, intertítulos temáticos, números, contexto, o que vem agora, o que não está confirmado). Releia-os antes de escrever e nunca os aposente enquanto a pauta estiver aberta.
 
 ## Atualização de verdade: reescreva, não anexe
 Quando uma matéria tem fato novo:
@@ -68,7 +89,8 @@ Quando uma matéria tem fato novo:
 ## Retenção: não aposente o que ainda é notícia
 - Matéria só fica `velha:true` depois de **48 h sem fato novo**, ou quando o fato se encerrou ou foi superado por outra matéria. Para aposentar matéria de hoje ou de ontem, escreva `velhaMotivo:'fato encerrado'` ou `'superada por <id>'`. No máximo 8 aposentadas por edição.
 - Pisos de matérias ativas (o `publicar.cjs` confere): Política ≥10, Economia ≥3, Mundo ≥6 (a partir da edição das 7h de 09/11: ≥14, ≥4 e ≥6); cada sub-região ≥5. O alvo normal é Política 14–22, Economia 4–8, Mundo 6–10. Se faltar, recoloque no `ORDER` matéria quente das últimas 48 h (tire `velha`), atualize-a, ou escreva nova.
-- Matéria idêntica em 3 edições seguidas está parada: atualize com fato novo ou aposente.
+- Matéria idêntica em 6 edições seguidas está parada: atualize com fato novo ou aposente.
+- **Acervo (dívida de profundidade)**: toda matéria ativa deve ter no mínimo 250 palavras de `fundo` (`fonteunica:true`: 160). Hoje a maioria está abaixo disso. A cada edição, ao menos 6 matérias rasas saem da lista (o `publicar.cjs` conta a diferença para a edição anterior): amplie com pesquisa, contexto, reações e "o que vem agora" e marque `ampliada:true` (permitido quando não há fato novo; exige o fundo ≥40% maior e dispensa trocar o resumo), ou aposente a que já esgotou. Comece pelas mais lidas (as que sobem no resumo do dia: capa, topo das editorias, pautas P0/P1). Ampliar conta como ATUALIZADA.
 
 ## Cadência e novidade
 - Cada edição traz ao menos 5 NOVO e 10 NOVO+ATUALIZADA (a das 7h: 15 e 25; pesquise o que saiu à noite e de madrugada). `HOME_LEAD` e `HOME_ROW` só podem ser matéria NOVA ou ATUALIZADA.
@@ -96,7 +118,8 @@ Só na das 19h, preencha `AMANHA=[[quando, tipo, título, nota, url, idRel], ...
 ## Antes de publicar: lista de conferência
 - Toda matéria que mudou foi **reescrita inteira**; `t`, `sub`, `resumo` e `hora` dizem o estado de agora.
 - Nenhum "Atualização das Xh"; nenhum parágrafo por veículo; atribuição dentro da frase.
-- Destaques com ≥3 veículos e ≥450 palavras; as demais, ≥2 veículos e ≥200.
+- Destaques com ≥3 veículos e ≥600 palavras; as demais novas ou atualizadas, ≥2 veículos e ≥300; lide de 20 a 85 palavras; intertítulos, "O que vem agora" e "O que ainda não está confirmado" nos destaques; mediana ≥380 palavras.
+- Acervo: ao menos 6 matérias rasas ampliadas nesta edição (ou aposentadas com motivo).
 - Mundo com fonte fora da imprensa brasileira; pelo menos 12 veículos diferentes na edição, nenhum acima de 25%.
 - `pautas.json` e varreduras atualizados; nenhuma pauta P0 com matéria aposentada.
 - Nenhuma matéria quente aposentada; pisos atendidos.

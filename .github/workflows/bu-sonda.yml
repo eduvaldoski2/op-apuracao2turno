@@ -1,0 +1,52 @@
+name: Sonda - boletins de urna e votação por seção dos anos antigos (TSE)
+on:
+  workflow_dispatch:
+    inputs:
+      anos: { description: 'Anos separados por espaço', required: false, default: '2004 2002 2000 1998 1996 1994' }
+permissions:
+  contents: write
+jobs:
+  sonda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Sondar
+        run: |
+          exec > >(tee /tmp/sonda.log) 2>&1
+          B=https://cdn.tse.jus.br/estatistica/sead/odsele
+          head1() { curl -sSI -L --http1.1 --max-time 60 "$1" | egrep -i "^HTTP|content-length|last-modified" | tr -d '\r' | tr '\n' ' '; echo; }
+          for A in ${{ github.event.inputs.anos }}; do
+            echo "######## $A"
+            for u in votacao_secao/votacao_secao_${A}_RJ votacao_secao/votacao_secao_${A}_BR votacao_secao/votacao_secao_${A}_ZZ detalhe_votacao_secao/detalhe_votacao_secao_${A} votacao_candidato_munzona/votacao_candidato_munzona_${A} detalhe_votacao_munzona/detalhe_votacao_munzona_${A} boletim_urna/boletim_urna_${A} bu/bu_${A} perfil_eleitor_secao/perfil_eleitor_secao_${A}_RJ eleitorado_local_votacao/eleitorado_local_votacao_${A}; do
+              printf '%s : ' "$u"; head1 "$B/$u.zip"
+            done
+          done
+          echo "######## CKAN (dadosabertos.tse.jus.br)"
+          for q in "boletim de urna" "votação por seção" "resultados 2002" "resultados 2004" "resultados 1998" "resultados 2000"; do
+            echo "== $q"
+            curl -sS --max-time 60 -G "https://dadosabertos.tse.jus.br/api/3/action/package_search" --data-urlencode "q=$q" --data-urlencode "rows=40" | python3 -c "
+import sys,json
+try:
+  j=json.load(sys.stdin)
+except Exception as e:
+  print('erro',e); sys.exit()
+for p in j.get('result',{}).get('results',[]):
+  print(' -',p['name'],'|',p.get('title'),'|',len(p.get('resources',[])),'recursos')
+"
+          done
+          for n in resultados-2002-votacao-por-secao-eleitoral resultados-2004-votacao-por-secao-eleitoral resultados-1998-votacao-por-secao-eleitoral resultados-2000-votacao-por-secao-eleitoral; do
+            echo "== pacote $n"
+            curl -sS --max-time 60 -G "https://dadosabertos.tse.jus.br/api/3/action/package_show" --data-urlencode "id=$n" | python3 -c "
+import sys,json
+try:
+  j=json.load(sys.stdin)
+except Exception as e:
+  print('erro',e); sys.exit()
+if not j.get('success'): print('não existe'); sys.exit()
+for r in j['result']['resources'][:40]: print('  ',r.get('name'),'|',r.get('url'))
+"
+          done
+      - name: Publicar log
+        if: always()
+        run: |
+          rm -rf /tmp/pub && mkdir /tmp/pub && cd /tmp/pub && cp /tmp/sonda.log . && git init -q -b sonda-bu && git config user.name coletor && git config user.email coletor@users.noreply.github.com && git add . && git commit -q -m log && git push -q -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" sonda-bu

@@ -46,7 +46,7 @@ function resumoDoDia(data, opts) {
   Object.keys(ultEd.ORDER).forEach(k => ultEd.ORDER[k].forEach((i, p) => { pos[i] = p; }));
 
   // entra no resumo do dia a matéria de hoje; a de ontem só se foi atualizada ou foi à capa hoje; mais velha que isso não entra
-  const elegivel = i => ult[i] && (ult[i].hora === hojeLabel || (ult[i].hora === ontemLabel && (tocadaEm[i] || naCapa[i])));
+  const elegivel = i => ult[i] && !ult[i].velha && (ult[i].hora === hojeLabel || (ult[i].hora === ontemLabel && (tocadaEm[i] || naCapa[i])));
   const placar = i => (pts[i] || 0) + Math.min(tocadaEm[i] || 0, PESO.tocadaMax) * PESO.tocada + (prio[i] || 0) * (elegivel(i) ? 1 : 0);
   const ids = Object.keys(ult).filter(elegivel);
   ids.sort((a, b) => placar(b) - placar(a) || (pos[a] ?? 999) - (pos[b] ?? 999) || (a < b ? -1 : 1));
