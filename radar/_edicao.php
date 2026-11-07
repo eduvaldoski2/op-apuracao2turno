@@ -4822,7 +4822,116 @@ S.sp_jem_pacaembu = {
  ]
 };
 
+/* ===== REESCRITA 18h (6) ===== */
+S.ministerio_40 = {
+ "ed": "politica",
+ "k": "Política · Governo",
+ "hora": "7/11",
+ "t": "Lula quer condicionar ministérios do quarto mandato a votos no Congresso; estrutura pode chegar a 40 pastas, e derrotados nas urnas disputam espaço",
+ "sub": "Aliados falam em fechar o time até 20 de dezembro; cada partido terá de estimar quantos votos entrega, e só parlamentares leais poderão indicar para cargos do Executivo.",
+ "resumo": "O governo Lula prepara o ministério do quarto mandato com um critério novo: o espaço de cada partido dependerá dos votos que ele prometer entregar no Congresso, segundo a Folhapress e o Metrópoles. A estrutura, que teve 38 cadeiras na reunião ministerial do mandato atual, pode chegar a 40, de acordo com O Rio Branco, e deve acomodar derrotados nas urnas, como Fernando Haddad, Gleisi Hoffmann, Marina Silva e Simone Tebet. Aliados citam 20 de dezembro como meta, e o presidente do PT, Edinho Silva, conduz as primeiras conversas.",
+ "upd": "A matéria foi reescrita como texto único, com Folhapress, Metrópoles e O Rio Branco: traz o critério de votos prometidos, o calendário, os nomes em avaliação, o quadro de bancadas e o que é só bastidor.",
+ "fundo": [
+  [
+   "p",
+   "Lula quer condicionar os ministérios do quarto mandato ao compromisso de votos de cada partido no Congresso, em contraste com o terceiro mandato, em que o tamanho das bancadas pesava mais. A estrutura, que teve 38 cadeiras na reunião ministerial do mandato atual, pode chegar a 40 e deve acomodar aliados derrotados nas urnas, como Fernando Haddad, Gleisi Hoffmann, Marina Silva e Simone Tebet. Aliados falam em fechar o time até 20 de dezembro."
+  ],
+  [
+   "nums",
+   [
+    [
+     "38",
+     "cadeiras na reunião ministerial do mandato atual, segundo O Rio Branco"
+    ],
+    [
+     "40",
+     "pastas possíveis no quarto mandato (projeção, não estrutura definida)"
+    ],
+    [
+     "20/12",
+     "meta de aliados para fechar o ministério, segundo a Folhapress"
+    ],
+    [
+     "207",
+     "deputados dos cinco partidos de centro, segundo O Rio Branco"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "O critério: votos prometidos"
+  ],
+  [
+   "p",
+   "A Folhapress, em texto publicado pelo O Tempo em 30 de outubro, relata que o espaço de cada partido será definido pelos votos que ele promete garantir no Congresso e que só congressistas leais poderão indicar nomes para cargos no Executivo. O objetivo, segundo aliados, é evitar a repetição de votações em que partidos com ministérios derrotaram o governo. O Metrópoles, citado pelo Jornal Grande Bahia e pelo Diário do Centro do Mundo, diz que Lula pediu que cada legenda estime de forma precisa quantos votos pode entregar e que pesa a atuação do Centrão no segundo turno, quando líderes e partidos apoiaram Flávio Bolsonaro (PL)."
+  ],
+  [
+   "p",
+   "Emissários de Lula já abriram conversa com líderes do Centrão. O presidente nacional do PSD, Gilberto Kassab, era esperado em encontro com Lula na semana seguinte ao feriado de Finados, sem data definida, segundo o Jornal Grande Bahia. O presidente do PT, Edinho Silva, foi escalado para conduzir as primeiras conversas e deve se reunir com presidentes de partidos, de acordo com a Folhapress. Relatos ouvidos pela reportagem dizem que o MDB se oferece para garantir 30 votos ao governo."
+  ],
+  [
+   "h",
+   "Quem pode entrar"
+  ],
+  [
+   "p",
+   "A Folhapress cita nomes em avaliação, todos de bastidor. Gleisi Hoffmann, que abriu mão de disputar a Câmara para concorrer ao Senado pelo Paraná a pedido de Lula, e perdeu, aparece cotada para o Desenvolvimento Social, para uma vaga no TCU, caso Rodrigo Pacheco seja indicado ao STF, ou para a direção-geral de Itaipu. Fernando Haddad, derrotado na disputa pelo governo de São Paulo, já foi o principal nome para a Casa Civil e agora é lembrado para as Relações Exteriores ou a Educação."
+  ],
+  [
+   "p",
+   "O vice-presidente, Geraldo Alckmin (PSB), deve assumir um ministério a partir de janeiro: aliados do PT apontam a Defesa, e ele também é citado para a Fazenda. O governador reeleito do Piauí, Rafael Fonteles (PT), é cotado para a Fazenda. O senador Camilo Santana (PT-CE) lidera as especulações para a Casa Civil, mas poderia chefiar um novo Ministério da Segurança Pública, cuja criação depende da aprovação da PEC da Segurança pelo Congresso. Fonteles, Camilo e Haddad aparecem ainda como possíveis candidatos do PT à sucessão de Lula, e aliados dizem que o presidente pode dar aos três postos de peso parecido para ver quem se destaca."
+  ],
+  [
+   "h",
+   "O quadro dos partidos"
+  ],
+  [
+   "p",
+   "A reportagem de José Benedito da Silva, Laila Nery e Pedro Jordão, publicada neste sábado (7) por O Rio Branco, soma o quadro das bancadas. Os cinco partidos de centro reúnem 207 deputados, e o PL terá as maiores bancadas, com 121 deputados e 29 senadores. O PSD controla Agricultura, Minas e Energia e Pesca; o Republicanos pode indicar de novo Silvio Costa Filho, mas deve pedir pasta maior. O texto afirma que Lula deixa o mandato com “quase 50% de desaprovação” e que pode criar um ministério dos idosos. O deputado Pedro Campos, vice-líder do PSB, disse que o governo terá a oportunidade de repensar."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "Lula tem dito que as conversas ainda não começaram, segundo a Folhapress, que descreve a declaração como tentativa de desencorajar rumores. As negociações com o Centrão e com os aliados devem avançar nas próximas semanas, com meta de conclusão em 20 de dezembro. A Folhapress acrescenta que Lula planeja uma estrutura ligada diretamente a ele para a comunicação pessoal nas redes, separada da Secretaria de Comunicação da Presidência."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Quase tudo vem de aliados e governistas não identificados; a Folhapress, o Metrópoles e O Rio Branco não citam fontes oficiais, e o próprio Lula diz que as conversas não começaram.",
+    "O número de 40 ministérios é projeção publicada por O Rio Branco; não há estrutura definida nem decreto.",
+    "Os nomes para cada pasta são especulação de bastidor. Uma manchete relacionada, ligada à página da Folhapress, informa que Fonteles negou ter sido convidado para a Fazenda; o Radar não leu esse texto.",
+    "As fontes lidas não divulgam número mínimo de votos nem outro critério formal para o espaço de cada partido; o Jornal Grande Bahia diz que se trata de estratégia descrita por aliados, não de modelo anunciado pelo governo."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Folhapress, via O Tempo (30/10)",
+   "https://www.otempo.com.br/politica/governo/2026/10/30/lula-vai-buscar-centrao-e-condicionara-indicacoes-para-ministerios-a-votos-no-congresso"
+  ],
+  [
+   "Metrópoles, via Jornal Grande Bahia",
+   "https://jornalgrandebahia.com.br/2026/11/presidente-lula-pretende-exigir-compromisso-de-votos-do-centrao-antes-de-negociar-ministerios-no-quarto-mandato/"
+  ],
+  [
+   "Metrópoles, via Diário do Centro do Mundo (31/10)",
+   "https://www.diariodocentrodomundo.com.br/lula-exigir-votos-centrao-negociar-ministerios"
+  ],
+  [
+   "O Rio Branco",
+   "https://oriobranco.net/as-estrategias-que-estao-na-mesa-de-lula-para-definir-o-time-de-ministros-da-nova-gestao/"
+  ]
+ ]
+};
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","vr_va_interop":"atualizada","sp_f1_2035":"atualizada","sp_bras_desabamento":"atualizada","sp_alesp_sucessao":"atualizada","sp_jem_pacaembu":"atualizada","ne_sertanejos":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","arg_china_telecom":"atualizada"};
+var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","vr_va_interop":"atualizada","sp_f1_2035":"atualizada","sp_bras_desabamento":"atualizada","sp_alesp_sucessao":"atualizada","sp_jem_pacaembu":"atualizada","ne_sertanejos":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","arg_china_telecom":"atualizada"};
 var GIRO_FLAGS = {};
 /* ===== FIM DOS DADOS ===== */
