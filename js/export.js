@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=c549f0cf';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=c549f0cf';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=e9c8f0e7';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=e9c8f0e7';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -346,6 +346,7 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
             let n2 = rest.length; poe2(n2); while (!cabe() && n2 > 4) { n2 -= 2; poe2(n2); }
             if (forca2 || n2 > n1) n = n2; else { lst.classList.remove('xl-2'); lst.style.display = 'block'; poe1(n1); n = n1; }
           }
+          if (!partes && n < 5 && alvo.querySelector('svg')) { (tabela.closest('.dc2') || tabela).remove(); n = 0; }   // o mapa já ocupa a imagem: 3 ou 4 linhas soltas só atrapalham
           infoTab = { de, n, total };
           if (de > 0 || n < rest.length) {
             const nota = doc.createElement('div'); nota.style.cssText = 'margin-top:10px;font:600 16px system-ui,sans-serif;color:#6f6888;text-align:center';
@@ -396,7 +397,7 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
           infoTab = { de, n, total };
           if (de > 0 || n < rest.length) {
             const nota = doc.createElement('div'); nota.style.cssText = 'margin-top:10px;font:600 16px system-ui,sans-serif;color:#6f6888;text-align:center';
-            nota.textContent = partes ? `Linhas ${de + 1} a ${de + n} de ${total}${de + n < total ? ' · continua na próxima imagem' : ''}` : `Mostrando ${n} de ${total} linhas · a tabela completa está no painel`; alvo.appendChild(nota);
+            nota.textContent = partes ? `Linhas ${de + 1} a ${de + n} de ${total}${de + n < total ? ' · continua na próxima imagem' : ''}` : (n ? `Mostrando ${n} de ${total} linhas · a tabela completa está no painel` : `Lista completa (${total} linhas) em oficinapolitica.com.br`); alvo.appendChild(nota);
           }
         }
       },
@@ -431,9 +432,18 @@ export async function canvasSecaoSocial(el, fmt, { titulo, topo, sub, de = 0, pa
 }
 // Devolve quantas imagens foram geradas. Tabela que não cabe legível em uma imagem sai completa, dividida em partes
 // (até 5 partes: arquivos separados; acima disso: um ZIP com todas).
+// Lista com mais linhas que isto (ex.: os 853 municípios de Minas): a imagem leva só as primeiras, em UMA imagem. Antes saíam dezenas de imagens e
+// cada uma leva vários segundos para desenhar, então o botão parecia travado e nada baixava. A lista inteira continua na tela.
+const MAX_LINHAS_IMAGEM = 100;
+export let ultimoCorte = null;   // {mostradas, total} quando a última imagem levou só as primeiras linhas
 export async function baixarPNGSecaoSocial(el, nome, fmtId, ctx) {
   const fmt = FORMATOS_SEC[fmtId] || FORMATOS_SEC['4x5'];
-  const cvs = []; let de = 0;
+  const cvs = []; let de = 0; ultimoCorte = null;
+  const linhas = Math.max(el.querySelectorAll('table.tab tbody tr').length, [...el.querySelectorAll('[data-export-lista]')].reduce((m, l) => Math.max(m, l.children.length), 0));
+  if (linhas > MAX_LINHAS_IMAGEM && !window.__exMax) {
+    const cv = await canvasSecaoSocial(el, fmt, { ...ctx, de: 0, partes: false }); cvs.push(cv);
+    ultimoCorte = { mostradas: cv.info?.n || 0, total: linhas };
+  } else
   for (let k = 0; k < (window.__exMax || 80); k++) {   // __exMax: só para gerar amostras rápidas
     const cv = await canvasSecaoSocial(el, fmt, { ...ctx, de, partes: true }); cvs.push(cv);
     const inf = cv.info; if (window.__exMax && inf) window.__exTotal = inf.total; if (!inf || inf.n < 1) break; de += inf.n; if (de >= inf.total) break;

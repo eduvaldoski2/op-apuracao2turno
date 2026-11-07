@@ -1,10 +1,10 @@
 // Camada de dados compartilhada pelo comparador e pela IA: uma "unidade" é o Brasil, uma região, um estado, um município ou um bairro,
 // sempre no mesmo formato (resultado do 2º turno + o 1º turno do mesmo recorte). Referências: br · reg:SE · uf:rj · mun:rj:60011 · bai:rj:60011:NOME
-import { listaMunicipios } from './model.js?v=c549f0cf';
-import { linhaAp } from './views.js?v=c549f0cf';
-import { UF_IDS, UF_NOME, UF_REGIAO, REGIOES, sigla } from './util.js?v=c549f0cf';
-import { estatico, aoVivo, agregar, bonito, setSemDelta, demoSecoes } from './bairros.js?v=c549f0cf';
-import { sem } from './ui.js?v=c549f0cf';
+import { listaMunicipios } from './model.js?v=e9c8f0e7';
+import { linhaAp } from './views.js?v=e9c8f0e7';
+import { UF_IDS, UF_NOME, UF_REGIAO, REGIOES, sigla } from './util.js?v=e9c8f0e7';
+import { estatico, aoVivo, agregar, bonito, setSemDelta, demoSecoes } from './bairros.js?v=e9c8f0e7';
+import { sem } from './ui.js?v=e9c8f0e7';
 
 export const MAX_COMPARAR = 4;
 

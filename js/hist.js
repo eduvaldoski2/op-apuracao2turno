@@ -3,14 +3,14 @@
 // Tudo é clicável: candidato (?c=<número>) e partido/federação/coligação (?p=<chave>) abrem a votação deles em qualquer nível.
 // Dados: branch hist-<ano> (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]][?c=<n> | ?p=<chave>]
-import { CONFIG } from './config.js?v=c549f0cf';
-import { UF_NOME, fInt, fNum, mix } from './util.js?v=c549f0cf';
-import { esc, tabela, sem } from './ui.js?v=c549f0cf';
-import { getJSON } from './tse.js?v=c549f0cf';
-import { corPartido, corTextoSobre } from './partidos.js?v=c549f0cf';
-import { criarMapa } from './map.js?v=c549f0cf';
-import { criarMapaMun } from './mapamun.js?v=c549f0cf';
-import { criarMapaPontos } from './mapapontos.js?v=c549f0cf';
+import { CONFIG } from './config.js?v=e9c8f0e7';
+import { UF_NOME, fInt, fNum, mix } from './util.js?v=e9c8f0e7';
+import { esc, tabela, sem } from './ui.js?v=e9c8f0e7';
+import { getJSON } from './tse.js?v=e9c8f0e7';
+import { corPartido, corTextoSobre } from './partidos.js?v=e9c8f0e7';
+import { criarMapa } from './map.js?v=e9c8f0e7';
+import { criarMapaMun } from './mapamun.js?v=e9c8f0e7';
+import { criarMapaPontos } from './mapapontos.js?v=e9c8f0e7';
 
 export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;
