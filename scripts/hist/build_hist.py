@@ -62,6 +62,7 @@ import re
 limpa_fed = lambda x: re.sub(r'\b\d+-', '', str(x or '')).strip()
 for cg, uf, ue, sq, nr, nm, sg, fed, st, t, npart, col, comp in cands_rows:
     st = '' if st in (None, '#NULO', '#NE') else st
+    if st == 'MÉDIA': st = 'ELEITO POR MÉDIA'   # 2006 e 2010 rotulam assim quem entrou pela regra da média
     vazio = lambda x: not x or str(x).startswith('#') or str(x).strip().upper() in ('PARTIDO ISOLADO', 'FEDERAÇÃO', 'FEDERACAO')
     fed = '' if vazio(fed) and vazio(comp) else limpa_fed(comp if not vazio(comp) else fed)
     col = '' if vazio(col) else col.strip()
