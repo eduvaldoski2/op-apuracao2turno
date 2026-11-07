@@ -4,8 +4,8 @@ Uso: build_cand.py <saida> [anos...]   (padrão: 1994..2026, anos pares)
 Saídas: candidaturas.parquet (uma linha por candidatura), pessoas.parquet (uma linha por pessoa), manifesto.json, conferencia.md.
 
 Privacidade (LGPD): CPF, título, e-mail, nome social e data de nascimento completa NUNCA são gravados. O CPF só é usado dentro desta execução
-para gerar `pessoa_id` = SHA-256(sal aleatório + CPF) truncado; o sal é gerado a cada execução e descartado, então o código não pode ser
-revertido para o CPF. Quem não tem CPF válido (1994/1996 e falhas) é ligado por nome civil normalizado + ano de nascimento, só quando a
+para gerar `pessoa_id` = MD5 (14 caracteres) da chave pública da primeira candidatura da pessoa (estável entre reconstruções; a ligação entre candidaturas usa SHA-256(sal aleatório + CPF) só durante a execução, e o sal é descartado, então nada no resultado permite chegar ao CPF).
+Quem não tem CPF válido (1994/1996 e falhas) é ligado por nome civil normalizado + ano de nascimento, só quando a
 chave é inequívoca; os demais ficam marcados (pessoa_via = 'nome_incerta')."""
 import sys, os, subprocess, json, re, hashlib, datetime
 import duckdb
@@ -79,6 +79,13 @@ con.execute(f"""CREATE OR REPLACE TABLE c AS SELECT t.* EXCLUDE (_cpf, id_cpf, n
 con.execute("""CREATE OR REPLACE TABLE c AS SELECT * EXCLUDE (pessoa_id), CASE WHEN pessoa_via = 'nome_incerta' AND pessoa_id NOT LIKE 'p%' THEN 'n' || left(sha256(coalesce(chave_nome, '') || '|' || sq_candidato || '|' || ano), 16) ELSE pessoa_id END AS pessoa_id FROM c""")
 # 'nome' (sem CPF, sem concorrente de CPF com a mesma chave): liga por chave entre anos (mesma chave -> mesmo id 'n' + hash da chave)
 con.execute("""CREATE OR REPLACE TABLE c AS SELECT * EXCLUDE (pessoa_id), CASE WHEN pessoa_via = 'nome' THEN 'n' || left(sha256(chave_nome), 16) ELSE pessoa_id END AS pessoa_id FROM c""")
+# identificador ESTÁVEL: 14 primeiros caracteres do MD5 da chave pública da PRIMEIRA candidatura da pessoa
+# (ano|cargo|uf|ue|sq|nr|nome, ordenada por ano, turno, cargo, uf, ue, sq). Não depende de sal nem da reconstrução do conjunto
+# (só muda se o TSE alterar a ligação entre candidaturas) e não carrega CPF. (ano, sq) sozinho NÃO é único: de 2000 a 2008 o sq repete entre UEs.
+con.execute("""CREATE OR REPLACE TABLE c AS SELECT * EXCLUDE (pessoa_id, _k),
+  left(md5(_k), 14) AS pessoa_id
+  FROM (SELECT *, first_value(CAST(ano AS VARCHAR) || '|' || cargo || '|' || uf || '|' || ue || '|' || sq_candidato || '|' || nr || '|' || coalesce(nome, ''))
+        OVER (PARTITION BY pessoa_id ORDER BY ano, turno, cargo, uf, ue, sq_candidato, nr, nome) AS _k FROM c)""")
 con.execute("COPY (SELECT * FROM c ORDER BY ano, turno, cargo, uf, ue, nr, sq_candidato) TO '" + out + "/candidaturas.parquet' (FORMAT parquet, COMPRESSION zstd)")
 con.execute("""COPY (SELECT pessoa_id, arg_max(nome, ano) nome, arg_max(nome_urna, ano) nome_urna_ultimo, any_value(pessoa_via) pessoa_via_principal,
   min(ano) primeiro_ano, max(ano) ultimo_ano, count(*) candidaturas, count(DISTINCT ano) anos_disputados,
@@ -103,7 +110,7 @@ md.append('- Chaves nome+ano de nascimento que pertencem a mais de um CPF (homô
 mult = R("SELECT count(*) FROM (SELECT pessoa_id FROM c WHERE pessoa_via='cpf' GROUP BY 1 HAVING count(DISTINCT nome) > 1)")[0][0]
 md.append('- Pessoas (por CPF) que aparecem com mais de um nome civil ao longo dos anos (mudança de nome ou grafia): ' + f'{mult:,}'.replace(',', '.'))
 md += ['', '## 4) Como cruzar votos', '', 'A tabela de votos de cada ano (`zona_<ano>.parquet` dos releases `lake-<ano>`) traz `sq_candidato`. Junte por (`ano`, `sq_candidato`) com `candidaturas.parquet` e agrupe por `pessoa_id`.',
-      '`pessoa_id` só vale dentro deste conjunto: o sal é descartado a cada geração, então reconstruir o conjunto muda os códigos.']
+      '`pessoa_id` = MD5 (14 caracteres) da chave pública (ano|cargo|uf|ue|sq) da primeira candidatura da pessoa: estável entre reconstruções (só muda se o TSE alterar a ligação entre candidaturas).']
 open(out + '/conferencia.md', 'w').write('\n'.join(md) + '\n')
 man['totais'] = {'candidaturas': tot, 'pessoas': pes}; json.dump(man, open(out + '/manifesto.json', 'w'), indent=1)
 print('\n'.join(md))
