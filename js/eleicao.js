@@ -1,8 +1,10 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
 // O resto aparece esmaecido ("em breve"). Só o presidente de 2026 é aberto: os demais cargos e anos exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=e9c8f0e7';
-import { esc } from './ui.js?v=e9c8f0e7';
+import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=2b4a38be';
+import { esc } from './ui.js?v=2b4a38be';
+import { RAIZ } from './config.js?v=2b4a38be';
+import { montarMenuConta } from './menuconta.js?v=2b4a38be';
 
 const ANOS = [2026, 2024, 2022, 2020, 2018];
 const DISPONIVEL = { 2026: true, 2024: true, 2022: true, 2020: true, 2018: true };
@@ -106,14 +108,17 @@ function abrirLogin(toast, depois) {
 }
 export function ligarTopoConta({ toast }) {
   const topo = document.querySelector('.topo-in'); if (!topo) return;
-  const box = document.createElement('div'); box.className = 'topo-conta sem-export'; topo.appendChild(box);
+  const box = document.createElement('div'); box.className = 'topo-conta sem-export'; box.innerHTML = '<span class="tc-en"></span><span class="tc-mm"></span>'; topo.appendChild(box);
+  const en = box.querySelector('.tc-en'), mm = box.querySelector('.tc-mm');
+  // logado: ícone de pessoa com menu recolhido (Minha conta · Preferências · Sair); deslogado: botão Entrar
+  const menu = montarMenuConta(mm, { tema: 'escuro', contaUrl: (RAIZ || '/') + 'conta.html', aoSair: async () => { await sairConta(); pinta(); avisarConta(); toast('Você saiu da sua conta.', true); } });
   const pinta = () => {
-    if (!CONTA.carregado) { box.innerHTML = ''; return; }
-    box.innerHTML = CONTA.logado ? `<button type="button" class="tc-b" data-tc="sair" title="${esc(CONTA.usuario?.email || '')}">Sair</button>` : `<button type="button" class="tc-b tc-on" data-tc="entrar">Entrar</button>`;
+    if (!CONTA.carregado) { en.innerHTML = ''; menu.atualizar(null); return; }
+    en.innerHTML = CONTA.logado ? '' : '<button type="button" class="tc-b tc-on" data-tc="entrar">Entrar</button>';
+    menu.atualizar(CONTA.logado ? CONTA.usuario : null);
   };
-  box.addEventListener('click', async ev => {
+  box.addEventListener('click', ev => {
     const b = ev.target.closest('[data-tc]'); if (!b) return;
-    if (b.dataset.tc === 'sair') { await sairConta(); pinta(); avisarConta(); toast('Você saiu da sua conta.', true); return; }
     abrirLogin(toast, () => { pinta(); avisarConta(); toast('Você está logado.', true); });
   });
   // botões "Entrar" dos blocos e telas que exigem cadastro

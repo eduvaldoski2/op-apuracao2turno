@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#3E347E"><title>Radar da Oficina Política</title><link rel="icon" type="image/svg+xml" href="/img/favicon.svg"><link rel="apple-touch-icon" href="/img/apple-touch-icon.png"><link rel="manifest" href="/manifest.webmanifest?v=3"><meta name="application-name" content="Oficina Política"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Oficina Política"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <link rel="preload" href="/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/css/consent.css?v=e9c8f0e7">
+<link rel="stylesheet" href="/css/consent.css?v=2b4a38be">
 <style>
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/dm-serif-display-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 @font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url(/fonts/dm-serif-display-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
@@ -34,10 +34,11 @@ button:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-off
 html,body{overflow-anchor:none}
 .hdr{background:var(--hdr);color:var(--hdr-ink);border-bottom:1px solid #e3ddd0;position:sticky;top:env(safe-area-inset-top,0px);z-index:50;text-align:center}
 .hdrin{display:flex;flex-direction:column;align-items:center;gap:6px;padding-block:16px 6px}
-.btn-sair{position:absolute;top:10px;right:max(12px,env(safe-area-inset-right,0px));font:700 13px/1 'Space Grotesk',system-ui,sans-serif;color:#3E347E;background:#fff;border:1.5px solid #3E347E;border-radius:999px;padding:7px 14px;cursor:pointer}
+.btn-sair{font:700 13px/1 'Space Grotesk',system-ui,sans-serif;color:#3E347E;background:#fff;border:1.5px solid #3E347E;border-radius:999px;padding:7px 14px;cursor:pointer}
 .btn-sair:hover{background:#3E347E;color:#fff}
-.hdr.compact .btn-sair{top:50%;transform:translateY(-50%)}
-@media(max-width:520px){.hdrin{padding-left:12px;padding-right:76px}.btn-sair{right:8px}}
+#opmc{position:absolute;top:8px;right:max(12px,env(safe-area-inset-right,0px));z-index:30}
+.hdr.compact #opmc{top:50%;transform:translateY(-50%)}
+@media(max-width:520px){.hdrin{padding-left:12px;padding-right:76px}#opmc{right:8px}}
 .logo{display:block;line-height:0;text-decoration:none;min-width:0;max-width:100%}
 .logo img{display:block;width:clamp(290px,60vw,560px);max-width:100%;height:auto;margin:0 auto}
 .edicao{font-size:13px;color:#4a4660;padding-bottom:10px;font-weight:500;letter-spacing:.01em}
@@ -197,16 +198,6 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .mailbox .go{margin-top:10px;width:100%;padding:12px;border:0;background:var(--accent);color:#2a1700;font-weight:700;font-size:15px}
 .mailbox .go[disabled]{opacity:.6}
 .mailbox small{display:block;margin-top:8px;color:var(--ink-soft);font-size:12.5px;line-height:1.4}
-.boletim{max-width:560px}
-.boletim h1{font:400 34px/1.1 var(--serif);color:var(--brand);margin:0 0 8px}
-.boletim h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:22px 0 8px}
-.boletim .chk{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.boletim .ck{display:flex;align-items:center;gap:10px;padding:10px 12px;background:var(--surface);border:1.5px solid var(--line);font-weight:600;cursor:pointer}
-.boletim .ck:has(input:checked){border-color:var(--brand)}
-.boletim input[type=checkbox]{width:20px;height:20px;accent-color:var(--brand);flex:none}
-.boletim .aceite{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45;margin:18px 0 12px}
-.boletim .go{width:100%;padding:14px;border:0;background:var(--accent);color:#2a1700;font-weight:700;font-size:16px}
-.boletim .st{margin-top:12px;font-size:14.5px}
 .opt{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:13px 10px;border:1.5px solid var(--brand);color:var(--brand);font-weight:700;font-size:14px;text-decoration:none;background:transparent}
 .opt:hover{background:var(--band)}
 .opt.wa{background:#1f8a4c;border-color:#1f8a4c;color:#fff}
@@ -249,7 +240,7 @@ footer small{color:#5a5670;font-size:12.5px}
 <header class="hdr" id="hdr">
   <div class="wrap hdrin">
     <a class="voltar" href="/">← oficinapolitica.com.br</a>
-    <button type="button" class="btn-sair" id="sair-topo" aria-label="Sair da minha conta">Sair</button>
+    <div id="opmc"><button type="button" class="btn-sair" id="sair-topo" aria-label="Sair da minha conta">Sair</button></div>
     <a class="logo" href="#" aria-label="Radar da Oficina Política, página inicial"><img alt="Radar da Oficina Política" src="/img/radar-cor.svg"></a>
     <div class="edicao" id="edicao"></div>
   </div>
@@ -439,7 +430,7 @@ function route(){
   if(h.indexOf('materia-')===0 && S[h.slice(8)]){var id=h.slice(8);app.innerHTML=articleView(id);updateMins(id);cur='editoria-'+S[id].ed}
   else if(h==='giro'){app.innerHTML=giroView()}
   else if(h==='arquivo'){app.innerHTML=arquivoView()}
-  else if(h==='boletim'){app.innerHTML=boletimView();boletimLoad()}
+  else if(h==='boletim'){location.replace('/conta.html#preferencias')}
   else if(h.indexOf('regiao-')===0){app.innerHTML=edView('regioes',h.slice(7));cur='editoria-regioes'}
   else if(h.indexOf('editoria-')===0 && edOf(h.slice(9))){app.innerHTML=edView(h.slice(9))}
   else {app.innerHTML=homeView();cur=''}
@@ -510,34 +501,6 @@ function openShare(id){
    +'<button class="opt" type="button" id="mOpen">E-mail</button>'
    +'</div><div id="mailslot"></div><div class="sharetxt" id="stxt">'+esc(full)+'</div><div class="msg" id="cmsg">Para Instagram e Stories, use “Baixar card” e publique a imagem.</div></div></div>';
   document.getElementById('modal').innerHTML=h;
-}
-var BOL_REG=[['rj','Rio de Janeiro'],['sp','São Paulo'],['mg','Minas Gerais'],['ne','Nordeste'],['sul','Sul'],['norte','Norte'],['co','Centro-Oeste']];
-function boletimView(){
-  var h='<div class="pg boletim"><h1>Boletim do Radar</h1><p>Receba por e-mail, uma vez por dia no fim da tarde, o resumo das principais notícias, com os links para o Radar. Escolha o que quer ler.</p>'
-   +'<h4>Editorias</h4><div class="chk">'+[['politica','Política'],['economia','Economia'],['mundo','Mundo']].map(function(x){return '<label class="ck"><input type="checkbox" name="bed" value="'+x[0]+'">'+x[1]+'</label>'}).join('')+'</div>'
-   +'<h4>Regiões</h4><p class="meta" style="margin:0 0 8px">Marque só as que importam para você.</p><div class="chk">'+BOL_REG.map(function(x){return '<label class="ck"><input type="checkbox" name="breg" value="'+x[0]+'">'+x[1]+'</label>'}).join('')+'</div>'
-   +'<p style="margin:18px 0 0;padding:12px 14px;background:var(--band);font-size:14px;line-height:1.5">Inclui sempre a seção <b>Para ficar de olho</b>. Todo boletim traz um link para cancelar com um clique.</p>'
-   +'<label class="aceite"><input type="checkbox" id="bAceite" style="width:20px;height:20px;accent-color:var(--brand);flex:none"><span>Quero receber o boletim do Radar por e-mail, uma vez por dia, com as editorias e regiões que escolhi. Sei que posso cancelar quando quiser.</span></label>'
-   +'<button class="go" type="button" id="bSalvar">Salvar minhas escolhas</button><button type="button" id="bCancelar" class="opt" style="width:100%;margin-top:10px" hidden>Cancelar o boletim</button><div class="st" id="bMsg" role="status"></div></div>';
-  return h;
-}
-function boletimLoad(){
-  fetch('/radar/boletim.php',{credentials:'same-origin'}).then(function(r){return r.json()}).then(function(j){
-    if(!j||!j.ok)return;var p=j.prefs||{ativo:false,ed:[],reg:[]};
-    document.querySelectorAll('[name=bed]').forEach(function(c){c.checked=p.ed.indexOf(c.value)>=0});
-    document.querySelectorAll('[name=breg]').forEach(function(c){c.checked=p.reg.indexOf(c.value)>=0});
-    var a=document.getElementById('bAceite');if(a)a.checked=!!p.ativo;
-    var b=document.getElementById('bCancelar');if(b)b.hidden=!p.ativo;
-    if(!j.email){var m=document.getElementById('bMsg');if(m)m.textContent='Sua conta não tem e-mail cadastrado; não é possível receber o boletim.'}
-  }).catch(function(){});
-}
-function boletimSave(ativo){
-  var fd=new FormData();fd.append('ativo',ativo?'1':'0');fd.append('aceite',document.getElementById('bAceite').checked?'1':'0');
-  document.querySelectorAll('[name=bed]:checked').forEach(function(c){fd.append('ed[]',c.value)});
-  document.querySelectorAll('[name=breg]:checked').forEach(function(c){fd.append('reg[]',c.value)});
-  var m=document.getElementById('bMsg');m.textContent='Salvando…';
-  fetch('/radar/boletim.php',{method:'POST',body:fd,credentials:'same-origin'}).then(function(r){return r.json()}).then(function(j){m.textContent=j.mensagem||'';document.getElementById('bCancelar').hidden=!(j.ok&&ativo);
-    if(j.ok&&ativo)gaEv('boletim_assinou',{editorias:fd.getAll('ed[]').join(','),regioes:fd.getAll('reg[]').join(',')},{meta:'Subscribe',ads:'cadastro'})}).catch(function(){m.textContent='Não foi possível salvar agora.'});
 }
 function mailForm(id){
   return '<div class="mailbox" id="mailbox"><b>Enviar por e-mail</b><label for="mPara">E-mail de quem vai receber</label><input type="email" id="mPara" autocomplete="off" placeholder="nome@exemplo.com">'
@@ -679,12 +642,10 @@ document.addEventListener('click',function(e){
   if(t.closest('#cp')){copyText(document.getElementById('stxt').textContent)}
   if(t.closest('#mOpen')){var sl=document.getElementById('mailslot');if(sl&&!sl.innerHTML){sl.innerHTML=mailForm(shareId);var pi=document.getElementById('mPara');if(pi)pi.focus()}return}
   if(t.closest('#mEnviar')){mailSend();return}
-  if(t.closest('#bSalvar')){boletimSave(true);return}
-  if(t.closest('#bCancelar')){document.getElementById('bAceite').checked=false;boletimSave(false);return}
 });
 document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal()}});
 window.addEventListener('hashchange',route);
-(async function(){try{var c=await import('/js/consentimento.js?v=e9c8f0e7');window.__op=c;c.iniciarConsentimento();route2ga();var mm=location.hash.match(/^#materia-(.+)$/);if(mm&&S[mm[1]]){lidaId='';lerMateria(mm[1])}if(typeof CONV_NOVA!=='undefined'&&CONV_NOVA)gaEv('sign_up',{method:'link_compartilhado'},{meta:'CompleteRegistration',ads:'cadastro'})}catch(e){}})();
+(async function(){try{var c=await import('/js/consentimento.js?v=2b4a38be');window.__op=c;c.iniciarConsentimento();route2ga();var mm=location.hash.match(/^#materia-(.+)$/);if(mm&&S[mm[1]]){lidaId='';lerMateria(mm[1])}if(typeof CONV_NOVA!=='undefined'&&CONV_NOVA)gaEv('sign_up',{method:'link_compartilhado'},{meta:'CompleteRegistration',ads:'cadastro'})}catch(e){}})();
 function route2ga(){try{window.__op.rastrearTela('/radar/'+location.hash,document.title)}catch(e){}}
 function sizeHdr(){var h=document.getElementById('hdr');document.documentElement.style.setProperty('--hh',h.offsetHeight+'px')}
 window.addEventListener('scroll',function(){var h=document.getElementById('hdr'),app=document.getElementById('app'),was=h.classList.contains('compact'),y=window.scrollY;var c=was?y>40:y>120;if(c!==was){var h0=h.offsetHeight;h.classList.toggle('compact',c);var h1=h.offsetHeight;app.style.marginTop=c?(h0-h1)+'px':'';sizeHdr()}},{passive:true});
@@ -693,5 +654,7 @@ document.getElementById('edicao').innerHTML='<b>Edição das '+esc(EDICAO.hora)+
 route();sizeHdr();
 if(window.ResizeObserver)new ResizeObserver(sizeHdr).observe(document.getElementById('hdr'));
 </script>
+<script>(function(){var el=document.getElementById('opmc');if(!el)return;function sai(){fetch('/api/conta.php',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({acao:'sair'})}).then(function(){location.reload()},function(){location.reload()})}
+fetch('/api/conta.php',{credentials:'same-origin',headers:{Accept:'application/json'},cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(!j||!j.logado)return;import('/js/menuconta.js?v=2b4a38be').then(function(m){m.montarMenuConta(el,{tema:'claro',contaUrl:'/conta.html',aoSair:sai}).atualizar(j.usuario)})}).catch(function(){})})();</script>
 <script>document.addEventListener("click",function(e){var a=e.target.closest("#sair,#sair-topo");if(!a)return;e.preventDefault();fetch("/api/conta.php",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({acao:"sair"})}).then(function(){location.reload()},function(){location.reload()})});</script>
 </body></html>

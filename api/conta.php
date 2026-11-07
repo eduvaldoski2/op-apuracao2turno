@@ -150,4 +150,42 @@ if ($acao === 'excluir') {   // direito de exclusão (LGPD): apaga a conta e os 
   sessao_encerrar(); sai(['ok' => true, 'logado' => false]);
 }
 
+// ---- Minha conta (só logado): nome, senha e aceite de novidades ----
+function usuario_recarrega($id) { $s = conta_db()->prepare('SELECT * FROM usuarios WHERE id = ?'); $s->execute([$id]); return $s->fetch(); }
+if (in_array($acao, ['perfil_nome', 'senha_trocar', 'senha_pedir_codigo', 'senha_definir', 'novidades'], true)) {
+  $u = usuario_atual(); if (!$u) erro(401, 'login', 'Entre na sua conta.');
+  if (!taxa_ok('perfil:' . $u['id'], 30, 900)) erro(429, 'limite', 'Muitas tentativas. Aguarde alguns minutos.');
+  $atual = hash('sha256', (string)($_COOKIE['op_sessao'] ?? ''));
+  $outras = function () use ($db, $u, $atual) { $db->prepare('DELETE FROM sessoes WHERE uid = ? AND hash <> ?')->execute([$u['id'], $atual]); };   // trocar a senha encerra os outros aparelhos, mantém este
+  if ($acao === 'perfil_nome') {
+    $nome = trim(preg_replace('/\s+/u', ' ', (string)($j['nome'] ?? '')));
+    if (mb_strlen($nome) < 2 || mb_strlen($nome) > 80) erro(422, 'nome', 'Informe seu nome (de 2 a 80 letras).');
+    $db->prepare('UPDATE usuarios SET nome = ? WHERE id = ?')->execute([$nome, $u['id']]);
+    sai(['ok' => true, 'mensagem' => 'Nome atualizado.', 'usuario' => usuario_publico(usuario_recarrega($u['id']))]);
+  }
+  if ($acao === 'senha_trocar') {
+    if (($u['senha_hash'] ?? '') === '') erro(422, 'sem_senha', 'Sua conta entra com o Google. Use “Criar senha” para definir uma.');
+    if (!taxa_ok('trocasenha:' . $u['id'], 6, 900)) erro(429, 'limite', 'Muitas tentativas. Aguarde alguns minutos.');
+    if (!password_verify((string)($j['senha_atual'] ?? ''), $u['senha_hash'])) erro(401, 'credenciais', 'A senha atual está incorreta.');
+    senha_valida($j['senha'] ?? null);
+    $db->prepare('UPDATE usuarios SET senha_hash = ? WHERE id = ?')->execute([password_hash((string)$j['senha'], PASSWORD_DEFAULT), $u['id']]); $outras();
+    sai(['ok' => true, 'mensagem' => 'Senha alterada. Os outros aparelhos foram desconectados.', 'usuario' => usuario_publico(usuario_recarrega($u['id']))]);
+  }
+  if ($acao === 'senha_pedir_codigo') {   // quem entra só com o Google (ou esqueceu a atual) confirma pelo contato da conta e define a senha
+    resposta_envio(emite_codigo($u, 'redefinir'), $u);
+    sai(['ok' => true, 'destino' => mascara($u['canal'], $u['contato']), 'mensagem' => 'Enviamos um código para ' . mascara($u['canal'], $u['contato']) . '. Ele vale por 15 minutos.']);
+  }
+  if ($acao === 'senha_definir') {
+    if (!taxa_ok('ver:' . $iph, 20, 900)) erro(429, 'limite', 'Muitas tentativas. Aguarde alguns minutos.');
+    senha_valida($j['senha'] ?? null); msg_codigo(confere_codigo($u, 'redefinir', $j['codigo'] ?? ''));
+    $db->prepare('UPDATE usuarios SET senha_hash = ? WHERE id = ?')->execute([password_hash((string)$j['senha'], PASSWORD_DEFAULT), $u['id']]); $outras();
+    sai(['ok' => true, 'mensagem' => 'Senha definida. Agora você também pode entrar com ela.', 'usuario' => usuario_publico(usuario_recarrega($u['id']))]);
+  }
+  if ($acao === 'novidades') {   // aceite de novidades: liga e desliga sem apagar a conta. Códigos de confirmação e avisos de segurança continuam sendo enviados.
+    $on = !empty($j['ativo']) ? 1 : 0;
+    $db->prepare('UPDATE usuarios SET c_msgs = ?, c_contato = ?, c_ts = ?, c_versao = ?, c_iph = ? WHERE id = ?')->execute([$on, $on, $agora, OP_TEXTO_VERSAO, $iph, $u['id']]);
+    sai(['ok' => true, 'mensagem' => $on ? 'Pronto: você vai receber as novidades da Oficina Política.' : 'Pronto: você não vai mais receber novidades. Códigos de acesso e avisos de segurança continuam chegando.', 'usuario' => usuario_publico(usuario_recarrega($u['id']))]);
+  }
+}
+
 erro(400, 'acao', 'Ação desconhecida.');

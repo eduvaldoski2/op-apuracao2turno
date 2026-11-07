@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Minha conta · Oficina Política</title><meta name="robots" content="noindex,nofollow"><meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Space+Grotesk:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="css/consent.css?v=2b4a38be">
+<style>
+:root{--roxo:#3E347E;--roxo-2:#2A2260;--laranja:#F08A24;--creme:#FBF9F5;--tx:#1b1530;--mudo:#5d5675;--linha:#ddd8ea;--faixa:#EFEBF8;--ok:#1f7a5a;--erro:#b3261e;color-scheme:light}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--creme);color:var(--tx);font:400 16px/1.5 'Space Grotesk',system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;padding-left:env(safe-area-inset-left,0);padding-right:env(safe-area-inset-right,0)}
+a{color:var(--roxo)}
+.topo{background:var(--roxo);color:#fff;border-bottom:4px solid var(--laranja)}
+.wrap{max-width:760px;margin:0 auto;padding-left:16px;padding-right:16px}
+.topo .wrap{display:flex;align-items:center;gap:12px;min-height:64px;justify-content:space-between}
+.topo img{height:34px;display:block}
+.topo a.logo{display:flex;align-items:center}
+.nav2{background:#fff;border-bottom:1px solid var(--linha)}
+.nav2 .wrap{display:flex;gap:18px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;font-size:14px;font-weight:600}
+.nav2 a{text-decoration:none;color:var(--roxo)}.nav2 a:hover{text-decoration:underline}
+main{padding-top:26px;padding-bottom:70px}
+h1{font:400 clamp(30px,6vw,40px)/1.1 'DM Serif Display',Georgia,serif;color:var(--roxo);margin:0 0 6px;text-wrap:balance}
+.sub{color:var(--mudo);margin:0 0 20px}
+.abas{display:flex;gap:4px;border-bottom:1.5px solid var(--linha);margin:0 0 22px}
+.abas button{font:inherit;font-weight:700;font-size:15px;color:var(--mudo);background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1.5px;padding:12px 14px;cursor:pointer;min-height:44px}
+.abas button[aria-selected=true]{color:var(--roxo);border-bottom-color:var(--laranja)}
+.abas button:focus-visible,.btn:focus-visible,.lk:focus-visible,input:focus-visible,summary:focus-visible,.sw:focus-visible{outline:3px solid var(--laranja);outline-offset:2px}
+.card{background:#fff;border:1px solid var(--linha);border-radius:12px;padding:20px 18px;margin:0 0 18px}
+.card h2{font:400 24px/1.15 'DM Serif Display',Georgia,serif;color:var(--roxo-2);margin:0 0 4px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.card h2 small{font:700 11px/1 'Space Grotesk',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:99px;background:var(--faixa);color:var(--roxo)}
+.card h2 small.on{background:#dff3ea;color:var(--ok)}
+.card p.d{margin:0 0 14px;color:var(--mudo);font-size:14.5px}
+.campo{display:grid;gap:6px;margin:0 0 14px}
+.campo label,.campo .l{font-weight:700;font-size:13.5px;color:var(--roxo-2)}
+.campo input[type=text],.campo input[type=password]{font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--linha);border-radius:8px;background:#fff;color:var(--tx);width:100%;min-height:46px}
+.campo input:focus{border-color:var(--roxo)}
+.campo .v{padding:11px 12px;border:1.5px solid var(--linha);border-radius:8px;background:var(--faixa);min-height:46px;overflow-wrap:anywhere}
+.campo .h{font-size:13px;color:var(--mudo)}
+.btn{font:inherit;font-weight:700;font-size:15px;padding:12px 20px;border:0;border-radius:99px;background:var(--laranja);color:#2a1700;cursor:pointer;min-height:46px}
+.btn:hover{filter:brightness(1.06)}.btn[disabled]{opacity:.6;cursor:default}
+.btn.sec{background:#fff;color:var(--roxo);border:1.5px solid var(--roxo)}
+.btn.sec:hover{background:var(--faixa)}
+.btn.perigo{background:var(--erro);color:#fff}
+.lk{font:inherit;font-weight:700;color:var(--roxo);background:none;border:0;text-decoration:underline;cursor:pointer;padding:6px 0;min-height:36px}
+.acoes{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.st{margin:12px 0 0;font-size:14.5px}.st:empty{display:none}.st.ok{color:var(--ok)}.st.erro{color:var(--erro)}
+.grade{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grade.tres{grid-template-columns:repeat(3,1fr)}
+.ck{display:flex;align-items:center;gap:10px;padding:11px 12px;border:1.5px solid var(--linha);border-radius:8px;font-weight:600;cursor:pointer;min-height:46px;background:#fff}
+.ck:has(input:checked){border-color:var(--roxo);background:var(--faixa)}
+.ck input,.aceite input{width:20px;height:20px;accent-color:var(--roxo);flex:none;margin:0}
+h3{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--roxo);margin:18px 0 8px}
+.aceite{display:flex;gap:10px;align-items:flex-start;font-size:14px;line-height:1.45;margin:16px 0 14px}
+.nota{padding:12px 14px;background:var(--faixa);border-radius:8px;font-size:14px;margin:14px 0 0}
+.sw-l{display:flex;align-items:flex-start;gap:14px;justify-content:space-between}
+.sw{flex:none;position:relative;width:52px;height:30px;border-radius:99px;border:0;background:#b9b3cf;cursor:pointer;transition:background .15s;padding:0;margin-top:2px}
+.sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:transform .15s;box-shadow:0 1px 3px rgba(0,0,0,.3)}
+.sw[aria-checked=true]{background:var(--ok)}.sw[aria-checked=true]::after{transform:translateX(22px)}
+details.perigo{border-color:#f0c9c6}
+details summary{cursor:pointer;font:400 20px/1.2 'DM Serif Display',Georgia,serif;color:var(--erro);list-style:none;display:flex;justify-content:space-between;gap:10px}
+details summary::-webkit-details-marker{display:none}
+details summary::after{content:"＋";font-family:'Space Grotesk',sans-serif}
+details[open] summary::after{content:"－"}
+.carrega{color:var(--mudo);padding:30px 0}
+.ct-box{background:#fff;border:1px solid var(--linha);border-radius:12px;padding:20px 18px}
+.ct-form{display:grid;gap:12px;margin-top:14px}
+.ct-form label{display:grid;gap:6px;font-weight:700;font-size:13.5px;color:var(--roxo-2)}
+.ct-form input{font:inherit;font-size:16px;padding:11px 12px;border:1.5px solid var(--linha);border-radius:8px;min-height:46px;width:100%}
+.ct-form .ct-aceite{display:flex;gap:10px;align-items:flex-start;font-weight:500;font-size:14px}.ct-form .ct-aceite input{width:20px;min-height:0;height:20px;accent-color:var(--roxo)}
+.ct-chamada{margin:0 0 12px;font-size:14.5px}
+.ct-abas{display:flex;gap:6px;margin:6px 0 4px}.ct-abas button{font:inherit;font-weight:700;padding:9px 14px;border-radius:99px;border:1.5px solid var(--roxo);background:#fff;color:var(--roxo);cursor:pointer}.ct-abas button.on{background:var(--roxo);color:#fff}
+.ct-bt{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.ct-link{font:inherit;font-weight:700;color:var(--roxo);background:none;border:0;text-decoration:underline;cursor:pointer;padding:6px 0}
+.ct-msg{margin:6px 0 0;font-size:14.5px}.ct-erro{color:var(--erro)}.ct-ok{color:var(--ok)}
+.ct-ou{text-align:center;color:var(--mudo);font-size:13px;margin:8px 0}
+.ct-form .btn,.ct-bt .btn{font:inherit;font-weight:700;font-size:15px;padding:12px 20px;border:0;border-radius:99px;background:var(--laranja);color:#2a1700;cursor:pointer}
+.rodape{margin-top:30px;font-size:13.5px;color:var(--mudo)}
+@media (max-width:520px){.grade,.grade.tres{grid-template-columns:1fr}.card{padding:18px 14px}.btn{width:100%}.acoes .btn{width:100%}}
+@media (prefers-reduced-motion:reduce){.sw,.sw::after{transition:none}}
+</style></head>
+<body>
+<header class="topo"><div class="wrap"><a class="logo" href="./" aria-label="Oficina Política, página inicial"><img src="img/logo-negativo.svg" alt="Oficina Política"></a><div id="menu-conta"></div></div></header>
+<nav class="nav2" aria-label="Ir para"><div class="wrap"><a href="resultados/">Painel de eleições</a><a href="radar/">Radar</a><a href="privacidade.html">Privacidade</a></div></nav>
+<main class="wrap" id="app"><p class="carrega">Carregando…</p></main>
+<script type="module" src="js/contapag.js?v=2b4a38be"></script>
+</body></html>

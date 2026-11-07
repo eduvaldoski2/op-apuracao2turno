@@ -224,7 +224,11 @@ function usuario_atual() {
   $s = conta_db()->prepare("SELECT u.* FROM sessoes s JOIN usuarios u ON u.id = s.uid WHERE s.hash = ? AND s.expira > ? AND u.status = 'ativo'"); $s->execute([hash('sha256', $t), time()]);
   $r = $s->fetch(); if ($r) $u = $r; return $u;
 }
-function usuario_publico($u) { return ['nome' => $u['nome'], 'canal' => $u['canal'], 'contato' => mascara($u['canal'], $u['contato']), 'sem_senha' => ($u['senha_hash'] ?? '') === '']; }
+function usuario_publico($u) {
+  return ['nome' => $u['nome'], 'canal' => $u['canal'], 'contato' => mascara($u['canal'], $u['contato']), 'sem_senha' => ($u['senha_hash'] ?? '') === '',
+    'google' => !empty($u['google_sub']), 'desde' => substr((string)($u['criado'] ?? ''), 0, 10),
+    'novidades' => (int)($u['c_msgs'] ?? 0) > 0 || (int)($u['c_contato'] ?? 0) > 0];   // aceite de novidades da Oficina Política (avisos sobre a plataforma e conteúdos sobre as eleições)
+}
 
 // ---------- entrada com o Google (Google Identity Services): o navegador manda o ID token e o servidor o confere com o Google ----------
 function google_confere($credencial) {

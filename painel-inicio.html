@@ -238,10 +238,12 @@ function upAll(){upTerr();pintaMapa();eUp()}
 eDraw();upAll();
 </script><script>(function(){var b=document.getElementById('conta-topo');if(!b)return;var base=/\/(resultados|apuracao-2t-2026)\//.test(location.pathname)?location.pathname.replace(/\/(resultados|apuracao-2t-2026)\/.*$/,'/'):'';var u=base+'api/conta.php';
 function ent(){b.innerHTML='<a class="tc-b tc-on" href="painel.html?entrar=1">Entrar</a>'}
-fetch(u,{credentials:'same-origin',headers:{Accept:'application/json'},cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;if(!j.logado)return ent();b.innerHTML='<button type="button" class="tc-b">Sair</button>';b.firstChild.onclick=function(){fetch(u,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({acao:'sair'})}).then(function(){location.reload()},function(){location.reload()})}}).catch(ent)})();</script>
+function sair(){fetch(u,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({acao:'sair'})}).then(function(){location.reload()},function(){location.reload()})}
+fetch(u,{credentials:'same-origin',headers:{Accept:'application/json'},cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;if(!j.logado)return ent();
+import('./js/menuconta.js?v=2b4a38be').then(function(m){m.montarMenuConta(b,{tema:'escuro',contaUrl:(base||'/')+'conta.html',aoSair:sair}).atualizar(j.usuario)},function(){b.innerHTML='<a class="tc-b" href="'+(base||'/')+'conta.html">Minha conta</a>'})}).catch(ent)})();</script>
 <script type="module" src="js/sugestao.js"></script>
 <script type="module">
-import { iniciarConsentimento } from './js/consentimento.js?v=a32929f5';
+import { iniciarConsentimento } from './js/consentimento.js';
 try { iniciarConsentimento(); } catch (e) {}
 </script>
 </body></html>

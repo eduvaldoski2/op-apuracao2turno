@@ -32,7 +32,7 @@ AddType application/manifest+json .webmanifest
 <FilesMatch "\.(png|jpg|jpeg|svg|webp|woff2)$">
 Header set Cache-Control "public, max-age=86400"
 </FilesMatch>
-<FilesMatch "^(index|painel|admin|privacidade|termos)\.html$">
+<FilesMatch "^(index|painel|admin|privacidade|termos|conta)\.html$">
 Header set Cache-Control "no-cache"
 </FilesMatch>
 <If "%{REQUEST_URI} =~ m#^/resultados/teste#">
