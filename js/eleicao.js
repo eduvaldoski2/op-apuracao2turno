@@ -1,10 +1,10 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
 // O resto aparece esmaecido ("em breve"). Só o presidente de 2026 é aberto: os demais cargos e anos exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=00e6b9d2';
-import { esc } from './ui.js?v=00e6b9d2';
-import { RAIZ } from './config.js?v=00e6b9d2';
-import { montarMenuConta } from './menuconta.js?v=00e6b9d2';
+import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=7d90a61c';
+import { esc } from './ui.js?v=7d90a61c';
+import { RAIZ } from './config.js?v=7d90a61c';
+import { montarMenuConta } from './menuconta.js?v=7d90a61c';
 
 const ANOS = [2026, 2024, 2022, 2020, 2018, 2016, 2014, 2012, 2010, 2008, 2006];
 const DISPONIVEL = { 2026: true, 2024: true, 2022: true, 2020: true, 2018: true, 2016: true, 2014: true, 2012: true, 2010: true, 2008: true, 2006: true };

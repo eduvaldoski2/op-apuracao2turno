@@ -1,7 +1,7 @@
 // Página "Minha conta" (conta.html): cadastro (nome, contato, senha, excluir) e preferências (boletim do Radar, novidades).
 // Mesma conta e mesmo cookie do Painel e do Radar. O menu do topo (ícone de pessoa) leva para cá.
-import { CONTA, carregarConta, montarConta, chamarConta, sairConta } from './conta.js?v=00e6b9d2';
-import { montarMenuConta } from './menuconta.js?v=00e6b9d2';
+import { CONTA, carregarConta, montarConta, chamarConta, sairConta } from './conta.js?v=7d90a61c';
+import { montarMenuConta } from './menuconta.js?v=7d90a61c';
 
 const app = document.getElementById('app');
 const REG = [['rj', 'Rio de Janeiro'], ['sp', 'São Paulo'], ['mg', 'Minas Gerais'], ['ne', 'Nordeste'], ['sul', 'Sul'], ['norte', 'Norte'], ['co', 'Centro-Oeste']];
@@ -162,5 +162,5 @@ function troca(k) {
 }
 window.addEventListener('hashchange', () => { if (CONTA.logado && (location.hash === '#cadastro' || location.hash === '#preferencias')) troca(location.hash.slice(1)); });
 
-(async () => { try { analise = await import('./consentimento.js?v=00e6b9d2'); analise.iniciarConsentimento(); } catch { analise = null; } })();
+(async () => { try { analise = await import('./consentimento.js?v=7d90a61c'); analise.iniciarConsentimento(); } catch { analise = null; } })();
 iniciar();
