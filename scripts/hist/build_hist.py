@@ -85,11 +85,11 @@ ZZ_PRES = False
 if not TEM_LOCAL and not municipal and os.path.exists(P(f'secao_{ano}_BR.parquet')) and (not UFS_ARG or 'ZZ' in UFS_ARG):
     try: ZZ_PRES = con.execute(f"SELECT count(*) FROM '{P(f'secao_{ano}_BR.parquet')}' WHERE uf = 'ZZ' AND cargo = 1").fetchone()[0] > 0
     except Exception: ZZ_PRES = False
-# Lacunas do TSE: municípios que existem na votação por zona e não aparecem no arquivo de seções (2004: MT, AP, RR, MA...).
+# Lacunas do TSE: municípios que têm candidato a prefeito e não aparecem no arquivo de seções (2004: MT, AP, RR, MA...).
 LACUNAS = {}
 if municipal:
     try:
-        for uf_, cd_ in con.execute(f"""SELECT uf, cd_municipio_tse FROM '{P(f'zona_{ano}.parquet')}' WHERE cargo = 11 AND turno = 1 AND qt_votos_nominais > 0 GROUP BY ALL
+        for uf_, cd_ in con.execute(f"""SELECT uf, TRY_CAST(ue AS INTEGER) FROM '{cand_pq}' WHERE cargo = 11 AND turno = 1 AND TRY_CAST(ue AS INTEGER) > 0 GROUP BY ALL
           EXCEPT SELECT uf, cd_municipio_tse FROM read_parquet('{P(f'secao_{ano}_*.parquet')}') WHERE cargo = 11 AND turno = 1 GROUP BY ALL""").fetchall():
             LACUNAS.setdefault(uf_.lower(), []).append(cd5(cd_) if 'cd5' in globals() else f'{cd_:05d}')
     except Exception as e: log('lacunas: não calculadas', e)
