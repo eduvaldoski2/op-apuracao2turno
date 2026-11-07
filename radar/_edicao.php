@@ -3951,7 +3951,374 @@ S.to_transicao.velha = true; S.to_transicao.velhaMotivo = "sem fato novo desde 5
 S.rn_transicao.velha = true; S.rn_transicao.velhaMotivo = "primeira reunião realizada em 6/11; próximo marco só com a conclusão da comissão (18/11)";
 Object.keys(ORDER).forEach(function(k){ ORDER[k] = ORDER[k].filter(function(i){ return !(S[i] && S[i].velha); }); });
 
+/* ===== REESCRITA 18h (3) ===== */
+S.ucrania_energia = {
+ "ed": "mundo",
+ "k": "Mundo · Ucrânia",
+ "hora": "7/11",
+ "t": "Ataque russo danifica a Ponte Norte de Kiev, atinge a rede elétrica e deixa cinco regiões da Ucrânia com cortes de energia",
+ "sub": "Zelensky fala em 36 mísseis balísticos e 172 drones; Moscou diz ter mirado alvos militares, de energia e de transporte. A negociação em Abu Dhabi está marcada para terça (10).",
+ "resumo": "Um ataque russo na madrugada deste sábado (7) danificou a Ponte Norte, sobre o Rio Dnipro, e instalações de energia nas regiões de Kiev e Jitomir. Houve cortes de luz em cinco regiões e falhas no aquecimento e na água da capital. Zelensky diz que a Rússia lançou 36 mísseis balísticos e 172 drones; o balanço de feridos varia entre cinco e oito, conforme a fonte. Delegações de Rússia, Ucrânia e Estados Unidos devem se reunir na terça (10), em Abu Dhabi.",
+ "upd": "A matéria foi reescrita como texto único, com Reuters, AFP e Euronews: traz a ponte, a rede elétrica, os números do ataque, a disputa entre Zelensky e Klitschko e o que ainda diverge entre as fontes.",
+ "fundo": [
+  [
+   "p",
+   "Um ataque russo na madrugada deste sábado (7) danificou a Ponte Norte, sobre o Rio Dnipro, atingiu instalações de energia nas regiões de Kiev e Jitomir e provocou cortes de luz em cinco regiões da Ucrânia. O prefeito da capital, Vitali Klitschko, descreveu a situação do abastecimento de energia como “extremamente difícil”, com falhas no aquecimento e na água, num dia em que as temperaturas estavam perto de zero."
+  ],
+  [
+   "p",
+   "A Ponte Norte, que liga as margens leste e oeste de Kiev, foi atingida por vários mísseis balísticos, afirmou Klitschko, de acordo com a Reuters. Em vídeo gravado no local, o prefeito mostrou que a pista foi danificada, assim como a rede aérea dos trólebus e uma linha de energia. A ponte foi fechada nos dois sentidos enquanto especialistas avaliam a estrutura, informa a Euronews, e cinco carros estacionados perto dela foram danificados pela onda de choque. A Reuters lembra que a Rússia ampliou nas últimas semanas os ataques às pontes da capital, que tem mais de 3 milhões de habitantes."
+  ],
+  [
+   "nums",
+   [
+    [
+     "36",
+     "mísseis balísticos lançados, segundo Zelensky"
+    ],
+    [
+     "172",
+     "drones lançados, segundo Zelensky; a Força Aérea diz ter abatido 149"
+    ],
+    [
+     "5",
+     "regiões com cortes de energia: Dnipropetrovsk, Donetsk, Kiev, Jitomir e Kharkiv"
+    ],
+    [
+     "55",
+     "mortos em Komyshuvakha, no sul, após o ataque de segunda (2)"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Energia, água e aquecimento"
+  ],
+  [
+   "p",
+   "Instalações de energia em ao menos três distritos da região de Kiev foram atingidas, informou a Reuters, que cita o governo regional. Em Jitomir, a infraestrutura energética também foi danificada, segundo o governador e o próprio Ministério da Defesa russo. Os cortes de luz atingiram cinco regiões, de acordo com a Euronews: Dnipropetrovsk, Donetsk, Kiev, Jitomir e Kharkiv. As fontes lidas não informam quantos consumidores ficaram sem energia nem quando o serviço será restabelecido."
+  ],
+  [
+   "p",
+   "Kiev enfrenta cortes de emergência prolongados, interrupções repetidas no abastecimento de água e paralisações no metrô com a chegada do frio, segundo a AFP. Klitschko disse, em publicação no Telegram, que os danos à rede afetam o aquecimento e a água. O presidente Volodymyr Zelensky afirmou que a tática russa busca destruir redes elétricas, transformadores e quadros de distribuição, e que algumas regiões continuam com falta de energia mesmo quando a capacidade de geração é suficiente."
+  ],
+  [
+   "h",
+   "O tamanho do ataque e o balanço de vítimas"
+  ],
+  [
+   "p",
+   "Zelensky disse que a Rússia lançou 36 mísseis balísticos e 172 drones em um ataque combinado e afirmou que Moscou programa os golpes contra a infraestrutura crítica para antes das negociações. A Força Aérea ucraniana informou ter abatido 149 dos 172 drones e quatro mísseis balísticos, a maioria dirigidos à região de Kiev, segundo a Daily Sabah, em relato reunido pelo agregador Newscord. O Ministério da Defesa russo falou em um ataque “massivo” contra o complexo militar-industrial e contra instalações de energia e de transporte em Kiev e arredores, informa a Reuters."
+  ],
+  [
+   "p",
+   "Os balanços de vítimas divergem. A Reuters registra um morto e oito feridos, entre eles uma criança, além de danos a casas e a prédios não residenciais. Em outro balanço, reproduzido pela AFP e pela Euronews, são cinco feridos na capital, entre eles um adolescente de 14 anos; uma versão posterior da Euronews fala em seis feridos na região de Kiev. O Serviço Estatal de Emergência informou danos em prédios do distrito de Solomianskyi, incluindo um jardim de infância, e também nos distritos de Darnytskyi e Sviatoshynskyi, em relatos reunidos pelo Newscord."
+  ],
+  [
+   "h",
+   "A disputa entre Zelensky e Klitschko"
+  ],
+  [
+   "p",
+   "O ataque ocorre no meio de uma disputa pública sobre o preparo de Kiev para o inverno. Klitschko acusa o governo central de atrasar a aprovação do plano de resiliência da cidade e de atrapalhar a preparação para o frio, e chamou as críticas de Zelensky de “manipulações constantes”, segundo a AFP. Na sexta (6), Zelensky escreveu no X que Kiev vive a pior situação energética do país e responsabilizou tanto os ataques russos quanto a falha de autoridades da cidade em cumprir as decisões para o período de aquecimento. Segundo a Daily Sabah, ele já havia alertado que a inteligência indicava ataques planejados à energia, às pontes do Dnipro e a instalações civis."
+  ],
+  [
+   "p",
+   "No sul do país, a operação de resgate em Komyshuvakha chegou ao sexto dia neste sábado. Bombas guiadas russas atingiram na segunda (2) uma antiga escola e um abrigo vizinho, onde moradores esperavam ajuda humanitária. Nas últimas 24 horas foram retirados mais nove corpos, o que eleva o balanço a 55 mortos, e dezenas de pessoas seguem desaparecidas, informa a Euronews."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "Delegações da Rússia, da Ucrânia e dos Estados Unidos devem se reunir na terça (10), em Abu Dhabi, na quarta rodada de negociações mediada por Washington; a anterior foi em Genebra, em fevereiro, segundo a Euronews. A Reuters observa que a Rússia aumentou os ataques aéreos enquanto a ofensiva terrestre está em grande parte estagnada, e que o esforço de paz apoiado pelos EUA produziu poucos resultados até agora. Zelensky disse ter falado com a equipe responsável pelos ataques de longo alcance e que a Rússia vai receber uma resposta. Ele também voltou a pedir interceptadores Patriot antes do inverno: o Departamento de Estado dos EUA aprovou um pacote de US$ 2,1 bilhões em mísseis PAC-3, mas Zelensky afirmou que a entrega pode levar anos."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "O balanço de vítimas varia entre cinco, seis e oito feridos, e só a Reuters registra um morto; nenhuma das fontes lidas traz um número consolidado.",
+    "Os 36 mísseis e os 172 drones vêm de Zelensky, e o número de abatidos, da Força Aérea ucraniana, por meio da Daily Sabah; não há contagem independente.",
+    "O Ministério da Defesa russo diz ter mirado alvos militares, de energia e de transporte; autoridades ucranianas relatam danos a prédios residenciais e a um jardim de infância.",
+    "O Straits Times, citado pelo Newscord, descreve o episódio como o primeiro ataque às pontes sobre o Dnipro na guerra, mas a Reuters fala em ampliação desses ataques nas últimas semanas. O Newsweek aponta a pior crise de água da guerra; os demais veículos descrevem interrupções, sem essa comparação.",
+    "Nenhuma fonte informa o número de consumidores sem luz nem o prazo para reabrir a ponte; Klitschko disse que os reparos começaram."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Reuters, via Business Recorder",
+   "https://www.brecorder.com/news/40447890/russian-strikes-hit-power-facilities-around-kyiv-damage-major-bridge"
+  ],
+  [
+   "Euronews",
+   "https://euronews.com/2026/11/07/russian-strikes-on-kyiv-injure-five-and-damage-bridge-and-energy-facilities"
+  ],
+  [
+   "Euronews, versão atualizada via Yahoo",
+   "https://www.yahoo.com/news/world/articles/russian-strikes-kyiv-region-injure-125321674.html"
+  ],
+  [
+   "AFP, via TRT World",
+   "https://www.trtworld.com/article/3d67e5a21e1c"
+  ],
+  [
+   "AFP, via UOL",
+   "https://noticias.uol.com.br/ultimas-noticias/afp/2026/11/07/ucrania-denuncia-cortes-de-energia-em-cinco-regioes-por-ataque-massivo-da-russia.htm"
+  ],
+  [
+   "Newscord (agregador de sete veículos)",
+   "https://newscord.org/article/russian-missiles-damage-kyivs-northern-bridge-disrupt-power-heating-and-water--Story_20261107_UkraineRussischerGrof8864a50"
+  ]
+ ]
+};
+S.iemen_houthis = {
+ "ed": "mundo",
+ "k": "Mundo · Oriente Médio",
+ "hora": "7/11",
+ "t": "Ao menos 11 morrem em bombardeios perto de Sanaa, no Iêmen, segundo os houthis; coalizão saudita não comentou",
+ "sub": "O balanço vem da TV e da agência dos rebeldes, sem verificação independente. A guerra civil, em pausa desde 2022, foi retomada em julho e já atinge a Arábia Saudita.",
+ "resumo": "Ao menos 11 pessoas morreram em bombardeios na aldeia de Ash Sharyah, no distrito de Bani Hushaysh, a leste de Sanaa, neste sábado (7), segundo a TV Al-Masirah e a agência Saba, ligadas aos houthis, que culpam a aviação saudita. O balanço é preliminar, e a coalizão liderada pela Arábia Saudita não comentou. A Xinhua lembra que, um dia antes, um ataque a um mercado em Taiz deixou ao menos 30 mortos, com houthis e governo atribuindo a culpa uns aos outros.",
+ "upd": "A matéria foi reescrita como texto único: traz onde caíram as bombas, quem fez cada afirmação, o histórico da escalada desde julho, a pressão internacional e o que ainda não foi verificado, com seis fontes.",
+ "fundo": [
+  [
+   "p",
+   "Bombardeios atribuídos à aviação da Arábia Saudita deixaram ao menos 11 mortos neste sábado (7) na aldeia de Ash Sharyah, no distrito de Bani Hushaysh, a leste de Sanaa, a capital do Iêmen controlada pelos houthis. O balanço foi divulgado pela TV Al-Masirah e pela agência Saba, ligadas aos rebeldes, e atribuído ao chefe do escritório de saúde do distrito, que o classificou como preliminar porque a retirada dos corpos dos escombros continuava."
+  ],
+  [
+   "p",
+   "Segundo a Al-Masirah, cinco casas foram destruídas e há mulheres e crianças entre os mortos. A emissora afirma que outros dois ataques tiveram como alvo equipes de resgate e as estradas de acesso à aldeia, e que aviões militares continuaram sobrevoando a região. Um morador disse à agência Xinhua que aeronaves circulavam sobre Sanaa antes de uma série de bombardeios atingir a capital. A Xinhua não conseguiu verificar os relatos de forma independente, e a coalizão liderada pelos sauditas não fez comentário imediato, segundo a agência e o Middle East Eye, que reproduz texto da AFP."
+  ],
+  [
+   "nums",
+   [
+    [
+     "11",
+     "mortos, segundo a Al-Masirah e a Saba (balanço preliminar)"
+    ],
+    [
+     "5",
+     "casas destruídas, segundo a Al-Masirah"
+    ],
+    [
+     "30",
+     "mortos no ataque ao mercado de Taiz na sexta (6), segundo a Xinhua"
+    ],
+    [
+     "3.689",
+     "ataques sauditas desde a escalada, segundo os houthis (dado de 31/10)"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Um dia depois do mercado de Taiz"
+  ],
+  [
+   "p",
+   "A Xinhua lembra que, na sexta (6), um ataque a um mercado lotado na província de Taiz matou ao menos 30 pessoas, e que houthis e autoridades do governo atribuem a responsabilidade uns aos outros. A agência descreve uma intensificação dos combates entre os houthis e as forças do governo apoiadas pela coalizão, com bombardeios aéreos em várias regiões do país e ataques de mísseis e drones que os rebeldes dizem ter lançado contra a Arábia Saudita. Nos episódios anteriores, a coalizão divulgou interceptações de mísseis e drones."
+  ],
+  [
+   "h",
+   "Como a guerra chegou a este ponto"
+  ],
+  [
+   "p",
+   "A guerra civil iêmenita, adormecida desde um cessar-fogo de 2022, foi retomada em julho de 2026, segundo o Times of Israel, com a desestabilização do Oriente Médio como pano de fundo. Os houthis tomaram Sanaa e boa parte do norte do país no fim de 2014, e a coalizão liderada pela Arábia Saudita interveio em 2015 para apoiar o governo reconhecido internacionalmente, lembra a Xinhua. Em 4 de outubro, a Al Jazeera registrou que o Exército iemenita apoiado pelos sauditas dizia ter matado centenas de combatentes houthis em 24 horas, e que os rebeldes afirmaram ter atacado uma instalação da Aramco em Riade, o que as autoridades sauditas não confirmaram. O Times of Israel acrescenta que um ataque ao aeroporto de Riade, no início de outubro, matou 13 pessoas."
+  ],
+  [
+   "p",
+   "Em 24 de outubro, o porta-voz militar houthi Yahya Saree disse ter atingido aeroportos, instalações de petróleo e uma base militar em Riade, Yanbu, Rabigh, Dammam, Najran e Khamis Mushait. A coalizão afirmou ter interceptado mísseis e drones, e a Defesa Civil saudita disse que destroços caíram nas regiões de Meca e Medina, o que os houthis negam ter mirado, segundo a CGTN. Em 31 de outubro, a Al-Masirah relatou ao menos seis mortos, entre eles uma mulher e quatro filhos, num ataque saudita a uma casa em Taiz, enquanto o porta-voz da coalizão, Turki Al-Malki, disse que as defesas abateram drones sobre Riade e no sul da Arábia Saudita, de acordo com a Shafaq News."
+  ],
+  [
+   "p",
+   "Alvo de ataques declarados pelos houthis, Yanbu é o principal polo de exportação de petróleo saudita no Mar Vermelho e, segundo o Times of Israel, permitiu a Riade contornar o bloqueio iraniano do Estreito de Ormuz para boa parte de suas vendas. O jornal informa que os EUA mandaram sair da Arábia Saudita funcionários não essenciais de sua embaixada e familiares, que o Egito sugeriu enviar tropas para ajudar na defesa do reino e que Reino Unido e França ofereceram suas forças. Os dados são de 24 de outubro e não foram atualizados nas fontes lidas."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "Nenhuma das fontes lidas anuncia negociação ou trégua. O primeiro dado a acompanhar é a posição da coalizão sobre Ash Sharyah, que não comentou até a divulgação das notícias. Do lado iemenita, o governo diz manter a ofensiva chamada “Dawn of Yemen” (Amanhecer do Iêmen), que reivindicou 1.087 ataques a posições houthis até 31 de outubro, com 336 combatentes mortos ou feridos, segundo a Shafaq News. Os houthis, por sua vez, dizem ter sofrido 3.689 ataques aéreos e de mísseis desde o início da escalada mais recente. Os dois conjuntos de números são de uma das partes e não foram verificados."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "O número de 11 mortos e a autoria saudita vêm de veículos houthis (Al-Masirah e Saba); a Xinhua e a AFP não verificaram de forma independente, e a coalizão não comentou.",
+    "O relato de que socorristas e estradas foram alvo de dois ataques consta apenas da Al-Masirah.",
+    "O balanço de 30 mortos no mercado de Taiz, na sexta (6), aparece só na Xinhua entre as fontes lidas; houthis e governo se acusam mutuamente.",
+    "O número 11 coincide com o de 24 de outubro, quando a mídia houthi também falou em 11 mortos em Sanaa (Times of Israel), mas são episódios distintos.",
+    "Os números de ataques e baixas divulgados pelos houthis (93 ataques em 24 horas, 3.689 desde a escalada) e pelo governo (1.087 ataques, 336 combatentes mortos ou feridos) são alegações de cada lado.",
+    "Os houthis negam ter atacado Meca e Medina; a Defesa Civil saudita diz que destroços de mísseis interceptados caíram nas duas regiões."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Xinhua",
+   "https://english.news.cn/20261107/2ce700a7fef5445dbd5f3dcfc8b6790e/c.html"
+  ],
+  [
+   "Middle East Eye, com texto da AFP",
+   "https://www.middleeasteye.net/live-blog/live-blog-update/houthi-media-says-11-killed-saudi-strikes-yemens-sanaa-province"
+  ],
+  [
+   "Times of Israel (contexto de 24/10)",
+   "https://www.timesofisrael.com/yemens-houthis-say-11-killed-in-strikes-on-sanaa-saudis-say-two-missiles-shot-down/"
+  ],
+  [
+   "CGTN (contexto de 24/10)",
+   "https://news.cgtn.com/news/2026-10-25/Houthis-and-Saudi-led-coalition-exchange-strikes-casualties-reported-1RwzGeb5Smc/share_amp.html"
+  ],
+  [
+   "Shafaq News (contexto de 31/10)",
+   "https://shafaq.com/en/Middle-East/Six-killed-in-Yemen-as-Saudi-Houthi-fighting-escalates"
+  ],
+  [
+   "Al Jazeera (contexto de 4/10)",
+   "https://www.aljazeera.com/video/newsfeed/2026/10/4/saudi-backed-yemeni-army-says-700-houthis-killed-in-24-hours"
+  ],
+  [
+   "AFP, via UOL",
+   "https://noticias.uol.com.br/ultimas-noticias/afp/2026/11/07/ao-menos-11-mortos-em-bombardeios-sauditas-no-iemen-segundo-houthis.htm"
+  ]
+ ]
+};
+S.arg_china_telecom = {
+ "ed": "mundo",
+ "k": "Mundo · Argentina",
+ "hora": "7/11",
+ "t": "Argentina exige certificação de segurança dos EUA para equipamentos de telecomunicações do Estado, e norma pode barrar Huawei e ZTE",
+ "sub": "A Disposição 7/2026 foi publicada na sexta (6); ela não proíbe as chinesas de forma expressa, mas o selo da TIA é negado a empresas de listas americanas, e o regulador avalia estender a regra a operadoras e celulares.",
+ "resumo": "O governo argentino publicou na sexta (6), no Boletim Oficial, a Disposição 7/2026 do Centro Nacional de Ciberseguridad, que exige dos fabricantes de equipamentos para redes críticas de telecomunicações a certificação SCS 9001, padrão privado dos Estados Unidos. A regra vale para as compras do setor público nacional e, como a TIA, que emite o selo, filtra empresas de listas de restrição americanas, Huawei e ZTE tendem a ficar de fora. O regulador Enacom foi instado a avaliar estender as exigências à homologação de equipamentos, o que poderia alcançar celulares. A medida se liga a um acordo de US$ 15 milhões com Washington.",
+ "upd": "A matéria foi reescrita a partir da norma e de quatro veículos argentinos e regionais: traz o que a disposição exige, quem é atingido, o papel dos EUA, o acordo de US$ 15 milhões, as reações e o que as fontes não esclarecem. O Radar não leu o texto integral da disposição.",
+ "fundo": [
+  [
+   "p",
+   "O governo argentino publicou na sexta (6), no Boletim Oficial, a Disposição 7/2026 do Centro Nacional de Ciberseguridad (CNC), que adota como referência o padrão SCS 9001, da associação americana de telecomunicações TIA, para avaliar fornecedores de equipamentos de redes críticas. A norma não proíbe de forma expressa as empresas chinesas, mas o selo é negado a companhias que constam de listas de restrição dos Estados Unidos, como Huawei e ZTE, o que na prática as afasta das compras do Estado."
+  ],
+  [
+   "p",
+   "A TIA confere o candidato contra as listas americanas antes de auditar a empresa e, se ele constar delas, avisa em 48 horas úteis que não pode seguir adiante, descreve o iProfesional. O Informe Digital diz que Huawei e ZTE não conseguem obter o selo; a TIA também exclui Hikvision, Dahua, Hytera e DJI. O MobileTime ressalva que a norma não proíbe essas empresas de forma expressa e não as exclui automaticamente do mercado privado. A certificação avalia os processos do fabricante, em auditoria de dois a quatro dias, mas não testa o equipamento, e a TIA pode mudar suas regras por decisão própria, observa o iProfesional."
+  ],
+  [
+   "nums",
+   [
+    [
+     "SCS 9001",
+     "padrão privado de segurança da cadeia de suprimentos, da TIA dos EUA"
+    ],
+    [
+     "90 dias",
+     "prazo para o CNC definir as redes críticas e os quatro níveis de equipamento"
+    ],
+    [
+     "US$ 15 mi",
+     "acordo bilateral com os EUA, anunciado em 22 de outubro"
+    ],
+    [
+     "2/3",
+     "do parque da Arsat seria de origem chinesa, segundo o Informe Digital, que cita a La Nación"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Quem é atingido de imediato e quem pode ser depois"
+  ],
+  [
+   "p",
+   "A exigência é obrigatória para o setor público nacional, que inclui as empresas do Estado; para os demais, tem caráter de orientação, de adoção voluntária, segundo a TeleSemana. O Informe Digital, que cita a La Nación, diz que a primeira afetada tende a ser a estatal Arsat, cujo parque seria em cerca de dois terços de origem chinesa, sobretudo Huawei e ZTE. O CNC tem 90 dias para definir quais redes são críticas e dividir os equipamentos em quatro níveis (crítico, alto, moderado e baixo). O SCS 9001 vale para os dois mais altos, e o nível crítico exige ainda testes do produto em laboratório credenciado. Nos primeiros 36 meses, basta o registro na TIA, informa o Informe Digital."
+  ],
+  [
+   "p",
+   "O artigo 9º da disposição pede ao Enacom, regulador do setor, que avalie incorporar os requisitos à homologação de equipamentos e às obrigações das operadoras licenciadas. É aí que o alcance pode crescer. Segundo o iProfesional, celulares, modems, módulos 4G e 5G e o Wi-Fi de veículos teriam de cumprir as exigências se o Enacom adotar o padrão, e o Informe Digital menciona novas regras de homologação previstas para 1º de dezembro. O Enacom disse à TeleSemana não ter nada a informar por ora. O Clarín, que deu a notícia na manhã deste sábado, titulou que a restrição pode afetar o mercado de celulares."
+  ],
+  [
+   "h",
+   "O acordo com os EUA e o que acontece na região"
+  ],
+  [
+   "p",
+   "A disposição vem na esteira de um acordo bilateral de US$ 15 milhões anunciado pelos EUA em 22 de outubro para financiar um centro civil de operações de cibersegurança, a cargo do CNC e instalado na Arsat, em Benavídez, além de uma avaliação de segurança da rede de fibra troncal da estatal, incluindo riscos de equipamentos de fornecedores não confiáveis, descreve a TeleSemana. O iProfesional informa que o programa prevê seis meses de diagnóstico e até 18 meses de implementação, com o objetivo de substituir equipamentos chineses nas redes do governo. O vice-secretário de Estado americano, Christopher Landau, afirmou que a cibersegurança é um pilar fundamental da segurança nacional."
+  ],
+  [
+   "p",
+   "Washington vem pressionando a região. Em agosto, o embaixador americano em Buenos Aires, Peter Lamelas, e o secretário adjunto de Estado para o Hemisfério Ocidental, Juan Pablo Segura, classificaram Huawei, ZTE, Hikvision, Hytera, Dahua e DJI como fornecedores de alto risco, de acordo com o Canal 26. Pequim respondeu que as declarações eram calúnias sem fundamento e que a Huawei aceita auditorias externas. A embaixada dos EUA também ameaçou revogar vistos de dirigentes da cooperativa CALF, de Neuquén, por seu acordo com a Huawei, segundo o iProfesional. Costa Rica e Paraguai já adotaram a mesma certificação: na Costa Rica, a Justiça suspendeu parcialmente o decreto; no Paraguai, dois dos quatro operadores deixaram a licitação de 5G em que o requisito foi incluído, informam o iProfesional e o Informe Digital."
+  ],
+  [
+   "h",
+   "Quem reclama e quanto está em jogo"
+  ],
+  [
+   "p",
+   "A Associação Argentina de TIC, Vídeo e Conectividade (ATVC) apoia o objetivo de proteger as redes, mas pediu diálogo e consulta pública antes de novas obrigações e questiona a dependência de um único esquema privado de certificação, segundo o MobileTime. Operadoras grandes e pequenas temem que a passagem de três ou quatro fornecedores para um ou dois reduza a concorrência, diz a TeleSemana. O Informe Digital acrescenta que mais de 1.200 pequenos provedores e cooperativas do interior montaram redes de fibra com equipamentos Huawei ou ZTE e que a substituição elevaria custos, com possível repasse às tarifas."
+  ],
+  [
+   "p",
+   "O iProfesional cita mais de 1.200 provedores de internet, 547 deles cooperativas, e diz que a Huawei fornece cerca de 70% do núcleo 5G da Telecom Argentina, com a Nokia no restante. A TeleSemana indica que equipamentos chineses somariam cerca de 40% do mercado argentino de redes fixas e móveis, mas não informa a origem do número. As cifras não têm confirmação das empresas nem de fonte oficial."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "Três pontos vão definir o alcance da norma. O primeiro é o prazo de 90 dias para o CNC apontar as redes críticas e os níveis de equipamento. O segundo é a decisão do Enacom sobre estender a exigência à homologação e às licenças, sem prazo informado nas fontes lidas. O terceiro é a reação das empresas e de Pequim, ainda ausente: nenhuma das fontes lidas traz posição da Huawei, da ZTE ou do governo chinês sobre a disposição. A embaixada chinesa em Buenos Aires já havia acusado Washington de arrogância e de desrespeito à soberania argentina, segundo o iProfesional, em manifestação anterior à norma."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "As fontes divergem sobre o alcance: o MobileTime diz que a norma não proíbe expressamente Huawei, ZTE e outras e não as exclui do mercado privado; o Informe Digital diz que as duas não podem obter o selo; o iProfesional ora fala em bloqueio, ora em limitação de fato.",
+    "Não está claro o que acontece com os equipamentos já instalados; as fontes lidas só mencionam um regime de transição como proposta e os 36 meses de registro na TIA.",
+    "A decisão do Enacom sobre homologação e licenças não tem data.",
+    "O custo de substituição para operadoras, cooperativas e municípios não foi estimado nas fontes lidas, e os números de participação de mercado vêm de reportagens, sem confirmação oficial.",
+    "O governo argentino não divulgou justificativa pública além da técnica do CNC. O Radar não leu o texto integral da disposição e se baseia na descrição de quatro veículos."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "MobileTime",
+   "https://mobiletime.la/noticias/06/11/2026/argentina-ciberseguridad-redes-de-telecomunicaciones"
+  ],
+  [
+   "TeleSemana",
+   "https://www.telesemana.com/blog/2026/11/06/estados-unidos-estrecha-el-cerco-sobre-el-equipamiento-chino-para-las-redes-ahora-en-argentina/"
+  ],
+  [
+   "iProfesional",
+   "https://iprofesional.com/tecnologia/468539-el-gobierno-adopta-norma-de-ciberseguridad-de-eeuu-que-bloquearia-a-huawei"
+  ],
+  [
+   "Informe Digital",
+   "https://informedigital.com.ar/el-gobierno-comienza-a-restringir-la-llegada-de-celulares-chinos-a-la-argentina/"
+  ],
+  [
+   "Canal 26 (contexto de agosto)",
+   "https://www.canal26.com/politica/2026/08/27/la-pulseada-entre-estados-unidos-y-china-por-la-infraestructura-tecnologica-argentina/"
+  ],
+  [
+   "Clarín (manchete)",
+   "https://www.clarin.com/politica/gobierno-restringe-tecnologia-china-sector-telecomunicaciones-podria-impactar-mercado-telefonos-celulares_0_BWnofkEPnf.html"
+  ]
+ ]
+};
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","vr_va_interop":"atualizada"};
+var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","vr_va_interop":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","arg_china_telecom":"atualizada"};
 var GIRO_FLAGS = {};
 /* ===== FIM DOS DADOS ===== */
