@@ -1,0 +1,95 @@
+{
+ "gerado_em": "2026-11-07T20:18:47.109599+00:00Z",
+ "fonte": "https://cdn.tse.jus.br/estatistica/sead/odsele/consulta_cand",
+ "anos": {
+  "1994": {
+   "candidaturas": 12035,
+   "com_cpf": 0,
+   "com_ano_nascimento": 12014
+  },
+  "1996": {
+   "candidaturas": 321790,
+   "com_cpf": 0,
+   "com_ano_nascimento": 203239
+  },
+  "1998": {
+   "candidaturas": 15092,
+   "com_cpf": 14630,
+   "com_ano_nascimento": 15090
+  },
+  "2000": {
+   "candidaturas": 399455,
+   "com_cpf": 396490,
+   "com_ano_nascimento": 399297
+  },
+  "2002": {
+   "candidaturas": 18109,
+   "com_cpf": 17763,
+   "com_ano_nascimento": 17819
+  },
+  "2004": {
+   "candidaturas": 402157,
+   "com_cpf": 401335,
+   "com_ano_nascimento": 401479
+  },
+  "2006": {
+   "candidaturas": 19303,
+   "com_cpf": 19303,
+   "com_ano_nascimento": 19302
+  },
+  "2008": {
+   "candidaturas": 382079,
+   "com_cpf": 382079,
+   "com_ano_nascimento": 382079
+  },
+  "2010": {
+   "candidaturas": 22577,
+   "com_cpf": 22577,
+   "com_ano_nascimento": 22567
+  },
+  "2012": {
+   "candidaturas": 483741,
+   "com_cpf": 344170,
+   "com_ano_nascimento": 482451
+  },
+  "2014": {
+   "candidaturas": 26263,
+   "com_cpf": 26235,
+   "com_ano_nascimento": 26263
+  },
+  "2016": {
+   "candidaturas": 498391,
+   "com_cpf": 498282,
+   "com_ano_nascimento": 498273
+  },
+  "2018": {
+   "candidaturas": 29287,
+   "com_cpf": 29179,
+   "com_ano_nascimento": 29178
+  },
+  "2020": {
+   "candidaturas": 558804,
+   "com_cpf": 558520,
+   "com_ano_nascimento": 558519
+  },
+  "2022": {
+   "candidaturas": 29322,
+   "com_cpf": 29293,
+   "com_ano_nascimento": 29293
+  },
+  "2024": {
+   "candidaturas": 463932,
+   "com_cpf": 0,
+   "com_ano_nascimento": 463882
+  },
+  "2026": {
+   "candidaturas": 21017,
+   "com_cpf": 21014,
+   "com_ano_nascimento": 21014
+  }
+ },
+ "totais": {
+  "candidaturas": 3703354,
+  "pessoas": 2310228
+ }
+}
