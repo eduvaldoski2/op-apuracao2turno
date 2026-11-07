@@ -198,8 +198,11 @@ fs.writeFileSync(path.join(arq, nome + '.php'), novo);
 const pub = {}; Object.keys(d.S).forEach(i => { const s = d.S[i]; pub[i] = { k: s.k, t: s.t, sub: s.sub, resumo: s.resumo, fundo: s.fundo, fontes: s.fontes, hora: s.hora }; });
 fs.writeFileSync(path.join(raiz, '_publico.php'), "<?php if (!defined('RADAR_OK')) { http_response_code(404); exit; } ?>\n" + JSON.stringify(pub).replace(/</g, '\\u003c'));
 // dados para o boletim por e-mail (lidos pelo cron em PHP): só o necessário
-const mail = { dia: data, hora: hh, data: d.EDICAO.data, lead: d.HOME_LEAD, order: d.ORDER, amanha: d.AMANHA || [], stories: {} };
-Object.keys(d.S).forEach(i => { const s = d.S[i]; mail.stories[i] = { ed: s.ed, reg: s.reg || '', t: s.t, sub: s.sub }; });
-fs.writeFileSync(path.join(raiz, '_dados_email.php'), "<?php if (!defined('RADAR_OK')) { http_response_code(404); exit; } ?>\n" + JSON.stringify(mail).replace(/</g, '\\u003c'));
+// O boletim é o RESUMO DO DIA: junta todas as edições do dia e escolhe o que mais pesou (radar/tools/resumo_dia.cjs).
+try { const rd = require('./resumo_dia.cjs'); const mail = rd.resumoDoDia(data); if (!mail) throw new Error('sem edições do dia'); rd.gravar(mail); }
+catch (e) { console.warn('AVISO: resumo do dia não gerado (' + e.message + '); usando só esta edição no boletim');
+  const mail = { dia: data, hora: hh, data: d.EDICAO.data, lead: d.HOME_LEAD, order: d.ORDER, amanha: d.AMANHA || [], stories: {} };
+  Object.keys(d.S).forEach(i => { const s = d.S[i]; mail.stories[i] = { ed: s.ed, reg: s.reg || '', t: s.t, sub: s.sub }; });
+  fs.writeFileSync(path.join(raiz, '_dados_email.php'), "<?php if (!defined('RADAR_OK')) { http_response_code(404); exit; } ?>\n" + JSON.stringify(mail).replace(/</g, '\\u003c')); }
 const n = Object.values(flags).filter(v => v === 'novo').length, a = Object.values(flags).filter(v => v === 'atualizada').length;
 console.log('OK ' + nome + ': ' + Object.keys(d.S).length + ' matérias, ' + n + ' NOVO, ' + a + ' ATUALIZADA' + (ant ? ' (vs ' + ant + ')' : ' (sem edição anterior)'));

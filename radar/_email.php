@@ -84,27 +84,35 @@ function radar_boletim_montar($d, $prefs) {
   $apoio = [];   // até 2, de editorias diferentes da do destaque
   $edDest = $destaque ? $S[$destaque]['ed'] : '';
   foreach ($lista as $e => $ids) { if (count($apoio) >= 2 || $e === $edDest || $e === 'regioes') continue; foreach ($ids as $i) if (!in_array($i, $usados, true)) { $apoio[] = $i; $usados[] = $i; break; } }
-  $max = ['politica' => 5, 'economia' => 3, 'mundo' => 2, 'regioes' => 7]; $blocos = [];
+  $max = ['politica' => 5, 'economia' => 3, 'mundo' => 3, 'regioes' => 7]; $blocos = [];
   foreach ($lista as $e => $ids) { $rest = array_values(array_filter($ids, fn($i) => !in_array($i, $usados, true))); $rest = array_slice($rest, 0, $max[$e] ?? 3); if ($rest) $blocos[$e] = $rest; }
   return ['destaque' => $destaque, 'apoio' => $apoio, 'blocos' => $blocos];
 }
+function rc_corta($s, $n) {   // corta em fim de palavra
+  $s = trim((string)$s); if (mb_strlen($s) <= $n) return $s;
+  $c = mb_substr($s, 0, $n - 1); $p = mb_strrpos($c, ' '); if ($p !== false && $p > $n * 0.6) $c = mb_substr($c, 0, $p);
+  return rtrim($c, " ,;:.") . '…';
+}
+// "Resumo do dia": os dados vêm de todas as edições do dia (radar/tools/resumo_dia.cjs), na versão mais recente de cada matéria.
 function radar_html_boletim($d, $sel, $nome, $prefs, $urlSair) {
   $S = $d['stories']; $link = fn($id) => RADAR_SITE . '/radar/?utm_source=boletim&utm_medium=email&utm_campaign=diario&m=' . rawurlencode($id) . '#materia-' . rawurlencode($id);
   $serif = rc_serif();
   $topo = '<div style="margin-top:16px;' . $serif . ';font-size:30px;line-height:1.1;color:#fff">Resumo do dia</div><div style="margin-top:4px;font-size:13px;color:#D9D4F0">' . radar_e($d['data']) . '</div>';
-  $mi = '<tr><td style="padding:24px 28px 0;font-size:16px;line-height:1.5">Boa noite, <b>' . radar_e($nome) . '</b>. Estas foram as principais notícias do dia.</td></tr>';
+  $ne = count($d['edicoes'] ?? []); $nt = (int)($d['tocadas'] ?? 0);
+  $conta = $ne > 1 && $nt > 0 ? ' O Radar publicou ' . $ne . ' edições hoje e ' . $nt . ' matérias novas ou atualizadas; estas são as que mais pesaram.' : ' Estas são as notícias que mais pesaram hoje.';
+  $mi = '<tr><td style="padding:24px 28px 0;font-size:16px;line-height:1.5">Boa noite, <b>' . radar_e($nome) . '</b>.' . radar_e($conta) . '</td></tr>';
   if ($sel['destaque']) { $id = $sel['destaque'];
     $mi .= '<tr><td style="padding:20px 28px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff;border:1px solid #ddd8ea;border-top:5px solid #F08A24"><tr><td style="padding:18px 20px 20px"><div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#b45f06">Destaque do dia · ' . radar_e(RC_NOME[$S[$id]['ed']] ?? '') . '</div>'
-      . '<a href="' . radar_e($link($id)) . '" style="' . $serif . ';font-size:27px;line-height:1.13;color:#2A2260;text-decoration:none;display:block;margin:6px 0 8px">' . radar_e($S[$id]['t']) . '</a><div style="font-size:15px;line-height:1.5;color:#3d3860;margin-bottom:16px">' . radar_e($S[$id]['sub']) . '</div>' . rc_btn('Ler no Radar', $link($id)) . '</td></tr></table></td></tr>'; }
+      . '<a href="' . radar_e($link($id)) . '" style="' . $serif . ';font-size:27px;line-height:1.13;color:#2A2260;text-decoration:none;display:block;margin:6px 0 8px">' . radar_e($S[$id]['t']) . '</a><div style="font-size:15px;line-height:1.55;color:#3d3860;margin-bottom:16px">' . radar_e($S[$id]['resumo'] ?? $S[$id]['sub']) . '</div>' . rc_btn('Ler a matéria completa', $link($id)) . '</td></tr></table></td></tr>'; }
   if ($sel['apoio']) {
-    $card = function ($id) use ($S, $link, $serif) { $c = RC_COR[$S[$id]['ed']] ?? '#3E347E'; $sub = $S[$id]['sub']; if (mb_strlen($sub) > 110) $sub = mb_substr($sub, 0, 107) . '…';
+    $card = function ($id) use ($S, $link, $serif) { $c = RC_COR[$S[$id]['ed']] ?? '#3E347E'; $sub = rc_corta($S[$id]['sub'], 120);
       return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff;border:1px solid #ddd8ea;border-top:4px solid ' . $c . '"><tr><td style="padding:14px 14px 16px"><div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:' . $c . '">' . radar_e(RC_NOME[$S[$id]['ed']] ?? '') . '</div><a href="' . radar_e($link($id)) . '" style="' . $serif . ';font-size:19px;line-height:1.18;color:#2A2260;text-decoration:none;display:block;margin:5px 0 6px">' . radar_e($S[$id]['t']) . '</a><div style="font-size:13.5px;line-height:1.45;color:#3d3860">' . radar_e($sub) . '</div></td></tr></table>'; };
     $a = $sel['apoio'];
     $mi .= '<tr><td style="padding:12px 28px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="' . (count($a) > 1 ? '49%' : '100%') . '" valign="top">' . $card($a[0]) . '</td>' . (count($a) > 1 ? '<td width="2%">&nbsp;</td><td width="49%" valign="top">' . $card($a[1]) . '</td>' : '') . '</tr></table></td></tr>'; }
   foreach ($sel['blocos'] as $e => $ids) { $c = RC_COR[$e] ?? '#3E347E'; $linhas = '';
     foreach ($ids as $n => $id) {
-      if ($e === 'regioes') $linhas .= '<tr><td style="padding:10px 0;border-top:1px solid #e6e1f2"><span style="display:inline-block;background:#FDEBD3;color:#7a420a;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px">' . radar_e(RC_REG[$S[$id]['reg'] ?? ''] ?? '') . '</span><br><a href="' . radar_e($link($id)) . '" style="display:block;margin-top:5px;font-size:16px;line-height:1.35;font-weight:600;color:#1b1530;text-decoration:none">' . radar_e($S[$id]['t']) . '</a></td></tr>';
-      else $linhas .= '<tr><td style="padding:10px 0;border-top:1px solid #e6e1f2"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="34" valign="top" style="' . $serif . ';font-size:24px;line-height:1;color:' . $c . '">' . ($n + 1) . '</td><td valign="top"><a href="' . radar_e($link($id)) . '" style="font-size:16px;line-height:1.35;font-weight:600;color:#1b1530;text-decoration:none">' . radar_e($S[$id]['t']) . '</a></td></tr></table></td></tr>';
+      if ($e === 'regioes') $linhas .= '<tr><td style="padding:10px 0;border-top:1px solid #e6e1f2"><span style="display:inline-block;background:#FDEBD3;color:#7a420a;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:3px">' . radar_e(RC_REG[$S[$id]['reg'] ?? ''] ?? '') . '</span><br><a href="' . radar_e($link($id)) . '" style="display:block;margin-top:5px;font-size:16px;line-height:1.35;font-weight:600;color:#1b1530;text-decoration:none">' . radar_e($S[$id]['t']) . '</a><div style="margin-top:3px;font-size:13.5px;line-height:1.45;color:#5d5675">' . radar_e(rc_corta($S[$id]['sub'] ?? '', 150)) . '</div></td></tr>';
+      else $linhas .= '<tr><td style="padding:10px 0;border-top:1px solid #e6e1f2"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td width="34" valign="top" style="' . $serif . ';font-size:24px;line-height:1;color:' . $c . '">' . ($n + 1) . '</td><td valign="top"><a href="' . radar_e($link($id)) . '" style="font-size:16px;line-height:1.35;font-weight:600;color:#1b1530;text-decoration:none">' . radar_e($S[$id]['t']) . '</a><div style="margin-top:3px;font-size:13.5px;line-height:1.45;color:#5d5675">' . radar_e(rc_corta($S[$id]['sub'] ?? '', 150)) . '</div></td></tr></table></td></tr>';
     }
     $mi .= '<tr><td style="padding:22px 28px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#fff;border:1px solid #ddd8ea"><tr><td style="background:' . $c . ';padding:9px 18px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#fff">' . radar_e(RC_NOME[$e]) . '</td></tr><tr><td style="padding:6px 18px 14px"><table role="presentation" width="100%" cellpadding="0" cellspacing="0">' . $linhas . '</table></td></tr></table></td></tr>';
   }
@@ -113,7 +121,7 @@ function radar_html_boletim($d, $sel, $nome, $prefs, $urlSair) {
     $mi .= '<tr><td style="padding:22px 28px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#2A2260"><tr><td style="padding:16px 20px 6px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F5A855">👀 Para ficar de olho</td></tr>' . $it . '<tr><td style="height:12px;font-size:0">&nbsp;</td></tr></table></td></tr>'; }
   $voce = [];
   foreach ($prefs['ed'] as $e) $voce[] = RC_NOME[$e] ?? $e; if ($prefs['reg']) $voce[] = 'regiões ' . implode(', ', array_map(fn($g) => RC_REG[$g] ?? $g, $prefs['reg']));
-  $mi .= '<tr><td align="center" style="padding:28px 28px 0">' . rc_btn('Abrir as edições de hoje', RADAR_SITE . '/radar/?utm_source=boletim&utm_medium=email&utm_campaign=diario', '#3E347E', '#fff') . '</td></tr>'
+  $mi .= '<tr><td align="center" style="padding:28px 28px 0">' . rc_btn('Abrir o Radar', RADAR_SITE . '/radar/?utm_source=boletim&utm_medium=email&utm_campaign=diario', '#3E347E', '#fff') . '</td></tr>'
     . '<tr><td style="padding:26px 28px 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#EFEBF8"><tr><td style="padding:16px 18px;font-size:14px;line-height:1.5;color:#3d3860;text-align:center">Você recebe: ' . radar_e(implode(', ', $voce)) . '.<br><a href="' . RADAR_SITE . '/radar/#boletim" style="color:#3E347E;font-weight:700">Mudar editorias e regiões</a></td></tr></table></td></tr>'
     . '<tr><td style="padding:18px 28px 28px;font-size:12px;line-height:1.6;color:#5d5675;text-align:center">Não quer mais receber este boletim? <a href="' . radar_e($urlSair) . '" style="color:#3E347E;font-weight:700;text-decoration:underline">Cancelar com um clique</a> (sem senha, sem formulário).<br>Você recebe este e-mail porque ativou o boletim no Radar da Oficina Política. <a href="' . RADAR_SITE . '/privacidade.html" style="color:#3E347E">Privacidade</a><br>Oficina Política · oficinapolitica.com.br · contato@oficinapolitica.com.br</td></tr>';
   return rc_casca($topo, $mi, 'O resumo do dia no Radar da Oficina Política');
@@ -121,9 +129,9 @@ function radar_html_boletim($d, $sel, $nome, $prefs, $urlSair) {
 function radar_texto_boletim($d, $sel, $nome, $urlSair) {
   $S = $d['stories']; $t = "Resumo do dia · " . $d['data'] . "\nRadar da Oficina Política\n\nBoa noite, $nome.\n\n";
   $l = fn($id) => RADAR_SITE . '/radar/?utm_source=boletim&utm_medium=email&utm_campaign=diario&m=' . rawurlencode($id) . '#materia-' . rawurlencode($id);
-  if ($sel['destaque']) $t .= "DESTAQUE: " . $S[$sel['destaque']]['t'] . "\n" . $S[$sel['destaque']]['sub'] . "\n" . $l($sel['destaque']) . "\n\n";
+  if ($sel['destaque']) $t .= "DESTAQUE DO DIA: " . $S[$sel['destaque']]['t'] . "\n" . ($S[$sel['destaque']]['resumo'] ?? $S[$sel['destaque']]['sub']) . "\n" . $l($sel['destaque']) . "\n\n";
   foreach ($sel['apoio'] as $id) $t .= mb_strtoupper(RC_NOME[$S[$id]['ed']] ?? '') . ': ' . $S[$id]['t'] . "\n" . $l($id) . "\n\n";
-  foreach ($sel['blocos'] as $e => $ids) { $t .= mb_strtoupper(RC_NOME[$e]) . "\n"; foreach ($ids as $id) $t .= '- ' . $S[$id]['t'] . "\n  " . $l($id) . "\n"; $t .= "\n"; }
+  foreach ($sel['blocos'] as $e => $ids) { $t .= mb_strtoupper(RC_NOME[$e]) . "\n"; foreach ($ids as $id) $t .= '- ' . $S[$id]['t'] . "\n  " . rc_corta($S[$id]['sub'] ?? '', 150) . "\n  " . $l($id) . "\n"; $t .= "\n"; }
   if (!empty($d['amanha'])) { $t .= "PARA FICAR DE OLHO AMANHÃ\n"; foreach ($d['amanha'] as $a) $t .= '- ' . $a[0] . ': ' . $a[2] . ' (' . $a[3] . ")\n"; $t .= "\n"; }
   return $t . "Cancelar o boletim com um clique: $urlSair\nMudar editorias e regiões: " . RADAR_SITE . "/radar/#boletim\n\nOficina Política · oficinapolitica.com.br\n";
 }
