@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      - uses: actions/checkout@v4
       - name: Sondar
         run: |
           exec > >(tee /tmp/sonda.log) 2>&1
@@ -23,28 +24,10 @@ jobs:
           done
           echo "######## CKAN (dadosabertos.tse.jus.br)"
           for q in "boletim de urna" "votação por seção" "resultados 2002" "resultados 2004" "resultados 1998" "resultados 2000"; do
-            echo "== $q"
-            curl -sS --max-time 60 -G "https://dadosabertos.tse.jus.br/api/3/action/package_search" --data-urlencode "q=$q" --data-urlencode "rows=40" | python3 -c "
-import sys,json
-try:
-  j=json.load(sys.stdin)
-except Exception as e:
-  print('erro',e); sys.exit()
-for p in j.get('result',{}).get('results',[]):
-  print(' -',p['name'],'|',p.get('title'),'|',len(p.get('resources',[])),'recursos')
-"
+            echo "== $q"; python3 scripts/lake_hist/sonda_bu.py busca "$q"
           done
-          for n in resultados-2002-votacao-por-secao-eleitoral resultados-2004-votacao-por-secao-eleitoral resultados-1998-votacao-por-secao-eleitoral resultados-2000-votacao-por-secao-eleitoral; do
-            echo "== pacote $n"
-            curl -sS --max-time 60 -G "https://dadosabertos.tse.jus.br/api/3/action/package_show" --data-urlencode "id=$n" | python3 -c "
-import sys,json
-try:
-  j=json.load(sys.stdin)
-except Exception as e:
-  print('erro',e); sys.exit()
-if not j.get('success'): print('não existe'); sys.exit()
-for r in j['result']['resources'][:40]: print('  ',r.get('name'),'|',r.get('url'))
-"
+          for n in resultados-2002-votacao-por-secao-eleitoral resultados-2004-votacao-por-secao-eleitoral resultados-1998-votacao-por-secao-eleitoral resultados-2000-votacao-por-secao-eleitoral resultados-2002-boletim-de-urna resultados-2004-boletim-de-urna resultados-2022-boletim-de-urna; do
+            echo "== pacote $n"; python3 scripts/lake_hist/sonda_bu.py pacote "$n"
           done
       - name: Publicar log
         if: always()
