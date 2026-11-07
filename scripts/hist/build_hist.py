@@ -80,6 +80,20 @@ for c in CAND.values():
 TEM_LOCAL = os.path.exists(P(f'local_secao_{ano}.parquet'))   # antes de 2010 o TSE não tem o cadastro de locais (sem coordenadas/bairro): o resultado por seção sai igual, sem a camada locais/
 UFS = sorted({r[0] for r in con.execute(f"SELECT DISTINCT uf FROM '{P(f'local_secao_{ano}.parquet')}'").fetchall()}) if TEM_LOCAL else sorted({os.path.basename(f)[len(f'secao_{ano}_'):-8] for f in glob.glob(P(f'secao_{ano}_*.parquet'))} - {'BR', 'ZZ'})
 if UFS_ARG: UFS = [u for u in UFS if u in UFS_ARG]
+# Exterior (ZZ) no presidente: nos anos sem cadastro de locais o ZZ ficava de fora, e o total nacional saía menor que o oficial (voto no exterior).
+ZZ_PRES = False
+if not TEM_LOCAL and not municipal and os.path.exists(P(f'secao_{ano}_BR.parquet')) and (not UFS_ARG or 'ZZ' in UFS_ARG):
+    try: ZZ_PRES = con.execute(f"SELECT count(*) FROM '{P(f'secao_{ano}_BR.parquet')}' WHERE uf = 'ZZ' AND cargo = 1").fetchone()[0] > 0
+    except Exception: ZZ_PRES = False
+# Lacunas do TSE: municípios que existem na votação por zona e não aparecem no arquivo de seções (2004: MT, AP, RR, MA...).
+LACUNAS = {}
+if municipal:
+    try:
+        for uf_, cd_ in con.execute(f"""SELECT uf, cd_municipio_tse FROM '{P(f'zona_{ano}.parquet')}' WHERE cargo = 11 AND turno = 1 AND qt_votos_nominais > 0 GROUP BY ALL
+          EXCEPT SELECT uf, cd_municipio_tse FROM read_parquet('{P(f'secao_{ano}_*.parquet')}') WHERE cargo = 11 AND turno = 1 GROUP BY ALL""").fetchall():
+            LACUNAS.setdefault(uf_.lower(), []).append(cd5(cd_) if 'cd5' in globals() else f'{cd_:05d}')
+    except Exception as e: log('lacunas: não calculadas', e)
+    log('lacunas', {u: len(v) for u, v in LACUNAS.items()})
 arqs_sec = {os.path.basename(f)[len(f'secao_{ano}_'):-8]: f for f in glob.glob(P(f'secao_{ano}_*.parquet'))}
 els = []
 for (cg, t) in con.execute(f"""SELECT DISTINCT cargo, turno FROM '{P(f'detalhe_secao_{ano}.parquet')}' ORDER BY 1, 2""").fetchall():
@@ -114,7 +128,7 @@ def soma(a, b):
 # ---------- majoritário ----------
 def majoritario(e, br_acc):
     cg, t, eid = e['c'], e['t'], e['id']
-    for uf in UFS:
+    for uf in UFS + (['ZZ'] if cg == 1 and ZZ_PRES else []):
         rows = votos(uf, cg, t)
         if not rows: continue
         det = detalhe(uf, cg, t)
@@ -309,5 +323,5 @@ if __name__ == '__main__':
     ids = {e['id'] for e in feitos}
     todos = [e for e in antigo.get('el', []) if e['id'] not in ids] + feitos
     todos.sort(key=lambda e: (e['c'], e['t']))
-    grava('idx.json', {'ano': ano, 'el': todos, 'ufs': [u.lower() for u in UFS], 'gerado': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')})
+    grava('idx.json', {'ano': ano, 'el': todos, 'ufs': [u.lower() for u in UFS] + (['zz'] if ZZ_PRES else []), 'lacunas': LACUNAS, 'gerado': datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='seconds')})
     log('fim')
