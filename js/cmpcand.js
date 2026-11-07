@@ -1,13 +1,13 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Sem CPF nem dados pessoais além do nome público e do ano de nascimento.
-import { CONFIG } from './config.js?v=2b4a38be';
-import { getJSON } from './tse.js?v=2b4a38be';
-import { esc, sem, tabela } from './ui.js?v=2b4a38be';
-import { fNum, fInt } from './util.js?v=2b4a38be';
-import { dispersao } from './dispersao.js?v=2b4a38be';
-import { corPartido, corTextoSobre } from './partidos.js?v=2b4a38be';
-import { baixarCSV } from './export.js?v=2b4a38be';
+import { CONFIG } from './config.js?v=01cad7eb';
+import { getJSON } from './tse.js?v=01cad7eb';
+import { esc, sem, tabela } from './ui.js?v=01cad7eb';
+import { fNum, fInt } from './util.js?v=01cad7eb';
+import { dispersao } from './dispersao.js?v=01cad7eb';
+import { corPartido, corTextoSobre } from './partidos.js?v=01cad7eb';
+import { baixarCSV } from './export.js?v=01cad7eb';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];
@@ -105,6 +105,7 @@ export function viewCmpCand(ctx, q) {
       } catch (e) { pessoaEl.innerHTML = `<p class="aviso">Não foi possível carregar as candidaturas (${esc(e.message)}).</p>`; }
     };
     pessoaEl.addEventListener('click', e => { const b = e.target.closest('[data-add]'); if (b && !cheio()) ir([...refs, b.dataset.add]); });
+    if (q.get('p') && /^[0-9a-f]{6,20}$/.test(q.get('p'))) abrirPessoa(q.get('p'));   // vindo da capa: abre as candidaturas da pessoa escolhida na busca
 
     // ---- busca
     let seq = 0, tmr = null;

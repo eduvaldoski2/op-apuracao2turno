@@ -886,3 +886,17 @@ a.h-bar-n,a.h-rank-n{color:var(--roxo);text-decoration:none;font-weight:700}a.h-
 .cc-eixos select{font:inherit;font-size:14px;padding:8px 10px;border:1.5px solid #cfc8e6;border-radius:10px;background:#fff;min-width:0;max-width:100%}
 .cc-disp{margin:6px 0 10px}.cc-th{border-left:4px solid var(--c);padding-left:6px;display:inline-block}
 .cc-traj{margin:8px 0}
+
+/* ---------- composição das cadeiras (js/cadeiras.js) ---------- */
+.cad-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+.cad-top h2{margin:0}
+.cad-png{position:relative}.cad-png summary{list-style:none;cursor:pointer;padding:7px 14px;border-radius:10px;border:1.5px solid var(--linha,#e4dfee);background:#fff;font:700 13px/1 'Space Grotesk',sans-serif;color:var(--roxo,#3E347E)}
+.cad-png summary::-webkit-details-marker{display:none}
+.cad-png>div{position:absolute;right:0;top:calc(100% + 6px);z-index:6;display:grid;gap:4px;padding:8px;border-radius:12px;background:#fff;border:1.5px solid var(--linha,#e4dfee);box-shadow:0 14px 28px -16px rgba(42,34,96,.5);min-width:190px}
+.cad-png button{border:0;background:transparent;text-align:left;padding:8px 10px;border-radius:8px;font:500 14px 'Space Grotesk',sans-serif;color:var(--roxo,#3E347E);cursor:pointer}.cad-png button:hover{background:#f1eef9}
+.cad-corpo{display:flex;flex-wrap:wrap;gap:18px 34px;align-items:flex-end;justify-content:center;margin-top:8px}
+.cad-b{flex:1 1 380px;max-width:640px}.cad-b.peq{flex:0 1 280px}
+.cad-b h3{margin:0 0 2px;text-align:center;font:700 13px/1.2 'Space Grotesk',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--roxo,#3E347E)}
+.cad-svg{display:block;width:100%;height:auto}.cad-svg .cad-num{font:400 17px 'DM Serif Display',Georgia,serif;fill:#1b1530}
+.cad-leg{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;font-size:13.5px;color:var(--tx2,#5d5675)}
+.cad-leg li{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.cad-leg i{width:11px;height:11px;border-radius:50%;display:inline-block}.cad-leg b{color:var(--roxo-2,#2A2260)}

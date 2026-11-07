@@ -1,25 +1,26 @@
-// Eleições anteriores (2018–2024) e cargos de 2026, com a descida completa:
+// Eleições anteriores (2006–2024) e cargos de 2026, com a descida completa:
 // Brasil > Estado > Região do estado > Município > Região/distrito do município > Bairro > Local de votação > Seção.
 // Tudo é clicável: candidato (?c=<número>) e partido/federação/coligação (?p=<chave>) abrem a votação deles em qualquer nível.
 // Dados: branch hist-<ano> (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]][?c=<n> | ?p=<chave>]
-import { CONFIG } from './config.js?v=2b4a38be';
-import { UF_NOME, fInt, fNum, mix } from './util.js?v=2b4a38be';
-import { esc, tabela, sem } from './ui.js?v=2b4a38be';
-import { getJSON } from './tse.js?v=2b4a38be';
-import { corPartido, corTextoSobre } from './partidos.js?v=2b4a38be';
-import { criarMapa } from './map.js?v=2b4a38be';
-import { criarMapaMun } from './mapamun.js?v=2b4a38be';
-import { criarMapaPontos } from './mapapontos.js?v=2b4a38be';
+import { CONFIG } from './config.js?v=01cad7eb';
+import { UF_NOME, fInt, fNum, mix } from './util.js?v=01cad7eb';
+import { esc, tabela, sem } from './ui.js?v=01cad7eb';
+import { getJSON } from './tse.js?v=01cad7eb';
+import { corPartido, corTextoSobre } from './partidos.js?v=01cad7eb';
+import { criarMapa } from './map.js?v=01cad7eb';
+import { criarMapaMun } from './mapamun.js?v=01cad7eb';
+import { criarMapaPontos } from './mapapontos.js?v=01cad7eb';
 
-export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018];
+import { cadeirasHTML, ligarCadeiras, agrupa } from './cadeiras.js?v=01cad7eb';
+export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018, 2016, 2014, 2012, 2010, 2008, 2006];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;
 const cache = new Map();
 const pega = (url, op = {}) => { if (!cache.has(url)) cache.set(url, getJSON(url, { retries: 2, timeout: 60000, ...op }).catch(e => { cache.delete(url); throw e; })); return cache.get(url); };
 export const idxAno = ano => pega(BASE(ano) + 'idx.json');
 const arq = (ano, rel) => pega(BASE(ano) + rel);
 const pc = (a, b) => (b > 0 ? 100 * a / b : NaN);
-const bonito = s => String(s || '').toLowerCase().replace(/(^|[\s\-\/(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E|Em) /g, x => x.toLowerCase());
+const bonito = s => /^Candidato \d+$/.test(s) ? `Nº ${String(s).slice(10)} (sem cadastro no TSE)` : String(s || '').toLowerCase().replace(/(^|[\s\-\/(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E|Em) /g, x => x.toLowerCase());
 const nomeUf = uf => UF_NOME[uf] || uf.toUpperCase();
 const sgTxt = s => String(s || '').replace(/PC do B/g, 'PCdoB');
 const situ = st => { const s = String(st || ''); if (/^ELEITO/.test(s)) return '<span class="h-sel">Eleito</span>'; if (/2º TURNO/.test(s)) return '<span class="h-sel h-2t">2º turno</span>'; if (/SUPLENTE/.test(s)) return '<small class="h-sit">suplente</small>'; return ''; };
@@ -72,7 +73,7 @@ function grupos(par) {
   const m = new Map();
   (par || []).forEach((p, i) => {
     const k = p.fed ? `${p.tg || 'F'}:${p.fed}` : `P:${p.sg}`;
-    if (!m.has(k)) m.set(k, { k, tipo: p.fed ? (p.tg || 'F') : 'P', nome: p.fed ? (p.tg === 'C' ? `Coligação ${bonito(p.fed)}` : `Federação ${sgTxt(p.fed)}`) : sgTxt(p.sg), sg: p.sg, membros: [], ele: 0 });
+    if (!m.has(k)) m.set(k, { k, tipo: p.fed ? (p.tg || 'F') : 'P', nome: p.fed ? (p.tg === 'C' ? (/^colig/i.test(p.fed) ? bonito(p.fed) : `Coligação ${bonito(p.fed)}`) : `Federação ${sgTxt(p.fed)}`) : sgTxt(p.sg), sg: p.sg, membros: [], ele: 0 });
     const g = m.get(k); g.membros.push(i); g.ele += p.ele || 0;
   });
   return [...m.values()];
@@ -85,7 +86,7 @@ function membrosFoco(k, par) {
   return grupos(par).find(g => g.k === k)?.membros || [];
 }
 function nomeFoco(k, par) {
-  if (k.startsWith('P:')) { const p = (par || []).find(x => x.sg === k.slice(2)); return { nome: sgTxt(k.slice(2)), sg: k.slice(2), grupo: p?.fed ? { k: `${p.tg || 'F'}:${p.fed}`, nome: p.tg === 'C' ? `Coligação ${bonito(p.fed)}` : `Federação ${sgTxt(p.fed)}` } : null }; }
+  if (k.startsWith('P:')) { const p = (par || []).find(x => x.sg === k.slice(2)); return { nome: sgTxt(k.slice(2)), sg: k.slice(2), grupo: p?.fed ? { k: `${p.tg || 'F'}:${p.fed}`, nome: p.tg === 'C' ? (/^colig/i.test(p.fed) ? bonito(p.fed) : `Coligação ${bonito(p.fed)}`) : `Federação ${sgTxt(p.fed)}` } : null }; }
   const g = grupos(par).find(x => x.k === k); return { nome: g?.nome || k.slice(2), sg: g ? par[g.membros[0]].sg : '', membros: g ? g.membros.map(i => par[i].sg) : [] };
 }
 
@@ -268,8 +269,12 @@ async function telaBrasil(r, E, ctx, nomeEl) {
   const cols = E.prop
     ? [colNome('Estado'), { k: 'ele', t: 'Eleitos', h: x => fInt(x.eleT), v: x => x.eleT, cls: 'n' }, { k: 'top', t: 'Mais votado', h: x => { const c = [...x.d.cands].sort((a, b) => b.v - a.v)[0]; return c ? `${esc(bonito(c.nm))} ${chipP(c.sg)}` : ''; }, v: () => '' }, { k: 'ap', t: 'Aptos', h: x => fInt(x.u.ap), v: x => x.u.ap, cls: 'n' }]
     : [colNome('Estado'), { k: 'venc', t: r.id.endsWith('t1') ? 'Eleito ou mais votado' : 'Eleito', h: x => x.venc ? `${esc(bonito(x.venc.nm))} ${chipP(x.venc.sg)} ${situ(x.venc.st)}` : '', v: x => x.venc?.nm || '' }, { k: 'pv', t: '% válidos', h: x => x.venc ? `<b>${fNum(x.u.p[x.its.indexOf(x.venc)], 2)}%</b>` : '', v: x => x.venc ? x.u.p[x.its.indexOf(x.venc)] : NaN, cls: 'n' }];
-  return { titulo: `Brasil — ${nomeEl}`, trilha, html: `${E.prop ? '' : secMapa('h-mapa-br', 'Mais votado por estado', 'Clique em um estado.')}<section class="painel"><h2>Estados</h2><p class="sub">Clique em um estado para ver ${E.prop ? 'partidos, federações, candidatos e municípios' : 'os candidatos e os municípios'}.</p><div id="h-tab"></div></section>`,
+  let cad = '';   // composição das cadeiras: Câmara dos Deputados (soma dos estados) e renovação do Senado
+  if (E.prop && E.el.c === 6) { const it = agrupa(rows.flatMap(x => x.d.par.map(p => ({ sg: p.sg, n: p.ele || 0 })))); cad = cadeirasHTML({ titulo: `Câmara dos Deputados · eleitos em ${r.ano}`, sub: 'Cada ponto é um deputado federal eleito, agrupado por partido, somando os 27 estados.', blocos: [{ rot: 'Brasil', itens: it, total: 513 }] }); }
+  else if (!E.prop && E.el.c === 5) { const it = agrupa(rows.flatMap(x => x.d.cands.filter(c => /^ELEITO/.test(c.st)).map(c => ({ sg: c.sg, n: 1 })))), tt = r.ano % 8 === 2 ? 54 : 27; cad = cadeirasHTML({ titulo: `Senado · eleitos em ${r.ano}`, sub: `Renovação de ${tt === 54 ? 'dois terços' : 'um terço'} do Senado (${tt} das 81 cadeiras). As demais seguem com quem foi eleito na eleição anterior.`, blocos: [{ rot: 'Senadores eleitos', itens: it, total: tt }] }); }
+  return { titulo: `Brasil — ${nomeEl}`, trilha, html: `${cad}${E.prop ? '' : secMapa('h-mapa-br', 'Mais votado por estado', 'Clique em um estado.')}<section class="painel"><h2>Estados</h2><p class="sub">Clique em um estado para ver ${E.prop ? 'partidos, federações, candidatos e municípios' : 'os candidatos e os municípios'}.</p><div id="h-tab"></div></section>`,
     montar(root) {
+      ligarCadeiras(root);
       const por = Object.fromEntries(rows.map(x => [x.id, x])), alvo = root.querySelector('#h-mapa-br');
       if (alvo) { const mp = criarMapa(alvo, ctx.geo, { onClick: id => por[id] && ctx.ir(H(r, pUf(id))), tooltip: id => por[id]?.venc ? `<b>${esc(por[id].nome)}</b><br>${esc(bonito(por[id].venc.nm))} (${esc(por[id].venc.sg)})` : '' });
         mp.atualizar(Object.fromEntries(rows.map(x => [x.id, x.venc ? { fill: corPartido(x.venc.sg), k: 'x', solo: true, lab: esc(sgTxt(x.venc.sg)) } : { k: null }]))); }
@@ -349,8 +354,11 @@ async function telaUf(r, E, ctx, nomeEl) {
   const topo = F ? cabFoco(r, F, tot, extra, rg ? 'na região' : 'no estado') : (E.prop ? barrasGrupos(r, d.par, tot, extra, { ele: r.nivel === 'uf' }) : barrasCand(r, E, its, tot, extra));
   const pin = pintor(E, its, d.par, F, rows, F?.cor);
   const rotMapa = F ? `${esc(F.nome)} por município` : E.prop ? 'Maior partido ou federação por município' : 'Mais votado por município';
-  return { titulo: tituloF(F, onde, nomeEl), trilha, html: `${topo}${F ? '' : kpis(tot, 'municípios')}${blocoCand}${mapaUf ? secMapa('h-mapa-mun', rotMapa, 'Clique em um município.') : ''}${blocoRegs}<section class="painel"><h2>Municípios${rg ? ' da região' : ''}</h2><p class="sub">Clique em um município para descer a bairros, locais de votação e seções.</p><div id="h-tab"></div></section>`,
-    montar(root) {
+  let cadUf = '';   // composição das cadeiras do estado (deputados)
+  if (E.prop && r.nivel === 'uf' && !F && d.par) { const it = agrupa(d.par.map(p => ({ sg: p.sg, n: p.ele || 0 }))), n = it.reduce((a, x) => a + x.n, 0), c = E.el.c;
+    cadUf = cadeirasHTML({ titulo: `${c === 6 ? 'Deputados federais' : c === 8 ? 'Câmara Legislativa' : 'Assembleia Legislativa'} · ${onde} · eleitos em ${r.ano}`, sub: 'Cada ponto é um deputado eleito, agrupado por partido.', blocos: [{ rot: onde, itens: it, total: n }] }); }
+  return { titulo: tituloF(F, onde, nomeEl), trilha, html: `${topo}${cadUf}${F ? '' : kpis(tot, 'municípios')}${blocoCand}${mapaUf ? secMapa('h-mapa-mun', rotMapa, 'Clique em um município.') : ''}${blocoRegs}<section class="painel"><h2>Municípios${rg ? ' da região' : ''}</h2><p class="sub">Clique em um município para descer a bairros, locais de votação e seções.</p><div id="h-tab"></div></section>`,
+    montar(root) { ligarCadeiras(root);
       if (E.prop && root.querySelector('#h-tab-c')) { const memSg = F?.t === 'p' ? new Set(F.mem.map(i => d.par[i].sg)) : null, lista = memSg ? d.cands.filter(c => memSg.has(c.sg)) : d.cands;
         tabela(root.querySelector('#h-tab-c'), { cols: [{ k: 'nm', t: 'Candidato', h: c => `<b>${esc(bonito(c.nm))}</b> ${situ(c.st)}`, v: c => c.nm }, { k: 'sg', t: 'Partido', h: c => chipP(c.sg), v: c => c.sg }, { k: 'v', t: 'Votos', h: c => fInt(c.v), v: c => c.v, cls: 'n' }, { k: 'pv', t: '% válidos', h: c => `${fNum(pc(c.v, tot.vv), 2)}%`, v: c => c.v, cls: 'n' }], rows: lista, onRow: c => ctx.ir(cLink(r, c.n, extra)), sort: 'v', dir: 'desc', filtro: (c, q) => sem(c.nm).includes(q) || sem(c.sg).includes(q), limite: 200 }); }
       if (blocoRegs) tabela(root.querySelector('#h-tab-reg'), { cols: F ? colsFoco(colNome('Região'), tot.fv) : colsGeral(E, its, tot, colNome('Região'), d.par), rows: rowsReg, onRow: x => ctx.ir(H(r, pReg(uf, x.i))), sort: F ? 'fv' : 'nome', dir: F ? 'desc' : 'asc' });
@@ -382,7 +390,7 @@ async function telaMun(r, E, ctx, nomeEl) {
   if (r.foco?.t === 'c') {
     const ci = cands.findIndex(c => c.n === r.foco.n);
     if (ci >= 0) { const c = cands[ci], p = E.prop ? par.find(x => x.sg === c.sg) : null;
-      F = { t: 'c', nome: bonito(c.nm), sg: c.sg, st: c.st, cor: corPartido(c.sg), grupo: p?.fed ? { k: `${p.tg || 'F'}:${p.fed}`, nome: p.tg === 'C' ? `Coligação ${bonito(p.fed)}` : `Federação ${sgTxt(p.fed)}` } : null };
+      F = { t: 'c', nome: bonito(c.nm), sg: c.sg, st: c.st, cor: corPartido(c.sg), grupo: p?.fed ? { k: `${p.tg || 'F'}:${p.fed}`, nome: p.tg === 'C' ? (/^colig/i.test(p.fed) ? bonito(p.fed) : `Coligação ${bonito(p.fed)}`) : `Federação ${sgTxt(p.fed)}` } : null };
       if (!E.prop) fSec = k => sec.s[k]?.[4 + ci] || 0;
       else { const lst = E.mun ? ((await arq(r.ano, `${r.id}/${uf}/${cd}/cs.json`).catch(() => ({})))[ci] || []) : ((await arq(r.ano, `${r.id}/${uf}/c/${c.n}.json`).catch(() => ({ s: {} }))).s[cd] || []);
         const mp = new Map(); for (let i = 0; i < lst.length; i += 3) mp.set(`${lst[i]}-${lst[i + 1]}`, (mp.get(`${lst[i]}-${lst[i + 1]}`) || 0) + lst[i + 2]); fSec = k => mp.get(k) || 0; } }

@@ -14,7 +14,7 @@ for (const f of arqs) {
   if (f === 'radar/_login.html') s = s.replace(/(import\(\s*'\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`);
   if (f === 'radar/_shell.html') s = s.replace(/(import\(\s*'\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`).replace(/(href="\/css\/consent\.css)/, `$1?v=${v}`).replace(/(href="\/css\/consent\.css\?v=[0-9a-f]+)"/, '$1"');
   if (f === 'conta.html') s = s.replace(/(src="js\/contapag\.js)"/, `$1?v=${v}"`).replace(/(href="css\/consent\.css)"/, `$1?v=${v}"`);
-  if (f === 'painel-inicio.html') s = s.replace(/(import\(\s*'\.\/js\/menuconta\.js)'/g, `$1?v=${v}'`);
+  if (f === 'painel-inicio.html') s = s.replace(/(import\(\s*'\.\/js\/(?:menuconta|capabusca)\.js)'/g, `$1?v=${v}'`);
   if (f === 'index.html') s = s.replace(/(from\s+'\.\/js\/[\w.\-]+\.js)'/g, `$1?v=${v}'`).replace(/(href="css\/consent\.css)"/, `$1?v=${v}"`);
   if (s !== fs.readFileSync(f, 'utf8')) fs.writeFileSync(f, s);
 }

@@ -1,14 +1,14 @@
 // Seletor "Eleição" (ano · turno · cargo) das telas de resultado.
 // Mostra o que o painel já tem em tela: 2026, presidente (1º e 2º turno) e governador (1º turno, por estado).
 // O resto aparece esmaecido ("em breve"). Só o presidente de 2026 é aberto: os demais cargos e anos exigem cadastro (conta gratuita).
-import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=2b4a38be';
-import { esc } from './ui.js?v=2b4a38be';
-import { RAIZ } from './config.js?v=2b4a38be';
-import { montarMenuConta } from './menuconta.js?v=2b4a38be';
+import { CONTA, carregarConta, montarConta, sairConta } from './conta.js?v=01cad7eb';
+import { esc } from './ui.js?v=01cad7eb';
+import { RAIZ } from './config.js?v=01cad7eb';
+import { montarMenuConta } from './menuconta.js?v=01cad7eb';
 
-const ANOS = [2026, 2024, 2022, 2020, 2018];
-const DISPONIVEL = { 2026: true, 2024: true, 2022: true, 2020: true, 2018: true };
-const PADRAO_ANO = { 2024: 'c11t1', 2022: 'c1t1', 2020: 'c11t1', 2018: 'c1t1' };   // eleição aberta ao trocar de ano (dados no branch hist-<ano>)
+const ANOS = [2026, 2024, 2022, 2020, 2018, 2016, 2014, 2012, 2010, 2008, 2006];
+const DISPONIVEL = { 2026: true, 2024: true, 2022: true, 2020: true, 2018: true, 2016: true, 2014: true, 2012: true, 2010: true, 2008: true, 2006: true };
+const PADRAO_ANO = { 2024: 'c11t1', 2022: 'c1t1', 2020: 'c11t1', 2018: 'c1t1', 2016: 'c11t1', 2014: 'c1t1', 2012: 'c11t1', 2010: 'c1t1', 2008: 'c11t1', 2006: 'c1t1' };   // eleição aberta ao trocar de ano (dados no branch hist-<ano>)
 const CARGOS = [
   { k: 'presidente', nome: 'Presidente' },
   { k: 'governador', nome: 'Governador', cadastro: true },

@@ -154,7 +154,7 @@ footer{margin-top:40px;padding-block:22px 30px;border-top:1px solid var(--linha)
 <div class="wrap hero">
   <p class="k">Dados eleitorais <i>Em ampliação</i></p>
   <h1>Painel Eleições</h1>
-  <p class="lede">Da eleição nacional à seção eleitoral. Escolha o território no mapa, depois o ano e o cargo, e abra o resultado: candidatos, partidos, mapa e tabela, com imagem e planilha para levar. Dados do TSE, de 2018 a 2026.</p>
+  <p class="lede">Da eleição nacional à seção eleitoral. Escolha o território no mapa, depois o ano e o cargo, e abra o resultado: candidatos, partidos, mapa e tabela, com imagem e planilha para levar. Dados do TSE, de 2006 a 2026.</p>
   <p class="vivo"><b>Resultado das eleições 2026</b><span>Presidente:</span><a href="painel.html#/t1">1º turno</a><a href="painel.html#/">2º turno</a></p>
 </div>
 
@@ -176,11 +176,18 @@ footer{margin-top:40px;padding-block:22px 30px;border-top:1px solid var(--linha)
       <div class="terr" data-terr></div>
       <div class="fase"><p class="rot"><b>1</b> Ano</p><div class="op" id="e-ano"></div></div>
       <div class="fase"><p class="rot"><b>2</b> Cargo</p><div class="op" id="e-cargo"></div></div>
+      <div class="fase" id="f-turno"><p class="rot"><b>3</b> Turno</p><div class="op" id="e-turno"></div></div>
             <div class="resumo"><p>Sua consulta<b id="e-res"></b></p><a class="btn" id="e-go" href="#">Abrir resultado →</a></div>
     </div>
 
    </div>
   </div>
+</section>
+
+<section aria-labelledby="h-cand">
+  <h2 id="h-cand">Candidatos: busca e comparação</h2>
+  <p class="sub">Procure pelo nome e compare candidaturas de 2006 a 2026: o mesmo candidato em anos diferentes ou candidatos entre si, com a votação cruzada por município.</p>
+  <div id="cand-box"><noscript>Ative o JavaScript para buscar candidatos.</noscript></div>
 </section>
 
 <nav class="atalhos" aria-label="Atalhos"><span>Atalhos:</span><a href="painel.html#/h/2024/c11t1/uf/rj">Prefeitos do RJ em 2024</a><a href="painel.html#/h/2022/c1t1">Presidente 2022 por estado</a><a href="painel.html#/comparar">Comparar dois municípios</a></nav>
@@ -200,16 +207,20 @@ var MAPA={"viewBox":"0 0 613 639","ufs":{"ac":{"n":"Acre","d":"m 30.732574,238.0
 var $=function(i){return document.getElementById(i)};
 var UFS={};Object.keys(MAPA.ufs).forEach(function(k){UFS[k]=MAPA.ufs[k].n});
 var T={uf:''};   // território escolhido no mapa
-var ANOS=[[2026,'Gerais'],[2024,'Municipais'],[2022,'Gerais'],[2020,'Municipais'],[2018,'Gerais']];
-var GER=[['Presidente','c1t1'],['Governador','c3t1'],['Senador','c5t1'],['Dep. federal','c6t1'],['Dep. estadual / distrital','c7t1']];
-var MUN=[['Prefeito','c11t1'],['Vereador','c13t1']];
-var C26=[['Presidente · 1º turno','t1'],['Presidente · 2º turno','t2'],['Governador','c3t1'],['Senador','c5t1'],['Dep. federal','depf'],['Dep. estadual / distrital','depe']];
+var ANOS=[[2026,'Gerais'],[2024,'Municipais'],[2022,'Gerais'],[2020,'Municipais'],[2018,'Gerais'],[2016,'Municipais'],[2014,'Gerais'],[2012,'Municipais'],[2010,'Gerais'],[2008,'Municipais'],[2006,'Gerais']];
+var MUNIC={2024:1,2020:1,2016:1,2012:1,2008:1};
+var GER=[['Presidente','1'],['Governador','3'],['Senador','5'],['Dep. federal','6'],['Dep. estadual / distrital','7']];
+var MUN=[['Prefeito','11'],['Vereador','13']];
+var DOIS={'1':1,'3':1,'11':1};   // cargos com 2º turno: o turno é um passo à parte (só 1º e 2º)
 /* Em produção, a lista de partidos vem do índice da eleição escolhida (idx.json); a capa não nomeia nenhum partido. */
-function cargos(a){return a===2026?C26:(a===2024||a===2020)?MUN:GER}
+function cargos(a){return MUNIC[a]?MUN:GER}
 function rd(el,nome,it,sel,fn){el.innerHTML='';it.forEach(function(x){var l=document.createElement('label'),i=document.createElement('input'),s=document.createElement('span');i.type='radio';i.name=nome;i.value=x[1];i.checked=String(x[1])===String(sel);i.onchange=function(){fn(x[1])};s.innerHTML=x[0]+(x[2]?'<small>'+x[2]+'</small>':'');l.appendChild(i);l.appendChild(s);el.appendChild(l)})}
 function nome(a,c){var l=cargos(a);for(var i=0;i<l.length;i++)if(l[i][1]===c)return l[i][0];return ''}
 function terrTxt(){return T.uf?UFS[T.uf]:'Brasil'}
-function hash(a,c,uf,extra){if(c==='c7t1'&&uf==='df')c='c8t1';var u=uf?'/uf/'+uf:'';if(a===2026){if(c==='t2')return '#/'+(uf?'uf/'+uf:'');if(c==='t1')return '#/t1'+(uf?'/uf/'+uf:'');if(c==='depf'||c==='depe')return '#/t1'+(uf?'/uf/'+uf:'')+'?cargo='+c;return '#/h/2026/'+c+u+(extra||'')}return '#/h/'+a+'/'+c+u+(extra||'')}
+function hash(a,c,t,uf){var u=uf?'/uf/'+uf:'';if(!DOIS[c])t=1;
+ if(a===2026){if(c==='1')return t===2?'#/'+(uf?'uf/'+uf:''):'#/t1'+u;if(c==='6'||c==='7')return '#/t1'+u+'?cargo='+(c==='6'?'depf':'depe')}
+ else if(c==='7'&&uf==='df')c='8';
+ return '#/h/'+a+'/c'+c+'t'+t+u}
 // ---- mapa
 var svg=$('mapa');
 svg.innerHTML=Object.keys(MAPA.ufs).map(function(k){return '<path data-uf="'+k+'" tabindex="0" role="button" aria-label="'+UFS[k]+'" d="'+MAPA.ufs[k].d+'"><title>'+UFS[k]+'</title></path>'}).join('');
@@ -225,11 +236,13 @@ $('regs').onclick=function(e){var b=e.target.closest('button');if(!b)return;T.uf
 $('uf-lista').innerHTML='<option value="">Ou escolha na lista: Brasil inteiro</option>'+Object.keys(UFS).sort(function(a,b){return UFS[a].localeCompare(UFS[b])}).map(function(k){return '<option value="'+k+'">'+UFS[k]+'</option>'}).join('');
 $('uf-lista').onchange=function(){T.uf=this.value;upAll()};
 // ---- painel
-var E={ano:2026,cargo:'t2'};
-function eDraw(){rd($('e-ano'),'ea',ANOS.map(function(a){return [a[0],a[0],a[1]]}),E.ano,function(v){E.ano=+v;if(!cargos(E.ano).some(function(x){return x[1]===E.cargo}))E.cargo=cargos(E.ano)[0][1];eDraw()});
- rd($('e-cargo'),'ec',cargos(E.ano),E.cargo,function(v){E.cargo=v;eUp()});eUp()}
-function eUp(){$('e-res').textContent=E.ano+' · '+nome(E.ano,E.cargo)+' · '+terrTxt();
- $('e-go').href='painel.html'+hash(E.ano,E.cargo,T.uf)}
+var E={ano:2026,c:'1',t:2};
+function eDraw(){rd($('e-ano'),'ea',ANOS.map(function(a){return [a[0],a[0],a[1]]}),E.ano,function(v){E.ano=+v;if(!cargos(E.ano).some(function(x){return x[1]===E.c}))E.c=cargos(E.ano)[0][1];eDraw()});
+ rd($('e-cargo'),'ec',cargos(E.ano),E.c,function(v){E.c=v;eDraw()});
+ var f=$('f-turno');f.hidden=!DOIS[E.c];if(DOIS[E.c])rd($('e-turno'),'et',[['1º turno',1],['2º turno',2]],E.t,function(v){E.t=+v;eUp()});
+ eUp()}
+function eUp(){$('e-res').textContent=E.ano+' · '+nome(E.ano,E.c)+(DOIS[E.c]?' · '+E.t+'º turno':'')+' · '+terrTxt();
+ $('e-go').href='painel.html'+hash(E.ano,E.c,E.t,T.uf)}
 // ---- estado geral
 function upTerr(){var h='Território: <b>'+terrTxt()+'</b> '+(T.uf?'<button onclick="T.uf=\'\';upAll()">limpar</button>':'<span>(clique em um estado no mapa)</span>');
  document.querySelectorAll('[data-terr]').forEach(function(e){e.innerHTML=h});
@@ -240,7 +253,13 @@ eDraw();upAll();
 function ent(){b.innerHTML='<a class="tc-b tc-on" href="painel.html?entrar=1">Entrar</a>'}
 function sair(){fetch(u,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({acao:'sair'})}).then(function(){location.reload()},function(){location.reload()})}
 fetch(u,{credentials:'same-origin',headers:{Accept:'application/json'},cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;if(!j.logado)return ent();
-import('./js/menuconta.js?v=2b4a38be').then(function(m){m.montarMenuConta(b,{tema:'escuro',contaUrl:(base||'/')+'conta.html',aoSair:sair}).atualizar(j.usuario)},function(){b.innerHTML='<a class="tc-b" href="'+(base||'/')+'conta.html">Minha conta</a>'})}).catch(ent)})();</script>
+import('./js/menuconta.js?v=01cad7eb').then(function(m){m.montarMenuConta(b,{tema:'escuro',contaUrl:(base||'/')+'conta.html',aoSair:sair}).atualizar(j.usuario)},function(){b.innerHTML='<a class="tc-b" href="'+(base||'/')+'conta.html">Minha conta</a>'})}).catch(ent)})();</script>
+<script type="module">
+// busca de candidato + caixa de comparação: só carrega quando a pessoa chega perto ou clica (não pesa na abertura da capa)
+var cb = document.getElementById('cand-box');
+function carregaCb() { import('./js/capabusca.js?v=01cad7eb').then(function (m) { m.montarBuscaCapa(cb, { painelUrl: 'painel.html' }); }, function () { cb.textContent = 'Não foi possível carregar a busca agora.'; }); }
+if ('IntersectionObserver' in window) { new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); carregaCb(); } }, { rootMargin: '400px' }).observe(cb); } else carregaCb();
+</script>
 <script type="module" src="js/sugestao.js"></script>
 <script type="module">
 import { iniciarConsentimento } from './js/consentimento.js';
