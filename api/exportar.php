@@ -59,10 +59,27 @@ if ($fmt === 'eventos') {   // contagem de uso (api/evento.php): linhas por dia/
   } catch (Throwable $e) { echo '{"linhas":[]}'; }
   exit;
 }
+// preferências do boletim do Radar (radar/dados/radar.sqlite), por id de conta; vazio se o banco do Radar estiver indisponível
+function radar_ok() { try { require_once dirname(__DIR__) . '/radar/_track.php'; return (bool)radar_db(); } catch (Throwable $e) { return false; } }
+function boletim_por_uid() {
+  $m = [];
+  try {
+    require_once dirname(__DIR__) . '/radar/_track.php'; $rd = radar_db(); if (!$rd) return $m;
+    foreach ($rd->query('SELECT uid, ativo, ed, reg, c_ts, c_versao, atualizado FROM boletim') as $b) {
+      $m[(int)$b['uid']] = ['ativo' => (int)$b['ativo'] === 1, 'ed' => array_values(array_filter(explode(',', (string)$b['ed']))), 'reg' => array_values(array_filter(explode(',', (string)$b['reg']))),
+        'aceite_em' => $b['c_ts'] ? date('c', (int)$b['c_ts']) : null, 'versao' => $b['c_versao'], 'atualizado' => $b['atualizado'] ? date('c', (int)$b['atualizado']) : null];
+    }
+  } catch (Throwable $e) { /* sem banco do Radar */ }
+  return $m;
+}
 if ($fmt === 'json') {   // usado pela página admin.html
   header('Content-Type: application/json; charset=utf-8');
   try {
-    echo json_encode(['leads' => $db->query("SELECT id, COALESCE(lead_criado, criado) AS criado, nome, $EMAIL AS email, COALESCE(telefone, CASE WHEN canal = 'whatsapp' THEN contato END, '') AS telefone, c_contato, c_anuncios, lead_texto AS texto_versao, pagina, origem, status AS situacao FROM usuarios WHERE $LEAD ORDER BY id DESC")->fetchAll()], JSON_UNESCAPED_UNICODE);
+    $rows = $db->query("SELECT id, COALESCE(lead_criado, criado) AS criado, nome, $EMAIL AS email, COALESCE(telefone, CASE WHEN canal = 'whatsapp' THEN contato END, '') AS telefone, c_contato, c_anuncios, lead_texto AS texto_versao, pagina, origem, status AS situacao,
+      c_msgs, c_ts AS msgs_em, c_versao AS msgs_versao, confirmado, ultimo_login, COALESCE(cidade, '') AS cidade, COALESCE(perfil, '') AS perfil, (senha_hash <> '' AND senha_hash IS NOT NULL) AS tem_senha, (google_sub IS NOT NULL AND google_sub <> '') AS google FROM usuarios WHERE $LEAD ORDER BY id DESC")->fetchAll();
+    $bol = boletim_por_uid();
+    foreach ($rows as &$r) { $r['boletim'] = $bol[(int)$r['id']] ?? null; unset($r['id']); }
+    echo json_encode(['leads' => $rows, 'boletim_banco' => !empty($bol) || radar_ok()], JSON_UNESCAPED_UNICODE);
   } catch (Throwable $e) { echo '{"leads":[]}'; }   // ainda não há cadastros (a tabela é criada no primeiro)
   exit;
 }
@@ -76,6 +93,10 @@ if ($fmt === 'audiencia') {
     fputcsv($o, [hash('sha256', $r['email']), $r['telefone'] ? hash('sha256', $r['telefone']) : '', $fn ? hash('sha256', $fn) : '']);
   }
 } else {
-  fputcsv($o, ['criado', 'nome', 'email', 'telefone', 'cidade', 'perfil', 'autoriza_contato', 'autoriza_anuncios', 'texto_versao', 'pagina', 'origem', 'situacao']);
-  foreach ($db->query("SELECT COALESCE(lead_criado, criado), nome, $EMAIL, COALESCE(telefone, ''), COALESCE(cidade, ''), COALESCE(perfil, ''), c_contato, c_anuncios, COALESCE(lead_texto, ''), COALESCE(pagina, ''), COALESCE(origem, ''), status FROM usuarios WHERE $LEAD ORDER BY id") as $r) fputcsv($o, array_values($r));
+  fputcsv($o, ['criado', 'nome', 'email', 'telefone', 'cidade', 'perfil', 'autoriza_contato', 'autoriza_anuncios', 'texto_versao', 'pagina', 'origem', 'situacao', 'recebe_novidades', 'boletim', 'boletim_editorias', 'boletim_regioes', 'boletim_aceite_em', 'ultimo_login']);
+  $bol = boletim_por_uid();
+  foreach ($db->query("SELECT id, COALESCE(lead_criado, criado) AS a, nome, $EMAIL AS e, COALESCE(telefone, '') AS t, COALESCE(cidade, '') AS ci, COALESCE(perfil, '') AS pe, c_contato, c_anuncios, COALESCE(lead_texto, '') AS lt, COALESCE(pagina, '') AS pg, COALESCE(origem, '') AS og, status, (c_msgs > 0 OR c_contato > 0) AS nov, COALESCE(ultimo_login, '') AS ul FROM usuarios WHERE $LEAD ORDER BY id", PDO::FETCH_ASSOC) as $r) {
+    $b = $bol[(int)$r['id']] ?? null;
+    fputcsv($o, [$r['a'], $r['nome'], $r['e'], $r['t'], $r['ci'], $r['pe'], $r['c_contato'], $r['c_anuncios'], $r['lt'], $r['pg'], $r['og'], $r['status'], $r['nov'] ? 1 : 0, $b && $b['ativo'] ? 1 : 0, $b && $b['ativo'] ? implode(' ', $b['ed']) : '', $b && $b['ativo'] ? implode(' ', $b['reg']) : '', $b && $b['ativo'] ? ($b['aceite_em'] ?? '') : '', $r['ul']]);
+  }
 }

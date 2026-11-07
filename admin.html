@@ -19,7 +19,7 @@ header{background:linear-gradient(100deg,var(--roxo-2),var(--roxo));padding:18px
 header div{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:16px;justify-content:space-between;flex-wrap:wrap}
 header img{height:46px;display:block}header span{color:#fff;opacity:.9;font-size:14px}
 main{max-width:980px;margin:0 auto;padding:22px 16px 60px;display:grid;gap:18px}
-section{background:#fff;border:1px solid var(--linha);border-radius:16px;padding:20px 22px}
+section{min-width:0;background:#fff;border:1px solid var(--linha);border-radius:16px;padding:20px 22px}
 h1{font:400 32px/1.1 'DM Serif Display',Georgia,serif;color:var(--roxo);margin:0 0 4px}
 h2{font:400 22px/1.15 'DM Serif Display',Georgia,serif;color:var(--roxo);margin:0 0 8px}
 p{margin:6px 0}.sub{color:var(--tx2)}
@@ -51,6 +51,14 @@ input[type=password],input[type=search]{font:inherit;padding:9px 12px;border:1.5
 details>summary{cursor:pointer;font:400 22px/1.2 'DM Serif Display',Georgia,serif;color:var(--roxo)}
 details[open]>summary{margin-bottom:10px}
 td.ac{white-space:nowrap}
+.pf{display:flex;flex-wrap:wrap;gap:4px}.pf i{font-style:normal;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:99px;background:#efecf5;color:#7a7391;white-space:nowrap}
+.pf i.on{background:#e3f4ec;color:#146845}.pf i.off{opacity:.8}
+tr.dt>td{background:var(--lilas);padding:14px 16px}
+.dg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px 22px}
+.dg h3{font:700 12px/1.2 'Space Grotesk',system-ui,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--tx2);margin:0 0 6px}
+.dg dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:3px 10px;font-size:13.5px}.dg dt{color:var(--tx2)}.dg dd{margin:0;overflow-wrap:anywhere}
+.btn.peq.det{margin-right:6px}
+select.fl{font:inherit;padding:8px 10px;border:1.5px solid #cfc8e6;border-radius:10px;background:#fff}
 @media (max-width:640px){main{padding:14px 10px 50px}section{padding:16px 14px}}
 </style>
 </head>
@@ -65,6 +73,8 @@ td.ac{white-space:nowrap}
     <div class="card"><b id="c-total">🔒</b><span>cadastros (entre com o token)</span></div>
     <div class="card"><b id="c-ativos">🔒</b><span>com login ativo</span></div>
     <div class="card"><b id="c-sem">🔒</b><span>só cadastro, sem login</span></div>
+    <div class="card"><b id="c-bol">🔒</b><span>recebem o boletim do Radar</span></div>
+    <div class="card"><b id="c-nov">🔒</b><span>aceitam novidades</span></div>
     <div class="card"><b id="c-hoje">🔒</b><span>cadastros hoje</span></div>
     <div class="card"><b id="c-7">🔒</b><span>cadastros nos últimos 7 dias</span></div>
   </div>
@@ -82,6 +92,7 @@ td.ac{white-space:nowrap}
   <div id="lista" hidden>
     <p style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
       <input type="search" id="busca" placeholder="Buscar por nome ou e-mail" aria-label="Buscar">
+      <select class="fl" id="filtro" aria-label="Filtrar por preferência"><option value="">Todas as pessoas</option><option value="boletim">Recebem o boletim</option><option value="novidades">Aceitam novidades</option><option value="contato">Autorizam contato</option><option value="anuncios">Autorizam anúncios</option><option value="login">Com login ativo</option><option value="semlogin">Só cadastro</option></select>
       <button class="btn peq" type="button" id="b-csv">Baixar planilha (CSV)</button>
       <button class="btn peq sec" type="button" id="b-aud">Lista para anúncios (hash)</button>
       <button class="btn peq sec" type="button" id="b-mail">Copiar e-mails</button>
@@ -89,7 +100,7 @@ td.ac{white-space:nowrap}
     </p>
     <p class="sub" id="l-res"></p>
     <div class="tab-scroll"><table>
-      <thead><tr><th>Data</th><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Origem</th><th>Situação</th><th></th></tr></thead>
+      <thead><tr><th>Data</th><th>Nome</th><th>E-mail</th><th>WhatsApp</th><th>Origem</th><th>Situação</th><th>Preferências</th><th></th></tr></thead>
       <tbody id="l-corpo"></tbody>
     </table></div>
     <p class="sub">Pedido de exclusão (LGPD): use “Excluir” na linha da pessoa; o nome, o e-mail e o telefone são apagados de forma definitiva.</p>
@@ -303,20 +314,49 @@ const fmtData = iso => { try { return new Date(iso).toLocaleString('pt-BR', { da
 const fmtTel = t => { const d = String(t || '').replace(/\D/g, '').replace(/^55/, ''); return d.length >= 10 ? `(${d.slice(0, 2)}) ${d.slice(2, d.length - 4)}-${d.slice(-4)}` : t; };
 const SIT = { ativo: 'Login ativo', pendente: 'Login a confirmar', cadastro: 'Só cadastro' };
 const origemTxt = o => { try { const j = JSON.parse(o || '{}'); return j.utm_source ? [j.utm_source, j.utm_medium, j.utm_campaign].filter(Boolean).join(' / ') : (j.ref || 'direto'); } catch { return 'direto'; } };
+const RC_REG = { rj: 'Rio de Janeiro', sp: 'São Paulo', mg: 'Minas Gerais', ne: 'Nordeste', sul: 'Sul', norte: 'Norte', co: 'Centro-Oeste' };
+const RC_ED = { politica: 'Política', economia: 'Economia', mundo: 'Mundo', congresso: 'Congresso', agenda: 'Agenda', justica: 'Justiça', eleicao: 'Eleição' };
+const bolAtivo = l => !!(l.boletim && l.boletim.ativo);
+const novAtivo = l => Number(l.c_msgs) > 0 || Number(l.c_contato) > 0;
+const FILTROS = { boletim: bolAtivo, novidades: novAtivo, contato: l => Number(l.c_contato) > 0, anuncios: l => Number(l.c_anuncios) > 0, login: l => l.situacao === 'ativo', semlogin: l => l.situacao !== 'ativo' };
+function chips(l) {
+  const w = el('div', null, 'pf');
+  [['Boletim', bolAtivo(l)], ['Novidades', novAtivo(l)], ['Contato', Number(l.c_contato) > 0], ['Anúncios', Number(l.c_anuncios) > 0]].forEach(([t, on]) => { const i = el('i', (on ? '✓ ' : '– ') + t, on ? 'on' : 'off'); i.title = t + (on ? ': sim' : ': não'); w.append(i); });
+  return w;
+}
+function bloco(titulo, pares) {
+  const d = el('div'); d.append(el('h3', titulo)); const dl = el('dl');
+  pares.forEach(([k, v]) => { if (v === null || v === undefined || v === '') v = '—'; dl.append(el('dt', k), el('dd', String(v))); });
+  d.append(dl); return d;
+}
+const sn = v => (v ? 'Sim' : 'Não');
+function detalhes(l) {
+  const b = l.boletim, g = el('div', null, 'dg');
+  g.append(bloco('Boletim do Radar', [['Recebe', bolAtivo(l) ? 'Sim' : (b ? 'Não (cancelou)' : 'Não (nunca ativou)')], ['Editorias', b && b.ed.length ? b.ed.map(x => RC_ED[x] || x).join(', ') : ''], ['Regiões', b && b.reg.length ? b.reg.map(x => RC_REG[x] || x).join(', ') : ''], ['Aceite em', b && b.aceite_em ? fmtData(b.aceite_em) + (b.versao ? ' (texto ' + b.versao + ')' : '') : ''], ['Última alteração', b && b.atualizado ? fmtData(b.atualizado) : '']]));
+  g.append(bloco('Autorizações', [['Novidades da Oficina', sn(novAtivo(l))], ['Aceite das novidades', l.msgs_em ? fmtData(l.msgs_em) + (l.msgs_versao ? ' (texto ' + l.msgs_versao + ')' : '') : ''], ['Contato por WhatsApp/e-mail', sn(Number(l.c_contato) > 0)], ['Uso nos anúncios (Meta/Google)', sn(Number(l.c_anuncios) > 0)], ['Texto do cadastro', l.texto_versao]]));
+  g.append(bloco('Conta', [['Cadastro em', fmtData(l.criado)], ['Login confirmado em', l.confirmado ? fmtData(l.confirmado) : ''], ['Último acesso', l.ultimo_login ? fmtData(l.ultimo_login) : ''], ['Entra com', [Number(l.tem_senha) ? 'senha' : '', Number(l.google) ? 'Google' : ''].filter(Boolean).join(' e ')], ['Cidade', l.cidade], ['Perfil', l.perfil], ['Origem', origemTxt(l.origem)], ['Página do cadastro', l.pagina]]));
+  return g;
+}
+const abertos = new Set();
 function desenha() {
-  const q = $('busca').value.trim().toLowerCase();
-  const vis = leads.filter(l => !q || (l.nome + ' ' + l.email).toLowerCase().includes(q));
+  const q = $('busca').value.trim().toLowerCase(), f = FILTROS[$('filtro').value];
+  const vis = leads.filter(l => (!q || (l.nome + ' ' + l.email).toLowerCase().includes(q)) && (!f || f(l)));
   const corpo = $('l-corpo'); corpo.replaceChildren();
   vis.forEach(l => {
     const tr = el('tr'); tr.append(el('td', fmtData(l.criado)), el('td', l.nome), el('td', l.email), el('td', fmtTel(l.telefone)), el('td', origemTxt(l.origem)), el('td', SIT[l.situacao] || l.situacao || ''));
+    const tp = el('td'); tp.append(chips(l)); tr.append(tp);
     const ac = el('td', null, 'ac');
+    const det = el('button', abertos.has(l.email) ? 'Ocultar' : 'Detalhes', 'btn peq sec det'); det.type = 'button'; det.setAttribute('aria-expanded', abertos.has(l.email) ? 'true' : 'false');
+    det.addEventListener('click', () => { abertos.has(l.email) ? abertos.delete(l.email) : abertos.add(l.email); desenha(); });
     const wa = el('a', 'WhatsApp', 'btn peq sec'); wa.href = 'https://wa.me/' + String(l.telefone).replace(/\D/g, ''); wa.target = '_blank'; wa.rel = 'noopener'; wa.style.marginRight = '6px';
+    if (!String(l.telefone || '').replace(/\D/g, '')) wa.style.display = 'none';
     const ex = el('button', 'Excluir', 'btn peq perigo'); ex.type = 'button';
     ex.addEventListener('click', async () => {
       if (!confirm(`Excluir definitivamente os dados de ${l.nome} (${l.email})?`)) return;
       try { await chama({ excluir: l.email }); await carrega(); } catch { msg('Não foi possível excluir agora.'); }
     });
-    ac.append(wa, ex); tr.append(ac); corpo.append(tr);
+    ac.append(det, wa, ex); tr.append(ac); corpo.append(tr);
+    if (abertos.has(l.email)) { const t2 = el('tr', null, 'dt'), c = el('td'); c.colSpan = 8; c.append(detalhes(l)); t2.append(c); corpo.append(t2); }
   });
   $('l-res').textContent = `${vis.length} de ${leads.length} cadastros`;
 }
@@ -324,6 +364,7 @@ function resumo() {
   const agora = Date.now(), ini = new Date(); ini.setHours(0, 0, 0, 0);
   $('c-total').textContent = leads.length;
   $('c-ativos').textContent = leads.filter(l => l.situacao === 'ativo').length;
+  $('c-bol').textContent = leads.filter(bolAtivo).length; $('c-nov').textContent = leads.filter(novAtivo).length;
   $('c-sem').textContent = leads.filter(l => l.situacao !== 'ativo').length;
   $('c-hoje').textContent = leads.filter(l => new Date(l.criado) >= ini).length;
   $('c-7').textContent = leads.filter(l => agora - new Date(l.criado) <= 7 * 864e5).length;
@@ -337,10 +378,10 @@ async function carrega() {
     if (e.tok) { msg('Token incorreto.'); sair(true); } else msg('Não foi possível carregar os cadastros agora. Tente de novo.');
   }
 }
-function sair(manter) { tok = ''; try { sessionStorage.removeItem('op_admin_tok'); } catch {} leads = []; $('uso').hidden = true; $('sugestoes').hidden = true; $('lista').hidden = true; $('sair').hidden = true; ['c-total', 'c-ativos', 'c-sem', 'c-hoje', 'c-7'].forEach(i => { $(i).textContent = '🔒'; }); if (!manter) msg(''); }
+function sair(manter) { tok = ''; try { sessionStorage.removeItem('op_admin_tok'); } catch {} leads = []; $('uso').hidden = true; $('sugestoes').hidden = true; $('lista').hidden = true; $('sair').hidden = true; ['c-total', 'c-ativos', 'c-sem', 'c-bol', 'c-nov', 'c-hoje', 'c-7'].forEach(i => { $(i).textContent = '🔒'; }); if (!manter) msg(''); }
 $('f-tok').addEventListener('submit', e => { e.preventDefault(); const v = $('tok').value.trim(); if (!v) return; tok = v; try { sessionStorage.setItem('op_admin_tok', tok); } catch {} carrega(); });
 $('sair').addEventListener('click', () => sair());
-$('busca').addEventListener('input', desenha);
+$('busca').addEventListener('input', desenha); $('filtro').addEventListener('change', desenha);
 $('b-atualizar').addEventListener('click', carrega);
 $('b-mail').addEventListener('click', async () => { try { await navigator.clipboard.writeText(leads.map(l => l.email).join('; ')); msg(''); $('l-res').textContent = 'E-mails copiados.'; } catch { $('l-res').textContent = 'Não foi possível copiar.'; } });
 async function baixa(formato, nome) {
