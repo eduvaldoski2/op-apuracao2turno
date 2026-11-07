@@ -1,13 +1,13 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Sem CPF nem dados pessoais além do nome público e do ano de nascimento.
-import { CONFIG } from './config.js?v=a4cbdcb2';
-import { getJSON } from './tse.js?v=a4cbdcb2';
-import { esc, sem, tabela } from './ui.js?v=a4cbdcb2';
-import { fNum, fInt } from './util.js?v=a4cbdcb2';
-import { dispersao } from './dispersao.js?v=a4cbdcb2';
-import { corPartido, corTextoSobre } from './partidos.js?v=a4cbdcb2';
-import { baixarCSV } from './export.js?v=a4cbdcb2';
+import { CONFIG } from './config.js?v=c549f0cf';
+import { getJSON } from './tse.js?v=c549f0cf';
+import { esc, sem, tabela } from './ui.js?v=c549f0cf';
+import { fNum, fInt } from './util.js?v=c549f0cf';
+import { dispersao } from './dispersao.js?v=c549f0cf';
+import { corPartido, corTextoSobre } from './partidos.js?v=c549f0cf';
+import { baixarCSV } from './export.js?v=c549f0cf';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];
@@ -60,7 +60,8 @@ async function carregar(ref, turnoPedido) {
   const t = turnoPedido === 2 && c[10] ? 2 : 1;
   const flat = (arq['c' + t] || {})[sq] || [], tot = arq['t' + t] || {}, v = new Map();
   for (let i = 0; i < flat.length; i += 2) v.set(flat[i], flat[i + 1]);
-  const T = new Map(Object.entries(tot).map(([k, x]) => [+k, x]));
+  // prefeito: o recorte da candidatura é só o município dela (o arquivo traz todos os do estado, para o denominador)
+  const T = new Map(Object.entries(tot).filter(([k]) => cargo !== '11' || v.has(+k)).map(([k, x]) => [+k, x]));
   return { ref, pid, p, c, nome: p.u || p.n, t, v, T };
 }
 const rotulo = x => `${x.nome} · ${CARGO[x.c[1]] || ''} ${x.c[0]}${x.c[2] && x.c[2] !== 'BR' ? ' ' + x.c[2] : ''}${x.c[3] ? ' ' + bonito(x.c[3]) : ''}${x.c[10] ? (x.t === 2 ? ' · 2º turno' : ' · 1º turno') : ''}`;
@@ -74,7 +75,7 @@ export function viewCmpCand(ctx, q) {
     <p class="sub">Até ${MAX_CC} candidaturas de qualquer eleição de 2006 a 2026 e de qualquer cargo (presidente, governador, senador, deputados e prefeito): o mesmo candidato em anos diferentes, candidatos entre si ou em cargos diferentes. Os votos são cruzados por município.</p>
     <div class="cmp-chips" id="cc-chips"><span class="cmp-vazio">${refs.length ? 'Carregando…' : 'Nenhuma candidatura escolhida ainda.'}</span></div>
     <div class="cmp-add" id="cc-add" ${refs.length >= MAX_CC ? 'hidden' : ''}>
-      <div class="cmp-busca"><input id="cc-in" type="search" autocomplete="off" placeholder="Digite o nome do candidato (ex.: Lula, Tiririca, Marina)…" aria-label="Buscar candidato pelo nome"><ul id="cc-sug" class="cmp-sug" role="listbox" hidden></ul></div>
+      <div class="cmp-busca"><input id="cc-in" type="search" autocomplete="off" placeholder="Nome do candidato (ex.: Lula, Tiririca)…" aria-label="Buscar candidato pelo nome"><ul id="cc-sug" class="cmp-sug" role="listbox" hidden></ul></div>
       <p class="cmp-dica" id="cc-dica">Digite pelo menos 3 letras do nome de urna ou do nome completo.</p>
       <div id="cc-pessoa"></div>
     </div>
@@ -130,7 +131,7 @@ export function viewCmpCand(ctx, q) {
     if (!refs.length) return;
     // ---- resultado
     const alvo = root.querySelector('#cc-res'), chips = root.querySelector('#cc-chips');
-    alvo.innerHTML = '<section class="painel"><p class="carregando">Carregando votos por município…</p></section>';
+    alvo.innerHTML = '<section class="painel sem-export"><p class="carregando">Carregando votos por município…</p></section>';
     chips.addEventListener('click', e => { const b = e.target.closest('[data-rm]'); if (b) ir(refs.filter((_, i) => i !== +b.dataset.rm)); });
     Promise.allSettled(refs.map(r => carregar(r, turno))).then(res => {
       if (!alvo.isConnected) return;
@@ -146,7 +147,7 @@ export function viewCmpCand(ctx, q) {
 
 // ---------- resultado ----------
 function resultado(cs, falhas, B, turno) {
-  if (!cs.length) return `<section class="painel"><div class="aviso">Não foi possível carregar os votos desta escolha. ${falhas.length ? esc(falhas.join('; ')) : ''}</div></section>`;
+  if (!cs.length) return `<section class="painel sem-export"><div class="aviso">Não foi possível carregar os votos desta escolha. ${falhas.length ? esc(falhas.join('; ')) : ''}</div></section>`;
   const cards = cs.map(x => {
     const c = x.c, v = c[8] != null || c[10] != null;
     return `<article class="cc-card" style="--c:${SLOT[x.i]}"><div class="cc-top"></div>
@@ -160,9 +161,9 @@ function resultado(cs, falhas, B, turno) {
   const ctl = temT2 ? `<div class="cc-turno sem-export" role="group" aria-label="Turno comparado"><span>Turno nos municípios:</span><button type="button" data-t="1" class="${turno === 1 ? 'on' : ''}">1º turno</button><button type="button" data-t="2" class="${turno === 2 ? 'on' : ''}">2º turno (quando houve)</button></div>` : '';
   const pids = [...new Map(cs.map(x => [x.pid, x])).values()];
   const traj = pids.map(x => `<details class="entenda cc-traj" ${pids.length === 1 ? 'open' : ''}><summary><span class="mais" aria-hidden="true"></span>Trajetória de ${esc(x.nome)}</summary><div class="entenda-c" data-pid="${esc(x.pid)}"></div></details>`).join('');
-  return `<section class="painel"><h2>Candidaturas</h2><div class="cc-cards">${cards}</div>${ctl}${falhas.length ? `<p class="cmp-nota">Não foi possível carregar: ${esc(falhas.join('; '))}</p>` : ''}</section>
-  <section class="painel" id="cc-mun"><h2>${cs.length > 1 ? 'Votos cruzados por município' : 'Votos por município'}</h2><div id="cc-mun-c"></div></section>
-  <section class="painel"><h2>Trajetória eleitoral</h2>${traj}<p class="cmp-nota">Votos por município e zona: TSE (2006 a 2026). Trajetória: candidaturas registradas no TSE desde 1994 (antes de 2006 não há votos por município nesta base).</p></section>`;
+  return `<section class="painel sem-export"><h2>Candidaturas</h2><div class="cc-cards">${cards}</div>${ctl}${falhas.length ? `<p class="cmp-nota">Não foi possível carregar: ${esc(falhas.join('; '))}</p>` : ''}</section>
+  <section class="painel sem-export" id="cc-mun"><h2>${cs.length > 1 ? 'Votos cruzados por município' : 'Votos por município'}</h2><div id="cc-mun-c"></div></section>
+  <section class="painel sem-export"><h2>Trajetória eleitoral</h2>${traj}<p class="cmp-nota">Votos por município e zona: TSE (2006 a 2026). Trajetória: candidaturas registradas no TSE desde 1994 (antes de 2006 não há votos por município nesta base).</p></section>`;
 }
 
 function ligarResultado(alvo, cs, B, ir, refs, turno) {
@@ -202,19 +203,19 @@ function munSecao(el, cs, B) {
       const xs = emComum.map(r => r.vals[a].p), ys = emComum.map(r => r.vals[b].p), r = pearson(xs, ys);
       const maisA = emComum.filter(r => r.vals[a].p > r.vals[b].p).length;
       const na = esc(cs[a].nome) + ' ' + cs[a].c[0], nb = esc(cs[b].nome) + ' ' + cs[b].c[0];
-      let t = `<b>${na}</b> teve percentual maior que <b>${nb}</b> em ${fInt(maisA)} de ${fInt(emComum.length)} municípios (${fNum(100 * maisA / emComum.length, 0)}%).`;
+      let t = `<b>${na}</b> teve percentual maior que <b>${nb}</b> em ${fInt(maisA)} de ${fInt(emComum.length)} município${emComum.length === 1 ? '' : 's'} (${fNum(100 * maisA / emComum.length, 0)}%).`;
       if (isFinite(r)) { const f = Math.abs(r) >= .7 ? 'forte' : Math.abs(r) >= .4 ? 'moderada' : 'fraca'; t += ` Correlação entre os percentuais municipais: <b>${fNum(r, 2)}</b> (${f}${Math.abs(r) < .4 ? '' : r > 0 ? ': vão bem nos mesmos municípios' : ': vão bem em municípios opostos'}).`; }
       p.push(t);
     }
     p.push('<small>A correlação compara os municípios, não os eleitores: ela mostra onde cada candidatura foi forte, mas não prova que o mesmo eleitor votou nas duas.</small>');
     return p.join(' ');
   };
-  const disp = cs.length > 1 ? `<div class="cc-eixos sem-export"><label>Eixo X <select id="cc-x">${cs.map((x, i) => `<option value="${i}">${esc(rotulo(x))}</option>`).join('')}</select></label><label>Eixo Y <select id="cc-y">${cs.map((x, i) => `<option value="${i}" ${i === 1 ? 'selected' : ''}>${esc(rotulo(x))}</option>`).join('')}</select></label></div><div id="cc-disp" class="cc-disp"></div>` : '';
+  const disp = cs.length > 1 && emComum.length >= 5 ? `<div class="cc-eixos sem-export"><label>Eixo X <select id="cc-x">${cs.map((x, i) => `<option value="${i}">${esc(rotulo(x))}</option>`).join('')}</select></label><label>Eixo Y <select id="cc-y">${cs.map((x, i) => `<option value="${i}" ${i === 1 ? 'selected' : ''}>${esc(rotulo(x))}</option>`).join('')}</select></label></div><div id="cc-disp" class="cc-disp"></div>` : '';
   el.innerHTML = `${cs.length > 1 ? `<p class="cmp-leit">${leit()}</p>` : `<p class="cmp-leit"><b>${fInt(base.length)}</b> município${base.length === 1 ? '' : 's'} com votos neste recorte.</p>`}
     ${disp}
     <div class="cc-agr sem-export" role="group" aria-label="Agrupar por"><span>Tabela por:</span><button type="button" data-g="mun" class="on">Município</button><button type="button" data-g="uf">Estado</button><button type="button" class="cc-csv">⬇ Planilha (CSV)</button></div>
     <div id="cc-tab"></div>
-    <p class="cmp-nota">Percentual = votos da candidatura ÷ votos válidos nominais do mesmo cargo no município, no turno indicado. ${cs.length > 1 ? 'A tabela e o gráfico usam só os municípios que fazem parte dos recortes de todas as candidaturas escolhidas. ' : ''}Fonte: TSE.</p>`;
+    <p class="cmp-nota">Percentual = votos da candidatura ÷ votos válidos nominais do mesmo cargo no município, no turno indicado. ${cs.length > 1 ? 'A tabela e o gráfico usam só os municípios que fazem parte dos recortes de todas as candidaturas escolhidas. ' : ''}Nas eleições de 2006 a 2014 o TSE não separa os votos anulados sub judice nos arquivos por município; nesses anos usa-se o total de votos nominais. Fonte: TSE.</p>`;
 
   const desenhaDisp = () => {
     const d = el.querySelector('#cc-disp'); if (!d) return;
@@ -223,9 +224,10 @@ function munSecao(el, cs, B) {
     const A = cs[ix], Bc = cs[iy];
     const pts = emComum.map(r => ({ id: r.cd, nome: r.nome, x: r.vals[ix].p, y: r.vals[iy].p, r: r.vals[ix].t, cor: SLOT[iy],
       tip: `<b>${esc(r.nome)}${r.uf ? ' (' + r.uf + ')' : ''}</b><br>${esc(A.nome)} ${A.c[0]}: ${fNum(r.vals[ix].p, 1)}% (${fInt(r.vals[ix].v)})<br>${esc(Bc.nome)} ${Bc.c[0]}: ${fNum(r.vals[iy].p, 1)}% (${fInt(r.vals[iy].v)})` }));
-    dispersao(d, { pts, xFmt: v => fNum(v, 0) + '%', yFmt: v => fNum(v, 0) + '%', xRot: `${A.nome} ${A.c[0]} (% no município)`, yRot: `${Bc.nome} ${Bc.c[0]} (% no município)` });
+    const dec = k => { const m = Math.max(...pts.map(p => p[k])); return m < 1 ? 2 : m < 10 ? 1 : 0; }, dx = dec('x'), dy = dec('y');
+    dispersao(d, { pts, xFmt: v => fNum(v, dx) + '%', yFmt: v => fNum(v, dy) + '%', xRot: `${A.nome} ${A.c[0]} (% no município)`, yRot: `${Bc.nome} ${Bc.c[0]} (% no município)` });
   };
-  if (cs.length > 1) { el.querySelectorAll('#cc-x,#cc-y').forEach(s => s.addEventListener('change', desenhaDisp)); desenhaDisp(); }
+  if (disp) { el.querySelectorAll('#cc-x,#cc-y').forEach(s => s.addEventListener('change', desenhaDisp)); desenhaDisp(); }
 
   let modo = 'mun', tab = null;
   const desenhaTab = () => {

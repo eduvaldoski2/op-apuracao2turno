@@ -1,8 +1,8 @@
 // Comparador: Brasil, regiões, estados, municípios e bairros lado a lado (até 4), com leitura automática e imagem em 1:1, 4:5 e 9:16.
-import { MAX_COMPARAR, METRICAS, fmtMetrica, buscar, obter, bairrosDe, entradaPorRef } from './unidades.js?v=a4cbdcb2';
-import { esc, sem } from './ui.js?v=a4cbdcb2';
-import { CAND } from './util.js?v=a4cbdcb2';
-import { bonito } from './bairros.js?v=a4cbdcb2';
+import { MAX_COMPARAR, METRICAS, fmtMetrica, buscar, obter, bairrosDe, entradaPorRef } from './unidades.js?v=c549f0cf';
+import { esc, sem } from './ui.js?v=c549f0cf';
+import { CAND } from './util.js?v=c549f0cf';
+import { bonito } from './bairros.js?v=c549f0cf';
 
 const CHAVES = ['a', 'b', 'c', 'd'];
 export const refsDaRota = q => CHAVES.map(k => q.get(k)).filter(Boolean).slice(0, MAX_COMPARAR);
@@ -88,6 +88,7 @@ export function viewComparar(ctx, q) {
   const chips = refs.map((r, i) => `<span class="cmp-chip" data-i="${i}"><b>${esc(rotRef(r))}</b><button type="button" class="cmp-x" data-rm="${i}" aria-label="Remover ${esc(rotRef(r))}">✕</button></span>`).join('');
   const html = `
   <section class="painel cmp-pick sem-export">
+    <div class="cmp-modo" role="tablist" aria-label="O que comparar"><a href="#/comparar" role="tab" class="on" aria-selected="true">Territórios</a><a href="#/comparar/candidatos" role="tab">Candidatos</a></div>
     <h2>Escolha o que comparar</h2>
     <p class="sub">Até ${MAX_COMPARAR} recortes: Brasil, região, estado, município ou bairro. Misture à vontade.</p>
     <div class="cmp-chips" id="cmp-chips">${chips || '<span class="cmp-vazio">Nenhum recorte escolhido ainda.</span>'}</div>

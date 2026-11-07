@@ -1,29 +1,30 @@
-import { CONFIG, TESTE } from './config.js?v=a4cbdcb2';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=a4cbdcb2';
-import { getJSON } from './tse.js?v=a4cbdcb2';
-import { calcular } from './model.js?v=a4cbdcb2';
-import { projetar, PARAMS } from './proj.js?v=a4cbdcb2';
-import { viewComparar, hashComparar } from './comparar.js?v=a4cbdcb2';
-import { viewPerguntar } from './ia.js?v=a4cbdcb2';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=a4cbdcb2';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=a4cbdcb2';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=a4cbdcb2';
-import { iniciarExportSecoes } from './expsec.js?v=a4cbdcb2';
-import { eventosEntre } from './avisos.js?v=a4cbdcb2';
-import { mostrarEleito } from './eleito.js?v=a4cbdcb2';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=a4cbdcb2';
-import { abrirTelao, iniciarTV } from './tv.js?v=a4cbdcb2';
-import { iniciarConsentimento } from './consentimento.js?v=a4cbdcb2';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=a4cbdcb2';
-import { lerCard } from './card.js?v=a4cbdcb2';
-import { abrirCompartilhar } from './compartilhar.js?v=a4cbdcb2';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=a4cbdcb2';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=a4cbdcb2';
-import { esc } from './ui.js?v=a4cbdcb2';
-import { getFoco, setFoco, comFoco } from './foco.js?v=a4cbdcb2';
-import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=a4cbdcb2';
-import { rotaHist, viewHist } from './hist.js?v=a4cbdcb2';
-import { CONTA, carregarConta } from './conta.js?v=a4cbdcb2';
+import { CONFIG, TESTE } from './config.js?v=c549f0cf';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=c549f0cf';
+import { getJSON } from './tse.js?v=c549f0cf';
+import { calcular } from './model.js?v=c549f0cf';
+import { projetar, PARAMS } from './proj.js?v=c549f0cf';
+import { viewComparar, hashComparar } from './comparar.js?v=c549f0cf';
+import { viewCmpCand } from './cmpcand.js?v=c549f0cf';
+import { viewPerguntar } from './ia.js?v=c549f0cf';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=c549f0cf';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=c549f0cf';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=c549f0cf';
+import { iniciarExportSecoes } from './expsec.js?v=c549f0cf';
+import { eventosEntre } from './avisos.js?v=c549f0cf';
+import { mostrarEleito } from './eleito.js?v=c549f0cf';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=c549f0cf';
+import { abrirTelao, iniciarTV } from './tv.js?v=c549f0cf';
+import { iniciarConsentimento } from './consentimento.js?v=c549f0cf';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=c549f0cf';
+import { lerCard } from './card.js?v=c549f0cf';
+import { abrirCompartilhar } from './compartilhar.js?v=c549f0cf';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=c549f0cf';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=c549f0cf';
+import { esc } from './ui.js?v=c549f0cf';
+import { getFoco, setFoco, comFoco } from './foco.js?v=c549f0cf';
+import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=c549f0cf';
+import { rotaHist, viewHist } from './hist.js?v=c549f0cf';
+import { CONTA, carregarConta } from './conta.js?v=c549f0cf';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -46,6 +47,7 @@ function rota0() {
   const h = location.hash.replace(/^#\/?/, ''), [caminho, qs] = h.split('?'), p = caminho.split('/').filter(Boolean), q = new URLSearchParams(qs || '');
   if (p[0] === 'h' && p[1]) return { modo: 'h', tela: 'hist', p: p.slice(1), q };
   let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; p.shift(); } else if (p[0] === 't1') { modo = 't1'; p.shift(); }
+  if (p[0] === 'comparar' && p[1] === 'candidatos' && modo === 'ap') return { modo, tela: 'cmpcand', q };
   if (p[0] === 'comparar' && modo === 'ap') return { modo, tela: 'comparar', q };
   if (p[0] === 'perguntar' && modo === 'ap' && TESTE) return { modo, tela: 'perguntar' };
   if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
@@ -68,7 +70,7 @@ function render(manterScroll = false, forcar = false) {
   const r = rota(), y = window.scrollY;
   { const fAnt = getFoco(); setFoco(r.modo === 't1' ? r.c : null); metTela(r); if (r.modo === 't1' && r.c && r.c !== fAnt) { evento('candidato_foco', { cand: r.c }); manterScroll = false; } }   // abriu a página de um candidato: volta ao topo
   const bs = document.getElementById('barra-status'); if (bs) bs.hidden = true;   // dados oficiais finais: a data da última divulgação do TSE fica nos critérios
-  document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.tela ? a.dataset.tela === r.tela : (a.dataset.modo === (r.modo === 'pr' ? 'ap' : r.modo) && !['comparar', 'perguntar'].includes(r.tela))));
+  document.querySelectorAll('.aba').forEach(a => a.classList.toggle('on', a.dataset.tela ? (a.dataset.tela === r.tela || (a.dataset.tela === 'comparar' && r.tela === 'cmpcand')) : (a.dataset.modo === (r.modo === 'pr' ? 'ap' : r.modo) && !['comparar', 'cmpcand', 'perguntar'].includes(r.tela))));
   if (r.tela === 'criterios') { const v = viewCriterios({ B: S.B, PARAMS, ultima: S.snap ? horaTSE(S.snap) : '' }, r.modo); return pintar(v, r, {}); }
   const faixa = document.getElementById('sim'), demoBar = document.getElementById('demo-bar');
   if (faixa) faixa.hidden = r.modo === 't1' || !S.simulado; if (demoBar) demoBar.hidden = r.modo === 't1' || !S.demo;
@@ -82,6 +84,7 @@ function render(manterScroll = false, forcar = false) {
   else if (r.tela === 'cand') v = viewCand(ctx, r.k);
   else if (r.tela === 'regiao') v = viewRegiao(ctx, r.reg);
   else if (r.tela === 'comparar') v = viewComparar(ctx, r.q);
+  else if (r.tela === 'cmpcand') v = viewCmpCand(ctx, r.q);
   else if (r.tela === 'perguntar') v = viewPerguntar(ctx);
   else if (r.tela === 'mun') v = viewMun(ctx, r.uf, r.cd);
   else if (r.tela === 'bairro') v = viewBairro(ctx, r.uf, r.cd, r.chave, r.di);
@@ -132,7 +135,7 @@ async function renderHist(r, manterScroll, forcar) {
 function pintar(v, r, ctx) {
   const voltar = r.tela !== 'geral' ? `<a class="voltar sem-export" href="#" data-voltar>← Voltar</a>` : '';
   const sub = r.tela === 'geral' && r.modo !== 't1' ? `<a class="criterios sem-export" href="#/${r.modo === 'pr' ? 'p/' : ''}criterios">ⓘ Critérios ${r.modo === 'pr' ? 'da projeção' : 'da apuração'}</a>` : '';
-  const exp = ['comparar', 'perguntar'].includes(r.tela) ? '' : `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><button class="exp-comp" data-exp="compartilhar" title="Compartilhar no WhatsApp, Instagram e outras redes">⤴ Compartilhar</button><span>⬇ Baixar</span><button data-exp="pdf" title="PDF: página de resumo + mapas e tabelas">PDF</button><button data-exp="png" title="Imagem para redes sociais (card)">PNG</button><button data-exp="csv" ${r.tela === 'criterios' || /cargo=dep[fe]/.test(location.hash) ? 'disabled title="Em breve para deputados"' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' || /cargo=dep[fe]/.test(location.hash) ? 'disabled title="Em breve para deputados"' : 'title="Planilha do Excel (.xlsx)"'}>Excel</button></div>`;
+  const exp = ['comparar', 'cmpcand', 'perguntar'].includes(r.tela) ? '' : `<div class="exp sem-export" role="group" aria-label="Baixar esta tela"><button class="exp-comp" data-exp="compartilhar" title="Compartilhar no WhatsApp, Instagram e outras redes">⤴ Compartilhar</button><span>⬇ Baixar</span><button data-exp="pdf" title="PDF: página de resumo + mapas e tabelas">PDF</button><button data-exp="png" title="Imagem para redes sociais (card)">PNG</button><button data-exp="csv" ${r.tela === 'criterios' || /cargo=dep[fe]/.test(location.hash) ? 'disabled title="Em breve para deputados"' : ''}>CSV</button><button data-exp="xlsx" ${r.tela === 'criterios' || /cargo=dep[fe]/.test(location.hash) ? 'disabled title="Em breve para deputados"' : 'title="Planilha do Excel (.xlsx)"'}>Excel</button></div>`;
   const refCmp = r.modo !== 'ap' ? null : r.tela === 'geral' ? 'br' : r.tela === 'uf' ? 'uf:' + r.uf : r.tela === 'regiao' ? 'reg:' + r.reg : r.tela === 'mun' ? `mun:${r.uf}:${r.cd}` : r.tela === 'bairro' && /^n:/.test(r.chave || '') ? `bai:${r.uf}:${r.cd}:${r.chave.slice(2)}` : null;
   const linkCmp = refCmp ? `<a class="criterios sem-export" href="${hashComparar([refCmp])}" title="Comparar com outros estados, municípios ou bairros">⇄ Comparar</a>` : '';
   const trilha = v.trilha ? `<nav class="trilha sem-export" aria-label="Navegação">${trilhaHtml(v.trilha)}</nav>` : '';
