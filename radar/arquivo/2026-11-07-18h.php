@@ -4931,6 +4931,11 @@ S.ministerio_40 = {
  ]
 };
 
+/* ===== REESCRITA 18h (7) ===== */
+S.rs_alerta.velha = true; S.rs_alerta.velhaMotivo = "o aviso de tempestades valia até sábado (7) e já expirou; volta com balanço de danos ou novo alerta da Defesa Civil";
+S.ms_riedel.velha = true; S.ms_riedel.velhaMotivo = "fato encerrado: o governador, o vice e o presidente da Alems reassumiram em 7/11; volta com novo fato do governo estadual";
+Object.keys(ORDER).forEach(function(k){ ORDER[k] = ORDER[k].filter(function(i){ return !(S[i] && S[i].velha); }); });
+
 /* FLAGS (gerado por publicar.js; não editar) */
 var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","vr_va_interop":"atualizada","sp_f1_2035":"atualizada","sp_bras_desabamento":"atualizada","sp_alesp_sucessao":"atualizada","sp_jem_pacaembu":"atualizada","ne_sertanejos":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","arg_china_telecom":"atualizada"};
 var GIRO_FLAGS = {};
