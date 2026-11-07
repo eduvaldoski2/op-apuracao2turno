@@ -1,6 +1,6 @@
 // Composição das cadeiras: hemiciclo em SVG (um ponto por cadeira, agrupado por partido) + legenda + imagem para redes (1:1, 4:5, 9:16).
 // Não classifica partidos em campos políticos: os grupos seguem do maior para o menor número de cadeiras.
-import { corPartido } from './partidos.js?v=01cad7eb';
+import { corPartido } from './partidos.js?v=1a0ad75b';
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sgTxt = s => String(s || '').replace(/PC do B/g, 'PCdoB');

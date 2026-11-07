@@ -1,8 +1,8 @@
 // Gerador de dados SIMULADOS — usado no modo demonstração, no servidor mock e nos testes.
 // Com `real` (linhas de data/base_1t.json) usa os municípios, eleitorados e o 1º turno REAIS e simula apenas o 2º turno;
 // sem `real`, gera um país sintético com nomes fictícios. Nenhum resultado de 2º turno aqui é real. Os "candidatos" simulados usam os mesmos números 13/22 apenas para exercitar o painel.
-import { logit, expit, UF_IDS } from './util.js?v=01cad7eb';
-import { rng } from './proj.js?v=01cad7eb';
+import { logit, expit, UF_IDS } from './util.js?v=1a0ad75b';
+import { rng } from './proj.js?v=1a0ad75b';
 
 // uf, nº de municípios, eleitorado (milhões), % de Lula entre os válidos (simulado), % de Flávio
 const TAB = {

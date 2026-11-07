@@ -1,6 +1,6 @@
 // Modo telão: apresentação em slides (placar, marcha, mapa, indicadores…) em tela cheia, 16:9, com troca lateral animada.
 // Os slides são cópias das seções mais relevantes da tela aberta e se refazem sozinhos a cada nova divulgação do TSE.
-import { evento } from './metricas.js?v=01cad7eb';
+import { evento } from './metricas.js?v=1a0ad75b';
 
 const PALCO = { w: 1280, h: 720 }, INTERVALO = 14000, PAUSA = 45000;
 let T = null;   // estado do telão quando aberto

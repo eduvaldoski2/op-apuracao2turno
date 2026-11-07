@@ -3,16 +3,16 @@
 // Tudo é clicável: candidato (?c=<número>) e partido/federação/coligação (?p=<chave>) abrem a votação deles em qualquer nível.
 // Dados: branch hist-<ano> (scripts/hist/build_hist.py, a partir do lake do TSE por seção).
 // Rotas: #/h/<ano>/<eleição>[/uf/<uf>[/r/<i> | /m/<cd>[/d/<i> | /b/<bairro> | /l/<zona-local> | /s/<zona-seção>]]][?c=<n> | ?p=<chave>]
-import { CONFIG } from './config.js?v=01cad7eb';
-import { UF_NOME, fInt, fNum, mix } from './util.js?v=01cad7eb';
-import { esc, tabela, sem } from './ui.js?v=01cad7eb';
-import { getJSON } from './tse.js?v=01cad7eb';
-import { corPartido, corTextoSobre } from './partidos.js?v=01cad7eb';
-import { criarMapa } from './map.js?v=01cad7eb';
-import { criarMapaMun } from './mapamun.js?v=01cad7eb';
-import { criarMapaPontos } from './mapapontos.js?v=01cad7eb';
+import { CONFIG } from './config.js?v=1a0ad75b';
+import { UF_NOME, fInt, fNum, mix } from './util.js?v=1a0ad75b';
+import { esc, tabela, sem } from './ui.js?v=1a0ad75b';
+import { getJSON } from './tse.js?v=1a0ad75b';
+import { corPartido, corTextoSobre } from './partidos.js?v=1a0ad75b';
+import { criarMapa } from './map.js?v=1a0ad75b';
+import { criarMapaMun } from './mapamun.js?v=1a0ad75b';
+import { criarMapaPontos } from './mapapontos.js?v=1a0ad75b';
 
-import { cadeirasHTML, ligarCadeiras, agrupa } from './cadeiras.js?v=01cad7eb';
+import { cadeirasHTML, ligarCadeiras, agrupa } from './cadeiras.js?v=1a0ad75b';
 export const ANOS_HIST = [2026, 2024, 2022, 2020, 2018, 2016, 2014, 2012, 2010, 2008, 2006];
 const BASE = ano => `https://raw.githubusercontent.com/${CONFIG.repo}/hist-${ano}/`;
 const cache = new Map();
@@ -23,7 +23,7 @@ const pc = (a, b) => (b > 0 ? 100 * a / b : NaN);
 const bonito = s => /^Candidato \d+$/.test(s) ? `Nº ${String(s).slice(10)} (sem cadastro no TSE)` : String(s || '').toLowerCase().replace(/(^|[\s\-\/(])(\p{L})/gu, (m, a, b) => a + b.toUpperCase()).replace(/ (D[aeo]s?|E|Em) /g, x => x.toLowerCase());
 const nomeUf = uf => UF_NOME[uf] || uf.toUpperCase();
 const sgTxt = s => String(s || '').replace(/PC do B/g, 'PCdoB');
-const situ = st => { const s = String(st || ''); if (/^ELEITO/.test(s)) return '<span class="h-sel">Eleito</span>'; if (/2º TURNO/.test(s)) return '<span class="h-sel h-2t">2º turno</span>'; if (/SUPLENTE/.test(s)) return '<small class="h-sit">suplente</small>'; return ''; };
+const situ = st => { const s = String(st || ''); if (/^(ELEITO|MÉDIA$)/.test(s)) return '<span class="h-sel">Eleito</span>'; if (/2º TURNO/.test(s)) return '<span class="h-sel h-2t">2º turno</span>'; if (/SUPLENTE/.test(s)) return '<small class="h-sit">suplente</small>'; return ''; };
 const chipP = (sg, href) => { const c = corPartido(sg), t = `<span class="h-p" style="background:${c};color:${corTextoSobre(c)}">${esc(sgTxt(sg))}</span>`; return href ? `<a class="h-lk" href="${href}">${t}</a>` : t; };
 
 // ---------- rota e foco ----------
@@ -240,7 +240,7 @@ async function telaBrasil(r, E, ctx, nomeEl) {
   const dados = (await Promise.all(ufsIdx.map(uf => arq(r.ano, `${r.id}/${uf}.json`).then(d => [uf, d]).catch(() => null)))).filter(Boolean);
   if (E.mun) {   // prefeito / vereador: escolha do estado (e, no prefeito, quantos municípios cada partido levou)
     const rows = dados.map(([uf, d]) => { const ms = Object.values(d.mun); const t = { ap: 0, n: ms.length, ele: 0, part: new Map() };
-      for (const m of ms) { t.ap += m.tot[0]; if (E.prop) t.ele += m.ele || 0; else { const its = m.cands, u = fecha(somaLinha(novaU(its.length), m.tot, false)); const c = its.find(x => /^ELEITO/.test(x.st)) || (u.lid >= 0 ? its[u.lid] : null); if (c) t.part.set(c.sg, (t.part.get(c.sg) || 0) + 1); } }
+      for (const m of ms) { t.ap += m.tot[0]; if (E.prop) t.ele += m.ele || 0; else { const its = m.cands, u = fecha(somaLinha(novaU(its.length), m.tot, false)); const c = its.find(x => /^(ELEITO|MÉDIA$)/.test(x.st)) || (u.lid >= 0 ? its[u.lid] : null); if (c) t.part.set(c.sg, (t.part.get(c.sg) || 0) + 1); } }
       return { id: uf, nome: nomeUf(uf), ...t }; });
     const part = new Map(); rows.forEach(x => x.part.forEach((n, sg) => part.set(sg, (part.get(sg) || 0) + n)));
     const resumo = E.prop ? '' : `<section class="painel"><h2>${r.id.endsWith('t1') ? 'Prefeitos eleitos ou mais votados' : 'Prefeitos eleitos no 2º turno'}, por partido</h2><ol class="h-rank">${[...part].sort((a, b) => b[1] - a[1]).map(([sg, n]) => `<li>${chipP(sg)}<b>${fInt(n)}</b></li>`).join('')}</ol></section>`;
@@ -253,8 +253,8 @@ async function telaBrasil(r, E, ctx, nomeEl) {
     const its = E.prop ? d.par : d.cands, mvec = E.prop ? Object.values(d.mun).reduce((a, l) => { l[4].forEach((x, i) => { a[i] = (a[i] || 0) + x; }); return a; }, []) : null;
     const u = fecha(somaLinha(novaU(its.length), E.prop ? [...d.tot, mvec, []] : d.tot, E.prop));
     let ele = 0; if (F0 && E.prop) { const mem = membrosFoco(F0, d.par); u.fv = mem.reduce((a, i) => a + (u.v[i] || 0), 0); ele = mem.reduce((a, i) => a + (d.par[i].ele || 0), 0); }
-    const venc = E.prop ? null : d.cands.find(c => /^ELEITO/.test(c.st)) || (u.lid >= 0 ? d.cands[u.lid] : null);
-    return { id: uf, nome: nomeUf(uf), u, d, its, venc, ele, eleT: E.prop ? d.cands.filter(c => /^ELEITO/.test(c.st)).length : 0 }; });
+    const venc = E.prop ? null : d.cands.find(c => /^(ELEITO|MÉDIA$)/.test(c.st)) || (u.lid >= 0 ? d.cands[u.lid] : null);
+    return { id: uf, nome: nomeUf(uf), u, d, its, venc, ele, eleT: E.prop ? d.cands.filter(c => /^(ELEITO|MÉDIA$)/.test(c.st)).length : 0 }; });
   if (F0 && E.prop) {   // partido/federação no Brasil inteiro: votos e eleitos por estado
     const t = novaU(1); rows.forEach(x => somaU(t, x.u)); fecha(t); t.vv = rows.reduce((a, x) => a + x.u.vv, 0);
     const ref = rows.find(x => membrosFoco(F0, x.d.par).length); const nf = ref ? nomeFoco(F0, ref.d.par) : { nome: F0.slice(2), sg: F0.slice(2) };
@@ -271,7 +271,7 @@ async function telaBrasil(r, E, ctx, nomeEl) {
     : [colNome('Estado'), { k: 'venc', t: r.id.endsWith('t1') ? 'Eleito ou mais votado' : 'Eleito', h: x => x.venc ? `${esc(bonito(x.venc.nm))} ${chipP(x.venc.sg)} ${situ(x.venc.st)}` : '', v: x => x.venc?.nm || '' }, { k: 'pv', t: '% válidos', h: x => x.venc ? `<b>${fNum(x.u.p[x.its.indexOf(x.venc)], 2)}%</b>` : '', v: x => x.venc ? x.u.p[x.its.indexOf(x.venc)] : NaN, cls: 'n' }];
   let cad = '';   // composição das cadeiras: Câmara dos Deputados (soma dos estados) e renovação do Senado
   if (E.prop && E.el.c === 6) { const it = agrupa(rows.flatMap(x => x.d.par.map(p => ({ sg: p.sg, n: p.ele || 0 })))); cad = cadeirasHTML({ titulo: `Câmara dos Deputados · eleitos em ${r.ano}`, sub: 'Cada ponto é um deputado federal eleito, agrupado por partido, somando os 27 estados.', blocos: [{ rot: 'Brasil', itens: it, total: 513 }] }); }
-  else if (!E.prop && E.el.c === 5) { const it = agrupa(rows.flatMap(x => x.d.cands.filter(c => /^ELEITO/.test(c.st)).map(c => ({ sg: c.sg, n: 1 })))), tt = r.ano % 8 === 2 ? 54 : 27; cad = cadeirasHTML({ titulo: `Senado · eleitos em ${r.ano}`, sub: `Renovação de ${tt === 54 ? 'dois terços' : 'um terço'} do Senado (${tt} das 81 cadeiras). As demais seguem com quem foi eleito na eleição anterior.`, blocos: [{ rot: 'Senadores eleitos', itens: it, total: tt }] }); }
+  else if (!E.prop && E.el.c === 5) { const it = agrupa(rows.flatMap(x => x.d.cands.filter(c => /^(ELEITO|MÉDIA$)/.test(c.st)).map(c => ({ sg: c.sg, n: 1 })))), tt = r.ano % 8 === 2 ? 54 : 27; cad = cadeirasHTML({ titulo: `Senado · eleitos em ${r.ano}`, sub: `Renovação de ${tt === 54 ? 'dois terços' : 'um terço'} do Senado (${tt} das 81 cadeiras). As demais seguem com quem foi eleito na eleição anterior.`, blocos: [{ rot: 'Senadores eleitos', itens: it, total: tt }] }); }
   return { titulo: `Brasil — ${nomeEl}`, trilha, html: `${cad}${E.prop ? '' : secMapa('h-mapa-br', 'Mais votado por estado', 'Clique em um estado.')}<section class="painel"><h2>Estados</h2><p class="sub">Clique em um estado para ver ${E.prop ? 'partidos, federações, candidatos e municípios' : 'os candidatos e os municípios'}.</p><div id="h-tab"></div></section>`,
     montar(root) {
       ligarCadeiras(root);
@@ -300,7 +300,7 @@ async function telaUf(r, E, ctx, nomeEl) {
   if (E.mun) {   // prefeito ou vereador: cada município tem seus candidatos (a página do candidato começa no município)
     const rows = cds.map(cd => { const m = d.mun[cd];
       if (E.prop) return { id: cd, nome: nomeDe(cd), ap: m.tot[0], ele: m.ele, nc: m.nc, top: m.top || [] };
-      const its = m.cands, u = fecha(somaLinha(novaU(its.length), m.tot, false)); const venc = its.find(c => /^ELEITO/.test(c.st)) || (u.lid >= 0 ? its[u.lid] : null);
+      const its = m.cands, u = fecha(somaLinha(novaU(its.length), m.tot, false)); const venc = its.find(c => /^(ELEITO|MÉDIA$)/.test(c.st)) || (u.lid >= 0 ? its[u.lid] : null);
       return { id: cd, nome: nomeDe(cd), u, its, venc, ap: u.ap }; });
     const cols = E.prop
       ? [colNome('Município'), ...colReg, { k: 'ele', t: 'Eleitos', h: x => fInt(x.ele), v: x => x.ele, cls: 'n' }, { k: 'nc', t: 'Candidatos', h: x => fInt(x.nc), v: x => x.nc, cls: 'n' }, { k: 'top', t: 'Mais votado', h: x => x.top[0] ? `${esc(bonito(x.top[0][0]))} ${chipP(x.top[0][1])} <small>${fInt(x.top[0][2])}</small>` : '', v: x => x.top[0]?.[2] || 0 }, { k: 'ap', t: 'Aptos', h: x => fInt(x.ap), v: x => x.ap, cls: 'n' }]
@@ -348,7 +348,7 @@ async function telaUf(r, E, ctx, nomeEl) {
   let blocoCand = '';
   if (E.prop) {
     const memSg = F?.t === 'p' ? new Set(F.mem.map(i => d.par[i].sg)) : null;
-    if (r.nivel === 'uf' && (!F || F.t === 'p')) blocoCand = `<section class="painel"><h2>${F ? `Candidatos — ${esc(F.nome)}` : 'Candidatos'}</h2><p class="sub">${fInt(d.cands.filter(c => /^ELEITO/.test(c.st) && (!memSg || memSg.has(c.sg))).length)} eleitos. Clique num nome para ver a votação do candidato.</p><div id="h-tab-c"></div></section>`;
+    if (r.nivel === 'uf' && (!F || F.t === 'p')) blocoCand = `<section class="painel"><h2>${F ? `Candidatos — ${esc(F.nome)}` : 'Candidatos'}</h2><p class="sub">${fInt(d.cands.filter(c => /^(ELEITO|MÉDIA$)/.test(c.st) && (!memSg || memSg.has(c.sg))).length)} eleitos. Clique num nome para ver a votação do candidato.</p><div id="h-tab-c"></div></section>`;
     else if (!F || F.t === 'p') blocoCand = listaCands(r, d.cands, tot.cv, extra, { titulo: F ? `Candidatos mais votados na região — ${esc(F.nome)}` : 'Candidatos mais votados na região', aprox: true, filtro: memSg ? c => memSg.has(c.sg) : null });
   }
   const topo = F ? cabFoco(r, F, tot, extra, rg ? 'na região' : 'no estado') : (E.prop ? barrasGrupos(r, d.par, tot, extra, { ele: r.nivel === 'uf' }) : barrasCand(r, E, its, tot, extra));
