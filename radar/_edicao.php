@@ -4624,7 +4624,205 @@ S.sp_f1_2035 = {
  ]
 };
 
+/* ===== REESCRITA 18h (5) ===== */
+S.ne_sertanejos = {
+ "ed": "regioes",
+ "reg": "ne",
+ "k": "Nordeste · Prefeituras",
+ "hora": "7/11",
+ "t": "Fortaleza e Recife tiram Jorge & Mateus dos eventos de fim de ano; prefeituras do Nordeste contrataram R$ 38,3 milhões em shows de 11 sertanejos que apoiaram Flávio Bolsonaro",
+ "sub": "Levantamento do Metrópoles com base no PNCP não prova relação entre apoio político e contratações. Fortaleza fala em cancelamento por acordo; Recife recuou depois da pressão nas redes.",
+ "resumo": "As prefeituras de Fortaleza e de Recife retiraram a dupla Jorge & Mateus dos eventos de fim de ano depois que Jorge declarou apoio a Flávio Bolsonaro. Fortaleza diz que o cancelamento foi acordado e que os cachês são pagos por patrocinadores; Recife recuou após pressão na internet. Um levantamento do Metrópoles, divulgado neste sábado (7) pelo NC News, mostra que prefeituras nordestinas destinaram cerca de R$ 38,3 milhões a shows de 11 sertanejos que apoiaram o candidato. A reportagem ressalva que não há prova de relação entre as duas coisas.",
+ "upd": "A matéria foi reescrita como texto único: junta os cancelamentos de Fortaleza e Recife, o vídeo que os provocou, as explicações das prefeituras e o levantamento dos cachês, com as ressalvas de cada fonte.",
+ "fundo": [
+  [
+   "p",
+   "As prefeituras de Fortaleza e de Recife tiraram a dupla Jorge & Mateus dos eventos de fim de ano depois que Jorge declarou apoio a Flávio Bolsonaro (PL) na campanha presidencial. Um levantamento do Metrópoles com dados do Portal Nacional de Contratações Públicas (PNCP), divulgado neste sábado (7) pelo NC News, mostra que prefeituras do Nordeste destinaram cerca de R$ 38,3 milhões a shows de 11 sertanejos que declararam o mesmo apoio."
+  ],
+  [
+   "p",
+   "A polêmica nasceu de um vídeo de um encontro em Goiás, em 20 de outubro, que reuniu mais de 30 cantores, segundo o NC News. Nele, Jorge diz: “Pode chorar, mas eu não voto no PT”, de acordo com O Povo e o Jornal Correio. Cerca de uma semana depois, o prefeito de Fortaleza, Evandro Leitão (PT), anunciou a dupla no réveillon da cidade. Na terça (3), o chefe da Casa Civil, Chagas Vieira, disse nas redes que o município tentava cancelar o contrato “de forma legal e responsável”."
+  ],
+  [
+   "nums",
+   [
+    [
+     "R$ 38,3 mi",
+     "contratados por prefeituras nordestinas com 11 sertanejos, segundo o Metrópoles"
+    ],
+    [
+     "R$ 11,6 mi",
+     "Gusttavo Lima, o maior valor, em oito shows"
+    ],
+    [
+     "27/12",
+     "data da Virada Recife, da qual a dupla saiu"
+    ],
+    [
+     "2,7 mi",
+     "pessoas esperadas no Réveillon de Todos, em Fortaleza, em dois dias"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Fortaleza: cancelamento “acordado entre as partes”"
+  ],
+  [
+   "p",
+   "Leitão anunciou o fim da participação da dupla em vídeo no Instagram. Disse que as negociações para os shows ocorrem com meses de antecedência e que controvérsias posteriores tiraram o foco do objetivo do evento, que descreveu como uma das maiores festas populares do país. A nota da prefeitura afirma que o cancelamento foi acordado entre as partes, é legal e não usa dinheiro municipal, porque os cachês dos artistas são pagos integralmente por patrocinadores privados. Segundo O Povo, Leitão havia dito que o contrato foi assinado no meio do ano, antes de o apoio de Jorge a Flávio se tornar público. A prefeitura informa que o Réveillon de Todos será gratuito e descentralizado, com expectativa de 2,7 milhões de pessoas em dois dias."
+  ],
+  [
+   "h",
+   "Recife: da defesa das diferenças à retirada"
+  ],
+  [
+   "p",
+   "Em Recife, o prefeito Victor Marques (PCdoB) retirou a dupla da Virada Recife, marcada para 27 de dezembro, na Praia do Pina. Em vídeo, disse que não havia mais clima para a apresentação, segundo o Jornal Correio. Na segunda (2), ele havia defendido o respeito às diferenças políticas e a manutenção da dupla; o recuo veio depois da pressão de internautas por causa do vídeo de Jorge. Nenhuma das duas prefeituras anunciou atrações substitutas até a publicação do Correio, e os dois eventos serão mantidos."
+  ],
+  [
+   "h",
+   "O que mostra o levantamento do Metrópoles"
+  ],
+  [
+   "p",
+   "Segundo o levantamento, Gusttavo Lima aparece com R$ 11,6 milhões (oito shows), Amado Batista com R$ 7,376 milhões (14), Bruno & Marrone com R$ 6,61 milhões (oito), Murilo Huff com R$ 5,855 milhões (dez), Zezé Di Camargo com R$ 1,92 milhão (três) e Jorge & Mateus com R$ 1,5 milhão (um). Os contratos citados são de cidades de Pernambuco, Bahia, Maranhão, Paraíba e Ceará. No Nordeste, Lula teve 69,37% dos votos válidos e Flávio, 30,63%."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "Os dois eventos seguem no calendário, sem atrações substitutas anunciadas. Em São Paulo, a sindicância aberta pela Prefeitura sobre a estrutura paga para outro show da dupla, no Pacaembu, continua sem prazo conhecido."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "O levantamento não prova relação entre o apoio político e as contratações, não representa o total gasto na região, e os valores contratados podem diferir dos desembolsados, ressalva a própria reportagem.",
+    "O valor do contrato de Jorge & Mateus em Fortaleza e a existência de multa não foram informados; a prefeitura diz que os cachês são pagos por patrocinadores, sem dinheiro municipal.",
+    "As fontes lidas não trazem posição da dupla sobre os cancelamentos.",
+    "O Radar não leu o levantamento original do Metrópoles e usa a reprodução do NC News."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "NC News (levantamento do Metrópoles)",
+   "https://ncnews.com.br/2026/11/07/nordeste-38-milhoes-a-sertanejos-caches/"
+  ],
+  [
+   "O Povo (3/11)",
+   "https://www.opovo.com.br/vidaearte/2026/11/03/reveillon-de-fortaleza-prefeitura-avalia-cancelar-show-de-jorge-mateus.html"
+  ],
+  [
+   "O Povo (4/11)",
+   "https://mais.opovo.com.br/jornal/farol/2026/11/04/reveillon-de-fortaleza-prefeitura-cancela-show-de-jorge-e-mateus-diz-evandro.html"
+  ],
+  [
+   "Jornal Correio",
+   "https://www.correio24horas.com.br/em-alta/jorge-amp-mateus-sao-retirados-do-reveillon-de-fortaleza-apos-polemica-politica-1126"
+  ]
+ ]
+};
+S.sp_jem_pacaembu = {
+ "ed": "regioes",
+ "reg": "sp",
+ "k": "São Paulo · Capital",
+ "hora": "7/11",
+ "t": "Prefeitura de SP bancou mais de R$ 3 milhões em estrutura para show pago de Jorge & Mateus; Nunes manda abrir sindicância",
+ "sub": "Apoio ao show no Pacaembu, em 13 de dezembro de 2025, não foi publicado no Diário Oficial; a dupla diz que não recebeu cachê, e a reportagem não achou quem pediu ou aprovou o gasto.",
+ "resumo": "A coluna de Demétrio Vecchioli, no Metrópoles, revelou ordens de serviço da SPTuris que somam mais de R$ 3 milhões em estrutura para o show pago de Jorge & Mateus no Pacaembu. O apoio não saiu no Diário Oficial, e não se sabe quem o pediu ou aprovou. Nunes mandou abrir sindicância na Controladoria; a Secretaria de Turismo diz que seguiu a lei, e a dupla afirma que não houve cachê. O caso ganhou peso político porque Jorge apoia Flávio Bolsonaro.",
+ "upd": "A matéria foi reescrita como texto único: detalha os valores, as respostas da prefeitura e da dupla, o pano de fundo político (cancelamentos em Fortaleza e Recife) e o que ainda falta esclarecer.",
+ "fundo": [
+  [
+   "p",
+   "A Prefeitura de São Paulo pagou mais de R$ 3 milhões em estrutura para o show pago da dupla Jorge & Mateus no Estádio do Pacaembu, em 13 de dezembro de 2025, segundo ordens de serviço da SPTuris reveladas pela coluna de Demétrio Vecchioli, no Metrópoles. O prefeito Ricardo Nunes (MDB) mandou abrir sindicância na Controladoria Geral do Município. A dupla afirma que não recebeu cachê."
+  ],
+  [
+   "p",
+   "O gasto aparece em ordens de serviço da SPTuris que registram o evento como “J E M 20 anos”, em referência aos 20 anos de carreira da dupla. Os ingressos custavam até R$ 1,1 mil. O palco custou R$ 967 mil e o painel de LED, R$ 750 mil, o que soma mais de R$ 1,7 milhão; a prefeitura também pagou ambulância, bombeiros civis, segurança e atendimento médico. O apoio não foi publicado no Diário Oficial, e a reportagem não conseguiu identificar quem o pediu ou aprovou, segundo o Diário do Centro do Mundo, que reproduz a coluna."
+  ],
+  [
+   "nums",
+   [
+    [
+     "R$ 3 mi+",
+     "em estrutura paga pela Prefeitura, segundo a coluna do Metrópoles"
+    ],
+    [
+     "R$ 967 mil",
+     "palco"
+    ],
+    [
+     "R$ 750 mil",
+     "painel de LED"
+    ],
+    [
+     "6.752",
+     "ingressos solidários, segundo a dupla"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "O que dizem a prefeitura e a dupla"
+  ],
+  [
+   "p",
+   "Depois da divulgação, a prefeitura informou que Nunes determinou a sindicância. A Secretaria Municipal de Turismo afirmou que o apoio seguiu os procedimentos legais e citou o Decreto 61.244/2022. A dupla disse que nenhum cachê foi pago e que houve 6.752 ingressos solidários e cerca de sete toneladas de alimentos doadas à Cufa. As fontes lidas não trazem o texto do decreto nem os critérios que teriam permitido o apoio a um evento com ingressos pagos."
+  ],
+  [
+   "h",
+   "O pano de fundo político"
+  ],
+  [
+   "p",
+   "O caso ganha repercussão política porque Jorge declarou apoio a Flávio Bolsonaro (PL) na campanha presidencial. Em 20 de outubro, em um encontro de sertanejos, ele disse em vídeo: “Pode chorar, mas eu não voto no PT”, segundo O Povo e o Jornal Correio. Desde então, as prefeituras de Fortaleza, governada pelo PT, e de Recife, pelo PCdoB, retiraram a dupla de seus eventos de fim de ano. Fortaleza afirma que o cancelamento foi acordado entre as partes e que os cachês são pagos por patrocinadores; Recife diz que não havia mais clima para a apresentação."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "A sindicância na Controladoria Geral do Município é o único procedimento anunciado, e as fontes lidas não informam prazo. O ponto central ainda sem resposta é quem pediu e quem aprovou o apoio."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Os valores e a ausência de publicação no Diário Oficial vêm de uma única reportagem, a coluna de Vecchioli no Metrópoles; as fontes lidas não trazem confirmação independente.",
+    "Não se sabe quem pediu e quem aprovou o apoio da prefeitura.",
+    "A afirmação da dupla de que não houve cachê não foi verificada.",
+    "O Radar não leu a coluna original do Metrópoles e usa a reprodução do Diário do Centro do Mundo."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Diário do Centro do Mundo (coluna do Metrópoles)",
+   "https://www.diariodocentrodomundo.com.br/prefeitura-de-sp-bancou-estrutura-de-r-3-milhoes-para-show-de-jorge-entenda"
+  ],
+  [
+   "O Povo (3/11)",
+   "https://www.opovo.com.br/vidaearte/2026/11/03/reveillon-de-fortaleza-prefeitura-avalia-cancelar-show-de-jorge-mateus.html"
+  ],
+  [
+   "Jornal Correio",
+   "https://www.correio24horas.com.br/em-alta/jorge-amp-mateus-sao-retirados-do-reveillon-de-fortaleza-apos-polemica-politica-1126"
+  ]
+ ]
+};
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","vr_va_interop":"atualizada","sp_f1_2035":"atualizada","sp_bras_desabamento":"atualizada","sp_alesp_sucessao":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","arg_china_telecom":"atualizada"};
+var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","vr_va_interop":"atualizada","sp_f1_2035":"atualizada","sp_bras_desabamento":"atualizada","sp_alesp_sucessao":"atualizada","sp_jem_pacaembu":"atualizada","ne_sertanejos":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","arg_china_telecom":"atualizada"};
 var GIRO_FLAGS = {};
 /* ===== FIM DOS DADOS ===== */
