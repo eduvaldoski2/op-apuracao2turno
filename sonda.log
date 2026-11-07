@@ -1,0 +1,206 @@
+######## 2004
+votacao_secao/votacao_secao_2004_RJ : HTTP/1.1 200 OK Last-Modified: Thu, 04 Nov 2021 22:14:48 GMT Content-Length: 33922624 
+votacao_secao/votacao_secao_2004_BR : HTTP/1.1 404 Not Found Content-Length: 1 
+votacao_secao/votacao_secao_2004_ZZ : HTTP/1.1 200 OK Last-Modified: Thu, 16 Apr 2015 19:26:04 GMT Content-Length: 465944 
+detalhe_votacao_secao/detalhe_votacao_secao_2004 : HTTP/1.1 200 OK Last-Modified: Mon, 25 Oct 2021 16:32:08 GMT Content-Length: 20633231 
+votacao_candidato_munzona/votacao_candidato_munzona_2004 : HTTP/1.1 200 OK Last-Modified: Fri, 18 Mar 2022 17:36:41 GMT Content-Length: 41242913 
+detalhe_votacao_munzona/detalhe_votacao_munzona_2004 : HTTP/1.1 200 OK Last-Modified: Fri, 08 Aug 2025 16:17:03 GMT Content-Length: 1400835 
+boletim_urna/boletim_urna_2004 : HTTP/1.1 404 Not Found Content-Length: 1 
+bu/bu_2004 : HTTP/1.1 404 Not Found Content-Length: 1 
+perfil_eleitor_secao/perfil_eleitor_secao_2004_RJ : HTTP/1.1 404 Not Found Content-Length: 1 
+eleitorado_local_votacao/eleitorado_local_votacao_2004 : HTTP/1.1 404 Not Found Content-Length: 1 
+######## 2002
+votacao_secao/votacao_secao_2002_RJ : HTTP/1.1 200 OK Last-Modified: Thu, 09 Dec 2021 17:08:38 GMT Content-Length: 81394499 
+votacao_secao/votacao_secao_2002_BR : HTTP/1.1 200 OK Last-Modified: Thu, 09 Dec 2021 17:09:18 GMT Content-Length: 19858557 
+votacao_secao/votacao_secao_2002_ZZ : HTTP/1.1 404 Not Found Content-Length: 1 
+detalhe_votacao_secao/detalhe_votacao_secao_2002 : HTTP/1.1 200 OK Last-Modified: Wed, 08 Dec 2021 18:32:42 GMT Content-Length: 58040971 
+votacao_candidato_munzona/votacao_candidato_munzona_2002 : HTTP/1.1 200 OK Last-Modified: Fri, 18 Mar 2022 15:55:50 GMT Content-Length: 120264128 
+detalhe_votacao_munzona/detalhe_votacao_munzona_2002 : HTTP/1.1 200 OK Last-Modified: Fri, 08 Aug 2025 16:31:06 GMT Content-Length: 3625552 
+boletim_urna/boletim_urna_2002 : HTTP/1.1 404 Not Found Content-Length: 1 
+bu/bu_2002 : HTTP/1.1 404 Not Found Content-Length: 1 
+perfil_eleitor_secao/perfil_eleitor_secao_2002_RJ : HTTP/1.1 404 Not Found Content-Length: 1 
+eleitorado_local_votacao/eleitorado_local_votacao_2002 : HTTP/1.1 404 Not Found Content-Length: 1 
+######## 2000
+votacao_secao/votacao_secao_2000_RJ : HTTP/1.1 200 OK Last-Modified: Mon, 31 Jan 2022 19:57:32 GMT Content-Length: 30754902 
+votacao_secao/votacao_secao_2000_BR : HTTP/1.1 404 Not Found Content-Length: 1 
+votacao_secao/votacao_secao_2000_ZZ : HTTP/1.1 404 Not Found Content-Length: 1 
+detalhe_votacao_secao/detalhe_votacao_secao_2000 : HTTP/1.1 200 OK Last-Modified: Mon, 31 Jan 2022 19:59:53 GMT Content-Length: 16559112 
+votacao_candidato_munzona/votacao_candidato_munzona_2000 : HTTP/1.1 200 OK Last-Modified: Tue, 05 Sep 2023 12:40:44 GMT Content-Length: 40216594 
+detalhe_votacao_munzona/detalhe_votacao_munzona_2000 : HTTP/1.1 200 OK Last-Modified: Fri, 08 Aug 2025 16:20:15 GMT Content-Length: 1370004 
+boletim_urna/boletim_urna_2000 : HTTP/1.1 404 Not Found Content-Length: 1 
+bu/bu_2000 : HTTP/1.1 404 Not Found Content-Length: 1 
+perfil_eleitor_secao/perfil_eleitor_secao_2000_RJ : HTTP/1.1 404 Not Found Content-Length: 1 
+eleitorado_local_votacao/eleitorado_local_votacao_2000 : HTTP/1.1 404 Not Found Content-Length: 1 
+######## 1998
+votacao_secao/votacao_secao_1998_RJ : HTTP/1.1 200 OK Last-Modified: Wed, 20 Apr 2022 13:10:04 GMT Content-Length: 65650966 
+votacao_secao/votacao_secao_1998_BR : HTTP/1.1 200 OK Last-Modified: Tue, 16 Feb 2016 16:19:23 GMT Content-Length: 2841465 
+votacao_secao/votacao_secao_1998_ZZ : HTTP/1.1 200 OK Last-Modified: Tue, 01 Dec 2015 17:40:23 GMT Content-Length: 684492 
+detalhe_votacao_secao/detalhe_votacao_secao_1998 : HTTP/1.1 200 OK Last-Modified: Tue, 05 Sep 2023 22:12:21 GMT Content-Length: 38623857 
+votacao_candidato_munzona/votacao_candidato_munzona_1998 : HTTP/1.1 200 OK Last-Modified: Wed, 20 Sep 2023 21:08:21 GMT Content-Length: 106050738 
+detalhe_votacao_munzona/detalhe_votacao_munzona_1998 : HTTP/1.1 200 OK Last-Modified: Fri, 08 Aug 2025 16:33:17 GMT Content-Length: 3356350 
+boletim_urna/boletim_urna_1998 : HTTP/1.1 404 Not Found Content-Length: 1 
+bu/bu_1998 : HTTP/1.1 404 Not Found Content-Length: 1 
+perfil_eleitor_secao/perfil_eleitor_secao_1998_RJ : HTTP/1.1 404 Not Found Content-Length: 1 
+eleitorado_local_votacao/eleitorado_local_votacao_1998 : HTTP/1.1 404 Not Found Content-Length: 1 
+######## 1996
+votacao_secao/votacao_secao_1996_RJ : HTTP/1.1 404 Not Found Content-Length: 1 
+votacao_secao/votacao_secao_1996_BR : HTTP/1.1 404 Not Found Content-Length: 1 
+votacao_secao/votacao_secao_1996_ZZ : HTTP/1.1 404 Not Found Content-Length: 1 
+detalhe_votacao_secao/detalhe_votacao_secao_1996 : HTTP/1.1 404 Not Found Content-Length: 1 
+votacao_candidato_munzona/votacao_candidato_munzona_1996 : HTTP/1.1 200 OK Last-Modified: Fri, 13 Feb 2026 17:00:14 GMT Content-Length: 19437416 
+detalhe_votacao_munzona/detalhe_votacao_munzona_1996 : HTTP/1.1 200 OK Last-Modified: Fri, 13 Feb 2026 17:00:14 GMT Content-Length: 752177 
+boletim_urna/boletim_urna_1996 : HTTP/1.1 404 Not Found Content-Length: 1 
+bu/bu_1996 : HTTP/1.1 404 Not Found Content-Length: 1 
+perfil_eleitor_secao/perfil_eleitor_secao_1996_RJ : HTTP/1.1 404 Not Found Content-Length: 1 
+eleitorado_local_votacao/eleitorado_local_votacao_1996 : HTTP/1.1 404 Not Found Content-Length: 1 
+######## 1994
+votacao_secao/votacao_secao_1994_RJ : HTTP/1.1 404 Not Found Content-Length: 1 
+votacao_secao/votacao_secao_1994_BR : HTTP/1.1 404 Not Found Content-Length: 1 
+votacao_secao/votacao_secao_1994_ZZ : HTTP/1.1 404 Not Found Content-Length: 1 
+detalhe_votacao_secao/detalhe_votacao_secao_1994 : HTTP/1.1 404 Not Found Content-Length: 1 
+votacao_candidato_munzona/votacao_candidato_munzona_1994 : HTTP/1.1 200 OK Last-Modified: Fri, 13 Feb 2026 17:00:14 GMT Content-Length: 42301735 
+detalhe_votacao_munzona/detalhe_votacao_munzona_1994 : HTTP/1.1 200 OK Last-Modified: Fri, 13 Feb 2026 17:00:14 GMT Content-Length: 1594934 
+boletim_urna/boletim_urna_1994 : HTTP/1.1 404 Not Found Content-Length: 1 
+bu/bu_1994 : HTTP/1.1 404 Not Found Content-Length: 1 
+perfil_eleitor_secao/perfil_eleitor_secao_1994_RJ : HTTP/1.1 404 Not Found Content-Length: 1 
+eleitorado_local_votacao/eleitorado_local_votacao_1994 : HTTP/1.1 404 Not Found Content-Length: 1 
+######## CKAN (dadosabertos.tse.jus.br)
+== boletim de urna
+ - resultados-eleicoes-suplementares-2024 | Resultados - Eleições suplementares 2024 | 5 recursos
+ - resultados-eleicoes-suplementares-2022 | Resultados - Eleições suplementares 2022 | 6 recursos
+ - resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno | Resultados - 2026 - Logs do sistema de preparação das urnas eletrônicas (Gedai) - 2º turno | 112 recursos
+ - resultados-2026-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno | Resultados - 2026 - Logs do sistema de preparação das urnas eletrônicas (Gedai) - 1º turno | 112 recursos
+ - resultados-2026-boletim-de-urna | Resultados - 2026 - Boletim de Urna | 112 recursos
+ - resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-2-turno | Resultados - 2024 - Logs do sistema de preparação das urnas eletrônicas (Gedai) - 2º turno | 104 recursos
+ - resultados-2024-logs-do-sistema-de-preparacao-das-urnas-eletronicas-gedai-1-turno | Resultados - 2024 - Logs do sistema de preparação das urnas eletrônicas (Gedai) - 1º turno | 104 recursos
+ - resultados-2024-boletim-de-urna | Resultados - 2024 - Boletim de Urna | 104 recursos
+ - resultados-2022-boletim-de-urna | Resultados - 2022 - Boletim de Urna | 112 recursos
+ - resultados-2020-suplementares | Resultados - Eleições suplementares 2020 | 5 recursos
+ - resultados-2020-boletim-de-urna | Resultados - 2020 - Boletim de Urna | 108 recursos
+ - resultados-2018-boletim-de-urna | Resultados - 2018 - Boletim de Urna | 112 recursos
+ - resultados-2016-boletim-de-urna | Resultados - 2016 - Boletim de Urna | 92 recursos
+ - resultados-2014-boletim-de-urna | Resultados - 2014 - Boletim de Urna | 112 recursos
+ - resultados-2012-boletim-de-urna-1-turno | Resultados - 2012 - Boletim de Urna | 92 recursos
+ - correspondencia-entre-numero-interno-e-modelo-da-urna-1 | Correspondência entre número interno e modelo da urna | 1 recursos
+== votação por seção
+ - resultados-eleicoes-suplementares-2024 | Resultados - Eleições suplementares 2024 | 5 recursos
+ - resultados-eleicoes-suplementares-2022 | Resultados - Eleições suplementares 2022 | 6 recursos
+ - resultados-2026 | Resultados - 2026 | 63 recursos
+ - resultados-2024 | Resultados - 2024 | 56 recursos
+ - resultados-2022 | Resultados - 2022 | 34 recursos
+ - resultados-2020-suplementares | Resultados - Eleições suplementares 2020 | 5 recursos
+ - resultados-2020 | Resultados - 2020 | 30 recursos
+ - resultados-2018 | Resultados - 2018 | 32 recursos
+ - resultados-2016 | Resultados - 2016 | 30 recursos
+ - resultados-2014 | Resultados - 2014 | 32 recursos
+ - resultados-2012 | Resultados - 2012 | 31 recursos
+ - resultados-2010 | Resultados - 2010 | 34 recursos
+ - resultados-2008 | Resultados - 2008 | 30 recursos
+ - resultados-2006 | Resultados - 2006 | 32 recursos
+ - resultados-2004 | Resultados - 2004 | 30 recursos
+ - resultados-2002 | Resultados - 2002 | 32 recursos
+ - resultados-2000 | Resultados - 2000 | 30 recursos
+ - resultados-1998 | Resultados - 1998 | 32 recursos
+ - resultados-1996 | Resultados - 1996 | 3 recursos
+ - resultados-1994 | Resultados - 1994 | 3 recursos
+ - resultados-1990 | Resultados - 1990 | 3 recursos
+ - resultados-1989 | Resultados - 1989 | 2 recursos
+ - resultados-1986 | Resultados - 1986 | 3 recursos
+ - resultados-1982 | Resultados - 1982 | 3 recursos
+ - resultados-1978 | Resultados - 1978 | 3 recursos
+ - resultados-1974 | Resultados - 1974 | 3 recursos
+ - resultados-1970 | Resultados - 1970 | 3 recursos
+ - resultados-1966 | Resultados - 1966 | 3 recursos
+ - resultados-1965 | Resultados - 1965 | 3 recursos
+ - resultados-1962 | Resultados - 1962 | 3 recursos
+ - resultados-1960 | Resultados - 1960 | 3 recursos
+ - resultados-1958 | Resultados - 1958 | 3 recursos
+ - resultados-1955 | Resultados - 1955 | 3 recursos
+ - resultados-1954 | Resultados - 1954 | 3 recursos
+ - resultados-1950 | Resultados - 1950 | 3 recursos
+ - resultados-1947 | Resultados - 1947 | 3 recursos
+ - resultados-1945 | Resultados - 1945 | 3 recursos
+ - resultados-1934 | Resultados - 1934 | 3 recursos
+ - resultados-1933 | Resultados - 1933 | 3 recursos
+ - eleitorado-atual | Eleitorado Atual | 30 recursos
+== resultados 2002
+ - resultados-2002 | Resultados - 2002 | 32 recursos
+== resultados 2004
+ - resultados-2004 | Resultados - 2004 | 30 recursos
+== resultados 1998
+ - resultados-1998 | Resultados - 1998 | 32 recursos
+== resultados 2000
+ - resultados-2000 | Resultados - 2000 | 30 recursos
+== pacote resultados-2002-votacao-por-secao-eleitoral
+  erro HTTP Error 404: Not Found
+== pacote resultados-2004-votacao-por-secao-eleitoral
+  erro HTTP Error 404: Not Found
+== pacote resultados-1998-votacao-por-secao-eleitoral
+  erro HTTP Error 404: Not Found
+== pacote resultados-2000-votacao-por-secao-eleitoral
+  erro HTTP Error 404: Not Found
+== pacote resultados-2002-boletim-de-urna
+  erro HTTP Error 404: Not Found
+== pacote resultados-2004-boletim-de-urna
+  erro HTTP Error 404: Not Found
+== pacote resultados-2022-boletim-de-urna
+   AC - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_AC_051020221321.zip
+   AC - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_AC_051020221321.zip.sha512
+   AC - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_AC_311020221535.zip
+   AC - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_AC_311020221535.zip.sha512
+   AL - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_AL_051020221321.zip
+   AL - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_AL_051020221321.zip.sha512
+   AL - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_AL_311020221535.zip
+   AL - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_AL_311020221535.zip.sha512
+   AM - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_AM_051020221321.zip
+   AM - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_AM_051020221321.zip.sha512
+   AM - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_AM_311020221535.zip
+   AM - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_AM_311020221535.zip.sha512
+   AP - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_AP_051020221321.zip
+   AP - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_AP_051020221321.zip.sha512
+   AP - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_AP_311020221535.zip
+   AP - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_AP_311020221535.zip.sha512
+   BA - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_BA_051020221321.zip
+   BA - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_BA_051020221321.zip.sha512
+   BA - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_BA_311020221535.zip
+   BA - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_BA_311020221535.zip.sha512
+   CE - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_CE_051020221321.zip
+   CE - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_CE_051020221321.zip.sha512
+   CE - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_CE_311020221535.zip
+   CE - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_CE_311020221535.zip.sha512
+   DF - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_DF_051020221321.zip
+   DF - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_DF_051020221321.zip.sha512
+   DF - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_DF_311020221535.zip
+   DF - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_DF_311020221535.zip.sha512
+   ES - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_ES_051020221321.zip
+   ES - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_ES_051020221321.zip.sha512
+   ES - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_ES_311020221535.zip
+   ES - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_ES_311020221535.zip.sha512
+   GO - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_GO_051020221321.zip
+   GO - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_GO_051020221321.zip.sha512
+   GO - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_GO_311020221535.zip
+   GO - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_GO_311020221535.zip.sha512
+   MA - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MA_051020221321.zip
+   MA - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MA_051020221321.zip.sha512
+   MA - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MA_311020221535.zip
+   MA - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MA_311020221535.zip.sha512
+   MG - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MG_051020221321.zip
+   MG - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MG_051020221321.zip.sha512
+   MG - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MG_311020221535.zip
+   MG - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MG_311020221535.zip.sha512
+   MS - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MS_051020221321.zip
+   MS - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MS_051020221321.zip.sha512
+   MS - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MS_311020221535.zip
+   MS - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MS_311020221535.zip.sha512
+   MT - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MT_051020221321.zip
+   MT - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_MT_051020221321.zip.sha512
+   MT - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MT_311020221535.zip
+   MT - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_MT_311020221535.zip.sha512
+   PA - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_PA_051020221321.zip
+   PA - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_PA_051020221321.zip.sha512
+   PA - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_PA_311020221535.zip
+   PA - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_PA_311020221535.zip.sha512
+   PB - Boletim de Urna - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_PB_051020221321.zip
+   PB - Hash SHA2 - Primeiro turno - 05.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_1t_PB_051020221321.zip.sha512
+   PB - Boletim de Urna - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_PB_311020221535.zip
+   PB - Hash SHA2 - Segundo turno - 31.10.2022 | https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/buweb/bweb_2t_PB_311020221535.zip.sha512
