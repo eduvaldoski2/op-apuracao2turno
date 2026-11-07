@@ -2878,7 +2878,1080 @@ S.ueno_bank = {
  ]
 };
 
+/* ===== REESCRITA 18h ===== */
+S.alcolumbre_stf = {
+ "ed": "politica",
+ "k": "Política · Senado",
+ "hora": "7/11",
+ "t": "Eleição para presidir o Senado já tem três pré-candidatos; grupo de Alcolumbre diz ter 48 votos, e aliados de Tereza Cristina contestam",
+ "sub": "A maioria é de 41 dos 81 senadores. O voto é secreto, e o PL avalia propor votação aberta. Marinho e Tereza dizem que não serão candidatos um contra o outro.",
+ "dado": {
+  "n": "41 de 81",
+  "l": "votos para eleger o presidente do Senado em 1º de fevereiro · o grupo de Alcolumbre diz ter 48"
+ },
+ "resumo": "A eleição para a presidência do Senado, em 1º de fevereiro, já tem três pré-candidatos: Davi Alcolumbre (União-AP), que busca a reeleição com apoio do governo Lula; Rogério Marinho (PL-RN); e Tereza Cristina (PP-MS), que mantém a candidatura contra a orientação do próprio partido. O grupo de Alcolumbre diz ter 48 dos 81 votos; aliados de Tereza estimam de 7 a 8 a menos. A maioria é de 41. O voto é secreto, e o PL avalia propor votação aberta.",
+ "upd": "A matéria foi reescrita: em vez do bastidor sobre o STF, traz a disputa inteira (candidatos, contagem de votos, posição dos partidos e regras da votação), com seis fontes.",
+ "fundo": [
+  [
+   "p",
+   "A eleição para a presidência do Senado, prevista para 1º de fevereiro, já tem três pré-candidatos: o atual presidente, Davi Alcolumbre (União-AP), que busca a reeleição com o apoio do governo Lula; o líder da oposição, Rogério Marinho (PL-RN); e a líder do PP, Tereza Cristina (MS), que mantém a candidatura contra a orientação do próprio partido. O grupo de Alcolumbre diz ter 48 dos 81 votos, e aliados de Tereza contestam a conta."
+  ],
+  [
+   "p",
+   "Os números são de bastidor e não coincidem. Aliados de Tereza estimam que Alcolumbre tenha de 7 a 8 votos a menos do que diz ter e afirmam, segundo a CNN Brasil, que nem ele nem Marinho têm hoje os 41 votos necessários, a maioria dos 81 senadores. A oposição identifica parlamentares contados nas projeções de mais de uma candidatura, o que aumenta a incerteza, informa o Correio do Estado."
+  ],
+  [
+   "nums",
+   [
+    [
+     "48",
+     "votos que o grupo de Alcolumbre diz reunir, de 81"
+    ],
+    [
+     "41",
+     "votos para a maioria; aliados de Tereza dizem que nenhum dos dois tem hoje"
+    ],
+    [
+     "32",
+     "senadores que a oposição vê como base contrária à reeleição: 29 do PL e 3 do Novo"
+    ],
+    [
+     "16",
+     "parlamentares de Republicanos, Podemos e PSDB, com votos em disputa"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Os três lados e as contas"
+  ],
+  [
+   "p",
+   "Alcolumbre tem o apoio das direções do União Brasil e do PP, que formam uma federação. Os presidentes das duas legendas, Antonio Rueda e Ciro Nogueira, divulgaram nota em que defendem a continuidade do senador como garantia de estabilidade institucional e equilíbrio político. A federação terá 11 senadores, e parte deles não pretende seguir a orientação: o senador eleito Guilherme Derrite (PP-SP) anunciou que não votará em Alcolumbre."
+  ],
+  [
+   "p",
+   "Marinho, que coordenou a campanha presidencial de Flávio Bolsonaro, é o nome do PL, que terá 29 senadores a partir de fevereiro, segundo o Correio do Estado (outras fontes falam em 28). Ele defende que o impeachment de ministros do STF seja a prioridade do Senado em 2027 e tem o apoio de Flávio Bolsonaro e do senador eleito Carlos Bolsonaro (PL-SC). O lançamento oficial da candidatura estava previsto para a quarta (4)."
+  ],
+  [
+   "p",
+   "Tereza Cristina, ex-ministra da Agricultura de Jair Bolsonaro, tenta se firmar como terceira via. Aliados dizem à CNN Brasil que ela pode atrair partidos do Centrão que resistem a Marinho e também não querem a recondução de Alcolumbre. Ela aceita discutir o impeachment de ministros do STF, mas não que o tema seja a prioridade do Senado: defende também uma ampla agenda de reformas econômicas em 2027. Na terça (3), disse que quer ser a primeira mulher a presidir a Casa."
+  ],
+  [
+   "h",
+   "Voto secreto, rodízio e o peso do STF"
+  ],
+  [
+   "p",
+   "A eleição é por voto secreto, o que permite candidaturas individuais e apoios não declarados. O PL avalia defender a votação aberta, que, segundo o DGABC, teria o objetivo de pressionar parlamentares eleitos com o apoio do bolsonarismo; o tema seria discutido pela bancada na quarta (4). Tereza afirmou em nota, em 27 de outubro, que o voto dos senadores é livre, soberano e secreto."
+  ],
+  [
+   "p",
+   "Marinho diz haver um acordo para que os dois não sejam candidatos um contra o outro. Tereza confirma as conversas, mas afirma que as duas candidaturas estão mantidas. A oposição discute um rodízio, com um nome em 2027 e outro em 2029, e, segundo a CNN Brasil, a estratégia de Tereza é manter a candidatura até o fim para ganhar força e só então tentar convencer Marinho a desistir. Os dois se reuniram na semana anterior sem chegar a acordo."
+  ],
+  [
+   "p",
+   "A disputa também passa pelo Supremo. Parlamentares do PL afirmam, segundo a Gazeta do Povo, que Alcolumbre mantém engavetados pedidos de impeachment do ministro Alexandre de Moraes e dizem querer derrotá-lo para fazê-los andar. Condenar um ministro no Senado exige 54 dos 81 votos. O cientista político Elias Tavares, ouvido pelo Correio da Manhã, calcula que ao menos 49 senadores são favoráveis ao impeachment de ministros, mas que a maioria necessária ainda não existe, embora a distância tenha diminuído."
+  ],
+  [
+   "p",
+   "O Globo revelou, segundo o Correio do Estado, uma articulação entre Congresso, governo e Judiciário para atenuar a situação judicial de Jair Bolsonaro, rejeitada pela bancada do PL e por senadores da oposição. Damares Alves (Republicanos-DF) e Hamilton Mourão (Republicanos-RS) recusaram vincular a eleição da Mesa ao caso de Bolsonaro."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "A votação é em 1º de fevereiro de 2027, dia em que toma posse a nova legislatura, e Tereza diz que faltam menos de 90 dias. Ela pretende acompanhar o placar da semana e avaliar novos apoios. O PL deve decidir se defenderá o voto aberto, a oposição precisa definir se terá um ou dois candidatos, e os votos de Republicanos, Podemos e PSDB, que somam 16 parlamentares, estão em disputa entre as candidaturas."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Os números de cada campo vêm de aliados dos próprios candidatos: o grupo de Alcolumbre diz ter 48 votos, e aliados de Tereza estimam de 7 a 8 a menos. Nenhuma contagem independente foi encontrada.",
+    "As páginas consultadas são de 3 de novembro ou não têm data e não informam se o lançamento de Marinho ocorreu na quarta (4) nem o que o PL decidiu sobre o voto aberto.",
+    "A bancada do PL aparece com 29 senadores no Correio do Estado e com 28 no Times Brasil, na Gazeta do Povo e no levantamento da ARX; as matérias não explicam a diferença.",
+    "O rodízio entre Marinho e Tereza é uma discussão da oposição: nenhum dos dois confirmou que aceitaria desistir.",
+    "A Agenda do Poder, que atribui a informação ao UOL, diz que ministros do STF atuam nos bastidores pela reeleição de Alcolumbre, por receio de processos de impeachment. É informação de bastidor, não foi confirmada pelos citados, e a própria matéria ressalva que contatos ou vínculos, por si sós, não comprovam irregularidades."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Itatiaia (CNN Brasil)",
+   "https://www.itatiaia.com.br/politica/tereza-cristina-mantem-candidatura-e-vira-3a-via-ao-comando-do-senado/"
+  ],
+  [
+   "DGABC",
+   "https://www.dgabc.com.br/Noticia/4366631/tereza-cristina-reafirma-candidatura-a-presidencia-do-senado-e-pl-quer-voto-aberto"
+  ],
+  [
+   "Correio do Estado",
+   "https://correiodoestado.com.br/politica/tereza-cristina-e-rogerio-marinho-travam-duelo-pelos-votos-do-centrao/476152/"
+  ],
+  [
+   "Gazeta do Povo (Tereza Cristina critica o apoio à reeleição)",
+   "https://www.gazetadopovo.com.br/republica/tereza-cristina-critica-apoio-uniao-brasil-pp-reeleicao-alcolumbre/"
+  ],
+  [
+   "Correio da Manhã (Elias Tavares)",
+   "https://www.correiodamanha.com.br/politica/2026/10/324752-aumento-da-direita-no-congresso-amplia-articulacao-mas-nao-garante-aprovacao-de-pautas-avalia-especialista.html"
+  ],
+  [
+   "Agenda do Poder",
+   "https://agendadopoder.com.br/ministros-do-stf-atuam-nos-bastidores-para-reeleger-alcolumbre-e-barrar-ameaca-de-impeachment-no-senado/"
+  ]
+ ]
+};
+S.congresso_direita = {
+ "ed": "politica",
+ "k": "Política · Congresso",
+ "hora": "7/11",
+ "t": "Direita terá maioria nas duas Casas em 2027, mostra levantamento da ARX; PL lidera Câmara e Senado, mas as pautas dependem do Centro",
+ "sub": "Direita e centro-direita somam 303 dos 513 deputados e 63% do Senado. Condenar um ministro do STF no Senado exige 54 dos 81 votos.",
+ "dado": {
+  "n": "121",
+  "l": "deputados do PL, a maior bancada da Câmara em 2027 · no Senado, 28 ou 29, conforme a fonte"
+ },
+ "resumo": "A direita e a centro-direita somam 303 dos 513 deputados (59,1%) e 63% do Senado na legislatura que começa em 1º de fevereiro, segundo a ARX Investimentos. O PL tem 121 deputados e 28 ou 29 senadores, conforme a fonte: a maior bancada nas duas Casas. Analistas dizem que a maioria numérica não garante aprovar pautas como o impeachment de ministros do STF, que exige 54 dos 81 votos. O PT elegeu 9 senadores, e o governo deve negociar com o Centrão.",
+ "upd": "A matéria foi reescrita com mais fontes (Times Brasil, Gazeta do Povo e Correio da Manhã), a composição das bancadas, as divergências entre as contagens e o que está em aberto até a posse.",
+ "fundo": [
+  [
+   "p",
+   "A direita e a centro-direita terão maioria nas duas Casas do Congresso que toma posse em 1º de fevereiro de 2027: 303 dos 513 deputados (59,1%) e 63% do Senado, segundo levantamento da ARX Investimentos divulgado neste sábado (7) pela TV Sim Brasil. O PL, partido de Flávio Bolsonaro, será a maior bancada na Câmara e no Senado, e o governo do presidente reeleito, Lula, deve precisar negociar com o Centrão."
+  ],
+  [
+   "p",
+   "Pela ARX, a Câmara terá 303 deputados de direita, 86 de centro e 124 de esquerda. A bancada do PL chega a 121 deputados, entre 22 e 24 a mais do que em 2022 (as fontes divergem sobre a base, de 97 a 99). O PT elege 70, e o Times Brasil projeta, entre os demais, União Brasil com 46, PSD com 43, PP e Republicanos com 41 cada, MDB com 36 e Podemos com 27. PSD, União, Republicanos e PP somam 171."
+  ],
+  [
+   "nums",
+   [
+    [
+     "303",
+     "dos 513 deputados são de direita ou centro-direita (59,1%), pela ARX"
+    ],
+    [
+     "121",
+     "deputados do PL, a maior bancada da Câmara"
+    ],
+    [
+     "28 ou 29",
+     "senadores do PL, de 81, a depender da fonte"
+    ],
+    [
+     "19",
+     "senadores eleitos pelo PL em 2026, o maior número de um partido numa eleição desde 1988"
+    ],
+    [
+     "54",
+     "votos de 81 para condenar um ministro do STF no Senado"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "O Senado"
+  ],
+  [
+   "p",
+   "O PL elegeu 19 dos 54 senadores em jogo em 2026, a maior votação de um partido para o Senado desde 1988; o recorde anterior era de 14 vagas. A Gazeta do Povo soma 28 senadores para o partido: os 19 eleitos, 8 com mandato até 2031 e 1 suplente. Se os 28 se confirmarem, será a maior bancada no início de uma legislatura desde 1988; o recorde anterior era do PMDB, que começou 1999 com 27 senadores, segundo o Times Brasil."
+  ],
+  [
+   "p",
+   "O PT terá 9 senadores. O PSD, que começou a legislatura atual com 15, deve ter 5 em 2027, de acordo com o Times Brasil; a Gazeta do Povo diz que o Centrão encolheu e tende a ser menos decisivo em processos como impeachment e escolha de ministros do STF. Foram eleitas 12 mulheres, o maior número da história do Senado."
+  ],
+  [
+   "h",
+   "Por que a maioria numérica não é automática"
+  ],
+  [
+   "p",
+   "O cientista político Elias Tavares avalia, em entrevista ao Correio da Manhã, que o aumento da bancada de direita não significa aprovação automática de pautas: o campo ainda precisa formar maioria, principalmente com partidos de centro. Temas como anistia e mudanças na relação entre Congresso e STF encontrariam ambiente mais favorável, mas sem garantia. Ao menos 49 senadores seriam favoráveis ao impeachment de ministros do Supremo, e a condenação exige 54, uma maioria que, para ele, ainda não existe."
+  ],
+  [
+   "p",
+   "O analista Alexandre Bandeira, ouvido pela Gazeta do Povo, diz que o PL conseguiu transformar uma agenda específica, com impeachment de ministros do STF, anistia e revisão de penas, em votos. Para Juan Carlos Arruda, do Ranking dos Políticos, a eleição foi um plebiscito sobre o protagonismo do STF, mas defender o instrumento do impeachment é diferente de votar pela condenação num caso concreto."
+  ],
+  [
+   "p",
+   "Cristiano Noronha, da Arko Advice, afirma que a situação pode ajudar o governo, mas também trazer custo e desgaste ao presidente. Ele lembra que o União Brasil entregou só de 60% a 65% dos votos da bancada na Câmara no terceiro mandato de Lula."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "Os deputados eleitos tomam posse em 1º de fevereiro de 2027, dia em que também ocorre a eleição para a presidência do Senado. O governo aposta na reeleição de Hugo Motta (Republicanos-PB) na Câmara e de Davi Alcolumbre (União-AP) no Senado, onde o PL tem Rogério Marinho como candidato e a senadora Tereza Cristina (PP-MS) também mantém o nome. Lula convidou Motta e Alcolumbre para acompanhá-lo à COP31, na Turquia."
+  ],
+  [
+   "h",
+   "O que ainda não está definido"
+  ],
+  [
+   "ul",
+   [
+    "As contagens variam. O Correio da Manhã, com dados do primeiro turno divulgados pelo TSE, soma 281 deputados e 49 senadores de direita; a ARX chega a 303 deputados e 63% do Senado. As classificações ideológicas não são as mesmas.",
+    "A bancada do PL no Senado é de 28 na maior parte das fontes e de 29 no Correio do Estado e na Agenda do Poder.",
+    "O Senado ainda pode mudar até a posse. Cleitinho (Republicanos-MG), eleito governador no primeiro turno, será substituído pelo primeiro suplente, Alex Diniz (PL), segundo o Times Brasil.",
+    "Deltan Dallagnol (Novo-PR) foi eleito, mas o registro está \"deferido com recurso\": o ministro do TSE Floriano de Azevedo Marques negou a candidatura em 3 de outubro, e o presidente do tribunal, Kassio Nunes Marques, derrubou a decisão no dia da eleição. O plenário decide. Se a inelegibilidade for confirmada, haverá nova eleição no Paraná."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "TV Sim Brasil (levantamento da ARX)",
+   "https://tvsimbrasil.com.br/brasil/politica/noticia/2026/11/07/lula-tera-congresso-maioria-direita"
+  ],
+  [
+   "Times Brasil (CNBC)",
+   "https://timesbrasil.com.br/brasil/decisao-2026-como-ficam-as-bancadas-partidarias-apos-as-eleicoes/"
+  ],
+  [
+   "Gazeta do Povo (PL no Senado)",
+   "https://www.gazetadopovo.com.br/republica/pl-amplia-forca-senado-transforma-casa-peca-chave-proximo-governo/"
+  ],
+  [
+   "Correio da Manhã (Elias Tavares)",
+   "https://www.correiodamanha.com.br/politica/2026/10/324752-aumento-da-direita-no-congresso-amplia-articulacao-mas-nao-garante-aprovacao-de-pautas-avalia-especialista.html"
+  ]
+ ]
+};
+S.vr_va_interop = {
+ "ed": "economia",
+ "k": "Economia · Consumo",
+ "hora": "7/11",
+ "t": "VR e VA passam a valer em qualquer maquininha habilitada desde sábado (7); setor reclama de falta de integração e discute regras na Justiça",
+ "sub": "Taxa máxima de 3,6%, intercâmbio de até 2% e repasse em até 15 dias. O Ministério do Trabalho diz que não vai prorrogar o prazo e prevê multas de R$ 5 mil a R$ 50 mil.",
+ "dado": {
+  "n": "3,6%",
+  "l": "taxa máxima cobrada do estabelecimento · intercâmbio até 2% e repasse em até 15 dias"
+ },
+ "resumo": "Desde este sábado (7), cartões de vale-refeição e vale-alimentação de Alelo, Ticket, VR Benefícios, Pluxee, Flash e Swile valem em qualquer maquininha habilitada, última etapa do decreto de novembro de 2025. O trabalhador não precisa fazer nada, e o saldo não muda. A taxa máxima é de 3,6%, o intercâmbio, de até 2%, e o repasse, em até 15 dias. O Ministério do Trabalho não pretende prorrogar o prazo; a Abrasel aponta falta de integração, e operadoras contestam parte das regras na Justiça.",
+ "upd": "A matéria foi reescrita com o que muda para trabalhador, comerciante e empresa, as multas, o cronograma do decreto e a posição de Abrasel, ABBT, Abecs e Ministério do Trabalho.",
+ "fundo": [
+  [
+   "p",
+   "Os cartões de vale-refeição (VR) e vale-alimentação (VA) passaram a ser aceitos em qualquer maquininha habilitada para esse tipo de pagamento a partir deste sábado (7), a última etapa do cronograma do decreto de novembro de 2025 que atualizou o Programa de Alimentação do Trabalhador (PAT). A regra alcança cartões de Alelo, Ticket, VR Benefícios, Pluxee, Flash e Swile, desde que o estabelecimento aceite esse meio de pagamento."
+  ],
+  [
+   "p",
+   "Na prática, um restaurante que aceita uma bandeira poderá receber cartões de outras operadoras, se a maquininha estiver habilitada. O saldo do trabalhador e a finalidade do benefício não mudam: o VR segue restrito a refeições prontas, e o VA, a alimentos no comércio varejista. Não é preciso trocar o cartão nem atualizar cadastro, e a expectativa é ampliar a aceitação em bairros afastados, cidades menores e áreas rurais, informa a Folhapress."
+  ],
+  [
+   "nums",
+   [
+    [
+     "3,6%",
+     "teto da taxa cobrada do estabelecimento"
+    ],
+    [
+     "2%",
+     "teto da tarifa de intercâmbio, dentro dos 3,6%"
+    ],
+    [
+     "15",
+     "dias corridos para o repasse ao comerciante"
+    ],
+    [
+     "R$ 5 mil a R$ 50 mil",
+     "multa por descumprimento, com possibilidade de cobrança em dobro na reincidência"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "O que muda para trabalhador, comerciante e empresa"
+  ],
+  [
+   "p",
+   "Para o trabalhador, a orientação é não fazer nada. Se o cartão for recusado em estabelecimento que aceita VR ou VA, a Folhapress recomenda anotar o nome do local, a data e o horário e, se possível, fotografar a mensagem da maquininha; o primeiro contato é a operadora e o RH da empresa, e, persistindo o problema, a denúncia vai ao Ministério do Trabalho e Emprego (MTE), que fiscaliza o PAT. Mensagens que peçam dados pessoais, senha ou atualização obrigatória do cartão devem ser vistas com desconfiança."
+  ],
+  [
+   "p",
+   "Para o comerciante, a Abrasel (bares e restaurantes) afirma que a interoperabilidade não exige investimento nem troca de equipamento: a adaptação técnica é das operadoras de benefícios e das credenciadoras. Vale confirmar com a credenciadora se equipamento e cadastro estão habilitados. Quem não opera com esse meio de pagamento não é obrigado a aceitá-lo, informa a Agência Brasil."
+  ],
+  [
+   "p",
+   "Para as empresas, o valor pago aos funcionários não muda. O decreto veda cashback, deságio e descontos nas operações do PAT e proíbe exigir exclusividade de rede ou de bandeira, segundo o IstoÉ Dinheiro. Facilitadoras com menos de 500 mil trabalhadores podem manter arranjo fechado."
+  ],
+  [
+   "h",
+   "Taxas, prazos e fiscalização"
+  ],
+  [
+   "p",
+   "O teto da taxa de desconto cobrada do estabelecimento é de 3,6%, e a tarifa de intercâmbio, que já está dentro desse limite, não pode passar de 2%. O repasse ao comerciante deve ocorrer em até 15 dias corridos; antes era de 30 dias, segundo o IstoÉ Dinheiro, e podia ultrapassar isso, segundo a Agência Brasil. Também estão proibidas taxas de adesão e anuidade. As regras de taxas e repasse valem desde fevereiro de 2026."
+  ],
+  [
+   "p",
+   "O decreto fixou prazos de 90 dias para taxas e repasse, 180 dias para a abertura dos arranjos com mais de 500 mil trabalhadores e 360 dias para a interoperabilidade total, que chegou agora. A fiscalização é da Secretaria de Inspeção do Trabalho, e as multas vão de R$ 5 mil a R$ 50 mil, com possibilidade de cobrança em dobro em caso de reincidência ou de dificuldade imposta à fiscalização. Empresas podem perder o registro no PAT e os benefícios fiscais ligados ao programa."
+  ],
+  [
+   "p",
+   "O Ministério do Trabalho diz que não pretende prorrogar o prazo e que a falta de regulamentação complementar não elimina a obrigação do decreto. Em julho, o órgão esclareceu que as regras alcançam também empresas que concedem os benefícios fora do PAT, segundo a Tribuna de Jundiaí."
+  ],
+  [
+   "h",
+   "Setor aponta falhas e contesta regras na Justiça"
+  ],
+  [
+   "p",
+   "A Abrasel relata falta de integração plena entre os sistemas das operadoras de benefícios e os das credenciadoras de maquininhas, o que causa falhas na identificação das transações e na conciliação financeira. A entidade afirma ainda que empresas do setor migraram operações para modalidades fora do teto de taxas. A Abecs, associação do setor de pagamentos, diz que os sistemas estão sendo preparados com varejistas e outros participantes."
+  ],
+  [
+   "p",
+   "A ABBT, que reúne empresas de benefícios ao trabalhador, e operadoras do setor contestam na Justiça o limite de tarifas e a mudança da estrutura por decreto, e alegam dificuldade de controlar os credenciados no modelo de arranjo aberto. Liminares chegaram a suspender exigências de forma provisória, mas foram derrubadas, segundo a Agência Brasil."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "A etapa de interoperabilidade já vale, e o descumprimento pode render multas. O Ministério do Trabalho diz que não vai prorrogar o prazo. Operadoras e credenciadoras ainda precisam concluir a integração dos sistemas, segundo a Abrasel, e a contestação das operadoras ao decreto é feita na Justiça."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Não há dado público sobre quantos estabelecimentos já estão habilitados nem sobre o volume de recusas desde sábado; as matérias consultadas não trazem esses números.",
+    "A Agência Brasil não detalha quais exigências foram suspensas pelas liminares nem quais ações seguem em curso.",
+    "As fontes divergem sobre a data do decreto: o IstoÉ Dinheiro diz que foi assinado em 11 de novembro de 2025, e a Tribuna de Jundiaí fala em publicação em 12 de novembro."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Repórter Ceará (texto da Agência Brasil)",
+   "https://reporterceara.com.br/2026/11/07/vr-e-va-podem-ser-aceitos-em-mais-maquininhas-a-partir-deste-sabado-7/"
+  ],
+  [
+   "Bahia Notícias (Folhapress)",
+   "https://www.bahianoticias.com.br/folha/noticia/415352-veja-o-que-muda-com-as-novas-regras-para-vale-refeicao-e-alimentacao"
+  ],
+  [
+   "O Liberal (Agência Brasil)",
+   "https://www.oliberal.com/brasil/mudancas-nos-cart-es-de-vales-alimentac-o-e-refeic-o-entram-em-vigor-dia-7-1.1189422"
+  ],
+  [
+   "IstoÉ Dinheiro (decreto)",
+   "https://istoedinheiro.com.br/vale-refeicao-maquininha-o-que-muda"
+  ],
+  [
+   "Tribuna de Jundiaí",
+   "https://tribunadejundiai.com.br/mais/brasil/vale-alimentacao-vale-refeicao-maquininhas-novembro-2026/"
+  ]
+ ]
+};
+S.lula_equipe_eco = {
+ "ed": "politica",
+ "k": "Política · Bastidores",
+ "hora": "7/11",
+ "t": "Bastidor: ala do Planalto quer que Lula dê sinal ao mercado antes da COP31; Alckmin na Fazenda e a permanência de Durigan são hipóteses",
+ "sub": "Lula resiste a antecipar a equipe econômica e embarca na segunda (9) para a Turquia; o pronunciamento em rede nacional é no domingo (8). Nada foi confirmado pelo Planalto.",
+ "resumo": "Uma ala do Planalto quer um gesto concreto ao mercado financeiro antes da viagem de Lula à COP31, que vá além do pronunciamento em cadeia de rádio e TV de domingo (8), segundo a coluna de Neila Guimarães, no Metrópoles. Entre as hipóteses estão Geraldo Alckmin na Fazenda, o governador Rafael Fonteles e a permanência de Dario Durigan, que assumiu o ministério em março. Lula resiste a antecipar o anúncio. É informação de bastidor, não confirmada pelo Planalto.",
+ "upd": "A matéria foi reescrita com o contexto de quem comanda a Fazenda hoje (Durigan, desde março), a agenda de Lula até as Filipinas e a separação entre o que é informado e o que não está confirmado.",
+ "fundo": [
+  [
+   "p",
+   "Uma ala do Planalto defende que o presidente Lula dê um sinal concreto ao mercado financeiro antes de viajar à COP31, na Turquia, mas o presidente resiste a antecipar a equipe econômica do quarto mandato e pretende apresentá-la depois da viagem, segundo coluna publicada neste sábado (7) no Metrópoles. Entre as hipóteses citadas estão Geraldo Alckmin na Fazenda, o governador reeleito do Piauí, Rafael Fonteles, e a permanência de Dario Durigan."
+  ],
+  [
+   "p",
+   "Para os interlocutores ouvidos pela coluna de Neila Guimarães, o gesto deve ir além do pronunciamento em cadeia nacional de rádio e TV marcado para domingo (8). Um interlocutor do governo, não identificado, tratou a eventual indicação de Alckmin (PSB), que completa 74 anos neste sábado, como um presente de aniversário. Lula embarca na segunda (9) para a Turquia, onde a cúpula de líderes da COP31 ocorre em 11 e 12 de novembro, e depois segue para as Filipinas."
+  ],
+  [
+   "h",
+   "Quem comanda a Fazenda hoje"
+  ],
+  [
+   "p",
+   "O ministro da Fazenda é Dario Durigan, 41 anos, que assumiu em março, depois de Fernando Haddad deixar o cargo para disputar o governo de São Paulo. Lula o confirmou como substituto em 19 de março, durante a 17ª caravana federativa, na capital paulista, segundo a Jovem Pan. Durigan era secretário-executivo da pasta desde 2023, posto que ocupou depois da saída de Gabriel Galípolo para a presidência do Banco Central."
+  ],
+  [
+   "p",
+   "Natural de Bebedouro (SP), Durigan passou pela Advocacia-Geral da União, pela Prefeitura de São Paulo e pela Casa Civil, presidiu o conselho do Banco do Brasil e foi diretor de políticas públicas do WhatsApp na América Latina, de acordo com a mesma reportagem."
+  ],
+  [
+   "h",
+   "O desenho do próximo ministério"
+  ],
+  [
+   "p",
+   "O portal O Rio Branco publicou no mesmo dia que, na terceira passagem, Lula precisou de 38 cadeiras numa reunião ministerial e que o número pode chegar a 40 no quarto mandato. Os cargos servirão, diz o texto, para acomodar derrotados nas urnas, ampliar a base e preparar a sucessão. Para a Fazenda e a Casa Civil, os nomes citados são Camilo Santana, Rafael Fonteles e Fernando Haddad. A divisão das pastas entre os partidos de centro aparece na matéria sobre o quarto mandato e os 40 ministérios."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "O primeiro marco é o pronunciamento de domingo (8), em rede nacional. Lula viaja na segunda (9) e só deve apresentar a equipe econômica depois da volta, segundo a coluna. Hugo Motta (Republicanos-PB) e Davi Alcolumbre (União-AP) foram convidados a acompanhá-lo à COP31 e ainda avaliavam o convite."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Nenhum dos nomes foi confirmado pelo Planalto, e a coluna se apoia em interlocutores não identificados.",
+    "Não se sabe se Lula mudará a decisão de anunciar a equipe só depois da viagem.",
+    "A informação sobre até 40 ministérios vem de um único portal, O Rio Branco, e não foi encontrada em outro veículo nas páginas consultadas."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Metrópoles (coluna de Neila Guimarães)",
+   "https://www.metropoles.com/colunas/neila-guimaraes/ala-do-planalto-espera-aceno-de-lula-ao-mercado-antes-da-cop31"
+  ],
+  [
+   "O Rio Branco",
+   "https://oriobranco.net/as-estrategias-que-estao-na-mesa-de-lula-para-definir-o-time-de-ministros-da-nova-gestao/"
+  ],
+  [
+   "Jovem Pan (Durigan na Fazenda)",
+   "https://jovempan.com.br/politica/lula-confirma-dario-durigan-no-lugar-de-haddad-no-ministerio-da-fazenda/"
+  ]
+ ]
+};
+S.paraguai = {
+ "ed": "mundo",
+ "k": "Mundo",
+ "hora": "7/11",
+ "t": "Paraguai destitui Peña, prende o ex-presidente e empossa Alliana em meio à quebra do Ueno Bank",
+ "sub": "Senado votou 44 a 0 na sexta (6); neste sábado, Peña foi interrogado, os promotores pedem prisão preventiva e os EUA reconheceram o sucessor.",
+ "dado": {
+  "n": "44 a 0",
+  "l": "Votos do Senado paraguaio pela destituição de Peña · mandato de Alliana vai até agosto de 2028"
+ },
+ "resumo": "O Senado paraguaio destituiu Santiago Peña na sexta (6), por 44 votos a 0, por mau desempenho no caso do Ueno Bank, e o vice Pedro Alliana assumiu até agosto de 2028. O Ministério Público mandou prender Peña, que passou a noite sob custódia policial e foi interrogado neste sábado (7); segundo a Al Jazeera, ele foi acusado de lesão de confiança, e os promotores pedem prisão preventiva. Os EUA reconheceram Alliana, e o Banco Central diz já ter reembolsado 1,2 milhão de clientes do banco.",
+ "upd": "Texto reorganizado em parágrafos mais curtos, com o lide enxugado e o acréscimo de Carvallo ao pedido de prisão preventiva. Não há fato novo desde as 15h.",
+ "fundo": [
+  [
+   "p",
+   "O Senado do Paraguai destituiu o presidente Santiago Peña na noite de sexta (6), por 44 votos a 0, por “mau desempenho das funções” no caso do Ueno Bank, e o vice, Pedro Alliana, assumiu para completar o mandato, que termina em agosto de 2028. O Ministério Público mandou prender Peña, que foi interrogado neste sábado (7) em Assunção e, segundo a Al Jazeera, acusado de lesão de confiança."
+  ],
+  [
+   "p",
+   "Peña também foi acusado de administração em benefício próprio, de acordo com a Al Jazeera, que cita a Reuters. Os promotores pedem prisão preventiva para ele e para o ex-presidente do Banco Central Carlos Carvallo, que presidiu o Ueno antes de chefiar a autoridade monetária."
+  ],
+  [
+   "p",
+   "A queda veio três dias depois de o Banco Central fechar o Ueno, banco digital com cerca de 3 milhões de clientes que ficaram sem acesso a contas e cartões. Peña, que governava desde agosto de 2023, foi acionista do grupo dono do banco até março de 2025 e nomeou para o comando do Banco Central o ex-presidente do Ueno, Carvallo; ele nega irregularidades. O que selou o processo, porém, foi a política: o ex-presidente Horacio Cartes, chefe do Partido Colorado e padrinho político de Peña, retirou o apoio na quinta (5) e passou a defender a destituição."
+  ],
+  [
+   "nums",
+   [
+    [
+     "44",
+     "votos pela destituição no Senado; nenhum contra e um senador ausente"
+    ],
+    [
+     "78",
+     "votos da Câmara a favor da acusação, na quinta (5)"
+    ],
+    [
+     "27",
+     "pessoas acusadas formalmente no caso Ueno Bank"
+    ],
+    [
+     "39",
+     "pessoas na investigação aberta pela Procuradoria-Geral, entre elas Peña e Alliana"
+    ],
+    [
+     "1,2 mi",
+     "clientes do Ueno com reembolso total ou parcial, segundo o Banco Central"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Dois dias de rito acelerado"
+  ],
+  [
+   "p",
+   "A Câmara abriu o juízo político na quinta pela manhã e aprovou a acusação por 78 votos a 0; no mesmo dia, rejeitou por 48 a 30 o processo contra Alliana. Peña anunciou a renúncia por volta das 13h30, mas o Congresso não a aceitou e seguiu com o julgamento. Na sexta, 44 senadores deram quórum. Peña pediu 72 horas para preparar a defesa, e o Senado negou, por 39 votos. Ele não foi ao Congresso e enviou os advogados Adolfo Ferreiro e Ricardo Preda, que sustentaram que o julgamento era nulo porque o presidente já havia renunciado. A La Nación registrou quase 70 discursos, nenhum em defesa de Peña. Às 18h21, segundo o jornal, Peña voltou a apresentar a renúncia, sem efeito, e foi destituído meia hora depois."
+  ],
+  [
+   "p",
+   "A renúncia importava por um motivo concreto: ex-presidentes que deixam o cargo sem serem destituídos viram senadores vitalícios, com foro e imunidade, e a oposição e os manifestantes viam na saída antecipada uma manobra para preservar esse posto. A destituição o retira. Pouco antes das 19h, o presidente do Senado e do Congresso, Basilio Núñez, declarou Peña culpado e afirmou, em tradução livre: “Não podemos ficar nem mais um minuto governados por esse delinquente”."
+  ],
+  [
+   "h",
+   "A prisão e o interrogatório"
+  ],
+  [
+   "p",
+   "Segundo a La Nación, Peña foi detido na noite de sexta em casa, num bairro residencial de Assunção, enquanto Alliana prestava juramento, às 19h49. Manifestantes se reuniram em frente à residência; depois de incidentes com manifestantes, o ex-presidente foi levado ao Regimento Escolta Presidencial por razões de segurança, de acordo com o ABC Color. Carvallo se entregou à polícia na noite de sexta e está no Departamento de Investigações, em Assunção; o Ministério Público pediu que ele seja transferido para um grupamento especializado da Polícia Nacional, também por segurança."
+  ],
+  [
+   "p",
+   "No sábado, Peña chegou à Procuradoria-Geral num carro, com escolta reduzida e sem algemas, segundo imagens de veículos locais citadas pela EFE. O local foi trocado horas antes, da unidade de Delitos Econômicos e Anticorrupção para a sede central, por “razões de segurança”. O promotor Cristian Benítez disse que um juiz de garantias decidirá onde Peña ficará durante o processo e classificou o caso como difícil. A situação dele ainda é descrita de formas diferentes: a Infobae e a AP falam em prisão domiciliar até o comparecimento, o ABC Color relata a passagem pelo regimento, e a Al Jazeera informa o pedido de prisão preventiva. A AP diz que as acusações podem render até dez anos de prisão."
+  ],
+  [
+   "h",
+   "O que diz a acusação e o que responde a defesa"
+  ],
+  [
+   "p",
+   "A acusação aprovada pelos deputados, conduzida pela oposicionista Rocío Vallejo, aponta conflito de interesses (Peña foi acionista do Ueno Holding até março de 2025), a nomeação de Carvallo, que presidiu o Ueno entre 2022 e 2023, para o Banco Central, falhas de supervisão e a aplicação de cerca de US$ 355 milhões do fundo de previdência (IPS) no banco, acima dos limites legais. Peña nega ilícitos, diz que vendeu a participação e sustenta que os problemas do banco são uma questão regulatória. Os advogados denunciam violação do devido processo e ameaçam pedir a nulidade e recorrer a órgãos internacionais, segundo a Última Hora."
+  ],
+  [
+   "p",
+   "Há ainda uma investigação mais ampla. Na quinta, o procurador-geral, Emiliano Rolón, abriu inquérito sobre 39 pessoas, entre elas Peña, Alliana e dirigentes e ex-dirigentes do Banco Central, da Superintendência de Bancos, da Previdência, das binacionais Itaipu e Yacyretá e do Ministério da Economia, informa a Última Hora. A resolução, diz o jornal, não descreve a conduta atribuída a cada um, inclusive ao vice. Alliana é citado numa denúncia apresentada por senadores, e a Câmara rejeitou o processo político contra ele."
+  ],
+  [
+   "h",
+   "Alliana assume com a missão de acalmar os poupadores"
+  ],
+  [
+   "p",
+   "Pedro Alliana, 52 anos, nasceu em Pilar, no departamento de Ñeembucú, onde foi governador (2008–2012). Foi deputado por cerca de uma década, presidiu a Câmara entre 2019 e 2022 e comandou o Partido Colorado de 2016 a 2023, quando foi sucedido por Cartes, segundo a La Nación. É vice desde agosto de 2023 e integra o grupo de Cartes, o Honor Colorado. O senador Antonio Barrios, descrito pela La Nación como médico de Cartes, foi designado vice-presidente."
+  ],
+  [
+   "p",
+   "Na posse, Alliana prometeu compensar plenamente os afetados pela quebra, com prioridade para os mais pobres, cortar gastos que considera desnecessários, limitar as viagens de ministros ao exterior e exigir relatórios diários de resultados, segundo a La Nación e a Infobae. A Última Hora conta ao menos quatro saídas no governo, entre elas a do assessor político José Alberto Alderete. Alliana também enfrenta desconfiança: a Al Jazeera registra manifestantes frustrados com a posse de Alliana, que pertence ao mesmo partido e é citado em denúncias ligadas ao caso."
+  ],
+  [
+   "h",
+   "Reação internacional e efeito econômico"
+  ],
+  [
+   "p",
+   "O secretário-adjunto de Estado dos EUA para o Hemisfério Ocidental, Juan Pablo Segura, escreveu no X, neste sábado, que o Paraguai é parceiro estratégico, amigo e aliado de Washington e que o país espera trabalhar com o presidente Alliana. A embaixada americana em Assunção pediu que autoridades e cidadãos mantenham a paz e respeitem as instituições democráticas, segundo a Última Hora. De acordo com a AP, reproduzida pela Euronews, os títulos paraguaios perderam valor e o guarani se desvalorizou frente ao dólar; um aplicativo de transporte suspendeu operações, deixando 3 mil motoristas sem trabalho, e US$ 21 milhões em obras públicas foram congelados."
+  ],
+  [
+   "p",
+   "O Banco Central diz que o caso é isolado e que o sistema financeiro segue estável, e a S&P avalia que o crescimento deve resistir ao impacto de curto prazo, segundo o The New York Times, via Infobae. A economia paraguaia cresceu 6,6% no ano passado."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "O primeiro passo é a decisão do juiz de garantias sobre a prisão preventiva e o local de custódia de Peña e Carvallo; as fontes lidas não informam a data da audiência. No Banco Central, a indicação de Peña para a presidência, Raúl Vera Bogado, que já chefiou o órgão em 2001 e 2002, depende do Senado, segundo a Infobae, e as fontes não dizem se Alliana a manterá. O banco central afirma que 1,2 milhão de clientes receberam reembolso total ou parcial de depósitos segurados, conforme a Al Jazeera; cerca de 87 mil poupadores têm saldos acima do teto de garantia e ficariam sem cobertura integral, segundo a Infobae."
+  ],
+  [
+   "p",
+   "Peña é o segundo presidente do período democrático destituído por juízo político, depois de Fernando Lugo, em 2012. Se for condenado e preso, seria o primeiro ex-presidente da era democrática a cumprir pena de prisão, observa a Última Hora, que trata a hipótese como possibilidade, não como resultado."
+  ],
+  [
+   "h",
+   "Linha do tempo"
+  ],
+  [
+   "tl",
+   [
+    [
+     "2 e 3/11",
+     "O Banco Central conclui que o Ueno não cumpre a solvência mínima e fecha o banco na madrugada de terça. Carvallo renuncia à presidência do BC."
+    ],
+    [
+     "4/11",
+     "O Ministério Público acusa 27 pessoas; Peña promulga lei de emergência para antecipar pagamentos; a oposição apresenta o pedido de juízo político."
+    ],
+    [
+     "5/11",
+     "Cartes retira o apoio a Peña. A Câmara aprova a acusação por 78 a 0 e poupa Alliana (48 a 30). Peña anuncia a renúncia, que o Congresso não aceita. A Procuradoria abre inquérito sobre 39 pessoas."
+    ],
+    [
+     "6/11",
+     "O Senado nega o prazo de 72 horas e destitui Peña por 44 a 0. Alliana jura às 19h49. O Ministério Público manda prender Peña, detido em casa; Carvallo se entrega."
+    ],
+    [
+     "7/11",
+     "Peña presta declaração na Procuradoria-Geral e é acusado; os promotores pedem prisão preventiva. Os EUA reconhecem Alliana. O BC diz ter ressarcido 1,2 milhão de clientes."
+    ]
+   ]
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Onde e em que condição Peña está: as fontes falam em prisão domiciliar, em passagem pelo regimento da Escolta Presidencial e em pedido de prisão preventiva, e nenhuma informa a decisão do juiz.",
+    "A conduta atribuída a Alliana na investigação: a resolução da Procuradoria não a descreve, e a Câmara rejeitou o processo contra ele por 48 a 30.",
+    "O tamanho do prejuízo: Rocío Vallejo cita US$ 1,2 bilhão e diz que o número cresce; não há apuração oficial. Os depósitos públicos no banco aparecem entre US$ 800 milhões e US$ 850 milhões, conforme a fonte.",
+    "O teto de cobertura do fundo de garantia: aparece entre cerca de US$ 20 mil e US$ 38 mil por cliente, conforme a fonte; a lei de emergência permite adiantar até 40 salários mínimos."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Infobae (cronologia da crise)",
+   "https://www.infobae.com/america/america-latina/2026/11/07/cronologia-de-la-crisis-financiera-que-provoco-la-destitucion-y-detencion-de-santiago-pena-en-paraguay/"
+  ],
+  [
+   "Infobae (EFE: Peña em prisão domiciliar)",
+   "https://www.infobae.com/america/agencias/2026/11/07/el-expresidente-santiago-pena-en-arresto-domiciliario-tras-su-detencion-por-la-policia/"
+  ],
+  [
+   "Infobae (posse de Alliana)",
+   "https://www.infobae.com/america/america-latina/2026/11/07/pedro-alliana-asumio-como-presidente-de-paraguay-tras-la-destitucion-de-santiago-pena-por-el-escandalo-del-ueno-bank/"
+  ],
+  [
+   "Infobae (The New York Times)",
+   "https://www.infobae.com/america/the-new-york-times/2026/11/07/el-presidente-de-paraguay-es-destituido-y-arrestado-tras-una-crisis-financiera/"
+  ],
+  [
+   "Al Jazeera (Peña preso e Alliana empossado)",
+   "https://www.aljazeera.com/news/2026/11/7/paraguays-santiago-pena-under-arrest-new-president-pedro-alliana-sworn-in"
+  ],
+  [
+   "Al Jazeera (Reuters: ex-presidente acusado)",
+   "https://www.aljazeera.com/economy/2026/11/7/paraguays-ousted-president-charged-over-banking-scandal"
+  ],
+  [
+   "ABC Color (EFE: comparecimento à Procuradoria)",
+   "https://www.abc.com.py/internacionales/2026/11/07/expresidente-santiago-pena-comparece-ante-la-fiscalia-de-paraguay-por-el-caso-ueno-bank/"
+  ],
+  [
+   "ABC Color (Carvallo se entrega)",
+   "https://www.abc.com.py/policiales/2026/11/07/ueno-bank-expresidente-del-bcp-se-entrego-y-quedo-detenido/"
+  ],
+  [
+   "Última Hora (destituído e detido)",
+   "https://www.ultimahora.com/destituido-y-detenido-pena-puede-convertirse-en-el-primer-presidente-en-terminar-en-prision"
+  ],
+  [
+   "Última Hora (inquérito sobre 39 pessoas)",
+   "https://www.ultimahora.com/fiscalia-abre-investigacion-contra-santiago-pena-pedro-alliana-y-otras-autoridades-tras-escandalo-de-ueno"
+  ],
+  [
+   "Última Hora (reação dos EUA)",
+   "https://www.ultimahora.com/eeuu-se-pronuncia-tras-detencion-de-santiago-pena-y-asuncion-de-pedro-alliana"
+  ],
+  [
+   "La Nación (jornada histórica)",
+   "https://www.lanacion.com.ar/el-mundo/santiago-pena-fue-destituido-y-detenido-tras-una-jornada-historica-en-paraguay-nid06112026/"
+  ],
+  [
+   "La Nación (perfil de Alliana)",
+   "https://www.lanacion.com.ar/el-mundo/quien-es-pedro-alliana-el-nuevo-presidente-de-paraguay-nid06112026/"
+  ],
+  [
+   "Euronews (AP)",
+   "https://pt.euronews.com/2026/11/07/paraguai-destitui-presidente-santiago-pena-em-plena-crise-do-banco-ueno"
+  ],
+  [
+   "Agência Brasil",
+   "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/apos-impeachment-santiago-pena-e-preso-no-paraguai"
+  ]
+ ]
+};
+S.ueno_bank = {
+ "ed": "mundo",
+ "k": "Mundo · Paraguai",
+ "hora": "7/11",
+ "t": "Ueno Bank: o que se sabe sobre a quebra do banco que reunia 3 milhões de clientes e US$ 800 milhões de dinheiro público",
+ "sub": "O Banco Central diz que o capital caiu abaixo da metade do mínimo legal; 27 pessoas foram acusadas e 1,2 milhão de clientes já receberam reembolso.",
+ "dado": {
+  "n": "3 milhões",
+  "l": "Clientes do Ueno Bank com contas bloqueadas · mais de US$ 800 milhões em recursos públicos"
+ },
+ "resumo": "O Banco Central do Paraguai fechou o Ueno Bank na terça (3) depois de concluir que a solvência caiu abaixo da metade do mínimo legal, por empréstimos a empresas ligadas ao grupo controlador. O banco tinha cerca de 3 milhões de clientes e mais de US$ 800 milhões em dinheiro público, e a quebra levou à queda do presidente Santiago Peña. O Ministério Público acusou 27 pessoas; o fundo de garantia cobre cerca de 97% dos depositantes, e o BC diz já ter reembolsado 1,2 milhão de clientes até sábado (7).",
+ "upd": "Lide enxugado e texto reorganizado em parágrafos mais curtos. Não há fato novo desde as 15h.",
+ "fundo": [
+  [
+   "p",
+   "O Banco Central do Paraguai (BCP) fechou o Ueno Bank na madrugada de terça (3) porque o índice de solvência da instituição caiu abaixo de 50% do mínimo exigido por lei. Cerca de 3 milhões de clientes ficaram sem acesso ao dinheiro, e o colapso derrubou, três dias depois, o presidente Santiago Peña."
+  ],
+  [
+   "p",
+   "A diretoria do BCP chegou a essa conclusão na segunda (2), segundo a Infobae, depois que a Superintendência de Bancos encontrou créditos e saques a descoberto elevados para empresas do Grupo Vázquez, controlador do banco, muitos sem garantias suficientes. Aplicativo, cartões, caixas eletrônicos e agências foram bloqueados."
+  ],
+  [
+   "nums",
+   [
+    [
+     "2,9 mi",
+     "clientes, segundo o ABC Color e a Infobae; o banco dizia atender mais da metade dos adultos"
+    ],
+    [
+     "US$ 800 mi",
+     "ou mais em recursos de órgãos públicos, incluindo a Previdência (IPS)"
+    ],
+    [
+     "US$ 146 mi",
+     "em empréstimos a empresas ligadas ao dono, segundo a Al Jazeera"
+    ],
+    [
+     "27",
+     "pessoas acusadas pelo Ministério Público"
+    ],
+    [
+     "97%",
+     "dos depositantes cobertos integralmente pelo fundo de garantia, segundo o BC"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Como o banco cresceu"
+  ],
+  [
+   "p",
+   "O Grupo Vázquez comprou em 2021 a financeira El Comercio e a relançou como banco digital; recebeu licença bancária plena em dezembro de 2023 e, em meados de 2024, absorveu o Visión Banco, segundo a Infobae. A Al Jazeera descreve uma expansão com cashback em supermercados, mais de 70 agências e patrocínio da seleção de futebol. No fim de 2025, o Ueno detinha 8,9% dos depósitos e 5,9% dos empréstimos do sistema, era o quinto do país em depósitos e, em março de 2026, emitiu US$ 350 milhões em títulos com vencimento em 2031, os únicos de um banco paraguaio negociados no exterior."
+  ],
+  [
+   "p",
+   "Para o analista Alejandro García, da Fitch, citado pelo The New York Times, o Ueno construiu um modelo ágil e bem-sucedido que levou muitos paraguaios sem conta bancária ao sistema formal. Segundo o próprio banco, mais de 1 milhão de pessoas abriram ali a primeira conta, número que não foi verificado de forma independente. Parte do crescimento se apoiou em recursos públicos: mais de US$ 800 milhões de órgãos estatais, incluindo cerca de US$ 355 milhões do fundo de previdência IPS, algo próximo de 9% a 10% da carteira do instituto; a Al Jazeera cita US$ 380 milhões do IPS em outra reportagem, com dados do BCP."
+  ],
+  [
+   "h",
+   "O que o Banco Central e o Ministério Público apontam"
+  ],
+  [
+   "p",
+   "Segundo a Al Jazeera, o banco havia emprestado US$ 146 milhões a empresas ligadas ao dono, acima dos limites legais e sem garantias adequadas, e contabilizado como ativos gastos que não poderiam sê-lo; com a correção, o capital ficou abaixo de metade do mínimo. O Ministério Público sustenta, segundo a Infobae, que, depois de a supervisão mandar o banco se desfazer de créditos a empresas relacionadas, o Ueno transferiu uma carteira de US$ 74,4 milhões à Vinanzas SA, ligada ao grupo, que não teria recursos próprios suficientes e teria sido financiada indiretamente pelo próprio banco, o que pode ter escondido a situação real da instituição. O Ministério Público estima que cerca de US$ 167 milhões dificilmente serão recuperados; os dados são acusações e estimativas, ainda não confirmados em juízo."
+  ],
+  [
+   "p",
+   "Na quarta (4), o Ministério Público acusou 27 pessoas, os oito diretores e 19 representantes de empresas ligadas, por conduta indevida em crise financeira, lesão de confiança, tentativa de fraude e violação do dever de manter os livros comerciais. Na quinta, um juiz mandou para a prisão preventiva seis executivos, entre eles o fundador, Miguel Vázquez, e o presidente do banco, Juan Manuel Gustale, e determinou prisão domiciliar para outros dois, segundo a Al Jazeera; na sexta, os executivos foram transferidos para presídios. A Infobae informa bloqueio preventivo de US$ 70 milhões em bens de diretores e das empresas do grupo. A Procuradoria-Geral abriu na quinta um inquérito sobre 39 pessoas, entre elas o presidente Peña e o vice Alliana, mas a resolução não descreve a conduta de cada um, segundo a Última Hora."
+  ],
+  [
+   "h",
+   "Quem paga e quando"
+  ],
+  [
+   "p",
+   "O Congresso aprovou na quarta uma lei de emergência (nº 7.745) que permite antecipar, por meio do Fundo de Garantia de Depósitos, até 40 salários mínimos por poupador. Contas de até 10 milhões de guaranis, cerca de US$ 1,5 mil, foram as primeiras a ser pagas, a partir da noite de quinta. O Banco Central afirma que o fundo cobre integralmente cerca de 97% dos depositantes, estimativa que a S&P também cita. Neste sábado, o BC disse que 1,2 milhão de clientes já haviam recebido reembolso parcial ou total, informa a Al Jazeera."
+  ],
+  [
+   "p",
+   "Quem ficou acima do teto não terá cobertura integral: a Infobae fala em cerca de 87 mil poupadores nessa situação, e analistas citados pelo The New York Times alertam que empresas com grandes depósitos também podem perder dinheiro. O valor do teto varia conforme a reportagem, de cerca de US$ 20 mil a US$ 38 mil por cliente. O presidente Pedro Alliana prometeu compensar plenamente os afetados, sem detalhar mecanismo nem valor. A deputada Rocío Vallejo estima o prejuízo em US$ 1,2 bilhão e diz que o número cresce, estimativa não verificada."
+  ],
+  [
+   "h",
+   "Efeitos sobre economia, emprego e vizinhos"
+  ],
+  [
+   "p",
+   "Segundo a AP, reproduzida pela Euronews, os títulos paraguaios perderam valor e o guarani se desvalorizou frente ao dólar, enquanto um aplicativo de transporte suspendeu as operações, deixando 3 mil motoristas sem trabalho, e US$ 21 milhões de obras públicas ficaram congelados. O Banco Central trata o caso como isolado e diz que o sistema financeiro segue estável; a S&P avalia que o crescimento, de 6,6% no ano passado, deve resistir ao choque de confiança de curto prazo. Na Argentina, a Kaitel SRL, ligada ao grupo ITTI, que o Ministério Público cita entre as empresas para onde teriam fluído recursos, suspendeu parte dos funcionários sem salário de 5 de novembro a 4 de dezembro, informa a Infobae."
+  ],
+  [
+   "h",
+   "Um histórico que pesa"
+  ],
+  [
+   "p",
+   "A Al Jazeera lembra que o Paraguai atravessou uma longa crise bancária entre meados dos anos 1990 e o início dos 2000, após o fechamento do Bancopar, em 1995, e que o governo cobriu os depósitos de quatro bancos, o que deixou danos duradouros à confiança no sistema. Parte da cobrança política contra Peña vem da proximidade com o grupo: ele declarou, antes de assumir, participação no Ueno Holding e, segundo a Infobae, seu irmão consta como sócio da U Holding SARL, veículo pelo qual o grupo controlaria o banco. Peña diz que se desfez das ações em 2025 e que nada ilegal ocorreu."
+  ],
+  [
+   "h",
+   "O que ainda não se sabe"
+  ],
+  [
+   "ul",
+   [
+    "O tamanho final do rombo e quanto poderá ser recuperado: o Ministério Público fala em cerca de US$ 167 milhões com poucas chances de cobrança, e a estimativa de Vallejo é de US$ 1,2 bilhão.",
+    "Quanto dos recursos da Previdência (IPS) e de outros órgãos públicos será devolvido, e em que prazo.",
+    "Se haverá mecanismo de compensação para quem tem saldo acima do teto de garantia e para empresas com depósitos maiores.",
+    "O destino dos funcionários do Ueno e das empresas do Grupo Vázquez, cuja situação trabalhista segue incerta."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Infobae (cronologia da crise)",
+   "https://www.infobae.com/america/america-latina/2026/11/07/cronologia-de-la-crisis-financiera-que-provoco-la-destitucion-y-detencion-de-santiago-pena-en-paraguay/"
+  ],
+  [
+   "Infobae (quem é quem no caso)",
+   "https://www.infobae.com/economia/2026/11/07/quien-es-quien-y-cuales-son-las-claves-del-escandalo-del-ueno-bank-que-termino-con-la-detencion-de-pena-en-paraguay/"
+  ],
+  [
+   "Infobae (The New York Times)",
+   "https://www.infobae.com/america/the-new-york-times/2026/11/07/el-presidente-de-paraguay-es-destituido-y-arrestado-tras-una-crisis-financiera/"
+  ],
+  [
+   "Al Jazeera (a crise bancária paraguaia)",
+   "https://www.aljazeera.com/news/2026/11/6/how-paraguays-ueno-collapse-is-only-its-latest-banking-crisis"
+  ],
+  [
+   "Al Jazeera (Reuters: ex-presidente acusado)",
+   "https://www.aljazeera.com/economy/2026/11/7/paraguays-ousted-president-charged-over-banking-scandal"
+  ],
+  [
+   "Euronews (AP)",
+   "https://pt.euronews.com/2026/11/07/paraguai-destitui-presidente-santiago-pena-em-plena-crise-do-banco-ueno"
+  ],
+  [
+   "Última Hora (inquérito sobre 39 pessoas)",
+   "https://www.ultimahora.com/fiscalia-abre-investigacion-contra-santiago-pena-pedro-alliana-y-otras-autoridades-tras-escandalo-de-ueno"
+  ],
+  [
+   "ABC Color (EFE)",
+   "https://www.abc.com.py/internacionales/2026/11/07/expresidente-santiago-pena-comparece-ante-la-fiscalia-de-paraguay-por-el-caso-ueno-bank/"
+  ]
+ ]
+};
+EDICAO.hora = '18h';
+EDICAO.data = 'Sábado, 07 de novembro de 2026';
+HOME_LEAD = 'paraguai';
+HOME_ROW = ['alcolumbre_stf','congresso_direita','vr_va_interop'];
+ORDER.politica = ['alcolumbre_stf','congresso_direita','lula_equipe_eco'].concat(ORDER.politica.filter(function(i){return ['alcolumbre_stf','congresso_direita','lula_equipe_eco'].indexOf(i)<0;}));
+
+/* ===== REESCRITA 18h (2) ===== */
+S.papa_leao = {
+ "ed": "mundo",
+ "k": "Mundo · Uruguai, Argentina e Peru",
+ "hora": "7/11",
+ "t": "Papa Leão XIV celebra a primeira missa no Uruguai, em Paysandú, e preside vigília no Centenario neste sábado; domingo segue para a Argentina",
+ "sub": "É a primeira visita de um papa ao Uruguai em 38 anos e a primeira escala de uma viagem de 12 dias que passa pela Argentina e pelo Peru.",
+ "resumo": "Leão XIV celebrou na manhã deste sábado (7) a primeira missa do Uruguai, em Paysandú, diante de milhares de fiéis, e à noite preside uma vigília no Estádio Centenario, onde se esperam cerca de 60 mil pessoas. A visita, a primeira de um papa ao país desde 1988, abre uma viagem que vai até 17 de novembro, com Argentina (8 a 11) e Peru (11 a 17). A CNN Brasil lembra que o papa se recupera de uma cirurgia no pulmão feita há pouco mais de três semanas.",
+ "upd": "A matéria foi reescrita como texto único: a missa de Paysandú já ocorreu, e a programação da tarde e da noite, a chegada de sexta e o roteiro até o Peru estão reunidos.",
+ "fundo": [
+  [
+   "p",
+   "O papa Leão XIV celebrou na manhã deste sábado (7) a primeira missa de sua visita ao Uruguai, no Parque París Londres, em Paysandú, diante de milhares de fiéis, e preside à noite uma vigília de oração no Estádio Centenario, em Montevidéu, onde cerca de 60 mil pessoas são esperadas. É a primeira visita de um papa ao país em 38 anos e a primeira escala de uma viagem de 12 dias pela América do Sul, que passa ainda por Argentina e Peru."
+  ],
+  [
+   "p",
+   "O papa saiu de Montevidéu às 8h25 e celebrou a missa às 10h, com peregrinos argentinos e brasileiros, segundo a Cadena 3. A TMC relata que grupos de gaúchos cruzaram a fronteira para participar. O retorno à capital estava previsto para as 13h30. À tarde, a agenda inclui a paróquia de Casavalle (17h) e o encontro com representantes do ensino católico na Universidade Católica (18h), com discurso centrado na educação, antes da vigília (19h). Havia previsão de chuva e vento forte."
+  ],
+  [
+   "h",
+   "A chegada e o recado político"
+  ],
+  [
+   "p",
+   "Leão XIV desembarcou na sexta (6), por volta das 16h30, no aeroporto de Carrasco, vindo de Roma. Teve cerimônia de boas-vindas na Plaza Independencia, às 17h30, e, por volta das 18h15, reuniu-se em privado com o presidente Yamandú Orsi. Em discurso em Montevidéu, valorizou quatro décadas de continuidade democrática, segundo a Cadena 3."
+  ],
+  [
+   "p",
+   "Em voo sobre o Brasil, o papa enviou telegrama a Lula com votos de unidade e paz, seguindo a tradição de saudar os países sobrevoados. Lula agradeceu nas redes e reiterou o convite para uma visita oficial ao Brasil, informa o Diário Carioca. A bordo, o papa, de 71 anos, disse estar relativamente bem; a CNN Brasil lembra que a viagem ocorre pouco mais de três semanas depois de uma cirurgia para retirar um câncer de pulmão, que o Vaticano descreveu como bem-sucedida e sem necessidade de tratamento adicional."
+  ],
+  [
+   "h",
+   "O roteiro até o fim da viagem"
+  ],
+  [
+   "p",
+   "No domingo (8), o papa vai a Florida, visita o santuário da Virgem dos Trinta e Três, celebra a segunda missa no hipódromo Irineo Leguisamo e segue para Buenos Aires. Na Argentina, onde fica de 8 a 11 de novembro, o roteiro inclui Luján, Córdoba e Claypole. De 11 a 17 de novembro, o papa visita o Peru. A passagem pela Argentina ocorre com o presidente Javier Milei isolado entre os líderes da região por não reconhecer a vitória de Lula, observa a CNN Brasil."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "Neste sábado à noite, a vigília no Centenario encerra a programação do dia. No domingo, a missa em Florida coincide com a peregrinação nacional ao santuário da padroeira do Uruguai, e o papa embarca em seguida para Buenos Aires."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Não há balanço oficial de público: \"milhares\" na missa de Paysandú e \"cerca de 60 mil\" na vigília são estimativas anteriores ao evento.",
+    "As páginas consultadas não trazem o que o papa disse em Casavalle nem na Universidade Católica; a programação vem da divulgação de setembro, que o Montevideo Portal ressalva poder ter sofrido ajustes."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "CNN Brasil",
+   "https://www.cnnbrasil.com.br/internacional/papa-leao-chega-ao-uruguai-nesta-sexta-feira-para-agenda-na-america-do-sul/"
+  ],
+  [
+   "Montevideo Portal (programação no Uruguai)",
+   "https://www.montevideo.com.uy/Noticias/Leon-XIV-en-Uruguay-vigilia-en-el-Centenario-dos-misas-y-encuentro-con-Orsi-uc975961"
+  ],
+  [
+   "Cadena 3 (missa em Paysandú)",
+   "https://www.cadena3.com/noticia/el-camino-de-leon-en-argentina-uruguay-y-peru/leon-xiv-llego-a-paysandu-para-celebrar-su-primera-misa-en-uruguay-ante-miles-de-fieles_611105"
+  ],
+  [
+   "TMC (gaúchos em Paysandú)",
+   "https://tmc.com.br/mundo/papa-leao-xiv-uruguai-gauchos-paysandu-missa/"
+  ],
+  [
+   "Diário Carioca (telegrama a Lula)",
+   "https://www.diariocarioca.com/2026/11/07/mundo/geopolitica/papa-leao-xiv-envia-telegrama-lula-convite-brasil/"
+  ]
+ ]
+};
+S.flavio_senado = {
+ "ed": "politica",
+ "k": "Política · Senado",
+ "hora": "7/11",
+ "t": "Senado não responde sobre a situação de Flávio Bolsonaro, que deixou o país em 27 de outubro e votou dos EUA na PEC da Segurança; Alcolumbre diz que vai avaliar",
+ "sub": "Randolfe Rodrigues pediu a anulação do voto. Perder o mandato por faltas exigiria 24 ausências sem justificativa; cassação por quebra de decoro precisa de 41 votos.",
+ "resumo": "O Senado não respondeu, em dez dias, sobre as regras aplicáveis a Flávio Bolsonaro (PL-RJ), que deixou o país em 27 de outubro e votou remotamente da terça (3) na PEC da Segurança Pública. Randolfe Rodrigues (PT-AP) pediu esclarecimentos e a anulação do voto; Alcolumbre disse que vai avaliar. Pela Constituição, a perda do mandato por faltas depende de ato da Mesa, e a cassação por decoro, de 41 votos no plenário. Uma ação popular pede a suspensão do salário do senador.",
+ "upd": "A matéria foi reescrita com a resposta de Alcolumbre na quarta (4), a explicação do PL sobre o voto remoto, o roteiro da viagem e o que a lei prevê sobre faltas e cassação.",
+ "fundo": [
+  [
+   "p",
+   "O Senado ainda não disse que regras valem para o senador Flávio Bolsonaro (PL-RJ), que deixou o país em 27 de outubro, está nos Estados Unidos e votou remotamente na terça (3) na PEC da Segurança Pública. O presidente da Casa, Davi Alcolumbre (União-AP), afirmou na quarta (4) que vai avaliar a situação, e o senador Randolfe Rodrigues (PT-AP) pediu a anulação do voto."
+  ],
+  [
+   "p",
+   "A Agência Brasil informa que o Senado não respondeu, em dez dias, a perguntas sobre licença prévia, faltas, participação remota, pagamento de salário e o Código de Ética. Dois advogados entraram em 31 de outubro com ação popular na 6ª Vara Federal do Rio pedindo a suspensão do salário do senador. Um deles, Leonardo Nicolau Passos Marinho, sustenta que parlamentares precisam pedir licença prévia à Mesa Diretora para se ausentar."
+  ],
+  [
+   "h",
+   "A viagem e o voto remoto"
+  ],
+  [
+   "p",
+   "Flávio deixou o Brasil por terra, com a família, na terça (27), pela ponte entre Foz do Iguaçu (PR) e Puerto Iguazú, na Argentina, segundo apuração da CNN Brasil. De lá, embarcou em um jato que reabasteceu em Guayaquil, no Equador, e pousou em Miami na quarta (28). Menos de um dia antes de partir, segundo o DGABC, ele havia declarado que ficaria no Brasil para comandar a oposição."
+  ],
+  [
+   "p",
+   "Na sessão de terça (3), o senador registrou presença e votou de forma remota. O líder do PL no Senado, Carlos Portinho (RJ), disse que Flávio teve dificuldade para se registrar, que Alcolumbre autorizou a habilitação de um novo número e que o senador não abandonou o mandato, que vai até fevereiro de 2027. Na quarta, Alcolumbre afirmou que Flávio pôde votar porque a sessão era semipresencial, modelo em que os senadores votam por aplicativo e registram presença, e que a questão de ordem de Randolfe será avaliada para definir o encaminhamento, segundo o Estadão Conteúdo."
+  ],
+  [
+   "p",
+   "O DGABC e a Agência Brasil relatam que o ministro Alexandre de Moraes, do STF, determinou a apreensão dos passaportes de Flávio, a pedido da Polícia Federal, depois do resultado da eleição. Como o documento não foi entregue em 24 horas, na terça (27), os passaportes foram cancelados. Flávio é investigado no Supremo por suspeita de lavagem de dinheiro, em apuração que envolve o advogado Willer Tomaz, e por pagamentos de Daniel Vorcaro para o filme \"Dark Horse\". Ele mantém o foro enquanto durar o mandato."
+  ],
+  [
+   "h",
+   "O que diz a lei"
+  ],
+  [
+   "p",
+   "A Constituição (artigo 55, inciso III) determina a perda do mandato do senador que deixar de comparecer, em cada sessão legislativa, a um terço das sessões ordinárias, salvo licença ou missão autorizada pela Casa. O Senado realizou 46 sessões até 26 de outubro e deve fazer mais 25 até o recesso, num total de 71: bastariam 24 ausências sem justificativa para ultrapassar o limite, segundo o DGABC. A perda por faltas depende de ato declaratório da Mesa, assegurado o direito de defesa."
+  ],
+  [
+   "p",
+   "O senador pode pedir licença para tratar de assuntos particulares, sem remuneração, por até 120 dias por ano legislativo, e as faltas durante a licença não entram na conta. O advogado Wellington Arruda, ouvido pelo DGABC, diz que o que conta são as sessões a que o senador deixou de comparecer, não os dias fora do Brasil, e que as ausências do período de campanha não podem ser somadas automaticamente como faltas injustificadas. A cassação por quebra de decoro passa pelo Conselho de Ética e exige ao menos 41 votos em votação aberta no plenário."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "A decisão de Alcolumbre sobre a questão de ordem de Randolfe é o primeiro marco: dela depende se o voto de terça (3) é mantido ou anulado. O Senado também precisa responder sobre licença, faltas e pagamento do salário, perguntas que estão sem resposta, e a ação popular tramita na Justiça Federal do Rio. O mandato de Flávio termina em fevereiro de 2027."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Não há prazo informado para Alcolumbre decidir sobre a questão de ordem nem sobre a situação de Flávio.",
+    "As matérias consultadas não informam o resultado da votação da PEC da Segurança nem se o voto de Flávio foi decisivo.",
+    "O Senado não esclareceu quais normas amparam a participação remota de um senador que está fora do país nem se houve pedido de licença.",
+    "Flávio Bolsonaro não é citado com falas diretas nas matérias; a informação de que ele havia dito que ficaria no Brasil é relatada de forma indireta."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Agência Brasil, via Notícia Urbana",
+   "https://noticiaurbana.com.br/politica/sem-posicao-do-senado-regras-sobre-flavio-seguem-indefinidas/"
+  ],
+  [
+   "Itatiaia (CNN Brasil)",
+   "https://www.itatiaia.com.br/politica/dos-eua-flavio-bolsonaro-marca-presenca-em-votacao-da-pec-da-seguranca/"
+  ],
+  [
+   "O Liberal (Estadão Conteúdo)",
+   "https://www.oliberal.com/politica/alcolumbre-diz-que-avaliara-situacao-de-flavio-bolsonaro-no-senado-1.1190596"
+  ],
+  [
+   "DGABC (o que prevê a lei)",
+   "https://www.dgabc.com.br/Noticia/4365856/fuga-de-flavio-bolsonaro-poe-em-risco-o-mandato-no-senado-veja-o-que-preve-a-lei"
+  ]
+ ]
+};
+S.bets_stf = {
+ "ed": "politica",
+ "k": "Política · STF",
+ "hora": "7/11",
+ "t": "STF deve esperar o Congresso decidir sobre a MP que proíbe as bets; Fux diz que apostas deveriam ser banidas, mas que o tribunal ainda avalia argumentos",
+ "sub": "A MP 1.394/2026 perde validade em 24 de novembro; se prorrogada, vai até 23 de janeiro de 2027. Fux relata oito ações, e o julgamento de uma delas está parado por pedido de vista de Dino.",
+ "resumo": "O Plenário do STF deve aguardar o Congresso decidir sobre a MP 1.394/2026, que proíbe as bets, para evitar choque entre os Poderes, segundo o Estado de Minas. A MP perde validade em 24 de novembro. Em audiência pública na terça (3), o relator, Luiz Fux, disse ter a percepção de que as bets deveriam ser banidas, mas ressalvou que não fala pelo tribunal. Fux relata oito ações; o julgamento de uma delas está suspenso desde agosto por pedido de vista de Flávio Dino.",
+ "upd": "A matéria foi ampliada com a audiência pública de terça (3) no STF, o que Fux disse, as ações em andamento e a pendência do pedido de vista de Flávio Dino.",
+ "fundo": [
+  [
+   "p",
+   "O Supremo Tribunal Federal deve esperar a decisão do Congresso sobre a medida provisória que proíbe as bets antes de julgar o tema, para evitar choque entre os Poderes, segundo o Estado de Minas. A MP 1.394/2026, editada antes do primeiro turno, perde a validade em 24 de novembro e, se for prorrogada, vigora até 23 de janeiro de 2027."
+  ],
+  [
+   "p",
+   "O presidente do STF, Edson Fachin, sinalizou que pretende julgar o caso em conjunto com a ação sobre jogos de azar, de acordo com a mesma reportagem. O ministro Flávio Dino pediu vista em agosto, e o julgamento está interrompido até que ele devolva o processo; as matérias consultadas não informam prazo."
+  ],
+  [
+   "h",
+   "A audiência pública e o que Fux disse"
+  ],
+  [
+   "p",
+   "Na terça (3), o ministro Luiz Fux conduziu audiência pública sobre a MP, com 34 inscritos depois de inclusões. Falaram representantes dos ministérios da Saúde e da Justiça e Segurança Pública, da Associação Brasileira de Supermercados (Abras), de entidades esportivas, do Comitê Paralímpico, da Federação Nacional dos Atletas Profissionais de Futebol e do Grêmio, além de clubes e associações do mercado de apostas, informa o Correio da Manhã. A audiência é informativa e não decide a validade da MP."
+  ],
+  [
+   "p",
+   "A presença de representantes do setor de apostas foi criticada, e Fux negou ter convocado apenas participantes favoráveis a ele. O ministro afirmou ter formado a percepção de que as bets deveriam ser banidas no Brasil, e tratou o jogo como problema de saúde pública. Ao lembrar a audiência de 2024 sobre os impactos das apostas, em que entidades relataram danos sociais e ludopatia, afirmou: “Ninguém aqui falou bem”. Ressalvou que o STF precisa avaliar novos argumentos, em especial sobre segurança jurídica, e que sua posição não representa decisão do tribunal."
+  ],
+  [
+   "h",
+   "As ações no STF e o efeito da MP"
+  ],
+  [
+   "p",
+   "Fux é relator de oito ações diretas de inconstitucionalidade sobre o tema. A ADI 8.027, apresentada pela Associação Nacional de Jogos e Loterias, questiona a MP e pede a suspensão da proibição. O julgamento foi interrompido em agosto, quando Dino pediu vista."
+  ],
+  [
+   "p",
+   "O advogado Matheus Puppe lembra, segundo o Estado de Minas, que rejeitar a MP não restabelece automaticamente as regras anteriores, por causa do artigo 62 da Constituição, que regula as medidas provisórias."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "O primeiro prazo é 24 de novembro, quando a MP perde a validade se o Congresso não a votar nem a prorrogar. Em caso de prorrogação, ela segue até 23 de janeiro de 2027. O plenário do STF só deve decidir se a MP é compatível com a Constituição depois da definição no Congresso e da devolução da vista de Dino."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "A tendência de o STF aguardar o Congresso é relatada pelo Estado de Minas; o tribunal não a confirmou oficialmente.",
+    "Não há data para o julgamento da ADI 8.027 nem prazo para a devolução da vista de Dino.",
+    "As matérias consultadas não informam a posição da AGU sobre o mérito da MP."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Estado de Minas",
+   "https://www.em.com.br/politica/2026/11/7534857-stf-espera-pelo-congresso-para-tomar-decisao-sobre-proibicao-de-bets.html"
+  ],
+  [
+   "Correio da Manhã (audiência pública)",
+   "https://www.correiodamanha.com.br/economia/justica/2026/11/331907-fux-defende-proibicao-das-bets-mas-cobra-debate-sobre-impactos.html"
+  ]
+ ]
+};
+S.papa_telegrama.velha = true; S.papa_telegrama.velhaMotivo = "fato encerrado: telegrama enviado e respondido em 6/11; o conteúdo foi incorporado a papa_leao";
+S.to_transicao.velha = true; S.to_transicao.velhaMotivo = "sem fato novo desde 5/11; a transição só começa em 10/11 e volta com novo fato";
+S.rn_transicao.velha = true; S.rn_transicao.velhaMotivo = "primeira reunião realizada em 6/11; próximo marco só com a conclusão da comissão (18/11)";
+Object.keys(ORDER).forEach(function(k){ ORDER[k] = ORDER[k].filter(function(i){ return !(S[i] && S[i].velha); }); });
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","sc_chapeco":"atualizada","ueno_bank":"atualizada","mt_russi":"atualizada","rs_alerta":"atualizada","lula_equipe_eco":"novo","ministerio_40":"novo","vr_va_interop":"novo","sp_f1_2035":"novo","sp_bras_desabamento":"novo","sp_alesp_sucessao":"novo","sp_jem_pacaembu":"novo","ne_sertanejos":"novo","pe_exoneracoes":"novo","ms_riedel":"novo","rs_pelotas":"novo","ucrania_energia":"novo","iemen_houthis":"novo","arg_china_telecom":"novo"};
-var GIRO_FLAGS = {"Aceno ao mercado":"novo","Até 40 ministérios":"novo","EUA reconhecem Alliana":"novo","VR e VA em qualquer maquininha":"novo","Interlagos até 2035":"novo","Desabamento no Brás":"novo","Shows sertanejos e prefeituras":"novo","Jorge & Mateus no Pacaembu":"novo","Flávio, NYT e Folha":"novo","Exonerações em Pernambuco":"novo"};
+var FLAGS = {"paraguai":"atualizada","papa_leao":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","alcolumbre_stf":"atualizada","flavio_senado":"atualizada","bets_stf":"atualizada","lula_equipe_eco":"atualizada","vr_va_interop":"atualizada"};
+var GIRO_FLAGS = {};
 /* ===== FIM DOS DADOS ===== */
