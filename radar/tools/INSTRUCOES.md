@@ -73,6 +73,7 @@ Quando uma matéria tem fato novo:
 ## Cadência e novidade
 - Cada edição traz ao menos 5 NOVO e 10 NOVO+ATUALIZADA (a das 7h: 15 e 25; pesquise o que saiu à noite e de madrugada). `HOME_LEAD` e `HOME_ROW` só podem ser matéria NOVA ou ATUALIZADA.
 - Só se, depois de pesquisar a fundo, o dia estiver parado, use `--aceitar-poucas --motivo="o que foi pesquisado e por que não há mais"`. O motivo fica em `radar/arquivo/_avisos.log` e vale só para as contagens (novidade, pisos e regiões), nunca para profundidade, fontes e pautas. Diga isso no resumo final.
+- **Último recurso para não perder a edição (e o boletim das 19h):** se, depois de pesquisar e escrever de verdade, algumas matérias que **não** são destaque ficarem abaixo do piso de palavras ou de veículos (ou a edição inteira ficar abaixo da mediana e da variedade de fontes), use `--aceitar-curtas --motivo="…"`. Ele afrouxa só esses pisos; destaques, diário de atualizações, cascata de "segundo X", fonte estrangeira em Mundo, pautas e varreduras continuam valendo. O motivo é gravado em `radar/arquivo/_avisos.log` e é lido por Edu: não use para evitar a pesquisa.
 - Renove o Giro OP (12–20 notas, só com link verificado; o título identifica a nota) e coloque o novo no topo. TRENDS só com link e contexto confirmado (pode ser `[]`). Colunistas vão em `COLUNAS`, não são seção.
 
 ## Estrutura editorial

@@ -89,6 +89,7 @@ if (ant) {
 const CORTE = '2026-11-07-19h';
 const NOVAS = nome >= CORTE || process.env.RADAR_REGRAS === '1';
 const relaxa = process.argv.includes('--aceitar-poucas');
+const curtas = process.argv.includes('--aceitar-curtas');   // último recurso: afrouxa só o piso de palavras/veículos das matérias que NÃO são destaque
 const CFG = {
   piso: { politica: 10, economia: 3, mundo: 6 },          // matérias ativas por editoria
   pisoDepois: { '2026-11-09-07h': { politica: 14, economia: 4, mundo: 6 } },
@@ -124,8 +125,10 @@ if (NOVAS) {
     if (!s.fundo.length || s.fundo[0][0] !== 'p') e2.push(rot + ': o fundo deve começar por parágrafo com o lide (fato principal, quem, o quê, quando)');
     const diario = (s.fundo || []).filter(b => b[0] === 'h' && /^(atualiza[çc][ãa]o|\d{1,2}h\b|[àa]s \d)/i.test(b[1]));
     if (diario.length) e2.push(rot + ': o fundo tem intertítulo de diário ("' + diario[0][1] + '"). Reescreva a matéria inteira como um texto único com o estado atual; não acrescente blocos "Atualização das Xh"');
-    if (w < minW) e2.push(rot + ': fundo com ' + w + ' palavras (mínimo ' + minW + ')');
-    if (nv < minV) e2.push(rot + ': ' + nv + ' veículo(s) distinto(s) com link (mínimo ' + minV + ')');
+    if (!(curtas && !ehD)) {
+      if (w < minW) e2.push(rot + ': fundo com ' + w + ' palavras (mínimo ' + minW + ')');
+      if (nv < minV) e2.push(rot + ': ' + nv + ' veículo(s) distinto(s) com link (mínimo ' + minV + ')');
+    }
     const ps = s.fundo.filter(b => b[0] === 'p');
     if (ps.length >= 4 && ps.filter(b => ATRIB.test(b[1])).length / ps.length > CFG.maxCascata) e2.push(rot + ': mais de 40% dos parágrafos começam por "Segundo X…": isso é resumo por fonte. Reescreva fato a fato, atribuindo dentro da frase');
     if (s.ed === 'mundo' && !comUrl(s).some(f => estrangeira(f[1]))) e2.push(rot + ': matéria de Mundo precisa de ao menos uma fonte fora da imprensa brasileira (agência, veículo internacional ou do país do fato)');
@@ -137,7 +140,7 @@ if (NOVAS) {
     }
   });
   // conjunto da edição: mediana, concentração e variedade de fontes
-  if (tocadas.length >= 5) {
+  if (tocadas.length >= 5 && !curtas) {
     const ws = tocadas.map(i => palavras(d.S[i])).sort((a, b) => a - b), med = ws[ws.length >> 1];
     if (med < CFG.medianaTocadas) e2.push('mediana do fundo das matérias novas/atualizadas é ' + med + ' palavras (mínimo ' + CFG.medianaTocadas + '). Aprofunde: lide, contexto, desdobramentos, o que vem a seguir');
     const cont = {}; let tot = 0;
@@ -177,10 +180,11 @@ if (NOVAS) {
   }
   if (pisoErro) { if (relaxa) console.warn('AVISO (relaxado): ' + pisoErro); else e2.push(pisoErro); }
   if (e2.length) die('regras de curadoria e profundidade (radar/tools/INSTRUCOES.md):\n - ' + e2.join('\n - '));
-  if (relaxa) {
-    if (motivoArg.length < 20) die('--aceitar-poucas exige --motivo="…" (mín. 20 caracteres) explicando o que foi pesquisado e por que não há mais; o motivo vai para radar/arquivo/_avisos.log');
+  if (relaxa || curtas) {
+    const usados = [relaxa ? '--aceitar-poucas' : '', curtas ? '--aceitar-curtas' : ''].filter(Boolean).join(' ');
+    if (motivoArg.length < 20) die(usados + ' exige --motivo="…" (mín. 20 caracteres) explicando o que foi pesquisado e por que não foi possível cumprir a regra; o motivo vai para radar/arquivo/_avisos.log');
     fs.mkdirSync(arq, { recursive: true });
-    fs.appendFileSync(path.join(arq, '_avisos.log'), nome + ' · --aceitar-poucas · ' + motivoArg + '\n');
+    fs.appendFileSync(path.join(arq, '_avisos.log'), nome + ' · ' + usados + ' · ' + motivoArg + '\n');
   }
 }
 const bloco = '/* FLAGS (gerado por publicar.js; não editar) */\nvar FLAGS = ' + JSON.stringify(flags) + ';\nvar GIRO_FLAGS = ' + JSON.stringify(giroFlags) + ';\n';
