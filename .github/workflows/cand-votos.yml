@@ -1,0 +1,39 @@
+name: Candidatos - votos por município, perfis e busca (lake -> JSON -> branches cv-<ano> e cand-pessoas)
+on:
+  workflow_dispatch:
+    inputs:
+      anos: { description: 'Anos separados por espaço (vazio = 2006 a 2026)', required: false, default: '' }
+permissions: { contents: write }
+concurrency: { group: 'cand-votos', cancel-in-progress: false }
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: "scripts/lake_cand", sparse-checkout-cone-mode: false }
+      - run: pip install -q duckdb==1.1.3
+      - name: Baixar candidaturas e votos por zona
+        env: { GH_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
+        run: |
+          mkdir -p /tmp/lake && cd /tmp/lake
+          gh release download lake-candidatos -R ${{ github.repository }} -p 'candidaturas.parquet'
+          A="${{ github.event.inputs.anos }}"; [ -z "$A" ] && A="2006 2008 2010 2012 2014 2016 2018 2020 2022 2024 2026"
+          for a in $A; do gh release download lake-$a -R ${{ github.repository }} -p "zona_$a.parquet"; done
+          ls -la
+      - name: Construir
+        run: |
+          set -o pipefail
+          python3 scripts/lake_cand/build_cand_votos.py /tmp/lake /tmp/out ${{ github.event.inputs.anos }} 2>&1 | tee /tmp/build.log
+          du -sh /tmp/out/*; find /tmp/out -type f | wc -l
+      - name: Publicar
+        run: |
+          R="https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          pub() {  # pub <branch> <pasta>
+            rm -rf /tmp/pub && mkdir /tmp/pub && cp -r "$2"/. /tmp/pub/ && cd /tmp/pub
+            git init -q -b "$1" && git config user.name coletor && git config user.email coletor@users.noreply.github.com
+            git add -A && git commit -q -m "Candidatos: $1" && git push -f "$R" "$1" && cd /tmp
+          }
+          for d in /tmp/out/cv/*; do [ -d "$d" ] && pub "cv-$(basename $d)" "$d"; done
+          cp /tmp/out/conferencia.md /tmp/out/pessoas/conferencia.md; cp /tmp/build.log /tmp/out/pessoas/build.log
+          pub cand-pessoas /tmp/out/pessoas
