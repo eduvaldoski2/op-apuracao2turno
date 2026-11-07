@@ -4091,7 +4091,7 @@ S.iemen_houthis = {
   ],
   [
    "p",
-   "Segundo a Al-Masirah, cinco casas foram destruídas e há mulheres e crianças entre os mortos. A emissora afirma que outros dois ataques tiveram como alvo equipes de resgate e as estradas de acesso à aldeia, e que aviões militares continuaram sobrevoando a região. Um morador disse à agência Xinhua que aeronaves circulavam sobre Sanaa antes de uma série de bombardeios atingir a capital. A Xinhua não conseguiu verificar os relatos de forma independente, e a coalizão liderada pelos sauditas não fez comentário imediato, segundo a agência e o Middle East Eye, que reproduz texto da AFP."
+   "Segundo a Al-Masirah, cinco casas foram destruídas e há mulheres e crianças entre os mortos. A emissora afirma que outros dois ataques tiveram como alvo equipes de resgate e as estradas de acesso à aldeia, e que aviões militares continuaram sobrevoando a região. Um morador disse à agência Xinhua que aeronaves circulavam sobre Sanaa antes de uma série de bombardeios atingir a capital. A Xinhua não conseguiu verificar os relatos de forma independente, e a coalizão liderada pelos sauditas não fez comentário imediato, segundo a Xinhua; o texto da AFP reproduzido pelo Middle East Eye também não traz resposta saudita."
   ],
   [
    "nums",
@@ -4241,7 +4241,7 @@ S.arg_china_telecom = {
   ],
   [
    "p",
-   "O artigo 9º da disposição pede ao Enacom, regulador do setor, que avalie incorporar os requisitos à homologação de equipamentos e às obrigações das operadoras licenciadas. É aí que o alcance pode crescer. Segundo o iProfesional, celulares, modems, módulos 4G e 5G e o Wi-Fi de veículos teriam de cumprir as exigências se o Enacom adotar o padrão, e o Informe Digital menciona novas regras de homologação previstas para 1º de dezembro. O Enacom disse à TeleSemana não ter nada a informar por ora. O Clarín, que deu a notícia na manhã deste sábado, titulou que a restrição pode afetar o mercado de celulares."
+   "O artigo 9º da disposição pede ao Enacom, regulador do setor, que avalie incorporar os requisitos à homologação de equipamentos e às obrigações das operadoras licenciadas. É aí que o alcance pode crescer. Segundo o iProfesional, celulares, modems, módulos 4G e 5G e o Wi-Fi de veículos teriam de cumprir as exigências se o Enacom adotar o padrão, e o Informe Digital menciona novas regras de homologação previstas para 1º de dezembro. O Enacom disse à TeleSemana não ter nada a informar por ora. O Clarín, que destacou o tema neste sábado (7), titulou que a restrição pode afetar o mercado de celulares."
   ],
   [
    "h",
