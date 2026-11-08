@@ -6094,7 +6094,1023 @@ S.israel = {
  ]
 };
 
+/* ===== CONTEXTO POLÍTICO 08/11 (2) ===== */
+S.paraguai = {
+ "ed": "mundo",
+ "k": "Mundo",
+ "hora": "7/11",
+ "t": "Juiz decreta prisão preventiva de Peña, ex-presidente do Paraguai, por risco de fuga; Alliana governa e Banco Central paga poupadores do Ueno Bank",
+ "sub": "Humberto Otazú, juiz de garantias de delitos econômicos, acolheu o pedido da Fiscalía; Peña cumpre a medida no Regimento Escolta Presidencial e responde por lesão de confiança e administração em proveito próprio, com pena de até 15 anos.",
+ "dado": {
+  "n": "Prisão preventiva",
+  "l": "Decretada neste sábado (7) pelo juiz Humberto Otazú; Peña é imputado por lesão de confiança e administração em proveito próprio"
+ },
+ "resumo": "O juiz Humberto Otazú decretou neste sábado (7) a prisão preventiva do ex-presidente Santiago Peña, destituído pelo Senado na sexta (6) por 44 votos a 0, por lesão de confiança e administração em proveito próprio, com pena de até 15 anos. Peña, o vice Pedro Alliana, que governa até agosto de 2028, e Horacio Cartes são do Partido Colorado, de direita e com maioria no Congresso: a oposição e dissidentes pediram o processo, mas ele só andou quando Cartes, presidente do partido, retirou o apoio.",
+ "upd": "A matéria passou a situar os atores: o partido e a facção de Peña, Cartes e Alliana, quem pediu o juízo político (oposição e dissidentes do oficialismo) e como o apoio de Cartes viabilizou a votação.",
+ "fundo": [
+  [
+   "p",
+   "O juiz de garantias especializado em delitos econômicos Humberto Otazú decretou neste sábado (7), por volta das 18h30 em Assunção, a prisão preventiva do ex-presidente Santiago Peña, destituído na sexta (6) pelo Senado. Segundo o ABC Color e a Última Hora, o magistrado viu perigo de fuga, e Peña cumprirá a medida no Regimento Escolta Presidencial. Pedro Alliana governa até agosto de 2028."
+  ],
+  [
+   "p",
+   "Peña também foi acusado de administração em benefício próprio, de acordo com a Al Jazeera, que cita a Reuters. Os promotores pedem prisão preventiva para ele e para o ex-presidente do Banco Central Carlos Carvallo, que presidiu o Ueno antes de chefiar a autoridade monetária."
+  ],
+  [
+   "p",
+   "A queda veio três dias depois de o Banco Central fechar o Ueno, banco digital com cerca de 3 milhões de clientes que ficaram sem acesso a contas e cartões. Peña, que governava desde agosto de 2023, foi acionista do grupo dono do banco até março de 2025 e nomeou para o comando do Banco Central o ex-presidente do Ueno, Carvallo; ele nega irregularidades. O que selou o processo, porém, foi a política: o ex-presidente Horacio Cartes, chefe do Partido Colorado e padrinho político de Peña, retirou o apoio na quinta (5) e passou a defender a destituição."
+  ],
+  [
+   "nums",
+   [
+    [
+     "44",
+     "votos pela destituição no Senado; nenhum contra e um senador ausente"
+    ],
+    [
+     "78",
+     "votos da Câmara a favor da acusação, na quinta (5)"
+    ],
+    [
+     "27",
+     "pessoas acusadas formalmente no caso Ueno Bank"
+    ],
+    [
+     "39",
+     "pessoas na investigação aberta pela Procuradoria-Geral, entre elas Peña e Alliana"
+    ],
+    [
+     "1,2 mi",
+     "clientes do Ueno com reembolso total ou parcial, segundo o Banco Central"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Quem é quem: o partido, o padrinho e a oposição"
+  ],
+  [
+   "p",
+   "Santiago Peña, Pedro Alliana e Horacio Cartes são do mesmo partido, o Colorado, de direita e que governa o Paraguai há décadas, inclusive na ditadura de Alfredo Stroessner. Cartes, ex-presidente (2013–2018) e hoje presidente do partido, é o padrinho político de Peña e comanda o grupo Honor Colorado, ao qual Alliana também pertence. O Colorado tem maioria própria nas duas Casas do Congresso, segundo o El Comercio, e a destituição exigia dois terços dos votos na Câmara e no Senado: ela só era possível com votos colorados."
+  ],
+  [
+   "p",
+   "O pedido de juízo político partiu da oposição e de parlamentares dissidentes da própria base governista, de acordo com o El Comercio, e a acusação na Câmara foi conduzida pela oposicionista Rocío Vallejo. Mas o que viabilizou a votação foi a decisão de Cartes, anunciada em comunicado na quinta (5), de que o partido \"acompanha\" o processo. O presidente do Congresso, Basilio Núñez, também do oficialismo, pediu a renúncia de Peña e disse que apoiaria o julgamento se ele não saísse. A queda de Peña, portanto, veio de dentro do partido que o elegeu, e não só dos adversários: o El Comercio fala em \"divisão dentro do oficialismo\". O vice, Alliana, é do mesmo grupo e é citado em denúncia de senadores, mas a Câmara rejeitou o processo contra ele por 48 a 30."
+  ],
+  [
+   "h",
+   "A imputação e o pedido de prisão"
+  ],
+  [
+   "p",
+   "A Fiscalía imputou na tarde de sábado Peña e o ex-presidente do Banco Central Carlos Carvallo. Peña responde por lesão de confiança (artigo 192 do Código Penal) e administração em proveito próprio (artigo 8 da Lei 2523), com pena máxima, em concurso, de até 15 anos. Carvallo responde pelos mesmos crimes e também por produção imediata de documentos públicos de conteúdo falso (artigo 250), com pena de até 20 anos. A promotora adjunta Nancy Salomón disse que a associação criminosa \"por ora não se configura\" e que os elementos recolhidos \"estão sendo analisados\"."
+  ],
+  [
+   "p",
+   "O pedido de prisão, assinado por quatro promotores, sustenta o risco de fuga de Peña com a ligação dele à holding U Holding S.à r.l., de Luxemburgo, em que o irmão, Francisco Peña Palacios, aparece com 58 ações em 22 contratos de cessão de 2024, e com cerca de US$ 200 mil em dinheiro entregues na residência Mburuvicha Róga em junho de 2025. Para Carvallo, a Fiscalía aponta risco de ocultação de provas: em 7 de outubro ele teria enviado ao Senado a nota BCP/P nº 016 sem relatórios técnicos que questionavam a solvência do banco. Os promotores pediram também a proibição de vender ou gravar bens e o bloqueio de contas de ambos."
+  ],
+  [
+   "p",
+   "A defesa, conduzida pelo advogado Ricardo Preda, afirma que Peña está \"sereno\", que não há risco de fuga e que pedirá medida menos severa, citando a integridade física do ex-presidente. Preda disse que os agentes entraram na casa sem ordem judicial, mas com autorização de Peña registrada em ata. O juiz estimou, segundo a Última Hora, dano preliminar de G. 3,6 trilhões e US$ 233,4 milhões, em valores de setembro."
+  ],
+  [
+   "h",
+   "Dois dias de rito acelerado"
+  ],
+  [
+   "p",
+   "A Câmara abriu o juízo político na quinta pela manhã e aprovou a acusação por 78 votos a 0; no mesmo dia, rejeitou por 48 a 30 o processo contra Alliana. Peña anunciou a renúncia por volta das 13h30, mas o Congresso não a aceitou e seguiu com o julgamento. Na sexta, 44 senadores deram quórum. Peña pediu 72 horas para preparar a defesa, e o Senado negou, por 39 votos. Ele não foi ao Congresso e enviou os advogados Adolfo Ferreiro e Ricardo Preda, que sustentaram que o julgamento era nulo porque o presidente já havia renunciado. A La Nación registrou quase 70 discursos, nenhum em defesa de Peña. Às 18h21, segundo o jornal, Peña voltou a apresentar a renúncia, sem efeito, e foi destituído meia hora depois."
+  ],
+  [
+   "p",
+   "A renúncia importava por um motivo concreto: ex-presidentes que deixam o cargo sem serem destituídos viram senadores vitalícios, com foro e imunidade, e a oposição e os manifestantes viam na saída antecipada uma manobra para preservar esse posto. A destituição o retira. Pouco antes das 19h, o presidente do Senado e do Congresso, Basilio Núñez, declarou Peña culpado e afirmou, em tradução livre: “Não podemos ficar nem mais um minuto governados por esse delinquente”."
+  ],
+  [
+   "h",
+   "A prisão e o interrogatório"
+  ],
+  [
+   "p",
+   "Segundo a La Nación, Peña foi detido na noite de sexta em casa, num bairro residencial de Assunção, enquanto Alliana prestava juramento, às 19h49. Manifestantes se reuniram em frente à residência; depois de incidentes com manifestantes, o ex-presidente foi levado ao Regimento Escolta Presidencial por razões de segurança, de acordo com o ABC Color. Carvallo se entregou à polícia na noite de sexta e está no Departamento de Investigações, em Assunção; o Ministério Público pediu que ele seja transferido para um grupamento especializado da Polícia Nacional, também por segurança."
+  ],
+  [
+   "p",
+   "No sábado, Peña chegou à Procuradoria-Geral num carro, com escolta reduzida e sem algemas, segundo imagens de veículos locais citadas pela EFE. O local foi trocado horas antes, da unidade de Delitos Econômicos e Anticorrupção para a sede central, por “razões de segurança”. O promotor Cristian Benítez disse que um juiz de garantias decidirá onde Peña ficará durante o processo e classificou o caso como difícil. A situação dele ainda é descrita de formas diferentes: a Infobae e a AP falam em prisão domiciliar até o comparecimento, o ABC Color relata a passagem pelo regimento, e a Al Jazeera informa o pedido de prisão preventiva. A AP diz que as acusações podem render até dez anos de prisão."
+  ],
+  [
+   "h",
+   "O que diz a acusação e o que responde a defesa"
+  ],
+  [
+   "p",
+   "A acusação aprovada pelos deputados, conduzida pela oposicionista Rocío Vallejo, aponta conflito de interesses (Peña foi acionista do Ueno Holding até março de 2025), a nomeação de Carvallo, que presidiu o Ueno entre 2022 e 2023, para o Banco Central, falhas de supervisão e a aplicação de cerca de US$ 355 milhões do fundo de previdência (IPS) no banco, acima dos limites legais. Peña nega ilícitos, diz que vendeu a participação e sustenta que os problemas do banco são uma questão regulatória. Os advogados denunciam violação do devido processo e ameaçam pedir a nulidade e recorrer a órgãos internacionais, segundo a Última Hora."
+  ],
+  [
+   "p",
+   "Há ainda uma investigação mais ampla. Na quinta, o procurador-geral, Emiliano Rolón, abriu inquérito sobre 39 pessoas, entre elas Peña, Alliana e dirigentes e ex-dirigentes do Banco Central, da Superintendência de Bancos, da Previdência, das binacionais Itaipu e Yacyretá e do Ministério da Economia, informa a Última Hora. A resolução, diz o jornal, não descreve a conduta atribuída a cada um, inclusive ao vice. Alliana é citado numa denúncia apresentada por senadores, e a Câmara rejeitou o processo político contra ele."
+  ],
+  [
+   "h",
+   "Alliana assume com a missão de acalmar os poupadores"
+  ],
+  [
+   "p",
+   "Pedro Alliana, 52 anos, nasceu em Pilar, no departamento de Ñeembucú, onde foi governador (2008–2012). Foi deputado por cerca de uma década, presidiu a Câmara entre 2019 e 2022 e comandou o Partido Colorado de 2016 a 2023, quando foi sucedido por Cartes, segundo a La Nación. É vice desde agosto de 2023 e integra o grupo de Cartes, o Honor Colorado. O senador Antonio Barrios, descrito pela La Nación como médico de Cartes, foi designado vice-presidente."
+  ],
+  [
+   "p",
+   "Na posse, Alliana prometeu compensar plenamente os afetados pela quebra, com prioridade para os mais pobres, cortar gastos que considera desnecessários, limitar as viagens de ministros ao exterior e exigir relatórios diários de resultados, segundo a La Nación e a Infobae. A Última Hora conta ao menos quatro saídas no governo, entre elas a do assessor político José Alberto Alderete. Alliana também enfrenta desconfiança: a Al Jazeera registra manifestantes frustrados com a posse de Alliana, que pertence ao mesmo partido e é citado em denúncias ligadas ao caso."
+  ],
+  [
+   "h",
+   "Reação internacional e efeito econômico"
+  ],
+  [
+   "p",
+   "O secretário-adjunto de Estado dos EUA para o Hemisfério Ocidental, Juan Pablo Segura, escreveu no X, neste sábado, que o Paraguai é parceiro estratégico, amigo e aliado de Washington e que o país espera trabalhar com o presidente Alliana. A embaixada americana em Assunção pediu que autoridades e cidadãos mantenham a paz e respeitem as instituições democráticas, segundo a Última Hora. De acordo com a AP, reproduzida pela Euronews, os títulos paraguaios perderam valor e o guarani se desvalorizou frente ao dólar; um aplicativo de transporte suspendeu operações, deixando 3 mil motoristas sem trabalho, e US$ 21 milhões em obras públicas foram congelados."
+  ],
+  [
+   "p",
+   "O Banco Central diz que o caso é isolado e que o sistema financeiro segue estável, e a S&P avalia que o crescimento deve resistir ao impacto de curto prazo, segundo o The New York Times, via Infobae. A economia paraguaia cresceu 6,6% no ano passado."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "O primeiro passo é o recurso que a defesa de Peña anunciou contra a preventiva, em busca de medida menos severa; as fontes lidas não informam prazo nem a decisão sobre Carvallo, cuja prisão a Fiscalía também pediu. No Banco Central, a indicação de Raúl Vera Bogado à presidência depende do Senado, segundo a Infobae. O Banco Central começou às 6h30 deste sábado o pagamento do segundo grupo de depositantes pelo Fundo de Garantia, com saldos à vista entre G. 10 milhões e G. 121,76 milhões. Cerca de 87 mil poupadores têm saldos acima do teto e ficariam sem cobertura integral, segundo a Infobae."
+  ],
+  [
+   "p",
+   "Peña é o segundo presidente do período democrático destituído por juízo político, depois de Fernando Lugo, em 2012. Se for condenado e preso, seria o primeiro ex-presidente da era democrática a cumprir pena de prisão, observa a Última Hora, que trata a hipótese como possibilidade, não como resultado."
+  ],
+  [
+   "h",
+   "Linha do tempo"
+  ],
+  [
+   "tl",
+   [
+    [
+     "2 e 3/11",
+     "O Banco Central conclui que o Ueno não cumpre a solvência mínima e fecha o banco na madrugada de terça. Carvallo renuncia à presidência do BC."
+    ],
+    [
+     "4/11",
+     "O Ministério Público acusa 27 pessoas; Peña promulga lei de emergência para antecipar pagamentos; a oposição apresenta o pedido de juízo político."
+    ],
+    [
+     "5/11",
+     "Cartes retira o apoio a Peña. A Câmara aprova a acusação por 78 a 0 e poupa Alliana (48 a 30). Peña anuncia a renúncia, que o Congresso não aceita. A Procuradoria abre inquérito sobre 39 pessoas."
+    ],
+    [
+     "6/11",
+     "O Senado nega o prazo de 72 horas e destitui Peña por 44 a 0. Alliana jura às 19h49. O Ministério Público manda prender Peña, detido em casa; Carvallo se entrega."
+    ],
+    [
+     "7/11",
+     "Peña presta declaração na Procuradoria-Geral e é acusado; os promotores pedem prisão preventiva. Os EUA reconhecem Alliana. O BC diz ter ressarcido 1,2 milhão de clientes."
+    ]
+   ]
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Os fundamentos do juiz Otazú e a situação de Carvallo na decisão: as fontes lidas dão a hora da decretação, mas não detalham a decisão sobre o ex-presidente do Banco Central.",
+    "A conduta atribuída a Alliana na investigação: a resolução da Procuradoria não a descreve, e a Câmara rejeitou o processo contra ele por 48 a 30.",
+    "O tamanho do prejuízo: Rocío Vallejo cita US$ 1,2 bilhão e diz que o número cresce; não há apuração oficial. Os depósitos públicos no banco aparecem entre US$ 800 milhões e US$ 850 milhões, conforme a fonte.",
+    "O teto de cobertura do fundo de garantia: aparece entre cerca de US$ 20 mil e US$ 38 mil por cliente, conforme a fonte; a lei de emergência permite adiantar até 40 salários mínimos.",
+    "A composição exata do Congresso e as facções dos principais atores: o El Comercio diz que o Colorado tem maioria própria nas duas Casas e que há divisão no oficialismo, mas não traz números nem nomeia as facções; a ligação de Cartes e Alliana com o Honor Colorado vem da La Nación."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Última Hora (juiz decreta a preventiva)",
+   "https://www.ultimahora.com/juez-da-prision-preventiva-al-ex-presidente-santiago-pena-por-escandalo-de-ueno-bank"
+  ],
+  [
+   "ABC Color (Peña preso no Regimento Escolta)",
+   "https://www.abc.com.py/nacionales/2026/11/07/santiago-pena-queda-preso-en-el-regimiento-escolta-presidencial/"
+  ],
+  [
+   "ABC Color (imputação e risco de fuga)",
+   "https://www.abc.com.py/nacionales/2026/11/07/ueno-bank-para-la-fiscalia-pena-se-puede-fugar-y-carvallo-ocultar-pruebas/"
+  ],
+  [
+   "Infobae (Fiscalía pede prisão provisória)",
+   "https://www.infobae.com/america/america-latina/2026/11/07/la-fiscalia-de-paraguay-pidio-la-prision-preventiva-del-ex-presidente-santiago-pena-por-el-colapso-del-ueno-bank/"
+  ],
+  [
+   "Infobae (cronologia da crise)",
+   "https://www.infobae.com/america/america-latina/2026/11/07/cronologia-de-la-crisis-financiera-que-provoco-la-destitucion-y-detencion-de-santiago-pena-en-paraguay/"
+  ],
+  [
+   "Infobae (EFE: Peña em prisão domiciliar)",
+   "https://www.infobae.com/america/agencias/2026/11/07/el-expresidente-santiago-pena-en-arresto-domiciliario-tras-su-detencion-por-la-policia/"
+  ],
+  [
+   "Infobae (posse de Alliana)",
+   "https://www.infobae.com/america/america-latina/2026/11/07/pedro-alliana-asumio-como-presidente-de-paraguay-tras-la-destitucion-de-santiago-pena-por-el-escandalo-del-ueno-bank/"
+  ],
+  [
+   "Infobae (The New York Times)",
+   "https://www.infobae.com/america/the-new-york-times/2026/11/07/el-presidente-de-paraguay-es-destituido-y-arrestado-tras-una-crisis-financiera/"
+  ],
+  [
+   "Al Jazeera (Peña preso e Alliana empossado)",
+   "https://www.aljazeera.com/news/2026/11/7/paraguays-santiago-pena-under-arrest-new-president-pedro-alliana-sworn-in"
+  ],
+  [
+   "Al Jazeera (Reuters: ex-presidente acusado)",
+   "https://www.aljazeera.com/economy/2026/11/7/paraguays-ousted-president-charged-over-banking-scandal"
+  ],
+  [
+   "ABC Color (EFE: comparecimento à Procuradoria)",
+   "https://www.abc.com.py/internacionales/2026/11/07/expresidente-santiago-pena-comparece-ante-la-fiscalia-de-paraguay-por-el-caso-ueno-bank/"
+  ],
+  [
+   "ABC Color (Carvallo se entrega)",
+   "https://www.abc.com.py/policiales/2026/11/07/ueno-bank-expresidente-del-bcp-se-entrego-y-quedo-detenido/"
+  ],
+  [
+   "Última Hora (destituído e detido)",
+   "https://www.ultimahora.com/destituido-y-detenido-pena-puede-convertirse-en-el-primer-presidente-en-terminar-en-prision"
+  ],
+  [
+   "Última Hora (inquérito sobre 39 pessoas)",
+   "https://www.ultimahora.com/fiscalia-abre-investigacion-contra-santiago-pena-pedro-alliana-y-otras-autoridades-tras-escandalo-de-ueno"
+  ],
+  [
+   "Última Hora (reação dos EUA)",
+   "https://www.ultimahora.com/eeuu-se-pronuncia-tras-detencion-de-santiago-pena-y-asuncion-de-pedro-alliana"
+  ],
+  [
+   "La Nación (jornada histórica)",
+   "https://www.lanacion.com.ar/el-mundo/santiago-pena-fue-destituido-y-detenido-tras-una-jornada-historica-en-paraguay-nid06112026/"
+  ],
+  [
+   "La Nación (perfil de Alliana)",
+   "https://www.lanacion.com.ar/el-mundo/quien-es-pedro-alliana-el-nuevo-presidente-de-paraguay-nid06112026/"
+  ],
+  [
+   "Euronews (AP)",
+   "https://pt.euronews.com/2026/11/07/paraguai-destitui-presidente-santiago-pena-em-plena-crise-do-banco-ueno"
+  ],
+  [
+   "Agência Brasil",
+   "https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/apos-impeachment-santiago-pena-e-preso-no-paraguai"
+  ],
+  [
+   "El Comercio (Partido Colorado respalda o juízo político)",
+   "https://www.elcomercio.com/actualidad/mundo/partido-colorado-respalda-juicio-politico-contra-santiago-pena-paraguay/"
+  ],
+  [
+   "Primicias (claves del juicio político)",
+   "https://www.primicias.ec/internacional/juicio-politico-santiago-pena-presidente-paraguay-crisis-banco-ueno-bank-136440/"
+  ]
+ ]
+};
+S.ueno_bank = {
+ "ed": "mundo",
+ "k": "Mundo · Paraguai",
+ "hora": "8/11",
+ "t": "Ueno Bank: o que se sabe sobre a quebra do banco que reunia 3 milhões de clientes e US$ 800 milhões de dinheiro público",
+ "sub": "O Banco Central diz que o capital caiu abaixo da metade do mínimo legal; 27 pessoas foram acusadas e 1,2 milhão de clientes já receberam reembolso.",
+ "dado": {
+  "n": "3 milhões",
+  "l": "Clientes do Ueno Bank com contas bloqueadas · mais de US$ 800 milhões em recursos públicos"
+ },
+ "resumo": "O prejuízo do caso Ueno Bank ao Estado paraguaio é estimado de forma preliminar em US$ 809,5 milhões, informa o ABC Color, com fundos de IPS, Itaipu, Yacyretá, ANDE e Cajubi. O juiz Humberto Otazú decretou a preventiva e o embargo de bens do ex-presidente Santiago Peña e o embargo contra o ex-presidente do Banco Central Carlos Carvallo. O governo de Pedro Alliana diz que 1.196.000 pessoas receberam a garantia estatal, cerca de G. 996 bilhões (US$ 160 milhões). Peña, Alliana e Cartes são do Partido Colorado, de direita.",
+ "upd": "A matéria passou a explicar quem são os atores políticos do caso (partido de Peña, Alliana e Cartes, e quem pediu o juízo político).",
+ "fundo": [
+  [
+   "p",
+   "O Banco Central do Paraguai (BCP) fechou o Ueno Bank na madrugada de terça (3) porque o índice de solvência da instituição caiu abaixo de 50% do mínimo exigido por lei. Cerca de 3 milhões de clientes ficaram sem acesso ao dinheiro, e o colapso derrubou, três dias depois, o presidente Santiago Peña."
+  ],
+  [
+   "h",
+   "Quem é quem na crise política do Ueno"
+  ],
+  [
+   "p",
+   "O caso mistura banco e política dentro do mesmo partido. O presidente destituído, Santiago Peña, e o vice que assumiu, Pedro Alliana, são do Partido Colorado, de direita e de maioria no Congresso, ligados ao ex-presidente Horacio Cartes, que preside a legenda. Peña foi acionista do grupo dono do Ueno até março de 2025 e nomeou para o Banco Central o ex-presidente do banco, Carlos Carvallo, que nega irregularidades. A oposição pediu o juízo político, mas a destituição só foi possível depois que Cartes retirou o apoio a Peña."
+  ],
+  [
+   "p",
+   "A diretoria do BCP chegou a essa conclusão na segunda (2), segundo a Infobae, depois que a Superintendência de Bancos encontrou créditos e saques a descoberto elevados para empresas do Grupo Vázquez, controlador do banco, muitos sem garantias suficientes. Aplicativo, cartões, caixas eletrônicos e agências foram bloqueados."
+  ],
+  [
+   "nums",
+   [
+    [
+     "2,9 mi",
+     "clientes, segundo o ABC Color e a Infobae; o banco dizia atender mais da metade dos adultos"
+    ],
+    [
+     "US$ 800 mi",
+     "ou mais em recursos de órgãos públicos, incluindo a Previdência (IPS)"
+    ],
+    [
+     "US$ 146 mi",
+     "em empréstimos a empresas ligadas ao dono, segundo a Al Jazeera"
+    ],
+    [
+     "27",
+     "pessoas acusadas pelo Ministério Público"
+    ],
+    [
+     "97%",
+     "dos depositantes cobertos integralmente pelo fundo de garantia, segundo o BC"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Como o banco cresceu"
+  ],
+  [
+   "p",
+   "O Grupo Vázquez comprou em 2021 a financeira El Comercio e a relançou como banco digital; recebeu licença bancária plena em dezembro de 2023 e, em meados de 2024, absorveu o Visión Banco, segundo a Infobae. A Al Jazeera descreve uma expansão com cashback em supermercados, mais de 70 agências e patrocínio da seleção de futebol. No fim de 2025, o Ueno detinha 8,9% dos depósitos e 5,9% dos empréstimos do sistema, era o quinto do país em depósitos e, em março de 2026, emitiu US$ 350 milhões em títulos com vencimento em 2031, os únicos de um banco paraguaio negociados no exterior."
+  ],
+  [
+   "p",
+   "Para o analista Alejandro García, da Fitch, citado pelo The New York Times, o Ueno construiu um modelo ágil e bem-sucedido que levou muitos paraguaios sem conta bancária ao sistema formal. Segundo o próprio banco, mais de 1 milhão de pessoas abriram ali a primeira conta, número que não foi verificado de forma independente. Parte do crescimento se apoiou em recursos públicos: mais de US$ 800 milhões de órgãos estatais, incluindo cerca de US$ 355 milhões do fundo de previdência IPS, algo próximo de 9% a 10% da carteira do instituto; a Al Jazeera cita US$ 380 milhões do IPS em outra reportagem, com dados do BCP."
+  ],
+  [
+   "h",
+   "O que o Banco Central e o Ministério Público apontam"
+  ],
+  [
+   "p",
+   "Segundo a Al Jazeera, o banco havia emprestado US$ 146 milhões a empresas ligadas ao dono, acima dos limites legais e sem garantias adequadas, e contabilizado como ativos gastos que não poderiam sê-lo; com a correção, o capital ficou abaixo de metade do mínimo. O Ministério Público sustenta, segundo a Infobae, que, depois de a supervisão mandar o banco se desfazer de créditos a empresas relacionadas, o Ueno transferiu uma carteira de US$ 74,4 milhões à Vinanzas SA, ligada ao grupo, que não teria recursos próprios suficientes e teria sido financiada indiretamente pelo próprio banco, o que pode ter escondido a situação real da instituição. O Ministério Público estima que cerca de US$ 167 milhões dificilmente serão recuperados; os dados são acusações e estimativas, ainda não confirmados em juízo."
+  ],
+  [
+   "p",
+   "Na quarta (4), o Ministério Público acusou 27 pessoas, os oito diretores e 19 representantes de empresas ligadas, por conduta indevida em crise financeira, lesão de confiança, tentativa de fraude e violação do dever de manter os livros comerciais. Na quinta, um juiz mandou para a prisão preventiva seis executivos, entre eles o fundador, Miguel Vázquez, e o presidente do banco, Juan Manuel Gustale, e determinou prisão domiciliar para outros dois, segundo a Al Jazeera; na sexta, os executivos foram transferidos para presídios. A Infobae informa bloqueio preventivo de US$ 70 milhões em bens de diretores e das empresas do grupo. A Procuradoria-Geral abriu na quinta um inquérito sobre 39 pessoas, entre elas o presidente Peña e o vice Alliana, mas a resolução não descreve a conduta de cada um, segundo a Última Hora."
+  ],
+  [
+   "h",
+   "O avanço do processo"
+  ],
+  [
+   "p",
+   "Segundo a Fiscalía, Peña foi acionista do Ueno Holding até março de 2025. O Instituto de Previdência Social (IPS) investiu cerca de US$ 355 milhões no banco, e aproximadamente 32 mil dos 91 mil aposentados do instituto tinham conta no Ueno. O cofundador Miguel Vázquez e outros cinco executivos estão em prisão preventiva. Neste sábado, o juiz Humberto Otazú decretou a preventiva de Peña, e a Fiscalía pediu a de Carvallo por suposta supressão de relatórios técnicos enviados ao Senado, o que ele ainda pode contestar."
+  ],
+  [
+   "p",
+   "A deputada Rocío Vallejo, que conduziu a acusação, fala em \"buraco\" de US$ 1,2 bilhão e chamou Peña de \"o maior desfalcador da história do Paraguai\", estimativa que não foi verificada por apuração oficial."
+  ],
+  [
+   "h",
+   "Quem paga e quando"
+  ],
+  [
+   "p",
+   "O Congresso aprovou na quarta uma lei de emergência (nº 7.745) que permite antecipar, por meio do Fundo de Garantia de Depósitos, até 40 salários mínimos por poupador. Contas de até 10 milhões de guaranis, cerca de US$ 1,5 mil, foram as primeiras a ser pagas, a partir da noite de quinta. O Banco Central afirma que o fundo cobre integralmente cerca de 97% dos depositantes, estimativa que a S&P também cita. Neste sábado, o BC disse que 1,2 milhão de clientes já haviam recebido reembolso parcial ou total, informa a Al Jazeera."
+  ],
+  [
+   "p",
+   "Quem ficou acima do teto não terá cobertura integral: a Infobae fala em cerca de 87 mil poupadores nessa situação, e analistas citados pelo The New York Times alertam que empresas com grandes depósitos também podem perder dinheiro. O valor do teto varia conforme a reportagem, de cerca de US$ 20 mil a US$ 38 mil por cliente. O presidente Pedro Alliana prometeu compensar plenamente os afetados, sem detalhar mecanismo nem valor. A deputada Rocío Vallejo estima o prejuízo em US$ 1,2 bilhão e diz que o número cresce, estimativa não verificada."
+  ],
+  [
+   "h",
+   "Efeitos sobre economia, emprego e vizinhos"
+  ],
+  [
+   "p",
+   "Segundo a AP, reproduzida pela Euronews, os títulos paraguaios perderam valor e o guarani se desvalorizou frente ao dólar, enquanto um aplicativo de transporte suspendeu as operações, deixando 3 mil motoristas sem trabalho, e US$ 21 milhões de obras públicas ficaram congelados. O Banco Central trata o caso como isolado e diz que o sistema financeiro segue estável; a S&P avalia que o crescimento, de 6,6% no ano passado, deve resistir ao choque de confiança de curto prazo. Na Argentina, a Kaitel SRL, ligada ao grupo ITTI, que o Ministério Público cita entre as empresas para onde teriam fluído recursos, suspendeu parte dos funcionários sem salário de 5 de novembro a 4 de dezembro, informa a Infobae."
+  ],
+  [
+   "h",
+   "Um histórico que pesa"
+  ],
+  [
+   "p",
+   "A Al Jazeera lembra que o Paraguai atravessou uma longa crise bancária entre meados dos anos 1990 e o início dos 2000, após o fechamento do Bancopar, em 1995, e que o governo cobriu os depósitos de quatro bancos, o que deixou danos duradouros à confiança no sistema. Parte da cobrança política contra Peña vem da proximidade com o grupo: ele declarou, antes de assumir, participação no Ueno Holding e, segundo a Infobae, seu irmão consta como sócio da U Holding SARL, veículo pelo qual o grupo controlaria o banco. Peña diz que se desfez das ações em 2025 e que nada ilegal ocorreu."
+  ],
+  [
+   "h",
+   "O prejuízo e os pagamentos"
+  ],
+  [
+   "p",
+   "O ABC Color calcula o prejuízo preliminar em US$ 809,5 milhões: G. 3,6 trilhões (cerca de US$ 576,1 milhões) mais US$ 233,4 milhões, com recursos do IPS, de Itaipu, de Yacyretá, da ANDE e da Cajubi. O jornal cita ainda que Peña declarou patrimônio de G. 23 bilhões em 2023, 1.603% acima do de 2017, e que dois envelopes com US$ 200 mil teriam sido achados na residência oficial, informação que a matéria apresenta como relato."
+  ],
+  [
+   "p",
+   "O El Comercio, com material de EFE e AFP, informa que 1.196.000 pessoas já receberam a garantia estatal, perto de G. 996 bilhões, desde o início dos pagamentos, na quinta (5). O Banco Central é conduzido pelo interino Pedro Acosta. O Ministério Público imputou Peña por lesão de confiança e administração em proveito próprio e Carvallo pelos mesmos delitos mais documento público falso; a RDN registra pena de até 10 anos para a imputação, número diferente dos 15 anos citados por outras fontes."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "ul",
+   [
+    "Recurso da defesa de Peña contra a prisão preventiva e o embargo de bens.",
+    "Decisão do juiz Humberto Otazú sobre Carvallo e andamento da causa 92/2026.",
+    "Novos pagamentos da garantia estatal aos cerca de 2,94 milhões de clientes afetados e nomeação do titular do Banco Central."
+   ]
+  ],
+  [
+   "h",
+   "O que ainda não se sabe"
+  ],
+  [
+   "ul",
+   [
+    "O tamanho final do rombo e quanto poderá ser recuperado: o Ministério Público fala em cerca de US$ 167 milhões com poucas chances de cobrança, e a estimativa de Vallejo é de US$ 1,2 bilhão.",
+    "Quanto dos recursos da Previdência (IPS) e de outros órgãos públicos será devolvido, e em que prazo.",
+    "Se haverá mecanismo de compensação para quem tem saldo acima do teto de garantia e para empresas com depósitos maiores.",
+    "O destino dos funcionários do Ueno e das empresas do Grupo Vázquez, cuja situação trabalhista segue incerta."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "ABC Color (prejuízo preliminar)",
+   "https://www.abc.com.py/nacionales/2026/11/08/caso-ueno-perjuicio-causado-por-santiago-pena-seria-de-mas-de-us-809-millones/"
+  ],
+  [
+   "RDN (preventiva e embargo)",
+   "https://www.rdn.com.py/2026/11/08/juez-dicta-prision-preventiva-y-embargo-de-bienes-contra-santiago-pena-por-caso-ueno"
+  ],
+  [
+   "El Comercio (EFE e AFP)",
+   "https://elcomercio.pe/mundo/latinoamerica/santiago-pena-queda-en-prision-preventiva-tras-su-destitucion-por-el-caso-ueno-bank-en-paraguay-noticia/"
+  ],
+  [
+   "Última Hora (juiz decreta a preventiva)",
+   "https://www.ultimahora.com/juez-da-prision-preventiva-al-ex-presidente-santiago-pena-por-escandalo-de-ueno-bank"
+  ],
+  [
+   "ABC Color (imputação e risco de fuga)",
+   "https://www.abc.com.py/nacionales/2026/11/07/ueno-bank-para-la-fiscalia-pena-se-puede-fugar-y-carvallo-ocultar-pruebas/"
+  ],
+  [
+   "Infobae (cronologia da crise)",
+   "https://www.infobae.com/america/america-latina/2026/11/07/cronologia-de-la-crisis-financiera-que-provoco-la-destitucion-y-detencion-de-santiago-pena-en-paraguay/"
+  ],
+  [
+   "Infobae (quem é quem no caso)",
+   "https://www.infobae.com/economia/2026/11/07/quien-es-quien-y-cuales-son-las-claves-del-escandalo-del-ueno-bank-que-termino-con-la-detencion-de-pena-en-paraguay/"
+  ],
+  [
+   "Infobae (The New York Times)",
+   "https://www.infobae.com/america/the-new-york-times/2026/11/07/el-presidente-de-paraguay-es-destituido-y-arrestado-tras-una-crisis-financiera/"
+  ],
+  [
+   "Al Jazeera (a crise bancária paraguaia)",
+   "https://www.aljazeera.com/news/2026/11/6/how-paraguays-ueno-collapse-is-only-its-latest-banking-crisis"
+  ],
+  [
+   "Al Jazeera (Reuters: ex-presidente acusado)",
+   "https://www.aljazeera.com/economy/2026/11/7/paraguays-ousted-president-charged-over-banking-scandal"
+  ],
+  [
+   "Euronews (AP)",
+   "https://pt.euronews.com/2026/11/07/paraguai-destitui-presidente-santiago-pena-em-plena-crise-do-banco-ueno"
+  ],
+  [
+   "Última Hora (inquérito sobre 39 pessoas)",
+   "https://www.ultimahora.com/fiscalia-abre-investigacion-contra-santiago-pena-pedro-alliana-y-otras-autoridades-tras-escandalo-de-ueno"
+  ],
+  [
+   "ABC Color (EFE)",
+   "https://www.abc.com.py/internacionales/2026/11/07/expresidente-santiago-pena-comparece-ante-la-fiscalia-de-paraguay-por-el-caso-ueno-bank/"
+  ]
+ ]
+};
+S.alcolumbre_stf = {
+ "ed": "politica",
+ "k": "Política · Senado",
+ "hora": "7/11",
+ "t": "Eleição para presidir o Senado já tem três pré-candidatos; grupo de Alcolumbre diz ter 48 votos, e aliados de Tereza Cristina contestam",
+ "sub": "A maioria é de 41 dos 81 senadores. O voto é secreto, e o PL avalia propor votação aberta. Marinho e Tereza dizem que não serão candidatos um contra o outro.",
+ "dado": {
+  "n": "41 de 81",
+  "l": "votos para eleger o presidente do Senado em 1º de fevereiro · o grupo de Alcolumbre diz ter 48"
+ },
+ "resumo": "A eleição para a presidência do Senado, em 1º de fevereiro, já tem três pré-candidatos: Davi Alcolumbre (União-AP), que busca a reeleição com apoio do governo Lula; Rogério Marinho (PL-RN); e Tereza Cristina (PP-MS), que mantém a candidatura contra a orientação do próprio partido. O grupo de Alcolumbre diz ter 48 dos 81 votos; aliados de Tereza estimam de 7 a 8 a menos. A maioria é de 41. O voto é secreto, e o PL avalia propor votação aberta. O PL e o Novo representam a direita de oposição; União Brasil e PP, o Centrão, apoiam Alcolumbre com o governo Lula.",
+ "upd": "A matéria passou a situar cada candidato e cada bancada no espectro político e a mostrar quem apoia quem.",
+ "fundo": [
+  [
+   "p",
+   "A eleição para a presidência do Senado, prevista para 1º de fevereiro, já tem três pré-candidatos: o atual presidente, Davi Alcolumbre (União-AP), que busca a reeleição com o apoio do governo Lula; o líder da oposição, Rogério Marinho (PL-RN); e a líder do PP, Tereza Cristina (MS), que mantém a candidatura contra a orientação do próprio partido. O grupo de Alcolumbre diz ter 48 dos 81 votos, e aliados de Tereza contestam a conta."
+  ],
+  [
+   "p",
+   "Os números são de bastidor e não coincidem. Aliados de Tereza estimam que Alcolumbre tenha de 7 a 8 votos a menos do que diz ter e afirmam, segundo a CNN Brasil, que nem ele nem Marinho têm hoje os 41 votos necessários, a maioria dos 81 senadores. A oposição identifica parlamentares contados nas projeções de mais de uma candidatura, o que aumenta a incerteza, informa o Correio do Estado."
+  ],
+  [
+   "nums",
+   [
+    [
+     "48",
+     "votos que o grupo de Alcolumbre diz reunir, de 81"
+    ],
+    [
+     "41",
+     "votos para a maioria; aliados de Tereza dizem que nenhum dos dois tem hoje"
+    ],
+    [
+     "32",
+     "senadores que a oposição vê como base contrária à reeleição: 29 do PL e 3 do Novo"
+    ],
+    [
+     "16",
+     "parlamentares de Republicanos, Podemos e PSDB, com votos em disputa"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Quem é quem: os três lados e as contas"
+  ],
+  [
+   "p",
+   "Em termos de campos políticos, o PL de Marinho, com 29 senadores, e o Novo, com 3, formam o bloco de direita e oposição ao governo Lula, que a oposição vê como base contrária à reeleição de Alcolumbre. O União Brasil e o PP, federados e liderados por Antonio Rueda e Ciro Nogueira, fazem parte do Centrão, bloco de centro-direita, e hoje apoiam Alcolumbre, que conta também com o governo Lula (PT). Republicanos, Podemos e PSDB, com 16 votos em disputa, são o fiel da balança. Tereza Cristina, ex-ministra de Bolsonaro, é da mesma família política do PL mas disputa contra Marinho e contra a orientação do próprio PP."
+  ],
+  [
+   "p",
+   "Alcolumbre tem o apoio das direções do União Brasil e do PP, que formam uma federação. Os presidentes das duas legendas, Antonio Rueda e Ciro Nogueira, divulgaram nota em que defendem a continuidade do senador como garantia de estabilidade institucional e equilíbrio político. A federação terá 11 senadores, e parte deles não pretende seguir a orientação: o senador eleito Guilherme Derrite (PP-SP) anunciou que não votará em Alcolumbre."
+  ],
+  [
+   "p",
+   "Marinho, que coordenou a campanha presidencial de Flávio Bolsonaro, é o nome do PL, que terá 29 senadores a partir de fevereiro, segundo o Correio do Estado (outras fontes falam em 28). Ele defende que o impeachment de ministros do STF seja a prioridade do Senado em 2027 e tem o apoio de Flávio Bolsonaro e do senador eleito Carlos Bolsonaro (PL-SC). O lançamento oficial da candidatura estava previsto para a quarta (4)."
+  ],
+  [
+   "p",
+   "Tereza Cristina, ex-ministra da Agricultura de Jair Bolsonaro, tenta se firmar como terceira via. Aliados dizem à CNN Brasil que ela pode atrair partidos do Centrão que resistem a Marinho e também não querem a recondução de Alcolumbre. Ela aceita discutir o impeachment de ministros do STF, mas não que o tema seja a prioridade do Senado: defende também uma ampla agenda de reformas econômicas em 2027. Na terça (3), disse que quer ser a primeira mulher a presidir a Casa."
+  ],
+  [
+   "h",
+   "Voto secreto, rodízio e o peso do STF"
+  ],
+  [
+   "p",
+   "A eleição é por voto secreto, o que permite candidaturas individuais e apoios não declarados. O PL avalia defender a votação aberta, que, segundo o DGABC, teria o objetivo de pressionar parlamentares eleitos com o apoio do bolsonarismo; o tema seria discutido pela bancada na quarta (4). Tereza afirmou em nota, em 27 de outubro, que o voto dos senadores é livre, soberano e secreto."
+  ],
+  [
+   "p",
+   "Marinho diz haver um acordo para que os dois não sejam candidatos um contra o outro. Tereza confirma as conversas, mas afirma que as duas candidaturas estão mantidas. A oposição discute um rodízio, com um nome em 2027 e outro em 2029, e, segundo a CNN Brasil, a estratégia de Tereza é manter a candidatura até o fim para ganhar força e só então tentar convencer Marinho a desistir. Os dois se reuniram na semana anterior sem chegar a acordo."
+  ],
+  [
+   "p",
+   "A disputa também passa pelo Supremo. Parlamentares do PL afirmam, segundo a Gazeta do Povo, que Alcolumbre mantém engavetados pedidos de impeachment do ministro Alexandre de Moraes e dizem querer derrotá-lo para fazê-los andar. Condenar um ministro no Senado exige 54 dos 81 votos. O cientista político Elias Tavares, ouvido pelo Correio da Manhã, calcula que ao menos 49 senadores são favoráveis ao impeachment de ministros, mas que a maioria necessária ainda não existe, embora a distância tenha diminuído."
+  ],
+  [
+   "p",
+   "O Globo revelou, segundo o Correio do Estado, uma articulação entre Congresso, governo e Judiciário para atenuar a situação judicial de Jair Bolsonaro, rejeitada pela bancada do PL e por senadores da oposição. Damares Alves (Republicanos-DF) e Hamilton Mourão (Republicanos-RS) recusaram vincular a eleição da Mesa ao caso de Bolsonaro."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "A votação é em 1º de fevereiro de 2027, dia em que toma posse a nova legislatura, e Tereza diz que faltam menos de 90 dias. Ela pretende acompanhar o placar da semana e avaliar novos apoios. O PL deve decidir se defenderá o voto aberto, a oposição precisa definir se terá um ou dois candidatos, e os votos de Republicanos, Podemos e PSDB, que somam 16 parlamentares, estão em disputa entre as candidaturas."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Os números de cada campo vêm de aliados dos próprios candidatos: o grupo de Alcolumbre diz ter 48 votos, e aliados de Tereza estimam de 7 a 8 a menos. Nenhuma contagem independente foi encontrada.",
+    "As páginas consultadas são de 3 de novembro ou não têm data e não informam se o lançamento de Marinho ocorreu na quarta (4) nem o que o PL decidiu sobre o voto aberto.",
+    "A bancada do PL aparece com 29 senadores no Correio do Estado e com 28 no Times Brasil, na Gazeta do Povo e no levantamento da ARX; as matérias não explicam a diferença.",
+    "O rodízio entre Marinho e Tereza é uma discussão da oposição: nenhum dos dois confirmou que aceitaria desistir.",
+    "A Agenda do Poder, que atribui a informação ao UOL, diz que ministros do STF atuam nos bastidores pela reeleição de Alcolumbre, por receio de processos de impeachment. É informação de bastidor, não foi confirmada pelos citados, e a própria matéria ressalva que contatos ou vínculos, por si sós, não comprovam irregularidades."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Itatiaia (CNN Brasil)",
+   "https://www.itatiaia.com.br/politica/tereza-cristina-mantem-candidatura-e-vira-3a-via-ao-comando-do-senado/"
+  ],
+  [
+   "DGABC",
+   "https://www.dgabc.com.br/Noticia/4366631/tereza-cristina-reafirma-candidatura-a-presidencia-do-senado-e-pl-quer-voto-aberto"
+  ],
+  [
+   "Correio do Estado",
+   "https://correiodoestado.com.br/politica/tereza-cristina-e-rogerio-marinho-travam-duelo-pelos-votos-do-centrao/476152/"
+  ],
+  [
+   "Gazeta do Povo (Tereza Cristina critica o apoio à reeleição)",
+   "https://www.gazetadopovo.com.br/republica/tereza-cristina-critica-apoio-uniao-brasil-pp-reeleicao-alcolumbre/"
+  ],
+  [
+   "Correio da Manhã (Elias Tavares)",
+   "https://www.correiodamanha.com.br/politica/2026/10/324752-aumento-da-direita-no-congresso-amplia-articulacao-mas-nao-garante-aprovacao-de-pautas-avalia-especialista.html"
+  ],
+  [
+   "Agenda do Poder",
+   "https://agendadopoder.com.br/ministros-do-stf-atuam-nos-bastidores-para-reeleger-alcolumbre-e-barrar-ameaca-de-impeachment-no-senado/"
+  ]
+ ]
+};
+S.dino_6x1 = {
+ "ed": "politica",
+ "k": "Política · STF",
+ "hora": "8/11",
+ "t": "STF reúne confederações, centrais e governo na terça (10) para negociar a implementação do fim da escala 6x1; Marinho prevê decreto na segunda",
+ "sub": "Dino diz que o corte da jornada não está em discussão e que a audiência trata só de prazos; CNI e CNC pedem adiar a mudança e proteger acordos coletivos.",
+ "dado": {
+  "n": "10/11, 14h",
+  "l": "Audiência de conciliação na Primeira Turma do STF, convocada pelo ministro Flávio Dino"
+ },
+ "resumo": "A CNI e a CNC pediram ao STF mais prazo para a transição do fim da escala 6x1, e o ministro Flávio Dino marcou audiência de conciliação para terça (10), às 14h, sem conceder liminar. A CNI quer suspender os prazos por no mínimo um ano e estima alta de 11,1% no custo do trabalho formal, cerca de R$ 88 bilhões; a CNC propõe 42 horas em outubro de 2027 e 40 horas em outubro de 2028. A emenda prevê a primeira etapa a partir de 16 de dezembro, e o ministro Luiz Marinho promete regulamentação na segunda (9). Em campos opostos estão as confederações patronais e o governo Lula, com as centrais sindicais e o Congresso também intimados.",
+ "upd": "A matéria passou a situar quem está de cada lado: patronal, centrais sindicais, governo, Congresso e o relator no STF.",
+ "fundo": [
+  [
+   "p",
+   "O ministro Flávio Dino convocou para terça-feira (10), às 14h, na Sala de Sessões da Primeira Turma do Supremo Tribunal Federal, uma audiência de conciliação sobre a aplicação da Emenda Constitucional 141/2026, que extinguiu a escala 6x1 e fixou jornada de até 40 horas semanais com dois dias de repouso remunerado. A convocação, publicada pelo STF na quinta (5), está vinculada à Ação Direta de Inconstitucionalidade 8041, da Confederação Nacional do Comércio (CNC)."
+  ],
+  [
+   "nums",
+   [
+    [
+     "10/11, 14h",
+     "audiência na Primeira Turma do STF"
+    ],
+    [
+     "40 h",
+     "jornada semanal final prevista na emenda"
+    ],
+    [
+     "42 h",
+     "primeira etapa, de 44 para 42 horas, em 60 dias"
+    ],
+    [
+     "11,1%",
+     "alta do custo do trabalho formal na indústria, estimada pela CNI"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Quem é quem: quem foi chamado e o que está em jogo"
+  ],
+  [
+   "p",
+   "Há três campos na mesa. De um lado, as confederações patronais, a CNI (indústria) e a CNC (comércio), que contestam o calendário da transição e estimam custo maior para as empresas. De outro, as centrais sindicais, que foram intimadas, e o governo Lula (PT), por meio do ministro do Trabalho, Luiz Marinho, que promete regulamentar a emenda e garantir oito folgas por mês. O Congresso, que aprovou e promulgou a Emenda Constitucional 141/2026, é parte intimada. No meio está o ministro Flávio Dino, relator das ações, que diz que a redução da jornada não está em discussão e que só os prazos podem mudar."
+  ],
+  [
+   "p",
+   "Foram intimadas as confederações empresariais nacionais, as centrais sindicais, a Advocacia-Geral da União (AGU), as advocacias do Senado e da Câmara e a Procuradoria-Geral da República (PGR). O texto do STF descreve a primeira etapa da emenda em 60 dias, com queda de 44 para 42 horas semanais e duas folgas por semana, e a jornada de 40 horas em um ano."
+  ],
+  [
+   "p",
+   "Dino escreveu que a redução da jornada e a ampliação do repouso não estão em discussão. A audiência, afirma, trata só da implementação. Na análise inicial, o prazo de dois meses \"não parece inviável\", e a emenda exige negociação coletiva para ajustar a jornada diária ao limite de 42 horas, o que explica a busca de consenso antes de qualquer decisão. O ministro lembrou ainda que a declaração de inconstitucionalidade de uma emenda constitucional é \"medida excepcional\"."
+  ],
+  [
+   "h",
+   "O pedido da indústria e do comércio"
+  ],
+  [
+   "p",
+   "A Agência Brasil relata que a CNI e a CNC foram ao STF na quarta (4). A Confederação Nacional da Indústria (CNI), autora da ADI 8042, que contesta as regras de transição, estima alta de 11,1% no custo do trabalho formal da indústria, o equivalente a R$ 88 bilhões, e pede que acordos e convenções coletivas em vigor mantenham \"plenos efeitos até o término regular de seus prazos de vigência\". A CNC quer adiar o início da redução da jornada para outubro de 2027 e cita pesquisa Nexus de fevereiro em que 73% dos entrevistados apoiam o fim da 6x1."
+  ],
+  [
+   "h",
+   "O calendário da emenda e o pedido da CNC"
+  ],
+  [
+   "p",
+   "Segundo a CNN Brasil, a emenda promulgada em outubro reduz a jornada de 44 para 42 horas em 16 de dezembro de 2026, com dois dias de descanso, e chega às 40 horas em dezembro de 2027. A CNC pede que a primeira etapa vá para outubro de 2027 e a de 40 horas, para outubro de 2028. Dino não concedeu liminar: deu cinco dias para Câmara e Senado informarem e três dias para a AGU e a PGR se manifestarem, antes da audiência."
+  ],
+  [
+   "h",
+   "O decreto e a regulamentação do governo"
+  ],
+  [
+   "p",
+   "A Agência Brasil informa que o ministro do Trabalho, Luiz Marinho, prevê para segunda (9) a publicação de um decreto regulamentador, que deve garantir ao menos oito folgas por mês. A CNN Brasil, em reportagem de quarta (4), detalha que Marinho falou na coletiva do Caged: as oito folgas mensais viriam por convenção coletiva, com ao menos uma folga por semana, e haveria exceções para saúde, transporte, segurança e limpeza urbana, com escalas definidas por categoria. A vigência esperada é 15 de dezembro, data que outra reportagem da CNN trata como 16. O Planalto não confirmou o decreto nas matérias lidas."
+  ],
+  [
+   "h",
+   "O que pedem as confederações"
+  ],
+  [
+   "p",
+   "Segundo a WSCOM, a emenda constitucional promulgada em 16 de outubro prevê a primeira etapa a partir de 16 de dezembro, com 42 horas semanais e dois dias de descanso, e as 40 horas em dezembro de 2027. A CNC quer a primeira etapa em outubro de 2027 e as 40 horas em outubro de 2028. A CNI pede a suspensão dos prazos por no mínimo um ano e estima que o custo do trabalho formal subirá 11,1%, cerca de R$ 88 bilhões."
+  ],
+  [
+   "p",
+   "Dino afirmou que um prazo de dois meses “não parece inviável”, não concedeu liminar e disse que a audiência de terça não discutirá a validade da redução da jornada. O ministro do Trabalho, Luiz Marinho, prevê a publicação da regulamentação na segunda (9). A Agência Brasil registra o mínimo de oito folgas em 30 dias e tratamento específico para setores de operação contínua, e a data de início aparece como 15 ou 16 de dezembro, conforme a fonte."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "ul",
+   [
+    "Segunda (9): data prevista para o decreto regulamentador, segundo Marinho.",
+    "Terça (10), 14h: audiência de conciliação no STF, com empresários, centrais, AGU, Congresso e PGR.",
+    "Depois da audiência, Dino decide se propõe um calendário de transição ou devolve as ações ao plenário."
+   ]
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "O resultado da audiência e a eventual mudança de prazos pelo STF.",
+    "Se o decreto sai na segunda e com que conteúdo; a previsão é do ministro Marinho.",
+    "A data exata de vigência da primeira etapa: 15 ou 16 de dezembro, conforme a reportagem da CNN Brasil."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "WSCOM",
+   "https://wscom.com.br/destaque/destaque-especial/2026/11/08/cnc-cni-stf-adiar-fim-escala-6x1/"
+  ],
+  [
+   "Click Petróleo e Gás (decreto)",
+   "https://clickpetroleoegas.com.br/governo-lula-prepara-decreto-sobre-fim-da-escala-6x1-com-oito-folgas-mensais-e-publicacao-prevista-para-9-de-novembro-asaf04"
+  ],
+  [
+   "STF",
+   "https://noticias.stf.jus.br/postsnoticias/escala-6x1-stf-marca-audiencia-de-conciliacao-para-debater-implementacao-da-mudanca/"
+  ],
+  [
+   "Agência Brasil",
+   "https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/entidades-da-industria-e-do-comercio-recorrem-ao-stf-contra-fim-da-6x1"
+  ],
+  [
+   "CNN Brasil (audiência)",
+   "https://www.cnnbrasil.com.br/politica/dino-marca-audiencia-para-discutir-prazo-para-implementar-fim-da-escala-6x1/"
+  ],
+  [
+   "CNN Brasil (decreto)",
+   "https://www.cnnbrasil.com.br/economia/money/macroeconomia/governo-planeja-divulgar-decreto-do-fim-da-escala-6x1-na-proxima-segunda/"
+  ]
+ ]
+};
+S.ucrania_energia = {
+ "ed": "mundo",
+ "k": "Mundo · Ucrânia",
+ "hora": "8/11",
+ "t": "Ataque russo danifica a Ponte Norte de Kiev, atinge a rede elétrica e deixa cinco regiões da Ucrânia com cortes de energia",
+ "sub": "Zelensky fala em 36 mísseis balísticos e 172 drones; Moscou diz ter mirado alvos militares, de energia e de transporte. A negociação em Abu Dhabi está marcada para terça (10).",
+ "resumo": "A Rússia lançou 172 drones e 36 mísseis balísticos contra a Ucrânia, e a defesa interceptou só 4 dos mísseis, informa a Al Jazeera. O ataque deixou ao menos 2 mortos e cerca de 12 feridos, atingiu subestações em cinco regiões e deixou Kiev com problemas de luz, água e aquecimento. Em Komyshuvakha, na região de Zaporíjia, ao menos 50 pessoas morreram em um ataque a um ponto de ajuda, segundo o serviço de emergência ucraniano. A rodada trilateral em Abu Dhabi está prevista para terça (10).",
+ "upd": "A Al Jazeera detalha o ataque de 7/11: 172 drones e 36 mísseis balísticos, só 4 interceptados, com subestações atingidas em cinco regiões; a rodada de Abu Dhabi é na terça (10).",
+ "fundo": [
+  [
+   "p",
+   "Um ataque russo na madrugada deste sábado (7) danificou a Ponte Norte, sobre o Rio Dnipro, atingiu instalações de energia nas regiões de Kiev e Jitomir e provocou cortes de luz em cinco regiões da Ucrânia. O prefeito da capital, Vitali Klitschko, descreveu a situação do abastecimento de energia como “extremamente difícil”, com falhas no aquecimento e na água, num dia em que as temperaturas estavam perto de zero."
+  ],
+  [
+   "p",
+   "A Ponte Norte, que liga as margens leste e oeste de Kiev, foi atingida por vários mísseis balísticos, afirmou Klitschko, de acordo com a Reuters. Em vídeo gravado no local, o prefeito mostrou que a pista foi danificada, assim como a rede aérea dos trólebus e uma linha de energia. A ponte foi fechada nos dois sentidos enquanto especialistas avaliam a estrutura, informa a Euronews, e cinco carros estacionados perto dela foram danificados pela onda de choque. A Reuters lembra que a Rússia ampliou nas últimas semanas os ataques às pontes da capital, que tem mais de 3 milhões de habitantes."
+  ],
+  [
+   "nums",
+   [
+    [
+     "36",
+     "mísseis balísticos lançados, segundo Zelensky"
+    ],
+    [
+     "172",
+     "drones lançados, segundo Zelensky; a Força Aérea diz ter abatido 149"
+    ],
+    [
+     "5",
+     "regiões com cortes de energia: Dnipropetrovsk, Donetsk, Kiev, Jitomir e Kharkiv"
+    ],
+    [
+     "55",
+     "mortos em Komyshuvakha, no sul, após o ataque de segunda (2)"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Energia, água e aquecimento"
+  ],
+  [
+   "p",
+   "Instalações de energia em ao menos três distritos da região de Kiev foram atingidas, informou a Reuters, que cita o governo regional. Em Jitomir, a infraestrutura energética também foi danificada, segundo o governador e o próprio Ministério da Defesa russo. Os cortes de luz atingiram cinco regiões, de acordo com a Euronews: Dnipropetrovsk, Donetsk, Kiev, Jitomir e Kharkiv. As fontes lidas não informam quantos consumidores ficaram sem energia nem quando o serviço será restabelecido."
+  ],
+  [
+   "p",
+   "Kiev enfrenta cortes de emergência prolongados, interrupções repetidas no abastecimento de água e paralisações no metrô com a chegada do frio, segundo a AFP. Klitschko disse, em publicação no Telegram, que os danos à rede afetam o aquecimento e a água. O presidente Volodymyr Zelensky afirmou que a tática russa busca destruir redes elétricas, transformadores e quadros de distribuição, e que algumas regiões continuam com falta de energia mesmo quando a capacidade de geração é suficiente."
+  ],
+  [
+   "h",
+   "O tamanho do ataque e o balanço de vítimas"
+  ],
+  [
+   "p",
+   "Zelensky disse que a Rússia lançou 36 mísseis balísticos e 172 drones em um ataque combinado e afirmou que Moscou programa os golpes contra a infraestrutura crítica para antes das negociações. A Força Aérea ucraniana informou ter abatido 149 dos 172 drones e quatro mísseis balísticos, a maioria dirigidos à região de Kiev, segundo a Daily Sabah, em relato reunido pelo agregador Newscord. O Ministério da Defesa russo falou em um ataque “massivo” contra o complexo militar-industrial e contra instalações de energia e de transporte em Kiev e arredores, informa a Reuters."
+  ],
+  [
+   "p",
+   "Os balanços de vítimas divergem. A Reuters registra um morto e oito feridos, entre eles uma criança, além de danos a casas e a prédios não residenciais. Em outro balanço, reproduzido pela AFP e pela Euronews, são cinco feridos na capital, entre eles um adolescente de 14 anos; uma versão posterior da Euronews fala em seis feridos na região de Kiev. O Serviço Estatal de Emergência informou danos em prédios do distrito de Solomianskyi, incluindo um jardim de infância, e também nos distritos de Darnytskyi e Sviatoshynskyi, em relatos reunidos pelo Newscord."
+  ],
+  [
+   "h",
+   "A disputa entre Zelensky e Klitschko"
+  ],
+  [
+   "p",
+   "O ataque ocorre no meio de uma disputa pública sobre o preparo de Kiev para o inverno. Klitschko acusa o governo central de atrasar a aprovação do plano de resiliência da cidade e de atrapalhar a preparação para o frio, e chamou as críticas de Zelensky de “manipulações constantes”, segundo a AFP. Na sexta (6), Zelensky escreveu no X que Kiev vive a pior situação energética do país e responsabilizou tanto os ataques russos quanto a falha de autoridades da cidade em cumprir as decisões para o período de aquecimento. Segundo a Daily Sabah, ele já havia alertado que a inteligência indicava ataques planejados à energia, às pontes do Dnipro e a instalações civis."
+  ],
+  [
+   "p",
+   "No sul do país, a operação de resgate em Komyshuvakha chegou ao sexto dia neste sábado. Bombas guiadas russas atingiram na segunda (2) uma antiga escola e um abrigo vizinho, onde moradores esperavam ajuda humanitária. Nas últimas 24 horas foram retirados mais nove corpos, o que eleva o balanço a 55 mortos, e dezenas de pessoas seguem desaparecidas, informa a Euronews."
+  ],
+  [
+   "h",
+   "O ataque de 7 de novembro"
+  ],
+  [
+   "p",
+   "Segundo o balanço da Al Jazeera, a Ucrânia interceptou apenas 4 dos 36 mísseis balísticos, entre eles modelos KN-23, e as subestações de cinco regiões foram atingidas. O prefeito de Kiev, Vitali Klitschko, informou dano a uma ponte importante. Separadamente, o serviço de emergência ucraniano relatou ao menos 50 mortos no ataque ao ponto de ajuda em Komyshuvakha, em Zaporíjia, número que o Radar trata como de fonte única até nova confirmação."
+  ],
+  [
+   "p",
+   "A delegação ucraniana na rodada de Abu Dhabi é chefiada por Rustem Umerov e inclui, segundo o Kyiv Independent, Davyd Arakhamia, Kyrylo Budanov e outros. O formato é trilateral, com EUA e Rússia, sem europeus, e a Al Jazeera diz que é a primeira reunião do tipo desde fevereiro."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "p",
+   "Delegações da Rússia, da Ucrânia e dos Estados Unidos devem se reunir na terça (10), em Abu Dhabi, na quarta rodada de negociações mediada por Washington; a anterior foi em Genebra, em fevereiro, segundo a Euronews. A Reuters observa que a Rússia aumentou os ataques aéreos enquanto a ofensiva terrestre está em grande parte estagnada, e que o esforço de paz apoiado pelos EUA produziu poucos resultados até agora. Zelensky disse ter falado com a equipe responsável pelos ataques de longo alcance e que a Rússia vai receber uma resposta. Ele também voltou a pedir interceptadores Patriot antes do inverno: o Departamento de Estado dos EUA aprovou um pacote de US$ 2,1 bilhões em mísseis PAC-3, mas Zelensky afirmou que a entrega pode levar anos."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "O balanço de vítimas varia entre cinco, seis e oito feridos, e só a Reuters registra um morto; nenhuma das fontes lidas traz um número consolidado.",
+    "Os 36 mísseis e os 172 drones vêm de Zelensky, e o número de abatidos, da Força Aérea ucraniana, por meio da Daily Sabah; não há contagem independente.",
+    "O Ministério da Defesa russo diz ter mirado alvos militares, de energia e de transporte; autoridades ucranianas relatam danos a prédios residenciais e a um jardim de infância.",
+    "O Straits Times, citado pelo Newscord, descreve o episódio como o primeiro ataque às pontes sobre o Dnipro na guerra, mas a Reuters fala em ampliação desses ataques nas últimas semanas. O Newsweek aponta a pior crise de água da guerra; os demais veículos descrevem interrupções, sem essa comparação.",
+    "Nenhuma fonte informa o número de consumidores sem luz nem o prazo para reabrir a ponte; Klitschko disse que os reparos começaram."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Al Jazeera (ataque a Kiev)",
+   "https://www.aljazeera.com/news/2026/11/7/russia-launches-missile-attack-on-kyiv-injuring-residents"
+  ],
+  [
+   "Kyiv Independent (delegação)",
+   "https://kyivindependent.com/umerov-to-lead-ukraine-delegation-in-abu-dhabi-peace-talks-despite-media-confusion-top-official-confirms/"
+  ],
+  [
+   "Reuters, via Business Recorder",
+   "https://www.brecorder.com/news/40447890/russian-strikes-hit-power-facilities-around-kyiv-damage-major-bridge"
+  ],
+  [
+   "Euronews",
+   "https://euronews.com/2026/11/07/russian-strikes-on-kyiv-injure-five-and-damage-bridge-and-energy-facilities"
+  ],
+  [
+   "Euronews, versão atualizada via Yahoo",
+   "https://www.yahoo.com/news/world/articles/russian-strikes-kyiv-region-injure-125321674.html"
+  ],
+  [
+   "AFP, via TRT World",
+   "https://www.trtworld.com/article/3d67e5a21e1c"
+  ],
+  [
+   "AFP, via UOL",
+   "https://noticias.uol.com.br/ultimas-noticias/afp/2026/11/07/ucrania-denuncia-cortes-de-energia-em-cinco-regioes-por-ataque-massivo-da-russia.htm"
+  ],
+  [
+   "Newscord (agregador de sete veículos)",
+   "https://newscord.org/article/russian-missiles-damage-kyivs-northern-bridge-disrupt-power-heating-and-water--Story_20261107_UkraineRussischerGrof8864a50"
+  ]
+ ],
+ "semAtores": true
+};
+S.ira_iron_gate = {
+ "ed": "mundo",
+ "k": "Mundo · Irã e Golfo",
+ "hora": "8/11",
+ "t": "EUA criam a força-tarefa “Iron Gate” para cortar as rotas terrestres e do Cáspio do Irã; explosões atingem Qeshm, Jask e Bandar Abbas",
+ "sub": "O Comando Central diz que 147 embarcações foram redirecionadas desde julho; a Guarda Revolucionária encerra o limite de 2.000 km para seus mísseis, e o Catar segue mediando.",
+ "dado": {
+  "n": "147",
+  "l": "Embarcações redirecionadas pelos EUA desde julho, segundo o Comando Central (Al Jazeera)"
+ },
+ "upd": "",
+ "resumo": "O Comando Central dos EUA (Centcom) anunciou no sábado (7) a força-tarefa “Iron Gate”, para bloquear as rotas terrestres e do Mar Cáspio que abastecem o Irã, informa a Al Jazeera. O almirante Brad Cooper diz que 147 embarcações foram redirecionadas desde julho e cinco navios mercantes foram desabilitados. Explosões foram relatadas em Qeshm, Jask, Sirik e Bandar Abbas. A ABC da Austrália registra que a Guarda Revolucionária deixou de seguir o limite de 2.000 km de alcance de seus mísseis.",
+ "fundo": [
+  [
+   "p",
+   "O Comando Central dos EUA (Centcom) anunciou no sábado (7) a criação da força-tarefa “Iron Gate”, destinada a interromper as rotas terrestres e pelo Mar Cáspio que abastecem o Irã, informa a Al Jazeera. O comandante, almirante Brad Cooper, afirmou que 147 embarcações foram redirecionadas desde julho e que cinco navios mercantes foram desabilitados. A guerra entre os dois países passa dos oito meses."
+  ],
+  [
+   "nums",
+   [
+    [
+     "147",
+     "embarcações redirecionadas desde julho"
+    ],
+    [
+     "5",
+     "navios mercantes desabilitados"
+    ],
+    [
+     "11",
+     "navios atacados em Ormuz na semana até 6/11 (UKMTO)"
+    ],
+    [
+     "2.000 km",
+     "limite de alcance de mísseis que a Guarda Revolucionária diz ter encerrado"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "A força-tarefa e os ataques"
+  ],
+  [
+   "p",
+   "A Al Jazeera relata explosões em Qeshm, Jask, Sirik e Bandar Abbas, no litoral iraniano, e o ataque ao cargueiro M/V Huda no Golfo de Omã. Duas petroleiras teriam atingido minas, segundo a Marinha da Guarda Revolucionária. O blog ao vivo da emissora registra ainda que destroços de um projétil abatido atingiram instalações da Aramco, em Riad, de acordo com o Ministério da Energia saudita, no contexto do combate com os houthis."
+  ],
+  [
+   "p",
+   "A ABC da Austrália, que cita a AP, informa que a Guarda Revolucionária encerrou o limite autoimposto de 2.000 km para o alcance dos seus mísseis e que Teerã analisa as propostas do Catar sobre o programa nuclear. A informação sobre o limite vem de um comunicado iraniano e não foi confirmada por fonte independente."
+  ],
+  [
+   "h",
+   "Mediação e mercado"
+  ],
+  [
+   "p",
+   "Os mediadores do Catar mantêm as negociações, e o premiê, xeque Mohammed bin Abdulrahman Al Thani, disse na sexta (6) haver progresso significativo. Na sexta, os EUA haviam atingido defesas aéreas na ilha de Qeshm, e o presidente Donald Trump disse que o Irã quer um acordo. O Brent fechou a semana a US$ 98,32, depois da maior queda semanal desde 2020 por expectativa de acordo, e um analista da Rapidan avalia em 80% a chance de retomada dos combates e de preço acima de US$ 100."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "ul",
+   [
+    "Resposta dos EUA à proposta iraniana mediada pelo Catar.",
+    "Efeito da força-tarefa sobre o comércio iraniano pelo Cáspio e por terra.",
+    "Novos ataques a navios em Ormuz e reação do petróleo na abertura de segunda (9)."
+   ]
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Os números da força-tarefa vêm do Centcom e não têm verificação independente.",
+    "O fim do limite de 2.000 km é afirmação iraniana relatada pela ABC.",
+    "Não há balanço de mortos nas explosões do litoral iraniano nas fontes lidas."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Al Jazeera (força-tarefa Iron Gate)",
+   "https://www.aljazeera.com/news/2026/11/8/us-launches-task-force-to-disrupt-irans-land-based-supply-routes"
+  ],
+  [
+   "Al Jazeera (blog ao vivo)",
+   "https://www.aljazeera.com/news/liveblog/2026/11/8/iran-war-live-explosions-hit-qeshm-us-moves-to-block-land-supply-routes"
+  ],
+  [
+   "ABC News (Austrália, AP)",
+   "https://abc.net.au/news/2026-11-08/iran-strait-of-hormuz-update-explosions-talks/107360730"
+  ],
+  [
+   "FinanceFeeds (Brent)",
+   "https://financefeeds.com/brent-crude-oil-price-98-32-saturday-week-ahead-us-iran-deal-bets-cpi-10-november-bull-105-bear-93/"
+  ]
+ ],
+ "semAtores": true
+};
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"israel":"atualizada","dino_6x1":"atualizada","ueno_bank":"atualizada","ucrania_energia":"atualizada","nz_eleicao":"atualizada","lula_pronunciamento":"novo","quaest_pos_eleicao":"novo","ira_iron_gate":"novo","mercado_semana":"novo","sp_pacaembu_show":"novo"};
+var FLAGS = {"paraguai":"atualizada","israel":"atualizada","dino_6x1":"atualizada","ueno_bank":"atualizada","alcolumbre_stf":"atualizada","ucrania_energia":"atualizada","nz_eleicao":"atualizada","lula_pronunciamento":"novo","quaest_pos_eleicao":"novo","ira_iron_gate":"novo","mercado_semana":"novo","sp_pacaembu_show":"novo"};
 var GIRO_FLAGS = {"Lula fala às 20h30":"novo","Quaest pós-eleição":"novo","Iron Gate":"novo","CNI quer adiar a 6x1":"novo","Prejuízo do Ueno":"novo","Show no Pacaembu":"novo"};
 /* ===== FIM DOS DADOS ===== */

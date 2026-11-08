@@ -153,6 +153,11 @@ if (NOVAS) {
       if (!hs.some(x => /n[ãa]o est[áa] confirmado|n[ãa]o se sabe|ainda n[ãa]o|em aberto|o que falta/i.test(x))) e2.push(rot + ': destaque sem intertítulo "O que ainda não está confirmado" (divergências e lacunas)');
       if (!s.fundo.some(b => b[0] === 'nums' || b[0] === 'tl')) e2.push(rot + ': destaque sem bloco de números (nums) ou cronologia (tl)');
     }
+    // atores políticos: matéria de Mundo ou destaque político situa quem são os agentes (partido, campo ideológico, alianças, quem acusou quem)
+    if (nome >= '2026-11-08-15h' && s.semAtores !== true && (s.ed === 'mundo' || (ehD && s.ed === 'politica'))) {
+      const hs2 = s.fundo.filter(b => b[0] === 'h').map(b => b[1]);
+      if (!hs2.some(x => /quem [ée] quem|quem s[ãa]o|os atores|mapa d|campos? (pol[íi]tic|ideol)|quem disputa|quem governa|quem acusa|alian[çc]as|os partidos|o campo/i.test(x))) e2.push(rot + ': falta o intertítulo que situa os atores políticos ("Quem é quem", "Os partidos e as alianças"…): partido e campo ideológico de cada agente, alianças locais, quem acusou quem e se é do mesmo partido (se não houver ator político, use semAtores:true)');
+    }
     // estilo: clichês e adjetivação não entram; frase repetida é enchimento
     const corpo = txtBlocos(s).join(' ');
     const CLICHE = /(vale (a pena )?(destacar|ressaltar|lembrar|mencionar)|é importante (destacar|ressaltar|notar|frisar)|cabe (destacar|ressaltar|lembrar)|em suma|nesse sentido|no cen[áa]rio atual|sem sombra de d[úu]vida|bomb[áa]stic|esc[âa]ndalo (absurdo|total)|chocante|pol[êe]mica envolvendo|diante (disso|desse cen[áa]rio)|como j[áa] dito|ficou marcado|n[ãa]o poderia ser diferente)/i.exec(corpo);
