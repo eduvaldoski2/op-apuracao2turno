@@ -7110,7 +7110,221 @@ S.ira_iron_gate = {
  "semAtores": true
 };
 
+
+/* ---------- Edição das 15h de 08/11 ---------- */
+EDICAO.hora = '15h';
+EDICAO.data = 'Domingo, 08 de novembro de 2026';
+
+/* Motta e o PL (destaque, capa) */
+S.pl_motta.hora = '8/11';
+S.pl_motta.t = 'Motta tem 15 partidos e 361 dos 513 deputados para a reeleição; o PL, com 121, decide na quarta (11) entre acordo, sete comissões e candidatura própria';
+S.pl_motta.sub = 'O União Brasil e o PT já oficializaram apoio; o Novo lança nome próprio, e a ala do PL que quer negociar teme ficar sem Mesa e sem comissões.';
+S.pl_motta.upd = 'Entram o mapa de bancadas por partido (PSD 43, PP 41, Republicanos 41, MDB 36), o candidato do Novo e a disputa interna do PL por sete comissões, inclusive a CCJ.';
+S.pl_motta.resumo = 'O presidente da Câmara, Hugo Motta (Republicanos-PB), reúne 15 partidos que elegeram 361 dos 513 deputados (70,4%) para a eleição de 1º de fevereiro de 2027, em voto secreto; bastam 257 no primeiro turno. O PT e o União Brasil já oficializaram apoio, e o Novo lança candidato próprio. O PL, maior bancada, com 121, decide na quarta (11): a ala que quer negociar teme perder Mesa e comissões, e Nikolas Ferreira defende nome próprio. O líder Sóstenes Cavalcante (PL-RJ) quer sete comissões, entre elas a CCJ.';
+_ins('pl_motta', 'O mapa de apoios', [
+ ['h', 'Quem é quem na disputa'],
+ ['p', 'A Câmara tem 513 cadeiras, e a presidência se decide por voto secreto em 1º de fevereiro de 2027: vence no primeiro turno quem somar 257 votos. Hugo Motta (Republicanos-PB), do Centrão e de um partido de centro-direita, tem o apoio formal do PT, que forma federação com PCdoB e PV e soma 88 deputados. A federação oficializou a adesão em 27 de outubro, um dia depois de o presidente Lula receber Motta no Alvorada. Esquerda e Centrão ficam, assim, do mesmo lado numa disputa em que a maior bancada, a da direita bolsonarista, ainda não tem candidato.'],
+ ['p', 'O bloco pró-Motta reúne ainda o União Brasil (46 deputados), o PSD (43), o PP (41), o Republicanos (41), o MDB (36), o Podemos (27), o PSB (15), o PSDB (11) e o PDT (6), segundo a CartaCapital. O União Brasil oficializou o apoio na quarta (4), em Brasília. O Novo, de direita liberal e com 10 deputados, lança candidato próprio, e a CartaCapital aponta Kim Kataguiri como provável nome; Adriana Ventura, Luiz Lima e Jeffrey Chiquini também são citados. O PSOL e a Rede não definiram posição.'],
+ ['p', 'No PL, partido de direita liderado na Câmara por Sóstenes Cavalcante (PL-RJ), a ala que quer negociar teme perder a Mesa Diretora e as comissões. Sóstenes diz que o partido reivindicará sete comissões, entre elas a de Constituição e Justiça, informa o Poder360. Nikolas Ferreira (PL-MG) defende candidato próprio, porque “existem coisas maiores em jogo”, e Altineu Côrtes e Luiz Philippe aparecem como alternativas internas. O desgaste com Motta nasce da anistia aos condenados do 8 de janeiro e da proximidade do presidente da Câmara com o governo Lula.']
+]);
+S.pl_motta.fontes.push(['CartaCapital', 'https://www.cartacapital.com.br/politica/uniao-brasil-oficializa-apoio-a-hugo-motta-que-ja-reune-361-deputados-para-reeleicao-na-camara/'], ['Metrópoles (coluna de Igor Gadelha)', 'https://www.metropoles.com/colunas/igor-gadelha/mirando-reeleicao-motta-almoca-com-presidentes-de-7-partidos'], ['Poder360 (Sóstenes e as comissões)', 'https://www.poder360.com.br/poder-congresso/sostenes-diz-que-pl-reivindicara-comando-de-7-comissoes-na-camara/']);
+
+/* Israel (destaque, capa) */
+S.israel.hora = '8/11';
+S.israel.t = 'Herzog entrega a Eisenkot o mandato para formar o governo de Israel; Deri deixa o Knesset, e o Shas nega que entrará numa coalizão';
+S.israel.sub = 'Eisenkot tem 28 dias, até 6 de dezembro, prorrogáveis por até 14; com a UTJ (7) e o Shas (6) chegaria a 61 cadeiras, mas o Shas desmente que apoiará.';
+S.israel.upd = 'O mandato foi entregue a Eisenkot neste domingo; o líder do Shas, Aryeh Deri, deixou o Knesset sem largar a presidência do partido, e o Shas negou que integrará um governo Eisenkot.';
+S.israel.resumo = 'O presidente Isaac Herzog entregou neste domingo (8) a Gadi Eisenkot, líder do Yashar, o mandato para formar o governo: ele teve 67 recomendações dos 120 deputados, contra 46 de Benjamin Netanyahu. O prazo é de 28 dias, até 6 de dezembro, com prorrogação de até 14. A conta dos 61 votos passa pelos ultraortodoxos: a UTJ tem 7 cadeiras e o Shas, 6. O Shas, que perdeu cinco cadeiras, nega que entrará no governo, e seu líder, Aryeh Deri, deixou o Knesset, mas continua presidente do partido.';
+S.israel.fundo[0] = ['p', 'O presidente de Israel, Isaac Herzog, entregou neste domingo (8) a Gadi Eisenkot, líder do Yashar, o mandato para formar o governo, informam o Times of Israel e o Jerusalem Post. Eisenkot recebeu 67 recomendações dos 120 deputados nas consultas, contra 46 de Benjamin Netanyahu, do Likud. Tem 28 dias, até 6 de dezembro, prorrogáveis por até 14, para reunir 61 cadeiras.'];
+_ins('israel', 'O que vem agora', [
+ ['h', 'A saída de Deri e a negativa do Shas'],
+ ['p', 'Aryeh Deri, presidente do Shas, partido ultraortodoxo de base sefardita e aliado de Netanyahu, deixa o Knesset, mas segue à frente da legenda, informa o Times of Israel. O Conselho de Sábios da Torá rejeitou a renúncia dele à presidência. Deri não pode ser ministro por condenações anteriores. O Shas caiu de 11 para 6 cadeiras, o pior resultado em três décadas, e as vagas passam a Uriel Buso e Yossi Taieb.'],
+ ['p', 'O Jerusalem Post e o JNS registram que o Shas negou que entrará num governo Eisenkot. Fontes do Conselho dizem que ele não se oporia se a UTJ aprovasse, o que coincide com a versão do Israel Hayom citada na matéria. Com os 7 deputados da UTJ e os 6 do Shas, a conta de Eisenkot chega a 61, desde que ele mantenha a recusa de coalizão com Netanyahu e os quatro princípios que apresentou, entre eles o serviço militar para todos.']
+]);
+(function(){ var f = S.israel.fundo, u = f[f.length - 1]; if (u[0] === 'ul') { u[1].push('O Jerusalem Post soma 53 cadeiras ao bloco de Netanyahu, provavelmente com a UTJ; as demais fontes lidas falam em 46 recomendações.', 'A negativa do Shas é pública; a posição final dependerá da UTJ e do Conselho de Sábios da Torá, e não há prazo para essa decisão.'); } })();
+S.israel.fontes.push(['Times of Israel (mandato a Eisenkot)', 'https://www.timesofisrael.com/president-herzog-taps-eisenkot-to-form-coalition-but-path-remains-fraught/'], ['The Jerusalem Post (eleição 2026)', 'https://www.jpost.com/israel-election-2026/article-914236'], ['Times of Israel (Deri)', 'https://www.timesofisrael.com/shas-leader-aryeh-deri-to-step-down-from-knesset-while-remaining-party-chair']);
+
+/* Ucrânia: delegações em Abu Dhabi */
+S.ucrania_abudhabi.hora = '8/11';
+S.ucrania_abudhabi.t = 'Rússia confirma delegação ampliada, chefiada por Medinsky, para Abu Dhabi; Kiev leva Umerov e Budanov à primeira rodada trilateral desde fevereiro';
+S.ucrania_abudhabi.sub = 'As conversas de 10 e 11 de novembro têm mediação técnica dos EUA, com Witkoff e Kushner; Kiev quer garantias aprovadas pelo Congresso americano, e Moscou exige que a Ucrânia renuncie à Otan.';
+S.ucrania_abudhabi.upd = 'O Kremlin nomeou a delegação russa, com Medinsky à frente e um oficial do Estado-Maior, e o Kyiv Post detalhou a mediação técnica de Witkoff e Kushner.';
+S.ucrania_abudhabi.resumo = 'O Kremlin confirmou, pelo porta-voz Dmitri Peskov, a delegação russa que vai a Abu Dhabi nos dias 10 e 11 de novembro: Vladimir Medinsky chefia o grupo, com diplomatas, um representante da inteligência militar e um oficial do Estado-Maior. A Ucrânia envia Rustem Umerov, Kyrylo Budanov e David Arakhamia. É a primeira rodada trilateral desde fevereiro, com Steve Witkoff e Jared Kushner mediando em nível técnico. Kiev quer garantias dos EUA aprovadas pelo Congresso, e Moscou exige que a Ucrânia abra mão da Otan.';
+S.ucrania_abudhabi.fundo[0] = ['p', 'O Kremlin confirmou a delegação da Rússia para as negociações com a Ucrânia e os Estados Unidos em Abu Dhabi, nos dias 10 e 11 de novembro: o porta-voz Dmitri Peskov nomeou Vladimir Medinsky como chefe, informa o Kyiv Independent. É a primeira rodada trilateral desde fevereiro. A Ucrânia vai com Rustem Umerov, secretário do Conselho de Segurança e Defesa, à frente, e os Estados Unidos mediam em nível técnico.'];
+_ins('ucrania_abudhabi', 'Quem vai e o que Kiev quer', [
+ ['h', 'Quem é quem nas delegações'],
+ ['p', 'Pela Rússia, governada por Vladimir Putin, vão Vladimir Medinsky, chefe, os diplomatas Sergei Ryabkov e Mikhail Galuzin, Igor Kostyukov, da inteligência militar, e um oficial do Estado-Maior, segundo o Kyiv Independent. A Ucrânia, do presidente Volodymyr Zelensky, manda Umerov, Budanov, chefe de gabinete de Zelensky, e Arakhamia. Os Estados Unidos, do republicano Donald Trump, participam como mediadores, com o enviado Steve Witkoff e Jared Kushner, informa o Kyiv Post; Putin recebeu Witkoff em 21 de outubro.'],
+ ['p', 'Os dois lados chegam com exigências opostas. Kiev quer garantias de segurança americanas aprovadas pelo Congresso, agora com maioria democrata nas duas Casas. Moscou exige que a Ucrânia renuncie a entrar na Otan, além da cessão do Donbas já registrada pela matéria. Os temas previstos são garantias de segurança, desescalada e questões humanitárias.']
+]);
+(function(){ var f = S.ucrania_abudhabi.fundo;
+ f.forEach(function(b){ if (b[0] === 'p') b[1] = b[1].replace(' Os nomes dos delegados russos e americanos não foram divulgados nas fontes lidas.', ' Os nomes dos delegados russos foram divulgados pelo Kremlin na noite de sábado (7).'); if (b[0] === 'ul') b[1] = b[1].map(function(x){ return x === 'A data exata e os delegados russos e americanos.' ? 'A data exata de cada sessão em Abu Dhabi e a composição da equipe americana além de Witkoff e Kushner.' : x; }); });
+})();
+S.ucrania_abudhabi.fontes.push(['Kyiv Independent (delegação russa)', 'https://kyivindependent.com/russia-to-send-senior-diplomats-military-officials-to-upcoming-peace-talks-in-abu-dhabi/'], ['Kyiv Post', 'https://www.kyivpost.com/post/88971']);
+
+/* Quaest: ampliada */
+S.quaest_pos_eleicao.ampliada = true;
+S.quaest_pos_eleicao.upd = 'A matéria foi ampliada com os motivos de otimismo e de preocupação dos entrevistados e com as prioridades entre as promessas de campanha, segundo o recorte divulgado pela Quaest.';
+_ins('quaest_pos_eleicao', 'Como ler os números', [
+ ['h', 'O que preocupa e o que anima'],
+ ['p', 'A pesquisa ouviu 2.004 pessoas entre 30 de outubro e 2 de novembro, com margem de 2 pontos percentuais e 95% de confiança. Os entrevistados se dividem sobre o futuro: 48% estão preocupados e 44% otimistas, informa O Tempo. O otimismo vem da democracia e do combate ao bolsonarismo (20%), dos programas sociais (17%) e da regulação de bets e redes (16%).'],
+ ['p', 'A maior preocupação é economia, gastos, dívida e juros (27%), seguida de segurança e facções (17%), corrupção (12%) e relação com o Congresso (12%). Entre as promessas de campanha, os entrevistados priorizam o fim da escala 6x1 (17%), o imposto zero na cesta básica (16%), a valorização do salário mínimo (11%) e o pacto contra o feminicídio (10%). Ainda assim, 94% torcem por um bom governo, o mesmo índice de dezembro de 2022.'],
+ ['p', 'O quadro dialoga com o pronunciamento de Lula desta noite, que os relatos prévios descrevem centrado em união nacional e responsabilidade fiscal, e com o debate sobre a criação do Ministério da Segurança Pública. Os dois temas que mais preocupam os brasileiros, economia e segurança, são justamente os que o governo promete atacar no começo do quarto mandato.']
+]);
+S.quaest_pos_eleicao.fontes.push(['O Tempo (Quaest)', 'https://www.otempo.com.br/politica/governo/2026/11/8/combate-ao-bolsonarismo-traz-mais-otimismo-ao-lula-4-e-economia-e-maior-preocupacao-diz-pesquisa'], ['BPMoney (Quaest)', 'https://bpmoney.com.br/politica/pesquisa-quaest-aprovacao-governo-lula-48-economia/']);
+
+/* Ministério da Segurança e maioridade (destaque, capa) */
+S.ms_seg = {ed:'politica', k:'Política · Segurança', hora:'7/11',
+ t:'Lula promete criar o Ministério da Segurança Pública por MP; a PEC passou no Senado com 75 votos no segundo turno, e a maioridade penal ficou para a Câmara',
+ sub:'O desenho da pasta prevê uma secretaria antifacção e escritórios nos 26 estados e no Distrito Federal; a MP ainda não foi publicada, e o Senado ameaça votar a maioridade se a Câmara não o fizer até 1º de dezembro.',
+ dado:{n:'75 a 0', l:'Placar do segundo turno da PEC da Segurança no Senado, em 3 de novembro, sem voto contrário'},
+ upd:'Entram o desenho da pasta (secretaria antifacção, escritórios estaduais), os nomes cotados, as duas PECs da maioridade do Senado e o prazo de 1º de dezembro proposto por Eduardo Braga.',
+ resumo:'Na quinta (5), Lula disse que criará o Ministério da Segurança Pública por medida provisória, desmembrando a pasta da Justiça; a MP não foi publicada até agora. O Senado aprovou em 3 de novembro a PEC da Segurança, com 73 votos no primeiro turno e 75 no segundo, nenhum contra. O desenho em estudo inclui secretaria antifacção e escritórios nos 26 estados e no DF. A redução da maioridade penal foi empurrada por Davi Alcolumbre para a Câmara, e Eduardo Braga propõe votá-la no Senado se a Câmara não agir até 1º de dezembro.',
+ fundo:[
+ ['p', 'O presidente Luiz Inácio Lula da Silva (PT) afirmou na quinta (5) que criará o Ministério da Segurança Pública por medida provisória (MP), desmembrando a pasta da Justiça. A MP não aparece no Diário Oficial da União até este domingo (8), e o nome do ministro não foi definido. O anúncio veio dois dias depois de o Senado aprovar, por 75 votos a 0 no segundo turno, a PEC da Segurança Pública.'],
+ ['nums', [['75 a 0', 'placar do 2º turno da PEC 18/2025 no Senado, em 3/11 (73 votos no 1º turno)'], ['60 dias', 'vigência de uma MP, prorrogável por mais 60'], ['26 + DF', 'escritórios previstos no desenho em estudo'], ['1º/12', 'prazo proposto por Eduardo Braga para a Câmara votar a maioridade']]],
+ ['h', 'A PEC e o desenho do ministério'],
+ ['p', 'A PEC 18/2025 põe o Sistema Único de Segurança Pública (Susp) na Constituição, cria cooperação e forças-tarefas entre União, estados e municípios e amplia a atuação da Polícia Rodoviária Federal para ferrovias e hidrovias federais. O texto vai à promulgação. Na live com o deputado André Janones (Rede-MG), Lula disse que a pasta coordenará a política nacional com estados e municípios e que a MP teria 60 dias de vigência, prorrogáveis uma vez, antes de a conversão em lei depender do Congresso.'],
+ ['p', 'Segundo apuração de grande jornal repercutida pela Sputnik, o desenho em estudo prevê uma secretaria antifacção, escritórios nos 26 estados e no Distrito Federal e a reunião de Polícia Federal, PRF, Força Nacional e sistema prisional, com foco em facções, feminicídio e roubo de celulares. A Casa Civil, de Miriam Belchior, a Justiça e a Advocacia-Geral da União, de Jorge Messias, discutiram a estrutura em 4 de novembro, informa a CNN Brasil. Entre os nomes cotados estão Camilo Santana (PT-CE), Chico Lucas, secretário nacional de Segurança, Fernando Haddad e Geraldo Alckmin.'],
+ ['h', 'Quem é quem na disputa'],
+ ['p', 'Lula e o PT lideram o governo e querem a pasta como marca do quarto mandato, em resposta à segurança como segunda maior preocupação do eleitor. A PEC foi aprovada sem voto contrário, e o texto passou com apoio da base e da oposição, o que reduz o espaço para resistência ao ministério. A Rede, de Janones, é aliada do governo. Davi Alcolumbre (União-AP), presidente do Senado, fez do voto da PEC um gesto ao Planalto, e Lula disse que ele “cumpriu com a palavra”.'],
+ ['p', 'A disputa maior é a da maioridade penal. O Senado havia desmembrado da PEC da Segurança duas propostas: a PEC 19/2026, de Rogério Marinho (PL-RN), líder da oposição de direita, com 16 anos como regra e 14 para crimes hediondos, tortura, tráfico, terrorismo e organização criminosa; e a PEC 20/2026, de Camilo Santana, do PT, com 16 anos só para hediondos, considerada a mais viável. Alcolumbre disse na quarta (4) que o tema seguirá pela PEC 32/2015, na comissão especial da Câmara, e acatou a ponderação de Hugo Motta (Republicanos-PB), que teria prometido votar em novembro.'],
+ ['p', 'Eduardo Braga (MDB-AM), do centro governista, propôs prazo de 1º de dezembro e reuniu mais de 50 assinaturas para votar as PECs do Senado com urgência se a Câmara não votar. Carlos Portinho (PL-RJ) cobrou o compromisso de Motta, e Alessandro Vieira (MDB-SE) defendeu um projeto de lei, o PL 1.473/2025, de Fabiano Contarato (PT-ES), que amplia a internação, por receio de que a mudança constitucional seja cláusula pétrea. O Portal da Capital registra que Motta disse não haver data acordada.'],
+ ['h', 'O que vem agora'],
+ ['ul', ['Promulgação da PEC da Segurança pelo Congresso, sem data confirmada.', 'Publicação da MP, que a imprensa associa ao retorno de Lula da viagem à Ásia, e escolha do ministro.', 'Votação da PEC 32/2015 na Câmara, que Motta promete para novembro, e a reação do Senado se o prazo de 1º de dezembro passar.']],
+ ['h', 'O que ainda não está confirmado'],
+ ['ul', ['A data e o texto da MP, o custo da pasta e o nome do ministro; nenhuma fonte oficial os divulgou.', 'O papel do Ministério da Justiça: a CNN Brasil trata Wellington César Lima e Silva como ministro, e outras fontes o chamam de secretário-executivo.', 'O compromisso de Motta de votar em novembro: Alcolumbre o atribui ao presidente da Câmara, e Motta diz não haver data.']]
+ ],
+ fontes:[['Agência Brasil', 'https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-vai-criar-ministerio-da-seguranca-publica-com-medida-provisoria'], ['Agência Senado', 'https://www12.senado.leg.br/noticias/materias/2026/11/04/reducao-da-maioridade-penal-senado-aguardara-votacao-de-pec-da-camara'], ['CNN Brasil', 'https://www.cnnbrasil.com.br/politica/apos-aval-a-pec-governo-lula-debate-estrutura-do-ministerio-da-seguranca/'], ['DGABC', 'https://www.dgabc.com.br/Noticia/4367222/lula-anuncia-medida-provisoria-para-criar-ministerio-da-seguranca'], ['Tribuna do Sertão (Sputnik)', 'https://www.tribunadosertao.com.br/geral/2026/11/07/1015963-lula-discute-nova-pasta-de-seguranca-com-foco-em-faccoes-e-feminicidios-diz-midia'], ['Metrópoles', 'https://www.metropoles.com/brasil/alcolumbre-decide-aguardar-camara-e-retira-reducao-da-maioridade-da-pauta'], ['Portal da Capital', 'https://www.portaldacapital.com/2026/11/05/motta-diz-que-nao-ha-data-acordada-para-votar-reducao-da-maioridade-penal-na-camara/']]
+};
+
+/* Orçamento 2027 (destaque de Economia, capa) */
+S.orcamento_2027 = {ed:'economia', k:'Economia · Orçamento', hora:'8/11',
+ t:'Orçamento de 2027 chega ao pronunciamento de Lula com superávit de R$ 18,6 bi no papel, déficit de R$ 86,1 bi na conta da IFI e votação marcada para 17 de dezembro',
+ sub:'O Congresso fechou o calendário da LDO e da LOA; o governo promete ajuste de ao menos R$ 39,8 bi, mas Durigan só leva propostas a Lula depois da COP31.',
+ dado:{n:'R$ 86,1 bi', l:'Déficit primário projetado pela IFI para 2027, contra superávit de R$ 18,6 bi no projeto do governo'},
+ upd:'',
+ resumo:'O projeto de Orçamento de 2027 prevê superávit primário de R$ 18,6 bilhões e despesas primárias de R$ 2,576 trilhões, mas a Instituição Fiscal Independente do Senado projeta déficit de R$ 86,1 bilhões e vê contingenciamento de R$ 35,7 bilhões. O Congresso acertou votar a LDO e a LOA até 17 de dezembro, com Eduardo Braga (MDB-AM) relator da LOA. O pronunciamento de Lula, hoje às 20h30, deve tratar do tema sem anunciar medidas; a Fazenda só leva propostas ao presidente depois da COP31.',
+ fundo:[
+ ['p', 'O projeto de Orçamento da União para 2027, enviado ao Congresso em 31 de agosto, prevê superávit primário de R$ 18,6 bilhões, mas a Instituição Fiscal Independente (IFI) do Senado projeta déficit de R$ 86,1 bilhões. O tema entra no pronunciamento que o presidente Lula faz hoje (8), às 20h30, em rede de rádio e TV, sem anúncio de medidas, segundo os relatos prévios. O Congresso combinou votar a LDO e a LOA até 17 de dezembro.'],
+ ['nums', [['R$ 18,6 bi', 'superávit primário do projeto do governo (PLN 24/2026)'], ['R$ 86,1 bi', 'déficit projetado pela IFI, diferença de R$ 104,8 bi'], ['R$ 2,576 tri', 'despesas primárias previstas, alta de 7,7%'], ['82,9%', 'dívida bruta em setembro, contra 71,7% em dezembro de 2022']]],
+ ['h', 'O que o projeto promete e o que a IFI enxerga'],
+ ['p', 'O projeto de lei orçamentária prevê despesas primárias de R$ 2,576 trilhões, alta de 7,7%, e salário mínimo de R$ 1.741, segundo o BP Money. A IFI, órgão do Senado que analisa as contas públicas, projeta resultado diferente, déficit de R$ 86,1 bilhões, e estima que o governo precisaria contingenciar R$ 35,7 bilhões para cumprir as regras fiscais. A distância entre os dois números, de R$ 104,8 bilhões, é o tamanho da incerteza sobre receitas e despesas que o debate do Congresso terá de resolver.'],
+ ['p', 'O ajuste que a Agência Estado calcula como necessário é de ao menos R$ 39,8 bilhões no Orçamento de 2027, para acomodar as promessas de campanha. A dívida bruta chegou a 82,9% do PIB em setembro, ante 71,7% em dezembro de 2022, e a Selic de 13,75%, mantida pelo Copom em 4 de novembro, encarece o serviço dessa dívida. O Focus de 3 de novembro já projetava IPCA de 4,76% e câmbio de R$ 5,40 para 2027.'],
+ ['h', 'Calendário e relatores no Congresso'],
+ ['p', 'Na terça (3), depois de reunião na presidência do Senado, o presidente da Comissão Mista de Orçamento, deputado Domingos Neto (PSD-CE), anunciou que o Congresso votará a Lei de Diretrizes Orçamentárias (LDO) e a Lei Orçamentária Anual (LOA) de 2027 até 17 de dezembro, antes do recesso. A líder do governo no Senado, Teresa Leitão (PT-PE), confirmou o acordo, informa o Brasil 247.'],
+ ['p', 'Davi Alcolumbre (União-AP), presidente do Senado, escolheu o senador Eduardo Braga (MDB-AM) como relator-geral da LOA e Eduardo Gomes (PL-TO) como relator da LDO, segundo a Gazeta do Povo. A LDO, enviada em abril, ainda não foi votada. O governo incluiu autorização para pagar o Auxílio Gás caso a LOA não passe até o fim do ano. O desenho da LDO, segundo as fontes lidas, traz meta de superávit primário de R$ 73,2 bilhões, com banda de R$ 36,6 bilhões a R$ 109,8 bilhões, número distinto do superávit do projeto da LOA.'],
+ ['h', 'O ajuste depois da COP31'],
+ ['p', 'O ministro da Fazenda, Dario Durigan, disse após reunião no Alvorada que não há “fórmula mágica” e que só levará propostas ao presidente depois da volta da COP31, na Turquia, e dos compromissos nas Filipinas, informa o Acessa. A viagem vai até 15 de novembro. As medidas de contenção de gastos e de aumento de receita, combinadas com o ministro do Planejamento, Bruno Moretti, só devem ser conhecidas “nas próximas semanas”, segundo a Agência Estado.'],
+ ['p', 'Por isso o pronunciamento de hoje é visto como um aceno ao mercado e não como pacote. Os relatos prévios do Brasil 247, com texto do Estadão, dizem que Lula reafirmará a responsabilidade fiscal, citará que o Orçamento de 2027 projeta superávit e criticará os juros altos. A Quaest divulgada hoje mostra que economia, gastos, dívida e juros são a maior preocupação dos brasileiros, com 27%.'],
+ ['h', 'O que vem agora'],
+ ['ul', ['Hoje, 20h30: pronunciamento de Lula em rede de rádio e TV; segunda (9), 7h30, no rádio.', 'Segunda (9), 8h30: Focus, com o efeito do Copom e do dólar a R$ 5,51 nas projeções.', 'Depois de 15 de novembro: propostas da Fazenda e do Planejamento ao presidente.', 'Até 17 de dezembro: votação da LDO e da LOA na Comissão Mista de Orçamento e no plenário do Congresso.']],
+ ['h', 'O que ainda não está confirmado'],
+ ['ul', ['Os números do projeto divergem entre as fontes: o superávit de R$ 18,6 bilhões e o salário mínimo de R$ 1.741 vêm do BP Money; a Gazeta do Povo e o Brasil 247 citam meta de R$ 73,2 bilhões e mínimo de R$ 1.717, parâmetros da LDO.', 'O conteúdo real do pronunciamento só será conhecido depois da exibição.', 'Não há data para a divulgação das medidas de ajuste nem se incluirão aumento de receita.']]
+ ],
+ fontes:[['Brasil 247 (calendário do Orçamento)', 'https://www.brasil247.com/economia/congresso-fecha-acordo-para-votar-orcamento-de-2027-ate-17-de-dezembro/'], ['Gazeta do Povo (relator da LDO)', 'https://www.gazetadopovo.com.br/economia/senador-do-pl-sera-relator-das-regras-do-orcamento-de-2027/'], ['Estado Político (Braga relator)', 'https://www.estadopolitico.com.br/braga-sera-relator-do-orcamento-de-2027-que-preve-r-74-trilhoes-em-despesas/'], ['Agência Senado (IFI)', 'https://www12.senado.leg.br/ifi/noticias/ifi-analisa-ploa-2027-e-apresenta-projecoes-diferentes-das-encaminhadas-pelo-governo-ao-congresso'], ['Acessa (Durigan)', 'https://www.acessa.com/economia/2026/11/343702-durigan-discutira-medidas-fiscais-com-lula-apos-viagem-a-cop31.html'], ['A Crítica (Agência Estado)', 'https://acritica.net/economia/lula-pronunciamento-rede-nacional-domingo-8-ajuste-mercado/'], ['Agência Brasil (Focus)', 'https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-para-inflacao-juros-e-dolar-em-2026']]
+};
+
+/* Argentina */
+S.argentina_risco_pais = {ed:'mundo', k:'Mundo · Argentina', hora:'8/11',
+ t:'Risco-país argentino sobe e bônus em dólar caem cerca de 20% desde o pico; Milei tem aprovação abaixo de 40% e o governo busca US$ 50 bi para chegar a 2027',
+ sub:'O mercado precifica 45% de chance de reeleição de Javier Milei, contra 50% nas pesquisas; a inflação segue perto de 2% ao mês e o desemprego é o maior desde 2021.',
+ dado:{n:'~20%', l:'Queda dos bônus argentinos em dólar desde o pico, segundo o Informe Digital'},
+ upd:'',
+ resumo:'O risco-país da Argentina sobe, e os bônus em dólar já caíram cerca de 20% desde o pico, segundo o Informe Digital de 8 de novembro. O presidente Javier Milei, da La Libertad Avanza, tem aprovação abaixo de 40%, e o governo precisaria de ao menos US$ 50 bilhões para chegar às eleições de 2027. A inflação foi de 1,9% em setembro e de 33,4% em 12 meses, e o desemprego chegou a 7,9% no segundo trimestre, o maior desde 2021. O mercado dá 45% de chance de reeleição a Milei; as pesquisas, 50%.',
+ fundo:[
+ ['p', 'O risco-país da Argentina sobe, e os bônus soberanos em dólar já caíram cerca de 20% desde o pico, informa o Informe Digital em reportagem de 8 de novembro. O governo do presidente Javier Milei precisaria de ao menos US$ 50 bilhões para chegar às eleições de 2027, e a aprovação do presidente está abaixo de 40%. O quadro piora a posição de um governo que apostava em estabilidade para disputar a reeleição.'],
+ ['nums', [['~20%', 'queda dos bônus em dólar desde o pico'], ['US$ 50 bi', 'necessidade de financiamento até 2027, segundo o Informe Digital'], ['33,4%', 'inflação em 12 meses até setembro; 1,9% no mês'], ['7,9%', 'desemprego no 2º trimestre, o maior desde 2021']]],
+ ['h', 'Quem é quem'],
+ ['p', 'Javier Milei governa pela La Libertad Avanza, partido de direita libertária, e tem como principal força de oposição o peronismo. O governo enfrenta dois processos de repercussão política: em 23 de outubro, um juiz arquivou o caso $LIBRA em relação a Milei, com recursos pendentes, e em 22 de setembro a Câmara confirmou o processamento do caso ANDIS, segundo o Estrella Digital. O consultor Fernando Marull observa que o mercado precifica 45% de chance de reeleição de Milei, ante 50% nas pesquisas.'],
+ ['h', 'Economia e eleição de 2027'],
+ ['p', 'A inflação argentina foi de 1,9% em setembro e de 33,4% em 12 meses, e o Informe Digital diz que o ritmo segue perto de 2% ao mês. O desemprego chegou a 7,9% no segundo trimestre, o maior desde 2021. A queda dos bônus e a alta do risco-país encarecem a rolagem da dívida e complicam o dólar e a atividade, na leitura do veículo, que liga o movimento também ao efeito da vitória de Lula no Brasil sobre os ativos da região.'],
+ ['p', 'O Estrella Digital faz o balanço do governo Milei em inflação, déficit, salários e emprego e lembra que a desaceleração dos preços convive com perda de renda e com o desemprego mais alto em cinco anos. Para o governo, a combinação reduz a margem política em 2027: uma inflação que cai pouco, sem recuperação do emprego, é o principal argumento da oposição peronista.'],
+ ['h', 'O que vem agora'],
+ ['ul', ['Dados de inflação e atividade das próximas semanas e a trajetória do risco-país.', 'Recursos pendentes no caso $LIBRA e andamento do caso ANDIS na Câmara.', 'Definição de como o governo financiará os US$ 50 bilhões até 2027.']],
+ ['h', 'O que ainda não está confirmado'],
+ ['ul', ['O valor de US$ 50 bilhões é estimativa do Informe Digital, sem fonte oficial.', 'A ligação entre a vitória de Lula e a queda dos bônus argentinos é leitura do veículo, não dado verificado.', 'Não localizamos a cobertura do Infobae ou do La Nación sobre o tema nesta edição.']]
+ ],
+ fontes:[['Informe Digital', 'https://informedigital.com.ar/el-riesgo-pais-golpea-a-milei-y-complica-dolar-y-actividad/'], ['Estrella Digital', 'https://www.estrelladigital.es/mundo/balance-milei-inflacion-deficit-salarios-empleo-calidad-democratica/20261101063000452729.html']]
+};
+
+/* Minas: transição */
+S.mg_transicao_fase_final = {ed:'regioes', reg:'mg', k:'Minas Gerais · Transição', hora:'8/11',
+ t:'Transição de Cleitinho em Minas entra na fase final: faltam oito reuniões, Propag entra em pauta e o rombo de R$ 10,5 bi em 2027 já divide Simões e o governador eleito',
+ sub:'Thiago Toscano chefia uma supersecretaria econômica e Otto Levy presidirá a Cemig; Fábio Baccheretti segue indefinido na Saúde.',
+ dado:{n:'R$ 10,5 bi', l:'Déficit previsto no projeto de orçamento de Minas para 2027'},
+ upd:'',
+ resumo:'A equipe do governador eleito Cleitinho Azevedo (Republicanos) revisou seis áreas com a gestão de Mateus Simões (PSD) e tem mais oito reuniões temáticas até a última, em 23 de novembro. A próxima, em 10 de novembro, é sobre Agricultura. Thiago Toscano chefia uma supersecretaria econômica e Otto Levy preside a Cemig em 2027. Cleitinho quer renegociar o Propag, e o projeto de orçamento de 2027 prevê déficit de R$ 10,5 bilhões, que Simões e o governador eleito discutem em público.',
+ fundo:[
+ ['p', 'A transição de governo em Minas Gerais entra na fase final: o governador Mateus Simões (PSD) passa o cargo ao eleito Cleitinho Azevedo (Republicanos) em 6 de janeiro, e a equipe de Cleitinho, coordenada pelo vice-eleito Luís Eduardo Falcão (Republicanos), já revisou seis áreas, informa O Tempo. Faltam oito reuniões temáticas. A próxima, em 10 de novembro, é sobre Agricultura, e a última, com parceiros externos, está marcada para 23 de novembro.'],
+ ['h', 'As áreas revistas e os nomes'],
+ ['p', 'Saúde, Infraestrutura, Educação, Desenvolvimento Econômico, Justiça e Segurança e Meio Ambiente já passaram pelas reuniões de transição. O setor do agronegócio pede a permanência do secretário Thales Fernandes. Dois nomes já foram confirmados para 2027: Thiago Toscano chefiará uma supersecretaria econômica, e Otto Levy presidirá a Cemig. Fábio Baccheretti, da Saúde, segue indefinido, e haverá uma reunião específica sobre o Propag.'],
+ ['h', 'Propag e o rombo de 2027'],
+ ['p', 'Cleitinho quer renegociar o Programa de Pagamento de Dívidas dos Estados (Propag), ligando o pagamento ao investimento federal. O programa alonga o prazo da dívida em até 30 anos, com juros reais zerados e retomada gradual das amortizações, e integrantes da equipe do governador eleito temem descumprir as exigências. A dívida de Minas com a União passou de R$ 179,3 bilhões em dezembro de 2025 para mais de R$ 210 bilhões, segundo a coluna da Rede 98.'],
+ ['p', 'O projeto de orçamento de 2027 prevê receita de cerca de R$ 145 bilhões, despesa de R$ 155,5 bilhões e déficit de R$ 10,5 bilhões. Simões projeta déficit de quase R$ 11 bilhões, e Cleitinho o critica publicamente, o que transforma a conta em disputa política entre o governo que sai e o que entra. O Tempo, em um trecho, escreveu “R$ 10,5 milhões”, erro provável de bilhões.'],
+ ['h', 'O que vem agora'],
+ ['ul', ['10 de novembro: reunião sobre Agricultura e definição sobre o secretário Thales Fernandes.', 'Reunião sobre o Propag e eventual proposta de renegociação ao governo federal.', '23 de novembro: última reunião, com parceiros externos; posse em 6 de janeiro.']],
+ ['h', 'O que ainda não está confirmado'],
+ ['ul', ['O nome do secretário de Saúde, que segue indefinido.', 'O tamanho exato do déficit de 2027: as fontes lidas divergem entre R$ 10,5 bilhões e quase R$ 11 bilhões.']]
+ ],
+ fontes:[['O Tempo (transição)', 'https://www.otempo.com.br/politica/2026/11/8/transicao-entra-em-fase-final-em-minas-com-encontros-finais-das-equipes-de-cleitinho-e-simoes'], ['Rede 98', 'https://rede98.com.br/eleicoes2026/colunas/cleitinho-simoes-e-a-divida-a-eleicao-acabou-a-conta-chegou/']]
+};
+
+/* Rio: TRE-RJ */
+S.tre_rj_totalizacao = {ed:'regioes', reg:'rj', k:'Rio de Janeiro · Eleições', hora:'7/11', fonteunica:true,
+ t:'TRE-RJ marca para quinta (12) nova totalização dos votos proporcionais, que pode mudar cadeiras na Alerj',
+ sub:'Decisões judiciais sobre candidaturas contestadas levam o tribunal a reprocessar os votos de deputado estadual e federal; não haverá recontagem física das urnas.',
+ dado:{n:'12/11, 14h', l:'Nova totalização dos votos proporcionais no TRE-RJ, no Palácio da Democracia'},
+ upd:'',
+ resumo:'O Tribunal Regional Eleitoral do Rio de Janeiro reprocessará os votos de deputado estadual e federal na quinta (12), às 14h, no Palácio da Democracia, por decisões judiciais que mudaram a situação de candidaturas. A matéria do Tempo Real RJ cita Luiz Martins (PSDB), Paulo Melo (União) e Marcos Müller (Avante) entre os possivelmente afetados. Não é recontagem física das urnas, e partidos, federações, Ministério Público Eleitoral e OAB podem acompanhar. Não há data para o resultado final.',
+ fundo:[
+ ['p', 'O Tribunal Regional Eleitoral do Rio de Janeiro (TRE-RJ) fará na quinta (12), às 14h, no Palácio da Democracia, nova totalização dos votos de deputado estadual e federal, informa o Tempo Real RJ. O motivo são decisões judiciais que mudaram a situação de candidaturas e podem alterar a distribuição de cadeiras na Assembleia Legislativa e na bancada federal.'],
+ ['p', 'A decisão consta do Edital 004/SJD/2026, e a responsabilidade é do presidente do tribunal, desembargador Claudio de Mello Tavares. Votos hoje anulados ou contestados podem voltar à conta. O Tempo Real RJ cita Luiz Martins (PSDB), Paulo Melo (União) e Marcos Müller (Avante) entre os possivelmente afetados, sem detalhar o efeito sobre cada um.'],
+ ['p', 'Não se trata de recontagem física das urnas. Partidos, federações, Ministério Público Eleitoral e Ordem dos Advogados do Brasil podem acompanhar a sessão, desde que avisem antes por e-mail ao tribunal. A matéria não informa quando sai o resultado final.'],
+ ['h', 'O que vem agora e o que falta saber'],
+ ['p', 'O resultado da nova totalização pode mudar a composição da Alerj antes da diplomação. Não está claro, na fonte lida, quantas cadeiras estão em jogo nem se o efeito alcança também a bancada federal. Esta é a única fonte lida; o Radar não localizou segunda confirmação do edital nem manifestação dos partidos citados.']
+ ],
+ fontes:[['Tempo Real RJ', 'https://temporealrj.com/tre-rj-nova-totalizacao-votos-alerj/']]
+};
+
+/* Rio: Cedae */
+S.cedae_nexxus = {ed:'regioes', reg:'rj', k:'Rio de Janeiro · Saneamento', hora:'7/11', fonteunica:true,
+ t:'Cedae aditiva em R$ 18,99 milhões o contrato com a Nexxus, única licitante, e leva o valor a R$ 115,12 milhões',
+ sub:'O aumento de 19,76% foi assinado em 19 de outubro; o parecer jurídico interno deu viabilidade condicionada a 11 recomendações, e a Cedae não diz se foram cumpridas.',
+ dado:{n:'19,76%', l:'Aumento do contrato 038/2025 da Cedae com a Nexxus, de R$ 96,12 milhões para R$ 115,12 milhões'},
+ upd:'',
+ resumo:'A Cedae assinou em 19 de outubro, pelo diretor-presidente Rafael Rolim, um aditivo de R$ 18,99 milhões, ou 19,76%, ao contrato 038/2025 com a Nexxus, que foi a única licitante. O valor passa de R$ 96,12 milhões para R$ 115,12 milhões, sem mudar o prazo de 24 meses. A diretoria aprovou em 28 de setembro, e o parecer jurídico interno de 13 de maio deu viabilidade condicionada a 11 recomendações, associando parte do aumento a subdimensionamento do planejamento. A informação é do Tempo Real RJ.',
+ fundo:[
+ ['p', 'A Companhia Estadual de Águas e Esgotos do Rio de Janeiro (Cedae) assinou em 19 de outubro um aditivo de R$ 18,99 milhões, ou 19,76%, ao contrato 038/2025 com a Nexxus, informa o Tempo Real RJ. O valor passa de R$ 96,12 milhões para R$ 115,12 milhões, e o prazo de 24 meses não muda. A Nexxus foi a única licitante na concorrência original.'],
+ ['p', 'O aditivo foi assinado pelo diretor-presidente, Rafael Rolim, depois de aprovação da diretoria em 28 de setembro. O parecer jurídico interno, de 13 de maio, deu viabilidade “condicionada” ao cumprimento de 11 recomendações e associou parte do aumento a subdimensionamento do planejamento original. A reportagem não diz se as recomendações foram cumpridas.'],
+ ['h', 'O que vem agora e o que falta saber'],
+ ['p', 'Os próximos passos são o reforço da garantia contratual pela Nexxus e o registro do aditivo no SIGFIS, o sistema de fiscalização do Tribunal de Contas do Estado. Esta é a única fonte lida, e o Radar não localizou resposta da Cedae ou da Nexxus nem justificativa técnica detalhada para o aumento.']
+ ],
+ fontes:[['Tempo Real RJ', 'https://temporealrj.com/cedae-licitacao-aditivo-19-milhoes/']]
+};
+
+/* ORDER, capa, Giro */
+HOME_LEAD = 'pl_motta';
+HOME_ROW = ['israel', 'orcamento_2027', 'ms_seg'];
+ORDER.politica = ['pl_motta', 'ms_seg'].concat(ORDER.politica.filter(function(i){ return ['pl_motta', 'ms_seg'].indexOf(i) < 0; }));
+ORDER.economia = ['orcamento_2027'].concat(ORDER.economia.filter(function(i){ return i !== 'orcamento_2027'; }));
+ORDER.mundo.splice(ORDER.mundo.indexOf('nz_eleicao') + 1, 0, 'argentina_risco_pais');
+ORDER.regioes = ['tre_rj_totalizacao', 'cedae_nexxus', 'mg_transicao_fase_final'].concat(ORDER.regioes);
+GIRO = [
+ ['361 votos para Motta', 'A CartaCapital soma 15 partidos e 70,4% da Câmara a favor da reeleição do presidente da Casa.', 'CartaCapital', 'https://www.cartacapital.com.br/politica/uniao-brasil-oficializa-apoio-a-hugo-motta-que-ja-reune-361-deputados-para-reeleicao-na-camara/', '', 'pl_motta'],
+ ['Sete comissões para o PL', 'Sóstenes Cavalcante quer a CCJ e mais seis comissões, segundo o Poder360.', 'Poder360', 'https://www.poder360.com.br/poder-congresso/sostenes-diz-que-pl-reivindicara-comando-de-7-comissoes-na-camara/', '', 'pl_motta'],
+ ['Deri deixa o Knesset', 'O líder do Shas continua presidente do partido, que caiu de 11 para 6 cadeiras, segundo o Times of Israel.', 'Times of Israel', 'https://www.timesofisrael.com/shas-leader-aryeh-deri-to-step-down-from-knesset-while-remaining-party-chair', '', 'israel'],
+ ['Orçamento até 17/12', 'Congresso fecha acordo para votar LDO e LOA de 2027 antes do recesso, segundo o Brasil 247.', 'Brasil 247', 'https://www.brasil247.com/economia/congresso-fecha-acordo-para-votar-orcamento-de-2027-ate-17-de-dezembro/', '', 'orcamento_2027'],
+ ['Delegação russa em Abu Dhabi', 'Medinsky chefia o grupo que o Kremlin confirmou para 10 e 11 de novembro, segundo o Kyiv Independent.', 'Kyiv Independent', 'https://kyivindependent.com/russia-to-send-senior-diplomats-military-officials-to-upcoming-peace-talks-in-abu-dhabi/', '', 'ucrania_abudhabi'],
+ ['Totalização no TRE-RJ', 'Os votos proporcionais serão reprocessados na quinta (12), às 14h, segundo o Tempo Real RJ.', 'Tempo Real RJ', 'https://temporealrj.com/tre-rj-nova-totalizacao-votos-alerj/', '', 'tre_rj_totalizacao'],
+ ['Cleitinho e o Propag', 'A equipe do governador eleito quer renegociar o programa de dívida, segundo O Tempo.', 'O Tempo', 'https://www.otempo.com.br/politica/2026/11/8/transicao-entra-em-fase-final-em-minas-com-encontros-finais-das-equipes-de-cleitinho-e-simoes', '', 'mg_transicao_fase_final'],
+ ['Risco-país na Argentina', 'Bônus em dólar caem cerca de 20% desde o pico, segundo o Informe Digital.', 'Informe Digital', 'https://informedigital.com.ar/el-riesgo-pais-golpea-a-milei-y-complica-dolar-y-actividad/', '', 'argentina_risco_pais']
+].concat(GIRO).slice(0, 20);
+
+
+S.sc_chapeco.velha = true;
+S.sc_chapeco.velhaMotivo = 'fato encerrado';
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","israel":"atualizada","dino_6x1":"atualizada","ueno_bank":"atualizada","alcolumbre_stf":"atualizada","ucrania_energia":"atualizada","nz_eleicao":"atualizada","lula_pronunciamento":"novo","quaest_pos_eleicao":"novo","ira_iron_gate":"novo","mercado_semana":"novo","sp_pacaembu_show":"novo"};
-var GIRO_FLAGS = {"Lula fala às 20h30":"novo","Quaest pós-eleição":"novo","Iron Gate":"novo","CNI quer adiar a 6x1":"novo","Prejuízo do Ueno":"novo","Show no Pacaembu":"novo"};
+var FLAGS = {"israel":"atualizada","ms_seg":"atualizada","pl_motta":"atualizada","ucrania_abudhabi":"atualizada","quaest_pos_eleicao":"atualizada","orcamento_2027":"novo","argentina_risco_pais":"novo","mg_transicao_fase_final":"novo","tre_rj_totalizacao":"novo","cedae_nexxus":"novo"};
+var GIRO_FLAGS = {"361 votos para Motta":"novo","Sete comissões para o PL":"novo","Deri deixa o Knesset":"novo","Orçamento até 17/12":"novo","Delegação russa em Abu Dhabi":"novo","Totalização no TRE-RJ":"novo","Cleitinho e o Propag":"novo","Risco-país na Argentina":"novo"};
 /* ===== FIM DOS DADOS ===== */

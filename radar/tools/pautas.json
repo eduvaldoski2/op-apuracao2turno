@@ -10,8 +10,8 @@
     "paraguai",
     "ueno_bank"
    ],
-   "verificada": "2026-11-08-11h",
-   "fato_novo": true,
+   "verificada": "2026-11-08-15h",
+   "fato_novo": false,
    "ultimo_fato": "08/11: o ABC Color estima o prejuízo preliminar em US$ 809,5 milhões; a RDN confirma preventiva e embargo de bens de Peña; o governo Alliana diz que 1.196.000 pessoas receberam a garantia estatal.",
    "proximo": "Recurso da defesa; decisão sobre Carvallo; nomeação ao Banco Central; novos pagamentos a poupadores."
   },
@@ -29,8 +29,8 @@
     "fiscal",
     "lula_pronunciamento"
    ],
-   "verificada": "2026-11-08-11h",
-   "fato_novo": true,
+   "verificada": "2026-11-08-15h",
+   "fato_novo": false,
    "ultimo_fato": "08/11: Lula fala hoje às 20h30 em rede de rádio e TV (7min44), com foco em união nacional e fiscal, sem medidas novas, segundo relatos prévios; embarca na segunda (9) para a COP31.",
    "proximo": "Exibição do pronunciamento (8, 20h30; rádio 9, 7h30); reação do mercado na segunda; propostas fiscais na segunda quinzena de novembro."
   },
@@ -44,7 +44,7 @@
     "tse_aije9",
     "tse_psol_se"
    ],
-   "verificada": "2026-11-08-11h",
+   "verificada": "2026-11-08-15h",
    "fato_novo": false,
    "ultimo_fato": "06/11: corregedor admite ação do Novo e dá cinco dias para a defesa; TSE abre mais ações de investigação contra Flávio, somando nove.",
    "proximo": "Prazo de defesa da chapa; novas decisões do corregedor."
@@ -61,8 +61,8 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-08-11h",
-   "fato_novo": true,
+   "verificada": "2026-11-08-15h",
+   "fato_novo": false,
    "ultimo_fato": "08/11: a Quaest (30/10 a 2/11) mostra 62% contra a ida de Flávio aos EUA e 56% que veem fuga; Senado segue sem resposta à questão de ordem de Randolfe.",
    "proximo": "Decisão da Mesa do Senado; pesquisas de Datafolha e AtlasIntel."
   },
@@ -78,10 +78,10 @@
     "congresso",
     "pl_motta"
    ],
-   "verificada": "2026-11-08-11h",
-   "fato_novo": false,
-   "ultimo_fato": "07/11: Motta tem apoio de 15 partidos que elegeram 361 dos 513 deputados (Congresso em Foco); o PL, com 121, decide na quarta (11) entre acordo e candidatura própria.",
-   "proximo": "Reunião da bancada do PL em 11/11; eleição na Câmara em 01/02/2027."
+   "verificada": "2026-11-08-15h",
+   "fato_novo": true,
+   "ultimo_fato": "08/11: Motta tem 15 partidos e 361 dos 513 deputados; o União Brasil e o PT oficializaram apoio, o Novo lança candidato próprio, e o PL (121) decide na quarta (11), com Sóstenes pedindo sete comissões.",
+   "proximo": "Reunião da bancada do PL em 11/11; anúncio do candidato do Novo; eleição na Câmara em 01/02/2027."
   },
   {
    "id": "seguranca-publica",
@@ -92,10 +92,10 @@
     "ms_seg",
     "maioridade"
    ],
-   "verificada": "2026-11-08-11h",
-   "fato_novo": false,
-   "ultimo_fato": "07/11: Lula diz que cria o Ministério da Segurança por MP, que não foi localizada no Diário Oficial; PEC aprovada no Senado com 73 votos em 03/11; maioridade penal adiada por Alcolumbre.",
-   "proximo": "Publicação da MP e nome do ministro; promulgação da PEC; maioridade na Câmara."
+   "verificada": "2026-11-08-15h",
+   "fato_novo": true,
+   "ultimo_fato": "07-08/11: Lula promete o Ministério da Segurança por MP, ainda não publicada; PEC passou com 73 votos no 1º turno e 75 no 2º; Braga propõe 1º/12 como prazo para a Câmara votar a maioridade.",
+   "proximo": "Publicação da MP e nome do ministro; promulgação da PEC; PEC 32/2015 na Câmara."
   },
   {
    "id": "escala-6x1",
@@ -105,8 +105,8 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-08-11h",
-   "fato_novo": true,
+   "verificada": "2026-11-08-15h",
+   "fato_novo": false,
    "ultimo_fato": "08/11: CNI e CNC pedem ao STF suspender ou adiar os prazos; Dino mantém a audiência de terça (10), às 14h, e diz que dois meses não parecem inviáveis; Marinho prevê a regulamentação na segunda (9).",
    "proximo": "Regulamentação prevista para 09/11; audiência de 10/11."
   },
@@ -121,12 +121,13 @@
     "dolar_maxima",
     "bolsas_ia",
     "ibov_semana",
-    "mercado_semana"
+    "mercado_semana",
+    "orcamento_2027"
    ],
-   "verificada": "2026-11-08-11h",
+   "verificada": "2026-11-08-15h",
    "fato_novo": true,
-   "ultimo_fato": "06-08/11: Ibovespa a 168.498 pontos e dólar a R$ 5,508 na sexta; Brent a US$ 98,32 após queda de mais de 16% na semana; semana tem Focus, ata do Copom, CPI dos EUA e IPCA.",
-   "proximo": "Focus (9), ata do Copom e CPI dos EUA (10), balanço da Petrobras (10 ou 11), IPCA (12)."
+   "ultimo_fato": "08/11: o projeto de Orçamento de 2027 prevê superávit de R$ 18,6 bi, mas a IFI projeta déficit de R$ 86,1 bi; LDO e LOA serão votadas até 17/12; Durigan só leva propostas a Lula depois da COP31.",
+   "proximo": "Pronunciamento de Lula (8, 20h30); Focus (9); ata do Copom e CPI dos EUA (10); IPCA (12)."
   },
   {
    "id": "eua-meio-mandato",
@@ -137,7 +138,7 @@
     "eua",
     "rubio_gabinete"
    ],
-   "verificada": "2026-11-08-11h",
+   "verificada": "2026-11-08-15h",
    "fato_novo": false,
    "ultimo_fato": "05/11: democratas vencem as eleições de meio de mandato; NPR registra reações do mundo.",
    "proximo": "Mudanças no gabinete; pauta do novo Congresso americano."
@@ -153,9 +154,9 @@
     "zaporizhzhia",
     "ucrania_abudhabi"
    ],
-   "verificada": "2026-11-08-11h",
+   "verificada": "2026-11-08-15h",
    "fato_novo": true,
-   "ultimo_fato": "07/11: ataque russo com 172 drones e 36 mísseis balísticos (4 interceptados) deixa subestações atingidas em cinco regiões; rodada trilateral em Abu Dhabi na terça (10).",
+   "ultimo_fato": "08/11: o Kremlin confirma Medinsky como chefe da delegação russa em Abu Dhabi (10-11/11); Kiev envia Umerov, Budanov e Arakhamia; EUA mediam com Witkoff e Kushner.",
    "proximo": "Rodada de Abu Dhabi (10-11/11); reunião da UE em 13/11."
   },
   {
@@ -166,10 +167,10 @@
    "materias": [
     "israel"
    ],
-   "verificada": "2026-11-08-11h",
+   "verificada": "2026-11-08-15h",
    "fato_novo": true,
-   "ultimo_fato": "08/11: Herzog entrega o mandato a Eisenkot hoje, 17h; prazo até 6 de dezembro; o Israel Hayom diz que o Shas só entra depois do aval da UTJ, e o Shas nega.",
-   "proximo": "Cerimônia de hoje; posse do Knesset em 10/11; posição de UTJ e Shas."
+   "ultimo_fato": "08/11: Herzog entrega o mandato a Eisenkot (67 recomendações contra 46); prazo até 6/12; Deri deixa o Knesset e o Shas nega que entrará no governo.",
+   "proximo": "Posição da UTJ e do Shas; negociação sobre o alistamento haredi; eventual prorrogação de 14 dias."
   },
   {
    "id": "ira-oriente-medio",
@@ -181,8 +182,8 @@
     "iemen_houthis",
     "ira_iron_gate"
    ],
-   "verificada": "2026-11-08-11h",
-   "fato_novo": true,
+   "verificada": "2026-11-08-15h",
+   "fato_novo": false,
    "ultimo_fato": "08/11: o Centcom anuncia a força-tarefa Iron Gate contra as rotas terrestres e do Cáspio do Irã; explosões em Qeshm, Jask e Bandar Abbas; Catar segue mediando.",
    "proximo": "Resposta dos EUA à proposta iraniana; novos ataques em Ormuz."
   }
@@ -190,63 +191,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-08-11h",
-   "achado": "Israel: mandato a Eisenkot hoje, 17h. Nova Zelândia: contagens parciais divergem, sem vencedor. Paraguai: prejuízo preliminar de US$ 809,5 mi e pagamentos a poupadores. Nada de queda ou prisão nova de chefe de Estado."
+   "feita": "2026-11-08-15h",
+   "achado": "Israel: mandato entregue a Eisenkot e saída de Deri do Knesset. Paraguai: sem fato novo desde as 11h. Nova Zelândia: votos especiais pendentes, sem vencedor. Nenhuma queda, renúncia ou prisão nova de chefe de Estado."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-08-11h",
-   "achado": "Paraguai coberto por ABC Color, RDN e El Comercio; Argentina, Chile, Colômbia, Peru, Venezuela, Bolívia, Equador e Uruguai: nada novo de 08/11 localizado."
+   "feita": "2026-11-08-15h",
+   "achado": "Argentina entra (risco-país e bônus, Informe Digital e Estrella Digital); Paraguai sem fato novo; Chile, Colômbia, Peru, Venezuela, Bolívia, Equador e Uruguai: nada novo de 08/11 localizado."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-08-11h",
-   "achado": "Iron Gate (Centcom) e explosões no litoral iraniano; ataque russo de 07/11 com 172 drones e 36 mísseis; rodada de Abu Dhabi na terça. Sudão: nada novo."
+   "feita": "2026-11-08-15h",
+   "achado": "Ucrânia: Kremlin confirma delegação russa para Abu Dhabi (Kyiv Independent) e Kyiv Post detalha a mediação dos EUA. Irã: Iron Gate já coberto, sem fato novo desde as 11h. Sudão: nada de 08/11 localizado."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-08-11h",
-   "achado": "Stephen Miller como chefe de gabinete só em título de busca (CNBC), sem texto lido; França: título da CNBC sobre protestos de 08/11 não abriu. Nada confirmado."
+   "feita": "2026-11-08-15h",
+   "achado": "EUA: troca de chefe de gabinete (Miller no lugar de Wiles, 06/11, ABC News) fora desta edição por ser de 06/11; China e França: nada de 07-08/11 verificado."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-08-11h",
-   "achado": "Brent a US$ 98,32 com queda semanal de 13% a 16% conforme a fonte; agenda de CPI dos EUA e Opep incluída em mercado_semana."
+   "feita": "2026-11-08-15h",
+   "achado": "Sem fato novo desde as 11h; Brent e dólar já em mercado_semana."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-08-11h",
-   "achado": "Pronunciamento de Lula às 20h30 de hoje (rádio segunda 7h30); MP do Ministério da Segurança e regulamentação da 6x1 sem confirmação de publicação."
+   "feita": "2026-11-08-15h",
+   "achado": "Pronunciamento de Lula às 20h30 ainda não ocorreu; MP do Ministério da Segurança não publicada até agora."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-08-11h",
-   "achado": "Nada novo de 08/11 em Agência Câmara e Agência Senado; reunião do PL em 11/11 mantida; Orçamento 2027 deve ser votado até 17/12 (Agência Senado, título)."
+   "feita": "2026-11-08-15h",
+   "achado": "Motta com 361 deputados e disputa do PL (Sóstenes, 7 comissões); calendário do Orçamento até 17/12 e relatores Braga e Gomes; prazo de 1º/12 proposto por Braga para a maioridade."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-08-11h",
-   "achado": "CNI e CNC no STF contra os prazos da 6x1; audiência de Dino na terça (10), 14h; TSE e Moraes/Fachin sem fato novo."
+   "feita": "2026-11-08-15h",
+   "achado": "Nada novo de 08/11 no STF, TSE, TCU, PGR ou PF; Banco Master e Moraes/Mendonça seguem com vista de Dino até dezembro."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-08-11h",
-   "achado": "Quaest pós-eleição (30/10 a 2/11) entra; Datafolha e AtlasIntel pós-eleição não localizados."
+   "feita": "2026-11-08-15h",
+   "achado": "Quaest (30/10 a 2/11) com aprovação de 48% e desaprovação de 44%, ampliada; Datafolha e AtlasIntel pós-eleição não localizados."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-08-11h",
-   "achado": "Agenda da semana (Focus, ata do Copom, CPI, IPCA) e fechamento de sexta em matéria nova; data do balanço da Petrobras segue conflitante (10 ou 11/11)."
+   "feita": "2026-11-08-15h",
+   "achado": "Orçamento 2027 (IFI, LDO e LOA) em matéria nova; agenda da semana já em mercado_semana; balanço da Petrobras em 11/11 após o fechamento (BP Money)."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-08-11h",
-   "achado": "SP (Pacaembu/GP) entra; MG, MT e PE já cobertos; Mossoró, João Pessoa e Campina Grande, RS (vice no comando até 13/11) e AM só em material lido, sem matéria nova; AL, CE, MA, PI, PR, PA, TO, RO, AC, AP e RR sem fato de 07-08/11."
+   "feita": "2026-11-08-15h",
+   "achado": "RJ: TRE-RJ (12/11) e Cedae entram; MG: transição de Cleitinho entra; MT, SP e RN já cobertos; AL, RO, PA e GO só com fonte única, ficaram fora; Sul sem fato de 07-08/11 verificado."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-08-11h",
-   "achado": "Todas verificadas às 11h: fato novo em Paraguai, Lula, Flávio (Quaest), 6x1, mercado, Ucrânia, Israel e Irã; TSE, Congresso, segurança e EUA sem novidade."
+   "feita": "2026-11-08-15h",
+   "achado": "Verificadas às 15h: fato novo em Congresso, segurança, economia, Ucrânia e Israel; sem fato novo em Paraguai, Lula, TSE, Flávio, 6x1, EUA e Irã desde as 11h."
   }
  ]
 }
