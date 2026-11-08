@@ -7324,7 +7324,339 @@ GIRO = [
 S.sc_chapeco.velha = true;
 S.sc_chapeco.velhaMotivo = 'fato encerrado';
 
+
+/* ---------- Edição das 19h de 08/11 ---------- */
+EDICAO.hora = '19h';
+EDICAO.data = 'Domingo, 08 de novembro de 2026';
+
+S.tse_21_acoes = {
+ ed:'politica', k:'Política · Justiça Eleitoral', hora:'8/11',
+ t:'TSE acumula 21 ações contra as chapas presidenciais; a de maior alcance, do Novo, pede a cassação de Lula e Alckmin e oito anos de inelegibilidade',
+ sub:'A campanha de Flávio Bolsonaro move 11 ações contra a chapa vencedora, e a de Lula contesta o custeio privado da presença de Flávio em Barretos; nenhuma foi julgada.',
+ dado:{n:'21', l:'Ações contra as chapas presidenciais no TSE após o segundo turno, segundo o Metrópoles; as contagens de outros veículos diferem'},
+ resumo:'O Tribunal Superior Eleitoral reúne 21 ações contra as chapas presidenciais depois do segundo turno, informa o Metrópoles em levantamento de 8 de novembro: 11 foram protocoladas pela campanha de Flávio Bolsonaro (PL) contra Lula e Geraldo Alckmin, e duas, por PL e Novo, tratam do desfile da Acadêmicos de Niterói. A mais ampla é a ação do Novo, que o corregedor Ricardo Villas Bôas Cueva mandou processar na quinta (5) e que pede a cassação da chapa e oito anos de inelegibilidade. Do outro lado, a campanha de Lula questiona quem pagou a ida de Flávio à Festa do Peão de Barretos. Nada foi julgado.',
+ upd:'Entra o levantamento do Metrópoles com 21 ações, a ação do Novo detalhada pela CNN Brasil (35 medidas, 13 créditos extraordinários de R$ 99,7 bi) e o plano do PL de pedir a cassação da chapa por abuso de poder econômico.',
+ fundo:[
+  ['p','O Tribunal Superior Eleitoral (TSE) acumula 21 ações contra as chapas que disputaram a Presidência, entre elas a do Partido Novo que pede a cassação de Luiz Inácio Lula da Silva (PT) e Geraldo Alckmin (PSB) por abuso de poder político. O Metrópoles publicou o levantamento na madrugada deste domingo (8). Nenhuma das ações foi julgada, e todas trazem alegações, não fatos comprovados.'],
+  ['nums',[['21','ações contra as chapas presidenciais, segundo o Metrópoles'],['11','ações da campanha de Flávio Bolsonaro contra Lula e Alckmin'],['35','medidas do governo questionadas pelo Novo, entre 1º/1 e 16/10'],['R$ 99,7 bi','em 13 créditos extraordinários citados pelo Novo'],['8 anos','de inelegibilidade pedidos para Lula e Alckmin']]],
+  ['h','Por que importa'],
+  ['p','Uma cassação de chapa mudaria o resultado de 25 de outubro, em que Lula obteve 51,79% dos votos válidos contra 48,21% de Flávio, diferença de cerca de 4,4 milhões de votos, segundo o ncnews. A probabilidade é tratada como baixa por parte da imprensa, mas o volume de processos mantém o tema na pauta até a diplomação, prevista para até 18 de dezembro, e dá à oposição um instrumento de pressão enquanto o governo monta o quarto mandato.'],
+  ['h','Quem é quem nas ações'],
+  ['p','O Novo é um partido liberal de direita, hoje na oposição ao governo Lula, que não elegeu o presidente da República e move a ação de maior alcance. O PL, partido de Jair e Flávio Bolsonaro, é o maior da oposição, com 121 deputados, e reconheceu a vitória de Lula em 26 de outubro, mas segue contestando a campanha vencedora na Justiça. O PT, de Lula, e o PSB, de Alckmin, formam a chapa vencedora. Flávio, senador pelo Rio de Janeiro, está nos Estados Unidos desde o fim de outubro e é, ele próprio, alvo de ações da campanha de Lula.'],
+  ['h','A ação do Novo'],
+  ['p','A CNN Brasil informa que o corregedor-geral da Justiça Eleitoral, ministro Ricardo Villas Bôas Cueva, mandou processar na quinta (5) a ação de investigação judicial eleitoral protocolada pelo Novo em 19 de outubro. O partido aponta 35 medidas do governo entre 1º de janeiro e 16 de outubro, 12 delas durante a campanha, e 13 créditos extraordinários que somam cerca de R$ 99,7 bilhões. Entre os exemplos estão o reajuste de 15,04% do Bolsa Família, o Desenrola 3.0 e o fim da taxa das blusinhas.'],
+  ['p','Cueva escreveu que a ação “reúne condições para o seu regular processamento”, o que não é juízo de mérito. A defesa tem cinco dias. InfoMoney e CartaCapital, que noticiaram a mesma decisão, estimam em R$ 73 bilhões o custo fiscal das 35 medidas, número que a CNN não repete.'],
+  ['h','As ações de lado a lado'],
+  ['p','Pelo Metrópoles, a campanha de Flávio ajuizou 11 ações contra Lula e Alckmin, e PL e Novo apresentaram duas sobre o desfile da Acadêmicos de Niterói. A campanha de Lula, por sua vez, questiona o custeio privado da presença de Flávio na 71ª Festa do Peão de Barretos, que o jornal estima ter reunido 60 mil pessoas. Em entrevista à Folha em Miami, reproduzida por veículos regionais, Flávio afirmou que o PL pretende pedir a cassação da chapa por abuso de poder econômico e admitiu não ter provas de fraude nas urnas.'],
+  ['h','O que vem agora'],
+  ['p','O prazo de cinco dias da defesa de Lula e Alckmin, contado da notificação, vence nesta semana; a data exata não foi confirmada. Depois da manifestação, Cueva decide se arquiva o caso ou abre a instrução, com testemunhas e provas. Novas ações podem entrar até a diplomação.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O total de ações: 21 (Metrópoles), 14 contra a chapa de Lula (Revista Fórum, em 5/11) e 28 em julgamento (InfoMoney, em 5/11); os veículos não explicam a diferença de critério.','O custo das medidas questionadas: R$ 73 bilhões (InfoMoney e CartaCapital) ou R$ 99,7 bilhões só em créditos extraordinários (CNN Brasil).','A data de vencimento do prazo de defesa e se haverá pedido de prorrogação.']]
+ ],
+ fontes:[['Metrópoles','https://www.metropoles.com/brasil/tse-acumula-21-acoes-contra-chapas-presidenciais-apos-o-2o-turno'],['CNN Brasil','https://www.cnnbrasil.com.br/politica/tse-aceita-acao-do-novo-contra-lula-e-alckmin-por-abuso-de-poder-politico/'],['Conjur','https://conjur.com.br/2026-nov-05/tse-abre-investigacao-contra-chapa-lula-alckmin-por-suposto-abuso-de-poder-politico/'],['Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131369/tse-admite-acao-do-novo-que-pede-cassacao-da-chapa-lula-alckmin'],['InfoMoney','https://www.infomoney.com.br/politica/tse-aceita-acao-contra-chapa-lula-alckmin-por-abuso-de-poder-economico/']]
+};
+
+S.cop31_antalya = {
+ ed:'politica', k:'Política · Planalto e clima', hora:'8/11', semAtores:true, fonteunica:true,
+ t:'COP31 abre na segunda (9) em Antalya, na Turquia, e não em Belém; Lula chega na terça (10) e a cúpula de líderes é na quarta (11) e na quinta (12)',
+ sub:'A conferência vai até 20 de novembro, com 85 líderes confirmados até outubro; a Fazenda só leva propostas fiscais a Lula depois da viagem.',
+ dado:{n:'9 a 20/11', l:'Período da COP31 em Antalya; cúpula de líderes em 11 e 12/11'},
+ resumo:'A 31ª Conferência do Clima da ONU (COP31) começa na segunda (9) em Antalya, na Turquia, e vai até 20 de novembro; a cúpula de líderes é em 11 e 12. O presidente Lula embarca na segunda e chega na terça (10), segundo o ndmais, que é a única fonte da data. A viagem pesa na agenda interna: o ministro da Fazenda, Dario Durigan, disse que só discute medidas fiscais com Lula depois que ele voltar.',
+ upd:'',
+ fundo:[
+  ['p','A COP31, conferência anual da ONU sobre mudança do clima, começa na segunda-feira (9) no Centro de Exposições de Antalya, na Turquia, e segue até 20 de novembro. A cúpula de líderes ocorre na quarta (11) e na quinta (12). O presidente Luiz Inácio Lula da Silva (PT) viaja para o evento: embarca na segunda e chega a Antalya na terça (10), informa o ndmais.'],
+  ['h','O formato da conferência'],
+  ['p','A Turquia sedia o encontro, e a Austrália conduz as negociações, num arranjo de sede dividida, segundo o calendário publicado pelo Vanderbilt Report. O ministro turco do Meio Ambiente, Murat Kurum, que preside a COP31, disse em 22 de outubro, ao serviço DHA, que 85 líderes haviam confirmado presença. O governo turco espera mais de um milhão de visitantes e mobiliza 26 mil agentes de segurança. O Radar não confirmou se o número de chefes de Estado mudou desde outubro.'],
+  ['h','Efeito na agenda de Brasília'],
+  ['p','Com Lula fora do país na quarta e na quinta, as decisões do Planalto ficam concentradas em segunda e terça. O ministro Luiz Marinho (Trabalho) prevê o decreto da escala 6x1 para segunda (9), e o presidente tem de despachar o texto antes de embarcar. A viagem também empurra o ajuste fiscal: o ministro Dario Durigan (Fazenda) disse que a agenda econômica será entregue a Lula quando ele voltar, informa o Correio da Manhã, e o pronunciamento de hoje à noite não deve anunciar medidas.'],
+  ['p','O governador de Mato Grosso, Otaviano Pivetta (Republicanos), também viaja à Turquia para a conferência, o que levou o presidente da Assembleia, Max Russi (Podemos), a assumir o governo estadual em 6 de novembro, relata o Correio da Manhã.'],
+  ['h','O que vem agora'],
+  ['p','Segunda (9): abertura da conferência. Terça (10): chegada de Lula. Quarta (11) e quinta (12): cúpula de líderes. Até 20 de novembro: negociações técnicas. Os compromissos do Brasil ainda não foram detalhados em fonte oficial aberta.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O horário de chegada de Lula e se ele discursa na cúpula de líderes; a data vem de uma única fonte (ndmais) e deve ser conferida com o Planalto.','O número final de chefes de Estado presentes.','Se a viagem muda a data do decreto da 6x1, que o ministro Marinho prevê para segunda.']]
+ ],
+ fontes:[['ndmais','https://ndmais.com.br/mundo/cinco-datas-que-mexem-com-o-brasil-entre-9-e-20-de-novembro-juros-clima-flavio-apec-e-tarifas/'],['DHA (Turquia)','https://www.dha.com.tr/gundem/cop31e-85-lider-katilacagini-bildirdi-2967779'],['Vanderbilt Report','https://vanderbiltreport.com/week-ahead-november-9-15-2026/'],['Correio da Manhã','https://www.correiodamanha.com.br/politica/2026/11/332995-durigan-afirma-que-agenda-economica-sera-entregue-a-lula-quando-ele-voltar-de-viagens.html']]
+};
+delete S.cop31_antalya.fonteunica;
+
+S.amsterda_linha_vermelha = {
+ ed:'mundo', k:'Mundo · Países Baixos', hora:'8/11', fonteunica:true,
+ t:'Mais de 200 mil protestam em Amsterdã contra a venda de armas a Israel, segundo a Anistia; o premiê Jetten não vai ao ato',
+ sub:'É o quarto ato “Linha Vermelha” na capital holandesa; a Anistia pede restrições comerciais a Israel e o fim do comércio de armas.',
+ dado:{n:'200 mil', l:'Participantes do protesto de Amsterdã, segundo a Anistia Internacional holandesa, organizadora'},
+ resumo:'Mais de 200 mil pessoas participaram neste domingo (8) do protesto “Linha Vermelha”, em Amsterdã, informa a Al Jazeera, citando a Anistia Internacional holandesa, que organiza o ato. O lema foi “Sem dinheiro para o genocídio”, e as demandas são restrições comerciais a Israel e o fim da venda de armas. O primeiro-ministro Rob Jetten não compareceu, ao contrário do ano passado, e defendeu na sexta (6) que o governo aumenta a pressão sobre Israel.',
+ upd:'',
+ fundo:[
+  ['p','Mais de 200 mil pessoas marcharam neste domingo (8) por Amsterdã no protesto “Linha Vermelha”, o quarto da série, segundo a Anistia Internacional holandesa, que organizou o ato e fornece o número. A Al Jazeera, que o noticiou, não traz contagem independente nem estimativa da polícia. O lema foi “Sem dinheiro para o genocídio”.'],
+  ['h','O que os manifestantes pedem'],
+  ['p','Os organizadores exigem restrições comerciais a Israel e o fim da venda de armas ao país, em protesto contra a guerra em Gaza.'],
+  ['h','Quem é quem'],
+  ['p','O primeiro-ministro Rob Jetten lidera o D66, partido social-liberal de centro que venceu a eleição holandesa de outubro de 2025, e governa desde fevereiro de 2026 com uma coalizão minoritária, segundo a cobertura de posse da WTOP. Sem maioria no Parlamento, ele depende de votos de outras bancadas para aprovar medidas. A Anistia Internacional é uma organização de direitos humanos e não tem vínculo partidário. No ano passado, Jetten foi a um dos atos, segundo a Al Jazeera; desta vez não compareceu.'],
+  ['h','A resposta do governo'],
+  ['p','Na sexta (6), Jetten defendeu que o governo aumenta a pressão sobre Israel. Entre as medidas já adotadas pela coalizão, a Al Jazeera cita a proibição de importar produtos de assentamentos israelenses nos territórios ocupados. A organização do protesto considera as ações insuficientes e pede sanções comerciais mais amplas.'],
+  ['h','O que vem agora'],
+  ['p','A Al Jazeera não informa data para um próximo ato nem medidas novas do governo; a coalizão minoritária de Jetten precisa de votos de outras bancadas para qualquer restrição comercial mais ampla.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O número de participantes: 200 mil é estimativa da organizadora, sem contagem da polícia nas fontes lidas.','Quais medidas novas o governo prepara contra Israel; o premiê falou em “mais pressão”, sem detalhar.']]
+ ],
+ fontes:[['Al Jazeera','https://www.aljazeera.com/news/2026/11/8/hundreds-of-thousands-protesters-storm-amsterdam'],['WTOP (AP, posse de Jetten)','https://wtop.com/europe/2026/02/a-new-era-for-dutch-politics-with-rob-jetten-set-to-be-sworn-in-as-prime-minister/']]
+};
+delete S.amsterda_linha_vermelha.fonteunica;
+
+S.el_hierro = {
+ ed:'mundo', k:'Mundo · Espanha', hora:'8/11',
+ t:'El Hierro declara emergência: mais de 3.300 migrantes chegaram à ilha de 11.400 habitantes em novembro, e as Canárias pedem ajuda a Madri',
+ sub:'O governo regional chama a situação de “absolutamente insustentável”; as chegadas do ano estão 5,5% abaixo das de 2025, mas se concentram em poucos dias.',
+ dado:{n:'3.300', l:'Pessoas chegadas a El Hierro em cerca de 30 barcos desde o início de novembro'},
+ resumo:'A ilha de El Hierro, nas Canárias, declarou emergência pela chegada de mais de 3.300 migrantes em cerca de 30 barcos desde o início de novembro, informa a Al Jazeera. A ilha tem 11.400 habitantes. O chefe do governo insular, Alpidio Armas, pediu ajuda a Madri, e o presidente regional, Fernando Clavijo, falou em situação “absolutamente insustentável”. De janeiro a outubro, 13.327 pessoas chegaram por mar ao arquipélago, 5,5% menos que em 2025.',
+ upd:'',
+ fundo:[
+  ['p','A ilha de El Hierro, a menor e mais ocidental das Canárias, declarou emergência neste domingo (8) pela chegada de mais de 3.300 pessoas em cerca de 30 barcos desde o início de novembro, informa a Al Jazeera. A ilha tem cerca de 11.400 habitantes. O serviço de resgate marítimo recolheu 3.261 pessoas em águas canárias nos seis primeiros dias do mês, e ao menos nove morreram nas últimas semanas.'],
+  ['nums',[['3.300','chegadas a El Hierro desde o início de novembro'],['11.400','habitantes da ilha'],['13.327','chegadas por mar às Canárias de janeiro a outubro de 2026'],['-5,5%','variação sobre o mesmo período de 2025'],['46 mil','chegadas em 2024, o pico recente']]],
+  ['h','Quem pede o quê'],
+  ['p','Alpidio Armas preside o governo insular de El Hierro, o Cabildo, e lidera o PSOE da ilha, partido de centro-esquerda do primeiro-ministro Pedro Sánchez, segundo a cobertura da RTVC, a emissora pública canária. Fernando Clavijo, presidente das Canárias, é de Coalición Canaria, partido regionalista de centro que governa o arquipélago em aliança com o PP, de centro-direita, conforme a mesma RTVC. Armas pediu ajuda ao governo central, de seu próprio partido; Clavijo classificou a situação de “absolutamente insustentável”.'],
+  ['h','Os números de um ano mais baixo'],
+  ['p','Apesar da emergência, a rota atlântica caiu em 2026: foram 13.327 chegadas por mar de janeiro a outubro, 5,5% menos que no mesmo período de 2025 e muito abaixo das mais de 46 mil de 2024. A pressão em El Hierro vem da concentração: milhares de pessoas em poucos dias, numa ilha de infraestrutura pequena.'],
+  ['h','O que vem agora'],
+  ['p','O governo insular espera resposta de Madri sobre transferências de migrantes para outras ilhas e para a península e sobre reforço de pessoal de resgate e acolhida. A Espanha vai às urnas em 29 de novembro, em eleição geral antecipada convocada por Sánchez em 5 de outubro, segundo o Free Press Journal.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A resposta do governo central e o calendário de transferências.','A nacionalidade e a origem das embarcações, que a Al Jazeera não detalha.']]
+ ],
+ fontes:[['Al Jazeera','https://www.aljazeera.com/news/2026/11/8/canary-islands-el-hierro-declares-emergency-amid-migrant-refugee-influx'],['RTVC (Radiotelevisión Canaria)','https://rtvc.es/alpidio-armas-pide-a-clavijo-que-de-un-golpe-sobre-la-mesa-y-rompa-el-gobierno-de-canarias/'],['Free Press Journal (eleição de 29/11)','https://www.freepressjournal.in/world/spain-pm-pedro-snchez-calls-snap-general-election-for-november-29-amid-housing-crisis']]
+};
+
+S.cracovia = {
+ ed:'mundo', k:'Mundo · Polônia', hora:'7/11',
+ t:'Polônia faz dois dias de luto por seis mortos a tiros em Cracóvia; Procuradoria investiga o ataque como terrorismo',
+ sub:'O atirador, de 24 anos, tinha porta legal de arma; o ministro do Interior diz que ele sofreu influência de ideologias de extrema direita.',
+ dado:{n:'6 mortos', l:'Vítimas do ataque no centro histórico de Cracóvia, em 7/11; 15 feridos'},
+ resumo:'Um atirador matou seis pessoas e feriu 15 no centro histórico de Cracóvia, na Polônia, no sábado (7), informa a Al Jazeera. O suspeito, identificado pela imprensa como Michal O., de 24 anos, foi ferido pela polícia e está em estado crítico; três corpos, que seriam de seus pais e de sua irmã, foram achados na casa dele. A Procuradoria Nacional abriu inquérito por terrorismo, e o país decretou dois dias de luto nacional.',
+ upd:'',
+ fundo:[
+  ['p','Um atirador matou seis pessoas e feriu 15 no centro histórico de Cracóvia, no sul da Polônia, na tarde de sábado (7), segundo a Al Jazeera. Entre os mortos está um britânico, e os feridos incluem cidadãos da Áustria, do Reino Unido, da Alemanha, de Portugal e da Rússia. A Procuradoria Nacional abriu inquérito por terrorismo, e o governo decretou dois dias de luto nacional.'],
+  ['nums',[['6','mortos no centro histórico'],['15','feridos de cinco nacionalidades além da polonesa'],['3','corpos achados na casa do suspeito, em Ostrowiec Swietokrzyski'],['2','dias de luto nacional'],['12 h','de suspensão do toque da trombeta da Igreja de Santa Maria']]],
+  ['h','O suspeito e a investigação'],
+  ['p','A imprensa polonesa o identifica como Michal O., de 24 anos, com porte legal de arma e sem antecedentes criminais. Ele foi ferido pela polícia e está em estado crítico. Em Ostrowiec Swietokrzyski, cidade onde morava, a polícia encontrou os corpos de três pessoas, que a Al Jazeera descreve como seus pais e sua irmã. A motivação oficial não foi divulgada.'],
+  ['h','Quem é quem'],
+  ['p','O ministro do Interior, Marcin Kierwinski, integra o governo do premiê Donald Tusk, de centro-liberal, e sobreviveu neste ano a uma moção de desconfiança apresentada pelo PiS, partido nacional-conservador de direita que está na oposição, segundo a TVP Info. Kierwinski disse que o atirador foi influenciado por ideologias de extrema direita e ultranacionalistas, afirmação que ainda depende das conclusões da Procuradoria. A oposição não se pronunciou nas fontes lidas.'],
+  ['h','A resposta da cidade'],
+  ['p','O toque de trombeta da Igreja de Santa Maria, tradição diária da cidade, foi suspenso por 12 horas, a primeira interrupção desde 1939, informa a Al Jazeera.'],
+  ['h','O que vem agora'],
+  ['p','O suspeito está em estado crítico, e a Procuradoria só poderá interrogá-lo quando houver condição médica; o Radar não viu em fonte aberta anúncio de mudança nas regras de porte de armas.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O motivo do ataque e a ligação do suspeito com grupos extremistas, apontada pelo ministro do Interior.','O número definitivo de feridos e o estado de saúde de cada um.','Se a polícia tinha informação prévia sobre o suspeito.']]
+ ],
+ fontes:[['Al Jazeera','https://www.aljazeera.com/news/2026/11/8/poland-mourns-six-killed-in-attack-as-authorities-launch-terrorism-probe'],['TVP Info (moção contra Kierwinski)','https://www.tvp.info/93732116/sejm-odrzucil-wniosek-pis-o-wotum-nieufnosci-marcin-kierwinski-pozostaje-szefem-mswia']]
+};
+
+S.gaza_enchentes = {
+ ed:'mundo', k:'Mundo · Gaza', hora:'8/11', semAtores:true, fonteunica:true,
+ t:'Chuva alaga 70 mil tendas em Gaza; Defesa Civil alerta para mais de 2 mil edifícios sob risco de desabar',
+ sub:'Cerca de 400 mil deslocados vivem em áreas vulneráveis, e as autoridades dizem precisar de 300 mil tendas; a UNICEF pede mais verbas.',
+ dado:{n:'70 mil', l:'Tendas alagadas em Gaza desde a noite de sexta (6), segundo a Al Jazeera'},
+ resumo:'A chuva que começou na noite de sexta (6) alagou cerca de 70 mil tendas na Faixa de Gaza e deixou dezenas de milhares sem abrigo, informa a Al Jazeera. A Defesa Civil recebeu mais de 1.500 chamados e diz que mais de 2.000 edifícios correm risco de desabar; as autoridades afirmam precisar de 300 mil tendas. A Al Jazeera registra ainda cinco mortos, quatro deles crianças, em outra reportagem.',
+ upd:'',
+ fundo:[
+  ['p','A chuva que começou na noite de sexta-feira (6) alagou cerca de 70 mil tendas na Faixa de Gaza e deixou dezenas de milhares de pessoas sem abrigo, informa a Al Jazeera. A Defesa Civil recebeu mais de 1.500 pedidos de socorro e alerta que mais de 2.000 edifícios, já danificados pela guerra, correm risco de desabar.'],
+  ['nums',[['70 mil','tendas alagadas'],['1.500','chamados à Defesa Civil'],['2.000','edifícios sob risco de desabar'],['300 mil','tendas que as autoridades dizem precisar'],['400 mil','deslocados em áreas vulneráveis']]],
+  ['h','O alcance dos danos'],
+  ['p','Cerca de 400 mil deslocados vivem em áreas vulneráveis a enchentes, segundo a Al Jazeera. O Escritório de Mídia do governo de Gaza, ligado ao Hamas, estima o prejuízo em US$ 3 milhões. Em reportagem de sábado (7), a emissora contou cinco mortes, quatro delas de crianças, atribuídas ao mau tempo.'],
+  ['h','O pano de fundo'],
+  ['p','Mais de 74.640 pessoas morreram em Gaza desde 7 de outubro de 2023, segundo a contagem citada pela Al Jazeera, e pelo menos 1.610 desde o cessar-fogo de 10 de outubro de 2025. Jonathan Veitch, da UNICEF, pediu mais recursos para a resposta humanitária.'],
+  ['h','O que vem agora'],
+  ['p','As autoridades de Gaza dizem precisar de 300 mil tendas, e a UNICEF pede mais verbas; a Al Jazeera não informa quando chegam novos carregamentos nem se há previsão de mais chuva.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O número de mortos pelo temporal: a Al Jazeera cita cinco, mas o balanço ainda pode mudar.','O valor do prejuízo, estimativa de uma entidade do governo de Gaza, sem verificação independente.','Quando entrarão novos carregamentos de tendas.']]
+ ],
+ fontes:[['Al Jazeera (enchentes)','https://www.aljazeera.com/news/2026/11/8/floods-in-gaza-leave-tens-of-thousands-without-shelter'],['Al Jazeera (chuvas de 7/11)','https://www.aljazeera.com/news/2026/11/7/rains-flood-thousands-of-tents-in-gaza']]
+};
+
+S.eua_meio_mandato_placar = {
+ ed:'mundo', k:'Mundo · Estados Unidos', hora:'8/11',
+ t:'Democratas miram 54 cadeiras no Senado e cerca de 256 na Câmara; Alasca e Mississippi seguem em aberto, e Trump ordena investigação de ameaças de impeachment',
+ sub:'No Alasca, Trump declarou a disputa encerrada a favor do republicano Dan Sullivan, mas a apuração estava em 74% e a democrata Mary Peltola liderava por cerca de 600 votos.',
+ dado:{n:'256', l:'Cadeiras democratas projetadas na Câmara dos EUA em janeiro (hoje 214), segundo a CBS News'},
+ resumo:'A CBS News projeta, em atualização de 8 de novembro, cerca de 256 cadeiras democratas na Câmara dos EUA em janeiro, contra 214 hoje, e ao menos 54 no Senado, faltando Alasca e Mississippi. No Alasca, Trump escreveu que a disputa “acabou” a favor do republicano Dan Sullivan, mas a democrata Mary Peltola liderava por cerca de 600 votos com 74% apurados e processou o órgão eleitoral. Trump também ordenou ao Departamento de Justiça que investigue ameaças de impeachment de democratas.',
+ upd:'',
+ fundo:[
+  ['p','Os democratas devem ter cerca de 256 das 435 cadeiras da Câmara dos Estados Unidos em janeiro, contra as 214 de hoje, e ao menos 54 das 100 do Senado, depois das eleições de meio de mandato de 3 de novembro, segundo atualização da CBS News deste domingo (8). Duas disputas ao Senado seguem abertas, no Alasca e no Mississippi, e mais de 20 corridas à Câmara ainda não foram decididas.'],
+  ['nums',[['256','cadeiras democratas projetadas na Câmara'],['43','distritos republicanos virados pelos democratas até 5/11'],['54','cadeiras democratas no Senado, no mínimo'],['600','votos de vantagem de Peltola no Alasca, com 74% apurados'],['2.500','votos de vantagem de Colom sobre Hyde-Smith no Mississippi']]],
+  ['h','Por que importa'],
+  ['p','Com a Câmara nas mãos dos democratas, o presidente Donald Trump perde o controle das comissões e da pauta, e com ele a capacidade de aprovar o orçamento sem negociação. Pela Al Jazeera, o líder democrata Hakeem Jeffries está posicionado para se tornar presidente da Câmara.'],
+  ['h','Quem é quem'],
+  ['p','O Partido Democrata, de centro-esquerda, lidera a oposição a Trump e agora prepara-se para assumir a Câmara. O Partido Republicano, de direita, de Trump, mantém a Casa Branca. No Alasca, o republicano Dan Sullivan disputa a reeleição contra a democrata Mary Peltola. No Mississippi, a senadora republicana Cindy Hyde-Smith enfrenta o democrata Colom, cujo primeiro nome as fontes lidas não trazem.'],
+  ['h','As disputas em aberto'],
+  ['p','No Alasca, Trump escreveu que a disputa “acabou” a favor de Sullivan, mas a apuração estava em cerca de 74% e Peltola liderava por aproximadamente 600 votos. A democrata processou o Departamento de Eleições do Alasca por cédulas rejeitadas. A contagem do voto ranqueado sai em 18 de novembro, e a certificação, em 25. No Mississippi, Colom lidera por cerca de 2.500 votos.'],
+  ['h','Os movimentos de Trump e dos democratas'],
+  ['p','Trump ordenou ao Departamento de Justiça que investigue ameaças de impeachment de democratas, que ele chamou de “extorsão”. Também nomeou Stephen Miller chefe de gabinete no lugar de Susie Wiles, com efeito em 9 de novembro. Entre os democratas, o senador Mark Kelly disse considerar candidatura presidencial em 2028, e Chris Van Hollen pediu que a escolha do líder do Senado não seja apressada.'],
+  ['h','O que vem agora'],
+  ['p','Em 18 de novembro, a contagem do voto ranqueado no Alasca; em 25, a certificação. Depois disso, as bancadas escolhem lideranças. Na Câmara, a nova maioria assume em janeiro.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O resultado do Alasca: Trump declarou o vencedor, mas a apuração não terminou.','O número final de cadeiras democratas na Câmara, hoje uma projeção da CBS.','Se o Departamento de Justiça abrirá de fato a investigação pedida por Trump.']]
+ ],
+ fontes:[['CBS News','https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/'],['Al Jazeera (Jeffries)','https://www.aljazeera.com/news/2026/11/7/who-is-hakeem-jeffries-the-democrat-poised-to-become-house-speaker']]
+};
+
+S.franca_custo_vida = {
+ ed:'mundo', k:'Mundo · França', hora:'7/11', fonteunica:true,
+ t:'Quarto fim de semana de protestos na França reúne 146 mil, segundo o governo, e 250 mil, segundo os sindicatos',
+ sub:'Os atos, que começaram por condições nas escolas e se ampliaram para o custo de vida, têm menos gente que nas semanas anteriores; a eleição presidencial é em abril de 2027.',
+ dado:{n:'146 mil', l:'Manifestantes na França no sábado (7), segundo o Ministério do Interior; os sindicatos dizem 250 mil'},
+ resumo:'O Ministério do Interior contou 146 mil manifestantes na França no sábado (7), 46 mil deles em Paris; os sindicatos falam em 250 mil, 75 mil na capital, informa a Al Jazeera. É o quarto fim de semana de protestos contra o custo de vida, com comparecimento menor que nas semanas anteriores. Cerca de 70 mil agentes foram mobilizados, e houve gás lacrimogêneo em Paris e Lyon.',
+ upd:'',
+ fundo:[
+  ['p','A França viveu no sábado (7) o quarto fim de semana de protestos contra o custo de vida, com 146 mil manifestantes em todo o país, segundo o Ministério do Interior, e 250 mil, segundo os sindicatos, informa a Al Jazeera. Em Paris, as contagens são de 46 mil e de 75 mil. Cerca de 70 mil agentes foram mobilizados, e a polícia usou gás lacrimogêneo em Paris e em Lyon.'],
+  ['nums',[['146 mil','manifestantes no país, segundo o governo'],['250 mil','segundo os sindicatos'],['70 mil','agentes mobilizados'],['575 mil','participantes de um ato sindical dias antes, segundo a Al Jazeera']]],
+  ['h','De onde vem o movimento'],
+  ['p','Os atos começaram em setembro por condições nas escolas e se ampliaram para custo de vida e preço dos combustíveis. O movimento é liderado por estudantes, com apoio de sindicatos e de integrantes dos coletes amarelos. Na quinta (5), estudantes e professores fizeram greve nacional contra o orçamento de austeridade, com até 55 mil manifestantes em Lyon, segundo a Euronews.'],
+  ['h','Quem é quem'],
+  ['p','O presidente Emmanuel Macron é de centro. A oposição de direita radical é liderada por Marine Le Pen, do Reunião Nacional (RN), primeira nas pesquisas para a eleição presidencial de abril de 2027, segundo a Al Jazeera. Jean-Luc Mélenchon, da França Insubmissa (LFI, esquerda), aparece em segundo e apresentou seu programa a cerca de 17 mil apoiadores. O ministro do Interior, Laurent Nuñez, disse estar “pronto” para conter baderneiros.'],
+  ['h','O que vem agora'],
+  ['p','A Al Jazeera não informa a próxima data de mobilização. O alvo declarado das greves de estudantes e professores é o orçamento de austeridade, e a disputa presidencial de abril de 2027 já aparece nas pesquisas, com Le Pen e Mélenchon à frente.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O número de manifestantes: o governo e os sindicatos divergem em mais de 100 mil pessoas.','A data do próximo ato e se o governo fará concessões no orçamento.']]
+ ],
+ fontes:[['Al Jazeera','https://www.aljazeera.com/news/2026/11/7/more-than-140000-rally-as-new-protests-against-rising-costs-sweep-france'],['Euronews (greve de 5/11)','https://pt.euronews.com/video/2026/11/05/franca-ate-55-mil-manifestam-se-em-lyon-com-confrontos-e-gas-lacrimogeneo']]
+};
+delete S.franca_custo_vida.fonteunica;
+
+/* Atualizações */
+S.ucrania_energia.hora = '8/11';
+S.ucrania_energia.t = 'Ataques russos deixam cerca de 850 mil sem energia em Dnipropetrovsk e Kharkiv, dois dias antes da rodada de Abu Dhabi; Moscou diz que seguirá atacando a rede';
+S.ucrania_energia.sub = 'Zelensky acusa a Rússia de intensificar os golpes para pressionar a negociação mediada pelos EUA; na véspera, a Ponte Norte de Kiev foi danificada e cinco regiões ficaram sem luz.';
+S.ucrania_energia.upd = 'Entram os cortes de domingo (8): mais de 600 mil sem energia na região de Dnipropetrovsk e cerca de 250 mil em Kharkiv, e o aviso do Ministério da Defesa russo de que continuará atacando instalações de energia e combustível.';
+S.ucrania_energia.resumo = 'Novos ataques russos deixaram, neste domingo (8), cerca de 850 mil pessoas sem energia na Ucrânia: mais de 600 mil na região de Dnipropetrovsk (Pavlohrad, Samarivskyi, Kamianske e Dnipro) e cerca de 250 mil em Kharkiv, informa a Al Jazeera. O presidente Volodymyr Zelensky acusa Moscou de intensificar os golpes antes da rodada trilateral de Abu Dhabi, na terça (10) e na quarta (11), e o Ministério da Defesa russo disse no Telegram que continuará atacando instalações de energia e combustível. Na véspera, um ataque com 172 drones e 36 mísseis balísticos danificou a Ponte Norte de Kiev e cortou a luz em cinco regiões.';
+S.ucrania_energia.fundo[0] = ['p','Ataques russos deixaram, neste domingo (8), cerca de 850 mil pessoas sem energia elétrica na Ucrânia, informa a Al Jazeera: mais de 600 mil na região de Dnipropetrovsk, em cidades como Pavlohrad, Samarivskyi, Kamianske e Dnipro, e cerca de 250 mil em Kharkiv. Na véspera, uma ofensiva com 172 drones e 36 mísseis balísticos havia danificado a Ponte Norte de Kiev e cortado a luz em cinco regiões.'];
+S.ucrania_energia.fundo.splice(1,0,['h','Os cortes de domingo e a mensagem de Moscou'],['p','O presidente Volodymyr Zelensky acusa a Rússia de intensificar os ataques à rede elétrica para pressionar Kiev antes das conversas trilaterais em Abu Dhabi, mediadas pelos Estados Unidos e previstas para terça (10) e quarta (11), segundo a Al Jazeera. O Ministério da Defesa russo respondeu no Telegram que continuará atacando instalações de energia e combustível. O Radar não encontrou nas fontes lidas a reação dos mediadores americanos aos cortes.']);
+S.ucrania_energia.fontes.unshift(['Al Jazeera (cortes de 8/11)','https://www.aljazeera.com/news/2026/11/8/russian-strikes-on-ukraine-leave-hundreds-of-thousands-without-electricity']);
+
+S.iemen_houthis.hora = '8/11';
+S.iemen_houthis.t = 'Coalizão saudita diz ter derrubado três mísseis houthis sobre Riade e a Província Oriental; destroços atingem prédio da Aramco, e houthis falam em 33 mortos perto de Sanaa';
+S.iemen_houthis.sub = 'O balanço dos bombardeios de sábado em Al-Shariyah subiu de 11 para 33 mortos, segundo o Ministério da Saúde houthi, sem verificação independente; a ONU contabiliza mais de 1.600 mortos desde julho.';
+S.iemen_houthis.upd = 'A coalizão saudita relata três mísseis balísticos interceptados (dois sobre Riade, um sobre a Província Oriental) e a Aramco confirma dano por destroços em Riade; o balanço houthi de Al-Shariyah passa de 11 para 33 mortos.';
+S.iemen_houthis.resumo = 'A coalizão liderada pela Arábia Saudita disse ter destruído três mísseis balísticos dos houthis, dois contra Riade e um contra a Província Oriental, segundo o porta-voz Turki al-Maliki, citado pela Al Jazeera. O Ministério da Energia saudita confirmou que um prédio da Aramco em Riade foi atingido por destroços após uma interceptação. Do lado houthi, o Ministério da Saúde afirma que 33 pessoas morreram, entre elas 8 mulheres e 13 crianças, num ataque aéreo da coalizão em Al-Shariyah, perto de Sanaa, no sábado (7); o número não foi verificado de forma independente. A ONU contabiliza mais de 1.600 mortos e quase 300 mil deslocados desde que o cessar-fogo de 2022 ruiu em julho.';
+S.iemen_houthis.fundo[0] = ['p','A coalizão liderada pela Arábia Saudita disse neste domingo (8) ter destruído três mísseis balísticos lançados pelos houthis, dois contra Riade e um contra a Província Oriental, anunciou o porta-voz, general Turki al-Maliki, no X. O Ministério da Energia saudita confirmou que um prédio da Aramco, a petroleira estatal, foi atingido por destroços após a interceptação de um projétil, informa a Al Jazeera.'];
+S.iemen_houthis.fundo.splice(1,0,['h','Mísseis sobre Riade e o balanço de Al-Shariyah'],['p','Do lado houthi, o Ministério da Saúde afirma que 33 pessoas morreram, 8 mulheres e 13 crianças entre elas, e 39 ficaram feridas num ataque aéreo da coalizão em Al-Shariyah, perto de Sanaa, no sábado (7). A Al-Masirah havia falado em 11 mortos na véspera; o novo número é do ministério houthi e não foi verificado de forma independente. A ONU contabiliza mais de 1.600 mortos e quase 300 mil deslocados desde que o cessar-fogo de 2022 ruiu, em julho de 2026, depois de um bloqueio houthi a portos sauditas. O governo iemenita lançou em outubro a operação “Dawn of Yemen” para retomar Sanaa.']);
+S.iemen_houthis.fontes.unshift(['Al Jazeera (mísseis sobre Riade)','https://www.aljazeera.com/news/2026/11/8/saudi-arabia-intercepts-houthi-missiles-targeting-riyadh-eastern-province']);
+
+S.nz_eleicao.hora = '8/11';
+delete S.nz_eleicao.fonteunica;
+S.nz_eleicao.upd = 'A Comissão Eleitoral espera cerca de 700 mil votos especiais, mais que os 400 mil usados antes, e Luxon fala em 300 mil; Hipkins se recusa a conceder; o resultado oficial é em 27/11.';
+S.nz_eleicao.resumo = S.nz_eleicao.resumo + ' A NewsWire acrescenta que a Comissão Eleitoral espera cerca de 700 mil votos especiais, número que Luxon situa em 300 mil, e que o líder trabalhista Chris Hipkins não concedeu a derrota.';
+S.nz_eleicao.fundo.splice(1,0,['h','A disputa pelos votos especiais'],['p','A NewsWire NZ informa que a Comissão Eleitoral espera cerca de 700 mil votos especiais, enquanto o primeiro-ministro Christopher Luxon citou cerca de 300 mil; antes, o Radar trabalhava com 400 mil. Na contagem preliminar, os Trabalhistas têm 29,4% (710.330 votos) e o Nacional, 29,2% (706.680), e os partidos menores passam de 40% dos votos, recorde. Luxon disse ter “um caminho para formar o próximo governo, mas está apertado demais”, e Hipkins se recusa a conceder. O resultado oficial sai em 27 de novembro.']);
+
+S.colombia_drones.hora = '8/11';
+S.colombia_drones.t = 'Ataque de drones à base de Santa Rosa del Sur deixa três soldados mortos e ao menos 16 feridos; presidente De la Espriella promete que os responsáveis “não terão onde se esconder”';
+S.colombia_drones.upd = 'A Al Jazeera eleva os feridos a ao menos 16, cita a resposta do presidente Abelardo de la Espriella e lembra o ataque da semana passada em Tolima, com quatro civis mortos.';
+S.colombia_drones.resumo = 'Um ataque de drones à base do Exército em Santa Rosa del Sur, no norte da Colômbia, matou três soldados e feriu ao menos 16, informa a Al Jazeera; a Infobae e o El Tiempo haviam dado balanços diferentes de feridos. Ninguém apontou autores. O presidente Abelardo de la Espriella, conservador que cancelou as negociações de paz com grupos armados ao assumir, em agosto, escreveu no X que os responsáveis “não terão onde se esconder”.';
+S.colombia_drones.fundo.splice(1,0,['h','A resposta do governo e o contexto'],['p','A Al Jazeera registra ao menos 16 feridos e atribui a área, rica em ouro, à disputa entre o Clã do Golfo, o ELN e dissidências das Farc. O presidente Abelardo de la Espriella, conservador empossado em agosto, cancelou as negociações de paz com grupos armados e adotou linha dura; no X, disse que os responsáveis “não terão onde se esconder”. Na semana passada, uma base em Tolima foi atingida por mísseis improvisados com botijões de gás, e quatro civis morreram, um deles um bebê de dois meses. O ACLED contou 34 ataques com bombas ou explosivos em quatro semanas até 16 de outubro, alta de 9%. O texto da Al Jazeera diz “sábado, 8”, mas 8 de novembro é domingo; a Infobae data o ataque em sábado (7), por volta das 12h30.']);
+S.colombia_drones.fontes.unshift(['Al Jazeera','https://www.aljazeera.com/news/2026/11/8/drone-attack-on-colombian-army-base-kills-three-soldiers-and-wounds-16']);
+
+S.mercado_semana.t = 'Semana começa com Focus, ata do Copom e CPI dos EUA; Selic está em 13,75% e Petrobras divulga balanço com data ainda divergente (10 ou 11/11)';
+S.mercado_semana.upd = 'Entram o horário do Focus (8h25), a decisão de 4/11 do Copom (13,75%, unânime, fim de cinco cortes), as projeções do Focus de 2/11 e o conflito de datas do balanço da Petrobras.';
+S.mercado_semana.fundo.forEach(function(x){ if(x[0]==='ul'){ x[1] = x[1].map(function(l){return l.replace('8h30','8h25');}); } if(x[0]==='p'){ x[1] = x[1].replace('8h30','8h25'); } });
+S.mercado_semana.fundo.push(
+ ['h','A Selic em 13,75% e o que o Copom vai detalhar'],
+ ['p','O Comitê de Política Monetária (Copom) manteve a Selic em 13,75% ao ano na quarta (4), por unanimidade, o que interrompeu cinco cortes seguidos de 0,25 ponto desde março, quando a taxa estava em 15%, informa o Sou Brasília. O comunicado citou dólar mais alto, El Niño, expectativas de inflação acima da meta e agravamento da guerra no Oriente Médio, e falou em “serenidade e cautela”. Antes da reunião, 10 de 18 economistas ouvidos pela Bloomberg esperavam manutenção e 8, corte para 13,50%. A ata sai na terça (10), às 8h, e deve detalhar o peso de cada fator. O comitê está desfalcado, porque dois mandatos de diretores terminaram no fim de 2025 e os substitutos ainda não foram enviados ao Congresso. A próxima reunião é em 8 e 9 de dezembro.'],
+ ['h','O Focus de 2 de novembro e o balanço da Petrobras'],
+ ['p','O Focus de 2 de novembro, com coleta feita antes do Copom, elevou o IPCA de 2026 de 5,19% para 5,22%, acima do teto de 4,5%, e o de 2027, de 4,34% para 4,76%; a Selic de fim de 2026 foi de 13,25% para 13,50%; e o dólar de fim de ano, de R$ 5,05 para R$ 5,34. A expectativa é que o boletim de segunda (9) reflita a pausa do Copom e a semana pós-eleição. Quanto à Petrobras, a Rankia, com base no formulário 6-K, indica resultado do terceiro trimestre em 10 de novembro, após o fechamento, enquanto o BP Money fala em 11; o Radar não confirmou a data no site de relações com investidores. O BP Money estima dividendos de US$ 3,1 bilhões a US$ 4,2 bilhões. O IPCA de outubro sai na quinta (12), às 9h; o de setembro foi de 0,82%.'],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A data do balanço da Petrobras: terça (10) ou quarta (11).','Se a ata do Copom indicará novos cortes em dezembro; o comunicado não deu sinalização.','O fechamento do petróleo e a reação do mercado ao pronunciamento de Lula, que ocorrem depois do fechamento desta edição.']]
+);
+S.mercado_semana.fontes.push(['Sou Brasília (Copom)','https://soubrasilia.com/copom-mantem-selic-13-75-unanimidade-4-novembro-2026/'],['Sou Brasília (Focus de 2/11)','https://soubrasilia.com/focus-2-novembro-2026-ipca-5-22-pib-1-76-selic-13-50-dolar-5-34/'],['BP Money (agenda e Petrobras)','https://bpmoney.com.br/economia/agenda-economica-semana-ata-copom-ipca-inflacao-eua/'],['Rankia (balanços do 3T26)','https://rankia.com.br/balancos-3t26-calendario-resultados-petrobras-vale-itau/']);
+
+/* Ordem, capa, giro e agenda */
+HOME_LEAD = 'tse_21_acoes';
+HOME_ROW = ['ucrania_energia','iemen_houthis','nz_eleicao'];
+var _mv19 = function(arr, ids){ return ids.concat(arr.filter(function(i){return ids.indexOf(i)<0;})); };
+ORDER.politica = _mv19(ORDER.politica, ['tse_21_acoes','cop31_antalya']);
+ORDER.economia = _mv19(ORDER.economia, ['mercado_semana']);
+ORDER.mundo = _mv19(ORDER.mundo, ['ucrania_energia','iemen_houthis','nz_eleicao','eua_meio_mandato_placar','cracovia','franca_custo_vida','amsterda_linha_vermelha','el_hierro','gaza_enchentes','colombia_drones']);
+
+GIRO = GIRO.filter(function(g){return ["Totalização no TRE-RJ","Cleitinho e o Propag","Show no Pacaembu","Cleitinho e os shows","Alliana promete ressarcir","Risco-país na Argentina","Mediação do Catar"].indexOf(g[0])<0;});
+GIRO.unshift(
+ ['21 ações no TSE','O Metrópoles contou 21 ações contra as chapas presidenciais, 11 delas da campanha de Flávio Bolsonaro contra Lula e Alckmin.','Metrópoles','https://www.metropoles.com/brasil/tse-acumula-21-acoes-contra-chapas-presidenciais-apos-o-2o-turno','','tse_21_acoes'],
+ ['COP31 em Antalya','A conferência abre na segunda (9) na Turquia, com a cúpula de líderes em 11 e 12 de novembro.','Vanderbilt Report','https://vanderbiltreport.com/week-ahead-november-9-15-2026/','','cop31_antalya'],
+ ['Linha Vermelha em Amsterdã','A Anistia holandesa fala em mais de 200 mil manifestantes contra a venda de armas a Israel.','Al Jazeera','https://www.aljazeera.com/news/2026/11/8/hundreds-of-thousands-protesters-storm-amsterdam','','amsterda_linha_vermelha'],
+ ['Emergência em El Hierro','Mais de 3.300 migrantes chegaram à ilha em novembro, e as Canárias pedem ajuda a Madri.','Al Jazeera','https://www.aljazeera.com/news/2026/11/8/canary-islands-el-hierro-declares-emergency-amid-migrant-refugee-influx','','el_hierro'],
+ ['Cracóvia','A Procuradoria investiga como terrorismo o ataque que matou seis pessoas no centro histórico.','Al Jazeera','https://www.aljazeera.com/news/2026/11/8/poland-mourns-six-killed-in-attack-as-authorities-launch-terrorism-probe','','cracovia'],
+ ['Chuva em Gaza','Cerca de 70 mil tendas foram alagadas desde a noite de sexta (6).','Al Jazeera','https://www.aljazeera.com/news/2026/11/8/floods-in-gaza-leave-tens-of-thousands-without-shelter','','gaza_enchentes'],
+ ['Senado dos EUA','Alasca e Mississippi seguem em aberto, e Trump declarou vencedor no Alasca com 74% apurados.','CBS News','https://www.cbsnews.com/live-updates/midterm-election-results-2026-democrats-house-senate-trump/','','eua_meio_mandato_placar']
+);
+if (GIRO.length > 20) GIRO.length = 20;
+
+AMANHA = [
+ ['Dom, 08/11 · 20h30','agenda','Lula fala ao país em rede de rádio e TV','O pronunciamento de 7min44, gravado em 5 de novembro, deve tratar de união nacional e responsabilidade fiscal, sem pacote de medidas; a versão de rádio vai ao ar na segunda (9), às 7h30.','https://ncnews.com.br/2026/11/08/lula-pronunciamento-rede-nacional/','lula_pronunciamento'],
+ ['Seg, 09/11 · 8h25','economia','Boletim Focus e IGP-DI abrem a semana do mercado','O Focus é o primeiro termômetro das projeções depois da pausa do Copom e da eleição; o IGP-DI sai às 8h.','https://bpmoney.com.br/economia/agenda-economica-semana-ata-copom-ipca-inflacao-eua/','mercado_semana'],
+ ['Seg, 09/11','agenda','Marinho prevê o decreto da escala 6x1; COP31 abre na Turquia','O ministro do Trabalho promete o decreto com ao menos oito folgas em 30 dias, data que já escorregou uma vez; Lula embarca para Antalya, onde a conferência vai até 20 de novembro.','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/governo-preve-decreto-do-fim-da-escala-6x1-para-segunda-feira','dino_6x1'],
+ ['Ter, 10/11 · 8h','economia','Ata do Copom e CPI de outubro dos EUA','A ata detalha a decisão de manter a Selic em 13,75%; o CPI americano sai às 10h30 e alimenta as apostas sobre os juros do Fed.','https://bpmoney.com.br/economia/agenda-economica-semana-ata-copom-ipca-inflacao-eua/','mercado_semana'],
+ ['Ter, 10/11 · 14h','justica','STF reúne confederações, centrais e governo sobre a escala 6x1','O ministro Flávio Dino conduz a audiência de conciliação na Primeira Turma; CNI e CNC pedem mais prazo para a transição.','https://noticias.stf.jus.br/postsnoticias/escala-6x1-stf-marca-audiencia-de-conciliacao-para-debater-implementacao-da-mudanca/','dino_6x1'],
+ ['Ter, 10/11','mundo','Ucrânia, Rússia e EUA se reúnem em Abu Dhabi','A rodada trilateral vai até quarta (11); os cortes de energia na Ucrânia entram na mesa.','https://www.aljazeera.com/news/2026/11/8/russian-strikes-on-ukraine-leave-hundreds-of-thousands-without-electricity','ucrania_energia'],
+ ['Qua, 11/11','congresso','PL decide se negocia com Hugo Motta ou lança candidato','A bancada de 121 deputados define a posição na disputa pela presidência da Câmara, marcada para 1º de fevereiro de 2027.','','pl_motta'],
+ ['Qui, 12/11 · 9h','economia','IPCA de outubro','O índice de setembro foi de 0,82%; a leitura de outubro mostra se a inflação segue acima do teto da meta.','https://bpmoney.com.br/economia/agenda-economica-semana-ata-copom-ipca-inflacao-eua/','mercado_semana']
+];
+
+
+/* Aposentadas: sem fato novo há mais de seis edições */
+['papa_leao','vr_va_interop','arg_china_telecom','ne_sertanejos','sp_jem_pacaembu'].forEach(function(i){ S[i].velha = true; S[i].velhaMotivo = 'fato encerrado: sem desdobramento novo apurado desde 6/11'; });
+S.sp_f1_2035.velha = true; S.sp_f1_2035.velhaMotivo = 'fato encerrado: contrato anunciado em 7/11 e corrida disputada hoje';
+S.congresso_direita.velha = true; S.congresso_direita.velhaMotivo = 'superada por pl_motta';
+S.sp_bras_desabamento.velha = true; S.sp_bras_desabamento.velhaMotivo = 'fato encerrado: resgate concluído, sem novo desdobramento apurado';
+
+/* Flávio e o Senado */
+S.flavio_senado.hora = '8/11';
+S.flavio_senado.upd = 'Entram a entrevista de Flávio à Folha em Miami, em que admite não ter provas de fraude, e a carta de 25 deputados democratas dos EUA a Marco Rubio, com prazo de resposta em 13/11.';
+S.flavio_senado.fundo.splice(1,0,['h','A entrevista de Miami e a carta de deputados americanos'],['p','Em entrevista à Folha de S.Paulo em Miami, na quinta (5), Flávio admitiu não ter provas de fraude na eleição, mas disse que investigar é “proibido”, que o Brasil “não tem democracia plena” e que o TSE está “dominado”, segundo resumo publicado por A Notícia do Vale. Disse ter saído do país para “não legitimar processo ditatorial” e que não repetirá o “erro” do pai, Jair Bolsonaro, que voltou ao Brasil em 2023 e foi preso. Afirmou querer disputar a Presidência em 2030, discordou de Tarcísio de Freitas (Republicanos), que reconheceu a vitória de Lula, e disse que o PL pretende pedir a cassação da chapa Lula-Alckmin. O Radar não leu a íntegra da Folha.'],['p','Do lado americano, 25 deputados democratas enviaram em 29 de outubro uma carta ao secretário de Estado, Marco Rubio, com 15 perguntas sobre o caso Flávio e pedem resposta por escrito até 13 de novembro, informa o ndmais. Os parlamentares não têm poder de intimação. O mandato de senador de Flávio termina em fevereiro de 2027, quando ele perde o foro no Supremo, segundo o Movimento Econômico.']);
+S.flavio_senado.fontes.push(['A Notícia do Vale (entrevista à Folha)','https://anoticiadovale.com/2026/11/07/flavio-admite-nao-ter-prova-de-fraude-critica-volta-de-jair-ao-brasil-e-diz-querer-2030-assim-como-tarcisio/'],['ndmais (carta a Rubio)','https://ndmais.com.br/mundo/cinco-datas-que-mexem-com-o-brasil-entre-9-e-20-de-novembro-juros-clima-flavio-apec-e-tarifas/'],['Movimento Econômico','https://movimentoeconomico.com.br/politica/2026/10/27/com-visto-nos-eua-flavio-planeja-oposicao-no-exilio-com-apoio-de-trump-e-rubio/']);
+
+/* Equipe econômica */
+S.lula_equipe_eco.hora = '8/11';
+S.lula_equipe_eco.upd = 'Entram a reunião de 3/11 com Durigan e Moretti, o ajuste de ao menos R$ 39,8 bi calculado pelo Estadão e o aviso de Durigan de que só entrega a agenda a Lula depois da viagem.';
+S.lula_equipe_eco.fundo.splice(1,0,['h','O que está decidido e o que não está'],['p','A Agência Estado informa que Lula discutiu o ajuste fiscal com o ministro da Fazenda, Dario Durigan, e com o do Planejamento, Bruno Moretti, no Alvorada na terça (3), e que medidas de corte e de arrecadação são esperadas “nas próximas semanas”. O levantamento citado calcula em ao menos R$ 39,8 bilhões o ajuste necessário no Orçamento de 2027 para acomodar promessas de campanha, cujo pacote passa de R$ 400 bilhões. Durigan disse que a agenda econômica será entregue a Lula quando ele voltar das viagens internacionais, segundo o Correio da Manhã, o que empurra qualquer anúncio para depois da COP31. O pronunciamento desta noite, relatado como sem medidas novas, é o primeiro sinal público.']);
+S.lula_equipe_eco.fontes.push(['A Crítica (Agência Estado)','https://acritica.net/economia/lula-pronunciamento-rede-nacional-domingo-8-ajuste-mercado/'],['Correio da Manhã (Durigan)','https://www.correiodamanha.com.br/politica/2026/11/332995-durigan-afirma-que-agenda-economica-sera-entregue-a-lula-quando-ele-voltar-de-viagens.html']);
+
+/* Ministérios e a eleição da Câmara */
+S.ministerio_40.hora = '8/11';
+S.ministerio_40.upd = 'O critério de votos prometidos ganha o primeiro teste: PT e União Brasil oficializaram apoio à reeleição de Hugo Motta, com 361 dos 513 deputados reunidos em 15 partidos.';
+S.ministerio_40.fundo.splice(1,0,['h','O primeiro teste do critério'],['p','O critério de votos prometidos tem um teste imediato na eleição da presidência da Câmara, em 1º de fevereiro de 2027. O presidente da Casa, Hugo Motta (Republicanos-PB), reúne 15 partidos que elegeram 361 dos 513 deputados, e o PT e o União Brasil já oficializaram apoio, conforme a matéria sobre a disputa na Câmara. O PL, com 121 deputados, decide na quarta (11) entre negociar com Motta e lançar candidato. A bancada que votar com o governo nessa eleição tende a pesar na distribuição das pastas, mas o Planalto não definiu essa conta em fonte aberta; a leitura é de bastidor.']);
+
+/* Alesp: ampliada com contexto */
+S.sp_alesp_sucessao.hora = '8/11';
+S.sp_alesp_sucessao.ampliada = true;
+S.sp_alesp_sucessao.fundo.splice(S.sp_alesp_sucessao.fundo.length - 2, 0,
+ ['h','Quem é André do Prado e por que a vaga importa'],
+ ['p','André do Prado é do PL, foi reeleito presidente da Alesp em uma das votações recentes e se elegeu senador em outubro com apoio do governador Tarcísio de Freitas (Republicanos), reeleito no primeiro turno com 62,65% dos votos, segundo o Correio da Manhã. Ao deixar a Casa em fevereiro de 2027, Prado abre a vaga que comanda a pauta, a Mesa Diretora e a relação entre a Assembleia e o Palácio dos Bandeirantes. Por isso o governo estadual acompanha a escolha, ainda que, conforme os parlamentares ouvidos pela Folhapress, só pretenda intervir se surgir nome contrário ao governo.'],
+ ['p','O PL cresce na eleição de 2026: passou de 21 para 27 deputados, e o PT tem 16, um a menos que hoje, segundo o BNews São Paulo. A coluna de Beatriz Manfredini, da Jovem Pan, de maio, já projetava o PSD como terceira força, com 11 deputados após incorporar tucanos, e o PL com 22. A bancada maior costuma indicar o presidente; a briga de agora, portanto, é interna ao PL, entre quem prefere um nome de dentro do grupo, como Madureira ou Auricchio, e os que seguem a indicação de Prado.']
+);
+
+S.flavio_senado.ampliada = false;
+
+S.sp_alesp_sucessao.upd = 'Entra o contexto da vaga: a trajetória de André do Prado, o peso das bancadas do PL (27) e do PT (16) e o papel de Tarcísio na escolha.';
+
+S.flavio_senado.t = 'Flávio admite à Folha que não tem provas de fraude, e o Senado segue sem responder sobre o voto remoto e as faltas do senador que está nos EUA';
+S.flavio_senado.sub = 'Na entrevista de Miami, o senador diz que não repetirá o “erro” do pai e quer disputar em 2030; 25 deputados democratas pedem a Rubio respostas até 13/11.';
+S.flavio_senado.resumo = 'Em entrevista à Folha em Miami, reproduzida por veículos regionais, o senador Flávio Bolsonaro (PL-RJ) admitiu não ter provas de fraude, disse que não repetirá o “erro” do pai, que voltou ao Brasil e foi preso, e afirmou querer disputar a Presidência em 2030. O Senado ainda não respondeu à questão de ordem de Randolfe Rodrigues (PT-AP) sobre o voto remoto de 3 de novembro, e 25 deputados democratas dos EUA pedem ao secretário de Estado, Marco Rubio, respostas por escrito até 13 de novembro.';
+S.lula_equipe_eco.t = 'Planalto discute ajuste de ao menos R$ 39,8 bi e só leva a agenda econômica a Lula depois da COP31; Alckmin na Fazenda segue como bastidor';
+S.lula_equipe_eco.sub = 'Durigan e Moretti se reuniram com Lula em 3/11; medidas de corte e arrecadação são esperadas “nas próximas semanas”, e o pronunciamento de hoje não deve trazer nenhuma.';
+S.lula_equipe_eco.resumo = 'A Agência Estado informa que Lula discutiu o ajuste fiscal com Dario Durigan (Fazenda) e Bruno Moretti (Planejamento) em 3 de novembro, e o Estadão calcula em ao menos R$ 39,8 bilhões o ajuste necessário no Orçamento de 2027. Durigan disse que só entrega a agenda econômica a Lula quando ele voltar da COP31. A coluna de Neila Guimarães, no Metrópoles, relata que uma ala do Planalto quer um gesto ao mercado antes da viagem; Alckmin na Fazenda e a permanência de Durigan são hipóteses de bastidor, não confirmadas.';
+S.ministerio_40.t = 'Ministérios do quarto mandato ficam atrelados a votos no Congresso; a eleição da Câmara em fevereiro, com 361 deputados já com Motta, é o primeiro teste';
+S.ministerio_40.sub = 'A estrutura pode chegar a 40 pastas e acomodar derrotados nas urnas; PT e União Brasil já apoiam a reeleição de Hugo Motta, e o PL decide na quarta (11).';
+S.ministerio_40.resumo = 'O governo Lula quer condicionar os ministérios do quarto mandato aos votos que cada partido prometer entregar no Congresso, segundo a Folhapress e o Metrópoles; a estrutura, de 38 cadeiras hoje, pode chegar a 40. O primeiro teste é a eleição da presidência da Câmara, em 1º de fevereiro de 2027: o presidente Hugo Motta (Republicanos-PB) reúne 15 partidos e 361 dos 513 deputados, com apoio oficial de PT e União Brasil, e o PL (121) decide na quarta (11). Aliados falam em fechar o time até 20 de dezembro.';
+S.sp_alesp_sucessao.ampliada = false;
+S.sp_alesp_sucessao.t = 'PL de São Paulo resiste a novatos na sucessão de André do Prado na Alesp; bancada de 27 deputados, a maior, decide o nome até dezembro';
+S.sp_alesp_sucessao.resumo = 'A bancada do PL na Assembleia Legislativa de São Paulo, que passa de 21 para 27 deputados, resiste a indicar um novato para suceder o presidente André do Prado, eleito senador. A maioria dos 15 presentes à reunião de terça (3) decidiu não apoiar nome de primeiro mandato, como os ex-prefeitos Rogério Franco e Rodrigo Ashiuchi. Alex de Madureira e Thiago Auricchio aparecem entre os mais fortes. O governador Tarcísio de Freitas só deve intervir diante de nome contrário ao governo, e a Mesa será eleita em fevereiro de 2027.';
+S.mercado_semana.sub = 'O Ibovespa fechou a sexta (6) em 168,5 mil pontos e o dólar a R$ 5,51; o Copom manteve a Selic em 13,75% em 4/11, e o balanço da Petrobras tem data divergente nas fontes.';
+S.mercado_semana.resumo = 'A semana do mercado traz o Focus (segunda, 9, às 8h25), a ata do Copom e o CPI dos EUA (terça, 10) e o IPCA de outubro (quinta, 12). O Copom manteve a Selic em 13,75% em 4 de novembro, por unanimidade, e interrompeu cinco cortes de 0,25 ponto. O Ibovespa fechou a sexta (6) em 168.498 pontos, alta de 1,39% no dia, e o Brent encerrou a semana a US$ 98,32, depois de cair mais de 16%. O balanço da Petrobras sai em 10 ou 11 de novembro, conforme a fonte, e o pronunciamento de Lula, hoje às 20h30, deve vir sem medidas fiscais.';
+S.mercado_semana.fundo.forEach(function(x){ if(x[0]==='p' && x[1].indexOf('O Focus de 2 de novembro, com coleta')===0){ x[1] = 'O Focus de 2 de novembro, com coleta feita antes do Copom, elevou o IPCA de 2026 de 5,19% para 5,22%, acima do teto de 4,5%, e o de 2027, de 4,34% para 4,76%. A Selic de fim de 2026 foi de 13,25% para 13,50%, e o dólar de fim de ano, de R$ 5,05 para R$ 5,34. A expectativa é que o boletim de segunda (9) reflita a pausa do Copom e a semana pós-eleição.'; } });
+S.mercado_semana.fundo.splice(S.mercado_semana.fundo.length-2,0,['p','Quanto à Petrobras, a Rankia, com base no formulário 6-K, indica resultado do terceiro trimestre em 10 de novembro, após o fechamento, enquanto o BP Money fala em 11; o Radar não confirmou a data no site de relações com investidores. O BP Money estima dividendos de US$ 3,1 bilhões a US$ 4,2 bilhões. O IPCA de outubro sai na quinta (12), às 9h; o de setembro foi de 0,82%.']);
+S.iemen_houthis.fundo.splice(2,0,['h','Quem é quem'],['p','Os houthis, ou Ansar Allah, são um movimento armado xiita que controla Sanaa e boa parte do norte do Iêmen e, segundo a descrição corrente na imprensa, é apoiado pelo Irã. A coalizão é liderada pela Arábia Saudita, monarquia sunita que sustenta o governo iemenita reconhecido internacionalmente, hoje em ofensiva para retomar Sanaa. Sauditas e houthis trocam acusações sobre os civis mortos, e a Al Jazeera ressalva que o balanço da Saúde houthi não foi verificado de forma independente.']);
+S.colombia_drones.fundo.splice(2,0,['h','Quem é quem'],['p','O presidente Abelardo de la Espriella, de direita conservadora, assumiu em agosto, cancelou as negociações de paz do governo anterior e adotou linha dura contra grupos armados. A região de Bolívar é disputada pelo Clã do Golfo, grupo ligado ao narcotráfico, pelo ELN, guerrilha de esquerda, e por dissidências das Farc que não aderiram ao acordo de 2016. Nenhum deles assumiu o ataque.']);
+S.amsterda_linha_vermelha.fundo.splice(S.amsterda_linha_vermelha.fundo.length-2,0,['h','O tamanho do ato'],['p','A Al Jazeera descreve o protesto como um dos maiores da série e afirma que a marcha tomou ruas do centro da cidade. O dado de participação é da Anistia holandesa, organizadora, e não de contagem policial. Na semana, o governo havia sido cobrado a ir além da proibição de importar produtos de assentamentos israelenses, que já está em vigor.']);
+S.el_hierro.fundo.forEach(function(x){ if(x[0]==='h' && x[1]==='Quem pede o quê') x[1]='Quem é quem'; });
+S.el_hierro.fundo.splice(S.el_hierro.fundo.length-2,0,['h','As cifras do arquipélago'],['p','O resgate marítimo recolheu 3.261 pessoas em águas das Canárias nos seis primeiros dias de novembro, e ao menos nove morreram nas últimas semanas na rota atlântica, segundo a Al Jazeera. Apesar da queda anual, a concentração de chegadas em poucos dias mantém o sistema de acolhida da ilha no limite, com cerca de 30 embarcações em pouco mais de uma semana.']);
+S.franca_custo_vida.fundo.splice(S.franca_custo_vida.fundo.length-2,0,['h','A pressão sobre o governo'],['p','A diferença entre as contagens é de mais de 100 mil pessoas, padrão comum nos protestos franceses, em que o Ministério do Interior e os sindicatos usam critérios diferentes. A queda no comparecimento em relação ao ato sindical de dias antes, que reuniu cerca de 575 mil pessoas segundo a Al Jazeera, não encerra o movimento: o noticiário registra quatro fins de semana seguidos de protestos e greves de estudantes e professores.']);
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"israel":"atualizada","ms_seg":"atualizada","pl_motta":"atualizada","ucrania_abudhabi":"atualizada","quaest_pos_eleicao":"atualizada","orcamento_2027":"novo","argentina_risco_pais":"novo","mg_transicao_fase_final":"novo","tre_rj_totalizacao":"novo","cedae_nexxus":"novo"};
-var GIRO_FLAGS = {"361 votos para Motta":"novo","Sete comissões para o PL":"novo","Deri deixa o Knesset":"novo","Orçamento até 17/12":"novo","Delegação russa em Abu Dhabi":"novo","Totalização no TRE-RJ":"novo","Cleitinho e o Propag":"novo","Risco-país na Argentina":"novo"};
+var FLAGS = {"flavio_senado":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","sp_alesp_sucessao":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","colombia_drones":"atualizada","nz_eleicao":"atualizada","mercado_semana":"atualizada","tse_21_acoes":"novo","cop31_antalya":"novo","amsterda_linha_vermelha":"novo","el_hierro":"novo","cracovia":"novo","gaza_enchentes":"novo","eua_meio_mandato_placar":"novo","franca_custo_vida":"novo"};
+var GIRO_FLAGS = {"21 ações no TSE":"novo","COP31 em Antalya":"novo","Linha Vermelha em Amsterdã":"novo","Emergência em El Hierro":"novo","Cracóvia":"novo","Chuva em Gaza":"novo","Senado dos EUA":"novo"};
 /* ===== FIM DOS DADOS ===== */
