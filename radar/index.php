@@ -65,7 +65,8 @@ try {
       $corpo = '';
       foreach ((array)($s['fundo'] ?? []) as $b) {
         if (!is_array($b) || !isset($b[0])) continue;
-        if ($b[0] === 'p') $corpo .= '<p>' . $e($b[1] ?? '') . '</p>';
+        if ($b[0] === 'video' && is_array($b[1] ?? null) && preg_match('/^[\w-]{11}$/', (string)($b[1]['id'] ?? ''))) $corpo .= '<p><a href="https://youtu.be/' . $e($b[1]['id']) . '" target="_blank" rel="noopener">▶ Assistir ao vídeo: ' . $e($b[1]['t'] ?? 'vídeo') . '</a></p>';
+        elseif ($b[0] === 'p') $corpo .= '<p>' . $e($b[1] ?? '') . '</p>';
         elseif ($b[0] === 'h') $corpo .= '<h3>' . $e($b[1] ?? '') . '</h3>';
         elseif ($b[0] === 'ul') { $corpo .= '<ul>'; foreach ((array)($b[1] ?? []) as $li) $corpo .= '<li>' . $e($li) . '</li>'; $corpo .= '</ul>'; }
         elseif ($b[0] === 'tl') { $corpo .= '<ul>'; foreach ((array)($b[1] ?? []) as $li) if (is_array($li)) $corpo .= '<li><b>' . $e($li[0] ?? '') . '</b> ' . $e($li[1] ?? '') . '</li>'; $corpo .= '</ul>'; }
