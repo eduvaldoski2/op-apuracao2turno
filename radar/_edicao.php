@@ -5579,11 +5579,190 @@ GIRO = [
  ["Alliana promete ressarcir","O novo presidente paraguaio prometeu devolver o dinheiro dos poupadores e cortar gastos, segundo a Infobae.","Infobae","https://www.infobae.com/america/america-latina/2026/11/07/pedro-alliana-asumio-como-presidente-de-paraguay-tras-la-destitucion-de-santiago-pena-por-el-escandalo-del-ueno-bank/","","paraguai"]
 ].concat(GIRO).slice(0,20);
 
+EDICAO.hora = '11h';
+EDICAO.data = 'Domingo, 08 de novembro de 2026';
+
+function _ins(id, hd, arr){
+ var f = S[id].fundo, i = -1;
+ f.forEach(function(x, k){ if (x[0]==='h' && x[1]===hd && i<0) i = k; });
+ if (i < 0) { f.push.apply(f, arr); } else { f.splice.apply(f, [i, 0].concat(arr)); }
+}
+
+S.lula_pronunciamento = {ed:'politica', k:'Política · Planalto', hora:'8/11',
+ t:'Lula fala hoje (8), às 20h30, em rede de rádio e TV: união nacional e compromisso fiscal, sem medidas novas, segundo os relatos prévios',
+ sub:'O pronunciamento de 7min44 foi gravado antes da viagem à COP31; as propostas para estabilizar a dívida só chegam ao presidente na segunda quinzena de novembro.',
+ dado:{n:'20h30', l:'Horário do pronunciamento de Lula em cadeia de TV hoje (8); o rádio vai ao ar segunda (9), às 7h30'},
+ upd:'',
+ resumo:'O presidente Luiz Inácio Lula da Silva fala ao país neste domingo (8), às 20h30, em cadeia de rádio e TV, num pronunciamento de 7min44 que o Brasil 247 e o Plantão Brasil, com texto do Estadão, descrevem como centrado em união nacional depois do segundo turno, responsabilidade fiscal e manutenção dos programas sociais. Os relatos dizem que não haverá anúncio de medidas econômicas. O rádio repete a fala na segunda (9), às 7h30. O conteúdo real só será conhecido depois da exibição.',
+ fundo:[
+ ['p','O presidente Luiz Inácio Lula da Silva (PT) faz neste domingo (8), às 20h30, um pronunciamento de 7min44 em cadeia de rádio e TV, o primeiro depois de reeleito no segundo turno de 25 de outubro. O Brasil 247, com texto do Estadão, e o Plantão Brasil descrevem uma fala de união nacional e responsabilidade fiscal, sem medidas econômicas novas. O horário vem do Brasil 247 e do blog de Esmael Morais; o conteúdo, de relatos prévios.'],
+ ['nums',[['20h30','horário da TV hoje (8); rádio na segunda (9), às 7h30'],['7min44','duração do pronunciamento, gravado em 5/11'],['64.256.232','votos de Lula no segundo turno, a agradecer na fala'],['R$ 39,8 bi','ajuste mínimo que as promessas exigem no Orçamento de 2027, segundo a Agência Estado']]],
+ ['h','O que os relatos antecipam'],
+ ['p','Segundo o Brasil 247, a fala agradece os 64.256.232 votos, pede união depois da disputa e reafirma a manutenção dos programas sociais. O texto informa que o presidente tratará do equilíbrio das contas, citará o Orçamento de 2027, já enviado ao Congresso com projeção de superávit primário, e criticará os juros, depois de o Banco Central manter a Selic em 13,75% na quarta (4). O ministro da Fazenda, Dario Durigan, deve receber elogios.'],
+ ['p','A coluna de Matheus Leitão, no Metrópoles, publicou na sexta (6) que o pronunciamento foi gravado e que o foco seria gratidão, democracia e soberania, com a economia no segundo plano. O blog de Esmael Morais afirma que Lula não anunciará ajuste fiscal e que o presidente teria incluído, por conta própria, as críticas aos juros no texto.'],
+ ['h','Por que o mercado olha para a fala'],
+ ['p','O pronunciamento chega depois de uma semana em que o dólar fechou a R$ 5,508 e o Ibovespa acumulou queda de 9,57% no quarto trimestre. A Agência Estado informou que as promessas de campanha exigem ao menos R$ 39,8 bilhões no Orçamento de 2027, e Durigan disse na quinta (5) que não haverá anúncio de ajuste nos próximos dias. A reação do mercado só se mede na segunda (9), com a abertura dos negócios e o boletim Focus, às 8h30.'],
+ ['h','O que vem agora'],
+ ['p','Lula embarca na segunda (9) para a COP31, em Antalya, na Turquia, e depois segue às Filipinas para a cúpula da Asean. As propostas para estabilizar a relação entre dívida e PIB devem ser levadas a ele na segunda quinzena de novembro, e o novo gabinete é esperado para meados de dezembro, segundo os mesmos relatos. O presidente quer ouvir os presidentes da Câmara, Hugo Motta (Republicanos-PB), e do Senado, Davi Alcolumbre (União-AP), antes de qualquer medida, de acordo com a coluna do Metrópoles.'],
+ ['ul',['Exibição do pronunciamento na TV, hoje às 20h30, e no rádio, amanhã às 7h30.','Reação do mercado e boletim Focus na segunda (9).','Propostas fiscais a Lula na segunda quinzena de novembro.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['O texto final: todas as descrições são prévias e nenhuma fonte teve acesso à fala exibida.','O horário de 20h30 vem de um jornal digital e de um blog; a Secom não foi localizada com a confirmação.','Se o pronunciamento mencionará a escala 6x1, a segurança pública ou o Ministério da Segurança: nenhuma fonte prevê.']]
+ ],
+ fontes:[['Brasil 247 (texto do Estadão)','https://www.brasil247.com/poder/lula-defendera-uniao-nacional-e-responsabilidade-fiscal-em-pronunciamento-neste-domingo/'],['Plantão Brasil (Estadão)','https://www.plantaobrasil.net/noticias/162375-em-rede-nacional-lula-prega-uniao-e-reafirma-compromisso-com-o-social-e-a-economia'],['Esmael Morais','https://www.esmaelmorais.com.br/lula-fala-tv-8-novembro-sem-medidas-fiscais/'],['Metrópoles (Matheus Leitão)','https://www.metropoles.com/colunas/matheus-leitao/live-com-janones-foi-spoiler-do-pronunciamento-de-gratidao-de-lula'],['A Crítica (Agência Estado)','https://acritica.net/economia/lula-pronunciamento-rede-nacional-domingo-8-ajuste-mercado/']]};
+
+S.quaest_pos_eleicao = {ed:'politica', k:'Política · Pesquisa', hora:'8/11',
+ t:'Quaest: 62% reprovam a ida de Flávio Bolsonaro aos EUA, 56% veem fuga da Justiça e 48% aprovam o governo Lula',
+ sub:'A pesquisa pós-eleitoral também mostra 61% que consideram a eleição limpa contra 30% que apontam fraude, com 64% dos eleitores de Flávio a acreditar em fraude.',
+ dado:{n:'62%', l:'Dos entrevistados consideram errada a ida de Flávio Bolsonaro aos EUA (29% acham certa), na Quaest de 30/10 a 2/11'},
+ upd:'',
+ resumo:'A pesquisa Quaest “O Brasil depois das urnas”, feita de 30 de outubro a 2 de novembro com 2.004 entrevistas e margem de 2 pontos percentuais, mostra que 62% consideram errada a ida do senador Flávio Bolsonaro (PL-RJ) aos EUA e 56% acham que ele fugiu da Justiça, contra 35% que veem perseguição política. A aprovação do governo Lula é de 48%, e a desaprovação, de 44%. Para 61%, a eleição foi limpa; 30% apontam fraude.',
+ fundo:[
+ ['p','A pesquisa Quaest “O Brasil depois das urnas” indica que 62% dos brasileiros consideram errada a viagem do senador Flávio Bolsonaro (PL-RJ) aos Estados Unidos, contra 29% que a julgam certa. Para 56%, ele fugiu da Justiça; 35% falam em perseguição política. O levantamento ouviu 2.004 pessoas de 30 de outubro a 2 de novembro, com margem de 2 pontos percentuais e confiança de 95%.'],
+ ['nums',[['62%','acham errada a ida aos EUA; 29% acham certa'],['56%','veem fuga da Justiça; 35%, perseguição política'],['61%','consideram a eleição limpa; 30% apontam fraude'],['48%','aprovam o governo Lula; 44% desaprovam']]],
+ ['h','O que a pesquisa mediu sobre o resultado'],
+ ['p','Para 59%, questionar o resultado das urnas é errado, e 34% aprovam a atitude. Sobre a lisura da eleição, 61% a consideram limpa e 30% apontam fraude, praticamente o patamar de 2022, quando as respostas foram 64% e 29%. Entre os eleitores de Flávio Bolsonaro, 64% acreditam em fraude, o que mostra que a desconfiança está concentrada no eleitorado do derrotado, segundo a leitura do JMais e da Tribuna do Sertão.'],
+ ['h','Aprovação e expectativa'],
+ ['p','O Plantão Brasil registra que 48% aprovam o governo Lula e 44% desaprovam, e que 94% dos entrevistados querem que o governo dê certo. Para 48%, a preocupação com o futuro do país predomina, contra 44% de otimistas. O resultado do segundo turno, em 25 de outubro, foi de 51,79% para Lula (64,2 milhões de votos) e 48,21% para Flávio (59,8 milhões).'],
+ ['h','Como ler os números'],
+ ['p','A pesquisa foi a campo depois da chegada de Flávio aos EUA, em 27 de outubro, na sequência da ordem do ministro Alexandre de Moraes para a entrega dos passaportes. Ele perde o mandato de senador em fevereiro de 2027. A Quaest é a primeira pesquisa de instituto de grande porte sobre o tema; a pesquisa da FESPSP, divulgada na sexta (6), havia dividido os eleitores do segundo turno entre fuga (49,2%) e exílio (47%), com outro recorte e outra pergunta, o que impede comparar os dois resultados diretamente.'],
+ ['h','O que vem agora'],
+ ['ul',['Pesquisas pós-eleitorais de Datafolha e AtlasIntel, que não foram localizadas até agora.','Decisão da Mesa do Senado sobre o voto remoto e a ausência de Flávio, que segue sem resposta.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A data de divulgação exata: os dois veículos que reproduzem a pesquisa trazem apenas 8/11.','O contratante e o registro no TSE, que não aparecem nos textos lidos.']]
+ ],
+ fontes:[['Tribuna do Sertão (Quaest)','https://www.tribunadosertao.com.br/politica/2026/11/08/1016302-maioria-reprova-ida-de-flavio-aos-eua-e-acredita-que-ele-fugiu-aponta-quaest'],['JMais','https://www.jmais.com.br/domingo-8-11-fuga-de-flavio-e-condenada-por-62-dos-eleitores-e-divide-a-direita/'],['Plantão Brasil (aprovação)','https://www.plantaobrasil.net/noticias/162389-aprovacao-de-lula-se-mantem-solida-em-nova-pesquisa-pos-eleitoral'],['CNN Brasil (Jussara Soares)','https://www.cnnbrasil.com.br/blogs/jussara-soares/politica/flavio-chega-com-mulher-e-filhas-aos-eua/']]};
+
+S.ira_iron_gate = {ed:'mundo', k:'Mundo · Irã e Golfo', hora:'8/11',
+ t:'EUA criam a força-tarefa “Iron Gate” para cortar as rotas terrestres e do Cáspio do Irã; explosões atingem Qeshm, Jask e Bandar Abbas',
+ sub:'O Comando Central diz que 147 embarcações foram redirecionadas desde julho; a Guarda Revolucionária encerra o limite de 2.000 km para seus mísseis, e o Catar segue mediando.',
+ dado:{n:'147', l:'Embarcações redirecionadas pelos EUA desde julho, segundo o Comando Central (Al Jazeera)'},
+ upd:'',
+ resumo:'O Comando Central dos EUA (Centcom) anunciou no sábado (7) a força-tarefa “Iron Gate”, para bloquear as rotas terrestres e do Mar Cáspio que abastecem o Irã, informa a Al Jazeera. O almirante Brad Cooper diz que 147 embarcações foram redirecionadas desde julho e cinco navios mercantes foram desabilitados. Explosões foram relatadas em Qeshm, Jask, Sirik e Bandar Abbas. A ABC da Austrália registra que a Guarda Revolucionária deixou de seguir o limite de 2.000 km de alcance de seus mísseis.',
+ fundo:[
+ ['p','O Comando Central dos EUA (Centcom) anunciou no sábado (7) a criação da força-tarefa “Iron Gate”, destinada a interromper as rotas terrestres e pelo Mar Cáspio que abastecem o Irã, informa a Al Jazeera. O comandante, almirante Brad Cooper, afirmou que 147 embarcações foram redirecionadas desde julho e que cinco navios mercantes foram desabilitados. A guerra entre os dois países passa dos oito meses.'],
+ ['nums',[['147','embarcações redirecionadas desde julho'],['5','navios mercantes desabilitados'],['11','navios atacados em Ormuz na semana até 6/11 (UKMTO)'],['2.000 km','limite de alcance de mísseis que a Guarda Revolucionária diz ter encerrado']]],
+ ['h','A força-tarefa e os ataques'],
+ ['p','A Al Jazeera relata explosões em Qeshm, Jask, Sirik e Bandar Abbas, no litoral iraniano, e o ataque ao cargueiro M/V Huda no Golfo de Omã. Duas petroleiras teriam atingido minas, segundo a Marinha da Guarda Revolucionária. O blog ao vivo da emissora registra ainda que destroços de um projétil abatido atingiram instalações da Aramco, em Riad, de acordo com o Ministério da Energia saudita, no contexto do combate com os houthis.'],
+ ['p','A ABC da Austrália, que cita a AP, informa que a Guarda Revolucionária encerrou o limite autoimposto de 2.000 km para o alcance dos seus mísseis e que Teerã analisa as propostas do Catar sobre o programa nuclear. A informação sobre o limite vem de um comunicado iraniano e não foi confirmada por fonte independente.'],
+ ['h','Mediação e mercado'],
+ ['p','Os mediadores do Catar mantêm as negociações, e o premiê, xeque Mohammed bin Abdulrahman Al Thani, disse na sexta (6) haver progresso significativo. Na sexta, os EUA haviam atingido defesas aéreas na ilha de Qeshm, e o presidente Donald Trump disse que o Irã quer um acordo. O Brent fechou a semana a US$ 98,32, depois da maior queda semanal desde 2020 por expectativa de acordo, e um analista da Rapidan avalia em 80% a chance de retomada dos combates e de preço acima de US$ 100.'],
+ ['h','O que vem agora'],
+ ['ul',['Resposta dos EUA à proposta iraniana mediada pelo Catar.','Efeito da força-tarefa sobre o comércio iraniano pelo Cáspio e por terra.','Novos ataques a navios em Ormuz e reação do petróleo na abertura de segunda (9).']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['Os números da força-tarefa vêm do Centcom e não têm verificação independente.','O fim do limite de 2.000 km é afirmação iraniana relatada pela ABC.','Não há balanço de mortos nas explosões do litoral iraniano nas fontes lidas.']]
+ ],
+ fontes:[['Al Jazeera (força-tarefa Iron Gate)','https://www.aljazeera.com/news/2026/11/8/us-launches-task-force-to-disrupt-irans-land-based-supply-routes'],['Al Jazeera (blog ao vivo)','https://www.aljazeera.com/news/liveblog/2026/11/8/iran-war-live-explosions-hit-qeshm-us-moves-to-block-land-supply-routes'],['ABC News (Austrália, AP)','https://abc.net.au/news/2026-11-08/iran-strait-of-hormuz-update-explosions-talks/107360730'],['FinanceFeeds (Brent)','https://financefeeds.com/brent-crude-oil-price-98-32-saturday-week-ahead-us-iran-deal-bets-cpi-10-november-bull-105-bear-93/']]};
+
+S.mercado_semana = {ed:'economia', k:'Economia · Mercado', hora:'8/11',
+ t:'Semana começa com Focus, ata do Copom, CPI dos EUA e IPCA; Brent cai 16% e o Ibovespa chega de um fim de semana de alta a 168,5 mil pontos',
+ sub:'O dólar fechou sexta (6) a R$ 5,508, o Focus de 3/11 elevou a Selic de 2026 para 13,50%, e o discurso de Lula hoje à noite é o primeiro teste de segunda (9).',
+ dado:{n:'168.498', l:'Pontos do Ibovespa no fechamento de sexta (6), alta de 1,39% no dia e de 0,34% na semana (InfoMoney)'},
+ upd:'',
+ resumo:'O Ibovespa fechou a sexta (6) em 168.498 pontos, com alta de 1,39% no dia e de 0,34% na semana, e o dólar subiu 0,36%, a R$ 5,508, segundo o InfoMoney. O Brent encerrou a semana a US$ 98,32, depois de cair mais de 16%, a maior queda semanal desde 2020 (FinanceFeeds). A semana traz o Focus (segunda, 9), a ata do Copom e o CPI dos EUA (terça, 10), os serviços do IBGE (quarta, 11) e o IPCA de outubro (quinta, 12).',
+ fundo:[
+ ['p','O Ibovespa fechou a sexta (6) em 168.498 pontos, com alta de 1,39% no dia e de 0,34% na semana, o fim de três quedas semanais seguidas, segundo o InfoMoney. O dólar comercial subiu 0,36%, a R$ 5,508, e o DI para janeiro de 2027 pagava 13,662%. O gatilho externo foi o payroll dos EUA de outubro, de cerca de 165 mil vagas contra 65 mil esperadas.'],
+ ['nums',[['168.498','pontos do Ibovespa na sexta (6)'],['R$ 5,508','dólar comercial no fechamento'],['US$ 98,32','Brent na sexta, queda de mais de 16% na semana'],['13,75%','Selic mantida pelo Copom em 4/11']]],
+ ['h','O que moveu os preços'],
+ ['p','O desemprego dos EUA em 4,1% elevou as apostas de alta de juros pelo Fed em dezembro. No Brasil, as ações da Petrobras (PETR4) caíram 1,28% na sexta e acumulam mais de 20% de queda em duas semanas, depois das eleições no Brasil e nos EUA, segundo o InfoMoney. O Ibovespa acumula perda de 9,57% no quarto trimestre e ganho de 4,58% no ano. A XP cortou a projeção do PIB de 2027 para 0,3%.'],
+ ['p','No petróleo, o Brent caiu mais de 16% na semana, e o WTI, cerca de 13%, com expectativa de acordo entre EUA e Irã e excesso de oferta estimado pelo JPMorgan em 1,4 milhão de barris por dia em outubro. A Piranot fala em queda de cerca de 13% para ambos; a diferença decorre do critério de cálculo, e o Radar usa a conta da FinanceFeeds para o Brent.'],
+ ['h','As expectativas do Focus e o calendário'],
+ ['p','O Focus de 3 de novembro elevou a projeção do IPCA de 2026 para 5,22% e a de 2027 para 4,76%, e a Selic do fim de 2026 para 13,50%, contra 13,25% na semana anterior. Para o fim de 2027, o mercado vê 12,50%. O câmbio de fim de ano passou a R$ 5,34, e o PIB deve crescer 1,76% em 2026 e 1,20% em 2027, segundo o Mixvale.'],
+ ['ul',['Segunda (9): IGP-DI de outubro às 8h e boletim Focus às 8h30.','Terça (10): ata do Copom às 8h e CPI dos EUA às 10h30; em setembro, o índice subiu 0,6% no mês e 3,7% em 12 meses.','Quarta (11): serviços do IBGE às 9h e, segundo o Seu Dinheiro, o balanço da Petrobras depois do fechamento.','Quinta (12): IPCA de outubro às 9h; setembro foi de 0,82% no mês e 4,58% em 12 meses.']],
+ ['h','O que vem agora'],
+ ['p','O primeiro teste é o pronunciamento de Lula hoje à noite, que os relatos prévios descrevem sem medidas fiscais novas. A Fazenda levará propostas ao presidente depois da COP31, na segunda quinzena de novembro. No petróleo, a EIA divulga as projeções em 10 de novembro, a Opep, o relatório em 11, e a Opep+ reúne-se em 29.'],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['A data do balanço da Petrobras: o Seu Dinheiro indica 11/11 e a Suno indicava 10/11; confira no site de relações com investidores.','A projeção de consenso para o IPCA de outubro não foi localizada.','Os números de queda do Brent divergem entre fontes (13% ou 16%).']]
+ ],
+ fontes:[['InfoMoney','https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-06112026/'],['TradeMap','https://trademap.com.br/noticias/news-8568725'],['Mixvale (Focus)','https://www.mixvale.com.br/2026/11/03/boletim-focus-do-banco-central-analistas-elevam-projecoes-da-selic-a-1350-e-do-ipca-a-522/'],['FinanceFeeds','https://financefeeds.com/brent-crude-oil-price-98-32-saturday-week-ahead-us-iran-deal-bets-cpi-10-november-bull-105-bear-93/'],['Piranot','https://www.piranot.com.br/2026/11/07/noticias/economia/petroleo-brent-wti-queda-semana/'],['Seu Dinheiro (Petrobras)','https://www.seudinheiro.com/2026/empresas/dividendos-de-ate-us-42-bilhoes-com-operacional-tinindo-petrobras-petr4-deve-blindar-os-proventos-da-queda-do-petroleo-bdap/']]};
+
+S.sp_pacaembu_show = {ed:'regioes', reg:'sp', k:'São Paulo · Capital', hora:'7/11', fonteunica:true,
+ t:'Prefeitura de São Paulo pagou R$ 3 milhões em estrutura para show de Jorge & Mateus no Pacaembu, e Nunes manda a Controladoria investigar',
+ sub:'O caso foi revelado pelo colunista Demétrio Vecchioli, do Metrópoles; a dupla diz que não recebeu cachê, e o prefeito anunciou a renovação do GP de São Paulo até 2035.',
+ dado:{n:'R$ 3 mi', l:'Custo da estrutura paga via SPTuris para o show de 13/12/2025, segundo o Diário do Centro do Mundo'},
+ upd:'',
+ resumo:'A Prefeitura de São Paulo pagou, via SPTuris, cerca de R$ 3 milhões em estrutura para um show de Jorge & Mateus, com ingressos pagos de até R$ 1,1 mil, no Estádio do Pacaembu em 13 de dezembro de 2025, informa o Diário do Centro do Mundo, com base em reportagem do colunista Demétrio Vecchioli, do Metrópoles. O prefeito Ricardo Nunes (MDB) mandou a Controladoria investigar. A dupla diz que não recebeu cachê da prefeitura.',
+ fundo:[
+ ['p','A Prefeitura de São Paulo pagou, por meio da SPTuris, cerca de R$ 3 milhões em estrutura para um show de Jorge & Mateus no Estádio do Pacaembu, em 13 de dezembro de 2025, com ingressos vendidos a até R$ 1,1 mil. A informação é do Diário do Centro do Mundo, que reproduz reportagem do colunista Demétrio Vecchioli, do Metrópoles; o Radar não localizou o texto original.'],
+ ['nums',[['R$ 3 mi','estrutura paga pela prefeitura'],['R$ 967 mil','palco'],['R$ 750 mil','painel de LED'],['R$ 1,1 mil','ingresso mais caro']]],
+ ['h','O que o caso revelou'],
+ ['p','A estrutura foi contratada pela SPTuris, empresa municipal de turismo e eventos, para um show com ingressos pagos. O palco custou R$ 967 mil e o painel de LED, R$ 750 mil. O prefeito Ricardo Nunes (MDB) mandou a Controladoria-Geral do Município apurar o contrato. A dupla afirmou que não recebeu cachê da prefeitura, sem explicar quem arcou com o pagamento artístico.'],
+ ['h','O anúncio do GP de São Paulo'],
+ ['p','No mesmo sábado (7), Nunes, o presidente da Fórmula 1, Stefano Domenicali, e o CEO do GP, Alan Adler, anunciaram a renovação antecipada do contrato do GP de São Paulo, que passa de 2030 para 2035. Adler cita impacto econômico superior a R$ 2,3 bilhões, segundo o Estadão Conteúdo publicado pelo O Liberal. A corrida de hoje está marcada para as 14h, em Interlagos.'],
+ ['h','O que vem agora'],
+ ['ul',['Resultado da apuração da Controladoria sobre o contrato do Pacaembu.','Eventuais questionamentos da Câmara Municipal e do Tribunal de Contas do Município.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['Quem pagou o cachê da dupla e qual o valor total do evento.','Os valores vêm de uma única fonte lida, que cita o Metrópoles; o texto original não foi aberto.']]
+ ],
+ fontes:[['Diário do Centro do Mundo (cita Metrópoles)','https://www.diariodocentrodomundo.com.br/prefeitura-de-sp-bancou-estrutura-de-r-3-milhoes-para-show-de-jorge-entenda/'],['O Liberal (Estadão Conteúdo)','https://www.oliberal.com/esportes/prefeitura-renova-contrato-com-a-formula-1-e-garante-gp-de-sao-paulo-em-interlagos-ate-2035-1.1191691']]};
+
+/* ===== atualizações de matérias existentes ===== */
+S.ueno_bank.hora = '8/11';
+S.ueno_bank.upd = 'O prejuízo preliminar sobe para US$ 809,5 milhões, segundo o ABC Color, e o governo Alliana diz que 1.196.000 pessoas já receberam a garantia estatal.';
+S.ueno_bank.resumo = 'O prejuízo do caso Ueno Bank ao Estado paraguaio é estimado de forma preliminar em US$ 809,5 milhões, informa o ABC Color, com fundos de IPS, Itaipu, Yacyretá, ANDE e Cajubi. O juiz Humberto Otazú decretou a preventiva e o embargo de bens do ex-presidente Santiago Peña e o embargo contra o ex-presidente do Banco Central Carlos Carvallo. O governo de Pedro Alliana diz que 1.196.000 pessoas receberam a garantia estatal, cerca de G. 996 bilhões (US$ 160 milhões).';
+_ins('ueno_bank','O que ainda não se sabe',[
+ ['h','O prejuízo e os pagamentos'],
+ ['p','O ABC Color calcula o prejuízo preliminar em US$ 809,5 milhões: G. 3,6 trilhões (cerca de US$ 576,1 milhões) mais US$ 233,4 milhões, com recursos do IPS, de Itaipu, de Yacyretá, da ANDE e da Cajubi. O jornal cita ainda que Peña declarou patrimônio de G. 23 bilhões em 2023, 1.603% acima do de 2017, e que dois envelopes com US$ 200 mil teriam sido achados na residência oficial, informação que a matéria apresenta como relato.'],
+ ['p','O El Comercio, com material de EFE e AFP, informa que 1.196.000 pessoas já receberam a garantia estatal, perto de G. 996 bilhões, desde o início dos pagamentos, na quinta (5). O Banco Central é conduzido pelo interino Pedro Acosta. O Ministério Público imputou Peña por lesão de confiança e administração em proveito próprio e Carvallo pelos mesmos delitos mais documento público falso; a RDN registra pena de até 10 anos para a imputação, número diferente dos 15 anos citados por outras fontes.']]);
+_ins('ueno_bank','O que ainda não se sabe',[
+ ['h','O que vem agora'],
+ ['ul',['Recurso da defesa de Peña contra a prisão preventiva e o embargo de bens.','Decisão do juiz Humberto Otazú sobre Carvallo e andamento da causa 92/2026.','Novos pagamentos da garantia estatal aos cerca de 2,94 milhões de clientes afetados e nomeação do titular do Banco Central.']]]);
+S.ueno_bank.fontes.unshift(['ABC Color (prejuízo preliminar)','https://www.abc.com.py/nacionales/2026/11/08/caso-ueno-perjuicio-causado-por-santiago-pena-seria-de-mas-de-us-809-millones/'],['RDN (preventiva e embargo)','https://www.rdn.com.py/2026/11/08/juez-dicta-prision-preventiva-y-embargo-de-bienes-contra-santiago-pena-por-caso-ueno'],['El Comercio (EFE e AFP)','https://elcomercio.pe/mundo/latinoamerica/santiago-pena-queda-en-prision-preventiva-tras-su-destitucion-por-el-caso-ueno-bank-en-paraguay-noticia/']);
+
+S.nz_eleicao.upd = 'Duas contagens parciais divergem: a ABC dá vantagem de cerca de 300 votos ao Nacional, e a NewsWire, de 3.650 ao Trabalhista; os votos especiais ainda não foram somados.';
+S.nz_eleicao.resumo = 'A eleição de sábado (7) na Nova Zelândia segue sem vencedor definido, e as contagens parciais divergem. A ABC News da Austrália registra, com 98% das urnas, Nacional com 29,3% e Trabalhistas com 29,27%, uma diferença de cerca de 300 votos. A NewsWire fala em 710.330 votos trabalhistas contra 706.680 nacionais, 3.650 de vantagem. Os cerca de 400 a 700 mil votos especiais, que historicamente favorecem o Trabalhismo, definirão o quadro, e o resultado oficial é esperado em 27 de novembro.';
+_ins('nz_eleicao','O que vem agora',[
+ ['h','Duas contagens, dois quadros'],
+ ['p','O blog ao vivo da ABC, atualizado no domingo (8), registra a última projeção de cadeiras em 41 para o Nacional, 35 para os Trabalhistas, 16 para os Verdes, 13 para a ACT, 12 para o NZ First, 7 para o Opportunity e 5 para o Te Pāti Māori, o que daria ao bloco de direita maioria de duas cadeiras. A NewsWire, com a contagem das 3h45 de domingo, soma 67 de 131 cadeiras para Nacional, ACT e NZ First, contra 57 do bloco de esquerda, e aponta vantagem trabalhista em votos.'],
+ ['p','As diferenças vêm do momento da contagem e da inclusão de cadeiras excedentes (overhang). O primeiro-ministro Christopher Luxon perdeu, segundo a ABC, três ministros nos distritos, entre eles Chris Bishop, que admitiu a derrota em Hutt South, e o líder trabalhista Chris Hipkins não reconheceu a derrota.']]);
+S.nz_eleicao.fontes.unshift(['ABC News (blog ao vivo)','https://www.abc.net.au/news/2026-11-07/nz-election-2026-live-blog/107355448'],['NewsWire NZ','https://newswire.co.nz/2026/11/luxon-too-close-to-call-hipkins-refuses-to-concede-special-votes-new-zealand-election-2026/']);
+
+S.dino_6x1.hora = '8/11';
+S.dino_6x1.upd = 'CNI e CNC pedem ao STF suspender ou adiar os prazos de transição, e a CNI estima alta de 11,1% no custo do trabalho formal; Dino diz que dois meses “não parecem inviáveis”.';
+S.dino_6x1.resumo = 'A CNI e a CNC pediram ao STF mais prazo para a transição do fim da escala 6x1, e o ministro Flávio Dino marcou audiência de conciliação para terça (10), às 14h, sem conceder liminar. A CNI quer suspender os prazos por no mínimo um ano e estima alta de 11,1% no custo do trabalho formal, cerca de R$ 88 bilhões; a CNC propõe 42 horas em outubro de 2027 e 40 horas em outubro de 2028. A emenda prevê a primeira etapa a partir de 16 de dezembro, e o ministro Luiz Marinho promete regulamentação na segunda (9).';
+_ins('dino_6x1','O que vem agora',[
+ ['h','O que pedem as confederações'],
+ ['p','Segundo a WSCOM, a emenda constitucional promulgada em 16 de outubro prevê a primeira etapa a partir de 16 de dezembro, com 42 horas semanais e dois dias de descanso, e as 40 horas em dezembro de 2027. A CNC quer a primeira etapa em outubro de 2027 e as 40 horas em outubro de 2028. A CNI pede a suspensão dos prazos por no mínimo um ano e estima que o custo do trabalho formal subirá 11,1%, cerca de R$ 88 bilhões.'],
+ ['p','Dino afirmou que um prazo de dois meses “não parece inviável”, não concedeu liminar e disse que a audiência de terça não discutirá a validade da redução da jornada. O ministro do Trabalho, Luiz Marinho, prevê a publicação da regulamentação na segunda (9). A Agência Brasil registra o mínimo de oito folgas em 30 dias e tratamento específico para setores de operação contínua, e a data de início aparece como 15 ou 16 de dezembro, conforme a fonte.']]);
+S.dino_6x1.fontes.unshift(['WSCOM','https://wscom.com.br/destaque/destaque-especial/2026/11/08/cnc-cni-stf-adiar-fim-escala-6x1/'],['Click Petróleo e Gás (decreto)','https://clickpetroleoegas.com.br/governo-lula-prepara-decreto-sobre-fim-da-escala-6x1-com-oito-folgas-mensais-e-publicacao-prevista-para-9-de-novembro-asaf04']);
+
+S.ucrania_energia.hora = '8/11';
+S.ucrania_energia.upd = 'A Al Jazeera detalha o ataque de 7/11: 172 drones e 36 mísseis balísticos, só 4 interceptados, com subestações atingidas em cinco regiões; a rodada de Abu Dhabi é na terça (10).';
+S.ucrania_energia.resumo = 'A Rússia lançou 172 drones e 36 mísseis balísticos contra a Ucrânia, e a defesa interceptou só 4 dos mísseis, informa a Al Jazeera. O ataque deixou ao menos 2 mortos e cerca de 12 feridos, atingiu subestações em cinco regiões e deixou Kiev com problemas de luz, água e aquecimento. Em Komyshuvakha, na região de Zaporíjia, ao menos 50 pessoas morreram em um ataque a um ponto de ajuda, segundo o serviço de emergência ucraniano. A rodada trilateral em Abu Dhabi está prevista para terça (10).';
+_ins('ucrania_energia','O que vem agora',[
+ ['h','O ataque de 7 de novembro'],
+ ['p','Segundo o balanço da Al Jazeera, a Ucrânia interceptou apenas 4 dos 36 mísseis balísticos, entre eles modelos KN-23, e as subestações de cinco regiões foram atingidas. O prefeito de Kiev, Vitali Klitschko, informou dano a uma ponte importante. Separadamente, o serviço de emergência ucraniano relatou ao menos 50 mortos no ataque ao ponto de ajuda em Komyshuvakha, em Zaporíjia, número que o Radar trata como de fonte única até nova confirmação.'],
+ ['p','A delegação ucraniana na rodada de Abu Dhabi é chefiada por Rustem Umerov e inclui, segundo o Kyiv Independent, Davyd Arakhamia, Kyrylo Budanov e outros. O formato é trilateral, com EUA e Rússia, sem europeus, e a Al Jazeera diz que é a primeira reunião do tipo desde fevereiro.']]);
+S.ucrania_energia.fontes.unshift(['Al Jazeera (ataque a Kiev)','https://www.aljazeera.com/news/2026/11/7/russia-launches-missile-attack-on-kyiv-injuring-residents'],['Kyiv Independent (delegação)','https://kyivindependent.com/umerov-to-lead-ukraine-delegation-in-abu-dhabi-peace-talks-despite-media-confusion-top-official-confirms/']);
+
+S.israel.hora = '8/11';
+S.israel.upd = 'O Israel Hayom confirma a cerimônia às 17h e o prazo até 6 de dezembro, e relata que o bloco de mudança vê o Shas só depois do aval da UTJ.';
+S.israel.resumo = 'O presidente Isaac Herzog entrega hoje (8), às 17h, na residência presidencial em Jerusalém, o mandato de formar governo a Gadi Eisenkot, que teve 67 das 120 recomendações contra 46 de Benjamin Netanyahu. O prazo de 28 dias vence em 6 de dezembro, com prorrogação possível de 14. O Israel Hayom relata que o bloco de mudança só espera o Shas depois do aval da UTJ, e que Avigdor Liberman admite flexibilizar a lei do serviço militar, enquanto Eisenkot e Yair Golan exigem serviço igual; o Shas nega publicamente.';
+_ins('israel','O que ainda não está confirmado',[
+ ['h','Prazos e o impasse do serviço militar'],
+ ['p','O Israel Hayom confirma que os 28 dias contam do domingo e que o mandato expira em 6 de dezembro, com extensão possível de 14. O novo Knesset toma posse na terça (10), e o presidente da Casa deve ser eleito até 17 de novembro; sem governo, o país iria a nova eleição em até 90 dias, segundo a Al Jazeera. Pela conta do jornal, com Shas e UTJ o bloco de Eisenkot chegaria a exatamente 61 cadeiras.'],
+ ['p','O ponto de atrito é a lei do alistamento militar dos ultraortodoxos: Liberman aceita flexibilidade, mas Eisenkot e Golan querem serviço igual para todos, segundo o Israel Hayom. O Ynet registra que Netanyahu renova o apelo à coalizão enquanto Eisenkot procura os partidos haredim.']]);
+S.israel.fontes.unshift(['Israel Hayom','https://www.israelhayom.com/2026/11/08/eisenkots-coalition-challenge'],['Al Jazeera (Herzog escolhe Eisenkot)','https://www.aljazeera.com/news/2026/11/7/israels-president-picks-eisenkot-over-netanyahu-to-form-next-government']);
+
+ORDER.politica = ['alcolumbre_stf','lula_pronunciamento','quaest_pos_eleicao'].concat(ORDER.politica.filter(function(i){return ['alcolumbre_stf','lula_pronunciamento','quaest_pos_eleicao'].indexOf(i)<0;}));
+ORDER.economia = ['vr_va_interop','mercado_semana'].concat(ORDER.economia.filter(function(i){return ['vr_va_interop','mercado_semana'].indexOf(i)<0;}));
+ORDER.mundo = ['paraguai','ueno_bank','israel','ira_iron_gate'].concat(ORDER.mundo.filter(function(i){return ['paraguai','ueno_bank','israel','ira_iron_gate'].indexOf(i)<0;}));
+ORDER.regioes = ['sp_pacaembu_show'].concat(ORDER.regioes.filter(function(i){return i!=='sp_pacaembu_show';}));
+HOME_LEAD = 'israel';
+HOME_ROW = ['dino_6x1','ueno_bank','ucrania_energia'];
+GIRO = [
+ ["Lula fala às 20h30","O pronunciamento de 7min44 tem foco em união nacional e responsabilidade fiscal, sem medidas novas, segundo o Brasil 247.","Brasil 247","https://www.brasil247.com/poder/lula-defendera-uniao-nacional-e-responsabilidade-fiscal-em-pronunciamento-neste-domingo/","","lula_pronunciamento"],
+ ["Quaest pós-eleição","Para 62%, a ida de Flávio aos EUA foi errada; 48% aprovam o governo Lula, segundo o Plantão Brasil.","Plantão Brasil","https://www.plantaobrasil.net/noticias/162389-aprovacao-de-lula-se-mantem-solida-em-nova-pesquisa-pos-eleitoral","","quaest_pos_eleicao"],
+ ["Iron Gate","O Centcom cria força-tarefa para cortar as rotas terrestres e do Cáspio do Irã, segundo a Al Jazeera.","Al Jazeera","https://www.aljazeera.com/news/2026/11/8/us-launches-task-force-to-disrupt-irans-land-based-supply-routes","","ira_iron_gate"],
+ ["CNI quer adiar a 6x1","A confederação pede suspender prazos por um ano e estima alta de 11,1% no custo do trabalho, segundo a WSCOM.","WSCOM","https://wscom.com.br/destaque/destaque-especial/2026/11/08/cnc-cni-stf-adiar-fim-escala-6x1/","","dino_6x1"],
+ ["Prejuízo do Ueno","O ABC Color estima prejuízo preliminar de US$ 809,5 milhões ao Estado paraguaio.","ABC Color","https://www.abc.com.py/nacionales/2026/11/08/caso-ueno-perjuicio-causado-por-santiago-pena-seria-de-mas-de-us-809-millones/","","ueno_bank"],
+ ["Show no Pacaembu","A prefeitura pagou R$ 3 milhões em estrutura para o show de Jorge & Mateus, segundo o Diário do Centro do Mundo.","Diário do Centro do Mundo","https://www.diariodocentrodomundo.com.br/prefeitura-de-sp-bancou-estrutura-de-r-3-milhoes-para-show-de-jorge-entenda/","","sp_pacaembu_show"]
+].concat(GIRO).slice(0,20);
+
 /* ===== RESUMO DOS PISOS ===== */
 Object.keys(ORDER).forEach(function(k){ ORDER[k] = ORDER[k].filter(function(i){ return !(S[i] && S[i].velha); }); });
 
 
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"israel":"atualizada","ira_proposta_catar":"atualizada","nz_eleicao":"novo","mg_cleitinho_shows":"novo"};
-var GIRO_FLAGS = {"Eisenkot e o Shas":"novo","Empate na Nova Zelândia":"novo","Ormuz em números":"novo","Mediação do Catar":"novo","Cleitinho e os shows":"novo","Alliana promete ressarcir":"novo"};
+var FLAGS = {"israel":"atualizada","dino_6x1":"atualizada","ueno_bank":"atualizada","ucrania_energia":"atualizada","nz_eleicao":"atualizada","lula_pronunciamento":"novo","quaest_pos_eleicao":"novo","ira_iron_gate":"novo","mercado_semana":"novo","sp_pacaembu_show":"novo"};
+var GIRO_FLAGS = {"Lula fala às 20h30":"novo","Quaest pós-eleição":"novo","Iron Gate":"novo","CNI quer adiar a 6x1":"novo","Prejuízo do Ueno":"novo","Show no Pacaembu":"novo"};
 /* ===== FIM DOS DADOS ===== */
