@@ -5762,6 +5762,338 @@ GIRO = [
 Object.keys(ORDER).forEach(function(k){ ORDER[k] = ORDER[k].filter(function(i){ return !(S[i] && S[i].velha); }); });
 
 
+/* ===== CONTEXTO POLÍTICO 08/11 ===== */
+S.nz_eleicao = {
+ "ed": "mundo",
+ "k": "Mundo · Nova Zelândia",
+ "hora": "8/11",
+ "t": "Eleição na Nova Zelândia termina sem vencedor definido: Trabalhistas e Partido Nacional separados por 3.650 votos na contagem preliminar",
+ "sub": "Cerca de 400 mil votos especiais, que historicamente favorecem o Trabalhismo, ainda serão contados, e o governo pode levar semanas para ser definido.",
+ "dado": {
+  "n": "3.650 votos",
+  "l": "Diferença entre Trabalhistas (710.330) e Nacional (706.680) na contagem preliminar (ABC News Austrália)"
+ },
+ "resumo": "A eleição de sábado (7) na Nova Zelândia não tem vencedor definido: na contagem preliminar, Trabalhistas (centro-esquerda) e Partido Nacional (centro-direita, do premiê Christopher Luxon) estão separados por 3.650 votos, segundo a ABC News da Austrália, e a NewsWire dá ao bloco de direita (Nacional, ACT e NZ First) 67 de 131 cadeiras, contra 57 da esquerda. Os cerca de 400 mil votos especiais, que historicamente favorecem os trabalhistas, e os partidos menores decidem quem governa; o resultado oficial é esperado em 27 de novembro.",
+ "upd": "A matéria passou a explicar o espectro de cada partido, as alianças definidas antes do voto e os temas em disputa (custo de vida, impostos, Tratado de Waitangi, clima e imigração).",
+ "fundo": [
+  [
+   "p",
+   "A eleição geral da Nova Zelândia, realizada no sábado (7), terminou sem um vencedor claro. Na contagem preliminar de mais de 2,4 milhões de votos de partido, o Partido Trabalhista somava 710.330 votos e o Partido Nacional, do primeiro-ministro Christopher Luxon, 706.680, uma diferença de 3.650 votos, segundo análise da ABC News da Austrália publicada neste domingo (8)."
+  ],
+  [
+   "nums",
+   [
+    [
+     "3.650",
+     "votos separam Trabalhistas e Nacional na contagem preliminar"
+    ],
+    [
+     "~400 mil",
+     "votos especiais ainda por contar"
+    ],
+    [
+     "74,6%",
+     "comparecimento, o segundo menor da história"
+    ],
+    [
+     "~59%",
+     "soma de Nacional e Trabalhistas, a primeira vez abaixo de 60% desde 1996"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Quem disputa: o mapa dos partidos"
+  ],
+  [
+   "p",
+   "A Nova Zelândia elege 120 deputados pelo sistema proporcional misto: 71 em distritos e 49 por lista, e cada eleitor tem dois votos, um no partido e outro no candidato local. A maioria é de 61 cadeiras. Só o Partido Trabalhista conseguiu governar sozinho nesse sistema, em 2020, e o resto das eleições produziu coalizões, o que dá peso aos partidos pequenos e explica por que o resultado pode levar semanas."
+  ],
+  [
+   "p",
+   "O governo que tenta a reeleição reúne três partidos de direita e centro-direita: o Nacional, conservador, do primeiro-ministro Christopher Luxon; o ACT, de liberalismo clássico e libertarianismo de direita, liderado por David Seymour; e o NZ First, nacionalista e populista de direita, de Winston Peters. O bloco de oposição tem o Trabalhista, de centro-esquerda e social-democrata, de Chris Hipkins; os Verdes, de esquerda e ambientalistas; e o Te Pāti Māori, partido de defesa dos direitos maoris e da autonomia (tino rangatiratanga). Fora do Parlamento até agora, o Opportunity, de centro, liderado por Qiulae Wong, aparece nas projeções da ABC com 7 cadeiras."
+  ],
+  [
+   "p",
+   "As alianças estavam definidas antes do voto: Trabalhistas e Verdes combinaram governar juntos, e o NZ First descartou trabalhar com os trabalhistas. A Wikipedia registra que o Nacional também descartou o Opportunity, mas a ABC diz que ele pode precisar do partido para somar maioria; a posição pode ter mudado depois do voto."
+  ],
+  [
+   "h",
+   "O que está em disputa"
+  ],
+  [
+   "p",
+   "Custo de vida, saúde, moradia e preço dos combustíveis lideram as preocupações dos eleitores em pesquisa Ipsos citada pela Wikipedia: os trabalhistas aparecem melhor avaliados na maioria desses temas, e o Nacional, na economia e na segurança. Em impostos, o Nacional promete não criar nenhum; os trabalhistas propõem taxar o ganho de capital em transações de imóveis; os Verdes e o Te Pāti Māori defendem tributos sobre riqueza e alíquotas maiores para altas rendas."
+  ],
+  [
+   "p",
+   "O segundo eixo é o Tratado de Waitangi, que fundamenta a relação entre o Estado e os maoris. O Te Pāti Māori quer uma comissão do Tratado e recomendações vinculantes do Tribunal de Waitangi; o ACT propõe extinguir o Tribunal e acabar com contratações \"por raça\"; o NZ First quer um referendo sobre os distritos eleitorais maoris. Há ainda choques sobre clima (o ACT quer abandonar a meta de emissões líquidas zero, os Verdes defendem eletrificação ampla) e sobre imigração (ACT e NZ First querem controle maior, e o NZ First, restringir o voto a cidadãos)."
+  ],
+  [
+   "h",
+   "Por que o resultado ainda não fecha"
+  ],
+  [
+   "p",
+   "A projeção de cadeiras da ABC dá 42 ao Nacional e 36 aos Trabalhistas, mas o número depende dos votos especiais, entre eles os de neozelandeses no exterior e os de eleitores que votaram fora de seu distrito. Segundo a análise, esses votos favorecem historicamente o Partido Trabalhista, o que pode estreitar ou inverter a diferença nos próximos dias."
+  ],
+  [
+   "p",
+   "Quem vai governar depende também dos partidos menores. A ABC diz que o Nacional pode precisar do novo partido Opportunity para somar maioria, e que a negociação de uma coalizão pode levar semanas. Luxon afirmou ter um caminho para continuar no cargo, segundo a mesma análise."
+  ],
+  [
+   "h",
+   "Um eleitorado mais fragmentado"
+  ],
+  [
+   "p",
+   "O comparecimento de 74,6% foi o segundo menor da história do país. Somados, Nacional e Trabalhistas ficaram em cerca de 59% dos votos, a primeira vez abaixo de 60% desde 1996, o que reforça o peso dos partidos pequenos na formação do governo. A análise não detalha o desempenho de cada partido menor."
+  ],
+  [
+   "h",
+   "Duas contagens, dois quadros"
+  ],
+  [
+   "p",
+   "O blog ao vivo da ABC, atualizado no domingo (8), registra a última projeção de cadeiras em 41 para o Nacional, 35 para os Trabalhistas, 16 para os Verdes, 13 para a ACT, 12 para o NZ First, 7 para o Opportunity e 5 para o Te Pāti Māori, o que daria ao bloco de direita maioria de duas cadeiras. A NewsWire, com a contagem das 3h45 de domingo, soma 67 de 131 cadeiras para Nacional, ACT e NZ First, contra 57 do bloco de esquerda, e aponta vantagem trabalhista em votos."
+  ],
+  [
+   "p",
+   "As diferenças vêm do momento da contagem e da inclusão de cadeiras excedentes (overhang). O primeiro-ministro Christopher Luxon perdeu, segundo a ABC, três ministros nos distritos, entre eles Chris Bishop, que admitiu a derrota em Hutt South, e o líder trabalhista Chris Hipkins não reconheceu a derrota."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "ul",
+   [
+    "Contagem dos cerca de 400 mil votos especiais nos próximos dias.",
+    "Negociações de coalizão, que podem levar semanas.",
+    "Resultado oficial, previsto para 27 de novembro, segundo informação não verificada em fonte oficial."
+   ]
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Todos os números de votos e cadeiras são preliminares e variam entre a ABC e a NewsWire; CNN e Newsweek aparecem na busca com a mesma leitura de empate, mas não foram abertas.",
+    "O efeito real dos votos especiais sobre a projeção de 42 a 36 cadeiras.",
+    "A data oficial de divulgação do resultado.",
+    "A classificação dos partidos e as posições de campanha vêm da Wikipedia (página da eleição, lida antes da apuração); o Radar não cruzou cada proposta com os programas oficiais, e acordos pós-eleição podem mudar o quadro."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "ABC News (blog ao vivo)",
+   "https://www.abc.net.au/news/2026-11-07/nz-election-2026-live-blog/107355448"
+  ],
+  [
+   "NewsWire NZ",
+   "https://newswire.co.nz/2026/11/luxon-too-close-to-call-hipkins-refuses-to-concede-special-votes-new-zealand-election-2026/"
+  ],
+  [
+   "ABC News (Austrália)",
+   "https://www.abc.net.au/news/2026-11-08/analysis-new-zealand-election-numbers/107360924"
+  ],
+  [
+   "Wikipedia (eleição geral de 2026 na Nova Zelândia)",
+   "https://en.wikipedia.org/wiki/2026_New_Zealand_general_election"
+  ]
+ ]
+};
+S.israel = {
+ "ed": "mundo",
+ "k": "Mundo · Israel",
+ "hora": "8/11",
+ "t": "Herzog entrega hoje (8), às 17h, o mandato de formar o governo a Eisenkot; a conta dos 61 votos passa pelos ultraortodoxos, e o Shas nega apoio",
+ "sub": "O Times of Israel calcula que o bloco de Eisenkot chegaria a cerca de 61 cadeiras com a UTJ e a não oposição do Shas; o alistamento dos haredim e os partidos árabes são os obstáculos.",
+ "dado": {
+  "n": "67 de 120",
+  "l": "Cadeiras do bloco anti-Netanyahu, incluindo 19 dos partidos árabes (Times of Israel)"
+ },
+ "resumo": "O presidente Isaac Herzog entrega hoje (8), às 17h, o mandato de formar governo a Gadi Eisenkot, líder do Yashar, partido fundado em 2025 e hoje o maior da oposição, com 21 cadeiras, contra 27 do Likud de Netanyahu. A oposição soma 67 das 120, mas 19 são de partidos árabes que Eisenkot, Bennett e Liberman não querem como base; sem eles, o bloco de Eisenkot só chega a 61 com os ultraortodoxos da UTJ e a não oposição do Shas, que nega apoio. O prazo é de 28 dias, até 6 de dezembro, com prorrogação possível de 14.",
+ "upd": "A matéria passou a localizar cada partido no espectro político (direita, centro, esquerda, religiosos e árabes), a explicar quem integra cada bloco e o que separa as alianças possíveis.",
+ "fundo": [
+  [
+   "p",
+   "O presidente de Israel, Isaac Herzog, anunciou neste sábado (7) que entregará no domingo (8), às 17h, em cerimônia na residência presidencial, o mandato para formar o governo a Gadi Eisenkot, líder do Yashar. A decisão veio depois de conversas de Herzog com Eisenkot e com o primeiro-ministro Benjamin Netanyahu, segundo o Times of Israel. A Al Jazeera confirma a decisão, comunicada na noite de sábado; o horário consta só do Times of Israel."
+  ],
+  [
+   "nums",
+   [
+    [
+     "67",
+     "recomendações a Eisenkot nas consultas; Netanyahu teve 46"
+    ],
+    [
+     "28 dias",
+     "prazo para formar governo, prorrogável por até 14"
+    ],
+    [
+     "27 / 21",
+     "cadeiras do Likud e do Yashar"
+    ],
+    [
+     "120",
+     "cadeiras do Knesset"
+    ]
+   ]
+  ],
+  [
+   "h",
+   "Quem é quem no Knesset"
+  ],
+  [
+   "p",
+   "O Knesset tem 120 cadeiras, eleitas por listas fechadas em todo o país e por representação proporcional, e uma maioria exige 61. Nenhum partido governa sozinho: o poder se decide por coalizões, e por isso os pequenos partidos religiosos e árabes valem mais do que seu tamanho."
+  ],
+  [
+   "p",
+   "O bloco de Benjamin Netanyahu tem 53 cadeiras. O Likud, de direita, elegeu 27. Os aliados são sobretudo religiosos: o Judaísmo da Torá Unida (UTJ), com 7, e o Shas, com 6 e liderado por Aryeh Deri, são partidos ultraortodoxos (haredim), de base asquenazita e sefardita respectivamente, e defendem isenção do serviço militar para estudantes religiosos. Partidos de extrema direita e religiosos sionistas, como o Sionismo Religioso, de Bezalel Smotrich, e o Otzma Yehudit, de Itamar Ben-Gvir, disputaram a eleição nesse campo, segundo a Wikipedia; a distribuição final de cadeiras entre eles não foi conferida pelo Radar."
+  ],
+  [
+   "p",
+   "A oposição soma 67. O Yashar, de Eisenkot, é o maior partido anti-Netanyahu, com 21 cadeiras. Foi fundado em setembro de 2025 por Eisenkot, ex-chefe do Estado-Maior, e por Matan Kahana, depois de deixarem a União Nacional de Benny Gantz; o JNS observa que ele não se define por rótulo e se apresenta como \"veículo de reconstrução nacional\", com uma comissão de inquérito sobre o 7 de Outubro, relações mais próximas com os EUA e foco em Irã e segurança. O Times of Israel nota que alguns de seus integrantes são mais à direita. O Yisrael Beytenu, de Avigdor Liberman, tem 7: é de direita, laico e \"linha-dura\" em segurança, e rejeita depender dos partidos árabes. Os outros partidos judeus de oposição, entre eles o de Naftali Bennett, que a Wikipedia classifica como de centro, somam 20."
+  ],
+  [
+   "p",
+   "Os partidos de maioria árabe são a Lista Conjunta, com 11 cadeiras, que apoiaria um governo alternativo de fora, e o Ra'am, de Mansour Abbas, com 8, que já integrou o governo em 2021 e mostra interesse em entrar em uma coalizão. Eisenkot, Bennett e Liberman descartam depender deles, e só o líder dos Democratas, Yair Golan, de esquerda, defende abertamente cooperar com os árabes. Sem os 19 deputados árabes, a conta dos 61 passa pela UTJ e pelo Shas."
+  ],
+  [
+   "h",
+   "O resultado da eleição"
+  ],
+  [
+   "p",
+   "Na eleição de 27 de outubro, o bloco de oposição a Netanyahu somou 67 das 120 cadeiras, incluindo 19 dos partidos árabes, a Lista Conjunta com 11 e a Ra'am com 8; os partidos opositores judeus têm 48. O bloco de Netanyahu tem 53. O Likud elegeu 27 deputados; o Yashar, de Eisenkot, 21; o Yisrael Beytenu, de Avigdor Liberman, 7; e o Judaísmo da Torá Unida (UTJ), 7. Nas consultas de quarta e quinta, Eisenkot recebeu 67 recomendações e Netanyahu, 46, e a UTJ não recomendou ninguém."
+  ],
+  [
+   "h",
+   "As saídas possíveis"
+  ],
+  [
+   "p",
+   "Eisenkot quer um governo de emergência nacional e convidou \"Likud e amigos\" a entrar numa coalizão sem extremistas. O Yashar chamou de hipócrita a proposta de unidade nacional de Netanyahu. Em análise, o Times of Israel aponta três caminhos para a oposição: governo de minoria com apoio externo dos partidos árabes, governo de minoria com abstenção da UTJ, ou governo liderado por Liberman. Para Netanyahu, as opções seriam a unidade nacional, que Eisenkot descartou, novas eleições ou a deserção de oito deputados."
+  ],
+  [
+   "p",
+   "Em 3 de novembro, líderes da oposição, entre eles Eisenkot, Naftali Bennett, Yair Golan, Liberman e Yair Lapid, reuniram-se em Herzliya e combinaram iniciar negociações. Querem substituir o presidente do Knesset, Amir Ohana, do Likud, e o nome de Lapid foi cogitado. O Likud chamou o futuro governo de \"perigoso\", dependente de \"apoiadores do terrorismo\", e tentou adiar a certificação dos resultados, pedido que o juiz Sohlberg rejeitou. Apenas Golan defende abertamente cooperar com os árabes; Liberman rejeita, mas abriu a porta aos ultraortodoxos."
+  ],
+  [
+   "h",
+   "A aritmética da maioria"
+  ],
+  [
+   "p",
+   "O bloco de Eisenkot tem 48 cadeiras entre os partidos judeus de oposição; com os 19 deputados árabes chegaria a 67, mas ele descarta depender deles. A saída, segundo o Times of Israel, seria somar o Judaísmo da Torá Unida (UTJ), com 7 cadeiras, que não recomendou ninguém, e contar com a não oposição do Shas, com 6, o que daria cerca de 61, uma maioria mínima."
+  ],
+  [
+   "p",
+   "O Ynet registra que a oposição com a UTJ somaria 55 e que Eisenkot pretende formar um governo minoritário inicial, de 48 deputados, com apoio externo da Ra’am e possivelmente da UTJ. Liberman diz que votará contra um governo dependente da Lista Conjunta e da Ra’am, mas aceita um compromisso sobre o alistamento militar dos ultraortodoxos. Um dirigente da UTJ disse ao Ynet que, fechado um acordo com Eisenkot, acredita que o Shas se juntará."
+  ],
+  [
+   "p",
+   "O Shas nega. O Jerusalem Post registra que o partido chamou de “fake news completa” a reportagem do canal N12 segundo a qual Liberman teria retirado o veto a um governo com partidos haredi, e o Ynet diz que o Shas segue com Netanyahu. Netanyahu pediu na noite de sábado um governo de unidade com “todos os partidos do campo nacional”; o Yashar respondeu que só aceita se o Likud romper com os “extremistas”."
+  ],
+  [
+   "p",
+   "Em reportagem de sexta, a Al Jazeera registrou Herzog dizendo que “vetos mútuos” dificultam o quadro e que, sem coalizão, o país iria a nova eleição, com Netanyahu como primeiro-ministro interino. O Jerusalem Post lembra que, se todas as tentativas falharem, o Knesset é dissolvido e há nova votação. A participação na eleição de 27 de outubro foi de 77,7%, 7,1 pontos acima de 2022."
+  ],
+  [
+   "h",
+   "O que vem agora"
+  ],
+  [
+   "ul",
+   [
+    "Domingo (8), 17h: Herzog entrega o mandato a Eisenkot.",
+    "Em seguida, 28 dias de negociação, com extensão possível de até 14.",
+    "Definição de quem presidirá o Knesset."
+   ]
+  ],
+  [
+   "h",
+   "Prazos e o impasse do serviço militar"
+  ],
+  [
+   "p",
+   "O Israel Hayom confirma que os 28 dias contam do domingo e que o mandato expira em 6 de dezembro, com extensão possível de 14. O novo Knesset toma posse na terça (10), e o presidente da Casa deve ser eleito até 17 de novembro; sem governo, o país iria a nova eleição em até 90 dias, segundo a Al Jazeera. Pela conta do jornal, com Shas e UTJ o bloco de Eisenkot chegaria a exatamente 61 cadeiras."
+  ],
+  [
+   "p",
+   "O ponto de atrito é a lei do alistamento militar dos ultraortodoxos: Liberman aceita flexibilidade, mas Eisenkot e Golan querem serviço igual para todos, segundo o Israel Hayom. O Ynet registra que Netanyahu renova o apelo à coalizão enquanto Eisenkot procura os partidos haredim."
+  ],
+  [
+   "h",
+   "O que ainda não está confirmado"
+  ],
+  [
+   "ul",
+   [
+    "Como a oposição teria maioria sem os partidos árabes e qual será a posição final da UTJ e do Shas, que nega publicamente o apoio.",
+    "A informação do Canal 13 sobre a pressão de Netanyahu sobre a UTJ, citada pelo Times of Israel.",
+    "O horário das 17h, que consta do Times of Israel; o Jerusalem Post não traz hora.",
+    "A classificação ideológica vem da Wikipedia (página da eleição, lida antes do voto), do Times of Israel e do JNS; o JNS não dá ao Yashar rótulo de centro ou de direita, e o Radar não encontrou um rótulo oficial."
+   ]
+  ]
+ ],
+ "fontes": [
+  [
+   "Israel Hayom",
+   "https://www.israelhayom.com/2026/11/08/eisenkots-coalition-challenge"
+  ],
+  [
+   "Al Jazeera (Herzog escolhe Eisenkot)",
+   "https://www.aljazeera.com/news/2026/11/7/israels-president-picks-eisenkot-over-netanyahu-to-form-next-government"
+  ],
+  [
+   "Times of Israel (Herzog escolhe Eisenkot)",
+   "https://www.timesofisrael.com/president-herzog-taps-eisenkot-to-form-coalition-but-path-remains-fraught/"
+  ],
+  [
+   "Ynet News",
+   "https://www.ynetnews.com/article/b1l00njp6mg"
+  ],
+  [
+   "The Jerusalem Post (ao vivo)",
+   "https://www.jpost.com/israel-election-2026/2026-11-08/live-updates-914159"
+  ],
+  [
+   "Times of Israel (liveblog)",
+   "https://www.timesofisrael.com/liveblog_entry/herzog-announces-he-will-task-eisenkot-tomorrow-with-forming-new-government-after-meeting-him-and-netanyahu/"
+  ],
+  [
+   "Times of Israel (reunião da oposição)",
+   "https://www.timesofisrael.com/opposition-chiefs-meet-agree-to-launch-coalition-talks-but-path-remains-unclear/"
+  ],
+  [
+   "Times of Israel (análise)",
+   "https://www.timesofisrael.com/netanyahu-lost-his-majority-but-can-the-opposition-form-a-government-a-look-at-possible-paths-ahead/"
+  ],
+  [
+   "Al Jazeera (Herzog escolhe Eisenkot)",
+   "https://www.aljazeera.com/news/2026/11/7/israels-president-picks-eisenkot-over-netanyahu-to-form-next-government"
+  ],
+  [
+   "Al Jazeera (nomeação no domingo)",
+   "https://www.aljazeera.com/news/2026/11/6/israels-herzog-to-name-a-candidate-to-form-government-on-sunday"
+  ],
+  [
+   "Wikipedia (eleição legislativa de 2026 em Israel)",
+   "https://en.wikipedia.org/wiki/2026_Israeli_legislative_election"
+  ],
+  [
+   "JNS (Yashar)",
+   "https://jns.org/feature/israels-political-parties-explained-yashar"
+  ]
+ ]
+};
+
 /* FLAGS (gerado por publicar.js; não editar) */
 var FLAGS = {"israel":"atualizada","dino_6x1":"atualizada","ueno_bank":"atualizada","ucrania_energia":"atualizada","nz_eleicao":"atualizada","lula_pronunciamento":"novo","quaest_pos_eleicao":"novo","ira_iron_gate":"novo","mercado_semana":"novo","sp_pacaembu_show":"novo"};
 var GIRO_FLAGS = {"Lula fala às 20h30":"novo","Quaest pós-eleição":"novo","Iron Gate":"novo","CNI quer adiar a 6x1":"novo","Prejuízo do Ueno":"novo","Show no Pacaembu":"novo"};
