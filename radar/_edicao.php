@@ -5487,11 +5487,103 @@ AMANHA = [
  ["Sáb, 14/11","eleicao","Prazo final das contas do segundo turno no TSE","Candidatos e partidos que disputaram o segundo turno devem prestar contas e devolver sobras do fundo eleitoral.","https://www.tse.jus.br/comunicacao/radio/2026/Novembro/prestacao-de-contas-do-segundo-turno","tse_psol_se"]
 ];
 
+EDICAO.hora = '07h';
+EDICAO.data = 'Domingo, 08 de novembro de 2026';
+
+S.nz_eleicao = {ed:'mundo', k:'Mundo · Nova Zelândia', hora:'8/11', fonteunica:true,
+ t:'Eleição na Nova Zelândia termina sem vencedor definido: Trabalhistas e Partido Nacional separados por 3.650 votos na contagem preliminar',
+ sub:'Cerca de 400 mil votos especiais, que historicamente favorecem o Trabalhismo, ainda serão contados, e o governo pode levar semanas para ser definido.',
+ dado:{n:'3.650 votos', l:'Diferença entre Trabalhistas (710.330) e Nacional (706.680) na contagem preliminar (ABC News Austrália)'},
+ resumo:'A eleição neozelandesa de sábado (7) não definiu quem governa o país. Na contagem preliminar de mais de 2,4 milhões de votos de partido, os Trabalhistas somavam 710.330 votos e o Partido Nacional, do primeiro-ministro Christopher Luxon, 706.680, diferença de 3.650, informa a ABC News da Austrália. A projeção de cadeiras dá 42 ao Nacional e 36 aos Trabalhistas, mas faltam cerca de 400 mil votos especiais, e o resultado oficial é esperado só no fim do mês. A informação vem de uma única análise e deve ser lida como preliminar.',
+ upd:'',
+ fundo:[
+ ['p','A eleição geral da Nova Zelândia, realizada no sábado (7), terminou sem um vencedor claro. Na contagem preliminar de mais de 2,4 milhões de votos de partido, o Partido Trabalhista somava 710.330 votos e o Partido Nacional, do primeiro-ministro Christopher Luxon, 706.680, uma diferença de 3.650 votos, segundo análise da ABC News da Austrália publicada neste domingo (8).'],
+ ['nums',[['3.650','votos separam Trabalhistas e Nacional na contagem preliminar'],['~400 mil','votos especiais ainda por contar'],['74,6%','comparecimento, o segundo menor da história'],['~59%','soma de Nacional e Trabalhistas, a primeira vez abaixo de 60% desde 1996']]],
+ ['h','Por que o resultado ainda não fecha'],
+ ['p','A projeção de cadeiras da ABC dá 42 ao Nacional e 36 aos Trabalhistas, mas o número depende dos votos especiais, entre eles os de neozelandeses no exterior e os de eleitores que votaram fora de seu distrito. Segundo a análise, esses votos favorecem historicamente o Partido Trabalhista, o que pode estreitar ou inverter a diferença nos próximos dias.'],
+ ['p','Quem vai governar depende também dos partidos menores. A ABC diz que o Nacional pode precisar do novo partido Opportunity para somar maioria, e que a negociação de uma coalizão pode levar semanas. Luxon afirmou ter um caminho para continuar no cargo, segundo a mesma análise.'],
+ ['h','Um eleitorado mais fragmentado'],
+ ['p','O comparecimento de 74,6% foi o segundo menor da história do país. Somados, Nacional e Trabalhistas ficaram em cerca de 59% dos votos, a primeira vez abaixo de 60% desde 1996, o que reforça o peso dos partidos pequenos na formação do governo. A análise não detalha o desempenho de cada partido menor.'],
+ ['h','O que vem agora'],
+ ['ul',['Contagem dos cerca de 400 mil votos especiais nos próximos dias.','Negociações de coalizão, que podem levar semanas.','Resultado oficial, previsto para 27 de novembro, segundo informação não verificada em fonte oficial.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['Todos os números são preliminares e vêm de uma única fonte lida, a ABC News da Austrália; CNN e Newsweek aparecem na busca com a mesma leitura de empate, mas não foram abertas.','O efeito real dos votos especiais sobre a projeção de 42 a 36 cadeiras.','A data oficial de divulgação do resultado.']]
+ ],
+ fontes:[['ABC News (Austrália)','https://www.abc.net.au/news/2026-11-08/analysis-new-zealand-election-numbers/107360924']]};
+
+S.israel.hora = '8/11';
+S.israel.t = 'Herzog entrega hoje (8), às 17h, o mandato de formar o governo a Eisenkot; a conta dos 61 votos passa pelos ultraortodoxos, e o Shas nega apoio';
+S.israel.sub = 'O Times of Israel calcula que o bloco de Eisenkot chegaria a cerca de 61 cadeiras com a UTJ e a não oposição do Shas; o alistamento dos haredim e os partidos árabes são os obstáculos.';
+S.israel.resumo = 'O presidente de Israel, Isaac Herzog, entrega neste domingo (8), às 17h, o mandato para formar governo a Gadi Eisenkot, líder do Yashar, que teve 67 das 120 recomendações nas consultas, contra 46 de Benjamin Netanyahu. Eisenkot terá 28 dias, com prorrogação de até 14. O Times of Israel calcula que o bloco dele tem 48 cadeiras e chegaria a cerca de 61 com o Judaísmo da Torá Unida (UTJ, 7) e a não oposição do Shas (6); o Shas chama de “fake news” a hipótese de se juntar a ele, e o Ynet diz que o partido segue com Netanyahu.';
+S.israel.upd = 'Entra a aritmética do Times of Israel para os 61 votos, a negativa pública do Shas e a pressão de Netanyahu sobre a UTJ; a entrega do mandato é hoje, às 17h.';
+(function(){
+ var f = S.israel.fundo, i = -1, j = -1;
+ f.forEach(function(x, k){ if (x[0]==='h' && x[1]==='A aritmética da maioria') i = k; if (x[0]==='h' && x[1]==='O que ainda não está confirmado') j = k; });
+ if (i >= 0) { f.splice(i+1, 1,
+  ['p','O bloco de Eisenkot tem 48 cadeiras entre os partidos judeus de oposição; com os 19 deputados árabes chegaria a 67, mas ele descarta depender deles. A saída, segundo o Times of Israel, seria somar o Judaísmo da Torá Unida (UTJ), com 7 cadeiras, que não recomendou ninguém, e contar com a não oposição do Shas, com 6, o que daria cerca de 61, uma maioria mínima.'],
+  ['p','O Ynet registra que a oposição com a UTJ somaria 55 e que Eisenkot pretende formar um governo minoritário inicial, de 48 deputados, com apoio externo da Ra’am e possivelmente da UTJ. Liberman diz que votará contra um governo dependente da Lista Conjunta e da Ra’am, mas aceita um compromisso sobre o alistamento militar dos ultraortodoxos. Um dirigente da UTJ disse ao Ynet que, fechado um acordo com Eisenkot, acredita que o Shas se juntará.'],
+  ['p','O Shas nega. O Jerusalem Post registra que o partido chamou de “fake news completa” a reportagem do canal N12 segundo a qual Liberman teria retirado o veto a um governo com partidos haredi, e o Ynet diz que o Shas segue com Netanyahu. Netanyahu pediu na noite de sábado um governo de unidade com “todos os partidos do campo nacional”; o Yashar respondeu que só aceita se o Likud romper com os “extremistas”.'],
+  ['p','Em reportagem de sexta, a Al Jazeera registrou Herzog dizendo que “vetos mútuos” dificultam o quadro e que, sem coalizão, o país iria a nova eleição, com Netanyahu como primeiro-ministro interino. O Jerusalem Post lembra que, se todas as tentativas falharem, o Knesset é dissolvido e há nova votação. A participação na eleição de 27 de outubro foi de 77,7%, 7,1 pontos acima de 2022.']
+ ); }
+ if (j >= 0) { var jj = -1; f.forEach(function(x, n){ if (x[0]==='h' && x[1]==='O que ainda não está confirmado') jj = n; }); f[jj+1] = ['ul',['Como a oposição teria maioria sem os partidos árabes e qual será a posição final da UTJ e do Shas, que nega publicamente o apoio.','A informação do Canal 13 sobre a pressão de Netanyahu sobre a UTJ, citada pelo Times of Israel.','O horário das 17h, que consta do Times of Israel; o Jerusalem Post não traz hora.']]; }
+})();
+S.israel.fontes.unshift(['Times of Israel (Herzog escolhe Eisenkot)','https://www.timesofisrael.com/president-herzog-taps-eisenkot-to-form-coalition-but-path-remains-fraught/'],['Ynet News','https://www.ynetnews.com/article/b1l00njp6mg'],['The Jerusalem Post (ao vivo)','https://www.jpost.com/israel-election-2026/2026-11-08/live-updates-914159']);
+
+S.ira_proposta_catar.hora = '8/11';
+S.ira_proposta_catar.sub = 'Ao menos 11 navios foram atacados no estreito na semana, três afundaram, e o trânsito está cerca de 65% abaixo do nível anterior ao conflito; o premiê do Catar fala em “progresso significativo”.';
+S.ira_proposta_catar.resumo = 'O presidente Donald Trump confirmou ataques americanos “limitados” contra defesas aéreas iranianas na ilha de Qeshm, no Estreito de Ormuz, na sexta (6), e disse que o Irã “quer um acordo”. A Al Jazeera registra que o centro de monitoramento UKMTO contou ao menos 11 navios atacados no estreito na semana até 6 de novembro, três deles afundados, e que o tráfego está cerca de 65% abaixo do nível anterior ao conflito. O primeiro-ministro do Catar diz que a mediação continua e que há “progresso significativo”. O Exército iraniano diz que Ormuz segue fechado até que as exigências de Teerã sejam atendidas.';
+S.ira_proposta_catar.upd = 'Entram o balanço da navegação em Ormuz (UKMTO), as sete exigências de Araghchi e a declaração do premiê do Catar de que a mediação segue.';
+(function(){
+ var f = S.ira_proposta_catar.fundo, k = -1;
+ f.forEach(function(x, n){ if (x[0]==='h' && x[1]==='A mediação do Catar') k = n; });
+ var add = [['h','Ormuz: navios e exigências'],['p','Segundo a Al Jazeera, o centro britânico de monitoramento marítimo UKMTO contou ao menos 11 navios atacados no estreito na semana até 6 de novembro, três deles afundados, e os trânsitos estão cerca de 65% abaixo do nível anterior ao conflito. Um petroleiro pegou fogo ao atingir uma mina. A Guarda Revolucionária diz não limitar mais o alcance de seus mísseis a cerca de 2.000 km. O chanceler Abbas Araghchi conversou com 12 colegas em 48 horas e apresentou sete exigências para reabrir o estreito. O Exército iraniano diz que Ormuz fica fechado até que elas sejam atendidas.'],['p','O trânsito reduzido pesa sobre o petróleo, que o Radar registrou perto de US$ 98 na sexta, mas as fontes lidas não trazem estimativa de volume nem de preço para esta semana. Os EUA ofereceram recompensa de US$ 20 milhões por informação sobre o programa nuclear iraniano, segundo a Al Jazeera.']];
+ if (k >= 0) f.splice.apply(f, [k, 0].concat(add));
+ var m = -1; f.forEach(function(x, n){ if (x[0]==='h' && x[1]==='A mediação do Catar') m = n; });
+ if (m >= 0) f[m+1] = ['p', f[m+1][1] + ' O premiê catari, xeque Mohammed bin Abdulrahman Al Thani, disse ao The New Arab que os EUA seguem dispostos a uma solução mesmo depois das eleições, que há “progresso significativo” e que o Catar espera “um bom acordo”.'];
+})();
+S.ira_proposta_catar.fontes.push(['The New Arab','https://www.newarab.com/news/qatar-continues-us-iran-mediation-efforts-prevent-escalation'],['Al Jazeera (Qeshm e Ormuz)','https://www.aljazeera.com/news/2026/11/7/qeshm-island-and-hormuz-hit-as-mediators-try-to-prevent-us-iran-escalation']);
+
+S.mg_cleitinho_shows = {ed:'regioes', reg:'mg', k:'Minas Gerais · Governo eleito', hora:'7/11',
+ t:'Cleitinho anuncia que vai proibir verba estadual para shows e festas em municípios mineiros e herda um déficit de R$ 10,51 bilhões em 2027',
+ sub:'O governador eleito diz que enviará projeto à Assembleia depois da posse, em janeiro, e que priorizará saúde, educação e segurança.',
+ dado:{n:'R$ 10,51 bi', l:'Déficit previsto na LOA 2027 revisada, enviada à ALMG em 14 de outubro (Diário do Comércio)'},
+ resumo:'O governador eleito de Minas Gerais, Cleitinho Azevedo (Republicanos), anunciou no sábado (7) que vai proibir o uso de verba estadual em shows e festas nos municípios, medida semelhante à do governador de Mato Grosso, Otaviano Pivetta, segundo a coluna de Cristiano Lima. Ele pretende enviar projeto à Assembleia (ALMG) depois da posse, em janeiro. A LOA 2027 revisada prevê déficit de R$ 10,51 bilhões, e a dívida com a União é de cerca de R$ 188 bilhões, segundo o Diário do Comércio.',
+ upd:'',
+ fundo:[
+ ['p','O governador eleito de Minas Gerais, Cleitinho Azevedo (Republicanos), anunciou no sábado (7) que vai proibir o repasse de verba estadual para shows e festas em municípios mineiros, segundo a coluna de Cristiano Lima. Ele pretende enviar um projeto de lei à Assembleia Legislativa (ALMG) depois da posse, em janeiro, e diz que vai priorizar saúde, educação e segurança.'],
+ ['nums',[['R$ 10,51 bi','déficit previsto na LOA 2027 (2026: R$ 5,22 bi)'],['R$ 155,50 bi','despesa prevista; receita de R$ 144,99 bi'],['~R$ 188 bi','dívida de Minas com a União'],['~55,4%','votos válidos de Cleitinho, segundo o Brasil de Fato']]],
+ ['h','A medida e o modelo'],
+ ['p','Segundo a coluna, Cleitinho segue medida semelhante à adotada em Mato Grosso pelo governador Otaviano Pivetta. A busca do Radar não localizou matéria própria sobre a decisão mato-grossense, de modo que essa referência vem só da coluna. O texto não traz o valor hoje repassado a festas e shows nem o impacto estimado da proibição.'],
+ ['h','O orçamento que o governo herda'],
+ ['p','A proposta de LOA 2027 revisada, enviada à ALMG em 14 de outubro, prevê despesa de R$ 155,50 bilhões e receita de R$ 144,99 bilhões, déficit de R$ 10,51 bilhões, o dobro dos R$ 5,22 bilhões de 2026, segundo o Diário do Comércio. A dívida com a União é de cerca de R$ 188 bilhões (o texto também cita R$ 180 bilhões). Pelo Propag, programa de renegociação de dívidas estaduais, Minas pagou R$ 1,03 bilhão e ofertou ativos de R$ 35,8 bilhões. O risco apontado é a dificuldade de pagar o funcionalismo em fevereiro de 2027.'],
+ ['p','O cronograma de transição prevê reuniões de Fazenda em 17 de novembro, Propag em 18 e Planejamento em 19. Bruno Westin é apontado como favorito para a Fazenda, e Marcos Lisboa e Flávio Roscoe, da Fiemg, teriam recusado o convite, segundo o mesmo texto, que não traz confirmação oficial.'],
+ ['h','O recado político'],
+ ['p','Cleitinho foi eleito com cerca de 55,4% dos votos válidos. Analistas ouvidos pelo Brasil de Fato veem espaço para aproximação com Brasília na negociação da dívida e dizem que o governo sofrerá pressão por isenções fiscais e privatizações, como a da Cemig e da Gasmig. Em outro movimento, Vittorio Medioli (PL), ex-prefeito de Betim, deve assumir Planejamento e Gestão com foco em renegociar a dívida, e Cleitinho defende mudar a lei do Propag para aplicar em obras as parcelas pagas à União.'],
+ ['h','O que vem agora'],
+ ['ul',['17 a 19 de novembro: reuniões de transição de Fazenda, Propag e Planejamento.','Janeiro de 2027: posse e envio do projeto sobre shows e festas à ALMG.','Votação da LOA 2027 na Assembleia, sem data nas fontes lidas.']],
+ ['h','O que ainda não está confirmado'],
+ ['ul',['O texto e o alcance do projeto sobre shows e festas, que só será enviado depois da posse.','A decisão de Mato Grosso citada como modelo.','Os nomes da equipe econômica, que vêm de relatos de imprensa.']]
+ ],
+ fontes:[['Cristiano Lima','https://cristianolima.com/2026/11/07/cleitinho-quer-proibir-verba-estadual-para-shows-e-festas-em-mg-acabou/'],['Diário do Comércio','https://diariodocomercio.com.br/politica/desafio-fiscal-governo-cleitinho/'],['Brasil de Fato','https://www.brasildefato.com.br/2026/11/04/cleitinho-tera-de-equilibrar-pressao-da-direita-e-dialogo-com-lula-para-governar-minas-apontam-analistas/'],['O Fator','https://ofator.com.br/?p=74021']]};
+
+HOME_LEAD = 'israel';
+HOME_ROW = ['ira_proposta_catar'];
+ORDER.mundo = ['paraguai','ueno_bank','israel','nz_eleicao','ira_proposta_catar'].concat(ORDER.mundo.filter(function(i){return ['paraguai','ueno_bank','israel','nz_eleicao','ira_proposta_catar'].indexOf(i)<0;}));
+ORDER.regioes = ['mg_cleitinho_shows'].concat(ORDER.regioes.filter(function(i){return i!=='mg_cleitinho_shows';}));
+GIRO = [
+ ["Eisenkot e o Shas","O Shas chama de “fake news” a hipótese de entrar numa coalizão liderada por Eisenkot, segundo o Jerusalem Post.","The Jerusalem Post","https://www.jpost.com/israel-election-2026/2026-11-08/live-updates-914159","","israel"],
+ ["Empate na Nova Zelândia","Trabalhistas e Nacional estão separados por 3.650 votos, e 400 mil votos especiais seguem por contar, segundo a ABC News.","ABC News (Austrália)","https://www.abc.net.au/news/2026-11-08/analysis-new-zealand-election-numbers/107360924","","nz_eleicao"],
+ ["Ormuz em números","O UKMTO conta 11 navios atacados na semana, três afundados, e tráfego 65% abaixo do normal, segundo a Al Jazeera.","Al Jazeera","https://www.aljazeera.com/news/2026/11/7/qeshm-island-and-hormuz-hit-as-mediators-try-to-prevent-us-iran-escalation","","ira_proposta_catar"],
+ ["Mediação do Catar","O premiê catari fala em “progresso significativo” e diz esperar “um bom acordo”, segundo o The New Arab.","The New Arab","https://www.newarab.com/news/qatar-continues-us-iran-mediation-efforts-prevent-escalation","","ira_proposta_catar"],
+ ["Cleitinho e os shows","O governador eleito de Minas quer proibir verba estadual para shows e festas, segundo a coluna de Cristiano Lima.","Cristiano Lima","https://cristianolima.com/2026/11/07/cleitinho-quer-proibir-verba-estadual-para-shows-e-festas-em-mg-acabou/","","mg_cleitinho_shows"],
+ ["Alliana promete ressarcir","O novo presidente paraguaio prometeu devolver o dinheiro dos poupadores e cortar gastos, segundo a Infobae.","Infobae","https://www.infobae.com/america/america-latina/2026/11/07/pedro-alliana-asumio-como-presidente-de-paraguay-tras-la-destitucion-de-santiago-pena-por-el-escandalo-del-ueno-bank/","","paraguai"]
+].concat(GIRO).slice(0,20);
+
 /* ===== RESUMO DOS PISOS ===== */
 Object.keys(ORDER).forEach(function(k){ ORDER[k] = ORDER[k].filter(function(i){ return !(S[i] && S[i].velha); }); });
 
 
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"fiscal":"atualizada","paraguai":"atualizada","israel":"atualizada","ms_seg":"atualizada","dino_6x1":"atualizada","lula_cop":"atualizada","ira_proposta_catar":"atualizada","ueno_bank":"atualizada","ibov_semana":"atualizada","mt_russi":"atualizada","bets_stf":"atualizada","rn_transicao":"atualizada","pe_exoneracoes":"atualizada","pl_motta":"novo","flavio_pesquisa":"novo","tse_psol_se":"novo","stf_pauta_nov":"novo","enamed":"novo","ucrania_abudhabi":"novo","colombia_drones":"novo","mg_aro_vorcaro":"novo","mg_ameacas":"novo","rj_volta_redonda":"novo","rs_salarios":"novo"};
-var GIRO_FLAGS = {"Preventiva de Peña":"novo","Holding em Luxemburgo":"novo","Mandato a Eisenkot":"novo","Abu Dhabi na terça":"novo","PGR e as bets":"novo","Pesquisa sobre Flávio":"novo","Enamed sancionado":"novo","Pauta de novembro no STF":"novo","Roteiro de Lula":"novo","Fiscal fica para depois":"novo","Repique da bolsa":"novo","Salários no RS":"novo","Previdência do RN":"novo"};
+var FLAGS = {"israel":"atualizada","ira_proposta_catar":"atualizada","nz_eleicao":"novo","mg_cleitinho_shows":"novo"};
+var GIRO_FLAGS = {"Eisenkot e o Shas":"novo","Empate na Nova Zelândia":"novo","Ormuz em números":"novo","Mediação do Catar":"novo","Cleitinho e os shows":"novo","Alliana promete ressarcir":"novo"};
 /* ===== FIM DOS DADOS ===== */
