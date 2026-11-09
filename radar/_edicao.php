@@ -7987,7 +7987,239 @@ S.pe_exoneracoes.fundo = S.pe_exoneracoes.fundo.filter(function(b){ return !(b[0
 S.pe_exoneracoes.fontes = S.pe_exoneracoes.fontes.filter(function(f){ return f[0] !== 'Diario de Pernambuco'; });
 S.pe_exoneracoes.hora = '7/11'; delete S.pe_exoneracoes.upd;
 
+/* ===== Edição das 11h ===== */
+EDICAO.hora = '11h';
+EDICAO.data = 'Segunda, 09 de novembro de 2026';
+
+/* --- Focus (nova) --- */
+S.focus_selic_13_75 = {ed:'economia', k:'Economia · Juros', hora:'9/11',
+ t:'Focus passa a prever Selic de 13,75% no fim de 2026, sem corte neste ano, e eleva a inflação de 2027 para 4,90%',
+ sub:'A mediana do IPCA de 2026 fica em 5,22%, acima do teto da meta; o PIB de 2027 cai para 1,15% e o dólar do fim de 2026 sobe a R$ 5,35.',
+ dado:{n:'13,75%', l:'Selic projetada para o fim de 2026 no Focus de 9/11 (13,50% na semana anterior)'},
+ resumo:'O Boletim Focus do Banco Central divulgado nesta segunda (9) elevou a projeção da Selic para o fim de 2026 de 13,50% para 13,75%, o nível atual, e o mercado deixou de apostar em corte neste ano. O IPCA de 2026 ficou em 5,22%, acima do teto de 4,5% da meta, e o de 2027 subiu de 4,76% para 4,90%. O PIB de 2026 recuou de 1,76% para 1,75%, e o de 2027, de 1,20% para 1,15%. A ata do Copom sai na terça (10), às 8h, e o IPCA de outubro, na quinta (12).',
+ upd:'',
+ fundo:[
+  ['p','O Boletim Focus do Banco Central divulgado na segunda-feira (9) passou a projetar a Selic em 13,75% ao fim de 2026, acima dos 13,50% da semana anterior, e deixou de prever qualquer corte neste ano. A mediana das instituições para o IPCA de 2027 subiu de 4,76% para 4,90%, e a de 2026 ficou em 5,22%, acima do teto da meta de inflação.'],
+  ['nums',[['13,75%','Selic projetada para o fim de 2026 (13,50% no Focus anterior)'],['5,22%','IPCA de 2026, estável e acima do teto de 4,5% da meta'],['4,90%','IPCA de 2027 (4,76% na semana anterior)'],['1,15%','PIB de 2027 (1,20% antes); o de 2026 fica em 1,75%'],['R$ 5,35','dólar no fim de 2026 (R$ 5,34 antes)']]],
+  ['h','Por que importa'],
+  ['p','Sem corte em 2026, o crédito e o custo da dívida pública seguem pressionados num momento em que o governo ainda não definiu medidas fiscais. A dívida bruta chegou a 82,9% do PIB em setembro, o maior nível desde abril de 2021, calcula a InvestNews, e o Ministério da Fazenda só leva propostas a Lula depois da volta dele da viagem à Turquia e às Filipinas, em 16 de novembro. O mercado descartou cortes da Selic em 2026, resume a Reuters em texto publicado pela CNN Brasil.'],
+  ['h','As projeções para os próximos anos'],
+  ['p','A trajetória dos juros segue em queda gradual depois de 2026: Selic de 12,50% no fim de 2027, sem mudança, de 11% em 2028 e de 10,25% em 2029, mostra a tabela do BMC News. A inflação projetada cai de 4,90% em 2027 para 4,00% em 2028 e em 2029 (3,98% no Focus anterior). O PIB de 2028 aparece em 1,80%. Para o câmbio, a mediana é de R$ 5,40 no fim de 2027, sem mudança, e de R$ 5,45 no fim de 2028, contra R$ 5,40 antes. O IGP-M de 2026 subiu de 6,05% para 6,10%.'],
+  ['h','O ponto de partida'],
+  ['p','O Focus de 3 de novembro, o primeiro depois da eleição, já havia elevado a Selic de 2026 de 13,25% para 13,50%, o IPCA de 5,19% para 5,22% e o dólar de R$ 5,05 para R$ 5,34, enquanto reduzia o PIB de 1,80% para 1,76%, informa a Agência Brasil. No dia seguinte, o Copom manteve a Selic em 13,75% por unanimidade e interrompeu o ciclo de cinco cortes iniciado em março. O Banco Central elevou a própria projeção de inflação de 2026 de 5,2% para 5,6%, segundo o Investidor10.'],
+  ['p','Na abertura desta segunda, o dólar comercial oscilava perto de R$ 5,50, praticamente estável, e o contrato de DI para janeiro de 2027 pagava 13,662% às 9h20, informa o Money Times. A meta de inflação é de 3,0%, com tolerância de 1,5 ponto percentual, o que fixa o teto em 4,5%.'],
+  ['h','O que vem agora'],
+  ['ul',['Terça (10), 8h: ata do Copom, com a avaliação do comitê sobre a inflação e os próximos passos.','Terça (10), 10h30: CPI de outubro dos Estados Unidos.','Quarta (11), após o fechamento: balanço do terceiro trimestre da Petrobras.','Quinta (12), 9h: IPCA de outubro, com projeções de alta de 0,29% (Bradesco) e de 0,21% (Itaú), segundo o InfoMoney.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['Quando e em que tamanho o Copom voltará a cortar a Selic: o Focus é a mediana de instituições, não uma projeção do Banco Central.','Se as propostas fiscais da Fazenda, esperadas depois de 16 de novembro, mudarão as projeções de juros e de dívida.','As projeções do IPCA de outubro vêm de uma única fonte lida, o InfoMoney.']]
+ ],
+ fontes:[['BMC News (tabela do Focus)','https://bmcnews.com.br/economia/boletim-focus-eleva-selic-projetada-a-13-75-em-2026-e-ajusta-ipca-e-pib/'],['WSCOM','https://wscom.com.br/economia/2026/11/09/boletim-focus-mercado-financeiro-eleva-projecao-da-taxa-selic-para-1375-no-fim-de-2026/'],['CNN Brasil (Reuters)','https://www.cnnbrasil.com.br/economia/money/macroeconomia/focus-apos-decisao-do-copom-mercado-descarta-cortes-da-selic-em-2026/'],['NC News','https://ncnews.com.br/2026/11/09/mercado-desiste-de-corte-da-selic-em-2026-e-eleva-previsao-de-inflacao-para-2027/'],['Agência Brasil (Focus de 3/11)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-para-inflacao-juros-e-dolar-em-2026'],['Money Times (tempo real)','https://www.moneytimes.com.br/tempo-real-9-11-26-davs/'],['InfoMoney (calendário da semana)','https://www.infomoney.com.br/mercados/calendario-economico-da-semana-inflacao-e-destaque-no-brasil-e-nos-estados-unidos/'],['Investidor10','https://investidor10.com.br/noticias/agenda-da-semana-traz-ipca-ata-do-copom-cpi-americano-e-pib-da-europa-123762/']]
+};
+delete S.focus_selic_13_75.upd;
+
+/* --- Motta e Alcolumbre fora da comitiva (nova, bastidor) --- */
+S.motta_alcolumbre_comitiva = {ed:'politica', k:'Política · Bastidor', hora:'9/11', fonteunica:true,
+ t:'Motta e Alcolumbre recusam o convite de Lula para a comitiva da COP31 e priorizam a disputa pela reeleição nas Casas, informa o Brasil 247',
+ sub:'O site atribui a informação à coluna de Igor Gadelha, do Metrópoles, e a aliados dos dois presidentes; o deputado André Janones (Rede-MG) integra a comitiva.',
+ dado:{n:'26/10', l:'Data em que Lula convidou os presidentes da Câmara e do Senado, segundo o Brasil 247'},
+ resumo:'O presidente da Câmara, Hugo Motta (Republicanos-PB), e o do Senado, Davi Alcolumbre (União-AP), recusaram o convite de Lula para integrar a comitiva da COP31, feito em 26 de outubro, informa o Brasil 247 nesta segunda (9), com base em coluna de Igor Gadelha, do Metrópoles. Aliados dos dois citam a pauta legislativa pendente e a negociação das reeleições às presidências das Casas. A informação vem de fonte indireta, e a coluna original não foi lida pelo Radar.',
+ fundo:[
+  ['p','O presidente da Câmara, Hugo Motta (Republicanos-PB), e o do Senado, Davi Alcolumbre (União-AP), recusaram o convite que Lula fez em 26 de outubro para integrarem a comitiva brasileira na COP31, informa o Brasil 247 nesta segunda-feira (9). O site cita coluna de Igor Gadelha, do Metrópoles, e diz que a informação vem de aliados dos dois, que apontam a pauta legislativa pendente e a negociação das próprias reeleições.'],
+  ['h','O que a informação diz'],
+  ['p','Segundo o Brasil 247, o convite foi feito pouco depois do segundo turno e os dois preferiram ficar em Brasília. O deputado André Janones (Rede-MG) segue na comitiva. A recusa ocorre na semana em que o PL, com 121 deputados, decide na quarta (11) se apoia a reeleição de Motta, e em que o Senado tem três nomes na disputa pela presidência.'],
+  ['h','Quem é quem'],
+  ['p','Motta, do Republicanos, tem 15 partidos e 361 dos 513 deputados em torno da reeleição, informa o Correio da Manhã; a maioria absoluta é de 257. Alcolumbre, do União Brasil, enfrenta Rogério Marinho (PL-RN), lançado pelo partido de Jair e Flávio Bolsonaro, e a senadora Tereza Cristina (PP-MS). A votação nas duas Casas está marcada para 1º de fevereiro de 2027. O presidente do PT, Edinho Silva, disse que Lula conversa com os partidos depois da COP31 e antes alinha com Motta e Alcolumbre, informa o Piranot.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O conteúdo da coluna original de Gadelha, que o Radar não leu: a informação chega por um agregador e vem de aliados dos dois presidentes.','Se houve resposta oficial de Motta ou de Alcolumbre ao convite; nenhuma fonte lida traz declaração dos dois.','Se a ausência tem relação com a agenda de votações de terça e quarta, como alegam os aliados.']]
+ ],
+ fontes:[['Brasil 247 (coluna de Igor Gadelha)','https://www.brasil247.com/brasilia/alcolumbre-e-motta-nao-viajam-com-lula-e-reforcam-negociacoes-pela-reeleicao-no-congresso/'],['Correio da Manhã (isolado, PL)','https://www.correiodamanha.com.br/politica/2026/11/amp/332989-isolado-pl-ainda-nao-se-decidiu-sobre-comando-da-camara.html'],['Piranot (pronunciamento)','https://www.piranot.com.br/2026/11/09/noticias/politica/lula-reformas-politica-judiciario/']]
+};
+
+/* --- SP: secretariado de Tarcísio (nova) --- */
+S.sp_tarcisio_secretariado = {ed:'regioes', reg:'sp', k:'São Paulo · Governo', hora:'9/11',
+ t:'Tarcísio reduz a cota do PSD no secretariado do segundo mandato; Ricardo Salles (Novo) é cotado para a Justiça e o MDB pode assumir a Saúde',
+ sub:'As mudanças devem atingir Casa Civil, Justiça, Saúde, Turismo, Esportes e Mulher em cerca de duas semanas; ao menos 30 prefeitos do PSD querem migrar para o Republicanos.',
+ dado:{n:'30', l:'Prefeitos paulistas do PSD que pretendem migrar para o Republicanos na próxima janela partidária, cerca de 20% dos do partido no estado'},
+ resumo:'O governador reeleito de São Paulo, Tarcísio de Freitas (Republicanos), prepara uma reforma do secretariado que reduz o espaço do PSD. O deputado federal Ricardo Salles (Novo) é cotado para a Secretaria da Justiça, e a Saúde, hoje com Eleuses Paiva (PSD), pode ir ao MDB, informa o Correio da Manhã nesta segunda (9). A Folha de Alphaville, de 6 de novembro, fala em mudanças em seis pastas em cerca de duas semanas. Nenhuma nomeação foi oficializada.',
+ fundo:[
+  ['p','O governador reeleito de São Paulo, Tarcísio de Freitas (Republicanos), prepara uma reforma do secretariado para o segundo mandato que reduz o espaço do PSD e abre vagas a aliados de outros partidos. O deputado federal Ricardo Salles (Novo) é cotado para a Secretaria da Justiça, informa o Correio da Manhã nesta segunda-feira (9).'],
+  ['nums',[['6','pastas em mudança: Casa Civil, Justiça, Saúde, Turismo, Esportes e Mulher, segundo a Folha de Alphaville'],['~2 semanas','prazo estimado para as mudanças, em reportagem de 6/11'],['30','prefeitos do PSD que querem migrar para o Republicanos']]],
+  ['h','Por que importa'],
+  ['p','O secretariado define a base política do governo paulista pelos próximos quatro anos e a posição de Tarcísio na direita nacional. A Folha de Alphaville diz que a reforma vem junto com a articulação de planos políticos para 2030. A redução da cota do PSD pesa porque o partido hoje comanda a Saúde, com Eleuses Paiva, e porque ao menos 30 prefeitos paulistas da sigla pretendem trocá-la pelo Republicanos, informa o Correio da Manhã.'],
+  ['h','Quem é quem'],
+  ['p','Tarcísio, do Republicanos, teve quase 63% dos votos no primeiro turno, segundo a Folha de Alphaville. Salles, do Novo, partido de direita liberal, teria abdicado de disputar o Senado para ajudar André do Prado (PL) e Derrite (PP), informa o jornal. O MDB, do prefeito de São Paulo, Ricardo Nunes, aparece na disputa pela Saúde, com Luiz Carlos Zamarco e Maurício Serpa cotados. A Folha de Alphaville avalia que a ida de Salles para o governo pode gerar atrito com Nunes.'],
+  ['h','Quem deve ficar'],
+  ['p','Marcelo Branco (Habitação) e Guilherme Afif Domingos (Projetos Estratégicos) devem permanecer, segundo o Correio da Manhã. Osvaldo Nico Gonçalves, da Segurança Pública, também deve ficar, e Natália Resende é cotada para a Casa Civil, informa a Folha de Alphaville. A mesma coluna do Correio da Manhã registra que a Fiesp cortou a projeção de crescimento da indústria paulista em 2026 de 1,4% para 0,4%, o que limita a margem fiscal do estado.'],
+  ['h','O que vem agora'],
+  ['ul',['Anúncio dos nomes das pastas em mudança, previsto para as próximas duas semanas, segundo a Folha de Alphaville.','Definição do destino da Saúde entre PSD e MDB.','Posse do novo mandato, em janeiro de 2027.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['Todos os nomes são cotações de bastidor: nenhuma nomeação foi oficializada pelo Palácio dos Bandeirantes.','O prazo de duas semanas vem de reportagem de 6 de novembro e pode mudar.','A ligação entre a decisão de Salles sobre o Senado e a montagem do secretariado vem de um único jornal.']]
+ ],
+ fontes:[['Correio da Manhã (Salles e a Justiça)','https://www.correiodamanha.com.br/nacional/sao-paulo/estado-de-sao-paulo/2026/11/333270-ricardo-salles-e-cotado-para-a-justica-no-governo-de-tarcisio.html'],['Folha de Alphaville (mudanças no secretariado)','https://folhadealphaville.com.br/cidades/2026/11/06/tarcisio-prepara-mudancas-no-secretariado-e-articula-planos-politicos-para-2030.html']]
+};
+
+/* --- PR: Moro anuncia secretários (nova) --- */
+S.pr_moro_secretarios = {ed:'regioes', reg:'sul', k:'Sul · Paraná', hora:'9/11',
+ t:'Sergio Moro anuncia Edson Vasconcelos para a Infraestrutura e o delegado Fabiano Bordignon para a Segurança Pública do governo do Paraná',
+ sub:'O governador eleito toma posse em 6 de janeiro de 2027; Pricila Santana (Fazenda) e Fátima Gavioli (Educação) já haviam sido anunciadas.',
+ dado:{n:'54', l:'Deputados da nova Assembleia do Paraná: 31 reeleitos e 23 novatos; PL e PSD têm 14 cadeiras cada'},
+ resumo:'O governador eleito do Paraná, Sergio Moro (PL), anunciou nesta segunda (9) o vice-governador eleito, Edson Vasconcelos, presidente da Fiep, para a Infraestrutura e Logística, e Fabiano Bordignon, delegado da Polícia Federal em Foz do Iguaçu, para a Segurança Pública. Já tinham sido anunciadas Pricila Santana, na Fazenda, e Fátima Gavioli, na Educação. A posse é em 6 de janeiro de 2027, e a transição corre desde 5 de novembro.',
+ fundo:[
+  ['p','O governador eleito do Paraná, Sergio Moro (PL), anunciou nesta segunda-feira (9) mais dois nomes do secretariado: o vice-governador eleito, Edson Vasconcelos, presidente da Federação das Indústrias do Paraná (Fiep), na Infraestrutura e Logística, e o delegado da Polícia Federal Fabiano Bordignon, de Foz do Iguaçu, na Segurança Pública. A informação é do Zebeto e foi repetida por outros sites paranaenses.'],
+  ['nums',[['6/1/2027','data da posse do governo Moro'],['54','deputados da nova Assembleia, com PL e PSD em 14 cadeiras cada'],['56%','dos 399 municípios paranaenses no Novo PAC, o menor índice do país, segundo a CNM']]],
+  ['h','Os nomes anunciados'],
+  ['p','Bordignon foi diretor do Departamento Penitenciário Nacional (Depen) de janeiro de 2019 a maio de 2020, segundo o Zebeto, e atua em Foz do Iguaçu, na fronteira com Paraguai e Argentina. Vasconcelos acumula a vice-governadoria eleita e a presidência da Fiep. O Paranashop identifica Moro como candidato do PL. Antes dos dois, Moro havia anunciado Pricila Santana para a Fazenda e Fátima Gavioli para a Educação.'],
+  ['h','A transição e a nova Assembleia'],
+  ['p','As equipes de Moro e do governador Ratinho Junior (PSD) iniciaram a transição em 5 de novembro, pelo Decreto 15.525/2026, com prazo até 5 de janeiro de 2027. Lucas de Góes coordena a equipe de Moro, e Renato Adur, a do governo atual, informa o Radar Político do Paranashop. A nova Assembleia terá 54 deputados, 31 reeleitos e 23 novatos, com PL e PSD empatados em 14 cadeiras, o que dá ao governo eleito um peso parlamentar parecido com o do partido do governador atual.'],
+  ['h','O que o novo governo herda'],
+  ['p','Um levantamento da Confederação Nacional de Municípios (CNM) de 4 de novembro põe o Paraná em último no Novo PAC: 224 dos 399 municípios, ou 56%, contra a média nacional de 69%, informa o Paranashop. Em 6 de novembro, o Ministério Público do Trabalho do Paraná ajuizou ação contra a deputada estadual eleita conhecida como Jessicão por assédio eleitoral, e pede R$ 1 milhão. A consulta pública do orçamento de Curitiba reuniu 9.262 participações, alta de 650%.'],
+  ['h','O que vem agora'],
+  ['ul',['Anúncio dos demais secretários até a posse, em 6 de janeiro de 2027.','Transição entre as equipes de Moro e de Ratinho Junior, até 5 de janeiro.','Início da legislatura na Assembleia, com 54 deputados.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O partido de Moro vem do Paranashop; a matéria do Zebeto não cita siglas.','Se Vasconcelos deixará a presidência da Fiep ao assumir a secretaria: nenhuma fonte lida informa.','A data da posse (6 de janeiro) vem de dois sites; em outras unidades da federação há divergência entre 1º e 6 de janeiro.']]
+ ],
+ fontes:[['Zebeto','https://www.zebeto.com.br/2026/11/09/moro-anuncia-secretarios-e-seguranca-publica/'],['Paranashop (Radar Político)','https://www.paranashop.com.br/post/radar-politico-a-semana-politica-no-parana-02-a-08-11'],['Tarobá','https://taroba.com.br/noticias/parana/moro-anuncia-novos-secretarios-de-seguranca-e-infraestrutura'],['Pinga Fogo','https://www.pingafogo.com.br/noticias/moro-anuncia-edson-vasconcelos-para-infraestrutura-e-fabiano-bordignon-para-seguranca-publica']]
+};
+
+/* --- AM: estiagem (nova, nota do governo) --- */
+S.am_estiagem_boletim = {ed:'regioes', reg:'norte', k:'Norte · Amazonas', hora:'8/11', fonteunica:true,
+ t:'Estiagem no Amazonas afeta 160 mil famílias, e 47 municípios estão em emergência, informa o governo estadual',
+ sub:'O boletim de domingo (8) soma 15 municípios em alerta, entre eles Manaus; o Ipaam aplicou R$ 190,7 milhões em multas por queimadas desde julho.',
+ dado:{n:'160.240', l:'Famílias afetadas pela estiagem no Amazonas, segundo a Defesa Civil estadual'},
+ resumo:'O governo do Amazonas informou no domingo (8) que a estiagem afeta 160.240 famílias, com 47 municípios em emergência e 15 em alerta, entre eles Manaus, Tabatinga e Itacoatiara. A Operação Estiagem 2026 distribuiu cestas, kits de limpeza e caixas d’água em 15 municípios, e cerca de 1.500 agentes e 18 aeronaves combatem o fogo. É nota oficial do governo, sem contraponto independente.',
+ fundo:[
+  ['p','A estiagem no Amazonas afeta 160.240 famílias, e 47 municípios estão em situação de emergência, informa o boletim divulgado pelo governo do estado no domingo (8). Outros 15 municípios, entre eles Manaus, Tabatinga e Itacoatiara, estão em alerta. A informação vem de nota oficial do governo, e o Radar não localizou outra fonte para os números.'],
+  ['h','A resposta do governo'],
+  ['p','A Operação Estiagem 2026, em sua primeira fase, chegou a 15 municípios, com 4.800 cestas básicas, 3.400 kits de limpeza e 3.060 caixas d’água. O boletim registra qualidade do ar em nível “severo” em Barreirinha, Itapiranga e Parintins, o que reforça o risco à saúde nas cidades com mais fumaça.'],
+  ['h','O combate ao fogo'],
+  ['p','Cerca de 1.500 agentes e 18 aeronaves, 16 federais e duas estaduais, atuam no combate às queimadas. Entre 1º de junho e 7 de novembro, o Corpo de Bombeiros Militar do Amazonas registrou 4.050 ocorrências e combateu 24.650 focos. O Instituto de Proteção Ambiental do Amazonas (Ipaam) aplicou 743 autos de infração e 697 embargos entre 1º de julho e 5 de novembro, o que corresponde a 78.793,45 hectares e a R$ 190,7 milhões em multas.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['Os números vêm só do governo estadual; não há dado independente de prefeituras ou de órgãos federais na fonte lida.','Quando o nível dos rios volta ao normal: o boletim não traz previsão.','Quanto das multas aplicadas é efetivamente pago: o boletim informa só o valor aplicado.']]
+ ],
+ fontes:[['Chumbo Grosso Manaus (boletim do governo do Amazonas)','https://chumbogrossomanaus.com.br/governo-do-amazonas/governo-do-amazonas-divulga-boletim-sobre-a-estiagem-neste-domingo-2/']]
+};
+
+/* --- RO: Rocha na COP31, Redano interino (nova, coluna) --- */
+S.ro_redano_interino = {ed:'regioes', reg:'norte', k:'Norte · Rondônia', hora:'9/11', fonteunica:true,
+ t:'Marcos Rocha passa ao menos 11 dias na COP31, e o presidente da Assembleia, Alex Redano (Republicanos), assume o governo de Rondônia pela primeira vez',
+ sub:'A coluna d’O Observador também traz o orçamento de 2027, de mais de R$ 20,44 bilhões, e um pedido de R$ 10,2 milhões para regularizar imóveis rurais.',
+ dado:{n:'R$ 20,44 bi', l:'Orçamento de Rondônia para 2027, cerca de R$ 1,8 bilhão acima do de 2026, ainda sem votação'},
+ resumo:'O governador de Rondônia, Marcos Rocha, chefia a delegação do estado na COP31 por ao menos 11 dias, e o presidente da Assembleia, Alex Redano (Republicanos), assume o governo interinamente, informa coluna d’O Observador de 9 de novembro. Nas viagens anteriores, o presidente do Tribunal de Justiça respondia pelo cargo. O orçamento de 2027 soma mais de R$ 20,44 bilhões e ainda não foi votado.',
+ fundo:[
+  ['p','O governador de Rondônia, Marcos Rocha, passa ao menos 11 dias na Turquia, à frente da delegação do estado na COP31, e o presidente da Assembleia Legislativa, Alex Redano (Republicanos), assume o governo de forma interina, informa coluna d’O Observador de 9 de novembro. O Radar não localizou outra fonte para os dados da coluna.'],
+  ['h','Quem governa em Rondônia'],
+  ['p','É a primeira vez que Redano ocupa o cargo de forma interina. Nas viagens anteriores de Rocha, o presidente do Tribunal de Justiça assumia o governo, segundo a coluna. A mudança segue o padrão visto em outros estados que mandaram o titular à COP31: em Mato Grosso, o presidente da Assembleia, Max Russi (Podemos), governa desde 6 de novembro, e no Rio Grande do Sul, o vice, Gabriel Souza, responde pelo governo de 7 a 13 de novembro.'],
+  ['h','Por que importa'],
+  ['p','Um presidente de Assembleia no comando do Executivo desloca o equilíbrio entre os Poderes justamente na fase de votação do orçamento de 2027. Redano é do Republicanos, partido de centro-direita, e preside a Casa que decide sobre os créditos pedidos pelo governo e sobre a lei orçamentária, o que concentra a agenda do estado em duas mãos por pelo menos 11 dias.'],
+  ['h','Orçamento e regularização fundiária'],
+  ['p','O orçamento de 2027 soma mais de R$ 20,44 bilhões, cerca de R$ 1,8 bilhão acima do de 2026, e a Assembleia ainda não o votou; o recesso começa em 18 de dezembro. O governo pediu à Casa R$ 10,2 milhões em crédito suplementar para regularizar mais de 35 mil imóveis rurais em 24 dos 52 municípios. A equipe de transição aponta cerca de R$ 3,5 bilhões em multas da Secretaria de Desenvolvimento Ambiental (Sedam) em três anos e nove meses.'],
+  ['h','O que vem agora'],
+  ['ul',['Votação do orçamento de 2027 na Assembleia antes do recesso, em 18 de dezembro.','Posse do novo mandato em 6 de janeiro, no Teatro Estadual, decidiu a Assembleia, segundo a coluna.','Disputa pela presidência da Assembleia, com o deputado Jean Mendonça (PL) citado.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A fonte é uma coluna de bastidor, com trechos de opinião, e traz itens de baixa solidez que o Radar não reproduz.','O prazo da viagem de Rocha: a coluna fala em “ao menos 11 dias”.','O valor das multas da Sedam vem da equipe de transição e não foi checado em documento.']]
+ ],
+ fontes:[['O Observador (coluna de 9/11)','https://www.oobservador.com/2026/11/rondonia-tera-novo-governador-por-onze.html']]
+};
+
+/* --- Atualizações --- */
+S.bets_stf.hora = '9/11';
+S.bets_stf.t = 'Fux suspende em todo o país os processos sobre a MP das bets, informa o TMC; outros veículos ainda dizem que a PGR apenas pede';
+S.bets_stf.sub = 'A decisão ad referendum do Plenário teria sido assinada no domingo (8) e vale até o julgamento das quatro ações no STF; a MP entra em regime de urgência no Congresso nesta segunda.';
+S.bets_stf.upd = 'O TMC informa que Fux acolheu o pedido da PGR e suspendeu os processos sobre a MP das bets; a decisão ainda não foi confirmada por outro veículo lido.';
+S.bets_stf.resumo = 'O TMC informa que o ministro Luiz Fux, do STF, assinou no domingo (8) decisão ad referendum do Plenário que suspende em todo o país os processos sobre a Medida Provisória 1.394/2026, das bets, até o julgamento das ações diretas 8.024, 8.027, 8.028 e 8.035. Atende ao pedido do procurador-geral Paulo Gonet, de sexta (6), que listou 13 processos fora do STF. Veículos como Ver-o-Fato e O Cafezinho ainda diziam nesta segunda que a PGR pede a suspensão, e o Radar não achou segunda fonte para a decisão.';
+S.bets_stf.fundo[0] = ['p','O ministro Luiz Fux, do Supremo Tribunal Federal, suspendeu em todo o país os processos que discutem a Medida Provisória 1.394/2026, das apostas online, até o julgamento das ações diretas 8.024, 8.027, 8.028 e 8.035, informa o TMC nesta segunda-feira (9). A decisão é monocrática, ad referendum do Plenário, e teria sido assinada no domingo (8), atendendo ao pedido apresentado na sexta (6) pelo procurador-geral da República, Paulo Gonet.'];
+_insAntes('bets_stf','O que vem agora',[
+ ['h','Quem é quem'],
+ ['p','Luiz Fux, ministro do STF, é relator das ações contra a MP e conduziu a audiência pública de 3 de novembro. Paulo Gonet, procurador-geral da República, pediu a suspensão nacional. O governo Lula, do PT, editou a medida provisória que proíbe as bets e criticou a maioria de participantes favorável às apostas na audiência, e a Advocacia-Geral da União contestou a composição, segundo o Congresso em Foco. Do outro lado estão empresas como Stake Brasil e o grupo CDA Gaming, que obtiveram liminares na Justiça Federal.'],
+ ['h','A decisão de Fux e as liminares em vigor'],
+ ['p','Segundo o TMC, a PGR listou 13 processos fora do Supremo e apontou o risco de decisões divergentes. Entre as liminares citadas estão a da Justiça Federal de São Paulo a favor da Stake Brasil, de 8 de outubro, válida até 25 de outubro, e a de 3 de novembro para o grupo CDA Gaming, que reúne Casa de Apostas, Betsul e Jogo Online. A suspensão vale para todos os processos até o plenário julgar as quatro ações, o que congela o efeito prático das liminares.'],
+ ['p','Há divergência entre as fontes: o Ver-o-Fato e O Cafezinho, em manchetes desta segunda, ainda dizem que a PGR pede a suspensão, e o Radar não conseguiu abrir os dois textos. O TMC é o único veículo lido que relata a decisão já assinada.']
+]);
+S.bets_stf.fundo.forEach(function(b){ if(b[0]==='ul' && b[1][0].indexOf('Decisão de Fux')===0){ b[1]=['Confirmação da decisão de Fux em segunda fonte e eventual referendo pelo Plenário.','Votação da MP pelo Congresso dentro do prazo de vigência.']; } if(b[0]==='ul' && b[1][0].indexOf('Se Fux acolherá')===0){ b[1]=['Se a decisão de Fux foi mesmo assinada no domingo (8): só o TMC a relata entre as fontes lidas.'].concat(b[1].slice(1)); } });
+S.bets_stf.fontes.unshift(['TMC (decisão de Fux)','https://tmc.com.br/politica/pgr-stf-suspender-processos-mp-bets-apostas/'],['Ver-o-Fato (PGR pede)','https://ver-o-fato.com.br/pgr-pede-ao-stf-suspensao-nacional-de-acoes-sobre-bets'],['O Cafezinho (PGR pede)','https://www.ocafezinho.com/2026-11-09/pgr-pede-ao-stf-suspensao-nacional-de-acoes-contra-proibicao-das-bets']);
+
+S.ms_seg.hora = '9/11';
+S.ms_seg.t = 'Lula pede estudos de cenários e de impacto orçamentário antes de oficializar o Ministério da Segurança; nova reunião só em 16/11 e a MP segue sem data';
+S.ms_seg.sub = 'O Orçamento de 2027 prevê R$ 27,52 bilhões para o Ministério da Justiça e Segurança unificado, sem linha para a nova pasta; a PEC da Segurança aguarda promulgação.';
+S.ms_seg.upd = 'O Brasil 247, citando O Globo, informa que Lula pediu estudos antes da MP, que a nova reunião será em 16/11 e que o Orçamento de 2027 não prevê linha para o ministério.';
+S.ms_seg.resumo = 'Lula pediu estudos de cenários e de impacto orçamentário antes de oficializar por medida provisória o Ministério da Segurança Pública, informa o Brasil 247, citando O Globo. A primeira reunião, em 6 de novembro, teve o ministro da Justiça, Wellington César Lima e Silva, e a chefe da Casa Civil, Miriam Belchior; a próxima será no primeiro dia depois da volta de Lula, em 16 de novembro. O Orçamento de 2027 prevê R$ 27,52 bilhões para o ministério unificado, sem linha própria. A PEC da Segurança passou no Senado em 3 de novembro e ainda falta a promulgação.';
+_insAntes('ms_seg','Quem é quem na disputa',[
+ ['h','Estudos antes da MP'],
+ ['p','Segundo o Brasil 247, que cita O Globo, Lula pediu análise de cenários e do impacto orçamentário antes de assinar a medida provisória. A reunião de 6 de novembro, no Planalto, reuniu o ministro da Justiça, Wellington César Lima e Silva, e a chefe da Casa Civil, Miriam Belchior, e uma nova rodada foi marcada para o primeiro dia depois do retorno do presidente, em 16 de novembro. Nomes para o comando da pasta não foram discutidos, informa o site.'],
+ ['p','Os órgãos que migrariam para o novo ministério são a Polícia Federal, a Polícia Rodoviária Federal, a Força Nacional e as secretarias nacionais de Segurança Pública, de Políticas Penais e de Políticas sobre Drogas. O projeto de lei orçamentária de 2027 reserva R$ 27,52 bilhões para o Ministério da Justiça e Segurança Pública unificado e não traz linha para a nova pasta, o que obriga o governo a remanejar recursos, informa o Brasil 247. O Plantão Brasil relata a mesma ordem de estudos técnicos.']
+]);
+S.ms_seg.fontes.unshift(['Brasil 247 (O Globo)','https://www.brasil247.com/poder/lula-pede-estudos-detalhados-antes-de-oficializar-o-ministerio-da-seguranca'],['Plantão Brasil','https://www.plantaobrasil.net/noticias/162485-lula-ordena-estudos-tecnicos-para-viabilizar-criacao-do-ministerio-da-seguranca-publica']);
+
+S.dino_6x1.hora = '9/11';
+S.dino_6x1.t = 'STF reúne confederações, centrais e governo na terça (10) para negociar a implementação do fim da escala 6x1; decreto de Marinho ainda não tem publicação confirmada';
+S.dino_6x1.upd = 'Até a manhã desta segunda não há decreto publicado nas fontes lidas: o Plantão Brasil traz manchete de publicação, mas o corpo do texto fala em preparação; entram os pontos previstos para a regulamentação.';
+S.dino_6x1.resumo = 'A CNI e a CNC pediram ao STF mais prazo para a transição do fim da escala 6x1, e o ministro Flávio Dino marcou audiência de conciliação para terça (10), às 14h, sem conceder liminar. A CNI quer suspender os prazos por no mínimo um ano e estima alta de 11,1% no custo do trabalho formal, cerca de R$ 88 bilhões. O ministro do Trabalho, Luiz Marinho, previa o decreto de regulamentação para esta segunda (9), mas as fontes lidas não confirmam a publicação, e a regulamentação prevista traz ao menos oito folgas mensais.';
+_insAntes('dino_6x1','O que vem agora',[
+ ['h','O decreto ainda não aparece'],
+ ['p','Até a manhã desta segunda, o Radar não encontrou decreto de regulamentação publicado, sem número nem registro no Diário Oficial. O Plantão Brasil, que credita a Revista Fórum, traz manchete de que o governo publica o decreto, mas o corpo do texto usa o futuro e diz que o governo prepara e deve divulgar o ato. O Metrópoles havia informado em 4 de novembro que Marinho previa a publicação para esta segunda, dependendo de reunião com Lula e com a Casa Civil, e Lula embarcou nesta manhã para a Turquia.'],
+ ['p','O conteúdo previsto, segundo o Plantão Brasil, regulamenta a emenda, com ao menos oito folgas por mês, jornada de 44 para 42 horas a partir de 15 de dezembro e de 40 horas depois de um ano, sem corte de salário, e arranjos de escala por negociação coletiva. Marinho disse ao Metrópoles que seria possível alternar 6x1 e 4x3 por acordo coletivo. A data inicial difere da usada pela CNN Brasil, que fala em 16 de dezembro.']
+]);
+S.dino_6x1.fundo.forEach(function(b){ if(b[0]==='ul'){ b[1]=b[1].map(function(x){ return x.indexOf('Segunda (9): data prevista')===0 ? 'Segunda (9): data prevista por Marinho para o decreto, ainda sem publicação confirmada nas fontes lidas.' : x; }); } });
+S.dino_6x1.fontes.unshift(['Plantão Brasil (decreto)','https://www.plantaobrasil.net/noticias/162406-governo-lula-publica-decreto-para-oficializar-o-fim-da-escala-6x1'],['Metrópoles (decreto na segunda)','https://www.metropoles.com/brasil/decreto-do-fim-da-escala-6x1-deve-sair-na-segunda-9-11-diz-ministro']);
+
+S.lula_cop.hora = '9/11';
+S.lula_cop.sub = 'O presidente chega à Turquia na terça (10), discursa na quarta (11) e tem bilaterais no dia 12; Motta e Alcolumbre recusaram o convite para a comitiva, informa o Brasil 247, e a Fazenda só leva propostas depois da volta.';
+S.lula_cop.upd = 'Entram a chegada a Antalya na terça (10), as bilaterais de 12/11, a volta marcada para 16/11, a agenda de dezembro e a recusa de Motta e Alcolumbre ao convite.';
+_insAntes('lula_cop','O clima da abertura',[
+ ['h','O calendário depois da COP'],
+ ['p','Lula chega à Turquia na manhã de terça (10), segundo o AC24horas, que descreve o embarque desta segunda como retomada da agenda internacional depois da reeleição. A abertura da COP31 tem o discurso e o debate sobre o fundo de florestas tropicais (TFFF) em 11 de novembro, e as bilaterais ficam para o dia 12, com mais de 15 pedidos ao Itamaraty. Em seguida, Manila: visita oficial no dia 13 e cúpula da ASEAN em 14 e 15, com volta a Brasília na manhã de 16, informa o AC24horas.'],
+ ['p','O mesmo texto lista os compromissos de dezembro: a cúpula do Mercosul no Uruguai, em 4 e 5, e o G20 na Flórida, em 15 e 16, sem bilateral com Donald Trump agendada. O Fundo Amazônia é citado com R$ 7,8 bilhões. O jornal malaio The Star, de 6 de novembro, fala em cúpula e reuniões em Manila de 15 a 18 de novembro, e as datas na Ásia seguem sem confirmação oficial lida pelo Radar.']
+]);
+S.lula_cop.t = 'Lula embarca nesta segunda (9) para a COP31, chega a Antalya na terça e segue às Filipinas; Motta e Alcolumbre recusam o convite para a comitiva e medidas fiscais ficam para depois da volta';
+S.lula_cop.resumo = 'Lula deixou Brasília na manhã desta segunda (9) rumo a Antalya, na Turquia, onde chega na terça (10); a COP31 abre hoje e vai até 20 de novembro. Discursa no dia 11, com bilaterais no dia 12, e segue a Manila (visita no dia 13, ASEAN em 14 e 15), com volta em 16 de novembro. O Brasil 247 informa que Hugo Motta e Davi Alcolumbre recusaram o convite para a comitiva. A Fazenda só leva propostas fiscais a Lula depois da viagem, e a cúpula do Mercosul (4 e 5/12) e o G20 (15 e 16/12) vêm em seguida.';
+_insAntes('lula_cop','O calendário depois da COP',[
+ ['h','Quem é quem'],
+ ['p','Lula é do PT, partido de esquerda que lidera o governo, e fala na COP31 como presidente reeleito. Hugo Motta (Republicanos-PB) e Davi Alcolumbre (União-AP), presidentes da Câmara e do Senado, são de partidos de centro-direita que disputam a reeleição às Casas em fevereiro de 2027, com apoio de 15 partidos no caso de Motta, informa o Correio da Manhã. André Janones (Rede-MG), da base aliada, vai na comitiva. O ministro da Fazenda, Dario Durigan, conduz as propostas fiscais, e o presidente do PT, Edinho Silva, disse que Lula conversa com os partidos depois da COP31, informa o Piranot.']
+]);
+S.lula_cop.fundo.forEach(function(b){ if(b[0]==='p' && b[1].indexOf('Lula deve citar')===0){ b[1]=b[1]+' Os presidentes da Câmara, Hugo Motta (Republicanos-PB), e do Senado, Davi Alcolumbre (União-AP), recusaram o convite para a comitiva, informa o Brasil 247, com base em coluna de Igor Gadelha, do Metrópoles; o deputado André Janones (Rede-MG) vai.'; } });
+S.lula_cop.fontes.unshift(['AC24horas (agenda internacional)','https://ac24horas.com/2026/11/09/lula-embarca-hoje-para-turquia-e-retoma-agenda-internacional-apos-reeleicao/'],['The Star (ASEAN)','https://www.thestar.com.my/aseanplus/aseanplus-news/2026/11/06/brazil-president-lula-to-join-other-world-leaders-at-asean-summit'],['Brasil 247 (Motta e Alcolumbre)','https://www.brasil247.com/brasilia/alcolumbre-e-motta-nao-viajam-com-lula-e-reforcam-negociacoes-pela-reeleicao-no-congresso/']);
+
+S.mercado_semana.hora = '9/11';
+S.mercado_semana.t = 'Focus tira o corte da Selic de 2026 e eleva a inflação de 2027; Ibovespa opera perto de 169 mil pontos e Petrobras recua antes do balanço de quarta (11)';
+S.mercado_semana.sub = 'O dólar oscila perto de R$ 5,50 e o Brent cai; a ata do Copom sai na terça (10), o IPCA na quinta (12) e o pronunciamento de Lula não trouxe medida fiscal.';
+S.mercado_semana.upd = 'Entram o Focus de 9/11 (Selic de 13,75% em 2026, IPCA de 2027 em 4,90%) e a abertura do pregão, com Ibovespa perto de 169 mil pontos, dólar perto de R$ 5,50 e Petrobras em queda.';
+S.mercado_semana.resumo = 'O Focus divulgado nesta segunda (9) passou a projetar a Selic em 13,75% no fim de 2026, sem corte, e elevou o IPCA de 2027 de 4,76% para 4,90%. O Ibovespa, que fechou a sexta (6) em 168.498 pontos, chegou perto de 169,3 mil por volta das 10h, com bancos em alta e Petrobras em queda de cerca de 2% com o recuo do Brent, informa o bpmoney. O dólar oscilava perto de R$ 5,50. A semana segue com a ata do Copom e o CPI dos EUA (terça), o balanço da Petrobras (quarta, após o fechamento) e o IPCA (quinta).';
+S.mercado_semana.fundo[0] = ['p','O Ibovespa abriu a segunda-feira (9) estável, aos 168,5 mil pontos, e chegou perto de 169,3 mil por volta das 10h, com bancos em alta e a Petrobras em queda, informa o bpmoney. O Focus das 8h25 passou a projetar a Selic em 13,75% no fim de 2026, sem corte, e elevou o IPCA de 2027 para 4,90%. O dólar comercial oscilava perto de R$ 5,50.'];
+_insAntes('mercado_semana','O que vem agora',[
+ ['h','A abertura de segunda e o Focus'],
+ ['p','Na abertura, o Ibovespa subiu 0,01%, aos 168.509 pontos, e depois ganhou cerca de 0,50%, enquanto o contrato futuro apontava 170.755 pontos às 9h31, informa o InfoMoney. SANB11 avançou 3,59%, BBDC4, 1,55%, ITUB4, 1,31% e VALE3, 1,14%, enquanto PETR4 caiu 2,25% e PETR3, 2,01%, com o Brent entre US$ 94,87 e US$ 97,39 conforme o veículo e o horário. O Metrópoles atribui o dólar mais fraco no início do dia ao pronunciamento de Lula e ao petróleo em queda e cita a expectativa pelo decreto do fim da escala 6x1.'],
+ ['p','O Focus, por sua vez, tirou do mapa o corte da Selic em 2026, o que sustenta os juros futuros: o DI para janeiro de 2027 pagava 13,662% às 9h20 e o de 2033, 15,010%, informa o Money Times. A cotação em reais da Petrobras não pôde ser confirmada em duas fontes, e o Radar só reproduz as variações.']
+]);
+S.mercado_semana.fontes.unshift(['InfoMoney (Ibovespa ao vivo)','https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-09112026/'],['bpmoney (abertura)','https://bpmoney.com.br/economia/ibovespa-sobe-aos-1698-mil-pontos-com-bancos-e-vale-petrobras-cai/'],['Metrópoles (dólar)','https://www.metropoles.com/brasil/dolar-nesta-segunda-4'],['Money Times (mercado digere o discurso)','https://www.moneytimes.com.br/mercado-digere-discurso-de-lula-enquanto-espera-inflacao-ibovespa-em-dolar-sobe-nesta-segunda-feira-9-rens/']);
+
+S.mg_cleitinho_shows.hora = '9/11';
+S.mg_cleitinho_shows.t = 'Cleitinho detalha o fim de verba estadual para shows e festas em Minas, com o exemplo de cidades de 4 mil habitantes que gastam R$ 1,5 milhão, e herda déficit de cerca de R$ 10 bilhões em 2027';
+S.mg_cleitinho_shows.resumo = 'O governador eleito de Minas Gerais, Cleitinho Azevedo (Republicanos), detalhou em vídeo de sábado (7), publicado nesta segunda (9), que enviará à Assembleia depois da posse projeto que proíbe repasses estaduais a shows, festivais e festas nos municípios, com o exemplo de cidades de 4 mil habitantes que gastam R$ 1,5 milhão num show. Eventos pagos com recursos próprios seguem permitidos. A LOA 2027 revisada prevê déficit de R$ 10,51 bilhões, e a dívida com a União é de cerca de R$ 188 bilhões, segundo o Diário do Comércio; o governador eleito fala em R$ 10 bilhões e R$ 200 bilhões.';
+S.mg_cleitinho_shows.upd = 'O portal Babados e Badalos publica nesta segunda (9) o vídeo de Cleitinho com o exemplo de cidades de 4 mil habitantes que gastam R$ 1,5 milhão num show e a ressalva para eventos pagos com recursos próprios.';
+_insAntes('mg_cleitinho_shows','O orçamento que o governo herda',[
+ ['h','O exemplo e a exceção'],
+ ['p','No vídeo gravado no sábado (7) e publicado nesta segunda (9) pelo portal Babados e Badalos, Cleitinho cita como exemplo cidades de 4 mil habitantes que gastam R$ 1,5 milhão num único show. Ele diz que a regra valerá para repasses estaduais a shows, festivais e festas, e que eventos locais pagos com recursos próprios do município continuam permitidos. O governador eleito afirma se inspirar no governador de Mato Grosso, Otaviano Pivetta (Republicanos), e enviará o projeto à Assembleia depois da posse.'],
+ ['p','Os números do vídeo diferem dos de outras fontes: Cleitinho fala em déficit estimado de R$ 10 bilhões e dívida de cerca de R$ 200 bilhões com a União, enquanto a proposta orçamentária revisada traz déficit de R$ 10,51 bilhões e a dívida citada pelo Diário do Comércio é de cerca de R$ 188 bilhões. A diferença pode vir de arredondamento ou de data-base, e o Radar mantém os valores dos documentos.']
+]);
+S.mg_cleitinho_shows.fontes.unshift(['Babados e Badalos (vídeo de Cleitinho)','https://portal.babadosebadalos.com.br/2026/11/09/cleitinho-anuncia-fim-do-dinheiro-publico-para-shows-e-festas-em-minas-gerais/'],['Rádio Sampaio','https://radiosampaio.com.br/cleitinho-fala-em-proibir-verba-estadual-para-shows-em-minas-gerais-acabou/']);
+
+/* --- Capa, ordem e Giro --- */
+HOME_LEAD = 'lula_cop';
+HOME_ROW = ['mercado_semana','dino_6x1','ms_seg'];
+ORDER.economia = ['mercado_semana','focus_selic_13_75'].concat(ORDER.economia.filter(function(i){ return i!=='mercado_semana' && i!=='focus_selic_13_75'; }));
+ORDER.politica.splice(1,0,'motta_alcolumbre_comitiva');
+ORDER.regioes = ['sp_tarcisio_secretariado','pr_moro_secretarios','am_estiagem_boletim','ro_redano_interino'].concat(ORDER.regioes);
+GIRO.unshift(
+ ['Focus sem corte em 2026','Mercado projeta Selic de 13,75% no fim do ano e IPCA de 4,90% em 2027, segundo o BMC News.','BMC News','https://bmcnews.com.br/economia/boletim-focus-eleva-selic-projetada-a-13-75-em-2026-e-ajusta-ipca-e-pib/','','focus_selic_13_75'],
+ ['Fux e as bets','O TMC informa que Fux suspendeu em todo o país os processos sobre a MP das apostas; falta segunda fonte.','TMC','https://tmc.com.br/politica/pgr-stf-suspender-processos-mp-bets-apostas/','','bets_stf'],
+ ['Motta e Alcolumbre fora da comitiva','Os dois recusaram o convite de Lula para a COP31, informa o Brasil 247, com base em coluna do Metrópoles.','Brasil 247','https://www.brasil247.com/brasilia/alcolumbre-e-motta-nao-viajam-com-lula-e-reforcam-negociacoes-pela-reeleicao-no-congresso/','','motta_alcolumbre_comitiva'],
+ ['Estudos antes da MP da Segurança','Lula pede cenários e impacto orçamentário; nova reunião em 16 de novembro, segundo o Brasil 247.','Brasil 247 (O Globo)','https://www.brasil247.com/poder/lula-pede-estudos-detalhados-antes-de-oficializar-o-ministerio-da-seguranca','','ms_seg'],
+ ['Secretariado de Tarcísio','Ricardo Salles (Novo) é cotado para a Justiça paulista, segundo o Correio da Manhã.','Correio da Manhã','https://www.correiodamanha.com.br/nacional/sao-paulo/estado-de-sao-paulo/2026/11/333270-ricardo-salles-e-cotado-para-a-justica-no-governo-de-tarcisio.html','','sp_tarcisio_secretariado'],
+ ['Moro escolhe a Segurança','Delegado Fabiano Bordignon vai para a Segurança Pública do Paraná, segundo o Zebeto.','Zebeto','https://www.zebeto.com.br/2026/11/09/moro-anuncia-secretarios-e-seguranca-publica/','','pr_moro_secretarios']
+);
+if (GIRO.length > 20) GIRO.length = 20;
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"fiscal":"atualizada","lula_cop":"atualizada","ira_proposta_catar":"atualizada","ibov_semana":"atualizada","bets_stf":"atualizada","rn_transicao":"atualizada","ucrania_abudhabi":"atualizada","rj_volta_redonda":"atualizada","rs_salarios":"atualizada","mercado_semana":"atualizada","cop31_antalya":"atualizada","agenda_semana":"novo","khor_mor":"novo","mexico_cjng_r2":"novo"};
-var GIRO_FLAGS = {"Premiê do Catar na Casa Branca":"novo","Khor Mor sem gás":"novo","Prisão de “R2” no México":"novo","Semana no Congresso":"novo"};
+var FLAGS = {"ms_seg":"atualizada","dino_6x1":"atualizada","lula_cop":"atualizada","bets_stf":"atualizada","mg_cleitinho_shows":"atualizada","mercado_semana":"atualizada","focus_selic_13_75":"novo","motta_alcolumbre_comitiva":"novo","sp_tarcisio_secretariado":"novo","pr_moro_secretarios":"novo","am_estiagem_boletim":"novo","ro_redano_interino":"novo"};
+var GIRO_FLAGS = {"Focus sem corte em 2026":"novo","Fux e as bets":"novo","Motta e Alcolumbre fora da comitiva":"novo","Estudos antes da MP da Segurança":"novo","Secretariado de Tarcísio":"novo","Moro escolhe a Segurança":"novo"};
 /* ===== FIM DOS DADOS ===== */

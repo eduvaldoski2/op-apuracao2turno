@@ -10,9 +10,9 @@
     "paraguai",
     "ueno_bank"
    ],
-   "verificada": "2026-11-09-07h",
+   "verificada": "2026-11-09-11h",
    "fato_novo": false,
-   "ultimo_fato": "09/11, 6h45: sem fato novo localizado; as fontes paraguaias consultadas não devolveram matéria de domingo à noite ou de segunda. Permanece a preventiva e o embargo de bens de Peña (RDN, 08/11); relatos de detenção do ex-presidente circulam em portais mexicanos e não foram confirmados.",
+   "ultimo_fato": "09/11, 10h30: sem fato novo localizado desde as 7h; Infobae e Noticias Latinas confirmam Alliana na presidência e Peña em prisão preventiva no quartel da Escolta Presidencial; professores protestam hoje por fundos de pensão aplicados no Ueno.",
    "proximo": "Recurso da defesa; decisão sobre Carvallo; nomeação ao Banco Central; novos pagamentos a poupadores."
   },
   {
@@ -30,9 +30,9 @@
     "lula_fala_nacao",
     "cop31_antalya"
    ],
-   "verificada": "2026-11-09-07h",
+   "verificada": "2026-11-09-11h",
    "fato_novo": true,
-   "ultimo_fato": "09/11: a COP31 abre em Antalya e Lula embarca; no pronunciamento de domingo (8) ele não anunciou medida fiscal nem a equipe econômica, e a Fazenda só leva propostas depois da volta (16/11).",
+   "ultimo_fato": "09/11: Lula embarcou de manhã e chega a Antalya na terça (10); bilaterais em 12/11, Manila em 13 a 15/11 e volta em 16/11; Motta e Alcolumbre recusaram o convite para a comitiva (Brasil 247); Fazenda só leva propostas depois da volta.",
    "proximo": "Discurso de Lula na COP31 (11/11); visita às Filipinas e Asean (13 a 15/11); volta em 16/11; propostas fiscais depois."
   },
   {
@@ -46,9 +46,9 @@
     "tse_psol_se",
     "tse_21_acoes"
    ],
-   "verificada": "2026-11-09-07h",
+   "verificada": "2026-11-09-11h",
    "fato_novo": false,
-   "ultimo_fato": "08/11: o Metrópoles contabiliza 21 ações contra as chapas presidenciais no TSE, 11 da campanha de Flávio contra Lula-Alckmin; a ação do Novo (35 medidas, 13 créditos de R$ 99,7 bi) segue com prazo de defesa de cinco dias.",
+   "ultimo_fato": "09/11, 10h30: nada novo de TSE localizado desde as 7h; permanece o prazo de defesa de cinco dias na ação do Novo.",
    "proximo": "Prazo de defesa da chapa; novas decisões do corregedor."
   },
   {
@@ -63,9 +63,9 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-09-07h",
+   "verificada": "2026-11-09-11h",
    "fato_novo": false,
-   "ultimo_fato": "08/11: Flávio admite à Folha, em Miami, que não tem provas de fraude e diz querer concorrer em 2030; 25 deputados democratas dos EUA pedem a Rubio respostas até 13/11; Senado segue sem decidir.",
+   "ultimo_fato": "09/11, 10h30: nada novo localizado desde as 7h; Senado segue sem decidir; deputados democratas esperam resposta de Rubio até 13/11.",
    "proximo": "Decisão da Mesa do Senado; pesquisas de Datafolha e AtlasIntel."
   },
   {
@@ -79,11 +79,12 @@
     "sucessao",
     "congresso",
     "pl_motta",
-    "agenda_semana"
+    "agenda_semana",
+    "motta_alcolumbre_comitiva"
    ],
-   "verificada": "2026-11-09-07h",
+   "verificada": "2026-11-09-11h",
    "fato_novo": true,
-   "ultimo_fato": "09/11: a agenda oficial de terça (10) traz comissão da PEC da maioridade penal e CCJ às 14h30; o PL (121) decide na quarta (11) sobre Motta; Marinho (PL-RN), Alcolumbre e Tereza Cristina disputam o Senado.",
+   "ultimo_fato": "09/11: Motta e Alcolumbre recusam o convite de Lula para a COP31 e priorizam a negociação das reeleições (Brasil 247); PL decide na quarta (11); comissão da maioridade penal e CCJ às 14h30 de terça.",
    "proximo": "Reunião da bancada do PL em 11/11; comissão da maioridade penal em 10/11; eleições das Mesas em fevereiro de 2027."
   },
   {
@@ -95,9 +96,9 @@
     "ms_seg",
     "maioridade"
    ],
-   "verificada": "2026-11-09-07h",
-   "fato_novo": false,
-   "ultimo_fato": "07-08/11: Lula promete o Ministério da Segurança por MP, ainda não publicada; PEC passou com 73 votos no 1º turno e 75 no 2º; Braga propõe 1º/12 como prazo para a Câmara votar a maioridade.",
+   "verificada": "2026-11-09-11h",
+   "fato_novo": true,
+   "ultimo_fato": "09/11: Lula pede estudos de cenários e impacto orçamentário antes da MP do Ministério da Segurança; nova reunião em 16/11; o Orçamento de 2027 não prevê linha para a pasta (Brasil 247, O Globo).",
    "proximo": "Publicação da MP e nome do ministro; promulgação da PEC; PEC 32/2015 na Câmara."
   },
   {
@@ -108,9 +109,9 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-09-07h",
-   "fato_novo": false,
-   "ultimo_fato": "08/11: CNI e CNC pedem ao STF suspender ou adiar os prazos; Dino mantém a audiência de terça (10), às 14h, e diz que dois meses não parecem inviáveis; Marinho prevê a regulamentação na segunda (9).",
+   "verificada": "2026-11-09-11h",
+   "fato_novo": true,
+   "ultimo_fato": "09/11, manhã: decreto de regulamentação sem publicação confirmada; Plantão Brasil traz manchete de publicação, mas o texto fala em preparação; audiência de Dino na terça (10), às 14h.",
    "proximo": "Regulamentação prevista para 09/11; audiência de 10/11."
   },
   {
@@ -125,11 +126,12 @@
     "bolsas_ia",
     "ibov_semana",
     "mercado_semana",
-    "orcamento_2027"
+    "orcamento_2027",
+    "focus_selic_13_75"
    ],
-   "verificada": "2026-11-09-07h",
+   "verificada": "2026-11-09-11h",
    "fato_novo": true,
-   "ultimo_fato": "09/11: pronunciamento de Lula sem medida fiscal; Focus às 8h25; ata do Copom e CPI dos EUA na terça (10); Petrobras divulga o balanço na quarta (11) após o fechamento; IPCA na quinta (12).",
+   "ultimo_fato": "09/11: Focus projeta Selic de 13,75% no fim de 2026 e IPCA de 2027 em 4,90%; Ibovespa perto de 169 mil pontos, dólar perto de R$ 5,50 e Petrobras em queda na abertura; ata do Copom e CPI dos EUA na terça (10).",
    "proximo": "Focus (9); ata do Copom e CPI dos EUA (10); balanço da Petrobras (11); IPCA (12)."
   },
   {
@@ -142,9 +144,9 @@
     "rubio_gabinete",
     "eua_meio_mandato_placar"
    ],
-   "verificada": "2026-11-09-07h",
+   "verificada": "2026-11-09-11h",
    "fato_novo": false,
-   "ultimo_fato": "08/11: CBS projeta 256 cadeiras democratas na Câmara e ao menos 54 no Senado; Alasca (Peltola x Sullivan, 74% apurados) e Mississippi seguem em aberto; Trump manda o DOJ investigar ameaças de impeachment.",
+   "ultimo_fato": "09/11, 10h30: sem placar final de Alasca e Mississippi localizado; NPR indica que o Mississippi pode levar dias.",
    "proximo": "Mudanças no gabinete; pauta do novo Congresso americano."
   },
   {
@@ -158,9 +160,9 @@
     "zaporizhzhia",
     "ucrania_abudhabi"
    ],
-   "verificada": "2026-11-09-07h",
-   "fato_novo": true,
-   "ultimo_fato": "09/11: a UE envia equipe conjunta a Abu Dhabi para a rodada trilateral de 10-11/11; Meloni critica o caos de formatos e Zelensky chama de perigosos os princípios de segurança de Kushner; cúpula informal em Dublin em seguida.",
+   "verificada": "2026-11-09-11h",
+   "fato_novo": false,
+   "ultimo_fato": "09/11, 10h30: rodada de Abu Dhabi segue marcada para 10 e 11/11, com equipe conjunta da UE; sem fato novo desde as 7h.",
    "proximo": "Rodada de Abu Dhabi (10-11/11); cúpula informal em Dublin; reunião de líderes da UE em 13/11."
   },
   {
@@ -171,9 +173,9 @@
    "materias": [
     "israel"
    ],
-   "verificada": "2026-11-09-07h",
+   "verificada": "2026-11-09-11h",
    "fato_novo": false,
-   "ultimo_fato": "08/11: Herzog entrega o mandato a Eisenkot (67 recomendações contra 46); prazo até 6/12; Deri deixa o Knesset e o Shas nega que entrará no governo.",
+   "ultimo_fato": "09/11, 10h30: sem fato novo; Eisenkot tem o mandato desde 08/11 e Lieberman rejeita governo minoritário dependente de partidos árabes; reunião prevista para 09/11.",
    "proximo": "Posição da UTJ e do Shas; negociação sobre o alistamento haredi; eventual prorrogação de 14 dias."
   },
   {
@@ -187,72 +189,72 @@
     "ira_iron_gate",
     "khor_mor"
    ],
-   "verificada": "2026-11-09-07h",
-   "fato_novo": true,
-   "ultimo_fato": "09/11: o premiê do Catar é recebido por Trump na Casa Branca com a proposta iraniana de reabrir Ormuz em dois dias; Rubio diz que não há avanço iminente; drone suspende o campo de gás de Khor Mor, no Curdistão iraquiano.",
+   "verificada": "2026-11-09-11h",
+   "fato_novo": false,
+   "ultimo_fato": "09/11, 10h30: resultado do encontro Trump e premiê do Catar não localizado em fontes lidas; Arab News diz que não há acordo iminente.",
    "proximo": "Resultado do encontro Trump-Catar; resposta dos EUA à proposta; APEC na semana que vem."
   }
  ],
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-09-07h",
-   "achado": "Nenhuma queda, renúncia ou prisão de chefe de Estado localizada em 08-09/11 (Al Jazeera, JTA). Israel: Herzog entrega o mandato a Eisenkot (08/11)."
+   "feita": "2026-11-09-11h",
+   "achado": "Nenhuma queda, renúncia ou prisão de chefe de Estado localizada às 10h30 de 09/11; Paraguai, Israel e EUA sem fato novo desde as 7h."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-09-07h",
-   "achado": "Paraguai, Argentina, Chile, Peru, Venezuela, Bolívia, Equador e Uruguai: nada novo de 08-09/11 localizado. México: prisão de “R2”, do CJNG, em Zapopan (08/11), na edição."
+   "feita": "2026-11-09-11h",
+   "achado": "Agenda EFE/Infobae de 09/11: Venezuela (Primero Justicia apresenta cronograma eleitoral) e Peru (plano de segurança da visita do papa); nada novo de Paraguai, Argentina, Chile, Bolívia, Colômbia ou Uruguai."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-09-07h",
-   "achado": "Irã/Catar: premiê do Catar na Casa Branca (09/11) e declarações de Rubio; Iraque: drone suspende Khor Mor (09/11); Ucrânia: equipe da UE em Abu Dhabi e ataque a Kiev de 07/11 (RFE/RL). Sudão: nada localizado."
+   "feita": "2026-11-09-11h",
+   "achado": "Resultado do encontro Trump e premiê do Catar não localizado; Arab News: sem acordo iminente; rodada de Abu Dhabi segue para 10 e 11/11; Sudão sem fato de 09/11."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-09-07h",
-   "achado": "EUA: Rubio a caminho do G7 de chanceleres; placar de Alasca e Mississippi sem atualização de 09/11 localizada. França: conferência social em Matignon marcada para 09/11, sem cobertura posterior. China: nada novo."
+   "feita": "2026-11-09-11h",
+   "achado": "Sem placar final de Alasca e Mississippi; G7 de chanceleres em Paris (9 e 10/11); China, França, Alemanha, Reino Unido e Espanha sem fato localizado."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-09-07h",
-   "achado": "Sem decisão de bancos centrais na semana; mercado aguarda Focus (09/11), ata do Copom e CPI (10/11), Petrobras (11/11) e IPCA (12/11). Brent e dólar em mercado_semana."
+   "feita": "2026-11-09-11h",
+   "achado": "Sem decisão de banco central; Brent entre US$ 94,87 e US$ 97,39 na manhã de 09/11; CPI dos EUA na terça (10)."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-09-07h",
-   "achado": "Pronunciamento de Lula (08/11, 20h30) já coberto; MP do Ministério da Segurança ainda não localizada; Lula embarca para a COP31 em 09/11."
+   "feita": "2026-11-09-11h",
+   "achado": "Lula embarcou para a COP31; Motta e Alcolumbre recusaram o convite para a comitiva (Brasil 247); Lula pediu estudos antes da MP do Ministério da Segurança (Brasil 247, O Globo); decreto da 6x1 sem publicação confirmada."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-09-07h",
-   "achado": "Agenda do Congresso Nacional para 10/11 lida (sessões solenes, plenário do Senado às 14h, PEC 32/15 e CCJ às 14h30). Agência Câmara e Agência Senado não devolveram matéria de 09/11."
+   "feita": "2026-11-09-11h",
+   "achado": "Agenda de 10/11 já lida; Agência Câmara e Agência Senado não abriram; PL decide em 11/11."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-09-07h",
-   "achado": "Nada novo de STF, PGR ou PF em 08-09/11; audiência de Dino em 10/11 às 14h mantida; Fachin homologou delação de fundador da Reag em 06/11 (fora da janela)."
+   "feita": "2026-11-09-11h",
+   "achado": "TMC informa decisão de Fux suspendendo processos da MP das bets (domingo, 08/11), sem segunda fonte; audiência de Dino em 10/11 mantida; nada novo de TSE, PGR ou PF."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-09-07h",
-   "achado": "Reação de partidos ao pronunciamento, Datafolha e AtlasIntel pós-eleição não localizados; Quaest de 08/11 já coberta. Colunas de bastidores de segunda (09/11) ainda não publicadas às 6h45."
+   "feita": "2026-11-09-11h",
+   "achado": "Nenhuma pesquisa nova (Datafolha, AtlasIntel, Quaest) de 08-09/11 localizada; reações de partidos ao pronunciamento não localizadas; bastidor de Gadelha via Brasil 247."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-09-07h",
-   "achado": "Focus de 09/11 ainda não divulgado às 6h45; InvestNews e A Crítica sobre o pronunciamento incorporadas; BP Money confirma balanço da Petrobras em 11/11."
+   "feita": "2026-11-09-11h",
+   "achado": "Focus de 09/11 lido (Selic 13,75% em 2026, IPCA 2027 em 4,90%); abertura do mercado e projeções da Petrobras e do IPCA de outubro incorporadas."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-09-07h",
-   "achado": "Muitas páginas regionais bloqueadas ou sem matéria de 07-09/11; só MG (O Tempo, 08/11) com fato do dia. Nada novo localizado de 07-09/11 para Alesp, TCE-RJ, Light, Guandu, PB, PI, SE, AC, RO, RR, AP, TO, DF."
+   "feita": "2026-11-09-11h",
+   "achado": "Fatos de 08-09/11 em SP (secretariado de Tarcísio), PR (Moro), AM (estiagem), RO (Redano), MG (Cleitinho), RJ (TRE-RJ, Cavaliere) e RS (Leite na COP31); sem fato datado em SC, GO, DF, PA, AC, AP, RR, TO, BA, PE, CE, PB, RN, SE e AL."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-09-07h",
-   "achado": "Pautas P0/P1 verificadas às 6h45 de 09/11: fato novo em transição de Lula, Congresso, mercado, Ucrânia e Irã; sem fato novo nas demais."
+   "feita": "2026-11-09-11h",
+   "achado": "Pautas P0/P1 verificadas às 10h30 de 09/11: fato novo em transição de Lula, Congresso, segurança, 6x1 e mercado; sem fato novo nas demais."
   }
  ]
 }
