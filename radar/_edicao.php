@@ -7714,7 +7714,280 @@ AMANHA.forEach(function(a){ if (a[5]==='lula_pronunciamento') a[5]='lula_fala_na
 
 S.lula_fala_nacao.cards = {'1x1':'/radar/cards/lula-5-pontos-1x1.png','4x5':'/radar/cards/lula-5-pontos-4x5.png','9x16':'/radar/cards/lula-5-pontos-9x16.png'};
 
+/* ===== EDIÇÃO DAS 07h DE 09/11 ===== */
+EDICAO.hora = '07h';
+EDICAO.data = 'Segunda, 09 de novembro de 2026';
+function _insAntes(id, titulo, blocos){ var f=S[id].fundo, k=-1; for (var n=0;n<f.length;n++){ if(f[n][0]==='h' && f[n][1]===titulo){k=n;break;} } if(k<0) k=f.length; S[id].fundo = f.slice(0,k).concat(blocos, f.slice(k)); }
+function _repP(id, comeco, texto){ S[id].fundo.forEach(function(b){ if(b[0]==='p' && b[1].indexOf(comeco)===0) b[1]=texto; }); }
+
+/* --- Irã, Catar e Casa Branca --- */
+S.ira_proposta_catar = {ed:'mundo', k:'Mundo · Oriente Médio', hora:'9/11',
+ t:'Premiê do Catar é recebido por Trump com a proposta iraniana de reabrir Ormuz em dois dias; Rubio diz que não há avanço iminente e Trump vê ataque “altamente improvável” se houver acordo forte',
+ sub:'Teerã condiciona a reabertura do estreito a sete exigências; Washington chama as demandas de irrealistas, e a imprensa americana relata pressão de Hegseth e do Comando Central para retomar os ataques.',
+ dado:{n:'2 dias', l:'Prazo do plano iraniano: no primeiro, medidas dos EUA; no segundo, a reabertura do Estreito de Ormuz'},
+ resumo:'O primeiro-ministro e chanceler do Catar, xeque Mohammed bin Abdulrahman Al Thani, reúne-se com Donald Trump na Casa Branca nesta segunda (9) para discutir a proposta iraniana de reabrir o Estreito de Ormuz em dois dias, se os EUA atenderem a sete exigências. O secretário de Estado, Marco Rubio, disse no domingo (8) que não há avanço iminente e classificou as demandas de irrealistas. Trump afirma que novos ataques são altamente improváveis se houver um acordo forte. A AIEA estima em 440,9 kg o urânio iraniano enriquecido a até 60%.',
+ upd:'O premiê do Catar vai à Casa Branca nesta segunda (9); Rubio e Trump comentam a proposta iraniana, e a Al Jazeera detalha as exigências de Teerã e as pressões internas em Washington.',
+ fundo:[
+  ['p','O primeiro-ministro e chanceler do Catar, xeque Mohammed bin Abdulrahman Al Thani, é recebido por Donald Trump na Casa Branca nesta segunda-feira (9) para discutir a proposta iraniana de reabrir o Estreito de Ormuz em dois dias, informa a Al Jazeera. O encontro é fechado à imprensa, e o vice-presidente JD Vance também deve conversar com o visitante, disse um funcionário americano à Reuters.'],
+  ['nums',[['2 dias','plano iraniano: medidas dos EUA no primeiro dia, reabertura de Ormuz no segundo'],['7','exigências de Teerã antes de qualquer discussão nuclear'],['440,9 kg','de urânio enriquecido a até 60%, estimativa da AIEA'],['~65%','queda do tráfego no estreito em relação ao nível anterior à guerra'],['US$ 98,32','Brent na sexta (6), queda de cerca de 13% na semana']]],
+  ['h','Por que importa'],
+  ['p','O estreito segue com o trânsito muito reduzido, e o petróleo reflete a aposta em uma saída diplomática: o Brent fechou a sexta (6) a US$ 98,32, e o WTI, a US$ 90,83, ambos com queda de cerca de 13% na semana, informa o Jornal do Comércio. A guerra também entrou na política americana: o vice-presidente JD Vance atribuiu a ela a derrota republicana nas eleições de meio de mandato, de 3 de novembro, comentário que, segundo Trump, desagradou a muita gente.'],
+  ['h','Quem é quem'],
+  ['p','Os Estados Unidos são governados por Donald Trump, republicano de direita, que passa a lidar com um Congresso de maioria democrata. Marco Rubio é o secretário de Estado; Pete Hegseth, o secretário de Defesa, e Brad Cooper comanda o Comando Central (CENTCOM), responsável pelas operações na região. A imprensa americana relata que Hegseth e Cooper defendem retomar os ataques, e o Axios cita um funcionário anônimo segundo o qual o CENTCOM aguarda ordens.'],
+  ['p','O Irã é uma república islâmica; a diplomacia passa pelo chanceler Abbas Araghchi, que falou com 12 interlocutores regionais em 48 horas. Mohsen Rezaei, chefe de segurança do país, e o brigadeiro-general Ali Belali, da Guarda Revolucionária (IRGC), prometem resposta devastadora a qualquer ataque. O Catar é a monarquia do Golfo que intermedeia as conversas, e seu premiê acumula a chancelaria.'],
+  ['h','A proposta e as exigências'],
+  ['p','A proposta iraniana, enviada na última semana por mediadores do Catar, só discute o programa nuclear depois que os EUA atenderem às exigências de Teerã. O plano é inspirado no roteiro de sete dias que a ONU apresentou em setembro: no primeiro dia, os EUA tomariam suas medidas; no segundo, o estreito seria reaberto. Entre as sete exigências, a Al Jazeera lista:'],
+  ['ul',['Suspender as sanções restabelecidas depois do colapso do memorando de Islamabad, de junho.','Reduzir a presença militar dos EUA na região.','Restabelecer as isenções de petróleo concedidas em junho.','Liberar fundos iranianos congelados, inclusive os mantidos no Catar.','Reconhecer a rota por Ormuz negociada com Omã e fechar as demais.','Encerrar a guerra em todas as frentes, incluindo o Líbano.']],
+  ['p','O dado que pressiona o relógio é nuclear: a Agência Internacional de Energia Atômica (AIEA) estima em 440,9 kg o urânio iraniano enriquecido a até 60%, a um passo técnico curto do grau militar, de 90%. O enriquecimento subiu depois que Trump retirou os EUA do acordo de 2018, que limitava o grau a menos de 3,67%.'],
+  ['h','Washington dividido'],
+  ['p','Em declarações na Flórida no domingo (8), a caminho da reunião de chanceleres do G7 na França, Rubio disse que a guerra é impopular, mas necessária para barrar uma “ameaça muito real”, e que não há avanço iminente. Ele classificou as exigências iranianas como irrealistas e ressalvou que os EUA mantêm o direito de se defender se houver ameaça clara a navios ou forças americanas. Rubio também chamou de infundado o boato de que deixaria o cargo para disputar a eleição de 2028.'],
+  ['p','Trump disse à CNN que, com progresso e um “acordo forte”, é altamente improvável retomar os ataques, e que não se arrepende da guerra. Na quinta (5), porém, afirmara que os EUA poderiam “destruir” o resto do Irã. Na semana, as forças americanas fizeram ataques limitados contra defesas aéreas ao menos duas vezes e, no sábado (7), dispararam contra um navio comercial que, segundo Washington, tentava romper o bloqueio aos portos iranianos. Araghchi respondeu no X que os eleitores americanos “fizeram sua escolha” e que a oferta de dois dias continua de pé.'],
+  ['h','Qeshm e o trânsito em Ormuz'],
+  ['p','Trump confirmou no sábado (7) os ataques “limitados” de sexta (6) contra defesas aéreas iranianas na ilha de Qeshm. A mídia iraniana disse ter derrubado um drone MQ-9, o que os EUA não confirmaram. O centro britânico UKMTO contou ao menos 11 navios atacados no estreito na semana até 6 de novembro, três deles afundados. Trump afirmou ainda que o bloqueio terrestre dos EUA às rotas do Irã está em vigor e que espera tratar do Irã e da “desnuclearização” com Xi Jinping e Vladimir Putin na cúpula da APEC da próxima semana.'],
+  ['h','O que vem agora'],
+  ['ul',['Segunda (9): Trump recebe o premiê do Catar na Casa Branca; Vance também deve conversar com ele.','A resposta americana à proposta iraniana e a decisão do CENTCOM sobre retomar ataques.','Próxima semana: Trump prevê falar com Xi e Putin na cúpula da APEC.','Rubio segue para o G7 de chanceleres, na França.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O conteúdo da conversa com o xeque Mohammed: a Casa Branca só divulgou o encontro a portas fechadas.','Se algum ponto da proposta iraniana foi aceito: a Al Jazeera diz que os EUA ainda a examinam.','A retomada iminente de ataques: a informação vem de fontes anônimas citadas pelo Axios.','A queda do drone MQ-9 em Qeshm, afirmada só pela mídia iraniana.']]
+ ],
+ fontes:[['Al Jazeera (Catar na Casa Branca)','https://www.aljazeera.com/news/2026/11/9/qatar-pm-to-meet-trump-whats-the-latest-on-us-iran-negotiations'],['Al Jazeera (Rubio)','https://www.aljazeera.com/news/2026/11/9/rubio-says-war-on-iran-unpopular-but-necessary-to-stop-nuclear-threat'],['Al Jazeera (ao vivo, 9/11)','https://www.aljazeera.com/news/liveblog/2026/11/9/iran-war-live-trump-says-land-blockade-in-effect-drone-cuts-power-in-iraq'],['Times of Israel (liveblog)','https://www.timesofisrael.com/liveblog-november-07-2026/'],['The New Arab','https://www.newarab.com/news/qatar-continues-us-iran-mediation-efforts-prevent-escalation'],['Jornal do Comércio (petróleo)','https://www.jornaldocomercio.com/economia/2026/11/1269615-petroleo-fecha-em-alta-mas-recua-13-na-semana-com-perspectiva-para-ira-apos-eleicao-nos-eua.html']]
+};
+
+/* --- Ucrânia: Abu Dhabi --- */
+S.ucrania_abudhabi.hora = '9/11';
+S.ucrania_abudhabi.t = 'UE vai a Abu Dhabi com equipe conjunta para a rodada trilateral de terça e quarta; Meloni critica o “caos” de formatos, e Zelensky chama de perigosos os princípios de segurança de Kushner';
+S.ucrania_abudhabi.sub = 'Moscou manda Medinsky e Kiev, Umerov; Witkoff e Kushner mediam, e líderes europeus se reúnem em Dublin logo depois, enquanto o ataque russo de sábado (7) a Kiev danificou a rede elétrica e a Ponte Norte.';
+S.ucrania_abudhabi.upd = 'A União Europeia confirma equipe conjunta em Abu Dhabi, inédita, com o grupo E3; Meloni e Sikorski comentam os formatos, e o RFE/RL traz as cifras de Zelensky para o ataque de sábado.';
+S.ucrania_abudhabi.resumo = 'Rússia, Ucrânia e Estados Unidos negociam em Abu Dhabi na terça (10) e na quarta (11), na primeira rodada trilateral desde fevereiro. Vladimir Medinsky chefia a delegação russa e Rustem Umerov, a ucraniana; Steve Witkoff e Jared Kushner mediam. A União Europeia enviará uma equipe conjunta, com França, Alemanha e Reino Unido, e admite contato direto com os russos, informa a Euronews. A premiê italiana, Giorgia Meloni, criticou o caos de formatos, e Volodymyr Zelensky chamou de perigosos os princípios de segurança propostos por Kushner.';
+S.ucrania_abudhabi.dado = {n:'10 e 11/11', l:'Rodada trilateral em Abu Dhabi, a primeira desde fevereiro, com equipe conjunta da UE (Euronews)'};
+S.ucrania_abudhabi.fundo[0] = ['p','Rússia, Ucrânia e Estados Unidos retomam na terça (10) e na quarta (11), em Abu Dhabi, a primeira rodada trilateral desde fevereiro, e a União Europeia enviará uma equipe conjunta, algo inédito nas conversas, informa a Euronews. Vladimir Medinsky chefia a delegação russa e Rustem Umerov, a ucraniana; Steve Witkoff e Jared Kushner mediam pelos EUA.'];
+S.ucrania_abudhabi.fundo[1] = ['nums',[['10 e 11/11','rodada em Abu Dhabi, a primeira trilateral desde fevereiro'],['172 + 36','drones e mísseis balísticos russos contra a Ucrânia no ataque de sábado (7), segundo Zelensky'],['13/11','reunião de líderes da UE sobre a representação do bloco'],['2','funcionários de alto nível da UE na equipe conjunta, com o grupo E3']]];
+_repP('ucrania_abudhabi','Os europeus não devem comparecer.','A União Europeia mudou de posição: enviará a Abu Dhabi uma equipe conjunta, com Bjoern Seibert, chefe de gabinete da presidente da Comissão, Ursula von der Leyen, e Anna-Maria Boura, assessora do presidente do Conselho Europeu, António Costa, informa a Euronews. O grupo E3, de França, Alemanha e Reino Unido, também acompanha, e Bruxelas admite contato direto com os russos, o que seria inédito. A reunião de líderes de 13 de novembro discute como o bloco será representado, e uma cúpula informal em Dublin ocorre logo depois de Abu Dhabi.');
+_insAntes('ucrania_abudhabi','Os ataques',[
+ ['h','Atritos entre aliados'],
+ ['p','Zelensky chamou de “perigosos” os princípios de segurança do pós-guerra propostos por Kushner, segundo a Euronews. A primeira-ministra da Itália, Giorgia Meloni, de direita, criticou o que descreveu como caos de formatos e pediu um enviado europeu para as conversas, posição apoiada pelo chanceler da Polônia, Radosław Sikorski. Putin concordou com a rodada depois de receber Witkoff em São Petersburgo, cerca de duas semanas atrás, informa a Euronews. A delegação ucraniana inclui, além de Umerov, Kyrylo Budanov, David Arakhamia, Dmytro Lytvyn e Serhiy Kyslytsia, e Kiev afirma que os demais russos além de Medinsky não têm poder de decisão, informa o RFE/RL.']
+]);
+_insAntes('ucrania_abudhabi','O que vem agora',[
+ ['p','O RFE/RL traz as cifras de Zelensky para o ataque de sábado (7) a Kiev: 172 drones e 36 mísseis balísticos, com danos a linhas de transmissão, prédios, a principal ponte sobre o Dnipro e um jardim de infância. Zelensky diz que Moscou busca um apagão total e mira subestações ligadas às usinas nucleares. O prefeito de Kiev, Vitali Klitschko, descreveu a situação como extremamente difícil. A contagem de feridos varia: o RFE/RL fala em mais de dez, ao menos duas crianças, e um morto em Dnipropetrovsk, enquanto o Kyiv Independent contou cinco feridos em Kiev na madrugada.']
+]);
+S.ucrania_abudhabi.fundo.forEach(function(b){ if(b[0]==='ul' && b[1][0].indexOf('10 e 11 de novembro')===0){ b[1]=['Terça (10) e quarta (11): rodada em Abu Dhabi, com equipe conjunta da UE.','Logo depois: cúpula informal de líderes europeus em Dublin.','13 de novembro: reunião de líderes da UE sobre a representação do bloco nas conversas.']; } if(b[0]==='ul' && b[1][0].indexOf('A data exata de cada sessão')===0){ b[1]=['A data exata de cada sessão em Abu Dhabi e a composição da equipe americana além de Witkoff e Kushner.','O ataque à refinaria de Saratov, que não foi confirmado.','A contagem de feridos do ataque de sábado (7), que difere entre RFE/RL e Kyiv Independent.','O teor dos princípios de segurança de Kushner: só o julgamento de Zelensky foi divulgado.']; } });
+S.ucrania_abudhabi.fontes.unshift(['Euronews (equipe da UE)','https://www.euronews.com/2026/11/09/eu-to-send-joint-team-to-ukraine-russia-peace-talks-in-abu-dhabi'],['Al-Monitor (mediação dos EUA)','https://www.al-monitor.com/originals/2026/11/us-mediate-trilateral-talks-ukraine-russia-abu-dhabi-next-week-us-envoy-says'],['RFE/RL (ataque a Kiev)','https://www.rferl.org/a/russia-strikes-kyiv-ukraine-trilateral-talks/33892815.html']);
+
+/* --- Mercado --- */
+S.mercado_semana.hora = '9/11';
+S.mercado_semana.t = 'Mercado abre a semana com Focus às 8h25 e depois do pronunciamento sem medidas de Lula; ata do Copom sai na terça (10), IPCA na quinta (12) e balanço da Petrobras na quarta (11)';
+S.mercado_semana.sub = 'O Ibovespa fechou a sexta (6) em 168,5 mil pontos, ainda longe dos cerca de 205 mil anteriores à eleição; Lula disse que a dívida e os juros altos o preocupam, mas não anunciou medidas.';
+S.mercado_semana.upd = 'Entra o pronunciamento de Lula, sem medida fiscal, o contexto da queda desde a eleição e a data confirmada do balanço da Petrobras (quarta, 11), com as projeções dos bancos.';
+S.mercado_semana.resumo = 'A semana começa com o Focus (segunda, 9, às 8h25), a ata do Copom e o CPI dos EUA (terça, 10), o balanço da Petrobras (quarta, 11, após o fechamento) e o IPCA de outubro (quinta, 12). No pronunciamento de domingo (8), Lula disse que a dívida pública e os juros altos o preocupam, prometeu manter as regras fiscais e não anunciou medidas, segundo a InvestNews. O Ibovespa fechou a sexta (6) em 168.498 pontos, e o Brent, a US$ 98,32. A Selic está em 13,75% desde 4 de novembro.';
+_repP('mercado_semana','O primeiro teste é o pronunciamento','O pronunciamento de Lula, na noite de domingo (8), veio sem medida fiscal nova: ele afirmou que a trajetória da dívida pública e os juros altos o preocupam e prometeu preservar as regras fiscais, informa a InvestNews. A Fazenda levará propostas ao presidente depois da COP31, e a A Crítica registra que cortes de gasto e aumento de receita são esperados “nas próximas semanas”. No petróleo, a EIA divulga as projeções em 10 de novembro, a Opep, o relatório em 11, e a Opep+ reúne-se em 29.');
+_insAntes('mercado_semana','O que moveu os preços',[
+ ['h','O pronunciamento e o fundo da queda'],
+ ['p','A dívida bruta está em 82,9% do PIB, o maior nível desde abril de 2021 e 11 pontos acima do início do governo, calcula a InvestNews. O Ibovespa ainda está bem abaixo dos cerca de 205 mil pontos anteriores ao segundo turno: no primeiro pregão depois da eleição, em 26 de outubro, caiu 13,88%, com circuit breaker, e perdeu 18,12% na semana. O dólar subiu mais de 10% desde então. O ajuste mínimo calculado para o Orçamento de 2027 é de R$ 39,8 bilhões, e o mercado quer saber quem comandará a Fazenda no quarto mandato.'],
+ ['p','Na sexta (6), o gatilho foi externo: o payroll americano de outubro somou cerca de 165 mil vagas, contra 65 mil esperadas, e a CME passou a dar 76,8% de chance de alta de juros pelo Fed em dezembro, contra 66,9% antes, informa o Times Brasil. O índice do dólar subiu 0,75%, e o real acompanhou a moeda americana, com alta de 1,18% na semana.']
+]);
+_repP('mercado_semana','Quanto à Petrobras','A Petrobras divulga o resultado do terceiro trimestre na quarta (11), depois do fechamento, segundo o BP Money. As projeções dos bancos: lucro líquido de US$ 9,9 bilhões na Safra e US$ 7,6 bilhões na XP, queda de 27% para a corretora; Ebitda entre US$ 17,3 bilhões e US$ 19,1 bilhões; dividendos entre US$ 3,1 bilhões (Safra) e US$ 4,2 bilhões (Itaú BBA). O imposto de 12% sobre a exportação de óleo pesa nos embarques, avalia o BTG, e a produção deve ficar perto de 2,83 milhões de barris por dia. O IPCA de outubro sai na quinta (12), às 9h; o de setembro foi de 0,82%.');
+S.mercado_semana.fundo.forEach(function(b){ if(b[0]==='ul'){ b[1]=b[1].map(function(x){ if(x.indexOf('A data do balanço da Petrobras: o Seu Dinheiro')===0) return 'O horário exato do balanço da Petrobras: o BP Money e o Seu Dinheiro indicam quarta (11) após o fechamento; o site de relações com investidores não foi consultado.'; if(x.indexOf('A data do balanço da Petrobras: terça')===0) return 'Se a ata do Copom indicará novos cortes em dezembro; o comunicado não deu sinalização.'; return x; }); } });
+S.mercado_semana.fundo.forEach(function(b){ if(b[0]==='ul'){ var seen={}; b[1]=b[1].filter(function(x){ if(seen[x]) return false; seen[x]=1; return true; }); } });
+S.mercado_semana.fontes.unshift(['InvestNews (pronunciamento)','https://investnews.com.br/investimentos/discurso-de-lula-a-nacao-pode-impactar-os-mercados-nesta-segunda-feira-saiba-o-que-esperar/'],['A Crítica','https://acritica.net/economia/lula-pronunciamento-rede-nacional-domingo-8-ajuste-mercado/'],['Times Brasil (fechamento de sexta)','https://timesbrasil.com.br/investimentos/bolsa/ibovespa-fecha-semana-em-alta-de-034-aos-168-mil-pontos-dolar-sobe-a-r-550-apos-payroll-dos-eua/'],['BP Money (Petrobras)','https://bpmoney.com.br/negocios/empresas/petrobras-petr4-dividendos-ate-42-bilhoes-3t26/']);
+
+/* --- COP31 --- */
+S.cop31_antalya.hora = '9/11';
+S.cop31_antalya.t = 'COP31 abre em Antalya com a Turquia propondo meta global de eletrificação de 35% até 2035; Lula embarca nesta segunda e discursa na quarta (11)';
+S.cop31_antalya.sub = 'A conferência vai até 20 de novembro; produtores de petróleo e países insulares divergem sobre o roteiro dos combustíveis fósseis, e a Fazenda só leva propostas fiscais a Lula depois da viagem.';
+S.cop31_antalya.upd = 'A conferência abre hoje, com a Turquia lançando o compromisso “35 por 35” de eletrificação, criticado por não exigir fontes limpas.';
+S.cop31_antalya.resumo = 'A 31ª Conferência do Clima da ONU (COP31) abre nesta segunda (9) em Antalya, na Turquia, e vai até 20 de novembro; a cúpula de líderes é em 11 e 12. A presidência turca lançou o compromisso não vinculante “35 por 35”, para que a eletricidade chegue a 35% da demanda global de energia até 2035. Críticos dizem que o texto não exige fontes de baixo carbono. Lula embarca nesta segunda e discursa na quarta (11), enquanto a Fazenda só discute medidas fiscais depois da volta.';
+S.cop31_antalya.dado = {n:'35% até 2035', l:'Meta do compromisso turco de eletrificação, não vinculante; hoje a eletricidade é cerca de um quinto do consumo final de energia (AIE)'};
+S.cop31_antalya.fundo[0] = ['p','A COP31, conferência anual da ONU sobre mudança do clima, abre nesta segunda-feira (9) no Centro de Exposições de Antalya, na Turquia, e segue até 20 de novembro, com a cúpula de líderes na quarta (11) e na quinta (12). O presidente Luiz Inácio Lula da Silva (PT) embarca nesta segunda; a chegada a Antalya é na terça (10), informa o ndmais.'];
+_insAntes('cop31_antalya','Efeito na agenda de Brasília',[
+ ['h','A pauta da presidência turca'],
+ ['p','A presidência turca lançou o “35 por 35”, compromisso global não vinculante para que a eletricidade responda por ao menos 35% da demanda mundial de energia até 2035, informa a Al Jazeera. Segundo a Agência Internacional de Energia, hoje a eletricidade equivale a cerca de um quinto do consumo final. O presidente da COP31 e ministro do Meio Ambiente turco, Murat Kurum, afirmou que a conferência quer “inaugurar a era da eletricidade”. Críticos observam que o texto não exige que a eletricidade adicional venha de fontes de baixo carbono.'],
+ ['p','Um grupo de países, que inclui ilhas do Pacífico Sul vulneráveis à elevação do mar, pressiona por um roteiro mais claro para abandonar os combustíveis fósseis. Produtores de petróleo e gás, como a Arábia Saudita, defendem que eles sigam na matriz se combinados com tecnologias de redução ou captura de emissões. A guerra entre EUA e Israel e o Irã, que desorganizou o transporte pelo Estreito de Ormuz, elevou os preços e levou governos da Ásia a ampliar o uso de carvão, enquanto a oferta de renováveis cresce com as exportações chinesas mais baratas.']
+]);
+S.cop31_antalya.fontes.push(['Al Jazeera (35 por 35)','https://www.aljazeera.com/news/2026/11/9/turkiye-pushes-electrification-top-of-climate-agenda-as-cop31-set-to-open']);
+
+/* --- Semana no Congresso (nova) --- */
+S.agenda_semana = {ed:'politica', k:'Política · Congresso', hora:'9/11',
+ t:'Semana no Congresso: comissão da PEC da maioridade penal e CCJ da Câmara se reúnem na terça (10), PL decide na quarta (11) sobre Motta e a MP das bets entra em regime de urgência',
+ sub:'O PL, com 121 deputados, escolhe entre apoiar a reeleição de Hugo Motta e lançar candidato próprio; no Senado, Rogério Marinho (PL-RN) enfrenta Davi Alcolumbre (União-AP) e Tereza Cristina (PP-MS) pela presidência.',
+ dado:{n:'121', l:'Deputados do PL, que decide na quarta (11) a posição sobre a presidência da Câmara em 2027'},
+ resumo:'A agenda oficial do Congresso para terça (10) tem sessões solenes na Câmara, sessão deliberativa no Senado às 14h e, às 14h30, reuniões da comissão da PEC 32/15, sobre a maioridade penal, e da CCJ da Câmara. Na quarta (11), a bancada do PL, com 121 deputados, decide se apoia a reeleição de Hugo Motta ou lança candidato. No Senado, Rogério Marinho (PL-RN) disputa a presidência com Davi Alcolumbre. A MP das bets entra em regime de urgência, segundo o Congresso em Foco, e o recesso começa em 23 de dezembro.',
+ upd:'', 
+ fundo:[
+  ['p','A Câmara e o Senado têm nesta semana sessões solenes e deliberativas, e a pauta que mais pesa para a base do governo é política: o PL, com 121 deputados, decide na quarta (11) se apoia a reeleição de Hugo Motta (Republicanos-PB) ou lança candidato próprio à presidência da Câmara. Na terça (10), a comissão da PEC da maioridade penal e a Comissão de Constituição e Justiça (CCJ) da Câmara se reúnem às 14h30.'],
+  ['nums',[['121','deputados do PL, que decide a posição na quarta (11)'],['361','dos 513 deputados já reunidos em torno de Motta, em 15 partidos'],['41','votos necessários para presidir o Senado; Alcolumbre diz ter ao menos 48'],['14h30','horário da comissão da PEC da maioridade penal e da CCJ na terça (10)'],['23/12','data de início do recesso parlamentar']]],
+  ['h','Por que importa'],
+  ['p','A posição do PL define quem comandará as comissões e a pauta da Câmara a partir de fevereiro de 2027. Fora do bloco de Motta, o partido cairia da primeira ou segunda escolha de comissões para a 14ª, e ficaria com sete presidências menos estratégicas, informa o Correio da Manhã. O PT já formalizou apoio a Motta e pode deixar o bloco se o PL entrar. A decisão também mede o tamanho da oposição de direita que enfrentará Lula no quarto mandato.'],
+  ['h','Quem é quem'],
+  ['p','O PL, partido de direita de Jair e Flávio Bolsonaro, terá em 2027 a maior bancada da Câmara, e é dirigido por Valdemar Costa Neto, cuja ala pragmática quer negociar com Motta. Nikolas Ferreira (PL-MG) defende candidatura própria e quer a presidência da CCJ, e cita como possíveis nomes Luiz Philippe de Orleans e Bragança (PL-SP) e Sóstenes Cavalcante (PL-RJ). Motta, do Republicanos (centro-direita), reúne 15 partidos, entre eles o União Brasil e o PT, de Lula (esquerda).'],
+  ['p','No Senado, o PL lançou Rogério Marinho (PL-RN) contra Davi Alcolumbre (União-AP), atual presidente, e a senadora Tereza Cristina (PP-MS) também segue candidata; os dois dizem que buscarão acordo para não dividir o voto da oposição, informa a Folha de Pernambuco. Alcolumbre criticou o PL por questionar o resultado da eleição depois do segundo turno. O líder do PL no Senado, Carlos Portinho (RJ), acusa-o de ter quebrado acordo ao retirar a maioridade penal da pauta a pedido de Motta.'],
+  ['h','A agenda oficial de terça (10)'],
+  ['p','A agenda do Congresso Nacional traz, na Câmara, sessões solenes às 9h, pelos 50 anos da Abrasce, e às 11h, pelos 100 anos do Grupo Mercadinho São Luiz, ambas sem votação. No Senado, há sessão especial às 10h e sessão deliberativa ordinária às 14h. Às 14h30, a comissão da PEC 32/15 delibera sobre a redução da maioridade penal, com audiência pública, e a CCJ da Câmara se reúne no mesmo horário. Às 10h, a Câmara lança o pacto “Saúde Não Se Aposta”.'],
+  ['p','Alcolumbre disse que pautará a maioridade penal no Senado um dia depois de a Câmara deliberar. No Senado, Marinho propõe 16 anos como regra e 14 para crimes graves, e Camilo Santana (PT-CE) defende 16 anos só para crimes hediondos. Na terça, às 14h, o ministro Flávio Dino, do STF, também conduz a audiência sobre a implementação do fim da escala 6x1.'],
+  ['h','MP das bets, voto distrital e Orçamento'],
+  ['p','A medida provisória 1.394/2026, sobre apostas online, vigora desde setembro e entra em regime de urgência em 9 de novembro, informa o Congresso em Foco; a comissão mista que a analisaria não foi instalada, e o prazo inicial de vigência vai até 23 de novembro, prorrogável por 60 dias. O ministro Luiz Fux realizou audiência pública sobre o tema no STF em 3 de novembro.'],
+  ['p','Motta quer votar ainda em 2026 a PEC do voto distrital misto, com vigência em 2034 e transição em 2030, que exige 308 votos na Câmara e 49 no Senado, sem texto fechado. O Orçamento de 2027 depende da Comissão Mista de Orçamento, presidida por Domingos Neto (PSD-CE), e a PEC da tarifa zero nos fins de semana reservaria cerca de R$ 12 bilhões das emendas impositivas. O recesso começa em 23 de dezembro.'],
+  ['h','O que vem agora'],
+  ['ul',['Terça (10): sessões na Câmara e no Senado; comissão da PEC 32/15 e CCJ, às 14h30; audiência do STF sobre a escala 6x1, às 14h.','Quarta (11): reunião da bancada do PL para decidir a posição sobre Motta.','Fevereiro de 2027: eleições das Mesas da Câmara e do Senado.','23 de dezembro: início do recesso parlamentar.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A pauta de votações de terça e quarta: o site do Congresso lista sessões e, ao mesmo tempo, exibe a mensagem “nenhuma sessão”.','A data de início do regime de urgência da MP das bets: o dado vem do Congresso em Foco e não foi cruzado com o Diário Oficial.','O resultado da reunião do PL: a bancada pode adiar a definição.','O texto da PEC do voto distrital, ainda sem versão fechada.']]
+ ],
+ fontes:[['Congresso Nacional (agenda de 10/11)','https://www.congressonacional.leg.br/pt_BR/sessoes/agenda-do-congresso-senado-e-camara/-/agenda/2026-11-10'],['Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131244/seguranca-bets-e-reforma-eleitoral-o-que-o-congresso-pode-votar'],['Correio da Manhã','https://www.correiodamanha.com.br/politica/2026/11/331866-pl-decide-se-apoiara-reeleicao-de-hugo-motta-e-discute-espaco-na-camara.html'],['Folha de Pernambuco','https://www.folhape.com.br/politica/alcolumbre-critica-pl-por-questionar-resultado-da-eleicao-apos/522453/']]
+};
+delete S.agenda_semana.upd;
+
+/* --- Khor Mor (nova) --- */
+S.khor_mor = {ed:'mundo', k:'Mundo · Iraque', hora:'9/11', fonteunica:true,
+ t:'Ataque de drone suspende a produção no campo de gás de Khor Mor e deixa mais de 70% do Curdistão iraquiano sem energia',
+ sub:'O governo regional tirou 2.500 a 2.800 MW da rede, e o premiê do Iraque, Ali al-Zaidi, mandou abrir investigação conjunta; ninguém assumiu o ataque.',
+ dado:{n:'+70%', l:'Parcela da região do Curdistão iraquiano sem eletricidade depois do ataque, segundo o governo regional'},
+ resumo:'Um drone com explosivos atingiu na noite de domingo (8) a instalação de armazenamento de gás do campo de Khor Mor, no Curdistão iraquiano, causou incêndio e suspendeu a produção, informa a Al Jazeera. O governo regional diz que mais de 70% da região ficou sem energia, com 2.500 a 2.800 megawatts fora da rede. O primeiro-ministro, Ali al-Zaidi, relatou que não houve vítimas na avaliação inicial e determinou uma investigação conjunta com as autoridades curdas. Ninguém assumiu a autoria.',
+ fundo:[
+  ['p','Um drone com explosivos atingiu na noite de domingo (8) a instalação de armazenamento de gás do campo de Khor Mor, no Curdistão iraquiano, causou incêndio e suspendeu a produção, informa a Al Jazeera. O governo regional diz que mais de 70% da região ficou sem eletricidade, e as autoridades não identificaram o responsável.'],
+  ['h','O efeito na rede elétrica'],
+  ['p','Omid Ahmed, porta-voz do Ministério de Eletricidade do Governo Regional do Curdistão, afirmou à agência INA que o fornecimento de gás foi suspenso para as usinas de Erbil, Sulaymaniyah, Bazian, Chamchamal e Duhok, o que tirou entre 2.500 e 2.800 megawatts da rede. Hospitais e estações de água serão atendidos por usinas hidrelétricas e combustível alternativo. Fontes de segurança ouvidas pelo correspondente da Al Jazeera em Bagdá, Peter Smith, estimam que a capacidade da rede caiu entre 70% e 80%.'],
+  ['h','Quem é quem'],
+  ['p','O primeiro-ministro do Iraque, Ali al-Zaidi, relatou, segundo a INA, que não houve vítimas na avaliação inicial e determinou um comitê conjunto de investigação com as autoridades curdas. O Curdistão iraquiano é uma região autônoma no norte do país, com governo próprio, e o campo de Khor Mor abastece boa parte de sua geração de eletricidade. A verificação de imagens feita pela equipe Sanad, da Al Jazeera, confirmou fumaça e chamas em Sulaymaniyah.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['Quem lançou o drone e se há ligação com a guerra dos EUA e de Israel contra o Irã: nenhuma fonte lida atribuiu a autoria.','Quando a produção será retomada.','O balanço final de danos e de vítimas, informado apenas como inicial.']],
+  ['p','A mesma instalação foi atingida por um drone em 27 de novembro de 2025, também sem reivindicação, segundo a Al Jazeera. A informação vem de um único veículo, e o Radar não localizou confirmação independente do ataque desta noite.']
+ ],
+ fontes:[['Al Jazeera (Khor Mor)','https://www.aljazeera.com/news/2026/11/9/drone-attack-suspends-production-at-iraqs-khor-mor-gasfield']]
+};
+
+/* --- México: R2 (nova) --- */
+S.mexico_cjng_r2 = {ed:'mundo', k:'Mundo · México', hora:'9/11', fonteunica:true,
+ t:'México prende em Zapopan “R2”, apontado como chefe da célula “Los Rs” do Cartel Jalisco Nova Geração, com inteligência da DEA',
+ sub:'Rafael Alvarez foi ferido em tiroteio e tem mandado de prisão por homicídio e pedido de extradição dos EUA; outras 19 pessoas foram presas, informa o secretário de Segurança, Omar García Harfuch.',
+ dado:{n:'19', l:'Outras pessoas presas na operação em Zapopan, além de Rafael Alvarez, “R2”'},
+ resumo:'As forças mexicanas prenderam no domingo (8), em Zapopan, na região metropolitana de Guadalajara, Rafael Alvarez, o “R2”, suspeito de chefiar a célula “Los Rs” do Cartel Jalisco Nova Geração (CJNG), informa a Al Jazeera, com texto da AFP e da Reuters. A operação usou inteligência compartilhada pela DEA, e outras 19 pessoas foram presas. Alvarez, ferido em tiroteio, tem mandado de prisão por homicídio qualificado no México e pedido de extradição dos Estados Unidos, afirmou o secretário de Segurança, Omar García Harfuch.',
+ fundo:[
+  ['p','As forças de segurança do México prenderam no domingo (8), em Zapopan, na região metropolitana de Guadalajara, Rafael Alvarez, conhecido como “R2”, suspeito de chefiar a célula “Los Rs” do Cartel Jalisco Nova Geração (CJNG), informa a Al Jazeera, com texto da AFP e da Reuters. A operação prendeu outras 19 pessoas, e Alvarez foi ferido em um tiroteio.'],
+  ['h','A operação'],
+  ['p','Participaram a agência de investigação criminal da Procuradoria, tropas da Marinha e do Exército e o Centro Nacional de Inteligência, a partir de informações compartilhadas pela Agência Antidrogas dos EUA (DEA), segundo a Marinha mexicana. O secretário de Segurança, Omar García Harfuch, informou no X que Alvarez recebe atendimento médico, que tem mandado de prisão pendente por homicídio qualificado no México e que há um pedido de extradição dos Estados Unidos.'],
+  ['h','Quem é quem'],
+  ['p','Harfuch afirmou que a célula está ligada a extorsão, tráfico de drogas, homicídio, privação ilegal de liberdade, sequestro e ataques a autoridades, e que entre as vítimas de extorsão estão donos de negócios e produtores de abacate. Alvarez é apontado como ligado a ao menos 19 mortes, entre elas o assassinato, no ano passado, de Carlos Manzo, prefeito de Uruapan, em Michoacán. O CJNG atua em Jalisco e Michoacán, disputa com o Cartel de Sinaloa o tráfico para os Estados Unidos e foi classificado por Washington como organização terrorista estrangeira em 2025.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A extensão dos ferimentos de Alvarez, informada apenas como atendimento médico.','Se a extradição aos EUA já foi formalizada e quando haverá audiência.','Os nomes e a situação dos outros 19 presos.','A ligação de Alvarez com as 19 mortes, atribuída pela autoridade mexicana e não julgada.']],
+  ['p','A informação desta nota vem da Al Jazeera e das declarações de Harfuch que ela reproduz; o Radar não localizou, até o fechamento, confirmação em veículo mexicano lido por inteiro. Cerca de 134 mil pessoas estão desaparecidas no México, com Jalisco no topo dos casos, segundo a Al Jazeera.']
+ ],
+ fontes:[['Al Jazeera (AFP e Reuters)','https://www.aljazeera.com/news/2026/11/9/mexico-arrests-major-leader-of-jalisco-cartel']]
+};
+
+/* --- Capa, ordens, Giro e Amanhã --- */
+HOME_LEAD = 'agenda_semana';
+HOME_ROW = ['mercado_semana','ira_proposta_catar','ucrania_abudhabi'];
+ORDER.politica = ['agenda_semana'].concat(ORDER.politica.filter(function(i){return i!=='agenda_semana';}));
+ORDER.mundo = ['ira_proposta_catar','ucrania_abudhabi','khor_mor','mexico_cjng_r2'].concat(ORDER.mundo.filter(function(i){return ['ira_proposta_catar','ucrania_abudhabi','khor_mor','mexico_cjng_r2'].indexOf(i)<0;}));
+ORDER.economia = ['mercado_semana'].concat(ORDER.economia.filter(function(i){return i!=='mercado_semana';}));
+GIRO.unshift(
+ ['Premiê do Catar na Casa Branca','Trump recebe nesta segunda o xeque Mohammed bin Abdulrahman Al Thani, com a proposta iraniana de reabrir Ormuz em dois dias, informa a Al Jazeera.','Al Jazeera','https://www.aljazeera.com/news/2026/11/9/qatar-pm-to-meet-trump-whats-the-latest-on-us-iran-negotiations','','ira_proposta_catar'],
+ ['Khor Mor sem gás','Ataque de drone suspende a produção do campo de gás e deixa mais de 70% do Curdistão iraquiano sem energia, diz o governo regional.','Al Jazeera','https://www.aljazeera.com/news/2026/11/9/drone-attack-suspends-production-at-iraqs-khor-mor-gasfield','','khor_mor'],
+ ['Prisão de “R2” no México','Forças mexicanas prendem em Zapopan o suposto chefe da célula Los Rs, do CJNG, com inteligência da DEA.','Al Jazeera','https://www.aljazeera.com/news/2026/11/9/mexico-arrests-major-leader-of-jalisco-cartel','','mexico_cjng_r2'],
+ ['Semana no Congresso','Comissão da PEC da maioridade penal e CCJ se reúnem às 14h30 de terça; PL decide na quarta sobre Motta.','Congresso Nacional','https://www.congressonacional.leg.br/pt_BR/sessoes/agenda-do-congresso-senado-e-camara/-/agenda/2026-11-10','','agenda_semana']
+);
+if (GIRO.length > 20) GIRO.length = 20;
+AMANHA = [
+ ['Ter, 10/11 · 8h','economia','Ata do Copom e CPI dos EUA','A ata detalha o peso de cada fator na decisão de manter a Selic em 13,75%; o CPI dos EUA sai às 10h30.','https://bpmoney.com.br/economia/agenda-economica-semana-ata-copom-ipca-inflacao-eua/','mercado_semana'],
+ ['Ter, 10/11 · 14h','justica','Audiência no STF sobre a escala 6x1','O ministro Flávio Dino reúne confederações, centrais sindicais e governo para tratar da implementação do fim da escala 6x1.','https://www.acessa.com/noticias/2026/11/343699-dino-marca-audiencia-de-conciliacao-sobre-fim-da-escala-6x1.html','dino_6x1'],
+ ['Ter, 10/11 · 14h30','congresso','Comissão da PEC da maioridade penal e CCJ da Câmara','A comissão da PEC 32/15 delibera sobre a redução da maioridade penal, com audiência pública, no mesmo horário da CCJ.','https://www.congressonacional.leg.br/pt_BR/sessoes/agenda-do-congresso-senado-e-camara/-/agenda/2026-11-10','agenda_semana'],
+ ['Ter, 10/11 e qua, 11/11','mundo','Rodada trilateral em Abu Dhabi','Rússia, Ucrânia e EUA negociam, com equipe conjunta da União Europeia presente pela primeira vez.','https://www.euronews.com/2026/11/09/eu-to-send-joint-team-to-ukraine-russia-peace-talks-in-abu-dhabi','ucrania_abudhabi'],
+ ['Qua, 11/11','congresso','Bancada do PL decide sobre a reeleição de Hugo Motta','O PL, com 121 deputados, escolhe entre integrar o bloco de Motta e lançar candidato próprio à presidência da Câmara.','https://www.correiodamanha.com.br/politica/2026/11/331866-pl-decide-se-apoiara-reeleicao-de-hugo-motta-e-discute-espaco-na-camara.html','pl_motta'],
+ ['Qua, 11/11','economia','Petrobras divulga o balanço do 3T26','O resultado sai depois do fechamento; os bancos projetam dividendos entre US$ 3,1 bilhões e US$ 4,2 bilhões.','https://bpmoney.com.br/negocios/empresas/petrobras-petr4-dividendos-ate-42-bilhoes-3t26/','mercado_semana'],
+ ['Qua, 11/11 e qui, 12/11','mundo','Cúpula de líderes da COP31, em Antalya','Lula discursa na abertura, na quarta, ao meio-dia, e fala de novo às 17h na plenária geral.','https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-11/lula-apresentara-avancos-ambientais-na-cop31-na-turquia','lula_cop']
+];
+
+/* --- Matérias paradas: atualizadas, ampliadas ou aposentadas --- */
+function _ulRep(id, comeco, novo){ S[id].fundo.forEach(function(b){ if(b[0]==='ul'){ b[1]=b[1].map(function(x){ return x.indexOf(comeco)===0 ? novo : x; }); } }); }
+
+S.fiscal.hora = '9/11';
+S.fiscal.sub = 'Lula falou à nação no domingo (8) sem anunciar medida fiscal: disse que a dívida e os juros altos o preocupam e que preservará as regras fiscais, informa a InvestNews.';
+S.fiscal.resumo = 'Depois de reunião no Alvorada em 5 de novembro, o ministro da Fazenda, Dario Durigan, disse que nenhuma medida fiscal foi definida e que as propostas só seguem a Lula depois da COP31 e das Filipinas. No pronunciamento de domingo (8), Lula afirmou que a trajetória da dívida pública e os juros altos o preocupam e que manterá as regras fiscais, mas não anunciou corte, receita nem nomes da equipe econômica. A dívida bruta estava em 82,9% do PIB em setembro. Cortes e receitas são esperados nas próximas semanas.';
+S.fiscal.upd = 'O pronunciamento de domingo (8) veio sem medida fiscal: Lula disse que dívida e juros o preocupam e prometeu manter as regras fiscais; cortes e receitas ficam para as próximas semanas.';
+_repP('fiscal','O InfoMoney registrou','O pronunciamento de Lula, na noite de domingo (8), não trouxe medida fiscal: o presidente disse que a trajetória da dívida pública e os juros altos o preocupam, prometeu manter as regras fiscais e reafirmou promessas de campanha, como o perdão de dívidas de microempreendedores e o transporte gratuito nos fins de semana, informa a InvestNews. A A Crítica registra que contenção de gastos e receitas são esperadas “nas próximas semanas”. O InfoMoney lembrou, em 5 de novembro, que a Folha de S.Paulo noticiou que o governo estuda tornar permanentes os bloqueios do Orçamento, e o Santander avalia que, sem reformas, o PIB de 2027 pode crescer menos de 1,3%.');
+_ulRep('fiscal','Domingo (8): pronunciamento previsto','Domingo (8): pronunciamento feito, sem medida fiscal; o mercado reage a partir desta segunda (9).');
+S.fiscal.fontes.push(['InvestNews (pronunciamento)','https://investnews.com.br/investimentos/discurso-de-lula-a-nacao-pode-impactar-os-mercados-nesta-segunda-feira-saiba-o-que-esperar/'],['A Crítica','https://acritica.net/economia/lula-pronunciamento-rede-nacional-domingo-8-ajuste-mercado/']);
+
+S.ibov_semana.hora = '9/11';
+S.ibov_semana.upd = 'A data do balanço da Petrobras foi confirmada para quarta (11), após o fechamento, e entram as projeções dos bancos e o contexto da queda desde a eleição.';
+S.ibov_semana.resumo = 'O Ibovespa fechou a sexta (6) em alta de 1,39%, aos 168.498,45 pontos, e acumulou ganho de 0,34% na semana, a primeira alta depois de três semanas negativas, segundo o InfoMoney. O dólar comercial subiu 0,36%, a R$ 5,508. O payroll americano de 165 mil vagas, contra cerca de 65 mil esperadas, elevou a aposta em alta de juros do Fed em dezembro. A Petrobras caiu 14,13% na semana e divulga o balanço do terceiro trimestre na quarta (11), após o fechamento, segundo o BP Money.';
+_ulRep('ibov_semana','Terça (10): CPI dos EUA','Terça (10): CPI dos EUA e ata do Copom; o BP Money confirma a Petrobras na quarta (11), após o fechamento, e a ata do Copom às 8h.');
+_ulRep('ibov_semana','A data do balanço da Petrobras','O horário exato do balanço da Petrobras, que o BP Money e o Seu Dinheiro dão para quarta (11) após o fechamento.');
+S.ibov_semana.fundo.splice(S.ibov_semana.fundo.length-4,0,['p','O Ibovespa ainda está bem abaixo dos cerca de 205 mil pontos anteriores ao segundo turno, lembra a InvestNews: no primeiro pregão depois da eleição, em 26 de outubro, o índice caiu 13,88%, com circuit breaker, e perdeu 18,12% na semana. Para a Petrobras, o Safra projeta lucro líquido de US$ 9,9 bilhões no terceiro trimestre e a XP, de US$ 7,6 bilhões, e os dividendos estimados vão de US$ 3,1 bilhões a US$ 4,2 bilhões, segundo o BP Money.']);
+S.ibov_semana.fontes.push(['BP Money (Petrobras)','https://bpmoney.com.br/negocios/empresas/petrobras-petr4-dividendos-ate-42-bilhoes-3t26/'],['InvestNews','https://investnews.com.br/investimentos/discurso-de-lula-a-nacao-pode-impactar-os-mercados-nesta-segunda-feira-saiba-o-que-esperar/']);
+
+S.lula_cop.hora = '9/11';
+S.lula_cop.t = 'Lula embarca nesta segunda (9) para a COP31 na Turquia, que abre hoje, e segue às Filipinas e à cúpula da ASEAN; medidas fiscais ficam para depois da viagem';
+S.lula_cop.resumo = 'Lula deixa Brasília nesta segunda (9) rumo a Antalya, na Turquia, onde a COP31 abre hoje e vai até 20 de novembro, com cúpula de líderes em 11 e 12. Discursa na abertura, no dia 11 ao meio-dia, e por cerca de três minutos às 17h; a pauta inclui o fundo de florestas tropicais TFFF. Na noite do dia 12 embarca para as Filipinas e a ASEAN, em Manila; as fontes divergem entre 13 e 14 de novembro para a visita de Estado. A Fazenda leva as medidas fiscais a Lula depois da viagem.';
+S.lula_cop.upd = 'A conferência abre hoje em Antalya, com a presidência turca propondo o compromisso de eletrificação “35 por 35”, e Lula embarca nesta segunda.';
+_insAntes('lula_cop','Filipinas e ASEAN',[
+ ['h','O clima da abertura'],
+ ['p','A presidência turca da COP31 abre a conferência com o compromisso não vinculante “35 por 35”, que busca elevar a eletricidade a 35% da demanda global de energia até 2035, informa a Al Jazeera. Produtores de petróleo e gás, como a Arábia Saudita, resistem a um roteiro para abandonar os combustíveis fósseis, e ilhas do Pacífico Sul pedem um caminho mais claro, o que tende a colocar o Brasil, anfitrião da COP30, no papel de ponte entre os blocos.']
+]);
+S.lula_cop.fontes.push(['Al Jazeera (abertura da COP31)','https://www.aljazeera.com/news/2026/11/9/turkiye-pushes-electrification-top-of-climate-agenda-as-cop31-set-to-open']);
+
+S.bets_stf.hora = '9/11';
+S.bets_stf.sub = 'Paulo Gonet alega insegurança jurídica pela proliferação de decisões que liberam apostas; a MP entra em regime de urgência nesta segunda (9), e Fux realizou audiência pública em 3/11.';
+S.bets_stf.resumo = 'O procurador-geral da República, Paulo Gonet, pediu na sexta (6) ao ministro Luiz Fux, do STF, a suspensão nacional de todos os processos sobre a Medida Provisória 1.394/2026, que proibiu as bets, por insegurança jurídica. O Tribunal Regional Federal derrubou na quinta (5) uma liminar que liberava três casas. Fux, relator de quatro ações, fez audiência pública em 3 de novembro e não decidiu o pedido. No Congresso, a MP entra em regime de urgência nesta segunda (9), segundo o Congresso em Foco.';
+S.bets_stf.upd = 'Entram a audiência pública de Fux em 3/11 e a entrada da MP em regime de urgência no Congresso, nesta segunda (9).';
+_insAntes('bets_stf','O que vem agora',[
+ ['h','A audiência de Fux e a urgência da MP'],
+ ['p','Fux conduziu em 3 de novembro uma audiência pública consultiva, com 34 participantes, na ação direta de inconstitucionalidade 8.027, que corre junto com as ações 7.721, 7.723 e 7.749. Lula criticou a maioria de participantes favorável às apostas, a Advocacia-Geral da União contestou a composição, e Fux incluiu representantes da Saúde, da Justiça e da Abras. O ministro defendeu banir as apostas online e citou cerca de 4 mil casas ilegais, número que não foi comprovado, informa o Congresso em Foco.'],
+ ['p','Na Câmara e no Senado, a MP entra em regime de urgência em 9 de novembro, com prazo inicial de vigência até 23 de novembro, prorrogável por 60 dias, e a comissão mista que a analisaria não foi instalada, informa o mesmo veículo. A data de início da urgência não foi cruzada com o Diário Oficial.']
+]);
+S.bets_stf.fontes.push(['Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131244/seguranca-bets-e-reforma-eleitoral-o-que-o-congresso-pode-votar'],['Congresso em Foco (audiência de Fux)','https://www.congressoemfoco.com.br/noticia/131258/apos-criticas-de-lula-fux-defende-audiencia-sobre-bets-no-stf']);
+
+S.rj_volta_redonda.hora = '9/11'; S.rj_volta_redonda.ampliada = true;
+S.rj_volta_redonda.upd = 'Entra o contexto estadual: o plano do governador eleito Douglas Ruas para unificar as polícias e a onda de ônibus sequestrados no Rio.';
+_insAntes('rj_volta_redonda','O que vem agora',[
+ ['h','O plano do governador eleito para as polícias'],
+ ['p','O governador eleito do Rio, Douglas Ruas (PL), quer subordinar a Polícia Militar, com cerca de 44 mil policiais ativos, e a Polícia Civil, com 9.758, a um único secretário de Segurança, o que reduziria as secretarias estaduais de 31 para algo entre 21 e 23, informa o Sociedade Militar, veículo especializado em segurança. O deputado estadual Delegado Carlos Augusto (PL) criticou a ideia, e a Lei Complementar 204/2022, que dá status de secretaria à Polícia Civil, pode exigir votação na Assembleia Legislativa. A estrutura de Polícia Civil e Militar sob a pasta da Segurança foi mantida na coletiva em que Ruas anunciou os primeiros secretários, segundo a Band.'],
+ ['p','O Diário do Rio contabiliza 135 ônibus sequestrados no Rio em 2026 e registra que criminosos tomaram ônibus em Irajá, Cavalcanti e Madureira em 30 de outubro, em reação à ocupação policial do Complexo da Serrinha, iniciada em 29 de outubro. A Polícia Militar atribui a ação ao Terceiro Comando Puro. Ruas disse que “se é guerra que eles querem, é guerra que eles terão”, e a nova estratégia de segurança só começa em janeiro, quando ele toma posse.']
+]);
+S.rj_volta_redonda.fontes.push(['Sociedade Militar','https://www.sociedademilitar.com.br/2026/11/pm-policia-civil-rio-perdem-status-secretarias-54-mil-policiais-douglas-ruas-mgs.html'],['Diário do Rio (ônibus sequestrados)','https://diariodorio.com/politica/2026/10/31/apos-sequestros-de-onibus-douglas-ruas-anuncia-mudanca-na-seguranca-publica-do-rio-e-guerra-que-eles-terao.html']);
+
+S.rs_salarios.hora = '9/11'; S.rs_salarios.ampliada = true;
+S.rs_salarios.upd = 'Entram a transição entre Leite e Zucco e o contexto do relator do Orçamento de 2027.';
+_insAntes('rs_salarios','O que vem agora',[
+ ['h','A transição e o Orçamento de 2027'],
+ ['p','O governador Eduardo Leite (PSD) e o governador eleito Luciano Zucco (PL) fizeram em 22 de outubro a terceira reunião de transição, sobre clima e El Niño, Defesa Civil, Plano Rio Grande, o fundo Funrigs, o Firece, o Bloco 2 de rodovias e o Hospital de Viamão, informa o governo do Estado. O deputado Claudio Branchieri, apontado como aliado de Zucco, foi confirmado em 8 de outubro como relator da Lei Orçamentária de 2027, que prevê déficit orçamentário de R$ 4 bilhões e primário de R$ 4,8 bilhões, segundo o Jornal do Comércio.'],
+ ['p','Zucco reconheceu a vitória de Lula e anunciou cinco nomes de secretariado em 29 de outubro, segundo o título do Sul21, cuja página o Radar não conseguiu abrir.']
+]);
+S.rs_salarios.fontes.push(['Governo do RS (transição)','https://estado.rs.gov.br/leite-e-zucco-avancam-na-transicao-de-governo-com-apresentacao-sobre-o-plano-rio-grande-e-a-defesa-civil'],['Jornal do Comércio (relator da LOA)','https://www.jornaldocomercio.com/politica/2026/10/1266349-claudio-branchieri-e-confirmado-relator-da-lei-orcamentaria-para-2027.html']);
+
+S.rn_transicao.hora = '9/11'; S.rn_transicao.ampliada = true;
+S.rn_transicao.upd = 'Entra o panorama das transições em Alagoas, Maranhão e Bahia, para comparar prazos e conflitos.';
+_insAntes('rn_transicao','O que vem agora',[
+ ['h','As transições no resto do Nordeste'],
+ ['p','Em Alagoas, o governador Paulo Dantas (MDB) abriu a transição e o prazo para o governador eleito JHC (PSDB) indicar nomes venceu em 6 de novembro; JHC nomeou Antônio Carvalho e Silva Neto e judicializou o acesso a dados, informa a Tribuna Hoje. A transição vai até 15 de dezembro, e o mandato de Dantas termina em 5 de janeiro de 2027, relata a Gazeta de Alagoas.'],
+ ['p','Na Bahia, Jerônimo Rodrigues (PT), reeleito com 55,80% dos votos válidos, disse ao jornal A Tarde que divulgará o secretariado do segundo mandato até 10 de dezembro e que não garante ninguém no cargo. Os mandatos dos atuais secretários vão até 31 de dezembro.']
+]);
+S.rn_transicao.fontes.push(['Tribuna Hoje (Alagoas)','https://tribunahoje.com/noticias/politica/2026/11/05/198039-apos-acoes-na-justica-jhc-indica-nome-para-transicao'],['Gazeta de Alagoas','https://www.gazetadealagoas.com.br/politica/946932/paulo-abre-processo-de-transicao-e-diz-que-eleicao-ficou-para-tras'],['A Tarde (Bahia)','https://atarde.com.br/politica/marcelo-werner-kleber-rosa-e-mais-jeronimo-rodrigues-revela-mudancas-no-2-mandato-1407586']);
+
+S.pe_exoneracoes.hora = '9/11'; S.pe_exoneracoes.ampliada = true;
+S.pe_exoneracoes.upd = 'Entra o histórico da recomposição do secretariado de Raquel Lyra depois da eleição.';
+_insAntes('pe_exoneracoes','O que vem agora',[
+ ['h','O secretariado depois da eleição'],
+ ['p','Em 15 de outubro, a governadora Raquel Lyra (PSD) reconduziu quatro secretários que haviam saído para disputar eleições: Daniel Coelho (Meio Ambiente), Juliana Gouveia (Mulher), Carlos Braga (Assistência Social) e André Teixeira Filho (Mobilidade e Infraestrutura), informa o Diario de Pernambuco. Kaio Maniçoba (PP) não voltou, porque assume uma cadeira na Assembleia Legislativa, e Raquel não descartou novas mudanças. O pacote de exonerações da Casa Civil se insere nesse reordenamento do governo no último ano de mandato.']
+]);
+S.pe_exoneracoes.fontes.push(['Diario de Pernambuco','https://www.diariodepernambuco.com.br/politica/2026/10/11726672-apos-eleicoes-quatro-secretarios-retornam-ao-governo-de-raquel-lyra.html']);
+
+[['tse_psol_se','sem desdobramento em mais de 48 h'],['enamed','sem desdobramento em mais de 48 h'],['flavio_pesquisa','superada por quaest_pos_eleicao'],['mt_russi','sem desdobramento em mais de 48 h'],['mg_aro_vorcaro','sem desdobramento em mais de 48 h'],['mg_ameacas','sem desdobramento em mais de 48 h'],['stf_pauta_nov','sem desdobramento em mais de 48 h']].forEach(function(x){ S[x[0]].velha = true; S[x[0]].velhaMotivo = x[1]; });
+
+/* ajustes finais das ampliações */
+delete S.rn_transicao.fonteunica; delete S.rj_volta_redonda.fonteunica; delete S.rs_salarios.fonteunica;
+_insAntes('rn_transicao','O que vem agora',[
+ ['p','No Maranhão, o governador Carlos Brandão formou uma comissão de 12 nomes para a transição ao governador eleito Eduardo Braide (PSD), que indicou Carol Marques Salgado, secretária de Educação de São Luís, para coordenar o grupo, com mais cinco integrantes. Os órgãos estaduais têm 10 dias para entregar documentos à Secretaria-Geral da Governadoria, informa o jornal O Estado do Maranhão, em reportagem de 16 de outubro reproduzida no portal Mirante. No Rio Grande do Norte, a comissão já tem prazo de fechamento definido, em 20 de dezembro.']
+]);
+S.rn_transicao.fontes.push(['Mirante (Maranhão)','https://m.imirante.com/noticias/sao-luis/2026/10/16/ipolitica-conheca-nomes-equipe-transicao-instituida-brandao']);
+_insAntes('rs_salarios','O que vem agora',[
+ ['p','O parecer do relator, previsto para o dia 19, abre a fase de votação na Assembleia Legislativa,. O texto passa por emendas e pelo plenário antes de virar lei, e a discussão sobre os salários do funcionalismo acompanha essa tramitação.']
+]);
+S.pe_exoneracoes.ampliada = false; delete S.pe_exoneracoes.ampliada;
+S.pe_exoneracoes.velha = true; S.pe_exoneracoes.velhaMotivo = 'sem desdobramento em mais de 48 h';
+S.pe_exoneracoes.fundo = S.pe_exoneracoes.fundo.filter(function(b){ return !(b[0]==='h' && b[1]==='O secretariado depois da eleição') && !(b[0]==='p' && b[1].indexOf('Em 15 de outubro, a governadora Raquel Lyra')===0); });
+S.pe_exoneracoes.fontes = S.pe_exoneracoes.fontes.filter(function(f){ return f[0] !== 'Diario de Pernambuco'; });
+S.pe_exoneracoes.hora = '7/11'; delete S.pe_exoneracoes.upd;
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"flavio_senado":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","sp_alesp_sucessao":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","colombia_drones":"atualizada","nz_eleicao":"atualizada","mercado_semana":"atualizada","tse_21_acoes":"novo","cop31_antalya":"novo","amsterda_linha_vermelha":"novo","el_hierro":"novo","cracovia":"novo","gaza_enchentes":"novo","eua_meio_mandato_placar":"novo","franca_custo_vida":"novo","lula_fala_nacao":"novo"};
-var GIRO_FLAGS = {"Pronunciamento de Lula":"novo","21 ações no TSE":"novo","COP31 em Antalya":"novo","Linha Vermelha em Amsterdã":"novo","Emergência em El Hierro":"novo","Cracóvia":"novo","Chuva em Gaza":"novo","Senado dos EUA":"novo"};
+var FLAGS = {"fiscal":"atualizada","lula_cop":"atualizada","ira_proposta_catar":"atualizada","ibov_semana":"atualizada","bets_stf":"atualizada","rn_transicao":"atualizada","ucrania_abudhabi":"atualizada","rj_volta_redonda":"atualizada","rs_salarios":"atualizada","mercado_semana":"atualizada","cop31_antalya":"atualizada","agenda_semana":"novo","khor_mor":"novo","mexico_cjng_r2":"novo"};
+var GIRO_FLAGS = {"Premiê do Catar na Casa Branca":"novo","Khor Mor sem gás":"novo","Prisão de “R2” no México":"novo","Semana no Congresso":"novo"};
 /* ===== FIM DOS DADOS ===== */
