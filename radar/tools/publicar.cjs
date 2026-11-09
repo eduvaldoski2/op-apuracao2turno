@@ -59,7 +59,7 @@ if (ant && !process.argv.includes('--aceitar-poucas') && (nN < (hh === '07h' ? 1
 // matéria ATUALIZADA precisa dizer o que mudou (campo upd) e o texto não pode repetir o da edição anterior
 if (ant) {
   const pa = carregar(fs.readFileSync(path.join(arq, ant + '.php'), 'utf8'));
-  const semUpd = Object.keys(flags).filter(i => flags[i] === 'atualizada' && (!d.S[i].upd || String(d.S[i].upd).length < 12 || d.S[i].upd === (pa.S[i] || {}).upd));
+  const semUpd = Object.keys(flags).filter(i => flags[i] === 'atualizada' && d.S[i].semAviso !== true && (!d.S[i].upd || String(d.S[i].upd).length < 12 || d.S[i].upd === (pa.S[i] || {}).upd));
   if (semUpd.length) die('matérias ATUALIZADAS sem o campo upd novo (1–2 frases dizendo o que mudou desde a edição anterior): ' + semUpd.join(', '));
 }
 // a capa só pode ter matéria NOVA ou ATUALIZADA nesta edição

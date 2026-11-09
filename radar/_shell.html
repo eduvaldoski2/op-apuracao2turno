@@ -401,7 +401,7 @@ function articleView(id){
   return '<article class="art"><div class="crumb"><a href="#">Radar</a> / <a href="#editoria-'+ed.id+'">'+esc(ed.nome)+'</a>'+(s.reg?' / <a href="#regiao-'+s.reg+'">'+esc(s.k.replace(/^[^·]*·\s*/,''))+'</a>':'')+'</div>'
    +'<h1>'+esc(s.t)+flag(id)+'</h1><p class="sub">'+esc(s.sub)+'</p>'
    +'<div class="meta">Edição das '+esc(EDICAO.hora)+' · '+esc(EDICAO.data)+' · com base em '+s.fontes.length+' fonte'+(s.fontes.length>1?'s':'')+'</div>'
-   +(typeof FLAGS!=='undefined'&&FLAGS[id]==='atualizada'&&s.upd?'<div class="upd"><b>Atualizada.</b> '+esc(s.upd)+'</div>':'')
+   +(typeof FLAGS!=='undefined'&&FLAGS[id]==='atualizada'&&s.upd&&!s.semAviso?'<div class="upd"><b>Atualizada.</b> '+esc(s.upd)+'</div>':'')
    +actionsBar(id)+'<div class="body" id="abody">'+articleBody(id)+'</div>'
    +'<div class="fontes"><b>Fontes</b>'+s.fontes.map(srcLink).join('')+'</div>'
    +'<div class="more">'+more.map(function(x){return item(x)}).join('')+'</div></article>';
