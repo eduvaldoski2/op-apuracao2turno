@@ -7662,7 +7662,6 @@ S.lula_pronunciamento.sub = "Em 7min44 na TV, o presidente reafirmou a responsab
 S.lula_pronunciamento.dado = {n:'7min44', l:'Pronunciamento de Lula em cadeia de rádio e TV, exibido às 20h30 deste domingo (8)'};
 S.lula_pronunciamento.resumo = "Em pronunciamento de 7min44 em rede de rádio e TV neste domingo (8), Lula agradeceu os mais de 64 milhões de votos, falou em governar para todos e disse que big techs tentaram interferir na eleição. Prometeu zerar o imposto da cesta básica a partir do ano que vem, criar o Pé-de-Meia universitário, integrar as polícias com a PEC e o Ministério da Segurança Pública e debater reformas política e do Judiciário. Na economia, reafirmou a responsabilidade fiscal e a meta de investimento acima de 20% do PIB. O Radar usou a transcrição automática da gravação, com trechos truncados.";
 S.lula_pronunciamento.upd = "Agora com o relato do que Lula disse no pronunciamento, exibido às 20h30, e o vídeo da fala.";
-S.lula_pronunciamento.semAviso = true;
 S.lula_pronunciamento.fundo = [
  ["p", "O presidente Luiz Inácio Lula da Silva (PT) usou os 7min44 do pronunciamento em rede nacional, na noite deste domingo (8), para agradecer os mais de 64 milhões de votos, prometer governar para todos os brasileiros e listar o que pretende fazer no quarto mandato: zerar o imposto da cesta básica, criar o Pé-de-Meia universitário, reforçar a segurança pública e discutir reformas política e do Judiciário. Veja o vídeo abaixo."],
  ["video", {id:"91kIna3CvP4", t:"Presidente Lula faz pronunciamento ao Brasil", c:"Vídeo do canal oficial de Lula no YouTube. O Radar não controla o conteúdo exibido pelo player."}],
@@ -7705,7 +7704,15 @@ GIRO.unshift(['Pronunciamento de Lula','Em 7min44, o presidente agradeceu 64 mil
 if (GIRO.length > 20) GIRO.length = 20;
 AMANHA[0] = ['Seg, 09/11 · 7h30','agenda','Rádio repete o pronunciamento de Lula; presidente embarca para a COP31','O mercado mede a reação à fala na abertura, com o Focus às 8h30; Lula segue depois às Filipinas, para a cúpula da Asean.','https://youtu.be/91kIna3CvP4','lula_pronunciamento'];
 
+/* A matéria do pronunciamento é nova (id próprio); a prévia sai de cena */
+S.lula_fala_nacao = S.lula_pronunciamento; delete S.lula_pronunciamento; delete S.lula_fala_nacao.upd;
+['politica','economia','regioes','mundo'].forEach(function(e){ if (ORDER[e]) ORDER[e] = ORDER[e].map(function(i){ return i==='lula_pronunciamento' ? 'lula_fala_nacao' : i; }); });
+if (typeof HOME_LEAD !== 'undefined' && HOME_LEAD === 'lula_pronunciamento') HOME_LEAD = 'lula_fala_nacao';
+HOME_ROW = HOME_ROW.map(function(i){ return i==='lula_pronunciamento' ? 'lula_fala_nacao' : i; });
+GIRO.forEach(function(g){ if (g[5]==='lula_pronunciamento') g[5]='lula_fala_nacao'; });
+AMANHA.forEach(function(a){ if (a[5]==='lula_pronunciamento') a[5]='lula_fala_nacao'; });
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"flavio_senado":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","sp_alesp_sucessao":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","colombia_drones":"atualizada","nz_eleicao":"atualizada","lula_pronunciamento":"atualizada","mercado_semana":"atualizada","tse_21_acoes":"novo","cop31_antalya":"novo","amsterda_linha_vermelha":"novo","el_hierro":"novo","cracovia":"novo","gaza_enchentes":"novo","eua_meio_mandato_placar":"novo","franca_custo_vida":"novo"};
+var FLAGS = {"flavio_senado":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","sp_alesp_sucessao":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","colombia_drones":"atualizada","nz_eleicao":"atualizada","mercado_semana":"atualizada","tse_21_acoes":"novo","cop31_antalya":"novo","amsterda_linha_vermelha":"novo","el_hierro":"novo","cracovia":"novo","gaza_enchentes":"novo","eua_meio_mandato_placar":"novo","franca_custo_vida":"novo","lula_fala_nacao":"novo"};
 var GIRO_FLAGS = {"Pronunciamento de Lula":"novo","21 ações no TSE":"novo","COP31 em Antalya":"novo","Linha Vermelha em Amsterdã":"novo","Emergência em El Hierro":"novo","Cracóvia":"novo","Chuva em Gaza":"novo","Senado dos EUA":"novo"};
 /* ===== FIM DOS DADOS ===== */
