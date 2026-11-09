@@ -77,6 +77,8 @@ Cada matéria é **um artigo**, escrito por você, com a voz de um jornal. As fo
 - **Agenda e calendário**: o que acontece, onde e quando; por que importa; o que está em jogo e quem decide; o que foi decidido antes.
 
 ### Estilo
+
+- **Nunca declare que não achou outra fonte.** Não escreva "falta segunda fonte", "o Radar não localizou outra fonte", "único veículo lido", "não consegui abrir o texto". Diga apenas quem dá a informação ("segundo o TMC…", "a nota oficial informa…"). "O que ainda não está confirmado" lista fatos pendentes (decisão, data, reação), nunca buscas de fonte. Vale para matérias, notas do Giro e chamadas.
 Frases curtas, voz ativa, uma ideia por frase. Passado para o que ocorreu, presente para o estado atual. "Disse", "afirmou", "informou", "apontou" sem adjetivo; o Radar não opina. Número com unidade e comparação ("alta de 1,39%, a primeira semanal depois de três quedas"). Nome completo e cargo na primeira menção ("senador Flávio Bolsonaro (PL-RJ)"), sigla explicada na primeira vez, data como "sexta (6)". O `publicar.cjs` recusa muletas e adjetivação ("vale destacar", "é importante ressaltar", "em suma", "nesse sentido", "bombástico", "chocante"…) e frase repetida.
 **Exemplares**: `paraguai` e `ueno_bank` em `radar/_edicao.php` mostram o padrão (lide, intertítulos temáticos, números, contexto, o que vem agora, o que não está confirmado). Releia-os antes de escrever e nunca os aposente enquanto a pauta estiver aberta.
 
