@@ -7658,7 +7658,7 @@ S.franca_custo_vida.fundo.splice(S.franca_custo_vida.fundo.length-2,0,['h','A pr
 
 /* ===== PRONUNCIAMENTO DE LULA (8/11, 20h47) ===== */
 S.lula_pronunciamento.t = "Lula agradece 64 milhões de votos, promete zerar o imposto da cesta básica e propõe debate sobre reformas política e do Judiciário";
-S.lula_pronunciamento.sub = "Em 7min44 na TV, o presidente reafirmou a responsabilidade fiscal, prometeu o Pé-de-Meia universitário, falou em reformas política e do Judiciário e disse que big techs tentaram interferir na eleição.";
+S.lula_pronunciamento.sub = "Em 7min44 na TV, o presidente reafirmou a responsabilidade fiscal, prometeu o Pé-de-Meia universitário, falou em reformas política e do Judiciário e disse que big techs tentaram interferir na eleição. Assista à íntegra do pronunciamento.";
 S.lula_pronunciamento.dado = {n:'7min44', l:'Pronunciamento de Lula em cadeia de rádio e TV, exibido às 20h30 deste domingo (8)'};
 S.lula_pronunciamento.resumo = "Em pronunciamento de 7min44 em rede de rádio e TV neste domingo (8), Lula agradeceu os mais de 64 milhões de votos, falou em governar para todos e disse que big techs tentaram interferir na eleição. Prometeu zerar o imposto da cesta básica a partir do ano que vem, criar o Pé-de-Meia universitário, integrar as polícias com a PEC e o Ministério da Segurança Pública e debater reformas política e do Judiciário. Na economia, reafirmou a responsabilidade fiscal e a meta de investimento acima de 20% do PIB. O Radar usou a transcrição automática da gravação, com trechos truncados.";
 S.lula_pronunciamento.upd = "O pronunciamento foi exibido às 20h30 e a matéria passa a relatar o que Lula disse, no lugar das prévias.";
