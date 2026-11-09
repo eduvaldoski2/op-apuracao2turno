@@ -8218,7 +8218,276 @@ GIRO.unshift(
 );
 if (GIRO.length > 20) GIRO.length = 20;
 
+/* ===== Edição das 15h ===== */
+EDICAO.hora = '15h';
+EDICAO.data = 'Segunda, 09 de novembro de 2026';
+
+/* --- Lula na COP31 (atualizada) --- */
+S.lula_cop.hora = '9/11';
+S.lula_cop.t = 'Lula embarca para a COP31, a primeira viagem internacional depois da reeleição, com Janones e quatro ministros na comitiva; discursa na quarta (11) e segue às Filipinas para a cúpula da Asean';
+S.lula_cop.sub = 'Motta e Alcolumbre ficaram em Brasília para negociar as reeleições nas Mesas, e a Fazenda só leva propostas fiscais a Lula depois da volta, prevista para 16 de novembro.';
+S.lula_cop.resumo = 'Lula embarcou nesta segunda (9) para Antalya, na Turquia, na primeira viagem internacional depois da reeleição, informa O Povo. Discursa na abertura da cúpula de chefes de Estado na quarta (11) e segue a Manila para a cúpula da Asean. Na comitiva estão o deputado André Janones (Rede-MG) e os ministros Capobianco, Silveira, Machiaveli e Márcio Elias Rosa, além de Mercadante, do BNDES. Hugo Motta e Davi Alcolumbre ficaram em Brasília, e as propostas fiscais da Fazenda só chegam a Lula depois da volta, em 16 de novembro.';
+S.lula_cop.upd = 'Entram a lista da comitiva (Janones, quatro ministros, Mercadante e Amorim), a mensagem de Lula no Instagram e a divergência sobre o dia da ida a Manila.';
+S.lula_cop.fundo[0] = ['p','O presidente Lula embarcou na segunda-feira (9) para a Turquia, onde participa da COP31, em Antalya, na primeira viagem internacional depois da reeleição, informa O Povo. Ele discursa na abertura da cúpula de chefes de Estado na quarta (11), tem encontro previsto com o presidente turco, Recep Tayyip Erdogan, e segue a Manila, nas Filipinas, para a cúpula da Asean.'];
+_insAntes('lula_cop','Quem é quem',[
+ ['h','A comitiva e a mensagem de Lula'],
+ ['p','A delegação reúne os ministros João Paulo Capobianco (Meio Ambiente), Fernanda Machiaveli (Desenvolvimento Agrário), Alexandre Silveira (Minas e Energia) e Márcio Elias Rosa (Desenvolvimento, Indústria, Comércio e Serviços), além do presidente do BNDES, Aloizio Mercadante, de Celso Amorim e de Mauricio Lyrio, do Itamaraty, informa O Povo. O único parlamentar é o deputado André Janones (Rede-MG), sem cargo no governo e dono do canal “Exército de Lula”, com mais de 10 milhões de inscritos.'],
+ ['p','Em mensagem no Instagram, Lula disse que o Brasil mostrará ao mundo seu exemplo em preservação ambiental e transição energética. A Pública, em sua agenda da semana, descreve a viagem como a passagem da presidência da conferência do Brasil, anfitrião da COP30, para a Turquia. O vice-presidente Geraldo Alckmin e os ministros Camilo Santana, Rui Costa e Fernando Haddad ficaram no país, relata o O Tempo.']
+]);
+S.lula_cop.fundo[S.lula_cop.fundo.length-1][1].push('O dia da ida a Manila: O Povo situa a partida na quinta (12), enquanto A Pública aponta a visita de Estado às Filipinas a partir de sexta (13) e a cúpula da Asean em 14 e 15 de novembro.');
+S.lula_cop.fontes.unshift(['O Povo (embarque e comitiva)','https://www.opovo.com.br/noticias/mundo/2026/11/09/lula-voa-para-a-turquia-para-a-cop31-em-sua-primeira-viagem-apos-a-reeleicao.html'],['A Pública (agenda da semana)','https://apublica.org/nota/agenda-maioridade-penal-volta-a-camara-e-lula-vai-a-cop31/'],['O Tempo (Motta e Alcolumbre)','https://www.otempo.com.br/politica/congresso/2026/11/9/alcolumbre-e-motta-decidem-nao-viajar-com-lula-janones-e-o-unico-parlamentar-da-comitiva']);
+
+/* --- 6x1: decreto adiado (atualizada) --- */
+S.dino_6x1.hora = '9/11';
+S.dino_6x1.t = 'Governo adia o decreto da escala 6x1 para depois da viagem de Lula, que quer assiná-lo em solenidade em 16 de novembro; Dino mantém para terça (10) a audiência no STF';
+S.dino_6x1.sub = 'O decreto previa transição coordenada por setor e ajuste de escalas por convenção coletiva; a CNC quer adiar a vigência para outubro de 2027, e a CNI pede um ano a mais.';
+S.dino_6x1.resumo = 'O governo adiou o decreto que regulamenta o fim da escala 6x1, previsto por Luiz Marinho para segunda (9), e só deve assiná-lo depois da volta de Lula, em 16 de novembro, informa o InfoMoney. O texto prevê transição coordenada por setor e ajuste de escalas por convenção coletiva. O ministro Flávio Dino mantém para terça (10), às 14h, a audiência de conciliação no STF, na qual a CNC pede adiar o início para outubro de 2027 e a CNI pede um ano de prorrogação. AGU, PGR, Câmara e Senado têm cinco dias para se manifestar.';
+S.dino_6x1.upd = 'O decreto não saiu nesta segunda: o InfoMoney (17h22) e a Rádio Pampa (16h34) informam o adiamento para depois da volta de Lula, com solenidade prevista para 16/11.';
+S.dino_6x1.fundo[0] = ['p','O governo adiou o decreto que regulamenta o fim da escala 6x1, que o ministro do Trabalho, Luiz Marinho, previa publicar na segunda-feira (9), e só deve assiná-lo depois da volta de Lula, em 16 de novembro, informa o InfoMoney. A audiência de conciliação convocada pelo ministro Flávio Dino segue marcada para terça (10), às 14h, na Primeira Turma do Supremo Tribunal Federal.'];
+(function(){ var f=S.dino_6x1.fundo, a=-1, b=-1, n; for(n=0;n<f.length;n++){ if(f[n][0]==='h' && f[n][1]==='O decreto ainda não aparece') a=n; if(f[n][0]==='h' && f[n][1]==='O que vem agora') b=n; }
+ if(a<0||b<0||b<a) throw new Error('dino_6x1: seções não encontradas');
+ S.dino_6x1.fundo = f.slice(0,a).concat([
+  ['h','O decreto fica para a volta de Lula'],
+  ['p','O InfoMoney informou às 17h22 que o governo adiou a regulamentação para depois da viagem de Lula à Turquia e às Filipinas e que o presidente quer assinar o decreto em solenidade na volta, prevista para segunda (16). A Rádio Pampa, às 16h34, relatou o mesmo adiamento. O texto previsto orienta uma transição coordenada por setor, respeitando a emenda, que fixa jornada menor e duas folgas semanais.'],
+  ['p','Marinho disse que o decreto vai orientar as partes a se acertarem em convenção coletiva para ajustar o melhor modelo de escala. Antes, o ministro havia indicado que seria possível alternar 6x1 e 4x3 por acordo, e a previsão era de ao menos oito folgas por mês. Pela emenda, a escala 5x2 vale a partir de dezembro, a jornada cai de 44 para 42 horas, sem corte de salário, e chega a 40 horas um ano depois; acordos e convenções fora das regras perdem validade.'],
+  ['p','Na audiência, a CNC pretende pedir que o início da vigência seja adiado para outubro de 2027, e a CNI pede um ano de prorrogação, segundo o Brasil de Fato. A AGU, a PGR, a Câmara e o Senado têm cinco dias para se manifestar. Dino escreveu que a redução da jornada não está em negociação, e a pesquisa Quaest divulgada no domingo (8) mostra o fim da 6x1 como a prioridade de 17% dos entrevistados, a maior entre as opções listadas.']
+ ], f.slice(b));
+})();
+(function(){ var f=S.dino_6x1.fundo, n; for(n=0;n<f.length;n++){ if(f[n][0]==='ul'){ f[n][1]=f[n][1].map(function(t){
+  if(t.indexOf('Segunda (9): data prevista')===0) return 'Segunda (16): data em que Lula quer assinar o decreto, em solenidade, depois da volta da viagem.';
+  if(t.indexOf('Se o decreto sai na segunda')===0) return 'O conteúdo final do decreto e a data exata da assinatura: o InfoMoney informa a solenidade na volta de Lula, sem data oficial.';
+  if(t.indexOf('A data exata de vigência')===0) return 'A data de vigência da primeira etapa: as fontes divergem entre 15 e 16 de dezembro, e entre 15 e 16 de outubro para a promulgação da emenda.';
+  return t; }); } } })();
+S.dino_6x1.fontes.unshift(['InfoMoney (decreto adiado)','https://www.infomoney.com.br/politica/fim-da-6x1-governo-adia-decreto-de-regulamentacao-para-depois-da-viagem-de-lula/'],['Rádio Pampa (decreto adiado)','https://www.radiopampa.com.br/governo-federal-adia-publicacao-de-decreto-que-regulamenta-o-fim-da-escala-6x1/'],['Brasil de Fato (audiência)','https://www.brasildefato.com.br/2026/11/05/dino-marca-audiencia-de-conciliacao-sobre-fim-da-escala-6x1/']);
+
+/* --- Irã, Catar e Ormuz (atualizada) --- */
+S.ira_proposta_catar.hora = '9/11';
+S.ira_proposta_catar.t = 'Trump recebe o premiê do Catar sem acordo à vista sobre Ormuz; Israel Hayom cita US$ 8 bilhões em fundos iranianos no plano, e o Brent cai quase 5% com a fala de Trump sobre novos ataques';
+S.ira_proposta_catar.sub = 'Rubio diz que não está à beira de um avanço, o chanceler iraniano afirma que as conversas não avançaram, e fontes diplomáticas anônimas apontam resistência de Bessent, Lutnick, Rubio e Hegseth.';
+S.ira_proposta_catar.resumo = 'O primeiro-ministro do Catar, xeque Mohammed bin Abdulrahman Al Thani, foi recebido por Donald Trump na Casa Branca nesta segunda (9), em reunião fechada, e o resultado não foi divulgado. A Reuters, via Al Jazeera, diz que não há acordo iminente. O Israel Hayom, citando fontes diplomáticas anônimas, afirma que o plano prevê reabrir Ormuz, encerrar o bloqueio americano e liberar US$ 8 bilhões iranianos no Catar. O Brent caiu entre 4,5% e 4,9%, perto de US$ 93,5, depois de Trump chamar de altamente improvável um novo ataque se as negociações avançarem.';
+S.ira_proposta_catar.upd = 'Entram o relato do Israel Hayom sobre os US$ 8 bilhões e a resistência de ministros americanos, a fala do chanceler iraniano de que as conversas não avançaram e a queda do Brent.';
+S.ira_proposta_catar.fundo[0] = ['p','O primeiro-ministro e chanceler do Catar, xeque Mohammed bin Abdulrahman Al Thani, foi recebido por Donald Trump na Casa Branca na segunda-feira (9), em reunião fechada, para tratar da proposta iraniana de reabrir o Estreito de Ormuz. O resultado do encontro não foi divulgado, e a Reuters, via Al Jazeera, diz que não se vê acordo iminente para encerrar a guerra.'];
+_insAntes('ira_proposta_catar','O que vem agora',[
+ ['h','O que o Israel Hayom relata sobre o acordo'],
+ ['p','O jornal israelense Israel Hayom, que cita fontes diplomáticas anônimas, afirma que o acordo em discussão prevê a reabertura de Ormuz, o fim do bloqueio dos EUA e a liberação de US$ 8 bilhões em fundos iranianos mantidos no Catar. As mesmas fontes dizem que o secretário do Tesouro, Scott Bessent, o secretário de Comércio, Howard Lutnick, o secretário de Estado, Marco Rubio, e o secretário de Defesa, Pete Hegseth, resistem ao desenho. O governo americano não confirmou essas informações.'],
+ ['p','O chanceler iraniano, Abbas Araghchi, disse que as conversas não avançaram, e Teerã afirma que o acordo só vem depois do atendimento aos sete pontos da proposta. Rubio disse no domingo (8) que não diria estar à beira de um avanço. Trump tem três porta-aviões na região e citou 38 pontes como possíveis alvos, segundo a Al Jazeera.'],
+ ['h','O efeito no petróleo'],
+ ['p','O Brent chegou a US$ 93,47 (queda de 4,94%) às 11h18 e a US$ 93,91 (queda de 4,49%) ao meio-dia, e o WTI ficou perto de US$ 86,8, com baixa de 4,4%, informam a Exame e a Tribuna do Sertão. O recuo veio depois de Trump dizer ser altamente improvável ordenar novos ataques se as negociações avançarem, o que ajudou a segurar a Petrobras na bolsa.']
+]);
+S.ira_proposta_catar.fundo[S.ira_proposta_catar.fundo.length-1][1].push('Os termos do plano em negociação: o valor de US$ 8 bilhões e a posição dos quatro ministros vêm de fontes anônimas citadas pelo Israel Hayom, e o governo americano não os confirmou.');
+S.ira_proposta_catar.fontes.unshift(['Al Jazeera (Catar e Trump, 9/11)','https://www.aljazeera.com/news/2026/11/9/qatar-pm-to-meet-trump-whats-the-latest-on-us-iran-negotiations'],['Israel Hayom (US$ 8 bilhões)','https://www.israelhayom.com/2026/11/09/8-billion-lifeline-iranian-deal-set-to-land-on-trumps-desk/'],['Exame (Brent e Ibovespa)','https://exame.com/invest/mercados/vale-e-bancos-puxam-ibovespa-dolar-fica-estavel-enquanto-mercado-cobra-lula-no-fiscal/']);
+
+/* --- Paraguai (atualizada) --- */
+S.paraguai.hora = '9/11';
+S.paraguai.t = 'Alliana pede que ministros ponham os cargos à disposição, o Senado aprova Jorge Schreiner para presidir o Banco Central e a Fiscalía faz buscas na casa de Peña, preso preventivamente';
+S.paraguai.sub = 'Peña, destituído na sexta (6), segue no Regimento Escolta Presidencial; a promotoria encontrou numa casa de San Bernardino uma porta reforçada atrás de uma falsa parede, que não foi aberta.';
+S.paraguai.resumo = 'O presidente Pedro Alliana pediu nesta segunda (9) que ministros e cargos de confiança ponham os postos à disposição, e o Senado aprovou Jorge Luis Schreiner para presidir o Banco Central, informa a EFE, via Infobae. Santiago Peña segue em prisão preventiva no Regimento Escolta Presidencial, imputado por lesão de confiança e administração em proveito próprio. Na noite de domingo (8), promotores revistaram a casa de San Bernardino ligada a empréstimos do Ueno Bank e não abriram uma porta reforçada atrás de uma falsa parede. Cerca de 1,2 milhão de pessoas já receberam a garantia estatal.';
+S.paraguai.upd = 'Entram a aprovação de Schreiner no Senado, o pedido de Alliana aos ministros, a busca na casa de San Bernardino e o balanço dos pagamentos da garantia.';
+_insAntes('paraguai','O que vem agora',[
+ ['h','O Banco Central e o primeiro gesto de Alliana'],
+ ['p','O Senado aprovou nesta segunda (9) o economista Jorge Luis Schreiner como presidente do Banco Central do Paraguai e Fernando Rivarola, por unanimidade, como diretor titular, informa a EFE, em texto publicado pela Infobae. Carlos Carvallo, que presidia a instituição e foi imputado com Peña, havia renunciado em 3 de novembro. A Expansión, do México, relata que Alliana pediu em publicação no X, por volta das 12h24, que ministros e cargos de confiança ponham os postos à disposição, o que não equivale a demissão imediata, e anunciou Ariel Martínez no Interior, Juan Carlos Baruja nas Obras Públicas e Rolando de Barros na chefia de gabinete.'],
+ ['p','O Banco Central interveio no Ueno Bank por insolvência, e o banco tinha cerca de 3 milhões de clientes. A Infobae informa que mais de 1,19 milhão de pessoas já receberam, em conjunto, cerca de 996 bilhões de guaranis (aproximadamente US$ 160 milhões) da garantia estatal, e Alliana anunciou alívio fiscal aos afetados.'],
+ ['h','A busca em San Bernardino'],
+ ['p','Na noite de domingo (8), por volta das 19h, promotores revistaram uma casa de veraneio de Peña em San Bernardino, financiada, segundo a Infobae, por dois empréstimos do Ueno de 3,548 bilhões de guaranis, concedidos em 13 de maio de 2024. A promotoria diz que Peña tinha 1,58% da Ueno Holding, vendida em março de 2025, e estima o dano em cerca de US$ 809 milhões. Atrás de uma falsa parede havia uma porta reforçada, que a equipe não abriu, e a ABC Color, citada pela Infobae, indica que os promotores devem voltar ao imóvel. Peña nega as acusações.']
+]);
+S.paraguai.fundo = S.paraguai.fundo.map(function(b){ if(b[0]==='p' && b[1].indexOf('O primeiro passo é o recurso que a defesa de Peña')===0){ return ['p', b[1].replace(' No Banco Central, a indicação de Raúl Vera Bogado à presidência depende do Senado, segundo a Infobae.', ' No Banco Central, o Senado já aprovou Schreiner para a presidência.')]; } return b; });
+S.paraguai.fundo[S.paraguai.fundo.length-1][1].push('A pena máxima: o promotor Christian Benítez fala em até 10 anos, enquanto as fontes das edições anteriores citam até 15, e o Radar não achou uma versão oficial; o nome indicado ao Banco Central também mudou ao longo dos dias, de Raúl Vera Bogado para Schreiner.','A natureza da prisão: veículos como a Expansión falam em prisão domiciliar, e a EFE e a Infobae, em prisão preventiva em unidade militar, que é a versão mantida aqui.');
+S.paraguai.fontes.unshift(['Infobae (EFE: Schreiner no Banco Central)','https://www.infobae.com/america/agencias/2026/11/09/jorge-schreiner-nuevo-presidente-del-banco-central-de-paraguay-tras-escandalo-de-ueno/'],['Expansión (Alliana pede cargos à disposição)','https://expansion.mx/mundo/2026/11/09/paraguay-alliana-pide-renuncia-a-todos-sus-ministros'],['Infobae (a porta da casa de Peña)','https://www.infobae.com/america/america-latina/2026/11/09/la-misteriosa-boveda-en-la-mansion-de-santiago-pena-que-la-policia-no-pudo-abrir-una-falsa-pared-y-una-puerta-inviolable/']);
+
+/* --- Israel (atualizada) --- */
+S.israel.hora = '9/11';
+S.israel.t = 'Eisenkot começa a negociar o governo de Israel: Shas avalia apoiar e Liberman diz estar aberto a discutir isenção militar, enquanto a extrema direita pede nova eleição';
+S.israel.sub = 'O mandato de 28 dias vai a 6 de dezembro, com prorrogação possível de 14; o Yashar busca Shas e UTJ para trocar o presidente do Knesset, e Trump diz que Eisenkot e Netanyahu têm visões parecidas.';
+S.israel.resumo = 'Gadi Eisenkot, líder do Yashar, abriu nesta segunda (9) as negociações para formar o governo de Israel, com mandato de 28 dias, até 6 de dezembro, e prorrogação possível de 14, segundo o Jerusalem Post e o Times of Israel. O Shas avalia apoiá-lo, com a UTJ como intermediária, mas o apoio não está confirmado. A extrema direita de Otzma Yehudit rejeita um governo de união e pede nova eleição, e Avigdor Liberman, do Yisrael Beytenu, está aberto a discutir uma lei de isenção militar para ultraortodoxos. Netanyahu insiste num governo de união sem partidos árabes.';
+S.israel.upd = 'Entram as movimentações de 9/11: o Shas avalia apoiar Eisenkot, o Yashar busca Shas e UTJ para trocar o presidente do Knesset, a extrema direita pede nova eleição e Trump comenta os dois líderes.';
+S.israel.fundo[0] = ['p','Gadi Eisenkot, líder do Yashar, abriu na segunda-feira (9) as negociações para formar o governo de Israel, depois de receber do presidente Isaac Herzog o mandato de 28 dias, que vai até 6 de dezembro e pode ser prorrogado por até 14. O Jerusalem Post e o Times of Israel registram que o apoio do Shas e da UTJ, os dois partidos ultraortodoxos, é a peça central da conta de maioria.'];
+_insAntes('israel','O que vem agora',[
+ ['h','As negociações de segunda-feira'],
+ ['p','O blog ao vivo do Jerusalem Post registra, às 6h03, que o Shas avalia apoiar Eisenkot, com a UTJ como intermediária, e às 9h26 que Eliyahu, de Otzma Yehudit, partido de extrema direita da base de Netanyahu, rejeita um governo de união e pede nova eleição. Às 12h51, o Yashar buscou o apoio do Shas e da UTJ para trocar o presidente do Knesset, e às 16h28 Eisenkot e Liberman se disseram confiantes. Segundo a Al-Monitor, Liberman, de direita laica e adversário de Netanyahu, afirmou estar aberto a discutir uma lei que isente ultraortodoxos do serviço militar.'],
+ ['p','Eisenkot apresentou quatro princípios: um Estado judeu e democrático, os valores da Declaração de Independência, o serviço nacional obrigatório para todos e o reconhecimento do Hamas como organização terrorista a ser destruída. Netanyahu, líder do Likud, de direita, repete a proposta de um governo de união sem os partidos árabes, informa o título do Haaretz, e Trump disse que Eisenkot e Netanyahu têm visões muito parecidas.']
+]);
+S.israel.fundo[S.israel.fundo.length-1][1].push('A adesão do Shas: o Jerusalem Post registra que o partido avalia apoiar Eisenkot, mas o Shas negou publicamente que integrará o governo, e a UTJ não recomendou nenhum candidato.');
+S.israel.fontes.unshift(['The Jerusalem Post (ao vivo, 9/11)','https://www.jpost.com/israel-election-2026/2026-11-09/live-updates-914287'],['Al-Monitor (mandato a Eisenkot)','https://www.al-monitor.com/originals/2026/11/israel-president-taps-eisenkot-form-new-government']);
+
+/* --- Congresso: direita e a disputa pelo Senado (atualizada) --- */
+S.congresso_direita.hora = '9/11';
+S.congresso_direita.t = 'PL oficializa Rogério Marinho para presidir o Senado contra Alcolumbre e decide na quarta (11) se apoia Motta na Câmara, onde a bancada está dividida';
+S.congresso_direita.sub = 'A direita soma 303 dos 513 deputados pela ARX, mas o PL tem 29 dos 81 senadores e precisa de 41 votos; Tereza Cristina (PP-MS) também quer o cargo e negocia unificar candidaturas.';
+S.congresso_direita.resumo = 'O PL oficializou o senador Rogério Marinho (PL-RN) como candidato à presidência do Senado contra Davi Alcolumbre (União-AP), informa a Gazeta do Povo nesta segunda (9). O partido tem 29 dos 81 senadores, conta com os 3 do Novo e precisa de 41 votos, com Republicanos, MDB, PP e União. Na Câmara, 15 partidos apoiam a reeleição de Hugo Motta (Republicanos-PB), mas o PL se divide, e a bancada decide na quarta (11). A pauta da oposição inclui anistia ao 8 de janeiro, mudanças no STF e a maioridade penal aos 16 anos. As Mesas são eleitas em 1º de fevereiro de 2027.';
+S.congresso_direita.upd = 'Entram a candidatura oficializada de Rogério Marinho ao Senado, a divisão do PL na Câmara e a reunião da bancada marcada para 11/11.';
+S.congresso_direita.fundo[0] = ['p','O PL oficializou o senador Rogério Marinho (PL-RN) como candidato à presidência do Senado, contra a reeleição de Davi Alcolumbre (União-AP), informa a Gazeta do Povo nesta segunda-feira (9). A direita e a centro-direita terão maioria numérica nas duas Casas a partir de 1º de fevereiro de 2027, mas a eleição das Mesas depende de alianças com o centro.'];
+_insAntes('congresso_direita','O que vem agora',[
+ ['h','Marinho, Tereza Cristina e a conta dos 41 votos'],
+ ['p','A bancada do PL tem 29 dos 81 senadores e conta com os três do Novo; a meta de Marinho é chegar a 41 votos com Republicanos, MDB, PP e União, informa a Gazeta do Povo. Tereza Cristina (PP-MS) também quer a presidência e conversa sobre unificar as candidaturas. Marinho disse que a anistia é uma pauta que foi impedida de tramitar, e Flávio Bolsonaro afirmou que a trincheira do momento será o Congresso. Jair Bolsonaro, em prisão domiciliar, participa das articulações, e a defesa pediu ao ministro Alexandre de Moraes, do STF, autorização para visitas de Marinho e Tereza Cristina.'],
+ ['p','Na Câmara, uma ala do PL apoia a reeleição de Hugo Motta, que tem o apoio de 15 partidos, e outra quer candidato próprio, com os nomes de Nikolas Ferreira, Sóstenes Cavalcante, Luiz Philippe de Orleans e Bragança e Altineu Côrtes citados. Nikolas disse ver que os espaços na Câmara têm peso menor. A bancada se reúne na quarta (11), e Motta e Alcolumbre, que ficaram em Brasília em vez de viajar com Lula, negociam as próprias reeleições, informa o O Tempo.']
+]);
+S.congresso_direita.fontes.unshift(['Gazeta do Povo (Marinho e Bolsonaro)','https://www.gazetadopovo.com.br/republica/com-flavio-nos-eua-bolsonaro-e-marinho-se-organizam-para-conquistar-o-comando-do-congresso/'],['O Tempo (Motta e Alcolumbre)','https://www.otempo.com.br/politica/congresso/2026/11/9/alcolumbre-e-motta-decidem-nao-viajar-com-lula-janones-e-o-unico-parlamentar-da-comitiva']);
+
+/* --- Flávio Bolsonaro (atualizada) --- */
+S.flavio_senado.hora = '9/11';
+S.flavio_senado.t = 'Aliados de Flávio criticam o sumiço do senador em Miami e a falta de trabalho por Marinho no Senado; Secretaria-Geral diz que sessões semipresenciais permitem o voto remoto';
+S.flavio_senado.sub = 'Há cerca de duas semanas nos EUA, Flávio estuda morar na Flórida ou no Texas e pretende cumprir o mandato até fevereiro de 2027; Sóstenes Cavalcante planeja visitá-lo.';
+S.flavio_senado.resumo = 'O senador Flávio Bolsonaro (PL-RJ), há cerca de duas semanas nos Estados Unidos, enfrenta críticas de aliados, que dizem que ele trocou de número e não responde, informa O Globo, em texto reproduzido pelo Imirante nesta segunda (9). A queixa principal é que ele não trabalha pela candidatura de Rogério Marinho ao Senado. Flávio estuda morar na Flórida ou no Texas e pretende cumprir o mandato até fevereiro. A Secretaria-Geral do Senado diz que sessões semipresenciais permitem o voto remoto que ele deu na PEC da Segurança, mas há dúvida sobre a validade do voto de fora do país.';
+S.flavio_senado.upd = 'Entram as críticas de aliados reproduzidas pelo Imirante (O Globo), os planos de Flávio nos EUA e a posição da Secretaria-Geral do Senado sobre o voto remoto.';
+S.flavio_senado.fundo[0] = ['p','Aliados do senador Flávio Bolsonaro (PL-RJ) criticam o sumiço dele nos Estados Unidos, onde está há cerca de duas semanas, com base em Miami, informa O Globo, em texto reproduzido pelo Imirante nesta segunda-feira (9). O Senado ainda não disse que regras valem para as faltas do senador, que deixou o país em 27 de outubro, e a Secretaria-Geral afirma que sessões semipresenciais permitem a participação remota.'];
+_insAntes('flavio_senado','O que diz a lei',[
+ ['h','As críticas dos aliados'],
+ ['p','Aliados dizem que Flávio trocou de número e não responde, e que saiu sem avisar o grupo, informa o Imirante, com base em O Globo. A queixa principal é que ele não trabalha por Rogério Marinho (PL-RN) na disputa pela presidência do Senado. Ele esteve no CPAC, em Mar-a-Lago, com Eduardo Bolsonaro, onde encontrou o ator Jim Caviezel, e na sexta (6) com o senador republicano Rick Scott. O filme “Dark Horse” aparece em investigações da Polícia Federal sobre um financiamento pedido ao ex-banqueiro Daniel Vorcaro.'],
+ ['p','Flávio estuda morar na Flórida ou no Texas e pretende cumprir o mandato até fevereiro de 2027, quando termina. O deputado Sóstenes Cavalcante (PL-RJ) planeja visitá-lo nos EUA. O voto remoto na PEC da Segurança teve aval de Alcolumbre, a pedido do líder do PL, Carlos Portinho (RJ), e a Secretaria-Geral diz que sessões semipresenciais permitem a prática, mas há dúvida sobre a validade de voto dado de fora do país, relata o Imirante.']
+]);
+S.flavio_senado.fundo[S.flavio_senado.fundo.length-1][1].push('A validade do voto remoto: a Secretaria-Geral do Senado diz que sessões semipresenciais permitem a participação, enquanto a dúvida sobre votos dados de fora do país segue sem resposta da Mesa.');
+S.flavio_senado.fontes.unshift(['Imirante (O Globo)','https://www.imirante.com/noticias/brasil/2026/11/09/ipolitica-flavio-bolsonaro-enfrenta-criticas-aliados-enquanto-articula-oposicao-eua'],['Gazeta do Povo (Flávio e Marinho)','https://www.gazetadopovo.com.br/republica/com-flavio-nos-eua-bolsonaro-e-marinho-se-organizam-para-conquistar-o-comando-do-congresso/'],['O Tempo (presença no Senado)','https://www.otempo.com.br/politica/congresso/2026/11/3/nos-eua-flavio-bolsonaro-registra-presenca-em-sessao-do-senado-sobre-pec-da-seguranca-publica']);
+
+/* --- NOVA: diretorias vagas do Banco Central --- */
+S.bc_diretorias = {ed:'economia', k:'Economia · Banco Central', hora:'9/11', fonteunica:true,
+ t:'Senado vê tempo para votar as duas diretorias vagas do Banco Central em 2026, mas o governo prioriza a vaga de Barroso no STF, informa o Estadão',
+ sub:'As diretorias de Política Econômica e de Organização do Sistema Financeiro estão vagas desde janeiro; Lula terá seis indicações ao BC até 2027, e aliados temem o Senado mais à direita.',
+ dado:{n:'6', l:'indicações de Lula ao Banco Central até 2027, com duas vagas já abertas'},
+ resumo:'O Senado tem tempo hábil para votar em 2026 as indicações às duas diretorias vagas do Banco Central, mas o governo deve priorizar a vaga de Luís Roberto Barroso no STF, informa o Estadão/Broadcast, em texto de O Povo nesta segunda (9). As diretorias de Política Econômica e de Organização do Sistema Financeiro e Resolução estão vagas desde janeiro, e Lula terá seis indicações até 2027. Renan Calheiros (MDB-AL), presidente da CAE, diz que vota em 2026 se os nomes chegarem. Aliados temem o Senado de 2027, mais à direita.',
+ fundo:[
+  ['p','O Senado vê tempo hábil para votar em 2026 as indicações às duas diretorias vagas do Banco Central, mas o governo deve priorizar a vaga de Luís Roberto Barroso no Supremo Tribunal Federal, informa o Estadão/Broadcast, em texto publicado por O Povo na segunda-feira (9).'],
+  ['h','As vagas e quem as cobre'],
+  ['p','As diretorias de Política Econômica, que era de Diogo Guillen, e de Organização do Sistema Financeiro e Resolução, que era de Renato Gomes, estão vagas desde janeiro de 2026. Paulo Picchetti e Gilneu Vivan as cobrem interinamente. Lula terá seis indicações ao Banco Central até 2027: em fevereiro vencem os mandatos de Ailton de Aquino e Nilton David, e em dezembro de 2027, os de Picchetti e Rodrigo Teixeira.'],
+  ['h','O Senado e a prioridade do governo'],
+  ['p','Renan Calheiros (MDB-AL), presidente da Comissão de Assuntos Econômicos, diz que a CAE vota ainda em 2026 se o governo enviar os nomes, e ele não se reelegeu. Aliados do governo temem o Senado de 2027, mais à direita, com o PL como maior bancada. O governo prioriza a vaga de Barroso no STF, aberta desde outubro de 2025, e Rodrigo Pacheco (PSB-MG) é opção, com apoio de Alcolumbre.'],
+  ['h','O que vem agora'],
+  ['ul',['Envio dos nomes às duas diretorias, que o governo ainda não definiu.','Escolha do indicado ao STF, que o governo trata como prioridade.','Fevereiro de 2027: vencem os mandatos de Ailton de Aquino e Nilton David.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['Quando Lula enviará os nomes: o levantamento fala em prioridade ao STF, sem prazo para o Banco Central.','Se a indicação de Rodrigo Pacheco ao STF será formalizada.']]
+ ],
+ fontes:[['O Povo (Estadão/Broadcast)','https://www.opovo.com.br/noticias/economia/2026/11/09/senado-ve-tempo-habil-para-votar-indicacoes-ao-bc-mas-governo-deve-priorizar-stf.html']]
+};
+
+/* --- NOVA: Tocantins, equipe de transição --- */
+S.to_transicao_vicentinho = {ed:'regioes', reg:'norte', k:'Norte · Tocantins', hora:'9/11', fonteunica:true,
+ t:'Wanderlei Barbosa oficializa a equipe de transição de Vicentinho Júnior (PSDB) no Tocantins, com dez integrantes e o irmão do governador eleito na coordenação',
+ sub:'O ato saiu no Diário Oficial; Neto Aires coordena e já aparece para a Secretaria de Governo, e Júlio Edstron Secundino Santos fica na Fazenda, em continuidade.',
+ dado:{n:'10', l:'integrantes da equipe de transição oficializada pelo governador Wanderlei Barbosa'},
+ resumo:'O governador Wanderlei Barbosa oficializou nesta segunda (9) a equipe de transição indicada pelo governador eleito do Tocantins, Vicentinho Júnior (PSDB), com dez integrantes, segundo o Jornal Opção. Raimundo Aires Neto Alves, o Neto Aires, irmão de Vicentinho, coordena e foi anunciado para a Secretaria de Governo. Oito integrantes já têm função anunciada no governo, entre elas Estellamaris Postal, na Casa Civil, e Júlio Edstron Secundino Santos, na Fazenda, em continuidade. Dois nomes aparecem sem função.',
+ fundo:[
+  ['p','O governador do Tocantins, Wanderlei Barbosa, oficializou nesta segunda-feira (9), com ato no Diário Oficial do Estado, a equipe de transição indicada pelo governador eleito, Vicentinho Júnior (PSDB), informa o Jornal Opção, em texto publicado às 14h35. A equipe tem dez integrantes, e oito já têm função anunciada para o governo que toma posse em 2027.'],
+  ['h','Quem coordena e quem vai para onde'],
+  ['p','O coordenador é Raimundo Aires Neto Alves, o Neto Aires, irmão de Vicentinho, anunciado para a Secretaria de Governo. Estellamaris Postal vai para a Casa Civil, Marlen Ribeiro Rodrigues para a Chefia de Gabinete, Júlio Edstron Secundino Santos para a Fazenda, em continuidade, e Thiago de Araújo Schuller para o Planejamento. Domingos Quirino de Freitas fica com a Saúde, Jairo Soares Mariano com a Administração e Zelma Coelho Santos com a Comunicação. Irisfran de Sousa Pereira e Solano Donato Carnot Damacena aparecem sem função anunciada.'],
+  ['h','O que vem agora'],
+  ['ul',['Conclusão do trabalho da equipe e entrega de relatório ao governador eleito antes da posse.','Anúncio das demais secretarias do governo Vicentinho.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O partido e a trajetória dos demais integrantes da equipe.','As datas de conclusão da transição e de posse do novo governo.']]
+ ],
+ fontes:[['Jornal Opção (Tocantins)','https://tocantins.jornalopcao.com.br/noticias/equipe-de-transicao-de-vicentinho-e-oficialziada-com-dez-integrantes-oito-ja-tem-funcoes-anunciadas-para-o-governo-604280/']]
+};
+
+/* --- NOVA: Mato Grosso do Sul, bastidor pós-eleição --- */
+S.ms_dialogo_pos_eleicao = {ed:'regioes', reg:'co', k:'Centro-Oeste · Mato Grosso do Sul · Bastidor', hora:'9/11', fonteunica:true,
+ t:'Coluna do Correio do Estado diz que Riedel e Azambuja têm a palavra final na Mesa da Alems e que o MDB terá uma única cadeira, a de Puccinelli, em Mato Grosso do Sul',
+ sub:'O PL, maior bancada, tem três pretendentes ao comando da Assembleia; a coluna também registra que o TCU aprovou a alíquota de referência de 11,3% da CBS.',
+ dado:{n:'11,3%', l:'alíquota de referência da CBS aprovada pelo TCU, citada na coluna'},
+ resumo:'A coluna Diálogo, do Correio do Estado, publicada nesta segunda (9), registra o desenho político de Mato Grosso do Sul depois da eleição: o MDB terá uma cadeira na Assembleia, a de André Puccinelli, e o PL, maior bancada, tem três pretendentes à presidência ou à secretaria-geral da Casa. Segundo a coluna, nenhuma candidatura avança sem o aval do governador Eduardo Riedel (PP) e do senador eleito Reinaldo Azambuja (PL). A informação é de bastidor, com verbos como “teria sido”, e não foi confirmada oficialmente.',
+ fundo:[
+  ['p','A coluna Diálogo, do Correio do Estado, publicada às 0h01 desta segunda-feira (9), descreve o cenário político de Mato Grosso do Sul depois das eleições: o MDB terá uma única cadeira na Assembleia Legislativa, a do deputado estadual eleito André Puccinelli, e o PL, maior bancada, tem três pretendentes à presidência ou à secretaria-geral da Casa. A informação é de bastidor, e o Radar atribui tudo à coluna.'],
+  ['h','A Mesa da Assembleia e o aval de Riedel'],
+  ['p','Segundo a coluna, nenhuma candidatura à Mesa da Assembleia avança sem o aval do governador Eduardo Riedel (PP) e do senador eleito Reinaldo Azambuja (PL). O PSDB e o PT também disputam espaço.'],
+  ['p','A coluna registra ainda que o governo estadual prepara uma reforma administrativa e que a Casa Civil poderia ganhar mais peso no segundo mandato de Riedel, e que Riedel e Barbosinha seriam os únicos reeleitos do governo.'],
+  ['h','O dado nacional da coluna'],
+  ['p','No campo nacional, a coluna registra que o Tribunal de Contas da União aprovou por unanimidade a alíquota de referência de 11,3% da CBS, tributo que substitui o PIS e a Cofins em 2027 e que o Senado ainda vai analisar. Em outubro, A Crítica informou que Riedel criou por decreto um grupo de transição de oito membros, coordenado por Barbosinha, com relatório final até 4 de dezembro e posse em 6 de janeiro de 2027.'],
+  ['h','O que vem agora'],
+  ['ul',['Definição dos candidatos do PL à Mesa da Alems antes da eleição interna da Casa.','Análise da alíquota da CBS pelo Senado.','4 de dezembro: prazo do relatório do grupo de transição, segundo A Crítica.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['As negociações sobre a Mesa e a reforma do governo: os itens aparecem na coluna no condicional e não foram confirmados oficialmente.','O cargo atual de Barbosinha, citado só pelo nome na coluna.']]
+ ],
+ fontes:[['Correio do Estado (coluna Diálogo)','https://correiodoestado.com.br/2026/11/09/as-eleicoes-de-2026-terminaram-mas-a-conta-das-mudancas-ainda-esta-chegando-leia-na-coluna-de-hoje.html']]
+};
+
+/* --- NOVA: Sudão, prisão de Ahmed Haroun --- */
+S.sudao_haroun = {ed:'mundo', k:'Mundo · Sudão', hora:'8/11',
+ t:'Exército do Sudão detém Ahmed Haroun, ex-chefe do partido de Bashir procurado pelo Tribunal Penal Internacional por crimes em Darfur',
+ sub:'A detenção foi confirmada por dois dirigentes do partido; o exército e o TPI não comentaram, e as Forças Armadas lutam ao lado do antigo partido governista contra as RSF.',
+ dado:{n:'US$ 5 mi', l:'recompensa oferecida pelos EUA por Haroun em janeiro de 2024'},
+ resumo:'O exército do Sudão deteve Ahmed Haroun, ex-presidente do Partido do Congresso Nacional (NCP), do ex-presidente Omar al-Bashir, que o Tribunal Penal Internacional procura por mais de 40 acusações de crimes em Darfur, segundo The National e a Reuters, via Arab News. Dois dirigentes do partido confirmaram a detenção. O exército e o TPI não comentaram, e o motivo não foi explicado. Haroun fugira da prisão de Kobar durante a guerra entre o exército e as Forças de Apoio Rápido (RSF), e os EUA oferecem recompensa de US$ 5 milhões desde janeiro de 2024.',
+ fundo:[
+  ['p','O exército do Sudão deteve Ahmed Haroun, ex-presidente do Partido do Congresso Nacional (NCP), a legenda do ex-presidente Omar al-Bashir, procurado pelo Tribunal Penal Internacional (TPI) por mais de 40 acusações ligadas a crimes em Darfur nos anos 2000, informam o jornal The National e a Reuters, via Arab News. A detenção, divulgada no domingo (8), foi confirmada por dois dirigentes do partido.'],
+  ['h','Quem é quem'],
+  ['p','O NCP governou o Sudão sob Bashir, de orientação islamista, até a queda dele, em 2019. A guerra em curso desde abril de 2023 opõe as Forças Armadas Sudanesas (SAF), comandadas pelo general Abdel Fattah al-Burhan, às Forças de Apoio Rápido (RSF), milícia paramilitar.'],
+  ['p','O National registra que as SAF e o NCP lutam juntos contra as RSF, o que torna a detenção de um dirigente do aliado um fato incomum.'],
+  ['h','O histórico de Haroun'],
+  ['p','Haroun foi preso em 2019, depois da queda de Bashir, e fugiu da prisão de Kobar durante a guerra. O mandado do TPI cita mais de 40 acusações ligadas a crimes em Darfur. A região de Darfur, no oeste do Sudão, foi palco de violência em larga escala nos anos 2000, e o tribunal investiga o caso desde então. Os Estados Unidos ofereceram em janeiro de 2024 uma recompensa de US$ 5 milhões por informações sobre ele. Segundo The National, Haroun teria dado uma entrevista em podcast, o que pode ter chamado a atenção das autoridades, mas o jornal não relaciona a entrevista à detenção.'],
+  ['h','O que vem agora'],
+  ['ul',['Posição das SAF e do TPI sobre a detenção e eventual pedido de entrega a Haia.','Reação do NCP, que apoia as SAF na guerra contra as RSF.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O motivo da detenção e o local onde Haroun está: nem o exército nem o TPI comentaram.','Se a entrevista em podcast tem ligação com a detenção: o jornal só registra que ela existiu.']]
+ ],
+ fontes:[['The National (Sudão detém Haroun)','https://www.thenationalnews.com/news/mena/2026/11/08/sudan-detains-politician-ahmed-haroun-wanted-by-icc/'],['Arab News (Reuters)','https://www.arabnews.com/middle-east/sudan-detains-chairman-of-former-ruling-party-ahmed-haroun-two-party-officials-say-3010516']]
+};
+
+/* --- NOVA: Argentina, governadores aliados --- */
+S.argentina_governadores = {ed:'mundo', k:'Mundo · Argentina', hora:'9/11',
+ t:'Cinco governadores aliados condicionam votos a Milei no Congresso por causa das PASO e de recursos, e o papa Leão XIV pede diálogo em Buenos Aires',
+ sub:'Os cinco controlam 19 deputados e 7 senadores; o governo retirou em três dias o projeto com imposto de 15% sobre ganhos de CEDEARs, e Milei voltou a atacar a oposição.',
+ dado:{n:'19 + 7', l:'deputados e senadores controlados pelos cinco governadores que condicionam o voto'},
+ resumo:'Cinco governadores aliados do presidente argentino, Javier Milei, condicionam o voto de 19 deputados e 7 senadores ao tratamento das PASO e dos recursos federais, informa o Moncloa nesta segunda (9). O governo quer suspender ou eliminar as primárias abertas, sem dar garantias a eles, e retirou três dias depois de enviá-lo o projeto de competitividade financeira, que taxava em 15% os ganhos com CEDEARs. A Libertad Avanza tem 95 deputados e 21 senadores. O papa Leão XIV pediu diálogo em Buenos Aires, e Milei voltou a atacar a oposição, segundo o LCR.',
+ fundo:[
+  ['p','Cinco governadores aliados do presidente argentino, Javier Milei, condicionam o voto de 19 deputados e 7 senadores a mudanças na proposta do governo sobre as primárias abertas (PASO) e à liberação de recursos, informa o Moncloa nesta segunda-feira (9). O papa Leão XIV chegou a Buenos Aires e pediu diálogo entre os partidos, e Milei respondeu atacando a oposição, relata o LCR.'],
+  ['h','Quem é quem'],
+  ['p','Milei é libertário, de direita, e preside a Argentina pela La Libertad Avanza, que tem 95 deputados e 21 senadores, sem maioria própria. Os cinco governadores são Martín Llaryora (Córdoba), Gustavo Sáenz (Salta), Osvaldo Jaldo (Tucumán), Hugo Passalacqua (Misiones) e Raúl Jalil (Catamarca), que o Moncloa descreve como aliados do governo e que controlam bancadas decisivas para a aprovação de projetos. A oposição aparece como alvo das críticas de Milei, segundo o LCR.'],
+  ['h','O que está em jogo'],
+  ['p','O Executivo quer suspender ou eliminar as PASO, e os governadores dizem não ter garantias, além de disputar recursos federais. O governo enviou à Câmara a lei de Competitividade Financeira e a retirou três dias depois, por causa de um imposto de 15% sobre ganhos com CEDEARs, os certificados de ações estrangeiras negociados na Argentina, informa o La Nación. O Moncloa, em texto de opinião, relaciona o quadro ao risco-país em alta e à inflação que não cede.'],
+  ['h','O papa e a resposta de Milei'],
+  ['p','Depois do pedido de diálogo feito pelo papa Leão XIV ao chegar a Buenos Aires, Milei voltou a atacar a oposição, falando em “baixa qualidade intelectual”, segundo o LCR, que não informa a hora da declaração. A visita papal segue no calendário do governo, que não comentou a pressão dos governadores até a publicação.'],
+  ['h','O que vem agora'],
+  ['ul',['Negociação das PASO e dos recursos entre a Casa Rosada e os cinco governadores.','Nova versão do projeto de competitividade financeira, sem o imposto sobre CEDEARs.']],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['Até onde vai a ameaça: se os cinco votarão juntos contra o governo ou negociarão item a item.','A posição pública dos governadores sobre o projeto de PASO, que ainda não aparece em declarações diretas.']]
+ ],
+ fontes:[['Moncloa (Milei e governadores)','https://www.moncloa.com/2026/11/09/milei-congreso-gobernadores-argentina-3464409'],['LCR (Milei ataca a oposição)','https://www.lcr.com.ar/noticias/2026/11/09/59222-tras-el-pedido-de-dialogo-del-papa-milei-volvio-a-atacar-a-la-oposicion'],['La Nación (CEDEARs)','https://www.lanacion.com.ar/politica/el-insolito-recorrido-de-un-proyecto-de-ley-que-milei-firmo-de-madrugada-y-pidio-retirar-tres-dias-nid04112026/']]
+};
+
+/* --- Capa, ordem e Giro --- */
+HOME_LEAD = 'lula_cop';
+HOME_ROW = ['dino_6x1','paraguai','ira_proposta_catar'];
+ORDER.economia.splice(1,0,'bc_diretorias');
+ORDER.regioes.push('to_transicao_vicentinho','ms_dialogo_pos_eleicao');
+ORDER.mundo.splice(2,0,'sudao_haroun','argentina_governadores');
+GIRO.unshift(
+ ['Decreto da 6x1 fica para 16/11','O governo adiou o decreto para depois da volta de Lula, segundo o InfoMoney.','InfoMoney','https://www.infomoney.com.br/politica/fim-da-6x1-governo-adia-decreto-de-regulamentacao-para-depois-da-viagem-de-lula/','','dino_6x1'],
+ ['Marinho contra Alcolumbre','O PL oficializou Rogério Marinho como candidato ao Senado, informa a Gazeta do Povo.','Gazeta do Povo','https://www.gazetadopovo.com.br/republica/com-flavio-nos-eua-bolsonaro-e-marinho-se-organizam-para-conquistar-o-comando-do-congresso/','','congresso_direita'],
+ ['Flávio e os aliados','Aliados reclamam que o senador não responde e não trabalha por Marinho, segundo o Imirante (O Globo).','Imirante (O Globo)','https://www.imirante.com/noticias/brasil/2026/11/09/ipolitica-flavio-bolsonaro-enfrenta-criticas-aliados-enquanto-articula-oposicao-eua','','flavio_senado'],
+ ['Schreiner no BC do Paraguai','O Senado aprovou o economista para presidir o Banco Central, informa a EFE, via Infobae.','Infobae (EFE)','https://www.infobae.com/america/agencias/2026/11/09/jorge-schreiner-nuevo-presidente-del-banco-central-de-paraguay-tras-escandalo-de-ueno/','','paraguai'],
+ ['Diretorias vagas do BC','Senado vê tempo para votar, mas o governo prioriza o STF, informa o Estadão, em texto de O Povo.','O Povo (Estadão)','https://www.opovo.com.br/noticias/economia/2026/11/09/senado-ve-tempo-habil-para-votar-indicacoes-ao-bc-mas-governo-deve-priorizar-stf.html','','bc_diretorias'],
+ ['Transição no Tocantins','Wanderlei Barbosa oficializa a equipe de Vicentinho Júnior, informa o Jornal Opção.','Jornal Opção','https://tocantins.jornalopcao.com.br/noticias/equipe-de-transicao-de-vicentinho-e-oficialziada-com-dez-integrantes-oito-ja-tem-funcoes-anunciadas-para-o-governo-604280/','','to_transicao_vicentinho'],
+ ['Haroun detido no Sudão','O exército prendeu o ex-chefe do partido de Bashir, segundo The National.','The National','https://www.thenationalnews.com/news/mena/2026/11/08/sudan-detains-politician-ahmed-haroun-wanted-by-icc/','','sudao_haroun']
+);
+if (GIRO.length > 20) GIRO.length = 20;
+
+
+
+/* --- Ueno Bank (atualizada) e aposentadas --- */
+S.ueno_bank.hora = '9/11';
+S.ueno_bank.upd = 'Entram a aprovação de Jorge Schreiner para presidir o Banco Central, o pedido de Alliana aos ministros e a busca na casa de San Bernardino financiada por empréstimos do Ueno.';
+S.ueno_bank.resumo = 'O Senado do Paraguai aprovou nesta segunda (9) o economista Jorge Luis Schreiner para presidir o Banco Central, no lugar de Carlos Carvallo, que renunciou em 3 de novembro, informa a EFE, via Infobae. O presidente Pedro Alliana pediu que ministros ponham os cargos à disposição. O prejuízo ao Estado é estimado de forma preliminar em US$ 809,5 milhões, segundo o ABC Color, com fundos de IPS, Itaipu, Yacyretá, ANDE e Cajubi. Cerca de 1,2 milhão de clientes já receberam a garantia estatal, e promotores revistaram uma casa de Peña em San Bernardino, financiada por empréstimos do Ueno.';
+_insAntes('ueno_bank','O que vem agora',[
+ ['h','O novo comando do Banco Central'],
+ ['p','O Senado aprovou nesta segunda (9) Jorge Luis Schreiner como presidente do Banco Central e Fernando Rivarola, por unanimidade, como diretor titular, informa a EFE, em texto da Infobae. A instituição interveio no Ueno por insolvência, e Carvallo, imputado com Peña, havia renunciado em 3 de novembro. Alliana anunciou alívio fiscal aos afetados, e os pagamentos da garantia chegaram a cerca de 996 bilhões de guaranis, segundo a Infobae.'],
+ ['p','Promotores revistaram na noite de domingo (8) uma casa de veraneio de Peña em San Bernardino, financiada por dois empréstimos do Ueno de 3,548 bilhões de guaranis, concedidos em maio de 2024, e não abriram uma porta reforçada atrás de uma falsa parede, relata a Infobae.']
+]);
+S.ueno_bank.fontes.unshift(['Infobae (EFE: Schreiner no Banco Central)','https://www.infobae.com/america/agencias/2026/11/09/jorge-schreiner-nuevo-presidente-del-banco-central-de-paraguay-tras-escandalo-de-ueno/'],['Infobae (a porta da casa de Peña)','https://www.infobae.com/america/america-latina/2026/11/09/la-misteriosa-boveda-en-la-mansion-de-santiago-pena-que-la-policia-no-pudo-abrir-una-falsa-pared-y-una-puerta-inviolable/']);
+S.alcolumbre_stf.velha = true; S.alcolumbre_stf.velhaMotivo = 'superada por congresso_direita';
+S.ira_iron_gate.velha = true; S.ira_iron_gate.velhaMotivo = 'superada por ira_proposta_catar';
+S.sp_pacaembu_show.velha = true; S.sp_pacaembu_show.velhaMotivo = 'sem desdobramento em mais de 48 h';
+
+/* --- Mercado (atualizada) --- */
+S.mercado_semana.t = 'Ibovespa sobe perto de 169,8 mil pontos com Vale e bancos, Brent cai quase 5% depois de Trump descartar novos ataques ao Irã, e o dólar fica perto de R$ 5,52 antes da ata do Copom (10)';
+S.mercado_semana.sub = 'O Focus tirou o corte da Selic de 2026, o IGP-DI de outubro subiu 1,15% e o mercado cobra medidas fiscais de Lula, que não as apresentou no pronunciamento de domingo (8).';
+S.mercado_semana.upd = 'Entram o pregão até o meio-dia (Ibovespa a 169.839 pontos, dólar a R$ 5,5165, Brent em queda de cerca de 4,9%), o IGP-DI de outubro e a cobrança do mercado por medidas fiscais.';
+S.mercado_semana.resumo = 'O Ibovespa subia 0,80%, a 169.839 pontos, às 12h12 desta segunda (9), puxado por Vale e bancos, informa o Bom Dia Mercado, e a Petrobras recuava menos do que de manhã. O Brent caiu entre 4,5% e 4,9%, perto de US$ 93,5, depois de Trump chamar de altamente improvável um novo ataque ao Irã, e o dólar ficou perto de R$ 5,52. O IGP-DI de outubro subiu 1,15%, e o Focus tirou o corte da Selic de 2026. Não há fechamento do dia nas fontes lidas. A ata do Copom sai na terça (10).';
+_insAntes('mercado_semana','O que vem agora',[
+ ['h','O pregão até o meio-dia'],
+ ['p','Às 11h30, o Ibovespa subia 0,64%, a 169.581 pontos, entre a mínima de 168.409 e a máxima de 170.021, informa a Tribuna do Sertão; às 12h12, avançava 0,80%, a 169.839 pontos, segundo o Bom Dia Mercado. Vale subia entre 2,1% e 2,3%, Bradesco PN, cerca de 1,9%, e Itaú, entre 1,3% e 1,6%. O futuro do índice apontava perto de 171 mil pontos, e Wall Street operava em alta.'],
+ ['p','O dólar comercial estava em R$ 5,5165 (alta de 0,14%) ao meio-dia, depois de fechar a sexta (6) a R$ 5,5087, segundo o Money Times, e o índice DXY recuava 0,43%, a 101,86. Na curva, o contrato de janeiro de 2028 cedia 3 pontos-base, a 14,265%, e o de janeiro de 2035 subia 3,5, a 15,020%, informa a Exame. O Tesouro Direto trouxe queda de juros em todos os vencimentos, e o IPCA+ 2032 pagava 7,75% ao ano, relata o Brasil 247.'],
+ ['h','Petróleo, Petrobras e inflação'],
+ ['p','O Brent chegou a US$ 93,47 (queda de 4,94%) às 11h18, e a Petrobras, que perdia cerca de 2% de manhã, recuava 0,31% na ON e 0,35% na PN ao meio-dia. O IGP-DI de outubro subiu 1,15%, contra 1,50% em setembro e mediana de 1,31% nas estimativas, e acumula 4,91% no ano e 5,03% em 12 meses, informa o InfoMoney. A data do balanço da Petrobras divide as fontes: o Money Times fala em terça (10), e o BPMoney, em quarta (11), depois do fechamento.'],
+ ['p','O analista Hugh Harley, da Aurum, alertou que, sem ajuste fiscal, 2027 pode lembrar 2015, ano do governo de Dilma Rousseff, segundo o Money Times. O pronunciamento de Lula na noite de domingo (8) citou a preocupação com a dívida e com os juros altos, mas não trouxe medidas.']
+]);
+S.mercado_semana.fontes.unshift(['Bom Dia Mercado (giro das 12h)','https://www.bomdiamercado.com.br/mercado-financeiro/giro-dos-mercados/giro-das-12h-vale-e-bancos-puxam-ibovespa-enquanto-petrobras-cai-com-brent-apos-trump-descartar-ataque-ao-ira/'],['Tribuna do Sertão (Ibovespa 11h30)','https://www.tribunadosertao.com.br/geral/2026/11/09/1016989-alta-em-ny-impulsiona-ibovespa-mas-queda-nas-commodities-e-cautela-fiscal-pesam'],['Exame (Vale e bancos)','https://exame.com/invest/mercados/vale-e-bancos-puxam-ibovespa-dolar-fica-estavel-enquanto-mercado-cobra-lula-no-fiscal/'],['Brasil 247 (Tesouro Direto)','https://www.brasil247.com/economia/bolsa-avanca-e-juros-do-tesouro-caem-apos-novo-compromisso-de-lula-com-responsabilidade-fiscal/']);
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"ms_seg":"atualizada","dino_6x1":"atualizada","lula_cop":"atualizada","bets_stf":"atualizada","mg_cleitinho_shows":"atualizada","mercado_semana":"atualizada","focus_selic_13_75":"novo","motta_alcolumbre_comitiva":"novo","sp_tarcisio_secretariado":"novo","pr_moro_secretarios":"novo","am_estiagem_boletim":"novo","ro_redano_interino":"novo"};
-var GIRO_FLAGS = {"Focus sem corte em 2026":"novo","Fux e as bets":"novo","Motta e Alcolumbre fora da comitiva":"novo","Estudos antes da MP da Segurança":"novo","Secretariado de Tarcísio":"novo","Moro escolhe a Segurança":"novo"};
+var FLAGS = {"paraguai":"atualizada","israel":"atualizada","dino_6x1":"atualizada","lula_cop":"atualizada","ira_proposta_catar":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","flavio_senado":"atualizada","mercado_semana":"atualizada","bc_diretorias":"novo","to_transicao_vicentinho":"novo","ms_dialogo_pos_eleicao":"novo","sudao_haroun":"novo","argentina_governadores":"novo"};
+var GIRO_FLAGS = {"Decreto da 6x1 fica para 16/11":"novo","Marinho contra Alcolumbre":"novo","Flávio e os aliados":"novo","Schreiner no BC do Paraguai":"novo","Diretorias vagas do BC":"novo","Transição no Tocantins":"novo","Haroun detido no Sudão":"novo"};
 /* ===== FIM DOS DADOS ===== */
