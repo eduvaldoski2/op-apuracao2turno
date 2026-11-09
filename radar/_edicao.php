@@ -8487,7 +8487,259 @@ _insAntes('mercado_semana','O que vem agora',[
  ['p','O analista Hugh Harley, da Aurum, alertou que, sem ajuste fiscal, 2027 pode lembrar 2015, ano do governo de Dilma Rousseff, segundo o Money Times. O pronunciamento de Lula na noite de domingo (8) citou a preocupação com a dívida e com os juros altos, mas não trouxe medidas.']
 ]);
 S.mercado_semana.fontes.unshift(['Bom Dia Mercado (giro das 12h)','https://www.bomdiamercado.com.br/mercado-financeiro/giro-dos-mercados/giro-das-12h-vale-e-bancos-puxam-ibovespa-enquanto-petrobras-cai-com-brent-apos-trump-descartar-ataque-ao-ira/'],['Tribuna do Sertão (Ibovespa 11h30)','https://www.tribunadosertao.com.br/geral/2026/11/09/1016989-alta-em-ny-impulsiona-ibovespa-mas-queda-nas-commodities-e-cautela-fiscal-pesam'],['Exame (Vale e bancos)','https://exame.com/invest/mercados/vale-e-bancos-puxam-ibovespa-dolar-fica-estavel-enquanto-mercado-cobra-lula-no-fiscal/'],['Brasil 247 (Tesouro Direto)','https://www.brasil247.com/economia/bolsa-avanca-e-juros-do-tesouro-caem-apos-novo-compromisso-de-lula-com-responsabilidade-fiscal/']);
+/* ===== EDIÇÃO 19h de 09/11 ===== */
+EDICAO.hora = '19h';
+EDICAO.data = 'Segunda, 09 de novembro de 2026';
+
+/* --- Novas: Política --- */
+S.senado_pauta_10_11 = {ed:'politica', k:'Política', hora:'9/11',
+ t:'Plenário do Senado vota na terça (10) e na quarta (11) o Estatuto do Aprendiz, o Selo Rosa e o acesso da ANP a dados fiscais de empresas de combustíveis',
+ sub:'A Câmara não tem sessão deliberativa do Plenário na terça, mas a comissão da PEC da maioridade penal e a CCJ se reúnem às 14h30.',
+ dado:{n:'5% a 15%', l:'Cota de aprendizes que o Estatuto do Aprendiz fixa para médias e grandes empresas (PL 6461/2019)'},
+ resumo:'O Plenário do Senado realiza sessões deliberativas na terça (10) e na quarta (11), com o Estatuto do Aprendiz (PL 6461/2019), o Selo Rosa (PL 5608/2023) e o acesso da ANP a dados fiscais de empresas de combustíveis (PLP 109/2025) entre os destaques, informa a Rádio Senado. A agenda do Congresso para terça não lista sessão deliberativa do Plenário da Câmara; a comissão especial da PEC da maioridade penal e a CCJ se reúnem às 14h30.',
+ fundo:[
+  ['p','O Plenário do Senado realiza sessões deliberativas na terça-feira (10) e na quarta (11), com o Estatuto do Aprendiz, o Selo Rosa e o acesso da Agência Nacional do Petróleo (ANP) a dados fiscais de empresas de combustíveis entre os destaques da pauta, informa a Rádio Senado. A sessão de terça começa às 14h.'],
+  ['h','O que está na pauta'],
+  ['p','O PL 6461/2019, o Estatuto do Aprendiz, fixa cota de 5% a 15% de aprendizes para médias e grandes empresas. O relator é o senador Veneziano Vital do Rêgo (MDB-PB).'],
+  ['p','O PL 5608/2023 cria o Programa Empresa Rosa, o Selo Rosa, voltado a mulheres com câncer de mama. O PLP 109/2025 permite que a ANP acesse dados fiscais de empresas do setor de combustíveis. A pauta também cita, em texto do Senado Notícias, um projeto que protege recursos destinados à internet em escolas públicas.'],
+  ['h','O resto da terça no Congresso'],
+  ['p','A agenda do Congresso para terça registra, no Senado, a sessão especial pelos 80 anos da Secretaria-Geral da Mesa, às 10h, a 38ª reunião deliberativa da Comissão de Educação, às 11h, e audiências públicas da CCJ e da Comissão de Ciência e Tecnologia, às 14h. Na Câmara, a Comissão de Previdência, Assistência Social e Família e a de Segurança Pública e Combate ao Crime Organizado têm reuniões deliberativas, também às 14h.'],
+  ['p','A comissão especial da PEC da maioridade penal e a Comissão de Constituição e Justiça da Câmara se reúnem às 14h30, e a audiência da comissão especial continua na quarta (11). A agenda não lista sessão deliberativa do Plenário da Câmara em 10 de novembro, e o ministro Flávio Dino conduz, às 14h, a audiência do Supremo sobre a escala 6x1.'],
+  ['h','Por que importa'],
+  ['p','Com os presidentes das duas Casas cuidando das candidaturas à reeleição e com o PL decidindo na quarta como se posiciona na Câmara, a pauta do Senado tem itens de efeito setorial, como cota de aprendizes e fiscalização de combustíveis, e não projetos que mudem a correlação de forças entre governo e oposição. As votações servem de termômetro da presença no Plenário em semana de viagem de Lula e de articulação nos bastidores.'],
+  ['h','O que vem agora'],
+  ['p','O Plenário do Senado vota terça e quarta. Se os projetos forem aprovados, seguem os trâmites regimentais de cada um, e a Rádio Senado acompanha a sessão. A reunião da bancada do PL na quarta (11) é o evento político da semana na Câmara.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A ordem de votação dos itens e se todos serão votados nas duas sessões.','Se a Mesa do Senado vai decidir sobre o voto remoto de Flávio Bolsonaro na semana: a pauta divulgada não traz o tema.']]
+ ],
+ fontes:[['Rádio Senado (pauta do Plenário)','https://www12.senado.leg.br/radio/1/noticia/2026/11/09/selo-rosa-e-estatuto-do-aprendiz-sao-destaques-da-pauta-do-plenario'],['Congresso Nacional (agenda de 10/11)','https://www.congressonacional.leg.br/pt_BR/sessoes/agenda-do-congresso-senado-e-camara/-/agenda/2026-11-10'],['Senado Notícias (internet nas escolas)','https://www12.senado.leg.br/noticias/materias/2026/11/09/plenario-vota-projeto-que-protege-recursos-para-internet-em-escolas-publicas']]};
+
+S.lula_sri_centrao = {ed:'politica', k:'Política', hora:'9/11', fonteunica:true,
+ t:'Lula avalia entregar a articulação política a um nome do Centrão, e petistas citam Silvio Costa Filho, Dr. Luizinho e Antônio Brito',
+ sub:'A coluna de Igor Gadelha, do Metrópoles, diz que não há prazo nem decisão; o titular da Secretaria de Relações Institucionais é José Guimarães (PT).',
+ dado:{n:'3', l:'Deputados reeleitos citados por petistas para a Secretaria de Relações Institucionais'},
+ resumo:'Lula indicou a auxiliares que pode nomear um político do Centrão para a Secretaria de Relações Institucionais (SRI), informa a coluna de Igor Gadelha, do Metrópoles. Petistas citam os deputados federais Silvio Costa Filho (Republicanos-PE), Dr. Luizinho (PP-RJ) e Antônio Brito (PSD-BA), os três com boa relação com Hugo Motta. O titular é José Guimarães (PT). A coluna não informa prazo, e o governo não se manifestou.',
+ fundo:[
+  ['p','O presidente Lula indicou a auxiliares que pode entregar a Secretaria de Relações Institucionais (SRI), responsável pela articulação com o Congresso, a um político do Centrão, informa a coluna de Igor Gadelha, no Metrópoles, publicada às 5h de segunda-feira (9). A informação vem de fontes do PT, e não há decisão nem prazo.'],
+  ['h','Quem são os nomes cotados'],
+  ['p','Os nomes sugeridos por petistas são de deputados federais reeleitos: Silvio Costa Filho (Republicanos-PE), ex-ministro de Portos e Aeroportos, Dr. Luizinho (PP-RJ) e Antônio Brito (PSD-BA). Segundo a coluna, os três mantêm boa relação com o presidente da Câmara, Hugo Motta (Republicanos-PB). Republicanos, PP e PSD estão entre os partidos do Centrão que Motta reúne na disputa pela reeleição.'],
+  ['p','A SRI é hoje comandada por José Guimarães (PT-CE). No mandato anterior, a pasta passou por Alexandre Padilha e Gleisi Hoffmann, ambos do PT. A troca por um político do Centrão seria uma mudança de campo na pasta que negocia emendas, votações e cargos com a Câmara e o Senado.'],
+  ['h','Por que importa'],
+  ['p','O governo Lula tem a reeleição de Motta na Câmara e a disputa de Davi Alcolumbre com Rogério Marinho no Senado como ponto central da relação com o Congresso. Ministérios do quarto mandato, segundo outras reportagens do Radar, ficam atrelados a votos dos partidos. Um articulador do Centrão na SRI seria sinal de aproximação com a base de Motta antes das eleições das Mesas, marcadas para 1º de fevereiro de 2027.'],
+  ['h','O que vem agora'],
+  ['p','Lula volta da viagem à Turquia e às Filipinas em 16 de novembro, e o Metrópoles informou em 7 de novembro que o Planalto deve anunciar a equipe depois da volta. Nenhum prazo específico foi dado para a SRI.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['Se Lula vai de fato trocar o titular da SRI e quando.','Quem seria escolhido: os três nomes são sugestões de petistas, e a coluna não registra manifestação do Planalto nem dos deputados.']]
+ ],
+ fontes:[['Metrópoles (coluna de Igor Gadelha)','https://www.metropoles.com/colunas/igor-gadelha/lula-avalia-entregar-articulacao-politica-do-governo-a-um-nome-do-centrao'],['Metrópoles (coluna de Neila Guimarães)','https://www.metropoles.com/colunas/neila-guimaraes/ala-do-planalto-espera-aceno-de-lula-ao-mercado-antes-da-cop31']]};
+
+S.trf1_kassio_lula = {ed:'politica', k:'Política', hora:'9/11', fonteunica:true,
+ t:'Lula nomeia Fausto Medanha para o TRF-1 e preterido é auxiliar de Kassio Nunes Marques; escolha atribuída a Gilmar Mendes e Flávio Dino',
+ sub:'A CNN Brasil diz que o presidente se irritou com a condução de Kassio no TSE durante a eleição; a formalização no Diário Oficial não foi confirmada.',
+ resumo:'Lula escolheu Fausto Medanha, da lista tríplice, para uma vaga de desembargador no Tribunal Regional Federal da 1ª Região (TRF-1), e preteriu Henrique Gouveia da Cunha, juiz auxiliar do ministro Kassio Nunes Marques no Supremo, informa o blog de Matheus Teixeira, na CNN Brasil. O blog atribui a escolha à articulação de Gilmar Mendes e Flávio Dino e diz que Lula se irritou com a condução de Kassio no TSE. Não há reação oficial.',
+ fundo:[
+  ['p','O presidente Lula escolheu Fausto Medanha, da lista tríplice, para uma vaga de desembargador no Tribunal Regional Federal da 1ª Região (TRF-1), e preteriu Henrique Gouveia da Cunha, juiz auxiliar do ministro Kassio Nunes Marques no Supremo, informa o blog de Matheus Teixeira, na CNN Brasil, publicado às 16h38 de segunda-feira (9).'],
+  ['h','A escolha e a derrota de Kassio'],
+  ['p','Segundo o blog, a escolha é atribuída à articulação dos ministros Gilmar Mendes e Flávio Dino, do Supremo Tribunal Federal. A CNN também registra que pessoas próximas a Lula dizem que o presidente se irritou com a condução de Kassio no Tribunal Superior Eleitoral (TSE) durante a eleição.'],
+  ['p','Kassio havia conseguido emplacar indicações em tribunais, como Carlos Brandão para o Superior Tribunal de Justiça e João Carlos Mayer para o TRF-1. A nomeação de Medanha interrompe essa série na mesma corte e entra como derrota do ministro na disputa por influência nos tribunais superiores e regionais.'],
+  ['h','Por que importa'],
+  ['p','Os tribunais regionais federais julgam, em segunda instância, ações contra a União e causas de interesse do governo. A disputa expõe a competição entre o Planalto e ministros do Supremo por influência nas nomeações, em semana em que o TSE acumula 21 ações contra as chapas presidenciais, tema coberto pelo Radar.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A formalização da nomeação no Diário Oficial da União.','A reação de Kassio e do Planalto: o texto da CNN não traz manifestação oficial.','A grafia do sobrenome varia entre os veículos: Medanha na CNN Brasil e Mendanha Gonzaga no título do Metrópoles.']]
+ ],
+ fontes:[['CNN Brasil (blog de Matheus Teixeira)','https://www.cnnbrasil.com.br/blogs/matheus-teixeira/politica/lula-nomeia-apadrinhado-de-dino-e-gilmar-para-trf-e-impoe-derrota-a-kassio/'],['Metrópoles (Grande Angular)','https://www.metropoles.com/colunas/grande-angular/lula-nomeia-fausto-mendanha-gonzaga-para-vaga-de-desembargador-no-trf-1']]};
+
+S.supersalarios_ongs = {ed:'politica', k:'Política', hora:'9/11', fonteunica:true,
+ t:'Sete ONGs cobram do governo e do Congresso medidas contra supersalários: R$ 24,3 bi pagos acima do teto em 2025',
+ sub:'O manifesto rejeita elevar o teto, critica a regra provisória do STF e propõe 11 medidas; a soma equivale a cerca de 39% do déficit primário federal do ano passado.',
+ dado:{n:'R$ 24,3 bi', l:'Pagos acima do teto constitucional em 2025 a cerca de 67,3 mil servidores'},
+ resumo:'Sete entidades da sociedade civil publicaram nesta segunda (9) um manifesto contra supersalários, informa o Metrópoles. Os dados citados mostram R$ 24,3 bilhões pagos acima do teto em 2025 a cerca de 67,3 mil servidores, quase 39% do déficit primário federal de R$ 61,7 bilhões. O texto rejeita elevar o teto, de R$ 46.366,19, critica a regra provisória do STF e propõe 11 medidas. Governo, Congresso e STF não responderam.',
+ fundo:[
+  ['p','Sete entidades da sociedade civil cobraram do governo e do Congresso, em manifesto divulgado nesta segunda-feira (9), medidas contra os supersalários no serviço público, informa o Metrópoles, em texto de Maria Laura Giuliani publicado às 17h59. O documento cita R$ 24,3 bilhões pagos acima do teto constitucional em 2025.'],
+  ['h','Os números do manifesto'],
+  ['p','Assinam o texto República.org, Fiquem Sabendo, Livres, CLP, Transparência Brasil, Movimento Pessoas à Frente e Transparência Internacional Brasil. Segundo os números citados, cerca de 67,3 mil servidores receberam acima do teto de R$ 46.366,19 em 2025, em sua maioria juízes, integrantes do Ministério Público, advogados públicos e defensores. A soma, de R$ 24,3 bilhões, equivale a cerca de 39% do déficit primário federal do ano, de R$ 61,7 bilhões.'],
+  ['h','O que as entidades propõem'],
+  ['p','O manifesto critica a regra provisória do Supremo Tribunal Federal, que combina dois limites de 35% e permite chegar a até R$ 78,8 mil, e rejeita a ideia de elevar o teto. São 11 propostas, entre elas uma lei nacional que separe verbas remuneratórias e indenizatórias, a incidência de Imposto de Renda sobre acréscimo patrimonial, a responsabilização de gestores que paguem acima do teto e a criação de uma comissão independente de acompanhamento.'],
+  ['h','O que vem agora'],
+  ['p','O tema chega ao Congresso no momento em que o governo discute ajuste fiscal de ao menos R$ 39,8 bilhões, segundo outras reportagens do Radar, e promete levar propostas a Lula só depois da volta da viagem, em 16 de novembro.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A resposta do governo, do Congresso e do Supremo: o Metrópoles não registra manifestação.','Se alguma das 11 propostas será incorporada às medidas fiscais ou à tramitação no Legislativo.']]
+ ],
+ fontes:[['Metrópoles (manifesto das ONGs)','https://www.metropoles.com/brasil/entidades-cobram-do-governo-e-congresso-medidas-contra-supersalarios']]};
+
+/* --- Nova: Regiões RJ --- */
+S.rj_alerj_concessoes = {ed:'regioes', reg:'rj', k:'Rio de Janeiro', hora:'9/11',
+ t:'Alerj discute concessões de gás, trens e saneamento, e a decisão sobre o gás fica para o governo de Douglas Ruas; o orçamento de 2027 projeta déficit de R$ 13,98 bi',
+ sub:'A Comissão de Orçamento ouviu o Executivo nesta segunda (9); a distribuição de gás da Naturgy vence em julho de 2027, e o plano da FGV chega até 30 de novembro.',
+ dado:{n:'R$ 13,98 bi', l:'Déficit projetado no orçamento do Rio para 2027 (receita líquida de R$ 124,39 bi e despesa de R$ 138,37 bi)'},
+ resumo:'A Comissão de Orçamento da Alerj fez nesta segunda (9) audiência com o Executivo sobre as concessões previstas para o fim de 2026 e 2027, informa a Agenda do Poder. A gestão interina de Ricardo Couto deixa para o governador eleito Douglas Ruas (PL) a escolha entre renovar ou licitar a distribuição de gás, cujo contrato com a Naturgy vence em julho de 2027. O orçamento de 2027 projeta déficit de R$ 13,98 bilhões, e as emendas vão até 11 de novembro.',
+ fundo:[
+  ['p','A Comissão de Orçamento da Assembleia Legislativa do Rio (Alerj) fez nesta segunda-feira (9) audiência pública com representantes do Executivo sobre as concessões previstas para o fim de 2026 e para 2027, informa a Agenda do Poder, às 18h11. A gestão interina de Ricardo Couto deixa a decisão sobre o gás para o governador eleito, Douglas Ruas (PL).'],
+  ['h','O gás e o calendário da decisão'],
+  ['p','Participaram da audiência os deputados Tutuca (PP), presidente da comissão, Luiz Paulo (PSD), Anderson Moraes (PL) e Alexandre Knoploch (PL). Os temas foram gás, transportes, saneamento, Via Lagos e Rota 116. Os contratos de distribuição de gás, com a Naturgy, vencem em julho de 2027, e a escolha entre renovar ou licitar ficará com Ruas, que ainda não se manifestou.'],
+  ['p','O calendário apresentado é longo. A Fundação Getulio Vargas entrega o plano estadual do gás até 30 de novembro, e a International Finance Corporation (IFC) avalia os ativos, com diagnóstico previsto para fevereiro de 2027. A modelagem e um eventual edital ficam para o fim de abril de 2027, e a licitação, para meados do ano. Luiz Paulo defendeu nova licitação e disse que o orçamento de 2027 não tem receita de outorga; o secretário de Planejamento, Rafael Ventura Abreu, respondeu que não há processo licitatório formal que justifique orçar a outorga.'],
+  ['h','Trens, hidrovia e metrô'],
+  ['p','O Estado paga cerca de R$ 32 milhões por mês à Trens RJ, e a concessão ferroviária busca cortar despesa, não gerar receita. A Casa Civil pediu ao IFC um modelo para hidrovia e trem com bilhete integrado, e há estudos com o BNDES para estender o metrô à Baixada e a Linha 3.'],
+  ['h','O orçamento de 2027'],
+  ['p','O projeto de lei orçamentária de 2027 (PL 8.378/26) começou a ser debatido na Alerj em 3 de novembro, informa o Diário do Rio, com receita líquida de R$ 124,39 bilhões, despesa de R$ 138,37 bilhões e déficit de R$ 13,98 bilhões. O prazo para emendas dos deputados vai de 5 a 11 de novembro.'],
+  ['h','O que vem agora'],
+  ['p','A comissão segue a análise do orçamento depois do prazo de emendas, e o plano da FGV, até 30 de novembro, é o primeiro marco da discussão sobre o gás. Ruas toma posse em 2027 com o calendário de modelagem já em curso.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A posição do governador eleito, Douglas Ruas, sobre renovar ou licitar a distribuição de gás.','Se o orçamento de 2027 receberá receita de outorga: o Executivo diz que não há processo que a justifique.']]
+ ],
+ fontes:[['Agenda do Poder (Alerj e concessões)','https://agendadopoder.com.br/comissao-de-orcamento-da-alerj-debate-concessoes-estaduais-em-audiencia-com-representantes-do-executivo/'],['Diário do Rio (orçamento de 2027)','https://diariodorio.com/politica/2026/11/03/orcamento-do-rj-para-2027-comeca-a-ser-debatido-na-alerj-deputados-poderao-propor-mudancas-a-partir-de-quinta.html']]};
+
+/* --- Paraguai (atualizada) --- */
+S.paraguai.hora = '9/11';
+S.paraguai.t = 'Alliana restringe viagens e contratações, pede os cargos de todos os ministros e vê o Senado aprovar Schreiner no Banco Central, enquanto Peña segue em prisão preventiva';
+S.paraguai.sub = 'A Câmara suspendeu a sessão sobre o Orçamento de 2027: sem texto novo até sábado (14), vale a sanção ficta da versão do governo Peña.';
+S.paraguai.resumo = 'O presidente Pedro Alliana pediu nesta segunda (9) que ministros e secretários ponham os cargos à disposição e, em circular, restringiu viagens ao exterior e suspendeu contratações não essenciais, informa o ABC Color. O Senado aprovou Jorge Schreiner para presidir o Banco Central, e Santiago Peña segue em prisão preventiva, imputado por lesão de confiança e administração em proveito próprio. A Câmara suspendeu a sessão sobre o Orçamento de 2027, que pode vigorar por sanção ficta no sábado (14).';
+S.paraguai.upd = 'Entram a circular de Alliana sobre viagens, contratações, prazos e serviços para afetados pelo Ueno (ABC Color, 14h37) e a suspensão da sessão sobre o Orçamento de 2027, com sanção ficta no sábado (14).';
+_insAntes('paraguai','O que vem agora',[
+ ['h','A circular de Alliana e o Orçamento de 2027'],
+ ['p','Em circular divulgada na tarde de segunda (9), às 14h37, Alliana restringiu as viagens ao exterior de funcionários, suspendeu contratações não essenciais, com relatório em 72 horas, prorrogou vencimentos sem multa e suspendeu cortes de luz e água, a cargo da ANDE e da Essap, para os afetados pelo Ueno, informa o ABC Color. A Dirección Nacional de Ingresos Tributarios também ficou orientada a não aplicar multas a quem operava só com o Ueno.'],
+ ['p','O novo presidente do Banco Central, Jorge Schreiner, disse que os depósitos estão cobertos pela garantia e que o plano é identificar ativos saudáveis do banco e cobri-los com passivos privilegiados, como os fundos de pensão, e depois com o fundo garantidor, informa a La Nación. A Câmara dos Deputados suspendeu a sessão extraordinária de segunda sobre o Orçamento de 2027. Se não houver versão nova até sábado (14), vale a sanção ficta do texto original enviado pelo governo de Peña.']
+]);
+S.paraguai.fontes.unshift(['ABC Color (circular de Alliana)','https://www.abc.com.py/politica/2026/11/09/alliana-restringe-viajes-y-contrataciones-y-pide-asistir-a-afectados-por-ueno-bank/'],['La Nación (Schreiner e o pedido de cargos)','https://www.lanacion.com.ar/el-mundo/paraguay-designa-al-nuevo-jefe-del-banco-central-y-el-presidente-pidio-la-renuncia-de-todos-sus-nid09112026/']);
+
+/* --- Ueno Bank (atualizada) --- */
+S.ueno_bank.hora = '9/11';
+S.ueno_bank.sub = 'O Banco Central diz que o capital caiu abaixo da metade do mínimo legal; 27 pessoas foram acusadas, e a primeira etapa da garantia paga até 10 milhões de guaranis (cerca de R$ 8.800) por cliente.';
+S.ueno_bank.resumo = 'O novo presidente do Banco Central do Paraguai, Jorge Schreiner, disse nesta segunda (9) que os depósitos do Ueno Bank estão cobertos pela garantia e que o plano é cobrir os passivos com ativos saudáveis do banco, informa a La Nación. A primeira etapa do fundo garantidor paga até 10 milhões de guaranis, cerca de R$ 8.800, a quem não deve ao banco e tem conta em outra instituição, segundo a Forbes Brasil. O prejuízo ao Estado é estimado, de forma preliminar, em US$ 809,5 milhões, e não há calendário das demais etapas.';
+S.ueno_bank.upd = 'Entram o plano de Schreiner (ativos saudáveis, passivos privilegiados e fundo garantidor), a primeira etapa da garantia, de até 10 milhões de guaranis, e a circular de Alliana para os afetados.';
+_insAntes('ueno_bank','O que vem agora',[
+ ['h','O plano do novo presidente e a primeira etapa da garantia'],
+ ['p','Schreiner, ex-diretor do Banco Central e ex-presidente da Comissão Nacional de Valores, disse que o plano é identificar os ativos saudáveis do Ueno e cobri-los com passivos privilegiados, como fundos de pensão, e depois com o fundo garantidor, informa a La Nación. Ele afirmou que os depósitos estão cobertos pela garantia.'],
+ ['p','A primeira etapa do pagamento da garantia chega a 10 milhões de guaranis, cerca de R$ 8.800, para quem não deve ao banco e tem conta em outra instituição, informa a Forbes Brasil. Não há calendário das etapas seguintes. Os ligados ao Ueno foram chamados a devolver recursos em 24 horas. A circular de Alliana de segunda (9) prorroga vencimentos sem multa e suspende cortes de luz e água para afetados, informa o ABC Color.']
+]);
+S.ueno_bank.fontes.unshift(['La Nación (plano de Schreiner)','https://www.lanacion.com.ar/el-mundo/paraguay-designa-al-nuevo-jefe-del-banco-central-y-el-presidente-pidio-la-renuncia-de-todos-sus-nid09112026/'],['Forbes Brasil (pagamento dos depósitos)','https://forbes.com.br/forbes-money/2026/11/ueno-bank-pagamento-depositos-paraguai/'],['ABC Color (circular de Alliana)','https://www.abc.com.py/politica/2026/11/09/alliana-restringe-viajes-y-contrataciones-y-pide-asistir-a-afectados-por-ueno-bank/']);
+
+/* --- Israel (atualizada) --- */
+S.israel.hora = '9/11';
+S.israel.t = 'Eisenkot e Liberman abrem conversa com Shas e UTJ e oferecem transição de um ano na lei do alistamento ultraortodoxo; Netanyahu acusa que preparam governo com apoiadores do terrorismo';
+S.israel.sub = 'O mandato de 28 dias vai a 6 de dezembro, com prorrogação possível de 14; Eisenkot soma 48 cadeiras de mudança, com UTJ (7) e Shas (6) chegaria a cerca de 61.';
+S.israel.resumo = 'Gadi Eisenkot, líder do Yashar, e Avigdor Liberman, do Yisrael Beytenu, acordaram abrir conversas com o Shas e a UTJ, oferecendo uma lei do alistamento suavizada, com transição de um ano, talvez 18 meses, sem sanções a desertores, informa o Times of Israel, citando Kan e Canal 12. O mandato de 28 dias vai a 6 de dezembro. O Shas diz seguir no bloco de direita e chama de falsas as notícias de que migra. A UTJ ainda não foi procurada formalmente.';
+S.israel.upd = 'Entram a decisão de Eisenkot e Liberman de abrir conversa com Shas e UTJ, a oferta de transição de um ano na lei do alistamento e a acusação de Netanyahu sobre um governo com apoiadores do terrorismo.';
+_insAntes('israel','O que vem agora',[
+ ['h','A oferta aos ultraortodoxos'],
+ ['p','Eisenkot e Avigdor Liberman, do Yisrael Beytenu, partido de direita laica, acordaram abrir conversas com o Shas e a United Torah Judaism (UTJ), com uma lei do alistamento suavizada, informou o Times of Israel às 21h54 em Israel (16h54 em Brasília), citando a emissora Kan e o Canal 12. A proposta prevê um período de transição de um ano, talvez 18 meses, sem alistamento relevante, sanções ou prisões de desertores. Eles querem o aval da procuradora-geral, Gali Baharav-Miara, e talvez uma lei.'],
+ ['p','A UTJ ainda não foi procurada formalmente, e o Canal 12 descreve o estágio como inicial. Rabinos lituanos da UTJ, Dov Lando e Moshe Hillel Hirsch, teriam rejeitado Netanyahu. O Shas diz seguir no bloco de direita e chamou de notícias falsas os relatos de que migra. O premiê Benjamin Netanyahu, do Likud, pede um governo de unidade nacional e acusou que alguém planeja empossar um governo com apoiadores do terrorismo na semana que vem, informa o Israel Hayom; o Yashar chamou a acusação de truque de propaganda.']
+]);
+S.israel.fontes.unshift(['Times of Israel (conversa com os haredim)','https://www.timesofisrael.com/liveblog_entry/report-eisenkot-liberman-agree-to-open-talks-with-haredi-parties-eyeing-draft-law-concessions/'],['Israel Hayom (Herzog escolhe Eisenkot)','https://www.israelhayom.com/2026/11/07/herzog-taps-eisenkot-to-form-next-government-after-securing-backing-of-67-mks/']);
+
+/* --- Mercado: fechamento (atualizada) --- */
+S.mercado_semana.hora = '9/11';
+S.mercado_semana.t = 'Ibovespa fecha em alta de 1,98%, a 171.837 pontos, com Vale, bancos e frigoríficos; Brent cai 5,85% e o dólar fica em R$ 5,50 sem medidas fiscais de Lula';
+S.mercado_semana.sub = 'Dow, S&P 500 e Nasdaq sobem mais de 2% com o petróleo menor; Durigan e Moretti só levam a agenda econômica a Lula depois da volta, em 16 de novembro.';
+S.mercado_semana.resumo = 'O Ibovespa fechou a segunda (9) em alta de 1,98%, a 171.837 pontos, puxado por Vale, bancos e frigoríficos, informa o Misto Brasil. O dólar comercial ficou em R$ 5,504, estável, e o Brent caiu 5,85%, a US$ 92,57, depois de Trump minimizar novos ataques ao Irã. Em Nova York, o S&P 500 subiu cerca de 2,3%. O mercado seguiu sem medidas fiscais de Lula, e a Fazenda só entrega a agenda econômica depois da volta do presidente, em 16 de novembro.';
+S.mercado_semana.upd = 'Entra o fechamento: Ibovespa a 171.837 pontos (+1,98%), dólar a R$ 5,504, Brent a US$ 92,57 (-5,85%), juros futuros, bolsas de Nova York em alta e a data da agenda fiscal.';
+_insAntes('mercado_semana','O que vem agora',[
+ ['h','O fechamento de segunda'],
+ ['p','O Ibovespa fechou em alta de 1,98%, a 171.837 pontos, informa o Misto Brasil; o InfoMoney, em atualização preliminar das 17h55, apontava ganho de cerca de 2%, perto de 171,9 mil, com máxima próxima de 172 mil. A alta veio de Vale e bancos, com o Santander Brasil subindo cerca de 5%, e dos frigoríficos MBRF (cerca de 8,8%) e Minerva (cerca de 6,9%), com a expectativa de que as Filipinas revertam o veto à carne suína. A venda de ativos da CSN também puxou a ação. As petroleiras ficaram entre as maiores quedas.'],
+ ['p','O dólar comercial terminou em R$ 5,504, estável, segundo o Misto Brasil; às 12h57, o Istoé Dinheiro registrava R$ 5,526, alta de 0,29%, com cautela fiscal depois do pronunciamento de Lula no domingo, que não detalhou medidas. Nos juros futuros, o contrato de janeiro de 2029 recuou 0,145 ponto percentual, a 14,52%, e o de janeiro de 2035 ficou perto de 14,95%, informa o InfoMoney. O Brent caiu 5,85%, a US$ 92,57, e o WTI, 4,38%, a US$ 86,85. Em Nova York, o Dow Jones subiu cerca de 2,2%, o S&P 500, 2,3%, e o Nasdaq, 2,7%.'],
+ ['p','O ministro da Fazenda, Dario Durigan, e o do Planejamento, Bruno Moretti, entregam a agenda econômica a Lula só depois das viagens do presidente: Antalya (COP31) na terça (10), Filipinas na sexta (13) e a volta em 16 de novembro, informa o Correio da Manhã. A Braskem aparece na pauta empresarial: credores e acionistas querem fechar a reestruturação até quarta (11), e o prazo judicial vai a 22 de novembro, informa o InfoMoney.']
+]);
+S.mercado_semana.fontes.unshift(['Misto Brasil (fechamento do Ibovespa)','https://www.mistobrasil.com/2026/11/09/ibovespa-fecha-em-alta-e-retoma-a-marca-dos-171-mil-pontos/'],['InfoMoney (Ibovespa ao vivo, 9/11)','https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-09112026/'],['Istoé Dinheiro (dólar e cautela fiscal)','https://istoedinheiro.com.br/dolar-hoje-alta-cautela-fiscal-9-novembro-2026'],['Correio da Manhã (agenda econômica)','https://www.correiodamanha.com.br/politica/2026/11/amp/332995-durigan-afirma-que-agenda-economica-sera-entregue-a-lula-quando-ele-voltar-de-viagens.html']);
+
+/* --- EUA: Trump questiona o resultado (atualizada) --- */
+S.eua_meio_mandato_placar.hora = '9/11';
+S.eua_meio_mandato_placar.t = 'Trump questiona nas redes se a eleição de meio de mandato foi honesta, sem apresentar provas; Alasca e Mississippi seguem em aberto';
+S.eua_meio_mandato_placar.sub = 'Na noite da votação, o presidente disse ao New York Times que aceitaria o resultado; os democratas miram 54 cadeiras no Senado e cerca de 256 na Câmara.';
+S.eua_meio_mandato_placar.resumo = 'O presidente Donald Trump questionou nesta segunda (9), em post no Truth Social, se a eleição de meio de mandato foi honesta, falou em despejos de voto antecipado e disse que máquinas importam mais que eleitores, sem apresentar provas, informa a AFP, via CP24. Na noite da votação ele havia dito ao New York Times que aceitaria o resultado. A CBS News projeta cerca de 256 cadeiras democratas na Câmara e ao menos 54 no Senado, com Alasca e Mississippi em aberto.';
+S.eua_meio_mandato_placar.upd = 'Entra o post de Trump na segunda (9) questionando a honestidade da eleição, em contraste com o que disse ao New York Times na noite da votação.';
+_insAntes('eua_meio_mandato_placar','O que vem agora',[
+ ['h','Trump volta a duvidar do resultado'],
+ ['p','Em post no Truth Social nesta segunda (9), Trump questionou se a eleição foi honesta, mencionou despejos de voto antecipado e escreveu que máquinas importam mais que eleitores, sem apresentar provas, informa a AFP, em texto do CP24 das 10h43 (horário de Nova York). Na noite da eleição, ele havia dito ao New York Times que aceitaria o resultado.'],
+ ['p','O texto da AFP afirma que os democratas ganharam as duas Casas, sem trazer a contagem de cadeiras, e trata a corrida ao Senado do Mississippi como pendente. O Radar mantém o placar do Senado como não definido, com base na projeção da CBS. O post não traz reações de democratas nem anuncia medidas de Trump.']
+]);
+S.eua_meio_mandato_placar.fontes.unshift(['CP24 (AFP: Trump e o resultado)','https://www.cp24.com/news/world/2026/11/09/trump-casts-doubt-on-us-midterm-results-with-new-fraud-claims/']);
+
+/* --- Ucrânia: delegações em Abu Dhabi (atualizada) --- */
+S.ucrania_abudhabi.hora = '9/11';
+S.ucrania_abudhabi.resumo = 'Rússia, Ucrânia e Estados Unidos negociam em Abu Dhabi na terça (10) e na quarta (11). Steve Witkoff e Jared Kushner mediam; Rustem Umerov chefia a delegação ucraniana e Vladimir Medinsky, a russa, informa a Al Jazeera, que conta a rodada como a quarta de 2026. A União Europeia enviará equipe conjunta, informa a Euronews, mas o Kremlin diz que os europeus não participam, e o chanceler francês Jean-Noël Barrot diz que França, Reino Unido, Alemanha, Otan e Comissão estarão. Analistas não esperam acordo.';
+S.ucrania_abudhabi.upd = 'Entram as delegações completas segundo a Al Jazeera, o desencontro entre Kremlin e Paris sobre a presença europeia e a pauta técnica possível: grãos, Mar Negro, energia e troca de prisioneiros.';
+_insAntes('ucrania_abudhabi','Atritos entre aliados',[
+ ['h','As delegações e a pauta técnica'],
+ ['p','Pelos Estados Unidos, vão Steve Witkoff e Jared Kushner. A Ucrânia leva Rustem Umerov, que chefia a delegação, David Arakhamia, Kyrylo Budanov, chefe de gabinete de Volodymyr Zelensky, e Sergiy Kyslytsya. A Rússia leva Vladimir Medinsky, Mikhail Galuzin, Igor Kostyukov e Yuri Zhygarlovsky, informa a Al Jazeera, que descreve a rodada como a quarta de 2026; a Euronews a trata como a primeira trilateral desde fevereiro, e a contagem diverge entre as fontes.'],
+ ['p','A presença europeia segue em disputa: o Kremlin diz que os europeus não participam, e o chanceler francês Jean-Noël Barrot diz que França, Reino Unido, Alemanha, Otan e Comissão Europeia estarão. Analistas ouvidos pela Al Jazeera não esperam acordo; uma pauta técnica possível inclui grãos, cessar-fogo no Mar Negro e na energia e troca de prisioneiros.']
+]);
+S.ucrania_abudhabi.fontes.unshift(['Al Jazeera (o que esperar de Abu Dhabi)','https://www.aljazeera.com/news/2026/11/9/no-concession-what-to-expect-from-russia-us-ukraine-talks-in-abu-dhabi']);
+
+/* --- Motta e Alcolumbre fora da comitiva (ampliada e atualizada) --- */
+S.motta_alcolumbre_comitiva.hora = '9/11';
+S.motta_alcolumbre_comitiva.ampliada = true;
+S.motta_alcolumbre_comitiva.t = 'Motta e Alcolumbre recusam o convite de Lula para a comitiva da COP31 e priorizam as votações e a disputa pela reeleição nas Casas';
+S.motta_alcolumbre_comitiva.sub = 'CNN Brasil e O Antagonista citam a pauta de votações antes do recesso; o convite foi feito em 26 de outubro, no Alvorada, e nenhum dos dois falou publicamente.';
+S.motta_alcolumbre_comitiva.resumo = 'O presidente da Câmara, Hugo Motta (Republicanos-PB), e o do Senado, Davi Alcolumbre (União-AP), recusaram o convite de Lula, feito em 26 de outubro no Alvorada, para a comitiva da COP31 e das Filipinas, informam a CNN Brasil e O Antagonista nesta segunda (9). Os dois priorizam as votações antes do recesso e a disputa pela reeleição nas Casas, em 1º de fevereiro de 2027. Motta tem 15 partidos e 361 deputados em torno da reeleição, e o PL, com 121, ainda não decidiu.';
+S.motta_alcolumbre_comitiva.upd = 'CNN Brasil (11h59) e O Antagonista (12h13) confirmam a recusa e o motivo, as votações antes do recesso e a reeleição nas Casas; entram o convite no Alvorada e o mapa de apoios.';
+_insAntes('motta_alcolumbre_comitiva','Quem é quem',[
+ ['h','As votações e o convite de Lula'],
+ ['p','A CNN Brasil, em texto de Taíná Falcão publicado às 11h59, e O Antagonista, às 12h13, relatam que Motta e Alcolumbre decidiram ficar em Brasília por causa da pauta legislativa e das eleições das Mesas. O convite foi feito por Lula em 26 de outubro, no Palácio da Alvorada. A viagem inclui a COP31, em Antalya, na Turquia, e a cúpula da Asean, nas Filipinas, com volta prevista para 16 de novembro.'],
+ ['p','Na Câmara, Motta reúne 15 partidos e 361 dos 513 deputados, cerca de 70% da Casa, e o PL, com 121 deputados, decide na quarta (11) se entra no bloco. No Senado, o PL lançou Rogério Marinho (PL-RN) contra Alcolumbre.']
+]);
+(function(){ var f=S.motta_alcolumbre_comitiva.fundo; for(var n=0;n<f.length;n++){ if(f[n][0]==='ul'){ f[n][1]=['Se houve resposta pública de Motta ou de Alcolumbre ao convite: as reportagens atribuem o motivo a aliados dos dois.','Se a ausência tem relação direta com a agenda de votações de terça e quarta, como alegam os aliados.','Se Lula conversa com os dois antes de definir a equipe de articulação, como disse o presidente do PT, Edinho Silva.']; } } })();
+S.motta_alcolumbre_comitiva.fontes.unshift(['CNN Brasil (Taíná Falcão)','https://www.cnnbrasil.com.br/blogs/taina-falcao/politica/hugo-e-alcolumbre-priorizam-votacoes-no-congresso-a-viagem-com-lula/'],['O Antagonista (agenda do Congresso)','https://oantagonista.com.br/brasil/agenda-do-congresso-faz-motta-e-alcolumbre-recusarem-viagem-com-lula/']);
+
+/* --- Aposentadas e cedae --- */
+S.cedae_nexxus.velha = true; S.cedae_nexxus.velhaMotivo = 'sem desdobramento em mais de 48 h';
+
+/* --- Capa, ordem, Giro e Para ficar de olho --- */
+HOME_LEAD = 'paraguai';
+HOME_ROW = ['israel','mercado_semana','ueno_bank'];
+ORDER.politica.splice(1,0,'lula_sri_centrao','trf1_kassio_lula','senado_pauta_10_11','supersalarios_ongs');
+ORDER.regioes.unshift('rj_alerj_concessoes');
+GIRO.unshift(
+ ['Centrão na articulação','Lula avalia um nome do Centrão para a Secretaria de Relações Institucionais, informa a coluna de Igor Gadelha.','Metrópoles','https://www.metropoles.com/colunas/igor-gadelha/lula-avalia-entregar-articulacao-politica-do-governo-a-um-nome-do-centrao','','lula_sri_centrao'],
+ ['TRF-1 e Kassio','Lula escolhe Fausto Medanha e preterido é auxiliar de Kassio Nunes Marques, informa a CNN Brasil.','CNN Brasil','https://www.cnnbrasil.com.br/blogs/matheus-teixeira/politica/lula-nomeia-apadrinhado-de-dino-e-gilmar-para-trf-e-impoe-derrota-a-kassio/','','trf1_kassio_lula'],
+ ['Supersalários','Sete ONGs cobram medidas contra R$ 24,3 bi pagos acima do teto em 2025, informa o Metrópoles.','Metrópoles','https://www.metropoles.com/brasil/entidades-cobram-do-governo-e-congresso-medidas-contra-supersalarios','','supersalarios_ongs'],
+ ['Figueiredo e os EUA','O Ministério da Justiça diz ao STF que voltou a cobrar dos EUA a notificação de Paulo Figueiredo, informa a CartaCapital.','CartaCapital','https://www.cartacapital.com.br/politica/governo-lula-diz-a-fachin-que-voltou-a-cobrar-eua-por-silencio-sobre-paulo-figueiredo/','',''],
+ ['Pauta do Senado','Estatuto do Aprendiz e Selo Rosa estão na pauta de terça e quarta, informa a Rádio Senado.','Rádio Senado','https://www12.senado.leg.br/radio/1/noticia/2026/11/09/selo-rosa-e-estatuto-do-aprendiz-sao-destaques-da-pauta-do-plenario','','senado_pauta_10_11'],
+ ['Fechamento do Ibovespa','O índice fecha a 171.837 pontos, alta de 1,98%, informa o Misto Brasil.','Misto Brasil','https://www.mistobrasil.com/2026/11/09/ibovespa-fecha-em-alta-e-retoma-a-marca-dos-171-mil-pontos/','','mercado_semana'],
+ ['Trump e o resultado','Trump questiona a honestidade da eleição sem provas, informa a AFP, via CP24.','CP24 (AFP)','https://www.cp24.com/news/world/2026/11/09/trump-casts-doubt-on-us-midterm-results-with-new-fraud-claims/','','eua_meio_mandato_placar'],
+ ['Eisenkot e os ultraortodoxos','Eisenkot e Liberman abrem conversa com Shas e UTJ, informa o Times of Israel.','Times of Israel','https://www.timesofisrael.com/liveblog_entry/report-eisenkot-liberman-agree-to-open-talks-with-haredi-parties-eyeing-draft-law-concessions/','','israel'],
+ ['Circular de Alliana','O presidente do Paraguai restringe viagens e contratações, informa o ABC Color.','ABC Color','https://www.abc.com.py/politica/2026/11/09/alliana-restringe-viajes-y-contrataciones-y-pide-asistir-a-afectados-por-ueno-bank/','','paraguai'],
+ ['Alerj e o gás','A decisão sobre o gás fica para o governo Ruas, informa a Agenda do Poder.','Agenda do Poder','https://agendadopoder.com.br/comissao-de-orcamento-da-alerj-debate-concessoes-estaduais-em-audiencia-com-representantes-do-executivo/','','rj_alerj_concessoes']
+);
+if (GIRO.length > 20) GIRO.length = 20;
+AMANHA.splice(2,0,["Ter, 10/11 · 14h","congresso","Plenário do Senado vota o Estatuto do Aprendiz e o Selo Rosa","A sessão deliberativa tem o PL 6461/2019, com cota de 5% a 15% de aprendizes, o PL 5608/2023 e o PLP 109/2025, sobre dados fiscais de empresas de combustíveis.","https://www12.senado.leg.br/radio/1/noticia/2026/11/09/selo-rosa-e-estatuto-do-aprendiz-sao-destaques-da-pauta-do-plenario","senado_pauta_10_11"]);
+
+/* --- Mais atualizadas e aposentadas (19h) --- */
+S.pl_motta.hora = '9/11';
+S.pl_motta.resumo = 'O presidente da Câmara, Hugo Motta (Republicanos-PB), reúne 15 partidos que elegeram 361 dos 513 deputados (70,4%) para a eleição de 1º de fevereiro de 2027; bastam 257 no primeiro turno. Se o PL, com 121 deputados, entrar no bloco, ele iria a 482, e a sigla corre o risco de perder comissões como CCJ e Saúde se ficar de fora, informam a Gazeta do Povo e o Metrópoles. A bancada decide na quarta (11), com Nikolas Ferreira defendendo nome próprio e Sóstenes Cavalcante dizendo que precisa ouvir todo mundo.';
+S.pl_motta.upd = 'Entram a conta do bloco de 482 deputados caso o PL adira, o risco de perder as comissões de CCJ e Saúde, a fala de Sóstenes e o recuo de Motta e Alcolumbre da comitiva de Lula.';
+_insAntes('pl_motta','O que vem agora',[
+ ['h','A conta do bloco e o risco nas comissões'],
+ ['p','Se o PL entrar no bloco de Motta, o grupo iria a 482 dos 513 deputados, segundo a Gazeta do Povo. Se ficar de fora, a bancada de 121 deputados corre o risco de perder comissões de peso, como a de Constituição e Justiça e a de Saúde, informou o Metrópoles em 5 de novembro. O líder do partido, Sóstenes Cavalcante (PL-RJ), disse que o PL precisa ouvir todo mundo antes de decidir, e o deputado Nikolas Ferreira (PL-MG) defende candidato próprio na Câmara.'],
+ ['p','No Senado, o PL formalizou o lançamento de Rogério Marinho (PL-RN) contra Davi Alcolumbre, e o senador Flávio Bolsonaro chamou o Congresso de trincheira, informa a Gazeta do Povo. Motta e Alcolumbre recusaram o convite de Lula para a comitiva da COP31, e a reunião do PL na quarta (11) é o próximo marco da disputa na Câmara.']
+]);
+S.pl_motta.fontes.unshift(['Gazeta do Povo (Bolsonaro e Marinho)','https://www.gazetadopovo.com.br/republica/com-flavio-nos-eua-bolsonaro-e-marinho-se-organizam-para-conquistar-o-comando-do-congresso/'],['Metrópoles (Motta isola o PL)','https://www.metropoles.com/brasil/sucessao-no-congresso-motta-isola-pl-e-alcolumbre-tenta-driblar-oposicao']);
+
+S.mg_transicao_fase_final.hora = '9/11';
+S.mg_transicao_fase_final.t = 'Transição de Cleitinho em Minas chega à metade com oito das 16 reuniões feitas; Propag é pauta de 18 de novembro, e o vice Falcão busca encontro com a Presidência para negociar a dívida';
+S.mg_transicao_fase_final.sub = 'Falcão diz que é hora de parar de olhar para trás e quer que a União devolva a Minas, em investimentos, o valor da venda de ativos; o déficit herdado é de R$ 10,5 bi.';
+S.mg_transicao_fase_final.resumo = 'A transição de Cleitinho Azevedo (Republicanos) em Minas chegou à metade, com oito das 16 reuniões temáticas feitas, e a dívida com a União, o Propag, é pauta de 18 de novembro, informa O Tempo. O vice-governador eleito, Luís Eduardo Falcão (Republicanos), disse que é hora de parar de olhar para trás, defendeu negociar a dívida de R$ 208,87 bilhões com Lula e busca encontro com a Presidência nos próximos dias. A equipe do agro pede a permanência do secretário Thales Fernandes.';
+S.mg_transicao_fase_final.upd = 'Entram o calendário das oito reuniões restantes, com Propag em 18/11, a fala de Falcão sobre negociar a dívida com Lula e o pedido do agro pela permanência de Thales Fernandes.';
+_insAntes('mg_transicao_fase_final','O que vem agora',[
+ ['h','O calendário das oito reuniões que faltam'],
+ ['p','Oito das 16 reuniões temáticas foram concluídas entre 6 de outubro e 4 de novembro. Faltam Agropecuária, em 10 de novembro, Desenvolvimento Social, em 11, Cultura e Turismo, em 12, Governo, em 16, Fazenda, em 17, Propag, em 18, Planejamento e Gestão, em 19, e a de parceiros externos, em 23, informa O Tempo. O vice-governador eleito, Luís Eduardo Falcão, coordena as reuniões, transmitidas ao vivo. Entidades do agro pediram a permanência de Thales Fernandes na Secretaria de Agricultura, sem resposta de Cleitinho.'],
+ ['p','Falcão disse, em evento da Eloos Mineração, que já chega de ficar olhando para trás e que a dívida de R$ 208,87 bilhões, em sua maior parte com a União, deve ser enfrentada como em outros estados. Ele quer que a União devolva a Minas, em investimentos, o valor da venda de ativos como imóveis, e que acelere a avaliação deles. A equipe tenta marcar encontro com a Presidência nos próximos dias, informa O Tempo; o texto não traz a reação do governo federal.']
+]);
+S.mg_transicao_fase_final.fontes.unshift(['O Tempo (transição chega à metade)','https://www.otempo.com.br/politica/2026/11/9/transicao-chega-a-metade-das-reunioes-e-tera-divida-com-a-uniao-como-pauta-na-proxima-semana'],['O Tempo (Falcão e a dívida)','https://www.otempo.com.br/politica/2026/11/9/vice-de-cleitinho-defende-negociar-divida-de-minas-com-lula-chega-de-ficar-olhando-para-tras']);
+
+S.orcamento_2027.hora = '9/11';
+S.orcamento_2027.resumo = 'O projeto de Orçamento de 2027 prevê superávit primário de R$ 18,6 bilhões, mas a Instituição Fiscal Independente do Senado projeta déficit de R$ 86,1 bilhões. O Congresso acertou votar a LDO e a LOA até 17 de dezembro, e o ministro Dario Durigan e o do Planejamento, Bruno Moretti, só entregam a Lula a agenda do ajuste, de ao menos R$ 39,8 bilhões, depois da volta da viagem, em 16 de novembro, informa o Correio da Manhã. Sete ONGs cobram, em manifesto de segunda (9), medidas contra os R$ 24,3 bilhões pagos acima do teto em 2025.';
+S.orcamento_2027.upd = 'Entram a data da agenda fiscal (depois de 16/11), segundo o Correio da Manhã, e o manifesto das ONGs contra os supersalários, com R$ 24,3 bi acima do teto em 2025.';
+_insAntes('orcamento_2027','O que vem agora',[
+ ['h','Supersalários no debate do ajuste'],
+ ['p','O Ministério da Fazenda e o do Planejamento só entregam a agenda econômica a Lula depois das viagens à Turquia e às Filipinas, com volta em 16 de novembro, informa o Correio da Manhã. No mesmo dia da cobrança do mercado por medidas, sete ONGs apontaram, em manifesto, que R$ 24,3 bilhões foram pagos acima do teto constitucional em 2025, o equivalente a cerca de 39% do déficit primário federal do ano, de R$ 61,7 bilhões, informa o Metrópoles.']
+]);
+S.orcamento_2027.fontes.unshift(['Correio da Manhã (agenda econômica a Lula)','https://www.correiodamanha.com.br/politica/2026/11/amp/332995-durigan-afirma-que-agenda-economica-sera-entregue-a-lula-quando-ele-voltar-de-viagens.html'],['Metrópoles (supersalários)','https://www.metropoles.com/brasil/entidades-cobram-do-governo-e-congresso-medidas-contra-supersalarios']);
+
+S.quaest_pos_eleicao.velha = true; S.quaest_pos_eleicao.velhaMotivo = 'pesquisa de 8/11 sem rodada nova; segue no acervo';
+S.argentina_risco_pais.velha = true; S.argentina_risco_pais.velhaMotivo = 'sem desdobramento desde 8/11; segue no acervo';
+
+S.motta_alcolumbre_comitiva.fonteunica = false;
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","israel":"atualizada","dino_6x1":"atualizada","lula_cop":"atualizada","ira_proposta_catar":"atualizada","ueno_bank":"atualizada","congresso_direita":"atualizada","flavio_senado":"atualizada","mercado_semana":"atualizada","bc_diretorias":"novo","to_transicao_vicentinho":"novo","ms_dialogo_pos_eleicao":"novo","sudao_haroun":"novo","argentina_governadores":"novo"};
-var GIRO_FLAGS = {"Decreto da 6x1 fica para 16/11":"novo","Marinho contra Alcolumbre":"novo","Flávio e os aliados":"novo","Schreiner no BC do Paraguai":"novo","Diretorias vagas do BC":"novo","Transição no Tocantins":"novo","Haroun detido no Sudão":"novo"};
+var FLAGS = {"paraguai":"atualizada","israel":"atualizada","ueno_bank":"atualizada","pl_motta":"atualizada","ucrania_abudhabi":"atualizada","mercado_semana":"atualizada","orcamento_2027":"atualizada","mg_transicao_fase_final":"atualizada","eua_meio_mandato_placar":"atualizada","motta_alcolumbre_comitiva":"atualizada","senado_pauta_10_11":"novo","lula_sri_centrao":"novo","trf1_kassio_lula":"novo","supersalarios_ongs":"novo","rj_alerj_concessoes":"novo"};
+var GIRO_FLAGS = {"Centrão na articulação":"novo","TRF-1 e Kassio":"novo","Supersalários":"novo","Figueiredo e os EUA":"novo","Pauta do Senado":"novo","Fechamento do Ibovespa":"novo","Trump e o resultado":"novo","Eisenkot e os ultraortodoxos":"novo","Circular de Alliana":"novo","Alerj e o gás":"novo"};
 /* ===== FIM DOS DADOS ===== */
