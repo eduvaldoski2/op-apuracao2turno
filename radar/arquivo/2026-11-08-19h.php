@@ -7712,6 +7712,8 @@ HOME_ROW = HOME_ROW.map(function(i){ return i==='lula_pronunciamento' ? 'lula_fa
 GIRO.forEach(function(g){ if (g[5]==='lula_pronunciamento') g[5]='lula_fala_nacao'; });
 AMANHA.forEach(function(a){ if (a[5]==='lula_pronunciamento') a[5]='lula_fala_nacao'; });
 
+S.lula_fala_nacao.cards = {'1x1':'/radar/cards/lula-5-pontos-1x1.png','4x5':'/radar/cards/lula-5-pontos-4x5.png','9x16':'/radar/cards/lula-5-pontos-9x16.png'};
+
 /* FLAGS (gerado por publicar.js; não editar) */
 var FLAGS = {"flavio_senado":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","sp_alesp_sucessao":"atualizada","ucrania_energia":"atualizada","iemen_houthis":"atualizada","colombia_drones":"atualizada","nz_eleicao":"atualizada","mercado_semana":"atualizada","tse_21_acoes":"novo","cop31_antalya":"novo","amsterda_linha_vermelha":"novo","el_hierro":"novo","cracovia":"novo","gaza_enchentes":"novo","eua_meio_mandato_placar":"novo","franca_custo_vida":"novo","lula_fala_nacao":"novo"};
 var GIRO_FLAGS = {"Pronunciamento de Lula":"novo","21 ações no TSE":"novo","COP31 em Antalya":"novo","Linha Vermelha em Amsterdã":"novo","Emergência em El Hierro":"novo","Cracóvia":"novo","Chuva em Gaza":"novo","Senado dos EUA":"novo"};

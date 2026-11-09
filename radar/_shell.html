@@ -215,6 +215,8 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .opt{display:flex;align-items:center;justify-content:center;gap:8px;text-align:center;padding:13px 10px;border:1.5px solid var(--brand);color:var(--brand);font-weight:700;font-size:14px;text-decoration:none;background:transparent}
 .opt:hover{background:var(--band)}
 .opt.wa{background:#1f8a4c;border-color:#1f8a4c;color:#fff}
+.opt.ig{background:linear-gradient(45deg,#f09433,#dc2743 55%,#bc1888);border-color:#dc2743;color:#fff}
+.cardbox .row{display:flex;gap:8px;flex-wrap:wrap}.cardbox .row .act{flex:1;justify-content:center}
 .sharetxt{margin:12px 0 0;padding:10px 12px;background:var(--band);font-size:14px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:16px;margin-top:14px;align-items:start}
 .cardbox{display:flex;flex-direction:column;gap:8px}
@@ -503,7 +505,7 @@ window.addEventListener('load',function(){layoutFix()});
 /* Compartilhar */
 function shareText(id,canal){var s=S[id];return s.t+'\n\n'+s.resumo+'\n\nLeia mais no Radar da Oficina Política: '+shareUrl(id,canal)}
 function closeModal(){document.getElementById('modal').innerHTML=''}
-function openShare(id){
+function openShare(id,showCards){
   var s=S[id], t=s.t, full=shareText(id,'copiar'), fullW=shareText(id,'whatsapp'); shareId=id;
   var enc=encodeURIComponent;
   var h='<div class="modal" id="mod"><div class="sheet" role="dialog" aria-modal="true" aria-label="Compartilhar"><button class="x" type="button" data-close>×</button><h3>Compartilhar</h3><div class="meta">'+esc(s.t)+'</div><div class="opts">'
@@ -512,10 +514,12 @@ function openShare(id){
    +'<a class="opt" data-canal="facebook" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u='+enc(shareUrl(id,'facebook'))+'">Facebook</a>'
    +'<a class="opt" data-canal="telegram" target="_blank" rel="noopener" href="https://t.me/share/url?url='+enc(shareUrl(id,'telegram'))+'&text='+enc(t)+'">Telegram</a>'
    +'<a class="opt" data-canal="linkedin" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url='+enc(shareUrl(id,'linkedin'))+'">LinkedIn</a>'
+   +'<button class="opt ig" type="button" id="igBtn" data-canal="instagram">Instagram</button>'
    +'<button class="opt" type="button" id="cp" data-canal="copiar">Copiar texto</button>'
    +'<button class="opt" type="button" id="mOpen">E-mail</button>'
-   +'</div><div id="mailslot"></div><div class="sharetxt" id="stxt">'+esc(full)+'</div><div class="msg" id="cmsg">Para Instagram e Stories, use “Baixar card” e publique a imagem.</div></div></div>';
+   +'</div><div id="mailslot"></div><div id="cardslot"></div><div class="sharetxt" id="stxt">'+esc(full)+'</div><div class="msg" id="cmsg">Para Instagram e Stories, toque em Instagram e escolha o formato do card.</div></div></div>';
   document.getElementById('modal').innerHTML=h;
+  if(showCards) openCardsSlot(id);
 }
 function mailForm(id){
   return '<div class="mailbox" id="mailbox"><b>Enviar por e-mail</b><label for="mPara">E-mail de quem vai receber</label><input type="email" id="mPara" autocomplete="off" placeholder="nome@exemplo.com">'
@@ -623,20 +627,32 @@ async function saveBlob(blob,filename,msgEl){
   try{var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;document.body.appendChild(a);a.click();a.remove();msgEl.textContent='Se o download não começar, toque e segure a imagem para salvar.'}
   catch(e){msgEl.textContent='Toque e segure a imagem para salvar.'}
 }
-async function openCards(id){
-  var h='<div class="modal" id="mod"><div class="sheet wide" role="dialog" aria-modal="true" aria-label="Baixar card"><button class="x" type="button" data-close>×</button><h3>Baixar card</h3><div class="meta">Escolha o formato. A imagem leva a manchete, o resumo e o convite para ler mais no Radar.</div><div class="cards" id="cards">'
-   +FORMATS.map(function(f){return '<div class="cardbox" id="cb-'+f.id+'"><b>'+esc(f.nome)+'</b><div class="meta">Gerando…</div></div>'}).join('')+'</div><div class="msg" id="dmsg"></div></div></div>';
-  document.getElementById('modal').innerHTML=h;
+function openCards(id){shareId=id;openShare(id,true)}
+async function openCardsSlot(id){
+  var slot=document.getElementById('cardslot');if(!slot)return;
+  if(slot.dataset.on){slot.innerHTML='';slot.dataset.on='';return}
+  slot.dataset.on='1';
+  var canShareFiles=false;try{canShareFiles=!!(navigator.canShare&&navigator.canShare({files:[new File([''],'a.png',{type:'image/png'})]}))}catch(e){}
+  slot.innerHTML='<div class="cardsbox"><b>Cards para Instagram, Stories e WhatsApp</b><div class="meta">'+(canShareFiles?'Toque em “Enviar para o Instagram” e escolha o app, ou baixe a imagem.':'Baixe a imagem e publique no Instagram ou no WhatsApp.')+'</div><div class="cards" id="cards">'
+   +FORMATS.map(function(f){return '<div class="cardbox" id="cb-'+f.id+'"><b>'+esc(f.nome)+'</b><div class="meta">Gerando…</div></div>'}).join('')+'</div><div class="msg" id="dmsg"></div></div>';
+  slot.scrollIntoView({block:'start',behavior:'smooth'});
+  var st=S[id];
   for(var i=0;i<FORMATS.length;i++){
     var f=FORMATS[i],box=document.getElementById('cb-'+f.id);
     if(!box) return;
     try{
-      var c=await drawCard(id,f);
-      var blob=await toBlob(c);
+      var blob;
+      if(st.cards&&st.cards[f.id]){var rs=await fetch(st.cards[f.id]);if(!rs.ok)throw new Error('card');blob=await rs.blob()}
+      else{var c=await drawCard(id,f);blob=await toBlob(c)}
       var url=URL.createObjectURL(blob);
       box=document.getElementById('cb-'+f.id); if(!box) return;
-      box.innerHTML='<b>'+esc(f.nome)+'</b><img alt="Card '+esc(f.id)+'" src="'+url+'"><button type="button" class="act" data-dl="'+f.id+'" style="justify-content:center">Baixar PNG</button>';
-      box.querySelector('[data-dl]').onclick=(function(b,fid){return function(){saveBlob(b,'radar-op-'+id+'-'+fid+'.png',document.getElementById('dmsg'))}})(blob,f.id);
+      box.innerHTML='<b>'+esc(f.nome)+'</b><img alt="Card '+esc(f.id)+'" src="'+url+'"><div class="row">'+(canShareFiles?'<button type="button" class="act" data-ig="'+f.id+'">Enviar para o Instagram</button>':'')+'<button type="button" class="act" data-dl="'+f.id+'">Baixar PNG</button></div>';
+      (function(b,fid){
+        var d=box.querySelector('[data-dl]');d.onclick=function(){saveBlob(b,'radar-op-'+id+'-'+fid+'.png',document.getElementById('dmsg'))};
+        var g=box.querySelector('[data-ig]');if(g)g.onclick=function(){
+          var file=new File([b],'radar-op-'+id+'-'+fid+'.png',{type:'image/png'});
+          navigator.share({files:[file],text:shareText(id,'instagram')}).catch(function(err){if(err&&err.name!=='AbortError')saveBlob(b,'radar-op-'+id+'-'+fid+'.png',document.getElementById('dmsg'))})};
+      })(blob,f.id);
     }catch(e){box=document.getElementById('cb-'+f.id);if(box)box.innerHTML='<b>'+esc(f.nome)+'</b><div class="meta">Não foi possível gerar este formato.</div>'}
   }
 }
@@ -654,6 +670,7 @@ document.addEventListener('click',function(e){
   var sh=t.closest('[data-share]');if(sh){openShare(sh.dataset.share);return}
   var cd=t.closest('[data-card]');if(cd){openCards(cd.dataset.card);return}
   if(t.closest('[data-close]')||t.id==='mod'){closeModal();return}
+  if(t.closest('#igBtn')){openCardsSlot(shareId);return}
   if(t.closest('#cp')){copyText(document.getElementById('stxt').textContent)}
   if(t.closest('#mOpen')){var sl=document.getElementById('mailslot');if(sl&&!sl.innerHTML){sl.innerHTML=mailForm(shareId);var pi=document.getElementById('mPara');if(pi)pi.focus()}return}
   if(t.closest('#mEnviar')){mailSend();return}
