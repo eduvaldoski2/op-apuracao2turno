@@ -311,7 +311,7 @@ function giroItems(){
   }).join('');
 }
 function giroBox(){
-  return '<div class="box"><button type="button" class="giro-btn" id="giroBtn" aria-expanded="'+giroOpen+'" aria-controls="giroList"><h2><img class="opb" src="/img/giro-op.svg" alt="">Giro OP</h2><span>'+GIRO.length+' notas<i class="chev"></i></span></button><p class="giro-sub">Os principais fatos do dia em notas curtas. Em poucos minutos, você fica bem informado e chega à conversa já sabendo.</p><ul class="notes" id="giroList"'+(giroOpen?'':' hidden')+'>'+giroItems()+'</ul><button type="button" class="giro-more" id="giroMore"></button></div>';
+  return '<div class="box"><button type="button" class="giro-btn" id="giroBtn" aria-expanded="'+giroOpen+'" aria-controls="giroList"><h2><img class="opb" src="/img/giro-op.svg" alt="">Giro OP</h2><span>'+GIRO.length+' notas<i class="chev"></i></span></button><p class="giro-sub">Os principais fatos do dia em notas curtas para você ficar bem informado em poucos minutos.</p><ul class="notes" id="giroList"'+(giroOpen?'':' hidden')+'>'+giroItems()+'</ul><button type="button" class="giro-more" id="giroMore"></button></div>';
 }
 var trendsOpen=false;
 function trendLink(t){
@@ -432,7 +432,7 @@ function arquivoView(){
    +(ord.length?ord.map(function(d){var p=d.split('-');return '<div class="subh"><h2>'+parseInt(p[2],10)+' de '+M[parseInt(p[1],10)-1]+' de '+p[0]+'</h2></div><div class="arqlist">'+dias[d].map(function(x){return '<a href="/radar/'+(x[1]?'':'?ed='+x[0])+'">Edição das '+x[0].slice(11)+(x[1]?' · atual':'')+'</a>'}).join('')+'</div>'}).join(''):'<p>Ainda não há edições arquivadas.</p>')+'</div>';
 }
 function giroView(){
-  return '<div class="pg"><div class="crumb"><a href="#">Radar</a> / Giro OP</div><h1 class="gh"><img class="opb big" src="/img/giro-op.svg" alt="">Giro OP</h1><p class="gsub">Os principais fatos do dia em notas curtas. Leia em poucos minutos, fique bem informado e chegue à conversa já sabendo.</p><ul class="notes">'+giroItems()+'</ul></div>';
+  return '<div class="pg"><div class="crumb"><a href="#">Radar</a> / Giro OP</div><h1 class="gh"><img class="opb big" src="/img/giro-op.svg" alt="">Giro OP</h1><p class="gsub">Os principais fatos do dia em notas curtas para você ficar bem informado em poucos minutos.</p><ul class="notes">'+giroItems()+'</ul></div>';
 }
 
 /* Menu horizontal */
