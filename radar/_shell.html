@@ -169,7 +169,7 @@ main{padding-block:26px 56px;display:flex;flex-direction:column;gap:44px}
 .body p{margin:0}
 .body h2{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.15;margin:14px 0 0;color:var(--brand);text-wrap:balance}
 .vid{margin:4px 0;display:flex;flex-direction:column;gap:8px}
-.vid .vbox{position:relative;aspect-ratio:16/9;max-width:100%;background:#14110f;border:0;width:100%;padding:0;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;overflow:hidden}
+.vid .vbox{position:relative;aspect-ratio:16/9;max-width:100%;background:#14110f;border:0;width:100%;padding:0;display:flex;align-items:center;justify-content:center;color:#fff;overflow:hidden}
 .vid .vbox iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .vid .vbox .pl{width:76px;height:76px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center}
 .vid .vbox .pl svg{width:30px;height:30px;fill:#fff;margin-left:4px}
@@ -389,7 +389,7 @@ function renderBlocks(blocks){
       case 'p': return '<p>'+esc(b[1])+'</p>';
       case 'ul': return '<ul>'+b[1].map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>';
       case 'tl': return '<ol class="tl">'+b[1].map(function(x){return '<li><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></li>'}).join('')+'</ol>';
-      case 'video': if(!/^[\w-]{11}$/.test(b[1].id))return '';return '<figure class="vid" style="margin:0"><button type="button" class="vbox" data-yt="'+b[1].id+'" aria-label="Reproduzir o vídeo: '+esc(b[1].t)+'"><span class="pl"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><span class="vt">'+esc(b[1].t)+'</span></button><figcaption class="vcap">'+esc(b[1].c)+'</figcaption></figure>';
+      case 'video': if(!/^[\w-]{11}$/.test(b[1].id))return '';return '<figure class="vid" style="margin:0"><div class="vbox"><iframe src="https://www.youtube-nocookie.com/embed/'+b[1].id+'?rel=0" title="'+esc(b[1].t)+'" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div><figcaption class="vcap">'+esc(b[1].c)+'</figcaption></figure>';
       case 'nums': return '<div class="nums">'+b[1].map(function(x){return '<div><b>'+esc(x[0])+'</b><span>'+esc(x[1])+'</span></div>'}).join('')+'</div>';
     }
     return '';
@@ -644,7 +644,6 @@ async function openCards(id){
 /* Eventos */
 document.addEventListener('click',function(e){
   var t=e.target;
-  var yt=t.closest('[data-yt]');if(yt){var fr=document.createElement('iframe');fr.src='https://www.youtube-nocookie.com/embed/'+yt.dataset.yt+'?autoplay=1&rel=0';fr.title=yt.getAttribute('aria-label')||'Vídeo';fr.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';fr.allowFullscreen=true;fr.referrerPolicy='strict-origin-when-cross-origin';yt.innerHTML='';yt.appendChild(fr);yt.removeAttribute('data-yt');return}
   var cn=t.closest('[data-canal]');if(cn)trackShare(cn.dataset.canal);
   if(t.closest('#giroMore')){giroAll=!giroAll;fitGiro();return}
   var gb=t.closest('#giroBtn');if(gb){giroOpen=!giroOpen;gb.setAttribute('aria-expanded',String(giroOpen));document.getElementById('giroList').hidden=!giroOpen;return}
