@@ -10,12 +10,13 @@
     "paraguai",
     "ueno_bank",
     "paraguai_cupula",
-    "pena_cofre"
+    "pena_cofre",
+    "ueno_pagamentos"
    ],
-   "verificada": "2026-11-10-15h",
-   "fato_novo": false,
-   "ultimo_fato": "10/11: Alliana troca a cúpula militar (Infobae/EFE); promotores acham cofre atrás de parede falsa na casa de veraneio de Peña e revistam outra casa e a de Carvallo (BBC Mundo); BCP diz que 93,1% dos clientes cobertos foram reembolsados.",
-   "proximo": "Abertura do cofre; sanção ficta do Orçamento (14/11); recurso da defesa contra a preventiva."
+   "verificada": "2026-11-10-19h",
+   "fato_novo": true,
+   "ultimo_fato": "10/11: governo diz ter pago 95% dos poupadores do Ueno Bank (US$ 330 mi a 1,74 mi de pessoas) e promete recuperar os fundos de aposentadoria; BCP fala em 93% com ao menos pagamento parcial (Infobae, Euronews).",
+   "proximo": "Pagamento do saldo até 11/11; recurso da defesa contra a preventiva; abertura do cofre; sanção ficta do Orçamento (14/11)."
   },
   {
    "id": "transicao-lula",
@@ -34,10 +35,10 @@
     "lula_sri_centrao",
     "lula_antalia_comitiva"
    ],
-   "verificada": "2026-11-10-15h",
-   "fato_novo": true,
-   "ultimo_fato": "10/11: Lula está em Antália para a COP31 sem Camilo Santana, Rui Costa, Rafael Fonteles nem Haddad; Motta e Alcolumbre recusaram o convite; montagem do ministério sem data (O Povo, Bahia Notícias).",
-   "proximo": "Cúpula de líderes (11 e 12/11); Manila (13 a 15/11); volta em 16/11; anúncio da equipe e decisão sobre a SRI."
+   "verificada": "2026-11-10-19h",
+   "fato_novo": false,
+   "ultimo_fato": "10/11: Lula em Antália para a COP31; sem anúncio de ministério ou equipe econômica; as decisões aguardam a volta, por volta de 16/11.",
+   "proximo": "Cúpula de líderes (11 e 12/11); Manila (13/11); ASEAN (14 a 15/11); volta em 16/11."
   },
   {
    "id": "tse-acoes",
@@ -50,9 +51,9 @@
     "tse_psol_se",
     "tse_21_acoes"
    ],
-   "verificada": "2026-11-10-15h",
+   "verificada": "2026-11-10-19h",
    "fato_novo": false,
-   "ultimo_fato": "10/11: sem movimentação nova; prazo de cinco dias de defesa da chapa Lula-Alckmin corre desde a notificação.",
+   "ultimo_fato": "10/11: sem movimentação nova localizada no TSE.",
    "proximo": "Defesa da chapa; novas decisões do corregedor."
   },
   {
@@ -67,9 +68,9 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-10-15h",
+   "verificada": "2026-11-10-19h",
    "fato_novo": false,
-   "ultimo_fato": "10/11: sem decisão da Mesa do Senado sobre o voto remoto de Flávio; resposta de Rubio aos democratas é pedida até 13/11.",
+   "ultimo_fato": "10/11: sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio; último registro é de 5/11 (Alcolumbre analisa com a assessoria).",
    "proximo": "Decisão da Mesa do Senado; resposta de Rubio até 13/11."
   },
   {
@@ -87,9 +88,9 @@
     "motta_alcolumbre_comitiva",
     "senado_pauta_10_11"
    ],
-   "verificada": "2026-11-10-15h",
-   "fato_novo": false,
-   "ultimo_fato": "10/11: Plenário do Senado vota ANP, Selo Rosa e Escazú; Estatuto do Aprendiz na pauta de quarta (11); comissão da PEC da maioridade se reúne às 14h30; PL decide em 11/11.",
+   "verificada": "2026-11-10-19h",
+   "fato_novo": true,
+   "ultimo_fato": "10/11: Senado aprova o Selo Rosa e o acesso da ANP a dados fiscais; resultado de Escazú não localizado; Estatuto do Aprendiz na pauta de quarta (11).",
    "proximo": "Bancada do PL (11/11); Estatuto do Aprendiz (11/11); eleições das Mesas em 1º/02/2027."
   },
   {
@@ -102,10 +103,10 @@
     "maioridade",
     "maioridade_audiencias"
    ],
-   "verificada": "2026-11-10-15h",
-   "fato_novo": true,
-   "ultimo_fato": "10/11: comissão especial da PEC da maioridade penal faz audiências na terça e na quarta, às 14h30; relator Mendonça Filho quer parecer até o fim de novembro.",
-   "proximo": "Segunda audiência (11/11); parecer do relator; publicação da MP do Ministério da Segurança."
+   "verificada": "2026-11-10-19h",
+   "fato_novo": false,
+   "ultimo_fato": "10/11: audiências da comissão da PEC da maioridade penal às 14h30 de terça e quarta; sem relato do conteúdo localizado.",
+   "proximo": "Segunda audiência (11/11); parecer do relator; MP do Ministério da Segurança."
   },
   {
    "id": "escala-6x1",
@@ -115,10 +116,10 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-10-15h",
-   "fato_novo": false,
-   "ultimo_fato": "10/11: audiência de conciliação de Dino marcada para as 14h, com CNC pedindo adiar o cronograma (42h em 16/12/2026 e 40h em 16/12/2027); decreto adiado para depois de 16/11.",
-   "proximo": "Resultado da audiência de 10/11; prazo de cinco dias para AGU, PGR, Câmara e Senado."
+   "verificada": "2026-11-10-19h",
+   "fato_novo": true,
+   "ultimo_fato": "10/11: audiência no STF termina sem acordo nem liminar; Dino diz que pedirá o julgamento no plenário antes de 16/12 e sinaliza flexibilização das folgas por negociação coletiva (Exame, CNN Brasil).",
+   "proximo": "Pedido de pauta na semana de 16/11; decreto do governo após a volta de Lula; decisão de Dino sobre folgas."
   },
   {
    "id": "economia-mercado",
@@ -139,10 +140,10 @@
     "petrobras_balanco",
     "combustiveis_decreto"
    ],
-   "verificada": "2026-11-10-15h",
+   "verificada": "2026-11-10-19h",
    "fato_novo": true,
-   "ultimo_fato": "10/11, 12h54: dólar a R$ 5,603 (+1,79%) e Ibovespa em queda de 0,30%, a 171.713 pontos, depois do CPI dos EUA e da ata do Copom; decreto prorroga até 9/12 a alíquota zero na gasolina; Petrobras divulga o balanço do 3T.",
-   "proximo": "Galípolo às 14h30; balanço da Petrobras; IPCA de outubro (12/11, 9h); varejo (13/11)."
+   "ultimo_fato": "10/11: Ibovespa fecha em queda de 0,52%, a 171.337 pontos; dólar a R$ 5,586 (+1,46%); Brent a US$ 91,49; balanço da Petrobras fica para quarta (11), após o pregão.",
+   "proximo": "Balanço da Petrobras (11/11); IPCA de outubro (12/11); varejo (13/11)."
   },
   {
    "id": "eua-meio-mandato",
@@ -154,9 +155,9 @@
     "rubio_gabinete",
     "eua_meio_mandato_placar"
    ],
-   "verificada": "2026-11-10-15h",
+   "verificada": "2026-11-10-19h",
    "fato_novo": false,
-   "ultimo_fato": "10/11: sem fato novo verificado desde 9/11; Alasca (contagem em ~18/11) e Mississippi (certificação dos condados até 13/11) seguem em aberto.",
+   "ultimo_fato": "10/11: sem fato novo verificado desde 9/11; Alasca e Mississippi seguem em aberto.",
    "proximo": "Contagem do Alasca (18/11) e certificação (25/11)."
   },
   {
@@ -170,10 +171,10 @@
     "zaporizhzhia",
     "ucrania_abudhabi"
    ],
-   "verificada": "2026-11-10-15h",
+   "verificada": "2026-11-10-19h",
    "fato_novo": true,
-   "ultimo_fato": "10/11: Rússia, Ucrânia e EUA retomam as conversas em Abu Dhabi, as primeiras em nove meses; Kushner diz que as partes estreitaram diferenças, e Moscou mantém a exigência sobre o Donbas.",
-   "proximo": "Segundo dia em Abu Dhabi (11/11); possível viagem de Witkoff e Kushner a Moscou e Kiev; reunião de líderes da UE em 13/11."
+   "ultimo_fato": "10/11: primeiro dia em Abu Dhabi termina após quase quatro horas de conversas mediadas pelos EUA, segundo a NPR; Moscou mantém a exigência sobre o Donbas.",
+   "proximo": "Segundo dia (11/11); possível viagem de Witkoff e Kushner a Moscou e Kiev."
   },
   {
    "id": "israel-governo",
@@ -183,10 +184,10 @@
    "materias": [
     "israel"
    ],
-   "verificada": "2026-11-10-15h",
+   "verificada": "2026-11-10-19h",
    "fato_novo": false,
-   "ultimo_fato": "10/11: sessão inaugural da 26ª Knesset; Yashar convida Shas e UTJ a trocar o presidente Amir Ohana, e a UTJ recusa antes de acordo de governo.",
-   "proximo": "Votação sobre o presidente da Knesset (possível semana de 16/11); prazo de 28 dias do mandato até 6/12."
+   "ultimo_fato": "10/11: sessão inaugural da 26ª Knesset; resultado da disputa pela presidência da Casa não localizado.",
+   "proximo": "Votação sobre o presidente da Knesset; prazo do mandato de Eisenkot até 6/12."
   },
   {
    "id": "ira-oriente-medio",
@@ -199,72 +200,72 @@
     "ira_iron_gate",
     "khor_mor"
    ],
-   "verificada": "2026-11-10-15h",
+   "verificada": "2026-11-10-19h",
    "fato_novo": false,
-   "ultimo_fato": "10/11: Trump diz que novos ataques ao Irã não são necessários por ora; dirigente iraniano chama negociações de fake news.",
+   "ultimo_fato": "10/11: Trump diz que novos ataques ao Irã não são necessários por ora.",
    "proximo": "Resposta dos EUA à proposta; APEC."
   }
  ],
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-10-15h",
-   "achado": "Indonésia (vice-presidente diz que pretende renunciar), Hungria (irmão de Orbán detido) e África do Sul (Ramaphosa nega renúncia) citados pelo Just Security; sem queda, golpe ou prisão de chefe de Estado nova confirmada."
+   "feita": "2026-11-10-19h",
+   "achado": "Nada novo além do Paraguai (Alliana no cargo desde 6/11); sem queda, golpe ou prisão nova de chefe de Estado localizada."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-10-15h",
-   "achado": "Peru (Fujimori viaja e Espá-Lavrov), Bolívia (arquivamento de denúncia contra a primeira-dama), Argentina (governadores condicionam votos, uma fonte); Colômbia, Chile, Equador e México sem fato datado de 10/11."
+   "feita": "2026-11-10-19h",
+   "achado": "Paraguai (pagamentos do Ueno Bank, 95%); Argentina, Peru, Bolívia e demais sem fato datado de 10/11 além do já publicado às 15h."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-10-15h",
-   "achado": "Abu Dhabi dia 1, Merz e o orçamento da UE; Irã: Trump diz improvável nova campanha; sem guerra nova."
+   "feita": "2026-11-10-19h",
+   "achado": "Abu Dhabi: primeiro dia com quase quatro horas de conversa (NPR); segundo dia em 11/11; sem guerra nova."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-10-15h",
-   "achado": "Sem número novo do Alasca e do Mississippi; Espanha vota em 29/11 e tem greve geral em 11/11; Nova Zelândia sem vencedor até 27/11."
+   "feita": "2026-11-10-19h",
+   "achado": "Espanha: greve geral em 11/11 e eleição em 29/11; EUA e China sem fato novo localizado."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-10-15h",
-   "achado": "Dólar a R$ 5,60, CPI dos EUA, Waller admite alta do Fed em dezembro, Brent a US$ 90, Vale rebaixada pelo Itaú BBA."
+   "feita": "2026-11-10-19h",
+   "achado": "Fechamento: Ibovespa -0,52%, dólar R$ 5,586, Brent US$ 91,49; CPI dos EUA acima do esperado e ~99% de chance de alta do Fed em dezembro."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-10-15h",
-   "achado": "Lula sem aliados de campanha em Antália; decreto da 6x1 fica para depois de 16/11; decreto prorroga alíquota zero na gasolina."
+   "feita": "2026-11-10-19h",
+   "achado": "Lula em Antália; decreto da 6x1 adiado para depois de 16/11; sem anúncio de ministério."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-10-15h",
-   "achado": "Audiências da PEC da maioridade; MP 1.394/2026 das bets; CMO com Moretti na quarta; resultado do Plenário do Senado de terça não localizado até o fechamento."
+   "feita": "2026-11-10-19h",
+   "achado": "Senado aprova Selo Rosa e acesso da ANP a dados fiscais; Escazú sem resultado localizado; Câmara só com sessões solenes."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-10-15h",
-   "achado": "Audiência de Dino sobre a 6x1 às 14h, sem relato do resultado até o fechamento; nada novo de TSE, PGR ou PF."
+   "feita": "2026-11-10-19h",
+   "achado": "Audiência de Dino sobre a 6x1 sem acordo nem liminar; nada novo de TSE, PGR ou PF localizado."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-10-15h",
-   "achado": "Sem pesquisa nova; PL decide sobre Motta na quarta (11)."
+   "feita": "2026-11-10-19h",
+   "achado": "Sem pesquisa nova; última Quaest de 8/11 (aprovação 48%); PL decide sobre Motta em 11/11."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-10-15h",
-   "achado": "Fala de Galípolo às 14h30 sem relato até o fechamento; balanços do 3T (TIM, Ecorodovias, Magalu, Brava); Petrobras."
+   "feita": "2026-11-10-19h",
+   "achado": "Fechamento do mercado, ata do Copom, balanços de Embraer, Magalu e TIM; Petrobras fica para 11/11; fala de Galípolo sem relato localizado."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-10-15h",
-   "achado": "Fato datado de 9 e 10/11 só em PE e BA; RJ, SP, MG, Sul, Norte e Centro-Oeste sem fato novo datado nos veículos abertos."
+   "feita": "2026-11-10-19h",
+   "achado": "Sem fato datado de 9 e 10/11 localizado em MG, SP, Nordeste, Sul, Norte e Centro-Oeste; RJ: prazo de emendas ao Orçamento na Alerj até 11/11."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-10-15h",
-   "achado": "Fato novo em transição de Lula, segurança pública, economia e Ucrânia; sem fato novo verificado em Paraguai, TSE, Flávio, 6x1, EUA, Israel e Irã."
+   "feita": "2026-11-10-19h",
+   "achado": "Nada novo localizado além do já publicado; sem fato datado de 10/11 em fonte aberta."
   }
  ]
 }
