@@ -8739,7 +8739,403 @@ S.quaest_pos_eleicao.velha = true; S.quaest_pos_eleicao.velhaMotivo = 'pesquisa 
 S.argentina_risco_pais.velha = true; S.argentina_risco_pais.velhaMotivo = 'sem desdobramento desde 8/11; segue no acervo';
 
 S.motta_alcolumbre_comitiva.fonteunica = false;
+
+EDICAO.hora = '11h';
+EDICAO.data = 'Terça, 10 de novembro de 2026';
+
+/* --- Novas: Economia --- */
+S.copom_ata = {ed:'economia', k:'Economia', hora:'10/11',
+ t:'Ata do Copom diz que o cenário é desafiador e que a Selic em 13,75% fica restritiva por período prolongado; o comitê cita petróleo, El Niño, fim da escala 6x1 e real depreciado',
+ sub:'O texto, divulgado às 8h12 de terça (10), afirma que inflação cheia e núcleos aceleraram e que as projeções de PIB caíram; analistas leem uma pausa sem prazo, com menos risco de alta no curto prazo.',
+ dado:{n:'13,75%', l:'Selic ao ano, mantida pelo Copom em 4 de novembro depois da sequência de cortes'},
+ resumo:'A ata do Copom, divulgada às 8h12 de terça (10), descreve um cenário desafiador e diz que a Selic em 13,75% ao ano deve ficar em nível restritivo por período prolongado. O comitê cita como choques o petróleo, o El Niño, o fim da escala 6x1 e a depreciação do real por incerteza política, e afirma que inflação e núcleos aceleraram, as expectativas estão elevadas e as projeções de PIB caíram. Analistas veem pausa sem prazo definido. O presidente do BC, Gabriel Galípolo, fala às 14h30.',
+ fundo:[
+  ['p','O Comitê de Política Monetária (Copom) do Banco Central avaliou na ata divulgada às 8h12 desta terça-feira (10) que o cenário é desafiador e que a Selic, em 13,75% ao ano, deve permanecer em nível restritivo por período prolongado. O documento detalha a decisão de 4 de novembro, quando o comitê interrompeu a sequência de cortes e manteve a taxa, informa o InfoMoney.'],
+  ['nums',[['13,75%','Selic ao ano desde a reunião de 4/11'],['5,22%','IPCA de 2026 no Focus de 9/11, acima do teto de 4,5%'],['4,90%','IPCA de 2027 no Focus, quarta alta seguida'],['82,9%','Dívida bruta em relação ao PIB em setembro'],['12/11','Divulgação do IPCA de outubro, às 9h']]],
+  ['h','O que a ata diz'],
+  ['p','O comitê afirma que a inflação cheia e os núcleos aceleraram, que as expectativas seguem elevadas e que as projeções de crescimento do PIB caíram. Entre os choques que pesam sobre o quadro, a ata lista o petróleo, por causa do conflito no Oriente Médio, o fenômeno El Niño, o fim da escala 6x1 e a depreciação do real, atribuída à incerteza política doméstica, informa o InfoMoney.'],
+  ['p','O texto também reafirma a regra de condução: em geral, o Copom não reage aos efeitos primários de um choque de oferta, mas age com firmeza se houver contaminação das expectativas. A ressalva é a sinalização central do documento, porque indica que o comitê trata a alta do petróleo e dos alimentos como risco, e não como fato que justifique novo aperto, desde que as projeções de longo prazo não piorem.'],
+  ['h','Como o mercado leu'],
+  ['p','No blog ao vivo do InfoMoney, às 9h42, a leitura de analistas foi de pausa sem prazo definido, com risco menor de alta da Selic no curto prazo. O comitê descreve o juro como restritivo por período prolongado, e a mediana do Focus de 9 de novembro, divulgada pelo Banco Central e reproduzida pela Agência Brasil, passou a ver a Selic em 13,75% no fim de 2026, ante 13,50% na semana anterior.'],
+  ['p','O dólar acompanhou o cenário externo e o fiscal: a moeda subia 0,70% e chegou a R$ 5,543 às 9h28, segundo o InfoMoney. Os juros futuros de prazo longo já estavam acima de 14,9% na segunda (9), com o contrato para janeiro de 2031 a 14,925%, informa a Exame.'],
+  ['h','Por que importa'],
+  ['p','A ata afasta a leitura de que o ciclo de cortes seria retomado logo. Para o governo, que prepara a agenda fiscal que Dario Durigan e Bruno Moretti só entregam a Lula depois de 16 de novembro, a mensagem é que o custo do crédito continuará alto enquanto a dívida bruta, em 82,9% do PIB em setembro, e a depreciação do real alimentarem as expectativas. Para empresas e famílias endividadas, a Selic acima de 13% segue como o principal fator de custo de financiamento.'],
+  ['p','O crédito mais caro pesa sobre o investimento que Lula prometeu elevar acima de 20% do PIB. A mensagem também alcança o Orçamento de 2027: com juro alto, o custo da dívida pública, que o mercado já cobra do governo, tende a consumir parte do espaço que o ajuste de ao menos R$ 39,8 bilhões buscaria abrir.'],
+  ['h','O que vem agora'],
+  ['p','O presidente do Banco Central, Gabriel Galípolo, fala às 14h30 desta terça em evento da Abracam, e o mercado procura nas declarações dele indicações sobre a duração da pausa. O IPCA de outubro sai na quinta (12), às 9h, e a projeção da ASA, citada pela bpmoney, é de alta de 0,23% no mês; o IPCA-15 de outubro havia ficado em 0,32%, com 4,62% em 12 meses.'],
+  ['p','As vendas do varejo de setembro saem na sexta (13), às 9h. O próximo Copom ainda depende de dados de inflação e de expectativas, e a ata não indica data nem direção para a próxima mudança.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['Se o comitê voltará a cortar a taxa em 2027: a ata não dá prazo, e o Focus projeta 12,5% para o fim do próximo ano.','A reação dos juros futuros e do Ibovespa à ata e ao CPI dos EUA, que saíram na mesma manhã.','O alcance das declarações de Galípolo às 14h30.']]
+ ],
+ fontes:[['InfoMoney (ata do Copom)','https://www.infomoney.com.br/economia/ata-do-copom-reforca-cenario-desafiador-para-politica-monetaria/'],['Money Times (agenda econômica)','https://www.moneytimes.com.br/agenda-economica-ata-do-copom-e-inflacao-dos-eua-podem-mexer-com-bolsa-e-dolar-nesta-terca-feira-mlem/'],['Diário de Pernambuco (Selic mantida em 13,75%)','https://www.diariodepernambuco.com.br/economia/2026/11/11728373-selic-banco-central-mantem-juros-basicos-em-1375-ao-ano.html'],['Agência Brasil (Focus)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-da-selic-para-1375-em-2026'],['bpmoney (agenda da semana)','https://bpmoney.com.br/economia/agenda-economica-semana-ata-copom-ipca-inflacao-eua/'],['Exame (juros futuros)','https://exame.com/invest/mercados/vale-e-bancos-puxam-ibovespa-dolar-fica-estavel-enquanto-mercado-cobra-lula-no-fiscal/']]};
+
+S.mercado_10_11 = {ed:'economia', k:'Economia', hora:'10/11',
+ t:'Dólar sobe a R$ 5,54 e Ibovespa futuro fica estável perto de 174,3 mil pontos depois da ata do Copom e do CPI de 0,4% nos EUA; Embraer divulga lucro de R$ 379,8 milhões',
+ sub:'O índice preso ao Copom e à inflação americana abre a terça depois da maior alta diária desde outubro, de 2,22%, a 172.236 pontos; Brent cede para perto de US$ 90 com a fala de Trump sobre o Irã.',
+ dado:{n:'0,4%', l:'Alta do CPI dos EUA em outubro, contra 0,3% esperado e 0,6% em setembro'},
+ resumo:'O Ibovespa futuro ficava estável perto de 174,3 mil pontos às 9h42 desta terça (10), e o dólar comercial subia 0,70%, a R$ 5,543, depois da ata do Copom e do CPI dos EUA de outubro, que subiu 0,4% contra 0,3% esperado. O Brent cedia para perto de US$ 90 depois de Trump dizer que novos ataques ao Irã não são necessários neste momento. A Embraer informou lucro ajustado de R$ 379,8 milhões no 3T26, queda de 15,6%, e elevou a projeção de receita de 2026.',
+ fundo:[
+  ['p','O dólar comercial subia 0,70% e chegou a R$ 5,543 às 9h28 desta terça-feira (10), enquanto o contrato futuro do Ibovespa ficava estável perto de 174,3 mil pontos, depois da ata do Copom e do índice de preços ao consumidor (CPI) dos Estados Unidos, informa o InfoMoney. A abertura vem depois da maior alta diária da bolsa desde outubro.'],
+  ['h','O fechamento de segunda'],
+  ['p','O Ibovespa encerrou a segunda (9) em alta de 2,22%, a 172.236,05 pontos, a maior variação diária desde outubro, informa a Agência Brasil. O número é o final e substitui o dado preliminar de 171.906,50 pontos (+2,02%) mostrado pelo InfoMoney no fim da tarde. No mês, o índice acumula alta de 2,57%; no ano, de 6,90%; no quarto trimestre, queda de 7,57%.'],
+  ['p','O dólar fechou a R$ 5,506, queda de 0,06% depois de duas altas seguidas, e o contrato de juros para janeiro de 2028 terminou em 14,150%, baixa de 0,145 ponto percentual. O Brent caiu 5,85%, a US$ 92,57, e o WTI, 4,38%, a US$ 86,85, o que derrubou as petroleiras no índice, segundo a Agência Brasil e a Exame.'],
+  ['h','O CPI dos EUA e o petróleo'],
+  ['p','O CPI americano de outubro subiu 0,4% na comparação mensal, contra 0,3% esperado, informa o InfoMoney com dados da Reuters. Em setembro, a alta tinha sido de 0,6%. Antes do número, o mercado precificava 84% de chance de alta de juros pelo Federal Reserve em dezembro; a reação dos preços ao dado ainda estava em formação no início da manhã.'],
+  ['p','O petróleo cede: o Brent fica perto de US$ 90 e o WTI perto de US$ 85, depois que o presidente Donald Trump disse que novos ataques ao Irã não são necessários neste momento, informa o InfoMoney. O dólar futuro subia 0,39%, a R$ 5,55, às 9h05.'],
+  ['h','Empresas e combustíveis'],
+  ['p','A Embraer informou lucro líquido ajustado de R$ 379,8 milhões no terceiro trimestre, queda de 15,6% na comparação anual, com receita recorde para um terceiro trimestre. A empresa elevou a projeção de receita de 2026 para a faixa de US$ 8,4 bilhões a US$ 8,6 bilhões. O Itaú BBA rebaixou a recomendação da Vale para neutra.'],
+  ['p','O blog do InfoMoney registra ainda que o governo prorrogou por 30 dias, até 9 de dezembro, o corte federal de tributos sobre gasolina e etanol. O custo fiscal da medida não consta no relato.'],
+  ['h','O que vem agora'],
+  ['p','A Petrobras divulga o balanço do terceiro trimestre na quarta (11), depois do fechamento, com estimativas de dividendos entre US$ 3,1 bilhões e US$ 4,2 bilhões, segundo a bpmoney. O IPCA de outubro sai na quinta (12) e o varejo de setembro, na sexta (13). O presidente do Banco Central, Gabriel Galípolo, fala às 14h30 desta terça.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O ato oficial da prorrogação do corte de tributos sobre combustíveis e o custo para a União.','O fechamento de terça do Ibovespa e do dólar, que dependem da leitura do CPI e das declarações de Galípolo.','A data do balanço da Petrobras: o InfoMoney e a bpmoney divergem entre a terça e a quarta, e a empresa não havia confirmado na manhã de terça.']]
+ ],
+ fontes:[['InfoMoney (Ibovespa ao vivo, 10/11)','https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-10112026/'],['InfoMoney (Ibovespa futuro)','https://www.infomoney.com.br/mercados/ibovespa-futuro-ronda-estabilidade-com-ata-do-copom-e-dados-de-inflacao-em-foco/'],['InfoMoney (CPI dos EUA)','https://www.infomoney.com.br/economia/inflacao-ao-consumidor-cpi-dos-eua-outubro-2026/'],['Agência Brasil (fechamento de 9/11)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/bolsa-sobe-222-e-registra-maior-alta-diaria-desde-outubro'],['Exame (Vale e bancos)','https://exame.com/invest/mercados/vale-e-bancos-puxam-ibovespa-dolar-fica-estavel-enquanto-mercado-cobra-lula-no-fiscal/'],['bpmoney (Petrobras)','https://bpmoney.com.br/negocios/empresas/petrobras-petr4-dividendos-ate-42-bilhoes-3t26/']]};
+
+/* --- mercado_semana: fechamento final de segunda --- */
+S.mercado_semana.hora = '10/11';
+S.mercado_semana.t = 'Ibovespa fecha a segunda em alta de 2,22%, a 172.236 pontos, com Vale, bancos e frigoríficos; Brent cai 5,85% e o dólar fica em R$ 5,51 sem medidas fiscais de Lula';
+S.mercado_semana.resumo = 'O Ibovespa fechou a segunda (9) em alta de 2,22%, a 172.236 pontos, a maior variação diária desde outubro, puxado por Vale, bancos e frigoríficos, informa a Agência Brasil. O dado final substitui o preliminar de 171,9 mil pontos. O dólar comercial ficou em R$ 5,506 e o Brent caiu 5,85%, a US$ 92,57, depois de Trump minimizar novos ataques ao Irã. O mercado seguiu sem medidas fiscais de Lula, e a Fazenda só entrega a agenda econômica depois da volta do presidente, em 16 de novembro.';
+S.mercado_semana.upd = 'O fechamento oficial da segunda corrige o preliminar: 172.236 pontos (+2,22%), e não 171.837 (+1,98%); entram o dólar a R$ 5,506 e o ponto de partida da terça, com ata do Copom e CPI dos EUA.';
+S.mercado_semana.sub = 'Dow, S&P 500 e Nasdaq sobem mais de 2% com o petróleo menor; Durigan e Moretti só levam a agenda econômica a Lula depois da volta, em 16 de novembro, e a terça abre com ata do Copom e CPI dos EUA.';
+(function(){ var f = S.mercado_semana.fundo;
+ for (var n=0;n<f.length;n++){ if (f[n][0]==='p' && f[n][1].indexOf('O Ibovespa fechou em alta de 1,98%, a 171.837 pontos')===0){
+  f[n][1] = 'O Ibovespa fechou em alta de 2,22%, a 172.236,05 pontos, a maior variação diária desde outubro, informa a Agência Brasil. O InfoMoney, em atualização preliminar das 17h55, apontava ganho de cerca de 2%, perto de 171,9 mil pontos, e outras fontes, como o Misto Brasil, chegaram a registrar 171.837 pontos, o dado preliminar que o número final substituiu. A alta veio de Vale e bancos, com o Santander Brasil subindo cerca de 5%, e dos frigoríficos MBRF (cerca de 8,8%) e Minerva (cerca de 6,9%), com a expectativa de que as Filipinas revertam o veto à carne suína. A venda de ativos da CSN também puxou a ação. As petroleiras ficaram entre as maiores quedas.'; } } })();
+_insAntes('mercado_semana','O que vem agora',[
+ ['h','A abertura de terça'],
+ ['p','A terça (10) abriu com a ata do Copom, às 8h12, e o CPI dos EUA, às 10h30. Às 9h42, o Ibovespa futuro ficava estável perto de 174,3 mil pontos e o dólar comercial subia 0,70%, a R$ 5,543, segundo o InfoMoney, que registra também a alta de 0,4% do CPI americano, contra 0,3% esperado. O mês fecha com o índice em alta de 2,57% e o dólar cerca de 1% acima do nível de 4 de novembro, de R$ 5,4511, informa a Forbes.']
+]);
+S.mercado_semana.fontes.unshift(['Agência Brasil (fechamento de 9/11)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/bolsa-sobe-222-e-registra-maior-alta-diaria-desde-outubro'],['InfoMoney (Ibovespa ao vivo, 10/11)','https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-10112026/']);
+
+/* --- Novas: Mundo --- */
+S.paraguai_cupula = {ed:'mundo', k:'Mundo', hora:'10/11',
+ t:'Alliana troca a cúpula militar do Paraguai: Manuel Rodríguez Sosa passa a comandar as Forças Armadas e Óscar González é mantido na Defesa',
+ sub:'A mudança, divulgada na terça (10), vem quatro dias depois da destituição de Santiago Peña e da prisão do ex-presidente; o governo não informou o motivo.',
+ dado:{n:'4', l:'Comandos militares trocados ou assumidos por interinos'},
+ resumo:'O presidente do Paraguai, Pedro Alliana, trocou a cúpula militar nesta terça (10): o general Manuel Rodríguez Sosa, que chefiava o Exército, passa a comandar as Forças Armadas no lugar de César Moreno Landaira, informa a Infobae com despacho da EFE. Alcides Lovera Ortíz assume o Exército, Roberto José Idoyaga a Força Aérea e Fredy Oviedo Cáceres o Gabinete Militar, todos interinos. Óscar González foi mantido na Defesa. O governo não explicou os motivos.',
+ fundo:[
+  ['p','O presidente do Paraguai, Pedro Alliana, trocou nesta terça-feira (10) a cúpula militar do país: o general Manuel Rodríguez Sosa, até agora comandante do Exército, passa a chefiar as Forças Armadas no lugar de César Moreno Landaira, informa a Infobae, com despacho da agência EFE. A mudança ocorre quatro dias depois da destituição de Santiago Peña.'],
+  ['h','As novas nomeações'],
+  ['p','O general Alcides Lovera Ortíz fica como comandante interino do Exército, e Roberto José Idoyaga assume, também de forma interina, a Força Aérea, no lugar de Julio Fullaondo. O general Fredy Oviedo Cáceres passa a dirigir, em caráter interino, o Gabinete Militar da Presidência. Óscar González foi ratificado como ministro da Defesa Nacional, informa a Infobae.'],
+  ['p','Alliana mexeu ainda em outras pastas do gabinete. Na segunda (9), ele havia pedido que ministros e secretários colocassem os cargos à disposição e restringira, em circular, viagens ao exterior e contratações não essenciais, informa o ABC Color. O despacho da EFE não traz o motivo da troca militar, e o governo não a explicou publicamente.'],
+  ['h','Quem é quem'],
+  ['p','Alliana e Peña pertencem ao Partido Colorado, de direita, cuja principal liderança é o ex-presidente Horacio Cartes. O pedido de juízo político partiu da oposição e de parlamentares dissidentes da própria base, e a Câmara aprovou a acusação por 78 votos a 0. Alliana, que era vice-presidente, assume até 2028, informa o Diário do Grande ABC, com base no ABC Color.'],
+  ['h','Por que importa'],
+  ['p','A troca ocorre num momento em que o novo governo tenta mostrar controle sobre o aparato do Estado, enquanto o Ministério Público investiga o ex-presidente pelo caso Ueno Bank. Em crises de transição, o comando das Forças Armadas é o ponto em que a continuidade institucional é medida, e a escolha de oficiais interinos deixa as posições abertas a novas mudanças.'],
+  ['h','O que vem agora'],
+  ['p','Os nomes interinos precisam ser confirmados em decreto, e a Defesa deve informar os critérios da escolha. O Orçamento de 2027 segue em sessão suspensa na Câmara, com sanção ficta possível no sábado (14), e a defesa de Peña prepara o recurso contra a prisão preventiva.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O motivo da troca, que o governo não informou.','A data em que os interinos serão efetivados.','Se a mudança tem relação com a investigação sobre o Ueno Bank ou é parte da reorganização do gabinete.']]
+ ],
+ fontes:[['Infobae (EFE: Alliana muda a cúpula militar)','https://www.infobae.com/america/agencias/2026/11/10/alliana-cambia-la-cupula-militar-en-paraguay-tras-el-escandalo-por-la-caida-de-ueno-bank/'],['Diário do Grande ABC (Peña preso e Alliana na Presidência)','https://www.dgabc.com.br/Noticia/4367408/pe-a-e-preso-apos-impeachment-no-paraguai-pedro-alliana-assume-presidencia'],['ABC Color (circular de Alliana)','https://www.abc.com.py/politica/2026/11/09/alliana-restringe-viajes-y-contrataciones-y-pide-asistir-a-afectados-por-ueno-bank/']]};
+
+S.pena_cofre = {ed:'mundo', k:'Mundo', hora:'10/11', fonteunica:true,
+ t:'Promotores do Paraguai encontram cofre atrás de parede falsa na casa de veraneio de Peña e avaliam detonação controlada para abri-lo',
+ sub:'A BBC Mundo informa que o sistema de segurança usa reconhecimento de íris; o Ministério Público também revistou outra casa de Peña em Assunção e a de Carlos Carvallo.',
+ dado:{n:'US$ 577 mil', l:'Soma de dois empréstimos do Ueno Bank a Peña em maio de 2024, segundo o Ministério Público'},
+ resumo:'Promotores paraguaios acharam um cofre atrás de uma parede falsa na casa de veraneio de Santiago Peña em San Bernardino, a cerca de 50 quilômetros de Assunção, informa a BBC Mundo, apoiada em ABC Color e Última Hora. Os agentes abriram uma primeira porta e foram barrados por uma segunda barreira, com reconhecimento de íris. O conteúdo é desconhecido, e o Ministério Público avalia pedir ajuda a familiares ou fazer uma detonação controlada. Peña nega irregularidades.',
+ fundo:[
+  ['p','Promotores do Paraguai encontraram um cofre atrás de uma parede falsa na casa de veraneio do ex-presidente Santiago Peña, em San Bernardino, a cerca de 50 quilômetros de Assunção, informa a BBC Mundo, em texto reproduzido pelo El Comercio do Peru e apoiado em reportagens do ABC Color e da Última Hora. O Ministério Público anunciou o achado na segunda-feira (9).'],
+  ['h','A busca e o cofre'],
+  ['p','A casa foi revistada no domingo (8) e está lacrada. Os agentes abriram uma primeira porta e esbarraram numa segunda barreira, com sistema de segurança que, segundo o ABC Color, é de origem israelense e usa reconhecimento de íris. O conteúdo é desconhecido. Entre as opções em estudo estão pedir ajuda a familiares, embora a esposa de Peña, Leticia Ocampos, não seja obrigada a cooperar, e fazer uma detonação controlada.'],
+  ['p','Na tarde de segunda, o Ministério Público começou outra busca, numa residência de Peña no bairro Mbocayaty, em Assunção, e revistou a casa do ex-presidente do Banco Central, Carlos Carvallo, também investigado. As promotoras citadas pela BBC Mundo são Silvia González e Nancy Salomón.'],
+  ['h','Quem é quem'],
+  ['p','Peña é do Partido Colorado, de direita, o mesmo de seu sucessor, Pedro Alliana, e foi destituído pelo Senado em 6 de novembro. Carlos Carvallo, ex-presidente do Banco Central do Paraguai, é investigado no mesmo caso. O Ministério Público, que pediu a prisão do ex-presidente, conduz a apuração.'],
+  ['h','Os empréstimos e os bens no exterior'],
+  ['p','O Ministério Público afirma que o Ueno Bank concedeu a Peña, em maio de 2024, dois empréstimos que somam 3,548 bilhões de guaranis, cerca de US$ 577 mil. A parcela mensal, de 239 milhões de guaranis (cerca de US$ 39 mil), equivale a cerca de seis vezes o salário presidencial. Parlamentares acusam Peña de usar sua influência a favor do banco, de cujo grupo foi sócio numa empresa. Peña nega irregularidades.'],
+  ['p','Os promotores mantêm contato com autoridades dos Estados Unidos, da Argentina e de Luxemburgo para rastrear bens no exterior, e os EUA se ofereceram para ajudar.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O conteúdo do cofre e a forma de abri-lo.','Se Peña está em prisão preventiva ou domiciliar: a imprensa paraguaia usa as duas descrições.','A existência de bens no exterior, que o Ministério Público apura com os três países.']]
+ ],
+ fontes:[['El Comercio (BBC Mundo: cofre na casa de Peña)','https://elcomercio.pe/mundo/latinoamerica/santiago-pena-la-fiscalia-de-paraguay-trata-de-abrir-una-boveda-oculta-hallada-en-una-propiedad-del-expresidente-por-caso-ueno-bank-noticia']]};
+
+/* --- Atualizadas: Paraguai, Ueno, Israel, Ucrânia, Irã --- */
+S.paraguai.hora = '10/11';
+S.paraguai.t = 'Alliana troca a cúpula militar e Peña tem cofre atrás de parede falsa investigado, enquanto o Senado aprova Schreiner no Banco Central e o Orçamento de 2027 fica em suspenso';
+S.paraguai.sub = 'A Câmara suspendeu a sessão sobre o Orçamento de 2027: sem texto novo até sábado (14), vale a sanção ficta da versão do governo Peña; promotores abrem cofre em casa de veraneio do ex-presidente.';
+S.paraguai.resumo = 'O presidente Pedro Alliana trocou nesta terça (10) a cúpula militar: o general Manuel Rodríguez Sosa assume as Forças Armadas, informa a Infobae. Promotores acharam um cofre atrás de parede falsa na casa de veraneio de Santiago Peña, informa a BBC Mundo. Na segunda (9), Alliana pediu os cargos de todos os ministros, o Senado aprovou Jorge Schreiner no Banco Central, e Peña seguiu em prisão preventiva por lesão de confiança. O Orçamento de 2027 pode vigorar por sanção ficta no sábado (14).';
+S.paraguai.upd = 'Entram a troca da cúpula militar (Infobae, 10/11) e o cofre atrás de parede falsa na casa de veraneio de Peña, com busca em outra residência e na casa de Carlos Carvallo (BBC Mundo).';
+_insAntes('paraguai','O que vem agora',[
+ ['h','A cúpula militar e o cofre de San Bernardino'],
+ ['p','Na terça (10), Alliana trocou os comandos das Forças Armadas, do Exército e da Força Aérea e do Gabinete Militar: o general Manuel Rodríguez Sosa passa a comandar as Forças Armadas, e Alcides Lovera Ortíz, Roberto José Idoyaga e Fredy Oviedo Cáceres assumem de forma interina, informa a Infobae. Óscar González seguiu na Defesa. O governo não explicou os motivos.'],
+ ['p','Na segunda (9), o Ministério Público anunciou que a casa de veraneio de Peña em San Bernardino tem um cofre atrás de uma parede falsa; os agentes abriram uma primeira porta e foram barrados por uma segunda barreira, com reconhecimento de íris, segundo a BBC Mundo. Houve busca também em outra residência de Peña, em Assunção, e na casa de Carlos Carvallo. O conteúdo do cofre é desconhecido.']
+]);
+S.paraguai.fontes.unshift(['Infobae (EFE: Alliana muda a cúpula militar)','https://www.infobae.com/america/agencias/2026/11/10/alliana-cambia-la-cupula-militar-en-paraguay-tras-el-escandalo-por-la-caida-de-ueno-bank/'],['El Comercio (BBC Mundo: cofre na casa de Peña)','https://elcomercio.pe/mundo/latinoamerica/santiago-pena-la-fiscalia-de-paraguay-trata-de-abrir-una-boveda-oculta-hallada-en-una-propiedad-del-expresidente-por-caso-ueno-bank-noticia']);
+
+S.ueno_bank.hora = '10/11';
+S.ueno_bank.resumo = 'O Banco Central do Paraguai disse em 9/11 que 93,1% dos clientes cobertos pela garantia estatal, cerca de 1.738.804 pessoas, já receberam o reembolso, com teto de US$ 38.622 por cliente, informa a BBC Mundo. O Ministério Público afirma que o Ueno Bank deu a Santiago Peña dois empréstimos que somam cerca de US$ 577 mil e investiga um cofre na casa de veraneio do ex-presidente. O banco, com cerca de 3 milhões de clientes e US$ 800 milhões de dinheiro público, está sob intervenção do Banco Central por insolvência.';
+S.ueno_bank.upd = 'Entram o avanço do reembolso (93,1% dos clientes cobertos), os dois empréstimos a Peña, de cerca de US$ 577 mil, e o cofre na casa de veraneio do ex-presidente (BBC Mundo).';
+_insAntes('ueno_bank','O que vem agora',[
+ ['h','Os empréstimos a Peña e o reembolso'],
+ ['p','O Ministério Público afirma que o Ueno Bank concedeu a Peña, em maio de 2024, dois empréstimos que somam 3,548 bilhões de guaranis, cerca de US$ 577 mil, com parcela mensal de 239 milhões de guaranis, cerca de seis vezes o salário presidencial, informa a BBC Mundo. Peña nega irregularidades. Promotores revistaram casas de Peña e de Carlos Carvallo e avaliam abrir um cofre em San Bernardino.'],
+ ['p','O Banco Central do Paraguai informou em 9 de novembro que 93,1% dos clientes cobertos pela garantia estatal, cerca de 1,74 milhão de pessoas, já foram reembolsados, até o teto de US$ 38.622 por cliente, segundo a mesma reportagem.']
+]);
+S.ueno_bank.fontes.unshift(['El Comercio (BBC Mundo: cofre na casa de Peña)','https://elcomercio.pe/mundo/latinoamerica/santiago-pena-la-fiscalia-de-paraguay-trata-de-abrir-una-boveda-oculta-hallada-en-una-propiedad-del-expresidente-por-caso-ueno-bank-noticia']);
+
+S.israel.hora = '10/11';
+S.israel.t = 'Eisenkot negocia com ultraortodoxos enquanto Yashar convida Shas e UTJ a derrubar o presidente do Knesset na sessão inaugural; UTJ recusa trocar o presidente da Casa antes de acordo de governo';
+S.israel.sub = 'Liberman diz que dá para formar 61 deputados, e Eisenkot afirma que não abre mão do serviço militar ou nacional para todos; o mandato de 28 dias vai a 6 de dezembro.';
+S.israel.resumo = 'A 26ª Knesset abre nesta terça (10) com disputa pela presidência da Casa: a bancada do Yashar, de Gadi Eisenkot, convidou Shas e UTJ a derrubar Amir Ohana, do Likud, mas o presidente da UTJ, Yaakov Asher, só aceita trocar o presidente da Knesset junto com a formação do governo, informa o Jerusalem Post. Eisenkot diz que não abre mão do serviço militar ou nacional para todos, e Avigdor Liberman afirma que é possível reunir 61 deputados, segundo o Times of Israel. O mandato de 28 dias vai a 6 de dezembro.';
+S.israel.upd = 'Entram a sessão inaugural da Knesset, o convite do Yashar a Shas e UTJ para trocar o presidente Amir Ohana, a recusa de Yaakov Asher e as declarações de Eisenkot e Liberman sobre o serviço militar.';
+_insAntes('israel','O que vem agora',[
+ ['h','A sessão inaugural e a disputa pela presidência da Casa'],
+ ['p','A 26ª Knesset realiza nesta terça (10) a sessão inaugural. A bancada do Yashar, com o deputado Roy Folkman, convidou o Shas e a UTJ a derrubar o presidente da Casa, Amir Ohana (Likud), informa o Jerusalem Post. O presidente da UTJ, Yaakov Asher, recusou: o partido só aceitaria trocar o presidente da Knesset ao mesmo tempo que a formação do governo. Ohana disse que não haverá votação hoje, mas marcaria uma na semana seguinte se houver pedido formal com apoio; a troca exige 61 deputados.'],
+ ['p','O Times of Israel registra que Eisenkot afirmou que não abrirá mão do serviço militar ou nacional para todos, e que Liberman, do Yisrael Beytenu, disse que dá para formar 61. A UTJ, segundo o Jerusalem Post, não entra no governo sem solução para os alunos de yeshiva, isentos do alistamento. Netanyahu convocou os partidos sionistas de oposição a um governo único sob seu comando.']
+]);
+S.israel.fontes.unshift(['The Jerusalem Post (ao vivo, 10/11)','https://www.jpost.com/israel-election-2026/2026-11-10/live-updates-914399'],['The Jerusalem Post (disputa pela Knesset)','https://www.jpost.com/israel-election-2026/article-914332'],['Times of Israel (liveblog, 10/11)','https://www.timesofisrael.com/liveblog-november-10-2026/']);
+
+S.ucrania_abudhabi.hora = '10/11';
+S.ucrania_abudhabi.t = 'Rússia, Ucrânia e EUA abrem em Abu Dhabi a rodada trilateral de dois dias, a primeira desde fevereiro; ataque russo da madrugada somou 162 drones e um míssil balístico';
+S.ucrania_abudhabi.sub = 'A Casa Branca diz que o foco são as garantias de segurança; Moscou manda Medinsky e Kiev, Umerov, com Witkoff e Kushner na mediação e a União Europeia em disputa sobre a presença.';
+S.ucrania_abudhabi.resumo = 'Rússia, Ucrânia e Estados Unidos abriram nesta terça (10), em Abu Dhabi, rodada de dois dias, as primeiras conversas trilaterais desde fevereiro, depois de três rodadas em 2026 sem avanço, informa a NPR. A Casa Branca diz que o foco são as garantias de segurança. Vladimir Medinsky chefia a delegação russa, Rustem Umerov a ucraniana, e Steve Witkoff e Jared Kushner mediam. Na madrugada, a Força Aérea ucraniana contou 162 drones e um míssil balístico russos, e Moscou disse ter derrubado 155 drones.';
+S.ucrania_abudhabi.upd = 'A rodada de Abu Dhabi abriu nesta terça, com a Casa Branca focada em garantias de segurança; entram o ataque russo da madrugada (162 drones e um míssil) e a resposta de Moscou.';
+_insAntes('ucrania_abudhabi','O que vem agora',[
+ ['h','O primeiro dia e o ataque da madrugada'],
+ ['p','A rodada de dois dias, de 10 e 11 de novembro, é a primeira conversa trilateral entre Rússia, Ucrânia e Estados Unidos desde fevereiro, informa a NPR, em texto distribuído pela MPR News. As três rodadas anteriores de 2026 terminaram sem avanço. A Casa Branca afirma que o foco é a garantia de segurança. Antes da reunião, a Ucrânia se reuniu com os EUA e com representantes de Reino Unido, França, Alemanha, Itália, Otan e Comissão Europeia.'],
+ ['p','Na madrugada de 9 para 10 de novembro, a Força Aérea ucraniana contou 162 drones e um míssil balístico russos, e Moscou disse ter derrubado 155 drones sobre oito regiões e a Crimeia, informa a NPR. Vladimir Putin exige que a Ucrânia deixe os quatro territórios anexados, abandone a Otan e aceite limites militares, e rejeita um cessar-fogo geral; Kiev quer cessar-fogo imediato e só trata de território numa reunião direta entre Volodimir Zelensky e Putin.']
+]);
+S.ucrania_abudhabi.fontes.unshift(['NPR (via MPR News: conversas em Abu Dhabi)','https://www.mprnews.org/story/2026/11/10/npr-russia-ukraine-war-talks'],['Al Jazeera (Zelensky e a rodada)','https://www.aljazeera.com/news/2026/11/3/zelenskyy-hopes-abu-dhabi-talks-will-open-way-to-meeting-with-putin']);
+
+S.ira_proposta_catar.hora = '10/11';
+S.ira_proposta_catar.resumo = 'Trump disse na terça (10) que novos ataques ao Irã não são necessários neste momento, vê boa chance de acordo e mantém o bloqueio, informa o Times of Israel, que cita o Financial Times ao dizer que Netanyahu liga diariamente a Trump para pedir a retomada dos ataques. O dirigente iraniano Mohsen Rezaei chamou as negociações de fake news e exigiu sete condições. Na segunda (9), o premiê do Catar foi recebido na Casa Branca sem acordo à vista sobre Ormuz, e o Brent cedeu para perto de US$ 90.';
+S.ira_proposta_catar.t = 'Trump diz que não há necessidade de novos ataques ao Irã por ora e vê boa chance de acordo sobre Ormuz; Netanyahu pressiona por retomada, e o Brent cede para perto de US$ 90';
+S.ira_proposta_catar.upd = 'Entram a fala de Trump de que não há necessidade de novos ataques por ora, o relato do Financial Times sobre os telefonemas diários de Netanyahu e a rejeição iraniana às negociações.';
+S.ira_proposta_catar.sub = 'Trump diz que não haverá nova ofensiva por ora e vê boa chance de acordo, mas o bloqueio continua; um dirigente iraniano chama as negociações de “fake news”, e o Brent cede para perto de US$ 90.';
+_insAntes('ira_proposta_catar','O que vem agora',[
+ ['h','A fala de Trump na terça'],
+ ['p','Trump disse que novos ataques ao Irã não são necessários neste momento, vê um momento positivo e uma boa chance de acordo e afirma que o bloqueio americano continua, informa o blog ao vivo do Times of Israel, que cita o Financial Times ao relatar que o primeiro-ministro Benjamin Netanyahu telefona diariamente a Trump para pedir a retomada dos ataques. Trump disse à Reuters que está pronto para atacar de novo. O dirigente iraniano Mohsen Rezaei chamou as negociações de “fake news” e exigiu a aceitação de sete condições.'],
+ ['p','Com a fala, o Brent cedeu para perto de US$ 90 e o WTI, para perto de US$ 85, informa o InfoMoney.']
+]);
+S.ira_proposta_catar.fontes.unshift(['Times of Israel (liveblog, 10/11)','https://www.timesofisrael.com/liveblog-november-10-2026/'],['InfoMoney (Ibovespa futuro)','https://www.infomoney.com.br/mercados/ibovespa-futuro-ronda-estabilidade-com-ata-do-copom-e-dados-de-inflacao-em-foco/']);
+
+/* --- Política --- */
+S.senado_pauta_10_11.hora = '10/11';
+S.senado_pauta_10_11.t = 'Plenário do Senado vota na terça (10) o acesso da ANP a dados fiscais, o Selo Rosa e a adesão ao Acordo de Escazú; Estatuto do Aprendiz fica na pauta de quarta (11)';
+S.senado_pauta_10_11.sub = 'A Câmara não tem sessão deliberativa do Plenário na terça, mas a comissão da PEC da maioridade penal e a CCJ se reúnem às 14h30; a comissão da MP 1376/2026 também se reúne às 14h.';
+S.senado_pauta_10_11.resumo = 'O Plenário do Senado realiza sessão deliberativa às 14h desta terça (10) com o PLP 109/2025, que dá à ANP acesso a dados fiscais do setor de combustíveis, o PL 5.608/2023, da Empresa Rosa, e o PDL 934/2025, da adesão ao Acordo de Escazú, informa o Congresso em Foco. O Estatuto do Aprendiz (PL 6.461/2019), o Fust (PLP 230/2025) e o PL 6.683/2025 estão na pauta de quarta (11). A Câmara não tem sessão deliberativa do Plenário; a comissão da maioridade penal se reúne às 14h30.';
+S.senado_pauta_10_11.upd = 'A agenda oficial do Congresso e o Congresso em Foco separam os dias: terça tem ANP, Selo Rosa e Escazú; o Estatuto do Aprendiz e o Fust estão na pauta de quarta; a comissão da MP 1376/2026 se reúne às 14h.';
+_insAntes('senado_pauta_10_11','Por que importa',[
+ ['h','O que fica para cada dia'],
+ ['p','A agenda do Congresso e o Congresso em Foco listam para terça (10), às 14h, o PLP 109/2025 (acesso da ANP a dados fiscais), o PL 5.608/2023 (Empresa Rosa, para mulheres com câncer de mama) e o PDL 934/2025, que trata da adesão do Brasil ao Acordo de Escazú, sobre acesso à informação e proteção de defensores ambientais. Na quarta (11), segundo o Congresso em Foco, entram o Estatuto do Aprendiz (PL 6.461/2019), o PLP 230/2025 (Fust) e o PL 6.683/2025 (implantes cirúrgicos).'],
+ ['p','Às 14h, a comissão mista da Medida Provisória 1376/2026 faz a segunda reunião deliberativa, e a CCJ e a Comissão de Ciência e Tecnologia do Senado têm audiências interativas. Na Câmara, a agenda registra apenas sessões solenes às 9h e às 11h.']
+]);
+S.senado_pauta_10_11.fontes.unshift(['Congresso em Foco (pauta do Senado)','https://www.congressoemfoco.com.br/noticia/131403/pauta-do-senado-tem-estatuto-do-aprendiz-e-protecao-a-ambientalistas']);
+
+S.lula_sri_centrao.hora = '10/11';
+S.lula_sri_centrao.resumo = 'Lula indicou a auxiliares que pode nomear um político do Centrão para a Secretaria de Relações Institucionais (SRI), informa a coluna de Igor Gadelha, do Metrópoles; petistas citam Silvio Costa Filho (Republicanos-PE), Dr. Luizinho (PP-RJ) e Antônio Brito (PSD-BA). A coluna de João Paulo Biage, no O Povo, diz que José Guimarães (PT-CE) deve deixar a pasta e que Silvio Costa Filho, indicado por Hugo Motta, é o favorito de Lula; Guimarães diz desconhecer a especulação. Não há prazo nem decisão do Planalto.';
+S.lula_sri_centrao.fonteunica = false;
+S.lula_sri_centrao.upd = 'Entra a coluna de João Paulo Biage, no O Povo, que diz que José Guimarães deve deixar a SRI e que Silvio Costa Filho, indicado por Hugo Motta, é o favorito de Lula; Guimarães diz desconhecer a especulação.';
+_insAntes('lula_sri_centrao','O que vem agora',[
+ ['h','O que diz a outra coluna'],
+ ['p','A coluna de João Paulo Biage, no O Povo, de 8 de novembro, informa que José Guimarães deve deixar a SRI e que o deputado Silvio Costa Filho (Republicanos-PE), indicado por Hugo Motta, seria o favorito de Lula para o posto. Guimarães diz desconhecer a especulação. A coluna cita também Camilo Santana como cotado para a Casa Civil. As duas colunas são informações de bastidor, sem confirmação do Planalto.']
+]);
+S.lula_sri_centrao.fontes.push(['O Povo (coluna de João Paulo Biage)','https://mais.opovo.com.br/colunistas/joao-paulo-biage-politica-brasilia/2026/11/08/guimaraes-o-cargo-e-o-coracao-leve.html']);
+
+/* --- Regiões: novas --- */
+S.mt_loa_retirada = {ed:'regioes', reg:'co', k:'Centro-Oeste', hora:'10/11',
+ t:'Governo de Mato Grosso retira da Assembleia a LOA de R$ 46,12 bilhões para incluir a reforma administrativa; votação marcada para 16 de dezembro pode ir para janeiro',
+ sub:'O governador em exercício, Max Russi (Podemos), diz que o texto volta em cerca de 15 dias; a audiência pública de 12/11 deve ir para cerca de 26/11.',
+ dado:{n:'R$ 46,12 bi', l:'Valor da Lei Orçamentária de 2027 que o governo retira da Assembleia'},
+ resumo:'O governador em exercício de Mato Grosso, Max Russi (Podemos), anunciou na segunda (9) que a Lei Orçamentária Anual (LOA) de 2027, de R$ 46,12 bilhões, será retirada da Assembleia e reenviada em cerca de 15 dias, para incorporar a reforma administrativa. A votação marcada para 16 de dezembro não se mantém: pode ir para 27 ou 28 de dezembro ou para janeiro de 2027, informa o Muvuca Popular. A audiência pública de 12/11 deve ser remarcada para cerca de 26/11.',
+ fundo:[
+  ['p','O governador em exercício de Mato Grosso, Max Russi (Podemos), anunciou na segunda-feira (9) que o governo vai retirar da Assembleia Legislativa a Lei Orçamentária Anual (LOA) de 2027, de R$ 46,12 bilhões, e reenviá-la em cerca de 15 dias, com a reforma administrativa incorporada. A votação, marcada para 16 de dezembro, não se mantém, informa o Muvuca Popular.'],
+  ['h','O que muda no calendário'],
+  ['p','Segundo o Muvuca Popular, o texto pode ser votado em 27 ou 28 de dezembro ou em janeiro de 2027. O Power Mix só menciona janeiro e deixa a data em aberto. A audiência pública do orçamento, marcada para 12 de novembro, deve ir para cerca de 26 de novembro. O deputado Carlos Avallone (PSDB) preside a comissão de orçamento da Assembleia.'],
+  ['p','A reforma administrativa, que pode incluir a fusão de secretarias, é coordenada por Rogério Gallo, que pediu mais prazo. Max Russi defendeu destinar mais recursos à saúde por causa dos novos hospitais estaduais que entram em funcionamento em 2027, e o governo diz que a reforma precisa estar refletida no orçamento antes da votação.'],
+  ['h','Quem governa e até quando'],
+  ['p','O titular, Otaviano Pivetta (Republicanos), está na Turquia, na COP31, e Max Russi fica no cargo até 19 de novembro. O reenvio do texto em cerca de 15 dias cai, portanto, depois do retorno do governador.'],
+  ['h','O que vem agora'],
+  ['p','O governo deve reenviar a LOA com a nova estrutura de pastas, e a Assembleia remarca a audiência pública. Uma votação em janeiro deixaria o estado iniciar 2027 com orçamento provisório, o que depende do calendário que a Casa fixar.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A data da votação: o Muvuca Popular cita 27 ou 28 de dezembro ou janeiro, e o Power Mix só fala em janeiro.','O desenho final da reforma administrativa e das pastas que seriam fundidas.']]
+ ],
+ fontes:[['Muvuca Popular (Max anuncia a retirada do orçamento)','https://www.muvucapopular.com.br/2026/11/10/max-anuncia-retirada-do-orcamento-e-admite-votacao-somente-em-janeiro/'],['Power Mix (votação do orçamento pode ficar para janeiro)','https://www.powermix.com.br/politica/votacao-do-orcamento-de-r-461-bilhoes-de-mt-pode-ficar-para-janeiro-de-2027/59143']]};
+
+S.df_celina_ajuste = {ed:'regioes', reg:'co', k:'Centro-Oeste', hora:'9/11',
+ t:'Celina Leão anuncia ajuste fiscal no Distrito Federal com cancelamento de empenhos, revisão de contratos e exoneração de cargos de confiança em 1º de janeiro',
+ sub:'A governadora diz que as contas estão em dia e que os salários de dezembro saem no dia de sempre; o risco é perder até R$ 1,8 bilhão por ano do Fundo Constitucional.',
+ dado:{n:'R$ 1,8 bi', l:'Perda anual possível do FCDF, segundo o governo'},
+ resumo:'A governadora do Distrito Federal, Celina Leão (PP), anunciou na segunda (9), depois de reunião com secretários no Buriti, medidas de racionalização: cancelamento de empenhos não essenciais, revisão de grandes contratos e decreto de exoneração de cargos de confiança em 1º de janeiro, informa o Correio Braziliense. Ela diz que as contas estão em dia e que os salários de dezembro saem no dia de sempre. O governo teme perder até R$ 1,8 bilhão por ano do Fundo Constitucional (FCDF).',
+ fundo:[
+  ['p','A governadora do Distrito Federal, Celina Leão (PP), anunciou na segunda-feira (9), depois de reunião com secretários no Palácio do Buriti, um pacote de racionalização de gastos que inclui o cancelamento de empenhos não essenciais, a revisão de grandes contratos e a exoneração de cargos de confiança por decreto em 1º de janeiro, informa o Correio Braziliense.'],
+  ['h','O que está no pacote'],
+  ['p','A agência de turismo terá corte em outras secretarias para se manter, e a área da saúde terá consultoria universitária, que inclui o Instituto de Gestão Estratégica de Saúde (Iges-DF). Celina afirmou que as contas estão em dia e que os salários de dezembro serão pagos no dia de sempre, sem antecipação, por causa do cenário do Fundo Constitucional do Distrito Federal (FCDF), informa o Jornal de Brasília.'],
+  ['p','O governo teme perder até R$ 1,8 bilhão por ano do FCDF, que financia a segurança, a saúde e a educação da capital. A matéria do Jornal de Brasília cita ainda a meta de alcançar a nota A de capacidade de pagamento (Capag), necessária para financiar a Linha 2 do Metrô, e a compra de 15 vagões, em licitação internacional que tramita no Tribunal de Contas do DF.'],
+  ['h','Por que importa'],
+  ['p','O DF depende da União para custear as polícias e parte da saúde e da educação, e qualquer corte no FCDF tem efeito direto no caixa local. O pacote antecipa uma agenda de cortes antes da eventual redução do fundo, e sinaliza a servidores e fornecedores que contratos e cargos de confiança serão revistos no começo de 2027.'],
+  ['h','O que vem agora'],
+  ['p','O decreto de exoneração de cargos de confiança está previsto para 1º de janeiro, e a revisão de contratos deve avançar nas próximas semanas, sem prazo informado. Na Câmara Legislativa, a discussão sobre o orçamento de 2027 segue em curso.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A economia que o pacote deve gerar e a lista de contratos revistos.','Se a redução do FCDF de até R$ 1,8 bilhão será confirmada pela União.']]
+ ],
+ fontes:[['Correio Braziliense (Celina Leão e as contas)','https://www.correiobraziliense.com.br/cidades-df/2026/11/7535654-apos-reuniao-de-secretarios-celina-leao-afirma-que-contas-estao-em-dia.html'],['Jornal de Brasília (racionalização e cortes)','https://jornaldebrasilia.com.br/brasilia/celina-leao-se-reune-com-secretarios-e-anuncia-racionalizacao-e-cortes-de-gasto/']]};
+
+S.ba_metro_alstom = {ed:'regioes', reg:'ne', k:'Nordeste', hora:'9/11',
+ t:'Alstom vence licitação de R$ 632 milhões para 10 trens do metrô de Salvador; empresa foi condenada por cartel pelo Cade, com efeitos suspensos por liminar',
+ sub:'A Casa Civil da Bahia diz que o contrato está na fase final para início da produção e que o novo ferry-boat chega ainda em 2026; a ponte Salvador–Itaparica tem previsão de cinco anos.',
+ dado:{n:'R$ 632 mi', l:'Valor da licitação para 10 trens do metrô de Salvador'},
+ resumo:'A Alstom venceu a nova licitação de R$ 632 milhões para 10 trens do metrô de Salvador, informa o Correio. A empresa foi condenada pelo Cade em 2019 por cartel, com multa de R$ 128 milhões e proibição de licitar por cinco anos, efeitos suspensos por liminar de 2020. A chinesa CRRC ofereceu R$ 636 milhões. A Casa Civil da Bahia diz que o contrato está na fase final e que o novo ferry-boat chega ainda em 2026. O governo Jerônimo Rodrigues (PT) não comentou o caso à Folha.',
+ fundo:[
+  ['p','A Alstom venceu a nova licitação de R$ 632 milhões para o fornecimento de 10 trens ao metrô de Salvador, informa o Correio, a partir de reportagem da Folha. A empresa foi condenada em 2019 pelo Conselho Administrativo de Defesa Econômica (Cade) por participação em cartel, com multa de R$ 128 milhões e proibição de licitar por cinco anos; os efeitos estão suspensos por liminar de 2020.'],
+  ['h','A licitação e a concorrente'],
+  ['p','A chinesa CRRC apresentou proposta de R$ 636 milhões, contra R$ 490 milhões na primeira licitação, revogada em agosto de 2026 depois de irregularidades e disputa judicial. O governo da Bahia, do governador Jerônimo Rodrigues (PT), não comentou o caso à Folha. A Alstom diz manter um programa de compliance.'],
+  ['h','Ferry, ponte e trens'],
+  ['p','A secretária da Casa Civil, Eracy Lafuente, disse que o novo ferry-boat, com capacidade para 180 a 190 veículos, o maior da frota, está em estaleiro na Grécia e deve chegar ainda em 2026, informa o Bahia Notícias. A ponte Salvador–Itaparica tem previsão de cinco anos. O contrato dos 10 trens, que se somam aos 40 da frota atual, está na fase final para o início da produção.'],
+  ['h','Por que importa'],
+  ['p','O metrô de Salvador é uma das obras de mobilidade de maior peso do governo petista, e a contratação de uma empresa com condenação por cartel, ainda que suspensa, tende a gerar questionamento de órgãos de controle e da oposição. O processo foi marcado pela revogação da primeira licitação e por disputa judicial.'],
+  ['h','O que vem agora'],
+  ['p','O contrato deve ser assinado e a produção, iniciada. O governo ainda não informou prazo de entrega dos trens, e a liminar que suspende os efeitos da condenação do Cade segue em vigor.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A data de assinatura do contrato e o prazo de entrega dos trens.','A posição do governo baiano sobre a condenação da Alstom pelo Cade.']]
+ ],
+ fontes:[['Correio (Alstom vence licitação)','https://www.correio24horas.com.br/minha-bahia/empresa-condenada-por-cartel-vence-licitacao-de-r-632-milhoes-para-fornecer-trens-a-bahia-1126'],['Bahia Notícias (ferry, ponte e trens)','https://www.bahianoticias.com.br/noticia/323489-secretario-da-casa-civil-detalha-avancos-de-ferry-ponte-e-novos-trens-na-bahia']]};
+
+S.ce_alece_pl = {ed:'regioes', reg:'ne', k:'Nordeste', hora:'9/11',
+ t:'Assembleia do Ceará vai à Justiça contra deputados eleitos do PL, e Elmano de Freitas só define o secretariado em dezembro',
+ sub:'A Procuradoria da Alece prepara medidas cíveis e criminais contra Tancredo dos Santos e Abreu Júnior; repasse de R$ 2,5 milhões à Unidos da Tijuca foi aprovado por 21 a 10 e vai à sanção.',
+ dado:{n:'21 a 10', l:'Votação do repasse de R$ 2,5 milhões à Unidos da Tijuca na Alece, em 3/11'},
+ resumo:'A Procuradoria da Assembleia Legislativa do Ceará (Alece) vai adotar medidas cíveis e criminais contra os deputados eleitos do PL Tancredo dos Santos e Abreu Júnior, informa o Diário do Nordeste. Tancredo acusou a Casa de fraudar assinaturas em projetos de título de cidadão cearense; Abreu criticou o repasse de R$ 2,5 milhões à Unidos da Tijuca com a expressão cabaré. O governador reeleito Elmano de Freitas (PT) disse que só define o secretariado em dezembro, informa o O Povo.',
+ fundo:[
+  ['p','A Procuradoria da Assembleia Legislativa do Ceará (Alece) vai acionar a Justiça, nas esferas cível e criminal, contra os deputados estaduais eleitos do PL Tancredo dos Santos e Abreu Júnior, informa o Diário do Nordeste. Os dois não tomam posse antes de 2027, e não há prazo para as ações.'],
+  ['h','A disputa com o PL'],
+  ['p','Tancredo dos Santos acusou a Casa de fraudar assinaturas em projetos de título de cidadão cearense. Abreu Júnior criticou o repasse de R$ 2,5 milhões à escola de samba Unidos da Tijuca, usando a expressão cabaré. A Procuradoria diz que as declarações configuram imputação falsa e ofensa gratuita, segundo o Diário do Nordeste.'],
+  ['p','O repasse foi aprovado em 3 de novembro, por 21 votos a 10, a partir de projeto do Executivo enviado em 27 de outubro. O dinheiro será pago pela Secretaria do Turismo para o desfile de 2027, e o texto segue para sanção do governador Elmano de Freitas (PT).'],
+  ['h','O secretariado de Elmano'],
+  ['p','O governador reeleito disse em coletiva que as conversas sobre o secretariado só começam em dezembro, informa o O Povo. Em 3 de novembro, o jornal já havia indicado a troca de cerca de metade das secretarias, mantendo o núcleo da segurança, em que o delegado Roberto Sá é cotado para seguir.'],
+  ['h','Por que importa'],
+  ['p','O PL, que cresce na Assembleia a partir de 2027, abre o novo mandato em conflito com a Casa, num estado governado pelo PT. A disputa envolve a transparência das votações e o uso de recursos públicos em eventos culturais, tema em que o Legislativo estadual costuma ser cobrado.'],
+  ['h','O que vem agora'],
+  ['p','A Procuradoria deve protocolar as ações, e a sanção do repasse à Unidos da Tijuca cabe a Elmano. O secretariado só sai depois de dezembro.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O teor e a data de protocolo das ações da Procuradoria.','A sanção do repasse de R$ 2,5 milhões.']]
+ ],
+ fontes:[['Diário do Nordeste (Alece e deputados do PL)','https://diariodonordeste.verdesmares.com.br/pontopoder/alece-acionara-justica-contra-deputados-eleitos-do-pl-por-imputacao-falsa-e-ofensa-gratuita-1.3804457'],['Diário do Nordeste (repasse à Unidos da Tijuca)','https://diariodonordeste.verdesmares.com.br/pontopoder/assembleia-autoriza-governo-estadual-a-repassar-r-25-milhoes-a-unidos-da-tijuca-1.3803130'],['O Povo (secretariado de Elmano)','https://www.opovo.com.br/noticias/politica/2026/11/09/elmano-inicia-em-dezembro-definicao-sobre-secretariado-no-ce.html']]};
+
+S.al_ceasa = {ed:'regioes', reg:'ne', k:'Nordeste', hora:'10/11', fonteunica:true,
+ t:'Permissionários da Ceasa de Maceió negam acordo sobre a concessão e convocam protesto na Assembleia de Alagoas nesta terça',
+ sub:'Eles pedem que os deputados rejeitem a proposta; o estudo da FGV citado diz que a Ceasa movimenta R$ 1,5 bilhão e sustenta 21 mil empregos.',
+ resumo:'Permissionários da Ceasa de Maceió negam que haja acordo sobre a concessão do entreposto e convocaram novo protesto na Assembleia Legislativa de Alagoas, às 16h desta terça (10), informa o Francês News. Eles pedem que os deputados rejeitem a proposta. O estudo da FGV citado pelos permissionários diz que a Ceasa movimenta R$ 1,5 bilhão e sustenta 21 mil empregos. A proposta não avançou em 3 de novembro, e em 4 de novembro deputados passaram a declarar oposição.',
+ fundo:[
+  ['p','Permissionários da Ceasa de Maceió negam que haja acordo sobre a concessão do entreposto e convocaram novo protesto na Assembleia Legislativa de Alagoas, às 16h desta terça-feira (10), informa o Francês News. Eles pedem que os deputados rejeitem a proposta do governo estadual.'],
+  ['h','O que os permissionários dizem'],
+  ['p','Segundo o Francês News, o estudo da Fundação Getulio Vargas citado pelos comerciantes calcula que a Ceasa movimenta R$ 1,5 bilhão por ano e sustenta 21 mil empregos. Os permissionários afirmam que não aceitaram os termos da concessão e que a proposta ameaça a permanência dos comerciantes no local.'],
+  ['p','A proposta não avançou em 3 de novembro, e em 4 de novembro deputados estaduais passaram a declarar oposição ao texto. A reportagem não traz a resposta do governo de Paulo Dantas, que deixa o cargo em 6 de janeiro de 2027, quando assume JHC.'],
+  ['h','O que vem agora'],
+  ['p','O ato na Assembleia está marcado para as 16h desta terça. A proposta de concessão depende de votação dos deputados, que ainda não tem data.']
+ ],
+ fontes:[['Francês News (permissionários da Ceasa)','https://francesnews.com.br/post/2026/11/10/45496-permissionarios-da-ceasa-negam-acordo-e-convocam-novo-protesto-na-assembleia-nesta-terca']]};
+
+S.sp_obras_superfaturamento = {ed:'regioes', reg:'sp', k:'São Paulo', hora:'9/11', fonteunica:true,
+ t:'Ministério Público de São Paulo aponta R$ 133,2 milhões de suspeita de sobrepreço em obras emergenciais da prefeitura de Ricardo Nunes',
+ sub:'Engenheiros do MP-SP veem sobrepreço de 76% nos R$ 175 milhões pagos à Ercan Construtora; a prefeitura diz que não foi notificada e a Siurb rejeita os achados.',
+ dado:{n:'R$ 133,2 mi', l:'Sobrepreço suspeito em seis obras emergenciais, segundo o CAEx do MP-SP'},
+ resumo:'Engenheiros do Centro de Apoio à Execução do Ministério Público de São Paulo apontam R$ 133,2 milhões de suspeita de sobrepreço, 76% dos R$ 175 milhões pagos à Ercan Construtora em seis obras emergenciais da gestão Ricardo Nunes (MDB), informa o Brasil de Fato. A Secretaria de Infraestrutura e Obras (Siurb) rejeita os achados, e a prefeitura diz que não foi notificada. O deputado estadual Antônio Donato (PT) pediu auditoria especial ao Tribunal de Contas do Município.',
+ fundo:[
+  ['p','Engenheiros do Centro de Apoio à Execução (CAEx) do Ministério Público de São Paulo apontam R$ 133,2 milhões de suspeita de sobrepreço em seis obras emergenciais da prefeitura de São Paulo, ou 76% dos R$ 175 milhões pagos à Ercan Construtora, informa o Brasil de Fato, em reportagem publicada às 18h06 de segunda-feira (9).'],
+  ['h','Os números do laudo'],
+  ['p','O maior caso são as contenções no Córrego Pirajussara, com R$ 115,4 milhões e sobrepreço estimado de 88%. O laudo aponta cerca de 25 mil metros de estacas-raiz orçados, contra 2,4 mil metros necessários, e 248 toneladas de fio orçadas, contra 24 quilos calculados, segundo a reportagem, que cita o G1 como origem da apuração.'],
+  ['p','A gestão do prefeito Ricardo Nunes (MDB) diz que não foi notificada, e a Secretaria de Infraestrutura e Obras (Siurb), sob o secretário Marcos Monteiro, rejeita os achados. O Tribunal de Contas do Município já havia chamado o caso de emergência fabricada, e a contratação emergencial da cidade chegou a R$ 2,9 bilhões em 2023.'],
+  ['h','O que vem agora'],
+  ['p','O deputado estadual Antônio Donato (PT), autor da denúncia, pediu que o Tribunal de Contas do Município junte os laudos e faça auditoria especial na Siurb. A investigação do Ministério Público segue.']
+ ],
+ fontes:[['Brasil de Fato (MP investiga superfaturamento)','https://www.brasildefato.com.br/2026/11/09/mp-investiga-superfaturamento-de-r-133-milhoes-em-obras-sem-licitacao-da-gestao-ricardo-nunes/']]};
+
+S.to_pm_comando = {ed:'regioes', reg:'norte', k:'Norte', hora:'10/11', fonteunica:true,
+ t:'Tocantins troca o comando da Polícia Militar: coronel Francinaldo Machado Bó assume e Sueli Ferreira dos Santos é a primeira mulher chefe do Estado-Maior',
+ sub:'O governador Wanderlei Barbosa diz que a corporação tem cerca de 3,7 mil policiais, com mais de 500 em formação que reforçam o patrulhamento em dezembro.',
+ resumo:'O coronel Francinaldo Machado Bó assumiu o comando da Polícia Militar do Tocantins, e a coronel Sueli Ferreira dos Santos é a primeira mulher chefe do Estado-Maior, informa o Conexão Tocantins. O governador Wanderlei Barbosa disse que a PM tem cerca de 3,7 mil policiais, com mais de 500 em formação que reforçam o patrulhamento em dezembro. O mandato de Wanderlei termina em 5 de janeiro de 2027, e o governo promete entregas em dezembro.',
+ fundo:[
+  ['p','O coronel Francinaldo Machado Bó assumiu o comando da Polícia Militar do Tocantins numa cerimônia conduzida pelo governador Wanderlei Barbosa, na segunda-feira (9), informa o Conexão Tocantins. A coronel Sueli Ferreira dos Santos passa a ser a primeira mulher chefe do Estado-Maior da corporação.'],
+  ['h','O que disse o governador'],
+  ['p','Wanderlei afirmou que a PM tem cerca de 3,7 mil policiais, e que mais de 500 estão em formação e reforçam o patrulhamento em dezembro. O governador deixa o cargo em 5 de janeiro de 2027, e a troca de comando ocorre no período final do mandato.'],
+  ['p','Em 5 de novembro, o governo informou que priorizará em dezembro a duplicação da ponte Palmas–Luzimangues, o Hospital da Mulher e Maternidade de Palmas, com execução acima de 90%, a Maternidade de Augustinópolis e dois centros profissionalizantes, em Guaraí e em Palmas, segundo o Conexão Tocantins.'],
+  ['h','O que vem agora'],
+  ['p','Os policiais em formação entram em serviço em dezembro, e o governo deve concluir as obras anunciadas antes da posse do sucessor. O novo comandante ainda não detalhou prioridades da gestão.']
+ ],
+ fontes:[['Conexão Tocantins (mudança no comando da PM)','https://conexaoto.com.br/2026/11/10/governador-wanderlei-barbosa-conduz-mudanca-no-comando-da-policia-militar-do-tocantins'],['Conexão Tocantins (metas dos 60 dias finais)','https://conexaoto.com.br/2026/11/05/governador-wanderlei-reune-se-com-secretarios-para-alinhar-acoes-dos-proximos-60-dias']]};
+
+/* --- Capa, ordem, Giro --- */
+HOME_LEAD = 'paraguai';
+HOME_ROW = ['copom_ata','ucrania_abudhabi','ueno_bank'];
+ORDER.economia = ['copom_ata','mercado_10_11'].concat(ORDER.economia);
+(function(){ var topo=['paraguai','paraguai_cupula','pena_cofre','ueno_bank','israel','ucrania_abudhabi','ira_proposta_catar'];
+ ORDER.mundo = topo.concat(ORDER.mundo.filter(function(i){return topo.indexOf(i)<0;})); })();
+ORDER.regioes = ['mt_loa_retirada','df_celina_ajuste','ba_metro_alstom','ce_alece_pl','al_ceasa','sp_obras_superfaturamento','to_pm_comando'].concat(ORDER.regioes);
+GIRO.unshift(
+ ['Ata do Copom','O comitê diz que o juro fica restritivo por período prolongado, informa o InfoMoney.','InfoMoney','https://www.infomoney.com.br/economia/ata-do-copom-reforca-cenario-desafiador-para-politica-monetaria/','','copom_ata'],
+ ['CPI dos EUA','A inflação de outubro sobe 0,4%, contra 0,3% esperado, informa o InfoMoney.','InfoMoney','https://www.infomoney.com.br/economia/inflacao-ao-consumidor-cpi-dos-eua-outubro-2026/','','mercado_10_11'],
+ ['Cofre de Peña','Promotores acham cofre atrás de parede falsa em casa de veraneio, informa a BBC Mundo.','El Comercio (BBC Mundo)','https://elcomercio.pe/mundo/latinoamerica/santiago-pena-la-fiscalia-de-paraguay-trata-de-abrir-una-boveda-oculta-hallada-en-una-propiedad-del-expresidente-por-caso-ueno-bank-noticia','','pena_cofre'],
+ ['Cúpula militar','Alliana troca o comando das Forças Armadas, informa a Infobae.','Infobae','https://www.infobae.com/america/agencias/2026/11/10/alliana-cambia-la-cupula-militar-en-paraguay-tras-el-escandalo-por-la-caida-de-ueno-bank/','','paraguai_cupula'],
+ ['Abu Dhabi','Rússia, Ucrânia e EUA abrem a rodada trilateral, informa a NPR.','NPR (MPR News)','https://www.mprnews.org/story/2026/11/10/npr-russia-ukraine-war-talks','','ucrania_abudhabi'],
+ ['Knesset','A sessão inaugural tem disputa pela presidência da Casa, informa o Jerusalem Post.','The Jerusalem Post','https://www.jpost.com/israel-election-2026/article-914332','','israel'],
+ ['LOA de Mato Grosso','O governo retira a LOA de R$ 46,12 bi para incluir a reforma administrativa, informa o Muvuca Popular.','Muvuca Popular','https://www.muvucapopular.com.br/2026/11/10/max-anuncia-retirada-do-orcamento-e-admite-votacao-somente-em-janeiro/','','mt_loa_retirada'],
+ ['Ajuste no DF','Celina Leão cancela empenhos e revê contratos, informa o Correio Braziliense.','Correio Braziliense','https://www.correiobraziliense.com.br/cidades-df/2026/11/7535654-apos-reuniao-de-secretarios-celina-leao-afirma-que-contas-estao-em-dia.html','','df_celina_ajuste'],
+ ['Metrô de Salvador','A Alstom vence a licitação de R$ 632 milhões, informa o Correio.','Correio','https://www.correio24horas.com.br/minha-bahia/empresa-condenada-por-cartel-vence-licitacao-de-r-632-milhoes-para-fornecer-trens-a-bahia-1126','','ba_metro_alstom'],
+ ['Pauta do Senado','Terça tem ANP, Selo Rosa e Escazú; Estatuto do Aprendiz fica para quarta, informa o Congresso em Foco.','Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131403/pauta-do-senado-tem-estatuto-do-aprendiz-e-protecao-a-ambientalistas','','senado_pauta_10_11']
+);
+if (GIRO.length > 20) GIRO.length = 20;
+
+
+/* --- Acervo: matérias paradas, atualizadas ou aposentadas (11h) --- */
+S.ucrania_energia.hora = '10/11';
+S.ucrania_energia.resumo = 'A Força Aérea da Ucrânia contou 162 drones e um míssil balístico russos na madrugada de 10 de novembro, e Moscou disse ter derrubado 155 drones sobre oito regiões e a Crimeia, informa a NPR. O ataque ocorreu no dia da abertura da rodada trilateral em Abu Dhabi. Dois dias antes, ataques russos tinham deixado cerca de 850 mil pessoas sem energia em Dnipropetrovsk e Kharkiv, informa a Al Jazeera, e o Ministério da Defesa russo disse que continuará atacando instalações de energia e combustível. A Ucrânia atinge refinarias russas.';
+S.ucrania_energia.upd = 'Entra o ataque da madrugada de 10/11, com 162 drones e um míssil balístico, e a resposta de Moscou, que diz ter derrubado 155 drones; a rodada de Abu Dhabi abriu no mesmo dia.';
+_insAntes('ucrania_energia','O que vem agora',[
+ ['h','A madrugada de 10 de novembro'],
+ ['p','Na noite de 9 para 10 de novembro, a Força Aérea ucraniana contou 162 drones e um míssil balístico russos, e a Rússia disse ter derrubado 155 drones sobre oito regiões e a Crimeia, informa a NPR. O ataque coincide com a abertura da rodada de Abu Dhabi. A Rússia mira a rede elétrica antes do inverno, e a Ucrânia atinge refinarias, segundo a mesma reportagem.']
+]);
+S.ucrania_energia.fontes.unshift(['NPR (via MPR News: conversas em Abu Dhabi)','https://www.mprnews.org/story/2026/11/10/npr-russia-ukraine-war-talks']);
+
+S.nz_eleicao.hora = '10/11';
+S.nz_eleicao.resumo = 'A eleição de 7 de novembro na Nova Zelândia segue sem vencedor: com 98% dos votos contados, Nacional e Trabalhista estão empatados em 29,27%, com diferença de 41 votos, segundo o The Spinoff. Cerca de 20% dos votos, os especiais, só saem por volta de 27 de novembro. Uma calculadora do sistema proporcional misto dá ao bloco de direita, de Nacional, ACT e NZ First, 67 de cerca de 131 cadeiras. O Opportunity Party, com cerca de 6%, entra no Parlamento sem ser cisão de outro partido e pode ser decisivo.';
+S.nz_eleicao.upd = 'Com 98% apurados, Nacional e Trabalhista aparecem empatados em 29,27%, a 41 votos de distância; o Opportunity Party, com cerca de 6%, pode ser decisivo; votos especiais só em torno de 27/11.';
+_insAntes('nz_eleicao','O que vem agora',[
+ ['h','A contagem mais recente'],
+ ['p','Com 98% dos votos apurados, Nacional e Trabalhista aparecem empatados em 29,27%, com diferença de 41 votos, a menor soma dos dois grandes partidos desde a adoção do sistema proporcional misto, informa o The Spinoff. Os votos especiais, cerca de 20% do total, ou perto de 300 mil, só saem por volta de 27 de novembro. O bloco de direita, de Nacional, ACT e NZ First, aparece com 67 de cerca de 131 cadeiras numa calculadora do sistema, e Verdes e ACT têm resultado recorde.'],
+ ['p','O Opportunity Party, com cerca de 6% dos votos, é o primeiro partido novo a entrar no Parlamento sem nascer de uma cisão, e pode ser decisivo na formação do governo, segundo o The Spinoff e a AP, reproduzida pelo Boston Globe. O Newsroom tem manchete de que Nacional e ACT perdem a maioria na contagem final.']
+]);
+S.nz_eleicao.fontes.unshift(['The Spinoff (quem ganhou a eleição de 2026)','https://thespinoff.co.nz/politics/08-11-2026/who-won-the-2026-election'],['Boston Globe (AP: neozelandeses só saberão em semanas)','https://www.bostonglobe.com/2026/11/08/world/new-zealanders-wont-know-for-weeks-who-won-election/']);
+
+S.tse_21_acoes.hora = '10/11';
+S.tse_21_acoes.resumo = 'O TSE reúne 21 ações contra as chapas presidenciais depois do segundo turno, e a do Novo, a Aije 0603194-42.2026.6.00.0000, pede a cassação de Lula e Geraldo Alckmin e oito anos de inelegibilidade por abuso de poder político, informa o Congresso em Foco. O corregedor Ricardo Villas Bôas Cueva admitiu a ação sem julgar o mérito, e a chapa tem cinco dias de defesa a partir da notificação. A ação contesta 35 atos de janeiro a 16 de outubro, entre eles o Bolsonaro Família, para cerca de 19,29 milhões de famílias, e medidas de combustíveis de R$ 40 bilhões.';
+S.tse_21_acoes.upd = 'Entram o número da ação (Aije 0603194-42.2026.6.00.0000), os 35 atos questionados de janeiro a 16/10, o valor das medidas de combustíveis (R$ 40 bi) e o prazo de cinco dias da defesa, que vence nesta semana.';
+_insAntes('tse_21_acoes','O que vem agora',[
+ ['h','Os atos questionados e o prazo'],
+ ['p','A Aije 0603194-42.2026.6.00.0000, do Novo, contesta 35 atos, entre medidas provisórias e decretos editados de janeiro a 16 de outubro de 2026, por abuso de poder político, informa o Congresso em Foco. A ação cita o Bolsonaro Família, que atinge cerca de 19,29 milhões de famílias, e as medidas de combustíveis, de R$ 40 bilhões, e pede a cassação dos diplomas e a inelegibilidade por oito anos. O corregedor Cueva admitiu a ação para tramitar, sem julgar o mérito, e Lula e Alckmin foram notificados, com cinco dias para a defesa, segundo o Diário de Pernambuco.']
+]);
+S.tse_21_acoes.fontes.unshift(['Congresso em Foco (TSE admite ação do Novo)','https://www.congressoemfoco.com.br/noticia/131369/tse-admite-acao-do-novo-que-pede-cassacao-da-chapa-lula-alckmin'],['Diário de Pernambuco (TSE admite denúncia do Novo)','https://www.diariodepernambuco.com.br/politica/2026/11/11728492-tse-admite-denuncia-do-novo-e-instauracao-acao-contra-chapa-lula-e-alckmin.html']);
+
+S.lula_equipe_eco.hora = '10/11';
+S.lula_equipe_eco.resumo = 'Depois do pronunciamento de domingo (8), em que Lula reafirmou compromisso fiscal sem anunciar medidas nem equipe, o mercado cobra propostas concretas e o nome do ministro da Fazenda, informa a Exame. Dario Durigan e Bruno Moretti só apresentam propostas a Lula depois da viagem, que termina em 15 de novembro, informa a Folha de Pernambuco; Durigan diz que não há fórmula mágica, mas manutenção dos compromissos fiscais. A dívida bruta está em 82,9% do PIB, contra 71,7% em dezembro de 2022. Gilberto Kassab (PSD) condiciona o alinhamento à condução das contas.';
+S.lula_equipe_eco.upd = 'Entram a cobrança do mercado por proposta e ministro depois do pronunciamento de 8/11 (Exame), a fala de Durigan de que não há fórmula mágica e o condicionamento do PSD de Kassab à condução das contas.';
+_insAntes('lula_equipe_eco','O que vem agora',[
+ ['h','O que o mercado e os aliados cobram'],
+ ['p','Depois do pronunciamento de domingo (8), o mercado cobra propostas concretas e o novo ministro da Fazenda, informa a Exame. O PT debate o perfil do próximo ocupante da pasta, e o presidente do PSD, Gilberto Kassab, condiciona o alinhamento do partido à condução das contas. A dívida bruta está em 82,9% do PIB, de R$ 11,1 trilhões, contra 71,7% em dezembro de 2022, segundo a Folha de Pernambuco.'],
+ ['p','Durigan disse que não há fórmula mágica, e sim manutenção dos compromissos fiscais, e que as propostas serão levadas a Lula depois da volta, em 16 de novembro, segundo a Folha de Pernambuco, com informações da Agência Brasil. Em 6 de novembro, no Conselho Nacional de Política Energética, Lula chamou Durigan e Moretti de meninos e elogiou a gestão orçamentária, o que foi lido como reforço a Durigan, informa o Plantão Brasil, com base em relato do Valor. Fonteles e Alckmin aparecem como alternativas de bastidor, sem confirmação oficial.']
+]);
+S.lula_equipe_eco.fontes.unshift(['Exame (mercado cobra Lula no fiscal)','https://exame.com/invest/mercados/vale-e-bancos-puxam-ibovespa-dolar-fica-estavel-enquanto-mercado-cobra-lula-no-fiscal/'],['Folha de Pernambuco (Durigan e as medidas fiscais)','https://www.folhape.com.br/noticias/durigan-discutira-medidas-fiscais-com-lula-apos-viagem-a-cop31/522657/'],['Plantão Brasil (sinal verde a Durigan)','https://plantaobrasil.net/noticias/162343-sinal-verde-de-lula-reforca-permanencia-de-dario-durigan-na-fazenda']);
+
+S.ministerio_40.hora = '10/11';
+S.ministerio_40.resumo = 'O governo Lula quer condicionar os ministérios do quarto mandato aos votos que cada partido prometer entregar no Congresso, segundo a Folhapress e o Metrópoles; a estrutura, de 38 cadeiras hoje, pode chegar a 40. O primeiro teste é a eleição da Câmara, em 1º de fevereiro de 2027, com Hugo Motta (Republicanos-PB) apoiado por 361 dos 513 deputados. A coluna de João Paulo Biage, no O Povo, de 8 de novembro, cita Camilo Santana como cotado para a Casa Civil e diz que José Guimarães deve deixar a SRI para Silvio Costa Filho; o Planalto não confirmou.';
+S.ministerio_40.upd = 'Entram os nomes de bastidor da coluna de João Paulo Biage (O Povo, 8/11): Camilo Santana na Casa Civil e Silvio Costa Filho na SRI no lugar de José Guimarães, sem confirmação do Planalto.';
+_insAntes('ministerio_40','O que vem agora',[
+ ['h','Os nomes de bastidor'],
+ ['p','O O Povo informou em 30 de outubro que Camilo Santana é cotado para a Casa Civil e para o Ministério da Segurança Pública. Na coluna de 8 de novembro, João Paulo Biage escreve que José Guimarães (PT-CE) deve deixar a Secretaria de Relações Institucionais e que Silvio Costa Filho (Republicanos-PE), indicado por Motta, é o favorito de Lula; Guimarães diz desconhecer a especulação. São informações de bastidor, e o Planalto não as confirmou.']
+]);
+S.ministerio_40.fontes.unshift(['O Povo (coluna de João Paulo Biage)','https://mais.opovo.com.br/colunistas/joao-paulo-biage-politica-brasilia/2026/11/08/guimaraes-o-cargo-e-o-coracao-leve.html'],['O Povo (Camilo Santana cotado)','https://mais.opovo.com.br/jornal/politica/2026/10/30/camilo-santana-e-cotado-para-casa-civil-e-ministerio-da-seguranca-publica-no-governo-lula-4.html']);
+
+S.lula_fala_nacao.hora = '10/11';
+S.lula_fala_nacao.resumo = 'Em pronunciamento de 7min44 em rede de rádio e TV no domingo (8), Lula agradeceu os mais de 64 milhões de votos, afirmou que big techs tentaram interferir na eleição e prometeu zerar o imposto da cesta básica, criar o Pé-de-Meia universitário e debater reformas política e do Judiciário. Reafirmou a responsabilidade fiscal, sem anunciar medidas nem equipe, e o mercado passou a cobrar propostas concretas e o ministro da Fazenda, informa a Exame. A ata do Copom, de terça (10), cita a depreciação do real por incerteza política doméstica.';
+S.lula_fala_nacao.upd = 'Entram a cobrança do mercado por medidas concretas depois do pronunciamento (Exame) e a ata do Copom, que cita a depreciação do real por incerteza política doméstica.';
+_insAntes('lula_fala_nacao','O que vem agora',[
+ ['h','A reação do mercado'],
+ ['p','Na segunda (9), o mercado cobrou de Lula propostas concretas no fiscal e o nome do novo ministro da Fazenda, informa a Exame; o dólar fechou a R$ 5,506 e os juros longos ficaram acima de 14,9%. A ata do Copom, divulgada às 8h12 de terça (10), cita entre os choques a depreciação do real por incerteza política doméstica, informa o InfoMoney.']
+]);
+S.lula_fala_nacao.fontes.unshift(['Exame (mercado cobra Lula no fiscal)','https://exame.com/invest/mercados/vale-e-bancos-puxam-ibovespa-dolar-fica-estavel-enquanto-mercado-cobra-lula-no-fiscal/'],['InfoMoney (ata do Copom)','https://www.infomoney.com.br/economia/ata-do-copom-reforca-cenario-desafiador-para-politica-monetaria/']);
+
+['iemen_houthis','colombia_drones','amsterda_linha_vermelha','el_hierro','cracovia','gaza_enchentes','franca_custo_vida','sp_alesp_sucessao'].forEach(function(i){ S[i].velha = true; S[i].velhaMotivo = 'sem desdobramento desde 8/11; segue no acervo por link'; });
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","israel":"atualizada","ueno_bank":"atualizada","pl_motta":"atualizada","ucrania_abudhabi":"atualizada","mercado_semana":"atualizada","orcamento_2027":"atualizada","mg_transicao_fase_final":"atualizada","eua_meio_mandato_placar":"atualizada","motta_alcolumbre_comitiva":"atualizada","senado_pauta_10_11":"novo","lula_sri_centrao":"novo","trf1_kassio_lula":"novo","supersalarios_ongs":"novo","rj_alerj_concessoes":"novo"};
-var GIRO_FLAGS = {"Centrão na articulação":"novo","TRF-1 e Kassio":"novo","Supersalários":"novo","Figueiredo e os EUA":"novo","Pauta do Senado":"novo","Fechamento do Ibovespa":"novo","Trump e o resultado":"novo","Eisenkot e os ultraortodoxos":"novo","Circular de Alliana":"novo","Alerj e o gás":"novo"};
+var FLAGS = {"paraguai":"atualizada","israel":"atualizada","ira_proposta_catar":"atualizada","ueno_bank":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","ucrania_energia":"atualizada","ucrania_abudhabi":"atualizada","nz_eleicao":"atualizada","mercado_semana":"atualizada","tse_21_acoes":"atualizada","lula_fala_nacao":"atualizada","senado_pauta_10_11":"atualizada","lula_sri_centrao":"atualizada","copom_ata":"novo","mercado_10_11":"novo","paraguai_cupula":"novo","pena_cofre":"novo","mt_loa_retirada":"novo","df_celina_ajuste":"novo","ba_metro_alstom":"novo","ce_alece_pl":"novo","al_ceasa":"novo","sp_obras_superfaturamento":"novo","to_pm_comando":"novo"};
+var GIRO_FLAGS = {"Ata do Copom":"novo","CPI dos EUA":"novo","Cofre de Peña":"novo","Cúpula militar":"novo","Abu Dhabi":"novo","Knesset":"novo","LOA de Mato Grosso":"novo","Ajuste no DF":"novo","Metrô de Salvador":"novo","Pauta do Senado":"atualizada"};
 /* ===== FIM DOS DADOS ===== */
