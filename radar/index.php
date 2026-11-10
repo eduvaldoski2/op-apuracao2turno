@@ -75,9 +75,10 @@ try {
       $prevHtml = '<article class="prev"><span class="kk">' . $e($s['k'] ?? 'Radar') . '</span><h2>' . $e($s['t'] ?? '') . '</h2><p class="sub">' . $e($s['sub'] ?? '') . '</p>' . $corpo
         . ($fontes ? '<p class="fts"><b>Fontes:</b> ' . $fontes . '</p>' : '')
         . '<div class="cta"><b>Gostou? Crie sua conta gratuita e leia o Radar completo.</b><br>Política, economia, regiões e mundo, em quatro edições por dia, com as fontes à vista.</div></article>';
-      $og = '<meta property="og:type" content="article"><meta property="og:site_name" content="Radar da Oficina Política"><meta property="og:title" content="' . $e($s['t'] ?? '') . '"><meta property="og:description" content="' . $e($s['sub'] ?? '') . '"><meta property="og:image" content="https://oficinapolitica.com.br/img/og.jpg"><meta name="twitter:card" content="summary_large_image">';
+      $og = '<meta property="og:type" content="article"><meta property="og:site_name" content="Radar da Oficina Política"><meta property="og:title" content="' . $e($s['t'] ?? '') . '"><meta property="og:description" content="' . $e($s['sub'] ?? '') . '"><meta property="og:image" content="https://oficinapolitica.com.br/img/og-radar.jpg?v=2"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">';
     }
   }
+  if ($og === '') $og = '<meta property="og:type" content="website"><meta property="og:site_name" content="Radar da Oficina Política"><meta property="og:title" content="Radar da Oficina Política"><meta property="og:description" content="Notícias de política, economia, regiões e mundo, em quatro edições por dia, com as fontes à vista."><meta property="og:image" content="https://oficinapolitica.com.br/img/og-radar.jpg?v=2"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">';
 } catch (Throwable $e2) { $prevHtml = ''; $og = ''; }
 $login = @file_get_contents(__DIR__ . '/_login.html');
 if ($login === false) { http_response_code(503); echo 'Radar temporariamente indisponível.'; exit; }
