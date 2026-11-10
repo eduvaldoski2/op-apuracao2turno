@@ -9135,7 +9135,264 @@ S.lula_fala_nacao.fontes.unshift(['Exame (mercado cobra Lula no fiscal)','https:
 
 ['iemen_houthis','colombia_drones','amsterda_linha_vermelha','el_hierro','cracovia','gaza_enchentes','franca_custo_vida','sp_alesp_sucessao'].forEach(function(i){ S[i].velha = true; S[i].velhaMotivo = 'sem desdobramento desde 8/11; segue no acervo por link'; });
 
+
+/* ===== Edição das 15h de 10/11 ===== */
+EDICAO.hora = '15h';
+EDICAO.data = 'Terça, 10 de novembro de 2026';
+
+/* --- Economia --- */
+S.mercado_10_11 = {ed:'economia', k:'Economia', hora:'10/11',
+ t:'Dólar sobe a R$ 5,60 e Ibovespa vira para queda depois da ata do Copom e do CPI dos EUA; Itaú BBA rebaixa a Vale e o petróleo cai com a fala de Trump sobre o Irã',
+ sub:'Ao meio-dia, o índice recuava 0,30%, a 171.713 pontos, depois de tocar 173.272 pela manhã; a moeda americana avançava 1,79%, a R$ 5,603, e Galípolo fala às 14h30 na Abracam.',
+ dado:{n:'R$ 5,603', l:'Dólar comercial às 12h54, alta de 1,79%; PTAX parcial em R$ 5,598 · Agora Litoral'},
+ resumo:'O dólar comercial subia 1,79%, a R$ 5,603, às 12h54 desta terça (10), e o Ibovespa virou para queda de 0,30%, a 171.713 pontos, depois de abrir em alta, informa o Agora Litoral. Os gatilhos foram o CPI dos EUA, de 0,4% em outubro contra 0,3% esperado, e a ata do Copom, que mantém a Selic em 13,75% por período prolongado. O Itaú BBA rebaixou a Vale, e o petróleo cedeu com a fala de Trump sobre o Irã. O presidente do BC, Gabriel Galípolo, fala às 14h30.',
+ fundo:[
+  ['p','O dólar comercial subia 1,79% e era negociado a R$ 5,603 às 12h54 desta terça-feira (10), enquanto o Ibovespa, que abrira em alta, passou a cair 0,30% e marcava 171.713 pontos às 12h42, informa o Agora Litoral. A inversão veio depois do índice de preços ao consumidor (CPI) dos Estados Unidos, que subiu 0,4% em outubro, acima dos 0,3% esperados, e da ata do Copom, que descreve a Selic em 13,75% como restritiva por período prolongado.'],
+  ['nums',[['R$ 5,603','Dólar comercial às 12h54 (+1,79%); fechou segunda a R$ 5,506'],['171.713','Ibovespa às 12h42 (-0,30%); máxima do dia: 173.272'],['0,4%','CPI dos EUA em outubro, contra 0,3% esperado'],['US$ 90,13','Brent (janeiro) por volta das 10h, queda de 2,16%'],['13,75%','Selic mantida por unanimidade, após cinco cortes de 0,25 ponto']]],
+  ['h','A virada da manhã'],
+  ['p','O Ibovespa operava em alta de 0,16%, a 172.515 pontos, às 11h, segundo a Exame, e alcançou a máxima de 173.271,61 pela manhã. Na segunda (9), tinha fechado em alta de 2,22%, a 172.236,05 pontos, com volume de R$ 27,90 bilhões, a maior alta diária desde a reeleição de Lula, de acordo com a Exame. No acumulado até segunda, a bolsa subia 2,57% em novembro, caía 7,57% no quarto trimestre e avançava 6,90% em 2026.'],
+  ['p','O dólar acompanhou o movimento: subia 1,24%, a R$ 5,574, por volta das 10h40, segundo a Exame com a CNN, e 1,18%, a R$ 5,571, às 10h33, segundo o BPMoney. A terceira parcial da Ptax, taxa de referência do Banco Central, ficou em R$ 5,5974 na compra e R$ 5,5980 na venda. A moeda tinha fechado segunda a R$ 5,506, queda de 0,06%.'],
+  ['h','CPI americano, Fed e ata do Copom'],
+  ['p','O CPI de outubro ficou acima da expectativa da Reuters, e o dirigente do Federal Reserve Christopher Waller disse, segundo o BPMoney, que uma alta de 0,25 ponto percentual nos juros em dezembro é possível e que um núcleo de 0,3% ou mais poderia pedir 0,50 ponto. Em setembro, o CPI tinha subido 0,6%. Juros americanos mais altos reforçam o dólar contra moedas emergentes, como o real.'],
+  ['p','A ata do Copom, divulgada às 8h12, confirma que a Selic fica em 13,75% por período prolongado, depois da decisão unânime da semana passada, que interrompeu cinco cortes de 0,25 ponto desde março, quando a taxa estava em 15%. O texto diz que as expectativas de inflação pioraram e cita quatro choques de oferta: petróleo, El Niño, fim da escala 6x1 e depreciação cambial. Na abertura, os contratos de juros futuros subiram até 0,075 ponto nos prazos longos: o vencimento de janeiro de 2027 estava em 13,654%, o de 2029 em 14,555% e o de 2031 em 14,885%. Depois, o mercado passou a operar misto.'],
+  ['h','Vale, Petrobras e petróleo'],
+  ['p','O Itaú BBA rebaixou a Vale de compra para neutra às 8h41 e cortou o preço-alvo do recibo (ADR) de US$ 18 para US$ 14, por revisão das projeções de 2027 com pressão de fretes e margens. As ações VALE3 renovaram a mínima às 11h40, em queda de 2,00%, a R$ 64,78, e pesaram sobre o índice. O petróleo cedia: o Brent para janeiro caía 2,16%, a US$ 90,13, e o WTI, 2,07%, a US$ 85,10, depois que Donald Trump disse que novos ataques ao Irã não são necessários por ora. O Brent acumula queda de cerca de 15% desde o início de novembro, e as ações da Petrobras oscilaram perto da estabilidade.'],
+  ['p','Entre os balanços do terceiro trimestre divulgados de manhã, a TIM informou lucro de R$ 1,1 bilhão, em linha com o esperado; a Ecorodovias, lucro de R$ 407 milhões, queda de 5,3%; o Magalu, prejuízo de R$ 10,7 milhões; e a Brava, prejuízo de R$ 156 milhões, contra lucro de R$ 121 milhões um ano antes, segundo o Money Times.'],
+  ['h','O que vem agora'],
+  ['p','O presidente do Banco Central, Gabriel Galípolo, faz palestra às 14h30 em evento da Abracam, em São Paulo, sobre um ano de regulação de criptoativos, aberta à imprensa. O ministro da Fazenda, Dario Durigan, tem reunião com deputados federais às 15h. O IPCA de outubro sai na quinta (12), às 9h, com consenso de 0,26% no mês, contra 0,82% em setembro. A Petrobras divulga o balanço do terceiro trimestre, e a data é tratada pela imprensa ora como a noite desta terça, ora como quarta (11).'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O fechamento do Ibovespa e do dólar nesta terça, que depende do conteúdo da fala de Galípolo e da leitura dos juros futuros no fim do dia.','A data do balanço da Petrobras: Exame e CNN Brasil apontam a noite de terça; a edição anterior do Radar registrava quarta (11).','Os números dos juros futuros do meio da tarde, que não constavam das fontes no fechamento desta edição.']]
+ ],
+ upd:'O dólar passou de R$ 5,60 e o Ibovespa virou para queda no meio do dia, com o CPI americano, a ata do Copom, o rebaixamento da Vale pelo Itaú BBA e o petróleo menor; entram os balanços do dia e a agenda de Galípolo.',
+ fontes:[['Agora Litoral (Ibovespa vira e cai)','https://agoralitoral.com.br/2026/11/10/ibovespa-vira-e-cai-com-ata-do-copom-e-avanco-do-dolar/'],['BPMoney (dólar perto de R$ 5,60)','https://bpmoney.com.br/mercado/cambio/dolar-sobe-perto-de-5-60-apos-inflacao-eua-acima-do-esperado/'],['Exame (Ibovespa, Vale e Petrobras)','https://exame.com/invest/mercados/ibovespa-tenta-emplacar-nova-alta-mas-vale-e-petrobras-pesam-dolar-sobe-mais-de-1/'],['Money Times (agenda e balanços)','https://www.moneytimes.com.br/investidores-aguardam-ata-do-copom-em-dia-de-inflacao-nos-eua-ibovespa-em-dolar-sobe-nesta-terca-feira-10-rens/'],['InfoMoney (Ibovespa ao vivo, 10/11)','https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-10112026/']]};
+
+S.petrobras_balanco = {ed:'economia', k:'Economia · Empresas', hora:'10/11',
+ t:'Petrobras divulga o balanço do 3º trimestre com dividendos esperados de até US$ 4,2 bilhões, enquanto o petróleo cai e o diesel segue defasado',
+ sub:'Os bancos projetam Ebitda de US$ 17,8 bilhões a US$ 19 bilhões; a Abicom aponta o diesel muito abaixo da paridade de importação, e a data exata da divulgação ainda varia entre as fontes.',
+ dado:{n:'US$ 4,2 bi', l:'Dividendos projetados pelo Itaú BBA para o 3º trimestre (~3,2% de dividend yield) · InfoMoney'},
+ resumo:'A Petrobras divulga o balanço do terceiro trimestre com projeção de dividendos de até US$ 4,2 bilhões, segundo o Itaú BBA, citado pelo InfoMoney; Bradesco BBI estima cerca de US$ 3,8 bilhões e o BTG, US$ 3,6 bilhões. O Ebitda esperado fica entre US$ 17,8 bilhões e US$ 19 bilhões. O Brent caiu perto de 15% desde o início de novembro, e a Abicom mostra o diesel e a gasolina abaixo da paridade de importação, o que pressiona o caixa da estatal e o debate sobre preços.',
+ fundo:[
+  ['p','A Petrobras divulga o balanço do terceiro trimestre de 2026 com expectativa de distribuir até US$ 4,2 bilhões em dividendos, segundo projeção do Itaú BBA citada pelo InfoMoney. Bradesco BBI estima cerca de US$ 3,8 bilhões e o BTG, US$ 3,6 bilhões. A Exame e a CNN Brasil indicam que a divulgação ocorre depois do pregão desta terça (10); o InfoMoney, em texto das 6h22, não informa a data, e o Radar registrou quarta (11) na edição das 11h.'],
+  ['nums',[['US$ 4,2 bi','Dividendos projetados pelo Itaú BBA (BBI: ~US$ 3,8 bi; BTG: ~US$ 3,6 bi)'],['US$ 17,8-19 bi','Ebitda estimado por BBI, Itaú BBA e BTG'],['US$ 4,9 bi','Fluxo de caixa livre estimado pelo BTG'],['~15%','Queda do Brent desde o início de novembro'],['62 dias','Tempo desde o último aumento da gasolina nas refinarias, segundo a Abicom']]],
+  ['h','O que o mercado espera'],
+  ['p','O Itaú BBA projeta Ebitda de US$ 18 bilhões e investimentos de US$ 4,8 bilhões. O Bradesco BBI estima Ebitda de US$ 17,8 bilhões, e o BTG, de US$ 19 bilhões, com fluxo de caixa livre de US$ 4,9 bilhões e investimentos entre US$ 4,8 bilhões e US$ 5,5 bilhões, informa o InfoMoney. Pelas contas do Itaú BBA, o dividendo equivale a cerca de 3,2% do valor de mercado da companhia no trimestre.'],
+  ['p','As ações PETR4 recuavam 1,13% por volta das 11h, segundo a Exame, e passaram a subir 0,12% às 11h54, de acordo com o Agora Litoral. O balanço chega com o petróleo em queda: o Brent para janeiro caía 2,16%, a US$ 90,13, e o WTI, 2,07%, a US$ 85,10, depois que Donald Trump disse que novos ataques ao Irã não são necessários por ora.'],
+  ['h','Combustíveis e preços'],
+  ['p','A defasagem calculada pela Associação Brasileira dos Importadores de Combustíveis (Abicom) às 8h58 mostrava o diesel S10 muito abaixo da paridade de importação, com diferença de R$ 3,09 por litro, e a gasolina A cerca de 5% abaixo, R$ 0,14 por litro, segundo o InfoMoney. A última alta da gasolina nas refinarias foi há 62 dias, e a do diesel, há 163 dias. Preço abaixo da paridade tende a segurar a margem da Petrobras no refino e alimenta a pressão do mercado por reajuste, em meio ao corte de tributos sobre gasolina e etanol prorrogado até 9 de dezembro.'],
+  ['h','Por que importa'],
+  ['p','Os dividendos da Petrobras entram na conta do Tesouro, acionista controlador, e o desempenho da empresa pesa no Ibovespa. A política de preços de combustíveis é um dos temas que o governo Lula discute com o mercado na montagem da equipe econômica do quarto mandato.'],
+  ['h','O que vem agora'],
+  ['p','Balanço e anúncio de proventos; reação das ações na quarta (11); IPCA de outubro na quinta (12), às 9h, com combustíveis entre os itens acompanhados.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A data e a hora do balanço, que variam entre as fontes (terça à noite ou quarta).','O valor final dos dividendos: as cifras acima são projeções de bancos, e uma manchete que fala em lucro de R$ 46,8 bilhões e dividendo de até R$ 1,80 por ação não foi confirmada.','Se haverá reajuste de diesel ou gasolina nas refinarias nos próximos dias.']]
+ ],
+ fontes:[['InfoMoney (Petrobras pode pagar até US$ 4,2 bi)','https://www.infomoney.com.br/mercados/petrobras-pode-pagar-ate-us-42-bilhoes-em-dividendos-no-3o-trimestre/'],['Exame (Vale e Petrobras pesam)','https://exame.com/invest/mercados/ibovespa-tenta-emplacar-nova-alta-mas-vale-e-petrobras-pesam-dolar-sobe-mais-de-1/'],['Agora Litoral (Ibovespa vira e cai)','https://agoralitoral.com.br/2026/11/10/ibovespa-vira-e-cai-com-ata-do-copom-e-avanco-do-dolar/'],['InfoMoney (Ibovespa ao vivo, 10/11)','https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-10112026/']]};
+
+S.combustiveis_decreto = {ed:'economia', k:'Economia · Combustíveis', hora:'10/11',
+ t:'Decreto prorroga até 9 de dezembro a alíquota zero de PIS/Cofins e Cide sobre a gasolina e mantém o subsídio de R$ 0,428 por litro ao etanol hidratado',
+ sub:'O texto saiu em edição extra do Diário Oficial de segunda (9), às 22h53; os valores não mudam, só o prazo. O diesel não está no decreto e tem subsídio por portaria da Fazenda.',
+ dado:{n:'R$ 0,428/l', l:'Subsídio ao etanol hidratado mantido até 9/12 · Eixos'},
+ resumo:'O decreto 13.159/2026, publicado em edição extra do Diário Oficial na noite de segunda (9), prorroga até 9 de dezembro a alíquota zero de PIS/Pasep e Cofins sobre a gasolina (importação e venda) e da Cide-Combustíveis, informa a Eixos. O PIS/Cofins do etanol hidratado continua zerado, e o subsídio de R$ 0,428 por litro é mantido. Só o prazo muda; o custo da prorrogação não foi informado.',
+ fundo:[
+  ['p','O governo federal prorrogou por 30 dias, até 9 de dezembro, a alíquota zero de PIS/Pasep e Cofins sobre a gasolina e da Cide-Combustíveis, por meio do decreto 13.159/2026, publicado em edição extra do Diário Oficial da União na noite de segunda-feira (9), às 22h53, informa a Eixos. O texto mantém o PIS/Cofins zerado no etanol hidratado e o subsídio de R$ 0,428 por litro ao produto.'],
+  ['nums',[['9/12','Novo fim do prazo da alíquota zero na gasolina'],['R$ 0,428/l','Subsídio ao etanol hidratado, inalterado'],['R$ 3,6 bi','Estimativa de custo em 30 dias do pacote de gasolina e etanol de outubro (decreto 13.134/2026)']]],
+  ['h','O que muda e o que não muda'],
+  ['p','As alíquotas e os valores permanecem iguais; o decreto só estende a vigência. O diesel não consta do texto: o subsídio ao combustível é concedido por portaria do Ministério da Fazenda, de acordo com a Eixos. O jornal Cana informou o mesmo prazo de 9 de dezembro para a desoneração da gasolina e do etanol.'],
+  ['p','O Radar registrou na edição das 11h, a partir do blog do InfoMoney, que o corte seria prorrogado por 30 dias. O ato oficial confirma o prazo e mostra que a medida entrou em vigor na própria noite de segunda, antes do fim da vigência anterior.'],
+  ['h','Custo e contexto fiscal'],
+  ['p','O governo não informou o custo da prorrogação. Uma estimativa de R$ 3,6 bilhões em 30 dias se refere ao pacote de gasolina e etanol de outubro, previsto no decreto 13.134/2026, e serve apenas de referência. A renúncia ocorre quando o ministro da Fazenda, Dario Durigan, admite que a meta fiscal de 2026 não será cumprida e prepara, com o ministro do Planejamento, Bruno Moretti, uma agenda de ajuste que só chega a Lula depois de 16 de novembro.'],
+  ['p','As medidas de combustíveis também aparecem no processo do Novo contra a chapa Lula-Alckmin no TSE, que questiona atos editados em ano eleitoral, entre eles decretos de desoneração.'],
+  ['h','O que vem agora'],
+  ['p','A decisão sobre o que ocorre depois de 9 de dezembro, o desenho do subsídio ao diesel e o resultado do balanço da Petrobras, que influencia o debate sobre reajustes, são os próximos pontos de atenção.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O custo exato da prorrogação para a União.','Se o governo vai estender de novo a medida depois de 9 de dezembro.','Se haverá nova portaria para o diesel.']]
+ ],
+ fontes:[['Eixos (governo mantém tributos da gasolina zerados)','https://eixos.com.br/combustiveis-e-bioenergia/governo-mantem-tributos-da-gasolina-zerados-e-subsidio-ao-etanol-por-mais-30-dias/'],['Jornal Cana (prorroga desoneração)','https://jornalcana.com.br/mercado/governo-prorroga-desoneracao-da-gasolina-e-do-etanol-ate-09-de-dezembro/'],['InfoMoney (Ibovespa ao vivo, 10/11)','https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-10112026/']]};
+
+/* --- Política --- */
+S.lula_antalia_comitiva = {ed:'politica', k:'Política · Planalto', hora:'10/11',
+ t:'Lula chega à COP31 sem os aliados da campanha, e a montagem do ministério do quarto mandato fica sem data',
+ sub:'Camilo Santana, Rui Costa, Rafael Fonteles e Fernando Haddad não viajaram a Antália; Hugo Motta e Davi Alcolumbre recusaram o convite. A cúpula de líderes é nesta quarta (11) e quinta (12).',
+ dado:{n:'16/11', l:'Volta de Lula a Brasília, depois de Antália e da cúpula da Asean, em Manila'},
+ resumo:'Lula embarcou na segunda (9) para a COP31, em Antália, na Turquia, sem os aliados de campanha que costumavam ser cotados para o ministério: Camilo Santana, Rui Costa, Rafael Fonteles e Fernando Haddad ficaram no Brasil, informa O Povo. Hugo Motta e Davi Alcolumbre, convidados, recusaram. A viagem frustra a expectativa de anunciar ministros no exterior, como em 2022, e adia a definição da equipe, sem nova data.',
+ fundo:[
+  ['p','O presidente Luiz Inácio Lula da Silva (PT) viajou para a COP31, a conferência do clima da ONU, em Antália, na Turquia, sem os aliados de campanha cotados para o novo ministério, e a montagem do governo do quarto mandato ficou sem data, informa O Povo. Camilo Santana, Rui Costa, Rafael Fonteles e Fernando Haddad não integram a comitiva, o que frustra a expectativa de anúncios feitos durante a viagem, como ocorreu em 2022.'],
+  ['nums',[['11 e 12/11','Cúpula de líderes da COP31, aberta por Recep Tayyip Erdogan e Anthony Albanese'],['13 a 15/11','Cúpula da Asean, em Manila, com visita de Estado às Filipinas no dia 13'],['16/11','Volta de Lula a Brasília'],['2','Presidentes do Congresso convidados que recusaram: Motta e Alcolumbre']]],
+  ['h','Quem foi e quem ficou'],
+  ['p','A delegação inclui o ministro de Minas e Energia, Alexandre Silveira, o do Desenvolvimento, Indústria, Comércio e Serviços, Márcio Elias Rosa, João Paulo Capobianco, do Meio Ambiente, o presidente do BNDES, Aloizio Mercadante, o assessor especial Celso Amorim, a secretária Fernanda Machiaveli e o deputado André Janones (Rede-MG), segundo O Povo e a Bahia Notícias. O presidente da Câmara, Hugo Motta (Republicanos-PB), e o do Senado, Davi Alcolumbre (União-AP), foram convidados e não aceitaram.'],
+  ['h','Quem é quem'],
+  ['p','Lula e Camilo Santana (ex-governador do Ceará e ex-ministro da Educação) são do PT, partido de esquerda que lidera a coalizão de governo. Rui Costa, Rafael Fonteles, governador do Piauí, e Fernando Haddad também são do PT. Motta e Alcolumbre comandam Casas legislativas de centro e centro-direita e disputam a reeleição em 1º de fevereiro de 2027, com apoio declarado de Lula a Motta.'],
+  ['h','Por que a viagem pesa na montagem do governo'],
+  ['p','O Planalto trata a escolha de ministros como moeda de articulação com o Congresso: o governo quer condicionar cargos a votos prometidos e a estrutura pode passar de 38 para 40 ministérios, segundo a cobertura do Metrópoles e da Folhapress registrada nas edições anteriores. Sem os nomes mais cotados na comitiva, os anúncios ficam para depois de 16 de novembro. O ministro da Fazenda, Dario Durigan, e o do Planejamento, Bruno Moretti, também só entregam a Lula as propostas fiscais depois da volta.'],
+  ['p','Na pauta da viagem, Lula deve apresentar o mapa do caminho para a saída dos combustíveis fósseis e defender o Fundo Florestas Tropicais para Sempre (TFFF), informa a Bahia Notícias. A agenda inclui a cúpula da Asean, em Manila, nos dias 14 e 15, e visita de Estado às Filipinas no dia 13.'],
+  ['h','O que vem agora'],
+  ['p','Discurso de Lula na cúpula de líderes (11 e 12), Manila (13 a 15) e volta em 16/11. A partir daí, decisão sobre a Secretaria de Relações Institucionais, a equipe econômica e o desenho dos ministérios.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['Quando o governo anuncia os ministros: não há data oficial.','Quem ocupa a Secretaria de Relações Institucionais: a coluna de O Povo de 8/11 cita Silvio Costa Filho (Republicanos-PE) como favorito, sem confirmação do Planalto.','Se Lula fará anúncios por videoconferência ou depois da volta.']]
+ ],
+ upd:'Entram a comitiva sem os aliados de campanha, a recusa de Motta e Alcolumbre ao convite e o adiamento da montagem do ministério para depois de 16/11.',
+ fontes:[['O Povo (Lula não leva aliados da campanha à Turquia)','https://www.opovo.com.br/noticias/politica/2026/11/09/lula-nao-leva-aliados-da-campanha-a-turquia-frustrando-expectativa-de-montagem-do-governo.html'],['Bahia Notícias (semana de Lula na Turquia e nas Filipinas)','https://www.bahianoticias.com.br/noticia/323472-semana-tem-lula-em-compromissos-na-turquia-e-filipinas-divulgacao-da-inflacao-e-debate-sobre-jornada-6x1-no-stf']]};
+
+S.maioridade_audiencias = {ed:'politica', k:'Política · Câmara', hora:'10/11',
+ t:'Comissão especial da PEC da maioridade penal faz audiências na terça e na quarta; relator quer entregar parecer até o fim de novembro',
+ sub:'Mendonça Filho (PL-PE) avalia responsabilização aos 16 anos só para crimes graves, ou até 14 em casos específicos; a PEC exige 308 votos na Câmara, e Hugo Motta não fixou data de votação.',
+ dado:{n:'308', l:'Votos necessários na Câmara para aprovar a PEC 32/2015; no Senado, 49'},
+ resumo:'A comissão especial da Câmara que analisa a PEC 32/2015, da redução da maioridade penal, realiza audiências nesta terça (10) e quarta (11), às 14h30, no plenário 9 do Anexo II. O relator, Mendonça Filho (PL-PE), quer apresentar o parecer até o fim de novembro e avalia limitar a responsabilização aos 16 anos a crimes graves, ou até 14 em casos específicos. A PEC precisa de 308 votos na Câmara e 49 no Senado, e o presidente da Casa, Hugo Motta, não marcou data.',
+ fundo:[
+  ['p','A comissão especial da Câmara dos Deputados que analisa a proposta de emenda à Constituição da redução da maioridade penal realiza audiências públicas nesta terça-feira (10) e na quarta (11), às 14h30, no plenário 9 do Anexo II, informam o ND Mais e o NC News. O relator, deputado Mendonça Filho (PL-PE), pretende apresentar o parecer até o fim de novembro, mas o presidente da Câmara, Hugo Motta (Republicanos-PB), não fixou data para a votação em plenário.'],
+  ['nums',[['308','Votos necessários na Câmara (três quintos de 513)'],['49','Votos necessários no Senado (três quintos de 81)'],['16 e 14','Idades em discussão: 16 anos para crimes graves e, em casos específicos, até 14'],['3','Audiências previstas na comissão, segundo o ND Mais']]],
+  ['h','O que está em debate'],
+  ['p','O relator avalia responsabilizar adolescentes a partir dos 16 anos apenas por crimes graves e admite, em casos específicos, idade de até 14. A proposta em análise é a PEC 32/2015. O presidente da comissão é Aluísio Mendes (Republicanos-MA). Os convidados desta terça são Paulo Garrido Modesto, secretário de Assuntos Legislativos do Ministério da Justiça e Segurança Pública, e Katy Braun do Prado, da Associação Brasileira dos Magistrados da Infância e Juventude.'],
+  ['h','Quem é quem'],
+  ['p','Mendonça Filho é do PL, partido de direita e principal sigla da oposição ao governo Lula, que tem 121 deputados. A redução da maioridade penal é bandeira da bancada da segurança pública e do bolsonarismo e o PT, de esquerda, lidera a base do governo. Motta, do Republicanos, de centro-direita, disputa a reeleição à presidência da Câmara em 1º de fevereiro de 2027 com apoio de 15 partidos, e a decisão sobre pautar o tema cabe a ele.'],
+  ['h','Por que importa'],
+  ['p','A pauta é um dos pontos de tensão entre o PL e o comando da Câmara: bolsonaristas veem o adiamento como descumprimento de promessa de campanha, segundo a coluna de Igor Gadelha, no Metrópoles, registrada em edição anterior. O PL decide na quarta (11) se apoia a reeleição de Motta, e a votação da PEC entra na negociação. No Senado, Davi Alcolumbre (União-AP) espera a Câmara se pronunciar.'],
+  ['h','O que vem agora'],
+  ['p','A segunda audiência ocorre na quarta (11). Depois, o relator apresenta o parecer, a comissão vota e o texto segue ao plenário da Câmara, em dois turnos, antes do Senado.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A data de votação da PEC no plenário da Câmara: Motta não a fixou, e reportagens indicam que pode ficar para depois da eleição das Mesas.','O conteúdo final do parecer, incluindo a idade mínima e a lista de crimes.','O resultado das audiências de terça, que não constava das fontes no fechamento desta edição.']]
+ ],
+ upd:'Entram as audiências de 10 e 11/11 na comissão especial, os convidados e a conta de votos da PEC.',
+ fontes:[['NC News (maioridade penal pode cair para 16 anos)','https://ncnews.com.br/2026/11/10/maioridade-penal-pode-cair-para-16-anos-camara-retoma-debate-e-busca-acordo/'],['ND Mais (maioridade penal na semana do Congresso)','https://ndmais.com.br/politica/maioridade-penal-congresso-debate-reducao-nesta-semana/'],['Correio da Manhã (Câmara tenta acordo)','https://www.correiodamanha.com.br/politica/2026/11/332629-camara-tenta-acordo-sobre-reducao-da-maioridade-penal-para-menores.html']]};
+
+/* --- Mundo --- */
+S.ucrania_abudhabi.hora = '10/11';
+S.ucrania_abudhabi.t = 'Rússia, Ucrânia e EUA retomam em Abu Dhabi as negociações de paz, nove meses depois da última rodada; Kushner diz que as partes “estreitaram diferenças”, e Moscou mantém a exigência sobre o Donbas';
+S.ucrania_abudhabi.sub = 'A pauta inclui troca de prisioneiros, possível cessar-fogo marítimo e de energia e garantias de segurança; o segundo dia é nesta quarta (11), e Witkoff e Kushner podem viajar a Moscou e a Kiev.';
+S.ucrania_abudhabi.resumo = 'Rússia, Ucrânia e Estados Unidos retomaram em Abu Dhabi as conversas trilaterais, as primeiras em nove meses, informa o Kyiv Independent. A pauta reúne troca de prisioneiros, cessar-fogo marítimo e de energia e garantias de segurança. O enviado americano Jared Kushner disse que as partes estreitaram diferenças, e autoridades dos EUA se dizem cautelosamente otimistas; Moscou ainda exige o Donbas e a proibição da Otan para a Ucrânia, que rejeita ceder território. O segundo dia é nesta quarta (11).';
+S.ucrania_abudhabi.upd = 'Entram a composição das delegações, a pauta de prisioneiros, cessar-fogo marítimo e de energia e garantias de segurança, a avaliação de Kushner e o impasse sobre o Donbas e a Otan.';
+_insAntes('ucrania_abudhabi','O que vem agora',[
+ ['h','As delegações e a pauta do primeiro dia'],
+ ['p','Segundo o Kyiv Independent e a CBS News, a Ucrânia é representada por Rustem Umerov, chefe da delegação, com o chefe de gabinete presidencial Kyrylo Budanov, Serhiy Kyslytsya, David Arakhamia e Oleh Skibitsky. A delegação russa é chefiada por Vladimir Medinsky, com Serguei Ryabkov, Galuzin e Kostyukov. Pelos Estados Unidos, participam o enviado Steve Witkoff e Jared Kushner. Assessores de segurança de França, Alemanha, Reino Unido e Itália atuam em paralelo.'],
+ ['p','Os temas são a troca de prisioneiros, um possível cessar-fogo marítimo e de energia e as garantias de segurança a Kiev. Kushner disse que as partes “estreitaram diferenças”, e autoridades americanas se dizem cautelosamente otimistas, segundo a CBS. Arakhamia, porém, não espera avanço na primeira rodada. Witkoff e Kushner podem seguir para Moscou e Kiev depois do encontro.'],
+ ['h','O impasse territorial e o financiamento europeu'],
+ ['p','Moscou exige o controle do Donbas e a proibição de a Ucrânia entrar na Otan, e Kiev rejeita ceder território. Na União Europeia, o chanceler alemão Friedrich Merz (CDU, centro-direita, no governo) ameaça bloquear o orçamento de longo prazo do bloco sem compromisso de todos com o financiamento da Ucrânia depois de 2027, informa a Euronews. O rombo ucraniano em 2027 é estimado em € 70 bilhões, e a UE pretende cobrir cerca de € 45 bilhões, além do empréstimo de € 90 bilhões já aprovado para 2026 e 2027. Hungria, Eslováquia e Tchéquia ficaram fora do empréstimo.'],
+]);
+S.ucrania_abudhabi.fontes.unshift(['Kyiv Independent (retomada das conversas trilaterais)','https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/'],['CBS News (conversas de paz em Abu Dhabi)','https://www.cbsnews.com/news/us-russia-ukraine-war-talks-peace-abu-dhabi-deal/'],['Euronews (Merz e o orçamento da UE)','https://www.euronews.com/2026/11/10/merzs-budget-gamble-no-ukraine-funding-no-eu-budget']);
+
+S.espanha_eleicao = {ed:'mundo', k:'Mundo · Espanha', hora:'10/11', fonteunica:true,
+ t:'Espanha vai às urnas em 29 de novembro, com Feijóo à frente nas pesquisas, e tem greve geral marcada para quarta (11)',
+ sub:'As sondagens apontam maioria absoluta para PP e Vox; Pedro Sánchez, candidato do PSOE, ainda não confirmou presença no debate de 23/11 e não vai ao Conselho Europeu informal.',
+ resumo:'A Espanha realiza eleição geral antecipada em 29 de novembro, com o líder do PP, Alberto Núñez Feijóo, à frente nas pesquisas, que mostram PP e Vox com maioria absoluta, informa a Infobae. O primeiro-ministro Pedro Sánchez, do PSOE, é candidato. Há greve geral marcada para quarta (11), e o debate da Atresmedia está previsto para 23 de novembro, sem confirmação de Sánchez.',
+ fundo:[
+  ['p','A Espanha vai às urnas em 29 de novembro, em eleição geral antecipada, e a Infobae informa que as pesquisas mostram o Partido Popular (PP) e o Vox com maioria absoluta. O candidato do PP, Alberto Núñez Feijóo, lidera as sondagens, e o primeiro-ministro Pedro Sánchez, do Partido Socialista (PSOE), disputa a reeleição. Uma greve geral está marcada para quarta (11).'],
+  ['nums',[['29/11','Data da eleição geral'],['23/11','Debate da Atresmedia, sem confirmação de Sánchez'],['11/11','Greve geral']]],
+  ['h','Quem é quem'],
+  ['p','O PSOE, de Sánchez, é de centro-esquerda e esquerda e governa o país. O PP, de Feijóo, é de centro-direita e direita e lidera a oposição. O Vox, de Santiago Abascal, é de extrema direita, e as pesquisas citadas pela Infobae indicam que PP e Vox somados chegariam à maioria absoluta, o que permitiria formar governo sem depender de partidos regionais. A Espanha elege 350 deputados, e a maioria absoluta exige 176.'],
+  ['h','A campanha e a greve'],
+  ['p','Feijóo disse, segundo a Infobae, confiar que os sindicatos aceitem o resultado eleitoral se houver troca de governo, em referência à greve geral de quarta. Sánchez não vai ao Conselho Europeu informal e ainda não confirmou presença no debate promovido pela Atresmedia em 23 de novembro.'],
+  ['h','O que vem agora'],
+  ['p','Greve geral em 11/11, debate em 23/11 e votação em 29/11, com apuração na mesma noite e negociação para a investidura do primeiro-ministro nas semanas seguintes.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O tamanho exato da maioria de PP e Vox, que depende do voto por província.','A presença de Sánchez no debate de 23/11.','A adesão à greve geral de quarta.']]
+ ],
+ upd:'Entram a data da eleição antecipada, as pesquisas e a greve geral de 11/11.',
+ fontes:[['Infobae (eleições gerais de 29/11, ao vivo)','https://www.infobae.com/espana/2026/11/09/elecciones-generales-29-n-en-directo-feijoo-confia-en-que-los-sindicatos-acepten-el-resultado-electoral-si-hay-cambio-de-gobierno/']]};
+
+S.peru_fujimori = {ed:'mundo', k:'Mundo · Peru', hora:'10/11',
+ t:'Keiko Fujimori pede licença para viajar à China e ao Japão enquanto o papa visita o Peru, e o chanceler discute com Lavrov os 459 peruanos recrutados pelo Exército russo',
+ sub:'A presidente fica fora de 15 a 21 de novembro, para a Apec em Shenzhen e uma visita a Tóquio; o premiê Luis Galarreta nega desfeita a Leão XIV, que está no país até 16 ou 17/11.',
+ dado:{n:'459', l:'Peruanos recrutados pelo Exército russo, segundo dados de outubro: 25 mortos e 187 desaparecidos'},
+ resumo:'A presidente do Peru, Keiko Fujimori, pediu licença ao Senado para viajar à China e ao Japão de 15 a 21 de novembro, no período em que o papa Leão XIV está no país, informa a Infobae. O presidente do Conselho de Ministros, Luis Galarreta, negou desfeita. Em Moscou, o chanceler Carlos Espá tratou com Serguei Lavrov, na segunda (9), dos 459 peruanos recrutados pelo Exército russo, e ficou acertado que os contratos não serão renovados automaticamente.',
+ fundo:[
+  ['p','A presidente do Peru, Keiko Fujimori, pediu licença ao Senado para viajar à China e ao Japão de 15 a 21 de novembro, e o premiê Luis Galarreta negou que a agenda seja desfeita ao papa Leão XIV, que visita o país até 16 ou 17 de novembro, informa a Infobae. A viagem inclui a Apec, em Shenzhen, nos dias 18 e 19, e Tóquio, no dia 20, com encontro com a primeira-ministra Sanae Takaichi.'],
+  ['nums',[['15 a 21/11','Período da licença da presidente para China e Japão'],['18 e 19/11','Cúpula da Apec, em Shenzhen'],['459','Peruanos recrutados pelo Exército russo (dados de outubro)'],['25 / 187','Mortos e desaparecidos entre eles, segundo os mesmos dados']]],
+  ['h','Quem é quem'],
+  ['p','Keiko Fujimori, do Fuerza Popular, partido de direita, assumiu a Presidência em 28 de julho, depois de vencer o segundo turno por menos de um ponto percentual. Luis Galarreta, que preside o Conselho de Ministros, integra o governo. A oposição no Senado precisa autorizar a saída da presidente do país. Takaichi, do Partido Liberal Democrata, de direita, é a primeira-ministra do Japão. A Apec reúne as economias da bacia do Pacífico, e a cúpula deste ano ocorre em Shenzhen, na China, nos dias 18 e 19 de novembro.'],
+  ['h','Os recrutados pela Rússia'],
+  ['p','O chanceler Carlos Espá reuniu-se com Serguei Lavrov, em Moscou, na segunda (9), para tratar da situação de 459 peruanos que combatem no Exército russo, segundo o site espanhol Estrella Digital. Os dados de outubro apontam 25 mortos, 187 desaparecidos e 4 prisioneiros. Ficou acertado que os contratos não serão renovados automaticamente. A Rússia não divulgou números.'],
+  ['h','O que vem agora'],
+  ['p','O Senado analisa a licença; o papa deixa o Peru em 16 ou 17 de novembro, data que a imprensa peruana e o roteiro do Vaticano informam de forma diferente; a Apec ocorre nos dias 18 e 19.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['A data em que o papa encerra a visita: o roteiro oficial indica 17/11 e a imprensa peruana, 16/11.','Se o Senado aprova a licença sem restrições.','O número atual de peruanos no Exército russo, que a Rússia não divulgou.']]
+ ],
+ upd:'Entram a licença de Fujimori para China e Japão, a defesa de Galarreta e o encontro Espá-Lavrov sobre os peruanos recrutados.',
+ fontes:[['Infobae (Galarreta nega desfeita de Keiko ao papa)','https://www.infobae.com/peru/2026/11/10/luis-galarreta-niega-desplante-de-keiko-fujimori-al-papa-leon-xiv-ella-lamenta-no-estar-hasta-el-final/'],['Estrella Digital (Peru, Rússia e Lavrov)','https://www.estrelladigital.es/mundo/peru-rusia-lavrov-espa-peruanos-reclutados-ucrania-papa-leon-xiv/20261110080000453131.html']]};
+
+S.bolivia_urquidi = {ed:'mundo', k:'Mundo · Bolívia', hora:'10/11', fonteunica:true,
+ t:'Ministério Público da Bolívia arquiva denúncia contra a primeira-dama e um ministro por áudios ligados a Fernando Cerimedo',
+ sub:'É a terceira denúncia arquivada contra María Elena Urquidi entre agosto e novembro; o advogado Guido Calcina vai recorrer. Há ao menos 15 áudios, quatro deles com os dois citados.',
+ resumo:'O Ministério Público da Bolívia rejeitou a denúncia penal contra a primeira-dama, María Elena Urquidi, e o ministro de Obras Públicas, Mauricio Zamora, por áudios ligados ao consultor argentino Fernando Cerimedo, informa a Infobae. É a terceira denúncia arquivada contra Urquidi entre agosto e novembro. O advogado Guido Calcina vai recorrer. O presidente Rodrigo Paz também aparece nos áudios, e Cerimedo está em prisão preventiva.',
+ fundo:[
+  ['p','O Ministério Público da Bolívia rejeitou a denúncia penal contra a primeira-dama, María Elena Urquidi, e contra o ministro de Obras Públicas, Mauricio Zamora, por áudios ligados ao consultor argentino Fernando Cerimedo, informa a Infobae. A decisão desta terça (10) é a terceira em que uma denúncia contra Urquidi é arquivada entre agosto e novembro, e o advogado Guido Calcina, autor da denúncia, anunciou que vai recorrer.'],
+  ['nums',[['3','Denúncias arquivadas contra Urquidi entre agosto e novembro'],['15','Áudios ou mais no caso, segundo a Infobae'],['4','Áudios em que aparecem Urquidi e Zamora']]],
+  ['h','Quem é quem'],
+  ['p','O presidente Rodrigo Paz, do Partido Democrata Cristão (PDC), é de centro-direita e governa a Bolívia; Urquidi é sua esposa, e Zamora é ministro do governo. Cerimedo, consultor argentino de 45 anos, está em prisão preventiva. O promotor-geral é José Armando Urioste. A Foreign Policy registrou, em 23 de outubro, um degelo nas relações entre a Bolívia e o Chile, de José Antonio Kast, de direita.'],
+  ['h','O que os áudios mostram e o que decide o Ministério Público'],
+  ['p','Há ao menos 15 áudios, quatro deles com a participação dos dois citados, e Paz também aparece nas gravações. A Infobae não detalha o conteúdo nem os fundamentos jurídicos do arquivamento. Urquidi e Zamora não foram condenados nem formalmente acusados.'],
+  ['h','O que vem agora'],
+  ['p','Calcina deve recorrer da decisão. O processo contra Cerimedo continua, com ele em preventiva.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O fundamento jurídico do arquivamento, que a reportagem não traz.','Se o recurso de Calcina será aceito e em qual instância.','O conteúdo completo dos áudios.']]
+ ],
+ upd:'Entram o arquivamento da terceira denúncia contra a primeira-dama e o anúncio de recurso.',
+ fontes:[['Infobae (Fiscalía da Bolívia desestima denúncia)','https://www.infobae.com/america/america-latina/2026/11/10/fiscalia-de-bolivia-desestima-denuncia-penal-contra-la-primera-dama-y-un-ministro-por-los-audios-de-cerimedo/']]};
+
+/* --- Regiões --- */
+S.pe_tjpe = {ed:'regioes', reg:'ne', k:'Nordeste · Pernambuco', hora:'10/11', fonteunica:true,
+ t:'Raquel Lyra nomeia Janielly Nunes e Silva desembargadora do TJPE pelo quinto constitucional, e o tribunal passa a ter sete desembargadoras',
+ sub:'Ela foi a mais votada na lista tríplice do Pleno, com 41 votos, contra 36 de Leonardo Oliveira e 34 de Henrique Seixas; a posse é nesta terça (10), no Palácio da Justiça.',
+ resumo:'A governadora de Pernambuco, Raquel Lyra, anunciou na segunda (9) a advogada Janielly Nunes e Silva como nova desembargadora do Tribunal de Justiça de Pernambuco, pela vaga do quinto constitucional da advocacia, informa o Blog do Elielson, da CBN Recife. Ela teve 41 votos na lista tríplice do Pleno, contra 36 de Leonardo Oliveira e 34 de Henrique Seixas. O tribunal passa a ter sete desembargadoras, e a posse é nesta terça (10).',
+ fundo:[
+  ['p','A governadora de Pernambuco, Raquel Lyra, escolheu a advogada Janielly Nunes e Silva para o cargo de desembargadora do Tribunal de Justiça de Pernambuco (TJPE), na vaga do quinto constitucional da advocacia, informa o Blog do Elielson, da CBN Recife. O anúncio foi feito na segunda (9), e a posse ocorre nesta terça (10), no Pleno do Palácio da Justiça.'],
+  ['nums',[['41','Votos de Janielly na lista tríplice do Pleno'],['36 e 34','Votos de Leonardo Oliveira e Henrique Seixas'],['7','Desembargadoras no TJPE com a nova nomeação']]],
+  ['h','Como funciona a escolha'],
+  ['p','O quinto constitucional reserva um quinto das vagas dos tribunais a advogados e membros do Ministério Público. A Ordem dos Advogados forma uma lista, o tribunal a reduz a três nomes, e o chefe do Executivo estadual escolhe um. Janielly foi a mais votada do Pleno, com 41 votos, contra 36 de Leonardo Oliveira e 34 de Henrique Seixas.'],
+  ['h','Quem é quem'],
+  ['p','Raquel Lyra, governadora reeleita no primeiro turno, é do PSD, partido de centro.'],
+  ['h','O que vem agora'],
+  ['p','A posse de Janielly no Pleno do TJPE, nesta terça, e a distribuição de processos ao seu gabinete.'],
+  ['h','O que ainda não está confirmado'],
+  ['ul',['O gabinete e a câmara em que ela atuará.','A data exata em que a vaga foi aberta.']]
+ ],
+ upd:'Entram a escolha de Janielly Nunes e Silva e o resultado da lista tríplice.',
+ fontes:[['CBN Recife, Blog do Elielson (nova desembargadora do TJPE)','https://www.cbnrecife.com/blogdoelielson/2026/11/10/raquel-lyra-anuncia-janielly-nunes-como-nova-desembargadora-do-tjpe/']]};
+
+/* --- Capa, ordem, Giro --- */
+HOME_LEAD = 'mercado_10_11';
+HOME_ROW = ['ucrania_abudhabi','fiscal','agenda_semana'];
+var _mv15=function(arr,ids,pos){var r=arr.filter(function(i){return ids.indexOf(i)<0;});return r.slice(0,pos).concat(ids,r.slice(pos));};
+ORDER.politica = _mv15(ORDER.politica,['lula_antalia_comitiva','maioridade_audiencias'],1);
+ORDER.economia = _mv15(ORDER.economia,['mercado_10_11','petrobras_balanco','combustiveis_decreto'],1);
+ORDER.mundo = _mv15(ORDER.mundo,['ucrania_abudhabi','espanha_eleicao','peru_fujimori','bolivia_urquidi'],1);
+ORDER.regioes = ['pe_tjpe'].concat(ORDER.regioes);
+GIRO = [
+ ['Dólar a R$ 5,60','O dólar comercial subia 1,79%, a R$ 5,603, às 12h54, e o Ibovespa caía 0,30%, segundo o Agora Litoral.','Agora Litoral','https://agoralitoral.com.br/2026/11/10/ibovespa-vira-e-cai-com-ata-do-copom-e-avanco-do-dolar/','','mercado_10_11'],
+ ['Vale rebaixada','O Itaú BBA cortou a Vale para neutra e o preço-alvo do ADR de US$ 18 para US$ 14, informa a Exame.','Exame','https://exame.com/invest/mercados/ibovespa-tenta-emplacar-nova-alta-mas-vale-e-petrobras-pesam-dolar-sobe-mais-de-1/','','mercado_10_11'],
+ ['Dividendos da Petrobras','Itaú BBA projeta até US$ 4,2 bilhões em dividendos no 3º trimestre, segundo o InfoMoney.','InfoMoney','https://www.infomoney.com.br/mercados/petrobras-pode-pagar-ate-us-42-bilhoes-em-dividendos-no-3o-trimestre/','','petrobras_balanco'],
+ ['Gasolina sem PIS/Cofins','O decreto 13.159 prorrogou a alíquota zero até 9 de dezembro, informa a Eixos.','Eixos','https://eixos.com.br/combustiveis-e-bioenergia/governo-mantem-tributos-da-gasolina-zerados-e-subsidio-ao-etanol-por-mais-30-dias/','','combustiveis_decreto'],
+ ['Lula sem aliados','A comitiva de Antália não inclui Camilo Santana, Rui Costa, Rafael Fonteles nem Haddad, informa O Povo.','O Povo','https://www.opovo.com.br/noticias/politica/2026/11/09/lula-nao-leva-aliados-da-campanha-a-turquia-frustrando-expectativa-de-montagem-do-governo.html','','lula_antalia_comitiva'],
+ ['Maioridade em audiência','A comissão especial da PEC ouve convidados na terça e na quarta, às 14h30, segundo o ND Mais.','ND Mais','https://ndmais.com.br/politica/maioridade-penal-congresso-debate-reducao-nesta-semana/','','maioridade_audiencias'],
+ ['Abu Dhabi, dia 1','Kushner diz que as partes estreitaram diferenças, informa a CBS News.','CBS News','https://www.cbsnews.com/news/us-russia-ukraine-war-talks-peace-abu-dhabi-deal/','','ucrania_abudhabi'],
+ ['Eleição na Espanha','O país vota em 29 de novembro, com PP e Vox perto da maioria absoluta, informa a Infobae.','Infobae','https://www.infobae.com/espana/2026/11/09/elecciones-generales-29-n-en-directo-feijoo-confia-en-que-los-sindicatos-acepten-el-resultado-electoral-si-hay-cambio-de-gobierno/','','espanha_eleicao'],
+ ['Keiko e o papa','Fujimori viaja à China e ao Japão de 15 a 21/11, e Galarreta nega desfeita, informa a Infobae.','Infobae','https://www.infobae.com/peru/2026/11/10/luis-galarreta-niega-desplante-de-keiko-fujimori-al-papa-leon-xiv-ella-lamenta-no-estar-hasta-el-final/','','peru_fujimori'],
+ ['Primeira-dama da Bolívia','O Ministério Público arquivou a terceira denúncia contra María Elena Urquidi, informa a Infobae.','Infobae','https://www.infobae.com/america/america-latina/2026/11/10/fiscalia-de-bolivia-desestima-denuncia-penal-contra-la-primera-dama-y-un-ministro-por-los-audios-de-cerimedo/','','bolivia_urquidi'],
+ ['Nova desembargadora','Raquel Lyra nomeia Janielly Nunes e Silva para o TJPE, informa a CBN Recife.','CBN Recife','https://www.cbnrecife.com/blogdoelielson/2026/11/10/raquel-lyra-anuncia-janielly-nunes-como-nova-desembargadora-do-tjpe/','','pe_tjpe']
+].concat(GIRO.filter(function(g){return ['Ata do Copom','CPI dos EUA','Fechamento do Ibovespa','Abu Dhabi','Pauta do Senado'].indexOf(g[0])<0;}).slice(0,9));
+
+
+/* --- Aposentada e atualizações de pautas paradas --- */
+S.ibov_semana.velha = true; S.ibov_semana.velhaMotivo = 'superada por mercado_10_11';
+S.fiscal.hora = '10/11';
+S.fiscal.resumo = S.fiscal.resumo + ' Na terça (10), o governo prorrogou até 9/12 a alíquota zero de PIS/Cofins sobre a gasolina, sem informar o custo.';
+S.fiscal.upd = 'Entram o decreto 13.159/2026, que prorroga até 9/12 a desoneração da gasolina sem informar o custo, e a reunião de Durigan com deputados às 15h desta terça.';
+_insAntes('fiscal','O que vem agora',[
+ ['h','A prorrogação da desoneração dos combustíveis'],
+ ['p','O decreto 13.159/2026, publicado em edição extra do Diário Oficial da União na noite de segunda (9), prorroga até 9 de dezembro a alíquota zero de PIS/Pasep e Cofins sobre a gasolina e da Cide-Combustíveis, e mantém o subsídio de R$ 0,428 por litro ao etanol hidratado, informa a Eixos. O governo não divulgou o custo; uma estimativa de R$ 3,6 bilhões em 30 dias se refere ao pacote de gasolina e etanol de outubro. A medida chega enquanto a meta fiscal de 2026 é tida como inalcançável pelo próprio ministro da Fazenda.'],
+ ['p','Na agenda desta terça, o ministro Dario Durigan assina às 11h50, de forma virtual, um memorando tributário com a Espanha e recebe deputados federais às 15h, segundo o Money Times. As propostas de ajuste, que ele e o ministro do Planejamento, Bruno Moretti, preparam, só são entregues a Lula depois da volta, em 16 de novembro. A Instituição Fiscal Independente do Senado projeta déficit primário de 0,5% do PIB em 2026, e a dívida bruta está em 82,9% do PIB, o que mantém a cobrança do mercado por medidas de corte de gastos e de arrecadação antes do Orçamento de 2027.']
+]);
+S.fiscal.fontes.unshift(['Eixos (tributos da gasolina zerados por mais 30 dias)','https://eixos.com.br/combustiveis-e-bioenergia/governo-mantem-tributos-da-gasolina-zerados-e-subsidio-ao-etanol-por-mais-30-dias/'],['Money Times (agenda de 10/11)','https://www.moneytimes.com.br/investidores-aguardam-ata-do-copom-em-dia-de-inflacao-nos-eua-ibovespa-em-dolar-sobe-nesta-terca-feira-10-rens/']);
+S.agenda_semana.hora = '10/11';
+S.agenda_semana.resumo = S.agenda_semana.resumo + ' Entram a MP 1.394/2026 das apostas e a audiência de Moretti na CMO na quarta (11).';
+S.agenda_semana.upd = 'Entram a MP 1.394/2026 das apostas de cota fixa e a audiência de Moretti na CMO na quarta (11), com o calendário da LDO e da LOA de 2027.';
+_insAntes('agenda_semana','O que vem agora',[
+ ['h','As MPs e o Orçamento na semana'],
+ ['p','O ND Mais informa que o senador Randolfe Rodrigues (PT-AP) tenta instalar nesta semana a comissão mista da MP 1.394/2026, que proíbe as apostas de cota fixa, e que a Comissão Mista de Orçamento ouve na quarta (11) o ministro Bruno Moretti sobre a LDO e a LOA de 2027. A LDO deve ser votada na comissão até 9 de dezembro, e o Orçamento, em 16 de dezembro, com plenário em 17 de dezembro.'],
+ ['p','As audiências da PEC da maioridade penal, às 14h30 de terça e de quarta, e a reunião de líderes com o presidente da Câmara, Hugo Motta (Republicanos-PB), para definir a pauta completam a semana. No STF, a quarta (11) tem julgamentos sobre o artigo 181 do Código Penal e o piso dos professores paulistas.']
+]);
+S.agenda_semana.fontes.unshift(['ND Mais (agenda do Congresso na semana)','https://ndmais.com.br/politica/maioridade-penal-congresso-debate-reducao-nesta-semana/'],['Bahia Notícias (semana com Lula na Turquia e 6x1 no STF)','https://www.bahianoticias.com.br/noticia/323472-semana-tem-lula-em-compromissos-na-turquia-e-filipinas-divulgacao-da-inflacao-e-debate-sobre-jornada-6x1-no-stf']);
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","israel":"atualizada","ira_proposta_catar":"atualizada","ueno_bank":"atualizada","lula_equipe_eco":"atualizada","ministerio_40":"atualizada","ucrania_energia":"atualizada","ucrania_abudhabi":"atualizada","nz_eleicao":"atualizada","mercado_semana":"atualizada","tse_21_acoes":"atualizada","lula_fala_nacao":"atualizada","senado_pauta_10_11":"atualizada","lula_sri_centrao":"atualizada","copom_ata":"novo","mercado_10_11":"novo","paraguai_cupula":"novo","pena_cofre":"novo","mt_loa_retirada":"novo","df_celina_ajuste":"novo","ba_metro_alstom":"novo","ce_alece_pl":"novo","al_ceasa":"novo","sp_obras_superfaturamento":"novo","to_pm_comando":"novo"};
-var GIRO_FLAGS = {"Ata do Copom":"novo","CPI dos EUA":"novo","Cofre de Peña":"novo","Cúpula militar":"novo","Abu Dhabi":"novo","Knesset":"novo","LOA de Mato Grosso":"novo","Ajuste no DF":"novo","Metrô de Salvador":"novo","Pauta do Senado":"atualizada"};
+var FLAGS = {"fiscal":"atualizada","ucrania_abudhabi":"atualizada","agenda_semana":"atualizada","mercado_10_11":"atualizada","petrobras_balanco":"novo","combustiveis_decreto":"novo","lula_antalia_comitiva":"novo","maioridade_audiencias":"novo","espanha_eleicao":"novo","peru_fujimori":"novo","bolivia_urquidi":"novo","pe_tjpe":"novo"};
+var GIRO_FLAGS = {"Dólar a R$ 5,60":"novo","Vale rebaixada":"novo","Dividendos da Petrobras":"novo","Gasolina sem PIS/Cofins":"novo","Lula sem aliados":"novo","Maioridade em audiência":"novo","Abu Dhabi, dia 1":"novo","Eleição na Espanha":"novo","Keiko e o papa":"novo","Primeira-dama da Bolívia":"novo","Nova desembargadora":"novo"};
 /* ===== FIM DOS DADOS ===== */
