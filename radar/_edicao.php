@@ -9615,7 +9615,824 @@ S.bets_stf.upd = 'Entra a tentativa de instalar nesta semana a comissão mista d
 _insAntes('bets_stf','O que vem agora',[['h','A comissão mista da MP'],['p','O ND Mais informa que o senador Randolfe Rodrigues (PT-AP) tenta instalar nesta semana a comissão mista da MP 1.394/2026, que proíbe as apostas de cota fixa, enquanto a suspensão dos processos pelo ministro Luiz Fux segue valendo até o julgamento das ações diretas no STF.']]);
 S.bets_stf.fontes.unshift(['ND Mais (agenda do Congresso na semana)','https://ndmais.com.br/politica/maioridade-penal-congresso-debate-reducao-nesta-semana/']);
 
+
+/* ===== EDIÇÃO 07h de 11/11 ===== */
+EDICAO.hora = '07h';
+EDICAO.data = 'Quarta, 11 de novembro de 2026';
+function _F(s){ var out=[], ul=null; s.split('\n').forEach(function(l){ l=l.trim(); if(!l) return;
+  if(l.indexOf('## ')===0){ ul=null; out.push(['h',l.slice(3)]); }
+  else if(l.indexOf('- ')===0){ if(!ul){ ul=[]; out.push(['ul',ul]); } ul.push(l.slice(2)); }
+  else if(l.indexOf('NUMS ')===0){ ul=null; out.push(['nums',l.slice(5).split(';').map(function(x){return x.split('|');})]); }
+  else if(l.indexOf('TL ')===0){ ul=null; out.push(['tl',l.slice(3).split(';').map(function(x){return x.split('|');})]); }
+  else { ul=null; out.push(['p',l]); } }); return out; }
+function _N(id, o){ o.fundo=_F(o.fundo); S[id]=o; }
+function _U(id, o){ o.fundo=_F(o.fundo); var a=S[id]; Object.keys(o).forEach(function(k){ a[k]=o[k]; }); delete a.velha; delete a.velhaMotivo; }
+function _top(lista, ids){ var r=ids.concat(lista.filter(function(i){return ids.indexOf(i)<0;})); return r; }
+
+/* --- Política --- */
+_U('dino_6x1', {hora:'10/11',
+ t:'Dino encerra a audiência sobre a escala 6x1 sem acordo, mantém o calendário de 16 de dezembro e anuncia decisão sobre as regras de transição para sexta (13)',
+ sub:'A decisão será levada ao plenário do STF, e o presidente da Corte, Edson Fachin, fixa a data; o decreto de Lula sobre a regulamentação fica para depois do retorno da Turquia, por volta de 16 de novembro.',
+ dado:{n:'16/12/2026', l:'Jornada cai de 44 para 42 horas, mesmo sem acordo coletivo · Revista Fórum'},
+ resumo:'O ministro Flávio Dino encerrou na terça (10) a audiência de conciliação sobre a escala 6x1 sem acordo entre confederações patronais, centrais sindicais e governo. Segundo a Revista Fórum, a decisão com as regras de transição sai até sexta (13) e vai ao plenário do STF. Dino manteve a jornada de 42 horas a partir de 16/12 e disse que não pode flexibilizar a emenda; convenções coletivas poderão ajustar a compensação das folgas. A CNI pede mais um ano, e a CNC, adiar para outubro de 2027. O decreto do governo espera a volta de Lula.',
+ fundo:`O ministro Flávio Dino, do Supremo Tribunal Federal (STF), encerrou na terça (10) a audiência de conciliação sobre o fim da escala 6x1 sem acordo entre confederações patronais, centrais sindicais e governo, e disse que decidirá as regras de transição até sexta (13), segundo a Revista Fórum. A jornada cai de 44 para 42 horas semanais em 16 de dezembro, com ou sem acordo coletivo, e o texto vai ao plenário da Corte.
+NUMS 16/12/2026|Primeira etapa: jornada de 44 para 42 horas;dez/2027|Etapa de 40 horas, cerca de 12 meses depois;24 h|Prazo dado por Dino para manifestações complementares;1 ano|Adaptação adicional pedida pela CNI
+## Quem é quem
+Flávio Dino, ministro do STF, é ex-PSB, hoje sem partido, de perfil próximo ao governo, e relata as ações diretas 8.041, da Confederação Nacional do Comércio (CNC), e 8.042, da Confederação Nacional da Indústria (CNI). CNC e CNI representam o patronato e contestam o prazo, não o princípio da redução, segundo o Terra. As centrais sindicais, de esquerda e centro-esquerda, defendem o calendário da emenda. Luiz Marinho (PT), ministro do Trabalho, é o interlocutor do governo, que o PT lidera.
+A emenda foi promulgada em 16 de outubro pelo Congresso. O Planalto prepara um decreto de regulamentação, e Edson Fachin preside o STF e fixa a pauta do plenário.
+## O que Dino decidiu e o que deixou aberto
+Dino disse que não pode flexibilizar uma emenda constitucional: "Não se cuida de flexibilizar emenda constitucional, porque isto é impossível a mim", registra o Vermelho. O limite de 42 horas vale em 16 de dezembro mesmo sem acordo coletivo. Por outro lado, empresas e trabalhadores concordaram em deixar convenções coletivas ajustarem o prazo de compensação das folgas de categorias diferenciadas, como trabalhadores embarcados, e em estender o regime especial a empregados de estatais econômicas, informa a Revista Fórum.
+A CNN Brasil já havia registrado que o ministro sinalizava uma decisão para esclarecer que o limite de descanso pode ser distribuído por negociação coletiva, porque a emenda "induz à rigidez" na marcação das duas folgas semanais.
+## O que pedem as confederações
+A CNC pede que a transição comece em outubro de 2027 e que as 40 horas cheguem em outubro de 2028; segundo o Terra, a entidade não se opõe ao mérito, só ao prazo, que cai no pico das vendas de Natal. Quer ainda excluir micro e pequenas empresas e contratos em vigor. A CNI pede ao menos um ano a mais, alegando o tempo de treinamento de substitutos, e estima alta de 11% no custo da hora de trabalho, segundo a Exame.
+Ronaldo Leite, secretário-geral da CTB, disse que os trabalhadores não querem adiar e que Dino não pretende estender o prazo indefinidamente. As ações das confederações atrasaram mesas de negociação em curso, segundo a Revista Fórum.
+## O decreto e o atrito com Marinho
+O decreto previsto para segunda (9) foi adiado para depois da volta de Lula da Turquia, por volta de 16 de novembro. Marinho disse que ele não listará setores; categorias com regime próprio, como aeronautas, vigilantes, médicos plantonistas, petroleiros e parte do agro, precisam de lei específica, informa o Terra. Dino respondeu às críticas à admissão das ações dizendo que as entidades têm direito de questioná-las e que o STF "vai continuar a se meter, porque há uma demanda social", segundo o Congresso em Foco.
+## O que vem agora
+- Até sexta (13): decisão de Dino sobre as regras de transição, com 24 horas para manifestações complementares.
+- Semana de 16/11: pedido de pauta ao presidente Fachin, que decide data e formato (presencial ou virtual).
+- Por volta de 16/11: Lula volta da Ásia, e o governo assina o decreto.
+- 16/12/2026: jornada de 42 horas, se o plenário não alterar o calendário.
+## O que ainda não está confirmado
+- A data exata da decisão: a Revista Fórum aponta sexta (13); o Vermelho escreveu "sexta, 16/11", data que não bate com o calendário, e o Radar usa 13/11 com essa ressalva.
+- O teor final do despacho e se o plenário aceitará algum adiamento antes de 16 de dezembro.
+- A data do decreto do governo.`,
+ upd:'Dino anuncia decisão sobre as regras de transição até sexta (13), mantém 16/12 e diz que não pode flexibilizar a emenda; convenções coletivas poderão ajustar a compensação das folgas.',
+ fontes:[['Revista Fórum (Dino e as regras de transição)','https://revistaforum.com.br/politica/dino-regras-transicao-fim-escala-6x1'],['Terra (empresas pedem adiamento e Dino reforça constitucionalidade)','https://www.terra.com.br/economia/escala-6x1-empresas-pedem-adiamento-da-implementacao-da-reducao-de-jornada-e-dino-reforca-que-medida-aprovada-e-plenamente-constitucional,e67daa46a05e40ef7faf26b608ac7f88w0olfjxs.html'],['Vermelho (Dino mantém o fim da 6x1)','https://vermelho.org.br/2026/11/10/flavio-dino-mantem-fim-da-escala-6x1-e-divulga-prazos-para-implementacao-na-pr0xima-sexta/'],['Exame (CNI pede mais prazo)','https://exame.com/brasil/fim-da-6x1-cni-pede-mais-prazo-para-nova-jornada-e-dino-preve-julgamento-no-stf-antes-de-dezembro/'],['CNN Brasil (Dino sinaliza flexibilização das folgas)','https://cnnbrasil.com.br/politica/dino-sinaliza-flexibilizacao-na-distribuicao-de-folgas-apos-fim-da-6x1'],['Congresso em Foco (Dino rebate críticas)','https://www.congressoemfoco.com.br/noticia/131470/dino-rebate-criticas-por-stf-discutir-escala-6x1--alguem-pediu']]});
+
+_N('escazu_cre', {ed:'politica', k:'Política · Senado', hora:'10/11',
+ t:'Senado adia a votação do Acordo de Escazú e manda o texto à Comissão de Relações Exteriores, mesmo com o pedido do governo para votar',
+ sub:'A relatora, Teresa Leitão (PT-PE), deu parecer favorável; Tereza Cristina (PP-MS) pediu análise aprofundada, e Davi Alcolumbre submeteu o requerimento ao Plenário.',
+ dado:{n:'13 países', l:'Ratificaram o Acordo de Escazú; o Brasil assinou em 2018 · Agência Senado'},
+ resumo:'O PDL 934/2025, que aprova a adesão do Brasil ao Acordo de Escazú, estava na pauta do Plenário do Senado na terça (10) e não foi votado. A senadora Tereza Cristina (PP-MS) apresentou o RQS 753/2026 pedindo análise mais aprofundada, e o presidente Davi Alcolumbre (União-AP) levou o texto à Comissão de Relações Exteriores, apesar do pedido do governo por votação, informa a Agência Senado. A relatora, Teresa Leitão (PT-PE), já dera parecer favorável. A CRE se reúne na terça (17).',
+ fundo:`O Senado não votou na terça (10) o PDL 934/2025, que aprova a adesão do Brasil ao Acordo de Escazú, tratado regional sobre acesso à informação e proteção de defensores ambientais, e mandou o texto à Comissão de Relações Exteriores (CRE) depois de requerimento da senadora Tereza Cristina (PP-MS), informa a Agência Senado. O presidente da Casa, Davi Alcolumbre (União-AP), submeteu o pedido ao Plenário e disse entender a "sensibilidade do assunto", mesmo com o governo pedindo a votação.
+## O que o acordo prevê e por que o tema é sensível
+O Acordo de Escazú foi assinado pelo Brasil em 2018 e está em vigor desde 2021, com 13 países que o ratificaram. É o primeiro tratado ambiental da América Latina e do Caribe com cláusulas específicas para defensores ambientais, em uma região apontada como a mais violenta do mundo para esse grupo, segundo a relatora. A Câmara aprovou o PDL em 2025, e o Senado o recebeu em 12 de novembro do ano passado; a urgência (Requerimento 847/2025) estava pendente.
+## Quem pediu mais debate
+Tereza Cristina, ex-ministra da Agricultura e do PP, partido de centro-direita ligado ao agro, apresentou o RQS 753/2026 pedindo análise aprofundada. O presidente da CRE, Nelsinho Trad (PSD-MS), concordou com o envio do texto ao colegiado. A relatora, Teresa Leitão (PT-PE), líder do governo no Senado, já havia dado parecer favorável; governo e PT defendem a adesão, e a Agência Senado deixa claro que Alcolumbre submeteu o adiamento apesar do pedido do Executivo, informa também o Brasil em Folhas. O teor das objeções de Tereza Cristina não foi detalhado.
+## O que vem agora
+A CRE se reúne na terça (17) e deve anunciar a data de uma audiência pública sobre o tema. Só depois o texto volta ao Plenário, onde precisa de maioria simples para ser aprovado e ir à promulgação. O Congresso em Foco registra que a pauta da semana também incluía o Estatuto do Aprendiz e proteção a ambientalistas, e que o item mais sensível foi o que ficou de fora.
+## O que ainda não está confirmado
+- O placar da votação do requerimento: a página oficial da matéria mostra apenas a tramitação.
+- A nova data de votação em Plenário.
+- O conteúdo das objeções do agro ao texto.`,
+ fontes:[['Agência Senado (adesão a acordo será analisada pela CRE)','https://www12.senado.leg.br/noticias/materias/2026/11/10/adesao-do-brasil-a-acordo-contra-crimes-ambientais-sera-analisada-pela-cre'],['Brasil em Folhas (Senado adia votação de Escazú)','https://brasilemfolhas.com.br/2026/11/senado-adia-votacao-de-adesao-do-brasil-ao-acordo-de-escazu/'],['Congresso em Foco (pauta do Senado)','https://www.congressoemfoco.com.br/noticia/131403/pauta-do-senado-tem-estatuto-do-aprendiz-e-protecao-a-ambientalistas']]});
+
+_N('mps_rurais_exportadores', {ed:'politica', k:'Política · Câmara', hora:'10/11',
+ t:'Câmara aprova as MPs das dívidas rurais e do crédito a exportadores atingidos pelo tarifaço; a primeira perde a validade nesta quarta (11) se o Senado não votar',
+ sub:'A MP 1.376/2026 renegocia dívidas do campo com juros de 6% a 12% ao ano; a MP 1.379/2026 eleva o limite do Plano Brasil Soberano de R$ 15 bilhões para R$ 28,5 bilhões.',
+ dado:{n:'R$ 28,5 bi', l:'Novo limite de financiamento do Plano Brasil Soberano · Congresso em Foco'},
+ resumo:'A Câmara aprovou na terça (10), por votação simbólica, a MP 1.376/2026, que renegocia dívidas rurais, com relatoria de Paulo Pimenta (PT-RS), e a MP 1.379/2026, que amplia o Plano Brasil Soberano para exportadores atingidos pelas tarifas dos EUA. A primeira vence em 11/11 e, sem votação no Senado, perde a eficácia; a segunda tem prazo até 18/11. A MP do crédito eleva o limite de R$ 15 bi para R$ 28,5 bi, com até R$ 13,5 bi em crédito subsidiado.',
+ fundo:`A Câmara aprovou na noite de terça (10), por votação simbólica, a Medida Provisória 1.376/2026, que renegocia dívidas de produtores rurais, e a MP 1.379/2026, que amplia o crédito a exportadores atingidos pelas tarifas dos Estados Unidos, informa o Congresso em Foco. O Senado precisa votar a primeira até quarta (11), quando ela perde a validade, e a segunda até 18 de novembro.
+## A renegociação das dívidas rurais
+Todos os partidos orientaram a favor da MP 1.376, relatada por Paulo Pimenta (PT-RS), líder do governo na Câmara. O governo a editou em julho. A regra geral vale para quem teve perdas em ao menos duas safras entre 2019 e 2025, com queda de renda de pelo menos 30% (25% em áreas da Sudam, da Sudene e da Sudeco). Os limites de crédito são de R$ 400 mil para a agricultura familiar, R$ 2 milhões no Pronamp e R$ 4 milhões para os demais, com juros de 6% a 12% ao ano e prazo de até oito anos, com a primeira amortização após dois anos.
+Uma regra mais favorável alcança quem perdeu 40% da renda em três safras: limite de até R$ 8 milhões, juros de 5% a 11% ao ano e prazo de até dez anos. A União pode entrar em fundo garantidor para eventos climáticos. Sem alteração no Senado, o texto vai à sanção; com alteração, volta à Câmara; sem votação, perde a eficácia.
+## O crédito aos exportadores
+A MP 1.379/2026, do Plano Brasil Soberano, foi aprovada também por votação simbólica e unânime. O limite de financiamento federal sobe de R$ 15 bilhões para R$ 28,5 bilhões, com até R$ 13,5 bilhões em crédito subsidiado a exportadores atingidos pelo tarifaço e a fornecedores, e até R$ 5 bilhões de recursos próprios do BNDES na terceira etapa. A relatora é a senadora Leany Lemos (PSB-DF), que retirou a exigência de que o valor extra viesse apenas de retornos de empréstimos anteriores.
+As duas primeiras etapas aprovaram mais de R$ 27 bilhões em mais de 1.700 operações, e a terceira chegou a cerca de R$ 7,7 bilhões em mais de 560 operações, informa o Congresso em Foco. As tarifas dos EUA cobrem cerca de 23,1% das exportações brasileiras ao país, e as vendas somaram US$ 17,4 bilhões no primeiro semestre, queda de 13%.
+## O que vem agora
+O Senado tem a pauta apertada: a MP 1.376 vence nesta quarta (11), e a MP 1.379, em 18 de novembro. A Agência Câmara informa que a comissão mista já havia aprovado a terceira edição do plano.
+## O que ainda não está confirmado
+- Se o Senado votou a MP 1.376 em 11/11 e se alterou o texto.
+- Se haverá mudanças de mérito no Senado, onde as MPs ainda precisam passar.`,
+ fontes:[['Congresso em Foco (Câmara aprova MP das dívidas rurais)','https://www.congressoemfoco.com.br/noticia/131483/camara-aprova-mp-da-renegociacao-de-dividas-de-produtores-rurais'],['Congresso em Foco (crédito a exportadores)','https://www.congressoemfoco.com.br/noticia/131485/camara-aprova-credito-a-exportadores-afetados-por-tarifas-dos-eua'],['Agência Câmara (comissão mista aprova plano para exportadores)','https://www.camara.leg.br/noticias/1316545-comissao-mista-aprova-terceira-edicao-de-plano-para-auxiliar-exportadores-atingidos-pelo-tarifaco-norte-americano']]});
+
+_N('nikolas_celulares_senado', {ed:'politica', k:'Política · Senado', hora:'10/11', fonteunica:true,
+ t:'Nikolas Ferreira aciona o TCU e a Justiça contra licitação de celulares do Senado, e Alcolumbre ironiza Zema no Plenário',
+ sub:'O Pregão Eletrônico 290/2026 estima R$ 6,04 milhões em telefonia móvel por 48 meses; o deputado diz que haveria iPhones, o que o edital não confirma.',
+ dado:{n:'R$ 6,04 mi', l:'Valor estimado do Pregão 290/2026 do Senado · Congresso em Foco'},
+ resumo:'O deputado Nikolas Ferreira (PL-MG) anunciou na terça (10) pedido de investigação ao TCU e ação popular contra o Pregão Eletrônico 290/2026 do Senado, de telefonia móvel e celulares em comodato por 48 meses, estimado em R$ 6,04 milhões. No Plenário, Otto Alencar (PSD-BA) criticou vídeo do deputado e Davi Alcolumbre (União-AP) ironizou Romeu Zema (Novo), que teve 0,27% dos votos válidos para presidente. A informação é do Congresso em Foco.',
+ fundo:`O deputado Nikolas Ferreira (PL-MG) anunciou na terça (10) um pedido de investigação ao Tribunal de Contas da União (TCU) e uma ação popular contra o Pregão Eletrônico 290/2026 do Senado, que contrata telefonia móvel e celulares em comodato por 48 meses, com valor estimado em R$ 6,04 milhões, informa o Congresso em Foco.
+## O que o edital prevê
+O pregão trata de 95 linhas com 100 GB e smartphones do tipo 1, 330 linhas com 50 GB e smartphones do tipo 2, 100 linhas de dados com modem e 150 chips de 40 GB, num total de 425 smartphones. Nikolas afirma em vídeo que os 95 aparelhos de topo seriam "iPhone 18 Pro" e chama o caso de "atentado à moralidade administrativa". O texto do edital, segundo o Congresso em Foco, não fala em compra direta pelo Senado nem confirma o modelo. O Senado justifica a contratação pela conectividade de parlamentares e servidores.
+## A reação no Plenário
+Às 19h01, no Plenário do Senado, Otto Alencar (PSD-BA) criticou um vídeo de Nikolas gravado em Luís Eduardo Magalhães (BA). Davi Alcolumbre (União-AP) ironizou Romeu Zema (Novo), lembrando o vídeo da banana com casca de fevereiro de 2025: "teve 0,27%" para presidente, e chamou o ex-governador de "espoca urna". Zema teve 326.488 votos no primeiro turno, 0,27% dos válidos, em sexto lugar. A fala de Alcolumbre é crítica e personalizada, e o Congresso em Foco não registra resposta de Zema nem de Nikolas.
+## O que vem agora
+O TCU decide se abre apuração sobre o pregão; a ação popular depende de protocolo na Justiça Federal. PL e Novo, de direita, fazem oposição ao governo Lula, e Alcolumbre e Otto Alencar integram a base governista no Senado, o que dá ao caso o tom de embate entre os dois campos.
+## O que ainda não está confirmado
+- Se o TCU abrirá apuração.
+- Se a ação popular foi protocolada: a reportagem fala em "aciona", sem número de processo.
+- O modelo dos aparelhos que o Senado vai contratar.`,
+ fontes:[['Congresso em Foco (Nikolas aciona Justiça contra licitação)','https://www.congressoemfoco.com.br/noticia/131461/nikolas-aciona-justica-contra-licitacao-de-iphones-para-o-senado'],['Congresso em Foco (Alcolumbre ironiza vídeo de Zema)','https://www.congressoemfoco.com.br/noticia/131484/alcolumbre-ironiza-video-de-zema-comendo-banana--teve-0-27']]});
+
+_N('dallagnol_tse_pauta', {ed:'politica', k:'Política · TSE', hora:'10/11', fonteunica:true,
+ t:'Recurso contra o registro de Deltan Dallagnol está há mais de um mês fora da pauta do TSE, e a diplomação do senador eleito pelo Paraná é em 18 de dezembro',
+ sub:'O relator, Floriano de Azevedo Marques, mandou indeferir o registro na véspera do primeiro turno; o presidente Kassio Nunes Marques suspendeu a decisão e disse que o plenário deve decidir.',
+ dado:{n:'18/12', l:'Diplomação prevista; o julgamento do registro não tem data · Congresso em Foco'},
+ resumo:'O recurso que pode invalidar a eleição de Deltan Dallagnol (Novo) ao Senado pelo Paraná saiu da pauta do TSE em 8/10 e não voltou, informa o Congresso em Foco. O relator, Floriano de Azevedo Marques, mandou indeferir o registro na véspera do primeiro turno, e o presidente da Corte, Kassio Nunes Marques, suspendeu a decisão. A diplomação é em 18/12; sem julgamento, Dallagnol pode ser diplomado sem garantia de permanência.',
+ fundo:`O julgamento do recurso que pode invalidar a eleição de Deltan Dallagnol (Novo) ao Senado pelo Paraná está há mais de um mês fora da pauta do Tribunal Superior Eleitoral (TSE) e não tem nova data, informa o Congresso em Foco. Dallagnol foi eleito em segundo lugar e segue com o registro sub judice; a diplomação está prevista para 18 de dezembro.
+## O que está em julgamento
+O recurso é da federação PT-PCdoB-PV e do PDT contra a decisão do Tribunal Regional Eleitoral do Paraná que autorizou a candidatura. O relator, ministro Floriano de Azevedo Marques, mandou indeferir o registro na véspera do primeiro turno. No dia da votação, o presidente do TSE, Kassio Nunes Marques, suspendeu essa decisão e disse que o plenário deve decidir o caso. Os votos foram contados, e a eleição é provisoriamente válida. O processo saiu da pauta em 8 de outubro e não voltou.
+## Os argumentos
+A federação sustenta que a inelegibilidade de 2023, quando o TSE cassou o registro de Dallagnol como deputado federal, por unanimidade e com relatoria de Benedito Gonçalves, vale até 2029. A defesa diz que a decisão se restringiu à eleição de 2022. O Ministério Público Eleitoral opinou pela manutenção do registro. Novo é partido de direita liberal; PT e PDT estão à esquerda e ao centro-esquerda.
+## O que vem agora
+Sem decisão até 18 de dezembro, Dallagnol pode ser diplomado "sem garantia de permanência", como em 2023, e o plenário ainda poderia anular os votos depois. Quem decide a data é o presidente Nunes Marques, e o relator é Floriano de Azevedo Marques.
+## O que ainda não está confirmado
+- A nova data de julgamento.
+- Se a decisão do plenário será antes ou depois da diplomação.
+- O alcance da inelegibilidade de 2023, ponto central da disputa entre as partes.`,
+ fontes:[['Congresso em Foco (julgamento de Dallagnol fora da pauta)','https://www.congressoemfoco.com.br/noticia/131463/julgamento-de-dallagnol-ultrapassa-um-mes-fora-da-pauta-do-tse']]});
+
+_N('dino_tecnologia_eleicoes', {ed:'politica', k:'Política · STF', hora:'10/11', fonteunica:true,
+ t:'Dino defende discutir limites ao uso de tecnologia em eleições e diz que os direitos sociais foram os vencedores de 2026',
+ sub:'O ministro falou no 3º Congresso Brasileiro de Direito Parlamentar, no Senado; é opinião, não decisão da Corte.',
+ dado:{n:'Opinião', l:'Fala de Dino no Senado em 10/11, sem decisão do STF · Congresso em Foco'},
+ resumo:'O ministro Flávio Dino, do STF, defendeu na terça (10), no 3º Congresso Brasileiro de Direito Parlamentar, no Senado, que se discutam fronteiras ao uso de tecnologia nos períodos eleitorais, citando decisão do Tribunal Europeu de Direitos Humanos de que os Estados devem impedir interferência tecnológica em eleições. Avaliou que a defesa dos direitos sociais foi a grande vencedora de 2026. A informação é do Congresso em Foco; o texto não registra reação da oposição.',
+ fundo:`O ministro Flávio Dino, do Supremo Tribunal Federal (STF), defendeu na terça (10), no 3º Congresso Brasileiro de Direito Parlamentar, realizado no Senado, que se discuta se há "fronteiras" ao uso de tecnologia nos períodos eleitorais, informa o Congresso em Foco. A fala ocorreu por volta das 17h51 e foi feita como opinião, sem relação com decisão da Corte.
+## O que Dino disse
+O ministro citou decisão do Tribunal Europeu de Direitos Humanos de que os Estados devem impedir a interferência tecnológica em eleições e defendeu que o debate chegue ao Brasil. Avaliou ainda que a defesa dos direitos sociais foi a "grande vencedora" de 2026 e que o eleitor aceitou discutir responsabilidade fiscal sem abrir mão de políticas públicas.
+## Contexto
+Dino relata no STF as ações sobre o fim da escala 6x1 e falou no mesmo evento sobre o tema, ao responder a críticas à atuação da Corte. O debate sobre tecnologia e eleições envolve plataformas, impulsionamento e inteligência artificial, assuntos que o TSE regulamentou nas últimas eleições e que voltam à pauta do Congresso. A direita critica com frequência o que chama de ativismo do STF em temas políticos, e o governo Lula e os partidos de esquerda costumam defender a atuação do tribunal.
+## O que vem agora
+Nenhuma decisão é esperada a partir da fala. O tema pode chegar ao STF em ações sobre regras eleitorais ou ao Congresso em projetos de regulação de plataformas.
+## O que ainda não está confirmado
+- Reações da oposição e de outros ministros.
+- Se Dino pretende levar a discussão a um processo específico no STF.`,
+ fontes:[['Congresso em Foco (Dino cobra discussão sobre limites tecnológicos nas eleições)','https://www.congressoemfoco.com.br/noticia/131478/flavio-dino-cobra-discussao-sobre-limites-tecnologicos-nas-eleicoes']]});
+
+_U('maioridade_audiencias', {hora:'10/11',
+ t:'Governo defende na comissão da Câmara reduzir a maioridade penal só para crimes hediondos; relator Mendonça Filho quer parecer até 30 de novembro',
+ sub:'Representantes do Ministério da Justiça falaram na audiência de terça (10); o relator sugere referendo em 2028, e a votação em plenário é esperada no início de dezembro.',
+ dado:{n:'9,8%', l:'Adolescentes internados por homicídio, entre os que cumprem medida privativa de liberdade · Agência Câmara'},
+ resumo:'Na audiência de terça (10) da comissão especial da PEC 32/2015, representantes do Ministério da Justiça e Segurança Pública defenderam reduzir a maioridade penal só para crimes hediondos, informa a Agência Câmara. O relator, Mendonça Filho (PL-PE), quer entregar o parecer até 30/11 e sugeriu referendo popular em 2028; a votação em plenário é esperada no início de dezembro. O vice-líder do governo, Alencar Santana (PT-SP), criticou a redução para 14 anos. A fonte lida não confirma outra audiência na quarta (11).',
+ fundo:`O governo defendeu na terça (10), na comissão especial da Câmara que analisa a PEC 32/2015, a redução da maioridade penal apenas para crimes hediondos, informa a Agência Câmara. O relator, deputado Mendonça Filho (PL-PE), quer entregar o parecer até 30 de novembro, e a votação em plenário é esperada no início de dezembro.
+NUMS 9,8%|Adolescentes internados por homicídio entre os que cumprem medida privativa de liberdade;8 anos|Internação máxima proposta pela Abraminj (hoje o limite é 3);30/11|Meta do relator para o parecer;308|Votos necessários na Câmara
+## O que o governo disse
+Paulo Modesto, secretário de Assuntos Legislativos do Ministério da Justiça e Segurança Pública, afirmou que os adolescentes condenados por homicídio são 9,8% dos que cumprem medida privativa de liberdade. O secretário nacional de Segurança Pública, Chico Lucas, alertou para encarceramento em massa e para o recrutamento de jovens por facções. O governo propõe punir adultos que recrutam menores, revisar prazos de internação no Estatuto da Criança e do Adolescente e reforçar a proteção digital.
+## Quem é quem
+Mendonça Filho é do PL, partido de direita que lidera a oposição a Lula e tem 121 deputados. Guilherme Derrite (PP-SP), de centro-direita, defendeu a redução. Juliana Cardoso (PT-SP) é contra, e o PT, de esquerda, lidera a base do governo. Katy Braun, da Associação Brasileira dos Magistrados da Infância e Juventude (Abraminj), é contra e propõe internação de até oito anos; alertou que o STF pode ver cláusula pétrea na maioridade. Siro Darlan classificou a PEC como "retrocesso".
+O presidente da comissão é Aluísio Mendes (Republicanos-MA). No Senado, Rogério Marinho (PL-RN), líder da oposição, propôs 16 anos como regra e 14 para hediondos, tortura, tráfico, terrorismo e organização criminosa; Camilo Santana (PT-CE) propôs 16 só para hediondos.
+## O relator e a conta de votos
+Mendonça Filho é favorável à redução, quer separar jovens de adultos no sistema e investir em educação integral, e sugeriu referendo popular em 2028. O primeiro vice-líder do governo, Alencar Santana (PT-SP), criticou a redução para 14 anos, informa o Congresso em Foco. A proposta exige 308 votos na Câmara e 49 no Senado. O Senado aprovou em 3 de novembro, por unanimidade, a PEC da Segurança Pública sem a redução, e Alcolumbre decidiu esperar a Câmara antes de retomar o tema.
+## O que vem agora
+Parecer do relator até 30/11, votação na comissão e plenário no início de dezembro; para virar lei, as duas Casas precisam acordar um texto único. O PL decide nesta quarta (11) se apoia a reeleição de Hugo Motta, e a pauta entra na negociação.
+## O que ainda não está confirmado
+- A idade final: o texto da Agência Câmara fala em 16 anos, e a cobertura política fala também em 14.
+- Se há segunda audiência na quarta (11), às 14h30, como indicavam agendas anteriores.
+- A data de votação em plenário.`,
+ upd:'A audiência de 10/11 trouxe a posição do governo (redução só para hediondos), a oposição de entidades de magistrados e a meta de parecer até 30/11.',
+ fontes:[['Agência Câmara (governo defende redução só para crimes hediondos)','https://www.camara.leg.br/noticias/1317996-governo-defende-reducao-da-maioridade-penal-apenas-para-crimes-hediondos'],['Congresso em Foco (vice-líder do governo se opõe a 14 anos)','https://www.congressoemfoco.com.br/noticia/131481/maioridade-penal-vice-lider-do-governo-se-opoe-a-reducao-para-14-anos'],['Correio da Manhã (PEC da Segurança e voto de Flávio)','https://www.correiodamanha.com.br/politica/2026/11/332641-alcolumbre-pode-anular-voto-de-flavio-bolsonaro-registrado-nos-eua.html']]});
+
+_U('lula_antalia_comitiva', {hora:'10/11',
+ t:'Lula discursa na COP31 em Antália e leva o TFFF à pauta, mas a montagem do ministério e a escolha do ministro da Fazenda ficam para depois de 16 de novembro',
+ sub:'A comitiva não inclui Camilo Santana, Rui Costa, Rafael Fonteles e Fernando Haddad; Hugo Motta e Davi Alcolumbre recusaram o convite, e o mercado espera o nome da Fazenda.',
+ dado:{n:'US$ 500 mi', l:'Aporte previsto no TFFF com Noruega, Reino Unido e Holanda · JB'},
+ resumo:'Lula discursa na COP31, em Antália (Turquia), nesta quarta (11), com o Mapa do Caminho sobre fósseis e desmatamento e reunião do TFFF para oficializar US$ 500 milhões, informa o JB. O Congresso em Foco registrou na terça (10) encontro com Erdogan. A comitiva não tem os aliados cotados para o ministério, e Motta e Alcolumbre recusaram o convite, segundo o DGABC. A NeoFeed diz que o mercado espera o titular da Fazenda; as decisões aguardam a volta, em 16/11.',
+ fundo:`O presidente Luiz Inácio Lula da Silva (PT) discursa nesta quarta (11) na cúpula de líderes da COP31, em Antália, na Turquia, levando o Mapa do Caminho para reduzir a dependência de combustíveis fósseis e o desmatamento, e a montagem do ministério do quarto mandato segue sem data, informam o JB e o DGABC. O Congresso em Foco registrou na terça (10) encontro de Lula com o presidente turco, Recep Tayyip Erdogan, a quem convidou para visitar o Brasil.
+NUMS 11 e 12/11|Cúpula de líderes da COP31;US$ 500 mi|Aporte do TFFF com Noruega, Reino Unido e Holanda;15|Líderes que pediram bilaterais, segundo o Itamaraty;16/11|Volta de Lula a Brasília
+## A agenda da viagem
+A abertura foi conduzida por Erdogan e pelo premiê australiano, Anthony Albanese; o Brasil entrega a presidência da conferência à Turquia, e a Austrália conduz as negociações. Segundo o JB e a Tribuna do Sertão, haverá reunião do Fundo Florestas Tropicais para Sempre (TFFF) com Noruega, Reino Unido e Holanda para oficializar US$ 500 milhões, cerca de R$ 2,75 bilhões, e mais de 15 líderes pediram encontros bilaterais, informa o Itamaraty. Em 3 de novembro, o governo apresentou a proposta de reduzir gradualmente os fósseis e zerar o desmatamento até 2030. Depois da Turquia, Lula segue a Manila, nas Filipinas, no dia 13, para a cúpula da Asean, nos dias 14 e 15.
+## Quem foi e quem ficou
+A comitiva, segundo a Secom citada pelo DGABC, tem João Paulo Capobianco (Meio Ambiente), Fernanda Machiaveli (Desenvolvimento Agrário), Alexandre Silveira (Minas e Energia), Márcio Elias Rosa (MDIC), Aloizio Mercadante (BNDES), Celso Amorim (assessor especial) e o deputado André Janones; as fontes divergem sobre o partido dele, Rede-MG para o DGABC e Avante-MG para o SBT News. Ficaram de fora Camilo Santana, Rui Costa, Rafael Fonteles e Fernando Haddad, todos do PT, partido de esquerda que lidera a coalizão. Hugo Motta (Republicanos-PB) e Davi Alcolumbre (União-AP), de centro-direita, foram convidados e decidiram não ir.
+## O mercado e a Fazenda
+A coluna de Angela Bittencourt, na NeoFeed, diz que o mercado espera o nome do titular da Fazenda e teme pressão do PT por uma queda artificial da Selic, hoje em 13,75%, patamar que o Copom manteve na reunião de 4 de novembro; a negociação dos ativos ainda não voltou ao nível anterior à eleição. A coluna lembra que em novembro de 2022 Lula foi à COP do Egito e só depois anunciou Haddad, Tebet e Marina. O DGABC lê a ausência dos aliados como adiamento da montagem do governo.
+## O que vem agora
+Discurso de Lula na cúpula (11 e 12), Manila (13 a 15) e volta em 16/11, quando o governo deve retomar o decreto da escala 6x1 e as decisões sobre ministérios e equipe econômica.
+## O que ainda não está confirmado
+- Nomes de ministros, a criação do Ministério da Segurança Pública e de uma pasta de Comunicação, que a NeoFeed diz que Lula "ventilou".
+- A data de qualquer anúncio.
+- O partido de Janones, em que as fontes divergem.`,
+ upd:'Lula discursa na COP31 com o TFFF e o Mapa do Caminho, encontra Erdogan, e a escolha do ministro da Fazenda e do ministério segue para depois de 16/11.',
+ fontes:[['JB (Lula na COP31, foco em clima e desmatamento)','https://www.jb.com.br/brasil/politica/2026/11/1061494-lula-participa-da-cop31-na-turquia-com-foco-em-clima-e-desmatamento.html'],['DGABC (Lula não leva aliados à Turquia)','https://www.dgabc.com.br/Noticia/4367639/lula-nao-leva-aliados-da-campanha-a-turquia-frustrando-expectativa-de-montagem-do-governo'],['NeoFeed (mercado em modo de espera pelo titular da Fazenda)','https://neofeed.com.br/experts/lula-parte-para-a-turquia-e-deixa-o-mercado-em-modo-de-espera-pelo-titular-da-fazenda/'],['Tribuna do Sertão (Lula defenderá multilateralismo na COP31)','https://www.tribunadosertao.com.br/geral/2026/11/09/1016646-lula-defendera-multilateralismo-na-cop-31-na-turquia'],['Congresso em Foco (Lula e Erdogan)','https://www.congressoemfoco.com.br/noticia/131466/lula-se-encontra-com-erdogan-na-turquia-e-o-convida-a-visitar-o-brasil']]});
+
+/* --- Economia --- */
+_U('petrobras_balanco', {hora:'10/11',
+ t:'Petrobras tem lucro de R$ 39,75 bilhões no 3º trimestre, alta de 21,5%, abaixo da projeção de analistas, e anuncia R$ 15,3 bilhões em proventos',
+ sub:'A divulgação ocorreu na noite de terça (10), e não na quarta, como se esperava; a empresa revisou para cima a projeção de produção e de caixa para 2026, e a teleconferência é nesta quarta.',
+ dado:{n:'R$ 39,75 bi', l:'Lucro líquido do 3T26, +21,5% sobre o 3T25 · Agência Infra'},
+ resumo:'A Petrobras divulgou depois do pregão de terça (10) lucro líquido de R$ 39,75 bilhões no 3º trimestre, alta de 21,5% sobre um ano antes, abaixo dos R$ 44,4 bilhões projetados pela Ativa Investimentos. A receita foi de R$ 169,3 bilhões, e o Ebitda ajustado, de R$ 85,8 bilhões. A empresa anunciou R$ 15,3 bilhões em proventos e produção recorde de 3,512 milhões de barris de óleo equivalente por dia. A teleconferência é nesta quarta (11), e a reação do mercado ainda não é conhecida.',
+ fundo:`A Petrobras divulgou na noite de terça (10), depois do pregão, lucro líquido de R$ 39,75 bilhões no terceiro trimestre de 2026, alta de 21,5% sobre o mesmo período de 2025, e anunciou R$ 15,3 bilhões em proventos, informam a Agência Infra e o Melhor Investimento. O resultado ficou abaixo da projeção da Ativa Investimentos, de R$ 44,4 bilhões, e a divulgação ocorreu um dia antes do que o Radar havia informado.
+NUMS R$ 39,75 bi|Lucro líquido, +21,5% sobre o 3T25;R$ 169,3 bi|Receita, +32,4%;R$ 85,8 bi|Ebitda ajustado, +34,3%;R$ 15,3 bi|Proventos, ou R$ 1,1873 por ação
+## O resultado em números
+A receita chegou a R$ 169,3 bilhões, alta de 32,4%, e o Ebitda ajustado, a R$ 85,8 bilhões, alta de 34,3%. O lucro ajustado, sem eventos extraordinários, foi de R$ 47,9 bilhões, 67,9% maior. A Ativa projetava lucro líquido de R$ 44,4 bilhões e Ebitda de R$ 90,9 bilhões, e o Prévias Broadcast estimava lucro ajustado de US$ 8,82 bilhões, que não é comparável em reais com o dado da empresa. O Brent médio foi de US$ 97 por barril no trimestre, contra US$ 104,52 no anterior, informa a Business Moment.
+## Recordes operacionais e o que pesou
+A produção chegou a 3,512 milhões de barris de óleo equivalente por dia, a de diesel, a 769 mil barris por dia, e as vendas domésticas de derivados, a 1,855 milhão de barris por dia, com as refinarias a 99% da capacidade. O Brent 7% menor, cerca de 140 mil barris por dia exportados que só serão reconhecidos no quarto trimestre, custos de venda de ativos ligados ao contrato da TAG, contingências judiciais e um ganho cambial menor, com o real mais forte, reduziram o lucro, segundo a Agência Infra.
+## Proventos e guidance
+A Petrobras pagará R$ 15,3 bilhões, ou R$ 1,1873 por ação, antes da correção pela Selic. A data de corte é 21 de dezembro, e o pagamento será em duas parcelas, em 22 de fevereiro e 22 de março de 2027; a forma, entre dividendos, juros sobre capital próprio ou ambos, será decidida até 10 de dezembro. A União, controladora, e os minoritários recebem em 2027, sem efeito no caixa de 2026.
+A Business Moment registra revisão do guidance de 2026: produção de 3,3 a 3,4 milhões de barris por dia, ante 3,1 milhões; geração operacional de caixa de US$ 45 bilhões a US$ 50 bilhões, ante US$ 35 bilhões; e investimento em projetos de US$ 24 bilhões a US$ 25,5 bilhões, ante US$ 19,4 bilhões, por câmbio e aceleração de etapas. O capex maior pressiona o fluxo de caixa livre.
+## O que analistas esperam
+A Ativa tem preço-alvo de R$ 44, contra referência de R$ 45,36, ou seja, viés neutro. O Eu Quero Investir e o Investing.com Brasil apontam a divulgação como um dos eventos do dia no mercado, junto com a ata do Copom e a inflação dos EUA.
+## O que vem agora
+A teleconferência com analistas é nesta quarta (11); as fontes divergem entre 11h30 e 13h. A reação das ações no pregão de quarta mostrará se o resultado abaixo da projeção pesa mais do que os proventos. A definição da forma dos proventos vem até 10 de dezembro, e o corte para quem tem direito, em 21 de dezembro. Para o acionista minoritário, o dado relevante é o valor por ação, de R$ 1,1873, e a data de pagamento, que só chega em 2027; para a União, controladora, os proventos entram no caixa do próximo ano fiscal.
+## O que ainda não está confirmado
+- O horário exato da teleconferência.
+- A dívida líquida e a comparação do lucro ajustado em reais com o consenso.
+- Os números do guidance revisado, que a Business Moment traz.
+- Um corte de US$ 500 milhões no quarto trimestre, citado em um título sem detalhe.`,
+ upd:'A Petrobras divulgou o balanço na noite de 10/11: lucro de R$ 39,75 bi (+21,5%), abaixo da projeção, R$ 15,3 bi em proventos e guidance de 2026 revisado.',
+ fontes:[['Agência Infra (Petrobras lucra R$ 39,8 bi no 3T26)','https://agenciainfra.com/blog/petrobras-lucra-r-398-bi-no-3t26-valor-215-maior-em-relacao-ao-3t25/'],['Melhor Investimento (lucro e dividendos do 3T26)','https://melhorinvestimento.net/noticias/petrobras-petr4-lucro-terceiro-trimestre-2026-dividendos'],['Business Moment (produção e proventos)','https://businessmoment.com.br/petrobras-3t26-lucro-producao-proventos/'],['Eu Quero Investir (o que esperar do balanço)','https://euqueroinvestir.com/acoes/o-que-esperar-do-balanco-da-petrobras-no-3t26'],['Investing.com Brasil (Ibovespa e dólar hoje)','https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-ata-do-copom-inflacao-nos-eua-e-balanco-da-petrobras-2121978']]});
+
+_N('cbs_senado_aliquota', {ed:'economia', k:'Economia · Reforma tributária', hora:'10/11',
+ t:'Alíquota de referência da CBS, de 11,3%, chega ao Senado, que tem até 15 de dezembro para se manifestar; sem votação, vale o número do TCU',
+ sub:'O relator na Comissão de Assuntos Econômicos é Eduardo Braga; a CBS começa a ser cobrada em 1º de janeiro de 2027, no lugar de PIS e Cofins.',
+ dado:{n:'11,3%', l:'Alíquota de referência da CBS aprovada pelo TCU em 28/10 · Tax Group'},
+ resumo:'O ofício do Tribunal de Contas da União com a alíquota de referência de 11,3% da CBS chega ao Senado em 10/11, data prevista para a audiência na Comissão de Assuntos Econômicos, com relatoria de Eduardo Braga, informa a Tax Group. O Senado tem até 15/12; se não votar, vale o número do TCU. A CBS substitui PIS e Cofins em 1º/01/2027, com alíquota cobrada de 11,2% em 2027 e 2028; o Imposto Seletivo começa em 2/02/2027. A audiência na CAE não teve resultado confirmado.',
+ fundo:`O Tribunal de Contas da União (TCU) aprovou em 28 de outubro a alíquota de referência de 11,3% da Contribuição sobre Bens e Serviços (CBS), e o ofício chega ao Senado em 10 de novembro, data prevista para a audiência na Comissão de Assuntos Econômicos (CAE), informa a Tax Group. O Senado tem até 15 de dezembro para se manifestar; sem votação, vale o número do TCU.
+## O que está em jogo
+A CBS, tributo federal da reforma tributária, passa a ser cobrada em 1º de janeiro de 2027 e substitui PIS e Cofins. Pela regra de transição, a alíquota efetivamente cobrada em 2027 e 2028 será de 11,2%, ou seja, a referência menos 0,1 ponto percentual. O Imposto Seletivo, sobre bens prejudiciais à saúde e ao meio ambiente, começa em 2 de fevereiro de 2027. O TCU aplicou um redutor de 44,2% para compras da administração direta, autarquias e fundações.
+## O rito no Senado
+O relator da matéria é o senador Eduardo Braga (MDB-AM). Há divergência sobre se os senadores podem alterar o número fixado pelo TCU: a visão majoritária no Executivo é que não. Fontes ouvidas pelo Valor, citadas pela Tribuna do Sertão em texto de 29 de outubro, esperam que o governo defenda os 11,3%, e um analista criticou a alíquota.
+## Efeito prático
+A alíquota de referência é o número que define quanto as empresas pagam de CBS a partir de janeiro e quanto o governo arrecada com o tributo em 2027. A Câmara publicou também uma medida provisória que regulamenta o Imposto Seletivo para 2027, e o Congresso em Foco informou que o Ministério da Fazenda prevê o split payment em 98% das operações entre empresas até outubro de 2027.
+## O que vem agora
+Audiência na CAE e parecer de Braga; manifestação do Senado até 15 de dezembro; início da CBS em 1º de janeiro e do Imposto Seletivo em 2 de fevereiro.
+## O que ainda não está confirmado
+- Se a audiência da CAE ocorreu em 10/11 e o que foi decidido.
+- Se o Senado pode alterar o valor fixado pelo TCU.
+- A posição formal do governo sobre os 11,3%.`,
+ fontes:[['Tax Group (alíquota da CBS de 11,3% e o rito até 1º de janeiro)','https://www.taxgroup.com.br/intelligence/aliquota-da-cbs-de-113-o-rito-ate-1o-de-janeiro-de-2027/'],['Tribuna do Sertão (Ibovespa cai com temor fiscal)','https://tribunadosertao.com.br/geral/2026/10/29/1008945-ibovespa-cai-com-temor-fiscal-e-expectativa-por-balanco-da-vale'],['Congresso em Foco (split payment em 98% das operações B2B)','https://www.congressoemfoco.com.br/noticia/131454/fin-preve-split-payment-em-98-das-operacoes-b2b-ate-outubro-de-2027']]});
+
+_N('braskem_capitalizacao', {ed:'economia', k:'Economia · Empresas', hora:'10/11',
+ t:'Acionistas e credores da Braskem tentam fechar até quarta (11) acordo de capitalização de cerca de US$ 4 bilhões, com prazo-limite em 22 de novembro',
+ sub:'A recuperação extrajudicial cobre cerca de US$ 11 bilhões em dívida; a proposta prevê conversão de US$ 2,8 bilhões em ações, e a Petrobras e a IG4 Capital manteriam o controle.',
+ dado:{n:'US$ 4 bi', l:'Capitalização em negociação entre acionistas e credores · Investing.com Brasil'},
+ resumo:'Acionistas e credores da Braskem tentam fechar até quarta (11) um acordo de capitalização de cerca de US$ 4 bilhões, informa o Investing.com Brasil. A recuperação extrajudicial, pedida em agosto, cobre cerca de US$ 11 bilhões em dívida. Pela proposta, credores convertem US$ 2,8 bilhões em ações e acionistas e terceiros aportam US$ 1,2 bilhão; Petrobras e IG4 manteriam o controle. O prazo-limite é 22/11, e o InvestNews registra que os credores exigem US$ 1,85 bilhão garantido pelos principais acionistas.',
+ fundo:`Acionistas e credores da Braskem tentam fechar até quarta (11) um acordo de capitalização de cerca de US$ 4 bilhões, dentro da recuperação extrajudicial da petroquímica, informa o Investing.com Brasil. O prazo-limite para o acordo é 22 de novembro, mas as fontes esperam um desfecho antes.
+## O que está em negociação
+A recuperação extrajudicial, pedida em agosto, envolve cerca de US$ 11 bilhões em dívida, segundo texto da Bloomberg de 25 de outubro reproduzido pelo InvestNews. A proposta da Braskem prevê que os credores convertam US$ 2,8 bilhões em ações e que acionistas e terceiros aportem US$ 1,2 bilhão em uma oferta de US$ 2,25 bilhões. Os credores aceitam a oferta, mas querem US$ 1,85 bilhão garantido pelos acionistas principais ou por terceiros.
+## Quem é quem
+A Petrobras, estatal controlada pela União, e a IG4 Capital, gestora privada, são os acionistas de referência e manteriam o controle e a gestão da companhia, segundo a proposta. A Petrobras não havia comentado a proposta até a publicação do texto de 25 de outubro.
+## Efeito prático
+A Petrobras, que divulgou balanço na noite de terça (10), é uma das acionistas de referência, e a proposta prevê que ela mantenha o controle ao lado da IG4. A conversão de dívida em ações e o aporte de acionistas e terceiros são os dois pilares da oferta.
+## O que vem agora
+Fim do prazo informal, nesta quarta (11); prazo-limite do acordo em 22 de novembro; e aprovação dos credores para a recuperação extrajudicial.
+## O que ainda não está confirmado
+- Se o acordo foi fechado em 10 ou 11/11.
+- Quem garantirá os US$ 1,85 bilhão exigidos pelos credores.
+- A posição da Petrobras sobre um novo aporte.
+- O impacto do acordo sobre a participação atual dos acionistas de referência.`,
+ fontes:[['Investing.com Brasil (Ibovespa e dólar hoje: Braskem)','https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-ata-do-copom-inflacao-nos-eua-e-balanco-da-petrobras-2121978'],['InvestNews (credores e acionistas da Braskem)','https://investnews.com.br/negocios/credores-acionistas-braskem-acordo/']]});
+
+_N('balancos_10_11', {ed:'economia', k:'Economia · Empresas', hora:'10/11',
+ t:'Embraer sobe 6,5% e Magalu avança mais de 5% com balanços; Hapvida cai 6,5%, Renner recua 5,1% e Vale perde 2% depois de rebaixamento do Itaú BBA',
+ sub:'A Vale tem lucro de US$ 1,255 bilhão no 3º trimestre, abaixo do consenso de US$ 1,508 bilhão; a Vivo e outras empresas divulgam resultados depois do pregão.',
+ dado:{n:'+6,53%', l:'Embraer a R$ 113,35 na sessão de 10/11 · Agora Litoral'},
+ resumo:'Na sessão de terça (10), a Embraer subiu 6,53%, a R$ 113,35, e o Magalu avançou 5,82% às 12h18, informa o Agora Litoral. Hapvida caiu 6,50%, a R$ 4,46, e Renner, 5,13%, a R$ 9,62; a Vale recuou cerca de 2%, a R$ 64,78, depois de o Itaú BBA rebaixar a recomendação para neutra. A Embraer teve lucro ajustado de R$ 379,8 milhões, queda de 15,6%. A Vale lucrou US$ 1,255 bilhão no 3º trimestre, abaixo do consenso Bloomberg.',
+ fundo:`A temporada de balanços moveu as ações na terça (10): a Embraer subiu 6,53%, a R$ 113,35, e o Magalu avançou 5,82% às 12h18, enquanto Hapvida (-6,50%, a R$ 4,46), Renner (-5,13%, a R$ 9,62) e Vale (cerca de -2%, a R$ 64,78) caíram, informam o Agora Litoral e o Investing.com Brasil. O Ibovespa fechou em queda de 0,52%, a 171.337 pontos.
+## O que pesou em cada empresa
+A Embraer teve lucro ajustado de R$ 379,8 milhões no terceiro trimestre, queda de 15,6% sobre o ano anterior, e mesmo assim subiu. O Magalu chegou a avançar mais de 12% de manhã depois do balanço. Hapvida e Renner caíram na mesma sessão, segundo o Agora Litoral.
+A Vale caiu depois de o Itaú BBA rebaixar a recomendação para neutra. A empresa divulgou em 29 de outubro lucro de US$ 1,255 bilhão no trimestre, queda de 53%, contra consenso Bloomberg de US$ 1,508 bilhão, informa o Seu Dinheiro. O Ebitda foi de US$ 3,508 bilhões, queda de 20%, mas um pouco acima do esperado, de US$ 3,324 bilhões. O minério foi negociado a US$ 85,1 por tonelada, queda de 10%, e o custo all-in subiu 21%, a US$ 60,4 por tonelada.
+## O pano de fundo
+O Ibovespa caiu 0,52% numa sessão de juros altos: a ata do Copom, o dólar a R$ 5,59, o maior valor desde julho de 2025, segundo a B3, e o CPI americano acima do esperado pressionaram. A máxima foi de 173.271,61 pontos e a mínima, de 170.569, com volume de R$ 30,10 bilhões, informa a B3. Dow Jones (-0,30%), S&P 500 (-0,38%) e Nasdaq (-0,74%) também recuaram.
+## O que vem agora
+Depois do fechamento de terça, a agenda trazia a Vivo, com lucro projetado de R$ 2,17 bilhões, além de Iguatemi, Energisa, Engie, Aeris, Auren e Cury. Na quarta (11), a Petrobras faz a teleconferência sobre o resultado do 3T26, e na quinta (12) o IBGE divulga o IPCA de outubro.
+## O que ainda não está confirmado
+- O resultado do Magalu no trimestre, que um título indica como prejuízo de R$ 107 milhões, sem confirmação do texto.
+- Os resultados das empresas que divulgaram depois do pregão.
+- O motivo exato da alta da Embraer.`,
+ fontes:[['Agora Litoral (Ibovespa vira e cai com a ata do Copom)','https://agoralitoral.com.br/2026/11/10/ibovespa-vira-e-cai-com-ata-do-copom-e-avanco-do-dolar/'],['Seu Dinheiro (Vale tem lucro de US$ 1,255 bilhão)','https://www.seudinheiro.com/2026/empresas/com-minerio-de-ferro-e-petroleo-jogando-contra-vale-vale3-ve-lucro-cair-54-para-us-1255-bilhao/'],['B3 Bora Investir (Ibovespa cai 0,52%)','https://borainvestir.b3.com.br/noticias/mercado/ibovespa-b3-cai-052-pressionado-por-expectativa-de-juros-elevados-no-brasil-e-nos-eua-dolar-vai-a-r-559'],['Investing.com Brasil (Ibovespa e dólar hoje)','https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-ata-do-copom-inflacao-nos-eua-e-balanco-da-petrobras-2121978']]});
+
+/* --- Mundo --- */
+function _repSec(id, titulo, novoTitulo, texto){ var f=S[id].fundo, k=-1, e=f.length; for (var n=0;n<f.length;n++){ if(f[n][0]==='h' && f[n][1]===titulo){k=n;break;} }
+  if(k<0){ _insAntes(id,'O que vem agora',_F('## '+novoTitulo+'\n'+texto)); return; }
+  for (var m=k+1;m<f.length;m++){ if(f[m][0]==='h'){e=m;break;} }
+  S[id].fundo = f.slice(0,k).concat(_F('## '+novoTitulo+'\n'+texto), f.slice(e)); }
+
+_U('ucrania_abudhabi', {hora:'11/11',
+ t:'Rússia, Ucrânia e EUA fecham em Abu Dhabi, nesta quarta (11), a rodada de negociações trilaterais, a primeira em nove meses; Moscou mantém a exigência sobre o Donbas e Kiev quer cessar-fogo primeiro',
+ sub:'Ataques russos à rede elétrica atingiram seis subestações em quatro regiões; a pauta inclui troca de prisioneiros, cessar-fogo marítimo e de energia e garantias de segurança, e uma delegação americana pode voltar a Moscou.',
+ dado:{n:'10 e 11/11', l:'Rodada trilateral em Abu Dhabi, a primeira em nove meses, com mais de 4 horas no primeiro dia · PBS'},
+ resumo:'Rússia, Ucrânia e Estados Unidos encerram nesta quarta (11), em Abu Dhabi, o segundo e último dia da primeira rodada trilateral em nove meses; no primeiro dia, as conversas passaram de quatro horas, informa a PBS. Moscou exige a retirada ucraniana do Donbas, e Kiev quer cessar-fogo incondicional antes de tratar de território. Zelensky chamou o dia 1 de construtivo; Merz diz não ter expectativas altas. A rede elétrica ucraniana foi atingida de novo. O resultado do dia 2 não era conhecido.',
+ fundo:`Rússia, Ucrânia e Estados Unidos encerram nesta quarta (11), em Abu Dhabi, o segundo e último dia da primeira rodada trilateral de negociações de paz em nove meses, depois de mais de quatro horas de conversas no primeiro dia, informam a PBS e o Kyiv Independent. A Ucrânia diz que a rodada foi "construtiva e bastante substantiva", e a Rússia mantém a exigência de que Kiev deixe o Donbas.
+NUMS 4 h|Duração do primeiro dia de conversas, em 10/11;162 + 1|Drones e míssil balístico lançados pela Rússia na noite de 10/11, segundo a Força Aérea ucraniana;6|Subestações elétricas atingidas em 4 regiões, segundo o premiê ucraniano;1.000 ou 1.500|Prisioneiros por lado em discussão
+## Quem é quem
+A Ucrânia, governada por Volodimir Zelensky, é liderada na mesa por Rustem Umerov, chefe da Inteligência Externa e negociador-chefe, com Kyrylo Budanov, chefe do Gabinete Presidencial, Serhii Kyslytsia, primeiro vice-chefe do gabinete, Davyd Arakhamia, líder da bancada governista Servidor do Povo, e Vadym Skibitsky, vice-chefe da inteligência militar, segundo o Euronews e o Kyiv Independent. A Rússia, de Vladimir Putin, é liderada por Vladimir Medinsky, assessor do Kremlin, com os vice-chanceleres Sergei Ryabkov e Mikhail Galuzin, o chefe da inteligência militar Igor Kostyukov e Yury Zhigarlovsky, do Estado-Maior; o Euronews não lista Galuzin nem Kostyukov.
+Os Estados Unidos, do republicano Donald Trump, mediam com Steve Witkoff e Jared Kushner. Rubio e Zelensky não estiveram em Abu Dhabi. A Europa, representada por conselheiros de segurança de França, Alemanha, Reino Unido e Itália, mais a Otan e a União Europeia, se reuniu em formato separado, e a PBS registra a presença do general Alexus Grynkewich, da Otan. A Rússia objetou à presença europeia no formato trilateral, embora admita que a UE entre depois.
+## O que cada lado quer
+A Rússia exige a retirada ucraniana do Donbas, de que diz controlar "metade", o que Kiev contesta, o veto à Otan e limites militares. Kiev quer cessar-fogo incondicional primeiro, rejeita ceder território e pede garantias de segurança nos moldes do Artigo 5 e uma força europeia de reasseguramento; Zelensky diz que território é assunto para a cúpula de líderes. Kiev também pediu cessar-fogo marítimo e de energia. Em discussão, uma troca de prisioneiros de 1.000 por 1.000 ou de 1.500 por 1.500.
+## Reações
+Kushner disse buscar "um novo arcabouço" e ter ouvido "boas ideias para superar" as divergências. Rubio, no G7 em Paris, classificou as conversas como "muito produtivas" e pediu paciência. O chanceler alemão, Friedrich Merz, disse não ter "expectativas muito altas". Arakhamia afirmou que não esperava avanço no primeiro dia e tinha mais esperança no segundo, e o emiradense Anwar Gargash disse estar otimista com um "avanço positivo", informa o The National.
+## Os ataques à energia
+Na noite de 10 de novembro, a Força Aérea ucraniana contou 162 drones e um míssil balístico russos, e Moscou diz ter derrubado 155 drones ucranianos sobre oito regiões e a Crimeia, informa a PBS. Em 11 de novembro, o premiê ucraniano, Sergii Koretskyi, disse que a Rússia atingiu seis grandes subestações elétricas em quatro regiões centrais, além de ferrovias, segundo o The National.
+## O que vem agora
+Balanço do segundo dia; possível troca grande de prisioneiros; nova visita de uma delegação americana a Moscou, sem data; e a discussão sobre uma cúpula de líderes, onde Zelensky quer tratar de território. A Casa Branca fala em construir um arcabouço, os europeus pedem lugar na mesa e Moscou resiste a aceitar a presença de Bruxelas no formato trilateral, o que pode travar uma eventual rodada seguinte.
+## O que ainda não está confirmado
+- O resultado do dia 2.
+- A contagem das rodadas: o The National fala em terceira rodada em Abu Dhabi no ano, e o Kyiv Independent e a PBS falam em retomada depois de nove meses, desde Genebra, em fevereiro.
+- O que Trump quis dizer com um "grande acordo" após encontro com o enviado russo Kirill Dmitriev, em 5 de novembro; o Kyiv Independent não traz detalhes.`,
+ upd:'Entram o balanço do primeiro dia (mais de 4 horas), as delegações completas, as posições de cada lado e os novos ataques à rede elétrica ucraniana em 10 e 11/11.',
+ fontes:[['Kyiv Independent (Rússia, Ucrânia e EUA retomam negociações trilaterais)','https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/'],['PBS NewsHour (quase 4 horas de conversas em Abu Dhabi)','https://www.pbs.org/newshour/world/russia-and-ukraine-hold-nearly-4-hours-of-u-s-mediated-talks-in-abu-dhabi'],['Euronews (quem é quem nas negociações de Abu Dhabi)','https://www.euronews.com/2026/11/10/whos-who-from-ukraine-and-russia-at-the-abu-dhabi-peace-talks'],['The National (Emirados otimistas com avanço)','https://www.thenationalnews.com/news/mena/2026/11/11/uae-optimistic-russia-ukraine-talks-will-achieve-positive-breakthrough/']]});
+
+/* Paraguai */
+S.paraguai.hora='11/11';
+S.paraguai.resumo='O presidente Pedro Alliana trocou a cúpula militar e promotores acharam um cofre na casa de veraneio de Santiago Peña, enquanto o Senado aprova Schreiner no Banco Central. O Banco Central do Paraguai conclui nesta quarta (11) os pagamentos da garantia do Ueno Bank: cobre cerca de US$ 740 milhões dos US$ 2,8 bilhões em depósitos, 27%, segundo o responsável pelo fundo, e o BCP tem 15 dias para oferecer a carteira a outras instituições. O Orçamento de 2027 segue em suspenso.';
+S.paraguai.upd='O BCP encerra em 11/11 os pagamentos da garantia do Ueno, que cobre 27% dos depósitos (US$ 740 mi de US$ 2,8 bi), e abre 15 dias para vender a carteira.';
+_insAntes('paraguai','O que vem agora',_F(`## O limite da garantia: 27% dos depósitos
+O Banco Central do Paraguai (BCP) conclui nesta quarta (11) o pagamento do Fundo de Garantia de Depósitos, cujo teto é de 75 salários mínimos por cliente e por banco, cerca de 228,3 milhões de guaranis, ou US$ 37 mil, informa a EFE. Uma lei de emergência antecipou em uma semana os pagamentos de até US$ 19 mil. O fundo cobre cerca de US$ 740 milhões dos aproximadamente US$ 2,8 bilhões em depósitos do Ueno, 27% do total, segundo José Maciel, responsável pelo fundo. Ficam cerca de US$ 2 bilhões sem data de pagamento, incluindo cerca de US$ 355 milhões do Instituto de Previsão Social (IPS), a caixa pública de aposentadorias, que responde por cerca de 9% da carteira.
+O BCP tem 15 dias, contados a partir de 11 de novembro, para avaliar o balanço, classificar os ativos e convidar outras instituições a comprar toda a carteira ou parte dela, segundo Pedro de Jesús Acosta, presidente interino do BCP. O que for arrecadado cobre o resto da garantia e, antes de tudo, as aposentadorias. Não há anúncio de reabertura do banco: as saídas são a venda parcial ou a liquidação.
+Alliana informou que 1,74 milhão de poupadores receberam cerca de US$ 330 milhões; o BCP registra 1.738.804 pessoas (93,1%) e cerca de US$ 340 milhões. Restam cerca de 128 mil contas, em geral com bloqueios, certificados de depósito ou operações ligadas à Agência Financeira de Desenvolvimento, e dívidas com o próprio Ueno são abatidas. O IPS diz que 90 mil aposentados recebem em 17 de novembro e que 32 mil pensionistas migram para outros oito bancos, informa a Emol. A oposição diz que decisões do governo ampliaram a exposição de recursos públicos, segundo o Movimento Econômico.`));
+S.paraguai.fontes.unshift(['Estrella Digital (EFE: garantia de depósitos e poupadores do Ueno)','https://www.estrelladigital.es/mundo/paraguay-ueno-bank-garantia-depositos-ahorradores-pena-prision/20261111073000453191.html'],['Emol (clientes do banco Ueno no Paraguai)','https://www.emol.com/noticias/Internacional/2026/11/07/1216410/banco-ueno-paraguay-clientes.html']);
+
+S.ueno_pagamentos.hora='11/11';
+S.ueno_pagamentos.sub='O Fundo de Garantia cobre US$ 740 milhões dos US$ 2,8 bilhões em depósitos, 27%; o BCP tem 15 dias para oferecer a carteira a outras instituições, e a aposentadoria pública tem cerca de US$ 355 milhões presos no banco.';
+S.ueno_pagamentos.resumo='O Banco Central do Paraguai conclui nesta quarta (11) os pagamentos do Fundo de Garantia de Depósitos do Ueno Bank, informa a EFE. O presidente Pedro Alliana disse que 1,74 milhão de poupadores receberam cerca de US$ 330 milhões; o BCP fala em 1.738.804 pessoas (93,1%) e US$ 340 milhões. O fundo cobre US$ 740 milhões dos US$ 2,8 bilhões em depósitos, 27%, e ficam cerca de US$ 2 bilhões sem data, incluindo US$ 355 milhões do IPS. O BCP tem 15 dias para vender a carteira.';
+S.ueno_pagamentos.upd='Entram o teto da garantia, a cobertura de 27% dos depósitos, os cerca de US$ 2 bi sem data de pagamento e o prazo de 15 dias do BCP para vender a carteira.';
+_insAntes('ueno_pagamentos','O que vem agora',_F(`## A conta que a garantia não cobre
+O teto da garantia é de 75 salários mínimos por cliente e por banco, cerca de US$ 37 mil, e uma lei de emergência antecipou os pagamentos de até US$ 19 mil, informa a EFE. O fundo cobre cerca de US$ 740 milhões dos aproximadamente US$ 2,8 bilhões em depósitos, 27%, segundo José Maciel. Os cerca de US$ 2 bilhões restantes não têm data, e entre eles estão cerca de US$ 355 milhões do IPS, caixa pública de aposentadorias.
+O presidente interino do BCP, Pedro de Jesús Acosta, disse que o banco tem 15 dias para avaliar o balanço, classificar os ativos e convidar outras instituições a comprar a carteira. A diferença entre os números do governo (95%, US$ 330 milhões) e os do BCP (93,1%, US$ 340 milhões) é pequena, e restam cerca de 128 mil contas com bloqueios ou operações ligadas à Agência Financeira de Desenvolvimento.`));
+S.ueno_pagamentos.fontes.unshift(['Estrella Digital (EFE: garantia de depósitos e poupadores do Ueno)','https://www.estrelladigital.es/mundo/paraguay-ueno-bank-garantia-depositos-ahorradores-pena-prision/20261111073000453191.html']);
+
+/* Israel */
+S.israel.hora='10/11';
+S.israel.t='Knesset toma posse e o bloco de Eisenkot nomeia Matan Kahana para a presidência da Casa; a votação para trocar Amir Ohana, do Likud, é esperada na terça (17)';
+S.israel.sub='Yashar entregou mais de 61 assinaturas exigindo a votação; Netanyahu segue como premiê interino, e o mandato de Eisenkot para formar governo vai até 6 de dezembro.';
+S.israel.resumo='A 26ª Knesset tomou posse na terça (10), com os 120 deputados e Isaac Herzog presidindo. Horas antes, Eisenkot, Golan, Liberman e Bennett anunciaram Matan Kahana, do Yashar, para substituir Amir Ohana (Likud) na presidência da Casa, e o Yashar entregou mais de 61 assinaturas exigindo a votação, informa o Times of Israel. Ohana disse que marcaria o plenário em até uma semana se houver maioria; o Jerusalem Post fala em terça (17). Eisenkot tem até 6/12 para formar governo, com prorrogação possível até 20/12.';
+S.israel.upd='A Knesset toma posse em 10/11, o bloco de Eisenkot nomeia Matan Kahana para presidir a Casa e entrega mais de 61 assinaturas; a votação é esperada na terça (17).';
+_repSec('israel','A sessão inaugural e a disputa pela presidência da Casa','A posse da Knesset e a candidatura de Matan Kahana',`A 26ª Knesset, eleita em 27 de outubro, tomou posse na terça (10), com os 120 deputados e Isaac Herzog presidindo, informa o Siasat. Horas antes, Gadi Eisenkot, Yair Golan, Avigdor Liberman e Naftali Bennett anunciaram a nomeação de Matan Kahana, número 5 da lista do Yashar, para substituir Amir Ohana, do Likud, na presidência da Casa, segundo o Times of Israel. O Yashar entregou mais de 61 assinaturas exigindo a votação.
+Ohana disse que marcaria o plenário em até uma semana se houvesse maioria; o Jerusalem Post diz que ele marcou a votação para a terça seguinte (17). Pelo Israel Hayom, destituir um presidente da Casa em exercício exigiria pedido de 61 deputados e maioria de 90 no plenário, razão pela qual o bloco montou o esquema de substituição. A composição das comissões vai ao plenário na quarta.
+Kahana é ex-ministro de Serviços Religiosos (2021-22), coronel da reserva e ex-piloto de F-16; entrou na política em 2019 numa chapa de direita de Bennett, passou pelo Azul e Branco e saiu com Eisenkot em 2025. O Jerusalem Post informa os acordos de comissões do bloco: Liberman fica com Relações Exteriores e Defesa, Liran Avisar Ben Horin, do B'Yachad, com Finanças, a primeira mulher no posto, e Roy Folkman, do Yashar, com Arranjos.`);
+_insAntes('israel','O que vem agora',_F(`## As reações e o que está em disputa
+Herzog disse que "tudo deve ser feito para evitar nova eleição". Eisenkot chamou o discurso de Netanyahu de "delirante, divisivo, odioso e vergonhoso", e a direita reagiu com indignação ao apoio de deputados árabes ao bloco, segundo o Israel National News. Netanyahu propôs que Gideon Sa'ar acumule o Ministério do Interior, vago desde julho de 2025; Ofir Katz recusou.
+Eisenkot cogita um governo minoritário com apoio externo do Ra'am e abstenção da Lista Conjunta; Liberman exige maioria sem os partidos árabes e aceitou flexibilizar o alistamento ultraortodoxo, reversão de promessa de campanha, segundo o Times of Israel. Netanyahu propôs um governo de unidade e rejeitou a rotação no cargo. Ahmad Tibi, da Lista Conjunta, disse que querem "fazer parte da mudança".`));
+S.israel.fontes.unshift(['Times of Israel (bloco de Eisenkot nomeia Matan Kahana)','https://www.timesofisrael.com/eisenkot-led-bloc-agrees-to-nominate-yashars-matan-kahan-for-knesset-speaker/'],['Times of Israel (Yashar entrega mais de 61 assinaturas)','https://www.timesofisrael.com/liveblog_entry/yashar-submits-over-61-mk-signatures-demanding-vote-to-replace-knesset-speaker-ohana/'],['Israel Hayom (Liberman e o teste de Eisenkot)','https://www.israelhayom.com/2026/11/09/lieberman-blinked-first-but-eisenkots-real-test-lies-ahead/'],['The Jerusalem Post (eleição 2026)','https://www.jpost.com/israel-election-2026/article-914426'],['Siasat (Knesset toma posse)','https://www.siasat.com/israels-new-knesset-sworn-in-as-eisenkot-races-to-form-govt-3573882/']);
+
+_N('espanha_greve_geral', {ed:'mundo', k:'Mundo · Espanha', hora:'11/11',
+ t:'Espanha tem nesta quarta (11) a primeira greve geral de CCOO e UGT desde 2012, por salários e moradia, a 18 dias da eleição de 29 de novembro',
+ sub:'Os sindicatos falam em adesão de 90% no setor automotivo e nos portos; não há dado independente, e o PP chama a paralisação de "greve eleitoral".',
+ dado:{n:'24 h', l:'Greve geral convocada por CCOO e UGT em 11/11, com serviços mínimos · AP'},
+ resumo:'Espanha para por 24 horas nesta quarta (11) na primeira greve geral de CCOO e UGT desde 2012, com o lema "salários, moradia, preços", informam a AP e a Al Jazeera. Os sindicatos falam em adesão de 90% em automotivo e portos, sem verificação independente; o Metrô de Madri opera com 80% nas pontas. O governo de Pedro Sánchez (PSOE) não apoiou formalmente; o PP chama de greve eleitoral. A eleição é em 29/11, e o PP lidera as pesquisas com 31,5% contra 26,8% do PSOE.',
+ fundo:`A Espanha para por 24 horas nesta quarta (11), na primeira greve geral convocada pelas centrais CCOO e UGT desde 2012, com o lema "salários, moradia, preços", informam a AP e a Al Jazeera. A paralisação ocorre a 18 dias da eleição geral antecipada de 29 de novembro, e os próprios sindicatos falam em adesão de 90% no setor automotivo e nos portos, sem dado independente.
+NUMS 24 h|Duração da greve geral, de 0h a 24h de 11/11;€ 1.176|Aluguel médio mensal, segundo a Al Jazeera;750 mil|Déficit de moradias, segundo o Banco da Espanha;29/11|Eleição geral antecipada
+## Quem é quem
+CCOO e UGT são as centrais sindicais de esquerda, historicamente próximas do PSOE, e contam com o apoio de CGT, CNT, do Sindicato de Inquilinas, da PAH, do Greenpeace e da Oxfam Intermón; USO e CSIF não aderiram. Pedro Sánchez, do PSOE, governa em coalizão com o Sumar, de esquerda; não apoiou formalmente a greve, mas defendeu a ação coletiva, informa a Al Jazeera. O Partido Popular (PP), de direita, de Alberto Núñez Feijóo, e o Vox, de extrema direita, veem a greve como política; o secretário-geral do PP, Miguel Tellado, chamou-a de "greve eleitoral". A patronal CEOE diz que ela é política.
+## O gatilho e a agenda de moradia
+O estopim foi o despejo, em setembro, de Maricarmen Abascal, de 87 anos, em Madri, que morreu depois, e o acampamento na Puerta del Sol, segundo a Al Jazeera e o Democrata. O aluguel médio é de cerca de € 1.176 por mês, o salário médio dos jovens, de € 1.190, e o déficit de moradias, de cerca de 750 mil, segundo o Banco da Espanha. Em 29 de setembro, Sánchez aprovou dois decretos-leis de moradia; em 2 de outubro, o Congresso os rejeitou, com votos de PP, Vox, Junts e UPN, e em 5 de outubro ele dissolveu as Cortes e convocou eleição.
+## Serviços e incidentes
+Os serviços mínimos mantêm o Metrô de Madri com 80% nas pontas e cerca de 50% no resto, e os ônibus da EMT com 40% a 50%, informa o Democrata; voos e trens podem ser afetados. Segundo os sindicatos, a adesão chega a 90% em automotivo e portos, 85% em carne, 82% em lixo e 75% em energia, números que a AP trata como não verificados. Houve pneus queimados em Barcelona e choques com a polícia perto do mercado atacadista de Madri.
+## O que vem agora
+A campanha oficial começa em dois dias. A AP diz que o governo tentará revalidar na quinta (12) os decretos de moradia, em um Parlamento provisório reduzido. Na média de 15 institutos de 10 de novembro, o PP tem 31,5%, o PSOE, 26,8% e o Vox, 19,1%, segundo o Democrata; a Al Jazeera avalia que o PP poderia governar com o Vox, que entraria pela primeira vez num governo nacional desde Franco, leitura que não é projeção de pesquisa.
+## O que ainda não está confirmado
+- A adesão real à greve.
+- A data exata do acidente ferroviário em Urda, que matou 69 pessoas e levou à saída do ministro Óscar Puente: a Al Jazeera fala em "novembro", e a AP o trata como peso na campanha.
+- A projeção de cadeiras para 29 de novembro.`,
+ fontes:[['AP via WSLS (primeira greve geral em 14 anos)','https://www.wsls.com/news/2026/11/11/spains-first-general-strike-in-14-years-brings-clashing-social-and-political-desires-to-the-fore/'],['Al Jazeera (Espanha se prepara para paralisação nacional)','https://www.aljazeera.com/news/2026/11/10/spain-braces-for-nationwide-walkout-as-anger-over-housing-costs-boils-over'],['Democrata (greve geral e moradia na véspera de 29N)','https://www.democrata.es/en/economy/spain-returns-to-a-general-strike-14-years-later-with-housing-as-the-trigger-and-on-the-eve-of-29n/']]});
+
+_N('eua_tarifas_300', {ed:'mundo', k:'Mundo · EUA', hora:'10/11',
+ t:'Casa Branca diz que tarifas seguem e que "está só começando", uma semana depois das eleições; Trump ameaça tarifas de até 300% a empresas que não produzam nos EUA',
+ sub:'A inflação ao consumidor subiu 0,4% em outubro; cerca de dois terços dos americanos culpam Trump pela alta de preços, segundo pesquisas citadas, e os democratas prometem revogar as tarifas.',
+ dado:{n:'+0,4%', l:'Alta do preço ao consumidor em outubro nos EUA, contra +0,3% esperado · Investing.com Brasil'},
+ resumo:'Jim Goyer, da Casa Branca, disse no B20, da Câmara de Comércio dos EUA, que "estamos só começando" com as tarifas, uma semana depois das eleições de meio de mandato, informa a Briefs. Em 5/11, Trump ameaçou tarifas de até 300% a empresas que não produzam nos EUA. O preço ao consumidor subiu 0,4% em outubro, e a inflação em 12 meses estava em 3,7% em setembro. Gary Cohn chamou as tarifas de imposto sobre o consumo; Hakeem Jeffries promete revogá-las em 100 dias.',
+ fundo:`A Casa Branca manteve a política de tarifas uma semana depois da eleição de meio de mandato e disse que ela está "só começando", afirmou Jim Goyer no B20, evento da Câmara de Comércio dos Estados Unidos, informa a Briefs. Em 5 de novembro, o presidente Donald Trump ameaçou impor tarifas de até 300% a empresas que não produzam no país, segundo o Seoul Economic Daily.
+NUMS +0,4%|Preço ao consumidor em outubro, contra +0,3% esperado;3,7%|Inflação em 12 meses em setembro;300%|Tarifa máxima ameaçada por Trump em 5/11;62%|Querem o fim das tarifas, em pesquisa citada sem instituto
+## Quem é quem
+Trump é o presidente, do Partido Republicano, de direita, e defende as tarifas como política de proteção à indústria. Jim Goyer fala pela Casa Branca. Gary Cohn, ex-conselheiro econômico de Trump e hoje executivo da IBM, chamou as tarifas de "imposto sobre o consumo". Hakeem Jeffries, líder dos democratas na Câmara, de centro-esquerda, prometeu revogá-las em 100 dias se for presidente da Casa. Os democratas ganharam a Câmara e a maioria do Senado nas eleições de 3 de novembro, com Alasca e Mississippi ainda em apuração.
+## A inflação e o voto
+O preço ao consumidor subiu 0,4% em outubro sobre setembro, contra 0,3% esperado, e o núcleo, 0,3%, contra 0,2%, segundo o Agora Litoral. O Departamento do Trabalho não divulgou a taxa anual por causa da interrupção da coleta em outubro de 2025, no shutdown. Cerca de dois terços dos americanos atribuem a inflação a Trump, e 62% querem o fim das tarifas, segundo pesquisas citadas pela Briefs, que não identifica o instituto. A guerra no Irã e o custo de vida pesaram no voto, segundo a avaliação do governo citada pela imprensa.
+## O que vem agora
+Trump disse em 5 de novembro que "veremos muito na próxima semana ou duas" em matéria de tarifas. A Casa Branca não detalhou quais empresas ou setores seriam atingidos, e a nova maioria democrata na Câmara só toma posse em janeiro.
+## O que ainda não está confirmado
+- Quais empresas seriam alvo da tarifa de 300% e quando ela valeria.
+- A decisão da Suprema Corte sobre a base legal das tarifas, citada em buscas e não lida pelo Radar.
+- O instituto das pesquisas sobre o apoio às tarifas.`,
+ fontes:[['Briefs (autoridades de Trump defendem tarifas)','https://www.briefs.co/news/trump-officials-stand-by-tariffs-one-week-after-midterms/'],['Seoul Economic Daily (Trump ameaça tarifas de 300%)','https://en.sedaily.com/international/2026/11/06/trump-threatens-300-percent-tariffs-as-cabinet-exodus-talk'],['Agora Litoral (Ibovespa e CPI dos EUA)','https://agoralitoral.com.br/2026/11/10/ibovespa-vira-e-cai-com-ata-do-copom-e-avanco-do-dolar/']]});
+
+_N('eua_senado_mississippi_alasca', {ed:'mundo', k:'Mundo · EUA', hora:'10/11',
+ t:'Mississippi e Alasca decidem a maioria do Senado dos EUA: Colom (D) lidera por 2.574 votos, certificação é na sexta (13), e Peltola (D) tem vantagem de menos de 700 votos',
+ sub:'O Mississippi tem cerca de 2.800 cédulas de ausente e 12.767 provisórias; o Alasca usa voto ranqueado, e a contagem final só vem depois de 18 de novembro.',
+ dado:{n:'2.574 votos', l:'Vantagem de Scott Colom (D) sobre Cindy Hyde-Smith (R) no Mississippi · AP'},
+ resumo:'No Mississippi, Scott Colom (D) lidera Cindy Hyde-Smith (R) por 2.574 votos (467.930 a 465.356, segundo a AP); terça (10) era o prazo para cédulas provisórias, e os 82 condados certificam em 13/11. No Alasca, Mary Peltola (D) tem vantagem de menos de 700 votos sobre o senador Dan Sullivan (R), com contagem ranqueada só depois de 18/11. Democratas têm ao menos 54 cadeiras no Senado em contagem inicial, e os dois estados definem a margem da maioria.',
+ fundo:`O Senado dos Estados Unidos ainda depende de dois estados: no Mississippi, o democrata Scott Colom lidera a republicana Cindy Hyde-Smith por 2.574 votos, e os 82 condados certificam o resultado na sexta (13); no Alasca, a democrata Mary Peltola tem vantagem de menos de 700 votos sobre o senador republicano Dan Sullivan, informam o Philadelphia Inquirer e o Alaska's News Source. Os democratas têm ao menos 54 cadeiras em contagem inicial, segundo a Bloomberg Línea, e os dois resultados definem a margem.
+NUMS 2.574|Vantagem de Colom no Mississippi (467.930 a 465.356);~2.800|Cédulas de ausente por contar, segundo o secretário de Estado;12.767|Cédulas provisórias processadas, cerca de 77% aceitas;<700|Vantagem de Peltola no Alasca, com 74% apurados
+## Quem é quem
+Scott Colom, do Partido Democrata, de centro-esquerda, é promotor e busca ser o primeiro senador negro do Mississippi. Cindy Hyde-Smith, do Partido Republicano, de direita, é a titular. Mike Hurst, presidente do partido republicano estadual, estimou cerca de 20 mil votos em aberto, 17 mil provisórios e 3 mil postais, e disse que o partido agirá "rapidamente" se houver violações. A campanha de Colom chamou de "ataque ilegal à privacidade do eleitor" o pedido republicano de separar e preservar as cédulas provisórias. No Alasca, Mary Peltola é ex-deputada democrata, e o senador Dan Sullivan é republicano em exercício.
+## O Mississippi
+Em 6 de novembro, a vantagem de Colom era de 2.574 votos; um dia antes, de 1.813. Em 9 de novembro, restavam cerca de 2.800 cédulas de ausente, segundo o secretário de Estado, Michael Watson (republicano), e 12.767 provisórias processadas, cerca de 77% aceitas. A maior parte do que resta está nos condados de Hinds (Jackson, de maioria democrata) e Holmes. Terça (10) era o prazo para provisórias e cédulas postadas até o dia da eleição. O Mississippi não tem recontagem automática: o caminho é judicial, segundo a Democracy Docket, que em 6 de novembro não registrava ação protocolada.
+## O Alasca
+Peltola lidera por menos de 700 votos, com 74% apurados e a margem parada por mais de 24 horas. O Alasca usa voto ranqueado: se ninguém passa de 50%, o último colocado é eliminado e seus votos são redistribuídos, o que não deve ocorrer antes de 18 de novembro. Cédulas remotas chegam de avião ou correio. Há um candidato homônimo, "Dan Sullivan", de terceiro partido; a fonte local diz que o Departamento de Justiça e o FBI investigam o caso e que o governo Trump entrou com ação para impedir a certificação se Peltola vencer, alegando plano democrata de desviar votos, enquadramento que as fontes não comprovam.
+## O que vem agora
+Certificação no Mississippi em 13 de novembro e provável ação judicial; contagem ranqueada no Alasca depois de 18 de novembro; os novos senadores tomam posse em janeiro.
+## O que ainda não está confirmado
+- A margem atual no Alasca, que pode ter mudado desde 6 de novembro.
+- Se haverá ação judicial no Mississippi.
+- O número final de cadeiras, que depende dos dois estados.`,
+ fontes:[['Philadelphia Inquirer (Senado no Mississippi: prazos das cédulas)','https://www.inquirer.com/politics/election/mississippi-senate-ballot-deadlines-scott-colom-lead-cindy-hyde-smith-20261109.html'],['Democracy Docket (disputa das cédulas no Mississippi)','https://www.democracydocket.com/news-alerts/live-mississippi-senate-ballot-fight-heats-up/'],['Alaska\'s News Source (corrida ao Senado segue indefinida)','https://www.alaskasnewssource.com/2026/11/07/alaska-senate-race-remains-undecided-days-after-election-day/'],['Bloomberg Línea (Fed ganha escudo com Senado democrata)','https://www.bloomberglinea.com.br/mercados/fed-ganha-escudo-contra-trump-com-senado-democrata-mas-ameaca-nao-desaparece-de-vez/']]});
+
+/* --- Regiões --- */
+_N('rj_qav_galeao', {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro', hora:'10/11',
+ t:'Alerj aprova diferimento do ICMS do querosene de aviação para o Galeão, com renúncia estimada em R$ 1,127 bilhão até 2029',
+ sub:'O projeto do Executivo (PL 8.227/2026) vale por cinco anos e depende de sanção do governador em exercício, Ricardo Couto; 20 emendas foram rejeitadas.',
+ dado:{n:'R$ 1,127 bi', l:'Renúncia estimada até 2029 com o diferimento do ICMS do QAV · Agenda do Poder'},
+ resumo:'A Alerj aprovou na terça (10) o PL 8.227/2026, do Executivo, que adia o recolhimento do ICMS do querosene de aviação nas vendas a distribuidoras autorizadas pela ANP e nas transferências nos aeroportos fluminenses, com regime de cinco anos. A renúncia estimada é de R$ 1,127 bilhão até 2029, informa o Agenda do Poder. Douglas Ruas (PL), presidente da Casa, e Gustavo Tutuca (PP) defenderam; Luiz Paulo (PSD) votou a favor com ressalvas. O placar não foi divulgado, e o governador em exercício, Ricardo Couto, sanciona ou veta.',
+ fundo:`A Assembleia Legislativa do Rio (Alerj) aprovou na terça (10) o PL 8.227/2026, do Executivo, que posterga o recolhimento do ICMS sobre o querosene de aviação (QAV) para os aeroportos fluminenses, com renúncia estimada em R$ 1,127 bilhão até 2029, informam o Agenda do Poder e o Brasil em Folhas. O projeto segue para sanção ou veto do governador em exercício, Ricardo Couto.
+## O que muda
+O imposto passa a ser recolhido mais adiante na cadeia, nas vendas a distribuidoras autorizadas pela ANP e nas transferências entre unidades da mesma distribuidora nos aeroportos do estado. O regime vale por cinco anos. A renúncia estimada é de R$ 192,2 milhões em 2026, R$ 300,47 milhões em 2027, R$ 311,89 milhões em 2028 e R$ 322,81 milhões em 2029. A empresa beneficiada precisa manter a arrecadação de ICMS, os empregos e a regularidade ambiental, com avaliação anual.
+## O debate
+O presidente da Alerj, Douglas Ruas (PL), governador eleito, defendeu a medida, e o presidente da Comissão de Orçamento, Gustavo Tutuca (PP), a apoiou. Luiz Paulo (PSD) votou a favor com ressalvas e disse que o diferimento é "a forma mais sutil de incentivo". Foram apresentadas 20 emendas na primeira discussão, e nenhuma foi incorporada. O tema é a competitividade do Galeão diante de Guarulhos.
+## Contexto fiscal
+A aprovação ocorre com o Orçamento de 2027 em discussão na Alerj, com déficit projetado de R$ 13,98 bilhões e prazo de emendas até quarta (11). O estado perde receita de royalties e tem despesa de pessoal em alta, de modo que cada incentivo fiscal pesa na conta de um governo que muda em janeiro.
+## O que vem agora
+Sanção ou veto de Couto, sem prazo informado, e votação do Orçamento de 2027.
+## O que ainda não está confirmado
+- O placar da votação, que as fontes não divulgaram.
+- O prazo de sanção.`,
+ fontes:[['Agenda do Poder (Alerj aprova incentivo fiscal para a aviação)','https://agendadopoder.com.br/alerj-aprova-incentivo-fiscal-para-aviacao-no-rio-com-impacto-estimado-em-r-11-bilhao-ate-2029/'],['Brasil em Folhas (Alerj aprova adiamento de ICMS sobre combustível de aviação)','https://brasilemfolhas.com.br/2026/11/alerj-aprova-adiamento-de-icms-sobre-combustivel-de-aviacao/']]});
+
+_N('rj_aije_paes_ruas', {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro', hora:'10/11',
+ t:'TRE-RJ dá andamento à ação de Eduardo Paes contra a chapa de Douglas Ruas, que tem cinco dias para apresentar defesa',
+ sub:'Paes (PSD) pede cassação e inelegibilidade por oito anos por compra de votos e abuso de poder econômico; todas as acusações são alegações da coligação, e o relator ainda não autorizou busca e apreensão.',
+ dado:{n:'204.309', l:'Votos nulos digitados como 13, segundo a ação de Paes · ICL Notícias'},
+ resumo:'O relator no TRE-RJ, desembargador Fernando Cerqueira Chagas, deu andamento à ação de investigação judicial de Eduardo Paes (PSD) contra Douglas Ruas (PL) e a vice Fernanda Louback, que têm cinco dias para a defesa, informa a ICL Notícias. Paes pede cassação da chapa e inelegibilidade por oito anos por compra de votos, abuso de poder econômico e propaganda irregular. Ruas teve 50,88% dos votos válidos e Paes, 44,16%. As acusações são alegações da coligação, e o relator pediu documentos à gráfica EDG, sem autorizar busca.',
+ fundo:`O desembargador Fernando Cerqueira Chagas, relator no Tribunal Regional Eleitoral do Rio (TRE-RJ), deu andamento à ação de investigação judicial eleitoral movida por Eduardo Paes (PSD) contra o governador eleito Douglas Ruas (PL) e a vice, Fernanda Louback (PL), que têm cinco dias para apresentar defesa e indicar testemunhas, informa a ICL Notícias, a partir do Tempo Real RJ. A ação foi ajuizada em 4 de novembro, segundo a Gazeta do Povo.
+## O que Paes alega
+O ex-prefeito pede a cassação da chapa e a inelegibilidade por oito anos, por compra de votos, abuso de poder econômico e propaganda irregular. A ação cita cerca de 1,1 milhão de panfletos "Rio Escolhe" ligando Paes ao número 13, embora ele concorresse com o 55; 100 mil peças "Douglas Ruas – Evangélico", pagas com o fundo eleitoral; 204.309 votos nulos digitados como 13; e R$ 600 mil em espécie apreendidos em Niterói, ligados a Priscila Alencar dos Santos, filha da deputada federal Soraya Santos (PL). Há ainda material apreendido em Nova Iguaçu e em Teresópolis.
+## O que decidiu o relator
+O relator pediu à gráfica EDG, de Niterói, documentos do período de 20 de julho a 4 de novembro, em dois dias, e por ora não autorizou busca e apreensão. Todas as acusações são alegações da coligação de Paes; a fonte não informa o vínculo da gráfica com a campanha de Ruas.
+## Quem é quem
+Douglas Ruas, do PL, partido de direita, presidia a Alerj e venceu com 4.271.199 votos, 50,88% dos válidos; Eduardo Paes, do PSD, centro, teve 3.706.984, 44,16%. Em 8 de outubro, o TSE confirmou o indeferimento da candidatura de Garotinho (Republicanos), e seus 274.411 votos viraram nulos. O PSD também pede segundo turno na ADPF 1362, no Supremo, relatada pelo ministro Cristiano Zanin.
+## O que vem agora
+Defesa de Ruas e Fernanda Louback em cinco dias, análise dos documentos da gráfica e eventual decisão sobre busca e apreensão.
+## O que ainda não está confirmado
+- Qualquer das acusações, que dependem de prova no processo.
+- O vínculo da gráfica com a campanha de Ruas.`,
+ fontes:[['ICL Notícias (TRE-RJ e a ação de Paes)','https://iclnoticias.com.br/?p=134684'],['Gazeta do Povo (Paes pede a cassação da chapa de Ruas)','https://www.gazetadopovo.com.br/republica/eduardo-paes-pede-a-cassacao-da-chapa-de-douglas-ruas/']]});
+
+_N('mg_cleitinho_alm', {ed:'regioes', reg:'mg', k:'Regiões · Minas Gerais', hora:'10/11',
+ t:'Cleitinho visita deputados na ALMG, inclusive da oposição petista, e se reúne com o embaixador da China para atrair investimentos',
+ sub:'O governador eleito (Republicanos) recebeu críticas de Andreia de Jesus (PT) um dia antes; ele assume em janeiro e herda déficit projetado de R$ 10,51 bilhões para 2027.',
+ dado:{n:'R$ 10,51 bi', l:'Déficit projetado para 2027 que Cleitinho herda · Itatiaia'},
+ resumo:'O governador eleito de Minas, Cleitinho (Republicanos), visitou na terça (10) gabinetes na ALMG, entre eles o de Andreia de Jesus (PT), um dia depois de ela publicar vídeo criticando-o, e se reuniu com o embaixador da China, Zhu Qingqiao, para atrair investimentos, informam o Metrópoles e o Estado de Minas. Ele assume em janeiro e herda déficit projetado de R$ 10,51 bilhões para 2027. Não há acordo concreto com o PT nem valores de investimento chinês divulgados.',
+ fundo:`O governador eleito de Minas Gerais, Cleitinho (Republicanos), fez na terça (10) uma rodada de visitas a gabinetes da Assembleia Legislativa (ALMG) e se reuniu com o embaixador da China, Zhu Qingqiao, informam o Metrópoles, o Estado de Minas e a Rede 98. A reunião com a deputada Andreia de Jesus (PT) ocorreu um dia depois de ela publicar um vídeo criticando-o por informações sobre a reforma tributária e por ataques a Lula.
+## As visitas
+Cleitinho visitou os gabinetes de Andreia de Jesus (PT), Roberto Andrade (PRD), Ulysses Gomes (PT), Duarte Bechir (PSD), João Bosco (PSD) e Dr. Jean Freire (PT). Os temas foram o Carnaval, o sistema prisional, com a denúncia de comida com larvas no presídio de Ribeirão das Neves, quilombolas e água para indígenas no Rio Doce. Ele disse: "Me questione, me cobre, me fiscalize". Na segunda (9), havia encontrado Guima Jardim, presidente do PT de Belo Horizonte.
+## A China
+O governador eleito se reuniu com o embaixador chinês e com o vice eleito, Luís Eduardo Falcão (Republicanos), para atrair investimentos ao estado. Não foram divulgados valores nem projetos.
+## Quem é quem
+Cleitinho é do Republicanos, de centro-direita, e discursa contra a reforma tributária do governo Lula; Andreia de Jesus, Ulysses Gomes e Jean Freire são do PT, de esquerda e de oposição ao novo governo; Duarte Bechir e João Bosco são do PSD, centro, partido do atual governador, Mateus Simões. A aproximação com a esquerda e com a China contrasta com o discurso de campanha.
+## Contexto fiscal
+Cleitinho assume em janeiro de 2027 e herda um déficit projetado de R$ 10,51 bilhões, com despesa de R$ 155,50 bilhões e receita de R$ 144,99 bilhões, segundo a Itatiaia de 14 de outubro. Ele pretende definir primeiro as secretarias de Planejamento e Fazenda.
+## O que vem agora
+Posse em janeiro, anúncio do secretariado e negociação da base na ALMG.
+## O que ainda não está confirmado
+- Qualquer acordo concreto com o PT.
+- Investimento chinês: não houve valor nem projeto divulgado.`,
+ fontes:[['Estado de Minas (Cleitinho se reúne com embaixador da China)','https://www.em.com.br/gerais/2026/11/7536491-cleitinho-se-reune-com-embaixador-da-china-e-visita-deputados.html'],['Metrópoles (Cleitinho visita oposição petista na ALMG)','https://www.metropoles.com/minas-gerais/apos-ser-criticado-cleitinho-visita-oposicao-petista-na-almg'],['Rede 98 (Andreia de Jesus recebe Cleitinho)','https://rede98.com.br/noticias/politica/apos-criticas-andreia-de-jesus-recebe-cleitinho-e-amplia-aproximacao-do-governador-eleito-com-a-esquerda-em-minas/'],['Itatiaia (déficit do Orçamento de Minas para 2027)','https://www.itatiaia.com.br/politica/projecao-do-deficit-no-orcamento-de-minas-para-2027-aumenta-para-r-105-bilhoes/']]});
+
+_N('mg_tarifa_zero_rmbh', {ed:'regioes', reg:'mg', k:'Regiões · Minas Gerais', hora:'10/11',
+ t:'Governo Simões envia à ALMG projeto de tarifa zero aos domingos e feriados e passe livre estudantil no transporte metropolitano de BH',
+ sub:'O PL 6.219/26 prevê aporte estadual, tarifas por anéis geográficos e implantação gradual; o governador Mateus Simões deixa o cargo em 31 de dezembro.',
+ dado:{n:'PL 6.219/26', l:'Tarifa zero e passe livre no transporte metropolitano da RMBH · TMC'},
+ resumo:'O governo de Minas enviou à ALMG o PL 6.219/26, que prevê tarifa zero em domingos e feriados nacionais e passe livre para alunos da educação básica e de graduação presencial no transporte metropolitano da Grande BH, informa o TMC. O texto traz tarifas por anéis geográficos, aporte estadual e bilhetagem interoperável, em implantação gradual e experimental. O projeto foi lido em plenário e passa por CCJ, Transporte e Finanças. Valores, custo e data de vigência não foram informados, e o governador Mateus Simões encerra o mandato em 31/12.',
+ fundo:`O governo de Minas Gerais, do governador Mateus Simões (PSD), enviou à Assembleia Legislativa (ALMG) o PL 6.219/26, que institui tarifa zero aos domingos e feriados nacionais e passe livre estudantil no transporte metropolitano da Região Metropolitana de Belo Horizonte, informam o TMC e o BH 24 Horas. O projeto foi lido em plenário e tramita pelas comissões de Constituição e Justiça, de Transporte e de Fiscalização Financeira, antes da votação.
+## O que o projeto prevê
+Haverá gratuidade em domingos e feriados nacionais e passe livre para alunos da educação básica e de cursos presenciais de graduação, com critérios de renda a regulamentar. As tarifas passam a variar por anéis geográficos, horário e sazonalidade. O Estado fará aporte para compensar os benefícios e subsidiar o custeio, com bilhetagem interoperável e implantação gradual, em caráter experimental. A mudança por anéis geográficos, horário e sazonalidade altera a lógica atual de tarifa única e precisa de regulamentação posterior para definir quanto cada faixa pagará.
+## Contexto
+Uma semana antes, a ALMG aprovou em definitivo a política estadual de subsídios ao transporte coletivo, de autoria do deputado Leleco Pimentel (PT), que não obriga repasses. O PT é de esquerda e de oposição ao governo estadual.
+## Quem decide e quando
+O projeto depende da ALMG, onde o governo precisa de maioria, e do orçamento estadual de 2027, que tem déficit projetado de R$ 10,51 bilhões. Simões encerra o mandato em 31 de dezembro, de modo que a execução pode ficar a cargo do governo de Cleitinho (Republicanos).
+## O que vem agora
+Parecer das comissões, votação em plenário e regulamentação dos critérios de renda.
+## O que ainda não está confirmado
+- Valores das tarifas, custo do subsídio e data de votação e de vigência: nenhum foi informado.
+- Se o governo seguinte dará continuidade ao projeto.`,
+ fontes:[['TMC (governo de MG envia projeto de tarifa zero e passe livre)','https://tmc.com.br/politica/governo-mg-projeto-tarifa-zero-passe-livre-transporte-metropolitano-almg/'],['BH 24 Horas (gratuidade no transporte metropolitano)','https://bh24horas.com.br/politica/projeto-preve-gratuidade-no-transporte-metropolitano-de-minas-aos-domingos-e-feriados/']]});
+
+_N('mg_cleitinho_cpi_shows', {ed:'regioes', reg:'mg', k:'Regiões · Minas Gerais', hora:'10/11',
+ t:'Cleitinho propõe CPI na ALMG sobre gastos de prefeituras com shows e quer proibir emendas estaduais para eventos',
+ sub:'O governador eleito cita R$ 1,5 bilhão gasto por municípios com festas de 2022 a 2025, número que não foi verificado; a instalação da CPI depende dos deputados.',
+ dado:{n:'R$ 1,5 bi', l:'Gasto de municípios com festas de 2022 a 2025, segundo Cleitinho (não verificado) · Brasil em Folhas'},
+ resumo:'O governador eleito de Minas, Cleitinho (Republicanos), anunciou na terça (10), em vídeo, que quer uma CPI na ALMG sobre gastos de prefeituras com festas e shows e um projeto que proíba emendas estaduais para esses eventos, informam o Brasil em Folhas e o BH 24 Horas. Ele cita R$ 1,5 bilhão gasto por municípios entre 2022 e 2025, número que não foi verificado. As fontes divergem sobre o alcance: uma fala em proibir, a outra em regras mais rígidas. Instalar a CPI depende dos deputados.',
+ fundo:`O governador eleito de Minas Gerais, Cleitinho (Republicanos), anunciou na terça (10), em vídeo nas redes sociais, que quer uma CPI na Assembleia (ALMG) sobre os gastos de prefeituras mineiras com festas e shows e um projeto que proíba o uso de emendas estaduais nesses eventos, informam o Brasil em Folhas e o BH 24 Horas. A instalação da CPI depende da assinatura dos deputados, e não há prazo.
+## O que ele propõe
+As duas fontes divergem sobre o alcance: o Brasil em Folhas diz que Cleitinho quer proibir emendas estaduais em shows, e o BH 24 Horas diz que ele negociará regras mais rígidas e encaminhará um projeto "durante o mandato". Cleitinho cita R$ 1,5 bilhão gasto por municípios com festas entre 2022 e 2025, além de uma dívida de R$ 200 bilhões com a União e um déficit de R$ 10 bilhões; todos os números são alegações dele, não verificadas.
+## O que já existe
+Em julho, a ALMG aprovou lei que limita o cachê a R$ 500 mil para shows contratados por municípios e a R$ 700 mil para os custeados pelo Estado, de autoria de Professor Cleiton (PV) e Antônio Carlos Arantes (PL). Na semana anterior, o Tribunal de Contas do Estado suspendeu cautelarmente R$ 32 milhões em patrocínios de estatais a Atlético, Cruzeiro e América, depois de acionamento de Cleitinho, segundo o Brasil em Folhas; a suspensão havia sido prometida pelo governador Mateus Simões após a proibição de patrocínio de bets.
+## Quem é quem
+Cleitinho, do Republicanos, de centro-direita, assume em janeiro. Simões é do PSD, de centro, e deixa o governo em 31 de dezembro. Professor Cleiton é do PV e Antônio Carlos Arantes, do PL, de direita.
+## O que vem agora
+Coleta de assinaturas para a CPI e eventual projeto sobre as emendas, que dependem de maioria na ALMG, onde o governador eleito não tem partido majoritário.
+## O que ainda não está confirmado
+- Os R$ 1,5 bilhão citados e a dívida de R$ 200 bilhões.
+- Se o projeto proíbe as emendas ou apenas endurece as regras.`,
+ fontes:[['Brasil em Folhas (Cleitinho quer proibir emendas estaduais em shows)','https://brasilemfolhas.com.br/2026/11/cleitinho-quer-proibir-uso-de-emendas-estaduais-em-shows/'],['BH 24 Horas (Cleitinho propõe CPI sobre gastos com festas)','https://bh24horas.com.br/politica/cleitinho-propoe-cpi-sobre-gastos-de-prefeituras-mineiras-com-festas-e-shows/']]});
+
+_N('df_cldf_reeleicao_mesa', {ed:'regioes', reg:'co', k:'Regiões · Distrito Federal', hora:'10/11',
+ t:'CLDF aprova em segundo turno, por 15 votos a 1, emenda que permite nova reeleição da Mesa e abre caminho para Wellington Luiz disputar o terceiro mandato',
+ sub:'A PEL, de Pastor Daniel de Castro (PP), tem a eleição da Mesa marcada para 6 de janeiro de 2027; Eduardo Pedrosa (União) votou contra e prevê questionamento judicial.',
+ dado:{n:'15 a 1', l:'Votação em segundo turno na CLDF; no primeiro, o placar foi de 17 a 6 · Acorda DF'},
+ resumo:'A Câmara Legislativa do DF aprovou na terça (10), em segundo turno, por 15 votos a 1, a emenda à Lei Orgânica que permite nova reeleição da Mesa Diretora, informa o Acorda DF. A regra veda a reeleição para o mesmo cargo na mesma legislatura e a permite no início de nova legislatura para quem cumpriu dois mandatos seguidos, o que abre caminho a Wellington Luiz (MDB) em 6/1/2027. Eduardo Pedrosa (União) votou contra e prevê judicialização, por contrariar entendimento do STF.',
+ fundo:`A Câmara Legislativa do Distrito Federal (CLDF) aprovou na terça (10), em segundo turno, por 15 votos a 1, a proposta de emenda à Lei Orgânica que permite nova reeleição da Mesa Diretora, informa o Acorda DF. A emenda abre caminho para que o presidente Wellington Luiz (MDB) dispute o terceiro mandato seguido na eleição de 6 de janeiro de 2027. No primeiro turno, em 27 de outubro, o placar foi de 17 a 6, segundo o Correio da Manhã.
+## O que a emenda diz
+Os mandatos continuam de dois anos. A regra veda a reeleição para o mesmo cargo na mesma legislatura e a permite no início de nova legislatura para quem cumpriu dois mandatos seguidos. O autor é o deputado distrital Pastor Daniel de Castro (PP). Como é emenda à Lei Orgânica, a proposta não passa por sanção do governo do DF.
+## A oposição à regra
+O único voto contrário foi o de Eduardo Pedrosa (União), que prevê questionamento judicial por contrariar o entendimento do Supremo Tribunal Federal sobre a recondução de Mesas legislativas. O relator, Thiago Manzoni (PL), propôs um substitutivo que limitava a reeleição a duas eleições e não obteve as oito assinaturas necessárias.
+## Quem é quem
+Wellington Luiz, do MDB, de centro, presidiu a Casa nos últimos mandatos e assumiu interinamente o governo em 28 de outubro, enquanto a governadora Celina Leão (PP) ficou dez dias afastada. Pastor Daniel de Castro é do PP, de centro-direita, partido de Celina; Manzoni, do PL, e Pedrosa, do União, também são de centro-direita e direita.
+## O que vem agora
+Promulgação da emenda pela Mesa e eventual ação judicial contra ela; eleição da Mesa em 6 de janeiro de 2027.
+## O que ainda não está confirmado
+- A promulgação e uma possível judicialização.
+- Se Wellington Luiz será candidato.
+- Se a regra será contestada no Supremo antes da eleição da Mesa.`,
+ fontes:[['Acorda DF (CLDF aprova proposta que permite nova reeleição da Mesa)','https://acordadf.com.br/noticias/brasilia/cldf-aprova-proposta-que-permite-nova-reeleicao-da-mesa-diretora/'],['Correio da Manhã (CLDF aprova regra que permite reeleição da Mesa)','https://www.correiodamanha.com.br/nacional/distrito-federal/2026/10/330931-cldf-aprova-regra-que-permite-reeleicao-da-mesa-diretora.html']]});
+
+_N('df_ploa_social', {ed:'regioes', reg:'co', k:'Regiões · Distrito Federal', hora:'10/11', fonteunica:true,
+ t:'Audiência na CLDF aponta queda de recursos para áreas sociais no Orçamento de 2027, de R$ 80,12 bilhões, e a comissão vai acionar o TCDF e o Ministério Público',
+ sub:'A cultura cai 4,63%, a R$ 392,2 milhões; 566 aprovados na educação aguardam nomeação, e há mais de 800 vagas de odontologia vazias, segundo a audiência.',
+ dado:{n:'R$ 80,12 bi', l:'Orçamento de 2027 do DF: R$ 49,8 bi do GDF e R$ 30,32 bi do FCDF · Brasil de Fato DF'},
+ resumo:'Audiência na Câmara Legislativa do DF apontou na terça (10) queda de recursos para áreas sociais no projeto de Orçamento de 2027, de R$ 80,12 bilhões, informa o Brasil de Fato DF. São R$ 49,8 bilhões do GDF e R$ 30,32 bilhões do Fundo Constitucional, alta de 7,68%; a cultura cai 4,63%, e as renúncias fiscais passam de R$ 10 bilhões. O presidente da comissão, Gabriel Magno (PT), pretende acionar o TCDF e o Ministério Público. A data da votação não foi informada.',
+ fundo:`Uma audiência na Câmara Legislativa do Distrito Federal (CLDF) apontou na terça (10) redução de recursos para áreas sociais no projeto de Orçamento de 2027, de R$ 80,12 bilhões, informa o Brasil de Fato DF. O presidente da comissão, deputado Gabriel Magno (PT), pretende acionar o Tribunal de Contas do DF (TCDF) e o Ministério Público.
+## Os números do orçamento
+O total de R$ 80,12 bilhões se divide em R$ 49,8 bilhões do governo do DF e R$ 30,32 bilhões do Fundo Constitucional do DF (FCDF), com alta de 7,68%. Do FCDF, a segurança fica com R$ 15,7 bilhões, 51,79%, a saúde com R$ 8,81 bilhões e a educação com R$ 5,53 bilhões, 18,25%. A cultura cai 4,63%, para R$ 392,2 milhões, e as renúncias fiscais passam de R$ 10 bilhões.
+## As críticas
+Participantes da audiência apontaram que 566 aprovados em concursos da educação aguardam nomeação e que há mais de 800 vagas de odontologia vazias. A crítica é que o orçamento prioriza a segurança e renúncias fiscais, em detrimento de saúde, educação e cultura.
+## Quem é quem
+Gabriel Magno é do PT, partido de esquerda e de oposição ao governo da governadora Celina Leão (PP), de centro-direita. A comissão é a de orçamento da CLDF.
+## O que vem agora
+Acionamento do TCDF e do Ministério Público pela comissão e votação do orçamento em plenário, ainda sem data.
+## O que ainda não está confirmado
+- A data de votação da lei orçamentária.
+- Se haverá mudanças no texto por emendas dos distritais.`,
+ fontes:[['Brasil de Fato DF (audiência na CLDF aponta redução para áreas sociais)','https://www.brasildefato.com.br/2026/11/10/audiencia-na-camara-legislativa-do-df-aponta-reducao-de-recursos-para-areas-sociais-e-questiona-prioridades-do-orcamento-de-2027/']]});
+
+_N('ms_pl_paulo_correa_alems', {ed:'regioes', reg:'co', k:'Regiões · Mato Grosso do Sul', hora:'10/11',
+ t:'PL escolhe Paulo Corrêa para disputar a presidência da Assembleia de Mato Grosso do Sul; eleição da Mesa é em 1º de fevereiro de 2027',
+ sub:'A bancada de nove deputados decidiu por unanimidade, e o candidato precisa de 13 votos entre 24; a federação PP-União tem quatro cadeiras.',
+ dado:{n:'13 de 24', l:'Votos necessários para presidir a Alems; o PL tem 9 cadeiras · Enfoque MS'},
+ resumo:'A bancada do PL escolheu por unanimidade, na terça (10), o deputado Paulo Corrêa como candidato à presidência da Assembleia de Mato Grosso do Sul para 2027-2028, anunciou o senador eleito e presidente estadual do partido, Reinaldo Azambuja, informa o Enfoque MS. A Casa tem 24 cadeiras e exige 13 votos; o PL tem nove, e a federação PP-União, quatro. A eleição é em 1º/2/2027, às 9h. Gerson Claro (PP), atual presidente, pode ir à 1ª Secretaria, sem decisão fechada.',
+ fundo:`A bancada do PL na Assembleia Legislativa de Mato Grosso do Sul (Alems) escolheu por unanimidade, na terça (10), o deputado Paulo Corrêa como candidato à presidência da Casa para o biênio 2027-2028, anunciou o senador eleito e presidente estadual do partido, Reinaldo Azambuja, informa o Enfoque MS. A Aonça confirma a escolha. A eleição da Mesa será em 1º de fevereiro de 2027, às 9h.
+## A conta de votos
+A Assembleia tem 24 cadeiras, e o candidato precisa de 13 votos. O PL tem nove deputados e a federação PP-União, quatro, o que obriga o partido a buscar aliados. Zé Teixeira e o Coronel David também queriam o posto, e Gerson Claro (PP), atual presidente da Casa, pode ir para a 1ª Secretaria, sem decisão fechada.
+## Quem é quem
+Reinaldo Azambuja é do PL, partido de direita que lidera a oposição a Lula. O governador Eduardo Riedel e a senadora Tereza Cristina são do PP, de centro-direita, e serão procurados para a composição da Mesa. A Aonça trata como especulação a tese de que Coronel David, com 41.492 votos, seria candidato a prefeito de Campo Grande em 2028.
+## O contexto fiscal da Casa
+O presidente Gerson Claro tratou com Riedel, no mesmo dia, a alíquota modal do ICMS, hoje de 17%, igual à de Espírito Santo, Santa Catarina e Mato Grosso, contra a média nacional buscada de 19% a 19,5%; para ele, 21%, defendido por técnicos da Fazenda, não passaria. Os projetos do Executivo, entre eles o Refis, a antecipação do IPVA e a LOA de 2027, de R$ 27,99 bilhões, devem ser votados até 17 de dezembro, segundo A Crítica. O assunto "não está fechado".
+## O que vem agora
+Conversas do PL com PP e União para formar maioria e definição da 1ª Secretaria.
+## O que ainda não está confirmado
+- O apoio de PP e União à candidatura de Corrêa.
+- O percentual final da alíquota modal do ICMS e o resultado da reunião com Riedel.`,
+ fontes:[['Enfoque MS (PL escolhe Paulo Corrêa)','https://www.enfoquems.com.br/pl-escolhe-paulo-correa-para-disputar-presidencia-da-assembleia-de-ms/'],['Aonça (deputados discutem alíquota com Riedel)','https://www.aonca.com.br/deputados-discutem-com-governador-eduardo-riedel-percentual-de-aliquota-modal/'],['A Crítica (Gerson Claro detalha o Orçamento 2027)','https://acritica.net/politica/gerson-claro-detalha-orcamento-2027-loa-projetos-governo-refis-ipva-ibs/']]});
+
+_N('mt_reforma_pivetta_rga', {ed:'regioes', reg:'co', k:'Regiões · Mato Grosso', hora:'10/11',
+ t:'Assembleia de Mato Grosso discute reforma administrativa de Pivetta e o pagamento parcelado da RGA da Covid aos servidores',
+ sub:'O presidente em exercício, Júlio Campos (União), defende parcelar a RGA em cinco anos; a proposta de reforma ainda não chegou à Casa.',
+ dado:{n:'5 anos', l:'Parcelamento defendido por Júlio Campos para a RGA da Covid · Folhamax'},
+ resumo:'O presidente em exercício da Assembleia de Mato Grosso, Júlio Campos (União), diz que a reforma administrativa do governador Otaviano Pivetta pode fundir secretarias, extinguir cargos e passar atribuições aos municípios, informa a Folhamax. Ele defende parcelar em cinco anos a RGA da Covid, pendente desde a pandemia, e diz que Pivetta "tem que dialogar". A proposta não chegou à Assembleia, que vota na quarta (11) o PL 225/2026, de monitoramento eletrônico, e a CPI da Saúde investiga licitações de 2019 a 2022.',
+ fundo:`O presidente em exercício da Assembleia Legislativa de Mato Grosso (ALMT), Júlio Campos (União), disse que a reforma administrativa do governador Otaviano Pivetta pode fundir secretarias, extinguir cargos e passar atribuições aos municípios, e defendeu o pagamento parcelado da RGA da Covid aos servidores, informa a Folhamax. A proposta ainda não chegou à Assembleia.
+## O que a reforma pode mudar
+A reorganização incluiria estradas, parte da Empaer e a regularização fundiária do Intermat, que passariam a ser atribuições dos municípios. Campos pretendia levar a proposta ao Colégio de Líderes antes da sessão de quarta (11).
+## A RGA da Covid
+Campos defende o pagamento parcelado em cinco anos da RGA da Covid, a revisão geral anual pendente desde a pandemia, e diz que o governo deve cobrar: "18% do que deve de atraso". Para ele, Pivetta "tem que dialogar" com os servidores. Pivetta foi reeleito no primeiro turno, em outubro, e a vice é Gisela Simona (União). A pendência pesa na relação do Executivo com a base de servidores e com a Assembleia, que precisa votar o Orçamento do ano seguinte.
+## A agenda da semana
+A Assembleia faz duas sessões ordinárias na quarta (11), às 9h e às 13h, com o PL 225/2026, do Executivo, sobre monitoramento eletrônico, segundo o Portal Mato Grosso e a agenda da ALMT. A CPI da Saúde investiga licitações da Secretaria de Estado de Saúde de 2019 a 2022.
+## Quem é quem
+Júlio Campos e Gisela Simona são do União Brasil, de centro-direita. O partido de Pivetta não foi informado nas fontes.
+## O que vem agora
+Colégio de Líderes, sessões de quarta (11) e eventual envio da reforma pelo governo.
+## O que ainda não está confirmado
+- O conteúdo e o prazo da reforma administrativa, que não chegou à Casa.
+- Valores da RGA e o cronograma do parcelamento.
+- Quais secretarias seriam fundidas ou extintas.`,
+ fontes:[['Folhamax (Assembleia tenta convencer Pivetta a pagar RGA da Covid)','https://www.folhamax.com/politica/al-tenta-convencer-pivetta-pagar-rga-da-covid-aos-servidores/581288'],['Portal Mato Grosso (semana de votações na Assembleia)','https://portalmatogrosso.com.br/assembleia-tera-semana-de-votacoes-debates-sobre-seguranca-publica-saude-e-meio-ambiente/']]});
+
+_N('ba_alba_17_projetos', {ed:'regioes', reg:'ne', k:'Regiões · Bahia', hora:'10/11',
+ t:'Assembleia da Bahia aprova 17 proposições depois de acordo entre governo e oposição; CCJ aprova seis projetos em fim de legislatura',
+ sub:'A trégua entre Rosemberg Pinto (PT) e Tiago Correia (PSDB) incluiu três resoluções da Comenda 2 de Julho; as votações seguem até meados de dezembro.',
+ dado:{n:'17', l:'Proposições aprovadas pela Alba na terça (10): 14 projetos de utilidade pública e 3 resoluções · A Tarde'},
+ resumo:'A Assembleia Legislativa da Bahia aprovou na terça (10) 17 proposições, 14 projetos de utilidade pública e três resoluções da Comenda 2 de Julho, depois de acordo entre o líder do governo, Rosemberg Pinto (PT), e o da oposição, Tiago Correia (PSDB), informa A Tarde. A CCJ aprovou seis projetos pela manhã. É o fim de legislatura: as votações vão até 15 e 16 de dezembro, e a diplomação é em 17/12. Placares e prazos de sanção não foram divulgados.',
+ fundo:`A Assembleia Legislativa da Bahia (Alba) aprovou na terça (10) 17 proposições, depois de acordo entre o líder do governo, Rosemberg Pinto (PT), e o líder da oposição, Tiago Correia (PSDB), informa A Tarde. A sessão foi presidida por Ivana Bastos (PSD), e só foram votados projetos de deputados presentes em plenário.
+## O que foi aprovado
+São 14 projetos de utilidade pública, relatados na CCJ por Robinson Almeida (PT), e três resoluções da Comenda 2 de Julho, incluídas a pedido de Tiago Correia, cujos autores terminam o mandato. Os autores incluem Angelo Almeida, Euclides Fernandes e Osni Cardoso (PT), Felipe Duarte e Luciano Araújo (Avante), Jurailton Santos (Republicanos), Kátia Oliveira e Robinho (União Brasil) e Rogério Andrade (MDB).
+Pela manhã, a CCJ aprovou seis projetos: o PL 25.947/2025, de artes marciais nas escolas, por 3 a 2; o PL 24.744/2023, de prova de vida no Suprev, por unanimidade; e o PL 25.401/2024, que transfere simbolicamente a sede do governo para Santo Amaro em 14 de julho.
+## O calendário de fim de legislatura
+O Bahia Notícias registrou em 3 de novembro o calendário: votações até 15 e 16 de dezembro, diplomação em 17 de dezembro e prazo de emendas à LOA da Casa em 18 de dezembro, além de um projeto sobre o TCE-BA que ajusta o regimento. A renovação da Casa é de 38,1% dos 63 deputados, segundo o Brasil de Fato de 5 de outubro.
+## Quem é quem
+Rosemberg Pinto e Robinson Almeida são do PT, partido do governador Jerônimo Rodrigues e de esquerda; Tiago Correia é do PSDB, centro, na oposição; Ivana Bastos, do PSD, preside a Casa. A trégua ocorre em pauta pré-recesso, sem vínculo direto com o Congresso.
+## O que vem agora
+Sanção dos projetos de lei e mais sessões até meados de dezembro.
+## O que ainda não está confirmado
+- Placares dos projetos aprovados.
+- Prazos de sanção do governo.`,
+ fontes:[['A Tarde (Alba aprova 17 projetos após acordo)','https://atarde.com.br/politica/alba-aprova-17-projetos-apos-acordo-entre-governo-e-oposicao-1409044'],['Bahia Notícias (calendário do encerramento dos trabalhos)','https://www.bahianoticias.com.br/noticia/323292-al-ba-aprova-projetos-e-define-calendario-para-o-encerramento-dos-trabalhos-legislativos']]});
+
+_N('ce_alece_presidencia_romeu', {ed:'regioes', reg:'ne', k:'Regiões · Ceará', hora:'10/11',
+ t:'Elmano acena a Romeu Aldigueri para a presidência da Alece, mas adia a decisão; eleição da Mesa é em 1º de fevereiro de 2027',
+ sub:'O governador (PT) diz que "o nome do Romeu é um nome que pode se colocar" e que prefere consenso; a oposição cai de 11 para 9 deputados.',
+ dado:{n:'46', l:'Cadeiras da Alece; 26 novos deputados (56% de renovação) · O Povo'},
+ resumo:'O governador do Ceará, Elmano de Freitas (PT), disse na segunda (9) que "o nome do Romeu é um nome que pode se colocar" para a presidência da Assembleia, mas que não interfere e prefere consenso amplo da base, informa o Diário do Nordeste, em coluna de 10/11. A Alece tem 46 cadeiras; a oposição cai de 11 para 9. Romeu Aldigueri (PSB) tem apoio declarado do PSD e da deputada Dra. Silvana (PL). A eleição é em 1º/2/2027, e a base discute o assunto no fim de dezembro.',
+ fundo:`O governador do Ceará, Elmano de Freitas (PT), disse na segunda (9) que "o nome do Romeu é um nome que pode se colocar" para a presidência da Assembleia Legislativa (Alece), mas que não interfere na eleição da Casa e prefere um consenso amplo da base, segundo coluna de Inácio Aguiar no Diário do Nordeste. A eleição da Mesa é em 1º de fevereiro de 2027, no início da nova legislatura.
+## A composição da Alece
+A Casa tem 46 cadeiras, com 26 novos deputados, cerca de 56% de renovação, e 20 reeleitos, segundo O Povo. A base tem PSB com 13, PT com 12, União Progressista com três, PSD com três, Republicanos com dois, PSOL com dois, MDB com um e Solidariedade com um. A oposição cai de 11 para 9 deputados: o PL sobe de quatro para seis, e o PSDB cai de sete para três.
+## Quem disputa
+Romeu Aldigueri (PSB) tem apoio declarado do PSD, de Domingos Filho, e da oposição do PL, de Dra. Silvana. Zezinho Albuquerque (PP) diz que o bloco discutirá com Elmano no fim de dezembro. Osmar Baquit (PSB) é cogitado, mas diz não discutir o tema. Em 2024, Romeu foi eleito com 44 dos 46 votos. Parte da base, segundo a coluna, ficou frustrada com o adiamento, porque já trata a sucessão como prioridade, e o presidente da Mesa controla o ritmo de empréstimos, créditos e reformas.
+## Quem é quem
+Elmano é do PT, partido de esquerda do governo cearense; Romeu e Baquit, do PSB, de centro-esquerda, aliado; o PL, de direita, e o PSDB, de Ciro Gomes, estão na oposição estadual.
+## O que vem agora
+Debate da base no fim de dezembro, com possível nova composição de áreas do governo, e eleição da Mesa em 1º de fevereiro.
+## O que ainda não está confirmado
+- A candidatura formal de Romeu Aldigueri.
+- Quórum e regras da votação, que as fontes não informam.`,
+ fontes:[['Diário do Nordeste (Elmano acena a Romeu, mas adia debate)','https://diariodonordeste.verdesmares.com.br/opiniao/colunistas/inacio-aguiar/presidencia-da-assembleia-elmano-acena-a-romeu-mas-adia-debate-1.3804690'],['O Povo (Aldigueri tem apoios da base à bolsonarista)','https://mais.opovo.com.br/jornal/politica/2026/11/06/aldigueri-tem-apoios-desde-a-base-ate-a-bolsonarista-porem-cenario-ainda-e-de-indefinicao.html']]});
+
+_N('ce_margem_equatorial_empregos', {ed:'regioes', reg:'ne', k:'Regiões · Ceará', hora:'10/11',
+ t:'Margem Equatorial pode gerar 91 mil empregos e R$ 38,3 bilhões no Ceará, estima a CNI; contratos com a ANP só em 26 de fevereiro de 2027',
+ sub:'O consórcio Petrobras e QatarEnergy arrematou sete dos oito blocos cearenses por R$ 28,46 milhões; a produção entraria a partir de 2033 na simulação.',
+ dado:{n:'R$ 38,3 bi', l:'Valor adicionado projetado pela CNI para o Ceará · Movimento Econômico'},
+ resumo:'A Confederação Nacional da Indústria estima que a exploração da Margem Equatorial pode gerar 91 mil empregos e R$ 38,3 bilhões de valor adicionado no Ceará, informa o Movimento Econômico. O consórcio Petrobras (70%) e QatarEnergy (30%) arrematou em 7/10 sete dos oito blocos cearenses por R$ 28,46 milhões. O cenário supõe 300 mil barris por dia e R$ 5,96 bilhões em royalties, com contratos previstos para 26/2/2027 e produção a partir de 2033. É projeção patronal, não dado oficial.',
+ fundo:`A Confederação Nacional da Indústria (CNI) estima que a exploração de petróleo na Margem Equatorial pode gerar 91 mil empregos e R$ 38,3 bilhões de valor adicionado no Ceará, informa o Movimento Econômico. O consórcio formado por Petrobras (70%) e QatarEnergy (30%), único a ofertar, arrematou em 7 de outubro sete dos oito blocos cearenses, em 4.689,68 km² e dez municípios, de Acaraú a Cascavel, por R$ 28,46 milhões, o valor mínimo, segundo o Diário do Nordeste.
+## O cenário da CNI
+A simulação supõe 300 mil barris por dia, R$ 38,3 bilhões de valor adicionado, até R$ 2,15 bilhões em tributos indiretos e R$ 5,96 bilhões em royalties, com petróleo a US$ 100 por barril e câmbio de R$ 5,45. A produção começaria em 2033, depois de sete anos de fase exploratória, e a Agência Nacional do Petróleo (ANP) prevê assinar os contratos em 26 de fevereiro de 2027. O investimento previsto na área é de R$ 235,25 milhões, segundo o Diário do Nordeste.
+## Contexto
+A Margem Equatorial é vista como alternativa ao pré-sal, cuja produção começa a declinar a partir de 2031, e o porto do Pecém é apontado como vantagem logística do Ceará. A projeção é de uma entidade patronal e não trata do licenciamento ambiental do Ibama.
+## Quem é quem
+Petrobras é estatal controlada pela União; QatarEnergy é a estatal de energia do Catar; a CNI representa a indústria. O governo do Ceará, de Elmano de Freitas (PT), e a bancada do estado tratam a exploração como oportunidade de empregos.
+## O que vem agora
+Assinatura dos contratos em 26 de fevereiro de 2027 e início da fase exploratória.
+## O que ainda não está confirmado
+- A assinatura dos contratos, ainda não ocorrida.
+- Os números da CNI, que são projeção e dependem de preço do petróleo e câmbio.
+- O licenciamento ambiental das áreas.`,
+ fontes:[['Movimento Econômico (Margem Equatorial pode gerar 91 mil empregos)','https://movimentoeconomico.com.br/estados/ceara/2026/11/10/margem-equatorial-pode-gerar-91-mil-empregos-e-movimentar-bilhoes-no-ce/'],['Diário do Nordeste (Petrobras e QatarEnergy arrematam sete blocos)','https://diariodonordeste.verdesmares.com.br/negocios/petrobras-e-qatar-energy-arrematam-sete-blocos-offshore-no-ceara-por-r-2846-mi-em-leilao-da-anp-1.3797192']]});
+
+_N('pe_compesa_barragens', {ed:'regioes', reg:'ne', k:'Regiões · Pernambuco', hora:'10/11',
+ t:'Compesa diz não prever ampliar o racionamento em Pernambuco, com 31 barragens abaixo de 10% e El Niño à frente',
+ sub:'Seis reservatórios estão zerados, e cidades como Araripina, Trindade e Ipubi têm rodízios de até 25 dias sem água; o painel federal projeta chuva abaixo do normal até janeiro.',
+ dado:{n:'31', l:'Barragens abaixo de 10%, sete delas usadas pela Compesa · Movimento Econômico'},
+ resumo:'A Compesa diz não prever ampliar o racionamento de água em Pernambuco, com 31 barragens abaixo de 10% de volume, sete delas usadas para abastecimento público, informa o Movimento Econômico. Outro levantamento da APAC, de 6/11, fala em 29 de 99 reservatórios em colapso e seis zerados. Araripina, Trindade e Ipubi têm rodízios de até 25 dias sem água, e o painel federal de El Niño projeta chuva abaixo do normal de novembro a janeiro. Os dois números usam critérios diferentes e não estão reconciliados.',
+ fundo:`A Companhia Pernambucana de Saneamento (Compesa) diz não prever ampliar o racionamento de água, com 31 barragens do estado abaixo de 10% de volume, sete delas usadas para abastecimento público, informa o Movimento Econômico, a partir do boletim da Agência Pernambucana de Águas e Clima (APAC) de 10 de novembro. O diretor Flávio Coutinho disse: "Acreditamos que essas cidades não vão sofrer tanto".
+## O que mostram os boletins
+Outro levantamento da APAC, de 6 de novembro, reproduzido pelo Portal de Prefeitura, fala em 29 dos 99 reservatórios em colapso e seis com volume zero: Parnamirim, Chapéu e Abóboras, em Parnamirim; Rancharia, em Araripina; Arrodeio, em São José do Belmonte; e Barra do Chapéu, em Cabrobó. Os números 29 e 31 usam critérios diferentes e não estão reconciliados. As bacias em pior situação são a do Brígida, a do Terra Nova e a do Pajeú.
+## As cidades mais atingidas
+Incharia, em Araripina, e Barra de Duas Serras, em Poção, dependem de carro-pipa. Araripina, Trindade e Ipubi têm rodízios de até 25 dias sem água. As adutoras do Agreste, ligadas à transposição do São Francisco, seguem incompletas, e não há prazo de conclusão.
+## O clima
+O painel federal de El Niño projeta calor acima da média e chuva abaixo do normal no Nordeste de novembro de 2026 a janeiro de 2027. O estado tem decretos de emergência, segundo o Portal de Prefeitura de 5 de agosto, título visto.
+## Quem é quem
+A governadora Raquel Lyra é do PSD, de centro, e a Compesa é a empresa estadual de saneamento. A gestão da água depende também do governo federal, responsável pela transposição.
+## O que vem agora
+Boletins semanais da APAC e a evolução do El Niño, que decidem se o racionamento será ampliado.
+## O que ainda não está confirmado
+- A população atingida, que as fontes pedem ao governo.
+- Quanto tempo os sistemas críticos resistem sem chuva.`,
+ fontes:[['Movimento Econômico (31 barragens comprometidas)','https://movimentoeconomico.com.br/infraestrutura-2/2026/11/10/com-31-barragens-comprometidas-compesa-nao-preve-ampliar-racionamento-de-agua/'],['Portal de Prefeitura (Pernambuco soma 29 barragens em colapso)','https://portaldeprefeitura.com.br/pernambuco/pernambuco-soma-29-barragens-em-colapso-e-seis-com-volume-zero-revela/635693/']]});
+
+_N('ac_loa_2027_suspensa', {ed:'regioes', reg:'norte', k:'Regiões · Acre', hora:'10/11', fonteunica:true,
+ t:'Governo do Acre pede à Aleac a retirada do projeto da LOA 2027, de R$ 14,6 bilhões, por incerteza tributária; Nicolau Júnior sanciona a LDO',
+ sub:'O Executivo diz precisar rever as estimativas de ICMS, IPVA, ITCMD, IRRF e FPE por causa da reforma tributária; a LDO de 2027 reserva 6,80% para emendas individuais.',
+ dado:{n:'R$ 14,6 bi', l:'Valor da LOA 2027 retirada, alta de 6,3% sobre 2026 · ac24horas'},
+ resumo:'O governo do Acre pediu à Assembleia, pela Mensagem nº 2.432, a retirada do projeto da LOA 2027, de R$ 14,6 bilhões, por incerteza tributária, informa o ac24horas. O Executivo diz precisar rever as estimativas de ICMS, IPVA, ITCMD, IRRF e FPE por causa da reforma tributária e do Imposto Seletivo. A LDO de 2027 (Lei 4.858/2026) foi sancionada por Nicolau Júnior (Progressistas), presidente da Aleac e governador em exercício, e reserva 6,80% para emendas individuais. Sem prazo de reenvio.',
+ fundo:`O governo do Acre pediu à Assembleia Legislativa (Aleac), pela Mensagem nº 2.432, a retirada do projeto da Lei Orçamentária de 2027, de R$ 14,6 bilhões, alta de 6,3% sobre 2026, por causa da incerteza tributária, informa o ac24horas. O Palácio Rio Branco, pela governadora Mailza Assis Cameli (Progressistas), diz precisar rever as estimativas de ICMS, IPVA, ITCMD, IRRF e do Fundo de Participação dos Estados (FPE), por causa da reforma tributária e do Imposto Seletivo, sem série histórica consolidada.
+## A LDO sancionada
+A LOA estava parada porque a Lei de Diretrizes Orçamentárias não havia sido votada. A Lei nº 4.858/2026, a LDO de 2027, é datada de 9 de novembro e foi publicada em 10 de novembro. Foi sancionada por Nicolau Júnior (Progressistas), presidente da Aleac e governador em exercício, enquanto Mailza estava na Turquia, na COP31. A LDO reserva 6,80% para emendas individuais, ao menos 50% delas para áreas listadas, e autoriza concursos e recomposição do magistério, sujeitos aos limites da Lei de Responsabilidade Fiscal.
+## Outras medidas
+O Decreto nº 11.956, assinado por Mailza, transfere R$ 6 milhões de receitas do Detran de 2026 para a Secretaria de Saúde e para a Fundhacre, informa o ac24horas. Há precedentes de R$ 3,5 milhões em 2022 e de R$ 8,5 milhões em 2023.
+## Quem é quem
+Mailza Assis Cameli e Nicolau Júnior são do Progressistas, partido de centro-direita que governa o Acre e preside a Assembleia. A mudança nas estimativas decorre da reforma tributária do governo Lula.
+## O que vem agora
+A equipe econômica refaz as planilhas e reenvia a LOA, sem prazo informado.
+## O que ainda não está confirmado
+- O prazo de reenvio da LOA.
+- A execução de concursos e reajustes, condicionada a exigências legais e orçamentárias.`,
+ fontes:[['ac24horas (incerteza tributária faz governo suspender a LOA)','https://ac24horas.com/2026/11/10/incerteza-tributaria-faz-governo-suspender-tramitacao-da-loa-na-aleac'],['ac24horas (Nicolau sanciona a LDO)','https://ac24horas.com/2026/11/10/governador-em-exercicio-nicolau-sanciona-ldo-com-previsao-de-concursos-publicos-e-recomposicao-salarial/']]});
+
+_N('ro_ale_suspende_pagamentos', {ed:'regioes', reg:'norte', k:'Regiões · Rondônia', hora:'10/11',
+ t:'Assembleia de Rondônia suspende pagamentos, licitações e novos contratos até 19 de novembro, em ato de Laerte Gomes',
+ sub:'Alex Redano assumiu o governo como interino em 9/11; a posse do governador eleito Marcos Rogério (PL) foi confirmada para 6 de janeiro de 2027.',
+ dado:{n:'19/11', l:'Prazo da suspensão de pagamentos e novos contratos na ALE-RO · Rondoniaovivo'},
+ resumo:'A Assembleia Legislativa de Rondônia suspendeu até 19 de novembro pagamentos a fornecedores, novas licitações, novos contratos, conversão de férias e licença-prêmio em dinheiro e a programação de despesas de água, energia e internet, em ato do presidente em exercício, deputado Laerte Gomes, informa o Rondoniaovivo. Decisões judiciais ficam de fora. Alex Redano, presidente da Casa, assumiu o governo como interino em 9/11. A posse de Marcos Rogério (PL) está marcada para 6 de janeiro de 2027. O motivo da suspensão não foi explicado.',
+ fundo:`A Assembleia Legislativa de Rondônia (ALE-RO) suspendeu até 19 de novembro os pagamentos a fornecedores, novas licitações, inclusive dispensa e inexigibilidade, novos contratos, a conversão de férias e de licença-prêmio em dinheiro e a programação de despesas de água, energia, internet e encargos, em ato do presidente em exercício, deputado Laerte Gomes, informa o Rondoniaovivo. O Ato nº 051/2026-LEG saiu no Diário Oficial nº 208, e decisões judiciais são exceção.
+## O contexto da suspensão
+O presidente titular da Casa, Alex Redano, assumiu o governo como interino em 9 de novembro, tema já publicado pelo Radar, o que deixou Gomes na presidência em exercício. O texto do ato fala em "equilíbrio financeiro", e o Rondoniaovivo não informa se a suspensão se deve à falta de caixa nem os valores envolvidos.
+## A transição
+A posse do governador eleito Marcos Rogério (PL) foi confirmada para 6 de janeiro de 2027, no Teatro Estadual Palácio das Artes, por resolução de 4 de novembro, atualizada em 10 de novembro, segundo o Rondoniaovivo. O Rondoniagora informa que, depois do relatório da equipe de transição, o novo governo iniciou negociações do Orçamento de 2027 com a Assembleia. O orçamento anual passa de R$ 20 bilhões, e os repasses seguem percentuais: Executivo 74,89%, ALE 4,77%, Judiciário 11,29%, Ministério Público 4,98%, TCE 2,54% e Defensoria 1,53%. As emendas individuais são de R$ 15 milhões por deputado, 50% para a Saúde, e o deputado federal Lúcio Mosquini (PL) defende prioridade à Saúde.
+## Quem é quem
+Marcos Rogério e Lúcio Mosquini são do PL, partido de direita que vai assumir o governo; Alex Redano e Laerte Gomes presidem a Assembleia. A interinidade resulta da vacância do cargo de governador.
+## O que vem agora
+Fim da suspensão em 19 de novembro, negociação do Orçamento de 2027 e posse de Marcos Rogério em 6 de janeiro.
+## O que ainda não está confirmado
+- O motivo da suspensão, se falta de caixa ou ajuste administrativo.
+- O valor exato do Orçamento de 2027.`,
+ fontes:[['Rondoniaovivo (ALE-RO suspende pagamentos e licitações)','https://www.rondoniaovivo.com/noticia/geral/2026/11/10/equilibrio-financeiro-ale-ro-suspende-pagamentos-licitacoes-e-novos-contratos-ate-19-de-novembro.html'],['Rondoniaovivo (posse de Marcos Rogério em 6 de janeiro)','https://www.rondoniaovivo.com/noticia/politica/2026/11/09/ato-solene-assembleia-legislativa-confirma-posse-de-marcos-rogerio-para-6-de-janeiro.html'],['Rondoniagora (transição e orçamento de 2027)','https://www.rondoniagora.com/politica/apos-relatorio-da-equipe-de-transicao-novo-governo-inicia-negociacoes-do-orcamento-de-2027-com-assembleia']]});
+
+_N('to_aleto_ldo_cultura', {ed:'regioes', reg:'norte', k:'Regiões · Tocantins', hora:'10/11', fonteunica:true,
+ t:'Prazo de emendas à LDO de 2027 na Assembleia do Tocantins termina em 10 de novembro, e o setor cultural pede inclusões',
+ sub:'Valdemar Júnior (MDB) diz que protocolará as sugestões e quer implementá-las a partir de janeiro; a LDO projeta R$ 16,8 bilhões de receita.',
+ dado:{n:'28/10 a 10/11', l:'Prazo de emendas à LDO 2027 na Aleto, segundo Olyntho Neto · Conexão Tocantins'},
+ resumo:'O prazo de emendas à LDO de 2027 na Assembleia do Tocantins foi de 28/10 a 10/11, segundo o presidente da Comissão de Finanças, Olyntho Neto, informa o Conexão Tocantins. Representantes da cultura, entre eles Osmar CasaGrande, Jerfeson Nascimento e Kaká Nogueira, pediram apoio ao deputado Valdemar Júnior (MDB), que disse que protocolaria as sugestões e podia corrigi-las durante a semana. O Fundo Estadual de Cultura existe por lei desde 2003, mas nem sempre é usado integralmente. Não há valores nas propostas.',
+ fundo:`O prazo de emendas à Lei de Diretrizes Orçamentárias (LDO) de 2027 na Assembleia Legislativa do Tocantins (Aleto) foi de 28 de outubro a 10 de novembro, segundo o presidente da Comissão de Finanças, Olyntho Neto, e na terça (10) o deputado Valdemar Júnior (MDB) recebeu representantes do setor cultural que pediram a inclusão de demandas, informa o Conexão Tocantins.
+## O que a cultura pediu
+Participaram da reunião Osmar CasaGrande, Jerfeson Nascimento, Kaká Nogueira e outros representantes. Valdemar Júnior disse que protocolaria as sugestões e que podia corrigi-las durante a semana, e que pretende implementá-las a partir de janeiro de 2027. O Fundo Estadual de Cultura existe por lei desde 2003, mas nem sempre é usado integralmente. As propostas não trazem valores.
+## A transição
+O governo passa de Wanderlei Barbosa para Vicentinho Júnior (PSDB), eleito, e o Conexão Tocantins registrou em 3 de novembro que Jorge Frederico será líder do governo de Vicentinho na Assembleia e, em 1º de novembro, que Moisemar Marinho confirmou candidatura à presidência da Casa, títulos vistos sem leitura do texto. A LDO de 2027 projeta R$ 16,8 bilhões de receita, segundo o T1 Notícias.
+## O clima
+Em 5 de novembro, a comissão da Aleto discutiu o risco de escassez hídrica; a barragem do rio Coco, em Paraíso do Tocantins, chegou ao volume morto por seca moderada desde maio, informa o Conexão Tocantins.
+## Quem é quem
+Valdemar Júnior é do MDB, de centro; Vicentinho Júnior, do PSDB, de centro, assume o governo em janeiro; Olyntho Neto preside a Comissão de Finanças.
+## O que vem agora
+Protocolo das sugestões, parecer da Comissão de Finanças e votação da LDO em plenário.
+## O que ainda não está confirmado
+- Valores das propostas culturais.
+- Se as emendas serão acolhidas no texto final.`,
+ fontes:[['Conexão Tocantins (cultura busca apoio de Valdemar Júnior)','https://conexaoto.com.br/2026/11/10/representantes-da-cultura-buscam-apoio-de-valdemar-junior-para-incluir-demandas-do-setor-na-ldo-2027'],['Conexão Tocantins (Assembleia avalia risco de escassez hídrica)','https://conexaoto.com.br/2026/11/06/assembleia-avalia-relatorio-da-semarh-e-debate-risco-de-escassez-hidrica-nas-bacias-do-tocantins']]});
+S.to_transicao_vicentinho.velha=true;delete S.rn_transicao.ampliada; S.to_transicao_vicentinho.velhaMotivo='superada por to_aleto_ldo_cultura';
+
+/* --- Capa, ordem, Giro --- */
+HOME_LEAD = 'dino_6x1';
+HOME_ROW = ['petrobras_balanco','ucrania_abudhabi','paraguai'];
+ORDER.politica = _top(ORDER.politica, ['dino_6x1','escazu_cre','mps_rurais_exportadores','maioridade_audiencias','lula_antalia_comitiva','nikolas_celulares_senado','dallagnol_tse_pauta','dino_tecnologia_eleicoes']);
+ORDER.economia = _top(ORDER.economia, ['petrobras_balanco','braskem_capitalizacao','cbs_senado_aliquota','balancos_10_11']);
+ORDER.mundo = _top(ORDER.mundo, ['ucrania_abudhabi','paraguai','ueno_pagamentos','israel','espanha_greve_geral','eua_tarifas_300','eua_senado_mississippi_alasca']);
+ORDER.regioes = _top(ORDER.regioes.filter(function(i){return i!=='to_transicao_vicentinho';}), ['rj_qav_galeao','rj_aije_paes_ruas','mg_cleitinho_alm','mg_tarifa_zero_rmbh','mg_cleitinho_cpi_shows','df_cldf_reeleicao_mesa','df_ploa_social','ms_pl_paulo_correa_alems','mt_reforma_pivetta_rga','ba_alba_17_projetos','ce_alece_presidencia_romeu','ce_margem_equatorial_empregos','pe_compesa_barragens','ac_loa_2027_suspensa','ro_ale_suspende_pagamentos','to_aleto_ldo_cultura']);
+var _giroNovo = [
+ ['Dino e as regras da 6x1','Dino decide até sexta (13) as regras de transição do fim da escala 6x1, informa a Revista Fórum.','Revista Fórum','https://revistaforum.com.br/politica/dino-regras-transicao-fim-escala-6x1','','dino_6x1'],
+ ['Escazú vai à CRE','Alcolumbre manda o acordo ambiental à Comissão de Relações Exteriores a pedido de Tereza Cristina, informa a Agência Senado.','Agência Senado','https://www12.senado.leg.br/noticias/materias/2026/11/10/adesao-do-brasil-a-acordo-contra-crimes-ambientais-sera-analisada-pela-cre','','escazu_cre'],
+ ['MP das dívidas rurais','A Câmara aprova a MP 1.376, que vence nesta quarta (11) no Senado, informa o Congresso em Foco.','Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131483/camara-aprova-mp-da-renegociacao-de-dividas-de-produtores-rurais','','mps_rurais_exportadores'],
+ ['Maioridade só para hediondos','O governo defende a redução da maioridade penal apenas para crimes hediondos, informa a Agência Câmara.','Agência Câmara','https://www.camara.leg.br/noticias/1317996-governo-defende-reducao-da-maioridade-penal-apenas-para-crimes-hediondos','','maioridade_audiencias'],
+ ['Lucro da Petrobras','A estatal lucra R$ 39,75 bilhões no 3T26 e anuncia R$ 15,3 bilhões em proventos, informa a Agência Infra.','Agência Infra','https://agenciainfra.com/blog/petrobras-lucra-r-398-bi-no-3t26-valor-215-maior-em-relacao-ao-3t25/','','petrobras_balanco'],
+ ['CBS de 11,3% no Senado','O Senado tem até 15 de dezembro para analisar a alíquota de referência aprovada pelo TCU, informa a Tax Group.','Tax Group','https://www.taxgroup.com.br/intelligence/aliquota-da-cbs-de-113-o-rito-ate-1o-de-janeiro-de-2027/','','cbs_senado_aliquota'],
+ ['Abu Dhabi, dia 2','Rússia, Ucrânia e EUA concluem a rodada trilateral nesta quarta (11), informa o Kyiv Independent.','Kyiv Independent','https://kyivindependent.com/ukraine-russia-us-resume-trilateral-peace-talks-in-abu-dhabi-after-9-month-pause/','','ucrania_abudhabi'],
+ ['Ueno cobre 27%','O fundo de garantia cobre US$ 740 milhões dos US$ 2,8 bilhões em depósitos, informa a EFE.','Estrella Digital (EFE)','https://www.estrelladigital.es/mundo/paraguay-ueno-bank-garantia-depositos-ahorradores-pena-prision/20261111073000453191.html','','ueno_pagamentos'],
+ ['Kahana na Knesset','O bloco de Eisenkot indica Matan Kahana para presidir a Knesset, informa o Times of Israel.','Times of Israel','https://www.timesofisrael.com/eisenkot-led-bloc-agrees-to-nominate-yashars-matan-kahan-for-knesset-speaker/','','israel'],
+ ['Greve geral na Espanha','CCOO e UGT param o país por 24 horas, informa a AP.','AP (WSLS)','https://www.wsls.com/news/2026/11/11/spains-first-general-strike-in-14-years-brings-clashing-social-and-political-desires-to-the-fore/','','espanha_greve_geral'],
+ ['Cleitinho na ALMG','O governador eleito visita deputados e o embaixador da China, informa o Estado de Minas.','Estado de Minas','https://www.em.com.br/gerais/2026/11/7536491-cleitinho-se-reune-com-embaixador-da-china-e-visita-deputados.html','','mg_cleitinho_alm'],
+ ['Paulo Corrêa na Alems','O PL escolhe Paulo Corrêa para disputar a presidência da Assembleia de MS, informa o Enfoque MS.','Enfoque MS','https://www.enfoquems.com.br/pl-escolhe-paulo-correa-para-disputar-presidencia-da-assembleia-de-ms/','','ms_pl_paulo_correa_alems']
+];
+GIRO = _giroNovo.concat(GIRO.filter(function(g){ return _giroNovo.every(function(n){return n[0]!==g[0];}); })).slice(0,20);
+
+
+/* --- Atualizações de pautas paradas --- */
+_U('flavio_senado', {hora:'10/11', fonteunica:true,
+ t:'PF abre inquérito sobre suspeita de recursos estrangeiros na campanha de Flávio Bolsonaro, por determinação do ministro Flávio Dino; Mesa do Senado segue sem decisão sobre o voto remoto',
+ sub:'A apuração inclui a possível participação da Meta e do grupo Rockbridge Network; o texto não informa prazo, e Flávio está nos EUA desde o fim de outubro.',
+ dado:{n:'Inquérito', l:'PF apura recursos estrangeiros na campanha de Flávio · Correio da Manhã'},
+ resumo:'A Polícia Federal abriu inquérito para apurar suspeita de uso de recursos estrangeiros na campanha de Flávio Bolsonaro (PL-RJ), por determinação do ministro Flávio Dino, do STF, que identificou indícios de atuação de agentes dos EUA em benefício da candidatura, informa o Correio da Manhã em texto de 10/11. A apuração inclui a possível participação da Meta e do grupo Rockbridge Network. O texto não traz prazo nem próximos passos. A Mesa do Senado segue sem decisão sobre o voto remoto de Flávio na PEC da Segurança, registrado em 3/11.',
+ fundo:`A Polícia Federal abriu inquérito para apurar a suspeita de uso de recursos estrangeiros na campanha do senador Flávio Bolsonaro (PL-RJ), derrotado por Luiz Inácio Lula da Silva (PT) na eleição presidencial, por determinação do ministro Flávio Dino, do Supremo Tribunal Federal (STF), informa o Correio da Manhã em texto publicado às 19h08 de terça (10). Dino identificou indícios de atuação de agentes dos Estados Unidos em benefício da candidatura.
+## O que a apuração inclui
+A investigação abrange a possível participação da plataforma Meta e do grupo Rockbridge Network. O texto não informa prazo, nem os próximos passos, nem a resposta de Flávio ou das empresas citadas, e a existência de indício não significa acusação formal.
+## O voto remoto e a ausência
+Flávio está nos Estados Unidos desde o fim de outubro e votou remotamente, por aplicativo, em 3 de novembro, na PEC da Segurança, aprovada por unanimidade nos dois turnos. Em 4 de novembro, o líder do governo no Congresso, Randolfe Rodrigues (PT-AP), pediu a anulação do voto e questionou se houve comunicação formal da viagem, exigida pelo art. 39 do Regimento. O presidente do Senado, Davi Alcolumbre (União-AP), disse que convocaria assessores para avaliar. Até a manhã de 11 de novembro, nenhuma decisão da Mesa foi divulgada.
+## Quem é quem
+Flávio Bolsonaro é do PL, partido de direita e principal sigla da oposição ao governo Lula. Dino é ministro do STF, ex-PSB e sem partido, de perfil próximo ao governo. Randolfe e Lula são do PT, de esquerda, e Alcolumbre, do União Brasil, de centro-direita, preside o Senado e disputa a reeleição em 1º de fevereiro de 2027.
+## O que vem agora
+Andamento do inquérito na PF e decisão da Mesa do Senado sobre o voto remoto; a resposta de Marco Rubio sobre o tema é aguardada até 13 de novembro.
+## O que ainda não está confirmado
+- O alcance do inquérito e o papel de cada citado.
+- A decisão da Mesa sobre anular o voto remoto.`,
+ upd:'Entra o inquérito da PF, determinado por Dino, sobre suspeita de recursos estrangeiros na campanha de Flávio; a Mesa do Senado segue sem decidir sobre o voto remoto.',
+ fontes:[['Correio da Manhã (PF abre inquérito sobre recursos estrangeiros na campanha de Flávio)','https://www.correiodamanha.com.br/politica/2026/11/334087-pf-abre-inquerito-sobre-suspeita-de-recursos-estrangeiros-na-campanha-de-flavio.html'],['Correio da Manhã (Alcolumbre pode anular voto de Flávio)','https://www.correiodamanha.com.br/politica/2026/11/332641-alcolumbre-pode-anular-voto-de-flavio-bolsonaro-registrado-nos-eua.html']]});
+
+_U('argentina_governadores', {hora:'11/11', fonteunica:true,
+ t:'Milei quer retomar a agenda legislativa depois da visita do papa e prioriza as PASO e o Orçamento de 2027; aliados desconfiam do governo',
+ sub:'A Infobae diz que os libertários buscam a aprovação do Orçamento na Câmara em 25 de novembro, e o governo tenta reaproximar-se de Mauricio Macri.',
+ dado:{n:'25/11', l:'Data buscada pelo governo para a meia-sanção do Orçamento 2027 · Infobae'},
+ resumo:'O governo de Javier Milei quer retomar a agenda legislativa depois da visita do papa, que entra na reta final, e precisa "recuperar com êxito" o Congresso antes do fim do ano, informa a Infobae em texto de 11/11. As prioridades são as PASO, a Lei de Soberania Nacional, delitos sexuais e a reforma da Lei de Sociedades. As negociações do Orçamento de 2027 seguem sem definição, e os aliados desconfiam, segundo manchete do portal; a meta é a meia-sanção em 25/11.',
+ fundo:`O governo do presidente argentino Javier Milei quer retomar a agenda própria no Congresso assim que a visita do papa Leão XIV entrar no fim, e precisa "recuperar com êxito a agenda legislativa antes do fim do ano", informa a Infobae em texto de 11 de novembro. As prioridades citadas são as PASO, a Lei de Soberania Nacional, os delitos sexuais e a reforma da Lei de Sociedades.
+## Quem é quem
+Milei lidera A Liberdade Avança (La Libertad Avanza), de direita libertária, que governa sem maioria própria no Congresso. Patricia Bullrich, presidente do bloco no Senado, quer impulsionar dois projetos: deficiência e ludopatia. Mauricio Macri, ex-presidente e líder do PRO, de centro-direita, é aliado histórico e interlocutor de um possível entendimento eleitoral, segundo manchete da Infobae. Os governadores Jorge Macri, Axel Kicillof e Martín Llaryora aparecem apenas na coordenação da visita papal.
+## O Orçamento e os aliados
+Manchete do mesmo portal diz que as negociações do Orçamento de 2027 seguem sem definições e que os aliados "já desconfiam do governo". Os libertários planejam obter a meia-sanção na Câmara dos Deputados em quarta-feira, 25 de novembro. Segundo outra manchete, Milei volta a fazer gestos de aproximação com Macri para retomar um entendimento eleitoral.
+## O contexto
+A semana de 3 a 6 de novembro foi de pressão sobre os mercados: o risco-país passou de 900 pontos, e o governo retirou do projeto de lei de competitividade financeira o artigo que cobrava 15% de imposto sobre ganhos com CEDEARs, segundo o Perfil.
+## O que vem agora
+Fim da visita do papa, negociação do Orçamento de 2027 e sessão da Câmara prevista para 25 de novembro.
+## O que ainda não está confirmado
+- A data de qualquer votação das PASO.
+- O conteúdo das negociações do Orçamento, só conhecidas pelas manchetes.`,
+ upd:'A Infobae de 11/11 mostra o governo tentando retomar a agenda legislativa depois da visita do papa, com meta de meia-sanção do Orçamento de 2027 em 25/11 e aliados desconfiados.',
+ fontes:[['Infobae (a visita do papa entra no fim e o governo quer voltar à agenda)','https://www.infobae.com/politica/2026/11/11/la-visita-del-papa-entra-en-su-tramo-final-y-el-gobierno-ansia-volver-a-la-agenda-propia/'],['Perfil (CEDEARs: o governo recuou)','https://perfil.com/economia/cedears-el-gobierno-quiso-cobrar-ganancias-a-los-ahorristas-pero-tuvo-que-dar-marcha-atras-aQghc9t5IrMj']]});
+
+_U('rn_transicao', {hora:'10/11', fonteunica:true,
+ t:'Fátima Bezerra diz que Cadu Xavier poderá escolher a própria equipe e espera que ele forme na Assembleia uma base melhor que a dela',
+ sub:'A governadora diz que atuará como parceira do sucessor e cita obras com apoio federal; o governo propõe um escritório do Consórcio Nordeste nos EUA.',
+ dado:{n:'20/12', l:'Prazo da transição no RN · Agora RN'},
+ resumo:'A governadora do Rio Grande do Norte, Fátima Bezerra (PT), afirmou que o governador eleito, Cadu Xavier (PT), poderá escolher a própria equipe, que ela atuará como parceira do sucessor e que espera que ele forme na Assembleia uma base melhor que a dela, informa o Agora RN em manchete de 10/11. A transição vai até 20/12. Os dois defendem um escritório do Consórcio Nordeste nos EUA, e o estado tem o maior gasto com pessoal do país.',
+ fundo:`A governadora do Rio Grande do Norte, Fátima Bezerra (PT), afirmou que o governador eleito, Cadu Xavier (PT), poderá escolher a própria equipe, que ela atuará como parceira do sucessor, citou obras com apoio federal e disse esperar que ele forme na Assembleia uma base melhor que a dela, informa o Agora RN em manchete de 10 de novembro. A transição vai até 20 de dezembro.
+## A agenda comum
+Na segunda (9), Fátima e Cadu discutiram com a ApexBrasil e a Fiern a criação de um escritório de representação dos estados do Nordeste nos Estados Unidos, na Flórida ou em Nova York, pelo Consórcio Nordeste, que reúne nove governadores. A governadora citou as tarifas americanas sobre sal, pescado, camarão e mel como risco a empregos no estado, e Cadu prometeu continuar a recuperação da competitividade, com licenciamento ambiental, energias renováveis, mineração e turismo.
+## O quadro fiscal
+Um editorial do Agora RN de 29 de outubro registra que o gasto com pessoal do Executivo caiu de 56,12% para 55,17% da receita corrente líquida ajustada, o maior do país, e que os precatórios somam 33,4% da receita, líder nacional. A meta é subir a nota fiscal de C para B em dois anos.
+## Quem é quem
+Fátima Bezerra e Cadu Xavier são do PT, partido de esquerda que governa o estado; a base na Assembleia, que Cadu terá de formar, depende de alianças com partidos de centro.
+## O que vem agora
+Definição do secretariado, negociação com a Assembleia e posse em janeiro.
+## O que ainda não está confirmado
+- Os nomes do secretariado.
+- Custo, localização e adesão dos estados ao escritório nos EUA.`,
+ upd:'Fátima diz em 10/11 que Cadu poderá escolher a própria equipe e espera que ele forme base melhor na Assembleia; os dois discutem o escritório do Consórcio Nordeste nos EUA.',
+ fontes:[['Agora RN (capa de 10/11: Fátima diz que Cadu escolherá a equipe)','https://agorarn.com.br/'],['Agora RN (escritório de representação do Nordeste nos EUA)','https://agorarn.com.br/politica/escritorio-representacao-nordeste-eua-governo-rn/'],['Agora RN (primeiros compromissos de Cadu)','https://agorarn.com.br/coluna/os-primeiros-compromissos-de-cadu-diante-dos-desafios-do-rio-grande-do-norte/']]});
+
+_U('cop31_antalya', {hora:'10/11',
+ t:'Albanese viaja à COP31, e a Austrália, que conduz as negociações, propõe meta global de 35% de eletricidade no consumo de energia até 2035',
+ sub:'A cúpula de líderes é nesta quarta (11) e quinta (12), com Lula, que discursa na quarta; o Brasil entrega a presidência da conferência à Turquia.',
+ dado:{n:'35% até 2035', l:'Meta global de eletricidade no consumo de energia proposta pelo ministro Chris Bowen · The Nightly'},
+ resumo:'O premiê australiano, Anthony Albanese, viaja à COP31, em Antália, na Turquia, onde o ministro Chris Bowen propôs uma meta global de 35% de eletricidade no consumo de energia até 2035, informa o The Nightly. A cúpula de líderes é em 11 e 12/11; Lula discursa na quarta com o Mapa do Caminho de saída dos fósseis, informa o JB. A Austrália conduz as negociações, e o Brasil entrega a presidência da conferência à Turquia. Albanese também anunciou um regulador de segurança de IA.',
+ fundo:`O premiê australiano, Anthony Albanese, viaja à COP31, em Antália, na Turquia, onde o ministro Chris Bowen propôs uma meta global de 35% de eletricidade no consumo de energia até 2035, informa o The Nightly em texto de terça (10). A cúpula de líderes ocorre nesta quarta (11) e quinta (12), e o presidente Lula discursa na quarta, segundo o JB.
+## A proposta e o formato
+A conferência foi aberta pelo presidente turco, Recep Tayyip Erdogan, e por Albanese. A Turquia preside formalmente a COP31, e a Austrália conduz as negociações, informa a Tribuna do Sertão. O Brasil, que presidiu a COP30, entrega a presidência. Bowen propôs a meta de 35% de eletricidade no consumo final de energia até 2035, que contrasta com a proposta brasileira, de reduzir gradualmente os fósseis e zerar o desmatamento até 2030, apresentada em 3 de novembro.
+## Quem é quem
+Albanese e Bowen são do Partido Trabalhista, de centro-esquerda, no governo da Austrália; Erdogan lidera o AKP, de direita religiosa; Lula é do PT, de esquerda. A Austrália abre mão de um papel de anfitriã e fica com a condução das negociações.
+## A agenda de Albanese
+Além da COP, Albanese anunciou um regulador de segurança de inteligência artificial depois de uma violação de dados do Services Australia por um agente de IA. O ministro do Tesouro, Jim Chalmers, foi reafirmado no cargo em meio a vazamentos internos, e a oposição o chamou de "tóxico", segundo o The Nightly.
+## O que vem agora
+Cúpula de líderes (11 e 12), reunião do TFFF com Noruega, Reino Unido e Holanda e bilaterais; depois, a cúpula da Asean em Manila.
+## O que ainda não está confirmado
+- Se a meta de 35% será incluída no texto final da conferência.
+- O resultado das negociações sobre fósseis e desmatamento.
+- Se a Turquia, que preside formalmente a conferência, apoiará a meta.`,
+ upd:'Entram a viagem de Albanese e a proposta australiana de meta global de 35% de eletricidade até 2035, às vésperas da cúpula de líderes de 11 e 12/11.',
+ fontes:[['The Nightly (Albanese voa à COP31 na Turquia)','https://thenightly.com.au/politics/australian-politics-live-updates-albanese-flies-to-cop31-in-turkey-chalmers-restricts-treasury-access-c-23138492'],['JB (Lula na COP31, foco em clima e desmatamento)','https://www.jb.com.br/brasil/politica/2026/11/1061494-lula-participa-da-cop31-na-turquia-com-foco-em-clima-e-desmatamento.html'],['Tribuna do Sertão (Lula defenderá multilateralismo na COP31)','https://www.tribunadosertao.com.br/geral/2026/11/09/1016646-lula-defendera-multilateralismo-na-cop-31-na-turquia']]});
+['lula_cop','mg_cleitinho_shows','ms_dialogo_pos_eleicao','sudao_haroun','tre_rj_totalizacao','rj_volta_redonda','bc_diretorias'].forEach(function(i){ S[i].velha=true; S[i].velhaMotivo = (i==='lula_cop')?'superada por lula_antalia_comitiva':(i==='mg_cleitinho_shows')?'superada por mg_cleitinho_cpi_shows':(i==='ms_dialogo_pos_eleicao')?'superada por ms_pl_paulo_correa_alems':(i==='tre_rj_totalizacao')?'superada por rj_aije_paes_ruas':'fato encerrado'; });
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","dino_6x1":"atualizada","bets_stf":"atualizada","ucrania_abudhabi":"atualizada","focus_selic_13_75":"atualizada","senado_pauta_10_11":"atualizada","mercado_10_11":"atualizada","petrobras_balanco":"atualizada","espanha_eleicao":"atualizada","ueno_pagamentos":"novo","rj_alerj_orcamento":"novo"};
-var GIRO_FLAGS = {"Dino e a 6x1":"novo","Folgas por acordo coletivo":"novo","Selo Rosa aprovado":"novo","Ibovespa fecha a 171.337":"novo","Pagamento no Ueno Bank":"novo","Greve geral na Espanha":"novo","Orçamento do Rio":"novo","Balanço da Petrobras na quarta":"novo"};
+var FLAGS = {"paraguai":"atualizada","israel":"atualizada","dino_6x1":"atualizada","flavio_senado":"atualizada","rn_transicao":"atualizada","ucrania_abudhabi":"atualizada","cop31_antalya":"atualizada","argentina_governadores":"atualizada","petrobras_balanco":"atualizada","lula_antalia_comitiva":"atualizada","maioridade_audiencias":"atualizada","ueno_pagamentos":"atualizada","escazu_cre":"novo","mps_rurais_exportadores":"novo","nikolas_celulares_senado":"novo","dallagnol_tse_pauta":"novo","dino_tecnologia_eleicoes":"novo","cbs_senado_aliquota":"novo","braskem_capitalizacao":"novo","balancos_10_11":"novo","espanha_greve_geral":"novo","eua_tarifas_300":"novo","eua_senado_mississippi_alasca":"novo","rj_qav_galeao":"novo","rj_aije_paes_ruas":"novo","mg_cleitinho_alm":"novo","mg_tarifa_zero_rmbh":"novo","mg_cleitinho_cpi_shows":"novo","df_cldf_reeleicao_mesa":"novo","df_ploa_social":"novo","ms_pl_paulo_correa_alems":"novo","mt_reforma_pivetta_rga":"novo","ba_alba_17_projetos":"novo","ce_alece_presidencia_romeu":"novo","ce_margem_equatorial_empregos":"novo","pe_compesa_barragens":"novo","ac_loa_2027_suspensa":"novo","ro_ale_suspende_pagamentos":"novo","to_aleto_ldo_cultura":"novo"};
+var GIRO_FLAGS = {"Dino e as regras da 6x1":"novo","Escazú vai à CRE":"novo","MP das dívidas rurais":"novo","Maioridade só para hediondos":"novo","Lucro da Petrobras":"novo","CBS de 11,3% no Senado":"novo","Abu Dhabi, dia 2":"novo","Ueno cobre 27%":"novo","Kahana na Knesset":"novo","Greve geral na Espanha":"atualizada","Cleitinho na ALMG":"novo","Paulo Corrêa na Alems":"novo"};
 /* ===== FIM DOS DADOS ===== */
