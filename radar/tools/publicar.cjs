@@ -80,6 +80,7 @@ if (ant) {
   const pg = carregar(fs.readFileSync(path.join(arq, ant + '.php'), 'utf8')).GIRO || [];
   const pm = {}; pg.forEach(g => { pm[g[0]] = g[1]; });
   (d.GIRO || []).forEach(g => { if (!(g[0] in pm)) giroFlags[g[0]] = 'novo'; else if (pm[g[0]] !== g[1]) giroFlags[g[0]] = 'atualizada'; });
+  { const nGiro = Object.keys(giroFlags).length; if (nGiro < 5) die('Giro OP sem renovação: só ' + nGiro + ' notas novas ou atualizadas em relação à edição anterior (mínimo 5). Escreva notas curtas dos fatos novos desta edição (título, nota de 1 frase, veículo, link lido, id da matéria) e coloque-as no topo do GIRO.'); }
   const p = carregar(fs.readFileSync(path.join(arq, ant + '.php'), 'utf8'));
   Object.keys(d.S).forEach(i => { if (!p.S[i]) flags[i] = 'novo'; else if (hash(p.S[i]) !== hash(d.S[i])) flags[i] = 'atualizada'; });
 }
