@@ -130,3 +130,10 @@ Só na das 19h, preencha `AMANHA=[[quando, tipo, título, nota, url, idRel], ...
 
 ## Entrega
 Resumo curto: matérias por editoria, quantas NOVO e ATUALIZADA (saída do publicar.cjs), pautas abertas e o que mudou em cada, o que foi aposentado e por quê, e QUALQUER limitação (fonte indisponível, sub-região fraca, push falhou). Sem notícia suficiente ou com passo falho que comprometa a edição, não publique conteúdo inventado: mantenha a edição anterior e explique.
+
+## Execução sem supervisão (a edição nunca pode ficar sem publicar)
+- Ninguém responde pedidos de permissão durante a edição agendada. Use WebFetch **só** em URLs que apareceram nos resultados do WebSearch desta própria sessão (ou na própria instrução). URL lembrada de cabeça ou montada à mão é recusada e não dá para aprovar: não insista, busque de novo com WebSearch e abra o link que ele devolver. O texto do resultado do WebSearch já serve de fonte quando a página não abre.
+- Falha de uma fonte, de uma ferramenta ou do validador **não é motivo para encerrar sem publicar**. Corrija e rode `publicar.cjs` de novo. Se a pesquisa devolver pouco material novo, publique com `--aceitar-poucas --motivo="..."` (≥ 20 caracteres, dizendo o que foi pesquisado e o que veio vazio), nunca com texto inventado.
+- Matérias "paradas" (o validador lista): atualize só com fato novo verificado ou aposente com `velha:true` e `velhaMotivo` honesto ("sem desdobramento novo desde d/m", "superada por <id>"). Não aposente matéria de pauta P0.
+- Capa (`HOME_LEAD`/`HOME_ROW`): só matérias NOVAS ou ATUALIZADAS **com 600+ palavras**, nums/tl e "Quem é quem". `HOME_ROW` pode ter 2 ou 3 ids; prefira 2 longas a 3 com uma rasa.
+- Se, mesmo assim, a edição não puder sair (push falhou, validador intransponível), grave a causa em `radar/arquivo/_avisos.log` (data, hora, erro), faça commit e push desse log e conte o motivo no resumo final. Terminar em silêncio é proibido.
