@@ -26,7 +26,7 @@ function textoMateria(m) {
   return [m.t, m.sub, m.resumo, f.slice(0, 2500)].join(' ');
 }
 
-function analisar(man, S) {
+function analisar(man, S, horas) {
   const pos = [];
   man.fontes.forEach(f => (f.itens || []).forEach((it, i) => {
     if (RUIDO.test(norm(it.t))) return;
@@ -40,7 +40,7 @@ function analisar(man, S) {
     if (!g) { g = { tk: [], itens: [] }; grupos.push(g); }
     g.itens.push(h); g.tk = [...new Set(g.tk.concat(h.tk))];
   });
-  const mats = Object.keys(S).filter(i => !S[i].velha).map(i => ({ id: i, tk: new Set(toks(textoMateria(S[i]))), hora: S[i].hora }));
+  const mats = Object.keys(S).filter(i => !S[i].velha && (!horas || horas.includes(S[i].hora))).map(i => ({ id: i, tk: new Set(toks(textoMateria(S[i]))), hora: S[i].hora }));
   const res = grupos.map(g => {
     const fontes = [...new Set(g.itens.map(x => x.fonte))];
     const capas = g.itens.filter(x => x.tipo === 'capa' && x.pos < 25).map(x => x.fonte);
@@ -65,7 +65,8 @@ if (require.main === module) {
   if (!fs.existsSync(arq)) { console.error('sem ' + arq + ' (busque: git fetch origin manchetes && git show origin/manchetes:manchetes.json > radar/tools/_manchetes.json)'); process.exit(2); }
   const man = JSON.parse(fs.readFileSync(arq, 'utf8'));
   const d = carregar(fs.readFileSync(path.join(__dirname, '..', '_edicao.php'), 'utf8'));
-  const r = analisar(man, d.S);
+  const hoje = new Date(Date.now() - 3 * 3600e3), dm = hoje.getUTCDate() + '/' + (hoje.getUTCMonth() + 1);
+  const r = analisar(man, d.S, [dm, String(hoje.getUTCDate()).padStart(2, '0') + '/' + String(hoje.getUTCMonth() + 1).padStart(2, '0')]);
   console.log('Manchetes de ' + man.coletado_brt + ' · ' + man.fontes_ok + '/' + man.fontes_total + ' fontes · ' + r.total + ' fatos distintos · ' + r.cobertas + ' já cobertos · ' + r.lacunas.length + ' LACUNAS\n');
   r.lacunas.slice(0, 40).forEach((l, i) => console.log((i + 1) + '. [' + l.nfontes + ' veículos' + (l.capas.length ? '; capa: ' + l.capas.join(', ') : '') + '] ' + l.titulo.slice(0, 170) + '\n   ' + l.fontes.join(', ') + ' · ' + l.url));
   if (args.includes('--json')) fs.writeFileSync('cobertura.json', JSON.stringify(r, null, 1));

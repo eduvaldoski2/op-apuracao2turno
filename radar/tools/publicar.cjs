@@ -58,7 +58,9 @@ if (erros.length) die('\n - ' + erros.join('\n - '));
     const idadeH = (Date.now() - Date.parse(man.coletado)) / 3600e3;
     if (idadeH > 5) die('manchetes.json com ' + idadeH.toFixed(1) + ' h (coletado em ' + man.coletado_brt + '): baixe de novo (git fetch origin manchetes). Se o coletor estiver parado, use WebSearch para ler as manchetes do dia de cada veículo e rode com --aceitar-lacunas.');
     else if (man.fontes_ok < 8) die('manchetes.json com só ' + man.fontes_ok + ' fontes lidas: leitura insuficiente das capas.');
-    const cob = require('./cobertura.cjs').analisar(man, d.S);
+    const dd = new Date(data + 'T12:00:00Z'), ontem = new Date(dd.getTime() - 864e5), fmt = x => String(x.getUTCDate()).padStart(2, '0') + '/' + String(x.getUTCMonth() + 1).padStart(2, '0');
+    const horas = [fmt(dd), dd.getUTCDate() + '/' + (dd.getUTCMonth() + 1)].concat(hh === '07h' ? [fmt(ontem), ontem.getUTCDate() + '/' + (ontem.getUTCMonth() + 1)] : []);   // só matéria do dia conta como cobertura
+    const cob = require('./cobertura.cjs').analisar(man, d.S, horas);
     const fortes = cob.lacunas.filter(l => l.nfontes >= 4 || l.capas.length >= 3);
     if (fortes.length && !process.argv.includes('--aceitar-lacunas')) die('o Radar NÃO cobre o que as capas dão (' + fortes.length + ' pautas em 4+ veículos ou 3+ capas). Escreva matéria (NOVA) sobre cada uma, buscando o fato em outros veículos se houver paywall:\n' + fortes.map(l => ' • [' + l.nfontes + ' veículos] ' + l.titulo.slice(0, 150) + ' (' + l.fontes.slice(0, 5).join(', ') + ') ' + l.url).join('\n') + '\n(outras lacunas menores: node radar/tools/cobertura.cjs)');
     else console.log('Cobertura das capas: ' + cob.cobertas + ' fatos cobertos; ' + fortes.length + ' lacunas fortes; ' + (cob.lacunas.length - fortes.length) + ' menores (node radar/tools/cobertura.cjs).');
