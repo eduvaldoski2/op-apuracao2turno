@@ -11173,7 +11173,291 @@ ORDER.regioes = _top(ORDER.regioes, ['rj_5_milhoes_dominio_armado','rj_zanin_seg
  Object.keys(v).forEach(function(i){ if (S[i]) { S[i].velha = true; S[i].velhaMotivo = v[i]; } });
 })();
 
+
+/* ===== EDIÇÃO 17h de 11/11 (extra): regiões ===== */
+EDICAO.hora='16h';
+_N('rs_stj_boate_kiss_penas', {ed:'regioes', reg:'sul', k:'Regiões · Rio Grande do Sul', hora:'11/11', semAtores:true,
+ t:'STJ aumenta as penas de dois sócios da Boate Kiss: Elissandro Spohr pega 14 anos e 4 meses e Mauro Hoffmann, 13 anos e 2 meses',
+ sub:'A Sexta Turma decidiu na terça (10) e manteve as condenações por homicídio; os dois começam a cumprir pena em regime fechado.',
+ dado:{n:'14 anos e 4 meses', l:'Nova pena de Elissandro Spohr, que tinha 12 anos no TJRS · CNN Brasil'},
+ resumo:'A Sexta Turma do Superior Tribunal de Justiça (STJ) aumentou na terça-feira (10) as penas de Elissandro Callegaro Spohr, para 14 anos e 4 meses, e de Mauro Londero Hoffmann, para 13 anos e 2 meses, ambos em regime fechado, informa a CNN Brasil. O Tribunal de Justiça do RS havia fixado 12 anos para cada um. A decisão acolheu em parte o recurso do Ministério Público gaúcho e não altera as condenações por homicídio, só o cálculo das penas. O incêndio de janeiro de 2013, em Santa Maria, matou 242 pessoas. A reportagem não informa a decisão sobre os outros dois condenados.',
+ upd:'O STJ concluiu o julgamento na terça (10), após dois adiamentos, e aumentou as penas de Spohr e Hoffmann.',
+ fundo:`A Sexta Turma do Superior Tribunal de Justiça (STJ) aumentou, na terça-feira (10), as penas de dois dos quatro condenados pelo incêndio da Boate Kiss, em Santa Maria (RS). Elissandro Callegaro Spohr passou a ter pena de 14 anos e 4 meses de prisão e Mauro Londero Hoffmann, de 13 anos e 2 meses, ambos em regime inicial fechado, informa a CNN Brasil. O fogo de janeiro de 2013 matou 242 pessoas.
+NUMS 242|mortes no incêndio de janeiro de 2013;14 anos e 4 meses|nova pena de Elissandro Spohr (antes, 12 anos);13 anos e 2 meses|nova pena de Mauro Hoffmann (antes, 12 anos);4|condenados no processo
+## O que a Turma decidiu
+O colegiado acolheu em parte o recurso do Ministério Público do Rio Grande do Sul (MPRS), que pedia penas maiores, e entendeu que a gravidade da conduta dos réus devia pesar mais na dosimetria, a etapa em que o juiz calcula a pena. A Turma também acolheu em parte o recurso da defesa de Spohr, o que beneficiou Hoffmann: corrigiu um aumento que o Tribunal de Justiça do RS (TJRS) havia considerado desproporcional. As condenações por homicídio consumado e tentado seguem como estavam. O julgamento tratou apenas de como as penas foram calculadas.
+## O que pesou na pena
+A decisão cita a espuma inflamável usada na casa noturna, o uso repetido de pirotecnia em ambiente fechado, a superlotação e os corredores estreitos, que dificultaram a saída das vítimas, informa a CNN Brasil. A reportagem não traz os nomes dos ministros que votaram nem o placar.
+## Do júri ao STJ
+O processo percorreu várias instâncias. Pelos números reunidos pelo site ohoje, o júri de 2021 fixou 22 anos e 6 meses para Spohr e 19 anos e 6 meses para Hoffmann, e 18 anos para cada um dos outros dois condenados, Marcelo de Jesus dos Santos e Luciano Augusto Bonilha Leão. Em agosto de 2025, o TJRS reduziu as penas para 12 anos (Spohr e Hoffmann) e 11 anos (Marcelo e Luciano).
+No STJ, a relatora, a desembargadora convocada Nilsoni de Freitas, propôs em setembro 18 anos para Spohr e Hoffmann e 12 anos, 4 meses e 15 dias para Marcelo e Luciano. O ministro Rogerio Schietti divergiu e sugeriu pena intermediária: 14 anos, 4 meses e 24 dias para Spohr. Em 3 de novembro, o ministro Carlos Pires Brandão pediu vista depois de não conseguir identificar a posição de Schietti na contagem dos votos, e o julgamento foi suspenso de novo, informa o ohoje.
+## Reação das defesas
+A CNN Brasil afirma ter procurado as defesas dos condenados e mantém espaço aberto para resposta. Até a publicação da reportagem, na quarta-feira (11), não havia manifestação registrada. As defesas de Spohr e Hoffmann pediam, nos recursos, novo júri ou redução das penas, informa o ohoje.
+## O que vem agora
+Com a decisão, Spohr e Hoffmann devem iniciar o cumprimento da pena em regime fechado, segundo a CNN Brasil. As defesas ainda podem se manifestar sobre a decisão.
+## O que ainda não está confirmado
+- A decisão da Turma sobre as penas de Marcelo de Jesus dos Santos e Luciano Augusto Bonilha Leão.
+- Os votos de cada ministro e o placar do julgamento.
+- Se as defesas vão recorrer e com qual argumento.
+- A data em que os dois sócios começam a cumprir a pena em regime fechado.`,
+ fontes:[['CNN Brasil (STJ aumenta penas de sócios da Boate Kiss)','https://www.cnnbrasil.com.br/nacional/sul/rs/stj-aumenta-penas-de-socios-da-boate-kiss-apos-tragedia-com-242-mortes/'],['ohoje (julgamento suspenso em 3 de novembro)','https://ohoje.com/2026/11/03/julgamento-da-boate-kiss-e-suspenso-apos-divergencia-e-duvida-sobre-voto-de-ministro/']]});
+
+_N('rs_rio_uruguai_alerta_vermelho', {ed:'regioes', reg:'sul', k:'Regiões · Rio Grande do Sul', hora:'11/11', semAtores:true,
+ t:'Defesa Civil do RS emite alerta vermelho de inundação para o Rio Uruguai; São Borja está em área crítica e Itaqui e Uruguaiana têm nível em alta',
+ sub:'O alerta vale até quarta (11); o Passo São Borja está acima da cota de 9 metros, em estabilização, e uma nova frente é esperada para o fim da semana.',
+ dado:{n:'9 metros', l:'Cota de inundação do Passo São Borja, ultrapassada na terça (10) · Defesa Civil via CNN Brasil'},
+ resumo:'A Defesa Civil do Rio Grande do Sul emitiu na terça-feira (10) alerta vermelho de inundação para o Rio Uruguai, válido até quarta (11), com São Borja em área crítica, informa a CNN Brasil. O nível no Passo São Borja está acima da cota de inundação, de 9 metros, em estabilização e com tendência de queda; Itaqui e Uruguaiana têm tendência de elevação, e Porto Mauá, de queda. O Serviço Geológico do Brasil divulgou novo boletim hidrológico da bacia. Em outubro, a cheia afetou 194 pessoas só em Uruguaiana.',
+ upd:'A Defesa Civil emitiu alerta vermelho para o Rio Uruguai na terça (10), válido até quarta (11).',
+ fundo:`A Defesa Civil do Rio Grande do Sul emitiu na terça-feira (10) alerta vermelho de inundação para o Rio Uruguai, com validade até quarta-feira (11), e colocou São Borja em área crítica. O nível no Passo São Borja está acima da cota de inundação, de 9 metros, em estabilização e com tendência de queda nas próximas horas, enquanto Itaqui e Uruguaiana têm tendência de elevação, informa a CNN Brasil.
+NUMS 9 m|cota de inundação do Passo São Borja;10,5 m|nível de São Borja no pico de 13 de outubro;194|pessoas afetadas em Uruguaiana na cheia de outubro;26.965|afetados por temporais em 20 municípios (balanço de 8/11)
+## O que dizem os boletins
+O Serviço Geológico do Brasil (SGB) emitiu na terça-feira (10) novo Boletim de Alerta Hidrológico da Bacia do Rio Uruguai. A leitura por ponto de medição, descrita pela CNN Brasil, é a seguinte: Porto Mauá (RS) tem tendência de queda; Iraí (RS) e Itapiranga (SC) estão com níveis normais e em redução contínua; Itaqui e Uruguaiana, mais a jusante, seguem com tendência de elevação. A reportagem não traz o nível atual em metros nem valores previstos, apenas as tendências de curto prazo.
+## A cheia de outubro como referência
+Em 13 de outubro, o Jornal do Comércio registrou o rio acima da cota em três cidades. São Borja chegou a 10,5 metros às 13h45, com cota de inundação de 9 metros e cerca de 190 milímetros de chuva acumulada, segundo o SGB, e 22 pessoas foram levadas a abrigos. Em Uruguaiana, o rio estava em 9,89 metros, com cota de 8,5, e a Defesa Civil contava 194 afetados: 32 desabrigados, cerca de 10 famílias, e 162 desalojados, 64 famílias. Em Itaqui, o nível era de 9,75 metros, para cota de 8,3, e 185 pessoas estavam afetadas.
+A Defesa Civil de Uruguaiana atribuiu aquela cheia a chuvas em outras regiões, como o Centro, o Noroeste e a divisa com Santa Catarina. Os resgates em Uruguaiana começaram em 5 de outubro e, em Itaqui, em 9 de outubro.
+## Tornados, El Niño e a previsão
+Entre 4 e 7 de novembro, a Defesa Civil confirmou tornados em Erval Grande, Itatiba do Sul, Barra do Rio Azul, Santo Augusto e Palmeira das Missões, informa o Brasil de Fato. O balanço preliminar divulgado em 8 de novembro aponta 26.965 pessoas afetadas em 20 municípios, 5 feridos e 1.573 casas destelhadas. Santo Augusto decretou situação de emergência.
+O meteorologista Luiz Fernando Nachtigall, da MetSul, diz que o El Niño está em intensidade muito forte e deve chegar ao pico entre o fim de 2026 e janeiro de 2027. Para a semana, a previsão citada pelo Brasil de Fato era de chuva isolada e de baixo acumulado a partir de terça (10), calor na segunda metade e um novo sistema pelo oeste gaúcho no fim da semana, com chuva forte e temporais.
+## O que vem agora
+O alerta vermelho vale até a quarta-feira (11). Itaqui e Uruguaiana, onde o nível sobe, são os pontos em que a Defesa Civil indica elevação nas próximas horas. A previsão citada pelo Brasil de Fato inclui um novo sistema de chuva forte pelo oeste gaúcho no fim da semana.
+## O que ainda não está confirmado
+- O nível do Rio Uruguai em metros em cada município, na terça e na quarta.
+- O pico previsto para Itaqui e Uruguaiana e o dia em que ele deve ocorrer.
+- O número de pessoas afetadas, desalojadas ou desabrigadas nesta cheia de novembro.
+- Se o alerta será renovado, rebaixado ou encerrado após a quarta-feira (11).`,
+ fontes:[['CNN Brasil (Defesa Civil emite alerta vermelho para o Rio Uruguai)','https://www.cnnbrasil.com.br/nacional/sul/rs/defesa-civil-emite-alerta-vermelho-de-inundacao-para-o-rio-uruguai/'],['Jornal do Comércio (inundação do Rio Uruguai atinge três cidades)','https://www.jornaldocomercio.com/jornal-cidades/2026/10/1266743-inundacao-do-rio-uruguai-atinge-tres-cidades-do-rio-grande-do-sul.html'],['Brasil de Fato (tornados e El Niño muito forte)','https://www.brasildefato.com.br/2026/11/09/tornados-atingem-cinco-municipios-do-rs-em-meio-a-el-nino-muito-forte/']]});
+
+_N('sc_blindagem_digital_mandados_bnmp', {ed:'regioes', reg:'sul', k:'Regiões · Santa Catarina', hora:'11/11', semAtores:true,
+ t:'MPSC faz a Operação Blindagem Digital contra suspeita de fraude no sistema de mandados de prisão, com 10 mandados em Santa Catarina e no Paraná',
+ sub:'Investigadores apuram se registros do BNMP foram alterados ou apagados mediante pagamento de R$ 8 mil a R$ 10 mil por intervenção.',
+ dado:{n:'R$ 8 mil a R$ 10 mil', l:'Valor que, segundo a investigação, teria sido pago por cada intervenção no sistema · CNN Brasil'},
+ resumo:'O Ministério Público de Santa Catarina (MPSC) deflagrou na quarta-feira (11) a Operação Blindagem Digital, com 10 mandados de busca e apreensão em Florianópolis, São Pedro de Alcântara e São Cristóvão do Sul, em SC, e em Curitiba, informa a CNN Brasil. A investigação apura se mandados de prisão registrados no Banco Nacional de Medidas Penais e Prisões (BNMP) foram alterados, apagados ou retirados em troca de pagamento. O caso está sob sigilo judicial e a reportagem não nomeia suspeitos. Em 3 de novembro, o MPSC já havia feito a Operação Crackers sobre fraudes no mesmo sistema.',
+ upd:'O MPSC deflagrou a Operação Blindagem Digital, com 10 mandados em SC e no PR, sobre fraudes no BNMP.',
+ fundo:`O Ministério Público de Santa Catarina (MPSC) deflagrou na manhã desta quarta-feira (11) a Operação Blindagem Digital, que cumpre 10 mandados de busca e apreensão em Santa Catarina e no Paraná. Os investigadores suspeitam que mandados de prisão registrados no Banco Nacional de Medidas Penais e Prisões (BNMP) foram alterados, apagados ou retirados do sistema de forma indevida, em troca de pagamento, informa a CNN Brasil.
+NUMS 10|mandados de busca e apreensão;4|cidades-alvo: Florianópolis, São Pedro de Alcântara, São Cristóvão do Sul e Curitiba;R$ 8 mil a R$ 10 mil|valor por intervenção no sistema, segundo a investigação;3 de novembro|data da Operação Crackers, sobre o mesmo tipo de fraude
+## O que a investigação apura
+Pelo relato da CNN Brasil, o objetivo do esquema seria beneficiar pessoas investigadas pela Justiça e atrapalhar o trabalho das forças de segurança e das instituições de Justiça. Os investigadores encontraram indícios de negociações com intermediários e de movimentações financeiras. Eles também checam se integrantes de organização criminosa e terceiros participaram, de forma direta ou indireta. O inquérito corre sob sigilo judicial, e a reportagem não nomeia os alvos.
+## Quem participa da operação
+A ação é conduzida pelo Grupo de Atuação Especial de Combate às Organizações Criminosas (Gaeco) do MPSC, com apoio da 39ª Promotoria de Justiça da Capital. O Gaeco do Ministério Público do Paraná ajuda a cumprir as ordens judiciais em Curitiba. As buscas ocorrem em Florianópolis, São Pedro de Alcântara e São Cristóvão do Sul, em Santa Catarina.
+## O precedente da semana passada
+Em 3 de novembro, o MPSC fez a Operação Crackers, também sobre fraudes no BNMP, informa o site Boca. Naquela ação, o Gaeco cumpriu 4 mandados de busca em Joinville e Penha, expedidos pela Vara Regional de Garantias de Joinville, e um mandado de prisão em Penha contra um condenado por estupro de vulnerável, expedido pela 2ª Vara Criminal de Blumenau. Um dos envolvidos teria intermediado a alteração de registros para ocultar um mandado de prisão pendente.
+A Crackers é um desdobramento da Operação Cavalo de Tróia, de março, que apurou a entrada de dispositivos eletrônicos em uma penitenciária catarinense. Novas diligências indicaram que o condenado e outra pessoa manipulavam dados, e o material apreendido seria periciado pela Polícia Científica.
+## O que vem agora
+O material apreendido nas buscas de quarta-feira (11) deve ser analisado para identificar outros participantes, a linha seguida também na Crackers, em que a perícia ficou a cargo da Polícia Científica. O MPSC ainda não divulgou os nomes dos alvos, que a investigação mantém sob sigilo.
+## O que ainda não está confirmado
+- Quem são os investigados e qual é o vínculo deles com o sistema de mandados.
+- Se a Blindagem Digital é desdobramento direto da Operação Crackers.
+- Quantos mandados de prisão teriam sido alterados ou apagados e em quais processos.
+- Se houve participação de servidores com acesso ao BNMP.`,
+ fontes:[['CNN Brasil (operação apura fraude para retirar mandados de prisão de sistema em SC)','https://www.cnnbrasil.com.br/nacional/sul/sc/operacao-apura-fraude-para-retirar-mandados-de-prisao-de-sistema-em-sc/'],['Boca (MPSC deflagra Operação Crackers contra fraudes no BNMP)','https://boca.com.br/justica/mpsc-deflagra-operacao-crackers-fraudes-bnmp']]});
+
+_N('sc_operacao_recycling_lavagem_itajai', {ed:'regioes', reg:'sul', k:'Regiões · Santa Catarina', hora:'11/11', semAtores:true, fonteunica:true,
+ t:'PF prende em Balneário Camboriú empresário acusado de lavar dinheiro de remessas de cocaína pelos portos de Itajaí e Rio Grande; Justiça bloqueia R$ 93,2 milhões',
+ sub:'A Operação Recycling é desdobramento da Hinterland, que condenou 13 réus em outubro; o MPF diz que as movimentações suspeitas continuam.',
+ dado:{n:'R$ 93,2 milhões', l:'Valor bloqueado pela 22ª Vara Federal de Porto Alegre · CNN Brasil'},
+ resumo:'A Polícia Federal prendeu na terça-feira (10), em Balneário Camboriú (SC), um empresário que o Ministério Público Federal (MPF) descreve como operador financeiro de organizações criminosas desde 2012, informa a CNN Brasil. A Operação Recycling, com Receita Federal e MPF, cumpriu mandado da 22ª Vara Federal de Porto Alegre, que bloqueou R$ 93,2 milhões e determinou a apreensão de 17 imóveis, cinco embarcações e mais de 100 veículos. O nome do preso não foi divulgado.',
+ upd:'A PF prendeu em Balneário Camboriú o empresário investigado na Operação Recycling; R$ 93,2 milhões foram bloqueados.',
+ fundo:`A Polícia Federal (PF) prendeu na terça-feira (10), em Balneário Camboriú (SC), um empresário que o Ministério Público Federal (MPF) descreve como operador financeiro de organizações criminosas desde 2012. A prisão ocorreu na Operação Recycling, feita com a Receita Federal e o MPF, e cumpriu mandado da 22ª Vara Federal de Porto Alegre. A informação é da CNN Brasil, que não divulga o nome do preso.
+NUMS R$ 93,2 milhões|bloqueados pela Justiça Federal;17|imóveis apreendidos em SC e no PR;mais de 100|veículos apreendidos;R$ 26 milhões|em saques fracionados, segundo o MPF
+## A acusação do MPF
+O MPF afirma que o empresário lavava dinheiro de remessas de drogas enviadas ao exterior pelos portos de Itajaí (SC) e Rio Grande (RS). Entre os clientes estariam pessoas ligadas a fraude fiscal, ao setor de combustíveis e a outras investigações antidrogas. Ele teria usado contas bancárias temporárias em nome da esposa, de filhos e de um laranja, além de empresas sob seu controle, algumas com depósitos sem nota fiscal. Os saques fracionados, para esconder o rastro, somariam mais de R$ 26 milhões. O dinheiro teria virado imóveis e veículos de alto padrão, muitas vezes registrados em nome de terceiros.
+Segundo o MPF, a partir de 2019 ele ajudou a receber uma carga de cocaína transportada de helicóptero e recebeu R$ 1,17 milhão.
+## Bloqueios e apreensões
+A Justiça Federal bloqueou R$ 93,2 milhões: R$ 45,5 milhões em valores ilícitos rastreados e R$ 47,8 milhões em quantias suspeitas. Foram apreendidos 17 imóveis em SC e no PR, cinco embarcações e mais de 100 veículos, entre eles cerca de 60 carros e motos de luxo e 42 caminhões e carretas. Quatro empresas de fachada foram suspensas, e participações em outras cinco foram apreendidas. Cerca de cinco mandados de busca foram cumpridos em Itajaí.
+## Origem do caso
+A investigação começou em 2021, na PF do Rio Grande do Sul, e chegou ao empresário pela Operação Hinterland, de 2023. Em outubro, a 22ª Vara Federal condenou 13 réus desse caso a penas somadas de mais de 312 anos. O grupo teria movimentado mais de R$ 3 bilhões entre 2019 e 2022 e enviado à Alemanha cocaína escondida em extrato de mimosa, estimada em cerca de 1,7 tonelada e R$ 380 milhões.
+## O que vem agora
+O empresário pode responder por lavagem de dinheiro reiterada, organização criminosa e tráfico internacional de drogas, com penas que, somadas, podem passar de 30 anos. Segundo o MPF, as movimentações financeiras suspeitas indicam que a atividade continua.
+## O que ainda não está confirmado
+- A identidade do preso e a resposta da defesa.
+- As datas de audiência e de eventual denúncia à Justiça.
+- A destinação dos bens apreendidos e dos valores bloqueados.`,
+ fontes:[['CNN Brasil (empresário ligado a envio de cocaína à Europa é preso em Balneário Camboriú)','https://www.cnnbrasil.com.br/nacional/sul/rs/empresario-ligado-a-envio-de-cocaina-a-europa-e-preso-em-balneario-camboriu/']]});
+
+_N('pr_movimento_pela_vida_rodovias', {ed:'regioes', reg:'sul', k:'Regiões · Paraná', hora:'11/11', semAtores:true,
+ t:'Paraná lança o Movimento Pela Vida nas rodovias, com PRF, Polícia Militar, ANTT e oito concessionárias, para reduzir mortes no trânsito',
+ sub:'O lançamento ocorreu na terça (10), em Curitiba, no 1º Seminário Rodovias Mais Seguras; o estado tem meta de cortar pela metade as mortes até 2030.',
+ dado:{n:'10,8 por 100 mil', l:'Meta de mortes no trânsito do Paraná em 2030, metade dos 21,7 de 2020 · Plano estadual de segurança viária'},
+ resumo:'O Paraná lançou na terça-feira (10), em Curitiba, o Movimento Paraná pela Vida, voltado às rodovias, informa a Agência Estadual de Notícias. A iniciativa reúne a Polícia Rodoviária Federal (PRF), o Batalhão de Polícia Rodoviária da PM, a ANTT e oito concessionárias para reduzir mortes e lesões graves em acidentes. O evento fez parte do 1º Seminário Rodovias Mais Seguras, que vai até quarta (11). O estado tem plano de segurança viária que prevê cortar as mortes pela metade até 2030, de 21,7 para 10,8 por 100 mil habitantes.',
+ upd:'O Movimento Paraná pela Vida foi lançado na terça (10), em Curitiba, com PRF, PM, ANTT e concessionárias.',
+ fundo:`O Paraná lançou na terça-feira (10), em Curitiba, o Movimento Paraná pela Vida - Rodovias Mais Seguras, iniciativa que reúne a Polícia Rodoviária Federal (PRF), o Batalhão de Polícia Rodoviária (BPRv) da Polícia Militar, a Agência Nacional de Transportes Terrestres (ANTT) e oito concessionárias para reduzir mortes e lesões graves em acidentes. O lançamento foi marcado para as 11h, na sede da PRF, dentro do 1º Seminário Rodovias Mais Seguras, que vai até quarta (11), informa a concessionária Motiva.
+NUMS 8|concessionárias participantes;5|eixos de atuação;21,7 por 100 mil|taxa de mortes no trânsito do Paraná em 2020;10,8 por 100 mil|meta do estado para 2030
+## O que é o movimento
+O movimento busca ampliar o diálogo entre as instituições e criar estratégias que reduzam a gravidade dos acidentes, sobretudo os que causam mortes e lesões graves, informa a Motiva. Participam as concessionárias Arteris Litoral Sul, Arteris Planalto Sul, EPR Iguaçu, EPR Litoral Pioneiro, EPR Paraná, Motiva Paraná, Via Araucária e Via Campo. A Agência Estadual de Notícias do Paraná (AEN) registrou o lançamento na terça-feira (10).
+## Os cinco eixos de atuação
+O texto de divulgação lista cinco áreas de trabalho: tecnologia, dados e gestão de riscos; capacitação, educação e comunicação; articulação política e institucional; operações e fiscalização; e engenharia de tráfego. A divulgação não traz estatísticas de acidentes nem metas numéricas próprias para o movimento.
+## A meta estadual de 2030
+O estado já tem um plano de segurança viária, o Petrans-PR, para 2025-2030. Segundo o Portal do Trânsito, que republicou texto da agência estadual em julho de 2025, o plano foi elaborado em dois anos por um grupo técnico liderado pelo Detran-PR. A meta é reduzir pela metade as mortes no trânsito: da taxa de 21,7 por 100 mil habitantes, registrada em 2020, para 10,8 em 2030. O documento reúne 30 metas e 115 ações e é coordenado por 35 entidades.
+O diagnóstico do plano aponta que a frota ativa cresceu 51,2% entre 2010 e 2024, de 48 para 73 veículos por 100 habitantes. Em 2023, municípios com menos de 20 mil habitantes responderam por 29% das mortes no trânsito, com 21% da população, e a faixa de 20 a 29 anos concentrou 21% dos óbitos. Um acidente com morte custa, em média, cerca de R$ 1 milhão. O plano lista excesso de velocidade, álcool ao volante e desrespeito às regras como os principais riscos.
+## O que vem agora
+O seminário continua na quarta-feira (11). A Motiva informa que o movimento pretende construir estratégias conjuntas entre as instituições, mas a divulgação não traz calendário de ações nem metas intermediárias.
+## O que ainda não está confirmado
+- As ações concretas e o calendário do movimento nas rodovias.
+- Se haverá metas numéricas próprias, além da meta estadual de 2030.
+- A situação atual do Petrans-PR: em julho de 2025, o plano ainda dependia de revisão da Casa Civil e de outros órgãos antes do lançamento oficial.
+- Se o movimento se estende às rodovias sem concessão.`,
+ fontes:[['Motiva Rodovias (Movimento Paraná pela Vida reúne forças de segurança e concessionárias)','https://rodovias.motiva.com.br/parana/noticias/2026/outubro/movimento-parana-pela-vida-reune-forcas-de-seguranca-e-concessio/'],['Portal do Trânsito (plano do Paraná para reduzir mortes pela metade até 2030)','https://www.portaldotransito.com.br/noticias/mobilidade-e-tecnologia/seguranca/parana-lanca-plano-inedito-para-reduzir-mortes-no-transito-pela-metade-ate-2030/'],['Agência Estadual de Notícias do Paraná (lista de notícias de 10/11)','https://www.parana.pr.gov.br/noticias']]});
+
+_N('sp_tarcisio_flavio_2030', {ed:'regioes', reg:'sp', k:'Regiões · São Paulo', hora:'11/11',
+ t:'Tarcísio diz que Flávio Bolsonaro tem direito de disputar a Presidência em 2030 e evita falar em candidatura própria',
+ sub:'Governador reeleito de São Paulo afirma que seu foco é o segundo mandato e minimiza críticas de bolsonaristas; Flávio perdeu para Lula em outubro.',
+ resumo:'O governador de São Paulo, Tarcísio de Freitas (Republicanos), disse na terça (10) que o senador Flávio Bolsonaro (PL-RJ) tem direito de disputar a Presidência em 2030, mas que ainda não é hora de discutir a eleição e que seu foco é o segundo mandato no estado. Flávio foi derrotado por Lula (PT) em outubro e, segundo a imprensa, divulgou carta que contesta o resultado sem provas. Tarcísio minimizou os ataques de bolsonaristas depois de admitir, em entrevista ao Estadão, a possibilidade de concorrer. Ele não confirmou nomes para o novo secretariado.',
+ upd:'Tarcísio disse que Flávio tem direito de concorrer em 2030 e que não é hora de falar de 2030.',
+ fundo:`O governador de São Paulo, Tarcísio de Freitas (Republicanos), afirmou na terça-feira (10) que o senador Flávio Bolsonaro (PL-RJ) tem direito de disputar a Presidência da República em 2030, mas disse que ainda não é o momento de discutir a eleição e que seu foco é o segundo mandato no estado. A fala ocorreu em Vila Mariana, na zona sul da capital, após a inauguração do novo pronto-socorro do Instituto Dante Pazzanese de Cardiologia.
+NUMS 60 milhões|votos obtidos por Flávio Bolsonaro no pleito, segundo Tarcísio;13 de 15|aliados de Flávio no segundo turno que reconheceram a reeleição de Lula;2030|ano da próxima eleição presidencial
+## O que Tarcísio disse
+Questionado por jornalistas, o governador respondeu que “é claro” que Flávio tem direito de concorrer, e lembrou que ele teve cerca de 60 milhões de votos na eleição presidencial, informa O Antagonista. Tarcísio acrescentou que não é hora de pensar em 2030 e que a atenção deve estar voltada ao estado de São Paulo. Sobre a própria candidatura, não disse se será candidato, informa a Agência O Globo, em texto republicado pelo Tribuna do Sertão.
+O governador também comentou as críticas de bolsonaristas à sua lealdade. Disse que não espera compreensão de todos, que continua pertencendo ao mesmo grupo político e que ficou “bastante feliz” com mensagens de apoio de aliados.
+## Por que a fala importa
+Flávio Bolsonaro perdeu a eleição presidencial de outubro para o presidente Luiz Inácio Lula da Silva (PT). Depois do resultado, ele divulgou uma carta em que contesta, sem provas, o resultado das urnas, e disse que pode voltar a disputar em 2030 se o PL o apoiar. Flávio também discordou de Tarcísio por ele ter reconhecido a vitória de Lula, informa a Agência O Globo. Em entrevista à Folha de S.Paulo, Flávio afirmou que ele e Tarcísio têm direito de apresentar seus nomes à Presidência, conforme O Antagonista.
+## Quem é quem
+- Tarcísio de Freitas (Republicanos): governador de São Paulo, reeleito em 2026; ex-ministro de Jair Bolsonaro; partido do campo da direita; é citado como possível candidato à Presidência.
+- Flávio Bolsonaro (PL-RJ): senador, filho de Jair Bolsonaro; candidato derrotado por Lula no segundo turno; o PL é partido de direita.
+- Lula (PT): presidente da República, reeleito; esquerda.
+- Eduardo Bolsonaro (PL): ex-deputado federal; os ataques bolsonaristas a Tarcísio foram associados a ele pelo O Antagonista.
+- Eleuses Paiva (PSD): secretário estadual da Saúde, que estava na cerimônia e deve deixar o cargo.
+- Luiz Carlos Zamarco: secretário municipal de Saúde da capital, que representou o prefeito Ricardo Nunes (MDB) e é cotado para o posto estadual.
+## O contexto da disputa
+Antes da fala, Tarcísio havia dito ao Estadão que admitia pela primeira vez a possibilidade de concorrer à Presidência, o que provocou reação de bolsonaristas ligados a Eduardo Bolsonaro, informa O Antagonista. Dos 15 nomes que estiveram ao lado de Flávio no segundo turno, 13 reconheceram expressamente a reeleição de Lula, e nenhum endossou a carta de Flávio, informa a Agência O Globo.
+## O que vem agora
+Tarcísio disse que algumas substituições no secretariado do segundo mandato já estão definidas e que outras pessoas ainda estão em entrevista, com anúncios previstos para breve. A agenda de 2030 não tem prazo: o governador afirmou que o tema não deve entrar em pauta agora.
+## O que ainda não está confirmado
+- Se Tarcísio será candidato à Presidência em 2030: ele não respondeu.
+- Se o PL apoiará nova candidatura de Flávio, condição que o próprio senador colocou.
+- Quem serão os novos secretários: o governador não confirmou nomes.
+- O número de 60 milhões de votos é a referência citada por Tarcísio e reproduzida pelos veículos, sem checagem no texto.`,
+ fontes:[['O Antagonista (Tarcísio diz que Flávio pode disputar a Presidência em 2030)','https://oantagonista.com.br/brasil/tarcisio-diz-que-flavio-pode-disputar-a-presidencia-em-2030/'],['Tribuna do Sertão (Agência O Globo)','https://www.tribunadosertao.com.br/poder-e-governo/2026/11/10/1018019-tarcisio-afirma-que-flavio-bolsonaro-tem-o-direito-de-se-candidatar-em-2030'],['A Voz do Campo (CBN/Política Bahia)','https://avozdocampo.com/bahia/nomeacao-de-salles-para-secretaria-da-justica-em-sp-e-dada-como-certa-por-interlocutores-de-tarcisio/']]});
+
+_N('sp_tarcisio_secretariado_salles', {ed:'regioes', reg:'sp', k:'Regiões · São Paulo', hora:'11/11',
+ t:'Tarcísio monta secretariado do segundo mandato: Ricardo Salles é dado como certo na Justiça, e a Saúde terá novo titular',
+ sub:'Governador não confirma nomes; Natália Resende deve mudar de pasta, e a distribuição entre PL, PP, MDB, Novo e Podemos ainda é negociada.',
+ resumo:'Interlocutores do governador Tarcísio de Freitas (Republicanos) dão como certa a nomeação do deputado federal Ricardo Salles (Novo) para a Secretaria da Justiça e Cidadania de São Paulo, informa a CBN. Tarcísio não confirmou nomes na terça (10) e disse que parte da equipe do segundo mandato está definida. Eleuses Paiva (PSD) deixará a Saúde; Luiz Carlos Zamarco e Maurício Serpa são cotados. Natália Resende deve ir para a Casa Civil ou para o Planejamento. Nada foi oficializado.',
+ upd:'Salles é dado como certo na Justiça; Tarcísio ainda não confirmou o secretariado do segundo mandato.',
+ fundo:`Interlocutores do governador de São Paulo, Tarcísio de Freitas (Republicanos), dão como certa a nomeação do deputado federal Ricardo Salles (Novo) para a Secretaria da Justiça e Cidadania no segundo mandato, que começa em janeiro de 2027. A informação foi publicada na terça-feira (10) pela CBN, a partir de aliados do governador, e a oficialização deve sair nos próximos dias pelo Diário Oficial do Estado. Tarcísio não confirmou o nome.
+## O que o governador disse
+Questionado na terça, Tarcísio afirmou que já definiu parte da equipe, que outros nomes ainda estão em entrevista e que pretende montar um time técnico, como no primeiro mandato, informa a CBN, em texto republicado pelo A Voz do Campo. Ele não confirmou a nomeação de Salles.
+Segundo a CBN, o cargo teria sido oferecido a Salles em troca da desistência de disputar o Senado por São Paulo, por receio de que a candidatura dividisse os votos da direita. Guilherme Derrite e André do Prado foram eleitos para o Senado. O prefeito da capital, Ricardo Nunes (MDB), reagiu mal à escolha, segundo a emissora, e mantém com Tarcísio uma rivalidade desde a disputa pela prefeitura em 2024.
+## Quem entra, quem sai e quem fica
+A Saúde é a pasta com saída anunciada: Eleuses Paiva (PSD) comunicou que deixará o cargo, e os nomes cotados são o secretário municipal de Saúde, Luiz Carlos Zamarco, e Maurício Serpa, da própria secretaria estadual, informa o Brasil em Folhas. Sobre Natália Resende, hoje à frente do Meio Ambiente, Infraestrutura e Logística, a CBN diz que a prioridade é a Casa Civil, com o Planejamento como alternativa; o Brasil em Folhas informou, na segunda (9), que ela foi escolhida para o Planejamento.
+## Quem é quem
+- Tarcísio de Freitas (Republicanos): governador reeleito; direita.
+- Ricardo Salles (Novo): deputado federal e ex-ministro do Meio Ambiente; direita; teria desistido da corrida ao Senado.
+- Natália Resende: secretária de Meio Ambiente, Infraestrutura e Logística; procuradora federal e integrante da coordenação da campanha de Tarcísio.
+- Nerylson Lima: chefe da Casa Civil, de confiança de Tarcísio.
+- Eleuses Paiva (PSD): secretário da Saúde, de saída.
+- Delegado Nico Gonçalves (PP): deve continuar na Segurança Pública, segundo coluna do Metrópoles.
+- Ricardo Nunes (MDB): prefeito de São Paulo, que reagiu mal à indicação de Salles, segundo a CBN.
+## O mapa partidário
+Em coluna publicada na sexta (6), o Metrópoles informa que Tarcísio negocia o secretariado com PL, PP, MDB e Podemos. O MDB deve ganhar espaço, com a Saúde como principal pasta, e João Cury é citado para Habitação ou Educação. Rogério Lins (Podemos) é cotado para Esportes, e Acacio Miranda (PSDB) para a Fundação Casa. Renato Feder (Educação) e Marcelo Branco (Habitação) podem ficar. O PSD, de Gilberto Kassab, deve perder espaço, e o União Brasil, até então, não havia sido procurado, de acordo com a coluna.
+## O que vem agora
+A nomeação de Salles depende de publicação no Diário Oficial, prevista pelos aliados para os próximos dias. Tarcísio disse que outros nomes ainda estão em entrevista, com anúncios em breve. O governo estuda separar o Planejamento da Fazenda e dividir a secretaria de Meio Ambiente, Infraestrutura e Logística, informa o Brasil em Folhas.
+## O que ainda não está confirmado
+- A nomeação de Salles: o governador não a confirmou.
+- O destino de Natália Resende: Casa Civil (CBN e Metrópoles) ou Planejamento (Brasil em Folhas).
+- O sucessor de Eleuses Paiva na Saúde: Zamarco e Serpa são cotados, sem decisão anunciada.
+- A nova configuração das pastas, que o governo ainda não divulgou oficialmente.
+- O espaço do União Brasil, partido cujo líder estadual, Milton Leite, está preso desde setembro, segundo a coluna do Metrópoles.`,
+ fontes:[['A Voz do Campo (CBN: Salles na Justiça)','https://avozdocampo.com/bahia/nomeacao-de-salles-para-secretaria-da-justica-em-sp-e-dada-como-certa-por-interlocutores-de-tarcisio/'],['Brasil em Folhas (Tarcísio nomeia Natália Resende)','https://brasilemfolhas.com.br/2026/11/tarcisio-de-freitas-nomeia-natalia-resende-para-o-planejamento/'],['Metrópoles (União escanteado na montagem do governo)','https://www.metropoles.com/colunas/vinicius-passarelli/com-lider-preso-uniao-e-escanteado-por-tarcisio-na-montagem-de-governo']]});
+
+_N('mg_cleitinho_lula_divida_propag', {ed:'regioes', reg:'mg', k:'Regiões · Minas Gerais', hora:'11/11',
+ t:'Cleitinho prepara com Marília Campos proposta sobre a dívida de Minas para levar a Lula; encontro ainda não tem data',
+ sub:'Governador eleito fala em reunião ainda neste ano; relatos à CNN indicam conversa só no início de 2027. Dívida com a União é de cerca de R$ 187 bilhões.',
+ resumo:'O governador eleito de Minas, Cleitinho Azevedo (Republicanos), disse a O Tempo na terça (10) que quer se reunir com o presidente Lula (PT) ainda neste ano, depois da volta do petista da COP31, e levará uma proposta elaborada com a senadora eleita Marília Campos (PT) para renegociar a dívida do estado com a União, de cerca de R$ 187 bilhões. A CNN Brasil informa que Lula admite negociar, mas pretende receber Cleitinho no início de 2027. Não há data marcada, e o conteúdo da proposta não foi divulgado.',
+ upd:'Cleitinho e Marília Campos preparam proposta sobre a dívida; Lula teria encontro no início de 2027, segundo a CNN.',
+ fundo:`O governador eleito de Minas Gerais, Cleitinho Azevedo (Republicanos), quer levar ao presidente Luiz Inácio Lula da Silva (PT) uma proposta para renegociar a dívida do estado com a União, de cerca de R$ 187 bilhões, e disse que a reunião deve ocorrer ainda neste ano. Em entrevista ao programa Café com Política, de O Tempo, gravada na terça-feira (10), ele afirmou que a conversa será depois da volta de Lula da COP31, na Turquia, e que não pretende ir sozinho a Brasília.
+NUMS R$ 187 bi|dívida de Minas com a União, perto desse valor;R$ 10,5 bi|déficit previsto no orçamento de 2027;R$ 1,03 bi|já pagos pelo estado no Propag;R$ 35,8 bi|em bens oferecidos à União na adesão
+## O que Cleitinho propõe
+Cleitinho disse que a senadora eleita Marília Campos (PT) será a ponte com o governo federal e que os dois pretendem começar a redigir um plano conjunto na segunda-feira, para evitar uma reunião em Brasília sem oferta concreta, informa O Tempo. O jornal não detalha o conteúdo. Em reportagem de 4 de novembro, O Fator informou que a ideia de Cleitinho é que todo o valor pago por mês por Minas volte ao estado na forma de obras federais, mecanismo que exigiria mudar as regras do Propag, o programa de renegociação das dívidas dos estados.
+## A posição de Lula
+A CNN Brasil informa que Lula sinalizou disposição para negociar, mas pretende se reunir com Cleitinho no início de 2027. Segundo a reportagem, dirigentes do PT atribuem à distância que o governador eleito manteve da campanha de Flávio Bolsonaro (PL) parte da virada de Lula em Minas, e o presidente planeja rodadas de reuniões com governadores eleitos de janeiro a março, inclusive opositores. O BH 24 Horas informa que a equipe de Cleitinho, coordenada pelo vice-governador eleito Luís Eduardo Falcão (Republicanos), aguarda a volta de Lula para pedir a reunião e quer incluir lideranças do PT mineiro, como o deputado federal Reginaldo Lopes.
+## Quem é quem
+- Cleitinho Azevedo (Republicanos): governador eleito; apoiou Flávio Bolsonaro no segundo turno; assume em janeiro de 2027.
+- Lula (PT): presidente, reeleito; esquerda.
+- Marília Campos (PT): senadora eleita, que coordenou a campanha de Lula em Minas no segundo turno e defende revisar o Propag.
+- Luís Eduardo Falcão (Republicanos): vice-governador eleito, que coordena a transição.
+- Mateus Simões (PSD): governador em exercício; enviou à Assembleia a proposta de orçamento de 2027.
+- Flávio Bolsonaro (PL-RJ): senador, derrotado por Lula; prometeu a Cleitinho revisar a dívida, segundo O Fator.
+## O contexto fiscal
+Minas aderiu ao Propag em 31 de dezembro de 2025, no governo de Romeu Zema (Novo), e já pagou R$ 1,03 bilhão em parcelas, informa o Diário do Comércio. O governo Simões prevê gastar cerca de R$ 4,56 bilhões com o programa em 2027, e o projeto de orçamento revisou o déficit de R$ 8,87 bilhões para R$ 10,51 bilhões, com despesas de R$ 155,50 bilhões e receita de R$ 144,99 bilhões. Segundo O Fator, o estado ofereceu R$ 35,8 bilhões em bens à União e não teve resposta.
+## O que vem agora
+- Elaboração da proposta por Cleitinho e Marília Campos, que deve começar na segunda-feira.
+- Pedido formal de reunião ao Planalto, depois da volta de Lula da COP31.
+- Rodadas de Lula com governadores eleitos, de janeiro a março, segundo a CNN.
+- A transição prevê, na semana que vem, reuniões sobre as áreas de Fazenda e Planejamento e um encontro temático sobre o Propag, informa O Tempo.
+## O que ainda não está confirmado
+- A data do encontro: Cleitinho fala em “esse ano ainda”; a CNN Brasil relata que Lula pretende receber o governador eleito no início de 2027.
+- O conteúdo da proposta, que não foi divulgado.
+- O valor da dívida: cerca de R$ 187 bilhões (CNN e O Fator), mais de R$ 188 bilhões (BH 24 Horas) e R$ 200 bilhões, número citado por Cleitinho na entrevista.
+- Se Lula aceitará mudar as regras do Propag, dispositivo que, segundo o SBT News, Lula vetou ao sancionar o programa.`,
+ fontes:[['O Tempo (Cleitinho vai encontrar Lula com Marília Campos)','https://www.otempo.com.br/politica/2026/11/10/cleitinho-vai-encontrar-lula-junto-com-marilia-campos-e-levar-proposta-para-a-divida-de-mg'],['CNN Brasil (Lula acena disposição em discutir dívida de MG)','https://cnnbrasil.com.br/blogs/gustavo-uribe/politica/lula-acena-disposicao-em-discutir-com-cleitinho-divida-de-mg'],['BH 24 Horas (equipe quer levar dívida a Lula)','https://bh24horas.com.br/politica/equipe-de-cleitinho-quer-levar-divida-de-minas-a-lula-apos-retorno-do-presidente/'],['O Fator (Cleitinho quer reunião com Lula)','https://ofator.com.br/?p=74342'],['SBT News (Lula pede Cleitinho quietinho)','https://sbtnews.sbt.com.br/noticia/politica/lula-pede-cleitinho-quietinho-para-ajudar-minas-com-divida'],['Diário do Comércio (aliados de Lula e a dívida de Minas)','https://diariodocomercio.com.br/politica/aliados-lula-interlocucao-governo-minas/']]});
+
+_N('mg_cleitinho_secretariado_medidas', {ed:'regioes', reg:'mg', k:'Regiões · Minas Gerais', hora:'11/11',
+ t:'Cleitinho confirma dois nomes do secretariado, descarta supersecretarias e lista IPVA menor e corte de patrocínios entre as primeiras medidas',
+ sub:'Governador eleito de Minas diz que Fazenda terá perfil técnico e que a posse deve ser no Vale do Jequitinhonha; maior parte do primeiro escalão segue indefinida.',
+ resumo:'Em entrevista a O Tempo, o governador eleito de Minas, Cleitinho Azevedo (Republicanos), confirmou Otto Levy para a Cemig e Thiago Toscano para o Desenvolvimento Econômico, disse que Vittorio Medioli (PL) aceitou ser secretário e que a Fazenda terá nome técnico. Descartou criar supersecretarias. Entre as primeiras medidas, listou redução do IPVA com compensação, parcelamento de 30 dias para evitar apreensão de veículos e fim de patrocínios de estatais a clubes de futebol. Quer a posse no Vale do Jequitinhonha.',
+ upd:'Cleitinho confirmou Levy e Toscano, disse que a Fazenda terá perfil técnico e listou primeiras medidas.',
+ fundo:`O governador eleito de Minas Gerais, Cleitinho Azevedo (Republicanos), confirmou em entrevista a O Tempo dois nomes de seu governo, Otto Levy na presidência da Cemig e Thiago Toscano no Desenvolvimento Econômico, e disse que a maior parte do primeiro escalão ainda não está definida. A entrevista, do programa Café com Política, foi gravada na terça-feira (10) e publicada na íntegra na quarta (11).
+NUMS 2|nomes confirmados: Otto Levy (Cemig) e Thiago Toscano (Desenvolvimento Econômico);76|deputados estaduais que ele diz que visitará;30 dias|de parcelamento previstos para IPVA atrasado;R$ 10,5 bi|déficit previsto para 2027
+## O secretariado
+Cleitinho descartou criar supersecretarias e disse que colocará pessoas nos cargos certos, com metas a cumprir, informa O Tempo. Vittorio Medioli (PL), deputado estadual eleito e ex-prefeito de Betim, aceitou ser secretário, em pasta ainda a definir. Gabriel Azevedo (MDB), seu adversário na disputa pelo governo, foi convidado, sem pasta definida, e o deputado estadual Cássio Soares (PSD) é cotado para a Secretaria de Governo, mas ainda não confirmou. A Fazenda terá secretário técnico, e a Saúde segue sem nome.
+Sobre a Fazenda, O Fator informou na segunda (9) que o nome que avançou é o do economista Pedro Meneguetti, secretário municipal de Fazenda de Belo Horizonte, e que Bruno Westin, servidor do Tesouro Nacional, também foi bem avaliado. Nenhuma escolha está definida, segundo o jornal.
+## Quem é quem
+- Cleitinho Azevedo (Republicanos): governador eleito de Minas; centro-direita; apoiou Flávio Bolsonaro (PL) no segundo turno.
+- Luís Eduardo Falcão (Republicanos): vice-governador eleito, ex-presidente da Associação Mineira de Municípios; coordena a transição e, segundo Cleitinho, não quer secretaria.
+- Gleidson Azevedo (Republicanos): irmão gêmeo de Cleitinho, deputado federal eleito e ex-prefeito de Divinópolis.
+- Vittorio Medioli (PL): deputado estadual eleito e ex-prefeito de Betim.
+- Gabriel Azevedo (MDB): ex-presidente da Câmara de Belo Horizonte e ex-candidato ao governo.
+- Cássio Soares (PSD): deputado estadual e presidente estadual do partido.
+- Mateus Simões (PSD): governador em exercício, com quem Cleitinho diz ter tido desencontros após a eleição e busca reaproximação.
+## As primeiras medidas
+Cleitinho listou a redução do IPVA, com alguma compensação, e o parcelamento em 30 dias para evitar a apreensão de veículos com imposto atrasado. Quer barrar patrocínios de estatais como Cemig e Codemge a clubes de futebol (SAF) e recursos estaduais para shows, por meio de emendas, e propôs um projeto de lei sobre o tema. Disse ainda que quer reduzir a conta de energia e propôs a ideia de uma “Cemig Rural”. Na saúde, prioriza regionalizar o atendimento e reduzir deslocamentos do interior à capital, e na infraestrutura propõe parcerias público-privadas para estradas de terra de 30 a 40 quilômetros.
+## Relação com a Assembleia e a posse
+Cleitinho afirmou que visitará os 76 deputados estaduais e que não vai “perseguir ninguém”. Pretende fazer a posse no Vale do Jequitinhonha e criar ali uma “mini-Cidade Administrativa” para despachar da região, sem dinheiro público, com apoio da iniciativa privada. O município ainda depende de logística e acesso, informa O Tempo.
+## O que vem agora
+A transição oficial vai até 23 de novembro. Na semana que vem, estão previstas reuniões sobre Desenvolvimento Social, Cultura e Turismo, Governo, Fazenda e Planejamento, informa O Tempo. Cleitinho disse esperar anunciar nesta semana o nome da Fazenda, segundo a edição de terça (10) do jornal.
+## O que ainda não está confirmado
+- O nome da Fazenda: Meneguetti avançou, segundo O Fator, mas o governador eleito não o confirmou.
+- Os titulares de Saúde, Governo, Educação e da maior parte das demais pastas.
+- O papel de Gleidson Azevedo: na entrevista de terça, Cleitinho disse que pede ao irmão que entre no governo, e na íntegra de quarta o texto informa que ele não deve assumir cargo, por preferir o mandato.
+- A pasta de Medioli: o Metrópoles informou em 30 de outubro que ele fora convidado para o Planejamento; Cleitinho diz que a pasta está por definir.
+- A data e o município da posse no Jequitinhonha.`,
+ fontes:[['O Tempo (entrevista na íntegra, 11/11)','https://www.otempo.com.br/politica/2026/11/11/gestao-relacao-com-deputados-e-posse-no-jequitinhonha-leia-na-integra-entrevista-com-cleitinho'],['O Tempo (Cleitinho projeta gestão com aliados)','https://www.otempo.com.br/politica/2026/11/10/cleitinho-projeta-gestao-com-aliados-serao-4-governadores'],['O Tempo (transição entra em fase final)','https://www.otempo.com.br/politica/2026/11/8/transicao-entra-em-fase-final-em-minas-com-encontros-finais-das-equipes-de-cleitinho-e-simoes'],['O Fator (nome que avançou para a Fazenda)','https://ofator.com.br/informacao/o-nome-que-avancou-para-a-secretaria-de-fazenda-de-cleitinho/'],['Metrópoles (quem já está no governo de Cleitinho)','https://www.metropoles.com/minas-gerais/quem-ja-esta-no-governo-de-cleitinho-em-mg-e-o-que-as-escolhas-revelam']]});
+
+_N('ac_mailza_cop31_carbono_amazonia2050', {ed:'regioes', reg:'norte', k:'Regiões · Acre', hora:'11/11',
+ t:'Na COP31, governadora do Acre reúne-se com a ART e vê certificação de créditos de carbono na 8ª de 11 etapas',
+ sub:'Mailza Assis também apresentou na Turquia a plataforma da Estratégia Amazônia 2050; a viagem da comitiva foi alvo de questionamento sobre custo.',
+ resumo:'A governadora do Acre, Mailza Assis (Progressistas), reuniu-se na terça (10), em Antalya, na Turquia, com a direção da ART, que valida projetos de carbono em escala estadual, durante a COP31. O Acre está na 8ª de 11 etapas da certificação, e a próxima fase, com visitas de auditores a comunidades, está prevista para o primeiro trimestre de 2027. No mesmo dia, a governadora participou do lançamento da plataforma da Estratégia Amazônia 2050. O ac24horas cita estimativa de R$ 700 mil para a viagem.',
+ upd:'Mailza Assis reuniu-se com a ART na COP31; o Acre está na 8ª de 11 etapas da certificação.',
+ fundo:`A governadora do Acre, Mailza Assis (Progressistas), reuniu-se na terça-feira (10), em Antalya, na Turquia, com a direção da ART, entidade que registra e valida projetos de carbono em escala jurisdicional, durante a 31ª Conferência das Nações Unidas sobre Mudanças Climáticas (COP31). O Acre está na 8ª de 11 etapas do processo de certificação, e a etapa seguinte, com visitas de auditores a comunidades acreanas, está prevista para o primeiro trimestre de 2027, informa a Folha do Acre.
+NUMS 8 de 11|etapas da certificação cumpridas pelo Acre;1º tri 2027|previsão da nova etapa, com auditores em comunidades;9|estados da Amazônia Legal na Estratégia Amazônia 2050;R$ 700 mil|custo estimado da viagem, citado pelo ac24horas
+## O que está em jogo na certificação
+O Acre busca a certificação pelo padrão ART Trees, voltado a reduções de emissões por desmatamento e degradação florestal em escala jurisdicional, avaliadas por auditoria de empresa independente. Falta concluir as verificações técnicas e submeter os resultados ao conselho deliberativo da ART, informa a Folha do Acre. Cada crédito corresponde a uma tonelada de dióxido de carbono equivalente cuja emissão foi reduzida ou removida. Com a certificação, o estado poderia registrar créditos jurisdicionais e negociar no mercado internacional, se cumprir todas as exigências.
+O governo espera atrair investimentos para a agricultura familiar, o extrativismo sustentável, os povos indígenas, as comunidades tradicionais e a prevenção do desmatamento. A Companhia de Desenvolvimento de Serviços Ambientais (CDSA) deve participar das etapas de negociação dos créditos.
+## Quem é quem
+- Mailza Assis (Progressistas): governadora do Acre, eleita em 2026.
+- Neide de Lima: presidente do Instituto de Mudanças Climáticas e Regulação de Serviços Ambientais (IMC); disse que é preciso cumprir integralmente os requisitos do padrão internacional.
+- Madson Cameli: chefe de gabinete, marido da governadora, segundo o ac24horas.
+- Mary Grady: presidente da ART; o contato com o governo acreano vem de junho, na Semana de Ação Climática de Londres.
+- Lúcia Madrid: diretora associada da ART, presente na reunião.
+- Victor Hugo Rondon: consultor internacional de mercados de carbono.
+- Luiz Calixto: secretário de Governo do Acre, que defendeu a ida da comitiva à Turquia.
+## A plataforma Amazônia 2050
+No mesmo dia, Mailza participou, no Hub da Amazônia, do lançamento da plataforma digital da Estratégia Regional Amazônia 2050. A ferramenta acompanha o planejamento de longo prazo dos nove estados da Amazônia Legal e deve ajudar a direcionar recursos a projetos alinhados às prioridades da região, informa o ac24horas. O lançamento fez parte da programação do Consórcio Interestadual de Desenvolvimento Sustentável da Amazônia Legal (CAL). A governadora afirmou que a ferramenta deverá contribuir para a atração de investimentos públicos, privados e internacionais.
+## O custo da viagem
+Em entrevista ao ac24horas, o secretário de Governo, Luiz Calixto, defendeu a participação da comitiva na COP31 e disse não saber o custo da viagem, que a reportagem cita como estimado em cerca de R$ 700 mil. O governo não divulgou os gastos nos textos lidos.
+## O que vem agora
+- Conclusão das verificações técnicas e submissão dos resultados ao conselho deliberativo da ART.
+- Visitas de auditores às comunidades acreanas, previstas para o primeiro trimestre de 2027.
+- Participação da CDSA nas etapas de negociação dos créditos.
+## O que ainda não está confirmado
+- Se o Acre concluirá a certificação: a Folha do Acre diz que isso depende do cumprimento de todas as exigências da ART.
+- O volume de créditos que poderá ser emitido e o preço de negociação, que não foram informados.
+- O custo da viagem, estimado em cerca de R$ 700 mil, valor que o governo não confirmou.`,
+ fontes:[['Folha do Acre (governadora avança em tratativas para certificação de créditos)','https://folhadoacre.com.br/politica/na-turquia-governadora-mailza-avanca-nas-tratativas-para-certificacao-de-creditos-de-carbono-do-acre/'],['ac24horas (Mailza destaca atração de investimentos com plataforma Amazônia 2050)','https://ac24horas.com/2026/11/10/mailza-destaca-atracao-de-investimentos-com-plataforma-da-amazonia-2050-na-cop31/'],['ac24horas (entrevista com Luiz Calixto)','https://ac24horas.com/2026/11/10/mailza-derrotou-todos-os-obstaculos-e-tem-autoridade-para-fazer-mudancas-diz-calixto/']]});
+
+ORDER.regioes = _top(ORDER.regioes, ['rs_stj_boate_kiss_penas','rs_rio_uruguai_alerta_vermelho','sc_blindagem_digital_mandados_bnmp','sc_operacao_recycling_lavagem_itajai','pr_movimento_pela_vida_rodovias','sp_tarcisio_flavio_2030','sp_tarcisio_secretariado_salles','mg_cleitinho_lula_divida_propag','mg_cleitinho_secretariado_medidas','ac_mailza_cop31_carbono_amazonia2050']);
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"pf_master_delegados":"novo","fim_inquerito_fake_news":"novo","ajuste_fiscal_pacote_11_11":"novo","cbs_prazo_pressao_adiar":"novo","operacao_refit_magro":"novo","maioridade_penal_alcolumbre":"novo","mp_bets_prorrogada":"novo","rj_5_milhoes_dominio_armado":"novo","rj_zanin_segundo_turno":"novo","sp_virada_esportiva_desvio":"novo","sp_renan_santos_prefeitura":"novo","quaest_partidos_pl_pt":"novo","europa_ameacas_bomba_escolas":"novo","portugal_tempestade_charles":"novo","nvidia_espia_jensen_huang":"novo","ira_argentina_nuclear":"novo","darchiev_gaza":"novo","tse_multa_meta_fundo_partidario":"novo"};
+var FLAGS = {"pf_master_delegados":"novo","fim_inquerito_fake_news":"novo","ajuste_fiscal_pacote_11_11":"novo","cbs_prazo_pressao_adiar":"novo","operacao_refit_magro":"novo","maioridade_penal_alcolumbre":"novo","mp_bets_prorrogada":"novo","rj_5_milhoes_dominio_armado":"novo","rj_zanin_segundo_turno":"novo","sp_virada_esportiva_desvio":"novo","sp_renan_santos_prefeitura":"novo","quaest_partidos_pl_pt":"novo","europa_ameacas_bomba_escolas":"novo","portugal_tempestade_charles":"novo","nvidia_espia_jensen_huang":"novo","ira_argentina_nuclear":"novo","darchiev_gaza":"novo","tse_multa_meta_fundo_partidario":"novo","rs_stj_boate_kiss_penas":"novo","rs_rio_uruguai_alerta_vermelho":"novo","sc_blindagem_digital_mandados_bnmp":"novo","sc_operacao_recycling_lavagem_itajai":"novo","pr_movimento_pela_vida_rodovias":"novo","sp_tarcisio_flavio_2030":"novo","sp_tarcisio_secretariado_salles":"novo","mg_cleitinho_lula_divida_propag":"novo","mg_cleitinho_secretariado_medidas":"novo","ac_mailza_cop31_carbono_amazonia2050":"novo"};
 var GIRO_FLAGS = {};
 /* ===== FIM DOS DADOS ===== */
