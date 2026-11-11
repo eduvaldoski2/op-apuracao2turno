@@ -89,6 +89,7 @@ if (require.main === module) {
   const r = analisar(man, d.S, [dm, String(hoje.getUTCDate()).padStart(2, '0') + '/' + String(hoje.getUTCMonth() + 1).padStart(2, '0')]);
   console.log('Manchetes de ' + man.coletado_brt + ' · ' + man.fontes_ok + '/' + man.fontes_total + ' fontes · ' + r.total + ' fatos distintos · ' + r.cobertas + ' já cobertos · ' + r.lacunas.length + ' LACUNAS\n');
   r.lacunas.slice(0, 40).forEach((l, i) => console.log((i + 1) + '. ' + (l.acao === 'atualizar' ? '→ATUALIZAR ' + l.materia + ' ' : '→NOVA ') + '[' + l.nfontes + ' veículos' + (l.capas.length ? '; capa: ' + l.capas.join(', ') : '') + '] ' + l.titulo.slice(0, 170) + '\n   ' + l.fontes.join(', ') + ' · ' + l.url));
+  if (args.includes('--regional')) { const por = {}; man.fontes.filter(f => f.uf).forEach(f => (por[f.uf] = por[f.uf] || []).push(...f.itens.slice(0, 12).map(i => '  [' + f.nome.replace(/^\[\w\w\] /, '') + '] ' + i.t.slice(0, 140)))); Object.keys(por).sort().forEach(uf => console.log('\n== ' + uf + '\n' + por[uf].join('\n'))); }
   if (args.includes('--ranking')) { console.log('\nRANKING DO DIA (o que mais aparece nos veículos; ✔ = coberto por matéria de hoje):'); ranking(r).slice(0, 30).forEach((l, i) => console.log((i + 1) + '. ' + (l.coberta ? '✔ ' + l.materia : '✘ LACUNA') + ' [' + l.nfontes + ' veíc.' + (l.capas.length ? ', capas: ' + l.capas.join('/') : '') + '] ' + l.titulo.slice(0, 120))); }
   if (args.includes('--json')) fs.writeFileSync('cobertura.json', JSON.stringify(r, null, 1));
 }
