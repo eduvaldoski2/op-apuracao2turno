@@ -12998,7 +12998,149 @@ var L = {sp_orcamento_2027_audiencias_butanta:'Orçamento 2027 em SP',lula_delcy
 })();
 
 
+
+/* ===== EDIÇÃO 19h de 11/11 ===== */
+EDICAO.hora='19h';
+
+_N('fachin_relatorio_pf_indicio_crime', {ed:'politica', k:'Política · STF', hora:'11/11',
+ t:'Fachin quer da PF relatório técnico, com indício de crime e sem juízo de valor, sobre a relação de ministros do STF com Vorcaro',
+ sub:'Os delegados que produziram os três relatórios foram afastados e os textos serão refeitos; o colunista Valdo Cruz, do g1, aponta que a crise na PF pode empurrar a análise para 2027.',
+ resumo:'O presidente do Supremo Tribunal Federal, Edson Fachin, disse a auxiliares na quarta (11) que espera da Polícia Federal um relatório com avaliação técnica das menções a ministros da Corte no caso Banco Master, que identifique indício de crime e não faça juízo sobre a relação com Daniel Vorcaro, informa o g1. A PF concluiu relatórios sobre Alexandre de Moraes, Kassio Nunes Marques e Dias Toffoli, segundo a DW; os delegados responsáveis foram afastados e os textos serão refeitos por extrapolarem o caráter descritivo. O g1 informa que a crise pode adiar a análise para 2027.',
+ upd:'Entram a orientação de Fachin sobre o conteúdo do relatório, o afastamento dos delegados e a avaliação de que a análise pode ficar para 2027.',
+ fundo:`O presidente do Supremo Tribunal Federal (STF), Edson Fachin, afirmou a auxiliares na quarta-feira (11) que espera da Polícia Federal (PF) um relatório de avaliação técnica sobre as menções a ministros da Corte no caso Banco Master, que aponte indício de crime quando houver e não faça juízo sobre a relação dos magistrados com o ex-banqueiro Daniel Vorcaro, informa o g1.
+## Por que importa
+O conteúdo do relatório define se o Supremo recebe um retrato descritivo de mensagens e contatos ou um documento com indícios que possam abrir investigação formal contra ministros. A decisão do tribunal sobre como tratar o material, e o calendário dessa análise, pesa sobre a imagem da Corte em um ano em que o caso Master já levou a pedidos de impeachment de ministros, segundo reportagens anteriores do Radar.
+NUMS 3|Ministros citados nos relatórios da PF (Moraes, Nunes Marques e Toffoli, segundo a DW);2027|Possível data da análise, segundo Valdo Cruz, do g1
+## O que a PF produziu e o que mudou
+A PF concluiu relatórios sobre as relações de Moraes, Nunes Marques e Toffoli com Vorcaro, informa a coluna de Eliane Cantanhede, no Estadão, e o Diário de Pernambuco reproduz a informação. A DW informa que os delegados responsáveis foram afastados e que os documentos deverão ser refeitos por supostamente extrapolarem o caráter descritivo que Fachin havia determinado. O g1 registra o afastamento em meio a divergências internas na PF.
+## A leitura política
+O colunista Valdo Cruz, do g1, avalia que a crise na PF pode cair bem para uma ala do Supremo que prefere adiar a análise sobre o envolvimento de ministros com Vorcaro, e que a decisão pode ficar para 2027. É uma avaliação do colunista, não uma decisão do tribunal.
+## Quem é quem
+- Edson Fachin: presidente do STF, que decidiu na terça (10) encerrar o inquérito das fake news e define o tratamento dado ao material da PF.
+- Alexandre de Moraes, Kassio Nunes Marques e Dias Toffoli: ministros do STF citados nos relatórios.
+- Daniel Vorcaro: ex-banqueiro, dono do Banco Master, alvo da investigação da PF.
+- Polícia Federal: órgão subordinado ao Ministério da Justiça, que cobrou informações sobre o afastamento dos delegados, segundo O Tempo.
+## O que vem agora
+- A PF deve refazer os relatórios dentro do formato pedido por Fachin; não há data divulgada.
+- O STF decide como tratar o material, e a avaliação de Valdo Cruz é que isso pode ficar para 2027.
+## O que ainda não está confirmado
+- O conteúdo dos relatórios não foi divulgado; as menções aos três ministros vêm de reportagens de colunistas e da DW.
+- Não há prazo oficial para a nova versão nem para a análise do Supremo.`,
+ fontes:[['g1 (Fachin quer relatório técnico da PF)','https://g1.globo.com/politica/noticia/2026/11/11/relatorio-da-pf-deve-identificar-indicio-de-crime-e-nao-fazer-juizo-sobre-relacao-de-ministros-com-vorcaro-indica-fachin-a-auxiliares.ghtml'],['g1 (Valdo Cruz: crise na PF pode adiar análise)','https://g1.globo.com/politica/blog/valdo-cruz/post/2026/11/11/crise-na-pf-pode-adiar-para-2027-analise-sobre-envolvimento-de-ministros-do-stf-com-vorcaro.ghtml'],['g1 (afastamento de delegados)','https://g1.globo.com/politica/blog/julia-duailibi/post/2026/11/11/afastamento-de-delegados.ghtml'],['DW Brasil (o que se sabe dos relatórios)','https://www.dw.com/pt-br/o-que-se-sabe-dos-relatórios-da-pf-sobre-os-laços-entre-stf-e-vorcaro/a-79908320?maca=bra-rss-br-all-1030-rdf'],['Diário de Pernambuco (PF conclui relatórios)','https://www.diariodepernambuco.com.br/politica/2026/11/11728680-pf-conclui-relatorios-sobre-ligacao-de-moraes-nunes-marques-e-toffoli-com-vorcaro-diz-colunista.html']] });
+
+_N('poupanca_saques_outubro_sexto_mes', {ed:'economia', k:'Economia · Poupança', hora:'11/11',
+ t:'Saques da poupança superam depósitos em R$ 8,88 bilhões em outubro, o sexto mês seguido de retirada líquida',
+ sub:'O Banco Central atribui o movimento à migração para aplicações de maior rentabilidade, com a Selic em 13,75%.',
+ dado:{n:'R$ 8,88 bi',l:'saída líquida da poupança em outubro'},
+ resumo:'Os saques da caderneta de poupança superaram os depósitos em R$ 8,88 bilhões em outubro, informou o Banco Central: foram depositados R$ 341,49 bilhões e retirados R$ 350,37 bilhões, segundo a Agência Brasil. É o sexto mês seguido de retirada líquida, que o BC atribui à migração para aplicações de maior rentabilidade em um cenário de Selic alta, informa a CartaCapital. Os rendimentos creditados não entram nessa conta.',
+ upd:'Entra o dado de outubro do Banco Central.',
+ fundo:`Os saques da caderneta de poupança superaram os depósitos em R$ 8,88 bilhões em outubro, informou o Banco Central (BC) na quarta-feira (11). No mês, os brasileiros depositaram R$ 341,49 bilhões e retiraram R$ 350,37 bilhões, segundo a Agência Brasil.
+## Por que importa
+A poupança perde recursos para aplicações que pagam mais. Com a Selic em 13,75% ao ano, mantida pelo Copom, renda fixa e fundos oferecem rendimento maior que a caderneta, e o BC atribui a saída líquida a essa migração, informa a CartaCapital. O resultado pesa no crédito imobiliário, financiado em parte com recursos da poupança.
+NUMS R$ 341,49 bi|Depósitos em outubro;R$ 350,37 bi|Retiradas em outubro;R$ 8,88 bi|Saída líquida;6º mês|Seguido de retirada líquida
+## O que o BC informou
+A conta compara depósitos e saques e não inclui os rendimentos creditados na caderneta, segundo a Agência Brasil. A CartaCapital registra que a retirada líquida ocorre pelo sexto mês consecutivo.
+## O que vem agora
+- O BC divulga o dado de novembro no início de dezembro.
+- A trajetória da Selic, que o Copom manteve em 13,75% e cuja ata saiu na terça (10), segue como principal fator da migração.
+## O que ainda não está confirmado
+- O acumulado de 2026 e a comparação com outubro de 2025 não foram checados nas fontes lidas.`,
+ fontes:[['Agência Brasil (saques da poupança superam depósitos)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/saques-da-poupanca-superam-depositos-em-r-888-bilhoes-em-outubro'],['CartaCapital (saques superam depósitos em quase R$ 9 bilhões)','https://www.cartacapital.com.br/economia/saques-da-poupanca-superam-depositos-em-quase-r-9-bilhoes/']] });
+
+_N('ira_rezaei_bases_europa', {ed:'mundo', k:'Mundo · Oriente Médio', hora:'11/11',
+ t:'Irã ameaça atacar bases militares dos EUA na Europa se elas forem usadas em novos bombardeios contra o país',
+ sub:'O chefe de segurança iraniano Mohsen Rezaei fez a ameaça na quarta (11); o g1 registra ainda que o partido de Trump barrou o impeachment do secretário de Guerra.',
+ resumo:'O chefe de segurança iraniano, Mohsen Rezaei, ameaçou na quarta-feira (11) atacar bases militares americanas fora do Oriente Médio, na Europa, se forem usadas em novos bombardeios contra o Irã, informa o g1. A CartaCapital descreve a declaração como motivo de preocupação com nova escalada da guerra, desta vez com impactos fora da região. O Euronews registrou em 4 de novembro ameaça semelhante de um deputado iraniano.',
+ upd:'Entra a ameaça de Rezaei de 11/11 contra bases dos EUA na Europa.',
+ fundo:`O chefe de segurança iraniano, Mohsen Rezaei, ameaçou na quarta-feira (11) atacar bases militares dos Estados Unidos na Europa caso elas sejam usadas contra o Irã em possíveis novos bombardeios, informa o g1.
+## Por que importa
+A ameaça leva a guerra entre Estados Unidos e Irã para além do Oriente Médio e coloca países europeus que abrigam bases americanas como possíveis alvos, o que preocupa por uma nova escalada, segundo a CartaCapital. O Euronews em espanhol já havia registrado, em 4 de novembro, aviso semelhante de um deputado iraniano de que Teerã atacaria a Europa se os EUA usassem as bases.
+## Quem é quem
+- Mohsen Rezaei: chefe de segurança do Irã, segundo o g1; do campo conservador do regime iraniano.
+- Donald Trump: presidente dos EUA, do Partido Republicano (direita), que tem maioria que barrou o impeachment do secretário de Guerra, segundo o g1.
+- Secretário de Guerra dos EUA: defendeu o conflito com o Irã e teve o impeachment barrado pelo partido de Trump.
+## O que vem agora
+- Não há data para novos bombardeios; o desdobramento depende de decisão de Washington.
+- Os governos dos países europeus com bases americanas ainda não responderam, segundo as fontes lidas.
+## O que ainda não está confirmado
+- Quais bases e países seriam alvos não foi especificado nas fontes lidas.
+- Não há confirmação de que novos bombardeios estejam planejados.`,
+ fontes:[['g1 (Irã ameaça atacar bases dos EUA na Europa)','https://g1.globo.com/mundo/noticia/2026/11/11/ira-ameaca-atacar-bases-dos-eua-na-europa-se-forem-usadas-contra-o-pais.ghtml'],['CartaCapital (Irã ameaça atacar bases)','https://www.cartacapital.com.br/cartaexpressa/ira-ameaca-atacar-bases-dos-eua-na-europa-para-retaliar-possiveis-novos-bombardeios/'],['Euronews (amenaza de un diputado iraní)','https://es.euronews.com/2026/11/04/amenaza-irani-teheran-atacara-europa-eeuu-usa-bases-advierte-diputado-irani-euronews']] });
+
+_N('trump_carta_biden_livro', {ed:'mundo', k:'Mundo · EUA', hora:'11/11',
+ t:'Livro de memórias de Biden revela carta manuscrita de Trump deixada no Salão Oval em janeiro de 2021',
+ sub:'A mensagem pede que Biden seja fiel ao povo americano, segundo g1, Folha e Terra.',
+ resumo:'Um novo livro de memórias de Joe Biden revela a mensagem escrita à mão que Donald Trump deixou para o sucessor em janeiro de 2021, informa o g1. Na primeira semana de mandato, Biden havia dito a jornalistas que recebeu uma carta muito generosa. A Folha cita a frase em que Trump diz saber o quanto Biden ama o povo americano.',
+ upd:'Entra a revelação da carta no livro de Biden.',
+ fundo:`Uma mensagem escrita à mão por Donald Trump para Joe Biden em janeiro de 2021 foi revelada no novo livro de memórias do ex-presidente democrata, informa o g1, com imagem da BBC. A carta, deixada no Salão Oval, pede que Biden seja fiel ao povo americano.
+## Por que importa
+A carta mostra o tom privado de Trump na transição de 2020, quando ele contestava publicamente o resultado da eleição. Hoje presidente, Trump aparece no texto de Biden como autor de um gesto de cortesia institucional.
+## Quem é quem
+- Donald Trump: Partido Republicano, direita; perdeu a eleição de 2020 e voltou à Presidência.
+- Joe Biden: Partido Democrata, centro-esquerda; presidente de 2021 a 2025.
+## O que vem agora
+- O livro de Biden segue em divulgação; a reação da Casa Branca não foi registrada nas fontes lidas.
+## O que ainda não está confirmado
+- O texto integral da carta não foi publicado nas fontes lidas.`,
+ fontes:[['g1 (Seja fiel ao povo americano)','https://g1.globo.com/mundo/noticia/2026/11/11/seja-fiel-ao-povo-americano-carta-privada-de-trump-a-biden-e-revelada-em-livro-do-ex-presidente.ghtml'],['Folha (carta de Trump a Biden)','https://www1.folha.uol.com.br/mundo/2026/11/eu-sei-o-quanto-voce-ama-o-povo-americano-disse-trump-a-biden-em-carta-apos-eleicoes-de-2020.shtml']] });
+
+_N('rj_campopiano_medalha_chiquinha', {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro', hora:'11/11',
+ t:'Câmara do Rio concede a Medalha Chiquinha Gonzaga à deputada eleita Eduarda Campopiano (PL-SP), e a oposição reage',
+ sub:'A parlamentar se declara antifeminista; abaixo-assinado pede que a Casa reveja a honraria.',
+ resumo:'A Câmara Municipal do Rio aprovou na terça-feira (10) a Medalha Chiquinha Gonzaga para a deputada estadual eleita por São Paulo Eduarda Campopiano (PL-SP), que se declara antifeminista e "maior inimiga das feministas", informa a Folha. Parlamentares do Rio repudiam a honraria, segundo o Brasil de Fato, e um abaixo-assinado pede que a Câmara reveja a decisão, informa O Globo.',
+ upd:'Entram a aprovação da medalha e a reação da oposição.',
+ fundo:`A Câmara Municipal do Rio aprovou na terça-feira (10) a concessão da Medalha Chiquinha Gonzaga à deputada estadual eleita por São Paulo Eduarda Campopiano (PL-SP), que se declara abertamente antifeminista, informa a Folha. A oposição reagiu.
+## Por que importa
+A medalha destina-se a mulheres de destaque por causa democrática, segundo O Globo, e a escolha de uma parlamentar que se apresenta como "maior inimiga das feministas" abriu disputa na Câmara carioca. Parlamentares do Rio chamaram a decisão de "contradição histórica", segundo o Brasil de Fato.
+## Quem é quem
+- Eduarda Campopiano: deputada estadual eleita por São Paulo pelo PL, partido de direita.
+- Oposição na Câmara do Rio: parlamentares de esquerda que repudiam a honraria, segundo o Brasil de Fato.
+## O que vem agora
+- Um abaixo-assinado pede que a Câmara reveja a medalha, informa O Globo; não há decisão sobre o pedido.
+## O que ainda não está confirmado
+- Não foi informado quem indicou o nome nem se haverá cerimônia de entrega.`,
+ fontes:[['Folha (Câmara do Rio concede medalha a Campopiano)','https://www1.folha.uol.com.br/poder/2026/11/camara-do-rio-concede-medalha-chiquinha-gonzaga-a-eduarda-campopiano-oposicao-reage.shtml'],['Brasil de Fato (parlamentares repudiam)','https://www.brasildefato.com.br/2026/11/11/contradicao-historica-parlamentares-do-rio-repudiam-medalha-chiquinha-gonzaga-para-eduarda-campopiano/'],['O Globo (abaixo-assinado)','https://oglobo.globo.com/blogs/ancelmo-gois/post/2026/11/abaixo-assinado-pede-que-camara-do-rio-reveja-medalha-chiquinha-gonzaga-para-eduarda-campopiano.ghtml']] });
+
+_N('sp_tarcisio_secretario_ciencia_ita', {ed:'regioes', reg:'sp', k:'Regiões · São Paulo', hora:'11/11',
+ t:'Tarcísio escolhe o ex-reitor do ITA como secretário de Ciência e Tecnologia de São Paulo',
+ sub:'A escolha entra no novo secretariado do governo paulista, informam Estadão e Terra.',
+ resumo:'O governador Tarcísio de Freitas (Republicanos) escolheu o ex-reitor do ITA como novo secretário de Ciência, Tecnologia e Inovação de São Paulo, informam o Estadão e o Terra na quarta-feira (11).',
+ upd:'Entra a escolha do secretário.',
+ fundo:`O governador de São Paulo, Tarcísio de Freitas (Republicanos), escolheu o ex-reitor do Instituto Tecnológico de Aeronáutica (ITA) para a Secretaria de Ciência e Tecnologia, informam o Estadão e o Terra.
+## Por que importa
+A pasta articula universidades estaduais e centros de pesquisa, e a escolha compõe o secretariado do governo paulista.
+## O que vem agora
+- A posse e o restante do secretariado devem ser anunciados pelo governo.
+## O que ainda não está confirmado
+- A data da posse não consta nas fontes lidas.`,
+ fontes:[['Estadão (Tarcísio escolhe ex-reitor do ITA)','https://www.estadao.com.br/em-alta/politica/tarcisio-escolhe-ex-reitor-do-ita-como-novo-secretario-de-ciencia-e-tecnologia-de-sao-paulo/'],['Terra (Tarcísio escolhe ex-reitor do ITA)','https://www.terra.com.br/noticias/brasil/politica/tarcisio-escolhe-ex-reitor-do-ita-como-novo-secretario-de-ciencia-e-tecnologia-de-sao-paulo,55d849b041c01860a66e733663bc5289j2dci54o.html']] });
+
+HOME_LEAD = 'fachin_relatorio_pf_indicio_crime';
+HOME_ROW = ['poupanca_saques_outubro_sexto_mes','ira_rezaei_bases_europa'];
+ORDER.politica = _top(ORDER.politica, ['fachin_relatorio_pf_indicio_crime']);
+ORDER.economia = _top(ORDER.economia, ['poupanca_saques_outubro_sexto_mes']);
+ORDER.mundo = _top(ORDER.mundo, ['ira_rezaei_bases_europa','trump_carta_biden_livro']);
+ORDER.regioes = _top(ORDER.regioes, ['rj_campopiano_medalha_chiquinha','sp_tarcisio_secretario_ciencia_ita']);
+(function(){
+ var novo=[
+  ['Fachin e o relatório da PF','Fachin quer relatório técnico da PF, com indício de crime e sem juízo sobre ministros do STF e Vorcaro, informa o g1.','g1','https://g1.globo.com/politica/noticia/2026/11/11/relatorio-da-pf-deve-identificar-indicio-de-crime-e-nao-fazer-juizo-sobre-relacao-de-ministros-com-vorcaro-indica-fachin-a-auxiliares.ghtml','','fachin_relatorio_pf_indicio_crime'],
+  ['Poupança em outubro','Saques superam depósitos em R$ 8,88 bilhões, o sexto mês seguido de saída líquida, segundo a Agência Brasil.','Agência Brasil','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/saques-da-poupanca-superam-depositos-em-r-888-bilhoes-em-outubro','','poupanca_saques_outubro_sexto_mes'],
+  ['Irã e as bases na Europa','Chefe de segurança iraniano ameaça atacar bases dos EUA na Europa se forem usadas contra o país, informa o g1.','g1','https://g1.globo.com/mundo/noticia/2026/11/11/ira-ameaca-atacar-bases-dos-eua-na-europa-se-forem-usadas-contra-o-pais.ghtml','','ira_rezaei_bases_europa'],
+  ['Carta de Trump a Biden','Livro de Biden revela mensagem manuscrita de Trump deixada no Salão Oval em 2021, informa o g1.','g1','https://g1.globo.com/mundo/noticia/2026/11/11/seja-fiel-ao-povo-americano-carta-privada-de-trump-a-biden-e-revelada-em-livro-do-ex-presidente.ghtml','','trump_carta_biden_livro'],
+  ['Medalha Chiquinha Gonzaga','Câmara do Rio concede a honraria a Eduarda Campopiano (PL-SP); oposição reage, informa a Folha.','Folha','https://www1.folha.uol.com.br/poder/2026/11/camara-do-rio-concede-medalha-chiquinha-gonzaga-a-eduarda-campopiano-oposicao-reage.shtml','','rj_campopiano_medalha_chiquinha'],
+  ['Secretário de Ciência em SP','Tarcísio escolhe o ex-reitor do ITA para a pasta de Ciência e Tecnologia, informa o Estadão.','Estadão','https://www.estadao.com.br/em-alta/politica/tarcisio-escolhe-ex-reitor-do-ita-como-novo-secretario-de-ciencia-e-tecnologia-de-sao-paulo/','','sp_tarcisio_secretario_ciencia_ita'],
+  ['Cunhado de Vorcaro no STF','Fabiano Zettel, preso desde março, pede ao STF a revogação da prisão, informa a CNN Brasil.','CNN Brasil','https://www.cnnbrasil.com.br/politica/cunhado-de-vorcaro-recorre-ao-stf-e-pede-revogacao-de-prisao/','','']
+ ];
+ GIRO = novo.concat(GIRO.filter(function(g){return novo.every(function(n){return n[0]!==g[0];});})).slice(0,20);
+})();
+AMANHA = [
+ ['Qui, 12/11','economia','IPCA de outubro, do IBGE','O Focus espera alta de 0,32% no mês; o IPCA-15 de outubro ficou em 0,32%, com 4,62% em 12 meses, acima do teto da meta, de 4,5%.','https://www.acessa.com/economia/2026/10/342836-previa-da-inflacao-oficial-cai-pela-metade-e-fecha-outubro-em-032.html','mercado_10_11'],
+ ['Qui, 12/11','mundo','Cúpula de líderes da COP31, em Antália','Lula participa do evento na Turquia antes de seguir às Filipinas; a volta ao Brasil é por volta de 16 de novembro, e as decisões sobre ministério e equipe econômica aguardam o retorno.','https://neofeed.com.br/experts/lula-parte-para-a-turquia-e-deixa-o-mercado-em-modo-de-espera-pelo-titular-da-fazenda/','lula_antalia_comitiva'],
+ ['Qui, 12/11','congresso','PP decide posição na disputa pela presidência da Assembleia da Paraíba','O partido tem reunião marcada para ouvir a posição da bancada na disputa entre o acordo dos dois biênios e outros nomes.','https://paraibaonline.com.br/politica/2026/11/11/wallber-virgolino-reafirma-acordo-do-pl-com-wilson-filho-na-disputa-pela-presidencia-da-alpb/','pb_alpb_presidencia_acordo_republicanos'],
+ ['Sex, 13/11','justica','Dino publica a decisão sobre a transição da escala 6x1','O ministro decide até sexta as regras de transição e leva a decisão ao plenário do STF; a jornada de 42 horas vale em 16 de dezembro.','https://www.infomoney.com.br/brasil/comerciarios-de-sp-e-rs-fecham-acordo-para-reduzir-a-escala-6x1-para-5x2/','dino_6x1']
+];
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","israel":"atualizada","dino_6x1":"atualizada","ueno_bank":"atualizada","flavio_senado":"atualizada","ucrania_abudhabi":"atualizada","argentina_governadores":"atualizada","copom_ata":"atualizada","mercado_10_11":"atualizada","paraguai_cupula":"atualizada","pena_cofre":"atualizada","petrobras_balanco":"atualizada","combustiveis_decreto":"atualizada","lula_antalia_comitiva":"atualizada","peru_fujimori":"atualizada","escazu_cre":"atualizada","mps_rurais_exportadores":"atualizada","eua_senado_mississippi_alasca":"atualizada","pf_master_delegados":"atualizada","fim_inquerito_fake_news":"atualizada","ajuste_fiscal_pacote_11_11":"atualizada","pb_alpb_presidencia_acordo_republicanos":"novo","pe_raquel_lyra_exonera_150_pl":"novo","se_racionamento_grande_aracaju_poxim":"novo","ma_cartorios_mortes_acoes_policiais_cnj":"novo","pi_mppi_hut_pacientes_cardiacos":"novo","am_abatedouro_flutuante_jacares":"novo","ap_gaeco_gabinete_empresarial_alap":"novo","rr_cnj_pad_desembargadores_tjrr":"novo","df_brb_acao_ex_gestores_master":"novo","mt_vg_camara_mesa_justica_48h":"novo","ms_santa_casa_greve_enfermagem_intervencao":"novo","rj_alerj_transparencia_ultimo_lugar":"novo","rj_mata_maravilha_torres_porto":"novo","es_pazolini_exoneracao_comissionados":"novo","mg_mpmg_lista_triplice_pgj":"novo","pr_codigo_florestal_alep_audiencia":"novo","lula_delcy_antalia":"novo","heleno_visitas_damares_malta":"novo","fhc_video_indiciado":"novo","oas_triplex_leilao_2_4_mi":"novo","senado_iphones_celulares":"novo","sp_orcamento_2027_audiencias_butanta":"novo"};
-var GIRO_FLAGS = {"Orçamento 2027 em SP":"novo","Lula e Delcy":"novo","Heleno recusa visitas":"novo","Vídeo de FHC":"novo","Tríplex e a OAS":"novo","iPhones do Senado":"novo","PF e caso Master":"novo","Pacote fiscal":"novo","Fim do inquérito das fake news":"novo","Dino e a escala 6x1":"novo","MPs rurais na Câmara":"novo","Escazú e a disputa no Senado":"novo","Inquérito sobre Flávio":"novo","Nomes para a Fazenda":"novo"};
+var FLAGS = {"fachin_relatorio_pf_indicio_crime":"novo","poupanca_saques_outubro_sexto_mes":"novo","ira_rezaei_bases_europa":"novo","trump_carta_biden_livro":"novo","rj_campopiano_medalha_chiquinha":"novo","sp_tarcisio_secretario_ciencia_ita":"novo"};
+var GIRO_FLAGS = {"Fachin e o relatório da PF":"novo","Poupança em outubro":"novo","Irã e as bases na Europa":"novo","Carta de Trump a Biden":"novo","Medalha Chiquinha Gonzaga":"novo","Secretário de Ciência em SP":"novo","Cunhado de Vorcaro no STF":"novo"};
 /* ===== FIM DOS DADOS ===== */
