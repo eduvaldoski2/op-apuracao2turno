@@ -10,7 +10,7 @@ concurrency: { group: manchetes, cancel-in-progress: true }
 jobs:
   m:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
         with: { sparse-checkout: 'radar/tools/coletar_manchetes.cjs', sparse-checkout-cone-mode: false }
@@ -23,7 +23,7 @@ jobs:
           mkdir -p hist
           cp /tmp/manchetes.json manchetes.json && cp /tmp/log.txt log.txt
           # histórico do dia: cada coleta fica em hist/ (compacto); apaga o que tem mais de 30 h
-          node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('manchetes.json'));const c={coletado:m.coletado,fontes:m.fontes.map(f=>({nome:f.nome,tipo:f.tipo,itens:f.itens.map((i,p)=>({t:i.t,url:i.url,p}))}))};fs.writeFileSync('hist/'+m.coletado.replace(/[:.]/g,'-')+'.json',JSON.stringify(c));const lim=Date.now()-30*3600e3;for(const f of fs.readdirSync('hist')){const t=Date.parse(f.slice(0,-5).replace(/T(\d+)-(\d+)-(\d+)-(\d+)Z/,'T\$1:\$2:\$3.\$4Z'));if(t<lim)fs.unlinkSync('hist/'+f);}"
+          node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('manchetes.json'));const c={coletado:m.coletado,fontes:m.fontes.map(f=>({nome:f.nome,tipo:f.tipo,uf:f.uf,itens:f.itens.map((i,p)=>({t:i.t,url:i.url,p}))}))};fs.writeFileSync('hist/'+m.coletado.replace(/[:.]/g,'-')+'.json',JSON.stringify(c));const lim=Date.now()-30*3600e3;for(const f of fs.readdirSync('hist')){const t=Date.parse(f.slice(0,-5).replace(/T(\d+)-(\d+)-(\d+)-(\d+)Z/,'T\$1:\$2:\$3.\$4Z'));if(t<lim)fs.unlinkSync('hist/'+f);}"
           node -e "const fs=require('fs');const a=fs.readdirSync('hist').sort().map(f=>JSON.parse(fs.readFileSync('hist/'+f)));fs.writeFileSync('historico.json',JSON.stringify({coletas:a.length,desde:a[0].coletado,ate:a[a.length-1].coletado,coletas_:a}))"
           git config user.name coletor && git config user.email coletor@users.noreply.github.com
           git add -A && git commit -q -m "manchetes $(date -u +%FT%TZ)" && git push -q --force origin HEAD:manchetes

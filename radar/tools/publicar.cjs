@@ -63,8 +63,9 @@ if (erros.length) die('\n - ' + erros.join('\n - '));
     const dd = new Date(data + 'T12:00:00Z'), ontem = new Date(dd.getTime() - 864e5), fmt = x => String(x.getUTCDate()).padStart(2, '0') + '/' + String(x.getUTCMonth() + 1).padStart(2, '0');
     const horas = [fmt(dd), dd.getUTCDate() + '/' + (dd.getUTCMonth() + 1)].concat(hh === '07h' ? [fmt(ontem), ontem.getUTCDate() + '/' + (ontem.getUTCMonth() + 1)] : []);   // só matéria do dia conta como cobertura
     const cob = require('./cobertura.cjs').analisar(man, d.S, horas);
+    global.__cob = cob;
     const fortes = cob.lacunas.filter(l => l.nfontes >= 4 || l.capas.length >= 3);
-    if (fortes.length && !process.argv.includes('--aceitar-lacunas')) die('o Radar NÃO cobre o que as capas dão (' + fortes.length + ' pautas em 4+ veículos ou 3+ capas). Escreva matéria (NOVA) sobre cada uma, buscando o fato em outros veículos se houver paywall:\n' + fortes.map(l => ' • [' + l.nfontes + ' veículos] ' + l.titulo.slice(0, 150) + ' (' + l.fontes.slice(0, 5).join(', ') + ') ' + l.url).join('\n') + '\n(outras lacunas menores: node radar/tools/cobertura.cjs)');
+    if (fortes.length && !process.argv.includes('--aceitar-lacunas')) die('o Radar NÃO cobre o que as capas dão (' + fortes.length + ' pautas em 4+ veículos ou 3+ capas). Escreva matéria (NOVA) sobre cada uma, buscando o fato em outros veículos se houver paywall:\n' + fortes.map(l => ' • ' + (l.acao === 'atualizar' ? 'ATUALIZE a matéria ' + l.materia + ' (reescreva com o fato novo, upd e resumo novos)' : 'ESCREVA matéria nova') + ' [' + l.nfontes + ' veículos] ' + l.titulo.slice(0, 150) + ' (' + l.fontes.slice(0, 5).join(', ') + ') ' + l.url).join('\n') + '\n(outras lacunas menores: node radar/tools/cobertura.cjs)');
     else console.log('Cobertura das capas: ' + cob.cobertas + ' fatos cobertos; ' + fortes.length + ' lacunas fortes; ' + (cob.lacunas.length - fortes.length) + ' menores (node radar/tools/cobertura.cjs).');
   }
 }
@@ -96,6 +97,13 @@ if (ant) {
 if (ant) {
   const naCapa = [d.HOME_LEAD].concat(d.HOME_ROW || []).filter(i => !flags[i]);
   if (naCapa.length) die('capa com matéria que não é nova nem atualizada nesta edição: ' + naCapa.join(', ') + '. Troque HOME_LEAD/HOME_ROW por matérias NOVAS ou ATUALIZADAS.');
+  // ATUALIZAÇÕES: matéria de dias anteriores que os veículos voltaram a noticiar hoje tem que ser atualizada
+  if (global.__cob) {
+    const cand = {}; global.__cob.todas.filter(x => x.acao === 'atualizar' && x.nfontes >= 2 && x.materia).forEach(x => { cand[x.materia] = Math.max(cand[x.materia] || 0, x.nfontes); });
+    const ids = Object.keys(cand), feitas = ids.filter(i => flags[i]), minimo = Math.min(5, ids.length);
+    if (feitas.length < minimo && !process.argv.includes('--aceitar-lacunas')) die('só ' + feitas.length + ' matérias antigas foram ATUALIZADAS e os veículos voltaram a noticiar ' + ids.length + ' delas hoje (exigido: ' + minimo + '). Atualize com o fato novo (reescreva resumo e fundo, upd novo): ' + ids.sort((a, b) => cand[b] - cand[a]).slice(0, 12).map(i => i + ' (' + cand[i] + ' veíc.)').join(', ') + '. Veja as manchetes em: node radar/tools/cobertura.cjs --ranking');
+    else console.log('Atualizações: ' + feitas.length + ' de ' + ids.length + ' matérias antigas com novidade nos veículos.');
+  }
   // matéria idêntica em várias edições seguidas está parada: aposente (velha:true) ou atualize com fato novo.
   // Até 07/11 19h eram 3 edições (levava a aposentar matéria ainda quente); a partir daí, 6 edições (cerca de um dia e meio).
   const ncorte = (nome >= '2026-11-07-19h' || process.env.RADAR_REGRAS === '1') ? 6 : 3;
@@ -129,7 +137,7 @@ const CFG = {
   medianaTocadas: 380,
   acervo: { palavras: 250, reducao: 6 },                   // dívida de profundidade: matéria ativa abaixo disso tem de ser ampliada, ao menos 6 por edição
   lide: { min: 20, max: 85 }, paragrafoMax: 140, resumo: { min: 50, max: 120 },
-  maxVelhasPorEdicao: 8,
+  maxVelhasPorEdicao: 80,                                  // aposentar é livre; o limite só evita limpeza em massa por engano
   maxCascata: 0.4,                                         // parágrafos que começam por "Segundo X…"
   maxVeiculo: 0.25, minVeiculos: 12
 };

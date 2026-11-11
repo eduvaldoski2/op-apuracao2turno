@@ -40,6 +40,7 @@ function analisar(man, S, horas) {
     if (!g) { g = { tk: [], itens: [] }; grupos.push(g); }
     g.itens.push(h); g.tk = [...new Set(g.tk.concat(h.tk))];
   });
+  const todas = Object.keys(S).filter(i => !S[i].velha).map(i => ({ id: i, tk: new Set(toks(textoMateria(S[i]))) }));
   const mats = Object.keys(S).filter(i => !S[i].velha && (!horas || horas.includes(S[i].hora))).map(i => ({ id: i, tk: new Set(toks(textoMateria(S[i]))), hora: S[i].hora }));
   const res = grupos.map(g => {
     const fontes = [...new Set(g.itens.map(x => x.fonte))];
@@ -49,8 +50,13 @@ function analisar(man, S, horas) {
     const nucleo = Object.keys(cont).filter(t => cont[t] >= (g.itens.length > 1 ? 2 : 1)).sort((a, b) => cont[b] - cont[a]).slice(0, 10);
     let melhor = { id: null, n: 0 };
     mats.forEach(m => { const n = nucleo.filter(t => m.tk.has(t)).length; if (n > melhor.n) melhor = { id: m.id, n }; });
-    const coberta = melhor.n >= Math.min(4, Math.max(3, Math.ceil(nucleo.length * 0.5)));
-    return { titulo: g.itens.slice().sort((a, b) => b.t.length - a.t.length)[0].t, fontes, nfontes: fontes.length, capas: [...new Set(capas)], url: g.itens[0].url, coberta, materia: melhor.id, casou: melhor.n, nucleo };
+    const lim = Math.min(4, Math.max(3, Math.ceil(nucleo.length * 0.5)));
+    const coberta = melhor.n >= lim;
+    // matéria ANTIGA (de dias anteriores) sobre o mesmo assunto: a ação é ATUALIZAR, não escrever nova
+    let antiga = { id: null, n: 0 };
+    if (!coberta) todas.forEach(m => { const n = nucleo.filter(t => m.tk.has(t)).length; if (n > antiga.n) antiga = { id: m.id, n }; });
+    const acao = coberta ? 'coberta' : (antiga.n >= lim ? 'atualizar' : 'nova');
+    return { titulo: g.itens.slice().sort((a, b) => b.t.length - a.t.length)[0].t, fontes, nfontes: fontes.length, capas: [...new Set(capas)], url: g.itens[0].url, coberta, acao, materia: coberta ? melhor.id : antiga.id, casou: melhor.n, nucleo };
   });
   const grandes = res.filter(r => !r.coberta && (r.nfontes >= 3 || (r.nfontes >= 2 && r.capas.length >= 1) || r.capas.length >= 2));
   grandes.sort((a, b) => b.nfontes - a.nfontes || b.capas.length - a.capas.length);
@@ -61,10 +67,10 @@ function analisar(man, S, horas) {
 function mesclar(hist) {
   const por = {};
   hist.coletas_.forEach(c => c.fontes.forEach(f => {
-    const o = por[f.nome] || (por[f.nome] = { nome: f.nome, tipo: f.tipo, status: 200, n: 0, mapa: {} });
+    const o = por[f.nome] || (por[f.nome] = { nome: f.nome, tipo: f.tipo, uf: f.uf, status: 200, n: 0, mapa: {} });
     f.itens.forEach(i => { const k = i.t; if (!o.mapa[k] || i.p < o.mapa[k].p) o.mapa[k] = { t: i.t, url: i.url, p: i.p }; });
   }));
-  const fontes = Object.values(por).map(o => { const itens = Object.values(o.mapa).sort((a, b) => a.p - b.p); return { nome: o.nome, tipo: o.tipo, n: itens.length, itens }; });
+  const fontes = Object.values(por).map(o => { const itens = Object.values(o.mapa).sort((a, b) => a.p - b.p); return { nome: o.nome, tipo: o.tipo, uf: o.uf, n: itens.length, itens }; });
   return { coletado: hist.ate, coletado_brt: new Date(Date.parse(hist.ate) - 3 * 3600e3).toISOString().replace('Z', '-03:00') + ' (' + hist.coletas + ' coletas desde ' + hist.desde + ')', fontes_ok: fontes.filter(f => f.n).length, fontes_total: fontes.length, fontes };
 }
 function ranking(r) { return r.todas.filter(x => x.nfontes >= 3 || x.capas.length >= 1).sort((a, b) => b.nfontes - a.nfontes || b.capas.length - a.capas.length); }
@@ -82,7 +88,7 @@ if (require.main === module) {
   const hoje = new Date(Date.now() - 3 * 3600e3), dm = hoje.getUTCDate() + '/' + (hoje.getUTCMonth() + 1);
   const r = analisar(man, d.S, [dm, String(hoje.getUTCDate()).padStart(2, '0') + '/' + String(hoje.getUTCMonth() + 1).padStart(2, '0')]);
   console.log('Manchetes de ' + man.coletado_brt + ' · ' + man.fontes_ok + '/' + man.fontes_total + ' fontes · ' + r.total + ' fatos distintos · ' + r.cobertas + ' já cobertos · ' + r.lacunas.length + ' LACUNAS\n');
-  r.lacunas.slice(0, 40).forEach((l, i) => console.log((i + 1) + '. [' + l.nfontes + ' veículos' + (l.capas.length ? '; capa: ' + l.capas.join(', ') : '') + '] ' + l.titulo.slice(0, 170) + '\n   ' + l.fontes.join(', ') + ' · ' + l.url));
+  r.lacunas.slice(0, 40).forEach((l, i) => console.log((i + 1) + '. ' + (l.acao === 'atualizar' ? '→ATUALIZAR ' + l.materia + ' ' : '→NOVA ') + '[' + l.nfontes + ' veículos' + (l.capas.length ? '; capa: ' + l.capas.join(', ') : '') + '] ' + l.titulo.slice(0, 170) + '\n   ' + l.fontes.join(', ') + ' · ' + l.url));
   if (args.includes('--ranking')) { console.log('\nRANKING DO DIA (o que mais aparece nos veículos; ✔ = coberto por matéria de hoje):'); ranking(r).slice(0, 30).forEach((l, i) => console.log((i + 1) + '. ' + (l.coberta ? '✔ ' + l.materia : '✘ LACUNA') + ' [' + l.nfontes + ' veíc.' + (l.capas.length ? ', capas: ' + l.capas.join('/') : '') + '] ' + l.titulo.slice(0, 120))); }
   if (args.includes('--json')) fs.writeFileSync('cobertura.json', JSON.stringify(r, null, 1));
 }

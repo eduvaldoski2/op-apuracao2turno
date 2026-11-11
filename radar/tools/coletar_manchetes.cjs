@@ -56,6 +56,44 @@ const FONTES = [
   ['Poder360 (capa)', 'capa', 'https://www.poder360.com.br/']
 ];
 
+
+// ---- Fontes regionais: g1 de cada estado + principais veículos locais. 'auto' = tenta <site>/feed/ e, se não houver feed, lê a capa.
+const G1 = { AC:'ac/acre', AL:'al/alagoas', AP:'ap/amapa', AM:'am/amazonas', BA:'ba/bahia', CE:'ce/ceara', DF:'df/distrito-federal', ES:'es/espirito-santo', GO:'go/goias', MA:'ma/maranhao', MT:'mt/mato-grosso', MS:'ms/mato-grosso-do-sul', MG:'mg/minas-gerais', PA:'pa/para', PB:'pb/paraiba', PR:'pr/parana', PE:'pe/pernambuco', PI:'pi/piaui', RJ:'rj/rio-de-janeiro', RN:'rn/rio-grande-do-norte', RS:'rs/rio-grande-do-sul', RO:'ro/rondonia', RR:'rr/roraima', SC:'sc/santa-catarina', SP:'sp/sao-paulo', SE:'se/sergipe', TO:'to/tocantins' };
+const LOCAIS = {
+  AC: [['ac24horas','https://ac24horas.com/'],['A Gazeta do Acre','https://agazetadoacre.com/'],['ContilNet','https://contilnet.com/']],
+  AL: [['Gazeta de Alagoas','https://gazetaweb.com/'],['TNH1','https://tnh1.com.br/'],['Tribuna Hoje','https://tribunahoje.com/']],
+  AP: [['Seles Nafes','https://selesnafes.com/'],['Diário do Amapá','https://www.diariodoamapa.com.br/'],['Agência Amapá','https://agenciaamapa.ap.gov.br/']],
+  AM: [['A Crítica','https://www.acritica.com/'],['Amazonas Atual','https://amazonasatual.com.br/'],['D24AM','https://d24am.com/']],
+  BA: [['Correio','https://www.correio24horas.com.br/'],['A Tarde','https://atarde.com.br/'],['Bahia Notícias','https://www.bahianoticias.com.br/'],['Metro1','https://www.metro1.com.br/']],
+  CE: [['Diário do Nordeste','https://diariodonordeste.verdesmares.com.br/'],['O Povo','https://www.opovo.com.br/'],['Tribuna do Ceará','https://tribunadoceara.com.br/']],
+  DF: [['Metrópoles DF','https://www.metropoles.com/distrito-federal'],['Jornal de Brasília','https://jornaldebrasilia.com.br/'],['Agência Brasília','https://www.agenciabrasilia.df.gov.br/']],
+  ES: [['Folha Vitória','https://www.folhavitoria.com.br/'],['A Gazeta ES','https://www.agazeta.com.br/'],['Século Diário','https://www.seculodiario.com.br/']],
+  GO: [['O Popular','https://opopular.com.br/'],['Jornal Opção','https://www.jornalopcao.com.br/'],['Mais Goiás','https://www.maisgoias.com.br/']],
+  MA: [['O Imparcial','https://oimparcial.com.br/'],['Imirante','https://imirante.com/'],['O Estado MA','https://oestadoma.com/']],
+  MT: [['Gazeta Digital','https://www.gazetadigital.com.br/'],['Olhar Direto','https://www.olhardireto.com.br/'],['FolhaMax','https://www.folhamax.com/']],
+  MS: [['Campo Grande News','https://www.campograndenews.com.br/'],['Correio do Estado','https://correiodoestado.com.br/'],['Midiamax','https://www.midiamax.com.br/']],
+  MG: [['O Tempo','https://www.otempo.com.br/'],['Estado de Minas','https://www.em.com.br/'],['Itatiaia','https://www.itatiaia.com.br/']],
+  PA: [['O Liberal','https://www.oliberal.com/'],['Diário do Pará','https://www.diarioonline.com.br/'],['Agência Pará','https://www.agenciapara.com.br/']],
+  PB: [['Jornal da Paraíba','https://jornaldaparaiba.com.br/'],['ClickPB','https://www.clickpb.com.br/'],['Paraíba Online','https://paraibaonline.com.br/']],
+  PR: [['Gazeta do Povo PR','https://www.gazetadopovo.com.br/parana/'],['Bem Paraná','https://www.bemparana.com.br/'],['Plural','https://www.plural.jor.br/'],['AEN-PR','https://www.aen.pr.gov.br/']],
+  PE: [['Diario de Pernambuco','https://www.diariodepernambuco.com.br/'],['Folha de Pernambuco','https://www.folhape.com.br/'],['JC','https://jc.ne10.uol.com.br/']],
+  PI: [['Meio Norte','https://www.meionorte.com/'],['Cidade Verde','https://cidadeverde.com/'],['180graus','https://180graus.com/']],
+  RJ: [['O Dia','https://odia.ig.com.br/'],['Extra','https://extra.globo.com/'],['O Fluminense','https://www.ofluminense.com.br/'],['Diário do Rio','https://diariodorio.com/']],
+  RN: [['Tribuna do Norte','https://tribunadonorte.com.br/'],['Nova Notícias','https://novanoticias.com.br/'],['Saiba Mais','https://saibamais.jor.br/']],
+  RS: [['GZH','https://gauchazh.clicrbs.com.br/'],['Correio do Povo','https://www.correiodopovo.com.br/'],['Jornal do Comércio','https://www.jornaldocomercio.com/']],
+  RO: [['Rondônia ao Vivo','https://www.rondoniaovivo.com/'],['Tudo Rondônia','https://www.tudorondonia.com/'],['News Rondônia','https://www.newsrondonia.com.br/']],
+  RR: [['Folha BV','https://folhabv.com.br/'],['Roraima em Tempo','https://roraimaemtempo.com.br/'],['Agência Roraima','https://agenciaroraima.com.br/']],
+  SC: [['NSC Total','https://www.nsctotal.com.br/'],['ND Mais','https://ndmais.com.br/'],['Notícias do Dia','https://ndmais.com.br/noticias/']],
+  SP: [['Agência SP','https://www.agenciasp.sp.gov.br/'],['Diário do Grande ABC','https://www.dgabc.com.br/'],['Metrópoles SP','https://www.metropoles.com/sao-paulo']],
+  SE: [['Infonet','https://infonet.com.br/'],['F5 News','https://f5news.com.br/'],['Jornal da Cidade SE','https://jornaldacidade.net/']],
+  TO: [['Jornal do Tocantins','https://jornaldotocantins.com.br/'],['Conexão Tocantins','https://conexaoto.com.br/'],['T1 Notícias','https://t1noticias.com.br/']]
+};
+Object.keys(G1).forEach(uf => {
+  FONTES.push(['[' + uf + '] g1 ' + uf, 'capa', 'https://g1.globo.com/' + G1[uf] + '/']);
+  FONTES.push(['[' + uf + '] g1 ' + uf + ' (feed)', 'rss', 'https://g1.globo.com/rss/g1/' + G1[uf].split('/')[1] + '/']);
+  (LOCAIS[uf] || []).forEach(([n, u]) => FONTES.push(['[' + uf + '] ' + n, 'auto', u]));
+});
+
 const NOMES = { quot: '"', amp: '&', lt: '<', gt: '>', apos: "'", nbsp: ' ', hellip: '…', ndash: '–', mdash: '—', rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”', laquo: '«', raquo: '»', ordm: 'º', ordf: 'ª' };
 const COMB = { acute: '\u0301', grave: '\u0300', circ: '\u0302', tilde: '\u0303', cedil: '\u0327', uml: '\u0308' };
 const ent = s => s.replace(/<!\[CDATA\[|\]\]>/g, '')
@@ -79,7 +117,7 @@ function rss(xml) {
   return out;
 }
 
-function capa(html, base) {
+function capa(html, base, frouxo) {
   const host = new URL(base).hostname.replace(/^www\./, '');
   const out = [], vistos = new Set();
   const re = /<a\b[^>]*href="([^"#]+)"[^>]*>([\s\S]*?)<\/a>/gi; let m;
@@ -88,7 +126,7 @@ function capa(html, base) {
     if (!/^https?:/.test(href)) continue;
     const t = ent(m[2]);
     if (t.length < 38 || t.length > 260 || t.split(' ').length < 6) continue;           // manchete tem frase
-    if (!/\d{4}\/\d{2}|\/\d{4}\/|\.ghtml|\.shtml|\.html|\/noticia|\/politica|\/economia|\/mundo|\/brasil|\/pais|\/radar/.test(href)) continue;
+    if (!frouxo && !/\d{4}\/\d{2}|\/\d{4}\/|\.ghtml|\.shtml|\.html|\/noticia|\/politica|\/economia|\/mundo|\/brasil|\/pais|\/radar/.test(href)) continue;
     if (vistos.has(t)) continue; vistos.add(t);
     out.push({ t, url: href });
   }
@@ -111,10 +149,15 @@ async function baixar(url) {
 (async () => {
   const agora = new Date();
   const res = await Promise.all(FONTES.map(async ([nome, tipo, url]) => {
-    const r = await baixar(url);
-    let itens = [];
-    try { itens = r.status === 200 ? (tipo === 'rss' ? rss(r.txt) : capa(r.txt, url)) : []; } catch (e) {}
-    return { nome, tipo, url, status: r.status, erro: r.erro || '', n: itens.length, itens };
+    let r, itens = [], t = tipo, u = url;
+    if (tipo === 'auto') {                       // tenta o feed do site; sem feed, lê a capa
+      const fr = await baixar(url.replace(/\/?$/, '/') + 'feed/');
+      try { itens = fr.status === 200 ? rss(fr.txt) : []; } catch (e) {}
+      if (itens.length) { r = fr; t = 'rss'; u = url.replace(/\/?$/, '/') + 'feed/'; }
+    }
+    if (!itens.length) { r = await baixar(url); try { itens = r.status === 200 ? (tipo === 'rss' ? rss(r.txt) : capa(r.txt, url, /^\[\w\w\]/.test(nome))) : []; } catch (e) {} if (tipo === 'auto') t = 'capa'; }
+    const uf = (/^\[(\w\w)\]/.exec(nome) || [])[1] || '';
+    return { nome, tipo: t, uf, url: u, status: r.status, erro: r.erro || '', n: itens.length, itens };
   }));
   const ok = res.filter(x => x.n > 0).length;
   const out = { coletado: agora.toISOString(), coletado_brt: new Date(agora.getTime() - 3 * 3600e3).toISOString().replace('Z', '-03:00'), fontes_ok: ok, fontes_total: res.length, fontes: res };
