@@ -45,7 +45,14 @@ const FONTES = [
   ['Poder360 (capa)', 'capa', 'https://www.poder360.com.br/']
 ];
 
-const ent = s => s.replace(/<!\[CDATA\[|\]\]>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#0?39;|&apos;/g, "'").replace(/&#(\d+);/g, (m, n) => String.fromCharCode(+n)).replace(/&nbsp;/g, ' ').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const NOMES = { quot: '"', amp: '&', lt: '<', gt: '>', apos: "'", nbsp: ' ', hellip: '…', ndash: '–', mdash: '—', rsquo: '’', lsquo: '‘', ldquo: '“', rdquo: '”', laquo: '«', raquo: '»', ordm: 'º', ordf: 'ª' };
+const COMB = { acute: '\u0301', grave: '\u0300', circ: '\u0302', tilde: '\u0303', cedil: '\u0327', uml: '\u0308' };
+const ent = s => s.replace(/<!\[CDATA\[|\]\]>/g, '')
+  .replace(/&([A-Za-z])(acute|grave|circ|tilde|cedil|uml);/g, (m, l, c) => (l + COMB[c]).normalize('NFC'))
+  .replace(/&#x([0-9a-f]+);/gi, (m, n) => String.fromCodePoint(parseInt(n, 16)))
+  .replace(/&#(\d+);/g, (m, n) => String.fromCodePoint(+n))
+  .replace(/&([a-z]+);/gi, (m, n) => NOMES[n] !== undefined ? NOMES[n] : m)
+  .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 
 function rss(xml) {
   const out = [];
@@ -81,7 +88,10 @@ async function baixar(url) {
   for (let i = 0; i < 2; i++) {
     try {
       const r = await fetch(url, { headers: { 'User-Agent': UA, 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language': 'pt-BR,pt;q=0.9' }, redirect: 'follow', signal: AbortSignal.timeout(25000) });
-      const txt = await r.text();
+      const buf = Buffer.from(await r.arrayBuffer());
+      let txt = buf.toString('utf8');
+      const cs = ((r.headers.get('content-type') || '').match(/charset=([\w-]+)/i) || txt.slice(0, 3000).match(/charset=["']?([\w-]+)/i) || [])[1];
+      if (cs && /^(iso-8859-1|latin1|windows-1252|iso-8859-15)$/i.test(cs)) txt = new TextDecoder('windows-1252').decode(buf);
       return { status: r.status, txt };
     } catch (e) { if (i) return { status: 0, txt: '', erro: String(e.message || e).slice(0, 120) }; }
   }

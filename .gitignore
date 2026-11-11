@@ -10,3 +10,4 @@ api/dados/*.log
 # Dados do Radar gerados no servidor (inscritos do boletim, descadastros, rastreio, chave, logs): a implantação da Hostinger apaga arquivos não rastreados e NÃO ignorados; ignorar preserva
 radar/dados/*
 !radar/dados/.htaccess
+radar/tools/_manchetes.json

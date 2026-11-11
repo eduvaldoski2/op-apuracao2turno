@@ -49,6 +49,22 @@ if (hh === '19h' || (d.AMANHA && d.AMANHA.length)) {
 }
 if (erros.length) die('\n - ' + erros.join('\n - '));
 
+// COBERTURA: o que as capas dos grandes veículos dão tem que estar no Radar (manchetes.json vem do branch "manchetes")
+{
+  const mf = path.join(__dirname, '_manchetes.json');
+  if (!fs.existsSync(mf)) die('sem radar/tools/_manchetes.json: as manchetes das capas (O Globo, Folha, Estadão, g1, Agência Brasil...) não foram lidas. Rode: git fetch origin manchetes && git show origin/manchetes:manchetes.json > radar/tools/_manchetes.json, depois node radar/tools/cobertura.cjs, e cubra as lacunas.');
+  else {
+    const man = JSON.parse(fs.readFileSync(mf, 'utf8'));
+    const idadeH = (Date.now() - Date.parse(man.coletado)) / 3600e3;
+    if (idadeH > 5) die('manchetes.json com ' + idadeH.toFixed(1) + ' h (coletado em ' + man.coletado_brt + '): baixe de novo (git fetch origin manchetes). Se o coletor estiver parado, use WebSearch para ler as manchetes do dia de cada veículo e rode com --aceitar-lacunas.');
+    else if (man.fontes_ok < 8) die('manchetes.json com só ' + man.fontes_ok + ' fontes lidas: leitura insuficiente das capas.');
+    const cob = require('./cobertura.cjs').analisar(man, d.S);
+    const fortes = cob.lacunas.filter(l => l.nfontes >= 4 || l.capas.length >= 3);
+    if (fortes.length && !process.argv.includes('--aceitar-lacunas')) die('o Radar NÃO cobre o que as capas dão (' + fortes.length + ' pautas em 4+ veículos ou 3+ capas). Escreva matéria (NOVA) sobre cada uma, buscando o fato em outros veículos se houver paywall:\n' + fortes.map(l => ' • [' + l.nfontes + ' veículos] ' + l.titulo.slice(0, 150) + ' (' + l.fontes.slice(0, 5).join(', ') + ') ' + l.url).join('\n') + '\n(outras lacunas menores: node radar/tools/cobertura.cjs)');
+    else console.log('Cobertura das capas: ' + cob.cobertas + ' fatos cobertos; ' + fortes.length + ' lacunas fortes; ' + (cob.lacunas.length - fortes.length) + ' menores (node radar/tools/cobertura.cjs).');
+  }
+}
+
 // edição anterior = a mais recente do arquivo, anterior a esta
 const lista = fs.existsSync(arq) ? fs.readdirSync(arq).filter(f => /^\d{4}-\d{2}-\d{2}-\d{2}h\.php$/.test(f)).map(f => f.slice(0, -4)).sort() : [];
 const ant = lista.filter(n => n < nome).pop();
