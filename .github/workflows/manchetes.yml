@@ -1,0 +1,23 @@
+name: Manchetes dos principais veículos (para o branch manchetes)
+# Lê as capas e os feeds de O Globo, Folha, Estadão, g1, Agência Brasil, etc. (o ambiente do Claude não alcança esses sites)
+# e grava manchetes.json no branch "manchetes", de onde as edições do Radar o leem. Só dados; nada aqui é executado.
+on:
+  schedule:
+    - cron: '10,40 8-23 * * *'      # a cada 30 min, das 05h10 às 20h40 (Brasília)
+  workflow_dispatch: {}
+permissions: { contents: write }
+concurrency: { group: manchetes, cancel-in-progress: true }
+jobs:
+  m:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with: { sparse-checkout: 'radar/tools/coletar_manchetes.cjs', sparse-checkout-cone-mode: false }
+      - name: Coletar
+        run: node radar/tools/coletar_manchetes.cjs /tmp/manchetes.json | tee /tmp/log.txt
+      - name: Publicar no branch manchetes
+        run: |
+          rm -rf /tmp/rep && mkdir /tmp/rep && cd /tmp/rep && git init -q -b manchetes && git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          cp /tmp/manchetes.json manchetes.json && cp /tmp/log.txt log.txt && git config user.name coletor && git config user.email coletor@users.noreply.github.com
+          git add -A && git commit -q -m "manchetes $(date -u +%FT%TZ)" && git push -q --force origin HEAD:manchetes
