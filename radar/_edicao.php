@@ -10548,7 +10548,10 @@ S.pl_motta.hora = '11/11';
  Object.keys(v).forEach(function(i){ S[i].velha = true; S[i].velhaMotivo = v[i]; });
 })();
 
+EDICAO.hora = '15h';
+EDICAO.data = 'Quarta, 11 de novembro de 2026';
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"lula_cop":"atualizada","pl_motta":"atualizada","cop31_antalya":"atualizada","espanha_greve_geral":"atualizada","brasil_mapa_fosseis":"novo"};
-var GIRO_FLAGS = {"Lula na COP31":"novo","Capobianco lê o discurso":"novo","Fósseis ficam para 2027":"novo"};
+var FLAGS = {};
+var GIRO_FLAGS = {};
 /* ===== FIM DOS DADOS ===== */
