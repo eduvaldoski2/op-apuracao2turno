@@ -54,7 +54,9 @@ if (erros.length) die('\n - ' + erros.join('\n - '));
   const mf = path.join(__dirname, '_manchetes.json');
   if (!fs.existsSync(mf)) die('sem radar/tools/_manchetes.json: as manchetes das capas (O Globo, Folha, Estadão, g1, Agência Brasil...) não foram lidas. Rode: git fetch origin manchetes && git show origin/manchetes:manchetes.json > radar/tools/_manchetes.json, depois node radar/tools/cobertura.cjs, e cubra as lacunas.');
   else {
-    const man = JSON.parse(fs.readFileSync(mf, 'utf8'));
+    let man = JSON.parse(fs.readFileSync(mf, 'utf8'));
+    const hf = path.join(__dirname, '_historico.json');
+    if (fs.existsSync(hf)) { try { const h = JSON.parse(fs.readFileSync(hf, 'utf8')); if (Date.parse(h.ate) >= Date.parse(man.coletado) - 60e3) { const cb = require('./cobertura.cjs'); const mm = cb.mesclar(h); mm.coletado = man.coletado; man = mm; } } catch (e) {} }
     const idadeH = (Date.now() - Date.parse(man.coletado)) / 3600e3;
     if (idadeH > 5) die('manchetes.json com ' + idadeH.toFixed(1) + ' h (coletado em ' + man.coletado_brt + '): baixe de novo (git fetch origin manchetes). Se o coletor estiver parado, use WebSearch para ler as manchetes do dia de cada veículo e rode com --aceitar-lacunas.');
     else if (man.fontes_ok < 8) die('manchetes.json com só ' + man.fontes_ok + ' fontes lidas: leitura insuficiente das capas.');

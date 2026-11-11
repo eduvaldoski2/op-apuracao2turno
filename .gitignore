@@ -11,3 +11,4 @@ api/dados/*.log
 radar/dados/*
 !radar/dados/.htaccess
 radar/tools/_manchetes.json
+radar/tools/_historico.json

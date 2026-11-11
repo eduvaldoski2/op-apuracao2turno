@@ -41,6 +41,17 @@ const FONTES = [
   ['CartaCapital', 'rss', 'https://www.cartacapital.com.br/feed/'],
   ['Congresso em Foco', 'rss', 'https://congressoemfoco.uol.com.br/feed/'],
   ['Jota', 'capa', 'https://www.jota.info/'],
+  ['R7', 'rss', 'https://noticias.r7.com/feed.xml'],
+  ['Terra', 'capa', 'https://www.terra.com.br/noticias/'],
+  ['Exame', 'rss', 'https://exame.com/feed/'],
+  ['Veja', 'capa', 'https://veja.abril.com.br/'],
+  ['Brasil de Fato', 'rss', 'https://www.brasildefato.com.br/feed'],
+  ['Intercept Brasil', 'rss', 'https://www.intercept.com.br/feed/'],
+  ['O Tempo', 'capa', 'https://www.otempo.com.br/'],
+  ['GZH', 'capa', 'https://gauchazh.clicrbs.com.br/'],
+  ['Estado de Minas', 'capa', 'https://www.em.com.br/'],
+  ['Diário de Pernambuco', 'capa', 'https://www.diariodepernambuco.com.br/'],
+  ['Migalhas', 'rss', 'https://www.migalhas.com.br/rss/quentes'],
   ['Reuters Brasil', 'capa', 'https://www.reuters.com/world/americas/'],
   ['Poder360 (capa)', 'capa', 'https://www.poder360.com.br/']
 ];

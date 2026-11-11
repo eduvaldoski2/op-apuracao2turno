@@ -22,8 +22,8 @@ function carregar(txt) {
   return vm.runInNewContext(corpo + '\n;({S:S,ORDER:ORDER})', {});
 }
 function textoMateria(m) {
-  const f = (m.fundo || []).filter(b => b[0] === 'p' || b[0] === 'h').map(b => b[1]).join(' ');
-  return [m.t, m.sub, m.resumo, f.slice(0, 2500)].join(' ');
+  const f = (m.fundo || []).filter(b => b[0] === 'p').slice(0, 1).map(b => b[1]).join(' ');   // título, subtítulo, resumo e lide: o assunto da matéria
+  return [m.t, m.sub, m.resumo, f].join(' ');
 }
 
 function analisar(man, S, horas) {
@@ -49,7 +49,7 @@ function analisar(man, S, horas) {
     const nucleo = Object.keys(cont).filter(t => cont[t] >= (g.itens.length > 1 ? 2 : 1)).sort((a, b) => cont[b] - cont[a]).slice(0, 10);
     let melhor = { id: null, n: 0 };
     mats.forEach(m => { const n = nucleo.filter(t => m.tk.has(t)).length; if (n > melhor.n) melhor = { id: m.id, n }; });
-    const coberta = melhor.n >= Math.min(3, Math.max(2, Math.ceil(nucleo.length * 0.4)));
+    const coberta = melhor.n >= Math.min(4, Math.max(3, Math.ceil(nucleo.length * 0.5)));
     return { titulo: g.itens.slice().sort((a, b) => b.t.length - a.t.length)[0].t, fontes, nfontes: fontes.length, capas: [...new Set(capas)], url: g.itens[0].url, coberta, materia: melhor.id, casou: melhor.n, nucleo };
   });
   const grandes = res.filter(r => !r.coberta && (r.nfontes >= 3 || (r.nfontes >= 2 && r.capas.length >= 1) || r.capas.length >= 2));
@@ -57,17 +57,32 @@ function analisar(man, S, horas) {
   return { total: res.length, cobertas: res.filter(r => r.coberta).length, lacunas: grandes, todas: res };
 }
 
-module.exports = { analisar, carregar };
+// junta todas as coletas do dia (historico.json do branch manchetes): o sistema "guarda" o que cada capa mostrou ao longo do dia
+function mesclar(hist) {
+  const por = {};
+  hist.coletas_.forEach(c => c.fontes.forEach(f => {
+    const o = por[f.nome] || (por[f.nome] = { nome: f.nome, tipo: f.tipo, status: 200, n: 0, mapa: {} });
+    f.itens.forEach(i => { const k = i.t; if (!o.mapa[k] || i.p < o.mapa[k].p) o.mapa[k] = { t: i.t, url: i.url, p: i.p }; });
+  }));
+  const fontes = Object.values(por).map(o => { const itens = Object.values(o.mapa).sort((a, b) => a.p - b.p); return { nome: o.nome, tipo: o.tipo, n: itens.length, itens }; });
+  return { coletado: hist.ate, coletado_brt: new Date(Date.parse(hist.ate) - 3 * 3600e3).toISOString().replace('Z', '-03:00') + ' (' + hist.coletas + ' coletas desde ' + hist.desde + ')', fontes_ok: fontes.filter(f => f.n).length, fontes_total: fontes.length, fontes };
+}
+function ranking(r) { return r.todas.filter(x => x.nfontes >= 3 || x.capas.length >= 1).sort((a, b) => b.nfontes - a.nfontes || b.capas.length - a.capas.length); }
+
+module.exports = { analisar, carregar, mesclar, ranking };
 
 if (require.main === module) {
   const args = process.argv.slice(2);
   const arq = args.find(a => !a.startsWith('--')) || path.join(__dirname, '_manchetes.json');
   if (!fs.existsSync(arq)) { console.error('sem ' + arq + ' (busque: git fetch origin manchetes && git show origin/manchetes:manchetes.json > radar/tools/_manchetes.json)'); process.exit(2); }
-  const man = JSON.parse(fs.readFileSync(arq, 'utf8'));
+  let man = JSON.parse(fs.readFileSync(arq, 'utf8'));
+  const hf = path.join(__dirname, '_historico.json');
+  if (!args.includes('--so-ultima') && fs.existsSync(hf)) { try { man = mesclar(JSON.parse(fs.readFileSync(hf, 'utf8'))); } catch (e) {} }
   const d = carregar(fs.readFileSync(path.join(__dirname, '..', '_edicao.php'), 'utf8'));
   const hoje = new Date(Date.now() - 3 * 3600e3), dm = hoje.getUTCDate() + '/' + (hoje.getUTCMonth() + 1);
   const r = analisar(man, d.S, [dm, String(hoje.getUTCDate()).padStart(2, '0') + '/' + String(hoje.getUTCMonth() + 1).padStart(2, '0')]);
   console.log('Manchetes de ' + man.coletado_brt + ' · ' + man.fontes_ok + '/' + man.fontes_total + ' fontes · ' + r.total + ' fatos distintos · ' + r.cobertas + ' já cobertos · ' + r.lacunas.length + ' LACUNAS\n');
   r.lacunas.slice(0, 40).forEach((l, i) => console.log((i + 1) + '. [' + l.nfontes + ' veículos' + (l.capas.length ? '; capa: ' + l.capas.join(', ') : '') + '] ' + l.titulo.slice(0, 170) + '\n   ' + l.fontes.join(', ') + ' · ' + l.url));
+  if (args.includes('--ranking')) { console.log('\nRANKING DO DIA (o que mais aparece nos veículos; ✔ = coberto por matéria de hoje):'); ranking(r).slice(0, 30).forEach((l, i) => console.log((i + 1) + '. ' + (l.coberta ? '✔ ' + l.materia : '✘ LACUNA') + ' [' + l.nfontes + ' veíc.' + (l.capas.length ? ', capas: ' + l.capas.join('/') : '') + '] ' + l.titulo.slice(0, 120))); }
   if (args.includes('--json')) fs.writeFileSync('cobertura.json', JSON.stringify(r, null, 1));
 }
