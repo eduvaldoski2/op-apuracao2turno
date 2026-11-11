@@ -134,7 +134,7 @@ function capa(html, base, frouxo) {
 }
 
 async function baixar(url) {
-  for (let i = 0; i < 2; i++) {
+  for (let i = 0; i < 3; i++) {
     try {
       const r = await fetch(url, { headers: { 'User-Agent': UA, 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8', 'Accept-Language': 'pt-BR,pt;q=0.9' }, redirect: 'follow', signal: AbortSignal.timeout(25000) });
       const buf = Buffer.from(await r.arrayBuffer());
@@ -142,13 +142,14 @@ async function baixar(url) {
       const cs = ((r.headers.get('content-type') || '').match(/charset=([\w-]+)/i) || txt.slice(0, 3000).match(/charset=["']?([\w-]+)/i) || [])[1];
       if (cs && /^(iso-8859-1|latin1|windows-1252|iso-8859-15)$/i.test(cs)) txt = new TextDecoder('windows-1252').decode(buf);
       return { status: r.status, txt };
-    } catch (e) { if (i) return { status: 0, txt: '', erro: String(e.message || e).slice(0, 120) }; }
+    } catch (e) { if (i > 1) return { status: 0, txt: '', erro: String(e.message || e).slice(0, 120) }; }
   }
 }
 
 (async () => {
   const agora = new Date();
-  const res = await Promise.all(FONTES.map(async ([nome, tipo, url]) => {
+  const pool = async (lista, n, fn) => { const out = new Array(lista.length); let k = 0; await Promise.all(Array.from({ length: n }, async () => { while (k < lista.length) { const i = k++; out[i] = await fn(lista[i]); } })); return out; };
+  const res = await pool(FONTES, 10, async ([nome, tipo, url]) => {
     let r, itens = [], t = tipo, u = url;
     if (tipo === 'auto') {                       // tenta o feed do site; sem feed, lê a capa
       const fr = await baixar(url.replace(/\/?$/, '/') + 'feed/');
@@ -158,7 +159,7 @@ async function baixar(url) {
     if (!itens.length) { r = await baixar(url); try { itens = r.status === 200 ? (tipo === 'rss' ? rss(r.txt) : capa(r.txt, url, /^\[\w\w\]/.test(nome))) : []; } catch (e) {} if (tipo === 'auto') t = 'capa'; }
     const uf = (/^\[(\w\w)\]/.exec(nome) || [])[1] || '';
     return { nome, tipo: t, uf, url: u, status: r.status, erro: r.erro || '', n: itens.length, itens };
-  }));
+  });
   const ok = res.filter(x => x.n > 0).length;
   const out = { coletado: agora.toISOString(), coletado_brt: new Date(agora.getTime() - 3 * 3600e3).toISOString().replace('Z', '-03:00'), fontes_ok: ok, fontes_total: res.length, fontes: res };
   fs.writeFileSync(SAIDA, JSON.stringify(out, null, 1));
