@@ -7,7 +7,17 @@ const arq = path.join(raiz, 'arquivo');
 const fonte = path.join(raiz, '_edicao.php');
 const [data, hh] = process.argv.slice(2);
 const motivoArg = (process.argv.find(a => a.startsWith('--motivo=')) || '').slice(9);
-const die = (m) => { console.error('ERRO: ' + m); process.exit(1); };
+// --publicar-mesmo-assim: último recurso para a edição sair NO HORÁRIO. Os erros viram avisos
+// (gravados em arquivo/_avisos.log) e a publicação segue; o prazo da edição vale mais que o piso editorial.
+const MESMO = process.argv.includes('--publicar-mesmo-assim');
+const die = (m) => {
+  if (MESMO) {
+    console.error('AVISO (ignorado por --publicar-mesmo-assim): ' + m);
+    try { require('fs').appendFileSync(require('path').join(__dirname, '..', 'arquivo', '_avisos.log'), new Date().toISOString() + ' ' + data + ' ' + hh + ' publicada com avisos: ' + String(m).replace(/\s+/g, ' ').slice(0, 600) + '\n'); } catch (e) {}
+    return;
+  }
+  console.error('ERRO: ' + m); process.exit(1);
+};
 if (!/^\d{4}-\d{2}-\d{2}$/.test(data || '') || !/^(0[0-9]|1[0-9]|2[0-3])h$/.test(hh || '')) die('uso: node radar/tools/publicar.cjs AAAA-MM-DD HHh');
 const nome = data + '-' + hh;
 
