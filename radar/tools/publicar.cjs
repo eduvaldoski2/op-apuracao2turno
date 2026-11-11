@@ -27,7 +27,7 @@ function carregar(txt) {
 }
 const txt = fs.readFileSync(fonte, 'utf8');
 if (!/^<\?php if \(!defined\('RADAR_OK'\)\)/.test(txt)) die('primeira linha do _edicao.php foi alterada');
-let d; try { d = carregar(txt); } catch (e) { die('sintaxe: ' + e.message); }
+let d; try { d = carregar(txt); } catch (e) { die("sintaxe: " + e.message + " " + String(e.stack).split("\n").slice(0,4).join(" | ")); }
 
 // validação
 const regs = ['rj', 'sp', 'mg', 'ne', 'sul', 'norte', 'co'], erros = [];
