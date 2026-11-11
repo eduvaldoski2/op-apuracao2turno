@@ -13,8 +13,8 @@
     "pena_cofre",
     "ueno_pagamentos"
    ],
-   "verificada": "2026-11-11-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-11-11h",
+   "fato_novo": false,
    "ultimo_fato": "11/11: o BCP conclui os pagamentos da garantia do Ueno, que cobre US$ 740 mi dos US$ 2,8 bi em depósitos (27%); o BCP tem 15 dias para oferecer a carteira a outras instituições (EFE).",
    "proximo": "Prazo de 15 dias do BCP; pagamento a aposentados do IPS em 17/11; recurso da defesa contra a preventiva; sanção ficta do Orçamento (14/11)."
   },
@@ -33,12 +33,13 @@
     "lula_fala_nacao",
     "cop31_antalya",
     "lula_sri_centrao",
-    "lula_antalia_comitiva"
+    "lula_antalia_comitiva",
+    "brasil_mapa_fosseis"
    ],
-   "verificada": "2026-11-11-07h",
+   "verificada": "2026-11-11-11h",
    "fato_novo": true,
-   "ultimo_fato": "11/11: Lula discursa na COP31 em Antália, com TFFF e Mapa do Caminho; ministério e ministro da Fazenda seguem sem data, e Motta e Alcolumbre recusaram o convite (DGABC, JB, NeoFeed).",
-   "proximo": "Cúpula (11 e 12/11); Manila (13/11); Asean (14 e 15/11); volta em 16/11."
+   "ultimo_fato": "11/11: Lula discursa na COP31 e pede US$ 1,3 tri por ano em financiamento climático; no evento de florestas, Capobianco lê o discurso porque o presidente está rouco (WSCOM, Área VIP); o roteiro dos fósseis fica para a COP32, em 2027 (Eixos)",
+   "proximo": "Segundo dia da cúpula (12), TFFF e bilaterais; Filipinas e Asean entre 13 e 15; volta a Brasília em 16; ministério e ministro da Fazenda seguem sem data"
   },
   {
    "id": "tse-acoes",
@@ -52,8 +53,8 @@
     "tse_21_acoes",
     "dallagnol_tse_pauta"
    ],
-   "verificada": "2026-11-11-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-11-11h",
+   "fato_novo": false,
    "ultimo_fato": "10/11: recurso contra o registro de Dallagnol segue fora da pauta do TSE há mais de um mês; diplomação em 18/12 (Congresso em Foco). Ação do Novo contra a chapa Lula-Alckmin sem fato novo.",
    "proximo": "Defesa da chapa Lula-Alckmin; data do julgamento de Dallagnol."
   },
@@ -69,7 +70,7 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-11-07h",
+   "verificada": "2026-11-11-11h",
    "fato_novo": false,
    "ultimo_fato": "11/11: sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio; o último registro é de 5/11.",
    "proximo": "Decisão da Mesa do Senado; resposta de Rubio até 13/11."
@@ -91,8 +92,8 @@
     "escazu_cre",
     "mps_rurais_exportadores"
    ],
-   "verificada": "2026-11-11-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-11-11h",
+   "fato_novo": false,
    "ultimo_fato": "10/11: Senado adia Escazú e manda o texto à CRE; Câmara aprova as MPs das dívidas rurais e do Brasil Soberano; o PL decide em 11/11 sobre Motta.",
    "proximo": "Bancada do PL (11/11); MP 1.376 vence no Senado em 11/11; CRE em 17/11; Mesas em 1º/02/2027."
   },
@@ -106,8 +107,8 @@
     "maioridade",
     "maioridade_audiencias"
    ],
-   "verificada": "2026-11-11-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-11-11h",
+   "fato_novo": false,
    "ultimo_fato": "10/11: governo defende na comissão da Câmara reduzir a maioridade penal só para crimes hediondos; relator quer parecer até 30/11 (Agência Câmara).",
    "proximo": "Parecer do relator até 30/11; plenário no início de dezembro."
   },
@@ -119,8 +120,8 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-11-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-11-11h",
+   "fato_novo": false,
    "ultimo_fato": "10/11: Dino encerra a audiência sem acordo, mantém 16/12 e anuncia decisão sobre a transição até sexta (13), a ser levada ao plenário (Revista Fórum, Terra).",
    "proximo": "Decisão de Dino (13/11); pauta no plenário; decreto do governo após 16/11."
   },
@@ -146,8 +147,8 @@
     "braskem_capitalizacao",
     "balancos_10_11"
    ],
-   "verificada": "2026-11-11-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-11-11h",
+   "fato_novo": false,
    "ultimo_fato": "10/11: Petrobras divulga lucro de R$ 39,75 bi no 3T26 e R$ 15,3 bi em proventos na noite de terça; CBS de 11,3% chega ao Senado; Braskem tenta acordo até 11/11.",
    "proximo": "Teleconferência da Petrobras (11/11); IPCA de outubro (12/11); varejo (13/11)."
   },
@@ -163,8 +164,8 @@
     "eua_senado_mississippi_alasca",
     "eua_tarifas_300"
    ],
-   "verificada": "2026-11-11-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-11-11h",
+   "fato_novo": false,
    "ultimo_fato": "10/11: Colom (D) lidera no Mississippi por 2.574 votos, com certificação em 13/11; Peltola (D) tem menos de 700 votos de vantagem no Alasca; Casa Branca diz que as tarifas seguem.",
    "proximo": "Certificação do Mississippi (13/11); contagem ranqueada do Alasca (após 18/11); certificação em 25/11."
   },
@@ -179,8 +180,8 @@
     "zaporizhzhia",
     "ucrania_abudhabi"
    ],
-   "verificada": "2026-11-11-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-11-11h",
+   "fato_novo": false,
    "ultimo_fato": "11/11: Rússia, Ucrânia e EUA fecham a rodada em Abu Dhabi; no dia 1 houve mais de 4 horas de conversas, e a Rússia atingiu seis subestações elétricas (PBS, The National).",
    "proximo": "Balanço do dia 2; troca de prisioneiros; nova ida de delegação americana a Moscou."
   },
@@ -192,8 +193,8 @@
    "materias": [
     "israel"
    ],
-   "verificada": "2026-11-11-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-11-11h",
+   "fato_novo": false,
    "ultimo_fato": "10/11: Knesset toma posse e o bloco de Eisenkot indica Matan Kahana para presidir a Casa, com mais de 61 assinaturas; votação esperada em 17/11 (Times of Israel, Jerusalem Post).",
    "proximo": "Votação do presidente da Knesset (17/11); mandato de Eisenkot até 6/12."
   },
@@ -217,63 +218,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-11-07h",
-   "achado": "Nada além do Paraguai (Alliana no cargo) e do início da posse da Knesset; sem queda, golpe ou prisão nova de chefe de Estado."
+   "feita": "2026-11-11-11h",
+   "achado": "Nada novo além da posse da Knesset e do mandato de Eisenkot; sem queda, renúncia ou prisão nova de chefe de Estado até 12h de 11/11."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-11-07h",
-   "achado": "Paraguai: BCP encerra pagamentos do Ueno (27% dos depósitos); Argentina, Chile e Venezuela só com fatos de 3 a 9/11; sem fato datado de 10 a 11/11 em Peru, Bolívia, Colômbia, México, Equador e Uruguai."
+   "feita": "2026-11-11-11h",
+   "achado": "Paraguai: sem fato novo posterior ao encerramento dos pagamentos do Ueno de 7 a 11/11."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-11-07h",
-   "achado": "Abu Dhabi: dia 1 com mais de 4 horas, dia 2 em 11/11; Trump e o premiê do Catar discutem o Irã (9/11); sem guerra nova; Sudão só com alegações do exército de 7 a 8/11."
+   "feita": "2026-11-11-11h",
+   "achado": "Sem desfecho novo localizado de Abu Dhabi até 12h; mantém-se a cobertura do 07h."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-11-07h",
-   "achado": "Espanha: greve geral em 11/11 e eleição em 29/11; EUA: tarifas mantidas e Senado indefinido (Mississippi e Alasca); Nova Zelândia aguarda contagem final em 27/11; China e Ásia sem fato datado de 10 a 11/11."
+   "feita": "2026-11-11-11h",
+   "achado": "Espanha: greve geral de 11/11 atualizada com a posição da patronal; EUA sem fato novo (Mississippi e Alasca seguem em apuração, certificação em 13/11)."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-11-07h",
-   "achado": "Brent abaixo de US$ 90 em 10/11; CPI dos EUA acima do esperado e alta do Fed em dezembro quase certa; Ibovespa -0,52%; sem abertura de 11/11 localizada."
+   "feita": "2026-11-11-11h",
+   "achado": "Sem dado novo além do 07h; balanços e inflação dos EUA seguem como referência."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-11-07h",
-   "achado": "Lula na COP31 com TFFF e Mapa do Caminho; ministério sem data; decreto da 6x1 após 16/11."
+   "feita": "2026-11-11-11h",
+   "achado": "Lula discursa na COP31 (11/11), pede US$ 1,3 tri por ano; Capobianco lê o discurso no evento de florestas; governo adia o roteiro dos fósseis para 2027."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-11-07h",
-   "achado": "Câmara aprova MPs das dívidas rurais e do Brasil Soberano; Senado adia Escazú; comissão da maioridade penal ouve o governo; resultado do PL em 11/11 ainda não localizado."
+   "feita": "2026-11-11-11h",
+   "achado": "Sem votação nova localizada até 12h; o PL reúne a bancada nesta quarta sobre a reeleição de Motta, sem resultado localizado."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-11-07h",
-   "achado": "Dino mantém o calendário da 6x1; Dallagnol fora da pauta do TSE há mais de um mês; sem operação da PF, decisão do TCU ou ato da PGR de 10/11 localizado."
+   "feita": "2026-11-11-11h",
+   "achado": "Sem decisão nova do STF, TSE ou TCU localizada até 12h; Dino decide a transição da 6x1 até sexta (13)."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-11-07h",
-   "achado": "Sem pesquisa nova além da Quaest de 8/11 (aprovação 48%); PL decide sobre Motta em 11/11; bastidores só de dias anteriores."
+   "feita": "2026-11-11-11h",
+   "achado": "Sem pesquisa nova; PL ainda não decidiu sobre Motta, e a reunião da bancada é nesta quarta (11)."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-11-07h",
-   "achado": "Petrobras divulgou o balanço na noite de 10/11 (lucro de R$ 39,75 bi); CBS de 11,3% no Senado; Braskem tenta acordo até 11/11; IPCA em 12/11."
+   "feita": "2026-11-11-11h",
+   "achado": "Sem fato novo além do balanço da Petrobras e da agenda do dia; reação do mercado não localizada até 12h."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-11-07h",
-   "achado": "RJ, MG, DF, MS, MT, BA, CE, PE, AC, RO e TO com fatos de 9 e 10/11; Sul, SP, AL, SE, PI, MA, PA, AM, AP e RR sem fato datado de 9 a 11/11 com duas fontes."
+   "feita": "2026-11-11-11h",
+   "achado": "Sem fato regional novo localizado entre 10h e 12h; regiões seguem como no 07h."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-11-07h",
-   "achado": "Todas as pautas P0 e P1 verificadas; fato novo em nove delas."
+   "feita": "2026-11-11-11h",
+   "achado": "Todas as pautas P0 e P1 verificadas; fato novo só na transicao-lula (Lula na COP31)."
   }
  ]
 }

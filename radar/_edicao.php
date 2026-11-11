@@ -10432,7 +10432,123 @@ Cúpula de líderes (11 e 12), reunião do TFFF com Noruega, Reino Unido e Holan
  fontes:[['The Nightly (Albanese voa à COP31 na Turquia)','https://thenightly.com.au/politics/australian-politics-live-updates-albanese-flies-to-cop31-in-turkey-chalmers-restricts-treasury-access-c-23138492'],['JB (Lula na COP31, foco em clima e desmatamento)','https://www.jb.com.br/brasil/politica/2026/11/1061494-lula-participa-da-cop31-na-turquia-com-foco-em-clima-e-desmatamento.html'],['Tribuna do Sertão (Lula defenderá multilateralismo na COP31)','https://www.tribunadosertao.com.br/geral/2026/11/09/1016646-lula-defendera-multilateralismo-na-cop-31-na-turquia']]});
 ['lula_cop','mg_cleitinho_shows','ms_dialogo_pos_eleicao','sudao_haroun','tre_rj_totalizacao','rj_volta_redonda','bc_diretorias'].forEach(function(i){ S[i].velha=true; S[i].velhaMotivo = (i==='lula_cop')?'superada por lula_antalia_comitiva':(i==='mg_cleitinho_shows')?'superada por mg_cleitinho_cpi_shows':(i==='ms_dialogo_pos_eleicao')?'superada por ms_pl_paulo_correa_alems':(i==='tre_rj_totalizacao')?'superada por rj_aije_paes_ruas':'fato encerrado'; });
 
+/* ===== EDIÇÃO 11h de 11/11 ===== */
+EDICAO.hora = '11h';
+EDICAO.data = 'Quarta, 11 de novembro de 2026';
+
+_U('lula_cop', {hora:'11/11',
+ t:'Lula pede na COP31 US$ 1,3 trilhão por ano em financiamento climático e cobra os países ricos; no evento de florestas, Capobianco lê o discurso',
+ sub:'O presidente, com a voz rouca, deixou o texto do evento de florestas para o ministro do Meio Ambiente, e o Brasil segue às Filipinas para a cúpula da Asean.',
+ resumo:'Em Antália, na quarta (11), Lula defendeu que os países ricos contribuam mais para o combate à crise climática e propôs financiamento internacional de US$ 1,3 trilhão por ano, informa o WSCOM. Citou o Fundo Florestas Tropicais para Sempre (TFFF), com US$ 7,8 bilhões em compromissos e 66 países e a União Europeia, e queda de cerca de 70% no desmatamento da Amazônia de 2022 a 2026. No evento de líderes sobre florestas, o texto foi lido pelo ministro João Paulo Capobianco, porque Lula estava com a voz rouca, informa o Área VIP, que cita a CNN Brasil. Depois da Turquia, ele segue às Filipinas e à cúpula da Asean, com volta a Brasília na manhã de 16.',
+ upd:'Lula discursou na COP31 e pediu US$ 1,3 trilhão por ano; no evento de florestas, o ministro Capobianco leu o texto porque o presidente estava rouco.',
+ fundo:`O presidente Lula defendeu na quarta-feira (11), na COP31, em Antália, na Turquia, que os países ricos contribuam mais para o combate à crise climática e propôs financiamento internacional de US$ 1,3 trilhão por ano, informa o WSCOM. No evento de líderes sobre florestas, o discurso foi lido pelo ministro do Meio Ambiente, João Paulo Capobianco, porque Lula estava com a voz rouca, informa o Área VIP, que atribui a informação à CNN Brasil.
+NUMS US$ 1,3 tri|financiamento climático anual proposto por Lula;US$ 7,8 bi|compromissos no fundo de florestas tropicais (TFFF);66 países e UE|apoiam o TFFF;70%|queda do desmatamento na Amazônia de 2022 a 2026, citada por Lula
+## O que Lula disse
+Na abertura da cúpula de líderes, Lula afirmou que as nações que mais se beneficiaram da exploração dos recursos naturais devem contribuir de forma mais efetiva, e que a crise ambiental não se separa dos problemas sociais, informa o WSCOM. Disse que conflitos armados e disputas comerciais passaram a ocupar o centro das conversas entre as grandes economias, e citou G7 e G20. Pediu respostas imediatas a secas, incêndios, enchentes e elevação do nível do mar.
+O presidente apresentou números do governo: emissões 42% menores desde 2005, 560 milhões de toneladas de carbono evitadas entre 2022 e 2024, queda de 70% no desmatamento da Amazônia entre 2022 e 2026 e de quase 50% no Cerrado, 2,5 milhões de hectares em áreas protegidas, 20 terras indígenas homologadas e 4,5 milhões de hectares recuperados, com meta de 40 milhões em dez anos. Encerrou com a frase “o Brasil está de volta para defender a continuidade de um planeta saudável”.
+## O discurso lido no evento de florestas
+No evento de líderes sobre florestas, na manhã de quarta, Lula pediu que Capobianco lesse o texto preparado, informa o Área VIP. O discurso chamou de equivocada a ideia de que conservação ambiental é incompatível com desenvolvimento econômico e apontou três desafios: superar a pobreza, ampliar os recursos para o financiamento climático e combater a falta de liderança. A reportagem registra que o presidente tinha outro discurso previsto para o mesmo dia.
+## O que o governo leva à conferência
+O Eixos informa que o governo leva à COP31 cinco mensagens: o inventário nacional, com queda de 27% nas emissões líquidas de 2022 a 2024; o mapa do desmatamento; as diretrizes para os combustíveis fósseis; o avanço do TFFF, com US$ 7,8 bilhões em compromissos e meta de US$ 10 bilhões para começar a operar; e o relatório do Fundo Amazônia, com R$ 7,8 bilhões investidos. Os números de emissões do WSCOM e do Eixos usam bases diferentes, desde 2005 e de 2022 a 2024.
+## Quem é quem
+Lula é do PT, partido de esquerda que lidera o governo. Capobianco é ministro do Meio Ambiente do governo Lula. O presidente turco, Recep Tayyip Erdogan, do AKP, partido de direita religiosa, preside formalmente a COP31, e a Austrália, do primeiro-ministro trabalhista Anthony Albanese, de centro-esquerda, conduz as negociações. Os presidentes da Câmara, Hugo Motta (Republicanos-PB), e do Senado, Davi Alcolumbre (União-AP), de centro-direita, recusaram o convite para a comitiva e negociam as reeleições nas Mesas, informa o Brasil 247, com base em coluna de Igor Gadelha, do Metrópoles. O deputado André Janones (Rede-MG) é o único parlamentar na viagem, informa O Tempo.
+## A comitiva e a agenda na Ásia
+A comitiva inclui os ministros Capobianco, Alexandre Silveira (Minas e Energia), Fernanda Machiaveli (Desenvolvimento Agrário) e Márcio Elias Rosa (Desenvolvimento, Indústria, Comércio e Serviços), além do presidente do BNDES, Aloizio Mercadante, informa O Povo. Mais de 15 líderes pediram reunião bilateral, segundo o Itamaraty, e os encontros prováveis são na quinta (12). Depois da Turquia, Lula segue a Manila: a Agência Brasil situa a visita de Estado em 14 de novembro e a cúpula da Asean em 15; a CNN Brasil dá 13 de novembro para a visita, 14 e 15 para a cúpula e a chegada a Brasília na manhã de 16.
+## A economia fica para depois
+O ministro da Fazenda, Dario Durigan, disse em 5 de novembro, à Rádio Nacional, que as medidas fiscais serão apresentadas a Lula depois da viagem. Em dezembro, o presidente tem a cúpula do Mercosul no Uruguai, em 4 e 5, e o G20 na Flórida, em 15 e 16, informa o AC24horas.
+## O que vem agora
+- Quinta (12): segundo dia da cúpula de líderes, reunião do TFFF e bilaterais.
+- Entre 13 e 15 de novembro: visita de Estado às Filipinas e cúpula da Asean, conforme a fonte.
+- Segunda (16): volta a Brasília, e depois as reuniões da Fazenda com Lula sobre as medidas fiscais.
+## O que ainda não está confirmado
+- Se Lula leu pessoalmente o discurso da plenária ou se o texto também foi lido por Capobianco.
+- A lista final de bilaterais e os horários.
+- As datas na Ásia: 13 ou 14 de novembro para as Filipinas.
+- Se Motta e Alcolumbre participarão de alguma etapa da viagem.`,
+ fontes:[['WSCOM (Lula na COP31: financiamento e metas)','https://wscom.com.br/noticias/2026/11/11/lula-financiamento-climatico-metas-ambientais-cop31/'],['Área VIP (Lula desiste do discurso no evento de florestas)','https://www.areavip.com.br/noticias/politica/com-problemas-de-voz-lula-desiste-de-discurso-na-cop31/'],['Eixos (o que Lula leva à COP31)','https://eixos.com.br/transicao-energetica/lula-leva-a-cop31-mapa-do-desmatamento-pronto-o-dos-fosseis-fica-para-2027/'],['JB (Lula na COP31)','https://www.jb.com.br/brasil/politica/2026/11/1061494-lula-participa-da-cop31-na-turquia-com-foco-em-clima-e-desmatamento.html']].concat(S.lula_cop.fontes)
+});
+
+_N('brasil_mapa_fosseis', {ed:'politica', k:'Política · Planalto e clima', hora:'11/11', semAtores:true,
+ t:'Governo leva o mapa do desmatamento à COP31 e deixa o roteiro dos combustíveis fósseis para a COP32, em 2027',
+ sub:'A ministra Miriam Belchior diz que o compromisso deste ano foi fixar critérios; o CNPE aprovou 18 diretrizes na sexta (6), e um grupo de trabalho tem até 270 dias.',
+ dado:{n:'270 dias', l:'Prazo do grupo de trabalho para o roteiro dos fósseis, prorrogável por 90 · Eixos'},
+ resumo:'O governo brasileiro leva à COP31 o mapa do desmatamento, aprovado pelo Comitê Interministerial sobre Mudança do Clima, e apresenta o roteiro de redução da dependência dos combustíveis fósseis só na COP32, na Etiópia, em 2027, informa o Eixos. A ministra Miriam Belchior disse que não houve compromisso de entregar a proposta agora. O Conselho Nacional de Política Energética aprovou 18 diretrizes na sexta (6), e um grupo de trabalho tem até 270 dias, prorrogáveis por 90, para redigir o roteiro. Segundo o Prodes, do Inpe, o desmatamento caiu 71,2% na Amazônia Legal e 48,4% no Cerrado entre 2022 e 2026.',
+ fundo:`O governo brasileiro leva à COP31, em Antália, o mapa do desmatamento pronto e deixa o roteiro de redução da dependência dos combustíveis fósseis para a COP32, na Etiópia, em 2027, informa o Eixos. A ministra Miriam Belchior afirmou que o compromisso deste ano era estabelecer critérios e parâmetros, e que não houve compromisso do presidente nem do governo de entregar a proposta agora.
+## O mapa do desmatamento
+O Comitê Interministerial sobre Mudança do Clima aprovou o mapa, que tem quatro frentes: uso sustentável das florestas, restauração, combate ao desmatamento e aos incêndios ilegais e redução da supressão legal da vegetação por instrumentos econômicos, informa o Eixos. Pelos dados do Prodes, do Instituto Nacional de Pesquisas Espaciais (Inpe), o desmatamento anual caiu 71,2% na Amazônia Legal e 48,4% no Cerrado de 2022 a 2026. Em discurso na cúpula de líderes, Lula citou queda de 70% na Amazônia e de quase 50% no Cerrado, informa o WSCOM.
+## Os combustíveis fósseis
+O Conselho Nacional de Política Energética (CNPE) aprovou 18 diretrizes na sexta (6). Um grupo de trabalho tem até 270 dias, com possibilidade de mais 90, para redigir o roteiro, informa o Eixos. Lula chamou as diretrizes de embrião da discussão do mapa do caminho. Em 3 de novembro, o governo havia apresentado uma proposta para reduzir gradualmente o uso de combustíveis fósseis e interromper a destruição das florestas até 2030, informa o JB.
+## As outras mensagens do governo
+Além do mapa e das diretrizes, o governo leva o inventário nacional, com queda de 27% nas emissões líquidas de 2022 a 2024, o equivalente a cerca de 560 milhões de toneladas de CO2, o avanço do Fundo Florestas Tropicais para Sempre (TFFF), com US$ 7,8 bilhões em compromissos e meta de US$ 10 bilhões para começar a operar, e o relatório do Fundo Amazônia, com R$ 7,8 bilhões investidos, informa o Eixos.
+## O que vem agora
+Grupo de trabalho do CNPE para redigir o roteiro em até 270 dias; apresentação na COP32, em 2027; e segundo dia da cúpula de líderes em Antália, nesta quinta (12).
+## O que ainda não está confirmado
+- A data de instalação do grupo de trabalho do CNPE.
+- O conteúdo final das 18 diretrizes e do roteiro.
+- Se os demais países aceitarão o calendário de 2027 para o roteiro dos fósseis.`,
+ fontes:[['Eixos (mapa do desmatamento pronto, o dos fósseis fica para 2027)','https://eixos.com.br/transicao-energetica/lula-leva-a-cop31-mapa-do-desmatamento-pronto-o-dos-fosseis-fica-para-2027/'],['JB (Lula na COP31)','https://www.jb.com.br/brasil/politica/2026/11/1061494-lula-participa-da-cop31-na-turquia-com-foco-em-clima-e-desmatamento.html'],['WSCOM (Lula na COP31)','https://wscom.com.br/noticias/2026/11/11/lula-financiamento-climatico-metas-ambientais-cop31/']]});
+
+_U('cop31_antalya', {hora:'11/11',
+ t:'Cúpula de líderes da COP31 reúne chefes de Estado em Antália: o TFFF soma US$ 7,8 bilhões, e a Austrália propõe a meta global de 35% de eletricidade até 2035',
+ sub:'A Turquia preside a conferência, e a Austrália conduz as negociações; Lula discursou na quarta (11), e a cúpula continua na quinta (12).',
+ resumo:'A cúpula de líderes da COP31 começou na quarta (11), em Antália, e continua na quinta (12). Lula discursou e citou US$ 7,8 bilhões em compromissos no Fundo Florestas Tropicais para Sempre, com 66 países e a União Europeia, informa o WSCOM. A Austrália, que conduz as negociações, propôs a meta global de 35% de eletricidade no consumo final de energia até 2035, informa o The Nightly. O Brasil entregou a presidência da conferência à Turquia e deixa o roteiro dos fósseis para a COP32, em 2027, informa o Eixos.',
+ upd:'A cúpula de líderes começou, com Lula citando US$ 7,8 bilhões para o TFFF; o Brasil deixa o roteiro dos fósseis para a COP32, em 2027.',
+ fundo:`A cúpula de líderes da COP31 começou na quarta (11), em Antália, na Turquia, e continua na quinta (12). Lula citou em seu discurso US$ 7,8 bilhões em compromissos no Fundo Florestas Tropicais para Sempre (TFFF), com apoio de 66 países e da União Europeia, informa o WSCOM. A Austrália, que conduz as negociações, propôs a meta global de 35% de eletricidade no consumo final de energia até 2035, informa o The Nightly.
+## A cúpula e o fundo de florestas
+O TFFF busca remunerar os países que mantêm florestas tropicais em pé, e o governo brasileiro trabalha para chegar a US$ 10 bilhões em compromissos para começar a operar, informa o Eixos. A reunião do fundo com Noruega, Reino Unido e Holanda está prevista para a conferência, e a Holanda deve formalizar US$ 500 milhões, informa o JB. O Brasil entregou a presidência da conferência à Turquia, que a preside formalmente, enquanto a Austrália conduz as negociações, informa a Tribuna do Sertão.
+## A proposta australiana
+O ministro australiano Chris Bowen propôs a meta de 35% de eletricidade no consumo final de energia até 2035, que contrasta com a proposta brasileira, apresentada em 3 de novembro, de reduzir gradualmente os fósseis e zerar o desmatamento até 2030. O premiê Anthony Albanese viajou à COP31 e anunciou um regulador de segurança de inteligência artificial, informa o The Nightly. O Brasil deixa para a COP32, na Etiópia, em 2027, a apresentação do roteiro dos fósseis, informa o Eixos.
+## Quem é quem
+Albanese e Bowen são do Partido Trabalhista, de centro-esquerda, no governo da Austrália; o presidente turco, Recep Tayyip Erdogan, lidera o AKP, de direita religiosa; Lula é do PT, de esquerda. A Austrália abre mão de um papel de anfitriã e fica com a condução das negociações.
+## O que vem agora
+Segundo dia da cúpula de líderes (12), reunião do TFFF e bilaterais; depois, a cúpula da Asean em Manila.
+## O que ainda não está confirmado
+- Se a meta de 35% entrará no texto final da conferência.
+- O resultado das negociações sobre fósseis e desmatamento.
+- Se a Turquia, que preside a conferência, apoiará a meta.`,
+ fontes:[['WSCOM (Lula na COP31: financiamento e metas)','https://wscom.com.br/noticias/2026/11/11/lula-financiamento-climatico-metas-ambientais-cop31/'],['Eixos (mapa do desmatamento pronto, o dos fósseis fica para 2027)','https://eixos.com.br/transicao-energetica/lula-leva-a-cop31-mapa-do-desmatamento-pronto-o-dos-fosseis-fica-para-2027/']].concat(S.cop31_antalya.fontes)
+});
+delete S.cop31_antalya.fonteunica;
+
+_insAntes('espanha_greve_geral','O que vem agora',[['h','A reação das empresas'],['p','Antonio Garamendi, presidente da CEOE, a confederação patronal, chamou a greve de “eleitoral” em 19 de outubro e anunciou que a impugnaria, informa o Vozpópuli. Segundo o Democrata, a CEOE desistiu do recurso em 22 de outubro e manteve as críticas. A ATA, entidade dos autônomos, também criticou a convocação, informa o Vozpópuli.'],['p','CCOO e UGT rejeitam que a greve seja partidária. Os convocantes registraram o aviso no Ministério do Trabalho em 19 de outubro e pedem aumentos salariais de 4% a 7%, alta de ao menos 7% do salário mínimo em 2027, limites aos aluguéis e mais moradia pública e protegida, informa o Democrata. O Idealista registra o lema “salários, moradia e preços” e a exigência de que a Lei do Direito à Moradia seja aplicada em todos os territórios.']]);
+S.espanha_greve_geral.resumo = S.espanha_greve_geral.resumo.replace('O governo de Pedro Sánchez','A patronal CEOE, que chamou a greve de eleitoral, desistiu em 22 de outubro de recorrer à Justiça, informa o Democrata. O governo de Pedro Sánchez');
+S.espanha_greve_geral.upd = 'Entra a posição da patronal CEOE, que chamou a greve de eleitoral e desistiu de recorrer, e a pauta salarial e de moradia dos sindicatos.';
+S.espanha_greve_geral.fontes.push(['Vozpópuli (Garamendi sobre a greve geral)','https://www.vozpopuli.com/economia/garamendi-pide-no-incendiar-las-calles-y-anuncia-que-impugnara-por-electoral-la-huelga-general.html'],['Idealista (greve geral por moradia em 11 de novembro)','https://www.idealista.com/en/news/legal-advice-in-spain/2026/10/09/917678-spain-general-strike-over-housing-crisis-set-for-11-november']);
+
+HOME_LEAD = 'lula_cop';
+HOME_ROW = ['pl_motta','espanha_greve_geral'];
+ORDER.politica = _top(ORDER.politica, ['lula_cop','brasil_mapa_fosseis','cop31_antalya']);
+ORDER.mundo = _top(ORDER.mundo, ['espanha_greve_geral']);
+var _giro11 = [
+ ['Lula na COP31','Lula pede US$ 1,3 trilhão por ano em financiamento climático e cobra os países ricos, informa o WSCOM.','WSCOM','https://wscom.com.br/noticias/2026/11/11/lula-financiamento-climatico-metas-ambientais-cop31/','','lula_cop'],
+ ['Capobianco lê o discurso','Com a voz rouca, Lula pede que o ministro Capobianco leia o discurso no evento de florestas, informa o Área VIP.','Área VIP','https://www.areavip.com.br/noticias/politica/com-problemas-de-voz-lula-desiste-de-discurso-na-cop31/','','lula_cop'],
+ ['Fósseis ficam para 2027','O governo apresenta o roteiro dos combustíveis fósseis só na COP32, em 2027, informa o Eixos.','Eixos','https://eixos.com.br/transicao-energetica/lula-leva-a-cop31-mapa-do-desmatamento-pronto-o-dos-fosseis-fica-para-2027/','','brasil_mapa_fosseis']
+];
+GIRO = _giro11.concat(GIRO.filter(function(g){ return _giro11.every(function(n){return n[0]!==g[0];}); })).slice(0,20);
+
+
+/* ===== 11h de 11/11: matérias paradas ===== */
+_insAntes('pl_motta','O que vem agora',[['h','O que o Correio da Manhã acrescenta'],
+['p','O líder do PL na Câmara, Sóstenes Cavalcante (PL-RJ), disputaria a presidência da Casa se Flávio Bolsonaro tivesse sido eleito presidente da República e, depois da derrota de Flávio, afirmou que não concorrerá, informa o Correio da Manhã. O jornal registra que Nikolas Ferreira (PL-MG) é o principal defensor da candidatura própria e se opõe a apoiar Motta, que declarou apoio à reeleição de Lula, e que a outra via é negociar o apoio em troca de espaço na Mesa Diretora e em comissões estratégicas.'],
+['p','Entre os 15 partidos e federações do bloco de Motta, o jornal lista PP, PSD, PSB, MDB, Podemos, PDT, a federação PT-PCdoB-PV, a federação Renovação Solidária (PRD e Solidariedade), a federação PSDB-Cidadania e o Republicanos. A reunião da bancada do PL está marcada para esta quarta (11), e as fontes consultadas até o fechamento desta edição não traziam o resultado.']]);
+S.pl_motta.resumo = S.pl_motta.resumo.replace('A bancada decide na quarta (11), com Nikolas Ferreira defendendo nome próprio e Sóstenes Cavalcante dizendo que precisa ouvir todo mundo.','A bancada se reúne nesta quarta (11), sem resultado divulgado até as 11h: Nikolas Ferreira defende nome próprio, e o líder Sóstenes Cavalcante, que diz não concorrer, afirma que precisa ouvir todo mundo, informa o Correio da Manhã.');
+S.pl_motta.upd = 'Entra o relato do Correio da Manhã: Sóstenes Cavalcante diz que não disputará a presidência da Câmara, e a reunião da bancada do PL é hoje, sem resultado divulgado.';
+S.pl_motta.fontes.push(['Correio da Manhã (Isolado, PL ainda não se decidiu sobre comando da Câmara)','https://www.correiodamanha.com.br/politica/2026/11/amp/332989-isolado-pl-ainda-nao-se-decidiu-sobre-comando-da-camara.html']);
+S.pl_motta.hora = '11/11';
+(function(){
+ var v = {
+  eua_meio_mandato_placar:'superada por eua_senado_mississippi_alasca, que traz o Mississippi e o Alasca atualizados',
+  motta_alcolumbre_comitiva:'superada por pl_motta e lula_cop, que já trazem a recusa de Motta e Alcolumbre à comitiva',
+  orcamento_2027:'sem desdobramento novo desde 9/11; segue acessível pelo link compartilhado',
+  mg_transicao_fase_final:'sem desdobramento novo desde 9/11; segue acessível pelo link compartilhado',
+  trf1_kassio_lula:'sem desdobramento novo desde 9/11; segue acessível pelo link compartilhado',
+  supersalarios_ongs:'sem desdobramento novo desde 9/11; segue acessível pelo link compartilhado',
+  rj_alerj_concessoes:'sem desdobramento novo desde 9/11; segue acessível pelo link compartilhado'
+ };
+ Object.keys(v).forEach(function(i){ S[i].velha = true; S[i].velhaMotivo = v[i]; });
+})();
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"paraguai":"atualizada","israel":"atualizada","dino_6x1":"atualizada","flavio_senado":"atualizada","rn_transicao":"atualizada","ucrania_abudhabi":"atualizada","cop31_antalya":"atualizada","argentina_governadores":"atualizada","petrobras_balanco":"atualizada","lula_antalia_comitiva":"atualizada","maioridade_audiencias":"atualizada","ueno_pagamentos":"atualizada","escazu_cre":"novo","mps_rurais_exportadores":"novo","nikolas_celulares_senado":"novo","dallagnol_tse_pauta":"novo","dino_tecnologia_eleicoes":"novo","cbs_senado_aliquota":"novo","braskem_capitalizacao":"novo","balancos_10_11":"novo","espanha_greve_geral":"novo","eua_tarifas_300":"novo","eua_senado_mississippi_alasca":"novo","rj_qav_galeao":"novo","rj_aije_paes_ruas":"novo","mg_cleitinho_alm":"novo","mg_tarifa_zero_rmbh":"novo","mg_cleitinho_cpi_shows":"novo","df_cldf_reeleicao_mesa":"novo","df_ploa_social":"novo","ms_pl_paulo_correa_alems":"novo","mt_reforma_pivetta_rga":"novo","ba_alba_17_projetos":"novo","ce_alece_presidencia_romeu":"novo","ce_margem_equatorial_empregos":"novo","pe_compesa_barragens":"novo","ac_loa_2027_suspensa":"novo","ro_ale_suspende_pagamentos":"novo","to_aleto_ldo_cultura":"novo"};
-var GIRO_FLAGS = {"Dino e as regras da 6x1":"novo","Escazú vai à CRE":"novo","MP das dívidas rurais":"novo","Maioridade só para hediondos":"novo","Lucro da Petrobras":"novo","CBS de 11,3% no Senado":"novo","Abu Dhabi, dia 2":"novo","Ueno cobre 27%":"novo","Kahana na Knesset":"novo","Greve geral na Espanha":"atualizada","Cleitinho na ALMG":"novo","Paulo Corrêa na Alems":"novo"};
+var FLAGS = {"lula_cop":"atualizada","pl_motta":"atualizada","cop31_antalya":"atualizada","espanha_greve_geral":"atualizada","brasil_mapa_fosseis":"novo"};
+var GIRO_FLAGS = {"Lula na COP31":"novo","Capobianco lê o discurso":"novo","Fósseis ficam para 2027":"novo"};
 /* ===== FIM DOS DADOS ===== */
