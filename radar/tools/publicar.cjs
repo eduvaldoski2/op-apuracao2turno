@@ -84,6 +84,18 @@ if (ant) {
   const p = carregar(fs.readFileSync(path.join(arq, ant + '.php'), 'utf8'));
   Object.keys(d.S).forEach(i => { if (!p.S[i]) flags[i] = 'novo'; else if (hash(p.S[i]) !== hash(d.S[i])) flags[i] = 'atualizada'; });
 }
+// HIST: para cada matéria, edição em que apareceu pela primeira vez e edição da última atualização (varre o arquivo)
+const HIST = {};
+{ let prev = null;
+  lista.filter(n => n < nome).concat([nome]).forEach(n => {
+    const S2 = n === nome ? d.S : carregar(fs.readFileSync(path.join(arq, n + '.php'), 'utf8')).S;
+    Object.keys(S2).forEach(i => {
+      const h = hash(S2[i]);
+      if (!HIST[i]) HIST[i] = { p: n, a: n, h };
+      else if (HIST[i].h !== h) { HIST[i].a = n; HIST[i].h = h; }
+    });
+  }); }
+Object.keys(HIST).forEach(i => { if (!d.S[i]) delete HIST[i]; else HIST[i] = [HIST[i].p, HIST[i].a]; });
 const nN = Object.values(flags).filter(v => v === 'novo').length, nA = Object.values(flags).filter(v => v === 'atualizada').length;
 if (ant && !process.argv.includes('--aceitar-poucas') && (nN < (hh === '07h' ? 15 : 5) || nN + nA < (hh === '07h' ? 25 : 10))) {
   die('edição quase igual à anterior (' + nN + ' NOVO, ' + nA + ' ATUALIZADA). Exigido: ao menos '+(hh === '07h' ? '15 NOVO e 25' : '5 NOVO e 10')+' NOVO+ATUALIZADA (a edição das 7h é a primeira do dia e precisa de mais novidades: pesquise o que saiu à noite e de madrugada). Busque mais notícias publicadas depois de ' + ant + ' em TODAS as editorias e sub-regiões. Só use --aceitar-poucas se tiver pesquisado de verdade e realmente não houver mais nada (e diga isso no resumo).');
@@ -270,8 +282,8 @@ if (NOVAS) {
     fs.appendFileSync(path.join(arq, '_avisos.log'), nome + ' · ' + usados + ' · ' + motivoArg + '\n');
   }
 }
-const bloco = '/* FLAGS (gerado por publicar.js; não editar) */\nvar FLAGS = ' + JSON.stringify(flags) + ';\nvar GIRO_FLAGS = ' + JSON.stringify(giroFlags) + ';\n';
-let novo = txt.replace(/\/\* FLAGS \(gerado[^\n]*\nvar FLAGS = [^\n]*\n(var GIRO_FLAGS = [^\n]*\n)?/, '');
+const bloco = '/* FLAGS (gerado por publicar.js; não editar) */\nvar FLAGS = ' + JSON.stringify(flags) + ';\nvar GIRO_FLAGS = ' + JSON.stringify(giroFlags) + ';\nvar HIST = ' + JSON.stringify(HIST) + ';\n';
+let novo = txt.replace(/\/\* FLAGS \(gerado[^\n]*\nvar FLAGS = [^\n]*\n(var GIRO_FLAGS = [^\n]*\n)?(var HIST = [^\n]*\n)?/, '');
 if (!novo.includes('/* ===== FIM DOS DADOS ===== */')) die('marcador FIM DOS DADOS ausente');
 novo = novo.replace('/* ===== FIM DOS DADOS ===== */', bloco + '/* ===== FIM DOS DADOS ===== */');
 fs.mkdirSync(arq, { recursive: true });

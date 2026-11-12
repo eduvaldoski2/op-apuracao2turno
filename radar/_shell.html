@@ -294,6 +294,9 @@ function gaEv(n,pr,ex){try{if(window.__op)window.__op.evento(n,pr||{},ex||{})}ca
 function edNome(id){var s=S[id];return s?s.ed:''}
 function trackShare(canal){gaEv('share',{method:canal,item_id:shareId,content_type:'materia',editoria:edNome(shareId),regiao:(S[shareId]||{}).reg||'',edicao:EDICAO.hora},{meta:'CompartilharMateria',metaCustom:true,metaDados:{canal:canal},ads:'compartilhar'});try{var fd=new FormData();fd.append('m',shareId);fd.append('c',canal);navigator.sendBeacon('/radar/track.php',fd)}catch(e){}}
 
+function edInfo(id){var h=typeof HIST!=='undefined'&&HIST[id];if(!h)return 'Edição das '+esc(EDICAO.hora)+' · '+esc(EDICAO.data);
+ function f(n){var m=n.match(/^\d{4}-(\d{2})-(\d{2})-(\d{2})h$/);return m?'edição das '+m[3]+'h de '+parseInt(m[2],10)+'/'+parseInt(m[1],10):n}
+ return 'Publicada na '+f(h[0])+(h[1]!==h[0]?' · atualizada na '+f(h[1]):'')}
 function flag(id){var f=typeof FLAGS!=='undefined'&&FLAGS[id];return f?'<span class="flag '+(f==='novo'?'n':'a')+'">'+(f==='novo'?'NOVO':'ATUALIZADA')+'</span>':''}
 function dadoTile(d){return ''&&d?'<div class="tile"><div class="n">'+esc(d.n)+'</div><div class="l">'+esc(d.l)+'</div></div>':''}
 function item(id,big){var s=S[id];return '<div class="item"><div class="kk"><span class="kicker">'+esc(s.k)+'</span>'+flag(id)+'</div><h3 class="hl" style="font-size:'+(big?'clamp(26px,3.4vw,36px)':'21px')+'"><a href="'+href(id)+'">'+esc(s.t)+'</a></h3><p class="sub">'+esc(s.sub)+'</p></div>'}
@@ -404,7 +407,7 @@ function articleView(id){
   var more=ORDER[s.ed].filter(function(x){return x!==id&&(!s.reg||S[x].reg===s.reg)}).concat(ORDER[s.ed].filter(function(x){return x!==id&&s.reg&&S[x].reg!==s.reg})).concat(Object.keys(S).filter(function(x){return x!==id&&S[x].ed!==s.ed})).slice(0,3);
   return '<article class="art"><div class="crumb"><a href="#">Radar</a> / <a href="#editoria-'+ed.id+'">'+esc(ed.nome)+'</a>'+(s.reg?' / <a href="#regiao-'+s.reg+'">'+esc(s.k.replace(/^[^·]*·\s*/,''))+'</a>':'')+'</div>'
    +'<h1>'+esc(s.t)+flag(id)+'</h1><p class="sub">'+esc(s.sub)+'</p>'
-   +'<div class="meta">Edição das '+esc(EDICAO.hora)+' · '+esc(EDICAO.data)+' · com base em '+s.fontes.length+' fonte'+(s.fontes.length>1?'s':'')+'</div>'
+   +'<div class="meta">'+edInfo(id)+'</div>'
    +(typeof FLAGS!=='undefined'&&FLAGS[id]==='atualizada'&&s.upd&&!s.semAviso?'<div class="upd"><b>Atualizada.</b> '+esc(s.upd)+'</div>':'')
    +actionsBar(id)+'<div class="body" id="abody">'+articleBody(id)+'</div>'
    +'<div class="fontes"><b>Fontes</b>'+s.fontes.map(srcLink).join('')+'</div>'
