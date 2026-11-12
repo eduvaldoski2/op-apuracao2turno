@@ -13140,7 +13140,225 @@ AMANHA = [
  ['Sex, 13/11','justica','Dino publica a decisão sobre a transição da escala 6x1','O ministro decide até sexta as regras de transição e leva a decisão ao plenário do STF; a jornada de 42 horas vale em 16 de dezembro.','https://www.infomoney.com.br/brasil/comerciarios-de-sp-e-rs-fecham-acordo-para-reduzir-a-escala-6x1-para-5x2/','dino_6x1']
 ];
 
+/* ===== EDIÇÃO 07h de 12/11 ===== */
+EDICAO.hora = '07h';
+EDICAO.data = 'Quinta, 12 de novembro de 2026';
+
+_N('pgr_mantem_prisao_vorcaro', {ed:'politica', k:'Política · Caso Master', hora:'11/11',
+ t:'PGR pede ao STF que mantenha a prisão preventiva de Daniel Vorcaro e cita risco às investigações',
+ sub:'Na petição, o procurador-geral Paulo Gonet diz que, solto, o ex-banqueiro poderia seguir com esquemas criminosos e movimentações milionárias; ao mesmo tempo, Fachin quer um relatório técnico da PF sobre a relação de ministros do STF com Vorcaro.',
+ resumo:'A Procuradoria-Geral da República (PGR) enviou ao Supremo Tribunal Federal (STF), na quarta (11), parecer favorável à manutenção da prisão preventiva de Daniel Vorcaro, dono do Banco Master. A petição aponta risco às investigações e diz que, em liberdade, o ex-banqueiro poderia manter esquemas criminosos e movimentações milionárias, informa o Poder360. No mesmo dia, o g1 informou que o presidente do STF, Edson Fachin, indicou a auxiliares querer um relatório técnico da PF, com indício de crime e sem juízo sobre ministros da Corte. A decisão sobre a prisão cabe ao STF.',
+ fundo:`A Procuradoria-Geral da República (PGR) pediu ao Supremo Tribunal Federal (STF), na quarta-feira (11), que mantenha a prisão preventiva de Daniel Vorcaro, controlador do Banco Master. A petição, noticiada por g1, Folha, UOL, Poder360 e Agência Brasil, aponta risco às investigações e afirma que, solto, o ex-banqueiro poderia seguir com esquemas criminosos e movimentações milionárias, informa o Poder360.
+NUMS PGR|parecer enviado ao STF em 11/11;Preventiva|prisão que a PGR quer manter;Fachin|quer relatório técnico da PF sem juízo sobre ministros
+## Por que importa
+A manifestação da PGR pesa na decisão do relator, porque o STF costuma ouvir o Ministério Público antes de revogar ou manter uma preventiva. A defesa de Vorcaro pediu a manifestação antes do julgamento da prisão, e a PGR já havia se posicionado contra a prisão domiciliar e a favor da permanência de parentes e operadores do caso na cadeia, conforme noticiado em outubro e novembro por Folha de Pernambuco, Itatiaia e Gazeta do Povo.
+## Quem é quem
+- Paulo Gonet: procurador-geral da República, chefe do Ministério Público Federal, indicado por Lula (PT); autor do parecer.
+- Daniel Vorcaro: ex-controlador do Banco Master, preso preventivamente; a defesa pede a soltura ou a prisão domiciliar.
+- Edson Fachin: presidente do STF; segundo o g1, indicou a auxiliares que o relatório da PF deve identificar indício de crime e não fazer juízo sobre a relação de ministros com Vorcaro.
+- Polícia Federal: conduz as apurações; a DW Brasil informa que delegados responsáveis foram afastados e que os relatórios sobre os laços entre STF e Vorcaro deverão ser refeitos por terem extrapolado o caráter descritivo determinado por Fachin.
+## O que vem agora
+O STF decide se mantém a preventiva. O relatório refeito da PF sobre a relação de ministros com Vorcaro é o segundo ponto de atenção, porque define como o caso chega à opinião pública e ao Supremo.
+## O que ainda não está confirmado
+- A data em que o STF julgará o pedido de manutenção da prisão.
+- O conteúdo do novo relatório da PF e se ele cita nomes de ministros.`,
+ fontes:[['Poder360 (PGR pede que STF mantenha prisão preventiva de Vorcaro)','https://www.poder360.com.br/poder-justica/pgr-pede-que-stf-mantenha-prisao-preventiva-de-vorcaro/'],['g1 (PGR defende manter prisão de Vorcaro)','https://g1.globo.com/politica/noticia/2026/11/11/pgr-defende-manter-prisao-de-daniel-vorcaro.ghtml'],['Agência Brasil (parecer da PGR ao Supremo)','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/pgr-envia-ao-supremo-parecer-favoravel-manter-prisao-de-vorcaro'],['DW Brasil (relatórios da PF sobre STF e Vorcaro)','https://www.dw.com/pt-br/o-que-se-sabe-dos-relatórios-da-pf-sobre-os-laços-entre-stf-e-vorcaro/a-79908320']]});
+
+_N('camara_hediondo_maus_tratos_animais', {ed:'politica', k:'Política · Câmara', hora:'11/11',
+ t:'Câmara aprova projeto que torna hediondo o crime de maus-tratos de cães e gatos com morte do animal; texto vai ao Senado',
+ sub:'A lei atual prevê pena de até 6 anos; a proposta torna o crime inafiançável e dificulta a progressão de pena.',
+ resumo:'A Câmara dos Deputados aprovou, na quarta (11), projeto que torna crime hediondo os maus-tratos a cães e gatos que resultem em morte. A legislação atual já prevê pena de até 6 anos, e a proposta torna o crime inafiançável e dificulta a progressão de pena, informa a CNN Brasil. O texto segue ao Senado e, se aprovado de novo, vai à sanção do presidente Lula, informa o Metrópoles.',
+ fundo:`A Câmara dos Deputados aprovou na quarta-feira (11) o projeto que classifica como crime hediondo os maus-tratos a cães e gatos quando resultam na morte do animal. A legislação em vigor já prevê pena de até 6 anos nesses casos, e a proposta aprovada torna o crime inafiançável e dificulta a progressão de pena, informa a CNN Brasil.
+## Por que importa
+O enquadramento como hediondo muda o tratamento penal: fiança deixa de ser possível e o condenado leva mais tempo para progredir de regime. É um dos temas de apelo popular mais forte no Congresso, e a votação ocorre depois de a Câmara aprovar urgência para o texto no início do ano, informa a Band.
+## O que vem agora
+Segundo o Metrópoles, a proposta segue ao Senado e, se for aprovada de novo sem mudanças, vai à sanção do presidente Luiz Inácio Lula da Silva (PT). Se os senadores alterarem o texto, ele volta à Câmara.
+## O que ainda não está confirmado
+- A data de votação no Senado e o relator.
+- O placar da votação na Câmara, que não consta nos textos lidos.`,
+ fontes:[['CNN Brasil (Câmara torna crime hediondo maus-tratos que causarem morte de animal)','https://www.cnnbrasil.com.br/politica/camara-torna-crime-hediondo-maus-tratos-que-causarem-morte-de-animal/'],['Metrópoles (Câmara aprova projeto)','https://www.metropoles.com/sao-paulo/camara-aprova-projeto-que-torna-maus-tratos-a-animais-crime-hediondo'],['UOL (Câmara transforma maus-tratos em crime hediondo)','https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/11/camara-aprova-crime-hediondo-por-maus-tratos-que-matem-caes-e-gatos.ghtm'],['O Globo (Câmara aprova projeto)','https://oglobo.globo.com/brasil/noticia/2026/11/11/camara-aprova-projeto-que-torna-crime-hediondo-o-crime-de-maus-tratos-a-animais.ghtml']]});
+
+_N('pf_celular_ameacas_ana_elisa', {ed:'politica', k:'Política · Segurança', hora:'11/11',
+ t:'PF faz buscas no Sul de Minas e apreende o celular de suspeito de ameaçar de morte a deputada federal eleita Ana Elisa',
+ sub:'A Polícia Federal investiga ameaças de morte, de estupro e racistas contra a parlamentar eleita por Minas Gerais; o Ministério da Justiça reforçou a segurança dela.',
+ resumo:'A Polícia Federal (PF) cumpriu mandado de busca na casa de um suspeito de ameaçar a deputada federal eleita Ana Elisa em cidade do Sul de Minas e apreendeu o celular dele, informa o g1 Minas. A PF abriu inquérito sobre as ameaças de morte e de estupro, e o Ministério da Justiça reforçou as medidas de segurança da deputada, informam o Congresso em Foco e o DGABC. O nome do suspeito não foi divulgado nos textos lidos.',
+ fundo:`A Polícia Federal (PF) cumpriu na quarta-feira (11) mandado de busca na casa de um suspeito de ameaçar a deputada federal eleita Ana Elisa e apreendeu o celular dele, em município do Sul de Minas, informam o g1 Minas e o Correio Braziliense. A ação é um desdobramento do inquérito aberto pela PF para apurar ameaças de morte e de estupro contra a parlamentar eleita por Minas Gerais.
+## Por que importa
+O caso é um teste da proteção a parlamentares eleitas antes da posse. O Ministério da Justiça acionou a PF e reforçou a segurança de Ana Elisa depois da denúncia dela, informam o Congresso em Foco e o DGABC. A deputada relatou ameaças durante a campanha, e o caso inclui mensagens de cunho racista, segundo reportagens sobre a denúncia.
+## O que vem agora
+A PF analisa o conteúdo do celular apreendido. Os resultados podem levar a indiciamento, ao pedido de medidas cautelares ou à identificação de outros autores. Informações da PF indicam ainda a requisição de dados a provedores no exterior, segundo o BP Money.
+## O que ainda não está confirmado
+- A identidade do suspeito, que não aparece nos textos lidos.
+- Se há outros alvos de investigação além do dono do celular.`,
+ fontes:[['g1 Minas (PF faz buscas na casa de suspeito)','https://g1.globo.com/mg/sul-de-minas/noticia/2026/11/11/pf-faz-buscas-na-casa-de-suspeito-de-ameacar-deputada-federal-eleita-ana-elisa-e-apreende-celular-em-mg.ghtml'],['Correio Braziliense (PF cumpre mandado de busca)','https://www.correiobraziliense.com.br/politica/2026/11/7537172-pf-cumpre-mandado-de-busca-em-investigacao-sobre-ameacas-a-ana-elisa.html'],['Congresso em Foco (PF abre inquérito)','https://www.congressoemfoco.com.br/noticia/131402/pf-abre-inquerito-para-investigar-ameacas-de-morte-contra-ana-elisa'],['DGABC (Ministério da Justiça reforça segurança)','https://www.dgabc.com.br/Noticia/4367681/pf-investiga-ameacas-a-ana-elisa-e-ministerio-da-justica-reforca-medidas-de-seguranca']]});
+
+_N('bb_lucro_3t26_queda_agro', {ed:'economia', k:'Economia · Bancos', hora:'11/11',
+ t:'Lucro do Banco do Brasil cai 66,5% no terceiro trimestre, a inadimplência sobe a 6,08% e o banco corta a previsão para 2026',
+ sub:'A inadimplência do agronegócio pesa no balanço; o banco também reduz dividendos, informa O Globo.',
+ resumo:'O Banco do Brasil registrou queda de 66,5% no lucro líquido ajustado do terceiro trimestre, e a inadimplência subiu para 6,08%, informa a CNN Brasil. O banco cortou a previsão de lucro de 2026 e reduziu dividendos, segundo O Globo. A Folha informa que o resultado operacional do segundo maior banco do país em ativos ficou negativo em R$ 906 mil. O UOL cita queda de 65,6% no lucro líquido, número que difere do ajustado.',
+ fundo:`O Banco do Brasil (BB) informou na quarta-feira (11) queda de 66,5% no lucro líquido ajustado do terceiro trimestre, com a inadimplência subindo para 6,08%, informa a CNN Brasil. O banco cortou a previsão de lucro para 2026 e reduziu dividendos, segundo O Globo; a Folha informa que o resultado operacional ficou negativo em R$ 906 mil.
+NUMS 66,5%|queda do lucro líquido ajustado;6,08%|inadimplência;R$ 906 mil|resultado operacional negativo (Folha)
+## Por que importa
+O BB é banco público e controlado pela União, e dividendos menores reduzem a receita do Tesouro justamente quando o governo tenta fechar as contas de 2027. A pressão vem do crédito ao agronegócio, segundo O Globo, num momento em que o Congresso discute o ajuste fiscal.
+## Contexto
+O banco já havia sofrido forte queda de lucro no terceiro trimestre do ano passado, de 60,2%, e então esperava uma virada da inadimplência agro a partir do primeiro trimestre de 2026, informa a CNN Brasil. A nova queda indica que a virada não ocorreu.
+## O que vem agora
+Analistas e o mercado reagem à revisão das projeções, e o Congresso discute dívida rural e seguro rural.
+## O que ainda não está confirmado
+- A diferença entre os números de lucro: o UOL cita queda de 65,6% no lucro líquido e a CNN Brasil, 66,5% no ajustado.
+- O valor final de dividendos que o BB distribuirá.`,
+ fontes:[['CNN Brasil (Banco do Brasil ceifa previsão de lucro para 2026)','https://www.cnnbrasil.com.br/economia/money/negocios/banco-do-brasil-ceifa-previsao-de-lucro-para-2026-apos-tombo-no-3o-tri/'],['O Globo (lucro do Banco do Brasil cai no 3º trimestre)','https://oglobo.globo.com/economia/negocios/noticia/2026/11/11/com-atrasos-do-agronegocio-lucro-do-banco-do-brasil-cai-a-r-13-bilhao-no-3o-trimestre.ghtml'],['g1 (Lucro do Banco do Brasil cai 66,5%)','https://g1.globo.com/economia/noticia/2026/11/11/banco-do-brasil-bb-resultados-3t26.ghtml'],['Folha (queda de 66,5% no lucro)','https://c-level.folha.uol.com.br/financas/2026/11/banco-do-brasil-tem-queda-de-65-no-lucro-com-inadimplencia-do-agronegocio.shtml'],['UOL (lucro líquido cai 65,6%)','https://economia.uol.com.br/noticias/redacao/2026/11/11/banco-do-brasil-balanco-terceiro-trimestre-2026-3t26.ghtml']]});
+
+_N('trancoso_faccao_operacao_ba', {ed:'regioes', reg:'ne', k:'Nordeste · Bahia', hora:'11/11',
+ t:'Polícia da Bahia prende liderança indígena em operação contra grupo suspeito de expulsar mais de 40 moradores em Trancoso',
+ sub:'O UOL descreve o alvo como facção; o g1 Bahia e O Globo noticiam a prisão da liderança.',
+ resumo:'A polícia da Bahia prendeu uma liderança indígena em operação contra grupo suspeito de expulsar moradores de Trancoso, no extremo sul do estado. O UOL informa que o alvo é uma facção suspeita de expulsar mais de 40 moradores; O Globo e o g1 Bahia noticiam a prisão.',
+ fundo:`A polícia da Bahia prendeu na quarta-feira (11) uma liderança indígena em operação contra um grupo suspeito de expulsar moradores de Trancoso, distrito de Porto Seguro, informam O Globo e o g1 Bahia. O UOL descreve o grupo como facção e diz que mais de 40 moradores foram expulsos.
+## Por que importa
+O caso une disputa territorial, crime organizado e povos indígenas numa das regiões turísticas mais valorizadas do Nordeste. As fontes não detalham a motivação, e a prisão de uma liderança indígena costuma gerar reação de entidades da área.
+## O que vem agora
+A Justiça decide sobre a prisão, e a polícia segue as investigações sobre os autores das expulsões.
+## O que ainda não está confirmado
+- O nome da liderança presa e a defesa dela.
+- Se o grupo é de fato uma facção e qual a relação dele com a comunidade indígena.`,
+ fontes:[['O Globo (Polícia da Bahia prende liderança indígena)','https://oglobo.globo.com/brasil/noticia/2026/11/11/policia-da-bahia-prende-lideranca-indigena-em-acao-contra-grupo-suspeito-de-expulsar-moradores-de-trancoso.ghtml'],['UOL (Facção vira alvo de operação em Trancoso)','https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/11/faccao-e-suspeita-de-expulsar-mais-de-40-moradores-em-trancoso.ghtm']]});
+
+_N('alcolumbre_motta_ultimato_stf_cop', {ed:'politica', k:'Política · Bastidor', hora:'11/11', fonteunica:true,
+ t:'Alcolumbre e Motta não viajaram com Lula para a COP31 após ultimato sobre a indicação ao STF, informa Lauro Jardim',
+ sub:'O blog de O Globo liga a ausência dos presidentes do Senado e da Câmara ao impasse sobre a vaga no Supremo.',
+ resumo:'O presidente do Senado, Davi Alcolumbre (União-AP), e o da Câmara, Hugo Motta (Republicanos-PB), não viajaram com Lula à COP31 após um ultimato sobre a indicação ao Supremo, informa o blog de Lauro Jardim, em O Globo.',
+ fundo:`O blog de Lauro Jardim, em O Globo, informa que o presidente do Senado, Davi Alcolumbre (União-AP), e o da Câmara, Hugo Motta (Republicanos-PB), não viajaram com o presidente Luiz Inácio Lula da Silva (PT) para a COP31, em Antália, na Turquia, depois de um ultimato sobre a indicação ao Supremo Tribunal Federal (STF).
+## O que sustenta a informação
+A informação é do blog, sem confirmação oficial nos textos lidos. O contexto é o impasse da vaga no STF, tema dos últimos dias no Congresso, e a comitiva de Lula à COP31, que o governo detalhou nos últimos dias.
+## O que não foi confirmado
+- O conteúdo do ultimato e o prazo dado ao Planalto.
+- Se a ausência na viagem tem relação direta com o impasse ou com a agenda dos dois.
+## O que vem agora
+Lula volta ao Brasil por volta de 16 de novembro, e a indicação ao STF segue sem data.`,
+ fontes:[['O Globo (Lauro Jardim)','https://oglobo.globo.com/blogs/lauro-jardim/post/2026/11/alcolumbre-e-motta-nao-viajaram-com-lula-para-a-cop-31-apos-ultimato-sobre-indicacao-ao-stf.ghtml']]});
+
+_U('ajuste_fiscal_pacote_11_11', {hora:'11/11',
+ t:'Alcolumbre adia para quinta (12) a análise do PLP do ajuste fiscal, que pode melhorar as contas em R$ 54 bi, após queixa de senadores',
+ sub:'Senadores disseram não ter tido tempo de ler o parecer; o presidente do Senado busca consenso e condiciona a votação à posição dos senadores.',
+ resumo:'O presidente do Senado, Davi Alcolumbre (União-AP), suspendeu a sessão e adiou para quinta (12) a análise do projeto de lei complementar do ajuste fiscal, que pode melhorar as contas em R$ 54 bilhões, informa O Globo. Ele queria votar na quarta, mas senadores disseram não ter tido tempo de ler o parecer, informa a CNN Brasil. O governo estima impacto de R$ 50 bi a R$ 60 bi em 2027.',
+ upd:'Alcolumbre adiou a votação de quarta para quinta (12) após queixa de senadores sobre o prazo de leitura do parecer.',
+ fundo:`O presidente do Senado, Davi Alcolumbre (União-AP), suspendeu a sessão e deixou para quinta-feira (12) a análise do projeto de lei complementar (PLP) do ajuste fiscal, que pode melhorar as contas públicas em R$ 54 bilhões, informa O Globo. Alcolumbre queria votar na quarta (11), mas senadores alegaram não ter tido tempo de ler o parecer, informa a CNN Brasil.
+## Por que importa
+O pacote é a resposta do governo à desconfiança do mercado sobre as contas de 2027. O Correio Braziliense informa que Alcolumbre condiciona a votação à posição dos senadores, o que dá à bancada o poder de ditar o ritmo. O ministro Bruno Moretti havia dito que o impacto seria de R$ 50 bi a R$ 60 bi.
+## O que vem agora
+O Senado volta ao tema na quinta (12). Se aprovado, o texto segue para a Câmara.
+## O que ainda não está confirmado
+- Se haverá quórum e consenso para votar na quinta.
+- O impacto final do pacote, que varia de R$ 38,3 bi (XP) a R$ 60 bi (governo).`,
+ fontes:[['O Globo (Alcolumbre deixa para quinta análise do pacote)','https://oglobo.globo.com/economia/noticia/2026/11/11/alcolumbre-deixa-para-quinta-feira-analise-de-pacote-de-r-60-bilhoes-do-governo.ghtml'],['CNN Brasil (Alcolumbre busca consenso)','https://www.cnnbrasil.com.br/politica/alcolumbre-busca-consenso-para-aprovar-plp-do-ajuste-fiscal-nesta-quinta/'],['Correio Braziliense (Alcolumbre condiciona votação)','https://www.correiobraziliense.com.br/politica/2026/11/7537190-alcolumbre-condiciona-votacao-de-ajuste-fiscal-a-posicao-dos-senadores.html']]});
+
+_U('maioridade', {hora:'11/11',
+ t:'Relator aponta amadurecimento do debate sobre redução da maioridade penal e marca votação da PEC na comissão especial para dezembro',
+ sub:'A comissão especial ouviu nesta quarta (11) o alerta de especialistas sobre as falhas do sistema prisional.',
+ resumo:'O relator da PEC da maioridade penal, Mendonça Filho (PL-PE), apontou amadurecimento do debate e marcou a votação para dezembro, informa a Agência Câmara. A comissão especial ouviu na quarta (11) especialistas, que alertaram para a precariedade do sistema prisional, informa a Agência Brasil. O prazo anterior era de parecer até o fim de novembro.',
+ upd:'O relator marcou a votação para dezembro; a comissão ouviu o alerta sobre o sistema prisional.',
+ fundo:`O relator da PEC que reduz a maioridade penal, deputado Mendonça Filho (PL-PE), apontou na quarta-feira (11) amadurecimento do debate na comissão especial e marcou a votação para dezembro, informa a Agência Câmara. Na audiência, especialistas alertaram para as falhas do sistema prisional, informa a Agência Brasil.
+## Por que importa
+A PEC é uma bandeira da oposição e da bancada da segurança. O adiamento para dezembro afasta a votação do calendário de novembro e dá tempo ao governo, que se opõe à redução, mas também aumenta a cobrança de bolsonaristas sobre promessas de campanha.
+## O que vem agora
+A votação na comissão está marcada para dezembro. Depois, a PEC precisa de dois turnos no plenário da Câmara, com 308 votos, e depois segue ao Senado.
+## O que ainda não está confirmado
+- A data exata da votação em dezembro.
+- Se o governo e o centrão fecharão acordo sobre o texto.`,
+ fontes:[['Agência Câmara (Relator aponta amadurecimento do debate)','https://www.camara.leg.br/noticias/1318624-relator-aponta-amadurecimento-do-debate-sobre-reducao-da-maioridade-penal-e-marca-votacao-para-dezembro'],['Agência Brasil (Precariedade do sistema prisional entra no debate)','https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/precariedade-do-sistema-prisional-entra-no-debate-da-maioridade-penal']]});
+
+_U('nvidia_espia_jensen_huang', {hora:'11/11',
+ t:'Conselho da Nvidia se prepara para afastar Jensen Huang após o escândalo, diz jornal; ações caem 9% no pós-mercado',
+ sub:'A Valor cita segundo caso extraconjugal; a empresa investiga a relação do CEO com uma empresária chinesa suspeita de espionagem.',
+ resumo:'O conselho da Nvidia se prepara para afastar o CEO Jensen Huang após o escândalo, diz um jornal citado por O Globo, Folha e Valor, e as ações caíram 9% no pós-mercado. A empresa investiga a relação dele com uma suposta espiã chinesa, informa a BBC Brasil. O conselho poderia se reunir ainda na quarta (11). A Nvidia não confirmou a destituição nos textos lidos.',
+ upd:'O conselho se prepara para afastar Huang, segundo jornal; ações caem 9% no pós-mercado.',
+ fundo:`O conselho da Nvidia se prepara para afastar o CEO Jensen Huang após o escândalo envolvendo a relação dele com uma suposta espiã chinesa, diz um jornal citado por O Globo, Folha e Valor Econômico. As ações da fabricante caíram 9% no pós-mercado, informa O Globo.
+## Por que importa
+A Nvidia é central na disputa tecnológica entre Estados Unidos e China, e a BBC Brasil afirma que Huang é mais importante para a ordem mundial do que outros executivos do setor. A Nvidia abriu investigação independente do conselho, segundo o Olhar Digital.
+## O que vem agora
+A Folha informa que o conselho poderia se reunir ainda na quarta (11) para definir o futuro dele.
+## O que ainda não está confirmado
+- A destituição, que depende de decisão do conselho e que a empresa não confirmou.
+- O conteúdo da investigação.`,
+ fontes:[['O Globo (Conselho da Nvidia se prepara para afastar Huang)','https://oglobo.globo.com/economia/noticia/2026/11/11/conselho-da-nvidia-se-prepara-para-afastar-huang-apos-escandalo-diz-jornal-e-acoes-caem-9percent-no-pos-mercado.ghtml'],['Folha (Nvidia se prepara para destituir o CEO)','https://c-level.folha.uol.com.br/negocios/2026/11/nvidia-se-prepara-para-destituir-o-ceo-jensen-huang-diz-jornal.shtml'],['Valor Econômico (Nvidia prepara destituição)','https://valor.globo.com/empresas/noticia/2026/11/11/nvidia-prepara-destituio-de-jensen-huang-diz-jornal.ghtml'],['BBC Brasil (Jensen Huang: o papel do CEO da Nvidia)','https://www.bbc.com/portuguese/articles/cmg474pw776wo']]});
+
+_U('espanha_greve_geral', {hora:'11/11',
+ t:'Espanha tem a primeira greve geral em 14 anos, com protestos por moradia e salários a 18 dias das eleições',
+ sub:'Sindicatos cobram moradia acessível, controle de aluguéis e melhores salários; a paralisação pressiona governo e oposição.',
+ resumo:'A Espanha teve na quarta (11) a primeira greve geral desde 2012, convocada por sindicatos contra a crise da moradia e o custo de vida, a 18 dias das eleições gerais, informam DW Brasil, BBC Brasil e Folha. Os atos cobram moradia acessível, controle de aluguéis e melhores salários.',
+ upd:'A greve geral ocorreu em 11/11, com multidões nas ruas.',
+ fundo:`A Espanha teve na quarta-feira (11) a primeira greve geral em 14 anos, convocada por sindicatos para protestar contra a crise da moradia e o alto custo de vida, a 18 dias das eleições gerais, informam DW Brasil, BBC Brasil e Folha.
+## Por que importa
+Os sindicatos cobram moradia acessível, controle de aluguéis e melhores salários, e a paralisação pressiona governo e oposição em plena campanha, segundo a DW Brasil. A Majorca Daily Bulletin alertou para cancelamentos de voos e atrasos no transporte.
+## O que vem agora
+As eleições gerais ocorrem em cerca de 18 dias, e a moradia deve ser tema central.
+## O que ainda não está confirmado
+- A adesão total à greve, que sindicatos e governo calculam de modo diferente.`,
+ fontes:[['DW Brasil (Espanha tem primeira greve geral em 14 anos)','https://www.dw.com/pt-br/espanha-tem-primeira-greve-geral-em-14-anos-em-meio-à-crise-habitacional-e-à-campanha-eleitoral/a-79922900'],['BBC Brasil (3 pontos para entender a greve geral)','https://www.bbc.com/portuguese/articles/c58j4le1w32ro'],['Folha (Espanha encara 1ª greve geral desde 2012)','https://www1.folha.uol.com.br/mundo/2026/11/espanha-tem-1o-greve-geral-desde-2012-com-multidao-nas-ruas-as-vesperas-das-eleicoes-legislativas.shtml']]});
+
+_U('operacao_refit_magro', {hora:'11/11',
+ t:'Operação do MPRJ prende 10 acusados no esquema de sonegação do Grupo Refit; mãe, pai, tio e avô do dono estão entre os presos',
+ sub:'Foram apreendidos aviões, carros de luxo, relógios, dinheiro e uma carteira de criptoativos.',
+ resumo:'O Ministério Público do Rio (MPRJ) prendeu 10 acusados de participar de esquema bilionário de sonegação do Grupo Refit, entre eles parentes de Ricardo Magro, informa o g1. A Folha lista dois aviões, sete veículos de luxo, cinco relógios, joias, telefones e dinheiro em espécie apreendidos, e o Valor cita criptomoedas. A reportagem da Folha não localizou a defesa de Magro e dos pais.',
+ upd:'MPRJ prendeu 10 acusados e apreendeu aviões, carros, relógios e criptoativos.',
+ fundo:`O Ministério Público do Rio (MPRJ) cumpriu mandados de prisão contra 10 acusados de participar de esquema bilionário de sonegação do Grupo Refit, entre eles mãe, pai, tio e avô de Ricardo Magro, dono do grupo, informa o g1. A Folha lista dois aviões, sete veículos de luxo, cinco relógios, joias, telefones e dinheiro em espécie apreendidos, e o Valor Econômico cita criptomoedas.
+## Por que importa
+O grupo é investigado por fraudes fiscais, e a operação é um dos maiores golpes contra a sonegação no setor de combustíveis, segundo a cobertura.
+## O que vem agora
+Os presos passam por audiência de custódia, e o MPRJ analisa o material apreendido.
+## O que ainda não está confirmado
+- A defesa de Ricardo Magro e dos pais, que a Folha não localizou.
+- O valor total da sonegação, que as fontes tratam como bilionário sem número exato.`,
+ fontes:[['g1 (Mãe, pai, tio e avô de dono da Refit estão entre presos)','https://g1.globo.com/jornal-nacional/noticia/2026/11/11/operacao-prende-10-acusados-de-participar-de-esquema-bilionario-de-sonegacao-do-grupo-refit.ghtml'],['Folha (operação apreende jatinhos, relógios e carros)','https://c-level.folha.uol.com.br/negocios/2026/11/operacao-contra-ricardo-magro-e-parentes-apreende-jatinhos-relogios-e-carros-de-luxo.shtml'],['Valor Econômico (Operação contra Grupo Refit)','https://valor.globo.com/empresas/noticia/2026/11/11/operacao-contra-grupo-refit-apreendeu-aeronaves-carros-de-luxo-dinheiro-e-criptomoedas.ghtml']]});
+
+_U('fhc_video_indiciado', {hora:'11/11',
+ t:'Casal que gravou vídeo de FHC é indiciado por difamação contra pessoa idosa, com penas que podem chegar a 5 anos; mais de 400 assinam nota de repúdio',
+ sub:'O homem fica proibido de se aproximar do ex-presidente; a nota reúne ex-ministros, empresários e juristas.',
+ resumo:'A Polícia Civil de São Paulo indiciou o casal que gravou e publicou vídeos do ex-presidente Fernando Henrique Cardoso por difamação contra pessoa idosa, com penas de até 5 anos, informam Folha e BBC Brasil. O homem foi proibido de se aproximar de FHC, informa o Estadão. Mais de 400 pessoas assinaram nota de repúdio à exposição, informa O Globo.',
+ upd:'O casal foi indiciado, e mais de 400 assinaram nota de repúdio.',
+ fundo:`A Polícia Civil de São Paulo indiciou o homem que filmou o ex-presidente Fernando Henrique Cardoso (FHC) e o marido dele por difamação contra pessoa idosa, informam Folha, Agência Brasil e BBC Brasil. Os crimes podem render até 5 anos de prisão, segundo a Folha, e o homem foi proibido de se aproximar de FHC, informa o Estadão.
+## Por que importa
+FHC tem Alzheimer e teve a interdição decretada neste ano a pedido dos filhos, informa a BBC Brasil. Uma nota de repúdio com mais de 400 assinaturas, entre ex-ministros, empresários, juristas e economistas, protesta contra a exposição pública do ex-presidente, informa O Globo.
+## O que vem agora
+O inquérito segue ao Ministério Público, que decide sobre a denúncia.
+## O que ainda não está confirmado
+- Se o MP apresentará denúncia e quando.`,
+ fontes:[['Folha (Homem que filmou FHC é indiciado)','https://www1.folha.uol.com.br/colunas/monicabergamo/2026/11/homem-que-filmou-fhc-e-indiciado-por-crimes-que-podem-chegar-a-5-anos-de-prisao.shtml'],['BBC Brasil (Polícia Civil indicia homem que gravou vídeos de FHC)','https://www.bbc.com/portuguese/articles/c6y43492vrzxo'],['Agência Brasil (Polícia Civil indicia influenciador e marido)','https://agenciabrasil.ebc.com.br/geral/noticia/2026-11/policia-civil-indicia-influenciador-e-marido-por-video-na-casa-de-fhc'],['O Globo (Personalidades assinam nota de repúdio)','https://oglobo.globo.com/politica/noticia/2026/11/11/personalidades-assinam-nota-de-repudio-a-exposicao-de-fernando-henrique-cardoso-afronta-a-dignidade-humana.ghtml']]});
+
+_U('lula_delcy_antalia', {hora:'11/11',
+ t:'Lula e Delcy Rodríguez se reúnem pela primeira vez desde a captura de Maduro e discutem petróleo e tarifas, na COP31',
+ sub:'O encontro em Antália, na Turquia, marcou a retomada do diálogo entre Brasil e Venezuela no mais alto nível.',
+ resumo:'Lula e a líder venezuelana Delcy Rodríguez se reuniram pela primeira vez desde a captura de Nicolás Maduro, na COP31, em Antália, na Turquia, informam Folha, Agência Brasil e UOL. Trataram de petróleo, tarifas e da relação bilateral, e ambos defenderam a retomada das relações, informa o Valor.',
+ upd:'Foi a primeira reunião presencial entre Lula e Delcy desde a captura de Maduro.',
+ fundo:`O presidente Luiz Inácio Lula da Silva (PT) e a líder venezuelana Delcy Rodríguez se reuniram na quarta-feira (11), em Antália, na Turquia, durante a COP31, no primeiro encontro presencial entre os dois desde a captura do ex-presidente Nicolás Maduro, informam Folha, Agência Brasil e UOL.
+## Por que importa
+O encontro reabre o diálogo entre Brasil e Venezuela e tratou de tarifas, petróleo e da relação bilateral, segundo o UOL. Ambos defenderam a retomada da relação, informa o Valor Econômico.
+## O que vem agora
+Lula segue às Filipinas e volta ao Brasil por volta de 16 de novembro.
+## O que ainda não está confirmado
+- Quais acordos concretos saíram da reunião.`,
+ fontes:[['Folha (Lula e Delcy se reúnem pela 1ª vez desde captura de Maduro)','https://www1.folha.uol.com.br/mundo/2026/11/lula-e-delcy-rodriguez-se-reunem-pela-1a-vez-desde-captura-de-maduro.shtml'],['UOL (Lula e Delcy debatem petróleo e tarifas)','https://noticias.uol.com.br/politica/ultimas-noticias/2026/11/11/lula-e-delcy-discutem-petroleo-em-1-encontro-apos-sequestro-de-maduro.ghtm'],['Valor Econômico (Lula tem primeira reunião com Delcy)','https://valor.globo.com/brasil/noticia/2026/11/11/lula-tem-primeira-reunio-com-delcy-rodrguez-e-ambos-defendem-retomada-da-relao-bilateral.ghtml']]});
+
+HOME_LEAD = 'pgr_mantem_prisao_vorcaro';
+HOME_ROW = ['ajuste_fiscal_pacote_11_11','bb_lucro_3t26_queda_agro'];
+ORDER.politica = _top(ORDER.politica, ['pgr_mantem_prisao_vorcaro','maioridade','camara_hediondo_maus_tratos_animais','pf_celular_ameacas_ana_elisa','alcolumbre_motta_ultimato_stf_cop','fhc_video_indiciado','lula_delcy_antalia']);
+ORDER.economia = _top(ORDER.economia, ['ajuste_fiscal_pacote_11_11','bb_lucro_3t26_queda_agro','operacao_refit_magro']);
+ORDER.mundo = _top(ORDER.mundo, ['espanha_greve_geral','nvidia_espia_jensen_huang']);
+ORDER.regioes = _top(ORDER.regioes, ['trancoso_faccao_operacao_ba']);
+(function(){
+ var novo=[
+  ['PGR e a prisão de Vorcaro','Gonet pede ao STF que mantenha a preventiva, citando risco às investigações, informa o Poder360.','Poder360','https://www.poder360.com.br/poder-justica/pgr-pede-que-stf-mantenha-prisao-preventiva-de-vorcaro/','','pgr_mantem_prisao_vorcaro'],
+  ['Hediondo para maus-tratos','Câmara aprova projeto que torna hediondo o crime de maus-tratos de cães e gatos com morte, informa a CNN Brasil.','CNN Brasil','https://www.cnnbrasil.com.br/politica/camara-torna-crime-hediondo-maus-tratos-que-causarem-morte-de-animal/','','camara_hediondo_maus_tratos_animais'],
+  ['Ana Elisa e a PF','PF apreende celular de suspeito de ameaçar a deputada eleita, informa o g1 Minas.','g1 Minas','https://g1.globo.com/mg/sul-de-minas/noticia/2026/11/11/pf-faz-buscas-na-casa-de-suspeito-de-ameacar-deputada-federal-eleita-ana-elisa-e-apreende-celular-em-mg.ghtml','','pf_celular_ameacas_ana_elisa'],
+  ['Balanço do Banco do Brasil','Lucro cai 66,5% no 3º trimestre, e a inadimplência sobe a 6,08%, informa a CNN Brasil.','CNN Brasil','https://www.cnnbrasil.com.br/economia/money/negocios/banco-do-brasil-ceifa-previsao-de-lucro-para-2026-apos-tombo-no-3o-tri/','','bb_lucro_3t26_queda_agro'],
+  ['Ultimato e a vaga no STF','Alcolumbre e Motta ficaram fora da comitiva da COP31 após ultimato sobre o STF, informa Lauro Jardim.','O Globo (Lauro Jardim)','https://oglobo.globo.com/blogs/lauro-jardim/post/2026/11/alcolumbre-e-motta-nao-viajaram-com-lula-para-a-cop-31-apos-ultimato-sobre-indicacao-ao-stf.ghtml','','alcolumbre_motta_ultimato_stf_cop'],
+  ['Operação em Trancoso','Polícia da Bahia prende liderança indígena em ação contra grupo suspeito de expulsar moradores, informa O Globo.','O Globo','https://oglobo.globo.com/brasil/noticia/2026/11/11/policia-da-bahia-prende-lideranca-indigena-em-acao-contra-grupo-suspeito-de-expulsar-moradores-de-trancoso.ghtml','','trancoso_faccao_operacao_ba'],
+  ['Pacote fiscal fica para quinta','Alcolumbre adia a análise do PLP do ajuste fiscal após queixa de senadores, informa O Globo.','O Globo','https://oglobo.globo.com/economia/noticia/2026/11/11/alcolumbre-deixa-para-quinta-feira-analise-de-pacote-de-r-60-bilhoes-do-governo.ghtml','','ajuste_fiscal_pacote_11_11']
+ ];
+ GIRO = novo.concat(GIRO.filter(function(g){return novo.every(function(n){return n[0]!==g[0];});})).slice(0,20);
+})();
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"fachin_relatorio_pf_indicio_crime":"novo","poupanca_saques_outubro_sexto_mes":"novo","ira_rezaei_bases_europa":"novo","trump_carta_biden_livro":"novo","rj_campopiano_medalha_chiquinha":"novo","sp_tarcisio_secretario_ciencia_ita":"novo"};
-var GIRO_FLAGS = {"Fachin e o relatório da PF":"novo","Poupança em outubro":"novo","Irã e as bases na Europa":"novo","Carta de Trump a Biden":"novo","Medalha Chiquinha Gonzaga":"novo","Secretário de Ciência em SP":"novo","Cunhado de Vorcaro no STF":"novo"};
+var FLAGS = {"maioridade":"atualizada","espanha_greve_geral":"atualizada","ajuste_fiscal_pacote_11_11":"atualizada","operacao_refit_magro":"atualizada","nvidia_espia_jensen_huang":"atualizada","lula_delcy_antalia":"atualizada","fhc_video_indiciado":"atualizada","pgr_mantem_prisao_vorcaro":"novo","camara_hediondo_maus_tratos_animais":"novo","pf_celular_ameacas_ana_elisa":"novo","bb_lucro_3t26_queda_agro":"novo","trancoso_faccao_operacao_ba":"novo","alcolumbre_motta_ultimato_stf_cop":"novo"};
+var GIRO_FLAGS = {"PGR e a prisão de Vorcaro":"novo","Hediondo para maus-tratos":"novo","Ana Elisa e a PF":"novo","Balanço do Banco do Brasil":"novo","Ultimato e a vaga no STF":"novo","Operação em Trancoso":"novo","Pacote fiscal fica para quinta":"novo"};
 /* ===== FIM DOS DADOS ===== */
