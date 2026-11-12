@@ -13976,22 +13976,18 @@ _N('zanin_nega_liminar_psd_2turno_rj', {ed:'regioes', reg:'rj', k:'Regiões · R
  t:'Zanin nega liminar do PSD de Eduardo Paes e mantém o Rio sem segundo turno para o governo estadual',
  sub:'O ministro do STF afirmou que a ação proposta pelo partido buscou "pular" o recurso da decisão anterior; O Globo, Folha, g1, UOL, Metrópoles, Valor e Terra destacam o caso nas capas desta quinta (12).',
  resumo:'O ministro Cristiano Zanin, do Supremo Tribunal Federal, rejeitou nesta quinta-feira (12) a liminar pedida pelo PSD, partido do ex-prefeito Eduardo Paes, para que o Rio de Janeiro tivesse segundo turno na eleição ao governo estadual. Segundo a coluna de Bela Megale, em O Globo, Zanin entendeu que a ação procurou "pular" o recurso cabível contra a decisão anterior. A negativa mantém o resultado que deu a vitória a Douglas Ruas (PL). O caso segue com as retotalizações já noticiadas pelo Radar.',
- fundo:`O ministro Cristiano Zanin, do Supremo Tribunal Federal (STF), negou nesta quinta-feira (12) a liminar apresentada pelo PSD, partido de Eduardo Paes, para que a eleição ao governo do Rio de Janeiro tivesse segundo turno. O Globo, a Folha, o g1, o UOL, o Metrópoles, o Valor Econômico e o Terra registram a decisão, e o g1 e o UOL a descrevem como nova negativa ao partido.
-NUMS 7|veículos que destacam a decisão nas capas e feeds desta quinta;12/11|data da decisão;PSD|autor da ação;Zanin|relator no STF
-## O que o ministro decidiu
-A coluna de Bela Megale, em O Globo, informa que Zanin rejeitou o pedido de liminar com o argumento de que a ação proposta pelo PSD procurou "pular" o recurso cabível contra a decisão anterior, ou seja, usou outro caminho processual para tentar o mesmo resultado. Com a negativa, não há determinação do Supremo para a realização de segundo turno no estado.
-## Por que importa
-A decisão fecha, por ora, o caminho que o PSD tentava abrir no STF para reverter o resultado da eleição fluminense, em que Douglas Ruas (PL) aparece como vencedor. O Radar acompanha o tema desde 11/11, com a matéria sobre a ação no Supremo e a retotalização dos votos publicada em 12/11.
-## Quem é quem
-- PSD: partido de Eduardo Paes, ex-prefeito do Rio e candidato ao governo estadual; autor da ação.
-- Douglas Ruas: candidato do PL (direita) ao governo do Rio, apontado como vencedor da disputa.
-- Cristiano Zanin: ministro do STF, relator da ação.
+ fundo:`Para entender a decisão, é preciso voltar ao primeiro turno. Em 4 de outubro, Douglas Ruas (PL) teve 49,27% dos votos válidos no Rio de Janeiro e Eduardo Paes (PSD), 42,76%, e ninguém alcançou a maioria absoluta. Em 8 de outubro, o Tribunal Superior Eleitoral manteve o indeferimento da candidatura de Anthony Garotinho (Republicanos) e, por 5 votos a 2, anulou os 274.411 votos que ele recebeu. Com a nova base de cálculo, Ruas chegou a 50,88% e foi declarado eleito no primeiro turno.
+NUMS 12/11|data da decisão;PSD|autor da ação;Zanin|relator no STF
+
+O PSD sustenta que a necessidade de segundo turno deveria seguir o resultado das urnas, e que a exclusão posterior dos votos de Garotinho não poderia eliminar a segunda votação. Paes argumenta que, sem esses votos, Ruas não teria alcançado mais da metade dos válidos. Em outubro, Zanin, relator da ação (ADPF 1362) e indicado ao Supremo por Lula, já havia negado um pedido de Paes para que o segundo turno fosse determinado. Na terça-feira (10), ele recebeu os advogados de Paes, Gustavo Schmidt e Felipe Santa Cruz, e sinalizou a interlocutores que decidiria em até 15 dias os próximos passos do processo.
+
+Nesta quinta (12), Zanin rejeitou a liminar pedida pelo PSD. Segundo a coluna de Bela Megale, em O Globo, ele entendeu que a ação procurou "pular" o recurso cabível contra a decisão anterior, ou seja, buscou por outro caminho processual o mesmo resultado. Com a negativa, não há determinação do Supremo para a realização de segundo turno no estado, e a vitória de Ruas se mantém. O g1 e o UOL descrevem a decisão como uma nova negativa ao partido de Paes.
+
 ## O que vem agora
-- O PSD pode recorrer da decisão individual de Zanin, ao plenário do STF; o partido não informou, nas matérias lidas pelo Radar, se vai fazê-lo.
-- A diplomação dos eleitos segue o calendário da Justiça Eleitoral, com data em dezembro.
+O PSD pode recorrer da decisão individual de Zanin ao plenário do STF. O partido não informou, nas matérias consultadas pelo Radar, se fará isso nem em que prazo. A diplomação dos eleitos segue o calendário da Justiça Eleitoral, com data em dezembro.
+
 ## O que ainda não está confirmado
-- Se o PSD apresentará recurso e em que prazo.
-- O conteúdo integral da decisão: o Radar trabalha com o resumo publicado por O Globo, g1 e UOL.`,
+Não está confirmado se o PSD vai recorrer, em que prazo, e se os pareceres da PGR e da AGU que Zanin havia pedido antes da decisão já foram entregues. O Radar trabalha com o resumo publicado por O Globo, g1 e UOL, e não com o texto integral da decisão.`,
  fontes:[['O Globo (Bela Megale)','https://oglobo.globo.com/blogs/bela-megale/post/2026/11/zanin-rejeita-pedido-do-psd-para-realizacao-de-segundo-turno-no-rio.ghtml'],['g1','https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/11/12/zanin-nega-liminar-do-psd-para-realizar-2o-turno-ao-governo-do-rj.ghtml'],['Metrópoles (Manoela Alcântara)','https://www.metropoles.com/colunas/manoela-alcantara/zanin-nega-pedido-do-psd-para-restabelecer-2o-turno-no-rio-de-janeiro']]});
 
 _N('milton_leite_reu_pcc', {ed:'regioes', reg:'sp', k:'Regiões · São Paulo', hora:'12/11',
