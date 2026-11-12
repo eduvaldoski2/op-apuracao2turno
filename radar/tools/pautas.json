@@ -13,7 +13,7 @@
         "pena_cofre",
         "ueno_pagamentos"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": false,
       "ultimo_fato": "11/11: o BCP conclui os pagamentos da garantia do Ueno, que cobre US$ 740 mi dos US$ 2,8 bi em depósitos (27%); o BCP tem 15 dias para oferecer a carteira a outras instituições (EFE).",
       "proximo": "Prazo de 15 dias do BCP; pagamento a aposentados do IPS em 17/11; recurso da defesa contra a preventiva; sanção ficta do Orçamento (14/11)."
@@ -34,12 +34,14 @@
         "cop31_antalya",
         "lula_sri_centrao",
         "lula_antalia_comitiva",
-        "brasil_mapa_fosseis"
+        "brasil_mapa_fosseis",
+        "cop31_lula_pezeshkian",
+        "cop31_tfff_lula_sem_voz"
       ],
-      "verificada": "2026-11-12-07h",
-      "fato_novo": false,
-      "ultimo_fato": "11/11: Lula discursa na COP31 e pede US$ 1,3 tri por ano em financiamento climático; no evento de florestas, Capobianco lê o discurso porque o presidente está rouco (WSCOM, Área VIP); o roteiro dos fósseis fica para a COP32, em 2027 (Eixos)",
-      "proximo": "Segundo dia da cúpula (12), TFFF e bilaterais; Filipinas e Asean entre 13 e 15; volta a Brasília em 16; ministério e ministro da Fazenda seguem sem data"
+      "verificada": "2026-11-12-11h",
+      "fato_novo": true,
+      "ultimo_fato": "12/11: Lula se reúne com o presidente do Irã, Masoud Pezeshkian, na COP31; em 11/11 pediu apoio ao TFFF, que soma quase US$ 8 bi (O Tempo; Folhapress).",
+      "proximo": "Cúpula da Asean nas Filipinas (14 e 15); volta a Brasília por volta de 16/11."
     },
     {
       "id": "tse-acoes",
@@ -53,7 +55,7 @@
         "tse_21_acoes",
         "dallagnol_tse_pauta"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": false,
       "ultimo_fato": "10/11: recurso contra o registro de Dallagnol segue fora da pauta do TSE há mais de um mês; diplomação em 18/12 (Congresso em Foco). Ação do Novo contra a chapa Lula-Alckmin sem fato novo.",
       "proximo": "Defesa da chapa Lula-Alckmin; data do julgamento de Dallagnol."
@@ -70,7 +72,7 @@
         "flavio_pesquisa",
         "quaest_pos_eleicao"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": false,
       "ultimo_fato": "11/11: sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio; o último registro é de 5/11.",
       "proximo": "Decisão da Mesa do Senado; resposta de Rubio até 13/11."
@@ -95,7 +97,7 @@
         "mp_bets_prorrogada",
         "quaest_partidos_pl_pt"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": false,
       "ultimo_fato": "10/11: Senado adia Escazú e manda o texto à CRE; Câmara aprova as MPs das dívidas rurais e do Brasil Soberano; o PL decide em 11/11 sobre Motta. | 11/11 (16h): Alcolumbre diz que vota a maioridade penal em 2026 se a Câmara votar; Congresso prorroga por 60 dias a MP das bets.",
       "proximo": "Bancada do PL (11/11); MP 1.376 vence no Senado em 11/11; CRE em 17/11; Mesas em 1º/02/2027."
@@ -110,8 +112,8 @@
         "maioridade",
         "maioridade_audiencias"
       ],
-      "verificada": "2026-11-12-07h",
-      "fato_novo": true,
+      "verificada": "2026-11-12-11h",
+      "fato_novo": false,
       "ultimo_fato": "11/11: o relator Mendonça Filho (PL-PE) aponta amadurecimento do debate e marca a votação da PEC da maioridade penal na comissão especial para dezembro (Agência Câmara). Câmara aprova projeto que torna hediondo o crime de maus-tratos de cães e gatos com morte (CNN Brasil).",
       "proximo": "Votação da PEC na comissão em dezembro; Senado analisa o projeto dos animais."
     },
@@ -123,7 +125,7 @@
       "materias": [
         "dino_6x1"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": false,
       "ultimo_fato": "10/11: Dino encerra a audiência sem acordo, mantém 16/12 e anuncia decisão sobre a transição até sexta (13), a ser levada ao plenário (Revista Fórum, Terra).",
       "proximo": "Decisão de Dino (13/11); pauta no plenário; decreto do governo após 16/11."
@@ -151,12 +153,14 @@
         "balancos_10_11",
         "ajuste_fiscal_pacote_11_11",
         "cbs_prazo_pressao_adiar",
-        "operacao_refit_magro"
+        "operacao_refit_magro",
+        "ipca_outubro_12_11",
+        "nvidia_espia_jensen_huang"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": true,
-      "ultimo_fato": "11/11: Alcolumbre adia para quinta (12) a análise do PLP do ajuste fiscal (impacto de R$ 54 bi, segundo O Globo); BB tem queda de 66,5% no lucro do 3º tri (CNN Brasil).",
-      "proximo": "Votação do PLP no Senado em 12/11; IPCA de outubro em 12/11."
+      "ultimo_fato": "12/11: IPCA de outubro sobe 0,14% e fecha 12 meses em 4,63%, acima do teto da meta (Folhapress/O Tempo); o Senado retoma às 16h a sessão do PLP 299 do ajuste fiscal, e Alcolumbre só vota com acordo (InfoMoney).",
+      "proximo": "Sessão do Senado às 16h de 12/11; balanço da Nvidia em 17/11."
     },
     {
       "id": "eua-meio-mandato",
@@ -170,7 +174,7 @@
         "eua_senado_mississippi_alasca",
         "eua_tarifas_300"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": false,
       "ultimo_fato": "10/11: Colom (D) lidera no Mississippi por 2.574 votos, com certificação em 13/11; Peltola (D) tem menos de 700 votos de vantagem no Alasca; Casa Branca diz que as tarifas seguem.",
       "proximo": "Certificação do Mississippi (13/11); contagem ranqueada do Alasca (após 18/11); certificação em 25/11."
@@ -186,7 +190,7 @@
         "zaporizhzhia",
         "ucrania_abudhabi"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": false,
       "ultimo_fato": "11/11: Rússia, Ucrânia e EUA fecham a rodada em Abu Dhabi; no dia 1 houve mais de 4 horas de conversas, e a Rússia atingiu seis subestações elétricas (PBS, The National).",
       "proximo": "Balanço do dia 2; troca de prisioneiros; nova ida de delegação americana a Moscou."
@@ -199,7 +203,7 @@
       "materias": [
         "israel"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": false,
       "ultimo_fato": "10/11: Knesset toma posse e o bloco de Eisenkot indica Matan Kahana para presidir a Casa, com mais de 61 assinaturas; votação esperada em 17/11 (Times of Israel, Jerusalem Post).",
       "proximo": "Votação do presidente da Knesset (17/11); mandato de Eisenkot até 6/12."
@@ -215,7 +219,7 @@
         "ira_iron_gate",
         "khor_mor"
       ],
-      "verificada": "2026-11-12-07h",
+      "verificada": "2026-11-12-11h",
       "fato_novo": false,
       "ultimo_fato": "10/11: Trump diz que novos ataques ao Irã não são necessários por ora.",
       "proximo": "Resposta dos EUA à proposta; APEC."
@@ -224,63 +228,63 @@
   "varredura": [
     {
       "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     },
     {
       "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-      "feita": "2026-11-12-07h",
-      "achado": "Edição das 07h de 12/11: leitura das capas e feeds do coletor (O Globo, Folha, Estadão, g1, Agência Brasil, UOL, CNN, Poder360 e outros, até 21h58 de 11/11) e buscas em veículos abertos; o que apareceu entrou nas matérias de 11/11 (PGR e Vorcaro, pacote fiscal, Banco do Brasil, Espanha, Nvidia, Refit). Nada novo além disso neste tema."
+      "feita": "2026-11-12-11h",
+      "achado": "Edição das 11h de 12/11: WebSearch em veículos abertos (O Tempo, InfoMoney, SBT News, JN, Jornal de Brasília) e leitura das capas do coletor (até 21h58 de 11/11, coletor parado). Entraram IPCA de outubro, PLP 299 no Senado, conselho da Nvidia, Lula na COP31 (Irã e TFFF). Nada novo além disso neste tema."
     }
   ]
 }

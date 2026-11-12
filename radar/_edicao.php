@@ -13358,7 +13358,184 @@ ORDER.regioes = _top(ORDER.regioes, ['trancoso_faccao_operacao_ba']);
  GIRO = novo.concat(GIRO.filter(function(g){return novo.every(function(n){return n[0]!==g[0];});})).slice(0,20);
 })();
 
+
+/* ===== EDIÇÃO 11h de 12/11 ===== */
+EDICAO.hora = '11h';
+EDICAO.data = 'Quinta, 12 de novembro de 2026';
+
+_N('ipca_outubro_12_11', {ed:'economia', k:'Economia · Inflação', hora:'12/11', semAtores:true,
+ t:'IPCA sobe 0,14% em outubro, abaixo do esperado, e a inflação em 12 meses vai a 4,63%, acima do teto da meta',
+ sub:'A queda da energia elétrica puxou o resultado para baixo; alimentos subiram 1,04%, o maior avanço entre os grupos.',
+ resumo:'O IPCA de outubro subiu 0,14%, ante 0,82% em setembro, informa o IBGE, segundo a Folhapress no jornal O Tempo. O resultado ficou abaixo da mediana de 0,25% dos analistas ouvidos pela Bloomberg e do Focus (0,26%). Em 12 meses, a inflação foi de 4,58% para 4,63%, acima do teto de 4,5% da meta. A energia elétrica residencial recuou 1,92%, e alimentos e bebidas subiram 1,04%.',
+ fundo:`O Índice Nacional de Preços ao Consumidor Amplo (IPCA) subiu 0,14% em outubro, após alta de 0,82% em setembro, informou o IBGE nesta quinta-feira (12). O resultado ficou abaixo da mediana de 0,25% das projeções de 35 analistas consultadas pela Bloomberg, cujo intervalo ia de 0,18% a 0,50%, e do 0,26% do boletim Focus, informa a Folhapress em texto publicado pelo jornal O Tempo.
+NUMS 0,14%|IPCA de outubro (setembro: 0,82%);4,63%|acumulado em 12 meses (setembro: 4,58%);-1,92%|energia elétrica residencial;+1,04%|alimentos e bebidas, maior alta entre os grupos
+## Por que importa
+Em 12 meses, o índice passou de 4,58% para 4,63% e permanece acima do teto de 4,5% da meta de inflação, de 3% com tolerância de 1,5 ponto para cima e para baixo. A meta é considerada descumprida quando o acumulado fica fora da faixa por seis meses seguidos. O Banco Central manteve a Selic em 13,75% na semana passada e escreveu que as expectativas seguem acima da meta em todos os horizontes.
+## O que puxou o índice
+A energia elétrica residencial passou de alta de 7,98% em setembro, quando acabou o desconto temporário ligado ao bônus de Itaipu, para queda de 1,92% em outubro, principal fator da desaceleração, segundo o IBGE. O grupo transportes recuou 0,59%, com queda de 9,21% nas passagens aéreas e de 0,56% na gasolina; o diesel subiu 1,66% e o etanol, 1,02%.
+Alimentação e bebidas avançaram 1,04% e deram 0,22 ponto percentual ao índice. O gerente do IPCA no IBGE, Fernando Gonçalves, citou tomate e carnes entre os itens que pesaram.
+## Contexto
+Em outubro de 2025 o índice havia subido 0,09%, e em outubro de 2024, 0,56%. Para 2026 o Focus projeta IPCA de 5,22%, e o Banco Central, de 5,6%. O dado chega no mesmo dia em que o Senado tenta votar o ajuste fiscal, tema que o mercado associa à trajetória dos juros.
+## O que vem agora
+O IPCA de novembro sai em dezembro, e o Copom volta a se reunir no fim do ano para decidir a Selic.
+## O que ainda não está confirmado
+- O acumulado no ano e os números por região, que as fontes lidas não trazem.
+- Se a desaceleração da energia se mantém em novembro, mês em que a bandeira tarifária pode mudar.`,
+ fontes:[['O Tempo (Folhapress): inflação fica em 0,14% em outubro','https://www.otempo.com.br/economia/2026/11/12/ibge-inflacao-fica-em-0-14-em-outubro-abaixo-das-expectativas'],['Agência IBGE: inflação desacelera e fica em 0,14%','https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/48569-inflacao-desacelera-e-fica-em-0-14-em-outubro'],['Diario de Pernambuco: IPCA sobe 0,14%','https://www.diariodepernambuco.com.br/economia/2026/11/11728946-ipca-de-outubro-sobe-014-ante-alta-de-082-em-setembro-revela-ibge.html']]});
+
+_U('ajuste_fiscal_pacote_11_11', {hora:'12/11', semAtores:false,
+ t:'Senado tenta votar hoje, às 16h, o PLP 299 do ajuste fiscal; Alcolumbre diz que "sente a temperatura" e, sem acordo, deixa para a semana que vem',
+ sub:'O relator Eduardo Braga (MDB-AM) estima melhora de R$ 43 bi a R$ 54 bi em 2027; o PT está dividido e a oposição pede mais tempo.',
+ resumo:'O Senado marcou para as 16h de quinta (12) a retomada da sessão do projeto de lei complementar 299/2026, o ajuste fiscal do governo, informa a InfoMoney. O presidente Davi Alcolumbre (União-AP) disse que vota se houver acordo; senão, fica para a semana que vem. O relator Eduardo Braga (MDB-AM) estima melhora de R$ 43 bi a R$ 54 bi no resultado primário de 2027, e o governo fala em R$ 50 bi a R$ 60 bi. O PT tem racha, e a oposição pediu mais tempo.',
+ upd:'A sessão foi marcada para as 16h de quinta (12); Alcolumbre condiciona a votação ao acordo, e o relator detalhou as medidas.',
+ fundo:`O Senado retoma às 16h desta quinta-feira (12) a sessão em que pode votar o projeto de lei complementar (PLP) 299/2026, o pacote de ajuste fiscal do governo, informa a InfoMoney. O presidente da Casa, Davi Alcolumbre (União-AP), disse que vai "sentir a temperatura" ao longo do dia: se houver acordo, vota; se não, o texto fica para a semana que vem. Na quarta (11), a sessão foi suspensa depois que senadores pediram mais tempo para ler o parecer.
+NUMS R$ 43 bi a R$ 54 bi|melhora no primário de 2027 segundo o parecer;R$ 50 bi a R$ 60 bi|estimativa do ministro Bruno Moretti;2,5% para 2,0%|limite de alta real da despesa quando acionado;R$ 10,5 bi|abatimento da meta de 2026 para o diesel
+## O que o projeto prevê
+O texto, apresentado pelo senador Jaques Wagner (PT-BA) em nome da Fazenda na tarde de quarta, autoriza o Executivo a mirar o centro da meta de resultado primário, e não o piso da margem, ao bloquear gastos. Reduz de 2,5% para 2,0% ao ano o limite de crescimento real da despesa quando o mecanismo for acionado e restringe o uso de créditos tributários por empresas. Corta benefícios fiscais, exclui receitas extraordinárias de petróleo e gás do cálculo do piso da saúde e permite desvincular até 40% do superávit financeiro de fundos, segundo SBT News, Poder News e Repórter Nordeste. Autoriza ainda abater até R$ 10,5 bi da meta de 2026 para a subvenção ao diesel e dá 120 dias, após a sanção, para o Congresso regulamentar os supersalários.
+## Quem é quem
+O relator, Eduardo Braga (MDB-AM), é do MDB, partido de centro que integra a base do governo Lula (PT). Jaques Wagner (PT-BA) é líder do governo no Senado. Alcolumbre, do União Brasil (centro-direita), preside a Casa e já disse sentir insegurança pela falta de conhecimento do texto. A oposição, de centro-direita e direita, pediu mais prazo. No PT, os deputados Lindbergh Farias (RJ) e Natália Bonavides (RN) criticam o endurecimento fiscal, sobretudo nos pisos de saúde e educação, e Lindbergh protocolou dois PLPs alternativos, segundo o SBT News. Os ministros Bruno Moretti (Planejamento) e Dario Durigan (Fazenda) formularam o pacote.
+## Mudanças no parecer
+Segundo a InfoMoney, o substitutivo de Braga faz ajustes de redação e técnicos: a limitação do crescimento da despesa passa a ser obtida por "contenção de despesas", e não por contingenciamento. Não houve emendas, porque o texto foi protocolado na tarde de quarta.
+## O que vem agora
+Se aprovado no Senado, o projeto segue à Câmara. Braga diz que a aprovação do PLP e de uma futura PEC é condição para destravar a LDO e o Orçamento de 2027.
+## O que ainda não está confirmado
+- A votação em si: nenhuma das fontes lidas registra resultado até a manhã de quinta.
+- O tamanho do corte de benefícios fiscais (10% ou 20%, conforme a fonte) e se o limite de 2% é permanente ou vale só no ano em que for acionado.
+- A soma das medidas do parecer (R$ 45,1 bi a R$ 56,1 bi, segundo o SBT) supera em R$ 2,1 bi o total do relatório.`,
+ fontes:[['InfoMoney (Estadão Conteúdo): relator mantém boa parte do projeto','https://www.infomoney.com.br/politica/relator-do-plp-do-ajuste-fiscal-mantem-boa-parte-do-projeto-e-faz-ajustes-de-redacao/'],['SBT News: Senado pode votar hoje o ajuste fiscal','https://sbtnews.sbt.com.br/noticia/politica/senado-pode-votar-hoje-projeto-de-ajuste-fiscal-de-lula'],['Poder News: Senado analisa nesta quinta o pacote','https://podernews.com.br/2026/11/12/senado-analisa-nesta-quinta-12-pacote-de-ajuste-fiscal-do-governo'],['Repórter Nordeste: racha no PT e pressão da oposição','https://reporternordeste.com.br/com-racha-no-pt-e-pressao-da-oposicao-senado-tenta-votar-ajuste-fiscal-hoje/'],['CNN Brasil: Alcolumbre busca consenso','https://www.cnnbrasil.com.br/politica/alcolumbre-busca-consenso-para-aprovar-plp-do-ajuste-fiscal-nesta-quinta/']]});
+
+_U('nvidia_espia_jensen_huang', {hora:'12/11',
+ t:'Conselho da Nvidia se reuniu na noite de quarta para decidir se destitui Jensen Huang; nenhuma decisão foi divulgada e as ações caem mais de 8% no pós-mercado',
+ sub:'Um segundo caso, noticiado pelo New York Times, ampliou a pressão; a Nvidia divulga balanço em 17/11.',
+ resumo:'O conselho da Nvidia se reuniu na noite de quarta (11) para decidir se destitui o presidente-executivo Jensen Huang, segundo fonte ouvida pela Reuters e publicada pelo SBT News. Nenhuma decisão foi divulgada. As ações caíram mais de 8% após o fechamento, depois que o Wall Street Journal noticiou a preparação da saída. O balanço trimestral está previsto para 17 de novembro.',
+ upd:'O conselho se reuniu na noite de 11/11; nenhuma decisão foi divulgada, e o New York Times noticiou um segundo caso.',
+ fundo:`O conselho de administração da Nvidia reuniu-se na noite de quarta-feira (11) para decidir se destitui o presidente-executivo Jensen Huang, segundo uma fonte próxima do assunto ouvida pela Reuters e reproduzida pelo SBT News. Nenhuma das fontes lidas registra decisão, e a empresa não respondeu aos pedidos de comentário. As ações caíram mais de 8% após o fechamento, depois que o Wall Street Journal noticiou que a empresa se preparava para demitir Huang.
+NUMS 11|conselheiros, todos independentes exceto Huang;mais de 8%|queda das ações no pós-mercado;17/11|balanço trimestral;63 anos|idade de Huang, que tem cerca de 3,6% da empresa
+## O escândalo
+No domingo (8), o conselho anunciou investigação sobre notícias de que Huang foi alvo de uma "operação de inteligência estrangeira" e contratou advogados externos. Huang mandou memorando aos funcionários em que reconhece ter sido infiel à esposa e assume "total responsabilidade", sem dar detalhes. Os serviços de inteligência dos EUA investigam Alice Huang, acusada de facilitar o envio de chips da Nvidia a empresas chinesas; o Jornal de Notícias, citando a AFP, diz que ela era executiva da Megaspeed, de Singapura. A China nega envolvimento.
+Na quarta, o New York Times noticiou um segundo caso, com Kimberly Powell, vice-presidente de saúde da Nvidia, o que a Reuters não conseguiu verificar de imediato.
+## Quem é quem
+Huang é aliado próximo do presidente Donald Trump (Partido Republicano, direita), que disse ter falado com ele na segunda (9) e que Huang afirmou não saber que a mulher era espiã. Os senadores democratas (centro-esquerda) Elizabeth Warren e Chris Coons pediram à administração que preserve documentos sobre exportações de chips para a China e uma sessão de esclarecimento no Congresso. Segundo a Axios, citada pelo SBT, o secretário de Comércio, Howard Lutnick, adiou a ação de Trump contra empresas suspeitas de desviar chips.
+## Sucessão
+Não há sucessor óbvio. A Bloomberg diz que o conselho trabalha com uma empresa externa para identificar substitutos; o Semafor e analistas citam a diretora financeira Colette Kress como possível interina, e Ian Buck, chefe de data centers, aparece como favorito em apostas da Polymarket.
+## O que vem agora
+O balanço trimestral de 17 de novembro é o próximo marco. O estatuto permite destituir Huang com ou sem justa causa por voto da maioria do conselho, e ele continuaria como conselheiro até decisão dos acionistas, segundo o JN.
+## O que ainda não está confirmado
+- Se o conselho votou, adiou ou decidiu destituir Huang.
+- O volume de US$ 7,5 bilhões em chips que teriam seguido para a China, apontado como alegação pelo 24 Notícias.
+- Se Huang foi intimado ou apenas convidado a depor a portas fechadas no Congresso: SBT e JN divergem.`,
+ fontes:[['SBT News (Reuters): conselho da Nvidia se reúne','https://sbtnews.sbt.com.br/noticia/mundo/conselho-da-nvidia-se-reune-para-decidir-futuro-do-ceo'],['Jornal de Notícias (AFP): futuro do CEO por um fio','https://www.jn.pt/mundo/artigo/jensen-huang-futuro-do-ceo-da-nvidia-esta-por-um-fio/18147365'],['24 Notícias: quem pode substituir Huang','https://24noticias.sapo.pt/atualidade/artigos/quem-pode-substituir-jensen-huang-conselho-de-administracao-da-nvidia-reune-se-para-decidir-futuro'],['O Globo: conselho se prepara para afastar Huang','https://oglobo.globo.com/economia/noticia/2026/11/11/conselho-da-nvidia-se-prepara-para-afastar-huang-apos-escandalo-diz-jornal-e-acoes-caem-9percent-no-pos-mercado.ghtml']]});
+
+_N('cop31_lula_pezeshkian', {ed:'mundo', k:'Mundo · Oriente Médio', hora:'12/11',
+ t:'Lula se reúne com o presidente do Irã, Masoud Pezeshkian, na COP31 e defende solução pacífica para a guerra com os EUA',
+ sub:'O governo brasileiro diz ter tratado da livre navegação em Ormuz, do uso pacífico da energia nuclear e de fertilizantes.',
+ resumo:'Lula e o presidente do Irã, Masoud Pezeshkian, se reuniram nesta quinta (12) em Antália, na Turquia, à margem da COP31, informa O Tempo. Segundo o governo brasileiro, Lula defendeu solução pacífica para a guerra entre Irã e EUA, o direito iraniano ao uso pacífico da energia nuclear e a livre navegação no Estreito de Ormuz, e demonstrou interesse em importar mais fertilizantes. Nenhum acordo foi anunciado.',
+ fundo:`O presidente Luiz Inácio Lula da Silva (PT) reuniu-se nesta quinta-feira (12) com o presidente do Irã, Masoud Pezeshkian, em Antália, na Turquia, à margem da COP31, informa O Tempo. A conversa tratou da guerra no Oriente Médio entre Irã e Estados Unidos, em curso desde fevereiro de 2026.
+## O que o governo brasileiro disse
+Segundo o relato oficial reproduzido pelo jornal, Lula ouviu de Pezeshkian um balanço das negociações de paz com os EUA, mediadas por Catar e Paquistão, e defendeu solução pacífica, o direito iraniano ao uso pacífico da energia nuclear e a livre navegação no Estreito de Ormuz. Também manifestou preocupação com o efeito da guerra nos preços de combustíveis e alimentos e indicou interesse em ampliar as importações de fertilizantes do Irã.
+## Quem é quem
+Pezeshkian, reformista, é o presidente da República Islâmica, mas fica abaixo do Líder Supremo, Mojtaba Khamenei, que detém a palavra final. Lula governa pelo PT, de esquerda, e mantém posição de não alinhamento na guerra. Os EUA, governados por Donald Trump (direita), são a outra parte do conflito.
+## O que vem agora
+Lula segue na COP31 e viaja às Filipinas para a cúpula da Asean, no fim de semana (14 e 15), e volta a Brasília por volta de 16 de novembro.
+## O que ainda não está confirmado
+- Qualquer compromisso concreto de comércio ou fertilizantes: o texto lido não relata anúncio.
+- O conteúdo das negociações EUA-Irã, relatado apenas pelo lado brasileiro.`,
+ fontes:[['O Tempo: Lula trata da guerra no Oriente Médio com o presidente do Irã','https://www.otempo.com.br/politica/governo/2026/11/12/lula-trata-da-guerra-no-oriente-medio-em-reuniao-com-o-presidente-do-ira-durante-a-cop31'],['Agência Gov: as cinco mensagens do Brasil na COP31','https://agenciagov.ebc.com.br/noticias/202611/presidente-lula-leva-legado-de-belem-a-cop31-e-conclama-lideres-mundiais-a-recolocar-a-acao-climatica-na-agenda-global']]});
+
+_N('cop31_tfff_lula_sem_voz', {ed:'politica', k:'Política · Clima', hora:'11/11',
+ t:'Sem voz, Lula pede apoio ao fundo de florestas TFFF na COP31; o mecanismo soma quase US$ 8 bi e busca US$ 10 bi até o fim do ano',
+ sub:'O ministro Capobianco leu o discurso; os Países Baixos anunciaram US$ 500 milhões e filantropias, US$ 72 milhões.',
+ resumo:'Rouco, Lula pediu que o ministro do Meio Ambiente, João Paulo Capobianco, lesse seu discurso na Cúpula de Florestas da COP31, na quarta (11), e pediu apoio ao TFFF, informa a Folhapress no Jornal de Brasília. O fundo soma quase US$ 8 bi, com meta de US$ 10 bi; os Países Baixos anunciaram US$ 500 milhões e entidades filantrópicas, mais de US$ 72 milhões.',
+ fundo:`O presidente Luiz Inácio Lula da Silva (PT), quase sem voz, pediu na quarta-feira (11) que o ministro do Meio Ambiente, João Paulo Capobianco, lesse em seu lugar o discurso na Cúpula de Líderes sobre Florestas, na COP31, em Antália, informa a Folhapress no Jornal de Brasília. Lula cancelou ainda um terceiro compromisso e faltou ao jantar do presidente turco, Recep Erdogan, para poupar a voz para a quinta (12).
+NUMS quase US$ 8 bi|já reunidos pelo TFFF;US$ 10 bi|meta, com cerca de US$ 2 bi faltando;US$ 500 mi|aporte dos Países Baixos;mais de US$ 72 mi|novas contribuições filantrópicas
+## O pedido
+O discurso, divulgado pela Secretaria de Comunicação da Presidência, aponta três entraves à proteção das florestas: a pobreza (cerca de 50 milhões de pessoas vivem em cidades da Amazônia), a falta de recursos e a falta de liderança política, já que o clima saiu das agendas do G7 e do G20 em 2026. O texto afirma que o TFFF "não se trata de doação" e tem endosso de 66 países e da União Europeia.
+## Como funciona o fundo
+O TFFF, na sigla em inglês do Fundo Florestas Tropicais para Sempre, prevê uma carteira de renda fixa de até US$ 125 bilhões, com rendimento de 7% a 8% ao ano: cerca de 4% para os financiadores e 4% para os países que preservam florestas, a US$ 4 por hectare, com desconto em caso de desmatamento ou fogo. Brasil e Noruega lideram a iniciativa; a Noruega banca 20% do aporte inicial. Se a meta for atingida, a expectativa é catalisar até US$ 100 bilhões privados, e uma Declaração de Roterdã foi assinada por investidores.
+## Dados do Brasil
+Lula citou queda de 71% do desmatamento na Amazônia e de quase 50% no Cerrado, 20 terras indígenas homologadas desde 2023 e 4,5 milhões de hectares recuperados, com meta de 40 milhões em dez anos.
+## O que vem agora
+Na quinta, Lula tem mais três compromissos e uma entrevista em Antália, e depois segue às Filipinas.
+## O que ainda não está confirmado
+- A origem dos US$ 2 bi que faltam para a meta.
+- A diferença entre o total de US$ 7,8 bi do discurso e o "quase US$ 8 bi" do jornal, que somam contribuições de períodos distintos.`,
+ fontes:[['Jornal de Brasília (Folhapress): sem voz, Lula pede apoio a fundo de florestas','https://jornaldebrasilia.com.br/noticias/brasil/sem-voz-lula-pede-apoio-a-fundo-de-florestas-na-cop31/'],['BS9: discurso de Lula na Turquia','https://www.bs9.com.br/brasil/2026/11/12/lula-ressalta-na-turquia-que-vontade-politica-investimento-e-cooperacao-internacional-sao-fundamentais-para-protecao-das-florestas-tropicais.html'],['InfoMoney: como funciona o TFFF','https://www.infomoney.com.br/mundo/como-funciona-o-tfff-fundo-para-floretas-tropicas-que-lula-deve-defender-na-cop31/']]});
+
+_N('brooklyn_desabamento_predio', {ed:'mundo', k:'Mundo · EUA', hora:'11/11', semAtores:true,
+ t:'Desabamento de prédio no Brooklyn, em Nova York, mata uma pessoa e fere pelo menos dez',
+ sub:'Socorristas trabalham entre os escombros, informam Folha, g1 e UOL.',
+ resumo:'O desabamento de um prédio no bairro do Brooklyn, em Nova York, matou uma pessoa e feriu ao menos outras dez, informam Folha, g1 e UOL. Socorristas trabalharam em meio aos escombros. As causas não foram divulgadas nos textos lidos.',
+ fundo:`Um prédio desabou no bairro do Brooklyn, em Nova York, e o acidente deixou uma pessoa morta e ao menos outras dez feridas, informam Folha, g1 e UOL. Socorristas trabalharam em meio aos escombros, segundo a imagem da agência Reuters publicada pela Folha.
+## O que se sabe
+O balanço é de uma morte e dez feridos, número que as três fontes tratam como mínimo. Os textos lidos não trazem a causa do desabamento nem o estado dos feridos.
+## O que vem agora
+A prefeitura e os bombeiros de Nova York costumam abrir inquérito sobre a estrutura e o histórico de obras do edifício.
+## O que ainda não está confirmado
+- A causa do desabamento e se houve aviso prévio de problemas estruturais.
+- O número final de feridos e de pessoas desaparecidas.`,
+ fontes:[['Folha: desabamento de prédio em Nova York mata uma pessoa','https://www1.folha.uol.com.br/mundo/2026/11/desabamento-de-predio-em-nova-york-mata-1-pessoa-e-fere-ao-menos-outras-10.shtml']]});
+
+_N('biden_leite_irlanda', {ed:'mundo', k:'Mundo · EUA', hora:'11/11', fonteunica:true, semAtores:true,
+ t:'Manifestantes arremessam leite em Joe Biden durante visita a universidade na Irlanda',
+ sub:'O ex-presidente dos EUA foi alvo do protesto, informam O Globo e a Folha.',
+ resumo:'Manifestantes arremessaram leite no ex-presidente dos EUA Joe Biden durante visita a uma universidade na Irlanda, informam O Globo e a Folha. Os textos lidos não detalham o motivo do protesto.',
+ fundo:`Manifestantes arremessaram leite em Joe Biden, ex-presidente dos Estados Unidos, durante visita a uma universidade na Irlanda, na quarta-feira (11), informam O Globo e a Folha. O episódio foi registrado em vídeo.
+## O que se sabe
+Biden é do Partido Democrata, de centro-esquerda, e deixou a Casa Branca em janeiro de 2025. As fontes lidas não informam a motivação dos manifestantes, se houve detidos ou se o ex-presidente ficou ferido.
+## O que vem agora
+A polícia irlandesa e a universidade devem apurar a segurança do evento.
+## O que ainda não está confirmado
+- A motivação do protesto e a identidade dos manifestantes.
+- Se houve prisões.`,
+ fontes:[['O Globo: manifestantes arremessam leite em Joe Biden','https://oglobo.globo.com/mundo/noticia/2026/11/11/manifestantes-arremessam-leite-em-joe-biden-ex-presidente-dos-eua-durante-visita-a-universidade-na-irlanda-video.ghtml']]});
+
+_N('rj_copacabana_atropelamento', {ed:'regioes', reg:'rj', k:'Rio de Janeiro · Cotidiano', hora:'11/11',
+ t:'Carro invade calçada, atropela quatro pessoas e atinge loja em Copacabana; uma vítima está em estado grave',
+ sub:'O caso foi noticiado por O Globo, g1, UOL, CNN Brasil e Metrópoles.',
+ resumo:'Um carro invadiu a calçada, atropelou quatro pessoas e atingiu uma loja em Copacabana, na Zona Sul do Rio, na quarta (11), informam O Globo, g1, UOL, CNN Brasil e Metrópoles. Uma vítima está em estado grave. As causas não foram detalhadas nos textos lidos.',
+ fundo:`Um carro invadiu a calçada, atropelou quatro pessoas e atingiu uma loja em Copacabana, na Zona Sul do Rio de Janeiro, na quarta-feira (11), informam O Globo, g1, UOL, CNN Brasil e Metrópoles. Uma das vítimas está em estado grave, segundo O Globo.
+## O que se sabe
+O caso é de capa de O Globo e foi noticiado por cinco veículos. Os textos lidos não detalham o motivo da perda de controle do carro, a identidade do motorista nem o estado das outras três vítimas.
+## O que vem agora
+A polícia investiga o acidente na delegacia da região, e a perícia define a causa.
+## O que ainda não está confirmado
+- A causa do acidente e se o motorista passou mal ou estava alcoolizado.
+- O estado de saúde das quatro vítimas.`,
+ fontes:[['O Globo: carro invade calçada em Copacabana','https://oglobo.globo.com/rio/noticia/2026/11/11/carro-invade-calcada-atropela-quatro-pessoas-e-atinge-loja-em-copacabana-uma-vitima-esta-em-estado-grave.ghtml']]});
+
+_N('raoni_documentario_cop31', {ed:'regioes', reg:'co', k:'Centro-Oeste · Mato Grosso', hora:'11/11',
+ t:'Cacique Raoni é internado em Mato Grosso com oscilação de pressão; família e líderes Mẽbêngôkre pedem suspensão de documentário na COP31',
+ sub:'Os familiares dizem não ter sido informados sobre a exibição do filme na Turquia.',
+ resumo:'O cacique Raoni Metuktire foi internado em Mato Grosso após oscilações na pressão arterial, informam Folha e UOL. Em outra frente, familiares e líderes Mẽbêngôkre exigem a suspensão da exibição de um documentário sobre ele na COP31, na Turquia, por falta de informação, informam O Globo, Veja e Brasil de Fato.',
+ fundo:`O cacique Raoni Metuktire foi internado em Mato Grosso após ter oscilações na pressão arterial, informam Folha, UOL e a Gazeta Digital. Os textos lidos não trazem boletim médico detalhado.
+## O documentário
+No mesmo dia, familiares e líderes Mẽbêngôkre pediram a suspensão da exibição de um documentário sobre Raoni na COP31, em Antália, na Turquia, por falta de informações sobre o filme, informam O Globo, Veja e Brasil de Fato. O caso foi capa de O Globo.
+## O que vem agora
+A exibição na COP31 depende de decisão dos organizadores, e o estado de saúde do cacique deve ser atualizado pelo hospital.
+## O que ainda não está confirmado
+- O diagnóstico e o prazo de alta.
+- Se a exibição foi mantida ou suspensa e quem produziu o filme.`,
+ fontes:[['O Globo: familiares tentam impedir exibição de documentário sobre Raoni','https://oglobo.globo.com/brasil/noticia/2026/11/11/familia-de-cacique-raoni-tenta-impedir-exibicao-de-documentario-sobre-lider-indigena-na-turquia-durante-a-cop31.ghtml'],['Folha: cacique Raoni é internado em Mato Grosso','https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/11/cacique-raoni-e-internado-em-mato-grosso-apos-ter-oscilacoes-na-pressao-arterial.shtml']]});
+
+HOME_LEAD = 'ajuste_fiscal_pacote_11_11';
+HOME_ROW = ['nvidia_espia_jensen_huang','ipca_outubro_12_11'];
+ORDER.politica = _top(ORDER.politica, ['cop31_tfff_lula_sem_voz']);
+ORDER.economia = _top(ORDER.economia, ['ipca_outubro_12_11','ajuste_fiscal_pacote_11_11']);
+ORDER.mundo = _top(ORDER.mundo, ['nvidia_espia_jensen_huang','cop31_lula_pezeshkian','brooklyn_desabamento_predio','biden_leite_irlanda']);
+ORDER.regioes = _top(ORDER.regioes, ['rj_copacabana_atropelamento','raoni_documentario_cop31']);
+(function(){
+ var novo=[
+  ['IPCA de outubro','Inflação sobe 0,14%, abaixo do esperado, e fecha 12 meses em 4,63%, informa a Folhapress.','O Tempo (Folhapress)','https://www.otempo.com.br/economia/2026/11/12/ibge-inflacao-fica-em-0-14-em-outubro-abaixo-das-expectativas','','ipca_outubro_12_11'],
+  ['Senado vota o PLP 299','Sessão às 16h; Alcolumbre diz que vota se houver acordo, informa a InfoMoney.','InfoMoney','https://www.infomoney.com.br/politica/relator-do-plp-do-ajuste-fiscal-mantem-boa-parte-do-projeto-e-faz-ajustes-de-redacao/','','ajuste_fiscal_pacote_11_11'],
+  ['Conselho da Nvidia','Reunião de quarta não teve decisão divulgada; ações caem mais de 8%, informa o SBT News (Reuters).','SBT News (Reuters)','https://sbtnews.sbt.com.br/noticia/mundo/conselho-da-nvidia-se-reune-para-decidir-futuro-do-ceo','','nvidia_espia_jensen_huang'],
+  ['Lula e o Irã','Lula se reúne com Pezeshkian na COP31 e fala de Ormuz e fertilizantes, informa O Tempo.','O Tempo','https://www.otempo.com.br/politica/governo/2026/11/12/lula-trata-da-guerra-no-oriente-medio-em-reuniao-com-o-presidente-do-ira-durante-a-cop31','','cop31_lula_pezeshkian'],
+  ['TFFF perto da meta','Fundo soma quase US$ 8 bi e busca US$ 10 bi, informa a Folhapress.','Jornal de Brasília (Folhapress)','https://jornaldebrasilia.com.br/noticias/brasil/sem-voz-lula-pede-apoio-a-fundo-de-florestas-na-cop31/','','cop31_tfff_lula_sem_voz'],
+  ['Raoni internado','Cacique é internado em MT após oscilação de pressão, informa a Folha.','Folha','https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/cotidiano/2026/11/cacique-raoni-e-internado-em-mato-grosso-apos-ter-oscilacoes-na-pressao-arterial.shtml','','raoni_documentario_cop31']
+ ];
+ GIRO = novo.concat(GIRO.filter(function(g){return novo.every(function(n){return n[0]!==g[0];});})).slice(0,20);
+})();
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"maioridade":"atualizada","espanha_greve_geral":"atualizada","ajuste_fiscal_pacote_11_11":"atualizada","operacao_refit_magro":"atualizada","nvidia_espia_jensen_huang":"atualizada","lula_delcy_antalia":"atualizada","fhc_video_indiciado":"atualizada","pgr_mantem_prisao_vorcaro":"novo","camara_hediondo_maus_tratos_animais":"novo","pf_celular_ameacas_ana_elisa":"novo","bb_lucro_3t26_queda_agro":"novo","trancoso_faccao_operacao_ba":"novo","alcolumbre_motta_ultimato_stf_cop":"novo"};
-var GIRO_FLAGS = {"PGR e a prisão de Vorcaro":"novo","Hediondo para maus-tratos":"novo","Ana Elisa e a PF":"novo","Balanço do Banco do Brasil":"novo","Ultimato e a vaga no STF":"novo","Operação em Trancoso":"novo","Pacote fiscal fica para quinta":"novo"};
+var FLAGS = {"ajuste_fiscal_pacote_11_11":"atualizada","nvidia_espia_jensen_huang":"atualizada","ipca_outubro_12_11":"novo","cop31_lula_pezeshkian":"novo","cop31_tfff_lula_sem_voz":"novo","brooklyn_desabamento_predio":"novo","biden_leite_irlanda":"novo","rj_copacabana_atropelamento":"novo","raoni_documentario_cop31":"novo"};
+var GIRO_FLAGS = {"IPCA de outubro":"novo","Senado vota o PLP 299":"novo","Conselho da Nvidia":"novo","Lula e o Irã":"novo","TFFF perto da meta":"novo","Raoni internado":"novo"};
 /* ===== FIM DOS DADOS ===== */
