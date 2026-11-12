@@ -10,6 +10,8 @@ const motivoArg = (process.argv.find(a => a.startsWith('--motivo=')) || '').slic
 // --publicar-mesmo-assim: último recurso para a edição sair NO HORÁRIO. Os erros viram avisos
 // (gravados em arquivo/_avisos.log) e a publicação segue; o prazo da edição vale mais que o piso editorial.
 const MESMO = process.argv.includes('--publicar-mesmo-assim');
+// erros de integridade (estrutura, referências, sintaxe) NUNCA podem ser dispensados, nem por --publicar-mesmo-assim
+const dieFatal = (m) => { console.error('ERRO FATAL (integridade; não dispensável): ' + m); process.exit(1); };
 const die = (m) => {
   if (MESMO) {
     console.error('AVISO (ignorado por --publicar-mesmo-assim): ' + m);
@@ -18,7 +20,7 @@ const die = (m) => {
   }
   console.error('ERRO: ' + m); process.exit(1);
 };
-if (!/^\d{4}-\d{2}-\d{2}$/.test(data || '') || !/^(0[0-9]|1[0-9]|2[0-3])h$/.test(hh || '')) die('uso: node radar/tools/publicar.cjs AAAA-MM-DD HHh');
+if (!/^\d{4}-\d{2}-\d{2}$/.test(data || '') || !/^(0[0-9]|1[0-9]|2[0-3])h$/.test(hh || '')) dieFatal('uso: node radar/tools/publicar.cjs AAAA-MM-DD HHh');
 const nome = data + '-' + hh;
 
 function carregar(txt) {
@@ -26,11 +28,11 @@ function carregar(txt) {
   return vm.runInNewContext(corpo + '\n;({S:S,ED:ED,ORDER:ORDER,HOME_LEAD:HOME_LEAD,HOME_ROW:HOME_ROW,GIRO:GIRO,COLUNAS:COLUNAS,TRENDS:TRENDS,EDICAO:EDICAO,AMANHA:(typeof AMANHA==="undefined"?[]:AMANHA)})', {});
 }
 const txt = fs.readFileSync(fonte, 'utf8');
-if (!/^<\?php if \(!defined\('RADAR_OK'\)\)/.test(txt)) die('primeira linha do _edicao.php foi alterada');
-let d; try { d = carregar(txt); } catch (e) { die("sintaxe: " + e.message + " " + String(e.stack).split("\n").slice(0,4).join(" | ")); }
+if (!/^<\?php if \(!defined\('RADAR_OK'\)\)/.test(txt)) dieFatal('primeira linha do _edicao.php foi alterada');
+let d; try { d = carregar(txt); } catch (e) { dieFatal("sintaxe: " + e.message + " " + String(e.stack).split("\n").slice(0,4).join(" | ")); }
 
 // validação
-const regs = ['rj', 'sp', 'mg', 'ne', 'sul', 'norte', 'co'], erros = [];
+const regs = ['rj', 'sp', 'mg', 'ne', 'sul', 'norte', 'co'], erros = [], errosEd = [];
 if (d.EDICAO.hora !== hh) erros.push('EDICAO.hora (' + d.EDICAO.hora + ') difere de ' + hh);
 Object.keys(d.ORDER).forEach(k => d.ORDER[k].forEach(i => { if (!d.S[i]) erros.push('ORDER.' + k + ': id inexistente ' + i); else if (d.S[i].ed !== k) erros.push(i + ': ed ≠ ' + k); }));
 Object.keys(d.S).forEach(i => { const s = d.S[i];
@@ -44,10 +46,13 @@ d.COLUNAS.forEach(g => { if (g[5] && !d.S[g[5]]) erros.push('COLUNAS relacionado
 d.TRENDS.forEach(g => { if (g[3] && !d.S[g[3]]) erros.push('TRENDS relacionado: ' + g[3]); });
 if (hh === '19h' || (d.AMANHA && d.AMANHA.length)) {
   const tp = ['congresso', 'agenda', 'economia', 'justica', 'eleicao', 'mundo'];
-  if (hh === '19h' && (!Array.isArray(d.AMANHA) || d.AMANHA.length < 3)) erros.push('edição das 19h exige a seção AMANHA (Para ficar de olho) com ao menos 3 itens: [quando, tipo, título, nota, url, idRel]');
-  else d.AMANHA.forEach((a, n) => { if (!a[0] || !a[2] || !a[3] || String(a[3]).length < 30) erros.push('AMANHA[' + n + ']: faltam quando, título ou nota (mín. 30 caracteres)'); if (!tp.includes(a[1])) erros.push('AMANHA[' + n + ']: tipo deve ser ' + tp.join('|')); if (a[5] && !d.S[a[5]]) erros.push('AMANHA[' + n + ']: idRel inexistente'); });
+  if (hh === '19h' && (!Array.isArray(d.AMANHA) || d.AMANHA.length < 3)) errosEd.push('edição das 19h exige a seção AMANHA (Para ficar de olho) com ao menos 3 itens: [quando, tipo, título, nota, url, idRel]');
+  else d.AMANHA.forEach((a, n) => { if (!a[0] || !a[2] || !a[3] || String(a[3]).length < 30) errosEd.push('AMANHA[' + n + ']: faltam quando, título ou nota (mín. 30 caracteres)'); if (!tp.includes(a[1])) errosEd.push('AMANHA[' + n + ']: tipo deve ser ' + tp.join('|')); if (a[5] && !d.S[a[5]]) errosEd.push('AMANHA[' + n + ']: idRel inexistente'); });
 }
-if (erros.length) die('\n - ' + erros.join('\n - '));
+Object.keys(d.S).forEach(i => { if (!/^[a-z0-9_]{1,64}$/i.test(i)) erros.push('id inválido (use a-z, 0-9 e _, até 64 caracteres): ' + i); });
+[d.HOME_LEAD].concat(d.HOME_ROW || []).forEach(i => { if (d.S[i] && d.S[i].velha) erros.push('capa com matéria aposentada (velha): ' + i); });
+if (erros.length) dieFatal('\n - ' + erros.join('\n - '));
+if (errosEd.length) die('\n - ' + errosEd.join('\n - '));
 
 // COBERTURA: o que as capas dos grandes veículos dão tem que estar no Radar (manchetes.json vem do branch "manchetes")
 {
@@ -123,7 +128,9 @@ if (ant) {
   const ants = lista.filter(n => n < nome).slice(-(ncorte - 1));
   if (ants.length === ncorte - 1) {
     const ps = ants.map(n => carregar(fs.readFileSync(path.join(arq, n + '.php'), 'utf8')));
-    const paradas = Object.keys(d.S).filter(i => !d.S[i].velha && !flags[i] && ps.every(p => p.S[i] && hash(p.S[i]) === hash(d.S[i])));
+    // matéria regional com até 2 dias de idade não é "parada": regiões precisam de 5 matérias e a cobertura local não muda a cada edição
+    const idadeDias = s => { const m = String(s.hora || '').match(/^(\d{1,2})\/(\d{1,2})$/); if (!m) return 99; const hoje = new Date(data + 'T12:00:00'); const dt = new Date(hoje.getFullYear(), +m[2] - 1, +m[1], 12); return Math.round((hoje - dt) / 864e5); };
+    const paradas = Object.keys(d.S).filter(i => !d.S[i].velha && !flags[i] && !(d.S[i].ed === 'regioes' && idadeDias(d.S[i]) <= 2) && ps.every(p => p.S[i] && hash(p.S[i]) === hash(d.S[i])));
     if (paradas.length) die('matérias paradas há ' + ncorte + ' edições sem fato novo (' + paradas.length + '): ' + paradas.join(', ') + '. Para cada uma: acrescente o desdobramento novo (vira ATUALIZADA, com upd) ou marque velha:true com velhaMotivo (sai das editorias e continua acessível por link compartilhado).');
   }
 }
@@ -267,7 +274,7 @@ if (NOVAS) {
         if (p.verificada !== nome) naoVerif.push(p.id + ' (' + p.prio + ')');
         if (!p.ultimo_fato || String(p.ultimo_fato).length < 10) e2.push('pauta ' + p.id + ': ultimo_fato vazio');
         if (!ms.length || ms.some(i => !d.S[i])) e2.push('pauta ' + p.id + ': materias inexistentes ou vazias');
-        else if (p.prio === 'P0' && ms.some(i => d.S[i].velha)) e2.push('pauta P0 ' + p.id + ' com matéria aposentada: reative-a (tire velha:true) ou feche a pauta');
+        else if (p.prio === 'P0' && ms.length && ms.every(i => !d.S[i] || d.S[i].velha)) e2.push('pauta P0 ' + p.id + ' com matéria aposentada: reative-a (tire velha:true) ou feche a pauta');
         else if (p.fato_novo === true && !ms.some(i => flags[i])) e2.push('pauta ' + p.id + ' tem fato novo, mas nenhuma matéria dela é NOVA ou ATUALIZADA nesta edição');
       }
     });

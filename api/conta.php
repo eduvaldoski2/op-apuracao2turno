@@ -144,6 +144,9 @@ if ($acao === 'excluir') {   // direito de exclusão (LGPD): apaga a conta e os 
   if (!taxa_ok('exc:' . $u['id'], 5, 900)) erro(429, 'limite', 'Muitas tentativas. Aguarde alguns minutos.');
   if (($u['senha_hash'] ?? '') === '') { if (strtoupper(trim((string)($j['confirmacao'] ?? ''))) !== 'EXCLUIR') erro(422, 'confirmacao', 'Digite EXCLUIR para confirmar.'); }   // conta criada só com o Google não tem senha
   elseif (!password_verify((string)($j['senha'] ?? ''), $u['senha_hash'])) erro(401, 'credenciais', 'Senha incorreta.');
+  // dados do Radar (leituras, compartilhamentos, códigos, boletim) ficam em outro banco: apagar antes; se falhar, a conta NÃO é excluída (nada fica órfão)
+  $rt = __DIR__ . '/../radar/_track.php';
+  if (is_file($rt)) { require_once $rt; if (function_exists('radar_db') && radar_db() && !radar_apagar_usuario($u['id'])) erro(500, 'radar', 'Não foi possível apagar seus dados do Radar agora. Tente de novo em alguns minutos; sua conta não foi excluída.'); }
   $db->prepare('UPDATE ia_uso SET uid = 0, iph = \'\' WHERE uid = ?')->execute([$u['id']]);
   foreach (['sessoes', 'codigos'] as $t) $db->prepare("DELETE FROM $t WHERE uid = ?")->execute([$u['id']]);
   $db->prepare('DELETE FROM usuarios WHERE id = ?')->execute([$u['id']]);

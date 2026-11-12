@@ -337,6 +337,8 @@ function colsFor(eid){
   var L=COLUNAS.filter(function(c){return c[6]===eid&&(c[4]||(c[5]&&S[c[5]]))});
   return L.length?'<div class="subh"><h2>Colunas e análises</h2></div>'+colCards(L):'';
 }
+/* matérias aposentadas (velha) saem das editorias, mas continuam acessíveis por link e no arquivo */
+Object.keys(ORDER).forEach(function(k){ORDER[k]=ORDER[k].filter(function(id){return S[id]&&!S[id].velha})});
 function idsOf(eid,sub){return ORDER[eid].filter(function(id){return !sub||S[id].reg===sub})}
 function briefRow(b){return '<div class="item"><a class="mini" href="'+esc(b[1])+'" target="_blank" rel="noopener">'+esc(b[0])+'</a><span class="meta">'+esc(b[2])+'</span></div>'}
 

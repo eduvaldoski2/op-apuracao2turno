@@ -122,7 +122,7 @@ export const abrirPreferencias = () => ui(true);
 export function iniciarConsentimento() {
   if (!moduloAtivo() || semAnuncios()) return;
   // link permanente no rodapé
-  const alvo = document.querySelector('.rodape-in, .rodape'); if (alvo && !alvo.querySelector('.ck-link') && cookiesConfigurados()) { const b = document.createElement('button'); b.className = 'ck-link'; b.type = 'button'; b.textContent = 'Preferências de cookies'; b.addEventListener('click', abrirPreferencias); alvo.appendChild(b); }
+  const alvo = document.querySelector('.rodape-in, .rodape, footer .wrap, footer'); if (alvo && !alvo.querySelector('.ck-link') && cookiesConfigurados()) { const b = document.createElement('button'); b.className = 'ck-link'; b.type = 'button'; b.textContent = 'Preferências de cookies'; b.addEventListener('click', abrirPreferencias); alvo.appendChild(b); }
   if (!cookiesConfigurados()) return;
   if (gpc()) return;                          // sinal de privacidade do navegador: nada de publicidade, sem insistir
   const c0 = lerConsent();

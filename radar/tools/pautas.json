@@ -13,9 +13,9 @@
         "pena_cofre",
         "ueno_pagamentos"
       ],
-      "verificada": "2026-11-12-11h",
-      "fato_novo": false,
-      "ultimo_fato": "11/11: o BCP conclui os pagamentos da garantia do Ueno, que cobre US$ 740 mi dos US$ 2,8 bi em depósitos (27%); o BCP tem 15 dias para oferecer a carteira a outras instituições (EFE).",
+      "verificada": "2026-11-12-18h",
+      "fato_novo": true,
+      "ultimo_fato": "12/11: o Ministério Público faz buscas na residência presidencial em Assunção; a EFE informa a detenção do superintendente de Bancos, Holger Insfrán; Alliana promete 'impunidade zero' (EFE, Reuters, Folha).",
       "proximo": "Prazo de 15 dias do BCP; pagamento a aposentados do IPS em 17/11; recurso da defesa contra a preventiva; sanção ficta do Orçamento (14/11)."
     },
     {
@@ -39,7 +39,7 @@
         "cop31_tfff_lula_sem_voz"
       ],
       "verificada": "2026-11-12-11h",
-      "fato_novo": true,
+      "fato_novo": false,
       "ultimo_fato": "12/11: Lula se reúne com o presidente do Irã, Masoud Pezeshkian, na COP31; em 11/11 pediu apoio ao TFFF, que soma quase US$ 8 bi (O Tempo; Folhapress).",
       "proximo": "Cúpula da Asean nas Filipinas (14 e 15); volta a Brasília por volta de 16/11."
     },
@@ -125,9 +125,9 @@
       "materias": [
         "dino_6x1"
       ],
-      "verificada": "2026-11-12-11h",
-      "fato_novo": false,
-      "ultimo_fato": "10/11: Dino encerra a audiência sem acordo, mantém 16/12 e anuncia decisão sobre a transição até sexta (13), a ser levada ao plenário (Revista Fórum, Terra).",
+      "verificada": "2026-11-12-18h",
+      "fato_novo": true,
+      "ultimo_fato": "12/11: Dino mantém o cronograma (42 h e dois dias de descanso em 16/12), rejeita adiar, dá 90 dias para renegociar acordos e leva a decisão ao plenário (UOL, CNN Brasil, STF).",
       "proximo": "Decisão de Dino (13/11); pauta no plenário; decreto do governo após 16/11."
     },
     {
@@ -157,9 +157,9 @@
         "ipca_outubro_12_11",
         "nvidia_espia_jensen_huang"
       ],
-      "verificada": "2026-11-12-11h",
+      "verificada": "2026-11-12-18h",
       "fato_novo": true,
-      "ultimo_fato": "12/11: IPCA de outubro sobe 0,14% e fecha 12 meses em 4,63%, acima do teto da meta (Folhapress/O Tempo); o Senado retoma às 16h a sessão do PLP 299 do ajuste fiscal, e Alcolumbre só vota com acordo (InfoMoney).",
+      "ultimo_fato": "12/11: governo apresenta o ajuste fiscal; Ibovespa cai 0,91% e dólar sobe a R$ 5,61 às 10h35 (Money Times); Congresso aprova crédito de R$ 149,4 bi para benefícios (Agência Câmara, CNN, Folha).",
       "proximo": "Sessão do Senado às 16h de 12/11; balanço da Nvidia em 17/11."
     },
     {
@@ -188,11 +188,12 @@
         "ucrania_acordo",
         "ucrania_energia",
         "zaporizhzhia",
-        "ucrania_abudhabi"
+        "ucrania_abudhabi",
+        "ucrania_putin_enviados_trump"
       ],
-      "verificada": "2026-11-12-11h",
-      "fato_novo": false,
-      "ultimo_fato": "11/11: Rússia, Ucrânia e EUA fecham a rodada em Abu Dhabi; no dia 1 houve mais de 4 horas de conversas, e a Rússia atingiu seis subestações elétricas (PBS, The National).",
+      "verificada": "2026-11-12-18h",
+      "fato_novo": true,
+      "ultimo_fato": "12/11: Putin recebe enviados de Trump e diz que gostaria que a paz na Ucrânia 'durasse para sempre' (g1, CartaCapital, Terra, O Tempo).",
       "proximo": "Balanço do dia 2; troca de prisioneiros; nova ida de delegação americana a Moscou."
     },
     {

@@ -10,7 +10,7 @@ try {
   $u = usuario_atual(); if (!$u) rsai(false, 'Entre no Radar para enviar.', 401);
   $m = (string)($_POST['m'] ?? ''); $para = trim((string)($_POST['para'] ?? '')); $msg = trim(strip_tags((string)($_POST['msg'] ?? '')));
   $msg = mb_substr(preg_replace('/\s+/u', ' ', $msg), 0, 200);
-  if (!preg_match('/^[a-z0-9_]{1,40}$/i', $m)) rsai(false, 'Matéria inválida.', 400);
+  if (!preg_match('/^[a-z0-9_]{1,64}$/i', $m)) rsai(false, 'Matéria inválida.', 400);
   if (!filter_var($para, FILTER_VALIDATE_EMAIL) || strlen($para) > 120) rsai(false, 'Digite um e-mail válido.', 400);
   $raw = @file_get_contents(__DIR__ . '/_publico.php'); $pub = json_decode(substr((string)$raw, (int)strpos((string)$raw, "\n") + 1), true);
   if (!is_array($pub) || !isset($pub[$m])) rsai(false, 'Matéria não encontrada.', 404);

@@ -17,6 +17,9 @@ $dirDados = dirname(__DIR__) . '/dados'; if (!is_dir($dirDados)) @mkdir($dirDado
 $LOG = $dirDados . '/boletim.log'; $STATUS = $dirDados . '/boletim_status.json';
 $MARCA = $dirDados . '/boletim_enviado.txt';        // dia (aaaa-mm-dd) da última edição enviada a todos
 $PARCIAL = $dirDados . '/boletim_parcial.json';     // quem já recebeu a edição em andamento
+// trava: duas execuções simultâneas poderiam enviar o mesmo boletim duas vezes; a segunda desiste
+$TRAVA = @fopen($dirDados . '/boletim.lock', 'c');
+if ($TRAVA && !@flock($TRAVA, LOCK_EX | LOCK_NB)) { fwrite(STDERR, "outra execução do boletim está em andamento; saindo\n"); exit(0); }
 ini_set('log_errors', '1'); ini_set('error_log', $LOG);   // error_log() do SMTP (ex.: "SMTP 535 ...") cai no mesmo log
 
 function blog($m) {

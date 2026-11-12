@@ -23,7 +23,7 @@ $meuCodigo = '';
 try {
   require_once __DIR__ . '/_track.php';
   $ref = (isset($_GET['r']) && preg_match('/^[a-f0-9]{8}$/', (string)$_GET['r'])) ? (string)$_GET['r'] : '';
-  $mat = (isset($_GET['m']) && preg_match('/^[a-z0-9_]{1,40}$/i', (string)$_GET['m'])) ? (string)$_GET['m'] : '';
+  $mat = (isset($_GET['m']) && preg_match('/^[a-z0-9_]{1,64}$/i', (string)$_GET['m'])) ? (string)$_GET['m'] : '';
   $can = (isset($_GET['utm_medium']) && preg_match('/^[a-z0-9_]{1,20}$/', (string)$_GET['utm_medium'])) ? (string)$_GET['utm_medium'] : '';
   $ck = ['expires' => time() + 30 * 86400, 'path' => '/radar', 'secure' => !empty($_SERVER['HTTPS']), 'httponly' => true, 'samesite' => 'Lax'];
   if ($uAtual) $meuCodigo = radar_codigo((int)$uAtual['id']);
@@ -69,6 +69,7 @@ try {
         elseif ($b[0] === 'p') $corpo .= '<p>' . $e($b[1] ?? '') . '</p>';
         elseif ($b[0] === 'h') $corpo .= '<h3>' . $e($b[1] ?? '') . '</h3>';
         elseif ($b[0] === 'ul') { $corpo .= '<ul>'; foreach ((array)($b[1] ?? []) as $li) $corpo .= '<li>' . $e($li) . '</li>'; $corpo .= '</ul>'; }
+        elseif ($b[0] === 'nums') { $corpo .= '<ul>'; foreach ((array)($b[1] ?? []) as $li) if (is_array($li)) $corpo .= '<li><b>' . $e($li[0] ?? '') . '</b> ' . $e($li[1] ?? '') . '</li>'; $corpo .= '</ul>'; }
         elseif ($b[0] === 'tl') { $corpo .= '<ul>'; foreach ((array)($b[1] ?? []) as $li) if (is_array($li)) $corpo .= '<li><b>' . $e($li[0] ?? '') . '</b> ' . $e($li[1] ?? '') . '</li>'; $corpo .= '</ul>'; }
       }
       $fontes = ''; foreach ((array)($s['fontes'] ?? []) as $f) if (is_array($f) && !empty($f[1]) && preg_match('#^https?://#', $f[1])) $fontes .= '<a href="' . $e($f[1]) . '" target="_blank" rel="noopener nofollow">' . $e($f[0] ?? 'Fonte') . '</a> ';
