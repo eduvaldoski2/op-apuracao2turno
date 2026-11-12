@@ -295,7 +295,7 @@ function edNome(id){var s=S[id];return s?s.ed:''}
 function trackShare(canal){gaEv('share',{method:canal,item_id:shareId,content_type:'materia',editoria:edNome(shareId),regiao:(S[shareId]||{}).reg||'',edicao:EDICAO.hora},{meta:'CompartilharMateria',metaCustom:true,metaDados:{canal:canal},ads:'compartilhar'});try{var fd=new FormData();fd.append('m',shareId);fd.append('c',canal);navigator.sendBeacon('/radar/track.php',fd)}catch(e){}}
 
 function edInfo(id){var h=typeof HIST!=='undefined'&&HIST[id];if(!h)return 'Edição das '+esc(EDICAO.hora)+' · '+esc(EDICAO.data);
- function f(n){var m=n.match(/^\d{4}-(\d{2})-(\d{2})-(\d{2})h$/);return m?'edição das '+m[3]+'h de '+parseInt(m[2],10)+'/'+parseInt(m[1],10):n}
+ function f(n){var m=n.match(/^\d{4}-(\d{2})-(\d{2})-(\d{2})h$/);return m?'edição das '+m[3]+'h de '+parseInt(m[2],10)+'/'+parseInt(m[1],10)+'/'+n.slice(0,4):n}
  return 'Publicada na '+f(h[0])+(h[1]!==h[0]?' · atualizada na '+f(h[1]):'')}
 function flag(id){var f=typeof FLAGS!=='undefined'&&FLAGS[id];return f?'<span class="flag '+(f==='novo'?'n':'a')+'">'+(f==='novo'?'NOVO':'ATUALIZADA')+'</span>':''}
 function dadoTile(d){return ''&&d?'<div class="tile"><div class="n">'+esc(d.n)+'</div><div class="l">'+esc(d.l)+'</div></div>':''}
