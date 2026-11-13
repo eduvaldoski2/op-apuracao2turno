@@ -9,12 +9,17 @@ const [data, hh] = process.argv.slice(2);
 const motivoArg = (process.argv.find(a => a.startsWith('--motivo=')) || '').slice(9);
 // --publicar-mesmo-assim: último recurso para a edição sair NO HORÁRIO. Os erros viram avisos
 // (gravados em arquivo/_avisos.log) e a publicação segue; o prazo da edição vale mais que o piso editorial.
-const MESMO = process.argv.includes('--publicar-mesmo-assim');
+// DECISÃO DO DONO (13/11): a publicação NUNCA pode falhar por regra editorial. Por padrão, qualquer regra de qualidade/volume
+// vira PENDÊNCIA: a edição é publicada e as pendências são listadas ao final (e em _avisos.log) para a passada 2 corrigir e
+// republicar. Só erros de integridade (dieFatal) barram. Para voltar ao modo rígido (testes), use --estrito.
+const MESMO = !process.argv.includes('--estrito');
+const PENDENCIAS = [];
 // erros de integridade (estrutura, referências, sintaxe) NUNCA podem ser dispensados, nem por --publicar-mesmo-assim
 const dieFatal = (m) => { console.error('ERRO FATAL (integridade; não dispensável): ' + m); process.exit(1); };
 const die = (m) => {
   if (MESMO) {
-    console.error('AVISO (ignorado por --publicar-mesmo-assim): ' + m);
+    PENDENCIAS.push(String(m).split('\n')[0].slice(0, 220));
+    console.error('PENDÊNCIA (publicada mesmo assim; corrija na passada 2 e republique): ' + m);
     try { require('fs').appendFileSync(require('path').join(__dirname, '..', 'arquivo', '_avisos.log'), new Date().toISOString() + ' ' + data + ' ' + hh + ' publicada com avisos: ' + String(m).replace(/\s+/g, ' ').slice(0, 600) + '\n'); } catch (e) {}
     return;
   }
@@ -22,6 +27,7 @@ const die = (m) => {
 };
 if (!/^\d{4}-\d{2}-\d{2}$/.test(data || '') || !/^(0[0-9]|1[0-9]|2[0-3])h$/.test(hh || '')) dieFatal('uso: node radar/tools/publicar.cjs AAAA-MM-DD HHh');
 const nome = data + '-' + hh;
+process.on('exit', (c) => { if (c === 0 && PENDENCIAS.length) console.log('\n=== EDIÇÃO PUBLICADA COM ' + PENDENCIAS.length + ' PENDÊNCIA(S). PASSADA 2 OBRIGATÓRIA: pesquise, escreva e rode publicar.cjs de novo na mesma edição até zerar: ===\n - ' + PENDENCIAS.join('\n - ')); });
 
 function carregar(txt) {
   const corpo = txt.replace(/^<\?php.*?\?>\s*/s, '');
