@@ -13,7 +13,7 @@
     "pena_cofre",
     "ueno_pagamentos"
    ],
-   "verificada": "2026-11-13-07h",
+   "verificada": "2026-11-13-11h",
    "fato_novo": false,
    "ultimo_fato": "12/11: o Ministério Público faz buscas na residência presidencial em Assunção; a EFE informa a detenção do superintendente de Bancos, Holger Insfrán; Alliana promete 'impunidade zero' (EFE, Reuters, Folha).",
    "proximo": "Prazo de 15 dias do BCP; pagamento a aposentados do IPS em 17/11; recurso da defesa contra a preventiva; sanção ficta do Orçamento (14/11)."
@@ -39,8 +39,8 @@
     "cop31_tfff_lula_sem_voz",
     "lula_filipinas_asean_13_11"
    ],
-   "verificada": "2026-11-13-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-13-11h",
+   "fato_novo": false,
    "ultimo_fato": "13/11: Lula chega às Filipinas para a cúpula da Asean (CNN Brasil, g1).",
    "proximo": "Asean 14 e 15/11; volta a Brasília por volta de 16/11."
   },
@@ -56,7 +56,7 @@
     "tse_21_acoes",
     "dallagnol_tse_pauta"
    ],
-   "verificada": "2026-11-13-07h",
+   "verificada": "2026-11-13-11h",
    "fato_novo": false,
    "ultimo_fato": "10/11: recurso contra o registro de Dallagnol segue fora da pauta do TSE há mais de um mês; diplomação em 18/12 (Congresso em Foco). Ação do Novo contra a chapa Lula-Alckmin sem fato novo.",
    "proximo": "Defesa da chapa Lula-Alckmin; data do julgamento de Dallagnol."
@@ -73,7 +73,7 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-13-07h",
+   "verificada": "2026-11-13-11h",
    "fato_novo": false,
    "ultimo_fato": "11/11: sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio; o último registro é de 5/11.",
    "proximo": "Decisão da Mesa do Senado; resposta de Rubio até 13/11."
@@ -98,7 +98,7 @@
     "mp_bets_prorrogada",
     "quaest_partidos_pl_pt"
    ],
-   "verificada": "2026-11-13-07h",
+   "verificada": "2026-11-13-11h",
    "fato_novo": false,
    "ultimo_fato": "10/11: Senado adia Escazú e manda o texto à CRE; Câmara aprova as MPs das dívidas rurais e do Brasil Soberano; o PL decide em 11/11 sobre Motta. | 11/11 (16h): Alcolumbre diz que vota a maioridade penal em 2026 se a Câmara votar; Congresso prorroga por 60 dias a MP das bets.",
    "proximo": "Bancada do PL (11/11); MP 1.376 vence no Senado em 11/11; CRE em 17/11; Mesas em 1º/02/2027."
@@ -111,11 +111,12 @@
    "materias": [
     "ms_seg",
     "maioridade",
-    "maioridade_audiencias"
+    "maioridade_audiencias",
+    "seguranca_ministerio_crise_pf_13_11"
    ],
-   "verificada": "2026-11-13-07h",
-   "fato_novo": false,
-   "ultimo_fato": "11/11: o relator Mendonça Filho (PL-PE) aponta amadurecimento do debate e marca a votação da PEC da maioridade penal na comissão especial para dezembro (Agência Câmara). Câmara aprova projeto que torna hediondo o crime de maus-tratos de cães e gatos com morte (CNN Brasil).",
+   "verificada": "2026-11-13-11h",
+   "fato_novo": true,
+   "ultimo_fato": "13/11: assessores de Lula dizem que a crise da PF não pode ir para o futuro Ministério da Segurança Pública (g1, O Globo).",
    "proximo": "Votação da PEC na comissão em dezembro; Senado analisa o projeto dos animais."
   },
   {
@@ -126,8 +127,8 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-13-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-13-11h",
+   "fato_novo": false,
    "ultimo_fato": "12/11-13/11: Dino mantém o prazo da 5x2 e flexibiliza a transição por acordo coletivo; empresários dizem que não terá efeito prático (Agência Brasil, Correio, Folha).",
    "proximo": "Plenário do STF; decreto do governo."
   },
@@ -158,8 +159,8 @@
     "ipca_outubro_12_11",
     "nvidia_espia_jensen_huang"
    ],
-   "verificada": "2026-11-13-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-13-11h",
+   "fato_novo": false,
    "ultimo_fato": "13/11: Senado aprova por 45 a 31 o texto-base do PLP do ajuste fiscal (Agência Brasil, CNN).",
    "proximo": "Destaques e sanção ou volta à Câmara."
   },
@@ -175,7 +176,7 @@
     "eua_senado_mississippi_alasca",
     "eua_tarifas_300"
    ],
-   "verificada": "2026-11-13-07h",
+   "verificada": "2026-11-13-11h",
    "fato_novo": false,
    "ultimo_fato": "10/11: Colom (D) lidera no Mississippi por 2.574 votos, com certificação em 13/11; Peltola (D) tem menos de 700 votos de vantagem no Alasca; Casa Branca diz que as tarifas seguem.",
    "proximo": "Certificação do Mississippi (13/11); contagem ranqueada do Alasca (após 18/11); certificação em 25/11."
@@ -192,7 +193,7 @@
     "ucrania_abudhabi",
     "ucrania_putin_enviados_trump"
    ],
-   "verificada": "2026-11-13-07h",
+   "verificada": "2026-11-13-11h",
    "fato_novo": false,
    "ultimo_fato": "12/11: Putin recebe enviados de Trump e diz que gostaria que a paz na Ucrânia 'durasse para sempre' (g1, CartaCapital, Terra, O Tempo).",
    "proximo": "Balanço do dia 2; troca de prisioneiros; nova ida de delegação americana a Moscou."
@@ -205,7 +206,7 @@
    "materias": [
     "israel"
    ],
-   "verificada": "2026-11-13-07h",
+   "verificada": "2026-11-13-11h",
    "fato_novo": false,
    "ultimo_fato": "10/11: Knesset toma posse e o bloco de Eisenkot indica Matan Kahana para presidir a Casa, com mais de 61 assinaturas; votação esperada em 17/11 (Times of Israel, Jerusalem Post).",
    "proximo": "Votação do presidente da Knesset (17/11); mandato de Eisenkot até 6/12."
@@ -222,8 +223,8 @@
     "khor_mor",
     "ira_radar_bahrein_13_11"
    ],
-   "verificada": "2026-11-13-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-13-11h",
+   "fato_novo": false,
    "ultimo_fato": "13/11: Guarda Revolucionária diz ter atacado radar dos EUA no Bahrein em meio à trégua (CNN Brasil, g1, UOL).",
    "proximo": "Resposta dos EUA à proposta; APEC."
   }
@@ -231,63 +232,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-13-07h",
-   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+   "feita": "2026-11-13-11h",
+   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
   }
  ]
 }
