@@ -51,7 +51,8 @@ Cada matéria é **um artigo narrado**, escrito por você, com a voz e a cadênc
 3. **Revise como editor** antes de gravar: corte adjetivo, muleta e repetição; confira cada número, nome, cargo, partido e data contra a fonte; veja se alguém que só lê essa matéria entende a história sem conhecer os capítulos anteriores.
 
 ### Padrão de matéria
-- **Manchete (`t`) e subtítulo (`sub`)** dizem o estado atual da história, não o fato de ontem. Verbo no presente ou no pretérito perfeito, sem adjetivo. O `sub` traz o segundo fato mais importante (1–2 frases).
+- **Manchete (`t`) e subtítulo (`sub`)** dizem o estado atual da história, não o fato de ontem. **Não citam veículos** (nada de "g1 e Folha registram…"): trazem fatos. O mesmo vale para o lide e o `resumo`. Quem informou cada dado entra no corpo da matéria, quando a atribuição for necessária, e na lista de fontes no rodapé (a partir da edição das 11h de 13/11 o `publicar.cjs` recusa veículo na manchete, no subtítulo e no lide).
+- **Explique o que o leitor pode não saber.** Sigla, organização, cargo, lei ou evento citados na matéria são explicados na primeira menção ("a Asean, Associação de Nações do Sudeste Asiático, bloco criado em 1967…"). Pergunte-se: alguém que nunca ouviu falar disso entende a matéria? Verbo no presente ou no pretérito perfeito, sem adjetivo. O `sub` traz o segundo fato mais importante (1–2 frases).
 - **`resumo`** (50–120 palavras): a versão curta e correta **hoje**: quem fez o quê, quando, o número central e o que está pendente. Não é cópia do 1º parágrafo.
 - **`fundo`** é a matéria narrada. Estrutura:
   1. **Lide** (um parágrafo de 20 a 85 palavras): o fato principal e o que mudou, com quem, o quê, quando e onde. Não começa pela fonte ("Segundo…").

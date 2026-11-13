@@ -224,6 +224,13 @@ if (NOVAS) {
     const frases = corpo.split(/(?<=[.!?])\s+/).map(x => x.trim()).filter(x => x.split(/\s+/).length >= 9);
     const rep1 = frases.find((x, k) => frases.indexOf(x) !== k);
     if (rep1) e2.push(rot + ': frase repetida no texto ("' + rep1.slice(0, 50) + '…"); é enchimento. Pesquise mais em vez de repetir');
+    if (nome >= '2026-11-13-11h') {   // abertura traz fatos, não veículos: a fonte entra no contexto e na lista final
+      const VEIC = /\b(g1|O Globo|Folha de S\.? ?Paulo|Folha|Estadão|UOL|Valor Econômico|CNN Brasil|Metrópoles|Correio Braziliense|Agência Brasil|Agência Câmara|Agência Senado|InfoMoney|Reuters|Poder360|ConJur|Conjur|Gazeta do Povo|Jovem Pan|Band News|GloboNews)\b/;
+      const mSub = VEIC.exec(String(s.sub || '')), mT = VEIC.exec(String(s.t || '')), mLide = ps.length ? VEIC.exec(ps[0][1]) : null;
+      if (mSub) e2.push(rot + ': o subtítulo cita veículo ("' + mSub[0] + '"). Traga o segundo fato mais importante; quem informa entra no corpo da matéria e na lista de fontes');
+      if (mT) e2.push(rot + ': a manchete cita veículo ("' + mT[0] + '"). Escreva o fato');
+      if (mLide) e2.push(rot + ': o lide cita veículo ("' + mLide[0] + '"). Abra pelo fato; a atribuição vem no desenvolvimento, quando for necessária');
+    }
     if (nome >= NARRATIVA && w >= 300 && !(curtas && !ehD)) {   // matéria narrada: o grosso é texto corrido; fichas e listas são fecho curto
       const FICHA = /por que importa|quem [ée] quem|quem s[ãa]o|os atores|o que vem|pr[óo]ximos passos|e agora|o que esperar|n[ãa]o est[áa] confirmado|n[ãa]o se sabe|em aberto|o que falta|os n[úu]meros|em n[úu]meros|n[úu]meros-chave|o que importa/i;
       const nw = t => String(t).split(/\s+/).filter(Boolean).length;
