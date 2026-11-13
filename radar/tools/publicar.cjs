@@ -102,8 +102,8 @@ const HIST = {};
   }); }
 Object.keys(HIST).forEach(i => { if (!d.S[i]) delete HIST[i]; else HIST[i] = [HIST[i].p, HIST[i].a]; });
 const nN = Object.values(flags).filter(v => v === 'novo').length, nA = Object.values(flags).filter(v => v === 'atualizada').length;
-if (ant && !process.argv.includes('--aceitar-poucas') && (nN < (hh === '07h' ? 15 : 5) || nN + nA < (hh === '07h' ? 25 : 10))) {
-  die('edição quase igual à anterior (' + nN + ' NOVO, ' + nA + ' ATUALIZADA). Exigido: ao menos '+(hh === '07h' ? '15 NOVO e 25' : '5 NOVO e 10')+' NOVO+ATUALIZADA (a edição das 7h é a primeira do dia e precisa de mais novidades: pesquise o que saiu à noite e de madrugada). Busque mais notícias publicadas depois de ' + ant + ' em TODAS as editorias e sub-regiões. Só use --aceitar-poucas se tiver pesquisado de verdade e realmente não houver mais nada (e diga isso no resumo).');
+if (ant && !process.argv.includes('--aceitar-poucas') && (nN < (hh === '07h' ? 15 : 8) || nN + nA < (hh === '07h' ? 25 : 16))) {
+  die('edição quase igual à anterior (' + nN + ' NOVO, ' + nA + ' ATUALIZADA). Exigido: ao menos '+(hh === '07h' ? '15 NOVO e 25' : '8 NOVO e 16')+' NOVO+ATUALIZADA (a edição das 7h é a primeira do dia e precisa de mais novidades: pesquise o que saiu à noite e de madrugada). Busque mais notícias publicadas depois de ' + ant + ' em TODAS as editorias e sub-regiões. Só use --aceitar-poucas se tiver pesquisado de verdade e realmente não houver mais nada (e diga isso no resumo).');
 }
 // matéria ATUALIZADA precisa dizer o que mudou (campo upd) e o texto não pode repetir o da edição anterior
 if (ant) {

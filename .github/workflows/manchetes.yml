@@ -10,18 +10,26 @@ concurrency: { group: manchetes, cancel-in-progress: true }
 jobs:
   m:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-        with: { sparse-checkout: 'radar/tools/coletar_manchetes.cjs', sparse-checkout-cone-mode: false }
+        with:
+          sparse-checkout: |
+            radar/tools/coletar_manchetes.cjs
+            radar/tools/coletar_artigos.cjs
+          sparse-checkout-cone-mode: false
       - name: Coletar
         run: node radar/tools/coletar_manchetes.cjs /tmp/manchetes.json | tee /tmp/log.txt
+      - name: Trechos das reportagens (não bloqueia a coleta se falhar)
+        continue-on-error: true
+        run: node radar/tools/coletar_artigos.cjs /tmp/manchetes.json /tmp/artigos.json | tee /tmp/log_artigos.txt
       - name: Publicar no branch manchetes
         run: |
           rm -rf /tmp/rep && mkdir /tmp/rep && cd /tmp/rep && git init -q -b manchetes && git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
           git fetch -q --depth 1 origin manchetes 2>/dev/null && git checkout -q FETCH_HEAD -- . 2>/dev/null || true
           mkdir -p hist
           cp /tmp/manchetes.json manchetes.json && cp /tmp/log.txt log.txt
+          cp /tmp/artigos.json artigos.json 2>/dev/null || true
           # histórico do dia: cada coleta fica em hist/ (compacto); apaga o que tem mais de 30 h
           node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('manchetes.json'));const c={coletado:m.coletado,fontes:m.fontes.map(f=>({nome:f.nome,tipo:f.tipo,uf:f.uf,itens:f.itens.map((i,p)=>({t:i.t,url:i.url,p}))}))};fs.writeFileSync('hist/'+m.coletado.replace(/[:.]/g,'-')+'.json',JSON.stringify(c));const lim=Date.now()-30*3600e3;for(const f of fs.readdirSync('hist')){const t=Date.parse(f.slice(0,-5).replace(/T(\d+)-(\d+)-(\d+)-(\d+)Z/,'T\$1:\$2:\$3.\$4Z'));if(t<lim)fs.unlinkSync('hist/'+f);}"
           node -e "const fs=require('fs');const a=fs.readdirSync('hist').sort().map(f=>JSON.parse(fs.readFileSync('hist/'+f)));fs.writeFileSync('historico.json',JSON.stringify({coletas:a.length,desde:a[0].coletado,ate:a[a.length-1].coletado,coletas_:a}))"

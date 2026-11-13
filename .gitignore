@@ -12,3 +12,4 @@ radar/dados/*
 !radar/dados/.htaccess
 radar/tools/_manchetes.json
 radar/tools/_historico.json
+radar/tools/_artigos.json
