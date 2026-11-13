@@ -14281,7 +14281,7 @@ _N('mello_araujo_2028_13_11', {ed:'regioes', reg:'sp', k:'Regiões · São Paulo
  fundo:`O vice-prefeito de São Paulo, Coronel Mello Araújo (PL), admitiu cogitar uma candidatura em 2028, criticou o prefeito Ricardo Nunes (MDB) e o governador Tarcísio de Freitas (Republicanos) e disse que buscará Jair Bolsonaro, informa a Folha. O UOL registra que ele reagiu às críticas de políticos dizendo que estava ajudando e que "parece que virou o vilão".
 NUMS 2028|eleição que Mello Araújo diz cogitar
 ## Por que importa
-A briga expõe o racha entre o vice, ligado ao bolsonarismo, e o prefeito, que busca a reeleição em 2028 com apoio de Tarcísio. A Folha informa que Nunes tenta reduzir o desgaste.
+A briga expõe o racha entre o vice, ligado ao bolsonarismo, e o prefeito. Nunes foi reeleito em 2024 e não pode disputar um terceiro mandato consecutivo em 2028, o que abre a sucessão na prefeitura; Mello Araújo diz querer disputá-la. A Folha informa que Nunes tenta reduzir o desgaste.
 ## Quem é quem
 - Mello Araújo: vice-prefeito, do PL (direita), indicado por Jair Bolsonaro para a chapa de Nunes.
 - Ricardo Nunes: prefeito, do MDB (centro-direita).
