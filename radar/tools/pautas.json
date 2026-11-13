@@ -1,291 +1,293 @@
 {
-  "ajuda": "Livro de pautas do Radar. Toda edição lê este arquivo ANTES de pesquisar e o atualiza ANTES de publicar (o publicar.cjs recusa a edição se faltar). pautas: histórias que continuam. Para cada pauta aberta P0/P1: busque o fato mais recente, preencha verificada com o nome da edição (AAAA-MM-DD-HHh), reescreva ultimo_fato e proximo, marque fato_novo true/false; se true, ao menos uma matéria dela precisa ser NOVA ou ATUALIZADA na edição. Feche com aberta:false e motivo quando a história acabou. Crie pauta nova (P0 = muda governo, regime, guerra, mercado, resultado eleitoral, prisão ou queda de chefe de Estado; P1 = decisão relevante de poder, crise setorial, assunto que volta nas próximas edições; P2 = acompanhar). varredura: buscas obrigatórias de cada edição; preencha feita com o nome da edição e achado (o que apareceu, ou 'nada novo').",
-  "pautas": [
-    {
-      "id": "paraguai-pena",
-      "tema": "Paraguai: queda e prisão de Peña, governo Alliana e quebra do Ueno Bank",
-      "prio": "P0",
-      "aberta": true,
-      "materias": [
-        "paraguai",
-        "ueno_bank",
-        "paraguai_cupula",
-        "pena_cofre",
-        "ueno_pagamentos"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "12/11: o Ministério Público faz buscas na residência presidencial em Assunção; a EFE informa a detenção do superintendente de Bancos, Holger Insfrán; Alliana promete 'impunidade zero' (EFE, Reuters, Folha).",
-      "proximo": "Prazo de 15 dias do BCP; pagamento a aposentados do IPS em 17/11; recurso da defesa contra a preventiva; sanção ficta do Orçamento (14/11)."
-    },
-    {
-      "id": "transicao-lula",
-      "tema": "Quarto mandato de Lula: ministérios e equipe econômica",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "ministerio_40",
-        "lula_equipe_eco",
-        "ministerio_4mandato",
-        "ministerio",
-        "lula_cop",
-        "fiscal",
-        "lula_fala_nacao",
-        "cop31_antalya",
-        "lula_sri_centrao",
-        "lula_antalia_comitiva",
-        "brasil_mapa_fosseis",
-        "cop31_lula_pezeshkian",
-        "cop31_tfff_lula_sem_voz"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "12/11: Lula se reúne com o presidente do Irã, Masoud Pezeshkian, na COP31; em 11/11 pediu apoio ao TFFF, que soma quase US$ 8 bi (O Tempo; Folhapress).",
-      "proximo": "Cúpula da Asean nas Filipinas (14 e 15); volta a Brasília por volta de 16/11."
-    },
-    {
-      "id": "tse-acoes",
-      "tema": "TSE: ação do Novo contra a chapa Lula-Alckmin e ações contra Flávio Bolsonaro",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "tse_novo",
-        "tse_aije9",
-        "tse_psol_se",
-        "tse_21_acoes",
-        "dallagnol_tse_pauta"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "10/11: recurso contra o registro de Dallagnol segue fora da pauta do TSE há mais de um mês; diplomação em 18/12 (Congresso em Foco). Ação do Novo contra a chapa Lula-Alckmin sem fato novo.",
-      "proximo": "Defesa da chapa Lula-Alckmin; data do julgamento de Dallagnol."
-    },
-    {
-      "id": "flavio-senado",
-      "tema": "Flávio Bolsonaro: viagem aos EUA, voto remoto e resposta do Senado",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "flavio_senado",
-        "flavio",
-        "fuga",
-        "flavio_pesquisa",
-        "quaest_pos_eleicao"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "11/11: sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio; o último registro é de 5/11.",
-      "proximo": "Decisão da Mesa do Senado; resposta de Rubio até 13/11."
-    },
-    {
-      "id": "congresso-novo",
-      "tema": "Novo Congresso: composição, reeleição de Motta e Alcolumbre",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "congresso_direita",
-        "alcolumbre_stf",
-        "sucessao",
-        "congresso",
-        "pl_motta",
-        "agenda_semana",
-        "motta_alcolumbre_comitiva",
-        "senado_pauta_10_11",
-        "escazu_cre",
-        "mps_rurais_exportadores",
-        "maioridade_penal_alcolumbre",
-        "mp_bets_prorrogada",
-        "quaest_partidos_pl_pt"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "10/11: Senado adia Escazú e manda o texto à CRE; Câmara aprova as MPs das dívidas rurais e do Brasil Soberano; o PL decide em 11/11 sobre Motta. | 11/11 (16h): Alcolumbre diz que vota a maioridade penal em 2026 se a Câmara votar; Congresso prorroga por 60 dias a MP das bets.",
-      "proximo": "Bancada do PL (11/11); MP 1.376 vence no Senado em 11/11; CRE em 17/11; Mesas em 1º/02/2027."
-    },
-    {
-      "id": "seguranca-publica",
-      "tema": "PEC da Segurança Pública e Ministério da Segurança",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "ms_seg",
-        "maioridade",
-        "maioridade_audiencias"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "11/11: o relator Mendonça Filho (PL-PE) aponta amadurecimento do debate e marca a votação da PEC da maioridade penal na comissão especial para dezembro (Agência Câmara). Câmara aprova projeto que torna hediondo o crime de maus-tratos de cães e gatos com morte (CNN Brasil).",
-      "proximo": "Votação da PEC na comissão em dezembro; Senado analisa o projeto dos animais."
-    },
-    {
-      "id": "escala-6x1",
-      "tema": "Fim da escala 6x1: promulgação e ações no STF",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "dino_6x1"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "12/11: Dino mantém o cronograma (42 h e dois dias de descanso em 16/12), rejeita adiar, dá 90 dias para renegociar acordos e leva a decisão ao plenário (UOL, CNN Brasil, STF).",
-      "proximo": "Decisão de Dino (13/11); pauta no plenário; decreto do governo após 16/11."
-    },
-    {
-      "id": "economia-mercado",
-      "tema": "Fiscal, Selic, câmbio e bolsas",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "copom",
-        "fiscal",
-        "dolar_maxima",
-        "bolsas_ia",
-        "ibov_semana",
-        "mercado_semana",
-        "orcamento_2027",
-        "focus_selic_13_75",
-        "copom_ata",
-        "mercado_10_11",
-        "petrobras_balanco",
-        "combustiveis_decreto",
-        "cbs_senado_aliquota",
-        "braskem_capitalizacao",
-        "balancos_10_11",
-        "ajuste_fiscal_pacote_11_11",
-        "cbs_prazo_pressao_adiar",
-        "operacao_refit_magro",
-        "ipca_outubro_12_11",
-        "nvidia_espia_jensen_huang"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "12/11: governo apresenta o ajuste fiscal; Ibovespa cai 0,91% e dólar sobe a R$ 5,61 às 10h35 (Money Times); Congresso aprova crédito de R$ 149,4 bi para benefícios (Agência Câmara, CNN, Folha).",
-      "proximo": "Sessão do Senado às 16h de 12/11; balanço da Nvidia em 17/11."
-    },
-    {
-      "id": "eua-meio-mandato",
-      "tema": "EUA: pós-eleição de meio de mandato e gabinete Trump",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "eua",
-        "rubio_gabinete",
-        "eua_meio_mandato_placar",
-        "eua_senado_mississippi_alasca",
-        "eua_tarifas_300"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "10/11: Colom (D) lidera no Mississippi por 2.574 votos, com certificação em 13/11; Peltola (D) tem menos de 700 votos de vantagem no Alasca; Casa Branca diz que as tarifas seguem.",
-      "proximo": "Certificação do Mississippi (13/11); contagem ranqueada do Alasca (após 18/11); certificação em 25/11."
-    },
-    {
-      "id": "ucrania-paz",
-      "tema": "Ucrânia: negociação de paz e ataques à energia",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "ucrania_acordo",
-        "ucrania_energia",
-        "zaporizhzhia",
-        "ucrania_abudhabi",
-        "ucrania_putin_enviados_trump"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "12/11: Putin recebe enviados de Trump e diz que gostaria que a paz na Ucrânia 'durasse para sempre' (g1, CartaCapital, Terra, O Tempo).",
-      "proximo": "Balanço do dia 2; troca de prisioneiros; nova ida de delegação americana a Moscou."
-    },
-    {
-      "id": "israel-governo",
-      "tema": "Israel: impasse pós-eleição e formação de governo",
-      "prio": "P1",
-      "aberta": true,
-      "materias": [
-        "israel"
-      ],
-      "verificada": "2026-11-12-19h",
-      "fato_novo": false,
-      "ultimo_fato": "10/11: Knesset toma posse e o bloco de Eisenkot indica Matan Kahana para presidir a Casa, com mais de 61 assinaturas; votação esperada em 17/11 (Times of Israel, Jerusalem Post).",
-      "proximo": "Votação do presidente da Knesset (17/11); mandato de Eisenkot até 6/12."
-    },
-    {
-      "id": "ira-oriente-medio",
-      "tema": "Irã, Catar e Oriente Médio",
-      "prio": "P2",
-      "aberta": true,
-      "materias": [
-        "ira_proposta_catar",
-        "iemen_houthis",
-        "ira_iron_gate",
-        "khor_mor"
-      ],
-      "verificada": "2026-11-12-11h",
-      "fato_novo": false,
-      "ultimo_fato": "10/11: Trump diz que novos ataques ao Irã não são necessários por ora.",
-      "proximo": "Resposta dos EUA à proposta; APEC."
-    }
-  ],
-  "varredura": [
-    {
-      "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    },
-    {
-      "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-      "feita": "2026-11-12-19h",
-      "achado": "Edição das 19h de 12/11: leitura de páginas bloqueada (WebFetch sem permissão); uso de manchetes das capas do coletor (18h40) e WebSearch. Entraram Zanin/PSD no RJ, Milton Leite réu, STF e violência patrimonial, CPMI do Master, Fachin e Ciro Nogueira, Outlook, Caixa Seguridade, Anvisa, Gaza e tiroteio em Washington. Nada além disso neste tema."
-    }
-  ]
+ "ajuda": "Livro de pautas do Radar. Toda edição lê este arquivo ANTES de pesquisar e o atualiza ANTES de publicar (o publicar.cjs recusa a edição se faltar). pautas: histórias que continuam. Para cada pauta aberta P0/P1: busque o fato mais recente, preencha verificada com o nome da edição (AAAA-MM-DD-HHh), reescreva ultimo_fato e proximo, marque fato_novo true/false; se true, ao menos uma matéria dela precisa ser NOVA ou ATUALIZADA na edição. Feche com aberta:false e motivo quando a história acabou. Crie pauta nova (P0 = muda governo, regime, guerra, mercado, resultado eleitoral, prisão ou queda de chefe de Estado; P1 = decisão relevante de poder, crise setorial, assunto que volta nas próximas edições; P2 = acompanhar). varredura: buscas obrigatórias de cada edição; preencha feita com o nome da edição e achado (o que apareceu, ou 'nada novo').",
+ "pautas": [
+  {
+   "id": "paraguai-pena",
+   "tema": "Paraguai: queda e prisão de Peña, governo Alliana e quebra do Ueno Bank",
+   "prio": "P0",
+   "aberta": true,
+   "materias": [
+    "paraguai",
+    "ueno_bank",
+    "paraguai_cupula",
+    "pena_cofre",
+    "ueno_pagamentos"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": false,
+   "ultimo_fato": "12/11: o Ministério Público faz buscas na residência presidencial em Assunção; a EFE informa a detenção do superintendente de Bancos, Holger Insfrán; Alliana promete 'impunidade zero' (EFE, Reuters, Folha).",
+   "proximo": "Prazo de 15 dias do BCP; pagamento a aposentados do IPS em 17/11; recurso da defesa contra a preventiva; sanção ficta do Orçamento (14/11)."
+  },
+  {
+   "id": "transicao-lula",
+   "tema": "Quarto mandato de Lula: ministérios e equipe econômica",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "ministerio_40",
+    "lula_equipe_eco",
+    "ministerio_4mandato",
+    "ministerio",
+    "lula_cop",
+    "fiscal",
+    "lula_fala_nacao",
+    "cop31_antalya",
+    "lula_sri_centrao",
+    "lula_antalia_comitiva",
+    "brasil_mapa_fosseis",
+    "cop31_lula_pezeshkian",
+    "cop31_tfff_lula_sem_voz",
+    "lula_filipinas_asean_13_11"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": true,
+   "ultimo_fato": "13/11: Lula chega às Filipinas para a cúpula da Asean (CNN Brasil, g1).",
+   "proximo": "Asean 14 e 15/11; volta a Brasília por volta de 16/11."
+  },
+  {
+   "id": "tse-acoes",
+   "tema": "TSE: ação do Novo contra a chapa Lula-Alckmin e ações contra Flávio Bolsonaro",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "tse_novo",
+    "tse_aije9",
+    "tse_psol_se",
+    "tse_21_acoes",
+    "dallagnol_tse_pauta"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": false,
+   "ultimo_fato": "10/11: recurso contra o registro de Dallagnol segue fora da pauta do TSE há mais de um mês; diplomação em 18/12 (Congresso em Foco). Ação do Novo contra a chapa Lula-Alckmin sem fato novo.",
+   "proximo": "Defesa da chapa Lula-Alckmin; data do julgamento de Dallagnol."
+  },
+  {
+   "id": "flavio-senado",
+   "tema": "Flávio Bolsonaro: viagem aos EUA, voto remoto e resposta do Senado",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "flavio_senado",
+    "flavio",
+    "fuga",
+    "flavio_pesquisa",
+    "quaest_pos_eleicao"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": false,
+   "ultimo_fato": "11/11: sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio; o último registro é de 5/11.",
+   "proximo": "Decisão da Mesa do Senado; resposta de Rubio até 13/11."
+  },
+  {
+   "id": "congresso-novo",
+   "tema": "Novo Congresso: composição, reeleição de Motta e Alcolumbre",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "congresso_direita",
+    "alcolumbre_stf",
+    "sucessao",
+    "congresso",
+    "pl_motta",
+    "agenda_semana",
+    "motta_alcolumbre_comitiva",
+    "senado_pauta_10_11",
+    "escazu_cre",
+    "mps_rurais_exportadores",
+    "maioridade_penal_alcolumbre",
+    "mp_bets_prorrogada",
+    "quaest_partidos_pl_pt"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": false,
+   "ultimo_fato": "10/11: Senado adia Escazú e manda o texto à CRE; Câmara aprova as MPs das dívidas rurais e do Brasil Soberano; o PL decide em 11/11 sobre Motta. | 11/11 (16h): Alcolumbre diz que vota a maioridade penal em 2026 se a Câmara votar; Congresso prorroga por 60 dias a MP das bets.",
+   "proximo": "Bancada do PL (11/11); MP 1.376 vence no Senado em 11/11; CRE em 17/11; Mesas em 1º/02/2027."
+  },
+  {
+   "id": "seguranca-publica",
+   "tema": "PEC da Segurança Pública e Ministério da Segurança",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "ms_seg",
+    "maioridade",
+    "maioridade_audiencias"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": false,
+   "ultimo_fato": "11/11: o relator Mendonça Filho (PL-PE) aponta amadurecimento do debate e marca a votação da PEC da maioridade penal na comissão especial para dezembro (Agência Câmara). Câmara aprova projeto que torna hediondo o crime de maus-tratos de cães e gatos com morte (CNN Brasil).",
+   "proximo": "Votação da PEC na comissão em dezembro; Senado analisa o projeto dos animais."
+  },
+  {
+   "id": "escala-6x1",
+   "tema": "Fim da escala 6x1: promulgação e ações no STF",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "dino_6x1"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": true,
+   "ultimo_fato": "12/11-13/11: Dino mantém o prazo da 5x2 e flexibiliza a transição por acordo coletivo; empresários dizem que não terá efeito prático (Agência Brasil, Correio, Folha).",
+   "proximo": "Plenário do STF; decreto do governo."
+  },
+  {
+   "id": "economia-mercado",
+   "tema": "Fiscal, Selic, câmbio e bolsas",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "copom",
+    "fiscal",
+    "dolar_maxima",
+    "bolsas_ia",
+    "ibov_semana",
+    "mercado_semana",
+    "orcamento_2027",
+    "focus_selic_13_75",
+    "copom_ata",
+    "mercado_10_11",
+    "petrobras_balanco",
+    "combustiveis_decreto",
+    "cbs_senado_aliquota",
+    "braskem_capitalizacao",
+    "balancos_10_11",
+    "ajuste_fiscal_pacote_11_11",
+    "cbs_prazo_pressao_adiar",
+    "operacao_refit_magro",
+    "ipca_outubro_12_11",
+    "nvidia_espia_jensen_huang"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": true,
+   "ultimo_fato": "13/11: Senado aprova por 45 a 31 o texto-base do PLP do ajuste fiscal (Agência Brasil, CNN).",
+   "proximo": "Destaques e sanção ou volta à Câmara."
+  },
+  {
+   "id": "eua-meio-mandato",
+   "tema": "EUA: pós-eleição de meio de mandato e gabinete Trump",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "eua",
+    "rubio_gabinete",
+    "eua_meio_mandato_placar",
+    "eua_senado_mississippi_alasca",
+    "eua_tarifas_300"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": false,
+   "ultimo_fato": "10/11: Colom (D) lidera no Mississippi por 2.574 votos, com certificação em 13/11; Peltola (D) tem menos de 700 votos de vantagem no Alasca; Casa Branca diz que as tarifas seguem.",
+   "proximo": "Certificação do Mississippi (13/11); contagem ranqueada do Alasca (após 18/11); certificação em 25/11."
+  },
+  {
+   "id": "ucrania-paz",
+   "tema": "Ucrânia: negociação de paz e ataques à energia",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "ucrania_acordo",
+    "ucrania_energia",
+    "zaporizhzhia",
+    "ucrania_abudhabi",
+    "ucrania_putin_enviados_trump"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": false,
+   "ultimo_fato": "12/11: Putin recebe enviados de Trump e diz que gostaria que a paz na Ucrânia 'durasse para sempre' (g1, CartaCapital, Terra, O Tempo).",
+   "proximo": "Balanço do dia 2; troca de prisioneiros; nova ida de delegação americana a Moscou."
+  },
+  {
+   "id": "israel-governo",
+   "tema": "Israel: impasse pós-eleição e formação de governo",
+   "prio": "P1",
+   "aberta": true,
+   "materias": [
+    "israel"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": false,
+   "ultimo_fato": "10/11: Knesset toma posse e o bloco de Eisenkot indica Matan Kahana para presidir a Casa, com mais de 61 assinaturas; votação esperada em 17/11 (Times of Israel, Jerusalem Post).",
+   "proximo": "Votação do presidente da Knesset (17/11); mandato de Eisenkot até 6/12."
+  },
+  {
+   "id": "ira-oriente-medio",
+   "tema": "Irã, Catar e Oriente Médio",
+   "prio": "P2",
+   "aberta": true,
+   "materias": [
+    "ira_proposta_catar",
+    "iemen_houthis",
+    "ira_iron_gate",
+    "khor_mor",
+    "ira_radar_bahrein_13_11"
+   ],
+   "verificada": "2026-11-13-07h",
+   "fato_novo": true,
+   "ultimo_fato": "13/11: Guarda Revolucionária diz ter atacado radar dos EUA no Bahrein em meio à trégua (CNN Brasil, g1, UOL).",
+   "proximo": "Resposta dos EUA à proposta; APEC."
+  }
+ ],
+ "varredura": [
+  {
+   "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  },
+  {
+   "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
+   "feita": "2026-11-13-07h",
+   "achado": "Edição das 7h de 13/11: páginas não abriram no WebFetch; uso de manchetes e resumos do coletor (06h41). Entraram ajuste fiscal no Senado, Dino/6x1, Irã/Bahrein, Lula nas Filipinas, vice de Nunes, defesa de Vorcaro. Nada além disso apurado."
+  }
+ ]
 }
