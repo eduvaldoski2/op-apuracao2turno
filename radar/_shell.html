@@ -46,6 +46,9 @@ html,body{overflow-anchor:none}
 .hdr.compact #opmc{top:50%}
 }
 .logo{display:block;line-height:0;text-decoration:none;min-width:0;max-width:100%}
+.logo .lg{position:relative;display:inline-block;max-width:100%}
+.beta{position:absolute;top:2px;right:-2px;padding:3px 7px;border-radius:999px;background:#F28C28;color:#fff;font:700 10px/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.hdr.compact .beta{font-size:8px;padding:2px 5px}
 .logo img{display:block;width:clamp(290px,60vw,560px);max-width:100%;height:auto;margin:0 auto}
 .edicao{font-size:13px;color:#4a4660;padding-bottom:10px;font-weight:500;letter-spacing:.01em}
 .edicao b{color:#3E347E;font-weight:700}
@@ -259,7 +262,7 @@ footer small{color:#5a5670;font-size:12.5px}
   <div class="wrap hdrin">
     <a class="voltar" href="/">← oficinapolitica.com.br</a>
     <div id="opmc"><button type="button" class="btn-sair" id="sair-topo" aria-label="Sair da minha conta">Sair</button></div>
-    <a class="logo" href="#" aria-label="Radar da Oficina Política, página inicial"><img alt="Radar da Oficina Política" src="/img/radar-cor.svg"></a>
+    <a class="logo" href="#" aria-label="Radar da Oficina Política (beta), página inicial"><span class="lg"><img alt="Radar da Oficina Política" src="/img/radar-cor.svg"><span class="beta" aria-hidden="true">beta</span></span></a>
     <div class="edicao" id="edicao"></div>
   </div>
   <nav class="nav" id="nav" aria-label="Seções"></nav>
