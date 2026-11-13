@@ -224,6 +224,10 @@ if (NOVAS) {
     const frases = corpo.split(/(?<=[.!?])\s+/).map(x => x.trim()).filter(x => x.split(/\s+/).length >= 9);
     const rep1 = frases.find((x, k) => frases.indexOf(x) !== k);
     if (rep1) e2.push(rot + ': frase repetida no texto ("' + rep1.slice(0, 50) + '…"); é enchimento. Pesquise mais em vez de repetir');
+    if (nome >= '2026-11-13-11h') {   // orientação editorial: o PT é partido de esquerda, nunca centro-esquerda
+      const mPT = /\bPT\)?,? (?:é )?(?:um )?(?:partido )?(?:de )?centro-esquerda/i.exec(txtBlocos(s).join(' '));
+      if (mPT) e2.push(rot + ': o PT é partido de esquerda, não centro-esquerda ("' + mPT[0] + '")');
+    }
     if (nome >= '2026-11-13-11h') {   // abertura traz fatos, não veículos: a fonte entra no contexto e na lista final
       const VEIC = /\b(g1|O Globo|Folha de S\.? ?Paulo|Folha|Estadão|UOL|Valor Econômico|CNN Brasil|Metrópoles|Correio Braziliense|Agência Brasil|Agência Câmara|Agência Senado|InfoMoney|Reuters|Poder360|ConJur|Conjur|Gazeta do Povo|Jovem Pan|Band News|GloboNews)\b/;
       const mSub = VEIC.exec(String(s.sub || '')), mT = VEIC.exec(String(s.t || '')), mLide = ps.length ? VEIC.exec(ps[0][1]) : null;
