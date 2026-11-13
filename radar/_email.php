@@ -78,7 +78,8 @@ function radar_boletim_montar($d, $prefs) {
   if ($regs) { $r = []; foreach ($regs as $g) { foreach ($ord['regioes'] ?? [] as $i) if (isset($S[$i]) && ($S[$i]['reg'] ?? '') === $g) { $r[] = $i; break; } } $lista['regioes'] = $r; }
   $usados = []; $destaque = null;
   $lead = $d['lead'] ?? '';
-  foreach ($lista as $e => $ids) if ($e !== 'regioes' && in_array($lead, $ids, true)) { $destaque = $lead; break; }
+  if ($lead !== '' && isset($S[$lead])) $destaque = $lead;   // manchete da edição mais recente, de qualquer editoria (inclusive regional)
+  if (!$destaque) foreach ($lista as $e => $ids) if ($e !== 'regioes' && in_array($lead, $ids, true)) { $destaque = $lead; break; }
   if (!$destaque) foreach ($lista as $e => $ids) if ($ids) { $destaque = $ids[0]; break; }
   if ($destaque) $usados[] = $destaque;
   $apoio = [];   // até 2, de editorias diferentes da do destaque

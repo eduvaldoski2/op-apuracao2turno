@@ -56,7 +56,10 @@ function resumoDoDia(data, opts) {
   ['politica', 'economia', 'mundo'].forEach(k => { order[k] = order[k].slice(0, MAX[k]); });
   // regiões: as de maior placar de cada sub-região primeiro (o PHP pega a primeira de cada região escolhida)
   order.regioes = order.regioes.slice(0, 40);
-  const lead = ids.find(i => ult[i].ed !== 'regioes') || '';
+  // destaque do boletim = manchete da edição MAIS RECENTE do dia (é a que o Radar acabou de pôr no topo);
+  // se ela não estiver elegível, cai no maior placar, como antes
+  const leadAtual = ultEd.HOME_LEAD && ult[ultEd.HOME_LEAD] && !ult[ultEd.HOME_LEAD].velha ? ultEd.HOME_LEAD : '';
+  const lead = leadAtual || ids.find(i => ult[i].ed !== 'regioes') || '';
   const ultimo = eds[eds.length - 1];
   const mail = {
     dia: data, hora: ultimo.hh, data: ultimo.d.EDICAO.data, lead, order,
