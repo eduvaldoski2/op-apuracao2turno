@@ -145,6 +145,7 @@ if (ant) {
 // Objetivo: matéria escrita como texto jornalístico único (não diário de atualizações nem resumo por fonte),
 // com fontes variadas, pautas importantes acompanhadas a cada edição e sem aposentar matéria recente.
 const CORTE = '2026-11-07-19h';
+const NARRATIVA = '2026-11-13-07h';   // a partir daqui: matéria narrada (75%+ de texto corrido); "O que vem agora", "não confirmado", nums e "Quem é quem" deixam de ser obrigatórios
 const NOVAS = nome >= CORTE || process.env.RADAR_REGRAS === '1';
 const relaxa = process.argv.includes('--aceitar-poucas');
 const curtas = process.argv.includes('--aceitar-curtas');   // último recurso: afrouxa só o piso de palavras/veículos das matérias que NÃO são destaque
@@ -205,14 +206,14 @@ if (NOVAS) {
     const rw = String(s.resumo || '').split(/\s+/).filter(Boolean).length;
     if (rw < CFG.resumo.min || rw > CFG.resumo.max) e2.push(rot + ': resumo com ' + rw + ' palavras; deve ter ' + CFG.resumo.min + ' a ' + CFG.resumo.max);
     if (ps.length && String(s.resumo || '').trim() === ps[0][1].trim()) e2.push(rot + ': o resumo é igual ao 1º parágrafo; o resumo é a versão curta (fato, número central, o que está pendente), o lide é o começo do artigo');
-    if (ehD) {
+    if (ehD && nome < NARRATIVA) {
       const hs = s.fundo.filter(b => b[0] === 'h').map(b => b[1]);
       if (!hs.some(x => /o que vem|pr[óo]ximos passos|e agora|o que esperar/i.test(x))) e2.push(rot + ': destaque sem intertítulo "O que vem agora" (próximos passos, prazos, quem decide)');
       if (!hs.some(x => /n[ãa]o est[áa] confirmado|n[ãa]o se sabe|ainda n[ãa]o|em aberto|o que falta/i.test(x))) e2.push(rot + ': destaque sem intertítulo "O que ainda não está confirmado" (divergências e lacunas)');
       if (!s.fundo.some(b => b[0] === 'nums' || b[0] === 'tl')) e2.push(rot + ': destaque sem bloco de números (nums) ou cronologia (tl)');
     }
     // atores políticos: matéria de Mundo ou destaque político situa quem são os agentes (partido, campo ideológico, alianças, quem acusou quem)
-    if (nome >= '2026-11-08-15h' && s.semAtores !== true && (s.ed === 'mundo' || (ehD && s.ed === 'politica'))) {
+    if (nome >= '2026-11-08-15h' && nome < NARRATIVA && s.semAtores !== true && (s.ed === 'mundo' || (ehD && s.ed === 'politica'))) {
       const hs2 = s.fundo.filter(b => b[0] === 'h').map(b => b[1]);
       if (!hs2.some(x => /quem [ée] quem|quem s[ãa]o|os atores|mapa d|campos? (pol[íi]tic|ideol)|quem disputa|quem governa|quem acusa|alian[çc]as|os partidos|o campo/i.test(x))) e2.push(rot + ': falta o intertítulo que situa os atores políticos ("Quem é quem", "Os partidos e as alianças"…): partido e campo ideológico de cada agente, alianças locais, quem acusou quem e se é do mesmo partido (se não houver ator político, use semAtores:true)');
     }
@@ -223,6 +224,19 @@ if (NOVAS) {
     const frases = corpo.split(/(?<=[.!?])\s+/).map(x => x.trim()).filter(x => x.split(/\s+/).length >= 9);
     const rep1 = frases.find((x, k) => frases.indexOf(x) !== k);
     if (rep1) e2.push(rot + ': frase repetida no texto ("' + rep1.slice(0, 50) + '…"); é enchimento. Pesquise mais em vez de repetir');
+    if (nome >= NARRATIVA && w >= 300 && !(curtas && !ehD)) {   // matéria narrada: o grosso é texto corrido; fichas e listas são fecho curto
+      const FICHA = /por que importa|quem [ée] quem|quem s[ãa]o|os atores|o que vem|pr[óo]ximos passos|e agora|o que esperar|n[ãa]o est[áa] confirmado|n[ãa]o se sabe|em aberto|o que falta|os n[úu]meros|em n[úu]meros|n[úu]meros-chave|o que importa/i;
+      const nw = t => String(t).split(/\s+/).filter(Boolean).length;
+      let emFicha = false, narr = 0, ficha = 0, lista = 0;
+      (s.fundo || []).forEach(b => {
+        if (b[0] === 'h') { emFicha = FICHA.test(b[1]); return; }
+        if (b[0] === 'ul') { const n = nw((b[1] || []).join(' ')); lista += n; ficha += n; return; }
+        if (b[0] === 'p') { if (emFicha) ficha += nw(b[1]); else narr += nw(b[1]); }
+      });
+      const tot = narr + ficha;
+      if (tot && narr / tot < 0.75) e2.push(rot + ': só ' + Math.round(100 * narr / tot) + '% do texto é narrativo (mínimo 75%). As seções de ficha (por que importa, quem é quem, o que vem agora, não confirmado) e as listas ocupam demais; conte a história em parágrafos encadeados e deixe só um fecho curto');
+      if (tot && lista / tot > 0.15) e2.push(rot + ': listas (ul) ocupam ' + Math.round(100 * lista / tot) + '% do texto (máximo 15%). Transforme os tópicos em parágrafos narrativos');
+    }
     if (ps.length >= 4 && ps.filter(b => ATRIB.test(b[1])).length / ps.length > CFG.maxCascata) e2.push(rot + ': mais de 40% dos parágrafos começam por "Segundo X…": isso é resumo por fonte. Reescreva fato a fato, atribuindo dentro da frase');
     if (s.ed === 'mundo' && !comUrl(s).some(f => estrangeira(f[1]))) e2.push(rot + ': matéria de Mundo precisa de ao menos uma fonte fora da imprensa brasileira (agência, veículo internacional ou do país do fato)');
     if (flags[i]) {
