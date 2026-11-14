@@ -13,10 +13,10 @@
     "pena_cofre",
     "ueno_pagamentos"
    ],
-   "verificada": "2026-11-13-11h",
-   "fato_novo": false,
-   "ultimo_fato": "12/11: o Ministério Público faz buscas na residência presidencial em Assunção; a EFE informa a detenção do superintendente de Bancos, Holger Insfrán; Alliana promete 'impunidade zero' (EFE, Reuters, Folha).",
-   "proximo": "Prazo de 15 dias do BCP; pagamento a aposentados do IPS em 17/11; recurso da defesa contra a preventiva; sanção ficta do Orçamento (14/11)."
+   "verificada": "2026-11-14-07h",
+   "fato_novo": true,
+   "ultimo_fato": "13/11: a Promotoria amplia a acusação por associação criminosa contra Peña, Carvallo, Holger Insfrán e três ex-diretores do BCP; Peña segue em prisão preventiva (La Nación, DW).",
+   "proximo": "Decisão do juiz sobre as cautelares; perícia do celular de Peña; sanção ficta do Orçamento (14/11); possível acusação de lavagem."
   },
   {
    "id": "transicao-lula",
@@ -37,11 +37,12 @@
     "brasil_mapa_fosseis",
     "cop31_lula_pezeshkian",
     "cop31_tfff_lula_sem_voz",
-    "lula_filipinas_asean_13_11"
+    "lula_filipinas_asean_13_11",
+    "ministerio"
    ],
-   "verificada": "2026-11-13-11h",
+   "verificada": "2026-11-14-07h",
    "fato_novo": false,
-   "ultimo_fato": "13/11: Lula chega às Filipinas para a cúpula da Asean (CNN Brasil, g1).",
+   "ultimo_fato": "13/11: Lula nas Filipinas para a cúpula da Asean; ministérios só após o retorno (g1, Folha).",
    "proximo": "Asean 14 e 15/11; volta a Brasília por volta de 16/11."
   },
   {
@@ -54,12 +55,13 @@
     "tse_aije9",
     "tse_psol_se",
     "tse_21_acoes",
-    "dallagnol_tse_pauta"
+    "dallagnol_tse_pauta",
+    "toffoli_contas_campanha_lula_14_11"
    ],
-   "verificada": "2026-11-13-11h",
-   "fato_novo": false,
-   "ultimo_fato": "10/11: recurso contra o registro de Dallagnol segue fora da pauta do TSE há mais de um mês; diplomação em 18/12 (Congresso em Foco). Ação do Novo contra a chapa Lula-Alckmin sem fato novo.",
-   "proximo": "Defesa da chapa Lula-Alckmin; data do julgamento de Dallagnol."
+   "verificada": "2026-11-14-07h",
+   "fato_novo": true,
+   "ultimo_fato": "13/11: o ministro Toffoli dá 3 dias à chapa Lula-Alckmin para explicar inconsistências na prestação de contas (Estadão, Folha, g1).",
+   "proximo": "Resposta da campanha em 3 dias; Dallagnol sem data."
   },
   {
    "id": "flavio-senado",
@@ -73,10 +75,10 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-13-11h",
+   "verificada": "2026-11-14-07h",
    "fato_novo": false,
-   "ultimo_fato": "11/11: sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio; o último registro é de 5/11.",
-   "proximo": "Decisão da Mesa do Senado; resposta de Rubio até 13/11."
+   "ultimo_fato": "Sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio até 14/11.",
+   "proximo": "Decisão da Mesa do Senado."
   },
   {
    "id": "congresso-novo",
@@ -98,10 +100,10 @@
     "mp_bets_prorrogada",
     "quaest_partidos_pl_pt"
    ],
-   "verificada": "2026-11-13-11h",
+   "verificada": "2026-11-14-07h",
    "fato_novo": false,
-   "ultimo_fato": "10/11: Senado adia Escazú e manda o texto à CRE; Câmara aprova as MPs das dívidas rurais e do Brasil Soberano; o PL decide em 11/11 sobre Motta. | 11/11 (16h): Alcolumbre diz que vota a maioridade penal em 2026 se a Câmara votar; Congresso prorroga por 60 dias a MP das bets.",
-   "proximo": "Bancada do PL (11/11); MP 1.376 vence no Senado em 11/11; CRE em 17/11; Mesas em 1º/02/2027."
+   "ultimo_fato": "Sem fato novo além do pacote fiscal no Senado (destaques na terça, 17).",
+   "proximo": "CRE em 17/11; Mesas em 1º/02/2027."
   },
   {
    "id": "seguranca-publica",
@@ -112,12 +114,13 @@
     "ms_seg",
     "maioridade",
     "maioridade_audiencias",
-    "seguranca_ministerio_crise_pf_13_11"
+    "seguranca_ministerio_crise_pf_13_11",
+    "stf_ministros_relatorios_pf_vorcaro_14_11"
    ],
-   "verificada": "2026-11-13-11h",
+   "verificada": "2026-11-14-07h",
    "fato_novo": true,
-   "ultimo_fato": "13/11: assessores de Lula dizem que a crise da PF não pode ir para o futuro Ministério da Segurança Pública (g1, O Globo).",
-   "proximo": "Votação da PEC na comissão em dezembro; Senado analisa o projeto dos animais."
+   "ultimo_fato": "13/11: Folha mostra disputa na PF pela sucessão de Andrei Rodrigues e pelo futuro ministério; ministros do STF reagem a relatórios da PF sobre magistrados no celular de Vorcaro.",
+   "proximo": "Lula define ministros após a volta da COP 31; decisão sobre relatoria do caso Master."
   },
   {
    "id": "escala-6x1",
@@ -127,10 +130,10 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-13-11h",
-   "fato_novo": false,
-   "ultimo_fato": "12/11-13/11: Dino mantém o prazo da 5x2 e flexibiliza a transição por acordo coletivo; empresários dizem que não terá efeito prático (Agência Brasil, Correio, Folha).",
-   "proximo": "Plenário do STF; decreto do governo."
+   "verificada": "2026-11-14-07h",
+   "fato_novo": true,
+   "ultimo_fato": "13/11: 4 de 10 votos pela liminar de Dino no plenário virtual; a Câmara contesta seis pontos.",
+   "proximo": "Votação virtual termina às 11h de segunda (16)."
   },
   {
    "id": "economia-mercado",
@@ -157,12 +160,16 @@
     "cbs_prazo_pressao_adiar",
     "operacao_refit_magro",
     "ipca_outubro_12_11",
-    "nvidia_espia_jensen_huang"
+    "nvidia_espia_jensen_huang",
+    "nubank_porto_real_bc_13_11",
+    "tesouro_ataque_hacker_14_11",
+    "diesel_subvencao_extra_14_11",
+    "mei_remissao_dividas_14_11"
    ],
-   "verificada": "2026-11-13-11h",
-   "fato_novo": false,
-   "ultimo_fato": "13/11: Senado aprova por 45 a 31 o texto-base do PLP do ajuste fiscal (Agência Brasil, CNN).",
-   "proximo": "Destaques e sanção ou volta à Câmara."
+   "verificada": "2026-11-14-07h",
+   "fato_novo": true,
+   "ultimo_fato": "13/11: Ibovespa +2,35% na semana e dólar a R$ 5,65; BC aprova compra do Porto Real pelo Nubank; Tesouro com sistemas fora do ar; subvenção extra ao diesel importado vence.",
+   "proximo": "Destaques do pacote fiscal na terça (17); sistemas do Tesouro até segunda (16)."
   },
   {
    "id": "eua-meio-mandato",
@@ -176,10 +183,10 @@
     "eua_senado_mississippi_alasca",
     "eua_tarifas_300"
    ],
-   "verificada": "2026-11-13-11h",
+   "verificada": "2026-11-14-07h",
    "fato_novo": false,
-   "ultimo_fato": "10/11: Colom (D) lidera no Mississippi por 2.574 votos, com certificação em 13/11; Peltola (D) tem menos de 700 votos de vantagem no Alasca; Casa Branca diz que as tarifas seguem.",
-   "proximo": "Certificação do Mississippi (13/11); contagem ranqueada do Alasca (após 18/11); certificação em 25/11."
+   "ultimo_fato": "Sem fato novo localizado em 14/11.",
+   "proximo": "Alasca após 18/11; certificação em 25/11."
   },
   {
    "id": "ucrania-paz",
@@ -191,12 +198,13 @@
     "ucrania_energia",
     "zaporizhzhia",
     "ucrania_abudhabi",
-    "ucrania_putin_enviados_trump"
+    "ucrania_putin_enviados_trump",
+    "ue_cinco_potencias_ucrania_14_11"
    ],
-   "verificada": "2026-11-13-11h",
-   "fato_novo": false,
-   "ultimo_fato": "12/11: Putin recebe enviados de Trump e diz que gostaria que a paz na Ucrânia 'durasse para sempre' (g1, CartaCapital, Terra, O Tempo).",
-   "proximo": "Balanço do dia 2; troca de prisioneiros; nova ida de delegação americana a Moscou."
+   "verificada": "2026-11-14-07h",
+   "fato_novo": true,
+   "ultimo_fato": "13/11: líderes da UE em Dublin definem equipe com Reino Unido, França, Alemanha, Itália e Polônia, sem enviado único (Euronews).",
+   "proximo": "Próxima rodada com a Polônia; reação da Rússia."
   },
   {
    "id": "israel-governo",
@@ -206,10 +214,10 @@
    "materias": [
     "israel"
    ],
-   "verificada": "2026-11-13-11h",
+   "verificada": "2026-11-14-07h",
    "fato_novo": false,
-   "ultimo_fato": "10/11: Knesset toma posse e o bloco de Eisenkot indica Matan Kahana para presidir a Casa, com mais de 61 assinaturas; votação esperada em 17/11 (Times of Israel, Jerusalem Post).",
-   "proximo": "Votação do presidente da Knesset (17/11); mandato de Eisenkot até 6/12."
+   "ultimo_fato": "Sem fato novo localizado em 14/11.",
+   "proximo": "Votação do presidente da Knesset (17/11)."
   },
   {
    "id": "ira-oriente-medio",
@@ -223,72 +231,72 @@
     "khor_mor",
     "ira_radar_bahrein_13_11"
    ],
-   "verificada": "2026-11-13-11h",
+   "verificada": "2026-11-14-07h",
    "fato_novo": false,
-   "ultimo_fato": "13/11: Guarda Revolucionária diz ter atacado radar dos EUA no Bahrein em meio à trégua (CNN Brasil, g1, UOL).",
-   "proximo": "Resposta dos EUA à proposta; APEC."
+   "ultimo_fato": "Sem fato novo de 13 e 14/11 localizado.",
+   "proximo": "Resposta dos EUA; APEC."
   }
  ],
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-13-11h",
-   "achado": "Edição das 11h de 13/11: páginas não abriram no WebFetch (permissão não respondida); uso de manchetes e resumos do coletor (08h48 BRT) e de WebSearch. Entraram BB e agro, Meta nas eleições, Uber, ministério e PF, papa no Peru, Xi e Taiwan. Nada além disso apurado."
+   "feita": "2026-11-14-07h",
+   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
   }
  ]
 }

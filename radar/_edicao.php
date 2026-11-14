@@ -14442,8 +14442,1159 @@ GIRO = [
  ['Xi e Taiwan','Xi diz que a reunificação com Taiwan é missão histórica do Partido Comunista, informa a Folha.','Folha de S.Paulo','https://www1.folha.uol.com.br/mundo/2026/11/xi-jinping-diz-que-reunificacao-de-taiwan-com-a-china-e-inevitavel.shtml','','xi_taiwan_13_11']
 ].concat(GIRO).slice(0,20);
 
+
+/* ===== EDIÇÃO 07h de 14/11 ===== */
+EDICAO.hora = '07h';
+EDICAO.data = 'Sábado, 14 de novembro de 2026';
+
+// Editoria POLITICA, edicao 07h de 14/11/2026
+
+_U('dino_6x1', {hora:'14/11',
+ t:'STF tem quatro votos para manter o fim da escala 6x1 em 16 de dezembro, e a Câmara pede que o plenário não referende seis pontos da liminar de Dino',
+ sub:'A deputada Érika Hilton (PSOL-SP), autora da PEC, pede que Dino esclareça a regra que permite acumular folgas por acordo coletivo; o julgamento virtual termina às 11h de segunda (16).',
+ dado:{n:'4 de 10', l:'ministros do STF já votaram para referendar a liminar de Dino'},
+ resumo:'Quatro dos dez ministros do STF votaram, na sexta (13), para referendar a liminar com que Flávio Dino manteve o início da escala 5x2 em 16 de dezembro, com 42 horas semanais na transição. A Advocacia da Câmara contesta seis pontos da decisão, e a deputada Érika Hilton (PSOL-SP) teme que a flexibilização das folgas permita jornadas longas sem descanso. O plenário virtual encerra a votação às 11h de segunda (16).',
+ upd:'Moraes, Cármen Lúcia e Gilmar Mendes acompanharam Dino na sexta (13); a Advocacia da Câmara contestou seis pontos da liminar e Érika Hilton pediu esclarecimentos.',
+ fundo:`Quatro dos dez ministros do Supremo Tribunal Federal (STF) votaram na sexta-feira (13) para referendar a liminar do relator, Flávio Dino, que manteve o início da escala de trabalho 5x2 em 16 de dezembro e fixou regras de transição. Ao relator se somaram Alexandre de Moraes, Cármen Lúcia e Gilmar Mendes, informam a Agência Brasil e o Correio Braziliense. A votação, no plenário virtual, termina às 11h de segunda-feira (16).
+
+## O que Dino decidiu
+A liminar foi assinada na quinta-feira (12), no âmbito das ações diretas de inconstitucionalidade (ADIs) apresentadas por confederações patronais contra a emenda constitucional que acaba com a escala 6x1. A Confederação Nacional da Indústria (CNI) e a Confederação Nacional do Comércio de Bens, Serviços e Turismo (CNC) pediam que a nova regra fosse adiada por mais um ano, segundo o Brasil de Fato. Dino negou o adiamento e manteve o calendário previsto na emenda, de acordo com o Correio Braziliense.
+
+Na transição, a jornada cai de 44 para 42 horas semanais a partir de 16 de dezembro. A Agência Brasil informa que o ministro permitiu distribuir as 42 horas em cinco dias de trabalho, com jornada de até 8 horas e 24 minutos por dia, ou seja, acima do limite de 8 horas. O texto promulgado pelo Congresso prevê, no fim do período, jornada de 40 horas semanais e dois dias de descanso remunerado por semana, sem redução de salário.
+
+## A flexibilização das folgas
+Dino atendeu em parte aos empresários ao retirar a exigência de que os dois dias de descanso sejam usufruídos dentro da mesma semana. O Correio Braziliense descreve a mudança como a flexibilização dos prazos para a concessão das folgas, e o Brasil de Fato informa que os dias de descanso poderão ser distribuídos de maneira diferenciada por meio de negociação coletiva. Segundo O Globo, o acordo coletivo poderá adiar folgas, mas não eliminá-las. Entidades empresariais disseram à Folha que as medidas não terão efeito prático, e a Fiesp afirmou que a flexibilização ajuda, mas não resolve.
+
+A deputada federal Érika Hilton (PSOL-SP, partido de esquerda), autora da proposta de emenda à Constituição (PEC) que originou a mudança, criticou essa parte da decisão. Ela pediu que Dino revise a liminar e esclareça os efeitos práticos do remanejamento das folgas, e alertou que a regra pode abrir brecha para que o trabalhador acumule descansos e chegue a jornadas de até dez dias consecutivos, informa o Correio Braziliense.
+
+## A Câmara entra na discussão
+A Advocacia da Câmara dos Deputados protocolou manifestação durante o julgamento virtual em que pede que o plenário não referende seis pontos da liminar, segundo o Correio do Estado. O órgão, que representa a Casa nas ações, contesta trechos da decisão que flexibilizam as regras de folgas previstas na emenda. A manifestação mostra que a disputa não se limita às confederações empresariais: parte do que Dino estabeleceu também é questionada pela Casa que aprovou a emenda.
+
+## Como o julgamento está
+Com o voto do relator, são quatro manifestações favoráveis em um colegiado de dez ministros, já que uma cadeira permanece aberta desde a aposentadoria antecipada de Luís Roberto Barroso. A decisão só vale como referendada se a maioria do plenário a acompanhar até o fim da sessão virtual, e qualquer ministro pode pedir destaque ou vista, o que levaria o caso ao plenário físico ou suspenderia a contagem.
+
+## O que vem agora
+A votação virtual se encerra às 11h de segunda (16). Se a liminar for referendada, o calendário de 16 de dezembro e as regras de transição seguem como estão até o julgamento de mérito das ADIs.
+
+## O que ainda não está confirmado
+Falta saber se os seis pontos contestados pela Câmara serão examinados pelos demais ministros e se Dino responderá ao pedido de esclarecimento de Érika Hilton antes do fim da votação.
+NUMS 4 de 10|ministros com voto favorável à liminar;16/12|início da jornada de 42 horas;8h24|jornada diária máxima na transição;6|pontos da liminar contestados pela Câmara`,
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/stf-tem-4-votos-para-manter-inicio-da-escala-5x2-em-dezembro'],['Correio Braziliense','https://www.correiobraziliense.com.br/politica/2026/11/7538422-stf-tem-quatro-votos-para-manter-decisao-de-dino-sobre-escala-6x1.html'],['Brasil de Fato','https://www.brasildefato.com.br/2026/11/13/quatro-ministros-do-stf-ja-votaram-por-manter-o-calendario-de-transicao-do-fim-da-escala-6x1/'],['Correio do Estado','https://correiodoestado.com.br/politica/2026/11/14/6x1-camara-contesta-parte-da-decisao-de-dino-sobre-flexibilizacao-de-folgas.html'],['Correio Braziliense (Érika Hilton)','https://www.correiobraziliense.com.br/politica/2026/11/7538437-fim-da-6x1-erika-hilton-critica-decisao-de-dino-sobre-flexibilizacao-das-folgas.html']]});
+
+_N('gilmar_moro_triplex_14_11', {ed:'politica', k:'Política · STF', hora:'14/11',
+ t:'Gilmar Mendes diz que Moro manipulou a Justiça para tirar Lula da eleição de 2018 e rebate a tese de que o caso do triplex foi anulado por detalhe processual',
+ sub:'O senador e governador eleito do Paraná tinha criticado a anulação da condenação; o STF declarou Moro suspeito por conluio com o ex-procurador Deltan Dallagnol.',
+ dado:{n:'13/11', l:'Gilmar publicou a resposta em rede social, depois da fala de Moro'},
+ resumo:'O ministro Gilmar Mendes, do STF, afirmou na sexta (13) que a sentença do caso triplex não foi anulada por meros detalhes processuais e que Sergio Moro foi declarado suspeito diante de provas de conluio com Deltan Dallagnol para afastar Lula da disputa de 2018. A declaração responde a fala do senador, que questionou a anulação da condenação. Moro é senador e governador eleito do Paraná.',
+ fundo:`O ministro Gilmar Mendes, do Supremo Tribunal Federal (STF), acusou na sexta-feira (13) o senador Sergio Moro (PL-PR), ex-juiz da Operação Lava Jato, de ter manipulado o sistema de Justiça para retirar o presidente Luiz Inácio Lula da Silva (PT) das eleições de 2018. Em postagem nas redes sociais, Gilmar respondeu a uma fala do senador sobre a anulação da condenação de Lula no caso do triplex do Guarujá.
+
+## O que Gilmar escreveu
+A Agência Brasil e o Conexão Tocantins reproduzem a mensagem do ministro: "A sentença do caso triplex não foi anulada por meros detalhes processuais. Sergio Moro foi declarado suspeito diante de provas robustas de que, em conluio com o então coordenador da força-tarefa, Deltan Dallagnol, manipulou o sistema de Justiça para alijar o atual presidente da República da disputa eleitoral de 2018". Dallagnol coordenava a força-tarefa da Lava Jato no Ministério Público Federal, em Curitiba.
+
+O ministro se referiu à decisão que declarou Moro suspeito para julgar os casos da operação, o que anulou a sentença do triplex. As declarações foram publicadas depois que o senador afirmou que a condenação de Lula havia sido anulada por questões processuais, segundo a Agência Brasil.
+
+## Quem é Moro hoje
+Moro foi o juiz da Lava Jato que julgou Lula no caso do triplex. Hoje é senador pelo PL, partido de direita, e foi eleito governador do Paraná, conforme descreve a Gazeta do Povo, que o trata como senador e governador eleito. Na quinta (12), ele criticou o projeto do ajuste fiscal do governo Lula no trecho que reduz repasses da Lei Kandir aos estados.
+
+Lula, reeleito para um novo mandato, cobrou no mesmo contexto um pedido de desculpas da imprensa brasileira sobre o caso do triplex, informa o Conexão Tocantins.
+
+## O que vem agora
+Não há decisão judicial pendente ligada à declaração: o caso é uma troca de manifestações públicas. A resposta de Moro, se houver, deve vir também nas redes sociais.
+
+## O que ainda não está confirmado
+Se Moro responderá a Gilmar e se o STF voltará ao tema em algum julgamento.
+NUMS 2018|eleição da qual Lula foi afastado, segundo Gilmar;13/11|data da postagem do ministro`,
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/gilmar-diz-que-moro-agiu-para-impedir-candidatura-de-lula-em-2018'],['Conexão Tocantins','https://conexaoto.com.br/2026/11/13/ministro-gilmar-mendes-diz-que-moro-agiu-para-impedir-candidatura-de-lula-em-2018'],['Gazeta do Povo','https://www.gazetadopovo.com.br/parana/sergio-moro-critica-projeto-que-preve-perda-de-r-604-milhoes-para-o-parana/']]});
+
+_N('toffoli_contas_campanha_lula_14_11', {ed:'politica', k:'Política · TSE', hora:'14/11',
+ t:'Toffoli dá três dias para a chapa Lula-Alckmin explicar indícios de irregularidades na prestação de contas da campanha',
+ sub:'O ministro do TSE cita passagens aéreas com datas incompatíveis, indícios de subcontratação e uso de veículos oficiais; a área técnica da Corte pediu esclarecimentos.',
+ dado:{n:'3 dias', l:'prazo para Lula e Alckmin apresentarem documentos'},
+ resumo:'O ministro Dias Toffoli, do TSE, abriu prazo de três dias para o presidente Lula (PT) e o vice Geraldo Alckmin (PSB) esclarecerem pendências nas contas da campanha de 2026, em despacho que atende a recomendação da área técnica da Corte. Entre os pontos estão passagens aéreas com itinerários aparentemente incompatíveis, subcontratação de fornecedores e impulsionamento de propaganda. A campanha ainda deve apresentar resposta.',
+ fundo:`O ministro Dias Toffoli, do Tribunal Superior Eleitoral (TSE), determinou que o presidente Luiz Inácio Lula da Silva (PT) e o vice-presidente Geraldo Alckmin (PSB) apresentem em três dias esclarecimentos e documentos sobre despesas da campanha eleitoral de 2026. A decisão atende a recomendação da área técnica do tribunal, que encontrou pendências na prestação de contas da chapa eleita, informa a Folha de Pernambuco.
+
+## Os pontos questionados
+A Assessoria de Exame de Contas Eleitorais e Partidárias (Asepa), setor técnico do TSE, fez uma segunda análise das contas e apontou a necessidade de informações adicionais para a continuidade da fiscalização. Entre os questionamentos estão gastos com passagens aéreas, contratação de fornecedores com recursos públicos e impulsionamento de propaganda nas redes sociais, segundo a Folha de Pernambuco.
+
+O Correio do Povo detalha o despacho: Toffoli cita "indícios de subcontratação", "passagens aéreas com aparente incompatibilidade de datas, horários ou itinerários" e o suposto uso de veículos oficiais para deslocamentos a compromissos eleitorais, o que exigiria compensação ao erário. O ministro menciona ainda gastos com impulsionamento de propaganda em plataformas digitais, tipo de despesa que outra decisão do TSE, do ministro André Mendonça, considerou irregular. Também devem ser esclarecidas a capacidade operacional dos fornecedores e a comprovação de que as passagens aéreas emitidas têm vínculo com a campanha.
+
+## Prazo e datas
+A Folha de Pernambuco informa que a decisão foi assinada na quinta-feira (12), e o Correio do Povo registra a publicação do despacho na sexta (13). O prazo de três dias vale para a chapa apresentar esclarecimentos e documentos. ## O que vem agora
+Lula e Alckmin devem apresentar as explicações e os documentos dentro do prazo. A área técnica reexamina as contas com o material enviado, e o tribunal decide sobre a prestação.
+
+## O que ainda não está confirmado
+A resposta da campanha e a posição do Ministério Público Eleitoral sobre cada ponto ainda não foram divulgadas.
+NUMS 3 dias|prazo dado por Toffoli;2026|campanha cuja prestação de contas está em exame`,
+ fontes:[['Folha de Pernambuco','https://www.folhape.com.br/politica/toffoli-da-tres-dias-para-lula-e-alckmin-explicarem-despesas-de/524227/'],['Correio do Povo','https://www.correiodopovo.com.br/not%C3%ADcias/pol%C3%ADtica/toffoli-da-3-dias-para-chapa-de-lula-explicar-indicios-de-irregularidades-em-contas-da-campanha-1.1764704']]});
+
+_N('fachin_suspende_prazos_microsoft_14_11', {ed:'politica', k:'Política · STF', hora:'14/11',
+ t:'Fachin suspende prazos processuais no país por causa da pane da Microsoft, e a contagem volta na segunda (16)',
+ sub:'A suspensão atende a pedido da OAB e vale para os dias 12 e 13; o CNJ também suspendeu a contagem nos tribunais.',
+ dado:{n:'16/11', l:'dia em que os prazos voltam a correr'},
+ resumo:'O presidente do STF e do CNJ, Edson Fachin, suspendeu na sexta (13) a contagem dos prazos processuais em todo o país nos dias 12 e 13, por causa da pane que derrubou Outlook e Teams, da Microsoft. A medida atende a pedido do Conselho Federal da OAB, e a contagem volta na segunda (16). Casos fora da suspensão, mas afetados pela falha, serão examinados caso a caso.',
+ fundo:`O presidente do Supremo Tribunal Federal (STF) e do Conselho Nacional de Justiça (CNJ), ministro Edson Fachin, suspendeu na sexta-feira (13) a contagem dos prazos processuais em todo o país nos dias 12 e 13 de novembro, por causa da pane global nos serviços da Microsoft. A contagem volta ao normal na segunda-feira (16), informam a Veja e o Extra.
+
+## O pedido e a decisão
+Fachin acolheu pedido do Conselho Federal da Ordem dos Advogados do Brasil (OAB), que argumentou que ferramentas como Outlook e Teams são amplamente usadas na Justiça e que as falhas poderiam prejudicar a advocacia e o andamento dos processos, segundo o Extra. Em resolução editada na sexta, o ministro escreveu que a instabilidade comprometeu ferramentas de comunicação e de trabalho usadas pelos órgãos do Judiciário.
+
+Na prática, um prazo que terminaria na quinta ou na sexta é estendido até a semana seguinte. A Veja informa que o sistema eletrônico de julgamentos e as demais atividades jurisdicionais não foram afetados. Casos que não estejam cobertos pela suspensão, mas tenham sido afetados pela instabilidade do Outlook, deverão ser analisados individualmente pelos juízos ou relatores, de acordo com o Extra.
+
+## O que causou a pane
+A Microsoft atribuiu a interrupção a problemas nos servidores e disse não ter conhecimento de atividade maliciosa, informa a Agência Brasil. Outlook, Teams e Copilot ficaram fora do ar por mais de 12 horas na sexta, e a BBC News Brasil registra que o Outlook começou a ser restabelecido depois de mais de 20 horas de instabilidade, com recuperação ainda incompleta no fim da manhã.
+
+A BBC News Brasil informa que o CNJ também suspendeu a contagem dos prazos das ações em tramitação no Judiciário nos dois dias, e que o próprio STF já havia tomado decisão semelhante.
+
+## O que vem agora
+A contagem de prazos recomeça na segunda (16). Advogados com prazos afetados por problemas fora do período podem pedir análise ao juízo ou ao relator do processo.
+
+## O que ainda não está confirmado
+A Microsoft ainda não detalhou a causa técnica da falha, e a empresa informou que a recuperação completa não havia sido concluída.
+NUMS 12 e 13/11|dias com prazos suspensos;16/11|retomada da contagem;20 h|duração da instabilidade do Outlook, segundo a BBC`,
+ fontes:[['Veja','https://veja.abril.com.br/politica/falha-da-microsoft-ameaca-processos-judiciais-e-fachin-toma-decisao/'],['Extra','https://extra.globo.com/economia/noticia/2026/11/pane-da-microsoft-stf-suspende-prazos-de-processos-em-todo-o-pais.ghtml'],['BBC News Brasil','https://www.bbc.com/portuguese/articles/cq62pdgrer0po?at_medium=RSS&at_campaign=rss'],['Agência Brasil','https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/outlook-teams-e-copilot-da-microsoft-ainda-estao-fora-do-ar']]});
+
+_N('fachin_ministra_negra_stf_14_11', {ed:'politica', k:'Política · STF', hora:'14/11',
+ t:'Fachin defende que a próxima vaga no Supremo seja ocupada por uma magistrada negra',
+ sub:'A cadeira está aberta desde a aposentadoria antecipada de Luís Roberto Barroso; a indicação cabe ao presidente Lula, que ainda não escolheu o nome.',
+ dado:{n:'15%', l:'dos magistrados são negros, segundo dados do CNJ citados por Fachin'},
+ resumo:'O presidente do STF, Edson Fachin, defendeu na sexta (13), no Rio de Janeiro, que a vaga aberta no tribunal seja preenchida por uma ministra negra. Ele citou números do CNJ: pessoas negras são 15% dos magistrados e 28% dos servidores do Judiciário. A indicação é do presidente da República, e o nome ainda não foi anunciado.',
+ fundo:`O presidente do Supremo Tribunal Federal (STF) e do Conselho Nacional de Justiça (CNJ), ministro Edson Fachin, defendeu na sexta-feira (13) a indicação de uma ministra negra para a vaga aberta na Corte. A fala ocorreu no Encontro Nacional de Juízas e Juízes Negros (Enajun), no Rio de Janeiro, informa a Agência Brasil.
+
+## O que Fachin disse
+Segundo a Agência Brasil, Fachin elogiou o currículo das magistradas presentes. "Eu olhava o auditório, ouvia as manifestações das magistradas que me precederam e certamente me vinha à cabeça que, quem de direito para definir uma próxima vaga da Suprema Corte brasileira, saberia que há magistradas negras à altura deste lugar para honrar o Brasil e o povo brasileiro", afirmou. Ele não citou nomes.
+
+O ministro apresentou números do CNJ: pessoas negras são apenas 15% dos magistrados e 28% dos servidores do Judiciário no país. "Essa assimetria não é acaso nem falta de mérito, é herança", disse, segundo a mesma reportagem.
+
+## A vaga
+O News Rondônia lembra que o STF tem uma cadeira aberta desde a aposentadoria antecipada de Luís Roberto Barroso. Pela Constituição, o presidente da República indica o nome, que precisa ser aprovado pelo Senado. A fala de Fachin, que preside o tribunal, ocorre quando Lula monta o novo governo e ainda não definiu os nomes de seus ministérios, segundo o g1.
+
+## O recorte racial no Judiciário
+Os dados citados por Fachin vêm do CNJ, órgão que ele também preside e que acompanha o perfil dos magistrados e servidores do país. Com 15% de magistrados negros e 28% de servidores negros, o presidente do STF descreveu a diferença como herança, e não como falta de mérito, ao defender que a composição da Corte reflita a qualificação das juízas negras que participaram do encontro.
+
+## O que vem agora
+Cabe a Lula indicar o nome e ao Senado sabatinar o indicado. Não há data informada para a indicação.
+
+## O que ainda não está confirmado
+O presidente não anunciou candidatas nem prazo para escolher o substituto de Barroso.
+NUMS 15%|de magistrados negros, segundo o CNJ;28%|de servidores negros no Judiciário`,
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/fachin-defende-indicacao-de-ministra-negra-para-o-stf'],['News Rondônia','https://newsrondonia.com.br/politica/2026/11/13/edson-fachin-defende-indicacao-de-ministra-negra-para-vaga-no-supremo-tribunal-federal/'],['g1','https://g1.globo.com/politica/noticia/2026/11/14/apos-eleicao-de-lula-bancada-do-agro-prioriza-acesso-ao-credito-para-produtores.ghtml']]});
+
+_N('stf_ministros_relatorios_pf_vorcaro_14_11', {ed:'politica', k:'Política · Caso Master', hora:'14/11', fonteunica:true,
+ t:'Ministros do STF reagem ao plano da PF de produzir relatórios sobre todos os magistrados citados no celular de Vorcaro',
+ sub:'Ao menos quatro ministros, de alas rivais do tribunal, veem a medida como novo erro da PF, informa a coluna de Bela Megale.',
+ dado:{n:'4', l:'ministros avaliam que os relatórios seriam um erro, segundo a coluna'},
+ resumo:'A coluna de Bela Megale, em O Globo, informa que ministros do STF que nunca tiveram relação com Daniel Vorcaro estão irritados com a possibilidade de a PF elaborar relatórios sobre todos os magistrados citados em mensagens do celular do dono do Banco Master. Ao menos quatro ministros, de alas ligadas a Alexandre de Moraes e a André Mendonça, dizem que a medida seria um erro.',
+ fundo:`Ministros do Supremo Tribunal Federal (STF) que nunca tiveram relação com Daniel Vorcaro, dono do Banco Master, estão irritados com a possibilidade de terem os nomes incluídos em relatórios da Polícia Federal (PF) sobre o banqueiro, informa a coluna de Bela Megale, em O Globo. A coluna não identifica os ministros.
+
+## O que a coluna relata
+De acordo com a coluna, investigadores da PF poderão produzir documentos sobre todos os magistrados mencionados nas mensagens extraídas do celular de Vorcaro. A perspectiva provocou forte reação entre integrantes da Corte que dizem nunca ter mantido contato com o banqueiro.
+
+A insatisfação, segundo O Globo, reúne ministros de diferentes alas, tanto magistrados próximos de Alexandre de Moraes quanto os mais alinhados a André Mendonça, que costumam divergir em julgamentos. Ao menos quatro ministros avaliam que a elaboração indiscriminada de relatórios sobre integrantes do STF seria um novo erro da PF e serviria para criar uma "cortina de fumaça" para proteger os verdadeiramente envolvidos, afirma a coluna.
+
+## O contexto
+A reação ocorre em meio à crise na PF com o afastamento de dois delegados que coordenavam a investigação do caso Master. A Folha informou nesta semana que um relatório da PF sobre o ministro Alexandre de Moraes e Vorcaro foi rejeitado pela cúpula da corporação e cita mensagens em que o banqueiro dizia que Kassio Nunes Marques e Moraes votariam a favor de seus interesses em uma ação na Corte. Kassio nega ter votado a favor de Vorcaro, e Moraes não respondeu, segundo a Folha.
+
+## O que mudaria se for confirmado
+Se a PF de fato produzir relatórios sobre todos os ministros citados, aumentará o número de magistrados com o nome em documentos oficiais da investigação.
+
+## O que ainda não está confirmado
+A existência de uma decisão formal da PF de preparar os relatórios e quais ministros seriam incluídos.
+NUMS 4|ministros que veem a medida como erro;2|alas do STF reunidas na reação`,
+ fontes:[['O Globo (coluna Bela Megale)','https://oglobo.globo.com/blogs/bela-megale/post/2026/11/ministros-do-stf-se-revoltam-com-plano-da-pf-de-inclui-los-em-relatorios-sobre-vorcaro.ghtml'],['Folha (relatório rejeitado)','https://www1.folha.uol.com.br/poder/2026/11/entenda-acao-sobre-cursos-de-medicina-em-que-moraes-e-kassio-votaram-a-favor-do-interesse-de-vorcaro.shtml']]});
+
+_N('pt_diretorio_ajuste_maioridade_ministerios_14_11', {ed:'politica', k:'Política · PT', hora:'14/11', fonteunica:true,
+ t:'PT discute em reunião do Diretório Nacional ajuste fiscal, redução da maioridade penal e nomes para o Ministério da Segurança Pública',
+ sub:'Tarso Genro diz que o governo vai enxugar gelo se tratar a segurança como no século passado; Lula defende reduzir a maioridade em crimes hediondos.',
+ dado:{n:'138', l:'presídios de segurança máxima defendidos por Lula na campanha'},
+ resumo:'O Diretório Nacional do PT reuniu-se na sexta (13), na última reunião do ano, para debater os desafios do quarto mandato de Lula. Segundo o Estadão, o partido está dividido sobre o ajuste fiscal, a proposta de reduzir a maioridade penal e os nomes para o novo Ministério da Segurança Pública, que teme ficar sem verba com o orçamento apertado.',
+ fundo:`O Diretório Nacional do PT, partido de esquerda, reuniu-se na sexta-feira (13), na última reunião do ano, para debater os desafios do quarto mandato do presidente Luiz Inácio Lula da Silva, e as divergências sobre ajuste fiscal, redução da maioridade penal e Ministério da Segurança Pública foram expostas, informa o Estadão. A informação vem de reportagem do jornal sobre os bastidores do partido.
+
+## O que o Estadão relata
+O novo Ministério da Segurança Pública, prometido por Lula para o quarto mandato, já provoca preocupação nas fileiras do PT diante do ajuste fiscal anunciado pela equipe econômica, segundo o jornal. Há avaliação interna de que, com orçamento apertado e corte de gastos a caminho, o governo não terá recursos para injetar na nova pasta.
+
+O ex-ministro Tarso Genro, do PT, disse que o governo vai "enxugar gelo" se tratar a segurança como no século passado, de acordo com o Estadão. A proposta de redução da maioridade penal, por sua vez, rachou o partido.
+
+## A posição de Lula
+Lula declarou ser favorável à redução da maioridade penal em casos de crimes hediondos e, na campanha, defendeu a criação do Ministério da Segurança Pública e a construção de 138 presídios de segurança máxima, segundo o Estadão. A proposta de emenda à Constituição (PEC) que reduz a maioridade tramita no Congresso, e a Câmara avalia votá-la em dezembro, conforme registros anteriores do Radar.
+
+## O que mudaria se for confirmado
+Se a divisão interna se confirmar em votação do diretório, o partido chegaria ao início do governo, em 5 de janeiro, sem posição unificada sobre pontos centrais da agenda de segurança.
+
+## O que ainda não está confirmado
+O resultado da reunião, o nome do ministro da Segurança Pública e a data de criação da pasta.
+NUMS 138|presídios de segurança máxima defendidos por Lula;13/11|data da reunião do Diretório`,
+ fontes:[['Estadão','https://www.estadao.com.br/politica/ajuste-fiscal-reducao-da-maioridade-penal-e-nomes-para-ministerio-da-seguranca-dividem-pt/']]});
+
+_U('seguranca_ministerio_crise_pf_13_11', {hora:'14/11', fonteunica:false,
+ t:'Crise com delegados do caso Master vira disputa pela sucessão na PF e pela escolha do ministro da Segurança Pública',
+ sub:'Aliados do diretor-geral Andrei Rodrigues defendem o nome dele para a nova pasta, e a associação dos delegados federais subiu o tom das críticas, informa a Folha.',
+ dado:{n:'2', l:'delegados afastados da coordenação do caso Master'},
+ resumo:'Integrantes da PF ouvidos pela Folha dizem que a crise do afastamento de dois delegados do caso Master alimenta a disputa pela troca do comando do órgão e pela indicação do ministro da Segurança Pública. Aliados do diretor-geral Andrei Rodrigues defendem o nome dele para a pasta; a associação dos delegados criticou sua gestão. Na coluna de Valdo Cruz, assessores dizem que Lula não pode levar a crise para a nova pasta.',
+ upd:'A Folha ouviu integrantes da PF que veem disputa política na crise; aliados de Andrei defendem o nome dele para o ministério.',
+ fundo:`A crise provocada pelo afastamento de dois delegados que coordenavam as investigações do caso Banco Master virou combustível da disputa interna na Polícia Federal (PF), segundo integrantes da corporação ouvidos pela Folha. Os policiais avaliam que o episódio é usado tanto na possível troca de comando do órgão quanto na indicação do ministro da Segurança Pública, pasta que o governo do presidente Luiz Inácio Lula da Silva (PT) pretende criar.
+
+## A disputa dentro da PF
+Aliados do diretor-geral da PF, Andrei Rodrigues, defendem o nome dele para comandar o futuro ministério, informa a Folha. A Associação Nacional dos Delegados de Polícia Federal (ADPF) subiu o tom das críticas a Andrei na última semana. Os integrantes da corporação divergem sobre o diretor-geral, de acordo com o jornal.
+
+A coluna de Eliane Cantanhede, no Estadão, descreve Andrei como o delegado cuja história "ainda está sendo escrita" e que, por ora, é favorável a ele, com a PF atuando em várias frentes e fazendo descobertas sobre direita, esquerda e centrão. A colunista afirma que o risco para ele é a própria PF, de onde partem os vazamentos, e registra que o pedido para que delegados incluíssem mais ministros em relatórios do caso Master indica intromissão na atuação dos investigadores.
+
+## O efeito para o governo
+A coluna de Valdo Cruz, no g1, informa que assessores de Lula avaliam que o presidente não pode carregar a crise da PF para o futuro Ministério da Segurança Pública. A coluna de Malu Gaspar, em O Globo, trata dos sinais de Lula a aliados sobre a escolha do ministro. O Estadão informou na sexta que o assunto também divide o PT, com preocupação sobre verba para a nova pasta.
+
+## O que vem agora
+Lula deve começar a definir os ministérios quando voltar da viagem à COP 31, na Turquia, segundo o Estadão. Até lá, o nome do ministro da Segurança e o futuro de Andrei seguem em aberto.
+
+## O que ainda não está confirmado
+O nome do titular da pasta, a data de criação do ministério por medida provisória e a permanência de Andrei Rodrigues na direção da PF.
+NUMS 2|delegados afastados do caso Master;ADPF|associação que subiu o tom contra Andrei`,
+ fontes:[['Folha de S.Paulo','https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/poder/2026/11/integrantes-da-pf-veem-disputa-politica-em-crise-com-delegados-do-master-e-divergem-sobre-andrei.shtml'],['Estadão (Eliane Cantanhede)','https://www.estadao.com.br/politica/eliane-cantanhede/o-risco-de-andrei-rodrigues-e-a-propria-pf-de-onde-jorram-os-vazamentos/'],['g1 (Valdo Cruz)','https://g1.globo.com/politica/blog/valdo-cruz/post/2026/11/12/lula-nao-pode-carregar-crise-da-pf-para-futuro-ministerio-da-seguranca-publica-avaliam-assessores.ghtml'],['O Globo (Malu Gaspar)','https://oglobo.globo.com/blogs/malu-gaspar/post/2026/11/os-sinais-de-lula-a-aliados-sobre-como-sera-a-escolha-para-o-ministerio-da-seguranca-publica.ghtml']]});
+
+_U('master_defesa_vorcaro_fachin_13_11', {hora:'14/11',
+ t:'Defesa de Vorcaro pede que o STF devolva a relatoria do caso Master a André Mendonça e que Gilmar Mendes decida sobre a prisão',
+ sub:'Os advogados dizem que a decisão de Fachin de manter o caso consigo fere o princípio do juiz natural; a PGR defendeu a manutenção da prisão em 11/11.',
+ dado:{n:'12/11', l:'data da nova petição da defesa ao STF'},
+ resumo:'A defesa de Daniel Vorcaro, dono do Banco Master, enviou ao STF na quinta (12) petição que questiona a decisão do presidente da Corte, Edson Fachin, de manter o inquérito sob sua relatoria e pede a volta do caso a André Mendonça. Os advogados alegam violação ao juiz natural, pedem que o recurso seja decidido por Gilmar Mendes, ministro mais antigo, ou pelo plenário, e solicitam urgência na análise do pedido de liberdade.',
+ upd:'A petição da defesa foi detalhada: pede a volta da relatoria a Mendonça, decisão de Gilmar ou do plenário e urgência no pedido de liberdade.',
+ fundo:`A defesa do banqueiro Daniel Vorcaro, dono do Banco Master, enviou ao Supremo Tribunal Federal (STF) na quinta-feira (12) uma petição que questiona a decisão do presidente da Corte, ministro Edson Fachin, de manter o caso sob sua relatoria, e pede que o inquérito volte ao relator original, André Mendonça, informa o Correio do Estado.
+
+## O que pedem os advogados
+O pedido contesta a competência atribuída a Fachin, sob o argumento de que o ato fere o princípio constitucional do juiz natural, segundo o qual o processo deve ser julgado pelo órgão definido por regras anteriores ao caso. Os advogados pedem ainda que o recurso seja encaminhado ao ministro mais antigo da Corte, Gilmar Mendes, ou ao plenário, para que se decida quem é o relator, "segundo as regras pré-existentes de distribuição e prevenção", conforme o Correio do Estado.
+
+O Dia acrescenta que a defesa alega violação ao juiz natural, pede urgência na análise do pedido de liberdade e quer que Gilmar Mendes decida sobre a revogação da prisão do banqueiro.
+
+## Onde Vorcaro está
+Vorcaro cumpre prisão no 19º Batalhão da Polícia Militar do Distrito Federal, conhecido como Papudinha. A coluna Na Mira, do Metrópoles, descreve a rotina: cela individual, cursos a distância, limpeza e cuidado de um jardim interno para remição de pena. Ele é alvo principal da Operação Compliance Zero, da Polícia Federal. Na quarta (11), a Procuradoria-Geral da República enviou ao STF parecer pela manutenção da prisão preventiva, informa o registro anterior do Radar.
+
+## O pano de fundo no Supremo
+O pedido chega quando o caso tensiona o tribunal. O UOL revelou na sexta (13) mensagens atribuídas a Vorcaro em que ele diz que Kassio Nunes Marques e Alexandre de Moraes votariam a favor de seus interesses em uma ação na Corte, segundo a Folha. Kassio afirma nunca ter votado a favor do banqueiro, e Moraes não respondeu. O Globo informa que ministros de alas diferentes reagem à possibilidade de a PF produzir relatórios sobre todos os magistrados citados.
+
+## O que vem agora
+Fachin ou o colegiado deve se manifestar sobre o pedido da defesa; não há data informada.
+
+## O que ainda não está confirmado
+Se o STF acolherá a mudança de relatoria e quando decidirá o pedido de liberdade.
+NUMS 12/11|data da petição;19º BPM|batalhão onde Vorcaro está preso (Papudinha)`,
+ fontes:[['Correio do Estado','https://correiodoestado.com.br/politica/2026/11/14/defesa-de-vorcaro-questiona-competencia-de-fachin-para-retirar-relatoria-do-caso-de-mendonca.html'],['O Dia','https://odia.ig.com.br/brasil/2026/11/7322254-defesa-de-vorcaro-pede-ao-stf-volta-de-andre-mendonca-como-relator.html'],['Metrópoles (Na Mira)','https://www.metropoles.com/distrito-federal/na-mira/faxina-petiscos-na-airfryer-e-tv-como-e-a-rotina-de-vorcaro-na-papudinha'],['Folha (relatório rejeitado)','https://www1.folha.uol.com.br/poder/2026/11/entenda-acao-sobre-cursos-de-medicina-em-que-moraes-e-kassio-votaram-a-favor-do-interesse-de-vorcaro.shtml']]});
+
+_U('dark_horse_prazo', {hora:'14/11',
+ t:'PF faz segunda fase da Operação Make Up e mira ex-assessor de Mario Frias em apuração sobre emendas ao filme Dark Horse',
+ sub:'Conversas encontradas pela PF indicam, segundo o Estadão, que Eduardo Bolsonaro orientou a gestão do dinheiro de Vorcaro para o filme nos EUA.',
+ dado:{n:'1', l:'alvo da segunda fase: Raphael Augusto Azevedo'},
+ resumo:'A Polícia Federal deflagrou na sexta (13) a segunda fase da Operação Make Up, que apura emendas parlamentares destinadas ao filme Dark Horse, sobre Jair Bolsonaro. O único alvo é Raphael Augusto Azevedo, ex-chefe de gabinete do deputado Mario Frias (PL-SP), roteirista do longa. O Estadão informa que a PF encontrou conversas sobre como o ex-deputado Eduardo Bolsonaro orientou a gestão de recursos de Daniel Vorcaro.',
+ upd:'A PF deflagrou a segunda fase da Operação Make Up e fez busca no endereço do ex-chefe de gabinete de Mario Frias, em Brasília.',
+ fundo:`A Polícia Federal (PF) deflagrou na sexta-feira (13) a segunda fase da Operação Make Up, que investiga a destinação de emendas parlamentares ao financiamento do filme Dark Horse, sobre a trajetória do ex-presidente Jair Bolsonaro (PL). O único alvo desta etapa é Raphael Augusto Azevedo, ex-chefe de gabinete do deputado federal Mario Frias (PL-SP), roteirista do longa, informa o Estadão. O endereço de Azevedo foi revistado em Brasília.
+
+## O que a PF investiga
+A operação apura o possível uso de verba pública para financiar o filme, segundo o jornal. O Estadão pediu manifestação dos citados. O jornal também informa que conversas encontradas pela PF indicam orientações do ex-deputado Eduardo Bolsonaro sobre a forma como recursos de Daniel Vorcaro, dono do Banco Master, poderiam ser geridos para o filme nos Estados Unidos. O ex-deputado não foi localizado para comentar, segundo o jornal.
+
+O Intercept Brasil publicou em 11/11 reportagem em que registra dúvidas sobre se Karina Ferreira da Gama usou dinheiro de um contrato de Wi-Fi da Prefeitura de São Paulo para bancar o filme.
+
+## O inquérito no STF
+Em paralelo, tramita no STF inquérito que apura o suposto financiamento do filme por Vorcaro. Em 4/11, o presidente da Corte, Edson Fachin, deu 15 dias à Procuradoria-Geral da República para opinar sobre o pedido da PF de prorrogar a investigação por mais 90 dias. O senador Flávio Bolsonaro (PL-RJ) e Eduardo Bolsonaro são investigados por lavagem de dinheiro e evasão de divisas, segundo o Estado de Minas. O inquérito foi instaurado em 23 de julho.
+
+A PF atribui a Vorcaro repasse de US$ 12,3 milhões ao fundo Havengate Development Fund para financiar a produção, de acordo com o Estado de Minas.
+
+## O que vem agora
+Fachin aguarda o parecer da PGR sobre a prorrogação do inquérito.
+
+## O que ainda não está confirmado
+Se Azevedo, Frias ou Eduardo Bolsonaro serão formalmente investigados ou denunciados, e o que a defesa de cada um dirá.
+NUMS 1|alvo da segunda fase;US$ 12,3 mi|repasse atribuído a Vorcaro pela PF (Estado de Minas);90 dias|prorrogação pedida pela PF`,
+ fontes:[['Estadão','https://www.estadao.com.br/politica/blog-do-fausto-macedo/pf-deflagra-segunda-fase-de-operacao-para-rastrear-emendas-de-mario-frias-ao-filme-dark-horse/'],['Intercept Brasil','https://www.intercept.com.br/2026/11/11/prefeitura-sao-paulo-financiou-dark-horse/'],['Estado de Minas','https://www.em.com.br/politica/2026/11/7533469-dark-horse-fachin-da-15-dias-para-pgr-se-manifestar-sobre-vorcaro.html']]});
+
+// Editoria ECONOMIA, edição 07h de 14/11/2026
+
+_N('nubank_porto_real_bc_13_11', {ed:'economia', k:'Economia · Bancos', hora:'14/11',
+ t:'Banco Central aprova a compra do Banco Porto Real pelo Nubank, que passa a ter licença bancária no Brasil',
+ sub:'A operação, anunciada em julho, cumpre a regra que restringe o uso da palavra "banco" na marca e não muda o serviço aos clientes, segundo o Nubank.',
+ dado:{n:'115 mi', l:'clientes do Nubank no Brasil, segundo a empresa'},
+ resumo:'O Nubank informou na sexta (13) que o Banco Central aprovou a compra do Banco Porto Real de Investimentos, pequena instituição fundada em 1992. Com isso, o banco digital terá uma licença bancária própria no país, exigida para manter "bank" no nome. O preço não foi divulgado, e a empresa diz que a mudança não altera capital, liquidez nem o atendimento.',
+ upd:'',
+ fundo:`O Nubank anunciou na sexta-feira (13) que o Banco Central aprovou a compra do Banco Porto Real de Investimentos. Com a aquisição, o banco digital passa a ter licença bancária no Brasil, requisito para continuar usando a palavra "banco" na marca, informa a Folha em texto distribuído pela Folhapress.
+
+## O que o Banco Central aprovou
+O Nubank havia comunicado o negócio na noite de segunda-feira, 20 de julho, por meio de um contrato de compra e venda de ações para adquirir 100% do Porto Real, informa o NeoFeed. A conclusão dependia da aprovação do Banco Central, que saiu agora, e a Exame registra que a empresa conclui a compra. O valor da operação não foi divulgado.
+
+O Porto Real é pequeno. Foi fundado em 1992, tem sede em Porto Real, no interior do Rio de Janeiro, atua com crédito a grandes empresas, tem duas agências e não integra nenhum conglomerado financeiro, segundo o NeoFeed e a Folha. Dados do Banco Central de março mostravam ativos de R$ 32 milhões (US$ 6,3 milhões), informa a Bloomberg Línea.
+
+## Por que o Nubank comprou um banco
+Apesar do porte, o Nubank não tinha licença bancária. Tinha as de instituição de pagamento, sociedade de crédito, financiamento e investimento e corretora de valores, e já era enquadrado pelo regulador como banco de médio porte, informa a Bloomberg Línea. A compra responde à Resolução Conjunta nº 17, editada pelo Banco Central e pelo Conselho Monetário Nacional (CMN, órgão que fixa as diretrizes do sistema financeiro) e publicada em 28 de novembro de 2025. A norma padroniza o uso da denominação "banco" por instituições reguladas, deu 120 dias para a entrega de um plano de adequação e fixou prazo máximo de um ano para a adequação efetiva, que incluiria eventual troca de marca, segundo o NeoFeed.
+
+Ao anunciar o negócio, em julho, o Nubank disse que a licença não impõe exigências adicionais de capital ou liquidez e que nada muda para os 115 milhões de clientes no Brasil. O cofundador e presidente-executivo, David Vélez, afirmou em comunicado que o Brasil é onde a empresa "nasceu, cresceu" e que seguirá como foco principal, informa a Bloomberg Línea.
+
+## O contexto da expansão
+A aprovação chega depois de o Nubank receber, no início de julho, autorização para operar como banco no México, seu segundo maior mercado, e de obter, em janeiro, aprovação preliminar para algumas atividades bancárias nos Estados Unidos, segundo a Bloomberg Línea. Para este ano, a empresa anunciou R$ 45 bilhões em investimentos no Brasil, informa a Exame.
+
+## O que vem agora
+O prazo da Resolução Conjunta nº 17 vence perto do fim de novembro de 2026, um ano após a publicação, e a licença do Porto Real é o instrumento que o Nubank escolheu para cumprir a regra sem trocar de nome.
+
+## O que ainda não está confirmado
+O preço pago pelo Porto Real e a forma como a licença será incorporada ao conglomerado do Nubank não foram divulgados.
+NUMS 100%|do Banco Porto Real adquirido, contrato de 20/07;1992|ano de fundação do Porto Real;R$ 32 mi|ativos do Porto Real em março, segundo a Bloomberg Línea;115 mi|clientes do Nubank no Brasil`,
+ fontes:[['Folha de S.Paulo (Folhapress, via Jornal de Brasília)','https://jornaldebrasilia.com.br/noticias/economia/bc-aprova-compra-de-banco-pelo-nubank-que-passara-a-ter-licenca-bancaria-no-brasil/'],['Exame','https://exame.com/invest/mercados/nubank-recebe-aval-do-bc-para-ter-licenca-bancaria-e-conclui-compra-do-banco-porto-real/'],['NeoFeed','https://neofeed.com.br/negocios/nubank-compra-banco-para-nao-perder-o-bank/'],['Bloomberg Línea','https://www.bloomberglinea.com.br/negocios/nubank-anuncia-compra-do-banco-porto-real-para-obter-licenca-bancaria-no-brasil/'],['Valor Econômico','https://valor.globo.com/financas/noticia/2026/11/13/nubank-recebe-aprovao-do-bc-para-obter-licena-bancria-no-brasil.ghtml']]});
+
+_N('tesouro_ataque_hacker_14_11', {ed:'economia', k:'Economia · Contas públicas', hora:'14/11',
+ t:'Ataque hacker expõe dados de 30 mil cadastros e 4 mil chaves Pix no Tesouro Nacional; sistemas só voltam na segunda (16)',
+ sub:'O Tesouro diz que não houve impacto financeiro e que a gestão da dívida pública segue sem alteração.',
+ dado:{n:'30 mil', l:'cadastros do portal e-Serviços atingidos, mais 4 mil chaves Pix'},
+ resumo:'A Secretaria do Tesouro Nacional comunicou na noite de quinta (12) um acesso não autorizado a seus sistemas que expôs dados de cerca de 30 mil cadastros e 4 mil chaves Pix de beneficiários de pagamentos do governo. Parte dos serviços e do portal Tesouro Transparente está fora do ar, com previsão de normalização até a manhã de segunda (16). O órgão diz que as operações principais seguem normais e que não houve prejuízo financeiro.',
+ upd:'',
+ fundo:`A Secretaria do Tesouro Nacional comunicou na noite de quinta-feira (12) a identificação de um acesso não autorizado a seus sistemas, que atingiu cerca de 30 mil cadastros de usuários do portal e-Serviços e 4 mil chaves Pix de beneficiários de pagamentos do governo federal, informa o g1. Parte dos serviços ficou fora do ar, e o órgão prevê restabelecê-los até a manhã de segunda-feira (16).
+
+## O que foi exposto
+Os dados expostos incluem nome, CPF e e-mail de cerca de 30 mil usuários, informa o Poder360. A Folha descreve o episódio como um ataque que expôs dados pessoais de usuários e de beneficiários de pagamentos do governo, e o Terra fala em dados de 30 mil pessoas. O comunicado do Tesouro foi divulgado na noite de quinta, e na sexta (13) o órgão informou que mantinha parte dos sistemas fora do ar, segundo a Folha.
+
+## O que está fora do ar
+A indisponibilidade afeta ferramentas de consulta e acesso a documentos, séries históricas e informações do site do Tesouro e do portal Tesouro Transparente, de acordo com a Agência Brasil. O Tesouro explica que a retirada de sistemas do ar faz parte das medidas de segurança, análise e recuperação adotadas depois do acesso não autorizado, e que nem todos os sistemas indisponíveis foram atingidos. O Globo noticia que o órgão tirou do ar dados fiscais com a suspensão.
+
+## O que o Tesouro diz sobre o impacto
+A Secretaria afirma que as principais estruturas responsáveis pelas operações do Tesouro continuam funcionando normalmente, que não houve impacto financeiro e que a gestão da Dívida Pública Federal segue sem alterações, informa a Agência Brasil. A consulta interativa aos leilões de títulos públicos, que depende de uma das ferramentas afetadas, está temporariamente indisponível.
+
+## O que vem agora
+A previsão do Tesouro é normalizar os sistemas até a manhã de segunda (16).
+
+## O que ainda não está confirmado
+A autoria do ataque, o método de invasão e o alcance exato dos dados expostos além dos cadastros e das chaves Pix informados não foram detalhados nas notas divulgadas até a manhã de sábado.
+NUMS 30 mil|cadastros do e-Serviços atingidos;4 mil|chaves Pix de beneficiários expostas;16/11|previsão de volta dos sistemas`,
+ fontes:[['g1','https://g1.globo.com/economia/noticia/2026/11/12/tesouro-nacional-incidente-seguranca.ghtml'],['Agência Brasil','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/tesouro-preve-normalizar-sistemas-fora-do-ar-ate-segunda-feira'],['Poder360','https://www.poder360.com.br/poder-economia/tesouro-suspende-sistemas-apos-invasao-e-vazamento-de-dados/'],['Folha de S.Paulo','https://www1.folha.uol.com.br/mercado/2026/11/tesouro-nacional-derruba-sistemas-apos-ataque-que-roubou-dados-de-beneficiarios-do-governo.shtml'],['O Globo','https://oglobo.globo.com/economia/noticia/2026/11/13/tesouro-suspende-sistemas-e-tira-dados-fiscais-do-ar-apos-ataque.ghtml']]});
+
+_N('diesel_subvencao_extra_14_11', {ed:'economia', k:'Economia · Combustíveis', hora:'14/11',
+ t:'Governo deixa vencer a subvenção extra de R$ 1,40 por litro ao diesel importado e mantém a de R$ 2,12 ao diesel rodoviário',
+ sub:'A Fazenda diz que pode reavaliar a medida conforme os preços do petróleo; o benefício de 30 dias custava R$ 1,6 bilhão.',
+ dado:{n:'R$ 1,40/litro', l:'subvenção extra ao diesel importado que não foi renovada'},
+ resumo:'O Ministério da Fazenda informou na noite de sexta (13) que a subvenção adicional de R$ 1,40 por litro ao diesel importado venceu e não será renovada. A de R$ 2,12 por litro, ao diesel rodoviário, continua. A pasta não descarta reavaliar a medida conforme o preço do petróleo. A subvenção extra tinha custo estimado de R$ 1,6 bilhão em 30 dias e foi criada por causa da guerra no Oriente Médio.',
+ upd:'',
+ fundo:`O Ministério da Fazenda informou na noite de sexta-feira (13) que a subvenção extra de R$ 1,40 por litro ao diesel importado venceu e não será renovada. A subvenção de R$ 2,12 por litro destinada ao diesel rodoviário não muda e continua em vigor, informa a Agência Brasil.
+
+## O que venceu
+A subvenção é um pagamento do governo a produtores ou importadores para reduzir o custo de comercialização do combustível, explica a Agência Brasil. A medida de R$ 1,40 foi anunciada em 9 de outubro, em um pacote complementar para enfrentar os preços dos combustíveis em razão da guerra no Oriente Médio, e formalizada pela Portaria nº 3.082, de 13 de outubro de 2026, que fixou um acréscimo de R$ 1,40 por litro na subvenção paga aos importadores de diesel A de uso rodoviário, informa o Diário do Grande ABC, em texto do Estadão Conteúdo. Tinha validade de 30 dias.
+
+Na ocasião, o ministro do Planejamento, Bruno Moretti, disse que o custo da subvenção adicional de 30 dias era de R$ 1,6 bilhão e que o objetivo era garantir o abastecimento interno sem provocar volatilidade de preços. O valor se somou ao da subvenção de R$ 2,12 por litro, segundo a mesma fonte.
+
+## O que o governo diz agora
+Em nota, a Fazenda afirmou que a decisão não impede reavaliações futuras "conforme necessário a partir da evolução dos preços do petróleo", informa o Diário do Grande ABC. A Agência Brasil observa que as duas medidas têm valores e regras diferentes e que o fim de uma delas não encerra o programa de apoio ao diesel. A Folha noticia que o governo Lula (PT) decidiu retirar a subvenção extra.
+
+## A ligação com o ajuste fiscal
+O projeto de ajuste fiscal aprovado no Senado na quinta (12), o PLP 299/2026, autoriza abater até R$ 10,5 bilhões da meta de resultado primário de 2026 para a subvenção ao diesel, segundo a InfoMoney.
+
+## O que vem agora
+A Fazenda não fixou data para uma nova decisão, que dependerá do preço do petróleo.
+
+## O que ainda não está confirmado
+O efeito do fim da subvenção extra sobre o preço do diesel importado nas bombas e as condições em que uma nova subvenção seria criada.
+NUMS R$ 1,40|por litro, subvenção extra encerrada;R$ 2,12|por litro, subvenção ao diesel rodoviário mantida;R$ 1,6 bi|custo estimado dos 30 dias da subvenção extra`,
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/governo-nao-renova-subsidio-de-r-140-ao-diesel-importado'],['Diário do Grande ABC (Estadão Conteúdo)','https://www.dgabc.com.br/Noticia/4368792/fazenda-deixa-vencer-subvencao-extra-de-rs-1-40-ao-diesel-importado'],['Folha de S.Paulo','https://www1.folha.uol.com.br/mercado/2026/11/governo-lula-retira-subvencao-extra-de-r-140-por-litro-de-diesel-importado.shtml'],['InfoMoney','https://www.infomoney.com.br/politica/relator-do-plp-do-ajuste-fiscal-mantem-boa-parte-do-projeto-e-faz-ajustes-de-redacao/']]});
+
+_N('mei_remissao_dividas_14_11', {ed:'economia', k:'Economia · Empresas', hora:'14/11',
+ t:'Receita Federal perdoa automaticamente dívidas previdenciárias de MEIs, mas exige o DAS em dia entre janeiro e junho de 2027',
+ sub:'O perdão inclui juros e multas, vem da Lei Complementar 238/2026 e só vale a partir de 1º de janeiro de 2027.',
+ dado:{n:'jan a jun/2027', l:'meses em que o MEI precisa pagar o DAS em dia para manter o perdão'},
+ resumo:'A Receita Federal informou na sexta (13) que perdoará automaticamente as dívidas de contribuição previdenciária dos Microempreendedores Individuais (MEIs), sem necessidade de pedido. O perdão inclui juros e multas e está previsto na Lei Complementar 238/2026, em vigor em 1º de janeiro de 2027. Quem continuar como MEI deve pagar os boletos mensais do DAS de janeiro a junho de 2027. Até 31 de dezembro, dívidas e parcelamentos seguem ativos.',
+ upd:'',
+ fundo:`A Receita Federal informou na sexta-feira (13) que vai perdoar automaticamente as dívidas de contribuição previdenciária dos Microempreendedores Individuais (MEIs), sem que o contribuinte precise pedir. O perdão inclui juros e multas, mas não elimina todos os valores cobrados no boleto, informa a Agência Brasil.
+
+## Como funciona o perdão
+A remissão, nome técnico do perdão de dívida, foi estabelecida pela Lei Complementar 238/2026, que também aumentou o teto de faturamento da categoria e começa a valer em 1º de janeiro de 2027, informam a Agência Brasil e O Imparcial. O benefício abrange a parte da contribuição ao Instituto Nacional do Seguro Social (INSS) incluída no Documento de Arrecadação do Simples Nacional do MEI, o DAS-MEI, o boleto mensal que o microempreendedor paga.
+
+Quanto à data de corte, a Agência Brasil fala em dívidas com vencimento até a sexta (13), e O Imparcial e a Receita citam vencimento até 13 de outubro de 2026. Em ambos os casos, o procedimento é automático.
+
+O MEI é a categoria do Simples Nacional, regime tributário simplificado, para pequenos empreendedores individuais, que recolhem mensalmente o DAS em valor fixo. A Receita não exige requerimento: o cancelamento da parte previdenciária será feito pelo próprio órgão, informa a Paraíba Online.
+
+## A condição para manter o benefício
+Quem continuar enquadrado como MEI deverá pagar em dia os boletos mensais do DAS entre janeiro e junho de 2027, informam a Agência Brasil e O Imparcial. Até 31 de dezembro de 2026, as dívidas e os parcelamentos continuam ativos, e a Receita não os cancela antes de a lei entrar em vigor.
+
+## O que vem agora
+O perdão passa a valer em 1º de janeiro de 2027, quando a lei complementar entra em vigor. O MEI que quiser manter o benefício precisa pagar o DAS de janeiro a junho de 2027 sem atraso.
+
+## O que ainda não está confirmado
+Os valores totais que serão perdoados e o número de MEIs beneficiados não foram divulgados nos textos da Receita e da imprensa.
+NUMS LC 238/2026|lei que criou o perdão e subiu o teto do MEI;1º/1/2027|início da vigência;jan a jun/2027|DAS em dia para manter o benefício`,
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/receita-cancelara-dividas-de-meis-vencidas-ate-esta-sexta-feira'],['O Imparcial','https://oimparcial.com.br/economia/2026/11/receita-federal-vai-perdoar-dividas-previdenciarias-de-meis-automaticamente/'],['Paraíba Online','https://paraibaonline.com.br/economia/2026/11/13/receita-cancelara-dividas-de-meis-vencidas-ate-esta-sexta/']]});
+
+_U('mercado_10_11', {hora:'14/11',
+ t:'Ibovespa fecha a 172,5 mil pontos, com alta de 2,35% na semana; dólar a R$ 5,65 sobe cerca de 2,6% e renova a máxima desde junho de 2025',
+ sub:'O pacote fiscal aprovado no Senado e as turbulências lá fora pesaram sobre o câmbio; os destaques do projeto vão a voto na terça (17).',
+ dado:{n:'+2,35%', l:'Ibovespa na semana, aos 172,5 mil pontos na sexta (13)'},
+ resumo:'O Ibovespa subiu 0,66% na sexta (13), aos 172,5 mil pontos, e acumulou alta de 2,35% na semana, a segunda semana seguida no azul. O dólar fechou praticamente estável, a R$ 5,65, no maior valor desde junho de 2025, e subiu entre 2,63% e 2,66% na semana, conforme a fonte. O mercado acompanha o pacote fiscal, a crise da Nvidia e os dados de inflação dos EUA.',
+ upd:'Entram os fechamentos de sexta (13): Ibovespa em alta de 0,66% e de 2,35% na semana, dólar a R$ 5,65 e alta semanal de cerca de 2,6%.',
+ fundo:`O Ibovespa, principal índice da bolsa brasileira, subiu 0,66% na sexta-feira (13), aos 172,5 mil pontos, e acumulou alta de 2,35% na semana, segundo a Agência Brasil e o Jornal do Comércio. O dólar fechou praticamente estável, a R$ 5,65, e subiu entre 2,63% e 2,66% na semana, o que o deixou no maior valor desde junho de 2025, informa o g1.
+
+## O fechamento de sexta
+A Agência Brasil informa que a alta do Ibovespa veio de ações de varejistas e petroleiras. O dólar oscilou entre R$ 5,632 e R$ 5,667 durante o pregão e terminou com leve alta de 0,11%, de acordo com a Agência Brasil; o g1 e o Jornal de Brasília calculam alta de 0,05%, a R$ 5,6549 e R$ 5,6550. A cotação semanal também varia: 2,63% para a Agência Brasil e 2,66% para a Exame e o Jornal de Brasília.
+
+O Jornal de Brasília observa que o câmbio teve ajuste de posições depois da arrancada de quinta-feira (12). O Globo descreve o dólar como estável, na máxima em 17 meses. O Tempo registra que a bolsa encerrou a segunda semana seguida de alta.
+
+## O que pesou na semana
+A Agência Brasil atribui a alta do dólar na semana à repercussão do pacote fiscal aprovado pelo Senado na quinta (12), com impacto estimado de até R$ 60 bilhões nas contas públicas em 2027, e à continuidade das turbulências no mercado internacional. A Exame e o Jornal de Brasília citam o fiscal e as expectativas sobre o Federal Reserve, o banco central dos Estados Unidos. Em Nova York, as bolsas fecharam sem direção única na sexta, com investidores avaliando os dados de inflação americana e a pressão sobre as ações da Nvidia, informa a Exame. No exterior, o petróleo encerrou perto da estabilidade, de acordo com a Agência Brasil.
+
+No começo da semana, o dólar havia fechado a R$ 5,586 na terça (10), o maior valor desde julho de 2025 até então, e o Ibovespa fechou a 171.337 pontos, com queda de 0,52%, segundo o Times Brasil. Na quarta (11), o índice subiu 0,42% e o dólar recuou a R$ 5,562, com o plano de ajuste no radar. Na quinta, o Banco do Brasil liderou as perdas da bolsa, com queda próxima de 9% depois do balanço.
+
+## O que vem agora
+A votação dos destaques do projeto de ajuste fiscal no Senado está prevista para terça (17), informa a Agência Brasil. Na terça também sai o balanço da Nvidia, e a União Nacional dos Estudantes (UNE) convocou ato contra os juros altos e o ajuste fiscal, às 17h, na avenida Faria Lima, em São Paulo, segundo o Brasil de Fato. A Petrobras apresenta o plano estratégico em 23 de novembro, informa a InfoMoney.
+
+## O que ainda não está confirmado
+O texto final do ajuste fiscal depende dos destaques do Senado e da análise posterior da Câmara dos Deputados.
+NUMS 172,5 mil|pontos do Ibovespa no fechamento de sexta (+0,66%);+2,35%|Ibovespa na semana;R$ 5,65|dólar, maior valor desde junho de 2025;+2,63% a +2,66%|alta semanal do dólar, conforme a fonte`,
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-fecha-estavel-r-565-mas-sobe-263-na-semana'],['g1','https://g1.globo.com/economia/noticia/2026/11/13/dolar-ibovespa.ghtml'],['Exame','https://exame.com/invest/mercados/ibovespa-sobe-com-fiscal-no-radar-e-avanca-235-na-semana-dolar-supera-ganho-com-266/'],['Jornal do Comércio','https://www.jornaldocomercio.com/economia/2026/11/1270508-ibovespa-sobe-066-no-dia-e-235-na-semana-de-olho-em-pacote-fiscal.html'],['Jornal de Brasília','https://jornaldebrasilia.com.br/noticias/economia/dolar-fecha-estavel-mas-sobe-266-na-semana-com-fiscal-e-fed-no-radar/'],['O Tempo','https://www.otempo.com.br/economia/2026/11/13/bolsa-de-valores-encerra-segunda-semana-seguida-no-azul'],['Brasil de Fato','https://www.brasildefato.com.br/2026/11/13/contra-os-juros-altos-e-o-ajuste-fiscal-une-marca-ato-em-frente-a-baleia-da-faria-lima-para-terca-17/']]});
+
+_U('ajuste_fiscal_pacote_11_11', {hora:'14/11', semAtores:false,
+ t:'Senado aprova por 45 a 31 o texto-base do ajuste fiscal de até R$ 60 bi e vota os destaques na terça (17); estados e parte do PT contestam o texto',
+ sub:'O placar ficou abaixo dos 49 votos exigidos para emendas constitucionais, e governadores tentam mudar os cortes nos repasses da União.',
+ dado:{n:'45 a 31', l:'placar do texto-base no Senado, quinta (12)'},
+ resumo:'O Senado aprovou na quinta (12), por 45 votos a 31, o texto-base do PLP 299/2026, o ajuste fiscal do governo Lula, que prevê economia de R$ 50 bi a R$ 60 bi em 2027 segundo o ministro Bruno Moretti. Os destaques devem ser votados na terça (17), e o projeto segue à Câmara. Governadores criticam o corte e o adiamento de repasses, o PT está dividido, e o placar acendeu alerta no Planalto para as PECs de 2027.',
+ upd:'Entram a votação dos destaques, prevista para terça (17), a reação dos governadores às mudanças nos repasses, o alerta do Planalto com o placar de 45 votos e o ato da UNE.',
+ fundo:`O Senado aprovou na quinta-feira (12), por 45 votos a 31, o texto-base do projeto de lei complementar (PLP) 299/2026, o ajuste fiscal do governo Lula (PT), com economia estimada entre R$ 50 bilhões e R$ 60 bilhões em 2027, segundo o ministro do Planejamento, Bruno Moretti. Os destaques, que são propostas de mudança votadas separadamente, devem ser analisados na terça-feira (17), e depois o projeto segue para a Câmara dos Deputados, informa a Agência Brasil.
+
+## Como foi a votação
+A votação durou quase quatro horas, informa a Agência Brasil. O presidente do Senado, Davi Alcolumbre (União-AP), havia condicionado a votação a um acordo, e o relator, Eduardo Braga (MDB-AM, partido de centro da base do governo), estimou melhora de R$ 43 bilhões a R$ 54 bilhões no resultado primário de 2027. A CNN Brasil cita superávit primário previsto entre R$ 45,1 bilhões e R$ 56,1 bilhões, e o Estadão e a Folha falam em esforço de R$ 46 bilhões a R$ 56 bilhões. As cifras diferem porque cada veículo mede um conjunto distinto de medidas.
+
+O placar de 45 votos garantiu a vitória, mas ficou abaixo dos 49 votos, três quintos dos 81 senadores, necessários para aprovar uma emenda à Constituição, informa o News Rondônia. A avaliação é que o governo enfrentará obstáculos para aprovar PECs a partir de 2027, quando uma nova composição assumirá o Congresso, e a próxima disputa é contra um destaque da oposição, na terça.
+
+## O que o projeto prevê
+O texto autoriza o Executivo a mirar o centro da meta de resultado primário ao bloquear gastos e reduz de 2,5% para 2,0% ao ano o limite de crescimento real da despesa quando o mecanismo for acionado. Prevê corte linear de 10% nos benefícios tributários, além do corte aprovado no fim de 2025, o que pode chegar a até 20% sobre os valores originais, com exceções para a folha de pagamentos, a tecnologia da informação, os semicondutores e a isenção de veículos para pessoas com deficiência e autistas, informa a Agência Brasil.
+
+O projeto exclui as receitas extraordinárias de petróleo e gás do cálculo do piso da saúde e permite desvincular até 40% do superávit financeiro de fundos, segundo o SBT News e o Poder News. Autoriza ainda abater até R$ 10,5 bilhões da meta de 2026 para a subvenção ao diesel e dá 120 dias, depois da sanção, para o Congresso regulamentar os supersalários, de acordo com a InfoMoney.
+
+## Estados contestam os repasses
+Um trecho do texto altera o calendário de pagamento das compensações da Lei Kandir, que garante recursos aos estados pelas perdas com a desoneração do ICMS sobre as exportações, e pode reduzir em bilhões de reais os repasses da União entre 2027 e 2030, informa o Jornal da Paraíba. O Comitê Nacional de Secretários de Fazenda dos Estados (Comsefaz) criticou a redução e o adiamento. A Paraíba, entre os estados menos afetados, pode deixar de receber mais de R$ 17 milhões no período.
+
+A governadora reeleita de Pernambuco, Raquel Lyra (PSD), disse na sexta (13), em São Paulo, que o ajuste "pode ser feito, mas não pode ser tirando dinheiro da gente", e afirmou que governadores estão mobilizados para alterar a proposta, informa o JC. O Distrito Federal ficou de fora: o texto-base preservou a fórmula de cálculo do Fundo Constitucional do DF, e a governadora Celina Leão (PP) atribuiu o resultado a articulação política, informa o g1 DF.
+
+## A resistência dentro e fora do Congresso
+No PT, partido de esquerda do presidente, o ajuste divide a sigla. O Estadão informa que o Diretório Nacional, reunido na sexta (13), debateria a preocupação de que o aperto fiscal deixe sem recursos o novo Ministério da Segurança Pública. A União Nacional dos Estudantes (UNE) convocou ato contra os juros altos e o ajuste fiscal para terça (17), às 17h, na avenida Faria Lima, em São Paulo, informa o Brasil de Fato.
+
+No mercado, o dólar subiu 2,63% na semana, com a repercussão do pacote entre os motivos, segundo a Agência Brasil. O presidente da Câmara, Hugo Motta (Republicanos-PB), disse ao blog de Ana Flor, no g1, que pode debater o projeto com os líderes já na próxima semana.
+
+## O que vem agora
+O Senado vota os destaques provavelmente na terça (17), e em seguida o texto vai à Câmara, onde Motta pretende ouvir os líderes.
+
+## O que ainda não está confirmado
+O texto final depende dos destaques, e não está definido se os governadores conseguirão mudar o calendário das compensações da Lei Kandir.
+NUMS 45 a 31|placar do texto-base no Senado;R$ 50 bi a R$ 60 bi|economia em 2027, segundo Moretti;49|votos exigidos para PEC, três quintos de 81;17/11|votação prevista dos destaques`,
+ fontes:[['Agência Brasil','https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/senado-aprova-texto-base-de-pacote-que-preve-economia-de-ate-r-60-bi'],['News Rondônia','https://newsrondonia.com.br/politica/2026/11/13/placar-do-ajuste-fiscal-no-senado-acende-alerta-no-planalto-sobre-aprovacao-de-pecs-em-2027/'],['Jornal da Paraíba','https://jornaldaparaiba.com.br/politica/ajuste-fiscal-menos-afetada-paraiba-ainda-pode-perder-r-17-milhoes-com-mudanca-na-lei-kandir'],['JC','https://jc.uol.com.br/politica/2026/11/13/raquel-lyra-questiona-ajuste-fiscal-do-governo-lula-nao-pode-ser-tirando-dinheiro-da-gente.html'],['g1 DF','https://g1.globo.com/df/distrito-federal/noticia/2026/11/13/texto-base-do-ajuste-fiscal-aprovado-pelo-senado-preserva-fundo-constitucional-do-df.ghtml'],['Estadão','https://www.estadao.com.br/politica/ajuste-fiscal-reducao-da-maioridade-penal-e-nomes-para-ministerio-da-seguranca-dividem-pt/'],['Brasil de Fato','https://www.brasildefato.com.br/2026/11/13/contra-os-juros-altos-e-o-ajuste-fiscal-une-marca-ato-em-frente-a-baleia-da-faria-lima-para-terca-17/'],['CNN Brasil','https://www.cnnbrasil.com.br/politica/como-votaram-os-senadores-na-analise-do-texto-base-do-plp-do-ajuste-fiscal/'],['InfoMoney','https://www.infomoney.com.br/politica/relator-do-plp-do-ajuste-fiscal-mantem-boa-parte-do-projeto-e-faz-ajustes-de-redacao/'],['g1 (blog de Ana Flor)','https://g1.globo.com/economia/blog/ana-flor/post/2026/11/13/hugo-motta-pode-debater-projeto-de-ajuste-fiscal-com-lideres-na-camara-ja-na-proxima-semana.ghtml']]});
+
+_U('bb_agro_inadimplencia_13_11', {hora:'14/11',
+ t:'Presidente do Banco do Brasil diz que 31 mil produtores rurais estão inadimplentes, 5,5% dos clientes do agro, e nega culpar o setor',
+ sub:'O banco diz que parte dos procurados atendia aos critérios da MP 1.376 e preferiu não renegociar; as ações caíram quase 9% na quinta (12).',
+ dado:{n:'31 mil', l:'produtores rurais com parcelas em atraso no BB, 5,5% dos 566 mil clientes do agro'},
+ resumo:'A presidente do Banco do Brasil, Tarciana Medeiros, afirmou na sexta (13) à GloboNews que 31 mil produtores rurais têm parcelas em atraso, 5,5% dos 566 mil clientes do agronegócio com crédito ativo, e que o banco não atribui a inadimplência a todo o setor. A fala veio depois de a Aprosoja criticar declaração anterior de Tarciana. As ações caíram quase 9% na quinta (12), e o lucro do terceiro trimestre, de R$ 1,3 bilhão, foi 66,5% menor.',
+ upd:'Na sexta (13), Tarciana Medeiros deu números: 31 mil inadimplentes, 5,5% da carteira de 566 mil clientes do agro; o BB soma R$ 1,64 bi em renegociações em Mato Grosso.',
+ fundo:`A presidente do Banco do Brasil, Tarciana Medeiros, afirmou na sexta-feira (13), em entrevista à GloboNews, que 31 mil produtores rurais estão com parcelas de empréstimos em atraso no banco, o equivalente a 5,5% dos 566 mil clientes do agronegócio com operações de crédito ativas, informa o Metro1. "Em nenhum instante nós atribuímos a inadimplência a todo o agro", declarou.
+
+## Os números da carteira
+O banco tem uma carteira com mais de 2,5 milhões de produtores rurais, dos quais 566 mil mantêm operações de crédito ativas, segundo Tarciana. A inadimplência no setor chegou a 6,92% em setembro, e o banco enfrenta aumento das perdas com crédito rural, informa o Metro1. Na sexta, o BB informou que parte dos clientes procurados, embora atendesse aos critérios da Medida Provisória 1.376, preferiu não aderir às condições de renegociação.
+
+## De onde veio a polêmica
+O banco registrou lucro de R$ 1,3 bilhão no terceiro trimestre, informa o g1, e o Brasil de Fato fala em queda de 66,5% do lucro, atribuída à inadimplência de médios e grandes produtores, em especial de soja, milho e pecuária. Na quinta (12), Tarciana disse, segundo o g1, que parte dos médios e grandes produtores inadimplentes escolheu não pagar nem renegociar à espera de novas medidas do governo. As ações lideraram as perdas do Ibovespa, com queda próxima de 9%, o pior nível em quase cinco anos, informa o g1. Na sexta, às 11h36, o papel valia R$ 15,09, com baixa de 2,52%, de acordo com o Metrópoles.
+
+A fala não repercutiu bem entre as entidades do agronegócio, informa a Folha, e a Aprosoja Brasil, associação dos produtores de soja, rebateu a presidente do banco em nota. O Banco do Brasil respondeu que não culpou todo o setor, e Tarciana disse, segundo o Poder360, que a instituição permanece sólida e que buscará as medidas necessárias para preservar o capital.
+
+## A renegociação em Mato Grosso
+A Medida Provisória 1.376/2026, apresentada em 15 de julho, autoriza linhas de crédito para produtores e cooperativas afetados por perdas quitarem dívidas rurais. Em Mato Grosso, o BB soma R$ 1,64 bilhão em valores de renegociação ligados à MP, em diferentes fases de contratação, segundo o balanço mais recente do banco, informa o g1 MT. O superintendente do banco no estado, Daniel Siqueira, orienta os produtores com parcelas em atraso a procurar uma agência, onde cada situação será analisada individualmente.
+
+## Leitura política
+O Brasil de Fato publicou entrevista com um economista que chama o calote de possível sabotagem depois da derrota de Flávio Bolsonaro (PL) na eleição presidencial. É a interpretação do entrevistado, e o texto não cita prova.
+
+## O que vem agora
+Os investidores acompanham as medidas de renegociação das dívidas do agro e a política de provisões do banco, que divulgou despesa recorde com perdas esperadas, como os demais bancos do país no trimestre, segundo a Folha.
+
+## O que ainda não está confirmado
+Quais novas medidas de renegociação o governo adotará e quando, e quanto da inadimplência vem de produtores que optaram por não pagar.
+NUMS 31 mil|produtores inadimplentes no BB;5,5%|dos 566 mil clientes do agro com crédito ativo;6,92%|inadimplência no setor em setembro;R$ 1,64 bi|renegociações do BB em Mato Grosso pela MP 1.376`,
+ fontes:[['Metro1','https://www.metro1.com.br/noticias/politica/191393,banco-do-brasil-aponta-calote-de-31-mil-produtores-rurais'],['g1 MT','https://g1.globo.com/mt/mato-grosso/noticia/2026/11/13/banco-do-brasil-soma-r-164-bilhao-em-renegociacao-de-dividas-rurais-em-mt.ghtml'],['g1','https://g1.globo.com/economia/agronegocios/noticia/2026/11/12/banco-do-brasil-dividas-do-agro.ghtml'],['Poder360','https://www.poder360.com.br/poder-economia/banco-do-brasil-permanece-solido-diz-presidente-da-instituicao/'],['Metrópoles','https://www.metropoles.com/brasil/acoes-do-banco-do-brasil-sexta-13-11'],['Brasil de Fato','https://www.brasildefato.com.br/2026/11/12/economista-critica-calote-do-agro-no-banco-do-brasil-em-possivel-sabotagem-apos-derrota-de-flavio-bolsonaro/']]});
+
+// Editoria MUNDO, edição 07h de 14/11/2026
+
+_N('voos_eua_ground_stop_14_11', {ed:'mundo', k:'Mundo · Estados Unidos', hora:'14/11',
+ t:'EUA suspendem todas as decolagens por mais de quatro horas por falha de radar e comunicação; governo pede bilhões para trocar o sistema de controle aéreo',
+ sub:'Mais de 2 mil voos de sábado (14) seguem cancelados; o secretário de Transportes culpa equipamentos antigos e o de Segurança Interna diz que nada indica ataque cibernético.',
+ dado:{n:'4 h', l:'Duração da paralisação nacional de decolagens nos EUA na sexta (13), a segunda desde o 11 de setembro de 2001'},
+ resumo:'A Administração Federal de Aviação (FAA) parou todas as decolagens nos Estados Unidos na tarde de sexta (13) e as liberou cerca de quatro horas depois. O secretário de Transportes, Sean Duffy, atribuiu o problema a equipamentos analógicos antigos que ficaram sobrecarregados. O governo pede US$ 30,1 bilhões ao Congresso para modernizar o sistema. Milhares de voos foram cancelados e os efeitos chegaram à Europa e ao Brasil.',
+ upd:'',
+ fundo:`A Administração Federal de Aviação dos Estados Unidos (FAA, na sigla em inglês) mandou parar todas as decolagens no país às 15h54 de sexta-feira (13), horário de Washington (17h54 em Brasília), e só as liberou cerca de quatro horas depois, às 20h15. A medida, chamada de ground stop, afetou aeroportos de todo o território americano e deixou milhares de voos cancelados.
+
+## O que aconteceu na sexta
+
+Por volta das 15h30, a FAA passou a registrar "instabilidade" nos radares e nas comunicações dos centros de controle de rotas e das torres de aeroportos, disse o secretário de Transportes, Sean Duffy, segundo a ABC News. Na hora da ordem de parada havia cerca de 3.500 aviões no ar, de acordo com Duffy, que escreveu nas redes sociais que técnicos investigavam o problema. A Al Jazeera registra que a FAA falou em "circunstâncias extraordinárias e por motivos de segurança".
+
+Duffy atribuiu a falha a um sistema "incrivelmente antigo", que roda sobre telecomunicações analógicas: comutadores e roteadores teriam ficado sobrecarregados de dados e passaram a gerar informações inconsistentes, e por isso o sistema foi desligado. O secretário de Segurança Interna, Markwayne Mullin, disse que, até ali, nada indicava um ataque cibernético, e que a parada foi uma medida de precaução. Segundo a ABC News, ele afirmou que tentativas de remendar o sistema acabaram sobrecarregando a tecnologia antiga.
+
+A AirSpace Intel, empresa que fornece o sistema de inteligência artificial SMART, em implantação nas instalações de controle aéreo do país, disse que a parada não teve relação com a ferramenta. Duffy também afirmou que o SMART não poderia ter influenciado o resultado, mas Mullin disse que as autoridades examinam essa possibilidade. A imprensa brasileira, como o g1, cita ainda a hipótese de cruzamento de frequências de rádio e uma investigação do governo americano e do FBI sobre uma possível atualização de software.
+
+## O custo e o pedido ao Congresso
+
+A paralisação foi a segunda ordem nacional de parada de decolagens da FAA desde os ataques de 11 de setembro de 2001; a anterior ocorreu em janeiro de 2023, após a pane de um sistema de avisos a pilotos. A Al Jazeera, citando o monitor FlightAware, fala em cerca de 7 mil voos atrasados ou cancelados ainda na noite de sexta; o g1 cita mais de 10 mil, e o Globo informa que mais de 2 mil voos de sábado (14) seguem cancelados.
+
+Duffy chamou a situação de "emergência" e disse que o Congresso precisa liberar bilhões de dólares para uma "reforma completa" do sistema; sem isso, afirmou, haverá novas panes e voar ficará "menos seguro". A Al Jazeera lembra que o Congresso aprovou US$ 12,5 bilhões para a modernização no ano passado, e que a FAA e a Casa Branca pediram na sexta outros US$ 30,1 bilhões. Duffy disse esperar o sistema "de pé e operacional" antes do feriado de Ação de Graças, no fim de novembro.
+
+No Congresso, a senadora Tammy Duckworth disse que vai exigir respostas da FAA, a senadora Maria Cantwell afirmou que a Comissão de Comércio vai examinar as questões de comunicação, e o deputado Hakeem Jeffries chamou o episódio de "colapso sem precedentes".
+
+## Efeitos fora dos Estados Unidos
+
+Voos dos EUA para a Europa foram suspensos por um período durante a noite, e a restrição foi retirada na manhã de sábado, informa a Yahoo News. Em Frankfurt, quatro voos de sábado para os EUA foram cancelados porque as aeronaves não chegaram dos EUA na sexta; em Munique, dois voos vindos dos EUA não chegaram e três partidas para Charlotte e Houston foram canceladas. Duffy disse que a recuperação completa dependerá também da disponibilidade de tripulações, hoje fora de posição.
+
+## O que ainda não está confirmado
+
+A causa exata da falha segue em apuração; o governo descarta, por ora, ataque cibernético, mas Mullin não excluiu a hipótese por completo. Também não há prazo para a normalização total da malha aérea.
+
+NUMS 4 h|Duração da parada nacional, de 15h54 a 20h15 (Washington);3.500|Aviões no ar quando a FAA mandou parar, segundo Duffy;US$ 30,1 bi|Novo pedido da FAA e da Casa Branca ao Congresso;2|Paradas nacionais desde 2001, a anterior em janeiro de 2023`,
+ fontes:[['ABC News (parada nacional levantada após mais de 4 horas)','https://abcnews.com/US/nationwide-ground-stop-ordered-airports-faa/story?id=138121848'],['Al Jazeera (EUA param todos os voos)','https://www.aljazeera.com/news/2026/11/13/us-grounds-all-flights-after-communication-issue'],['Yahoo News (EUA levantam a parada nacional)','https://www.yahoo.com/news/us/articles/us-lifts-nationwide-ground-stop-060324345.html'],['g1 (efeito cascata da suspensão de voos nos EUA)','https://g1.globo.com/mundo/noticia/2026/11/14/o-efeito-cascata-da-suspensao-de-voos-nos-eua-trens-sobrecarregados-brasil-impactado-e-horas-para-normalizar-fluxo.ghtml'],['O Globo (mais de 2 mil voos de sábado cancelados)','https://oglobo.globo.com/mundo/noticia/2026/11/14/mais-de-2000-voos-de-sabado-seguem-cancelados-nos-eua-apos-interrupcao-de-trafego-aereo.ghtml']]});
+
+_N('voos_eua_brasil_guarulhos_14_11', {ed:'mundo', k:'Mundo · Estados Unidos', hora:'14/11',
+ t:'Paralisação de voos nos EUA cancela partidas de Guarulhos para Nova York, Miami, Boston e Los Angeles; Anac e FAB acompanham',
+ sub:'Ao menos 15 voos de Guarulhos para os EUA foram afetados; passageiros devem confirmar a situação com as companhias aéreas.',
+ dado:{n:'15', l:'Voos de Guarulhos para os EUA afetados na sexta (13)'},
+ resumo:'A suspensão nacional de decolagens nos Estados Unidos, de cerca de quatro horas na sexta (13), cancelou voos que sairiam de Guarulhos (SP) para Boston, Nova York, Miami e Los Angeles. A Anac pediu que passageiros consultem as companhias aéreas, e a Força Aérea Brasileira informou que o Decea acompanha o fluxo e pode redirecionar aeronaves a aeroportos alternativos. Os EUA são o segundo maior destino internacional dos brasileiros.',
+ upd:'',
+ fundo:`Voos que sairiam do Aeroporto Internacional de Guarulhos, na Grande São Paulo, para cidades dos Estados Unidos foram cancelados na sexta-feira (13), depois que a Administração Federal de Aviação americana (FAA) mandou parar todas as decolagens no país por cerca de quatro horas. Ao menos 15 voos com destino aos EUA foram afetados no aeroporto, o principal terminal internacional do Brasil.
+
+## O que foi cancelado e quem acompanha
+
+O Estadão informa que as partidas canceladas incluíam rotas para Boston, Nova York, Miami e Los Angeles, e que os efeitos persistiram mesmo depois do fim da suspensão, às 22h20 em Brasília, segundo o Estado de Minas. Os Estados Unidos são o segundo maior destino dos voos internacionais brasileiros, atrás apenas da Argentina, de acordo com o Estadão.
+
+A Agência Nacional de Aviação Civil (Anac) disse que monitora a situação e orientou quem tem viagem marcada aos EUA a procurar a companhia aérea para saber se o voo mudou, informa a Agência Brasil. A Anac lembrou que as empresas devem manter os procedimentos de assistência e respeitar os direitos dos passageiros previstos na legislação brasileira em casos de atraso, cancelamento ou interrupção do serviço.
+
+A Força Aérea Brasileira (FAB) afirmou que o Departamento de Controle do Espaço Aéreo (Decea) coordena ações com as companhias para reduzir os transtornos, com atenção concentrada em Guarulhos. O governo avalia ajustes no fluxo de tráfego aéreo e, se necessário, o direcionamento de aeronaves para aeroportos alternativos, segundo o Jornal de Brasília.
+
+## Por que o problema começou nos EUA
+
+A ordem americana veio depois que o sistema de controle aéreo sofreu instabilidade em radares e comunicações, segundo o secretário de Transportes, Sean Duffy, citado pela ABC News. Ele atribuiu a pane a equipamentos antigos sobrecarregados de dados, e o secretário de Segurança Interna, Markwayne Mullin, disse que não havia indício de ataque cibernético. A Al Jazeera informa que cerca de 7 mil voos foram atrasados ou cancelados nos EUA até a noite de sexta.
+
+O Estadão e O Tempo registraram também o caso de cinco engenheiros de inteligência artificial que ficaram retidos em um aeroporto americano, com filas grandes e clima de tensão.
+
+## O que vem agora
+
+Duffy avisou que a normalização total depende de tripulações e aeronaves que ficaram fora de posição, e o Globo informa que mais de 2 mil voos de sábado (14) seguem cancelados nos EUA. Passageiros com voos marcados para o fim de semana devem verificar o status antes de ir ao aeroporto.
+
+NUMS 15|Voos de Guarulhos para os EUA afetados, segundo o g1;4 h|Duração da paralisação de decolagens nos EUA;22h20|Fim da suspensão em horário de Brasília, segundo o Estado de Minas;2º|Posição dos EUA entre os destinos internacionais dos brasileiros`,
+ fontes:[['Estadão (Guarulhos)','https://www.estadao.com.br/brasil/suspensao-de-voos-nos-eua-provoca-cancelamentos-e-filas-no-aeroporto-de-guarulhos-veja-fotos/'],['Agência Brasil (Anac orienta passageiros)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/anac-orienta-passageiros-consultar-aereas-sobre-voos-para-os-eua'],['Jornal de Brasília (FAB monitora)','https://jornaldebrasilia.com.br/noticias/brasil/fab-monitora-suspensao-de-voos-nos-eua-e-avalia-alternativas/'],['Estado de Minas (fim da suspensão)','https://www.em.com.br/internacional/2026/11/7538604-eua-encerram-suspensao-de-voos-apos-4-horas-de-paralisacao.html'],['g1 (efeito cascata)','https://g1.globo.com/mundo/noticia/2026/11/14/o-efeito-cascata-da-suspensao-de-voos-nos-eua-trens-sobrecarregados-brasil-impactado-e-horas-para-normalizar-fluxo.ghtml'],['ABC News (parada levantada)','https://abcnews.com/US/nationwide-ground-stop-ordered-airports-faa/story?id=138121848'],['Al Jazeera','https://www.aljazeera.com/news/2026/11/13/us-grounds-all-flights-after-communication-issue']]});
+
+_N('nova_orleans_petroleiro_cruzeiro_14_11', {ed:'mundo', k:'Mundo · Estados Unidos', hora:'14/11',
+ t:'Navio-tanque atinge barco de cruzeiro com 197 pessoas em Nova Orleans; todos são resgatados e 32 vão a hospitais',
+ sub:'Uma pessoa teve ferimentos graves; investigadores apuram por que o navio-tanque desviou de rota e atingiu a embarcação.',
+ dado:{n:'197', l:'Pessoas no barco American Heritage, todas resgatadas após a colisão no rio Mississippi, em Nova Orleans'},
+ resumo:'Um navio-tanque atingiu na sexta (13) o barco fluvial American Heritage, da American Cruise Lines, que estava junto ao cais em Nova Orleans, no rio Mississippi, e a embarcação virou. A prefeita Helena Moreno disse que todas as 197 pessoas a bordo foram localizadas; 32 estavam em hospitais, uma com ferimentos graves. O governador Jeff Landry falou em "milagre". A causa segue sob investigação.',
+ upd:'',
+ fundo:`Um navio-tanque atingiu na sexta-feira (13) o barco fluvial American Heritage, que transportava 197 pessoas e estava junto ao cais em Nova Orleans, no rio Mississippi, e a embarcação de cruzeiro virou. Todos os passageiros e tripulantes foram localizados e resgatados, segundo a prefeita Helena Moreno, e 32 pessoas estavam em hospitais, uma delas com ferimentos graves.
+
+## A colisão e o resgate
+
+A American Cruise Lines, dona do barco, confirmou que a embarcação American Heritage esteve envolvida e que passageiros e tripulação foram retirados, em coordenação com a Guarda Costeira e as autoridades locais, informa a ABC News. A CBS News descreve um barco de rodas de pás (paddlewheel) que ficou parcialmente submerso depois de ser atingido pelo navio-tanque, muito maior; imagens mostram pessoas na água, de colete salva-vidas, e outras junto à amurada enquanto o lado oposto adernava para o rio.
+
+Nas primeiras horas, a afiliada WWL-TV, citada pela CBS News, falou em até 129 pessoas a bordo; a prefeitura e a Folha falam em 197. Em entrevista coletiva, o governador da Louisiana, Jeff Landry, definiu o desfecho como "literalmente um milagre no Mississippi". A ABC News registra que ele havia dito mais cedo que acompanhava o caso de perto com as autoridades locais e a polícia.
+
+## O que se apura
+
+Investigadores trabalham para esclarecer por que o navio-tanque desviou de sua rota e atingiu a embarcação atracada, segundo a Folha. Não há, nos relatos publicados até aqui, informação sobre a carga do navio-tanque nem sobre vazamento de óleo.
+
+Quando a colisão ocorreu, o American Heritage estava atracado, segundo as imagens descritas pela CBS News e o relato da Folha. O governador Landry afirmou, ainda na sexta, que acompanhava a ocorrência em contato com as autoridades locais e a polícia, e se deslocou para Nova Orleans.
+
+## O que ainda não está confirmado
+
+A causa do desvio, o nome e a bandeira do navio-tanque e o estado de saúde da pessoa ferida com gravidade ainda não foram detalhados pelas autoridades.
+
+NUMS 197|Pessoas a bordo, todas resgatadas;32|Pessoas levadas a hospitais;1|Ferido grave`,
+ fontes:[['ABC News (vessel collision, Port of New Orleans)','https://abcnews.com/US/vessel-collision-port-new-orleans-emergency-crews-responding/story?id=138119847'],['CBS News (river cruise ship and tanker crash)','https://www.cbsnews.com/news/tanker-cruise-collision-mississippi-river-new-orleans/'],['Folha de S.Paulo (navio atinge barco de cruzeiro)','https://www1.folha.uol.com.br/mundo/2026/11/navio-atinge-e-vira-barco-de-cruzeiro-com-197-pessoas-em-nova-orleans.shtml']]});
+
+_N('trump_xi_putin_shenzhen_14_11', {ed:'mundo', k:'Mundo · Ásia', hora:'14/11',
+ t:'Casa Branca confirma reunião de Trump, Xi Jinping e Putin em Shenzhen, na China, na próxima quinta (19), a primeira dos três juntos',
+ sub:'A pauta é o arsenal nuclear e a guerra no Irã; um alto funcionário americano diz não esperar acordo, e o Kremlin rejeita a comparação com Yalta.',
+ dado:{n:'19/11', l:'Data da reunião dos presidentes dos EUA, da China e da Rússia em Shenzhen, à margem da cúpula da Apec'},
+ resumo:'A Casa Branca confirmou que o presidente americano, Donald Trump, vai se reunir com o presidente chinês, Xi Jinping, e o russo, Vladimir Putin, em Shenzhen, na China, à margem da cúpula da Apec, marcada para 18 e 19 de novembro. Trump quer discutir os arsenais nucleares; um alto funcionário diz não esperar acordo. A Ucrânia teme que o encontro trate do seu futuro sem Kiev.',
+ upd:'',
+ fundo:`A Casa Branca confirmou que o presidente dos Estados Unidos, Donald Trump, vai se reunir com o presidente da China, Xi Jinping, e o da Rússia, Vladimir Putin, em Shenzhen, no sul da China, na próxima semana. O encontro será à margem da cúpula da Apec (Cooperação Econômica Ásia-Pacífico), marcada para 18 e 19 de novembro, e seria a primeira reunião formal dos três líderes juntos; a data indicada pelo governo americano é a quinta-feira (19).
+
+## O que a Casa Branca disse
+
+A confirmação veio por meio de uma assistente da secretaria de imprensa da Casa Branca, informa a Al Jazeera. Trump afirma que a reunião é uma chance de os três países chegarem a um acordo sobre arsenais nucleares, e um alto funcionário americano disse à Al Jazeera que o presidente também pretende tratar da guerra com o Irã e evitar o tema da guerra da Rússia na Ucrânia. O mesmo funcionário afirmou: "Não esperamos chegar a nenhum tipo de acordo".
+
+O pano de fundo é o fim do tratado New Start, que limitava os arsenais de EUA e Rússia e expirou em fevereiro. Trump recusou a oferta russa de prorrogá-lo por um ano e quer um acordo "novo, melhorado e modernizado" que inclua a China. Com a expiração, EUA e Rússia ficaram sem limites formais para seus arsenais pela primeira vez em mais de 50 anos. Segundo o Sipri, instituto sueco de estudos de paz, a Rússia tem o maior número de ogivas, seguida dos EUA e da China. O bilionário Elon Musk viajará com Trump à China, mas não participará da reunião, e o presidente americano não deve se encontrar com o líder norte-coreano Kim Jong Un na viagem.
+
+## As posições de Moscou, Pequim e Kiev
+
+O porta-voz do Kremlin, Dmitri Peskov, rejeitou a comparação com a Conferência de Yalta, de 1945, em que Estados Unidos, Reino Unido e União Soviética dividiram esferas de influência, e disse que acordos fechados em Shenzhen não podem ser impostos a terceiros, mas chamou o encontro de "extremamente significativo". O governo chinês não comentou a confirmação, de acordo com a Al Jazeera.
+
+Antes do anúncio, Pequim já havia dito que participar de negociações nucleares trilaterais "nesta etapa" seria injusto, pouco razoável e irrealista, informa a Al Jazeera em reportagem de 6 de novembro. O presidente alemão, Frank-Walter Steinmeier, contou que Xi disse a ele, em 30 de outubro, que o encontro em Shenzhen provavelmente aconteceria, mas sem tratar da Ucrânia, e que os europeus precisam estar à mesa sobre a guerra.
+
+O presidente ucraniano, Volodimir Zelenski, teme que a reunião sirva para discutir um acordo para a Ucrânia sem a presença de Kiev. Trump disse no domingo (9), antes de voltar da Flórida a Washington, que um dos encontros da viagem seria com Putin e Xi e que o tema incluiria desnuclearização e "tentar acabar com a guerra no Irã", segundo o jornal The News Tribune. Em 25 de setembro, ao confirmar a viagem, Trump disse que aceitara o convite de Xi para visitar a China durante a Apec, informa o Times Brasil.
+
+## O que vem agora
+
+Os três líderes devem estar em Shenzhen entre 18 e 19 de novembro. A Al Jazeera informou em 6 de novembro que analistas esperam resultado limitado, com valor mais simbólico do que prático.
+
+## O que ainda não está confirmado
+
+A hora e o local exato do encontro dentro da cúpula, a posição oficial de Pequim e o conteúdo de qualquer conversa sobre a Ucrânia não foram divulgados.
+
+NUMS 19/11|Data da reunião indicada pelo governo americano;18 e 19/11|Cúpula da Apec em Shenzhen;fev/2026|Expiração do tratado New Start;1ª|Reunião formal dos três líderes juntos`,
+ fontes:[['Al Jazeera (Trump, Xi e Putin farão a primeira cúpula a três na China)','https://www.aljazeera.com/news/2026/11/14/trump-xi-and-putin-to-hold-first-three-way-summit-in-china'],['Al Jazeera (o que uma cúpula Trump-Xi-Putin significaria)','https://www.aljazeera.com/amp/news/2026/11/6/what-a-trump-xi-putin-summit-would-mean-and-what-it-wouldnt'],['The News Tribune (Trump acha que vai encontrar Xi e Putin na Apec)','https://www.newstribune.com/news/2026/nov/09/trump-thinks-he-will-meet-xi-and-putin-at-china-apec-summit/'],['Times Brasil (Trump confirma visita à China)','https://timesbrasil.com.br/mundo/trump-confirma-visita-a-china-para-participar-da-cupula-da-apec/']]});
+
+_N('ue_cinco_potencias_ucrania_14_11', {ed:'mundo', k:'Mundo · Europa', hora:'14/11',
+ t:'Europa define Reino Unido, França, Alemanha, Itália e Polônia, mais as instituições da UE, como equipe nas negociações de paz da Ucrânia',
+ sub:'Os líderes não nomearam um enviado único, e a alta representante Kaja Kallas ficou sem o posto que pleiteava; o Kremlin diz que aceita europeus à mesa se o objetivo for a paz.',
+ dado:{n:'5', l:'Países na equipe europeia: Reino Unido, França, Alemanha, Itália e Polônia, além das instituições da UE e da Otan'},
+ resumo:'Líderes da União Europeia, reunidos em Dublin na sexta (13), formalizaram a equipe que falará pela Europa nas negociações para encerrar a guerra na Ucrânia: Reino Unido, França, Alemanha, Itália e Polônia, mais Conselho Europeu, Comissão Europeia e Otan. Não houve enviado único. O Kremlin diz que receberia os europeus; Friedrich Merz, chanceler alemão, chamou a resposta de "o mesmo velho jogo".',
+ upd:'',
+ fundo:`Líderes da União Europeia (UE) decidiram na sexta-feira (13), em reunião informal em Dublin, que o Reino Unido, a França, a Alemanha, a Itália e a Polônia, junto com as instituições europeias, formarão a equipe que representa a Europa nas negociações para pôr fim à guerra na Ucrânia. O anúncio foi do presidente do Conselho Europeu, António Costa, no fim do encontro.
+
+## Como a decisão foi tomada
+
+A Euronews informa que os líderes não escolheram um único enviado, apesar de Ucrânia, Estados Unidos e Rússia terem pedido um interlocutor único da UE e de a primeira-ministra italiana, Giorgia Meloni, ter criticado a "desordem" de vozes. Em vez disso, ampliaram o grupo que já negociava, formado por Reino Unido, França e Alemanha (o chamado E3), com a entrada de Itália e Polônia. O Reino Unido, que deixou a UE, participa pelo E3. A Euronews informa que o formato também inclui o Conselho Europeu, a Comissão Europeia e a Otan, a aliança militar ocidental.
+
+A equipe formaliza um arranjo que já existia: o E3, as instituições da UE e a Otan participaram das rodadas recentes em Miami, Oslo, Bruxelas e Abu Dhabi, mediadas pelos Estados Unidos. A Itália esteve em Abu Dhabi, e a Polônia deve entrar na próxima rodada. Até agora, as conversas foram entre assessores de segurança nacional e altos funcionários, não entre chefes de governo. Costa disse que a "equipe europeia" é formada pelas instituições da UE e pelos cinco países da chamada Coalizão dos Dispostos, e que "a Europa deve falar com uma voz clara".
+
+A alta representante da UE para política externa, Kaja Kallas, tinha pleiteado o posto de enviada especial, com base em uma decisão de líderes de junho de 2024, e disse que "os russos não me querem". Costa respondeu que os tratados são "muito claros" ao dar ao presidente do Conselho Europeu a representação da UE em política externa no nível de líderes. A presidente da Comissão Europeia, Ursula von der Leyen, não apoiou Kallas, que é vice-presidente da Comissão: "Nós decidimos quem nos representa", disse. A Polônia havia alertado contra países da Europa Ocidental decidirem em nome do Leste, e Merz disse que o E3 "provou ser muito eficaz".
+
+## A resposta de Moscou
+
+O Kremlin afirma que receberia a participação europeia se os países tiverem a intenção real de contribuir para a paz, segundo o ThePrint, e quer um acordo amplo sobre a arquitetura de segurança da Europa antes de discutir os detalhes da guerra. Merz chamou a posição russa de "o mesmo velho jogo" e disse que não haverá conversa sobre a Ucrânia sem a Ucrânia, nem sobre a Europa sem a Europa. Kallas alertou que a pressão russa por esse debate pode desviar o foco de um cessar-fogo, o primeiro-ministro polonês, Donald Tusk, defendeu evitar concessões desnecessárias, e Kulbergs, da Letônia, chamou a discussão de "armadilha".
+
+Os enviados americanos Steve Witkoff e Jared Kushner estiveram em Moscou na quinta (12) para convencer Vladimir Putin a negociar. Depois, disseram que Moscou sinalizou disposição de conversar pessoalmente com europeus, e Kushner afirmou que começou a tratar da arquitetura de segurança do continente com parceiros europeus; o Kremlin minimizou essas falas. Na quinta, quarenta países europeus reunidos em Dublin assinaram uma declaração de que toda questão que afete a segurança europeia deve ser decidida com a participação dos europeus. A rodada de Abu Dhabi desta semana terminou com sinais de progresso, mas sem avanço sobre território, segundo o ThePrint.
+
+## Antecedentes
+
+Em 22 de outubro, o jornal britânico The Telegraph informou que a UE avaliava cinco nomes individuais, entre eles Meloni, o presidente finlandês Alexander Stubb e a primeira-ministra dinamarquesa Mette Frederiksen, para viajar em nome do bloco. A decisão de Dublin trocou essa lógica de nomes por um grupo de países.
+
+## O que ainda não está confirmado
+
+Não há data para a próxima rodada de negociações, e a Rússia, que repetidamente se recusou a sentar à mesma mesa com europeus, ainda não disse se aceitará conversar diretamente com a equipe formada.
+
+NUMS 5|Países na equipe europeia;40|Países europeus que assinaram a declaração de Dublin na quinta (12);4|Rodadas recentes com E3, UE e Otan: Miami, Oslo, Bruxelas e Abu Dhabi;22/10|Data em que o Telegraph noticiou cinco nomes individuais em estudo`,
+ fontes:[['Euronews (líderes incluem Itália e Polônia na equipe de paz)','https://www.euronews.com/2026/11/13/eu-leaders-bring-italy-and-poland-into-ukraine-peace-talks-team-as-kallas-fights-for-spot'],['ThePrint (UE define grupo de cinco nações)','https://theprint.in/world/eu-settles-on-five-nation-group-to-speak-for-europe-at-ukraine-peace-talks/3098400/'],['UNN (Telegraph: UE avalia cinco candidatos)','https://unn.ua/en/amp/the-eu-is-considering-five-candidates-for-talks-on-the-war-in-ukraine-the-telegraph'],['Folha de S.Paulo (UE define cinco potências)','https://www1.folha.uol.com.br/mundo/2026/11/ue-escolhe-cinco-paises-para-representar-europa-em-negociacoes-de-paz-entre-ucrania-e-russia.shtml']]});
+
+_U('paraguai', {hora:'14/11',
+ t:'Ministério Público do Paraguai acusa o ex-presidente Santiago Peña de liderar associação criminosa no caso Ueno; ele segue em prisão preventiva',
+ sub:'A Promotoria diz que Peña chefiaria uma estrutura dentro do Estado para favorecer o Grupo Vázquez, dono do banco; ele e os outros acusados têm direito de defesa, e o Orçamento de 2027 aguarda a Câmara.',
+ dado:{n:'6', l:'Pessoas acusadas de associação criminosa na sexta (13), entre elas Peña e o ex-presidente do Banco Central, Carlos Carvallo'},
+ resumo:'O Ministério Público do Paraguai acusou na sexta (13) de associação criminosa o ex-presidente Santiago Peña, destituído pelo Senado em 6 de novembro, o ex-presidente do Banco Central, Carlos Carvallo, e mais quatro pessoas ligadas ao órgão, no caso do Ueno Bank. A tese é de uma estrutura hierárquica para favorecer o Grupo Vázquez, dono do banco. Peña está em prisão preventiva desde sábado (7). As acusações ainda não foram julgadas.',
+ upd:'A Promotoria ampliou a acusação em 13/11: Peña passou a ser acusado também de associação criminosa e apontado como chefe da suposta estrutura; três ex-diretores do Banco Central foram detidos.',
+ fundo:`O Ministério Público do Paraguai acusou na sexta-feira (13) de associação criminosa o ex-presidente Santiago Peña, destituído pelo Senado em 6 de novembro, e outros cinco investigados no caso do Ueno Bank, entre eles o ex-presidente do Banco Central (BCP), Carlos Carvallo. A Promotoria sustenta que Peña seria o chefe de uma estrutura dentro do Estado para favorecer o Grupo Vázquez, controlador do banco.
+
+## A nova acusação
+
+A acusação consta da Ata de Imputação nº 9 da causa 92/2026, segundo o jornal La Nación, de Assunção. Entre os acusados estão também o ex-superintendente de Bancos, Holger Insfrán Ibarrola, e três ex-diretores do BCP, e a Promotoria pede prisão preventiva de um deles. O promotor Christian Benítez disse a jornalistas que a nova acusação se soma às de lesão de confiança (abuso de confiança) e administração em proveito próprio, pelas quais Peña já responde, o que amplia o processo, informa a DW. Os promotores dizem que a qualificação jurídica é provisória e que outros crimes, como lavagem de dinheiro, podem ser incluídos.
+
+Segundo a hipótese da Promotoria, Peña teria colocado pessoas de confiança em cargos estratégicos, teria feito reuniões reservadas com Federico Miguel Vázquez na Mburuvicha Róga, a residência presidencial, e dado diretrizes para evitar a intervenção do banco. A Promotoria também afirma que foram encontrados US$ 200 mil em envelopes na residência presidencial. Peña nega irregularidades; a defesa dele não foi citada nos textos consultados, e as acusações ainda precisam ser provadas no processo.
+
+Carvallo, que presidiu o Ueno antes de chefiar o BCP, teria paralisado processos de regularização do banco e assinado uma nota ao Congresso, a BCP/P nº 016/2026, que omitia advertências técnicas, de acordo com a Promotoria. Insfrán teria ignorado alertas, entre eles a venda de uma carteira de crédito à Vinanzas S.A. por US$ 74,4 milhões e um relatório de 10 de julho. Os ex-diretores Marco Aurelio González Maldonado, Liana Emilce Caballero Krauze e Miguel Ángel Mora teriam conhecido os alertas desde junho sem impulsionar medidas mais duras, e González teria participado da alteração de um relatório enviado ao Senado.
+
+O Ueno continuou captando depósitos entre junho e outubro, inclusive com promoções de devolução de 50%, o que, na avaliação da Promotoria, expôs o Fundo de Garantia de Depósitos e recursos públicos. Em 30 de setembro, os fundos públicos no banco somavam cerca de US$ 233,4 milhões, além de G$ 3,6 trilhões, segundo o La Nación. O BCP decidiu pela resolução (liquidação) do banco em 2 de novembro.
+
+## O que já estava em curso
+
+Peña, do Partido Colorado, de direita, foi destituído na sexta (6) pelo Senado, por 44 votos a 0, e o juiz Humberto Otazú, de garantias em delitos econômicos, decretou a prisão preventiva no sábado (7) para "garantir a sujeição dele ao procedimento", informa o jornal chileno Emol. O juiz descartou cadeia comum porque o ex-presidente tem informações sensíveis, e ele permanece no Regimento Escolta Presidencial. Peña se absteve de declarar perante o juiz. A lesão de confiança e a administração em proveito próprio podem render até 15 anos de prisão, segundo os fiscais.
+
+Em 8 de novembro, a Promotoria apreendeu um celular de Peña escondido na bagagem no regimento; ele havia negado ter aparelho. A fiscal Verónica Valdez disse que a perícia depende de autorização judicial, informa o La Nación. Em 9 de novembro, o fiscal adjunto de Assuntos Internacionais, Manuel Doldán, informou que o Paraguai pediu cooperação aos Estados Unidos, a Luxemburgo e à Argentina para rastrear e recuperar bens ligados ao banco, segundo o CRHoy.
+
+A acusação também detalha reuniões de Peña, em 22 e 27 de agosto de 2024, com o então presidente do Instituto de Previsão Social (IPS), Jorge Brítez; dois dias depois da segunda, o conselho do IPS teria aprovado a compra de títulos do Ueno de G$ 250 bilhões em sete anos, informa o site Prensa Mercosur, que cita a acusação.
+
+## Banco Central, poupadores e Orçamento
+
+O BCP informou que 1.738.804 clientes do Ueno, 93% do total, já tinham sido ressarcidos até segunda (9), num total de G$ 2,126 trilhões (cerca de R$ 1,92 bilhão), segundo a Agência Brasil. O prazo legal para o pagamento ia até quarta (11), e o economista Jorge Schreiner assumiu a presidência do BCP no lugar de Carvallo.
+
+O governo do presidente Pedro Alliana, que assumiu depois da queda de Peña e governa até agosto de 2028, pediu o adiamento da votação do Orçamento Geral de 2027, prevista para 9 de novembro, para incluir ajustes e medidas de austeridade, informa o Infonegocios. O jornal afirma que a Câmara tem até sábado (14) para se pronunciar, prazo constitucional da sanção ficta, e que o Ministério da Economia prepara um adendo. A publicação diz que os depósitos públicos no Ueno, acima de US$ 800 milhões, não equivalem necessariamente a perda definitiva.
+
+## O que vem agora
+
+O juiz deve decidir sobre as medidas cautelares pedidas contra os ex-dirigentes do BCP: prisão preventiva para González e prisão domiciliar para Caballero e Mora, que foram detidos e colocados à disposição da Justiça. Os três podem prestar declaração indagatória ou optar por não falar. A Promotoria reforçou as equipes do caso com as resoluções 4610 e 4611, de 12 de novembro.
+
+## O que ainda não está confirmado
+
+A autorização judicial para a perícia no celular de Peña, a decisão do juiz sobre os três ex-diretores e a definição da Câmara sobre o Orçamento ainda não foram divulgadas.
+
+NUMS 6|Pessoas acusadas de associação criminosa na sexta (13);44 a 0|Votos do Senado pela destituição de Peña em 6/11;US$ 200 mil|Valor em envelopes que a Promotoria diz ter achado na residência presidencial;93%|Clientes do Ueno ressarcidos até 9/11, segundo o BCP`,
+ fontes:[['DW Brasil (ex-presidente acusado de associação criminosa)','https://www.dw.com/pt-br/paraguai-ex-presidente-é-acusado-de-associação-criminosa/a-79945572?maca=bra-rss-br-all-1030-rdf'],['La Nación, Paraguai (imputam a Peña e Carvallo)','https://www.lanacion.com.py/politica/2026/11/06/imputan-a-pena-y-carvallo-ordenan-detencion/?outputType=amp'],['Emol, Chile (prisão preventiva de Peña)','https://www.emol.com/noticias/Internacional/2026/11/07/1216438/prision-preventiva-santiago-pena-paraguay.html'],['CRHoy (Fiscalía pede ajuda a EUA, Luxemburgo e Argentina)','https://crhoy.com/mundo/fiscalia-paraguaya-pide-ayuda-a-ee-uu-luxemburgo-y-argentina-para-rastrear-dinero-del-ueno-bank/'],['Prensa Mercosur (Peña e o Grupo Vázquez)','https://prensamercosur.org/2026/11/08/santiago-pena-fue-el-principal-defensor-del-grupo-vazquez/'],['Infonegocios, Paraguai (adiamento do Orçamento 2027)','https://infonegocios.com.py/nota-principal/postergan-el-tratamiento-del-pgn-2027-el-gobierno-busca-ajustar-las-cuentas-publicas-ante-el-nuevo-escenario-economico'],['Agência Brasil (BC do Paraguai ressarciu 93% dos clientes)','https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/bc-do-paraguai-ja-ressarciu-93-dos-clientes-do-banco-ueno'],['Semana, Colômbia (decisão da Fiscalía)','https://www.semana.com/mundo/articulo/fiscalia-de-paraguay-toma-decision-final-sobre-el-caso-del-expresidente-santiago-pena/202611/']]});
+
+_U('nvidia_espia_jensen_huang', {hora:'14/11',
+ t:'Nvidia busca novo CEO após a renúncia de Jensen Huang, que deve ser chamado a depor no Congresso dos EUA; Trump sugere Tim Cook',
+ sub:'Colette Kress é CEO interina e o balanço do terceiro trimestre fiscal sai na terça (17); as ações caíram cerca de 13% no dia da renúncia.',
+ dado:{n:'~13%', l:'Queda das ações da Nvidia no pregão em que a renúncia de Huang foi anunciada, em Wall Street'},
+ resumo:'Jensen Huang renunciou com efeito imediato aos cargos de presidente, CEO e conselheiro da Nvidia, depois de admitir uma relação com Alice Huang, empresária chinesa que autoridades americanas suspeitam ter coletado informações para a China; Pequim nega. Colette Kress assumiu como CEO interina, e Harvey C. Jones preside o conselho. O deputado Brian Mast espera o depoimento de Huang em cerca de uma semana. Trump sugeriu o nome de Tim Cook, da Apple.',
+ upd:'Entram a sugestão de Trump para o cargo, a expectativa de depoimento de Huang no Congresso, as falas do presidente da Câmara sobre exportação de chips à China e a sondagem da Nvidia a um executivo de empresa concorrente, noticiada pela Folha.',
+ fundo:`O fundador da Nvidia, Jensen Huang, renunciou com efeito imediato aos cargos de presidente, diretor executivo (CEO) e membro do conselho da maior fabricante de chips para inteligência artificial do mundo, e a diretora financeira, Colette Kress, assumiu como CEO interina, informa a empresa em comunicado divulgado na quinta-feira (12). O conselho abriu a busca por um sucessor permanente e nomeou Harvey C. Jones como o primeiro presidente do conselho da história da companhia.
+
+## Por que ele saiu
+
+Huang, de 63 anos, admitiu ter tido uma relação com Alice Huang, empresária chinesa e ex-diretora-geral da Megaspeed, empresa de nuvem para inteligência artificial com sede em Singapura, e a Nvidia abriu uma investigação independente. A empresária não tem parentesco com ele. O jornal The New York Times informou que a inteligência americana concluiu que ela coletava informações para a China, o que Pequim nega, segundo a rede australiana ABC. A Nvidia disse não ter motivo para acreditar que segredos ou a segurança nacional foram comprometidos.
+
+Singapura proibiu a empresária de voltar ao país depois que ela o deixou em fevereiro, e investigou possíveis crimes, entre eles a compra de servidores exportados por Singapura para a Malásia, mas concluiu que as provas eram insuficientes e lhe deu uma advertência. A Megaspeed diz levar a sério as regras de controle de exportação dos EUA e que vai colaborar com o governo americano. Acionistas entraram na terça (10) com uma ação coletiva que acusa a Nvidia e Huang de esconder os vínculos com a empresária, segundo a ABC.
+
+## A sucessão e o Congresso
+
+O comunicado da Nvidia não informa o motivo da saída nem nomeia sucessor. O presidente Donald Trump sugeriu o nome de Tim Cook, CEO da Apple, para o cargo, e a Folha informa que a Nvidia sonda o CEO de uma empresa concorrente para substituir Huang. Huang detém cerca de 3,6% da companhia e, segundo a ABC, a empresa não tinha um sucessor óbvio.
+
+O presidente do Comitê de Relações Exteriores da Câmara dos EUA, Brian Mast, disse esperar que Huang preste depoimento ao Congresso em cerca de uma semana, e o presidente da Câmara, Mike Johnson, defendeu limitar as exportações de chips para a China. Trump já havia confirmado que o FBI apurava o caso e chamado Huang de "muito honrado". Em coluna na Folha, o caso é apontado como um fator que enfraquece a tese a favor da venda de chips à China.
+
+## Mercado
+
+As ações da Nvidia caíram cerca de 13% no início do pregão de Wall Street, depois de uma baixa de pelo menos 24% em um mês, e a empresa vale cerca de US$ 4 trilhões, de acordo com a ABC; a cotação oscilou entre quedas de 7% e 14% conforme o horário e a fonte. O analista Dan Ives chamou a saída de "dia sombrio para a Nvidia e para a indústria de tecnologia americana", e Michael Feldman alertou para o risco de execução do roteiro tecnológico.
+
+## O que vem agora
+
+A Nvidia divulga na terça (17) os resultados do terceiro trimestre fiscal, às 16h20 em Brasília. O Olhar Digital informa que está prevista para 18 de novembro uma reunião a portas fechadas no Congresso sobre o caso, e o conselho conduz a busca pelo CEO permanente.
+
+## O que ainda não está confirmado
+
+O motivo formal da renúncia, a data do depoimento de Huang, o nome do sucessor e se Alice Huang foi recrutada pela inteligência chinesa, hipótese que parte de autoridades americanas e do New York Times e é negada por Pequim.
+
+NUMS 17/11|Balanço do 3º trimestre fiscal da Nvidia;3,6%|Participação de Huang na companhia;~US$ 4 tri|Valor de mercado da Nvidia;24%|Queda mínima das ações em um mês, antes da renúncia`,
+ fontes:[['ABC Austrália (Huang renuncia após relação com suposta espiã chinesa)','https://www.abc.net.au/news/2026-11-13/nvidia-founder-jensen-huang-resigns/107376470'],['SEC (comunicado de transição do CEO da Nvidia)','https://www.sec.gov/Archives/edgar/data/0001045810/000104581026000082/nvidiaannouncesceotransiti.htm'],['Folha de S.Paulo (Nvidia sonda CEO de concorrente)','https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/nvidia-sonda-ceo-de-empresa-concorrente-para-substituir-jensen-huang.shtml'],['Olhar Digital (Nvidia anuncia saída imediata de Jensen Huang)','https://olhardigital.com.br/2026/11/12/pro/nvidia-anuncia-saida-imediata-de-jensen-huang-do-cargo-de-ceo'],['CNN Brasil (Jensen Huang anuncia renúncia como CEO da Nvidia)','https://cnnbrasil.com.br/economia/money/mercado/jensen-huang-anuncia-renuncia-como-ceo-da-nvidia-apos-crise']]});
+
+_U('papa_leao_peru_13_11', {hora:'14/11',
+ t:'Papa Leão XIV celebra missa para cerca de 500 mil pessoas em Chiclayo, no Peru, e diz que se recupera da cirurgia de câncer de pulmão',
+ sub:'O Vaticano estima 1 milhão de pessoas ao longo do trajeto na cidade onde ele foi bispo; ele alertou contra um progresso técnico que ignore a justiça e os trabalhadores.',
+ dado:{n:'500 mil', l:'Pessoas na missa em Pimentel, perto de Chiclayo, segundo estimativa do Vaticano; cerca de 1 milhão ao longo do trajeto'},
+ resumo:'O papa Leão XIV voltou na sexta (13) a Chiclayo, no norte do Peru, onde foi bispo, e celebrou a primeira missa em solo peruano da viagem para cerca de 500 mil pessoas, segundo o Vaticano. Disse ser uma alegria estar em casa e que se recupera, com ajuda de Deus, da cirurgia de câncer de pulmão feita há cerca de um mês. Estima-se 1 milhão de pessoas ao longo do trajeto. A visita ao Peru vai até 17 de novembro, segundo o Vaticano.',
+ upd:'Entram a missa em Chiclayo, as estimativas do Vaticano de público, a fala do papa sobre a recuperação e o discurso na universidade católica.',
+ fundo:`O papa Leão XIV voltou na sexta-feira (13) a Chiclayo, no norte do Peru, cidade onde foi bispo, e celebrou uma missa ao ar livre para cerca de 500 mil pessoas, segundo estimativa do Vaticano. O pontífice chamou o retorno de "alegria" e disse que se recupera, "com a ajuda de Deus", da cirurgia de câncer de pulmão feita cerca de um mês antes.
+
+## A missa e o dia em Chiclayo
+
+O Vaticano calcula que 1 milhão de pessoas se enfileiraram ao longo do trajeto da comitiva, numa cidade de cerca de 700 mil habitantes, informa a AsiaOne. A missa foi num descampado poeirento perto das Pampas de Pimentel, em Pimentel, a primeira celebrada por Leão XIV em solo peruano. Ele chegou ao Peru na quarta (11), de acordo com a AsiaOne, que descreve sexta como o oitavo dia de uma viagem apostólica de 12 dias pela América do Sul, que incluiu Uruguai e Argentina. Na despedida da Argentina, rezou a maior missa de seu papado, para mais de 3 milhões de pessoas, segundo autoridades locais.
+
+A Folha informa que bloqueios obrigaram fiéis a fazer peregrinação a pé para chegar à missa, e o TNH1 registra que muitos acamparam no local. Na universidade católica, o papa disse que o avanço tecnológico que ignora a justiça e a dignidade dos trabalhadores pode virar instrumento de opressão e exclusão. A Veja destaca que ele afirmou estar "superando" os problemas de saúde, semanas depois da operação para retirar um tumor.
+
+Ele rezou numa capela dedicada a são Oscar Romero, arcebispo de El Salvador morto em 1980, cuja conclusão teve ajuda de seu ex-secretário diaconal, e se reuniu com padres, freiras e equipes leigas da antiga diocese. Disse a eles que trabalhar pela justiça, pela paz e pelo bem comum faz parte da missão da Igreja e não é tarefa opcional.
+
+## Um momento de descontração em Lima
+
+Na manhã de sexta, em Lima, Leão XIV começou a falar à multidão em italiano, percebeu a troca, pediu desculpas e continuou em espanhol, o que arrancou risos, segundo o TNH1. Ele viveu quase 20 anos no Peru e obteve a cidadania peruana. Na quarta, em seu primeiro grande discurso no país, dedicado às mulheres, disse ser triste que a mentalidade machista persista, informa a Folha.
+
+## O que vem agora
+
+O Vaticano anunciou que a visita ao Peru vai de 11 a 17 de novembro, segundo o El Peruano.
+
+## O que ainda não está confirmado
+
+O TNH1 diz que o papa fica no Peru até domingo (15), data diferente da do anúncio do Vaticano; o programa detalhado dos dias restantes e a data exata da volta a Roma ainda não foram esclarecidos.
+
+NUMS 500 mil|Pessoas na missa, segundo o Vaticano;1 mi|Pessoas ao longo do trajeto, segundo o Vaticano;~700 mil|Habitantes de Chiclayo;11 a 17/11|Período da visita ao Peru, segundo o Vaticano`,
+ fontes:[['AsiaOne (papa diz ser uma alegria estar em casa)','https://www.asiaone.com/world/pope-says-its-joy-be-home-perus-chiclayo-welcomes-back-its-former-shepherd'],['Folha de S.Paulo (bloqueios obrigam fiéis a peregrinar)','https://www1.folha.uol.com.br/mundo/2026/11/bloqueios-obrigam-fieis-a-fazer-peregrinacao-para-ver-missa-onde-papa-foi-bispo.shtml'],['TNH1 (papa cai no riso após confundir idioma)','https://www.tnh1.com.br/noticia/nid/papa-leao-xiv-cai-no-riso-apos-confundir-idioma-ao-falar-com-fieis-no-peru/'],['Folha de S.Paulo (discurso às mulheres)','https://www1.folha.uol.com.br/mundo/2026/11/e-triste-a-mentalidade-machista-persistir-diz-papa-em-discurso-dedicado-as-mulheres.shtml'],['El Peruano (visita de 11 a 17 de novembro)','https://elperuano.pe/noticia/301823-ya-es-oficial-el-papa-leon-xiv-visitara-el-peru-del-11-al-17-de-noviembre-confirma-el-vaticano']]});
+
+_N('rj_ruas_cupula_seguranca_14_11', {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro', hora:'14/11',
+ t:'Douglas Ruas anuncia cúpula da segurança do Rio e prevê juntar PM e Polícia Civil numa só secretaria',
+ sub:'O coronel escolhido para comandar a PM tem dois anos na patente, e um decreto exige quatro; o governo eleito avalia mudar a norma na Alerj.',
+ dado:{n:'3 nomes', l:'Secretário de Segurança, comandante da PM e chefe da Polícia Civil anunciados na sexta (13)'},
+ resumo:'O governador eleito do Rio, Douglas Ruas (PL), anunciou na sexta (13) o delegado Lauro Rangel para a Secretaria de Segurança Pública, o coronel Gilbert dos Santos para a PM e o delegado Robson da Costa Ferreira da Silva para a Polícia Civil. Dois deles receberam a Medalha Tiradentes a pedido de Ruas na Alerj. Para empossar o coronel, o futuro governo avalia alterar um decreto que exige quatro anos na patente; as mudanças dependem da Assembleia.',
+ upd:'',
+ fundo:`O governador eleito do Rio de Janeiro, Douglas Ruas (PL), anunciou na sexta-feira (13) a cúpula da segurança pública do futuro governo: o delegado Lauro Rangel na Secretaria de Segurança Pública, o coronel Gilbert dos Santos no comando da Polícia Militar e o delegado Robson da Costa Ferreira da Silva na chefia da Polícia Civil. O PL é partido de direita. A estrutura prevê reunir as duas polícias sob uma mesma secretaria.
+
+## Quem são os escolhidos
+
+Lauro César Lethier Rangel era titular da 73ª Delegacia de Polícia, em Neves, São Gonçalo, informa o Extra. Segundo o g1 Rio, ele recebeu a Medalha Tiradentes em 2023 por pedido de Ruas, de quem já foi chefe. O coronel Gilbert dos Santos está na PM desde 1995, comandou vários batalhões e chefiava o 4º Comando de Policiamento de Área, conforme o Extra; o g1 lembra que ele também foi homenageado por Ruas em 2023, quando comandava o 7º Batalhão. Robson da Costa Ferreira da Silva é delegado desde 2001, atuava na Controladoria da Polícia Civil, já chefiou a área de inteligência e recebeu a Medalha Tiradentes em 2011.
+
+O anúncio foi feito em evento na sede da Fecomércio, no Flamengo, Zona Sul da capital, informa o Extra.
+
+## O impasse do decreto
+
+Segundo o g1 Rio, o coronel Gilbert tem dois anos na patente, e um decreto de 2026 exige o mínimo de quatro para o comando-geral. O futuro governo avalia alterar o decreto e propõe que as polícias Civil e Militar percam o status de secretarias estaduais. Essas mudanças dependem da aprovação de projetos de lei pela Assembleia Legislativa do Rio (Alerj).
+
+A equipe de Ruas informou que a escolha segue a Lei Orgânica Nacional das Polícias Militares, de 2023, que não estabelece tempo mínimo para o posto. O g1 lembra que uma manobra semelhante ocorreu em 2023 para beneficiar o delegado Marcus Vinícius Amim, que foi preso em outubro, com seu articulador político.
+
+## Prioridades anunciadas
+
+No mesmo dia, Ruas disse que pretende tirar as mortes provocadas por agentes do Estado das metas do Instituto de Segurança Pública (ISP) e priorizar a reocupação de territórios sob domínio criminoso, com o plano enviado ao Supremo Tribunal Federal (STF) nos primeiros meses de gestão. Também defendeu o enxugamento de secretarias e a atuação conjunta com o governo federal.
+
+## O que vem agora
+
+A posse está prevista para janeiro de 2027. Antes disso, a Alerj deve receber os projetos que mudam o decreto e a estrutura das polícias.
+
+## O que ainda não está confirmado
+
+O conteúdo dos projetos de lei e a data em que serão enviados à Alerj não foram divulgados. Também não está definido como ficará a nomeação do coronel caso o decreto não seja alterado.
+
+NUMS 2 anos|tempo do coronel Gilbert na patente, contra 4 exigidos pelo decreto;1995|ano em que Gilbert entrou na PM;2001|ano em que Robson é delegado;5 milhões|de moradores em áreas sob domínio criminoso, segundo o ISP`,
+ fontes:[['g1 Rio (cúpula da segurança escolhida por Ruas)','https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/11/13/veja-quem-sao-os-escolhidos-para-a-cupula-da-seguranca-no-rj.ghtml'],['g1 Rio (novo comandante da PM e decreto)','https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/11/13/novo-comando-da-pm-do-rj-decreto.ghtml'],['Extra','https://extra.globo.com/rio/noticia/2026/11/douglas-ruas-escolhe-delegado-de-sao-goncalo-para-comandar-seguranca-publica-do-rio-veja-nomes-cotados-para-pm-e-policia-civil.ghtml']]});
+
+_N('rj_el_nino_plano_verao_14_11', {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro', hora:'14/11',
+ t:'Prefeitura do Rio antecipa Plano Verão e reserva R$ 3,5 bilhões para os efeitos do Super El Niño',
+ sub:'A previsão é de calor intenso, chuvas fortes e tempestades de dezembro ao fim do primeiro trimestre de 2027.',
+ dado:{n:'R$ 3,5 bi', l:'Valor reservado pela prefeitura para enfrentar o Super El Niño'},
+ resumo:'A Prefeitura do Rio antecipou o Plano Verão 2026/2027 e reservou R$ 3,5 bilhões para os impactos previstos do Super El Niño, informou o prefeito Eduardo Cavaliere. As projeções indicam temperaturas acima da média, ondas de calor, chuvas intensas e tempestades entre o início de dezembro e o fim do primeiro trimestre de 2027. A cidade conta com 50 protocolos operacionais integrados a 50 agências.',
+ upd:'',
+ fundo:`A Prefeitura do Rio de Janeiro decidiu antecipar o Plano Verão 2026/2027 e reservar R$ 3,5 bilhões para enfrentar os efeitos previstos do fenômeno climático Super El Niño. O anúncio foi feito pelo prefeito Eduardo Cavaliere, informa o Diário do Rio, nesta sexta-feira (13). A cidade se prepara para temperaturas acima da média, risco elevado de ondas de calor, chuvas intensas e tempestades entre o início de dezembro e o fim do primeiro trimestre de 2027.
+
+## O que a prefeitura já fez
+
+De acordo com o prefeito, o município vinha adotando ações preventivas nos últimos meses diante de um cenário que as autoridades consideram atípico. O objetivo, segundo a prefeitura, é reforçar a capacidade de resposta antes dos períodos mais críticos. Para lidar com situações de risco, a cidade tem 50 protocolos operacionais integrados a 50 agências, que coordenam a atuação do poder público em diferentes tipos de ocorrência.
+
+A mobilização não é nova. Desde julho, reportagens como a do Correio da Manhã já descreviam um plano preventivo da prefeitura contra os impactos do El Niño, e em setembro a distribuidora de energia Light anunciou a antecipação de seu próprio plano de verão. O que muda agora é o valor reservado e a antecipação formal do plano municipal.
+
+## Por que importa
+
+O Rio concentra áreas de encosta e baixadas sujeitas a deslizamentos e alagamentos em temporais, e o calor extremo pressiona a rede de saúde e o fornecimento de energia. A reserva de R$ 3,5 bilhões indica o tamanho do esforço que a administração municipal espera fazer, mas as fontes lidas não detalham a divisão do dinheiro entre obras, contenção de encostas, drenagem e resposta de emergência.
+
+## O que vem agora
+
+O período de maior risco previsto começa em dezembro. A prefeitura deve divulgar as ações do Plano Verão à medida que o calendário avança.
+
+## O que ainda não está confirmado
+
+A distribuição do valor por área e o cronograma de execução das obras não foram detalhados. A intensidade do fenômeno segue sujeita às projeções climáticas.
+
+NUMS R$ 3,5 bi|reservados pela prefeitura;50|protocolos operacionais integrados;50|agências envolvidas;dez/2026 a mar/2027|período de maior risco previsto`,
+ fontes:[['Diário do Rio','https://diariodorio.com/meio-ambiente/2026/11/13/rio-reserva-rs-35-bilhoes-para-enfrentar-os-efeitos-do-el-nino.html'],['Correio da Manhã (plano preventivo, julho)','https://www.correiodamanha.com.br/rio-de-janeiro/2026/07/303642-rio-apresenta-plano-preventivo-contra-impactos-do-el-nino.html'],['Tribuna do Sertão (Light antecipa plano verão)','https://tribunadosertao.com.br/rj-em-foco/2026/09/03/972619-light-antecipa-plano-verao-e-reforca-operacao-contra-el-nino']]});
+
+_N('sp_smart_sampa_inquerito_14_11', {ed:'regioes', reg:'sp', k:'Regiões · São Paulo', hora:'14/11',
+ t:'Polícia Civil de São Paulo abre inquérito sobre vazamento de dados que expôs falhas de segurança no Smart Sampa',
+ sub:'O Ministério Público já apura o caso; a prefeitura nega falha no sistema e atribui o vazamento a um servidor.',
+ dado:{n:'58 mil', l:'Câmeras cujo acesso teria ficado exposto por quase um ano, segundo o Canaltech'},
+ resumo:'A Polícia Civil de São Paulo abriu inquérito para investigar o vazamento de dados que apontou falhas de segurança no Smart Sampa, maior programa de vigilância com reconhecimento facial do país, informa a Folhapress. O Ministério Público já havia aberto apuração. A prefeitura de Ricardo Nunes (MDB) nega falha no sistema e atribui o vazamento a um servidor; há pedido de perícia independente na Justiça.',
+ upd:'',
+ fundo:`A Polícia Civil de São Paulo abriu um inquérito para investigar o vazamento de dados que apontou falhas de segurança no Smart Sampa, o maior programa de vigilância com reconhecimento facial do país, informa a Folhapress, em texto publicado pelo Jornal de Brasília na noite de sexta-feira (13). O programa é mantido pela Prefeitura de São Paulo e integra câmeras espalhadas pela cidade.
+
+## O que está em apuração
+
+O caso já vinha sendo investigado na esfera civil. O Correio da Manhã noticiou em outubro que o Ministério Público apurava o vazamento de dados do sistema, e a Gazeta SP registrou que o órgão abriu investigação após denúncia sobre possíveis falhas no monitoramento. O Canaltech publicou que uma falha no Smart Sampa teria exposto o acesso a 58 mil câmeras por quase um ano, número que é atribuído àquele veículo.
+
+## A posição da prefeitura
+
+A administração do prefeito Ricardo Nunes (MDB) nega que haja falha no sistema e atribui o vazamento de dados das câmeras a um servidor, informa a Gazeta SP. A prefeitura também divulga relatórios de transparência em que afirma que a taxa de acerto do reconhecimento facial é de 99,5%, sem registro de prisão de inocentes, conforme o portal do município.
+
+## O outro lado da discussão
+
+Há questionamentos sobre a precisão do reconhecimento facial. O Brasil de Fato publicou em fevereiro que mais de 80 pessoas foram levadas a delegacias por inconsistência do reconhecimento. A BNews informa que a Justiça de São Paulo pediu uma perícia independente no sistema, o que coloca a auditoria técnica no centro do processo.
+
+## O que vem agora
+
+O inquérito policial corre em paralelo à apuração do Ministério Público e ao pedido de perícia independente. Os próximos passos dependem do resultado das diligências.
+
+## O que ainda não está confirmado
+
+As fontes lidas não detalham quem é o servidor apontado pela prefeitura nem se há investigados formais no inquérito. O alcance exato dos dados vazados também segue sem confirmação oficial.
+
+NUMS 58 mil|câmeras com acesso exposto, segundo o Canaltech;99,5%|taxa de acerto citada pela prefeitura;80+|pessoas levadas a delegacias por inconsistência, segundo o Brasil de Fato;1 ano|tempo aproximado da falha, segundo o Canaltech`,
+ fontes:[['Jornal de Brasília (Folhapress)','https://jornaldebrasilia.com.br/noticias/brasil/policia-de-sp-abre-inquerito-para-investigar-falhas-no-smart-sampa/'],['Gazeta SP','https://www.gazetasp.com.br/policia/smart-sampa-prefeitura-de-sao-paulo-nega-falha-no-sistema-de-monitoramento-e-atribui-vazamento-de-dados-de-cameras-a-servidor/'],['Correio da Manhã','https://www.correiodamanha.com.br/nacional/norte/2026/10/328466-mp-apura-vazamento-de-dados-do-sistema-smart-sampa.html'],['Canaltech','https://canaltech.com.br/mercado/falha-no-smart-sampa-expos-acesso-a-58-mil-cameras-de-sp-por-quase-um-ano/']]});
+
+_N('mg_cleitinho_jequitinhonha_prisional_14_11', {ed:'regioes', reg:'mg', k:'Regiões · Minas Gerais', hora:'14/11',
+ t:'Governo Cleitinho quer começar pelo Jequitinhonha, com aeroporto e cidade administrativa em Araçuaí; Medioli promete ofensiva no sistema prisional',
+ sub:'Vittorio Medioli, futuro secretário de Planejamento e Gestão, diz que o governador eleito vai ouvir todos os lados.',
+ dado:{n:'55,4%', l:'Votos válidos de Cleitinho Azevedo na eleição de outubro'},
+ resumo:'O futuro secretário de Planejamento e Gestão de Minas, Vittorio Medioli, afirmou ao jornal O Tempo que o governo de Cleitinho Azevedo vai atacar a questão prisional e que o Vale do Jequitinhonha será ponto de partida de desenvolvimento, com aeroporto e cidade administrativa em Araçuaí. O governador eleito foi escolhido no primeiro turno com 55,4% dos votos válidos e toma posse em janeiro de 2027.',
+ upd:'',
+ fundo:`O governo de Cleitinho Azevedo (Republicanos), governador eleito de Minas Gerais, pretende fazer do Vale do Jequitinhonha o ponto de partida de sua política de desenvolvimento regional, com um aeroporto e uma cidade administrativa em Araçuaí, e promete uma ofensiva no sistema prisional. As propostas vieram nas entrevistas de Vittorio Medioli, escolhido para a Secretaria de Planejamento e Gestão, publicadas pelo jornal O Tempo na sexta-feira (13).
+
+## Quem é Medioli e o que ele vai comandar
+
+Medioli é deputado estadual eleito, ex-prefeito de Betim e filiado ao PL, partido de direita. A Itatiaia informou que ele confirmou o convite para chefiar a Secretaria de Planejamento e Gestão em 27 de outubro e que a nomeação formal só ocorrerá em 2027, depois da posse de Cleitinho. Ele integra a equipe de transição desde a eleição, em 4 de outubro. O Fator noticiou que a nova secretaria vai combinar ajuste fiscal e atração de investimentos.
+
+Em uma das entrevistas, segundo O Tempo, Medioli disse que Cleitinho vai ouvir todos os lados do debate político, com a frase de que quem entra na arca tem que remar. Em outra, afirmou que o governo vai atacar a questão prisional de forma muito forte em Minas.
+
+## O Jequitinhonha como prioridade
+
+O Tempo e o Estado de Minas registram que o Vale do Jequitinhonha deve ser prioridade da nova gestão. Cleitinho já havia dito que quer a posse no vale. A proposta de aeroporto e cidade administrativa em Araçuaí é apresentada como ponto de partida para o desenvolvimento da região.
+
+## Contexto da transição
+
+Cleitinho foi eleito no primeiro turno com 55,4% dos votos válidos, e o governador Mateus Simões (PSD) não conseguiu se reeleger. O processo de transição começou em 6 de outubro. A primeira reunião entre as equipes, em 23 de outubro, tratou da saúde.
+
+## O que vem agora
+
+A posse está prevista para janeiro de 2027. Até lá, a equipe deve definir o restante do secretariado e detalhar as propostas para o Jequitinhonha e para o sistema prisional.
+
+## O que ainda não está confirmado
+
+Valores, prazos e fontes de recursos do aeroporto e da cidade administrativa não foram divulgados nos textos lidos. O desenho da política prisional também não foi detalhado.
+
+NUMS 55,4%|votos válidos de Cleitinho;77.931|votos de Medioli para deputado estadual;4 de outubro|entrada de Medioli na transição;janeiro de 2027|posse do novo governo`,
+ fontes:[['O Tempo (Medioli será secretário)','https://www.otempo.com.br/politica/2026/11/13/vittorio-medioli-sera-secretario-de-planejamento-e-gestao-no-governo-cleitinho'],['O Tempo (questão prisional)','https://www.otempo.com.br/politica/2026/11/13/vamos-atacar-a-questao-prisional-de-forma-muito-forte-em-minas-aponta-medioli'],['O Tempo (Araçuaí e Jequitinhonha)','https://www.otempo.com.br/politica/2026/11/13/aeroporto-e-cidade-administrativa-em-aracuai-serao-ponto-de-partida-para-desenvolver-o-jequitinhonha'],['Itatiaia','https://www.itatiaia.com.br/politica/cleitinho-convida-medioli-para-comandar-secretaria-no-governo-de-minas/'],['Estado de Minas','https://www.em.com.br/politica/2026/11/7536840-vale-do-jequitinhonha-deve-ser-prioridade-do-governo-cleitinho.html']]});
+
+_N('ce_el_nino_emergencia_65_14_11', {ed:'regioes', reg:'ne', k:'Nordeste · Ceará', hora:'14/11',
+ t:'Ceará decreta emergência por 180 dias em 65 municípios por causa do El Niño e vai construir novas adutoras',
+ sub:'Quase 90% do território cearense enfrenta algum nível de seca, e 40 dos 144 açudes monitorados operam com menos de 30% da capacidade.',
+ dado:{n:'65', l:'Municípios em situação de emergência por 180 dias'},
+ resumo:'O governo do Ceará decretou na sexta (13) situação de emergência por 180 dias em 65 municípios, por efeitos do El Niño, por meio do decreto 37.608, assinado pelo governador Elmano de Freitas (PT). Quase 90% do estado tem algum nível de seca, e o açude Sousa está completamente seco. O estado vai construir adutoras para levar água às populações mais afetadas.',
+ upd:'',
+ fundo:`O governo do Ceará decretou situação de emergência por 180 dias em 65 municípios, em razão dos efeitos associados ao fenômeno El Niño. O decreto nº 37.608, assinado pelo governador Elmano de Freitas (PT), foi publicado no Diário Oficial do Estado desta sexta-feira (13), informa O Povo. O PT é partido de esquerda.
+
+## Seca e açudes
+
+Segundo O Povo, quase 90% do território cearense enfrenta algum nível de seca, com previsão de agravamento até dezembro por causa do calor e da falta de chuvas. Dos 144 açudes monitorados no estado, 40 operam com menos de 30% da capacidade, e o açude Sousa está completamente seco.
+
+## O que a emergência permite
+
+A situação de emergência é o instrumento que facilita a contratação de obras e serviços e o pedido de apoio de outros níveis de governo. O estado informou que vai iniciar a construção de novas adutoras para garantir o transporte e o fornecimento de água às populações mais afetadas. O Diário do Nordeste publicou que as adutoras serão construídas para reduzir os impactos do El Niño em 2027 e listou os locais das obras.
+
+## A cobrança por recursos federais
+
+No dia 10, O Povo registrou que Elmano pediu à bancada cearense no Congresso recursos para o combate ao El Niño. O Diário do Nordeste também noticiou que o governador afirmou que o Ceará pode enfrentar uma seca muito intensa em 2027. Em agosto, o estado ainda tinha reservatórios acima de 50% e se preparava para o fenômeno na agropecuária, segundo o site Movimento Econômico, o que indica a rapidez com que a situação se deteriorou.
+
+## O que vem agora
+
+Com o decreto, os 65 municípios passam a ter acesso a instrumentos de resposta por seis meses. O governo deve iniciar as obras de adutoras e negociar recursos com a União.
+
+## O que ainda não está confirmado
+
+A lista completa dos municípios e o valor total das obras de adutoras não constam do trecho lido do decreto. A evolução da seca depende da chuva dos próximos meses.
+
+NUMS 65|municípios em emergência;180 dias|duração do decreto;144|açudes monitorados, 40 abaixo de 30%;~90%|do território com algum nível de seca`,
+ fontes:[['O Povo (decreto de emergência)','https://www.opovo.com.br/noticias/ceara/2026/11/13/el-nino-ceara-decreta-situacao-de-emergencia-em-65-municipios.html'],['O Povo (Elmano pede recursos à bancada)','https://mais.opovo.com.br/jornal/politica/2026/11/10/elmano-pede-a-bancada-cearense-recursos-para-combate-ao-el-nino.html'],['Diário do Nordeste (adutoras)','https://diariodonordeste.verdesmares.com.br/ceara/novas-adutoras-serao-construidas-para-reduzir-impactos-do-el-nino-no-ce-em-2027-veja-locais-1.3804979'],['Diário do Nordeste (seca em 2027)','https://diariodonordeste.verdesmares.com.br/ceara/ceara-pode-enfrentar-seca-muito-intensa-em-2027-diz-elmano-1.3804972']]});
+
+_N('pe_raquel_lyra_ajuste_estados_14_11', {ed:'regioes', reg:'ne', k:'Nordeste · Pernambuco', hora:'14/11',
+ t:'Raquel Lyra diz que governadores se mobilizam para mudar repasses no ajuste fiscal de Lula: “não pode ser tirando dinheiro da gente”',
+ sub:'A governadora de Pernambuco criticou, em São Paulo, dispositivos que reduzem e adiam transferências aos estados em 2027.',
+ dado:{n:'Até R$ 60 bi', l:'Economia prevista no pacote fiscal do governo, aprovado em primeira votação no Senado'},
+ resumo:'A governadora reeleita de Pernambuco, Raquel Lyra (PSD), criticou na sexta (13) dispositivos do ajuste fiscal do governo Lula, aprovado de forma preliminar no Senado, que reduzem e adiam repasses a estados. Falando no Encontro de Líderes da Comunitas, em São Paulo, disse que governadores se mobilizam para alterar a proposta e preservar as receitas previstas para 2027.',
+ upd:'',
+ fundo:`A governadora reeleita de Pernambuco, Raquel Lyra (PSD), criticou nesta sexta-feira (13) dispositivos do ajuste fiscal do governo do presidente Luiz Inácio Lula da Silva (PT) que reduzem e adiam repasses da União aos estados. O pacote foi aprovado de forma preliminar no Senado na quinta (12). Segundo o Jornal do Commercio, ela afirmou que governadores estão mobilizados para modificar a proposta e preservar as receitas previstas para 2027.
+
+## A fala em São Paulo
+
+Raquel falou em entrevista coletiva durante o 19º Encontro de Líderes, promovido pela Comunitas, na capital paulista, que reuniu governadores eleitos e reeleitos de diferentes regiões, informa o JC. “O ajuste fiscal pode ser feito, as contas públicas precisam ser cuidadas em todos os âmbitos, mas não pode ser tirando dinheiro da gente”, disse. O Diario de Pernambuco registrou que ela afirmou que decisões tomadas em Brasília interferem diretamente nos estados e municípios e que, a cada momento, os entes perdem capacidade de planejamento e de entrega. Segundo o jornal, a governadora também mencionou que alguns senadores se movimentam pela suspensão da medida.
+
+## O pacote em discussão
+
+O plano, apelidado de plano Moretti em referência ao ministro do Planejamento e Orçamento, Bruno Moretti, prevê economia de até R$ 60 bilhões, segundo o Congresso em Foco. A colunista Adriana Fernandes, da Folha, lembra que o texto-base passou por uma primeira votação no Senado e que Moretti alimentou a expectativa de uma PEC (proposta de emenda à Constituição) ainda neste ano para conter despesas obrigatórias.
+
+No Paraná, o senador e governador eleito Sergio Moro (PL) apontou perda de cerca de R$ 604 milhões em um dos trechos, o que mostra que a reação dos estados atravessa partidos de campos diferentes.
+
+## O que vem agora
+
+O texto ainda precisa concluir a tramitação, e os governadores querem alterações no capítulo dos repasses. O Planalto acompanha o placar do Senado para a votação de PECs em 2027.
+
+## O que ainda não está confirmado
+
+Não há estimativa divulgada do impacto exato do pacote sobre as contas de Pernambuco. Também não está definido se o Senado aceitará mudar os dispositivos sobre repasses.
+
+NUMS Até R$ 60 bi|economia prevista no pacote;12/11|aprovação preliminar no Senado;19º|Encontro de Líderes da Comunitas;2027|ano de impacto nas receitas estaduais`,
+ fontes:[['JC (Raquel Lyra comenta ajuste fiscal)','https://jc.uol.com.br/politica/2026/11/13/raquel-lyra-questiona-ajuste-fiscal-do-governo-lula-nao-pode-ser-tirando-dinheiro-da-gente.html'],['Diario de Pernambuco','https://www.diariodepernambuco.com.br/politica/2026/11/11729079-em-sao-paulo-raquel-lyra-critica-ajuste-fiscal-nao-pode-ser-tirando-dinheiro-da-gente.html'],['Folha (coluna de Adriana Fernandes)','https://www1.folha.uol.com.br/colunas/adriana-fernandes/2026/11/teste-do-plano-moretti-reforca-urgencia-de-novas-medidas-ainda-em-2026.shtml'],['Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131525/governo-apresenta-plano-de-ajuste-fiscal-com-economia-de-ate-r-60-bi']]});
+
+_N('pr_moro_kandir_604_14_11', {ed:'regioes', reg:'sul', k:'Sul · Paraná', hora:'14/11',
+ t:'Moro, governador eleito do Paraná, apresenta emenda contra corte em repasses da Lei Kandir; estado pode perder R$ 604 milhões',
+ sub:'O senador defende ajuste fiscal por corte de despesas e diz que o Paraná vai reduzir secretarias.',
+ dado:{n:'R$ 604 mi', l:'Perda estimada do Paraná durante a vigência da medida, em cálculo preliminar'},
+ resumo:'O senador e governador eleito do Paraná, Sergio Moro (PL), criticou na quinta (12) o trecho do PLP 299/2026 que reduz a compensação da Lei Kandir a estados e municípios e apresentou emenda para barrá-lo. Cálculos preliminares apontam perda de cerca de R$ 604 milhões para o Paraná. Moro diz apoiar o ajuste fiscal, mas por corte de despesas, e afirma que o estado vai reduzir secretarias.',
+ upd:'',
+ fundo:`O senador e governador eleito do Paraná, Sergio Moro (PL), criticou na quinta-feira (12) o trecho do Projeto de Lei Complementar (PLP) 299/2026 que reduz os repasses da União aos estados e municípios referentes à compensação da Lei Kandir, e apresentou emenda para impedir a redução. Cálculos preliminares indicam que o Paraná pode perder cerca de R$ 604 milhões durante o período de vigência da medida, informa a Gazeta do Povo. O PL é partido de direita.
+
+## O que Moro disse
+
+“Somos favoráveis ao ajuste fiscal do governo federal, mas mediante corte de despesas”, afirmou Moro em publicação nas redes sociais. “Vamos no Paraná, aliás, fazer a nossa parte e diminuir secretarias. Não concordamos, porém, com ajuste fiscal mediante violação do direito dos estados e de seus cidadãos.” A Lei Kandir, de 1996, isenta de ICMS as exportações de produtos primários e semielaborados, e a União compensa os estados pela perda de arrecadação.
+
+## O ajuste fiscal em votação
+
+O projeto é discutido no contexto do pacote de medidas fiscais do governo Lula, com economia prevista de até R$ 60 bilhões, segundo o Congresso em Foco, cujo texto passou por votação preliminar no Senado na quinta. Em Pernambuco, a governadora reeleita Raquel Lyra (PSD) fez crítica semelhante na sexta (13), dizendo que os governadores se mobilizam para mudar os dispositivos que reduzem e adiam repasses a estados, informa o JC. As duas manifestações vêm de campos políticos diferentes, e o tema ganha peso porque o texto afeta o orçamento de 2027, primeiro ano dos novos governos estaduais.
+
+## O que vem agora
+
+O pacote segue em tramitação, e a emenda de Moro precisa ser analisada no processo legislativo. Governadores querem alterar o capítulo dos repasses antes da votação final.
+
+## O que ainda não está confirmado
+
+O período exato de vigência da redução e a posição do governo federal sobre a emenda não constam do texto lido. O cálculo de R$ 604 milhões é preliminar.
+
+NUMS R$ 604 mi|perda estimada do Paraná;PLP 299/2026|projeto em discussão;1996|ano da Lei Kandir;Até R$ 60 bi|economia total do pacote fiscal`,
+ fontes:[['Gazeta do Povo (Paraná)','https://www.gazetadopovo.com.br/parana/sergio-moro-critica-projeto-que-preve-perda-de-r-604-milhoes-para-o-parana/'],['JC (Raquel Lyra)','https://jc.uol.com.br/politica/2026/11/13/raquel-lyra-questiona-ajuste-fiscal-do-governo-lula-nao-pode-ser-tirando-dinheiro-da-gente.html'],['Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131525/governo-apresenta-plano-de-ajuste-fiscal-com-economia-de-ate-r-60-bi']]});
+
+_N('ro_transicao_batalhao_agro_14_11', {ed:'regioes', reg:'norte', k:'Norte · Rondônia', hora:'14/11',
+ t:'Transição de Marcos Rogério em Rondônia: coordenador quer trocar Batalhão de Polícia Ambiental por “Batalhão do Agro”',
+ sub:'A comissão de transição também enfrenta pressão por cargos no novo governo, que começa em janeiro.',
+ dado:{n:'~200', l:'Pedidos de emprego recebidos em uma semana por um membro da comissão, segundo coluna'},
+ resumo:'O deputado federal Lúcio Mosquini (PL), coordenador da transição do governador eleito de Rondônia, Marcos Rogério (PL), anunciou a intenção de acabar com o Batalhão de Polícia Ambiental e criar o “Batalhão do Agro”, segundo coluna publicada pela Folha. Em Rondônia, o Tudo Rondônia relata que membros da comissão recebem pedidos de cargos; um deles contou cerca de 200 em uma semana.',
+ upd:'',
+ fundo:`O deputado federal Lúcio Mosquini (PL), coordenador da transição do governo eleito de Rondônia, anunciou a intenção de acabar com o Batalhão de Polícia Ambiental e transformá-lo em um “Batalhão do Agro”, informa a coluna de Txai Suruí na Folha. O governador eleito é Marcos Rogério (PL), partido de direita, e o novo governo começa em janeiro.
+
+## A proposta para a polícia ambiental
+
+A coluna, que é um texto de opinião, afirma que a declaração sinaliza as prioridades que podem orientar a política ambiental do estado. Rondônia é um dos estados mais pressionados por desmatamento, grilagem de terras e exploração ilegal de recursos naturais, e a autora defende que a resposta do poder público seria fortalecer a fiscalização. O plano de governo de Marcos Rogério já previa um Batalhão de Polícia Rural, aumento do efetivo e valorização dos servidores, segundo o site Rondônia no Ar. Não há, nos textos lidos, detalhamento do desenho do novo batalhão nem do destino das atribuições ambientais.
+
+## A pressão por cargos
+
+O site Tudo Rondônia publicou uma coluna segundo a qual membros da comissão de transição sofrem assédio de pessoas que buscam vaga no futuro governo. Um dos integrantes, não identificado, teria contado cerca de 200 pedidos de emprego em apenas uma semana. O texto observa que fazer parte da comissão não significa compromisso de que o membro esteja no governo e que os candidatos a emprego criaram um jargão para abrir portas ao diálogo.
+
+## Por que importa
+
+A estrutura da segurança e da fiscalização ambiental define a atuação do estado em uma região de fronteira agrícola. Mudanças no batalhão afetam quem fiscaliza o desmatamento e como a polícia se relaciona com o setor produtivo.
+
+## O que vem agora
+
+Mosquini e a comissão devem detalhar as mudanças até a posse, e a eventual extinção do batalhão exigiria ato do futuro governo.
+
+## O que ainda não está confirmado
+
+Marcos Rogério não confirmou, nos textos lidos, a extinção do Batalhão de Polícia Ambiental. O número de 200 pedidos vem de uma coluna e não de levantamento oficial.
+
+NUMS ~200|pedidos de emprego em uma semana a um membro da comissão;1|batalhão ambiental que seria transformado;jan/2027|início do novo governo;PL|partido de Marcos Rogério e de Mosquini`,
+ fontes:[['Folha (coluna Txai Suruí)','https://www1.folha.uol.com.br/colunas/txai-surui/2026/11/batalhao-ambiental-fica.shtml'],['Tudo Rondônia','https://www.tudorondonia.com/noticias/assedio-marca-transicao-de-marcos-rogerio-e-pressao-por-cargos-publicos,164911.shtml'],['Rondônia no Ar (plano de governo)','https://www.rondonianoar.com.br/marcos-rogerio-apresenta-propostas-para-combater-a-violencia-em-rondonia']]});
+
+_N('mt_alemt_orcamento_61_14_11', {ed:'regioes', reg:'co', k:'Centro-Oeste · Mato Grosso', hora:'14/11',
+ t:'Orçamento da Assembleia de Mato Grosso deve chegar a R$ 984 milhões em 2027, alta de 61% em quatro anos',
+ sub:'Na Câmara de Cuiabá, uma CPI vai investigar o paradeiro de 13 maquinários da prefeitura.',
+ dado:{n:'R$ 984 mi', l:'Dotação prevista para a Assembleia de Mato Grosso em 2027'},
+ resumo:'A dotação da Assembleia Legislativa de Mato Grosso deve passar de R$ 611,7 milhões em 2023 para R$ 984 milhões em 2027, alta de 61%, sem contar recursos extras, segundo o Olhar Direto. O maior salto foi em 2026, de R$ 695,6 milhões para R$ 946,7 milhões. Em Cuiabá, a Câmara instalou CPI sobre 13 maquinários da prefeitura não localizados.',
+ upd:'',
+ fundo:`O orçamento da Assembleia Legislativa de Mato Grosso deve crescer 61% em quatro anos e chegar perto de R$ 1 bilhão em 2027, mesmo sem considerar os recursos extras destinados à Casa ao longo dos exercícios, informa o Olhar Direto. A dotação, de R$ 611,7 milhões em 2023, deve alcançar R$ 984 milhões no próximo ano, aumento de R$ 372,3 milhões, de acordo com a comparação das leis orçamentárias estaduais com a proposta enviada pelo governo de Otaviano Pivetta (Republicanos).
+
+## Como o valor evoluiu
+
+O maior salto ocorreu em 2026, quando os recursos previstos para o Legislativo passaram de R$ 695,6 milhões para R$ 946,7 milhões, crescimento de cerca de R$ 251 milhões, ou 36%, em um ano. Para 2027, o Projeto de Lei Orçamentária Anual (PLOA) prevê mais R$ 37,3 milhões, o que eleva a dotação a R$ 984 milhões e representa alta de 3,94% sobre o orçamento inicial deste ano. A maior parte do acréscimo é destinada à folha de pagamento, segundo o texto. O levantamento não inclui os recursos extras que a Casa recebeu ao longo dos anos.
+
+## A negociação com o Executivo
+
+O Olhar Direto também registrou uma reunião no Palácio Paiaguás, sede do governo, para discutir pagamento de emendas e orçamento, em que o deputado Dr. João cobrou urgência para a saúde. A proposta orçamentária do Executivo tramita na própria Assembleia, que decide sobre os valores.
+
+## Na Câmara de Cuiabá
+
+No âmbito municipal, a presidente da Câmara de Cuiabá, Paula Calil (PL), autorizou a instalação de uma Comissão Parlamentar de Inquérito (CPI) para investigar a localização e a eventual utilização por particulares de 13 maquinários da Secretaria Municipal de Obras, em período que alcança a gestão do ex-prefeito Emanuel Pinheiro (PSD). Kássio Coelho (Podemos) preside a comissão, Cezinha Nascimento (União) é o vice e Marcrean Santos (MDB) é membro titular. A CPI foi oficializada em 11 de novembro, depois de levantamentos patrimoniais não localizarem os equipamentos, e o caso foi registrado em boletim de ocorrência.
+
+## O que vem agora
+
+A Assembleia deve votar o PLOA de 2027 ainda neste ano, e a CPI da Câmara de Cuiabá começa a ouvir envolvidos e a reunir documentos.
+
+## O que ainda não está confirmado
+
+O valor final do orçamento do Legislativo depende da votação do PLOA. A CPI não apontou responsáveis, e o paradeiro dos maquinários segue em apuração.
+
+NUMS R$ 984 mi|dotação da Assembleia em 2027;61%|alta desde 2023 (R$ 611,7 mi);36%|salto em 2026;13|maquinários investigados pela CPI de Cuiabá`,
+ fontes:[['Olhar Direto (orçamento da Assembleia)','https://www.olhardireto.com.br/noticias/orcamento-da-al-pode-crescer-61-em-quatro-anos-e-chegar-perto-de-r-1-bilhao-conta-exclui-recursos-extras'],['Olhar Direto (CPI de Cuiabá)','https://www.olhardireto.com.br/noticias/camara-instala-cpi-para-investigar-destino-de-13-maquinarios-da-prefeitura-de-cuiaba-na-gestao-emanuel-veja-composicao']]});
+
+_U('rj_5_milhoes_dominio_armado', {hora:'14/11',
+ t:'Douglas Ruas quer tirar mortes por agentes do Estado das metas do ISP e priorizar a reocupação de áreas onde 5,1 milhões de pessoas vivem sob presença armada',
+ sub:'O governador eleito prevê aplicar nos primeiros meses o plano de reocupação enviado ao STF e unir PM e Polícia Civil numa secretaria.',
+ dado:{n:'5,1 milhões', l:'Moradores em 1.530 áreas com presença de grupos armados no estado · ISP'},
+ resumo:'O governador eleito do Rio, Douglas Ruas (PL), disse na sexta (13) que pretende retirar as mortes provocadas por agentes do Estado das metas do Instituto de Segurança Pública (ISP) e priorizar a reocupação de territórios sob domínio criminoso. O mapa do ISP aponta 1.530 áreas com presença de tráfico ou milícia, com cerca de 5,1 milhões de moradores, um terço do estado. O plano de reocupação foi enviado ao STF.',
+ upd:'Ruas anunciou que quer mudar as metas do ISP e aplicar o plano de reocupação nos primeiros meses de governo.',
+ fundo:`O governador eleito do Rio de Janeiro, Douglas Ruas (PL), anunciou na sexta-feira (13) que pretende retirar as mortes provocadas por agentes do Estado do sistema de metas do Instituto de Segurança Pública (ISP) e priorizar a reocupação de territórios sob domínio de grupos criminosos. Ruas planeja colocar em prática, nos primeiros meses de gestão, o plano de reocupação enviado ao Supremo Tribunal Federal (STF), informa o g1 Rio. O PL é partido de direita.
+
+## O mapa que sustenta o plano
+
+O governo do Rio tornou público na quarta-feira (11), pela primeira vez, o mapeamento do ISP sobre áreas com presença de grupos armados: são 1.530 territórios, que somam 614,3 km² e cerca de 5,1 milhões de moradores, aproximadamente um terço da população do estado. O levantamento foi feito ao longo de 2025, informa o Brasil em Folhas. O Comando Vermelho aparece em 779 territórios (50,9% do total) e cerca de 2,99 milhões de moradores. As milícias estão em 300 áreas, com 917.105 moradores; o Terceiro Comando Puro, em 274, com 914.859; e os Amigos dos Amigos, em 91, com 221.703, segundo o Brasil em Folhas.
+
+O ISP ressalva que os números não se comparam diretamente com os de 2016 (843 territórios) e 2019 (868), porque a metodologia foi aprimorada, e que presença de grupos armados não significa controle total. Os critérios incluem homens armados, barricadas, registros de disparos e restrições à circulação de policiais. O instituto diz que os dados devem orientar ações como o Plano Estratégico de Reocupação Territorial (PERT), ligado às determinações do STF na ação conhecida como ADPF das Favelas.
+
+## O que Ruas propõe
+
+Além de mudar as metas do ISP, o governador eleito defendeu o enxugamento de secretarias e a atuação conjunta com o governo federal, informa o g1 Rio. A reportagem registra que 900 fuzis foram apreendidos no estado no ano passado. No mesmo dia, Ruas anunciou a cúpula da segurança, com o delegado Lauro Rangel na Secretaria de Segurança Pública, o coronel Gilbert dos Santos na PM e o delegado Robson da Costa Ferreira da Silva na Polícia Civil, numa estrutura que reúne as duas polícias sob uma secretaria.
+
+As metas do ISP são indicadores que premiam as polícias por reduzir crimes, entre eles as mortes decorrentes de intervenção de agente do Estado. Retirar esse item muda o que a corporação é cobrada a reduzir.
+
+## O que vem agora
+
+A posse está prevista para janeiro de 2027, e o plano de reocupação deve ser aplicado nos primeiros meses. A mudança nas metas depende de decisão do próximo governo.
+
+## O que ainda não está confirmado
+
+O cronograma da reocupação, as áreas prioritárias e o desenho da nova meta não foram detalhados. As fontes lidas não informam datas para o PERT e para o plano de desenvolvimento econômico e social.
+
+NUMS 5,1 milhões|moradores em áreas com presença armada, 1/3 do estado;1.530|territórios mapeados;779|áreas do Comando Vermelho;900|fuzis apreendidos no ano passado, segundo o g1`,
+ fontes:[['g1 Rio (Ruas e as metas de segurança)','https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/11/13/douglas-ruas-diz-que-combate-ao-crime-organizado-sera-prioridade.ghtml'],['Brasil em Folhas','https://brasilemfolhas.com.br/2026/11/governo-do-rio-divulga-dominio-de-crime-em-1-530-areas/'],['Manchete Rio','https://mancheterio.com.br/estudo-revela-que-51-milhoes-de-pessoas-vivem-em-areas-dominadas-pelo-crime-no-rj/'],['Agenda do Poder','https://agendadopoder.com.br/um-em-cada-tres-moradores-do-rio-vive-em-areas-dominadas-pelo-trafico-e-por-milicias-revela-estudo-do-isp/']]});
+
+_U('rj_zanin_segundo_turno', {hora:'14/11',
+ t:'Zanin nega liminar do PSD, e a AGU defende no STF manter a eleição de Douglas Ruas no primeiro turno; Gilmar diz que recurso iria ao plenário',
+ sub:'O TSE ainda julga dois recursos sobre os votos de Garotinho; Ruas diz que a decisão “não muda nada”.',
+ dado:{n:'50,88%', l:'Votos válidos de Douglas Ruas após a anulação dos votos de Garotinho, segundo o TRE-RJ'},
+ resumo:'O ministro Cristiano Zanin, do STF, negou na quinta (12) a liminar do PSD que pedia segundo turno para governador do Rio. Na sexta (13), a AGU defendeu manter a decisão, porque o TSE ainda julgará dois recursos sobre os votos de Anthony Garotinho, e Gilmar Mendes disse que um recurso levaria o caso ao plenário. Douglas Ruas (PL) segue como governador eleito, com 50,88% pelo cálculo do TRE-RJ.',
+ upd:'Zanin negou a liminar do PSD na quinta (12); a AGU e Gilmar Mendes se manifestaram na sexta (13).',
+ fundo:`O ministro Cristiano Zanin, do Supremo Tribunal Federal (STF), negou na quinta-feira (12) a liminar do PSD, partido de Eduardo Paes, que tentava reverter a vitória de Douglas Ruas (PL) no primeiro turno da eleição para governador do Rio de Janeiro. Na sexta (13), a Advocacia-Geral da União (AGU) defendeu que o STF mantenha a decisão, e o ministro Gilmar Mendes afirmou que, havendo recurso, a questão iria ao plenário, informam o g1 Rio e o Diário do Rio.
+
+## A posição da AGU
+
+A AGU argumenta que o Tribunal Superior Eleitoral (TSE) ainda julgará dois recursos sobre os votos de Anthony Garotinho e que uma decisão do STF agora anteciparia essa análise, informa o g1 Rio. Ruas disse que a decisão “não muda nada”, declarou estar aberto a propostas de adversários e defendeu união de esforços.
+
+## O que disse Gilmar Mendes
+
+Durante o IDP Debates, na manhã de sexta, Gilmar disse que o assunto poderá chegar ao plenário se houver recurso. “Não sei ainda, isso certamente vai depender de recurso. Se houver recurso, irá ao plenário. Eu sei que essa questão também está no TSE”, afirmou, segundo o Diário do Rio. A declaração veio um dia depois da decisão de Zanin.
+
+## Como se chegou aqui
+
+Na apuração de 4 de outubro, Ruas teve 49,27% dos votos válidos e Paes, 42,76%. O TSE manteve o indeferimento da candidatura de Garotinho (Republicanos) e anulou seus 274.411 votos, por 5 votos a 2. Com a nova base, o TRE-RJ proclamou Ruas eleito em primeiro turno com 50,88%. O PSD, partido de centro, contesta o cálculo e sustenta que os votos anulados de Garotinho deveriam ser mantidos, o que deixaria Ruas abaixo da maioria absoluta necessária. O partido apresentou a ADPF 1362 no Supremo, com relatoria de Zanin.
+
+## O que vem agora
+
+O PSD pode recorrer da decisão de Zanin, e nesse caso Gilmar indicou que o plenário do STF seria acionado. Os dois recursos sobre Garotinho seguem no TSE.
+
+## O que ainda não está confirmado
+
+Não há informação de que o PSD tenha apresentado recurso, nem data para o julgamento dos recursos no TSE.
+
+NUMS 50,88%|votos válidos de Ruas após a anulação;49,27%|votos de Ruas na apuração de 4 de outubro;42,76%|votos de Paes;274.411|votos de Garotinho anulados`,
+ fontes:[['g1 Rio (AGU defende manter vitória de Ruas)','https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/11/13/agu-defende-no-stf-manter-decisao-que-negou-segundo-turno-na-eleicao-ao-governo-do-rj.ghtml'],['Diário do Rio (Gilmar Mendes)','https://diariodorio.com/politica/2026/11/13/gilmar-mendes-nao-descarta-analise-do-segundo-turno-no-rio-pelo-stf-se-houver-recurso-ira-ao-plenario.html']]});
+
+_U('sp_virada_esportiva_desvio', {hora:'14/11',
+ t:'Nunes diz que “está todo mundo desconfortável” com a denúncia do vice sobre a Virada Esportiva e sugere que Mello Araújo demita um assessor',
+ sub:'O vice-prefeito diz que as denúncias ajudam a prefeitura e reclama de ser tratado como criminoso; o MP pediu documentos à Secretaria de Esportes.',
+ dado:{n:'R$ 21,2 mi', l:'Recursos públicos em parcerias da Virada Esportiva 2026 sob suspeita'},
+ resumo:'O prefeito de São Paulo, Ricardo Nunes (MDB), disse na sexta (13) que a gestão está “desconfortável” depois de o vice, coronel Mello Araújo (PL), levar ao Ministério Público suspeitas sobre parcerias de R$ 21,2 milhões da Virada Esportiva 2026. Nunes criticou o fato de o vice divulgar antes de consultar a Secretaria de Esportes. Mello Araújo diz que a denúncia busca ajudar a prefeitura. O MP pediu documentos à pasta.',
+ upd:'Nunes criticou o vice na sexta (13); Mello Araújo respondeu em vídeo na quinta (12), e o MP pediu documentos à Secretaria de Esportes.',
+ fundo:`O prefeito de São Paulo, Ricardo Nunes (MDB), afirmou na sexta-feira (13) que a gestão está “desconfortável” depois de o vice-prefeito, coronel Mello Araújo (PL), denunciar suspeitas de irregularidades na Virada Esportiva 2026. Nunes criticou o vice por divulgar as suspeitas antes de consultar a Secretaria de Esportes, informa o g1 SP. Segundo o prefeito, o vice “meio que quis fazer uma pegadinha”. O MDB é partido de centro, e o PL, de direita.
+
+## O que Nunes disse
+
+Nunes afirmou que as denúncias devem ser investigadas, mas defendeu cautela e verificação dos fatos antes de acusações públicas. Disse ainda que o vice deveria demitir o assessor responsável pela fiscalização e que, se estivesse no lugar dele, pediria desculpas, informa o g1 SP.
+
+## A resposta do vice
+
+Na quinta-feira (12), Mello Araújo publicou um vídeo para se defender das críticas. Afirmou que as denúncias têm o objetivo de ajudar a prefeitura, negou fins eleitorais, disse ter poupado R$ 500 milhões em licitação na educação e reclamou de ser tratado como criminoso: “virei o vilão”, informa o g1 SP. A crise cresceu depois de ele enviar ao Ministério Público uma representação sobre contratos de R$ 21,2 milhões da Virada Esportiva 2026. O Ministério Público também pediu documentos à Secretaria Municipal de Esportes, e a prefeitura diz que todas as representações são devidamente apuradas.
+
+## O que a representação aponta
+
+Segundo a representação protocolada na terça (10), 12 de 15 entidades vistoriadas, com R$ 15,78 milhões, não estavam nos endereços informados. A prefeitura sustenta que o evento ocorreu normalmente e que as acusações não estão provadas. A coluna Painel, da Folha, registrou ainda outro atrito: o vice teria pedido investigação sobre um servidor que usou uma camisa com símbolo comunista.
+
+## O que vem agora
+
+O Ministério Público analisa os documentos da Secretaria de Esportes, e a prefeitura promete apurar. A relação entre prefeito e vice segue tensa.
+
+## O que ainda não está confirmado
+
+Não há, nos textos lidos, decisão do MP sobre abrir inquérito nem resposta pública do assessor citado por Nunes.
+
+NUMS R$ 21,2 mi|recursos em parcerias sob suspeita;12 de 15|entidades fora do endereço informado;R$ 15,78 mi|valor ligado a essas 12 entidades;R$ 500 mi|economia em licitação que o vice diz ter obtido`,
+ fontes:[['g1 SP (Nunes e o desconforto)','https://g1.globo.com/sp/sao-paulo/noticia/2026/11/13/nunes-diz-que-esta-todo-mundo-desconfortavel-na-prefeitura-de-sp-apos-denuncia-de-vice-prefeito.ghtml'],['g1 SP (vice reclama de ser tratado como criminoso)','https://g1.globo.com/sp/sao-paulo/noticia/2026/11/12/vice-de-nunes-diz-que-denuncias-de-corrupcao-sao-para-ajudar-a-prefeitura-e-reclama-de-ser-tratado-como-criminoso-virei-o-vilao.ghtml'],['Folha (Painel)','https://www1.folha.uol.com.br/colunas/painel/2026/11/vice-de-nunes-pediu-investigacao-sobre-servidor-que-usou-camisa-comunista.shtml']]});
+
+_U('to_transicao', {hora:'14/11',
+ t:'Governo do Tocantins manda órgãos mapear contratos, dívidas e patrimônio para a transição entre Wanderlei Barbosa e Vicentinho Júnior',
+ sub:'A Portaria Segov 131 complementa o decreto da transição; a posse é em 6 de janeiro de 2027.',
+ dado:{n:'5 dias úteis', l:'Prazo dos órgãos para responder às demandas da equipe de transição'},
+ resumo:'A Secretaria Executiva da Governadoria do Tocantins publicou a Portaria Segov 131, na terça (10), mandando os departamentos mapear contratos, convênios, licitações, processos e projetos em execução, além de dívidas e patrimônio, para subsidiar a transição do governador Wanderlei Barbosa (Republicanos) para Vicentinho Júnior (PSDB). O Decreto 7.263/2026 dá cinco dias úteis para resposta às demandas.',
+ upd:'A Portaria Segov 131 determinou o levantamento de contratos, dívidas e patrimônio para a nova gestão.',
+ fundo:`A Secretaria Executiva da Governadoria do Tocantins determinou que os órgãos do estado levantem informações da atual gestão para subsidiar a transição do governador Wanderlei Barbosa (Republicanos) para o governador eleito Vicentinho Júnior (PSDB). A instrução está na Portaria Segov nº 131, publicada no Diário Oficial do Estado na terça-feira (10), informa o T1 Notícias. A portaria complementa o decreto que regula a transição.
+
+## O que os órgãos devem levantar
+
+Os departamentos devem mapear contratos, convênios, licitações, processos administrativos e projetos ainda em execução, além de levantar dados sobre despesas pendentes, dívidas e patrimônio, segundo o T1 Notícias. O objetivo é dar à nova administração um retrato das obrigações e dos bens do estado antes da posse.
+
+## As regras do decreto
+
+O Decreto 7.263/2026, publicado em 4 de novembro, define que a transição começa em 10 de novembro, informa o Jornal Opção Tocantins. Um coordenador escolhido por Wanderlei recebe e encaminha as demandas. Os integrantes da equipe são indicados pelo eleito e designados pelo governador atual. Os pedidos são feitos por escrito, e os órgãos têm cinco dias úteis para responder. A atuação é informativa, sem transferência antecipada de atribuições, e as decisões ficam com Wanderlei até a posse, marcada para 6 de janeiro de 2027.
+
+## O contexto político
+
+Vicentinho Júnior é deputado federal pelo PSDB, partido de centro. Ele venceu a eleição de outubro, que, segundo análise publicada pelo T1 Notícias, começou com a senadora Professora Dorinha à frente por pouco mais de 13 mil votos e terminou com vitória ampla do tucano. A mesma análise aponta que os primeiros desafios do governador eleito passam pelo secretariado.
+
+## O que vem agora
+
+Os órgãos têm cinco dias úteis para responder aos pedidos da equipe de transição, e o governo eleito deve seguir anunciando nomes do secretariado até a posse.
+
+## O que ainda não está confirmado
+
+O valor total das dívidas e dos contratos mapeados não foi divulgado, nem a data em que o levantamento será entregue à equipe de Vicentinho Júnior.
+
+NUMS 5 dias úteis|prazo de resposta dos órgãos;10 de novembro|início da transição;Portaria 131|norma que determinou o levantamento;6 de janeiro de 2027|posse`,
+ fontes:[['T1 Notícias (Governadoria inicia levantamento)','https://t1noticias.com.br/politica/governadoria-inicia-levantamento-de-contratos-e-dividas-para-transicao-de-gestao/144687/'],['Jornal Opção Tocantins (decreto da transição)','https://tocantins.jornalopcao.com.br/noticias/decreto-estabelece-regras-para-transicao-de-governo-no-tocantins-ate-janeiro-de-2027-603999/'],['T1 Notícias (desafios de Vicente Jr)','https://t1noticias.com.br/blog-da-tum/os-desafios-de-vicente-jr-no-pos-eleicao-comecam-pelo-secretariado/144651/']]});
+
+
+HOME_LEAD = 'ajuste_fiscal_pacote_11_11';
+HOME_ROW = ['paraguai','dino_6x1'];
+ORDER.politica = _top(ORDER.politica, ['dino_6x1','gilmar_moro_triplex_14_11','toffoli_contas_campanha_lula_14_11','master_defesa_vorcaro_fachin_13_11','seguranca_ministerio_crise_pf_13_11','fachin_suspende_prazos_microsoft_14_11','fachin_ministra_negra_stf_14_11','dark_horse_prazo','stf_ministros_relatorios_pf_vorcaro_14_11','pt_diretorio_ajuste_maioridade_ministerios_14_11']);
+ORDER.economia = _top(ORDER.economia, ['ajuste_fiscal_pacote_11_11','mercado_10_11','nubank_porto_real_bc_13_11','tesouro_ataque_hacker_14_11','diesel_subvencao_extra_14_11','mei_remissao_dividas_14_11','bb_agro_inadimplencia_13_11']);
+ORDER.mundo = _top(ORDER.mundo, ['paraguai','voos_eua_ground_stop_14_11','trump_xi_putin_shenzhen_14_11','ue_cinco_potencias_ucrania_14_11','nvidia_espia_jensen_huang','voos_eua_brasil_guarulhos_14_11','nova_orleans_petroleiro_cruzeiro_14_11','papa_leao_peru_13_11']);
+ORDER.regioes = _top(ORDER.regioes, ['rj_5_milhoes_dominio_armado','rj_ruas_cupula_seguranca_14_11','rj_zanin_segundo_turno','rj_el_nino_plano_verao_14_11','sp_smart_sampa_inquerito_14_11','sp_virada_esportiva_desvio','mg_cleitinho_jequitinhonha_prisional_14_11','ce_el_nino_emergencia_65_14_11','pe_raquel_lyra_ajuste_estados_14_11','pr_moro_kandir_604_14_11','ro_transicao_batalhao_agro_14_11','to_transicao','mt_alemt_orcamento_61_14_11']);
+GIRO = [
+ ['Gilmar rebate Moro sobre o triplex','Gilmar Mendes afirmou na sexta (13) que a sentença do triplex não foi anulada por meros detalhes processuais, informa a Agência Brasil.','Agência Brasil','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/gilmar-diz-que-moro-agiu-para-impedir-candidatura-de-lula-em-2018','','gilmar_moro_triplex_14_11'],
+ ['Toffoli cobra contas de Lula e Alckmin','O ministro do TSE deu três dias para a chapa explicar passagens aéreas com itinerários incompatíveis e indícios de subcontratação, informa o Correio do Povo.','Correio do Povo','https://www.correiodopovo.com.br/not%C3%ADcias/pol%C3%ADtica/toffoli-da-3-dias-para-chapa-de-lula-explicar-indicios-de-irregularidades-em-contas-da-campanha-1.1764704','','toffoli_contas_campanha_lula_14_11'],
+ ['Câmara contesta liminar de Dino','A Advocacia da Câmara pediu que o plenário do STF não referende seis pontos da liminar sobre a escala 6x1, informa o Correio do Estado.','Correio do Estado','https://correiodoestado.com.br/politica/2026/11/14/6x1-camara-contesta-parte-da-decisao-de-dino-sobre-flexibilizacao-de-folgas.html','','dino_6x1'],
+ ['Nubank e o BC','O Nubank diz que o Banco Central aprovou a compra do Banco Porto Real, o que lhe dá licença bancária no Brasil, informa o Jornal de Brasília.','Jornal de Brasília','https://jornaldebrasilia.com.br/noticias/economia/bc-aprova-compra-de-banco-pelo-nubank-que-passara-a-ter-licenca-bancaria-no-brasil/','','nubank_porto_real_bc_13_11'],
+ ['Tesouro fora do ar','O Tesouro prevê normalizar os sistemas até a manhã de segunda (16) depois de ataque que atingiu 30 mil cadastros, informa a Agência Brasil.','Agência Brasil','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/tesouro-preve-normalizar-sistemas-fora-do-ar-ate-segunda-feira','','tesouro_ataque_hacker_14_11'],
+ ['Diesel importado','A Fazenda deixou vencer a subvenção extra de R$ 1,40 por litro, e a de R$ 2,12 segue, informa a Agência Brasil.','Agência Brasil','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/governo-nao-renova-subsidio-de-r-140-ao-diesel-importado','','diesel_subvencao_extra_14_11'],
+ ['Parada nacional de voos nos EUA','A FAA liberou as decolagens após mais de quatro horas; o secretário Sean Duffy culpa equipamentos analógicos antigos, informa a ABC News.','ABC News','https://abcnews.com/US/nationwide-ground-stop-ordered-airports-faa/story?id=138121848','','voos_eua_ground_stop_14_11'],
+ ['Trump, Xi e Putin em Shenzhen','A Casa Branca confirmou a primeira reunião dos três líderes na China, à margem da Apec, informa a Al Jazeera.','Al Jazeera','https://www.aljazeera.com/news/2026/11/14/trump-xi-and-putin-to-hold-first-three-way-summit-in-china','','trump_xi_putin_shenzhen_14_11'],
+ ['Equipe europeia para a paz na Ucrânia','Líderes da UE reunidos em Dublin definiram Reino Unido, França, Alemanha, Itália e Polônia, sem enviado único, informa a Euronews.','Euronews','https://www.euronews.com/2026/11/13/eu-leaders-bring-italy-and-poland-into-ukraine-peace-talks-team-as-kallas-fights-for-spot','','ue_cinco_potencias_ucrania_14_11'],
+ ['Ruas escolhe cúpula da segurança','O governador eleito do Rio anunciou Lauro Rangel (Segurança), coronel Gilbert dos Santos (PM) e Robson da Costa Ferreira da Silva (Polícia Civil), informa o g1 Rio.','g1 Rio','https://g1.globo.com/rj/rio-de-janeiro/noticia/2026/11/13/veja-quem-sao-os-escolhidos-para-a-cupula-da-seguranca-no-rj.ghtml','','rj_ruas_cupula_seguranca_14_11'],
+ ['Ceará decreta emergência','O governo cearense decretou emergência por 180 dias em 65 municípios por causa do El Niño, informa O Povo.','O Povo','https://www.opovo.com.br/noticias/ceara/2026/11/13/el-nino-ceara-decreta-situacao-de-emergencia-em-65-municipios.html','','ce_el_nino_emergencia_65_14_11'],
+ ['Moro e a Lei Kandir','O governador eleito do Paraná calcula perda de R$ 604 milhões com o corte na compensação da Lei Kandir, informa a Gazeta do Povo.','Gazeta do Povo','https://www.gazetadopovo.com.br/parana/sergio-moro-critica-projeto-que-preve-perda-de-r-604-milhoes-para-o-parana/','','pr_moro_kandir_604_14_11']
+].concat(GIRO).slice(0,20);
+
 /* FLAGS (gerado por publicar.js; não editar) */
-var FLAGS = {"bb_agro_inadimplencia_13_11":"novo","meta_eleicoes_recorde_13_11":"novo","uber_passe_motoristas_13_11":"novo","seguranca_ministerio_crise_pf_13_11":"novo","papa_leao_peru_13_11":"novo","xi_taiwan_13_11":"novo"};
-var GIRO_FLAGS = {"BB e o agro":"novo","Meta e as campanhas":"novo","Uber e o passe":"novo","Ministério e crise da PF":"novo","Papa no Peru":"novo","Xi e Taiwan":"novo"};
-var HIST = {"flavio":["2026-11-05-04h","2026-11-05-07h"],"senado":["2026-11-05-04h","2026-11-06-11h"],"pronunciamento":["2026-11-05-04h","2026-11-05-07h"],"bets":["2026-11-05-04h","2026-11-05-04h"],"copom":["2026-11-05-04h","2026-11-05-19h"],"seletivo":["2026-11-05-04h","2026-11-06-07h"],"paes":["2026-11-05-04h","2026-11-05-04h"],"guandu":["2026-11-05-04h","2026-11-05-04h"],"novoguandu":["2026-11-05-04h","2026-11-05-04h"],"pj":["2026-11-05-04h","2026-11-05-04h"],"prefeitura":["2026-11-05-04h","2026-11-05-04h"],"light":["2026-11-05-04h","2026-11-05-04h"],"reis":["2026-11-05-04h","2026-11-05-04h"],"eua":["2026-11-05-04h","2026-11-05-19h"],"fuga":["2026-11-05-04h","2026-11-06-07h"],"congresso":["2026-11-05-04h","2026-11-05-15h"],"ldo":["2026-11-05-04h","2026-11-05-04h"],"ministerio":["2026-11-05-04h","2026-11-05-15h"],"desinfo":["2026-11-05-04h","2026-11-05-13h"],"fiscal":["2026-11-05-04h","2026-11-10-15h"],"sp":["2026-11-05-04h","2026-11-05-04h"],"mg":["2026-11-05-04h","2026-11-05-04h"],"ne":["2026-11-05-04h","2026-11-05-04h"],"sul":["2026-11-05-04h","2026-11-05-04h"],"norte":["2026-11-05-04h","2026-11-05-04h"],"co":["2026-11-05-04h","2026-11-05-04h"],"imprensa":["2026-11-05-04h","2026-11-05-04h"],"argentina":["2026-11-05-04h","2026-11-05-19h"],"maioridade":["2026-11-05-04h","2026-11-12-07h"],"vorcaro":["2026-11-05-04h","2026-11-05-19h"],"darkhorse":["2026-11-05-04h","2026-11-05-04h"],"marinho":["2026-11-05-04h","2026-11-05-19h"],"seis1x1":["2026-11-05-04h","2026-11-05-04h"],"tse":["2026-11-05-04h","2026-11-05-04h"],"pauta5":["2026-11-05-04h","2026-11-05-04h"],"segmin":["2026-11-05-04h","2026-11-06-07h"],"assedio":["2026-11-05-04h","2026-11-05-04h"],"meta":["2026-11-05-04h","2026-11-05-04h"],"lulasaude":["2026-11-05-04h","2026-11-05-04h"],"psdb":["2026-11-05-04h","2026-11-05-04h"],"orcamento":["2026-11-05-04h","2026-11-05-13h"],"betsaud":["2026-11-05-04h","2026-11-05-04h"],"sp_barba":["2026-11-05-04h","2026-11-05-04h"],"mg_tce":["2026-11-05-04h","2026-11-05-04h"],"mg_china":["2026-11-05-04h","2026-11-05-04h"],"mg_ipva":["2026-11-05-04h","2026-11-05-04h"],"ba_blocos":["2026-11-05-04h","2026-11-05-04h"],"ba_jeronimo":["2026-11-05-04h","2026-11-05-04h"],"pe_emprestimo":["2026-11-05-04h","2026-11-05-04h"],"ce_mpe":["2026-11-05-04h","2026-11-05-04h"],"ce_gastos":["2026-11-05-04h","2026-11-05-04h"],"ma_tce":["2026-11-05-04h","2026-11-05-04h"],"al_trans":["2026-11-05-04h","2026-11-05-04h"],"sc_alesc":["2026-11-05-04h","2026-11-05-04h"],"pr_cwb":["2026-11-05-04h","2026-11-05-04h"],"rs_zucco":["2026-11-05-04h","2026-11-05-04h"],"pa_parau":["2026-11-05-04h","2026-11-05-04h"],"ms_assoma":["2026-11-05-04h","2026-11-05-04h"],"ms_senado":["2026-11-05-04h","2026-11-05-04h"],"eua_pioneiros":["2026-11-05-04h","2026-11-05-04h"],"mei":["2026-11-05-07h","2026-11-05-07h"],"tarifas":["2026-11-05-07h","2026-11-05-07h"],"industria":["2026-11-05-13h","2026-11-05-13h"],"durigan":["2026-11-05-13h","2026-11-05-13h"],"ato_obsceno":["2026-11-05-13h","2026-11-05-13h"],"oea":["2026-11-05-13h","2026-11-05-13h"],"g20_trump":["2026-11-05-13h","2026-11-05-13h"],"sc_tornados":["2026-11-05-13h","2026-11-05-13h"],"paraguai":["2026-11-05-13h","2026-11-12-18h"],"franca":["2026-11-05-13h","2026-11-05-19h"],"israel":["2026-11-05-13h","2026-11-11-17h"],"hongkong":["2026-11-05-13h","2026-11-05-13h"],"messias":["2026-11-05-15h","2026-11-05-15h"],"sucessao":["2026-11-05-15h","2026-11-05-15h"],"reuniao_eco":["2026-11-05-15h","2026-11-05-15h"],"rj_pm":["2026-11-05-15h","2026-11-05-15h"],"rj_teto":["2026-11-05-15h","2026-11-05-15h"],"ce_oposicao":["2026-11-05-15h","2026-11-05-15h"],"ce_arma":["2026-11-05-15h","2026-11-05-15h"],"juicio":["2026-11-05-19h","2026-11-05-19h"],"ueno":["2026-11-05-19h","2026-11-05-19h"],"cpac":["2026-11-05-19h","2026-11-06-07h"],"mercado":["2026-11-05-19h","2026-11-06-19h"],"tse_name":["2026-11-05-19h","2026-11-05-19h"],"ms_seg":["2026-11-06-07h","2026-11-09-11h"],"brent":["2026-11-06-07h","2026-11-06-07h"],"wall_street":["2026-11-06-07h","2026-11-09-15h"],"rnest":["2026-11-06-07h","2026-11-06-07h"],"ba_lula":["2026-11-06-07h","2026-11-06-07h"],"cedears":["2026-11-06-07h","2026-11-06-07h"],"bomba_europa":["2026-11-06-07h","2026-11-06-12h"],"dino_6x1":["2026-11-06-11h","2026-11-13-07h"],"tse_novo":["2026-11-06-11h","2026-11-06-12h"],"nikolas":["2026-11-06-11h","2026-11-06-11h"],"ucrania_acordo":["2026-11-06-11h","2026-11-09-15h"],"zaporizhzhia":["2026-11-06-11h","2026-11-06-12h"],"pgdf_master":["2026-11-06-12h","2026-11-06-12h"],"lula_cop":["2026-11-06-12h","2026-11-11-11h"],"planalto_pena":["2026-11-06-12h","2026-11-06-12h"],"janones_live":["2026-11-06-12h","2026-11-06-12h"],"camisotti":["2026-11-06-12h","2026-11-06-12h"],"bolsonaros_eua":["2026-11-06-12h","2026-11-06-12h"],"bolsas_ia":["2026-11-06-12h","2026-11-06-15h"],"seletivo_vinho":["2026-11-06-12h","2026-11-06-15h"],"localiza":["2026-11-06-12h","2026-11-06-12h"],"sp_chuva":["2026-11-06-12h","2026-11-06-12h"],"sp_marcola":["2026-11-06-12h","2026-11-06-12h"],"sul_ana":["2026-11-06-12h","2026-11-06-12h"],"sul_frente":["2026-11-06-12h","2026-11-06-12h"],"trump_arco":["2026-11-06-12h","2026-11-06-12h"],"papa_leao":["2026-11-06-12h","2026-11-07-18h"],"payroll_out":["2026-11-06-15h","2026-11-06-15h"],"bradesco_pib":["2026-11-06-15h","2026-11-06-15h"],"balancos_3t":["2026-11-06-15h","2026-11-06-15h"],"ministerio_4mandato":["2026-11-06-15h","2026-11-06-15h"],"zelensky_madrid":["2026-11-06-15h","2026-11-06-15h"],"franca_greve":["2026-11-06-15h","2026-11-06-15h"],"hk_wong":["2026-11-06-15h","2026-11-06-15h"],"sc_chapeco":["2026-11-06-15h","2026-11-07-15h"],"sc_arabia":["2026-11-06-15h","2026-11-06-15h"],"am_honda":["2026-11-06-15h","2026-11-06-15h"],"lula_cnpe":["2026-11-06-19h","2026-11-06-19h"],"bolsonaro_wal":["2026-11-06-19h","2026-11-06-19h"],"dolar_maxima":["2026-11-06-19h","2026-11-06-19h"],"ueno_bank":["2026-11-06-19h","2026-11-11-17h"],"mg_ipva_simoes":["2026-11-06-19h","2026-11-06-19h"],"ce_aldigueri":["2026-11-06-19h","2026-11-06-19h"],"ce_mpox":["2026-11-06-19h","2026-11-06-19h"],"ira_proposta_catar":["2026-11-07-07h","2026-11-10-11h"],"tse_aije9":["2026-11-07-07h","2026-11-07-07h"],"dark_horse_prazo":["2026-11-07-07h","2026-11-07-07h"],"ibov_semana":["2026-11-07-07h","2026-11-09-07h"],"exp_petroleo":["2026-11-07-07h","2026-11-07-07h"],"petrobras_3t":["2026-11-07-07h","2026-11-07-07h"],"braga_relator":["2026-11-07-07h","2026-11-07-07h"],"alliana_perfil":["2026-11-07-07h","2026-11-07-07h"],"arco_trump":["2026-11-07-07h","2026-11-07-07h"],"zapo_53":["2026-11-07-07h","2026-11-07-07h"],"rubio_gabinete":["2026-11-07-07h","2026-11-07-07h"],"japao_sismo":["2026-11-07-07h","2026-11-07-07h"],"rj_paes_tre":["2026-11-07-07h","2026-11-07-07h"],"rj_adpf":["2026-11-07-07h","2026-11-07-07h"],"rj_alerj_gas":["2026-11-07-07h","2026-11-07-07h"],"sp_alesp_emendas":["2026-11-07-07h","2026-11-07-07h"],"mg_tce_clubes":["2026-11-07-07h","2026-11-07-07h"],"mg_transicao":["2026-11-07-07h","2026-11-07-07h"],"mt_russi":["2026-11-07-07h","2026-11-07-19h"],"ba_ponte":["2026-11-07-07h","2026-11-07-07h"],"pi_educacao":["2026-11-07-07h","2026-11-07-07h"],"ma_tce_transicao":["2026-11-07-07h","2026-11-07-07h"],"al_jhc_transicao":["2026-11-07-07h","2026-11-07-07h"],"am_transicao_reuniao":["2026-11-07-07h","2026-11-07-07h"],"pr_transicao":["2026-11-07-07h","2026-11-07-07h"],"rs_alerta":["2026-11-07-07h","2026-11-07-15h"],"congresso_direita":["2026-11-07-11h","2026-11-09-15h"],"alcolumbre_stf":["2026-11-07-11h","2026-11-08-11h"],"flavio_senado":["2026-11-07-11h","2026-11-11-17h"],"bets_stf":["2026-11-07-11h","2026-11-10-19h"],"papa_telegrama":["2026-11-07-11h","2026-11-07-11h"],"rn_transicao":["2026-11-07-11h","2026-11-11-07h"],"to_transicao":["2026-11-07-11h","2026-11-07-11h"],"lula_equipe_eco":["2026-11-07-15h","2026-11-10-11h"],"ministerio_40":["2026-11-07-15h","2026-11-10-11h"],"vr_va_interop":["2026-11-07-15h","2026-11-07-18h"],"sp_f1_2035":["2026-11-07-15h","2026-11-07-18h"],"sp_bras_desabamento":["2026-11-07-15h","2026-11-07-18h"],"sp_alesp_sucessao":["2026-11-07-15h","2026-11-08-19h"],"sp_jem_pacaembu":["2026-11-07-15h","2026-11-07-18h"],"ne_sertanejos":["2026-11-07-15h","2026-11-07-18h"],"pe_exoneracoes":["2026-11-07-15h","2026-11-07-19h"],"ms_riedel":["2026-11-07-15h","2026-11-07-15h"],"rs_pelotas":["2026-11-07-15h","2026-11-07-15h"],"ucrania_energia":["2026-11-07-15h","2026-11-10-11h"],"iemen_houthis":["2026-11-07-15h","2026-11-08-19h"],"arg_china_telecom":["2026-11-07-15h","2026-11-07-18h"],"pl_motta":["2026-11-07-19h","2026-11-11-11h"],"flavio_pesquisa":["2026-11-07-19h","2026-11-09-15h"],"tse_psol_se":["2026-11-07-19h","2026-11-07-19h"],"stf_pauta_nov":["2026-11-07-19h","2026-11-07-19h"],"enamed":["2026-11-07-19h","2026-11-07-19h"],"ucrania_abudhabi":["2026-11-07-19h","2026-11-11-17h"],"colombia_drones":["2026-11-07-19h","2026-11-08-19h"],"mg_aro_vorcaro":["2026-11-07-19h","2026-11-07-19h"],"mg_ameacas":["2026-11-07-19h","2026-11-09-15h"],"rj_volta_redonda":["2026-11-07-19h","2026-11-09-15h"],"rs_salarios":["2026-11-07-19h","2026-11-09-11h"],"nz_eleicao":["2026-11-08-07h","2026-11-10-11h"],"mg_cleitinho_shows":["2026-11-08-07h","2026-11-09-15h"],"quaest_pos_eleicao":["2026-11-08-11h","2026-11-08-15h"],"ira_iron_gate":["2026-11-08-11h","2026-11-08-11h"],"mercado_semana":["2026-11-08-11h","2026-11-10-11h"],"sp_pacaembu_show":["2026-11-08-11h","2026-11-09-15h"],"orcamento_2027":["2026-11-08-15h","2026-11-09-19h"],"argentina_risco_pais":["2026-11-08-15h","2026-11-08-15h"],"mg_transicao_fase_final":["2026-11-08-15h","2026-11-09-19h"],"tre_rj_totalizacao":["2026-11-08-15h","2026-11-09-15h"],"cedae_nexxus":["2026-11-08-15h","2026-11-09-15h"],"tse_21_acoes":["2026-11-08-19h","2026-11-10-11h"],"cop31_antalya":["2026-11-08-19h","2026-11-11-11h"],"amsterda_linha_vermelha":["2026-11-08-19h","2026-11-08-19h"],"el_hierro":["2026-11-08-19h","2026-11-08-19h"],"cracovia":["2026-11-08-19h","2026-11-08-19h"],"gaza_enchentes":["2026-11-08-19h","2026-11-08-19h"],"eua_meio_mandato_placar":["2026-11-08-19h","2026-11-09-19h"],"franca_custo_vida":["2026-11-08-19h","2026-11-08-19h"],"lula_fala_nacao":["2026-11-08-19h","2026-11-10-11h"],"agenda_semana":["2026-11-09-07h","2026-11-10-15h"],"khor_mor":["2026-11-09-07h","2026-11-09-11h"],"mexico_cjng_r2":["2026-11-09-07h","2026-11-09-11h"],"focus_selic_13_75":["2026-11-09-11h","2026-11-10-19h"],"motta_alcolumbre_comitiva":["2026-11-09-11h","2026-11-09-19h"],"sp_tarcisio_secretariado":["2026-11-09-11h","2026-11-09-11h"],"pr_moro_secretarios":["2026-11-09-11h","2026-11-09-11h"],"am_estiagem_boletim":["2026-11-09-11h","2026-11-09-11h"],"ro_redano_interino":["2026-11-09-11h","2026-11-09-11h"],"bc_diretorias":["2026-11-09-15h","2026-11-09-15h"],"to_transicao_vicentinho":["2026-11-09-15h","2026-11-09-15h"],"ms_dialogo_pos_eleicao":["2026-11-09-15h","2026-11-09-15h"],"sudao_haroun":["2026-11-09-15h","2026-11-09-15h"],"argentina_governadores":["2026-11-09-15h","2026-11-11-17h"],"senado_pauta_10_11":["2026-11-09-19h","2026-11-10-19h"],"lula_sri_centrao":["2026-11-09-19h","2026-11-10-11h"],"trf1_kassio_lula":["2026-11-09-19h","2026-11-09-19h"],"supersalarios_ongs":["2026-11-09-19h","2026-11-09-19h"],"rj_alerj_concessoes":["2026-11-09-19h","2026-11-09-19h"],"copom_ata":["2026-11-10-11h","2026-11-11-17h"],"mercado_10_11":["2026-11-10-11h","2026-11-12-18h"],"paraguai_cupula":["2026-11-10-11h","2026-11-11-17h"],"pena_cofre":["2026-11-10-11h","2026-11-11-17h"],"mt_loa_retirada":["2026-11-10-11h","2026-11-10-11h"],"df_celina_ajuste":["2026-11-10-11h","2026-11-10-11h"],"ba_metro_alstom":["2026-11-10-11h","2026-11-10-11h"],"ce_alece_pl":["2026-11-10-11h","2026-11-10-11h"],"al_ceasa":["2026-11-10-11h","2026-11-10-11h"],"sp_obras_superfaturamento":["2026-11-10-11h","2026-11-10-11h"],"to_pm_comando":["2026-11-10-11h","2026-11-10-11h"],"petrobras_balanco":["2026-11-10-15h","2026-11-11-17h"],"combustiveis_decreto":["2026-11-10-15h","2026-11-11-17h"],"lula_antalia_comitiva":["2026-11-10-15h","2026-11-11-17h"],"maioridade_audiencias":["2026-11-10-15h","2026-11-11-07h"],"espanha_eleicao":["2026-11-10-15h","2026-11-10-19h"],"peru_fujimori":["2026-11-10-15h","2026-11-11-17h"],"bolivia_urquidi":["2026-11-10-15h","2026-11-10-15h"],"pe_tjpe":["2026-11-10-15h","2026-11-10-15h"],"ueno_pagamentos":["2026-11-10-19h","2026-11-11-07h"],"rj_alerj_orcamento":["2026-11-10-19h","2026-11-10-19h"],"escazu_cre":["2026-11-11-07h","2026-11-11-17h"],"mps_rurais_exportadores":["2026-11-11-07h","2026-11-11-17h"],"nikolas_celulares_senado":["2026-11-11-07h","2026-11-11-07h"],"dallagnol_tse_pauta":["2026-11-11-07h","2026-11-11-07h"],"dino_tecnologia_eleicoes":["2026-11-11-07h","2026-11-11-07h"],"cbs_senado_aliquota":["2026-11-11-07h","2026-11-11-07h"],"braskem_capitalizacao":["2026-11-11-07h","2026-11-11-07h"],"balancos_10_11":["2026-11-11-07h","2026-11-11-07h"],"espanha_greve_geral":["2026-11-11-07h","2026-11-12-07h"],"eua_tarifas_300":["2026-11-11-07h","2026-11-11-07h"],"eua_senado_mississippi_alasca":["2026-11-11-07h","2026-11-11-17h"],"rj_qav_galeao":["2026-11-11-07h","2026-11-11-07h"],"rj_aije_paes_ruas":["2026-11-11-07h","2026-11-11-07h"],"mg_cleitinho_alm":["2026-11-11-07h","2026-11-11-07h"],"mg_tarifa_zero_rmbh":["2026-11-11-07h","2026-11-11-07h"],"mg_cleitinho_cpi_shows":["2026-11-11-07h","2026-11-11-07h"],"df_cldf_reeleicao_mesa":["2026-11-11-07h","2026-11-11-07h"],"df_ploa_social":["2026-11-11-07h","2026-11-11-07h"],"ms_pl_paulo_correa_alems":["2026-11-11-07h","2026-11-11-07h"],"mt_reforma_pivetta_rga":["2026-11-11-07h","2026-11-11-07h"],"ba_alba_17_projetos":["2026-11-11-07h","2026-11-11-07h"],"ce_alece_presidencia_romeu":["2026-11-11-07h","2026-11-11-07h"],"ce_margem_equatorial_empregos":["2026-11-11-07h","2026-11-11-07h"],"pe_compesa_barragens":["2026-11-11-07h","2026-11-11-07h"],"ac_loa_2027_suspensa":["2026-11-11-07h","2026-11-11-07h"],"ro_ale_suspende_pagamentos":["2026-11-11-07h","2026-11-11-07h"],"to_aleto_ldo_cultura":["2026-11-11-07h","2026-11-11-07h"],"brasil_mapa_fosseis":["2026-11-11-11h","2026-11-11-11h"],"pf_master_delegados":["2026-11-11-16h","2026-11-11-17h"],"fim_inquerito_fake_news":["2026-11-11-16h","2026-11-11-17h"],"ajuste_fiscal_pacote_11_11":["2026-11-11-16h","2026-11-13-07h"],"cbs_prazo_pressao_adiar":["2026-11-11-16h","2026-11-11-16h"],"operacao_refit_magro":["2026-11-11-16h","2026-11-12-07h"],"maioridade_penal_alcolumbre":["2026-11-11-16h","2026-11-11-16h"],"mp_bets_prorrogada":["2026-11-11-16h","2026-11-11-16h"],"rj_5_milhoes_dominio_armado":["2026-11-11-16h","2026-11-11-16h"],"rj_zanin_segundo_turno":["2026-11-11-16h","2026-11-11-16h"],"sp_virada_esportiva_desvio":["2026-11-11-16h","2026-11-12-18h"],"sp_renan_santos_prefeitura":["2026-11-11-16h","2026-11-11-16h"],"quaest_partidos_pl_pt":["2026-11-11-16h","2026-11-11-16h"],"europa_ameacas_bomba_escolas":["2026-11-11-16h","2026-11-11-16h"],"portugal_tempestade_charles":["2026-11-11-16h","2026-11-11-16h"],"nvidia_espia_jensen_huang":["2026-11-11-16h","2026-11-12-18h"],"ira_argentina_nuclear":["2026-11-11-16h","2026-11-11-16h"],"darchiev_gaza":["2026-11-11-16h","2026-11-11-16h"],"tse_multa_meta_fundo_partidario":["2026-11-11-16h","2026-11-11-16h"],"rs_stj_boate_kiss_penas":["2026-11-11-16h","2026-11-11-16h"],"rs_rio_uruguai_alerta_vermelho":["2026-11-11-16h","2026-11-11-16h"],"sc_blindagem_digital_mandados_bnmp":["2026-11-11-16h","2026-11-11-16h"],"sc_operacao_recycling_lavagem_itajai":["2026-11-11-16h","2026-11-11-16h"],"pr_movimento_pela_vida_rodovias":["2026-11-11-16h","2026-11-11-16h"],"sp_tarcisio_flavio_2030":["2026-11-11-16h","2026-11-11-16h"],"sp_tarcisio_secretariado_salles":["2026-11-11-16h","2026-11-11-16h"],"mg_cleitinho_lula_divida_propag":["2026-11-11-16h","2026-11-11-16h"],"mg_cleitinho_secretariado_medidas":["2026-11-11-16h","2026-11-11-16h"],"ac_mailza_cop31_carbono_amazonia2050":["2026-11-11-16h","2026-11-11-16h"],"pb_alpb_presidencia_acordo_republicanos":["2026-11-11-17h","2026-11-11-17h"],"pe_raquel_lyra_exonera_150_pl":["2026-11-11-17h","2026-11-11-17h"],"se_racionamento_grande_aracaju_poxim":["2026-11-11-17h","2026-11-11-17h"],"ma_cartorios_mortes_acoes_policiais_cnj":["2026-11-11-17h","2026-11-11-17h"],"pi_mppi_hut_pacientes_cardiacos":["2026-11-11-17h","2026-11-11-17h"],"am_abatedouro_flutuante_jacares":["2026-11-11-17h","2026-11-11-17h"],"ap_gaeco_gabinete_empresarial_alap":["2026-11-11-17h","2026-11-11-17h"],"rr_cnj_pad_desembargadores_tjrr":["2026-11-11-17h","2026-11-11-17h"],"df_brb_acao_ex_gestores_master":["2026-11-11-17h","2026-11-11-17h"],"mt_vg_camara_mesa_justica_48h":["2026-11-11-17h","2026-11-11-17h"],"ms_santa_casa_greve_enfermagem_intervencao":["2026-11-11-17h","2026-11-11-17h"],"rj_alerj_transparencia_ultimo_lugar":["2026-11-11-17h","2026-11-11-17h"],"rj_mata_maravilha_torres_porto":["2026-11-11-17h","2026-11-11-17h"],"es_pazolini_exoneracao_comissionados":["2026-11-11-17h","2026-11-11-17h"],"mg_mpmg_lista_triplice_pgj":["2026-11-11-17h","2026-11-11-17h"],"pr_codigo_florestal_alep_audiencia":["2026-11-11-17h","2026-11-11-17h"],"lula_delcy_antalia":["2026-11-11-17h","2026-11-12-07h"],"heleno_visitas_damares_malta":["2026-11-11-17h","2026-11-11-17h"],"fhc_video_indiciado":["2026-11-11-17h","2026-11-12-07h"],"oas_triplex_leilao_2_4_mi":["2026-11-11-17h","2026-11-11-17h"],"senado_iphones_celulares":["2026-11-11-17h","2026-11-11-17h"],"sp_orcamento_2027_audiencias_butanta":["2026-11-11-17h","2026-11-11-17h"],"fachin_relatorio_pf_indicio_crime":["2026-11-11-19h","2026-11-11-19h"],"poupanca_saques_outubro_sexto_mes":["2026-11-11-19h","2026-11-11-19h"],"ira_rezaei_bases_europa":["2026-11-11-19h","2026-11-11-19h"],"trump_carta_biden_livro":["2026-11-11-19h","2026-11-11-19h"],"rj_campopiano_medalha_chiquinha":["2026-11-11-19h","2026-11-11-19h"],"sp_tarcisio_secretario_ciencia_ita":["2026-11-11-19h","2026-11-11-19h"],"pgr_mantem_prisao_vorcaro":["2026-11-12-07h","2026-11-12-07h"],"camara_hediondo_maus_tratos_animais":["2026-11-12-07h","2026-11-12-07h"],"pf_celular_ameacas_ana_elisa":["2026-11-12-07h","2026-11-12-07h"],"bb_lucro_3t26_queda_agro":["2026-11-12-07h","2026-11-12-07h"],"trancoso_faccao_operacao_ba":["2026-11-12-07h","2026-11-12-07h"],"alcolumbre_motta_ultimato_stf_cop":["2026-11-12-07h","2026-11-12-07h"],"ipca_outubro_12_11":["2026-11-12-11h","2026-11-12-11h"],"cop31_lula_pezeshkian":["2026-11-12-11h","2026-11-12-11h"],"cop31_tfff_lula_sem_voz":["2026-11-12-11h","2026-11-12-11h"],"brooklyn_desabamento_predio":["2026-11-12-11h","2026-11-12-11h"],"biden_leite_irlanda":["2026-11-12-11h","2026-11-12-11h"],"rj_copacabana_atropelamento":["2026-11-12-11h","2026-11-12-11h"],"raoni_documentario_cop31":["2026-11-12-11h","2026-11-12-11h"],"credito_149_12_11":["2026-11-12-16h","2026-11-12-16h"],"federacao_psb_pdt_12_11":["2026-11-12-16h","2026-11-12-16h"],"rj_retotalizacao_12_11":["2026-11-12-16h","2026-11-12-16h"],"ucrania_putin_enviados_trump":["2026-11-12-18h","2026-11-12-18h"],"imposto_seletivo_cigarro_emendas":["2026-11-12-18h","2026-11-12-18h"],"restos_mortais_escravizados_repatriados":["2026-11-12-18h","2026-11-12-18h"],"regina_torne_morre":["2026-11-12-18h","2026-11-12-18h"],"lutador_vizinhas_rio_justica":["2026-11-12-18h","2026-11-12-18h"],"mpf_ilha_willer_tomaz_richarlison":["2026-11-12-18h","2026-11-12-18h"],"itacare_turistas_israelenses_conflito":["2026-11-12-18h","2026-11-13-07h"],"sp_linha8_diamante_falha_trilhos":["2026-11-12-18h","2026-11-12-18h"],"covid_xfg_avanca_brasil":["2026-11-12-18h","2026-11-12-18h"],"zanin_nega_liminar_psd_2turno_rj":["2026-11-12-19h","2026-11-12-19h"],"milton_leite_reu_pcc":["2026-11-12-19h","2026-11-12-19h"],"stf_violencia_patrimonial_mulher":["2026-11-12-19h","2026-11-12-19h"],"alcolumbre_cpmi_master_leitura":["2026-11-12-19h","2026-11-12-19h"],"fachin_prorroga_inquerito_ciro_nogueira":["2026-11-12-19h","2026-11-13-07h"],"microsoft_outlook_falha_12_11":["2026-11-12-19h","2026-11-12-19h"],"caixa_seguridade_vazamento_dados":["2026-11-12-19h","2026-11-12-19h"],"anvisa_recolhe_insumos_tirzepatida":["2026-11-12-19h","2026-11-12-19h"],"drauzio_varella_abl":["2026-11-12-19h","2026-11-12-19h"],"gaza_hospital_ataque_12_11":["2026-11-12-19h","2026-11-12-19h"],"eua_tiroteio_casa_branca_12_11":["2026-11-12-19h","2026-11-12-19h"],"ira_radar_bahrein_13_11":["2026-11-13-07h","2026-11-13-07h"],"lula_filipinas_asean_13_11":["2026-11-13-07h","2026-11-13-07h"],"mello_araujo_2028_13_11":["2026-11-13-07h","2026-11-13-07h"],"master_defesa_vorcaro_fachin_13_11":["2026-11-13-07h","2026-11-13-07h"],"bb_agro_inadimplencia_13_11":["2026-11-13-11h","2026-11-13-11h"],"meta_eleicoes_recorde_13_11":["2026-11-13-11h","2026-11-13-11h"],"uber_passe_motoristas_13_11":["2026-11-13-11h","2026-11-13-11h"],"seguranca_ministerio_crise_pf_13_11":["2026-11-13-11h","2026-11-13-11h"],"papa_leao_peru_13_11":["2026-11-13-11h","2026-11-13-11h"],"xi_taiwan_13_11":["2026-11-13-11h","2026-11-13-11h"]};
+var FLAGS = {"paraguai":"atualizada","dino_6x1":"atualizada","dark_horse_prazo":"atualizada","to_transicao":"atualizada","mercado_10_11":"atualizada","ajuste_fiscal_pacote_11_11":"atualizada","rj_5_milhoes_dominio_armado":"atualizada","rj_zanin_segundo_turno":"atualizada","sp_virada_esportiva_desvio":"atualizada","nvidia_espia_jensen_huang":"atualizada","master_defesa_vorcaro_fachin_13_11":"atualizada","bb_agro_inadimplencia_13_11":"atualizada","seguranca_ministerio_crise_pf_13_11":"atualizada","papa_leao_peru_13_11":"atualizada","gilmar_moro_triplex_14_11":"novo","toffoli_contas_campanha_lula_14_11":"novo","fachin_suspende_prazos_microsoft_14_11":"novo","fachin_ministra_negra_stf_14_11":"novo","stf_ministros_relatorios_pf_vorcaro_14_11":"novo","pt_diretorio_ajuste_maioridade_ministerios_14_11":"novo","nubank_porto_real_bc_13_11":"novo","tesouro_ataque_hacker_14_11":"novo","diesel_subvencao_extra_14_11":"novo","mei_remissao_dividas_14_11":"novo","voos_eua_ground_stop_14_11":"novo","voos_eua_brasil_guarulhos_14_11":"novo","nova_orleans_petroleiro_cruzeiro_14_11":"novo","trump_xi_putin_shenzhen_14_11":"novo","ue_cinco_potencias_ucrania_14_11":"novo","rj_ruas_cupula_seguranca_14_11":"novo","rj_el_nino_plano_verao_14_11":"novo","sp_smart_sampa_inquerito_14_11":"novo","mg_cleitinho_jequitinhonha_prisional_14_11":"novo","ce_el_nino_emergencia_65_14_11":"novo","pe_raquel_lyra_ajuste_estados_14_11":"novo","pr_moro_kandir_604_14_11":"novo","ro_transicao_batalhao_agro_14_11":"novo","mt_alemt_orcamento_61_14_11":"novo"};
+var GIRO_FLAGS = {"Gilmar rebate Moro sobre o triplex":"novo","Toffoli cobra contas de Lula e Alckmin":"novo","Câmara contesta liminar de Dino":"novo","Nubank e o BC":"novo","Tesouro fora do ar":"novo","Diesel importado":"novo","Parada nacional de voos nos EUA":"novo","Trump, Xi e Putin em Shenzhen":"novo","Equipe europeia para a paz na Ucrânia":"novo","Ruas escolhe cúpula da segurança":"novo","Ceará decreta emergência":"novo","Moro e a Lei Kandir":"novo"};
+var HIST = {"flavio":["2026-11-05-04h","2026-11-05-07h"],"senado":["2026-11-05-04h","2026-11-06-11h"],"pronunciamento":["2026-11-05-04h","2026-11-05-07h"],"bets":["2026-11-05-04h","2026-11-05-04h"],"copom":["2026-11-05-04h","2026-11-05-19h"],"seletivo":["2026-11-05-04h","2026-11-06-07h"],"paes":["2026-11-05-04h","2026-11-05-04h"],"guandu":["2026-11-05-04h","2026-11-05-04h"],"novoguandu":["2026-11-05-04h","2026-11-05-04h"],"pj":["2026-11-05-04h","2026-11-05-04h"],"prefeitura":["2026-11-05-04h","2026-11-05-04h"],"light":["2026-11-05-04h","2026-11-05-04h"],"reis":["2026-11-05-04h","2026-11-05-04h"],"eua":["2026-11-05-04h","2026-11-05-19h"],"fuga":["2026-11-05-04h","2026-11-06-07h"],"congresso":["2026-11-05-04h","2026-11-05-15h"],"ldo":["2026-11-05-04h","2026-11-05-04h"],"ministerio":["2026-11-05-04h","2026-11-05-15h"],"desinfo":["2026-11-05-04h","2026-11-05-13h"],"fiscal":["2026-11-05-04h","2026-11-10-15h"],"sp":["2026-11-05-04h","2026-11-05-04h"],"mg":["2026-11-05-04h","2026-11-05-04h"],"ne":["2026-11-05-04h","2026-11-05-04h"],"sul":["2026-11-05-04h","2026-11-05-04h"],"norte":["2026-11-05-04h","2026-11-05-04h"],"co":["2026-11-05-04h","2026-11-05-04h"],"imprensa":["2026-11-05-04h","2026-11-05-04h"],"argentina":["2026-11-05-04h","2026-11-05-19h"],"maioridade":["2026-11-05-04h","2026-11-12-07h"],"vorcaro":["2026-11-05-04h","2026-11-05-19h"],"darkhorse":["2026-11-05-04h","2026-11-05-04h"],"marinho":["2026-11-05-04h","2026-11-05-19h"],"seis1x1":["2026-11-05-04h","2026-11-05-04h"],"tse":["2026-11-05-04h","2026-11-05-04h"],"pauta5":["2026-11-05-04h","2026-11-05-04h"],"segmin":["2026-11-05-04h","2026-11-06-07h"],"assedio":["2026-11-05-04h","2026-11-05-04h"],"meta":["2026-11-05-04h","2026-11-05-04h"],"lulasaude":["2026-11-05-04h","2026-11-05-04h"],"psdb":["2026-11-05-04h","2026-11-05-04h"],"orcamento":["2026-11-05-04h","2026-11-05-13h"],"betsaud":["2026-11-05-04h","2026-11-05-04h"],"sp_barba":["2026-11-05-04h","2026-11-05-04h"],"mg_tce":["2026-11-05-04h","2026-11-05-04h"],"mg_china":["2026-11-05-04h","2026-11-05-04h"],"mg_ipva":["2026-11-05-04h","2026-11-05-04h"],"ba_blocos":["2026-11-05-04h","2026-11-05-04h"],"ba_jeronimo":["2026-11-05-04h","2026-11-05-04h"],"pe_emprestimo":["2026-11-05-04h","2026-11-05-04h"],"ce_mpe":["2026-11-05-04h","2026-11-05-04h"],"ce_gastos":["2026-11-05-04h","2026-11-05-04h"],"ma_tce":["2026-11-05-04h","2026-11-05-04h"],"al_trans":["2026-11-05-04h","2026-11-05-04h"],"sc_alesc":["2026-11-05-04h","2026-11-05-04h"],"pr_cwb":["2026-11-05-04h","2026-11-05-04h"],"rs_zucco":["2026-11-05-04h","2026-11-05-04h"],"pa_parau":["2026-11-05-04h","2026-11-05-04h"],"ms_assoma":["2026-11-05-04h","2026-11-05-04h"],"ms_senado":["2026-11-05-04h","2026-11-05-04h"],"eua_pioneiros":["2026-11-05-04h","2026-11-05-04h"],"mei":["2026-11-05-07h","2026-11-05-07h"],"tarifas":["2026-11-05-07h","2026-11-05-07h"],"industria":["2026-11-05-13h","2026-11-05-13h"],"durigan":["2026-11-05-13h","2026-11-05-13h"],"ato_obsceno":["2026-11-05-13h","2026-11-05-13h"],"oea":["2026-11-05-13h","2026-11-05-13h"],"g20_trump":["2026-11-05-13h","2026-11-05-13h"],"sc_tornados":["2026-11-05-13h","2026-11-05-13h"],"paraguai":["2026-11-05-13h","2026-11-14-07h"],"franca":["2026-11-05-13h","2026-11-05-19h"],"israel":["2026-11-05-13h","2026-11-11-17h"],"hongkong":["2026-11-05-13h","2026-11-05-13h"],"messias":["2026-11-05-15h","2026-11-05-15h"],"sucessao":["2026-11-05-15h","2026-11-05-15h"],"reuniao_eco":["2026-11-05-15h","2026-11-05-15h"],"rj_pm":["2026-11-05-15h","2026-11-05-15h"],"rj_teto":["2026-11-05-15h","2026-11-05-15h"],"ce_oposicao":["2026-11-05-15h","2026-11-05-15h"],"ce_arma":["2026-11-05-15h","2026-11-05-15h"],"juicio":["2026-11-05-19h","2026-11-05-19h"],"ueno":["2026-11-05-19h","2026-11-05-19h"],"cpac":["2026-11-05-19h","2026-11-06-07h"],"mercado":["2026-11-05-19h","2026-11-06-19h"],"tse_name":["2026-11-05-19h","2026-11-05-19h"],"ms_seg":["2026-11-06-07h","2026-11-09-11h"],"brent":["2026-11-06-07h","2026-11-06-07h"],"wall_street":["2026-11-06-07h","2026-11-09-15h"],"rnest":["2026-11-06-07h","2026-11-06-07h"],"ba_lula":["2026-11-06-07h","2026-11-06-07h"],"cedears":["2026-11-06-07h","2026-11-06-07h"],"bomba_europa":["2026-11-06-07h","2026-11-06-12h"],"dino_6x1":["2026-11-06-11h","2026-11-14-07h"],"tse_novo":["2026-11-06-11h","2026-11-06-12h"],"nikolas":["2026-11-06-11h","2026-11-06-11h"],"ucrania_acordo":["2026-11-06-11h","2026-11-09-15h"],"zaporizhzhia":["2026-11-06-11h","2026-11-06-12h"],"pgdf_master":["2026-11-06-12h","2026-11-06-12h"],"lula_cop":["2026-11-06-12h","2026-11-11-11h"],"planalto_pena":["2026-11-06-12h","2026-11-06-12h"],"janones_live":["2026-11-06-12h","2026-11-06-12h"],"camisotti":["2026-11-06-12h","2026-11-06-12h"],"bolsonaros_eua":["2026-11-06-12h","2026-11-06-12h"],"bolsas_ia":["2026-11-06-12h","2026-11-06-15h"],"seletivo_vinho":["2026-11-06-12h","2026-11-06-15h"],"localiza":["2026-11-06-12h","2026-11-06-12h"],"sp_chuva":["2026-11-06-12h","2026-11-06-12h"],"sp_marcola":["2026-11-06-12h","2026-11-06-12h"],"sul_ana":["2026-11-06-12h","2026-11-06-12h"],"sul_frente":["2026-11-06-12h","2026-11-06-12h"],"trump_arco":["2026-11-06-12h","2026-11-06-12h"],"papa_leao":["2026-11-06-12h","2026-11-07-18h"],"payroll_out":["2026-11-06-15h","2026-11-06-15h"],"bradesco_pib":["2026-11-06-15h","2026-11-06-15h"],"balancos_3t":["2026-11-06-15h","2026-11-06-15h"],"ministerio_4mandato":["2026-11-06-15h","2026-11-06-15h"],"zelensky_madrid":["2026-11-06-15h","2026-11-06-15h"],"franca_greve":["2026-11-06-15h","2026-11-06-15h"],"hk_wong":["2026-11-06-15h","2026-11-06-15h"],"sc_chapeco":["2026-11-06-15h","2026-11-07-15h"],"sc_arabia":["2026-11-06-15h","2026-11-06-15h"],"am_honda":["2026-11-06-15h","2026-11-06-15h"],"lula_cnpe":["2026-11-06-19h","2026-11-06-19h"],"bolsonaro_wal":["2026-11-06-19h","2026-11-06-19h"],"dolar_maxima":["2026-11-06-19h","2026-11-06-19h"],"ueno_bank":["2026-11-06-19h","2026-11-11-17h"],"mg_ipva_simoes":["2026-11-06-19h","2026-11-06-19h"],"ce_aldigueri":["2026-11-06-19h","2026-11-06-19h"],"ce_mpox":["2026-11-06-19h","2026-11-06-19h"],"ira_proposta_catar":["2026-11-07-07h","2026-11-10-11h"],"tse_aije9":["2026-11-07-07h","2026-11-07-07h"],"dark_horse_prazo":["2026-11-07-07h","2026-11-14-07h"],"ibov_semana":["2026-11-07-07h","2026-11-09-07h"],"exp_petroleo":["2026-11-07-07h","2026-11-07-07h"],"petrobras_3t":["2026-11-07-07h","2026-11-07-07h"],"braga_relator":["2026-11-07-07h","2026-11-07-07h"],"alliana_perfil":["2026-11-07-07h","2026-11-07-07h"],"arco_trump":["2026-11-07-07h","2026-11-07-07h"],"zapo_53":["2026-11-07-07h","2026-11-07-07h"],"rubio_gabinete":["2026-11-07-07h","2026-11-07-07h"],"japao_sismo":["2026-11-07-07h","2026-11-07-07h"],"rj_paes_tre":["2026-11-07-07h","2026-11-07-07h"],"rj_adpf":["2026-11-07-07h","2026-11-07-07h"],"rj_alerj_gas":["2026-11-07-07h","2026-11-07-07h"],"sp_alesp_emendas":["2026-11-07-07h","2026-11-07-07h"],"mg_tce_clubes":["2026-11-07-07h","2026-11-07-07h"],"mg_transicao":["2026-11-07-07h","2026-11-07-07h"],"mt_russi":["2026-11-07-07h","2026-11-07-19h"],"ba_ponte":["2026-11-07-07h","2026-11-07-07h"],"pi_educacao":["2026-11-07-07h","2026-11-07-07h"],"ma_tce_transicao":["2026-11-07-07h","2026-11-07-07h"],"al_jhc_transicao":["2026-11-07-07h","2026-11-07-07h"],"am_transicao_reuniao":["2026-11-07-07h","2026-11-07-07h"],"pr_transicao":["2026-11-07-07h","2026-11-07-07h"],"rs_alerta":["2026-11-07-07h","2026-11-07-15h"],"congresso_direita":["2026-11-07-11h","2026-11-09-15h"],"alcolumbre_stf":["2026-11-07-11h","2026-11-08-11h"],"flavio_senado":["2026-11-07-11h","2026-11-11-17h"],"bets_stf":["2026-11-07-11h","2026-11-10-19h"],"papa_telegrama":["2026-11-07-11h","2026-11-07-11h"],"rn_transicao":["2026-11-07-11h","2026-11-11-07h"],"to_transicao":["2026-11-07-11h","2026-11-14-07h"],"lula_equipe_eco":["2026-11-07-15h","2026-11-10-11h"],"ministerio_40":["2026-11-07-15h","2026-11-10-11h"],"vr_va_interop":["2026-11-07-15h","2026-11-07-18h"],"sp_f1_2035":["2026-11-07-15h","2026-11-07-18h"],"sp_bras_desabamento":["2026-11-07-15h","2026-11-07-18h"],"sp_alesp_sucessao":["2026-11-07-15h","2026-11-08-19h"],"sp_jem_pacaembu":["2026-11-07-15h","2026-11-07-18h"],"ne_sertanejos":["2026-11-07-15h","2026-11-07-18h"],"pe_exoneracoes":["2026-11-07-15h","2026-11-07-19h"],"ms_riedel":["2026-11-07-15h","2026-11-07-15h"],"rs_pelotas":["2026-11-07-15h","2026-11-07-15h"],"ucrania_energia":["2026-11-07-15h","2026-11-10-11h"],"iemen_houthis":["2026-11-07-15h","2026-11-08-19h"],"arg_china_telecom":["2026-11-07-15h","2026-11-07-18h"],"pl_motta":["2026-11-07-19h","2026-11-11-11h"],"flavio_pesquisa":["2026-11-07-19h","2026-11-09-15h"],"tse_psol_se":["2026-11-07-19h","2026-11-07-19h"],"stf_pauta_nov":["2026-11-07-19h","2026-11-07-19h"],"enamed":["2026-11-07-19h","2026-11-07-19h"],"ucrania_abudhabi":["2026-11-07-19h","2026-11-11-17h"],"colombia_drones":["2026-11-07-19h","2026-11-08-19h"],"mg_aro_vorcaro":["2026-11-07-19h","2026-11-07-19h"],"mg_ameacas":["2026-11-07-19h","2026-11-09-15h"],"rj_volta_redonda":["2026-11-07-19h","2026-11-09-15h"],"rs_salarios":["2026-11-07-19h","2026-11-09-11h"],"nz_eleicao":["2026-11-08-07h","2026-11-10-11h"],"mg_cleitinho_shows":["2026-11-08-07h","2026-11-09-15h"],"quaest_pos_eleicao":["2026-11-08-11h","2026-11-08-15h"],"ira_iron_gate":["2026-11-08-11h","2026-11-08-11h"],"mercado_semana":["2026-11-08-11h","2026-11-10-11h"],"sp_pacaembu_show":["2026-11-08-11h","2026-11-09-15h"],"orcamento_2027":["2026-11-08-15h","2026-11-09-19h"],"argentina_risco_pais":["2026-11-08-15h","2026-11-08-15h"],"mg_transicao_fase_final":["2026-11-08-15h","2026-11-09-19h"],"tre_rj_totalizacao":["2026-11-08-15h","2026-11-09-15h"],"cedae_nexxus":["2026-11-08-15h","2026-11-09-15h"],"tse_21_acoes":["2026-11-08-19h","2026-11-10-11h"],"cop31_antalya":["2026-11-08-19h","2026-11-11-11h"],"amsterda_linha_vermelha":["2026-11-08-19h","2026-11-08-19h"],"el_hierro":["2026-11-08-19h","2026-11-08-19h"],"cracovia":["2026-11-08-19h","2026-11-08-19h"],"gaza_enchentes":["2026-11-08-19h","2026-11-08-19h"],"eua_meio_mandato_placar":["2026-11-08-19h","2026-11-09-19h"],"franca_custo_vida":["2026-11-08-19h","2026-11-08-19h"],"lula_fala_nacao":["2026-11-08-19h","2026-11-10-11h"],"agenda_semana":["2026-11-09-07h","2026-11-10-15h"],"khor_mor":["2026-11-09-07h","2026-11-09-11h"],"mexico_cjng_r2":["2026-11-09-07h","2026-11-09-11h"],"focus_selic_13_75":["2026-11-09-11h","2026-11-10-19h"],"motta_alcolumbre_comitiva":["2026-11-09-11h","2026-11-09-19h"],"sp_tarcisio_secretariado":["2026-11-09-11h","2026-11-09-11h"],"pr_moro_secretarios":["2026-11-09-11h","2026-11-09-11h"],"am_estiagem_boletim":["2026-11-09-11h","2026-11-09-11h"],"ro_redano_interino":["2026-11-09-11h","2026-11-09-11h"],"bc_diretorias":["2026-11-09-15h","2026-11-09-15h"],"to_transicao_vicentinho":["2026-11-09-15h","2026-11-09-15h"],"ms_dialogo_pos_eleicao":["2026-11-09-15h","2026-11-09-15h"],"sudao_haroun":["2026-11-09-15h","2026-11-09-15h"],"argentina_governadores":["2026-11-09-15h","2026-11-11-17h"],"senado_pauta_10_11":["2026-11-09-19h","2026-11-10-19h"],"lula_sri_centrao":["2026-11-09-19h","2026-11-10-11h"],"trf1_kassio_lula":["2026-11-09-19h","2026-11-09-19h"],"supersalarios_ongs":["2026-11-09-19h","2026-11-09-19h"],"rj_alerj_concessoes":["2026-11-09-19h","2026-11-09-19h"],"copom_ata":["2026-11-10-11h","2026-11-11-17h"],"mercado_10_11":["2026-11-10-11h","2026-11-14-07h"],"paraguai_cupula":["2026-11-10-11h","2026-11-11-17h"],"pena_cofre":["2026-11-10-11h","2026-11-11-17h"],"mt_loa_retirada":["2026-11-10-11h","2026-11-10-11h"],"df_celina_ajuste":["2026-11-10-11h","2026-11-10-11h"],"ba_metro_alstom":["2026-11-10-11h","2026-11-10-11h"],"ce_alece_pl":["2026-11-10-11h","2026-11-10-11h"],"al_ceasa":["2026-11-10-11h","2026-11-10-11h"],"sp_obras_superfaturamento":["2026-11-10-11h","2026-11-10-11h"],"to_pm_comando":["2026-11-10-11h","2026-11-10-11h"],"petrobras_balanco":["2026-11-10-15h","2026-11-11-17h"],"combustiveis_decreto":["2026-11-10-15h","2026-11-11-17h"],"lula_antalia_comitiva":["2026-11-10-15h","2026-11-11-17h"],"maioridade_audiencias":["2026-11-10-15h","2026-11-11-07h"],"espanha_eleicao":["2026-11-10-15h","2026-11-10-19h"],"peru_fujimori":["2026-11-10-15h","2026-11-11-17h"],"bolivia_urquidi":["2026-11-10-15h","2026-11-10-15h"],"pe_tjpe":["2026-11-10-15h","2026-11-10-15h"],"ueno_pagamentos":["2026-11-10-19h","2026-11-11-07h"],"rj_alerj_orcamento":["2026-11-10-19h","2026-11-10-19h"],"escazu_cre":["2026-11-11-07h","2026-11-11-17h"],"mps_rurais_exportadores":["2026-11-11-07h","2026-11-11-17h"],"nikolas_celulares_senado":["2026-11-11-07h","2026-11-11-07h"],"dallagnol_tse_pauta":["2026-11-11-07h","2026-11-11-07h"],"dino_tecnologia_eleicoes":["2026-11-11-07h","2026-11-11-07h"],"cbs_senado_aliquota":["2026-11-11-07h","2026-11-11-07h"],"braskem_capitalizacao":["2026-11-11-07h","2026-11-11-07h"],"balancos_10_11":["2026-11-11-07h","2026-11-11-07h"],"espanha_greve_geral":["2026-11-11-07h","2026-11-12-07h"],"eua_tarifas_300":["2026-11-11-07h","2026-11-11-07h"],"eua_senado_mississippi_alasca":["2026-11-11-07h","2026-11-11-17h"],"rj_qav_galeao":["2026-11-11-07h","2026-11-11-07h"],"rj_aije_paes_ruas":["2026-11-11-07h","2026-11-11-07h"],"mg_cleitinho_alm":["2026-11-11-07h","2026-11-11-07h"],"mg_tarifa_zero_rmbh":["2026-11-11-07h","2026-11-11-07h"],"mg_cleitinho_cpi_shows":["2026-11-11-07h","2026-11-11-07h"],"df_cldf_reeleicao_mesa":["2026-11-11-07h","2026-11-11-07h"],"df_ploa_social":["2026-11-11-07h","2026-11-11-07h"],"ms_pl_paulo_correa_alems":["2026-11-11-07h","2026-11-11-07h"],"mt_reforma_pivetta_rga":["2026-11-11-07h","2026-11-11-07h"],"ba_alba_17_projetos":["2026-11-11-07h","2026-11-11-07h"],"ce_alece_presidencia_romeu":["2026-11-11-07h","2026-11-11-07h"],"ce_margem_equatorial_empregos":["2026-11-11-07h","2026-11-11-07h"],"pe_compesa_barragens":["2026-11-11-07h","2026-11-11-07h"],"ac_loa_2027_suspensa":["2026-11-11-07h","2026-11-11-07h"],"ro_ale_suspende_pagamentos":["2026-11-11-07h","2026-11-11-07h"],"to_aleto_ldo_cultura":["2026-11-11-07h","2026-11-11-07h"],"brasil_mapa_fosseis":["2026-11-11-11h","2026-11-11-11h"],"pf_master_delegados":["2026-11-11-16h","2026-11-11-17h"],"fim_inquerito_fake_news":["2026-11-11-16h","2026-11-11-17h"],"ajuste_fiscal_pacote_11_11":["2026-11-11-16h","2026-11-14-07h"],"cbs_prazo_pressao_adiar":["2026-11-11-16h","2026-11-11-16h"],"operacao_refit_magro":["2026-11-11-16h","2026-11-12-07h"],"maioridade_penal_alcolumbre":["2026-11-11-16h","2026-11-11-16h"],"mp_bets_prorrogada":["2026-11-11-16h","2026-11-11-16h"],"rj_5_milhoes_dominio_armado":["2026-11-11-16h","2026-11-14-07h"],"rj_zanin_segundo_turno":["2026-11-11-16h","2026-11-14-07h"],"sp_virada_esportiva_desvio":["2026-11-11-16h","2026-11-14-07h"],"sp_renan_santos_prefeitura":["2026-11-11-16h","2026-11-11-16h"],"quaest_partidos_pl_pt":["2026-11-11-16h","2026-11-11-16h"],"europa_ameacas_bomba_escolas":["2026-11-11-16h","2026-11-11-16h"],"portugal_tempestade_charles":["2026-11-11-16h","2026-11-11-16h"],"nvidia_espia_jensen_huang":["2026-11-11-16h","2026-11-14-07h"],"ira_argentina_nuclear":["2026-11-11-16h","2026-11-11-16h"],"darchiev_gaza":["2026-11-11-16h","2026-11-11-16h"],"tse_multa_meta_fundo_partidario":["2026-11-11-16h","2026-11-11-16h"],"rs_stj_boate_kiss_penas":["2026-11-11-16h","2026-11-11-16h"],"rs_rio_uruguai_alerta_vermelho":["2026-11-11-16h","2026-11-11-16h"],"sc_blindagem_digital_mandados_bnmp":["2026-11-11-16h","2026-11-11-16h"],"sc_operacao_recycling_lavagem_itajai":["2026-11-11-16h","2026-11-11-16h"],"pr_movimento_pela_vida_rodovias":["2026-11-11-16h","2026-11-11-16h"],"sp_tarcisio_flavio_2030":["2026-11-11-16h","2026-11-11-16h"],"sp_tarcisio_secretariado_salles":["2026-11-11-16h","2026-11-11-16h"],"mg_cleitinho_lula_divida_propag":["2026-11-11-16h","2026-11-11-16h"],"mg_cleitinho_secretariado_medidas":["2026-11-11-16h","2026-11-11-16h"],"ac_mailza_cop31_carbono_amazonia2050":["2026-11-11-16h","2026-11-11-16h"],"pb_alpb_presidencia_acordo_republicanos":["2026-11-11-17h","2026-11-11-17h"],"pe_raquel_lyra_exonera_150_pl":["2026-11-11-17h","2026-11-11-17h"],"se_racionamento_grande_aracaju_poxim":["2026-11-11-17h","2026-11-11-17h"],"ma_cartorios_mortes_acoes_policiais_cnj":["2026-11-11-17h","2026-11-11-17h"],"pi_mppi_hut_pacientes_cardiacos":["2026-11-11-17h","2026-11-11-17h"],"am_abatedouro_flutuante_jacares":["2026-11-11-17h","2026-11-11-17h"],"ap_gaeco_gabinete_empresarial_alap":["2026-11-11-17h","2026-11-11-17h"],"rr_cnj_pad_desembargadores_tjrr":["2026-11-11-17h","2026-11-11-17h"],"df_brb_acao_ex_gestores_master":["2026-11-11-17h","2026-11-11-17h"],"mt_vg_camara_mesa_justica_48h":["2026-11-11-17h","2026-11-11-17h"],"ms_santa_casa_greve_enfermagem_intervencao":["2026-11-11-17h","2026-11-11-17h"],"rj_alerj_transparencia_ultimo_lugar":["2026-11-11-17h","2026-11-11-17h"],"rj_mata_maravilha_torres_porto":["2026-11-11-17h","2026-11-11-17h"],"es_pazolini_exoneracao_comissionados":["2026-11-11-17h","2026-11-11-17h"],"mg_mpmg_lista_triplice_pgj":["2026-11-11-17h","2026-11-11-17h"],"pr_codigo_florestal_alep_audiencia":["2026-11-11-17h","2026-11-11-17h"],"lula_delcy_antalia":["2026-11-11-17h","2026-11-12-07h"],"heleno_visitas_damares_malta":["2026-11-11-17h","2026-11-11-17h"],"fhc_video_indiciado":["2026-11-11-17h","2026-11-12-07h"],"oas_triplex_leilao_2_4_mi":["2026-11-11-17h","2026-11-11-17h"],"senado_iphones_celulares":["2026-11-11-17h","2026-11-11-17h"],"sp_orcamento_2027_audiencias_butanta":["2026-11-11-17h","2026-11-11-17h"],"fachin_relatorio_pf_indicio_crime":["2026-11-11-19h","2026-11-11-19h"],"poupanca_saques_outubro_sexto_mes":["2026-11-11-19h","2026-11-11-19h"],"ira_rezaei_bases_europa":["2026-11-11-19h","2026-11-11-19h"],"trump_carta_biden_livro":["2026-11-11-19h","2026-11-11-19h"],"rj_campopiano_medalha_chiquinha":["2026-11-11-19h","2026-11-11-19h"],"sp_tarcisio_secretario_ciencia_ita":["2026-11-11-19h","2026-11-11-19h"],"pgr_mantem_prisao_vorcaro":["2026-11-12-07h","2026-11-12-07h"],"camara_hediondo_maus_tratos_animais":["2026-11-12-07h","2026-11-12-07h"],"pf_celular_ameacas_ana_elisa":["2026-11-12-07h","2026-11-12-07h"],"bb_lucro_3t26_queda_agro":["2026-11-12-07h","2026-11-12-07h"],"trancoso_faccao_operacao_ba":["2026-11-12-07h","2026-11-12-07h"],"alcolumbre_motta_ultimato_stf_cop":["2026-11-12-07h","2026-11-12-07h"],"ipca_outubro_12_11":["2026-11-12-11h","2026-11-12-11h"],"cop31_lula_pezeshkian":["2026-11-12-11h","2026-11-12-11h"],"cop31_tfff_lula_sem_voz":["2026-11-12-11h","2026-11-12-11h"],"brooklyn_desabamento_predio":["2026-11-12-11h","2026-11-12-11h"],"biden_leite_irlanda":["2026-11-12-11h","2026-11-12-11h"],"rj_copacabana_atropelamento":["2026-11-12-11h","2026-11-12-11h"],"raoni_documentario_cop31":["2026-11-12-11h","2026-11-12-11h"],"credito_149_12_11":["2026-11-12-16h","2026-11-12-16h"],"federacao_psb_pdt_12_11":["2026-11-12-16h","2026-11-12-16h"],"rj_retotalizacao_12_11":["2026-11-12-16h","2026-11-12-16h"],"ucrania_putin_enviados_trump":["2026-11-12-18h","2026-11-12-18h"],"imposto_seletivo_cigarro_emendas":["2026-11-12-18h","2026-11-12-18h"],"restos_mortais_escravizados_repatriados":["2026-11-12-18h","2026-11-12-18h"],"regina_torne_morre":["2026-11-12-18h","2026-11-12-18h"],"lutador_vizinhas_rio_justica":["2026-11-12-18h","2026-11-12-18h"],"mpf_ilha_willer_tomaz_richarlison":["2026-11-12-18h","2026-11-12-18h"],"itacare_turistas_israelenses_conflito":["2026-11-12-18h","2026-11-13-07h"],"sp_linha8_diamante_falha_trilhos":["2026-11-12-18h","2026-11-12-18h"],"covid_xfg_avanca_brasil":["2026-11-12-18h","2026-11-12-18h"],"zanin_nega_liminar_psd_2turno_rj":["2026-11-12-19h","2026-11-12-19h"],"milton_leite_reu_pcc":["2026-11-12-19h","2026-11-12-19h"],"stf_violencia_patrimonial_mulher":["2026-11-12-19h","2026-11-12-19h"],"alcolumbre_cpmi_master_leitura":["2026-11-12-19h","2026-11-12-19h"],"fachin_prorroga_inquerito_ciro_nogueira":["2026-11-12-19h","2026-11-13-07h"],"microsoft_outlook_falha_12_11":["2026-11-12-19h","2026-11-12-19h"],"caixa_seguridade_vazamento_dados":["2026-11-12-19h","2026-11-12-19h"],"anvisa_recolhe_insumos_tirzepatida":["2026-11-12-19h","2026-11-12-19h"],"drauzio_varella_abl":["2026-11-12-19h","2026-11-12-19h"],"gaza_hospital_ataque_12_11":["2026-11-12-19h","2026-11-12-19h"],"eua_tiroteio_casa_branca_12_11":["2026-11-12-19h","2026-11-12-19h"],"ira_radar_bahrein_13_11":["2026-11-13-07h","2026-11-13-07h"],"lula_filipinas_asean_13_11":["2026-11-13-07h","2026-11-13-07h"],"mello_araujo_2028_13_11":["2026-11-13-07h","2026-11-13-07h"],"master_defesa_vorcaro_fachin_13_11":["2026-11-13-07h","2026-11-14-07h"],"bb_agro_inadimplencia_13_11":["2026-11-13-11h","2026-11-14-07h"],"meta_eleicoes_recorde_13_11":["2026-11-13-11h","2026-11-13-11h"],"uber_passe_motoristas_13_11":["2026-11-13-11h","2026-11-13-11h"],"seguranca_ministerio_crise_pf_13_11":["2026-11-13-11h","2026-11-14-07h"],"papa_leao_peru_13_11":["2026-11-13-11h","2026-11-14-07h"],"xi_taiwan_13_11":["2026-11-13-11h","2026-11-13-11h"],"gilmar_moro_triplex_14_11":["2026-11-14-07h","2026-11-14-07h"],"toffoli_contas_campanha_lula_14_11":["2026-11-14-07h","2026-11-14-07h"],"fachin_suspende_prazos_microsoft_14_11":["2026-11-14-07h","2026-11-14-07h"],"fachin_ministra_negra_stf_14_11":["2026-11-14-07h","2026-11-14-07h"],"stf_ministros_relatorios_pf_vorcaro_14_11":["2026-11-14-07h","2026-11-14-07h"],"pt_diretorio_ajuste_maioridade_ministerios_14_11":["2026-11-14-07h","2026-11-14-07h"],"nubank_porto_real_bc_13_11":["2026-11-14-07h","2026-11-14-07h"],"tesouro_ataque_hacker_14_11":["2026-11-14-07h","2026-11-14-07h"],"diesel_subvencao_extra_14_11":["2026-11-14-07h","2026-11-14-07h"],"mei_remissao_dividas_14_11":["2026-11-14-07h","2026-11-14-07h"],"voos_eua_ground_stop_14_11":["2026-11-14-07h","2026-11-14-07h"],"voos_eua_brasil_guarulhos_14_11":["2026-11-14-07h","2026-11-14-07h"],"nova_orleans_petroleiro_cruzeiro_14_11":["2026-11-14-07h","2026-11-14-07h"],"trump_xi_putin_shenzhen_14_11":["2026-11-14-07h","2026-11-14-07h"],"ue_cinco_potencias_ucrania_14_11":["2026-11-14-07h","2026-11-14-07h"],"rj_ruas_cupula_seguranca_14_11":["2026-11-14-07h","2026-11-14-07h"],"rj_el_nino_plano_verao_14_11":["2026-11-14-07h","2026-11-14-07h"],"sp_smart_sampa_inquerito_14_11":["2026-11-14-07h","2026-11-14-07h"],"mg_cleitinho_jequitinhonha_prisional_14_11":["2026-11-14-07h","2026-11-14-07h"],"ce_el_nino_emergencia_65_14_11":["2026-11-14-07h","2026-11-14-07h"],"pe_raquel_lyra_ajuste_estados_14_11":["2026-11-14-07h","2026-11-14-07h"],"pr_moro_kandir_604_14_11":["2026-11-14-07h","2026-11-14-07h"],"ro_transicao_batalhao_agro_14_11":["2026-11-14-07h","2026-11-14-07h"],"mt_alemt_orcamento_61_14_11":["2026-11-14-07h","2026-11-14-07h"]};
 /* ===== FIM DOS DADOS ===== */
