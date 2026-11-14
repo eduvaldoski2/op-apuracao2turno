@@ -1,0 +1,186 @@
+fontes com itens: 137/185
+OK 200  53 O Globo
+-- 200   0 O Globo (feed)
+OK 200  70 Folha
+OK 200  40 Folha (em cima da hora)
+OK 200  40 Folha (poder)
+OK 200  40 Folha (mercado)
+OK 200  40 Folha (mundo)
+OK 200  35 Estadão
+OK 200  22 Estadão (política)
+OK 200  10 g1
+OK 200  40 g1 (política)
+OK 200  40 g1 (economia)
+OK 200  40 g1 (mundo)
+OK 200  20 Agência Brasil
+OK 200  10 Agência Brasil (feed)
+OK 200  10 Agência Brasil (política)
+OK 200  10 Agência Brasil (economia)
+OK 200  10 Agência Brasil (internacional)
+OK 200  20 Agência Câmara
+-- 404   0 Agência Senado
+OK 200  70 UOL
+OK 200  15 UOL (feed)
+OK 200  40 CNN Brasil
+OK 200  10 Poder360
+OK 200  20 Metrópoles
+OK 200  70 Correio Braziliense
+OK 200  69 Valor Econômico
+OK 200  10 InfoMoney
+OK 200  30 BBC Brasil
+OK 200  40 DW Brasil
+-- 200   0 Gazeta do Povo
+OK 200  20 CartaCapital
+-- 0   0 Congresso em Foco fetch failed
+-- 200   0 Jota
+-- 404   0 R7
+OK 200  70 Terra
+OK 200  25 Exame
+OK 200  70 Veja
+OK 200  40 Brasil de Fato
+OK 200  40 Intercept Brasil
+OK 200  70 O Tempo
+OK 200  70 GZH
+OK 200  70 Estado de Minas
+OK 200  70 Diário de Pernambuco
+-- 404   0 Migalhas
+-- 401   0 Reuters Brasil
+OK 200   3 Poder360 (capa)
+OK 200   7 [AC] g1 AC
+-- 200   0 [AC] g1 AC (feed)
+OK 200  20 [AC] ac24horas
+OK 200  20 [AC] A Gazeta do Acre
+-- 200   0 [AC] ContilNet
+OK 200   7 [AL] g1 AL
+-- 200   0 [AL] g1 AL (feed)
+OK 200  20 [AL] Gazeta de Alagoas
+OK 200  30 [AL] TNH1
+OK 200  54 [AL] Tribuna Hoje
+OK 200   6 [AP] g1 AP
+-- 200   0 [AP] g1 AP (feed)
+OK 200  10 [AP] Seles Nafes
+OK 200  10 [AP] Diário do Amapá
+-- 0   0 [AP] Agência Amapá fetch failed
+OK 200   8 [AM] g1 AM
+-- 200   0 [AM] g1 AM (feed)
+OK 200  10 [AM] A Crítica
+-- 403   0 [AM] Amazonas Atual
+-- 403   0 [AM] D24AM
+OK 200   8 [BA] g1 BA
+OK 200  40 [BA] g1 BA (feed)
+OK 200  64 [BA] Correio
+OK 200  70 [BA] A Tarde
+OK 200  24 [BA] Bahia Notícias
+OK 200  41 [BA] Metro1
+OK 200   8 [CE] g1 CE
+OK 200  40 [CE] g1 CE (feed)
+OK 200  19 [CE] Diário do Nordeste
+OK 200  59 [CE] O Povo
+-- 0   0 [CE] Tribuna do Ceará fetch failed
+OK 200   5 [DF] g1 DF
+OK 200  40 [DF] g1 DF (feed)
+OK 200  20 [DF] Metrópoles DF
+OK 200  20 [DF] Jornal de Brasília
+OK 200  58 [DF] Agência Brasília
+OK 200   7 [ES] g1 ES
+OK 200  40 [ES] g1 ES (feed)
+OK 200  10 [ES] Folha Vitória
+-- 200   0 [ES] A Gazeta ES
+OK 200  37 [ES] Século Diário
+OK 200   7 [GO] g1 GO
+OK 200  40 [GO] g1 GO (feed)
+-- 200   0 [GO] O Popular
+-- 403   0 [GO] Jornal Opção
+-- 403   0 [GO] Mais Goiás
+OK 200   7 [MA] g1 MA
+-- 200   0 [MA] g1 MA (feed)
+OK 200  20 [MA] O Imparcial
+OK 200  70 [MA] Imirante
+OK 200  15 [MA] O Estado MA
+OK 200   7 [MT] g1 MT
+OK 200  40 [MT] g1 MT (feed)
+OK 200  53 [MT] Gazeta Digital
+OK 200  70 [MT] Olhar Direto
+-- 403   0 [MT] FolhaMax
+OK 200   7 [MS] g1 MS
+OK 200  40 [MS] g1 MS (feed)
+-- 403   0 [MS] Campo Grande News
+OK 200  30 [MS] Correio do Estado
+-- 403   0 [MS] Midiamax
+OK 200   9 [MG] g1 MG
+OK 200  40 [MG] g1 MG (feed)
+OK 200  70 [MG] O Tempo
+OK 200  20 [MG] Estado de Minas
+OK 200  70 [MG] Itatiaia
+OK 200   7 [PA] g1 PA
+-- 200   0 [PA] g1 PA (feed)
+OK 200  70 [PA] O Liberal
+OK 200  40 [PA] Diário do Pará
+OK 200  31 [PA] Agência Pará
+OK 200   7 [PB] g1 PB
+-- 200   0 [PB] g1 PB (feed)
+OK 200  40 [PB] Jornal da Paraíba
+OK 200  20 [PB] ClickPB
+OK 200  10 [PB] Paraíba Online
+OK 200   7 [PR] g1 PR
+-- 200   0 [PR] g1 PR (feed)
+OK 200  24 [PR] Gazeta do Povo PR
+OK 200  14 [PR] Bem Paraná
+-- 403   0 [PR] Plural
+OK 200  65 [PR] AEN-PR
+OK 200   9 [PE] g1 PE
+OK 200  40 [PE] g1 PE (feed)
+OK 200  70 [PE] Diario de Pernambuco
+OK 200  70 [PE] Folha de Pernambuco
+OK 200  58 [PE] JC
+OK 200   8 [PI] g1 PI
+-- 200   0 [PI] g1 PI (feed)
+OK 200  70 [PI] Meio Norte
+-- 403   0 [PI] Cidade Verde
+-- 403   0 [PI] 180graus
+OK 200   9 [RJ] g1 RJ
+OK 200  40 [RJ] g1 RJ (feed)
+OK 200  66 [RJ] O Dia
+OK 200  36 [RJ] Extra
+-- 403   0 [RJ] O Fluminense
+OK 200  38 [RJ] Diário do Rio
+OK 200   6 [RN] g1 RN
+-- 200   0 [RN] g1 RN (feed)
+OK 200   5 [RN] Tribuna do Norte
+-- 403   0 [RN] Nova Notícias
+-- 403   0 [RN] Saiba Mais
+OK 200   6 [RS] g1 RS
+-- 200   0 [RS] g1 RS (feed)
+OK 200  70 [RS] GZH
+OK 200  70 [RS] Correio do Povo
+OK 200  50 [RS] Jornal do Comércio
+OK 200   6 [RO] g1 RO
+-- 200   0 [RO] g1 RO (feed)
+OK 200  70 [RO] Rondônia ao Vivo
+OK 200  44 [RO] Tudo Rondônia
+OK 200  40 [RO] News Rondônia
+OK 200   7 [RR] g1 RR
+-- 200   0 [RR] g1 RR (feed)
+OK 200  10 [RR] Folha BV
+-- 403   0 [RR] Roraima em Tempo
+-- 0   0 [RR] Agência Roraima fetch failed
+OK 200   8 [SC] g1 SC
+-- 200   0 [SC] g1 SC (feed)
+-- 403   0 [SC] NSC Total
+OK 200  20 [SC] ND Mais
+OK 200  20 [SC] Notícias do Dia
+OK 200  11 [SP] g1 SP
+OK 200  40 [SP] g1 SP (feed)
+OK 200  10 [SP] Agência SP
+OK 200  56 [SP] Diário do Grande ABC
+OK 200  20 [SP] Metrópoles SP
+OK 200   6 [SE] g1 SE
+-- 200   0 [SE] g1 SE (feed)
+OK 200  10 [SE] Infonet
+-- 503   0 [SE] F5 News
+-- 403   0 [SE] Jornal da Cidade SE
+OK 200   7 [TO] g1 TO
+-- 200   0 [TO] g1 TO (feed)
+-- 200   0 [TO] Jornal do Tocantins
+OK 200  40 [TO] Conexão Tocantins
+OK 200  44 [TO] T1 Notícias
