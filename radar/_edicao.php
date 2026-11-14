@@ -11176,7 +11176,7 @@ ORDER.regioes = _top(ORDER.regioes, ['rj_5_milhoes_dominio_armado','rj_zanin_seg
 
 /* ===== EDIÇÃO 17h de 11/11 (extra): regiões ===== */
 EDICAO.hora='16h';
-_N( {ed:'regioes', reg:'sul', k:'Regiões · Rio Grande do Sul', hora:'11/11', semAtores:true,
+_N('rs_stj_boate_kiss_penas', {ed:'regioes', reg:'sul', k:'Regiões · Rio Grande do Sul', hora:'11/11', semAtores:true,
  t:'STJ aumenta as penas de dois sócios da Boate Kiss: Elissandro Spohr pega 14 anos e 4 meses e Mauro Hoffmann, 13 anos e 2 meses',
  sub:'A Sexta Turma decidiu na terça (10) e manteve as condenações por homicídio; os dois começam a cumprir pena em regime fechado.',
  dado:{n:'14 anos e 4 meses', l:'Nova pena de Elissandro Spohr, que tinha 12 anos no TJRS · CNN Brasil'},
@@ -11227,7 +11227,7 @@ O alerta vermelho vale até a quarta-feira (11). Itaqui e Uruguaiana, onde o ní
 - Se o alerta será renovado, rebaixado ou encerrado após a quarta-feira (11).`,
  fontes:[['CNN Brasil (Defesa Civil emite alerta vermelho para o Rio Uruguai)','https://www.cnnbrasil.com.br/nacional/sul/rs/defesa-civil-emite-alerta-vermelho-de-inundacao-para-o-rio-uruguai/'],['Jornal do Comércio (inundação do Rio Uruguai atinge três cidades)','https://www.jornaldocomercio.com/jornal-cidades/2026/10/1266743-inundacao-do-rio-uruguai-atinge-tres-cidades-do-rio-grande-do-sul.html'],['Brasil de Fato (tornados e El Niño muito forte)','https://www.brasildefato.com.br/2026/11/09/tornados-atingem-cinco-municipios-do-rs-em-meio-a-el-nino-muito-forte/']]});
 
-_N( {ed:'regioes', reg:'sul', k:'Regiões · Santa Catarina', hora:'11/11', semAtores:true,
+_N('sc_blindagem_digital_mandados_bnmp', {ed:'regioes', reg:'sul', k:'Regiões · Santa Catarina', hora:'11/11', semAtores:true,
  t:'MPSC faz a Operação Blindagem Digital contra suspeita de fraude no sistema de mandados de prisão, com 10 mandados em Santa Catarina e no Paraná',
  sub:'Investigadores apuram se registros do BNMP foram alterados ou apagados mediante pagamento de R$ 8 mil a R$ 10 mil por intervenção.',
  dado:{n:'R$ 8 mil a R$ 10 mil', l:'Valor que, segundo a investigação, teria sido pago por cada intervenção no sistema · CNN Brasil'},
@@ -11359,7 +11359,7 @@ A nomeação de Salles depende de publicação no Diário Oficial, prevista pelo
 - O espaço do União Brasil, partido cujo líder estadual, Milton Leite, está preso desde setembro, segundo a coluna do Metrópoles.`,
  fontes:[['A Voz do Campo (CBN: Salles na Justiça)','https://avozdocampo.com/bahia/nomeacao-de-salles-para-secretaria-da-justica-em-sp-e-dada-como-certa-por-interlocutores-de-tarcisio/'],['Brasil em Folhas (Tarcísio nomeia Natália Resende)','https://brasilemfolhas.com.br/2026/11/tarcisio-de-freitas-nomeia-natalia-resende-para-o-planejamento/'],['Metrópoles (União escanteado na montagem do governo)','https://www.metropoles.com/colunas/vinicius-passarelli/com-lider-preso-uniao-e-escanteado-por-tarcisio-na-montagem-de-governo']]});
 
-_N( {ed:'regioes', reg:'mg', k:'Regiões · Minas Gerais', hora:'11/11',
+_N('mg_cleitinho_lula_divida_propag', {ed:'regioes', reg:'mg', k:'Regiões · Minas Gerais', hora:'11/11',
  t:'Cleitinho prepara com Marília Campos proposta sobre a dívida de Minas para levar a Lula; encontro ainda não tem data',
  sub:'Governador eleito fala em reunião ainda neste ano; relatos à CNN indicam conversa só no início de 2027. Dívida com a União é de cerca de R$ 187 bilhões.',
  resumo:'O governador eleito de Minas, Cleitinho Azevedo (Republicanos), disse a O Tempo na terça (10) que quer se reunir com o presidente Lula (PT) ainda neste ano, depois da volta do petista da COP31, e levará uma proposta elaborada com a senadora eleita Marília Campos (PT) para renegociar a dívida do estado com a União, de cerca de R$ 187 bilhões. A CNN Brasil informa que Lula admite negociar, mas pretende receber Cleitinho no início de 2027. Não há data marcada, e o conteúdo da proposta não foi divulgado.',
@@ -12524,7 +12524,7 @@ O TJRR disse em nota que tomou conhecimento da decisão, respeita as determinaç
 - A identidade dos magistrados e advogados que teriam sido favorecidos e o processo da apelação cível citado na acusação.`,
  fontes:[['Folha BV (CNJ investiga dois desembargadores de Roraima por suspeita de parcialidade)','https://www.folhabv.com.br/cotidiano/cnj-investiga-dois-desembargadores-de-roraima-por-suspeita-de-parcialidade/'],['AC24horas (Dois desembargadores viram alvos do CNJ por suspeita de favorecimento)','https://ac24horas.com/2026/11/11/escandalo-no-judiciario-de-roraima-dois-desembargadores-viram-alvos-do-cnj-por-suspeita-de-favorecimento/'],['NC News (CNJ investiga dois desembargadores de Roraima)','https://ncnews.com.br/2026/11/11/cnj-investiga-desembargadores-roraima/']]});
 
-_N( {ed:'regioes', reg:'co', k:'Regiões · Distrito Federal', hora:'11/11',
+_N('df_brb_acao_ex_gestores_master', {ed:'regioes', reg:'co', k:'Regiões · Distrito Federal', hora:'11/11',
  t:'BRB processa o ex-presidente Paulo Henrique Costa e mais seis ex-administradores por perdas com o Master e pede bloqueio de bens',
  sub:'Banco pede indisponibilidade de seis imóveis de luxo avaliados em R$ 146,5 milhões; valor da causa, R$ 1 milhão, é só para custas, e o prejuízo será apurado depois.',
  resumo:'O BRB ajuizou na terça (10) ação de responsabilidade civil contra o ex-presidente Paulo Henrique Costa e seis ex-administradores por prejuízos com a compra de carteiras de crédito do Banco Master. Em caráter liminar, pede a indisponibilidade dos bens dos réus e de seis imóveis em São Paulo e Brasília apontados pela Polícia Federal como vantagem indevida. A causa vale R$ 1 milhão apenas para custas, e o valor final será apurado na liquidação. A defesa de Costa nega irregularidades. A ação foi autorizada pelos acionistas em agosto.',
@@ -17036,7 +17036,7 @@ NUMS 91 anos|idade ao morrer;13/11|dia da morte e do lançamento do álbum;10/11
 });
 
 
-['operacao_refit_magro','sp_renan_santos_prefeitura','rs_stj_boate_kiss_penas','rs_rio_uruguai_alerta_vermelho','sc_blindagem_digital_mandados_bnmp','sc_operacao_recycling_lavagem_itajai','sp_tarcisio_flavio_2030','mg_cleitinho_lula_divida_propag','ac_mailza_cop31_carbono_amazonia2050','pb_alpb_presidencia_acordo_republicanos','pe_raquel_lyra_exonera_150_pl','se_racionamento_grande_aracaju_poxim','am_abatedouro_flutuante_jacares','ap_gaeco_gabinete_empresarial_alap','rr_cnj_pad_desembargadores_tjrr','df_brb_acao_ex_gestores_master','mt_vg_camara_mesa_justica_48h','ms_santa_casa_greve_enfermagem_intervencao','es_pazolini_exoneracao_comissionados','mg_mpmg_lista_triplice_pgj','rj_campopiano_medalha_chiquinha','sp_tarcisio_secretario_ciencia_ita','trancoso_faccao_operacao_ba','ipca_outubro_12_11','cop31_lula_pezeshkian','cop31_tfff_lula_sem_voz','rj_copacabana_atropelamento','credito_149_12_11','imposto_seletivo_cigarro_emendas','restos_mortais_escravizados_repatriados','regina_torne_morre','mpf_ilha_willer_tomaz_richarlison','covid_xfg_avanca_brasil','microsoft_outlook_falha_12_11','rj_retotalizacao_12_11','drauzio_varella_abl'].forEach(function(i){if(S[i]){S[i].velha=true;S[i].velhaMotivo='sem desdobramento novo desde 12/11';}});
+['operacao_refit_magro','sp_renan_santos_prefeitura','rs_rio_uruguai_alerta_vermelho','sc_operacao_recycling_lavagem_itajai','sp_tarcisio_flavio_2030','ac_mailza_cop31_carbono_amazonia2050','pb_alpb_presidencia_acordo_republicanos','pe_raquel_lyra_exonera_150_pl','se_racionamento_grande_aracaju_poxim','am_abatedouro_flutuante_jacares','ap_gaeco_gabinete_empresarial_alap','rr_cnj_pad_desembargadores_tjrr','mt_vg_camara_mesa_justica_48h','ms_santa_casa_greve_enfermagem_intervencao','es_pazolini_exoneracao_comissionados','mg_mpmg_lista_triplice_pgj','rj_campopiano_medalha_chiquinha','sp_tarcisio_secretario_ciencia_ita','trancoso_faccao_operacao_ba','ipca_outubro_12_11','cop31_lula_pezeshkian','cop31_tfff_lula_sem_voz','rj_copacabana_atropelamento','credito_149_12_11','imposto_seletivo_cigarro_emendas','restos_mortais_escravizados_repatriados','regina_torne_morre','mpf_ilha_willer_tomaz_richarlison','covid_xfg_avanca_brasil','microsoft_outlook_falha_12_11','rj_retotalizacao_12_11','drauzio_varella_abl'].forEach(function(i){if(S[i]){S[i].velha=true;S[i].velhaMotivo='sem desdobramento novo desde 12/11';}});
 ORDER.politica = _top(ORDER.politica, ['dino_6x1','lula_filipinas_asean_13_11','toffoli_spoofing_14_11','enem_segundo_dia_14_11','brasil_japao_amistoso_14_11']);
 ORDER.mundo = _top(ORDER.mundo, ['paraguai']);
 ORDER.regioes = _top(ORDER.regioes, ['froes_morte_14_11','claudette_soares_morte_14_11','raoni_documentario_cop31']);
