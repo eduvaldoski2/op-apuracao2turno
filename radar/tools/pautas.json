@@ -14,9 +14,9 @@
     "ueno_pagamentos"
    ],
    "verificada": "2026-11-14-11h",
-   "fato_novo": false,
-   "ultimo_fato": "13/11: a Promotoria amplia a acusação por associação criminosa contra Peña, Carvallo, Holger Insfrán e três ex-diretores do BCP; Peña segue em prisão preventiva (La Nación, DW).",
-   "proximo": "Decisão do juiz sobre as cautelares; perícia do celular de Peña; sanção ficta do Orçamento (14/11); possível acusação de lavagem."
+   "fato_novo": true,
+   "ultimo_fato": "13/11: juiz Humberto Otazú decreta prisão preventiva de três ex-diretores do BCP no caso Ueno; Peña segue preso; Câmara dá meia sanção ao Orçamento de 2027.",
+   "proximo": "Sanção do Orçamento; perícia do celular de Peña; possível acusação de lavagem."
   },
   {
    "id": "transicao-lula",
@@ -132,8 +132,8 @@
     "dino_6x1"
    ],
    "verificada": "2026-11-14-11h",
-   "fato_novo": false,
-   "ultimo_fato": "13/11: 4 de 10 votos pela liminar de Dino no plenário virtual; a Câmara contesta seis pontos.",
+   "fato_novo": true,
+   "ultimo_fato": "14/11: Câmara e Senado pedem ao STF que não referende pontos da liminar de Dino; 4 de 10 votos.",
    "proximo": "Votação virtual termina às 11h de segunda (16)."
   },
   {
