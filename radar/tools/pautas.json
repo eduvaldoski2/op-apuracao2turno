@@ -13,8 +13,8 @@
     "pena_cofre",
     "ueno_pagamentos"
    ],
-   "verificada": "2026-11-14-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-14-11h",
+   "fato_novo": false,
    "ultimo_fato": "13/11: a Promotoria amplia a acusação por associação criminosa contra Peña, Carvallo, Holger Insfrán e três ex-diretores do BCP; Peña segue em prisão preventiva (La Nación, DW).",
    "proximo": "Decisão do juiz sobre as cautelares; perícia do celular de Peña; sanção ficta do Orçamento (14/11); possível acusação de lavagem."
   },
@@ -38,10 +38,11 @@
     "cop31_lula_pezeshkian",
     "cop31_tfff_lula_sem_voz",
     "lula_filipinas_asean_13_11",
-    "ministerio"
+    "ministerio",
+    "lula_filipinas_asean_13_11"
    ],
-   "verificada": "2026-11-14-07h",
-   "fato_novo": false,
+   "verificada": "2026-11-14-11h",
+   "fato_novo": true,
    "ultimo_fato": "13/11: Lula nas Filipinas para a cúpula da Asean; ministérios só após o retorno (g1, Folha).",
    "proximo": "Asean 14 e 15/11; volta a Brasília por volta de 16/11."
   },
@@ -58,8 +59,8 @@
     "dallagnol_tse_pauta",
     "toffoli_contas_campanha_lula_14_11"
    ],
-   "verificada": "2026-11-14-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-14-11h",
+   "fato_novo": false,
    "ultimo_fato": "13/11: o ministro Toffoli dá 3 dias à chapa Lula-Alckmin para explicar inconsistências na prestação de contas (Estadão, Folha, g1).",
    "proximo": "Resposta da campanha em 3 dias; Dallagnol sem data."
   },
@@ -75,7 +76,7 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-14-07h",
+   "verificada": "2026-11-14-11h",
    "fato_novo": false,
    "ultimo_fato": "Sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio até 14/11.",
    "proximo": "Decisão da Mesa do Senado."
@@ -100,7 +101,7 @@
     "mp_bets_prorrogada",
     "quaest_partidos_pl_pt"
    ],
-   "verificada": "2026-11-14-07h",
+   "verificada": "2026-11-14-11h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo além do pacote fiscal no Senado (destaques na terça, 17).",
    "proximo": "CRE em 17/11; Mesas em 1º/02/2027."
@@ -117,8 +118,8 @@
     "seguranca_ministerio_crise_pf_13_11",
     "stf_ministros_relatorios_pf_vorcaro_14_11"
    ],
-   "verificada": "2026-11-14-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-14-11h",
+   "fato_novo": false,
    "ultimo_fato": "13/11: Folha mostra disputa na PF pela sucessão de Andrei Rodrigues e pelo futuro ministério; ministros do STF reagem a relatórios da PF sobre magistrados no celular de Vorcaro.",
    "proximo": "Lula define ministros após a volta da COP 31; decisão sobre relatoria do caso Master."
   },
@@ -130,8 +131,8 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-14-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-14-11h",
+   "fato_novo": false,
    "ultimo_fato": "13/11: 4 de 10 votos pela liminar de Dino no plenário virtual; a Câmara contesta seis pontos.",
    "proximo": "Votação virtual termina às 11h de segunda (16)."
   },
@@ -164,9 +165,10 @@
     "nubank_porto_real_bc_13_11",
     "tesouro_ataque_hacker_14_11",
     "diesel_subvencao_extra_14_11",
-    "mei_remissao_dividas_14_11"
+    "mei_remissao_dividas_14_11",
+    "pec_gastos_fora_arcabouco_14_11"
    ],
-   "verificada": "2026-11-14-07h",
+   "verificada": "2026-11-14-11h",
    "fato_novo": true,
    "ultimo_fato": "13/11: Ibovespa +2,35% na semana e dólar a R$ 5,65; BC aprova compra do Porto Real pelo Nubank; Tesouro com sistemas fora do ar; subvenção extra ao diesel importado vence.",
    "proximo": "Destaques do pacote fiscal na terça (17); sistemas do Tesouro até segunda (16)."
@@ -183,7 +185,7 @@
     "eua_senado_mississippi_alasca",
     "eua_tarifas_300"
    ],
-   "verificada": "2026-11-14-07h",
+   "verificada": "2026-11-14-11h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo localizado em 14/11.",
    "proximo": "Alasca após 18/11; certificação em 25/11."
@@ -199,9 +201,10 @@
     "zaporizhzhia",
     "ucrania_abudhabi",
     "ucrania_putin_enviados_trump",
-    "ue_cinco_potencias_ucrania_14_11"
+    "ue_cinco_potencias_ucrania_14_11",
+    "ucrania_putin_enviados_trump"
    ],
-   "verificada": "2026-11-14-07h",
+   "verificada": "2026-11-14-11h",
    "fato_novo": true,
    "ultimo_fato": "13/11: líderes da UE em Dublin definem equipe com Reino Unido, França, Alemanha, Itália e Polônia, sem enviado único (Euronews).",
    "proximo": "Próxima rodada com a Polônia; reação da Rússia."
@@ -214,7 +217,7 @@
    "materias": [
     "israel"
    ],
-   "verificada": "2026-11-14-07h",
+   "verificada": "2026-11-14-11h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo localizado em 14/11.",
    "proximo": "Votação do presidente da Knesset (17/11)."
@@ -231,7 +234,7 @@
     "khor_mor",
     "ira_radar_bahrein_13_11"
    ],
-   "verificada": "2026-11-14-07h",
+   "verificada": "2026-11-14-11h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo de 13 e 14/11 localizado.",
    "proximo": "Resposta dos EUA; APEC."
@@ -240,63 +243,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-14-07h",
-   "achado": "Edição 07h de 14/11: ~45 consultas (artigo.cjs, cobertura.cjs, manchetes, WebSearch); WebFetch bloqueado (PROVENANCE_REQUIRED). Entraram Gilmar x Moro, Toffoli e contas de Lula, Fachin (prazos e ministra negra), Master/PF, Nubank, Tesouro, diesel, MEI, voos nos EUA, Trump-Xi-Putin, UE e Ucrânia, Paraguai, e 9 matérias regionais. Israel, Irã, Argentina, Venezuela e Bolívia sem fato novo localizado."
+   "feita": "2026-11-14-11h",
+   "achado": "Edição 11h de 14/11: coletor atualizado às 10h16, cobertura.cjs e artigo.cjs; 29 matérias (25 novas) entre Política, Economia, Mundo e as sete sub-regiões. Pautas P0/P1 sem fato novo localizado na passada 1, exceto Lula/Asean, Ucrânia e PEC fiscal; passada 2 reconsulta o restante."
   }
  ]
 }
