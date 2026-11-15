@@ -22414,7 +22414,7 @@ _N('minerais_criticos_superavit_classe1_15_11', {ed:'economia', k:'Economia · M
  sub:'Cobre, níquel e silício somaram saldo positivo de US$ 4,22 bilhões; a política de minerais críticos terá fundo de até R$ 2 bilhões da União.',
  dado:{n:'US$ 3,18 bi', l:'superávit de 2025 na balança dos 9 minerais da classe 1'},
  resumo:'A balança comercial dos nove minerais críticos de maior prioridade (classe 1 do Cimce) fechou 2025 com superávit de US$ 3,18 bilhões, cerca de R$ 18 bilhões, segundo levantamento publicado neste domingo (15). Cobre, silício e níquel tiveram saldo de US$ 4,22 bilhões, só o cobre com US$ 3,02 bilhões, e os outros seis minerais, déficit de US$ 1,05 bilhão. Manganês e lítio tiveram os piores saldos. O governo aprovou em 5 de novembro a lista de 27 minerais e condiciona o apoio a contrapartidas locais.',
- fundo:`A balança comercial dos nove minerais críticos classificados como de prioridade mais alta pelo governo fechou 2025 com superávit de US$ 3,18 bilhões, cerca de R$ 18 bilhões, informa o Poder360. O resultado esconde um quadro desigual: cobre, níquel e silício deram saldo positivo, e seis outros minerais tiveram déficit.
+ fundo:`A balança comercial dos nove minerais críticos classificados como de prioridade mais alta pelo governo fechou 2025 com superávit de US$ 3,18 bilhões, cerca de R$ 18 bilhões. O resultado esconde um quadro desigual: cobre, níquel e silício deram saldo positivo, e seis outros minerais tiveram déficit.
 
 ## O que mostram os números
 
@@ -22951,7 +22951,7 @@ _N('sc_pib_5_3_sexta_economia_sul_15_11', {ed:'regioes', reg:'sul', k:'Regiões 
  sub:'Os dados das Contas Regionais do IBGE mostram a participação catarinense no PIB do país subindo de 4,7% para 5%; o Paraná segue como a quarta economia.',
  dado:{n:'R$ 584,2 bi', l:'PIB de Santa Catarina em 2024, o sexto do país'},
  resumo:'O PIB de Santa Catarina cresceu 5,3% em 2024 e chegou a R$ 584,2 bilhões, o sexto maior do país, segundo as Contas Regionais divulgadas pelo IBGE na sexta (13). A participação do estado no PIB nacional subiu de 4,7% para 5%. O Paraná, com alta de 3,4% e R$ 726,63 bilhões, manteve a quarta posição, segundo o governo paranaense.',
- fundo:`O Produto Interno Bruto (PIB) de Santa Catarina cresceu 5,3% em 2024 e totalizou R$ 584,2 bilhões, o sexto maior do país, informa o g1 Santa Catarina com base nas Contas Regionais do Instituto Brasileiro de Geografia e Estatística (IBGE), divulgadas na sexta-feira (13). O avanço ficou entre os melhores do país e acima da média nacional.
+ fundo:`O Produto Interno Bruto (PIB) de Santa Catarina cresceu 5,3% em 2024 e totalizou R$ 584,2 bilhões, o sexto maior do país com base nas Contas Regionais do Instituto Brasileiro de Geografia e Estatística (IBGE), divulgadas na sexta-feira (13). O avanço ficou entre os melhores do país e acima da média nacional.
 
 ## O desempenho catarinense
 
@@ -23013,7 +23013,7 @@ _U('ce_medico_preso_aldeota_14_11', {hora:'15/11',
  dado:{n:'2021', l:'ano da agressão pela qual o médico já responde a processo por violência doméstica'},
  resumo:'O médico de 38 anos preso em Fortaleza no domingo (8), suspeito de agredir, sufocar e estuprar a namorada, já respondia a um processo por violência doméstica contra uma ex-companheira, por fatos de 2021. A prisão foi convertida em preventiva na segunda (9), e o Tribunal de Justiça do Ceará manteve a custódia ao negar habeas corpus. A defesa diz que o médico é inocente. Há relato de uma possível segunda vítima, em Sobral, que consta de reportagens e não de nota da polícia.',
  upd:'Entram a informação de que o médico já era réu por violência doméstica, a conversão em prisão preventiva e a negativa de habeas corpus pelo Tribunal de Justiça do Ceará.',
- fundo:`O médico de 38 anos preso em Fortaleza no domingo (8), suspeito de agredir, sufocar e abusar sexualmente da namorada em um apartamento do bairro Aldeota, já respondia a um processo por violência doméstica contra uma ex-companheira, por fatos de 2021, informa o g1 Ceará. A prisão em flagrante foi convertida em preventiva na segunda (9), e a Justiça negou o pedido de habeas corpus da defesa, que questionava a custódia. A defesa afirma que ele é inocente.
+ fundo:`O médico de 38 anos preso em Fortaleza no domingo (8), suspeito de agredir, sufocar e abusar sexualmente da namorada em um apartamento do bairro Aldeota, já respondia a um processo por violência doméstica contra uma ex-companheira, por fatos de 2021. A prisão em flagrante foi convertida em preventiva na segunda (9), e a Justiça negou o pedido de habeas corpus da defesa, que questionava a custódia. A defesa afirma que ele é inocente.
 
 ## A denúncia e a fuga da vítima
 
@@ -23048,7 +23048,9 @@ _U('ap_curiau_tork_suspende_14_11', {hora:'15/11',
  dado:{n:'45 anos', l:'de existência do Bar do Dico, que deixa de correr risco imediato de demolição'},
  resumo:'O desembargador Carlos Augusto Tork de Oliveira, do Tribunal de Justiça do Amapá (TJAP), suspendeu na sexta (13) a ordem de desocupação, retirada de obstáculos e demolição de estruturas na Comunidade Quilombola do Curiaú, em Macapá, e remeteu o caso à Justiça Federal. A suspensão tira o risco imediato de demolição do Bar do Dico, ponto tradicional da comunidade, e atende recurso da defesa dos moradores, além de pedidos do Incra e da Fundação Palmares.',
  upd:'Entra a confirmação de que a suspensão, publicada na sexta (13), deixa sem efeito a ordem que previa a demolição do Bar do Dico e de outras estruturas da comunidade.',
- fundo:`O desembargador Carlos Augusto Tork de Oliveira, do Tribunal de Justiça do Amapá (TJAP), suspendeu na sexta-feira (13) a ordem de desocupação, retirada de obstáculos e demolição de estruturas na Comunidade Quilombola do Curiaú, em Macapá, e mandou o processo para a Justiça Federal. Com a suspensão, a determinação que previa a retirada de ocupantes e a possível demolição do tradicional Bar do Dico fica sem efeito, por enquanto, informa o g1 Amapá. A decisão atende recurso da defesa dos moradores e pedidos do Incra, órgão federal de reforma agrária, e da Fundação Cultural Palmares, que protege a cultura afro-brasileira.
+ fundo:`O desembargador Carlos Augusto Tork de Oliveira, do Tribunal de Justiça do Amapá (TJAP), suspendeu na sexta-feira (13) a ordem de desocupação, retirada de obstáculos e demolição de estruturas na Comunidade Quilombola do Curiaú, em Macapá, e mandou o processo para a Justiça Federal. Com a suspensão, a determinação que previa a retirada de ocupantes e a possível demolição do tradicional Bar do Dico fica sem efeito, por enquanto.
+
+A decisão atende, informa o g1 Amapá, a recurso da defesa dos moradores e pedidos do Incra, órgão federal de reforma agrária, e da Fundação Cultural Palmares, que protege a cultura afro-brasileira.
 
 ## O que estava em jogo
 
@@ -23076,7 +23078,7 @@ _N('pa_emergencia_nivel_ii_incendios_marajo_15_11', {ed:'regioes', reg:'norte', 
  sub:'O decreto vale por 180 dias e prevê mobilização de equipes, assistência às comunidades e monitoramento da qualidade do ar.',
  dado:{n:'180 dias', l:'duração prevista do decreto de emergência de Nível II'},
  resumo:'O governo do Pará decretou situação de emergência de Nível II em áreas atingidas por incêndios florestais, com vigência prevista de 180 dias. O decreto prevê mobilização de equipes, assistência às comunidades e monitoramento da qualidade do ar. No sábado (14), o fogo chegou ao território quilombola do Caldeirão, em Salvaterra, na ilha do Marajó, e se aproximou de casas. Quinze bombeiros e três viaturas atuaram no local.',
- fundo:`O governo do Pará mantém situação de emergência de Nível II em áreas atingidas por incêndios florestais, com vigência prevista de 180 dias, informa a CNN Brasil. O decreto prevê mobilização de equipes, assistência às comunidades afetadas e monitoramento da qualidade do ar. A medida vem acompanhada da expansão do fogo na ilha do Marajó, onde as chamas chegaram a um território quilombola neste fim de semana.
+ fundo:`O governo do Pará mantém situação de emergência de Nível II em áreas atingidas por incêndios florestais, com vigência prevista de 180 dias. O decreto prevê mobilização de equipes, assistência às comunidades afetadas e monitoramento da qualidade do ar. A medida vem acompanhada da expansão do fogo na ilha do Marajó, onde as chamas chegaram a um território quilombola neste fim de semana.
 
 ## O fogo em Salvaterra
 
@@ -23104,7 +23106,7 @@ _N('am_parintins_fumaca_aulas_remotas_15_11', {ed:'regioes', reg:'norte', k:'Reg
  sub:'Moradores vedam portas e janelas com toalhas molhadas; na segunda (9), a fumaça cancelou voos e suspendeu aulas.',
  dado:{n:'péssima', l:'classificação da qualidade do ar em Parintins no sábado (14)'},
  resumo:'A qualidade do ar em Parintins e em outros municípios do Amazonas foi classificada como péssima no sábado (14), por causa da fumaça de queimadas. Moradores fecham as casas e usam umidificadores e toalhas molhadas nas portas e janelas. A prefeitura manteve o ensino remoto na rede municipal, sem previsão de retorno às salas. Na segunda (9), a fumaça já havia causado cancelamento de voos e suspensão de aulas.',
- fundo:`A qualidade do ar em Parintins, no Baixo Amazonas, e em outros municípios do Amazonas foi classificada como péssima no sábado (14), por causa da fumaça de queimadas, informa o g1 Amazonas. A prefeitura manteve o ensino remoto na rede municipal, e ainda não há previsão para o retorno dos estudantes às salas de aula, segundo A Crítica.
+ fundo:`A qualidade do ar em Parintins, no Baixo Amazonas, e em outros municípios do Amazonas foi classificada como péssima no sábado (14), por causa da fumaça de queimadas. A prefeitura manteve o ensino remoto na rede municipal, e ainda não há previsão para o retorno dos estudantes às salas de aula, segundo A Crítica.
 
 ## A rotina dentro de casa
 
@@ -23129,7 +23131,7 @@ _N('ap_oiapoque_queimadas_presos_14_11', {ed:'regioes', reg:'norte', k:'Regiões
  sub:'A operação emergencial usa drones; o governo federal liberou R$ 993,3 mil para ações de resposta à estiagem severa.',
  dado:{n:'1.691', l:'focos de calor na região, alta de 228%'},
  resumo:'Cinco pessoas foram presas em flagrante em três dias em Oiapoque, no extremo norte do Amapá, suspeitas de provocar incêndios ilegais e crimes ambientais. A população enviou 28 denúncias em dois dias, e o volume de chamados ao batalhão militar dobrou. A região registrou 1.691 focos de calor, alta de 228%. O governo federal liberou R$ 993.311,04 para as ações de resposta.',
- fundo:`Cinco pessoas foram presas em flagrante nos últimos três dias em Oiapoque, no extremo norte do Amapá, suspeitas de provocar incêndios ilegais e crimes ambientais, informa o g1 Amapá. As prisões ocorreram durante uma operação emergencial montada para conter a onda de queimadas e a fumaça, em meio a uma estiagem severa.
+ fundo:`Cinco pessoas foram presas em flagrante nos últimos três dias em Oiapoque, no extremo norte do Amapá, suspeitas de provocar incêndios ilegais e crimes ambientais. As prisões ocorreram durante uma operação emergencial montada para conter a onda de queimadas e a fumaça, em meio a uma estiagem severa.
 
 ## As denúncias e os drones
 
@@ -23156,7 +23158,7 @@ _N('df_passaporte_certidoes_forjadas_15_11', {ed:'regioes', reg:'co', k:'Regiõe
  sub:'A Polícia Civil do DF cumpriu mandados no Distrito Federal, em São Paulo e no Rio de Janeiro na quinta (12); parte dos foragidos pode ter deixado o país.',
  dado:{n:'14', l:'estrangeiros foragidos até sábado (14)'},
  resumo:'Cinco suspeitos de integrar um grupo que falsificava certidões de nascimento e documentos consulares foram presos na quinta (12), em operação no Distrito Federal, em São Paulo e no Rio de Janeiro. Com os papéis forjados, estrangeiros obtinham identidades e passaportes brasileiros, todos inválidos. Até sábado (14), 14 estrangeiros seguiam foragidos, e a polícia acredita que parte deixou o país.',
- fundo:`Cinco suspeitos de integrar um grupo que falsificava certidões de nascimento e documentos consulares foram presos na quinta-feira (12), em operação no Distrito Federal, em São Paulo e no Rio de Janeiro, informa o g1 Distrito Federal. Até este sábado (14), 14 estrangeiros que usaram o esquema seguiam foragidos, e a polícia acredita que parte deixou o país.
+ fundo:`Cinco suspeitos de integrar um grupo que falsificava certidões de nascimento e documentos consulares foram presos na quinta-feira (12), em operação no Distrito Federal, em São Paulo e no Rio de Janeiro. Até este sábado (14), 14 estrangeiros que usaram o esquema seguiam foragidos, e a polícia acredita que parte deixou o país.
 
 ## Como funcionava
 
@@ -23685,7 +23687,7 @@ _U('uber_passe_motoristas_13_11', {hora:'13/11', ampliada:true,
  dado:{n:'48 horas', l:'prazo para a Uber suspender o passe após ser notificada'},
  resumo:'A 9ª Vara do Trabalho de Salvador determinou que a Uber suspenda em todo o Brasil o "Passe para Motoristas", assinatura paga antecipadamente para aceitar corridas, em liminar assinada na segunda (9) a pedido do Ministério Público do Trabalho (MPT). O prazo é de 48 horas após a notificação, com multa de R$ 100 mil por dia para cada uma das três obrigações. A Uber avalia recorrer e diz que o programa é um teste. A audiência está marcada para 27 de novembro, e o pedido de R$ 321 milhões em danos morais coletivos ainda não foi julgado.',
  upd:'Texto ampliado com as duas modalidades do passe, a expansão de 29 para 42 cidades, o argumento do MPT sobre dependência econômica e a regra de transição para quem já pagou.',
- fundo:`A Justiça do Trabalho da Bahia determinou que a Uber suspenda em todo o Brasil o "Passe para Motoristas", programa em que motoristas e motociclistas pagam antecipadamente um valor fixo para aceitar corridas. A liminar, uma decisão provisória, foi assinada na segunda-feira (9) pelo juiz Luciano Dorea Martinez Carreiro, da 9ª Vara do Trabalho de Salvador, e tornou-se pública na quarta (11), informam o Metrópoles e o portal Jurinews. A Uber tem 48 horas, a partir da notificação pessoal, para cumprir a ordem.
+ fundo:`A Justiça do Trabalho da Bahia determinou que a Uber suspenda em todo o Brasil o "Passe para Motoristas", programa em que motoristas e motociclistas pagam antecipadamente um valor fixo para aceitar corridas. A liminar, uma decisão provisória, foi assinada na segunda-feira (9) pelo juiz Luciano Dorea Martinez Carreiro, da 9ª Vara do Trabalho de Salvador, e tornou-se pública na quarta (11). A Uber tem 48 horas, a partir da notificação pessoal, para cumprir a ordem.
 
 ## O que a liminar determina
 
@@ -23852,6 +23854,14 @@ NUMS 3 m|distância do disparo;2|mandados de prisão contra o suspeito;3T|tipo d
   ['politica','economia','mundo'].forEach(function(ed){ var m=ids.filter(function(i){return S[i]&&S[i].ed===ed;}); ORDER[ed]=_dem(ORDER[ed],m,2); });
   var r=ids.filter(function(i){return S[i]&&S[i].ed==='regioes';}); ORDER.regioes=_dem(ORDER.regioes,r,4);
 })();
+/* ===== 15h: ajustes da passada 2 ===== */
+S.nubank_porto_real_bc_13_11.upd = 'Matéria ampliada com o histórico da compra do banco Porto Real, as exigências do Banco Central e o que muda para a operação do Nubank no país.';
+S.diesel_subvencao_extra_14_11.upd = 'Matéria ampliada com o desenho da subvenção extra ao diesel, quem recebe, o custo para o Tesouro e o calendário de pagamento.';
+S.canudos_reparacao_uniao_14_11.upd = 'Matéria ampliada com a repercussão da condenação da União a pagar R$ 597 milhões, os detalhes da reparação e os próximos recursos.';
+S.atividade_3t_pib_negativo_14_11.upd = 'Matéria ampliada com a leitura do indicador de atividade do terceiro trimestre, o recorte setorial e o que o mercado espera para o PIB.';
+S.agenda_semana_16_20_11_focus_ibcbr_nvidia.resumo = S.agenda_semana_16_20_11_focus_ibcbr_nvidia.resumo + ' Jensen Huang depõe no Senado dos EUA em 3 de dezembro.';
+S.agenda_semana_16_20_11_focus_ibcbr_nvidia.sub = 'Focus, IBC-Br e o balanço da Nvidia lideram os indicadores da semana (16 a 20), com a pressão por restrição a chips para a China no pano de fundo.';
+S.uber_passe_motoristas_13_11.hora = '15/11';
 /* FLAGS (gerado por publicar.js; não editar) */
 var FLAGS = {"ucrania_putin_enviados_trump":"atualizada","zanin_nega_liminar_psd_2turno_rj":"atualizada","uber_passe_motoristas_13_11":"atualizada","fachin_ministra_negra_stf_14_11":"atualizada","nubank_porto_real_bc_13_11":"atualizada","tesouro_ataque_hacker_14_11":"atualizada","diesel_subvencao_extra_14_11":"atualizada","trump_xi_putin_shenzhen_14_11":"atualizada","canudos_reparacao_uniao_14_11":"atualizada","sp_salto_incendio_fabrica_14_11":"atualizada","mg_sarna_surto_escolas_14_11":"atualizada","ce_medico_preso_aldeota_14_11":"atualizada","icei_cni_menor_desde_2020_14_11":"atualizada","atividade_3t_pib_negativo_14_11":"atualizada","starship_voo15_booster_aborta_14_11":"atualizada","go_alego_sim_mulher_14_11":"atualizada","voto_distrital_misto_debate_camara_14_11":"atualizada","ap_curiau_tork_suspende_14_11":"atualizada","agenda_semana_16_20_11_focus_ibcbr_nvidia":"atualizada","ira_petroleiros_minas_ormuz_15_11":"atualizada","pa_novas_pontes_tocantins_maraba_15_11":"atualizada","carmen_lucia_bolsonaro_bloqueio_jornalistas_x_15_11":"novo","lula_sanchez_madri_16_11_15_11":"novo","idosos_comparecimento_segundo_turno_15_11":"novo","lula_big_techs_soberania_filipinas_15_11":"novo","oxe_xango_stf_inauguracao_15_11":"novo","ia_porto_digital_celeiro_aplicacoes_15_11":"novo","minerais_criticos_superavit_classe1_15_11":"novo","milei_reeleicao_2027_impostos_15_11":"novo","ira_supernavio_afundado_15_11":"novo","coreia_sul_prova_fraude_ia_15_11":"novo","canarias_recorde_1488_resgatados_15_11":"novo","sp_traslado_corpo_alagoano_pms_iml_15_11":"novo","mg_enem_transporte_bh_15_11":"novo","mg_santa_casa_bh_recem_nascido_15_11":"novo","rj_ruas_cupula_seguranca_desafios_15_11":"novo","pr_cnt_rodovias_48_por_cento_problemas_15_11":"novo","rs_crianca_esquecida_aviao_poa_15_11":"novo","sc_pib_5_3_sexta_economia_sul_15_11":"novo","ba_aroldo_macedo_morte_15_11":"novo","pa_emergencia_nivel_ii_incendios_marajo_15_11":"novo","am_parintins_fumaca_aulas_remotas_15_11":"novo","ap_oiapoque_queimadas_presos_14_11":"novo","df_passaporte_certidoes_forjadas_15_11":"novo","df_chuva_ceilandia_metro_hospital_14_11":"novo","proclamacao_republica_dom_rafael_golpe_15_11":"novo","senado_fim_reeleicao_presidencia_15_11":"novo","canada_fundo_florestas_tropicais_15_11":"novo","cabo_verde_eleicao_presidencial_15_11":"novo","ira_hijab_boicote_15_11":"novo","ba_temporais_granizo_15_11":"novo","sp_incendio_predio_pari_15_11":"novo","pe_bope_tiro_capacete_15_11":"novo"};
 var GIRO_FLAGS = {"Milei e a reeleição em 2027":"novo","Irã e o supernavio":"novo","Cármen Lúcia e o bloqueio no X":"novo","Lula e Sánchez em Madri":"novo","Oxê de Xangô no STF":"novo","Idosos no 2º turno":"novo","Fraude com IA na Coreia do Sul":"novo","Minerais críticos e superávit":"novo","Enem e transporte em BH":"novo","Morre Aroldo Macêdo":"novo"};
