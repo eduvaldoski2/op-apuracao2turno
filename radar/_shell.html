@@ -514,9 +514,11 @@ window.addEventListener('load',function(){layoutFix()});
 
 /* Compartilhar */
 function shareText(id,canal){var s=S[id];return s.t+'\n\n'+s.resumo+'\n\nLeia mais no Radar da Oficina Política: '+shareUrl(id,canal)}
+function resumoCurto(s){var r=String(s.resumo||'').replace(/\s+/g,' ').trim();var m=r.match(/^.*?[.!?](?=\s|$)/);var f=m?m[0]:r;if(f.length>200)f=f.slice(0,197).replace(/\s+\S*$/,'')+'…';return f}
+function shareTextCurto(id,canal){var s=S[id];return s.t+'\n\n'+resumoCurto(s)+'\n\nLeia a matéria completa: '+shareUrl(id,canal)}
 function closeModal(){document.getElementById('modal').innerHTML=''}
 function openShare(id,showCards){
-  var s=S[id], t=s.t, full=shareText(id,'copiar'), fullW=shareText(id,'whatsapp'); shareId=id;
+  var s=S[id], t=s.t, full=shareText(id,'copiar'), fullW=shareTextCurto(id,'whatsapp'); shareId=id;
   var enc=encodeURIComponent;
   var h='<div class="modal" id="mod"><div class="sheet" role="dialog" aria-modal="true" aria-label="Compartilhar"><button class="x" type="button" data-close>×</button><h3>Compartilhar</h3><div class="meta">'+esc(s.t)+'</div><div class="opts">'
    +'<a class="opt wa" target="_blank" rel="noopener" data-canal="whatsapp" href="https://wa.me/?text='+enc(fullW)+'">WhatsApp</a>'
