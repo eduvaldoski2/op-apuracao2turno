@@ -13,7 +13,7 @@
     "pena_cofre",
     "ueno_pagamentos"
    ],
-   "verificada": "2026-11-15-15h",
+   "verificada": "2026-11-15-19h",
    "fato_novo": false,
    "ultimo_fato": "14/11: o presidente Pedro Alliana diz à Infobae que o Paraguai superou a crise do Ueno, adia encontro com Trump; Peña segue preso.",
    "proximo": "Sanção do Orçamento; perícia do celular de Peña; possível acusação de lavagem."
@@ -39,10 +39,11 @@
     "cop31_tfff_lula_sem_voz",
     "lula_filipinas_asean_13_11",
     "ministerio",
-    "lula_filipinas_asean_13_11"
+    "lula_filipinas_asean_13_11",
+    "infantino_lula_manila_copa_feminina_15_11"
    ],
-   "verificada": "2026-11-15-15h",
-   "fato_novo": false,
+   "verificada": "2026-11-15-19h",
+   "fato_novo": true,
    "ultimo_fato": "15/11: Lula quer anunciar os primeiros ministros até a 1ª semana de dezembro; prioridade para Fazenda, Planejamento, Educação e Desenvolvimento Social; 73 indicações em agências e BC viram moeda com o Centrão.",
    "proximo": "Definição de ministros após volta da Ásia."
   },
@@ -59,7 +60,7 @@
     "dallagnol_tse_pauta",
     "toffoli_contas_campanha_lula_14_11"
    ],
-   "verificada": "2026-11-15-15h",
+   "verificada": "2026-11-15-19h",
    "fato_novo": false,
    "ultimo_fato": "15/11: chapa Lula-Alckmin diz ter contabilizado R$ 44 mi questionados; área técnica aponta possível omissão de cerca de R$ 48 mi.",
    "proximo": "Análise de Toffoli sobre a resposta."
@@ -76,7 +77,7 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-15-15h",
+   "verificada": "2026-11-15-19h",
    "fato_novo": false,
    "ultimo_fato": "15/11: voto remoto de Flávio sem decisão da Mesa; campanha pagou R$ 600 mil à Elytron, empresa de cibersegurança dos EUA.",
    "proximo": "Decisão da Mesa do Senado."
@@ -99,10 +100,11 @@
     "mps_rurais_exportadores",
     "maioridade_penal_alcolumbre",
     "mp_bets_prorrogada",
-    "quaest_partidos_pl_pt"
+    "quaest_partidos_pl_pt",
+    "motta_diferencas_proclamacao_15_11"
    ],
-   "verificada": "2026-11-15-15h",
-   "fato_novo": false,
+   "verificada": "2026-11-15-19h",
+   "fato_novo": true,
    "ultimo_fato": "15/11: texto-base do ajuste fiscal passou no Senado por 45 a 31; destaques na terça (17).",
    "proximo": "CRE em 17/11; Mesas em 1º/02/2027."
   },
@@ -118,7 +120,7 @@
     "seguranca_ministerio_crise_pf_13_11",
     "stf_ministros_relatorios_pf_vorcaro_14_11"
    ],
-   "verificada": "2026-11-15-15h",
+   "verificada": "2026-11-15-19h",
    "fato_novo": false,
    "ultimo_fato": "15/11: crise na PF vira disputa pelo Ministério da Segurança Pública; operação Segurança Legal X em 27 capitais.",
    "proximo": "Lula define ministros após a volta da COP 31; decisão sobre relatoria do caso Master."
@@ -131,7 +133,7 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-15-15h",
+   "verificada": "2026-11-15-19h",
    "fato_novo": false,
    "ultimo_fato": "15/11: Fux leva a liminar de Dino ao plenário físico; categorias aceleram acordos para a 5x2.",
    "proximo": "Sessão presencial marcada por Fachin; reação do Congresso."
@@ -171,9 +173,12 @@
     "atividade_3t_pib_negativo_14_11",
     "ubs_rebaixa_brasil_emergentes_15_11",
     "csn_prejuizo_3t26_cimentos_huaxin_15_11",
-    "agenda_semana_16_20_11_focus_ibcbr_nvidia"
+    "agenda_semana_16_20_11_focus_ibcbr_nvidia",
+    "icms_cbs_ibs_base_tjsp_15_11",
+    "fed_schmid_inflacao_eua_15_11",
+    "correios_prejuizo_3t26_15_11"
    ],
-   "verificada": "2026-11-15-15h",
+   "verificada": "2026-11-15-19h",
    "fato_novo": true,
    "ultimo_fato": "15/11: Tesouro diz ter contido o acesso indevido e reforçado o monitoramento; semana traz Focus, IBC-Br e audiência de Jensen Huang no Senado dos EUA.",
    "proximo": "Focus e IBC-Br na semana de 16/11; votação de destaques do ajuste fiscal."
@@ -190,7 +195,7 @@
     "eua_senado_mississippi_alasca",
     "eua_tarifas_300"
    ],
-   "verificada": "2026-11-15-15h",
+   "verificada": "2026-11-15-19h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo localizado em 14/11.",
    "proximo": "Alasca após 18/11; certificação em 25/11."
@@ -210,7 +215,7 @@
     "ucrania_putin_enviados_trump",
     "zelenski_starshield_spacex_14_11"
    ],
-   "verificada": "2026-11-15-15h",
+   "verificada": "2026-11-15-19h",
    "fato_novo": false,
    "ultimo_fato": "15/11: Zelenski diz que os EUA propuseram pela primeira vez cessão de território em troca de entrada na Otan.",
    "proximo": "Próxima rodada com a Polônia; reação da Rússia."
@@ -223,7 +228,7 @@
    "materias": [
     "israel"
    ],
-   "verificada": "2026-11-15-15h",
+   "verificada": "2026-11-15-19h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo localizado em 14/11.",
    "proximo": "Votação do presidente da Knesset (17/11)."
@@ -249,63 +254,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-15-15h",
-   "achado": "Edição 15h de 15/11: cobertura.cjs, artigo.cjs, buscas na web e 5 redatores em paralelo; 22 NOVO e 12 ATUALIZADA. Milei (reeleição 2027), Irã (Ormuz, Bahrein), Coreia do Sul, Starship e Canárias entram em Mundo; sem queda de chefe de Estado nova."
+   "feita": "2026-11-15-19h",
+   "achado": "Edição 19h de 15/11: cobertura.cjs, artigo.cjs e buscas; novas matérias sobre Iêmen, Bahrein, Estônia, Fed, Motta, Pacheco, Enem/Inep, estados; sem queda de chefe de Estado nova."
   }
  ]
 }
