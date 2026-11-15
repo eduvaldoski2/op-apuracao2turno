@@ -13,7 +13,7 @@
     "pena_cofre",
     "ueno_pagamentos"
    ],
-   "verificada": "2026-11-14-19h",
+   "verificada": "2026-11-15-07h",
    "fato_novo": false,
    "ultimo_fato": "14/11: o presidente Pedro Alliana diz à Infobae que o Paraguai superou a crise do Ueno, adia encontro com Trump; Peña segue preso.",
    "proximo": "Sanção do Orçamento; perícia do celular de Peña; possível acusação de lavagem."
@@ -41,10 +41,10 @@
     "ministerio",
     "lula_filipinas_asean_13_11"
    ],
-   "verificada": "2026-11-14-19h",
-   "fato_novo": false,
-   "ultimo_fato": "14/11: Lula propõe a Marcos Jr. integrar minerais críticos brasileiros e chips filipinos, cancela dois compromissos por rouquidão e deve ver Trump só no G20.",
-   "proximo": "Asean 14 e 15/11; volta a Brasília por volta de 16/11."
+   "verificada": "2026-11-15-07h",
+   "fato_novo": true,
+   "ultimo_fato": "15/11: Lula deve definir nomes da Esplanada a partir de terça (17); Centrão e PT disputam SRI e Desenvolvimento Social; ato com Lula em Madri cancelado pelo PSOE, reunião na Moncloa mantida.",
+   "proximo": "Definição de ministros após volta da Ásia."
   },
   {
    "id": "tse-acoes",
@@ -59,10 +59,10 @@
     "dallagnol_tse_pauta",
     "toffoli_contas_campanha_lula_14_11"
    ],
-   "verificada": "2026-11-14-19h",
-   "fato_novo": false,
-   "ultimo_fato": "13/11: o ministro Toffoli dá 3 dias à chapa Lula-Alckmin para explicar inconsistências na prestação de contas (Estadão, Folha, g1).",
-   "proximo": "Resposta da campanha em 3 dias; Dallagnol sem data."
+   "verificada": "2026-11-15-07h",
+   "fato_novo": true,
+   "ultimo_fato": "14/11: a chapa Lula-Alckmin respondeu ao TSE e diz que as pendências são formais (cerca de R$ 44 milhões ligados a contratos).",
+   "proximo": "Análise de Toffoli sobre a resposta."
   },
   {
    "id": "flavio-senado",
@@ -76,7 +76,7 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-14-19h",
+   "verificada": "2026-11-15-07h",
    "fato_novo": false,
    "ultimo_fato": "Sem decisão localizada da Mesa do Senado sobre o voto remoto de Flávio até 14/11.",
    "proximo": "Decisão da Mesa do Senado."
@@ -101,7 +101,7 @@
     "mp_bets_prorrogada",
     "quaest_partidos_pl_pt"
    ],
-   "verificada": "2026-11-14-19h",
+   "verificada": "2026-11-15-07h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo além do pacote fiscal no Senado (destaques na terça, 17).",
    "proximo": "CRE em 17/11; Mesas em 1º/02/2027."
@@ -118,7 +118,7 @@
     "seguranca_ministerio_crise_pf_13_11",
     "stf_ministros_relatorios_pf_vorcaro_14_11"
    ],
-   "verificada": "2026-11-14-19h",
+   "verificada": "2026-11-15-07h",
    "fato_novo": false,
    "ultimo_fato": "13/11: Folha mostra disputa na PF pela sucessão de Andrei Rodrigues e pelo futuro ministério; ministros do STF reagem a relatórios da PF sobre magistrados no celular de Vorcaro.",
    "proximo": "Lula define ministros após a volta da COP 31; decisão sobre relatoria do caso Master."
@@ -131,10 +131,10 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-14-19h",
+   "verificada": "2026-11-15-07h",
    "fato_novo": true,
-   "ultimo_fato": "14/11: Dino divulga a íntegra da liminar e diz que ela não autoriza acordos individuais nem exceções; Câmara e Senado pedem ao plenário do STF que rejeite pontos.",
-   "proximo": "Votação virtual do STF termina às 11h de segunda (16)."
+   "ultimo_fato": "15/11: Fux pede destaque e leva ao plenário presencial a liminar de Dino; a votação virtual perde efeito e a liminar segue em vigor.",
+   "proximo": "Sessão presencial marcada por Fachin; reação do Congresso."
   },
   {
    "id": "economia-mercado",
@@ -170,10 +170,10 @@
     "icei_cni_menor_desde_2020_14_11",
     "atividade_3t_pib_negativo_14_11"
    ],
-   "verificada": "2026-11-14-19h",
-   "fato_novo": false,
-   "ultimo_fato": "14/11: Senado aprova texto-base do ajuste fiscal por 45 a 31; dólar +2,63% na semana; CNI mostra confiança industrial no menor nível desde maio de 2020; atividade recua no 3º tri.",
-   "proximo": "Destaques do pacote fiscal na terça (17); sistemas do Tesouro até segunda (16)."
+   "verificada": "2026-11-15-07h",
+   "fato_novo": true,
+   "ultimo_fato": "15/11: UBS rebaixa o Brasil para underweight; CSN tem prejuízo de R$ 1,25 bi; agenda da semana traz Focus, IBC-Br e balanço da Nvidia.",
+   "proximo": "Destaques do pacote fiscal na terça (17); Focus segunda (16)."
   },
   {
    "id": "eua-meio-mandato",
@@ -187,7 +187,7 @@
     "eua_senado_mississippi_alasca",
     "eua_tarifas_300"
    ],
-   "verificada": "2026-11-14-19h",
+   "verificada": "2026-11-15-07h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo localizado em 14/11.",
    "proximo": "Alasca após 18/11; certificação em 25/11."
@@ -207,7 +207,7 @@
     "ucrania_putin_enviados_trump",
     "zelenski_starshield_spacex_14_11"
    ],
-   "verificada": "2026-11-14-19h",
+   "verificada": "2026-11-15-07h",
    "fato_novo": false,
    "ultimo_fato": "14/11: Zelenski acusa a SpaceX de limitar o Starshield sobre territórios ocupados; antes, líderes da UE definiram equipe de negociação.",
    "proximo": "Próxima rodada com a Polônia; reação da Rússia."
@@ -220,7 +220,7 @@
    "materias": [
     "israel"
    ],
-   "verificada": "2026-11-14-19h",
+   "verificada": "2026-11-15-07h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo localizado em 14/11.",
    "proximo": "Votação do presidente da Knesset (17/11)."
@@ -237,7 +237,7 @@
     "khor_mor",
     "ira_radar_bahrein_13_11"
    ],
-   "verificada": "2026-11-14-15h",
+   "verificada": "2026-11-15-07h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo de 13 e 14/11 localizado.",
    "proximo": "Resposta dos EUA; APEC."
@@ -246,63 +246,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-14-19h",
-   "achado": "Edição 19h de 14/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia/Mundo e Regiões; 16 matérias novas e 1 atualizada; sem fato novo em Paraguai, TSE, Flávio e Congresso além do já registrado nas pautas."
+   "feita": "2026-11-15-07h",
+   "achado": "Edição 07h de 15/11: cobertura.cjs, artigo.cjs e WebSearch por redatores de Política, Economia, Mundo e Regiões; 20 matérias novas e 6 atualizadas; Mundo com pouca coisa nova verificada (Starship; leads: Guatemala, Gaza, Ormuz)."
   }
  ]
 }
