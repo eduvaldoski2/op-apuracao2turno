@@ -6,6 +6,7 @@ import { nomeP } from './governador.js?v=eceea2b7';
 import { criarMapaMun } from './mapamun.js?v=eceea2b7';
 import { corPartido, corTextoSobre, logoP } from './partidos.js?v=eceea2b7';
 import { cadeirasHTML, ligarCadeiras, agrupa } from './cadeiras.js?v=eceea2b7';
+import { compartilharCandidato } from './cardcand.js?v=eceea2b7';
 
 const ARQ = { depf: ['federal', 'Deputado Federal', 'Deputados federais'], depe: ['estadual', 'Deputado Estadual', 'Deputados estaduais'] };
 const cache = {};
@@ -176,9 +177,15 @@ function candidato(ctx, el, { g, uf, tipo, cargo, nomeUf, base, vv, sit, todos, 
   const gr = g.grupos.find(x => x.n === c.gr), mesmoGr = todos.filter(x => x.gr === c.gr), mesmoP = todos.filter(x => x.sg === c.sg);
   const pGr = mesmoGr.findIndex(x => x.n === c.n && x.sg === c.sg) + 1, pP = mesmoP.findIndex(x => x.n === c.n) + 1, s = sit.get(c.n + '|' + c.sg), cor = corPartido(c.sg);
   const ehFed = gr.tp === 'f';
+  const dadosCand = { nome: nomeP(c.nm), sigla: sgTxt(c.sg), num: c.n, cargo, uf: nomeUf, cor, sit: s?.t || '', url: location.href.split('?v=')[0],
+    kpis: [['Votos', fInt(c.v), `${fNum(vv ? 100 * c.v / vv : 0, 2)}% dos válidos`],
+      ['Posição no estado', `${posG.get(c.n + '|' + c.sg)}º`, `entre ${fInt(todos.length)} candidatos`],
+      ehFed ? ['Posição na federação', `${pGr}º`, `entre ${fInt(mesmoGr.length)} · ${nomeGrupo(gr)}`] : ['Posição no partido', `${pGr}º`, `entre ${fInt(mesmoGr.length)} · ${sgTxt(c.sg)}`],
+      ehFed ? ['Posição no partido', `${pP}º`, `entre ${fInt(mesmoP.length)} do ${sgTxt(c.sg)}`] : ['Cadeiras do partido', fInt(eleitosDe(gr)), `votos do partido: ${fInt(gr.tn + gr.tl)}`]] };
   el.innerHTML = `<section class="painel cd-topo" style="--pc:${cor}"><div class="cd-id">${logoP(c.sg, 'lg-g')}<div><h2>${esc(nomeP(c.nm))}</h2><p class="sub">${esc(sgTxt(c.sg))} · nº ${esc(c.n)} · ${esc(cargo)} · ${esc(nomeUf)}</p>${seloSit(s)}</div></div>
     <div class="dp-ks">${stat('Votos', fInt(c.v), `${fNum(vv ? 100 * c.v / vv : 0, 2)}% dos válidos`)}${stat('Posição no estado', `${posG.get(c.n + '|' + c.sg)}º`, `entre ${fInt(todos.length)} candidatos`)}${stat(ehFed ? 'Posição na federação' : 'Posição no partido', `${pGr}º`, `entre ${fInt(mesmoGr.length)} · ${esc(ehFed ? nomeGrupo(gr) : sgTxt(c.sg))}`)}${ehFed ? stat('Posição no partido', `${pP}º`, `entre ${fInt(mesmoP.length)} do ${esc(sgTxt(c.sg))}`) : stat('Cadeiras do partido', fInt(eleitosDe(gr)), `votos do partido: ${fInt(gr.tn + gr.tl)}`)}</div>
-    <p class="sub" style="margin-top:10px"><a href="${base}&f=${encodeURIComponent(gr.n)}${ehFed ? `&p=${encodeURIComponent(c.sg)}` : ''}">← Ver a lista de ${esc(ehFed ? sgTxt(c.sg) : nomeGrupo(gr))}</a></p></section>
+    <p class="sub" style="margin-top:10px"><a href="${base}&f=${encodeURIComponent(gr.n)}${ehFed ? `&p=${encodeURIComponent(c.sg)}` : ''}">← Ver a lista de ${esc(ehFed ? sgTxt(c.sg) : nomeGrupo(gr))}</a></p><div class="cd-img" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:14px"><span style="font-weight:600">Imagem para redes:</span><button type="button" data-cfmt="1x1">1:1 · WhatsApp</button><button type="button" data-cfmt="4x5">4:5 · Feed</button><button type="button" data-cfmt="9x16">9:16 · Stories</button></div></section>
   <section class="painel" id="cd-mun"><h2>Votação por região e município</h2><p class="carregando">Carregando…</p></section>`;
+  el.querySelectorAll('[data-cfmt]').forEach(b => b.addEventListener('click', () => compartilharCandidato(dadosCand, b.dataset.cfmt, b)));
   import('./depcand.js?v=eceea2b7').then(m => m.candidatoDin(ctx, el.querySelector('#cd-mun'), { uf, tipo, arq: ARQ[tipo][0], c, cor, todos, sit, nomeUf, vv, H: { bonito, stat, nomeGrupo, sgTxt, ehFed } })).catch(e => { console.error('cand', e); el.querySelector('#cd-mun').innerHTML = '<h2>Votação por região e município</h2><p class="aviso">Não foi possível carregar a votação detalhada. Tente de novo.</p>'; });
 }
