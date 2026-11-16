@@ -13,7 +13,7 @@
     "pena_cofre",
     "ueno_pagamentos"
    ],
-   "verificada": "2026-11-16-11h",
+   "verificada": "2026-11-16-15h",
    "fato_novo": false,
    "ultimo_fato": "14/11: o presidente Pedro Alliana diz à Infobae que o Paraguai superou a crise do Ueno, adia encontro com Trump; Peña segue preso.",
    "proximo": "Sanção do Orçamento; perícia do celular de Peña; possível acusação de lavagem."
@@ -42,12 +42,13 @@
     "lula_filipinas_asean_13_11",
     "infantino_lula_manila_copa_feminina_15_11",
     "esplanada_lula4_centrao_sri_15_11",
-    "lula_testa_ministros_equipe_economica_16_11"
+    "lula_testa_ministros_equipe_economica_16_11",
+    "mercado_fazenda_bc_gestoras_caixa_15_11"
    ],
-   "verificada": "2026-11-16-11h",
+   "verificada": "2026-11-16-15h",
    "fato_novo": true,
-   "ultimo_fato": "16/11: Lula testa nomes para a equipe econômica; começa a decidir o ministério na terça (17), com escolha até 25/11 e anúncio até 5/12.",
-   "proximo": "Reunião de Lula com o presidente da Espanha, Pedro Sánchez, já ocorreu; decisões sobre Fazenda e Planejamento seguem abertas."
+   "ultimo_fato": "16/11: Mercadante diz que quer seguir no BNDES e descarta a Fazenda; Lula volta do giro e começa a decidir o ministério na terça (17).",
+   "proximo": "Decisões sobre Fazenda e Planejamento; escolha dos ministros até 25/11."
   },
   {
    "id": "tse-acoes",
@@ -62,7 +63,7 @@
     "dallagnol_tse_pauta",
     "toffoli_contas_campanha_lula_14_11"
    ],
-   "verificada": "2026-11-16-11h",
+   "verificada": "2026-11-16-15h",
    "fato_novo": false,
    "ultimo_fato": "15/11: chapa Lula-Alckmin diz ter contabilizado R$ 44 mi questionados; área técnica aponta possível omissão de cerca de R$ 48 mi.",
    "proximo": "Análise de Toffoli sobre a resposta."
@@ -79,7 +80,7 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao"
    ],
-   "verificada": "2026-11-16-11h",
+   "verificada": "2026-11-16-15h",
    "fato_novo": false,
    "ultimo_fato": "15/11: voto remoto de Flávio sem decisão da Mesa; campanha pagou R$ 600 mil à Elytron, empresa de cibersegurança dos EUA.",
    "proximo": "Decisão da Mesa do Senado."
@@ -105,7 +106,7 @@
     "quaest_partidos_pl_pt",
     "motta_diferencas_proclamacao_15_11"
    ],
-   "verificada": "2026-11-16-11h",
+   "verificada": "2026-11-16-15h",
    "fato_novo": false,
    "ultimo_fato": "16/11: Senado vota os destaques do ajuste fiscal na terça (17); PL fica com um terço da CCJ em 2027; disputa pela Presidência do Senado já mobiliza Alcolumbre, Marinho e Tereza Cristina.",
    "proximo": "Destaques no Senado (17), votação na Câmara (18); Mesas em 1º/02/2027."
@@ -120,12 +121,13 @@
     "maioridade",
     "maioridade_audiencias",
     "seguranca_ministerio_crise_pf_13_11",
-    "stf_ministros_relatorios_pf_vorcaro_14_11"
+    "stf_ministros_relatorios_pf_vorcaro_14_11",
+    "andrei_nega_crise_pf_dia_policial_16_11"
    ],
-   "verificada": "2026-11-16-11h",
-   "fato_novo": false,
-   "ultimo_fato": "15/11: crise na PF vira disputa pelo Ministério da Segurança Pública; operação Segurança Legal X em 27 capitais.",
-   "proximo": "Lula define ministros após a volta da COP 31; decisão sobre relatoria do caso Master."
+   "verificada": "2026-11-16-15h",
+   "fato_novo": true,
+   "ultimo_fato": "16/11: o diretor-geral da PF, Andrei Rodrigues, nega crise interna no Dia do Policial Federal; coluna diz que ministros do STF reavaliam apoio a ele.",
+   "proximo": "Definição do Ministério da Segurança e da relatoria do caso Master."
   },
   {
    "id": "escala-6x1",
@@ -135,8 +137,8 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-16-11h",
-   "fato_novo": true,
+   "verificada": "2026-11-16-15h",
+   "fato_novo": false,
    "ultimo_fato": "16/11: o julgamento da escala 5x2 recomeça no plenário físico do STF, sem data marcada; as regras de Dino seguem valendo.",
    "proximo": "Data da sessão presencial; reação do Congresso."
   },
@@ -179,12 +181,13 @@
     "icms_cbs_ibs_base_tjsp_15_11",
     "fed_schmid_inflacao_eua_15_11",
     "correios_prejuizo_3t26_15_11",
-    "ibcbr_setembro_queda_3t_16_11"
+    "ibcbr_setembro_queda_3t_16_11",
+    "focus_16_11_mercado_projecoes"
    ],
-   "verificada": "2026-11-16-11h",
+   "verificada": "2026-11-16-15h",
    "fato_novo": true,
-   "ultimo_fato": "16/11: a prévia do PIB do Banco Central (IBC-Br) cai 0,9% no 3º trimestre; Focus reduz projeções de inflação e crescimento.",
-   "proximo": "Destaques do ajuste no Senado (17) e votação na Câmara (18)."
+   "ultimo_fato": "16/11: dólar sobe a cerca de R$ 5,77 e o Ibovespa cai perto de 1,5% no meio da tarde; Cade, chips dos EUA e pacote fiscal dominam o dia.",
+   "proximo": "Destaques do ajuste no Senado (17), Câmara (18); PIB em 2/12."
   },
   {
    "id": "eua-meio-mandato",
@@ -196,12 +199,13 @@
     "rubio_gabinete",
     "eua_meio_mandato_placar",
     "eua_senado_mississippi_alasca",
-    "eua_tarifas_300"
+    "eua_tarifas_300",
+    "alasca_senado_peltola_sullivan_16_11"
    ],
-   "verificada": "2026-11-16-11h",
-   "fato_novo": false,
-   "ultimo_fato": "Sem fato novo localizado em 14/11.",
-   "proximo": "Alasca após 18/11; certificação em 25/11."
+   "verificada": "2026-11-16-15h",
+   "fato_novo": true,
+   "ultimo_fato": "10/11: Peltola (D) 49% a 47,2% sobre Sullivan (R) no Alasca com ~84% apurados; tabulação ranqueada em 18/11.",
+   "proximo": "Certificação em 25/11."
   },
   {
    "id": "ucrania-paz",
@@ -219,8 +223,8 @@
     "zelenski_starshield_spacex_14_11",
     "trump_xi_putin_shenzhen_14_11"
    ],
-   "verificada": "2026-11-16-11h",
-   "fato_novo": true,
+   "verificada": "2026-11-16-15h",
+   "fato_novo": false,
    "ultimo_fato": "16/11: Ucrânia ataca a ponte da Crimeia antes da cúpula Trump-Xi-Putin; Estônia fecha a fronteira com a Rússia.",
    "proximo": "Resultado da cúpula; reação da Rússia."
   },
@@ -233,10 +237,10 @@
     "israel",
     "israel_oposicao_acusa_netanyahu_golpe_16_11"
    ],
-   "verificada": "2026-11-16-11h",
+   "verificada": "2026-11-16-15h",
    "fato_novo": true,
-   "ultimo_fato": "16/11: oposição acusa Netanyahu de tentativa de golpe após indícios de ação de assessores contra partido árabe.",
-   "proximo": "Votação do presidente da Knesset (17/11)."
+   "ultimo_fato": "16/11: a oposição pede, com 67 assinaturas, a troca do presidente da Knesset em votação na terça (17); Netanyahu é acusado de tentativa de golpe.",
+   "proximo": "Votação na Knesset (17/11)."
   },
   {
    "id": "ira-oriente-medio",
@@ -250,7 +254,7 @@
     "khor_mor",
     "ira_radar_bahrein_13_11"
    ],
-   "verificada": "2026-11-16-11h",
+   "verificada": "2026-11-16-15h",
    "fato_novo": false,
    "ultimo_fato": "15/11: forças apoiadas pela Arábia Saudita recuam do mar Vermelho no Iêmen; Irã ataca o Bahrein.",
    "proximo": "Resposta dos EUA; APEC."
@@ -259,63 +263,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-16-11h",
-   "achado": "Edição 11h de 16/11: capas das 10h23, artigo.cjs e buscas; novas matérias sobre Israel/Netanyahu, Félix Gallardo, Crimeia/cúpula, IBC-Br, Focus, Quaest, estados; sem queda de chefe de Estado nova."
+   "feita": "2026-11-16-15h",
+   "achado": "Edição 15h de 16/11: capas das 14h13, artigo.cjs e buscas; novas matérias sobre Trump-Kim, COP31, Vulcan/Amazon, Alasca, chips dos EUA, Cade/Apple, lucro presumido, Andrei/PF, Cid, regiões; sem queda de chefe de Estado nova."
   }
  ]
 }
