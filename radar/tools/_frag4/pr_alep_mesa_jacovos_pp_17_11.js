@@ -5,7 +5,7 @@ _N('pr_alep_mesa_jacovos_pp_17_11', {ed:'regioes', reg:'sul', k:'Regiões · Sul
  sub:'A eleição da Mesa Diretora da Alep está prevista para o início de fevereiro de 2027, depois da posse dos 54 deputados estaduais eleitos.',
  dado:{n:'54', l:'deputados estaduais que tomam posse na Alep e elegem a Mesa Diretora em fevereiro de 2027'},
  resumo:'O Progressistas (PP) indicou, por unanimidade, o deputado estadual eleito Cesar Silvestri Filho para a 1ª Secretaria da Assembleia Legislativa do Paraná, em chapa de consenso encabeçada pelo deputado Delegado Jacovós (PL). A decisão foi anunciada na segunda-feira (16), após reunião com o governador eleito, Sergio Moro (PL). O deputado Paulo Gomes (PL) será o líder do governo Moro na Casa a partir de 2027. A Mesa Diretora será eleita no início de fevereiro.',
- fundo:`O Progressistas (PP), partido de centro-direita, definiu por unanimidade a indicação do deputado estadual eleito Cesar Silvestri Filho para a 1ª Secretaria da Assembleia Legislativa do Paraná (Alep) na próxima legislatura. A decisão foi anunciada na segunda-feira (16), depois de uma reunião da sigla com o governador eleito, Sergio Moro (PL), partido de direita, no Chapéu Pensador, em Curitiba, informa a Gazeta do Povo.
+ fundo:`O Progressistas (PP), partido de centro-direita, definiu por unanimidade a indicação do deputado estadual eleito Cesar Silvestri Filho para a 1ª Secretaria da Assembleia Legislativa do Paraná (Alep) na próxima legislatura. A decisão foi anunciada na segunda-feira (16), depois de uma reunião da sigla com o governador eleito, Sergio Moro (PL), partido de direita, no Chapéu Pensador, em Curitiba.
 
 ## A chapa de consenso
 

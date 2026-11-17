@@ -5,7 +5,7 @@ _N('al_jhc_falta_transicao_17_11', {ed:'regioes', reg:'ne', k:'Regiões · Norde
  sub:'O governador eleito indicou um único representante, que não apareceu; interlocutores dizem que ele quer os dados do governo, mas sem reuniões.',
  dado:{n:'1', l:'representante indicado por JHC para a reunião, que não compareceu'},
  resumo:'A equipe de transição do governador eleito de Alagoas, JHC (PL), faltou à primeira reunião institucional com o governo de Paulo Dantas (MDB), marcada para a segunda-feira (16) em Maceió. JHC havia indicado um único representante, que não compareceu. Integrantes da gestão atual esperaram até as 11h30 e saíram sem dar entrevistas. Interlocutores do governador eleito afirmam que ele evita as reuniões para não ser visto como avalista dos atos do fim da gestão, mas quer acesso às informações. A nova gestão começa em janeiro de 2027.',
- fundo:`A equipe de transição do governador eleito de Alagoas, JHC (PL), partido de direita, faltou na segunda-feira (16) à primeira reunião institucional com o governo do atual governador, Paulo Dantas (MDB). O encontro estava marcado para as 10h, na sede da Vice-Governadoria, no Centro de Maceió. JHC não se pronunciou sobre a ausência, informa o g1 Alagoas.
+ fundo:`A equipe de transição do governador eleito de Alagoas, JHC (PL), partido de direita, faltou na segunda-feira (16) à primeira reunião institucional com o governo do atual governador, Paulo Dantas (MDB). O encontro estava marcado para as 10h, na sede da Vice-Governadoria, no Centro de Maceió. JHC não se pronunciou sobre a ausência.
 
 ## Uma reunião sem convidados
 

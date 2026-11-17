@@ -5,7 +5,7 @@ _N('mundo_cn_pequim_drones_17_11', {ed:'mundo', k:'Mundo · China · Segurança'
  sub:'A regra, que vale para 16,4 mil km² urbanos e rurais, entrou em vigor no domingo (15), data-limite para vender, descartar ou levar os equipamentos para fora da cidade.',
  dado:{n:'16,4 mil km²', l:'área do município de Pequim onde drones estão proibidos, metade do tamanho da Bélgica'},
  resumo:'Desde o domingo (15), é proibido em toda a região administrativa de Pequim voar, possuir, guardar ou transportar drones e seus componentes principais. A norma vem do Legislativo local, prevê multas de 500 a 5.000 yuans, confiscação e recompensa para denúncias. A cidade já havia proibido a venda dos aparelhos em maio. As autoridades dizem que a medida protege a segurança da capital, sede do governo central e do Partido Comunista. Exceções valem para contraterrorismo, polícia, socorro, agricultura e pesquisa.',
- fundo:`Pequim passou a proibir drones em todo o município desde o domingo (15). A regra veda voar, possuir, armazenar e transportar os aparelhos e seus componentes principais, informa a Folha. Quem descumprir terá o equipamento confiscado e poderá ser multado.
+ fundo:`Pequim passou a proibir drones em todo o município desde o domingo (15). A regra veda voar, possuir, armazenar e transportar os aparelhos e seus componentes principais. Quem descumprir terá o equipamento confiscado e poderá ser multado.
 
 ## O que muda para os donos
 

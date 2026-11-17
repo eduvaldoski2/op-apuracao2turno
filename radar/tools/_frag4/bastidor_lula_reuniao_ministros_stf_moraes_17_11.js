@@ -5,7 +5,7 @@ _N('bastidor_lula_reuniao_ministros_stf_moraes_17_11', {ed:'politica', k:'Polít
  sub:'O encontro ainda não tem data e ocorre em meio ao desgaste entre o presidente e o ministro por causa do caso Master, segundo a coluna de Bela Megale.',
  dado:{n:'0', l:'data marcada para o encontro de Lula com ministros do Supremo'},
  resumo:'O presidente Lula pretende reunir-se com ministros do Supremo Tribunal Federal (STF), mas ainda é incógnita se Alexandre de Moraes participará, informa a colunista Bela Megale, de O Globo. O encontro não foi marcado e é articulado em meio ao desgaste entre o petista e o magistrado provocado pelo caso Master. Lula disse a aliados que as investigações e as revelações sobre a relação entre Moraes e Daniel Vorcaro o afetaram na campanha à reeleição, sobretudo no primeiro turno, e sinalizou que quer mudar a relação.',
- fundo:`A presença do ministro Alexandre de Moraes na reunião que o presidente Lula pretende realizar com ministros do Supremo Tribunal Federal (STF) é uma incógnita para integrantes do governo e da Corte, informa a colunista Bela Megale, de O Globo. A informação é de bastidor e vem de interlocutores citados pela coluna, sem identificação.
+ fundo:`A presença do ministro Alexandre de Moraes na reunião que o presidente Lula pretende realizar com ministros do Supremo Tribunal Federal (STF) é uma incógnita para integrantes do governo e da Corte, informa a coluna de Bela Megale. A informação é de bastidor e vem de interlocutores citados pela coluna, sem identificação.
 
 ## O que a coluna descreve
 

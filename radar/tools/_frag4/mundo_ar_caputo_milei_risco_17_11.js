@@ -23,6 +23,16 @@ Caputo atribuiu outra parte do problema ao temor de que um governo kirchnerista 
 
 Também na segunda, o Ministério da Economia divulgou o resultado do setor público nacional em outubro. O superávit financeiro foi de 1,58 trilhão de pesos, alta de 204,9% sobre um ano antes. O resultado primário, antes dos juros, foi de 1,93 trilhão de pesos. As receitas subiram 31,2% em relação a outubro de 2025, e os gastos primários, 23,6%. Nos dez primeiros meses, o superávit primário chegou a cerca de 1,4% do PIB, igual à meta anual combinada com o Fundo Monetário Internacional (FMI).
 
+## A mesma tese, 11 dias antes
+
+A explicação não é nova. Em 6 de novembro, em encontro com dirigentes da Sociedade Rural Argentina, em Buenos Aires, Caputo ligou o risco-país, que ele situou perto de 900 pontos-base, às dúvidas do mercado sobre a continuidade do governo. Disse que o problema não é Milei, e sim o temor de que ele deixe o cargo. Afirmou que não há alternativa a Milei para manter o rumo econômico e que falava como argentino, e não só como ministro, informa o jornal Perfil.
+
+Na mesma ocasião, o ministro reconheceu que os choques internacionais foram mais fortes e mais longos do que se esperava e citou as eleições no Brasil e nos Estados Unidos e as dúvidas sobre o apoio de Washington. Também apontou energia, mineração e economia do conhecimento como bases de um modelo de crescimento que, segundo ele, dá previsibilidade. Os dois discursos, o de Milei e o de Caputo, tratam o resultado eleitoral de 2027 como fator que pesa nos juros de hoje.
+
+## Quem contesta a leitura
+
+A leitura do governo não é consensual. Analistas citados em veículos argentinos, como o Letra P, associam a pressão sobre os títulos à alta de adversários nas pesquisas e a questões de ritmo da economia real, e não só ao temor do peronismo. O próprio tamanho do risco-país divide a opinião: o ministro já defendeu em outras ocasiões que o índice calculado pelo banco JPMorgan exagera a percepção de risco. Esses pontos aparecem como debate, não como dado oficial.
+
 ## O que vem agora
 
 Milei já confirmou que disputará a reeleição em 2027 e prometeu um pacote de reformas mais profundo que o anterior. O cumprimento da meta com o FMI depende de novembro e, sobretudo, de dezembro, quando o pagamento do aguinaldo, o 13º salário argentino, costuma elevar os gastos.
@@ -31,4 +41,4 @@ Milei já confirmou que disputará a reeleição em 2027 e prometeu um pacote de
 
 Infobae não informou o valor atual do risco-país nem trouxe resposta da oposição peronista às falas. Também não há dados oficiais que confirmem os efeitos do temor eleitoral citados por Caputo.
 NUMS 1,4%|do PIB: superávit primário em dez meses;204,9%|alta do superávit financeiro de outubro;US$ 500 bi|meta de devolução em impostos até 2031`,
- fontes:[['Infobae (Milei no jantar do CICyP)','https://www.infobae.com/politica/2026/11/17/milei-dijo-que-el-riesgo-pais-sube-por-el-miedo-a-orcolandia-y-afirmo-los-argentinos-no-van-a-votar-hacia-el-pasado/'],['Infobae (Caputo à Rádio Mitre)','https://www.infobae.com/economia/2026/11/16/para-caputo-los-mejores-18-meses-de-las-ultimas-decadas-no-se-dieron-por-el-shock-externo-y-el-temor-al-regreso-del-kirchnerismo/'],['O Liberal (Milei confirma reeleição)','https://www.oliberal.com/mundo/argentina-milei-anuncia-intencao-de-disputar-reeleicao-a-presidencia-em-2027-1.1194587']]});
+ fontes:[['Infobae (Milei no jantar do CICyP)','https://www.infobae.com/politica/2026/11/17/milei-dijo-que-el-riesgo-pais-sube-por-el-miedo-a-orcolandia-y-afirmo-los-argentinos-no-van-a-votar-hacia-el-pasado/'],['Infobae (Caputo à Rádio Mitre)','https://www.infobae.com/economia/2026/11/16/para-caputo-los-mejores-18-meses-de-las-ultimas-decadas-no-se-dieron-por-el-shock-externo-y-el-temor-al-regreso-del-kirchnerismo/'],['O Liberal (Milei confirma reeleição)','https://www.oliberal.com/mundo/argentina-milei-anuncia-intencao-de-disputar-reeleicao-a-presidencia-em-2027-1.1194587'],['Perfil (Caputo na Sociedade Rural)','https://www.perfil.com/noticias/amp/economia/caputo-vinculo-la-suba-del-riesgo-pais-con-el-temor-a-que-milei-no-siga-en-el-poder-no-hay-alternativa-aT0yq2T3YPnu.phtml']]});

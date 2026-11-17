@@ -5,7 +5,7 @@ _N('stf_codigo_etica_fachin_trava_2027_17_11', {ed:'politica', k:'Política · S
  sub:'Cármen Lúcia deve entregar a minuta até o fim de novembro, mas ministros veem falta de ambiente para votar antes do recesso de 20 de dezembro.',
  dado:{n:'20/12', l:'início do recesso do Judiciário, marco para uma votação em 2026'},
  resumo:'A criação de um Código de Ética para os ministros do Supremo Tribunal Federal (STF), bandeira do presidente da Corte, Edson Fachin, enfrenta resistência interna e dificilmente será votada neste ano, informa o InfoMoney. Fachin anunciou a iniciativa há nove meses e, há duas semanas, pediu à ministra Cármen Lúcia, relatora, a minuta até o fim de novembro. Interlocutores de ministros dizem que não há ambiente político para votar o texto antes do recesso, que começa em 20 de dezembro.',
- fundo:`O Código de Ética para os ministros do Supremo Tribunal Federal (STF), uma das principais bandeiras do presidente da Corte, Edson Fachin, enfrenta resistências internas e dificilmente será votado neste ano, informa o InfoMoney. A iniciativa ganhou força com a crise do caso Master, mas divide os ministros quanto à necessidade, ao momento da discussão e ao alcance de novas regras.
+ fundo:`O Código de Ética para os ministros do Supremo Tribunal Federal (STF), uma das principais bandeiras do presidente da Corte, Edson Fachin, enfrenta resistências internas e dificilmente será votado neste ano. A iniciativa ganhou força com a crise do caso Master, mas divide os ministros quanto à necessidade, ao momento da discussão e ao alcance de novas regras.
 
 ## O cronograma de Fachin
 

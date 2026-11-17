@@ -23,6 +23,18 @@ A alíquota de referência não é a que o consumidor paga de forma automática.
 
 Durigan afirmou que o mercado financeiro não considera o superávit suficiente, mas que o resultado foi construído de forma democrática. Disse também que não há soluções simples e que Congresso, Judiciário e governo federal precisam de disciplina fiscal conjunta. O ministro citou o pacote de ajuste fiscal em tramitação no Senado, com impacto de até R$ 56 bilhões no Orçamento de 2027, de acordo com o Brasil 247. O governo fala em até R$ 60 bilhões em outras declarações.
 
+## Como o número chegou ao Senado
+
+Na terça (10), o TCU enviou ao Senado um acórdão que recomenda a alíquota de 11,3% para a CBS. Segundo o presidente do tribunal, Vital do Rêgo Filho, o número resultou de cerca de oito meses de discussão com a Receita Federal. O tribunal calcula e recomenda, e quem fixa o valor definitivo é o Senado, que decide por resolução. A CAE confirmou Braga como relator no fim de outubro e abriu as audiências em 11 de novembro, de acordo com o portal Sou Brasília.
+
+O requerimento de Izalci Lucas, de número 107/2026, pede que o tribunal e a Receita expliquem os critérios. O senador afirma que o percentual supera em mais de dois pontos a estimativa que orientava o mercado. Nem o TCU nem a Receita comentaram a comparação com o teto de 26,5% no material divulgado pelo Senado antes da sessão.
+
+## Por que a alíquota importa
+
+A reforma tributária troca cinco tributos sobre o consumo por um imposto sobre valor agregado dividido em dois: a CBS, federal, e o IBS, de estados e municípios. A lei complementar 214, de 2025, fixou uma trava de 26,5% para a soma das duas alíquotas. Se a conta do TCU estiver correta, o espaço dentro da trava fica menor, e o governo precisa escolher entre reduzir benefícios fiscais ou aceitar uma alíquota maior para todos os setores.
+
+A população pôde enviar perguntas à audiência pelo portal e-Cidadania e pela Ouvidoria do Senado, e os senadores leram parte delas ao vivo.
+
 ## O que vem agora
 
 A CAE retoma o tema nesta quarta-feira (18), com representantes da FGV e da OAB. O Senado precisa aprovar uma resolução com a alíquota até 15 de dezembro. Sem definição, vale provisoriamente o percentual do TCU. A Fazenda prepara um projeto de lei complementar que dá 30 dias a mais para as empresas pagarem a CBS em 2027, e o pagamento dividido (split payment) deve começar em agosto de 2027.
@@ -31,4 +43,4 @@ A CAE retoma o tema nesta quarta-feira (18), com representantes da FGV e da OAB.
 
 Braga questiona o percentual do TCU, mas não apresentou alíquota alternativa. As respostas de Vital do Rêgo e de Barreirinhas aos senadores na audiência não constam dos textos lidos.
 NUMS 11,3%|alíquota de referência do TCU;9,21%|estimativa anterior da Fazenda;15/12|prazo do Senado;26,5%|teto da Lei Complementar 214/2025`,
- fontes:[['Brasil 247','https://brasil247.com/economia/enfrentar-privilegios-e-cortar-gastos-e-o-unico-caminho-diz-durigan'],['InfoMoney (Agência O Globo)','https://www.infomoney.com.br/politica/reforma-tributaria-durigan-vai-ao-senado-explicar-aliquota-de-113-para-a-cbs/'],['AJ Notícias','https://ajnoticias.com.br/noticia/59690/durigan-explica-no-senado-aliquota-de-11-3-da-cbs'],['Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131494/cbs-senado-ouvira-durigan-e-vital-do-rego-na-proxima-semana']]});
+ fontes:[['Brasil 247','https://brasil247.com/economia/enfrentar-privilegios-e-cortar-gastos-e-o-unico-caminho-diz-durigan'],['InfoMoney (Agência O Globo)','https://www.infomoney.com.br/politica/reforma-tributaria-durigan-vai-ao-senado-explicar-aliquota-de-113-para-a-cbs/'],['AJ Notícias','https://ajnoticias.com.br/noticia/59690/durigan-explica-no-senado-aliquota-de-11-3-da-cbs'],['Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131494/cbs-senado-ouvira-durigan-e-vital-do-rego-na-proxima-semana'],['Sou Brasília (audiência na CAE)','https://soubrasilia.com/cae-senado-durigan-tcu-aliquota-cbs-11-3-audiencia-17-novembro-2026/']]});

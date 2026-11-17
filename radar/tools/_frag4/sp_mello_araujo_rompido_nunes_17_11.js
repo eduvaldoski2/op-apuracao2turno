@@ -5,7 +5,7 @@ _N('sp_mello_araujo_rompido_nunes_17_11', {ed:'regioes', reg:'sp', k:'Regiões �
  sub:'O coronel Mello Araújo afirma que não fala com secretários nem participa de reuniões; em 10 de novembro, ele levou ao Ministério Público contratos da Secretaria de Esportes.',
  dado:{n:'R$ 21,3 milhões', l:'em contratos da Secretaria de Esportes e Lazer que o vice pediu ao MP-SP para investigar'},
  resumo:'O vice-prefeito de São Paulo, coronel Ricardo Mello Araújo (PL), disse nesta terça-feira (17) que está "extremamente decepcionado" com o prefeito Ricardo Nunes (MDB) e que os dois estão rompidos. Segundo ele, não fala com secretários e não participa de reuniões da prefeitura. A relação piorou depois que, em 10 de novembro, Araújo pediu ao Ministério Público de São Paulo a investigação de possíveis irregularidades em contratos de R$ 21,3 milhões da Secretaria Municipal de Esportes e Lazer.',
- fundo:`O vice-prefeito de São Paulo, coronel Ricardo Mello Araújo (PL), partido de direita, afirmou nesta terça-feira (17) ao jornal O Globo que está "extremamente decepcionado" com o prefeito Ricardo Nunes (MDB), partido de centro. Disse que não conversa com secretários, que não participa das reuniões da gestão e que vive "totalmente isolado", informa o Poder360.
+ fundo:`O vice-prefeito de São Paulo, coronel Ricardo Mello Araújo (PL), partido de direita, afirmou nesta terça-feira (17) a jornalistas que está "extremamente decepcionado" com o prefeito Ricardo Nunes (MDB), partido de centro. Disse que não conversa com secretários, que não participa das reuniões da gestão e que vive "totalmente isolado".
 
 ## O rompimento
 

@@ -5,7 +5,7 @@ _N('am_pai_governador_cidade_condenado_17_11', {ed:'regioes', reg:'norte', k:'Re
  sub:'A Justiça Federal substituiu a prisão de Roberto Maia Cidade por serviços comunitários e multa; outros três réus também foram condenados.',
  dado:{n:'4 anos', l:'pena em regime aberto para Roberto Maia Cidade, pai do governador Roberto Cidade'},
  resumo:'A Justiça Federal condenou Roberto Maia Cidade, pai do governador do Amazonas, Roberto Cidade (União Brasil), a quatro anos de prisão em regime aberto por participar de fraude na contratação de transporte escolar financiado com recursos federais. A sentença foi assinada na sexta-feira (6). A pena foi substituída por serviços comunitários e multa, e outros três réus também foram condenados. A defesa recorre da decisão, segundo o g1 Amazonas.',
- fundo:`A Justiça Federal condenou Roberto Maia Cidade, pai do governador do Amazonas, Roberto Cidade (União Brasil), partido de centro-direita, a quatro anos de prisão em regime aberto por participação em esquema de fraude na contratação de transporte escolar. A sentença saiu na sexta-feira (6), informa o g1 Amazonas.
+ fundo:`A Justiça Federal condenou Roberto Maia Cidade, pai do governador do Amazonas, Roberto Cidade (União Brasil), partido de centro-direita, a quatro anos de prisão em regime aberto por participação em esquema de fraude na contratação de transporte escolar. A sentença saiu na sexta-feira (6).
 
 ## O que a Polícia Federal apontou
 

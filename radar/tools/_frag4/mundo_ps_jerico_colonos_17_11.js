@@ -5,7 +5,7 @@ _N('mundo_ps_jerico_colonos_17_11', {ed:'mundo', k:'Mundo · Cisjordânia · Vio
  sub:'O Ministério da Saúde palestino identificou a vítima como Fadha Wadha; a morte ocorreu numa área onde colonos haviam ocupado casas de famílias palestinas.',
  dado:{n:'72 anos', l:'idade da mulher morta na madrugada de terça (17), em Al-Duyuk al-Tahta'},
  resumo:'Uma mulher palestina de 72 anos, da comunidade beduína, foi morta a tiros por colonos israelenses na madrugada desta terça (17), na vila de Al-Duyuk al-Tahta, perto de Jericó, na Cisjordânia ocupada. O Ministério da Saúde palestino a identificou como Fadha Wadha. Testemunhas dizem que os colonos atiraram do lado de fora da casa dela e, depois, contra outras casas. O filho foi baleado e preso por militares israelenses. A área havia sido ocupada recentemente por colonos.',
- fundo:`Colonos israelenses mataram a tiros uma mulher palestina de 72 anos na madrugada desta terça (17) em Jericó, na Cisjordânia ocupada, informam a Reuters e o g1. A morte ocorreu numa área onde colonos haviam ocupado recentemente casas de famílias palestinas, segundo testemunhas e autoridades palestinas.
+ fundo:`Colonos israelenses mataram a tiros uma mulher palestina de 72 anos na madrugada desta terça (17) em Jericó, na Cisjordânia ocupada, informam agências de notícias. A morte ocorreu numa área onde colonos haviam ocupado recentemente casas de famílias palestinas, segundo testemunhas e autoridades palestinas.
 
 ## O que as testemunhas relatam
 

@@ -5,7 +5,7 @@ _N('mundo_ir_ormuz_minas_17_11', {ed:'mundo', k:'Mundo · Oriente Médio · Estr
  sub:'O Exército iraniano afirma que os navios estavam numa "zona restrita" e tinham escolta de caças dos EUA; a agência marítima britânica confirma o incêndio no petroleiro, ao norte de Khasab, em Omã.',
  dado:{n:'37 ataques', l:'a navios em outubro, o maior total mensal desde o início da guerra, segundo o Washington Institute'},
  resumo:'Um petroleiro pegou fogo ao atingir uma mina na parte leste do Estreito de Ormuz, informou o Exército do Irã nesta terça (17). A agência britânica de operações de comércio marítimo (UKMTO) diz que o incidente foi ao norte de Khasab, em Omã, e que a tripulação está desaparecida. Segundo a UKMTO, o navio já havia sido atacado na segunda (16) e ficou inoperante por um incêndio na casa de máquinas. A Guarda Revolucionária cita ainda um navio-tanque de gás liquefeito. Os EUA não comentaram nos textos lidos.',
- fundo:`Um petroleiro pegou fogo depois de atingir uma mina naval na parte leste do Estreito de Ormuz, informou o Exército do Irã nesta terça (17), em comunicado divulgado pela mídia estatal. A agência britânica UKMTO, que monitora o comércio marítimo, registrou o incidente ao norte de Khasab, cidade portuária de Omã, e disse que a tripulação está desaparecida. A informação é do g1.
+ fundo:`Um petroleiro pegou fogo depois de atingir uma mina naval na parte leste do Estreito de Ormuz, informou o Exército do Irã nesta terça (17), em comunicado divulgado pela mídia estatal. A agência britânica UKMTO, que monitora o comércio marítimo, registrou o incidente ao norte de Khasab, cidade portuária de Omã, e disse que a tripulação está desaparecida. A informação vem de autoridades iranianas.
 
 ## O que se sabe sobre os navios
 

@@ -21,6 +21,18 @@ O premiê da Polônia, Donald Tusk, disse em Dublin que aceitar as condições s
 
 Os enviados americanos Steve Witkoff e Jared Kushner pediram aos russos que olhem para a frente. Um funcionário americano disse que novas propostas precisam trazer passos concretos para reduzir tensões. Kushner afirmou que não há acordo possível sem os europeus na mesa. O Times descreve o papel como posição inicial de negociação, e fontes russas indicaram que Vladimir Putin poderia ceder em alguns pontos.
 
+## O contexto das conversas
+
+As reuniões em Abu Dhabi foram os primeiros contatos diretos entre Rússia, Ucrânia e Estados Unidos em nove meses, informa a revista indiana The Week. Os mediadores americanos foram Witkoff e Kushner, acompanhados pelo general Alexus Grynkewich, comandante militar sênior da Otan e dos Estados Unidos. Os europeus ficaram em grande parte fora do formato trilateral e reagiram com dureza.
+
+A chefe da diplomacia da União Europeia, Kaja Kallas, classificou as exigências de segurança como uma armadilha para desviar a atenção de um cessar-fogo imediato. A revista cita ainda o princípio jurídico segundo o qual um tratado não obriga terceiros sem o consentimento deles, previsto no artigo 34 da Convenção de Viena sobre o Direito dos Tratados. Em tese, um acordo entre Washington, Moscou e Kiev não poderia impor nada à Finlândia nem aos Estados Bálticos.
+
+## O que mais circulou
+
+O relato da The Week menciona outros pontos de um papel não confirmado: a Rússia ficaria com todo o território ucraniano que ocupa e anexaria o Donbas inteiro, e a Ucrânia aceitaria a neutralidade permanente. Os portos de Odessa e Mykolaiv seriam desmilitarizados. Moscou também ofereceria retirar armas nucleares e mísseis de alcance intermediário da Bielorrússia. Para a Moldávia, o texto prevê federalização. A autenticidade desse conjunto não foi verificada.
+
+Os negociadores russos apresentam o pacote como resposta às causas profundas da guerra e chamam o princípio de segurança indivisível. Nas conversas bilaterais, delegados russos citaram a era do Pacto de Varsóvia como modelo de estabilidade, e os americanos pediram que olhassem para o futuro. O único resultado concreto foi um acordo de princípio para a maior troca de prisioneiros da guerra, de 1.000 a 1.500 militares de cada lado.
+
 ## O que vem agora
 
 A cúpula de Donald Trump, Xi Jinping e Putin está marcada para quinta (19), em Shenzhen, e os europeus acompanham se o tema chegará à mesa. As conversas de Abu Dhabi também renderam acordo sobre uma troca grande de prisioneiros.
@@ -29,4 +41,4 @@ A cúpula de Donald Trump, Xi Jinping e Putin está marcada para quinta (19), em
 
 Uma fonte que participou das conversas entregou o papel ao Times, e uma segunda confirmou a autenticidade, mas Moscou não comentou o conteúdo. Não há confirmação pública do governo ucraniano nem da Otan sobre as exigências.
 NUMS 16|membros da Otan em 1997;32|membros da Otan hoje;6|pontos do documento de 10 de novembro`,
- fontes:[['DW Brasil (o que Putin exige da Otan e da Europa)','https://www.dw.com/pt-br/o-que-putin-exige-da-otan-e-da-europa/a-79964253?maca=bra-rss-br-all-1030-rdf'],['Berliner Zeitung (exigências russas)','https://www.berliner-zeitung.de/article/russland-forderungen-nato-atomschutz-ukraine-verhandlungen-10598829'],['Liga.net (relato do NYT)','https://news.liga.net/en/war/news/the-nyt-obtained-a-document-outlining-russias-demands-at-the-abu-dhabi-talks']]});
+ fontes:[['DW Brasil (o que Putin exige da Otan e da Europa)','https://www.dw.com/pt-br/o-que-putin-exige-da-otan-e-da-europa/a-79964253?maca=bra-rss-br-all-1030-rdf'],['Berliner Zeitung (exigências russas)','https://www.berliner-zeitung.de/article/russland-forderungen-nato-atomschutz-ukraine-verhandlungen-10598829'],['Liga.net (relato do NYT)','https://news.liga.net/en/war/news/the-nyt-obtained-a-document-outlining-russias-demands-at-the-abu-dhabi-talks'],['The Week (exigências endurecidas da Rússia)','https://www.theweek.in/news/world/2026/11/14/what-are-russias-hardened-demands-for-ending-ukraine-war.html']]});

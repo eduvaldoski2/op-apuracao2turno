@@ -5,7 +5,7 @@ _N('psb_tebet_stf_aliados_lamentam_17_11', {ed:'politica', k:'Política · Plana
  sub:'Ex-ministra é cotada para o Supremo, para o Tribunal de Contas da União ou para um ministério; ela diz que o convite é daqueles que não se recusa.',
  dado:{n:'3', l:'vagas que Lula poderá preencher no Supremo até o fim do mandato'},
  resumo:'Aliados da ex-ministra do Planejamento Simone Tebet no PSB lamentam, em conversas com a Coluna do Estadão, a possibilidade de perdê-la para o Supremo Tribunal Federal (STF). Lula a considera para o STF, para uma vaga no Tribunal de Contas da União ou para um ministério, mas o cenário só deve ser definido depois de o presidente escolher quem comandará os principais ministérios, sobretudo a Fazenda. Tebet diz a pessoas próximas que não sonha com a Corte, mas que o convite não se recusa.',
- fundo:`Aliados da ex-ministra do Planejamento e Orçamento Simone Tebet no PSB lamentaram, em conversas com a Coluna do Estadão, a possibilidade de perdê-la para o Supremo Tribunal Federal (STF). Ela é cotada pelo presidente Lula para a Corte, para uma vaga no Tribunal de Contas da União (TCU) ou para um ministério, e o cenário só deve ser definido depois que o petista escolher quem comandará os principais ministérios, especialmente a Fazenda.
+ fundo:`Aliados da ex-ministra do Planejamento e Orçamento Simone Tebet no PSB lamentaram, em conversas reservadas, a possibilidade de perdê-la para o Supremo Tribunal Federal (STF). Ela é cotada pelo presidente Lula para a Corte, para uma vaga no Tribunal de Contas da União (TCU) ou para um ministério, e o cenário só deve ser definido depois que o petista escolher quem comandará os principais ministérios, especialmente a Fazenda.
 
 ## O que dizem os aliados
 

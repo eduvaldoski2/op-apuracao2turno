@@ -7,6 +7,7 @@ for(const f of F){const t=fs.readFileSync(d+f,'utf8');const ed=(t.match(/ED: (\w
  if(src.includes("_N('"+id+"'"))continue;
  code+=t.replace(/^\/\/.*\n/gm,'')+'\n';ord[ed].push(id);
  const m=t.match(/ t:'((?:[^'\\]|\\.)*)'/);const fo=t.match(/fontes:\[\['((?:[^'\\]|\\.)*)','([^']*)'/);info[id]={ed,t:m&&m[1],fn:fo&&fo[1],u:fo&&fo[2]};}
+for(const f of fs.readdirSync('radar/tools/_frag4u/').filter(f=>f.endsWith('.js'))){const t=fs.readFileSync('radar/tools/_frag4u/'+f,'utf8');code+=t.replace(/^\/\/.*\n/gm,'')+'\n';}
 code+="var _o4=function(k,ids){ORDER[k]=_top(ORDER[k],ids);};\n";
 for(const k in ord)code+=`_o4('${k}',${JSON.stringify(ord[k])});\n`;
 fs.writeFileSync('radar/tools/_info4.json',JSON.stringify(info,null,1));

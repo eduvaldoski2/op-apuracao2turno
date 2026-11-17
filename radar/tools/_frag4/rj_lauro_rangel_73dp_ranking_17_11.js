@@ -5,7 +5,7 @@ _N('rj_lauro_rangel_73dp_ranking_17_11', {ed:'regioes', reg:'rj', k:'Regiões ·
  sub:'O governador eleito minimiza o ranking da Polícia Civil e destaca os mais de 20 anos de carreira do delegado Lauro Rangel, que não ocupou cargos de gestão na polícia.',
  dado:{n:'31º de 31', l:'posição da 73ª DP (Neves) no ranking de desempenho investigativo de 2025'},
  resumo:'A 73ª DP (Neves), delegacia que o delegado Lauro Rangel comandou de setembro de 2024 até a semana passada, teve o pior desempenho investigativo entre as 31 distritais de grande porte do estado do Rio em 2025, de acordo com documentos obtidos pelo jornal O Globo. Rangel foi indicado pelo governador eleito, Douglas Ruas (PL), para a futura Secretaria de Segurança Pública, que terá as polícias Civil e Militar. Ruas voltou a defender a escolha e minimizou o ranking, feito pela própria Polícia Civil.',
- fundo:`A 73ª Delegacia de Polícia (Neves) teve o pior desempenho investigativo entre as 31 distritais de grande porte do estado do Rio de Janeiro em 2025. O delegado Lauro Rangel, indicado pelo governador eleito, Douglas Ruas (PL), partido de direita, para a futura Secretaria de Segurança Pública, comandou a unidade de setembro de 2024 até a semana passada. A informação consta de documentos obtidos pelo jornal O Globo e publicada no Extra.
+ fundo:`A 73ª Delegacia de Polícia (Neves) teve o pior desempenho investigativo entre as 31 distritais de grande porte do estado do Rio de Janeiro em 2025. O delegado Lauro Rangel, indicado pelo governador eleito, Douglas Ruas (PL), partido de direita, para a futura Secretaria de Segurança Pública, comandou a unidade de setembro de 2024 até a semana passada.
 
 ## O que mostra o ranking
 

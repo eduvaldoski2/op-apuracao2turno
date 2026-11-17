@@ -21,6 +21,20 @@ Na quarta (11), a reunião da bancada em Brasília terminou sem consenso, inform
 
 Motta já tem apoio de 15 partidos, que somam 361 deputados na legislatura que começa em 2027. A vitória no primeiro turno exige maioria absoluta, com quórum mínimo de 257 parlamentares. Sem esse resultado, os dois mais votados disputam segundo turno, e vence quem tiver maioria simples dos votos válidos.
 
+## O que Flávio disse
+
+Em transmissão ao vivo dos Estados Unidos, na quinta (12), Flávio se posicionou contra a reeleição de Motta e defendeu que o PL fique fora do bloco que articula a permanência dele, informa A Crítica de Campo Grande. Afirmou que Motta não cumpriu compromissos com aliados de Jair Bolsonaro, sobretudo sobre a anistia aos condenados pelos atos de 8 de Janeiro. Atribuiu ao ministro Alexandre de Moraes, do Supremo Tribunal Federal, dificuldades para avançar a medida, e acusou Motta e o presidente do Senado, Davi Alcolumbre (União-AP), de favorecerem o governo Lula na tramitação de projetos. Motta e Alcolumbre não responderam às críticas nas reportagens lidas.
+
+## O que o PL pode perder
+
+O Correio da Manhã descreve o argumento da ala pragmática. Sem participar do bloco de Motta, o PL pode ficar isolado na divisão de cargos. Pela ordem de escolha das comissões, o partido poderia cair da primeira ou segunda posição para a 14ª. Mesmo fora do bloco, teria direito à presidência de sete comissões, mas de colegiados considerados menos estratégicos. O deputado Nikolas Ferreira (PL-MG) tem interesse em comandar a Comissão de Constituição e Justiça (CCJ).
+
+A ala que resiste ao acordo cita a proximidade de Motta com o presidente Lula (PT), partido de esquerda. O deputado Zé Trovão (PL-SC) disse que, se o PL não lançar candidato próprio, pretende registrar candidatura avulsa. A iniciativa é individual e não representa decisão da direção partidária.
+
+## A disputa paralela no Senado
+
+Flávio também anunciou que indicará o líder da oposição, Rogério Marinho (PL-RN), para concorrer à Presidência do Senado contra Alcolumbre. O PL prevê 28 senadores a partir de 2027, e Alcolumbre afirma ter ao menos 48 votos, quando bastam 41. A oposição questiona essa conta. A disputa nas duas Casas se cruza com propostas da oposição para restringir competências do Supremo e facilitar o impeachment de ministros, que dependem da vontade do presidente do Senado.
+
 ## O que vem agora
 
 A consulta aos 121 deputados leva cerca de 15 dias a partir de 11 de novembro, e só depois o PL anuncia se apoia Motta ou lança nome próprio.
@@ -29,4 +43,4 @@ A consulta aos 121 deputados leva cerca de 15 dias a partir de 11 de novembro, e
 
 A decisão final da bancada e o nome de um eventual candidato do PL à Presidência da Câmara não foram definidos.
 NUMS 121|deputados eleitos do PL;94|presentes à reunião de 11/11;15|partidos que apoiam Motta;257|quórum mínimo no primeiro turno`,
- fontes:[['CartaCapital (Flávio quer liderar a oposição, mas não comanda o PL)','https://www.cartacapital.com.br/politica/flavio-bolsonaro-quer-liderar-a-oposicao-mas-nao-consegue-comandar-o-proprio-pl/'],['A Crítica de Campo Grande (PL consultará 121 deputados)','https://acritica.net/politica/sem-consenso-pl-consultara-121-deputados-sobre-apoio-a-reeleicao-de-hugo-motta/']]});
+ fontes:[['CartaCapital (Flávio quer liderar a oposição, mas não comanda o PL)','https://www.cartacapital.com.br/politica/flavio-bolsonaro-quer-liderar-a-oposicao-mas-nao-consegue-comandar-o-proprio-pl/'],['A Crítica de Campo Grande (PL consultará 121 deputados)','https://acritica.net/politica/sem-consenso-pl-consultara-121-deputados-sobre-apoio-a-reeleicao-de-hugo-motta/'],['A Crítica de Campo Grande (Flávio rejeita apoio a Motta)','https://acritica.net/politica/flavio-bolsonaro-rejeita-apoio-a-hugo-motta-e-amplia-divisao-no-pl/'],['Correio da Manhã (PL discute espaço na Câmara)','https://www.correiodamanha.com.br/politica/2026/11/331866-pl-decide-se-apoiara-reeleicao-de-hugo-motta-e-discute-espaco-na-camara.html']]});

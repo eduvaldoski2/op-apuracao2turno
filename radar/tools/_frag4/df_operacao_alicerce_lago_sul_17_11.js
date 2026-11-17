@@ -5,7 +5,7 @@ _N('df_operacao_alicerce_lago_sul_17_11', {ed:'regioes', reg:'co', k:'Regiões �
  sub:'Uma funcionária do setor financeiro da empresa inseria boletos falsos entre os pagamentos da obra, e o dinheiro ia para familiares; também houve buscas em Ceilândia e Águas Lindas de Goiás.',
  dado:{n:'R$ 1,4 milhão', l:'desviado de uma obra no Lago Sul, segundo a Polícia Civil do DF'},
  resumo:'A Polícia Civil do Distrito Federal prendeu na segunda-feira (16) quatro pessoas suspeitas de desviar R$ 1,4 milhão destinado à construção de uma casa no Lago Sul, área nobre de Brasília. Uma funcionária do setor administrativo-financeiro de uma empresa do ramo inseria boletos e cobranças falsas entre os pagamentos legítimos, com chaves Pix pessoais, e o dinheiro era transferido a familiares. A Operação Alicerce cumpriu também quatro mandados de busca em Ceilândia e Águas Lindas de Goiás.',
- fundo:`A Polícia Civil do Distrito Federal (PCDF) prendeu na segunda-feira (16) quatro pessoas suspeitas de desviar R$ 1,4 milhão destinado à construção de uma casa no Lago Sul, área nobre de Brasília. A ação, chamada Operação Alicerce, cumpriu também quatro mandados de busca e apreensão, informa o g1 DF. As identidades dos suspeitos não foram divulgadas.
+ fundo:`A Polícia Civil do Distrito Federal (PCDF) prendeu na segunda-feira (16) quatro pessoas suspeitas de desviar R$ 1,4 milhão destinado à construção de uma casa no Lago Sul, área nobre de Brasília. A ação, chamada Operação Alicerce, cumpriu também quatro mandados de busca e apreensão. As identidades dos suspeitos não foram divulgadas.
 
 ## Como o desvio funcionava
 

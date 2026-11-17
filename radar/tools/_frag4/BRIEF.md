@@ -38,3 +38,15 @@ NUMS 3|rótulo;4|rótulo;5|rótulo`,
 - Acusação é acusação ("é suspeito", "segundo a Polícia"). Citação direta: no máximo 1 curta por matéria. Reescreva com palavras próprias.
 - Valide cada arquivo: `node radar/tools/_frag_check.cjs radar/tools/_frag4/<id>.js` (SINTAXE OK, narrativo ≥75%, lide 20–85, resumo 50–120, fontes ≥2). Corrija o que apontar. Cuidado com crases dentro do template e com apóstrofos em strings entre aspas simples (use \').
 - Ao terminar (prazo: 20 minutos de relógio), responda só com a lista: id | editoria | t | (nº palavras).
+
+## ATUALIZAÇÕES (_U) — para quem foi designado a atualizar matéria existente
+Leia a matéria atual: `node -e "..."` não é necessário; use `grep -n "_N('ID'" radar/_edicao.php` e leia o bloco (ou `sed -n`). Escreva em radar/tools/_frag4u/<id>.js (mesmo id da matéria) assim:
+```
+// ED: politica
+// KIND: U
+_U('id_existente', {hora:'17/11',
+ t:'...estado de agora...', sub:'...', dado:{n:'',l:''}, resumo:'50–120 palavras', upd:'1–2 frases: o que mudou desde a edição anterior',
+ fundo:`...matéria REESCRITA INTEIRA com o fato novo (300–800 palavras, mesmo padrão: lide, narrativa, ## temáticos, fecho curto, NUMS)...`,
+ fontes:[[...],[...]]});
+```
+Reescreva tudo (não anexe "Atualização das 15h"); o fato anterior vira contexto. Valide com `node radar/tools/_frag_check.cjs <arquivo>` (aceita _U).
