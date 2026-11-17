@@ -6,7 +6,7 @@ _U('go_amado_batista_aviao_emergencia_16_11', {ed:'regioes', reg:'co', k:'Regiõ
  dado:{n:'30 mil para 15 mil pés', l:'descida feita pelo piloto para descongelar o sensor do lado esquerdo'},
  resumo:'O comandante Marcus Boldrin afirmou que o avião do cantor Amado Batista, que fez uma descida de emergência em 9 de novembro, não tinha sinais visuais de gelo nas asas nem no para-brisa. A principal hipótese é o congelamento de um resíduo de líquido no sensor esquerdo, por causa das temperaturas negativas na altitude de cruzeiro. Ele desceu de 30 mil para 15 mil pés para descongelar o sensor, e a aeronave pousou em segurança em Goiânia, onde passa por manutenção. Ninguém se feriu.',
  upd:'O piloto descartou sinais visuais de gelo nas asas e no para-brisa e apontou o congelamento de resíduo de líquido no sensor esquerdo como hipótese principal; a aeronave passa por manutenção em Goiânia.',
- fundo:`O comandante Marcus Boldrin afirmou, em entrevista ao g1 Goiás, que o avião do cantor Amado Batista que fez uma descida de emergência em 9 de novembro não tinha sinais visuais de gelo nas asas nem no para-brisa. A principal hipótese é o congelamento de um resíduo de líquido no sensor esquerdo, por causa das temperaturas negativas na altitude de cruzeiro.
+ fundo:`O comandante Marcus Boldrin afirmou, em entrevista, que o avião do cantor Amado Batista que fez uma descida de emergência em 9 de novembro não tinha sinais visuais de gelo nas asas nem no para-brisa. A principal hipótese é o congelamento de um resíduo de líquido no sensor esquerdo, por causa das temperaturas negativas na altitude de cruzeiro.
 
 ## A hipótese do sensor
 

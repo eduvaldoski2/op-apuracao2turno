@@ -6,7 +6,7 @@ _N('decreto_sistema_satelites_defesa_17_11', {ed:'politica', k:'Política · Gov
  dado:{n:'4', l:'ministérios nos colegiados que vão coordenar o sistema: Comunicações, Defesa, Ciência e Desenvolvimento'},
  resumo:'Decreto publicado no Diário Oficial da União desta terça (17) institui o Sistema de Satélites de Defesa e Comunicações Estratégicas, que reunirá os satélites governamentais de comunicações desenvolvidos, fabricados, lançados e operados pelo Brasil. O Satélite Geoestacionário de Defesa e Comunicações Estratégicas (SGDC-1), em operação desde 2017, passa a integrá-lo. A coordenação ficará com colegiados dos ministérios das Comunicações, da Defesa, da Ciência e Tecnologia e do Desenvolvimento, e a Telebras fará as contratações.',
  upd:'',
- fundo:`Um decreto publicado na edição desta terça-feira (17) do Diário Oficial da União institui o Sistema de Satélites de Defesa e Comunicações Estratégicas, que passa a fazer parte da estrutura do governo federal. O sistema reunirá os satélites governamentais de comunicações desenvolvidos, fabricados, lançados e operados pelo Brasil, com o objetivo de atender aos órgãos de defesa nacional e a outras instituições públicas, informa a Agência Brasil.
+ fundo:`Um decreto publicado na edição desta terça-feira (17) do Diário Oficial da União institui o Sistema de Satélites de Defesa e Comunicações Estratégicas, que passa a fazer parte da estrutura do governo federal. O sistema reunirá os satélites governamentais de comunicações desenvolvidos, fabricados, lançados e operados pelo Brasil, com o objetivo de atender aos órgãos de defesa nacional e a outras instituições públicas.
 
 ## O que o decreto muda
 

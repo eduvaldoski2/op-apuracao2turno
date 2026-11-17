@@ -5,7 +5,7 @@ _N('abono_salarial_276_mil_sem_sacar_17_11', {ed:'economia', k:'Economia · Trab
  sub:'O Ministério do Trabalho informa que 98,97% dos pagamentos previstos no calendário já foram feitos; quem tem direito pode consultar o valor na Carteira de Trabalho Digital e no Gov.br.',
  dado:{n:'R$ 304,8 mi', l:'valor do abono salarial de 2026 ainda disponível para saque por 276.831 pessoas'},
  resumo:'O Ministério do Trabalho e Emprego informa que 276.831 trabalhadores ainda não retiraram o abono salarial de 2026, e R$ 304,8 milhões seguem disponíveis. O prazo termina em 28 de dezembro. Até 9 de novembro, foram pagos 26.588.717 benefícios, que somam R$ 33,1 bilhões e equivalem a 98,97% do previsto no calendário deste ano. O pagamento é feito pela Caixa (PIS) e pelo Banco do Brasil (Pasep), e a consulta pode ser feita pela Carteira de Trabalho Digital e pelo Gov.br.',
- fundo:`Mais de 276 mil trabalhadores ainda não retiraram o abono salarial de 2026. O levantamento do Ministério do Trabalho e Emprego (MTE) aponta 276.831 pessoas com valores disponíveis, que somam R$ 304,8 milhões. O prazo para o saque termina em 28 de dezembro de 2026, informa a Agência Brasil.
+ fundo:`Mais de 276 mil trabalhadores ainda não retiraram o abono salarial de 2026. O levantamento do Ministério do Trabalho e Emprego (MTE) aponta 276.831 pessoas com valores disponíveis, que somam R$ 304,8 milhões. O prazo para o saque termina em 28 de dezembro de 2026.
 
 ## Quanto já foi pago
 

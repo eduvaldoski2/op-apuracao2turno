@@ -12,7 +12,7 @@ _N('europa_kits_emergencia_17_11', {ed:'mundo', k:'Mundo · Europa', hora:'17/11
 
 As diretrizes não são obrigatórias e podem ser revistas depois de consultas. Pela primeira, cada domicílio deve conseguir cobrir as necessidades básicas por 72 horas, tempo em que os serviços de emergência se mobilizam. Isso inclui estoque de água, comida e remédios, uma mochila pronta para evacuação, um plano familiar e noções de primeiros socorros, segundo o Brussels Signal. As outras três tratam da inclusão da preparação nos currículos da educação infantil e do ensino fundamental, de alertas e abrigos acessíveis a pessoas com deficiência e de comunicação de risco, com informação confiável antes, durante e depois das crises e combate à desinformação. A educação continua sendo competência de cada país, e a Comissão pede que o tema entre nas aulas existentes, sem criar disciplina nova e sem provocar medo.
 
-## Por que agora
+## As ameaças que motivam o pedido
 
 A comissária europeia Hadja Lahbib citou como ameaças o clima extremo, os ciberataques, a sabotagem e a possibilidade de conflito armado. Ela lembrou o apagão de 28 de abril de 2025 na Espanha e em Portugal como exemplo de uma crise que provoca outras. O Mecanismo de Proteção Civil da UE foi acionado mais de 60 vezes no último ano, cerca de dez vezes mais que nos primeiros anos, e a Bélgica o usou em agosto, para obter aviões de combate a incêndios durante um incêndio florestal recorde, informa o Brussels Signal. O conceito de 72 horas segue modelos nórdicos; a Noruega reforçou o planejamento de defesa civil depois da invasão em larga escala da Ucrânia pela Rússia. A BBC lembra que a medida não é exatamente nova: a Comissão já havia feito pedido semelhante em março de 2025.
 
@@ -20,7 +20,7 @@ A comissária europeia Hadja Lahbib citou como ameaças o clima extremo, os cibe
 
 A Irlanda tirou a referência às 72 horas do folheto "Be Emergency Ready", enviado a cerca de 2,2 milhões de lares desde 21 de setembro. Segundo o Brussels Signal, as autoridades agiram depois que pesquisa de mercado indicou que o prazo poderia causar ansiedade. Lahbib resumiu a intenção da Comissão com a frase "alerta, não alarmados; preparados, não assustados".
 
-## O que vem agora
+## A proposta de um Dia da Preparação
 
 A Comissão propôs um Dia Europeu da Preparação, em 23 de outubro de cada ano, a partir de 2027, data de criação do Mecanismo de Proteção Civil, em 2001. Lahbib levará a ideia ao Conselho e ao Parlamento Europeu. Ela também pediu financiamento firme para a proteção civil no próximo orçamento de longo prazo da UE, que vale a partir de 2028. A proposta segue o painel de 150 cidadãos europeus que, entre março e maio de 2026, recomendou uma Semana Europeia da Preparação.
 

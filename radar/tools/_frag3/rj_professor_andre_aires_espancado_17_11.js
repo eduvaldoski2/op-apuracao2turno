@@ -5,7 +5,7 @@ _N('rj_professor_andre_aires_espancado_17_11', {ed:'regioes', reg:'rj', k:'Regi�
  sub:'André Aires, professor, escritor e ator, sofreu traumatismo craniano no domingo (15) e está internado no Hospital Municipal Miguel Couto; policiais militares chegaram a ir ao local e saíram sem prender ninguém.',
  dado:{n:'Estado grave', l:'de André Aires, internado no Hospital Municipal Miguel Couto com traumatismo craniano'},
  resumo:'O professor, escritor e ator André Luís de Oliveira, o André Aires, está em estado grave no Hospital Municipal Miguel Couto, no Rio, com traumatismo craniano, depois de ser espancado no Centro na manhã de domingo (15) ao tentar defender uma mulher de agressões. Um suspeito foi preso por tentativa de homicídio. Policiais militares foram ao local, mas saíram sem prender ninguém. Uma mulher que acompanhava o agressor passou a perseguir o professor com ofensas homofóbicas, e ele foi agredido por mais de uma pessoa.',
- fundo:`O professor, escritor e ator André Luís de Oliveira, conhecido como André Aires, está em estado grave no Hospital Municipal Miguel Couto, na Zona Sul do Rio, com traumatismo craniano, depois de ser espancado no Centro da cidade na manhã de domingo (15). Um suspeito foi preso por tentativa de homicídio, informa O Globo.
+ fundo:`O professor, escritor e ator André Luís de Oliveira, conhecido como André Aires, está em estado grave no Hospital Municipal Miguel Couto, na Zona Sul do Rio, com traumatismo craniano, depois de ser espancado no Centro da cidade na manhã de domingo (15). Um suspeito foi preso por tentativa de homicídio.
 
 ## A agressão
 

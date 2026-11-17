@@ -5,7 +5,7 @@ _N('am_passe_livre_estudantil_manaus_17_11', {ed:'regioes', reg:'norte', k:'Regi
  sub:'A decisão fixa multa diária de R$ 50 mil ao Sinetram e ao IMMU em caso de descumprimento; o Sinetram diz que vai restabelecer os créditos.',
  dado:{n:'R$ 6 milhões', l:'repasse do Governo do Amazonas ao Sinetram: R$ 3 milhões em 24 horas e R$ 3 milhões até 5 de dezembro'},
  resumo:'A Justiça do Amazonas determinou na segunda-feira (16) a retomada, em até 24 horas, do Passe Livre Estudantil para alunos da rede estadual em Manaus, suspenso desde 2 de novembro. A decisão fixa multa diária de R$ 50 mil ao Sinetram, sindicato das empresas de ônibus, e ao IMMU, o instituto de mobilidade urbana, em caso de descumprimento. O Governo do Amazonas deve repassar R$ 3 milhões ao Sinetram em 24 horas e outros R$ 3 milhões até 5 de dezembro, para custear 48 créditos por aluno.',
- fundo:`A Justiça do Amazonas determinou nesta segunda-feira (16) o restabelecimento das recargas do Passe Livre Estudantil para alunos da rede estadual de ensino de Manaus no prazo de 24 horas, a contar da intimação. O benefício está suspenso desde 2 de novembro, informa o g1 Amazonas.
+ fundo:`A Justiça do Amazonas determinou nesta segunda-feira (16) o restabelecimento das recargas do Passe Livre Estudantil para alunos da rede estadual de ensino de Manaus no prazo de 24 horas, a contar da intimação. O benefício está suspenso desde 2 de novembro.
 
 ## O que a decisão determina
 
