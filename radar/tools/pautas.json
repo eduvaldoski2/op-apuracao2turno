@@ -13,10 +13,10 @@
     "pena_cofre",
     "ueno_pagamentos"
    ],
-   "verificada": "2026-11-16-19h",
-   "fato_novo": true,
-   "ultimo_fato": "16/11: a Justiça paraguaia ordena transferir Peña a prisão militar após denúncias de privilégios em presídio.",
-   "proximo": "Sanção do Orçamento; perícia do celular de Peña; possível acusação de lavagem."
+   "verificada": "2026-11-17-07h",
+   "fato_novo": false,
+   "ultimo_fato": "16/11, ~15h: o juiz Osmar Legal transfere Peña do regimento presidencial à prisão militar de Viñas Cue; Contraloría amplia exame patrimonial.",
+   "proximo": "Sanção do Orçamento; perícia do celular; possível acusação de lavagem."
   },
   {
    "id": "transicao-lula",
@@ -45,10 +45,10 @@
     "lula_testa_ministros_equipe_economica_16_11",
     "mercado_fazenda_bc_gestoras_caixa_15_11"
    ],
-   "verificada": "2026-11-16-19h",
+   "verificada": "2026-11-17-07h",
    "fato_novo": true,
-   "ultimo_fato": "16/11: Lula volta de Madri e decide o ministério a partir de terça (17); Lindbergh chama Moretti de autoritário.",
-   "proximo": "Decisões sobre Fazenda e Planejamento; escolha dos ministros até 25/11."
+   "ultimo_fato": "17/11: Lula volta sem ministros anunciados; PSB tem quatro nomes cotados e Alckmin é cotado para a Fazenda.",
+   "proximo": "Decisões sobre Fazenda e Planejamento; ministros até 25/11."
   },
   {
    "id": "tse-acoes",
@@ -63,7 +63,7 @@
     "dallagnol_tse_pauta",
     "toffoli_contas_campanha_lula_14_11"
    ],
-   "verificada": "2026-11-16-19h",
+   "verificada": "2026-11-17-07h",
    "fato_novo": false,
    "ultimo_fato": "15/11: chapa Lula-Alckmin diz ter contabilizado R$ 44 mi questionados; área técnica aponta possível omissão de cerca de R$ 48 mi.",
    "proximo": "Análise de Toffoli sobre a resposta."
@@ -81,10 +81,10 @@
     "quaest_pos_eleicao",
     "moraes_veta_visitas_bolsonaro_senado_16_11"
    ],
-   "verificada": "2026-11-16-19h",
+   "verificada": "2026-11-17-07h",
    "fato_novo": true,
-   "ultimo_fato": "16/11: Moraes veta visitas a Bolsonaro de pré-candidatos ao Senado; voto remoto de Flávio segue sem decisão.",
-   "proximo": "Decisão da Mesa do Senado."
+   "ultimo_fato": "16-17/11: Marinho e Tereza Cristina criticam veto de Moraes; Alencar Santana (PT-SP) e Prerrogativas pedem ao STF bloqueio de salário e mandato de Flávio.",
+   "proximo": "Decisão da Mesa do Senado e do STF."
   },
   {
    "id": "congresso-novo",
@@ -109,10 +109,10 @@
     "senado",
     "moraes_veta_visitas_bolsonaro_senado_16_11"
    ],
-   "verificada": "2026-11-16-19h",
+   "verificada": "2026-11-17-07h",
    "fato_novo": true,
-   "ultimo_fato": "16/11: Moraes veta visitas de Valdemar, Marinho e Tereza Cristina a Bolsonaro; Senado vota destaques do ajuste na terça (17).",
-   "proximo": "Destaques no Senado (17), votação na Câmara (18); Mesas em 1º/02/2027."
+   "ultimo_fato": "17/11: Senado vota às 14h os quatro destaques do ajuste fiscal; Câmara na quarta (18).",
+   "proximo": "Câmara (18); Mesas em 1º/02/2027."
   },
   {
    "id": "seguranca-publica",
@@ -127,10 +127,10 @@
     "stf_ministros_relatorios_pf_vorcaro_14_11",
     "andrei_nega_crise_pf_dia_policial_16_11"
    ],
-   "verificada": "2026-11-16-19h",
-   "fato_novo": false,
-   "ultimo_fato": "16/11: o diretor-geral da PF, Andrei Rodrigues, nega crise interna no Dia do Policial Federal; coluna diz que ministros do STF reavaliam apoio a ele.",
-   "proximo": "Definição do Ministério da Segurança e da relatoria do caso Master."
+   "verificada": "2026-11-17-07h",
+   "fato_novo": true,
+   "ultimo_fato": "17/11: PF entrega na quarta (18) novos relatórios sobre citações a ministros do STF no celular de Vorcaro; Andrei Rodrigues nega crise.",
+   "proximo": "Relatórios da PF (18); relatoria do caso Master."
   },
   {
    "id": "escala-6x1",
@@ -140,10 +140,10 @@
    "materias": [
     "dino_6x1"
    ],
-   "verificada": "2026-11-16-19h",
-   "fato_novo": false,
-   "ultimo_fato": "16/11: o julgamento da escala 5x2 recomeça no plenário físico do STF, sem data marcada; as regras de Dino seguem valendo.",
-   "proximo": "Data da sessão presencial; reação do Congresso."
+   "verificada": "2026-11-17-07h",
+   "fato_novo": true,
+   "ultimo_fato": "17/11: decreto da 6x1 esperado nesta semana; STF sem data para a sessão presencial.",
+   "proximo": "Decreto; sessão do STF."
   },
   {
    "id": "economia-mercado",
@@ -187,10 +187,10 @@
     "ibcbr_setembro_queda_3t_16_11",
     "focus_16_11_mercado_projecoes"
    ],
-   "verificada": "2026-11-16-19h",
+   "verificada": "2026-11-17-07h",
    "fato_novo": true,
-   "ultimo_fato": "16/11: dólar sobe a cerca de R$ 5,77 e o Ibovespa cai perto de 1,5% no meio da tarde; Cade, chips dos EUA e pacote fiscal dominam o dia.",
-   "proximo": "Destaques do ajuste no Senado (17), Câmara (18); PIB em 2/12."
+   "ultimo_fato": "17/11: Senado vota destaques às 14h; impacto do pacote em 2027 pode passar de R$ 56 bi; EUA exigem licença para chips de IA ao Brasil; dólar fechou a R$ 5,7767 na segunda.",
+   "proximo": "Câmara (18); balanço da Nvidia; PIB em 2/12."
   },
   {
    "id": "eua-meio-mandato",
@@ -205,10 +205,10 @@
     "eua_tarifas_300",
     "alasca_senado_peltola_sullivan_16_11"
    ],
-   "verificada": "2026-11-16-19h",
-   "fato_novo": false,
-   "ultimo_fato": "10/11: Peltola (D) 49% a 47,2% sobre Sullivan (R) no Alasca com ~84% apurados; tabulação ranqueada em 18/11.",
-   "proximo": "Certificação em 25/11."
+   "verificada": "2026-11-17-07h",
+   "fato_novo": true,
+   "ultimo_fato": "14/11: Peltola 49,9% x Sullivan 46% no Alasca com 97% contados.",
+   "proximo": "Tabulação ranqueada 18/11; certificação 25/11."
   },
   {
    "id": "ucrania-paz",
@@ -226,10 +226,10 @@
     "zelenski_starshield_spacex_14_11",
     "trump_xi_putin_shenzhen_14_11"
    ],
-   "verificada": "2026-11-16-19h",
-   "fato_novo": false,
-   "ultimo_fato": "16/11: Ucrânia ataca a ponte da Crimeia antes da cúpula Trump-Xi-Putin; Estônia fecha a fronteira com a Rússia.",
-   "proximo": "Resultado da cúpula; reação da Rússia."
+   "verificada": "2026-11-17-07h",
+   "fato_novo": true,
+   "ultimo_fato": "17/11: Rússia atinge pontes do Norte e do Sul em Kiev; China confirma cúpula Trump-Xi-Putin em 19/11; Moscou rejeita comparação com Yalta.",
+   "proximo": "Cúpula de 19/11."
   },
   {
    "id": "israel-governo",
@@ -240,10 +240,10 @@
     "israel",
     "israel_oposicao_acusa_netanyahu_golpe_16_11"
    ],
-   "verificada": "2026-11-16-19h",
-   "fato_novo": false,
-   "ultimo_fato": "16/11: a oposição pede, com 67 assinaturas, a troca do presidente da Knesset em votação na terça (17); Netanyahu é acusado de tentativa de golpe.",
-   "proximo": "Votação na Knesset (17/11)."
+   "verificada": "2026-11-17-07h",
+   "fato_novo": true,
+   "ultimo_fato": "17/11: votação do presidente da Knesset às 16h (11h em Brasília); UTJ não apoia Matan Kahana.",
+   "proximo": "Resultado da votação."
   },
   {
    "id": "ira-oriente-medio",
@@ -257,72 +257,72 @@
     "khor_mor",
     "ira_radar_bahrein_13_11"
    ],
-   "verificada": "2026-11-16-19h",
-   "fato_novo": false,
-   "ultimo_fato": "15/11: forças apoiadas pela Arábia Saudita recuam do mar Vermelho no Iêmen; Irã ataca o Bahrein.",
+   "verificada": "2026-11-17-07h",
+   "fato_novo": true,
+   "ultimo_fato": "17/11: Irã reivindica o terceiro ataque ao Bahrein em cinco dias, contra radar na base Sheikh Isa.",
    "proximo": "Resposta dos EUA; APEC."
   }
  ],
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-16-19h",
-   "achado": "Edição 19h de 16/11: capas das 15h23, artigo.cjs e buscas; novas matérias sobre veto de Moraes a visitas a Bolsonaro, Lindbergh x Moretti, provas da Vaza Jato, Pix 6 anos, Linha Amarela/Invepar, regiões; sem queda de chefe de Estado nova."
+   "feita": "2026-11-17-07h",
+   "achado": "Edição 07h de 17/11: capas das 06h15, artigo.cjs e buscas; novas: Mongólia (renúncia do presidente), Japão x Rússia, Senado/ajuste, PT nas redes, Flávio/Prerrogativas, Alasca, regiões; sem queda de chefe de Estado além da Mongólia."
   }
  ]
 }
