@@ -12,12 +12,13 @@
     "ueno_bank",
     "paraguai_cupula",
     "pena_cofre",
-    "ueno_pagamentos"
+    "ueno_pagamentos",
+    "itaipu_ueno_18"
    ],
-   "verificada": "2026-11-18-07h",
+   "verificada": "2026-11-18-11h",
    "fato_novo": true,
-   "ultimo_fato": "17/11: procurador-geral Emiliano Rolón renuncia ao cargo horas após abertura de impeachment; crise do Ueno Bank segue.",
-   "proximo": "Sanção do Orçamento; perícia do celular."
+   "ultimo_fato": "18/11: Itaipu habilitou o Ueno Bank com 13 meses de operação, contra exigência de cinco anos; a estatal mantinha R$ 1 bi no banco (Gazeta do Povo). Procurador-geral renunciou em 17/11.",
+   "proximo": "Sanção do Orçamento; perícia do celular; apuração sobre a Itaipu."
   },
   {
    "id": "transicao-lula",
@@ -49,12 +50,13 @@
     "planalto_bancada_pt_moretti_centrais_ato_une_16_11",
     "psb_tebet_stf_aliados_lamentam_17_11",
     "bastidor_lula_reuniao_ministros_stf_moraes_17_11",
-    "lula_refem_mercado_direita_17_11"
+    "lula_refem_mercado_direita_17_11",
+    "lula_ministerios_centrao_18"
    ],
-   "verificada": "2026-11-18-07h",
-   "fato_novo": false,
-   "ultimo_fato": "Lula reúne Camilo Santana, Rui Costa e Rafael Fonteles para montar o ministério; PSB tem ao menos quatro cotados (17/11).",
-   "proximo": "Decisões sobre Fazenda e Planejamento; ministros até 25/11."
+   "verificada": "2026-11-18-11h",
+   "fato_novo": true,
+   "ultimo_fato": "18/11: g1 vê risco de derrota no ajuste fiscal empurrando Lula a ceder mais espaço ao Centrão e à Frente Ampla; A Tarde diz que os primeiros ministros saem até o início de dezembro.",
+   "proximo": "Anúncios dos primeiros ministros até o início de dezembro; Fazenda e Planejamento; ministros até 25/11."
   },
   {
    "id": "tse-acoes",
@@ -69,7 +71,7 @@
     "dallagnol_tse_pauta",
     "toffoli_contas_campanha_lula_14_11"
    ],
-   "verificada": "2026-11-18-07h",
+   "verificada": "2026-11-18-11h",
    "fato_novo": false,
    "ultimo_fato": "15/11: chapa Lula-Alckmin diz ter contabilizado R$ 44 mi questionados; área técnica aponta possível omissão de cerca de R$ 48 mi.",
    "proximo": "Análise de Toffoli sobre a resposta."
@@ -89,8 +91,8 @@
     "moraes_veta_visitas_bolsonaro_senado_16_11",
     "pl_flavio_motta_consulta_121_deputados_17_11"
    ],
-   "verificada": "2026-11-18-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-18-11h",
+   "fato_novo": false,
    "ultimo_fato": "17/11: PGR (Gonet) apoia prorrogar por 90 dias o inquérito sobre o filme Dark Horse; PF cita perícias e cooperação com os EUA.",
    "proximo": "Decisão da Mesa do Senado e do STF."
   },
@@ -124,7 +126,7 @@
     "ajuste_fiscal_pacote_11_11",
     "janones_exercito_lula_ajuste_fiscal_15_11"
    ],
-   "verificada": "2026-11-18-07h",
+   "verificada": "2026-11-18-11h",
    "fato_novo": true,
    "ultimo_fato": "17/11: PL articula candidatura própria de Nikolas à Câmara contra Motta; Senado adia destaques do ajuste fiscal para quarta (18).",
    "proximo": "Câmara (18); Mesas em 1º/02/2027."
@@ -146,7 +148,7 @@
     "stf_codigo_etica_fachin_trava_2027_17_11",
     "vieira_interferencia_andrei_pf_17_11"
    ],
-   "verificada": "2026-11-18-07h",
+   "verificada": "2026-11-18-11h",
    "fato_novo": false,
    "ultimo_fato": "17/11: Alessandro Vieira vê interferência de Andrei Rodrigues contra delegados do caso Master na PF.",
    "proximo": "Relatórios da PF ao STF (18)."
@@ -161,10 +163,10 @@
     "dino_6x1",
     "dino_5x2_plenario_presencial_17_11"
    ],
-   "verificada": "2026-11-18-07h",
+   "verificada": "2026-11-18-11h",
    "fato_novo": true,
-   "ultimo_fato": "17/11: Marinho diz que Lula assina na quinta (19) o decreto de regulamentação do fim da 6x1, após pedir ajustes.",
-   "proximo": "Julgamento no plenário; decreto da 6x1."
+   "ultimo_fato": "18/11: Correio Braziliense confirma que Lula assina na quinta (19), no Planalto, o decreto que regulamenta o fim da 6x1, com portarias por categoria.",
+   "proximo": "Assinatura do decreto (19/11); publicação no Diário Oficial."
   },
   {
    "id": "economia-mercado",
@@ -210,12 +212,14 @@
     "correios_prejuizo_3t26_15_11",
     "ibcbr_setembro_queda_3t_16_11",
     "focus_16_11_mercado_projecoes",
-    "nvidia_campea_nacional_ia_trump_shenzhen_16_11"
+    "nvidia_campea_nacional_ia_trump_shenzhen_16_11",
+    "cash_out_18",
+    "sulamerica_blackrock_18"
    ],
-   "verificada": "2026-11-18-07h",
+   "verificada": "2026-11-18-11h",
    "fato_novo": true,
-   "ultimo_fato": "17/11: Senado adia para quarta (18) destaques do ajuste fiscal; STJ suspende liminar contra cobrança da Uber; abono de R$ 304,8 mi segue sem saque.",
-   "proximo": "Câmara (18); balanço da Nvidia; PIB em 2/12."
+   "ultimo_fato": "18/11: Senado vota hoje os destaques do ajuste fiscal (impacto de até R$ 56 bi); PF cumpre 59 mandados contra a Esportes da Sorte e a Justiça bloqueia R$ 2,3 bi.",
+   "proximo": "Votação dos destaques no Senado (18); retorno do texto à Câmara; PIB em 2/12."
   },
   {
    "id": "eua-meio-mandato",
@@ -229,12 +233,13 @@
     "eua_senado_mississippi_alasca",
     "eua_tarifas_300",
     "alasca_senado_peltola_sullivan_16_11",
-    "alasca_peltola_sullivan_tabulacao_18_11"
+    "alasca_peltola_sullivan_tabulacao_18_11",
+    "alasca_peltola_18"
    ],
-   "verificada": "2026-11-18-07h",
-   "fato_novo": false,
-   "ultimo_fato": "14/11: Peltola 49,9% x Sullivan 46% no Alasca com 97% contados.",
-   "proximo": "Tabulação ranqueada 18/11; certificação 25/11."
+   "verificada": "2026-11-18-11h",
+   "fato_novo": true,
+   "ultimo_fato": "17/11: Mary Peltola (D) venceu no Alasca sobre Dan Sullivan (R), resultado confirmado pelas autoridades estaduais; democratas com 56 a 44 no Senado (Estado de Minas).",
+   "proximo": "Certificação do resultado; posse da nova legislatura."
   },
   {
    "id": "ucrania-paz",
@@ -254,10 +259,10 @@
     "zelenski_starshield_spacex_14_11",
     "trump_xi_putin_shenzhen_14_11"
    ],
-   "verificada": "2026-11-18-07h",
+   "verificada": "2026-11-18-11h",
    "fato_novo": true,
-   "ultimo_fato": "17/11: Ucrânia destrói parte da ponte da Crimeia; China confirma reunião trilateral Trump-Xi-Putin em Shenzhen em 19/11.",
-   "proximo": "Cúpula de 19/11."
+   "ultimo_fato": "18/11: Xi abriu em Shenzhen a reunião com Trump e Putin; Putin chegou após bombardeiros nucleares russos voarem perto do Japão e de Taiwan (Folha).",
+   "proximo": "Resultado da cúpula trilateral de Shenzhen; tema da Ucrânia e tarifas."
   },
   {
    "id": "israel-governo",
@@ -269,8 +274,8 @@
     "israel",
     "israel_oposicao_acusa_netanyahu_golpe_16_11"
    ],
-   "verificada": "2026-11-18-07h",
-   "fato_novo": true,
+   "verificada": "2026-11-18-11h",
+   "fato_novo": false,
    "ultimo_fato": "17/11: Knesset elege Matan Kahana (Yashar, de Eisenkot) para a presidência, com apoio da oposição a Netanyahu.",
    "proximo": "Resultado da votação."
   },
@@ -287,8 +292,8 @@
     "ira_radar_bahrein_13_11",
     "ira_nega_ataque_washington_17_11"
    ],
-   "verificada": "2026-11-17-11h",
-   "fato_novo": true,
+   "verificada": "2026-11-18-11h",
+   "fato_novo": false,
    "ultimo_fato": "17/11: Irã nega plano de ataque a Washington; Trump diz que não descarta a ameaça; ataques a base no Bahrein seguem.",
    "proximo": "Resposta dos EUA; APEC."
   }
@@ -296,63 +301,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-18-07h",
-   "achado": "Edição 07h de 18/11: capas dos grandes veículos e artigo.cjs (17/11, 23h56); buscas: Senado/ajuste fiscal, Dark Horse/PGR, Dosimetria/Fachin, Aneel/Enel, cúpula Shenzhen, Paraguai/Peña, Crimeia, Knesset, sarampo, Epstein, respiradores/PF, Maré, Javari, Maranhão."
+   "feita": "2026-11-18-11h",
+   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
   }
  ]
 }
