@@ -34800,7 +34800,7 @@ S.xango_stf_18 = {ed:'politica', k:'Política', hora:'17/11',
  fundo:[
   ['p','O Supremo Tribunal Federal instalou na corte uma escultura de Oxê de Xangô, símbolo da justiça na tradição iorubá e nas religiões de matriz africana. A obra foi inaugurada nesta terça-feira (17), segundo a Folha.'],
   ['p','A homenagem atende a um pedido feito por um instituto, depois de o STF decidir que crucifixos e outros símbolos religiosos em prédios públicos não ferem a laicidade do Estado.'],
-  ['p','A Agência Brasil e o Correio Braziliense também registraram a inauguração. O que ainda não está confirmado: se a escultura terá uma cerimônia pública aberta ao público.']
+  ['p','O que ainda não está confirmado: se a escultura terá uma cerimônia pública aberta ao público.']
  ],
  fontes:[['Folha de S.Paulo','https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/colunas/painel/2026/11/escultura-com-simbolo-da-justica-africana-sera-instalada-no-stf.shtml'],['Folha de S.Paulo (Poder)','https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/poder/2026/11/stf-instala-na-corte-escultura-de-oxe-de-xango-simbolo-de-justica-em-religioes-de-matriz-africana.shtml']]
 };
@@ -34813,7 +34813,7 @@ S.deutsche_18 = {ed:'mundo', k:'Mundo', hora:'17/11',
  fundo:[
   ['p','Um consórcio de mais de 200 jornalistas de veículos de vários países analisou 15 milhões de documentos e apontou falhas do Deutsche Bank em coibir crimes financeiros. A investigação foi publicada nesta terça-feira (17), segundo a Folha e a Veja.'],
   ['p','Segundo a DW, o banco alemão ignorou alertas internos sobre potenciais crimes em negócios lucrativos com clientes de alto risco. Entre os nomes citados nos documentos estão oligarcas russos, Donald Trump e Jeffrey Epstein, como a própria reportagem registra.'],
-  ['p','O Valor Econômico destaca o vazamento de dados de contas e transações do banco. O Deutsche Bank afirma investir em controles para combater crimes financeiros, conforme declarações anteriores da instituição.'],
+  ['p','O Deutsche Bank afirma investir em controles para combater crimes financeiros, conforme declarações anteriores da instituição.'],
   ['p','O que ainda não está confirmado: se haverá investigação formal das autoridades alemãs ou americanas sobre as transações citadas.']
  ],
  fontes:[['DW Brasil','https://www.dw.com/pt-br/investigação-expõe-suposta-má-conduta-do-maior-banco-da-alemanha/a-79972604?maca=bra-rss-br-all-1030-rdf'],['Folha de S.Paulo','https://c-level.folha.uol.com.br/financas/2026/11/deutsche-bank-vazou-dados-de-conta-de-trump-e-movimentou-us-592-mi-de-epstein.shtml']]
@@ -34826,7 +34826,7 @@ S.eua_falhas_18 = {ed:'mundo', k:'Mundo', hora:'17/11',
  fundo:[
   ['p','O presidente Donald Trump minimizou nesta terça-feira (17) uma série de falhas tecnológicas nos Estados Unidos e disse que "coisas assim acontecem", segundo a Folha e o g1.'],
   ['p','O governo americano descartou ataque hacker e atribuiu a paralisação de voos a uma troca de cabo e a equipamentos antigos, de acordo com o Diário do Nordeste e o SBT. Em paralelo, uma rede interna ultrassecreta da Agência de Segurança Nacional (NSA) ficou fora do ar, o que a agência atribuiu a degradação temporária durante manutenção programada, segundo O Globo.'],
-  ['p','O episódio alimentou o debate sobre a modernização da infraestrutura de tecnologia do governo. O que ainda não está confirmado: se as falhas têm relação entre si.']
+  ['p','O que ainda não está confirmado: se as falhas têm relação entre si.']
  ],
  fontes:[['Folha de S.Paulo','https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/tec/2026/11/trump-minimiza-serie-de-falhas-tecnologicas-nos-eua-e-diz-que-coisas-assim-acontecem.shtml'],['O Globo','https://oglobo.globo.com/mundo/noticia/2026/11/17/no-dia-do-suposto-apagao-mundial-rede-interna-de-agencia-americana-fica-fora-do-ar-apos-outras-panes-nos-eua-relembre.ghtml'],['Diário do Nordeste','https://diariodonordeste.verdesmares.com.br/ultima-hora/mundo/governo-trump-descarta-ataque-hacker-e-atribui-paralisacao-apos-troca-de-cabo-1.3805872']]
 };
