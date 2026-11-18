@@ -816,6 +816,8 @@ html:not(.logado) .so-conta-av{display:flex}
 .topo .topo-in{position:relative;justify-content:center;padding:14px 16px 12px}
 .marca-g{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:0}
 .marca-sub{display:flex;align-items:center;gap:8px;color:#fff;font:800 15px/1 system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.marca-painel{height:40px;width:auto;display:block}
+.topo.compact .marca-painel{height:28px}
 .beta{display:inline-block;padding:2px 6px;border-radius:999px;background:#F28C28;color:#fff;font:700 9px/1.2 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase}
 .topo.compact .topo-in{padding:7px 16px 6px}.topo.compact .marca-logo{height:30px}.topo.compact .marca-g{gap:3px}.topo.compact .marca-sub{font-size:11px}
 .abas{top:var(--hh,0px)}
@@ -826,7 +828,7 @@ html:not(.logado) .so-conta-av{display:flex}
 .topo.compact .topo-conta{top:50%;transform:translateY(-50%)}
 @media (max-width:520px){.topo .topo-in{padding-left:12px;padding-right:78px}.topo .marca-logo,.topo.compact .marca-logo{height:32px}.topo-conta{right:8px}.tc-b{padding:7px 12px}}
 .criterios-pe{margin:22px 0 4px;text-align:center}
-@media (max-width:760px){.marca-sub{font-size:13px;letter-spacing:.18em}.beta{font-size:8px;padding:2px 5px}.topo.compact .marca-logo{height:26px}.topo.compact .marca-sub{font-size:10px}}
+@media (max-width:760px){.marca-painel{height:34px}.topo.compact .marca-painel{height:24px}.marca-sub{font-size:13px;letter-spacing:.18em}.beta{font-size:8px;padding:2px 5px}.topo.compact .marca-logo{height:26px}.topo.compact .marca-sub{font-size:10px}}
 /* eleições anteriores e demais cargos (js/hist.js) */
 .h-bar{margin:8px 0}.h-bar-t{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:14px}.h-bar-n{font-weight:600}.h-bar-v{margin-left:auto;white-space:nowrap}.h-bar-v small{color:var(--tx2);margin-left:4px}
 .h-bar-f{height:8px;background:#eeebf5;border-radius:6px;overflow:hidden;margin-top:4px}.h-bar-f i{display:block;height:100%;border-radius:6px}
