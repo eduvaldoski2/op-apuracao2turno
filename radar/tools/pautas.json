@@ -89,11 +89,12 @@
     "flavio_pesquisa",
     "quaest_pos_eleicao",
     "moraes_veta_visitas_bolsonaro_senado_16_11",
-    "pl_flavio_motta_consulta_121_deputados_17_11"
+    "pl_flavio_motta_consulta_121_deputados_17_11",
+    "rockbridge_flavio_pf_18"
    ],
-   "verificada": "2026-11-18-11h",
-   "fato_novo": false,
-   "ultimo_fato": "17/11: PGR (Gonet) apoia prorrogar por 90 dias o inquérito sobre o filme Dark Horse; PF cita perícias e cooperação com os EUA.",
+   "verificada": "2026-11-18-15h",
+   "fato_novo": true,
+   "ultimo_fato": "18/11: PF apura se a Rockbridge, ligada ao vice de Trump, apoiou a campanha de Flávio Bolsonaro (O Tempo, citando o Washington Post).",
    "proximo": "Decisão da Mesa do Senado e do STF."
   },
   {
@@ -124,11 +125,14 @@
     "camara_centrao_apoio_ajuste_motta_argentina_17_11",
     "pl_flavio_motta_consulta_121_deputados_17_11",
     "ajuste_fiscal_pacote_11_11",
-    "janones_exercito_lula_ajuste_fiscal_15_11"
+    "janones_exercito_lula_ajuste_fiscal_15_11",
+    "nikolas_presidencia_camara_18",
+    "senado_iphones_licitacao_18",
+    "cca_penas_embriaguez_18"
    ],
-   "verificada": "2026-11-18-11h",
+   "verificada": "2026-11-18-15h",
    "fato_novo": true,
-   "ultimo_fato": "17/11: PL articula candidatura própria de Nikolas à Câmara contra Motta; Senado adia destaques do ajuste fiscal para quarta (18).",
+   "ultimo_fato": "17/11 e 18/11: Senado aprovou na CCJ projeto que eleva penas de motoristas embriagados; PL divide-se sobre candidatura de Nikolas à presidência da Câmara, e Valdemar a chama de loucura (InfoMoney); Senado adiou destaques do ajuste fiscal.",
    "proximo": "Câmara (18); Mesas em 1º/02/2027."
   },
   {
@@ -148,9 +152,9 @@
     "stf_codigo_etica_fachin_trava_2027_17_11",
     "vieira_interferencia_andrei_pf_17_11"
    ],
-   "verificada": "2026-11-18-11h",
-   "fato_novo": false,
-   "ultimo_fato": "17/11: Alessandro Vieira vê interferência de Andrei Rodrigues contra delegados do caso Master na PF.",
+   "verificada": "2026-11-18-15h",
+   "fato_novo": true,
+   "ultimo_fato": "18/11: Andrei Rodrigues confirma ida ao Senado para explicar trocas de delegados do caso Master, após reunião com Lula (Veja).",
    "proximo": "Relatórios da PF ao STF (18)."
   },
   {
@@ -214,11 +218,16 @@
     "focus_16_11_mercado_projecoes",
     "nvidia_campea_nacional_ia_trump_shenzhen_16_11",
     "cash_out_18",
-    "sulamerica_blackrock_18"
+    "sulamerica_blackrock_18",
+    "durigan_recessao_2027_18",
+    "anthropic_ipo_18",
+    "desemprego_3t_18",
+    "toyota_sorocaba_18",
+    "fies_validacao_18"
    ],
-   "verificada": "2026-11-18-11h",
+   "verificada": "2026-11-18-15h",
    "fato_novo": true,
-   "ultimo_fato": "18/11: Senado vota hoje os destaques do ajuste fiscal (impacto de até R$ 56 bi); PF cumpre 59 mandados contra a Esportes da Sorte e a Justiça bloqueia R$ 2,3 bi.",
+   "ultimo_fato": "18/11: Senado adia para a tarde os destaques do ajuste fiscal; Durigan descarta recessão em 2027; Anthropic estreia na Nasdaq na quinta (19); IBGE mostra desemprego longo no menor nível desde 2012; Toyota inaugura linha em Sorocaba.",
    "proximo": "Votação dos destaques no Senado (18); retorno do texto à Câmara; PIB em 2/12."
   },
   {
@@ -236,9 +245,9 @@
     "alasca_peltola_sullivan_tabulacao_18_11",
     "alasca_peltola_18"
    ],
-   "verificada": "2026-11-18-11h",
+   "verificada": "2026-11-18-15h",
    "fato_novo": true,
-   "ultimo_fato": "17/11: Mary Peltola (D) venceu no Alasca sobre Dan Sullivan (R), resultado confirmado pelas autoridades estaduais; democratas com 56 a 44 no Senado (Estado de Minas).",
+   "ultimo_fato": "17/11: Mary Peltola venceu no Alasca, e os democratas tiveram o maior avanço no Senado desde 1958 (Folha); Jeffries foi indicado pelos democratas para a presidência da Câmara dos EUA (18/11).",
    "proximo": "Certificação do resultado; posse da nova legislatura."
   },
   {
@@ -301,63 +310,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-18-11h",
-   "achado": "Edição 11h de 18/11: manchetes.json (coletor de 13:20 UTC) e cobertura.cjs (82 lacunas); artigo.cjs sobre Paraguai, Lula ministérios, Senado ajuste fiscal, Dark Horse, 6x1, TSE, Shenzhen, Maré, Alasca, Esportes da Sorte, Master, IBGE, Anthropic, Digimais, Tarcísio, Raoni, Iglesias, Itaipu, isolados MA; WebSearch: Paraguai, Lula ministérios, Senado, 6x1, Dark Horse, TSE, Anthropic, Digimais, Atarde."
+   "feita": "2026-11-18-15h",
+   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
   }
  ]
 }
