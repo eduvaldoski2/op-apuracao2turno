@@ -53,7 +53,7 @@
     "lula_refem_mercado_direita_17_11",
     "lula_ministerios_centrao_18"
    ],
-   "verificada": "2026-11-18-11h",
+   "verificada": "2026-11-18-19h",
    "fato_novo": true,
    "ultimo_fato": "18/11: g1 vê risco de derrota no ajuste fiscal empurrando Lula a ceder mais espaço ao Centrão e à Frente Ampla; A Tarde diz que os primeiros ministros saem até o início de dezembro.",
    "proximo": "Anúncios dos primeiros ministros até o início de dezembro; Fazenda e Planejamento; ministros até 25/11."
@@ -141,6 +141,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "pf_andrei_ccj_18",
     "ms_seg",
     "maioridade",
     "maioridade_audiencias",
@@ -152,10 +153,10 @@
     "stf_codigo_etica_fachin_trava_2027_17_11",
     "vieira_interferencia_andrei_pf_17_11"
    ],
-   "verificada": "2026-11-18-15h",
+   "verificada": "2026-11-18-19h",
    "fato_novo": true,
-   "ultimo_fato": "18/11: Andrei Rodrigues confirma ida ao Senado para explicar trocas de delegados do caso Master, após reunião com Lula (Veja).",
-   "proximo": "Relatórios da PF ao STF (18)."
+   "ultimo_fato": "18/11: Andrei Rodrigues disse à CCJ do Senado que houve quebra de confiança e afastou dois delegados que elaboraram relatórios sobre ministros do STF; HD com mensagens de Vorcaro vai a Fachin à noite (Terra, Tribuna Hoje, JC).",
+   "proximo": "Entrega do HD a Fachin (18/11, à noite); decisão sobre refazer os relatórios."
   },
   {
    "id": "escala-6x1",
@@ -178,6 +179,8 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "cash_out_bets_18",
+    "bb_vazamento_dados_18",
     "ajuste_senado_18",
     "abono_18",
     "uber_stj_18",
@@ -225,10 +228,10 @@
     "toyota_sorocaba_18",
     "fies_validacao_18"
    ],
-   "verificada": "2026-11-18-15h",
+   "verificada": "2026-11-18-19h",
    "fato_novo": true,
-   "ultimo_fato": "18/11: Senado adia para a tarde os destaques do ajuste fiscal; Durigan descarta recessão em 2027; Anthropic estreia na Nasdaq na quinta (19); IBGE mostra desemprego longo no menor nível desde 2012; Toyota inaugura linha em Sorocaba.",
-   "proximo": "Votação dos destaques no Senado (18); retorno do texto à Câmara; PIB em 2/12."
+   "ultimo_fato": "18/11: PF, Receita e MPF deflagram a Operação Cash Out contra bets ilegais; Justiça bloqueia R$ 2,3 bi e iate de R$ 40 mi é apreendido (Extra). Banco do Brasil confirma acesso indevido a dados cadastrais de clientes.",
+   "proximo": "Análise do material apreendido; denúncias do MPF; Anthropic estreia na Nasdaq (19); PIB em 2/12."
   },
   {
    "id": "eua-meio-mandato",
@@ -315,18 +318,18 @@
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-18-19h",
+   "achado": "Paraguai: Itaipu e Ueno Bank sem novidade nova além da edição das 11h; Venezuela: acordo militar com os EUA (CartaCapital, Folha)."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-18-19h",
+   "achado": "Ucrânia: ponte da Crimeia atingida na noite de 17/11 (DW Brasil); acordo militar EUA-Venezuela."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-18-19h",
+   "achado": "Panes em aviação, bancos e NSA nos EUA (Agência Brasil, 18/11); Hegseth em Caracas com acordo militar com a Venezuela (CartaCapital, Folha)."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
@@ -335,8 +338,8 @@
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-18-19h",
+   "achado": "Lula avalia pedidos do Centrão e deve fazer nova rodada (O Globo, Folha)."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
@@ -345,23 +348,23 @@
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-18-19h",
+   "achado": "PF: afastamento de dois delegados e HD com mensagens de Vorcaro a Fachin (JC, O Globo, Terra, Tribuna Hoje). Morte de Paulo Gallotti (Folha, Correio Braziliense)."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-18-19h",
+   "achado": "PSB e PDT oficializam federação partidária, depende de registro no TSE (Metrópoles, O Imparcial, Diário do Grande ABC)."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-18-19h",
+   "achado": "Operação Cash Out contra bets (Extra, O Globo); Banco do Brasil confirma acesso indevido a dados (g1, Terra)."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-18-19h",
+   "achado": "RJ: Revista Piauí sobre contratos do governo Castro com o Metrópoles (O Liberal, Estadão). MG: laje desaba em obra na Região Leste de BH (Estado de Minas, g1 MG)."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
