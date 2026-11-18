@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 300" width="1100" height="300">
+<rect x="0" y="0" width="300" height="300" rx="66" fill="#FFFFFF"/>
+<polyline points="78,156 130,208 226,96" fill="none" stroke="#3E347E" stroke-width="40" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="330" y="188" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="700" letter-spacing="-2"><tspan fill="#FFFFFF">Painel</tspan><tspan fill="#F28C28"> Eleições</tspan></text>
+</svg>
