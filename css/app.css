@@ -902,3 +902,14 @@ a.h-bar-n,a.h-rank-n{color:var(--roxo);text-decoration:none;font-weight:700}a.h-
 .cad-svg{display:block;width:100%;height:auto}.cad-svg .cad-num{font:400 17px 'DM Serif Display',Georgia,serif;fill:#1b1530}
 .cad-leg{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;font-size:13.5px;color:var(--tx2,#5d5675)}
 .cad-leg li{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.cad-leg i{width:11px;height:11px;border-radius:50%;display:inline-block}.cad-leg b{color:var(--roxo-2,#2A2260)}
+
+/* Comparar candidatos: cabeçalhos que quebram linha e municípios clicáveis */
+#cc-tab .tab{table-layout:auto}
+#cc-tab .tab th{white-space:normal}
+#cc-tab .tab th button{padding:7px 5px;line-height:1.15;word-break:normal;overflow-wrap:anywhere}
+#cc-tab .tab th .cc-th{display:block;padding-left:5px}
+#cc-tab .tab th .cc-th small{display:block;font-weight:600;text-transform:none;letter-spacing:0}
+#cc-tab .tab td{padding:7px 5px}
+#cc-tab .tab td:first-child{min-width:92px}
+#cc-tab tr.clic{cursor:pointer}#cc-tab tr.clic:hover td{background:#f3f0fa}#cc-tab tr.clic td:first-child b{color:var(--roxo);text-decoration:underline;text-decoration-color:#cfc8e6;text-underline-offset:3px}
+@media (max-width:640px){#cc-tab .tab{font-size:13px}#cc-tab .tab th{font-size:10.5px}}

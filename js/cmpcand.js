@@ -226,7 +226,7 @@ function munSecao(el, cs, B) {
     const pts = emComum.map(r => ({ id: r.cd, nome: r.nome, x: r.vals[ix].p, y: r.vals[iy].p, r: r.vals[ix].t, cor: SLOT[iy],
       tip: `<b>${esc(r.nome)}${r.uf ? ' (' + r.uf + ')' : ''}</b><br>${esc(A.nome)} ${A.c[0]}: ${fNum(r.vals[ix].p, 1)}% (${fInt(r.vals[ix].v)})<br>${esc(Bc.nome)} ${Bc.c[0]}: ${fNum(r.vals[iy].p, 1)}% (${fInt(r.vals[iy].v)})` }));
     const dec = k => { const m = Math.max(...pts.map(p => p[k])); return m < 1 ? 2 : m < 10 ? 1 : 0; }, dx = dec('x'), dy = dec('y');
-    dispersao(d, { pts, xFmt: v => fNum(v, dx) + '%', yFmt: v => fNum(v, dy) + '%', xRot: `${A.nome} ${A.c[0]} (% no município)`, yRot: `${Bc.nome} ${Bc.c[0]} (% no município)` });
+    dispersao(d, { pts, onClick: id => { const r = emComum.find(x => String(x.cd) === String(id)); if (r && r.uf) location.hash = `#/t1/mun/${r.uf}/${r.cd}`; }, xFmt: v => fNum(v, dx) + '%', yFmt: v => fNum(v, dy) + '%', xRot: `${A.nome} ${A.c[0]} (% no município)`, yRot: `${Bc.nome} ${Bc.c[0]} (% no município)` });
   };
   if (disp) { el.querySelectorAll('#cc-x,#cc-y').forEach(s => s.addEventListener('change', desenhaDisp)); desenhaDisp(); }
 
@@ -249,7 +249,7 @@ function munSecao(el, cs, B) {
       cols.push({ k: 'p' + i, t: `<span class="cc-th" style="--c:${SLOT[i]}">${esc(nm)} <small>· % no local</small></span>`, h: r => r.vals[i] && isFinite(r.vals[i].p) ? `<b>${fNum(r.vals[i].p, 2)}%</b>` : '–', v: r => r.vals[i]?.p ?? -1, x: r => r.vals[i] && isFinite(r.vals[i].p) ? fNum(r.vals[i].p, 2) : '', cls: 'num' });
     });
     if (cs.length > 1) cols.push({ k: 'dif', t: 'Diferença (1ª − 2ª, p.p.)', h: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? `<span class="dlt ${Math.abs(d) < .05 ? 'zero' : d > 0 ? 'pos' : 'neg'}">${d > 0 ? '+' : d < 0 ? '−' : ''}${fNum(Math.abs(d), 1)}</span>` : '–'; }, v: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? d : null; }, x: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? fNum(d, 2) : ''; }, cls: 'num' });
-    tab = tabela(el.querySelector('#cc-tab'), { cols, rows: rs, sort: 'v0', dir: 'desc', filtro: (r, q2) => sem(r.nome).includes(q2) || sem(r.uf || '').includes(q2), limite: modo === 'mun' ? 300 : 0, vazio: 'Sem dados' });
+    tab = tabela(el.querySelector('#cc-tab'), { cols, rows: rs, sort: 'v0', dir: 'desc', filtro: (r, q2) => sem(r.nome).includes(q2) || sem(r.uf || '').includes(q2), limite: modo === 'mun' ? 300 : 0, vazio: 'Sem dados', onRow: modo === 'mun' ? x => { if (x.k && x.uf) location.hash = `#/t1/mun/${x.uf}/${x.k}`; } : undefined });
   };
   desenhaTab();
   el.querySelector('.cc-agr').addEventListener('click', e => {
