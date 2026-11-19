@@ -1,13 +1,13 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
-import { CONFIG } from './config.js?v=5f5759e6';
-import { getJSON } from './tse.js?v=5f5759e6';
-import { esc, sem, tabela } from './ui.js?v=5f5759e6';
-import { fNum, fInt } from './util.js?v=5f5759e6';
-import { corPartido, corTextoSobre } from './partidos.js?v=5f5759e6';
-import { baixarCSV } from './export.js?v=5f5759e6';
-import { abrirMunicipio } from './cmpmun.js?v=5f5759e6';
+import { CONFIG } from './config.js?v=fbfcffa0';
+import { getJSON } from './tse.js?v=fbfcffa0';
+import { esc, sem, tabela } from './ui.js?v=fbfcffa0';
+import { fNum, fInt } from './util.js?v=fbfcffa0';
+import { corPartido, corTextoSobre } from './partidos.js?v=fbfcffa0';
+import { baixarCSV } from './export.js?v=fbfcffa0';
+import { viewCmpMun } from './cmpmun.js?v=fbfcffa0';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];
@@ -71,6 +71,8 @@ async function carregar(ref, turnoPedido, B) {
   return { ref, pid, p, c, nome: p.u || p.n, t, v, T };
 }
 const rotulo = x => `${x.nome} · ${CARGO[x.c[1]] || ''} ${x.c[0]}${x.c[2] && x.c[2] !== 'BR' ? ' ' + x.c[2] : ''}${x.c[3] ? ' ' + bonito(x.c[3]) : ''}${x.c[10] ? (x.t === 2 ? ' · 2º turno' : ' · 1º turno') : ''}`;
+
+export const viewCmpMunicipio = (ctx, q, uf, cd) => viewCmpMun(ctx, q, uf, cd, { carregar, rotulo, SLOT, refsCC, hashCC });
 
 export function viewCmpCand(ctx, q) {
   const refs = refsCC(q), turno = q.get('t') === '2' ? 2 : 1, B = ctx.B;
@@ -220,14 +222,10 @@ function munSecao(el, cs, B) {
   el.innerHTML = `${cs.length > 1 ? `<p class="cmp-leit">${leit()}</p>` : `<p class="cmp-leit"><b>${fInt(base.length)}</b> município${base.length === 1 ? '' : 's'} com votos neste recorte.</p>`}
     <div class="cc-agr sem-export" role="group" aria-label="Agrupar por"><span>Tabela por:</span><button type="button" data-g="mun" class="on">Município</button><button type="button" data-g="uf">Estado</button><button type="button" class="cc-csv">⬇ Planilha (CSV)</button></div>
     <div id="cc-tab"></div>
-    <div id="cc-det" class="cc-det"></div>
     <p class="cmp-nota">Percentual = votos da candidatura ÷ votos válidos nominais do mesmo cargo no município, no turno indicado. ${cs.length > 1 ? 'A tabela e o gráfico usam só os municípios que fazem parte dos recortes de todas as candidaturas escolhidas. ' : ''}${cs.some(x => x.vereador) ? 'Vereador: considera só o município da candidatura; o percentual é o informado no cadastro de candidaturas (votos ÷ votos válidos nominais de vereador no município). ' : ''}Nas eleições de 2006 a 2014 o TSE não separa os votos anulados sub judice nos arquivos por município; nesses anos usa-se o total de votos nominais. Fonte: TSE.</p>`;
 
-  // clique no município: abre a descida (região > bairro > local de votação > seção) com as candidaturas comparadas
-  const mostraMun = x => {
-    const d = el.querySelector('#cc-det'); if (!d || !x || !x.k || !x.uf) return;
-    abrirMunicipio(d, { cs, cores: SLOT, rotulo, mun: { cd: x.k, uf: String(x.uf).toLowerCase(), nome: x.nome } });
-  };
+  // clique no município: abre a página própria do município (região > bairro > local de votação > seção)
+  const mostraMun = x => { if (!x || !x.k || !x.uf) return; location.hash = `#/comparar/candidatos/mun/${String(x.uf).toLowerCase()}/${x.k}?${(location.hash.split('?')[1] || '').replace(/&(nv|dk|bk|lid)=[^&]*/g, '')}`; };
   let modo = 'mun', tab = null;
   const desenhaTab = () => {
     let rs;
