@@ -1,17 +1,18 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
-import { CONFIG } from './config.js?v=fbfcffa0';
-import { getJSON } from './tse.js?v=fbfcffa0';
-import { esc, sem, tabela } from './ui.js?v=fbfcffa0';
-import { fNum, fInt } from './util.js?v=fbfcffa0';
-import { corPartido, corTextoSobre } from './partidos.js?v=fbfcffa0';
-import { baixarCSV } from './export.js?v=fbfcffa0';
-import { viewCmpMun } from './cmpmun.js?v=fbfcffa0';
+import { CONFIG } from './config.js?v=59429884';
+import { getJSON } from './tse.js?v=59429884';
+import { esc, sem, tabela } from './ui.js?v=59429884';
+import { fNum, fInt } from './util.js?v=59429884';
+import { corPartido, corTextoSobre } from './partidos.js?v=59429884';
+import { baixarCSV } from './export.js?v=59429884';
+import { viewCmpMun } from './cmpmun.js?v=59429884';
 
-export const MAX_CC = 4;
-const CH = ['a', 'b', 'c', 'd'];
-const SLOT = ['#3E347E', '#F08A24', '#1b8f6a', '#c8102e'];
+export const MAX_CC = 24;   // teto técnico (tamanho do endereço e leitura da tabela); sem o limite de 4 de antes
+const CH = 'abcdefghijklmnopqrsuvwxyz'.split('');   // sem a letra "t", que é o turno
+// 4 cores da marca + cores extras bem espaçadas para as demais candidaturas
+const SLOT = ['#3E347E', '#F08A24', '#1b8f6a', '#c8102e', '#0e7fa8', '#8a4fb3', '#b8860b', '#d6336c', '#5c7f2e', '#6b4a3a', '#2f5d8a', '#e0563b', '#4a4a4a', '#00897b', '#a0528c', '#7d6608', '#c0392b', '#2c3e8f', '#16a085', '#af601a', '#7f8c8d', '#6c3483', '#1f618d', '#a93226'];
 export const hashCC = (refs, t) => '#/comparar/candidatos' + (refs.length ? '?' + refs.map((r, i) => CH[i] + '=' + encodeURIComponent(r)).join('&') + (t === 2 ? '&t=2' : '') : '');
 export const refsCC = q => CH.map(k => q.get(k)).filter(Boolean).slice(0, MAX_CC);
 
@@ -80,7 +81,7 @@ export function viewCmpCand(ctx, q) {
   <section class="painel cmp-pick sem-export">
     <div class="cmp-modo" role="tablist" aria-label="O que comparar"><a href="#/comparar" role="tab">Territórios</a><a href="${hashCC([])}" role="tab" class="on" aria-selected="true">Candidatos</a></div>
     <h2>Escolha as candidaturas</h2>
-    <p class="sub">Até ${MAX_CC} candidaturas de qualquer eleição de 2006 a 2026 e de qualquer cargo (presidente, governador, senador, deputados, prefeito e vereador): o mesmo candidato em anos diferentes, candidatos entre si ou em cargos diferentes. Os votos são cruzados por município; o vereador entra só no município da candidatura, então o cruzamento com ele vale nesse município.</p>
+    <p class="sub">Quantas candidaturas quiser de qualquer eleição de 2006 a 2026 e de qualquer cargo (presidente, governador, senador, deputados, prefeito e vereador): o mesmo candidato em anos diferentes, candidatos entre si ou em cargos diferentes. Os votos são cruzados por município; o vereador entra só no município da candidatura, então o cruzamento com ele vale nesse município.</p>
     <div class="cmp-chips" id="cc-chips"><span class="cmp-vazio">${refs.length ? 'Carregando…' : 'Nenhuma candidatura escolhida ainda.'}</span></div>
     <div class="cmp-add" id="cc-add" ${refs.length >= MAX_CC ? 'hidden' : ''}>
       <div class="cmp-busca"><input id="cc-in" type="search" autocomplete="off" placeholder="Nome do candidato (ex.: Lula, Tiririca)…" aria-label="Buscar candidato pelo nome"><ul id="cc-sug" class="cmp-sug" role="listbox" hidden></ul></div>

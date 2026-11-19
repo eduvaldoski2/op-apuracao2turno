@@ -907,8 +907,10 @@ a.h-bar-n,a.h-rank-n{color:var(--roxo);text-decoration:none;font-weight:700}a.h-
 #cc-tab .tab{table-layout:auto}
 #cc-tab .tab th{white-space:normal}
 #cc-tab .tab th button{padding:7px 5px;line-height:1.15;word-break:normal;overflow-wrap:anywhere}
-#cc-tab .tab th .cc-th{display:block;padding-left:5px}
-#cc-tab .tab th .cc-th small{display:block;font-weight:600;text-transform:none;letter-spacing:0}
+#cc-tab .tab th .cc-th,#cc-md-tab .tab th .cc-th{display:block;padding-left:5px;white-space:normal;max-width:112px;line-height:1.15;word-break:normal;overflow-wrap:anywhere}
+#cc-tab .tab th .cc-th small,#cc-md-tab .tab th .cc-th small{display:block;font-weight:600;text-transform:none;letter-spacing:0;margin-top:2px}
+#cc-tab .tab th,#cc-tab .tab th button,#cc-md-tab .tab th,#cc-md-tab .tab th button{white-space:normal;vertical-align:bottom}
+#cc-tab .tab td.num,#cc-md-tab .tab td.num{white-space:nowrap}
 #cc-tab .tab td{padding:7px 5px}
 #cc-tab .tab td:first-child{min-width:92px}
 #cc-tab tr.clic{cursor:pointer}#cc-tab tr.clic:hover td{background:#f3f0fa}#cc-tab tr.clic td:first-child b{color:var(--roxo);text-decoration:underline;text-decoration-color:#cfc8e6;text-underline-offset:3px}

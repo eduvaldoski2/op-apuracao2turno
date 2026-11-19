@@ -1,6 +1,6 @@
 // Exportações: CSV (UTF-8 com BOM, separador ";"), PNG e PDF (geração direta, sem diálogo de impressão).
-import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=fbfcffa0';
-import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=fbfcffa0';
+import { carregaScript, cardCanvas, FORMATOS, criaQR, desenhaQR } from './card.js?v=59429884';
+import { linhas as desenhaLinhas, REG_GRAFICOS } from './charts.js?v=59429884';
 export const baixar = (blob, nome) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nome; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1500); };
 
 export function slug(s) { return String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
@@ -37,11 +37,13 @@ function canvasFatia(c, f) {
   return pc;
 }
 
+const larguraTabelas = el => Math.max(0, ...[...el.querySelectorAll('table')].map(t => t.scrollWidth));   // tabelas dentro de rolagem horizontal: largura real
 async function capturar(el, titulo, sub, cadeia = '', omitir = '') {
   await carregaScript('vendor/html2canvas.min.js');
+  const LT = larguraTabelas(el);
   let info = null; const ESC = Math.max(0.6, Math.min(2, 13000 / Math.max(1, el.scrollHeight)));
   const cv = await window.html2canvas(el, {
-    scale: ESC, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: Math.max(1100, el.scrollWidth),   // telas muito altas: reduz a escala (acima de ~16 mil px o navegador devolve canvas em branco)
+    scale: ESC, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: Math.max(1100, el.scrollWidth, LT ? LT + 120 : 0),   // telas muito altas: reduz a escala (acima de ~16 mil px o navegador devolve canvas em branco)
     onclone: doc => {
       doc.querySelectorAll('.sem-export').forEach(n => n.remove());
       doc.querySelectorAll('details > summary').forEach(n => n.remove());   // o "Entenda" é dica de tela; o texto fica aberto
@@ -50,6 +52,7 @@ async function capturar(el, titulo, sub, cadeia = '', omitir = '') {
       if (omitir) doc.querySelectorAll(omitir).forEach(n => n.remove());
       doc.querySelectorAll('details').forEach(d => { d.open = true; });
       const alvo = doc.querySelector('[data-export-raiz]') || doc.body;
+      if (LT > 1000) { doc.querySelectorAll('.tab-scroll').forEach(n => { n.style.overflow = 'visible'; }); alvo.style.cssText += `;width:${LT + 60}px;max-width:none`; }
       const cab = doc.createElement('div');
       cab.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 24px;margin-bottom:6px;background:linear-gradient(100deg,#2A2260,#3E347E);color:#fff;border-radius:12px;font-family:system-ui,sans-serif';
       cab.innerHTML = `<img src="img/logo-negativo.svg" alt="Oficina Política" style="height:54px;width:auto"><div style="text-align:right;font-size:13px;opacity:.92;line-height:1.4">${sub}</div>`;
@@ -73,7 +76,7 @@ export async function baixarCardPNG(dados, nome, fmt = FORMATOS['4x5']) { baixar
 // PDF: página 1 = card (A4) com a hierarquia de candidatos; páginas seguintes = mapas e tabelas da tela.
 export async function baixarPDF(el, nome, titulo, sub, cadeia, dadosCard = null, extra = null) {
   await carregaScript('vendor/jspdf.umd.min.js');
-  const { jsPDF } = window.jspdf, pdf = new jsPDF('p', 'mm', 'a4');
+  const { jsPDF } = window.jspdf, pdf = new jsPDF(!dadosCard && larguraTabelas(el) > 1000 ? 'l' : 'p', 'mm', 'a4');   // tabela larga: página A4 em paisagem
   const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight(), m = 8;
   let pag = 0;
   if (dadosCard) {
@@ -163,8 +166,9 @@ async function capturarSecao(el, sub, topo) {
   el.setAttribute('data-exp-alvo', '1');
   try {
     let info = null; const ESC = Math.max(0.6, Math.min(2, 13000 / Math.max(1, el.scrollHeight)));
+    const LW = Math.max(1240, larguraTabelas(el) + 60);   // tabela mais larga que a página: a imagem alarga junto, sem cortar
     const cv = await window.html2canvas(el, {
-      scale: ESC, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: 1320,
+      scale: ESC, backgroundColor: '#ffffff', useCORS: true, logging: false, windowWidth: Math.max(1320, LW + 80),
       onclone: doc => {
         const alvo = doc.querySelector('[data-exp-alvo]'); if (!alvo) return;
         // seção de mapa: leva junto a tabela com o resultado de cada bairro (o mapa sozinho só mostra o percentual de quem lidera)
@@ -178,7 +182,7 @@ async function capturarSecao(el, sub, topo) {
         alvo.querySelectorAll('.tab-scroll').forEach(n => { n.style.overflow = 'visible'; n.style.maxHeight = 'none'; });
         alvo.querySelectorAll('th,thead,.tab th').forEach(n => { n.style.position = 'static'; n.style.top = 'auto'; });
         alvo.querySelectorAll('table.tab tr > :first-child').forEach(c => { c.style.cssText += ';width:1%;white-space:nowrap;min-width:0'; });
-        alvo.style.cssText += ';box-shadow:none;margin:0;padding:18px 20px 14px;width:1240px';
+        alvo.style.cssText += ';box-shadow:none;margin:0;padding:18px 20px 14px;width:' + LW + 'px';
         const cab = doc.createElement('div');
         cab.style.cssText = 'display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 18px;margin:-18px -20px 14px;background:linear-gradient(100deg,#2A2260,#3E347E);color:#fff;font-family:system-ui,sans-serif';
         cab.innerHTML = `<img src="img/logo-negativo.svg" alt="Oficina Política" style="height:38px;width:auto"><div style="text-align:right;font-size:12px;opacity:.92;line-height:1.4">${topo ? `<b>${topo}</b><br>` : ''}${sub}</div>`;
@@ -190,7 +194,7 @@ async function capturarSecao(el, sub, topo) {
         info = medeCortes(alvo, ESC);
       },
     });
-    cv.info = info; return cv;
+    cv.info = info; cv.larguraCss = LW; return cv;
   } finally { el.removeAttribute('data-exp-alvo'); }
 }
 
@@ -462,7 +466,7 @@ export async function baixarPNGSecaoSocial(el, nome, fmtId, ctx) {
 export async function baixarPDFSecao(el, nome, sub, topo) {
   await carregaScript('vendor/jspdf.umd.min.js');
   const c = await capturarSecao(el, sub, topo);
-  const { jsPDF } = window.jspdf, pdf = new jsPDF('p', 'mm', 'a4');
+  const { jsPDF } = window.jspdf, pdf = new jsPDF(c.larguraCss > 1300 ? 'l' : 'p', 'mm', 'a4');
   const pw = pdf.internal.pageSize.getWidth(), ph = pdf.internal.pageSize.getHeight(), m = 8;
   const larg = pw - 2 * m, escala = larg / c.width, altPag = (ph - 2 * m - 6) / escala;
   let pag = 0;

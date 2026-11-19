@@ -1,10 +1,10 @@
 // Capa do Painel: busca de candidato pelo nome + caixa "Comparar" (cartões com a trajetória, no formato do Apuração 4013).
 // Dados: branch cand-pessoas (busca s/<3 letras>.json e perfis p/<3 primeiros do id>.json), os mesmos de js/cmpcand.js.
 // Não importa o cmpcand.js (que puxa a tela inteira de comparação): só leva até ele, pelo endereço, as candidaturas escolhidas.
-import { CONFIG } from './config.js?v=fbfcffa0';
+import { CONFIG } from './config.js?v=59429884';
 
-const RAW = `https://raw.githubusercontent.com/${CONFIG.repo}/`, MAX = 4;
-const SLOT = ['#3E347E', '#F08A24', '#1b8f6a', '#c8102e'];
+const RAW = `https://raw.githubusercontent.com/${CONFIG.repo}/`, MAX = 24;
+const SLOT = ['#3E347E', '#F08A24', '#1b8f6a', '#c8102e', '#0e7fa8', '#8a4fb3', '#b8860b', '#d6336c', '#5c7f2e', '#6b4a3a', '#2f5d8a', '#e0563b', '#4a4a4a', '#00897b', '#a0528c', '#7d6608', '#c0392b', '#2c3e8f', '#16a085', '#af601a', '#7f8c8d', '#6c3483', '#1f618d', '#a93226'];
 const CARGO = { 1: 'Presidente', 3: 'Governador', 5: 'Senador', 6: 'Dep. federal', 7: 'Dep. estadual', 8: 'Dep. distrital', 11: 'Prefeito', 13: 'Vereador' };
 const COM_VOTOS = new Set([1, 3, 5, 6, 7, 8, 11, 13]);   // cargos com votos por município (vereador: só o município da candidatura)
 const cache = new Map();
@@ -70,7 +70,7 @@ export function montarBuscaCapa(raiz, { painelUrl = 'painel.html' } = {}) {
   if (!raiz || raiz.dataset.pronto) return; raiz.dataset.pronto = '1';
   if (!document.getElementById('cb-css')) { const st = document.createElement('style'); st.id = 'cb-css'; st.textContent = CSS; document.head.appendChild(st); }
   const pessoas = [];   // {id, n, u, a, v, c, cor}
-  const sel = [];       // refs escolhidas (até 4), na ordem
+  const sel = [];       // refs escolhidas (sem limite prático), na ordem
   raiz.innerHTML = `<div class="cb">
     <div class="cb-busca"><input id="cb-in" type="search" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="cb-sug" placeholder="Nome do candidato(a), ex.: Lula, Tiririca, Freixo" aria-label="Buscar candidato pelo nome"><ul id="cb-sug" class="cb-sug" role="listbox" hidden></ul></div>
     <p class="cb-dica" id="cb-dica" aria-live="polite">Digite pelo menos 3 letras do nome de urna ou do nome completo. Candidaturas de 1994 a 2026 (votos por município a partir de 2006).</p>
@@ -94,7 +94,7 @@ export function montarBuscaCapa(raiz, { painelUrl = 'painel.html' } = {}) {
     const go = $('#cb-go'); go.hidden = !sel.length;
     $('#cb-n').textContent = sel.length === 1 ? '1 candidatura escolhida (escolha mais uma para cruzar)' : `${sel.length} candidaturas escolhidas`;
     const a = $('#cb-ir'); a.setAttribute('aria-disabled', sel.length < 1 ? 'true' : 'false');
-    a.href = painelUrl + '#/comparar/candidatos' + (sel.length ? '?' + sel.map((r, i) => 'abcd'[i] + '=' + encodeURIComponent(r)).join('&') : '');
+    a.href = painelUrl + '#/comparar/candidatos' + (sel.length ? '?' + sel.map((r, i) => 'abcdefghijklmnopqrsuvwxyz'[i] + '=' + encodeURIComponent(r)).join('&') : '');
   }
   const fecha = () => { sug.hidden = true; sug.innerHTML = ''; inp.setAttribute('aria-expanded', 'false'); };
   async function buscar() {
@@ -121,7 +121,7 @@ export function montarBuscaCapa(raiz, { painelUrl = 'painel.html' } = {}) {
       // escolha inicial: a candidatura mais recente com votos por município; sendo a primeira pessoa, também a anterior (mesmo candidato em anos diferentes)
       const com = p.c.filter(temVotos).sort((a, b) => b[0] - a[0] || a[1] - b[1]);
       const quer = pessoas.length === 1 ? 2 : 1; for (const c of com.slice(0, quer)) if (sel.length < MAX) sel.push(refDe(pid, c));
-      dica.textContent = com.length ? 'Marque as candidaturas que quer comparar (até 4) e abra a comparação.' : 'Esse candidato não tem votos por município na base (vice, suplente ou antes de 2006): veja a trajetória abaixo.';
+      dica.textContent = com.length ? 'Marque as candidaturas que quer comparar e abra a comparação.' : 'Esse candidato não tem votos por município na base (vice, suplente ou antes de 2006): veja a trajetória abaixo.';
       desenha();
     } catch { dica.textContent = 'Não foi possível carregar esse candidato agora. Tente de novo.'; }
   }
