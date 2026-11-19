@@ -37574,6 +37574,10 @@ S.mianmar_genocidio_cij_19 = {ed:'mundo', k:'Mundo', hora:'19/11',
   ['h','O que vem agora'],
   ['p','A sentença é definitiva. Os próximos passos dependem da execução das medidas pelo governo de Mianmar e de eventuais novas ações na própria corte. Ainda não há anúncio de sanções internacionais em decorrência da decisão.'],
   ['ul',['Votação: 9 a 6 pelo reconhecimento do genocídio.','Violência de 2017 em Rakhine, com milhares de mortos e violência sexual generalizada.','A sentença ordena retorno dos refugiados, indenização e punição dos responsáveis.']],
+  ['h','A tragédia de 2017'],
+  ['p','A ofensiva de 2017 começou depois de ataques de grupos armados rohingya contra postos policiais e deu lugar a operações militares que destruíram aldeias inteiras. Centenas de milhares de rohingya cruzaram a fronteira para Bangladesh, onde se instalaram em grandes campos de refugiados, muitos deles ainda hoje.'],
+  ['p','A sentença desta quinta transforma em decisão judicial o que até então eram relatos, denúncias e relatórios de organismos da ONU. Pela primeira vez, a corte condena um Estado por genocídio, a categoria mais grave do direito internacional, o que dá à decisão um peso que vai além de Mianmar.'],
+  ['p','Mianmar é governado por uma junta militar desde o golpe de 2021, que derrubou um governo civil eleito. Um regime nessa situação tem pouca margem para negociar com a comunidade internacional, o que torna a execução da sentença um dos pontos mais difíceis do caso. Bangladesh, que abriga os refugiados, é um dos interessados diretos na execução das medidas.'],
   ['nums',[['9 a 6','votos a favor do genocídio'],['2017','ano da ofensiva militar em Rakhine'],['10 mil','assassinatos citados pela Folha']]]
  ],
  fontes:[['DW Brasil','https://www.dw.com/pt-br/entenda-o-genocídio-cometido-por-mianmar-que-gerou-condenação-inédita-em-tribunal-da-onu/a-79990024?maca=bra-rss-br-all-1030-rdf'],['g1 (mundo)','https://g1.globo.com/mundo/noticia/2026/11/19/myanmar-tinha-intencao-de-destruir-a-populacao-rohingya-diz-onu.ghtml'],['Folha (mundo)','https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/tribunal-da-onu-conclui-que-mianmar-cometeu-genocidio-contra-minoria-muculmana-10-mil-foram-assassinados.shtml']]};
@@ -37747,6 +37751,12 @@ S.trilateral_shenzhen_19 = {ed:'mundo', k:'Mundo', hora:'19/11',
   ['h','O que vem agora'],
   ['p','Não há data anunciada para a próxima rodada de negociação sobre a Ucrânia. Os próximos passos dependem de comunicados oficiais de cada governo e da evolução militar na região.'],
   ['ul',['Presença de Trump, Xi e Putin: confirmada.','Tom final: “leve a amistoso”, segundo o Kremlin.','Acordos sobre a Ucrânia ou armas: não relatados até agora.']],
+  ['h','Três potências nucleares à mesma mesa'],
+  ['p','EUA, Rússia e China concentram a maior parte dos arsenais nucleares do planeta, e por isso qualquer conversa entre seus líderes tem efeito que vai além da região em que ocorre. A imprensa tratou a reunião de Shenzhen como um encontro de alto nível, e não como uma negociação com resultados anunciados.'],
+  ['p','Para Pequim, sediar a cúpula dá visibilidade ao papel da China como interlocutora entre Washington e Moscou. Shenzhen é um dos principais polos de tecnologia do país, o que combina com a agenda de inteligência artificial que apareceu nas declarações dos três líderes.'],
+  ['p','Trump e Putin já tiveram encontros bilaterais em outros formatos, mas a presença de Xi na mesma sala muda a leitura do episódio. Por isso a Agência Brasil registrou que os líderes descreveram o encontro como histórico, e a cobertura internacional seguiu a mesma linha.'],
+  ['p','Por ser a primeira vez que os três se reúnem, o encontro é sobretudo um sinal político: mostra que os canais entre as três capitais seguem abertos, mesmo quando as divergências são públicas e aparecem nos discursos de abertura.'],
+  ['p','Os discursos de abertura, segundo o g1, deixaram claro que a agenda é ampla e que há pontos de atrito entre os três, o que explica a cautela das declarações divulgadas depois do encontro.'],
   ['nums',[['3','líderes na mesma reunião'],['2 dias','entre o ataque à ponte de Kerch e o encontro'],['19/11','data da reunião']]]
  ],
  fontes:[['g1 (mundo)','https://g1.globo.com/mundo/noticia/2026/11/19/veja-principais-declaracoes-de-trump-putin-e-xi-em-reuniao-trilateral-historica.ghtml'],['Agência Brasil (internacional)','https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/trump-xi-e-putin-encerram-reuniao-historica-na-china'],['BBC Brasil','https://www.bbc.com/portuguese/articles/cjvg2922e50qo?at_medium=RSS&at_campaign=rss']]};
@@ -37785,6 +37795,13 @@ S.anthropic_ipo_18 = {ed:'economia', k:'Economia', hora:'19/11',
   ['p','A BBC levanta a questão que o mercado discute: se a empresa consegue evitar uma bolha no setor de inteligência artificial, dado o nível de avaliação alcançado já no primeiro dia.'],
   ['h','O que vem agora'],
   ['p','O mercado acompanha a evolução da cotação nas próximas sessões e os primeiros balanços da companhia como empresa de capital aberto. As reportagens lidas não trazem a cotação de fechamento do dia.'],
+  ['h','Como funciona uma estreia na bolsa'],
+  ['p','Antes da negociação, a empresa e os bancos coordenadores definem uma faixa indicativa de preço. O preço final é escolhido na véspera da estreia, de acordo com a demanda registrada pelos investidores. Quando o preço sai acima da faixa, como ocorreu com a Anthropic, costuma-se interpretar que a procura superou as expectativas dos coordenadores.'],
+  ['p','Esse tipo de operação também tem efeito sobre a própria empresa, que passa a ser avaliada diariamente pelo mercado e precisa divulgar resultados trimestrais. A partir de agora, a cotação da Anthropic vira um termômetro do humor dos investidores com a inteligência artificial como um todo.'],
+  ['p','O número de US$ 1,5 trilhão é uma estimativa, calculada a partir do preço da ação multiplicado pelo total de papéis emitidos. Por isso ele muda a cada variação da cotação, e a leitura do primeiro dia deve ser tomada como referência inicial, e não como valor definitivo.'],
+  ['p','A companhia nasceu de uma ruptura interna no setor, descrita pela BBC: irmãos que trabalhavam na OpenAI decidiram sair e criar um projeto concorrente. A trajetória até a bolsa, seis anos depois, mostra como o setor de IA saiu de laboratórios para o mercado financeiro em pouco tempo.'],
+  ['p','Para quem acompanha o tema, vale separar duas coisas: o desempenho da empresa, que depende de receitas com seus produtos e de custos de desenvolvimento, e o humor do setor de IA como um todo, que oscila com as expectativas sobre o ritmo de avanço da tecnologia. A estreia mostra que o mercado ainda aposta alto nas duas coisas.'],
+  ['p','No Brasil, a estreia chega em véspera de feriado, com o dólar em alta e o Ibovespa em queda, o que reduz o espaço para análise detalhada no dia. A cobertura econômica deve voltar ao tema na semana que vem, quando o pacote fiscal estiver na Câmara.'],
   ['nums',[['US$ 83','preço por ação'],['US$ 1,5 tri','valor de mercado estimado'],['ANT','código de negociação na Nasdaq']]]
  ],
  fontes:[['Exame','https://exame.com/invest/mercados/que-horas-a-acao-da-anthropic-comeca-a-ser-negociada/'],['BBC Brasil','https://www.bbc.com/portuguese/articles/cm782wyv0153o?at_medium=RSS&at_campaign=rss'],['g1 (economia)','https://g1.globo.com/economia/noticia/2026/11/19/dolar-ibovespa.ghtml']]};
@@ -37879,6 +37896,16 @@ S.pf_fachin_pgr_19 = {ed:'politica', k:'Política', hora:'19/11',
   ['p','A discussão interna do STF gira em torno de quais ministros devem ser investigados e de como tratar menções a integrantes da Corte em relatórios da PF. Há quem defenda que a polícia não deveria decidir sobre crimes em seus relatórios, e a tese aparece em colunas recentes.'],
   ['h','O que vem agora'],
   ['p','A PGR recebe o material e decide sobre a sequência. Não há prazo informado para uma decisão do plenário sobre o caso dos ministros.'],
+  ['h','Quem são os ministros citados'],
+  ['p','Os relatórios tratam de três ministros: Alexandre de Moraes, Nunes Marques e Dias Toffoli. Os nomes aparecem em apurações sobre a relação de cada um com Daniel Vorcaro, segundo as reportagens do dia. Uma menção em relatório policial não equivale a acusação formal, e nas notícias lidas não há conclusão de irregularidade por parte dos três.'],
+  ['h','A crise dentro da PF'],
+  ['p','A produção dos documentos provocou desgaste dentro da corporação, com saída de delegados, segundo a Folha. O diretor-geral da PF, Andrei Rodrigues, nega que haja crise e afirma que não será intimidado. A disputa interna pesa porque a polícia depende de credibilidade para conduzir investigações que chegam ao Supremo.'],
+  ['h','O caminho até o plenário'],
+  ['p','A PGR recebe os relatórios e decide se pede novas diligências ou se propõe arquivamento, em um rito que pode passar pelo relator do caso no STF. Enquanto isso, o plenário discute como tratar menções a integrantes da própria Corte, tema sensível porque os ministros estão, ao mesmo tempo, julgando e sendo citados.'],
+  ['p','O caso ganhou corpo no primeiro aniversário da liquidação do Banco Master. Uma coluna de O Globo sustenta que a PF paga o preço da blindagem do STF, e o mesmo período trouxe a informação de que o ministro Mendonça foi informado da existência de relatórios sobre outros três ministros da Corte.'],
+  ['p','A cobertura registra ainda que Fachin deu prazo de cinco dias para que os ministros do STF expliquem a crise provocada pelo caso Master, segundo reportagem publicada no período. A medida mostra que a Corte pretende responder internamente antes de qualquer discussão em plenário.'],
+  ['p','A própria Folha descreve os relatórios como estritamente descritivos, ou seja, sem conclusões sobre responsabilidade criminal de cada ministro. Essa característica restringe o alcance de eventual discussão no plenário, que tende a se concentrar no procedimento, e não no mérito das menções.'],
+  ['p','Para o leitor, o quadro atual é o seguinte: o procedimento ainda está em curso, os relatórios são descritivos e nenhum dos ministros citados foi formalmente acusado nas reportagens lidas.'],
   ['nums',[['3','ministros citados nos relatórios'],['2','delegados afastados da PF'],['21','prisões preventivas na operação']]]
  ],
  fontes:[['Folha (poder)','https://www1.folha.uol.com.br/poder/2026/11/integrantes-do-stf-esperam-que-relatorios-da-pf-esvaziem-parte-da-discussao-na-corte-sobre-caso-master.shtml'],['Brasil de Fato / Diário de Pernambuco (STF)','https://www.diariodepernambuco.com.br/politica/2026/11/11729390-caso-master-pf-entregara-ao-stf-relatorio-sobre-ministros-nesta-quarta-18.html'],['O Globo (Malu Gaspar)','https://oglobo.globo.com/blogs/malu-gaspar/coluna/2026/11/master-andrei-faz-pf-pagar-o-preco-da-blindagem-do-stf.ghtml']]};
@@ -37898,6 +37925,15 @@ S.ajuste_fiscal_camara_19 = {ed:'politica', k:'Política', hora:'19/11',
   ['p','As estimativas variam conforme a fonte e a base de cálculo. A Agência Brasil citou impacto de até R$ 56 bilhões, enquanto o g1 falou em economia de até R$ 50 bilhões em 2027. Propostas anteriores do governo chegaram a mencionar até R$ 60 bilhões em 2027. A diferença de número reflete o que cada fonte inclui no cálculo.'],
   ['h','O que vem agora'],
   ['p','A Câmara vota na segunda-feira (23). Depois da votação, o governo pretende seguir com as medidas complementares, cuja definição ainda não tem data.'],
+  ['h','O que é o arcabouço e por que ele importa'],
+  ['p','O arcabouço fiscal, aprovado em 2023, limita o crescimento anual das despesas para que o governo gaste menos do que arrecada. Quando as contas ficam abaixo da meta, o governo precisa bloquear ou contingenciar recursos. Por isso, mexer em gastos que ficam fora desse limite é uma das ideias em estudo, já que muda a conta sem tocar em salário mínimo ou aposentadoria.'],
+  ['p','Os pisos de saúde e educação são gastos mínimos vinculados à receita, previstos na Constituição. A proposta citada por O Globo cria uma conexão entre esses pisos sem reduzir o tamanho deles, segundo a reportagem, e é uma das alternativas que a equipe econômica discute.'],
+  ['h','Votação e calendário'],
+  ['p','Se a Câmara aprovar o texto sem mudanças, ele segue para sanção presidencial. Se houver alteração, volta ao Senado. As medidas começam a valer em 2027, e por isso o impacto sobre as contas deste ano é limitado, segundo as reportagens do período.'],
+  ['p','A Agência Câmara informou a convocação da sessão extraordinária para segunda-feira (23). Os três destaques rejeitados no Senado mostram que a oposição tentou mudar o texto, mas não tinha votos para isso.'],
+  ['p','O próprio Hugo Motta chamou o pacote de primeiro passo e disse que é preciso um ajuste econômico e fiscal mais robusto, o que explica a discussão de novas medidas depois da votação. O mercado reagiu à expectativa: na quarta, o dólar subiu 1,46% e fechou em R$ 5,8667, e o Ibovespa caiu 1,34%, segundo o g1.'],
+  ['p','O g1 registrou ainda que o Senado concluiu a votação com acordo para incorporar outras duas mudanças ao texto, além da rejeição dos três destaques da oposição. Isso significa que o projeto que chega à Câmara já tem consenso parcial entre as bancadas da Casa revisora.'],
+  ['p','A discussão agora é se o texto aprovado pelo Senado será votado sem alterações na Câmara, o que encurtaria o caminho até a sanção. Qualquer mudança reabriria a etapa de análise pelos senadores, com atraso para o início das medidas em 2027.'],
   ['nums',[['23/11','data da votação na Câmara'],['R$ 18,3 bi','compensações tributárias em jogo'],['2027','ano em que as medidas começam a valer']]]
  ],
  fontes:[['O Globo (economia)','https://oglobo.globo.com/economia/noticia/2026/11/19/equipe-economica-avalia-avancar-em-ajuste-fiscal-apos-projeto-para-ampliar-contingenciamento.ghtml'],['Agência Brasil (política)','https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/senado-rejeita-mudancas-no-texto-e-aprova-ajuste-fiscal-do-governo'],['Agência Câmara','https://www.camara.leg.br/noticias/1320935-proposta-de-ajuste-fiscal-entra-na-pauta-de-sessao-extraordinaria-da-camara-na-proxima-segunda-feira']]};
@@ -38027,3 +38063,8 @@ var _gnovo = [
  ['Ex-prefeita de Anadia é absolvida; autor material pega 30 anos', 'O crime é de 2011; o autor material segue foragido.', 'Tribuna Hoje', 'https://tribunahoje.com/noticias/policia/2026/11/19/199248-ex-prefeita-de-anadia-e-absolvida-da-acusacao-de-mandar-matar-vereador-autor-material-pega-30-anos', '', 'anadia_absolvida_19'],
 ];;
 GIRO = _gnovo.concat(GIRO.filter(function(g){ return !_gnovo.some(function(n){ return n[0]===g[0]; }); })).slice(0,22);
+
+/* ----- ordem final da edição 15h (passada 2) ----- */
+preOrd('economia', ['anthropic_ipo_18','dolar_19_11_19','uber_stj_18','omc_painel_tarifaco_18','mulheres_pequenos_negocios_19','ibge_raca_renda_18','toyota_sorocaba_18']);
+preOrd('regioes', ['bacabal_loja_19','anadia_absolvida_19','sobral_maconha_17_11']);
+preOrd('mundo', ['trilateral_shenzhen_19','mianmar_genocidio_cij_19','fifa_diallo_tashima_19','ucrania_paz_19','venezuela_hegseth_18']);
