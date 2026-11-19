@@ -1,12 +1,12 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
-import { CONFIG } from './config.js?v=c8b4672d';
-import { getJSON } from './tse.js?v=c8b4672d';
-import { esc, sem, tabela } from './ui.js?v=c8b4672d';
-import { fNum, fInt } from './util.js?v=c8b4672d';
-import { corPartido, corTextoSobre } from './partidos.js?v=c8b4672d';
-import { baixarCSV } from './export.js?v=c8b4672d';
+import { CONFIG } from './config.js?v=9a99ee54';
+import { getJSON } from './tse.js?v=9a99ee54';
+import { esc, sem, tabela } from './ui.js?v=9a99ee54';
+import { fNum, fInt } from './util.js?v=9a99ee54';
+import { corPartido, corTextoSobre } from './partidos.js?v=9a99ee54';
+import { baixarCSV } from './export.js?v=9a99ee54';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];
@@ -219,8 +219,19 @@ function munSecao(el, cs, B) {
   el.innerHTML = `${cs.length > 1 ? `<p class="cmp-leit">${leit()}</p>` : `<p class="cmp-leit"><b>${fInt(base.length)}</b> município${base.length === 1 ? '' : 's'} com votos neste recorte.</p>`}
     <div class="cc-agr sem-export" role="group" aria-label="Agrupar por"><span>Tabela por:</span><button type="button" data-g="mun" class="on">Município</button><button type="button" data-g="uf">Estado</button><button type="button" class="cc-csv">⬇ Planilha (CSV)</button></div>
     <div id="cc-tab"></div>
+    <div id="cc-det" class="cc-det"></div>
     <p class="cmp-nota">Percentual = votos da candidatura ÷ votos válidos nominais do mesmo cargo no município, no turno indicado. ${cs.length > 1 ? 'A tabela e o gráfico usam só os municípios que fazem parte dos recortes de todas as candidaturas escolhidas. ' : ''}${cs.some(x => x.vereador) ? 'Vereador: considera só o município da candidatura; o percentual é o informado no cadastro de candidaturas (votos ÷ votos válidos nominais de vereador no município). ' : ''}Nas eleições de 2006 a 2014 o TSE não separa os votos anulados sub judice nos arquivos por município; nesses anos usa-se o total de votos nominais. Fonte: TSE.</p>`;
 
+  // clique no município: mostra aqui mesmo as candidaturas escolhidas naquele município (e o atalho para o resultado geral do município)
+  const mostraMun = x => {
+    const d = el.querySelector('#cc-det'); if (!d || !x) return;
+    const mx = Math.max(0, ...x.vals.map(v => v && isFinite(v.p) ? v.p : 0)) || 1;
+    const lin = cs.map((c, i) => { const v = x.vals[i]; const w = v && isFinite(v.p) ? Math.max(1.5, 100 * v.p / mx) : 0;
+      return `<div style="display:grid;grid-template-columns:minmax(180px,1.2fr) 3fr minmax(150px,auto);gap:12px;align-items:center;padding:8px 0;border-top:1px solid #ece8f6"><span><i class="cc-dot" style="background:${SLOT[i]};display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:8px"></i><b>${esc(rotulo(c))}</b></span><span style="background:#efecf8;border-radius:6px;height:16px;display:block"><span style="display:block;height:16px;border-radius:6px;width:${w}%;background:${SLOT[i]}"></span></span><span style="text-align:right">${v ? `<b>${fInt(v.v)}</b> votos · <b>${isFinite(v.p) ? fNum(v.p, 2) + '%' : '–'}</b>` : '<small>fora do recorte</small>'}</span></div>`; }).join('');
+    const link = x.uf && x.k ? `<p style="margin:10px 0 0"><a href="#/t1/mun/${String(x.uf).toLowerCase()}/${x.k}">Ver o resultado geral deste município (presidente 2026) ›</a></p>` : '';
+    d.innerHTML = `<div style="margin-top:18px;padding:16px 18px;border:1px solid #d9d4f0;border-radius:16px;background:#fbf9f5"><h3 style="margin:0 0 6px;font:400 24px 'DM Serif Display',serif;color:#2A2260">${esc(x.nome)}${x.uf ? ' (' + esc(x.uf) + ')' : ''}: candidaturas comparadas</h3>${lin}<p class="cmp-nota" style="margin:8px 0 0">Percentual = votos ÷ votos válidos nominais do mesmo cargo no município.</p>${link}</div>`;
+    d.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  };
   let modo = 'mun', tab = null;
   const desenhaTab = () => {
     let rs;
@@ -240,7 +251,7 @@ function munSecao(el, cs, B) {
       cols.push({ k: 'p' + i, t: `<span class="cc-th" style="--c:${SLOT[i]}">${esc(nm)} <small>· % no local</small></span>`, h: r => r.vals[i] && isFinite(r.vals[i].p) ? `<b>${fNum(r.vals[i].p, 2)}%</b>` : '–', v: r => r.vals[i]?.p ?? -1, x: r => r.vals[i] && isFinite(r.vals[i].p) ? fNum(r.vals[i].p, 2) : '', cls: 'num' });
     });
     if (cs.length > 1) cols.push({ k: 'dif', t: 'Diferença (1ª − 2ª, p.p.)', h: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? `<span class="dlt ${Math.abs(d) < .05 ? 'zero' : d > 0 ? 'pos' : 'neg'}">${d > 0 ? '+' : d < 0 ? '−' : ''}${fNum(Math.abs(d), 1)}</span>` : '–'; }, v: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? d : null; }, x: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? fNum(d, 2) : ''; }, cls: 'num' });
-    tab = tabela(el.querySelector('#cc-tab'), { cols, rows: rs, sort: 'v0', dir: 'desc', filtro: (r, q2) => sem(r.nome).includes(q2) || sem(r.uf || '').includes(q2), limite: modo === 'mun' ? 300 : 0, vazio: 'Sem dados', onRow: modo === 'mun' ? x => { if (x.k && x.uf) location.hash = `#/t1/mun/${String(x.uf).toLowerCase()}/${x.k}`; } : undefined });
+    tab = tabela(el.querySelector('#cc-tab'), { cols, rows: rs, sort: 'v0', dir: 'desc', filtro: (r, q2) => sem(r.nome).includes(q2) || sem(r.uf || '').includes(q2), limite: modo === 'mun' ? 300 : 0, vazio: 'Sem dados', onRow: modo === 'mun' ? mostraMun : undefined });
   };
   desenhaTab();
   el.querySelector('.cc-agr').addEventListener('click', e => {

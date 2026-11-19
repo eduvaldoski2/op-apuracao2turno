@@ -1,5 +1,5 @@
 // Imagem para redes da página do candidato (1:1, 4:5, 9:16): nome, partido, cargo, situação e os 4 indicadores da tela.
-import { FORMATOS, criaQR, desenhaQR } from './card.js?v=c8b4672d';
+import { FORMATOS, criaQR, desenhaQR } from './card.js?v=9a99ee54';
 
 const AZUL = '#3E347E', LARANJA = '#F28C28', TEXTO = '#2A2350', SUAVE = '#6B6491';
 const FONTE = 'system-ui, -apple-system, "Segoe UI", Arial, sans-serif';
