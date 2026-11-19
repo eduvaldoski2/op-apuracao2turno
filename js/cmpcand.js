@@ -1,12 +1,12 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
-import { CONFIG } from './config.js?v=9a1696e5';
-import { getJSON } from './tse.js?v=9a1696e5';
-import { esc, sem, tabela } from './ui.js?v=9a1696e5';
-import { fNum, fInt } from './util.js?v=9a1696e5';
-import { corPartido, corTextoSobre } from './partidos.js?v=9a1696e5';
-import { baixarCSV } from './export.js?v=9a1696e5';
+import { CONFIG } from './config.js?v=c3decc5a';
+import { getJSON } from './tse.js?v=c3decc5a';
+import { esc, sem, tabela } from './ui.js?v=c3decc5a';
+import { fNum, fInt } from './util.js?v=c3decc5a';
+import { corPartido, corTextoSobre } from './partidos.js?v=c3decc5a';
+import { baixarCSV } from './export.js?v=c3decc5a';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];
@@ -240,7 +240,7 @@ function munSecao(el, cs, B) {
       cols.push({ k: 'p' + i, t: `<span class="cc-th" style="--c:${SLOT[i]}">${esc(nm)} <small>· % no local</small></span>`, h: r => r.vals[i] && isFinite(r.vals[i].p) ? `<b>${fNum(r.vals[i].p, 2)}%</b>` : '–', v: r => r.vals[i]?.p ?? -1, x: r => r.vals[i] && isFinite(r.vals[i].p) ? fNum(r.vals[i].p, 2) : '', cls: 'num' });
     });
     if (cs.length > 1) cols.push({ k: 'dif', t: 'Diferença (1ª − 2ª, p.p.)', h: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? `<span class="dlt ${Math.abs(d) < .05 ? 'zero' : d > 0 ? 'pos' : 'neg'}">${d > 0 ? '+' : d < 0 ? '−' : ''}${fNum(Math.abs(d), 1)}</span>` : '–'; }, v: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? d : null; }, x: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? fNum(d, 2) : ''; }, cls: 'num' });
-    tab = tabela(el.querySelector('#cc-tab'), { cols, rows: rs, sort: 'v0', dir: 'desc', filtro: (r, q2) => sem(r.nome).includes(q2) || sem(r.uf || '').includes(q2), limite: modo === 'mun' ? 300 : 0, vazio: 'Sem dados', onRow: modo === 'mun' ? x => { if (x.k && x.uf) location.hash = `#/t1/mun/${x.uf}/${x.k}`; } : undefined });
+    tab = tabela(el.querySelector('#cc-tab'), { cols, rows: rs, sort: 'v0', dir: 'desc', filtro: (r, q2) => sem(r.nome).includes(q2) || sem(r.uf || '').includes(q2), limite: modo === 'mun' ? 300 : 0, vazio: 'Sem dados', onRow: modo === 'mun' ? x => { if (x.k && x.uf) location.hash = `#/t1/mun/${String(x.uf).toLowerCase()}/${x.k}`; } : undefined });
   };
   desenhaTab();
   el.querySelector('.cc-agr').addEventListener('click', e => {
