@@ -1,18 +1,18 @@
 // Camada município → bairro → local de votação.
 // Dados: data/bairros/{uf}/{cd5}.json (TSE: locais de votação, bairro, coordenadas, 1º turno por seção) +
 // resultado por seção do 2º turno publicado pelo coletor (branches dados-b1…5) → agregação por local e por bairro.
-import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=c3decc5a';
-import { CONFIG, RAIZ } from './config.js?v=c3decc5a';
-import { getJSON } from './tse.js?v=c3decc5a';
-import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=c3decc5a';
-import { comFoco } from './foco.js?v=c3decc5a';
-import { cartaoCand, barraDupla, kpi, cabCand, linhaAp, seletorMapa, ligaModoMapa } from './views.js?v=c3decc5a';
-import { listaMunicipios } from './model.js?v=c3decc5a';
-import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=c3decc5a';
-import { projetarMunicipios } from './proj.js?v=c3decc5a';
-import { criarMapaPontos } from './mapapontos.js?v=c3decc5a';
-import { criarMapaBairros } from './mapabairros.js?v=c3decc5a';
-import { legendaMapa } from './map.js?v=c3decc5a';
+import { CAND, UF_NOME, fInt, fNum, fDelta, corDoPct, clamp } from './util.js?v=c8b4672d';
+import { CONFIG, RAIZ } from './config.js?v=c8b4672d';
+import { getJSON } from './tse.js?v=c8b4672d';
+import { esc, dlt, pcel, entenda, tabela, sem } from './ui.js?v=c8b4672d';
+import { comFoco } from './foco.js?v=c8b4672d';
+import { cartaoCand, barraDupla, kpi, cabCand, linhaAp, seletorMapa, ligaModoMapa } from './views.js?v=c8b4672d';
+import { listaMunicipios } from './model.js?v=c8b4672d';
+import { dec, topoT1, kpisT1, unidadeV, idxFoco, aplicaEscala, legendaT1, dadoMapaT1, tipUnidade as tipT1, lidChip, rankDe } from './t1.js?v=c8b4672d';
+import { projetarMunicipios } from './proj.js?v=c8b4672d';
+import { criarMapaPontos } from './mapapontos.js?v=c8b4672d';
+import { criarMapaBairros } from './mapabairros.js?v=c8b4672d';
+import { legendaMapa } from './map.js?v=c8b4672d';
 
 const q = new URLSearchParams(location.search);
 const bust = () => '?t=' + Math.floor(Date.now() / 10000);
