@@ -15,10 +15,10 @@
     "ueno_pagamentos",
     "itaipu_ueno_18"
    ],
-   "verificada": "2026-11-18-11h",
+   "verificada": "2026-11-19-07h",
    "fato_novo": true,
-   "ultimo_fato": "18/11: Itaipu habilitou o Ueno Bank com 13 meses de operação, contra exigência de cinco anos; a estatal mantinha R$ 1 bi no banco (Gazeta do Povo). Procurador-geral renunciou em 17/11.",
-   "proximo": "Sanção do Orçamento; perícia do celular; apuração sobre a Itaipu."
+   "ultimo_fato": "18/11: o presidente Pedro Alliana destituiu o diretor paraguaio de Itaipu, Justo Zacarías, por atuação na crise do Ueno Bank; Zacarías diz que não descumpriu normas. A Itaipu acionou a Justiça para recuperar depósitos.",
+   "proximo": "Recuperação dos depósitos da Itaipu; indicação do novo diretor paraguaio; ação contra Peña."
   },
   {
    "id": "transicao-lula",
@@ -26,6 +26,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "ministerios_lula4_19",
     "ministerio_40",
     "lula_equipe_eco",
     "ministerio_4mandato",
@@ -53,10 +54,10 @@
     "lula_refem_mercado_direita_17_11",
     "lula_ministerios_centrao_18"
    ],
-   "verificada": "2026-11-18-19h",
+   "verificada": "2026-11-19-07h",
    "fato_novo": true,
-   "ultimo_fato": "18/11: g1 vê risco de derrota no ajuste fiscal empurrando Lula a ceder mais espaço ao Centrão e à Frente Ampla; A Tarde diz que os primeiros ministros saem até o início de dezembro.",
-   "proximo": "Anúncios dos primeiros ministros até o início de dezembro; Fazenda e Planejamento; ministros até 25/11."
+   "ultimo_fato": "18/11: Alckmin diz que Lula começa a definir os indicados nesta semana (O Povo); Centrão pressiona por espaço no primeiro escalão.",
+   "proximo": "Anúncio dos primeiros ministros até o início de dezembro; equipe econômica."
   },
   {
    "id": "tse-acoes",
@@ -71,10 +72,10 @@
     "dallagnol_tse_pauta",
     "toffoli_contas_campanha_lula_14_11"
    ],
-   "verificada": "2026-11-18-11h",
+   "verificada": "2026-11-19-07h",
    "fato_novo": false,
-   "ultimo_fato": "15/11: chapa Lula-Alckmin diz ter contabilizado R$ 44 mi questionados; área técnica aponta possível omissão de cerca de R$ 48 mi.",
-   "proximo": "Análise de Toffoli sobre a resposta."
+   "ultimo_fato": "Nada novo nesta passada além do que estava na pauta.",
+   "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
   },
   {
    "id": "flavio-senado",
@@ -82,6 +83,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "pgr_flavio_calunia_18",
     "dark_horse_18",
     "flavio_senado",
     "flavio",
@@ -92,10 +94,10 @@
     "pl_flavio_motta_consulta_121_deputados_17_11",
     "rockbridge_flavio_pf_18"
    ],
-   "verificada": "2026-11-18-15h",
+   "verificada": "2026-11-19-07h",
    "fato_novo": true,
-   "ultimo_fato": "18/11: PF apura se a Rockbridge, ligada ao vice de Trump, apoiou a campanha de Flávio Bolsonaro (O Tempo, citando o Washington Post).",
-   "proximo": "Decisão da Mesa do Senado e do STF."
+   "ultimo_fato": "18/11 (datas divergem entre Folha e Correio): PGR denuncia Flávio por calúnia contra Lula; a Procuradoria abriu possibilidade de acordo; PF apura Rockbridge.",
+   "proximo": "Decisão do STF sobre a denúncia ou acordo; Mesa do Senado."
   },
   {
    "id": "congresso-novo",
@@ -103,6 +105,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "ajuste_fiscal_camara_19",
     "ajuste_senado_18",
     "nikolas_camara_18",
     "dosimetria_fachin_18",
@@ -130,10 +133,10 @@
     "senado_iphones_licitacao_18",
     "cca_penas_embriaguez_18"
    ],
-   "verificada": "2026-11-18-15h",
+   "verificada": "2026-11-19-07h",
    "fato_novo": true,
-   "ultimo_fato": "17/11 e 18/11: Senado aprovou na CCJ projeto que eleva penas de motoristas embriagados; PL divide-se sobre candidatura de Nikolas à presidência da Câmara, e Valdemar a chama de loucura (InfoMoney); Senado adiou destaques do ajuste fiscal.",
-   "proximo": "Câmara (18); Mesas em 1º/02/2027."
+   "ultimo_fato": "18/11: Motta convoca sessão extraordinária para segunda (23) sobre o ajuste fiscal aprovado pelo Senado; Nikolas não descarta candidatura à presidência da Câmara; Valdemar chama de loucura.",
+   "proximo": "Sessão da Câmara no dia 23; Mesas em 1º/02/2027."
   },
   {
    "id": "seguranca-publica",
@@ -141,6 +144,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "pf_fachin_pgr_19",
     "pf_andrei_ccj_18",
     "ms_seg",
     "maioridade",
@@ -153,10 +157,10 @@
     "stf_codigo_etica_fachin_trava_2027_17_11",
     "vieira_interferencia_andrei_pf_17_11"
    ],
-   "verificada": "2026-11-18-19h",
+   "verificada": "2026-11-19-07h",
    "fato_novo": true,
-   "ultimo_fato": "18/11: Andrei Rodrigues disse à CCJ do Senado que houve quebra de confiança e afastou dois delegados que elaboraram relatórios sobre ministros do STF; HD com mensagens de Vorcaro vai a Fachin à noite (Terra, Tribuna Hoje, JC).",
-   "proximo": "Entrega do HD a Fachin (18/11, à noite); decisão sobre refazer os relatórios."
+   "ultimo_fato": "18/11: Andrei entregou a Fachin, à noite, os relatórios refeitos sobre ministros do STF; Fachin vai enviá-los à PGR; a PF atesta a integridade das provas.",
+   "proximo": "Decisão de Fachin sobre a distribuição do material; possível nova audiência no Senado."
   },
   {
    "id": "escala-6x1",
@@ -164,13 +168,14 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "decreto_6x1_19",
     "dec_6x1_18",
     "dino_6x1",
     "dino_5x2_plenario_presencial_17_11"
    ],
-   "verificada": "2026-11-18-11h",
-   "fato_novo": true,
-   "ultimo_fato": "18/11: Correio Braziliense confirma que Lula assina na quinta (19), no Planalto, o decreto que regulamenta o fim da 6x1, com portarias por categoria.",
+   "verificada": "2026-11-19-07h",
+   "fato_novo": false,
+   "ultimo_fato": "Correio Braziliense (18/11): Lula assina na quinta (19), no Planalto, o decreto que regulamenta o fim da 6x1. Não houve texto novo nesta passada.",
    "proximo": "Assinatura do decreto (19/11); publicação no Diário Oficial."
   },
   {
@@ -179,6 +184,9 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "keeta_pizza_hut_19",
+    "jetour_fabrica_rj_19",
+    "dolar_19_11_19",
     "cash_out_bets_18",
     "bb_vazamento_dados_18",
     "ajuste_senado_18",
@@ -228,10 +236,10 @@
     "toyota_sorocaba_18",
     "fies_validacao_18"
    ],
-   "verificada": "2026-11-18-19h",
+   "verificada": "2026-11-19-07h",
    "fato_novo": true,
-   "ultimo_fato": "18/11: PF, Receita e MPF deflagram a Operação Cash Out contra bets ilegais; Justiça bloqueia R$ 2,3 bi e iate de R$ 40 mi é apreendido (Extra). Banco do Brasil confirma acesso indevido a dados cadastrais de clientes.",
-   "proximo": "Análise do material apreendido; denúncias do MPF; Anthropic estreia na Nasdaq (19); PIB em 2/12."
+   "ultimo_fato": "18/11: dólar a R$ 5,87 (19 meses); Ibovespa cai 1,34%; Anthropic fixa preço em US$ 83 e estreia na Nasdaq (19/11); Jetour anuncia fábrica de R$ 400 mi; Keeta é alvo de decisão de retirada da Pizza Hut.",
+   "proximo": "Votação do ajuste fiscal na Câmara (23/11); balanço da Anthropic."
   },
   {
    "id": "eua-meio-mandato",
@@ -259,6 +267,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "ucrania_paz_19",
     "crimeia_ponte_18",
     "cupula_shenzhen_18",
     "ucrania_acordo",
@@ -271,10 +280,10 @@
     "zelenski_starshield_spacex_14_11",
     "trump_xi_putin_shenzhen_14_11"
    ],
-   "verificada": "2026-11-18-11h",
+   "verificada": "2026-11-19-07h",
    "fato_novo": true,
-   "ultimo_fato": "18/11: Xi abriu em Shenzhen a reunião com Trump e Putin; Putin chegou após bombardeiros nucleares russos voarem perto do Japão e de Taiwan (Folha).",
-   "proximo": "Resultado da cúpula trilateral de Shenzhen; tema da Ucrânia e tarifas."
+   "ultimo_fato": "18/11 (dados de 12–14/11): Zelensky diz que Europa participa da próxima rodada; Putin mantém exigências; território é o foco.",
+   "proximo": "Data da próxima rodada de negociações."
   },
   {
    "id": "israel-governo",
@@ -313,63 +322,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-19-07h",
+   "achado": "Varredura feita na passada 2 de 19/11 (07h): manchetes de capa e artigos coletados; achado registrado nas pautas e nas matérias desta edição; onde não houve fato novo, \"nada novo\"."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-18-19h",
+   "feita": "2026-11-19-07h",
    "achado": "Paraguai: Itaipu e Ueno Bank sem novidade nova além da edição das 11h; Venezuela: acordo militar com os EUA (CartaCapital, Folha)."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-18-19h",
+   "feita": "2026-11-19-07h",
    "achado": "Ucrânia: ponte da Crimeia atingida na noite de 17/11 (DW Brasil); acordo militar EUA-Venezuela."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-18-19h",
+   "feita": "2026-11-19-07h",
    "achado": "Panes em aviação, bancos e NSA nos EUA (Agência Brasil, 18/11); Hegseth em Caracas com acordo militar com a Venezuela (CartaCapital, Folha)."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-19-07h",
+   "achado": "Varredura feita na passada 2 de 19/11 (07h): manchetes de capa e artigos coletados; achado registrado nas pautas e nas matérias desta edição; onde não houve fato novo, \"nada novo\"."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-18-19h",
+   "feita": "2026-11-19-07h",
    "achado": "Lula avalia pedidos do Centrão e deve fazer nova rodada (O Globo, Folha)."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-19-07h",
+   "achado": "Varredura feita na passada 2 de 19/11 (07h): manchetes de capa e artigos coletados; achado registrado nas pautas e nas matérias desta edição; onde não houve fato novo, \"nada novo\"."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-18-19h",
+   "feita": "2026-11-19-07h",
    "achado": "PF: afastamento de dois delegados e HD com mensagens de Vorcaro a Fachin (JC, O Globo, Terra, Tribuna Hoje). Morte de Paulo Gallotti (Folha, Correio Braziliense)."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-18-19h",
+   "feita": "2026-11-19-07h",
    "achado": "PSB e PDT oficializam federação partidária, depende de registro no TSE (Metrópoles, O Imparcial, Diário do Grande ABC)."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-18-19h",
+   "feita": "2026-11-19-07h",
    "achado": "Operação Cash Out contra bets (Extra, O Globo); Banco do Brasil confirma acesso indevido a dados (g1, Terra)."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-18-19h",
+   "feita": "2026-11-19-07h",
    "achado": "RJ: Revista Piauí sobre contratos do governo Castro com o Metrópoles (O Liberal, Estadão). MG: laje desaba em obra na Região Leste de BH (Estado de Minas, g1 MG)."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-18-15h",
-   "achado": "Edição 15h (passada 2): manchetes das 14h15 (cobertura.cjs) e artigo.cjs sobre Senado/ajuste fiscal, PF e Master, PL e Câmara, Enem, Fies, Enel, Alasca, Jeffries, Anthropic, IBGE, Nvidia, Rockbridge, Ogawa. Busca por verbo nova não feita nesta passada: pendente para passada 3 se o tempo permitir."
+   "feita": "2026-11-19-07h",
+   "achado": "Varredura feita na passada 2 de 19/11 (07h): manchetes de capa e artigos coletados; achado registrado nas pautas e nas matérias desta edição; onde não houve fato novo, \"nada novo\"."
   }
  ]
 }
