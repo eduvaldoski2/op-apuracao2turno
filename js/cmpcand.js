@@ -1,13 +1,13 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
-import { CONFIG } from './config.js?v=eceea2b7';
-import { getJSON } from './tse.js?v=eceea2b7';
-import { esc, sem, tabela } from './ui.js?v=eceea2b7';
-import { fNum, fInt } from './util.js?v=eceea2b7';
-import { dispersao } from './dispersao.js?v=eceea2b7';
-import { corPartido, corTextoSobre } from './partidos.js?v=eceea2b7';
-import { baixarCSV } from './export.js?v=eceea2b7';
+import { CONFIG } from './config.js?v=4fc9f7f4';
+import { getJSON } from './tse.js?v=4fc9f7f4';
+import { esc, sem, tabela } from './ui.js?v=4fc9f7f4';
+import { fNum, fInt } from './util.js?v=4fc9f7f4';
+import { dispersao } from './dispersao.js?v=4fc9f7f4';
+import { corPartido, corTextoSobre } from './partidos.js?v=4fc9f7f4';
+import { baixarCSV } from './export.js?v=4fc9f7f4';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];
@@ -16,7 +16,7 @@ export const hashCC = (refs, t) => '#/comparar/candidatos' + (refs.length ? '?' 
 export const refsCC = q => CH.map(k => q.get(k)).filter(Boolean).slice(0, MAX_CC);
 
 const CARGO = { 1: 'Presidente', 2: 'Vice-presidente', 3: 'Governador', 4: 'Vice-governador', 5: 'Senador', 6: 'Deputado federal', 7: 'Deputado estadual', 8: 'Deputado distrital', 9: '1º suplente de senador', 10: '2º suplente de senador', 11: 'Prefeito', 12: 'Vice-prefeito', 13: 'Vereador' };
-const COM_VOTOS = new Set([1, 3, 5, 6, 7, 8, 11]);   // cargos com votos por município nos arquivos cv-<ano>
+const COM_VOTOS = new Set([1, 3, 5, 6, 7, 8, 11, 13]);   // cargos com votos por município (vereador: só o município da candidatura, com os votos e o % do cadastro cand-pessoas)
 const ANO_MIN_VOTOS = 2006;
 
 // ---------- dados ----------
@@ -38,9 +38,9 @@ const situ = st => { const s = String(st || ''); if (/^(ELEITO|MÉDIA$)/.test(s)
 const ufTxt = uf => (uf === 'BR' ? '' : uf);
 const local = c => { const [, cg, uf, mun] = c; return [CARGO[cg] || 'Cargo ' + cg, mun ? bonito(mun) + (uf ? ' (' + uf + ')' : '') : ufTxt(uf)].filter(Boolean).join(' · '); };
 const refDe = (pid, c) => `${pid}.${c[0]}.${c[1]}.${c[2]}.${c[7]}`;
-const temVotos = c => COM_VOTOS.has(c[1]) && c[0] >= ANO_MIN_VOTOS && (c[8] || c[10]);
+const temVotos = c => COM_VOTOS.has(c[1]) && c[0] >= ANO_MIN_VOTOS && (c[1] === 13 ? c[8] > 0 && c[9] > 0 && !!c[3] : (c[8] || c[10]));
 const votosTxt = c => c[8] == null && c[10] == null ? '<span class="cc-nd">sem votos na base</span>' : `<b>${fInt(c[8] || 0)}</b>${c[9] != null ? ` <small>(${fNum(c[9], 2)}%)</small>` : ''}${c[10] ? `<br><small>2º turno: <b>${fInt(c[10])}</b>${c[11] != null ? ` (${fNum(c[11], 2)}%)` : ''}</small>` : ''}`;
-const motivo = c => !COM_VOTOS.has(c[1]) ? (c[1] === 13 ? 'vereador: só no histórico' : 'vice/suplente: sem votos próprios') : c[0] < ANO_MIN_VOTOS ? 'votos por município só a partir de 2006' : 'sem votos na base (registro indeferido ou renúncia)';
+const motivo = c => !COM_VOTOS.has(c[1]) ? 'vice/suplente: sem votos próprios' : c[0] < ANO_MIN_VOTOS ? 'votos por município só a partir de 2006' : 'sem votos na base (registro indeferido ou renúncia)';
 
 // ---------- análise ----------
 const pearson = (xs, ys) => {
@@ -50,12 +50,18 @@ const pearson = (xs, ys) => {
   return sxx > 0 && syy > 0 ? sxy / Math.sqrt(sxx * syy) : NaN;
 };
 // carrega a candidatura e monta os votos por município no turno pedido (2º só se a candidatura teve)
-async function carregar(ref, turnoPedido) {
+async function carregar(ref, turnoPedido, B) {
   const [pid, ano, cargo, uf, sq] = ref.split('.');
   const bloco = await perfilBloco(pid), p = bloco[pid];
   if (!p) throw new Error('pessoa não encontrada');
   const c = p.c.find(x => String(x[0]) === ano && String(x[1]) === cargo && x[2] === uf && String(x[7]) === sq);
   if (!c) throw new Error('candidatura não encontrada');
+  if (cargo === '13') {   // vereador: o recorte é só o município da candidatura; votos e % vêm do cadastro (T calculado para o % bater com o do TSE)
+    const mun = (B?.muns || []).find(m => norm(m.nome) === norm(c[3]) && String(m.uf).toLowerCase() === String(c[2]).toLowerCase());
+    if (!mun) throw new Error('município do vereador não localizado');
+    if (!(c[8] > 0 && c[9] > 0)) throw new Error('vereador sem votos na base');
+    return { ref, pid, p, c, nome: p.u || p.n, t: 1, v: new Map([[+mun.cd, c[8]]]), T: new Map([[+mun.cd, c[8] * 100 / c[9]]]), vereador: true };
+  }
   const arq = await votosArq(ano, cargo, uf);
   const t = turnoPedido === 2 && c[10] ? 2 : 1;
   const flat = (arq['c' + t] || {})[sq] || [], tot = arq['t' + t] || {}, v = new Map();
@@ -72,7 +78,7 @@ export function viewCmpCand(ctx, q) {
   <section class="painel cmp-pick sem-export">
     <div class="cmp-modo" role="tablist" aria-label="O que comparar"><a href="#/comparar" role="tab">Territórios</a><a href="${hashCC([])}" role="tab" class="on" aria-selected="true">Candidatos</a></div>
     <h2>Escolha as candidaturas</h2>
-    <p class="sub">Até ${MAX_CC} candidaturas de qualquer eleição de 2006 a 2026 e de qualquer cargo (presidente, governador, senador, deputados e prefeito): o mesmo candidato em anos diferentes, candidatos entre si ou em cargos diferentes. Os votos são cruzados por município.</p>
+    <p class="sub">Até ${MAX_CC} candidaturas de qualquer eleição de 2006 a 2026 e de qualquer cargo (presidente, governador, senador, deputados, prefeito e vereador): o mesmo candidato em anos diferentes, candidatos entre si ou em cargos diferentes. Os votos são cruzados por município; o vereador entra só no município da candidatura, então o cruzamento com ele vale nesse município.</p>
     <div class="cmp-chips" id="cc-chips"><span class="cmp-vazio">${refs.length ? 'Carregando…' : 'Nenhuma candidatura escolhida ainda.'}</span></div>
     <div class="cmp-add" id="cc-add" ${refs.length >= MAX_CC ? 'hidden' : ''}>
       <div class="cmp-busca"><input id="cc-in" type="search" autocomplete="off" placeholder="Nome do candidato (ex.: Lula, Tiririca)…" aria-label="Buscar candidato pelo nome"><ul id="cc-sug" class="cmp-sug" role="listbox" hidden></ul></div>
@@ -134,7 +140,7 @@ export function viewCmpCand(ctx, q) {
     const alvo = root.querySelector('#cc-res'), chips = root.querySelector('#cc-chips');
     alvo.innerHTML = '<section class="painel sem-export"><p class="carregando">Carregando votos por município…</p></section>';
     chips.addEventListener('click', e => { const b = e.target.closest('[data-rm]'); if (b) ir(refs.filter((_, i) => i !== +b.dataset.rm)); });
-    Promise.allSettled(refs.map(r => carregar(r, turno))).then(res => {
+    Promise.allSettled(refs.map(r => carregar(r, turno, B))).then(res => {
       if (!alvo.isConnected) return;
       const ok = [], falhas = [], idxFalha = [];
       res.forEach((x, i) => x.status === 'fulfilled' ? ok.push({ ...x.value, i }) : (falhas.push(`${refs[i]}: ${x.reason?.message || x.reason}`), idxFalha.push(i)));
@@ -156,7 +162,7 @@ function resultado(cs, falhas, B, turno) {
       <p class="cc-loc">${esc(local(c))} · <b>${c[0]}</b></p>
       <p class="cc-par">${chipP(c[4])}${c[5] ? ` <span>nº ${c[5]}</span>` : ''} ${situ(c[6])}</p>
       <p class="cc-vot">${v ? votosTxt(c) : '<span class="cc-nd">sem votos</span>'}</p>
-      <p class="cc-t">${c[10] ? `Comparando o <b>${x.t}º turno</b> nos municípios` : 'Votos do 1º turno nos municípios'}</p></article>`;
+      <p class="cc-t">${x.vereador ? 'Votos no município da candidatura' : c[10] ? `Comparando o <b>${x.t}º turno</b> nos municípios` : 'Votos do 1º turno nos municípios'}</p></article>`;
   }).join('');
   const temT2 = cs.some(x => x.c[10]);
   const ctl = temT2 ? `<div class="cc-turno sem-export" role="group" aria-label="Turno comparado"><span>Turno nos municípios:</span><button type="button" data-t="1" class="${turno === 1 ? 'on' : ''}">1º turno</button><button type="button" data-t="2" class="${turno === 2 ? 'on' : ''}">2º turno (quando houve)</button></div>` : '';
@@ -195,7 +201,7 @@ function munSecao(el, cs, B) {
   });
   const emComum = linhas.filter(r => r.vals.every(Boolean));
   const base = cs.length > 1 ? emComum : linhas;
-  if (!base.length) { el.innerHTML = '<div class="aviso">Estas candidaturas não têm nenhum município em comum (por exemplo, estados diferentes). O cruzamento por município só vale quando os recortes se sobrepõem.</div>'; return; }
+  if (!base.length) { el.innerHTML = '<div class="aviso">Estas candidaturas não têm nenhum município em comum (por exemplo, estados diferentes, ou vereador de um município fora do estado das demais). O cruzamento por município só vale quando os recortes se sobrepõem.</div>'; return; }
 
   const leit = () => {
     if (cs.length < 2) return '';
@@ -216,7 +222,7 @@ function munSecao(el, cs, B) {
     ${disp}
     <div class="cc-agr sem-export" role="group" aria-label="Agrupar por"><span>Tabela por:</span><button type="button" data-g="mun" class="on">Município</button><button type="button" data-g="uf">Estado</button><button type="button" class="cc-csv">⬇ Planilha (CSV)</button></div>
     <div id="cc-tab"></div>
-    <p class="cmp-nota">Percentual = votos da candidatura ÷ votos válidos nominais do mesmo cargo no município, no turno indicado. ${cs.length > 1 ? 'A tabela e o gráfico usam só os municípios que fazem parte dos recortes de todas as candidaturas escolhidas. ' : ''}Nas eleições de 2006 a 2014 o TSE não separa os votos anulados sub judice nos arquivos por município; nesses anos usa-se o total de votos nominais. Fonte: TSE.</p>`;
+    <p class="cmp-nota">Percentual = votos da candidatura ÷ votos válidos nominais do mesmo cargo no município, no turno indicado. ${cs.length > 1 ? 'A tabela e o gráfico usam só os municípios que fazem parte dos recortes de todas as candidaturas escolhidas. ' : ''}${cs.some(x => x.vereador) ? 'Vereador: considera só o município da candidatura; o percentual é o informado no cadastro de candidaturas (votos ÷ votos válidos nominais de vereador no município). ' : ''}Nas eleições de 2006 a 2014 o TSE não separa os votos anulados sub judice nos arquivos por município; nesses anos usa-se o total de votos nominais. Fonte: TSE.</p>`;
 
   const desenhaDisp = () => {
     const d = el.querySelector('#cc-disp'); if (!d) return;
