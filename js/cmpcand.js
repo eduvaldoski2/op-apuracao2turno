@@ -1,12 +1,13 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
-import { CONFIG } from './config.js?v=9a99ee54';
-import { getJSON } from './tse.js?v=9a99ee54';
-import { esc, sem, tabela } from './ui.js?v=9a99ee54';
-import { fNum, fInt } from './util.js?v=9a99ee54';
-import { corPartido, corTextoSobre } from './partidos.js?v=9a99ee54';
-import { baixarCSV } from './export.js?v=9a99ee54';
+import { CONFIG } from './config.js?v=5f5759e6';
+import { getJSON } from './tse.js?v=5f5759e6';
+import { esc, sem, tabela } from './ui.js?v=5f5759e6';
+import { fNum, fInt } from './util.js?v=5f5759e6';
+import { corPartido, corTextoSobre } from './partidos.js?v=5f5759e6';
+import { baixarCSV } from './export.js?v=5f5759e6';
+import { abrirMunicipio } from './cmpmun.js?v=5f5759e6';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];
@@ -222,15 +223,10 @@ function munSecao(el, cs, B) {
     <div id="cc-det" class="cc-det"></div>
     <p class="cmp-nota">Percentual = votos da candidatura ÷ votos válidos nominais do mesmo cargo no município, no turno indicado. ${cs.length > 1 ? 'A tabela e o gráfico usam só os municípios que fazem parte dos recortes de todas as candidaturas escolhidas. ' : ''}${cs.some(x => x.vereador) ? 'Vereador: considera só o município da candidatura; o percentual é o informado no cadastro de candidaturas (votos ÷ votos válidos nominais de vereador no município). ' : ''}Nas eleições de 2006 a 2014 o TSE não separa os votos anulados sub judice nos arquivos por município; nesses anos usa-se o total de votos nominais. Fonte: TSE.</p>`;
 
-  // clique no município: mostra aqui mesmo as candidaturas escolhidas naquele município (e o atalho para o resultado geral do município)
+  // clique no município: abre a descida (região > bairro > local de votação > seção) com as candidaturas comparadas
   const mostraMun = x => {
-    const d = el.querySelector('#cc-det'); if (!d || !x) return;
-    const mx = Math.max(0, ...x.vals.map(v => v && isFinite(v.p) ? v.p : 0)) || 1;
-    const lin = cs.map((c, i) => { const v = x.vals[i]; const w = v && isFinite(v.p) ? Math.max(1.5, 100 * v.p / mx) : 0;
-      return `<div style="display:grid;grid-template-columns:minmax(180px,1.2fr) 3fr minmax(150px,auto);gap:12px;align-items:center;padding:8px 0;border-top:1px solid #ece8f6"><span><i class="cc-dot" style="background:${SLOT[i]};display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:8px"></i><b>${esc(rotulo(c))}</b></span><span style="background:#efecf8;border-radius:6px;height:16px;display:block"><span style="display:block;height:16px;border-radius:6px;width:${w}%;background:${SLOT[i]}"></span></span><span style="text-align:right">${v ? `<b>${fInt(v.v)}</b> votos · <b>${isFinite(v.p) ? fNum(v.p, 2) + '%' : '–'}</b>` : '<small>fora do recorte</small>'}</span></div>`; }).join('');
-    const link = x.uf && x.k ? `<p style="margin:10px 0 0"><a href="#/t1/mun/${String(x.uf).toLowerCase()}/${x.k}">Ver o resultado geral deste município (presidente 2026) ›</a></p>` : '';
-    d.innerHTML = `<div style="margin-top:18px;padding:16px 18px;border:1px solid #d9d4f0;border-radius:16px;background:#fbf9f5"><h3 style="margin:0 0 6px;font:400 24px 'DM Serif Display',serif;color:#2A2260">${esc(x.nome)}${x.uf ? ' (' + esc(x.uf) + ')' : ''}: candidaturas comparadas</h3>${lin}<p class="cmp-nota" style="margin:8px 0 0">Percentual = votos ÷ votos válidos nominais do mesmo cargo no município.</p>${link}</div>`;
-    d.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const d = el.querySelector('#cc-det'); if (!d || !x || !x.k || !x.uf) return;
+    abrirMunicipio(d, { cs, cores: SLOT, rotulo, mun: { cd: x.k, uf: String(x.uf).toLowerCase(), nome: x.nome } });
   };
   let modo = 'mun', tab = null;
   const desenhaTab = () => {

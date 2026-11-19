@@ -913,3 +913,18 @@ a.h-bar-n,a.h-rank-n{color:var(--roxo);text-decoration:none;font-weight:700}a.h-
 #cc-tab .tab td:first-child{min-width:92px}
 #cc-tab tr.clic{cursor:pointer}#cc-tab tr.clic:hover td{background:#f3f0fa}#cc-tab tr.clic td:first-child b{color:var(--roxo);text-decoration:underline;text-decoration-color:#cfc8e6;text-underline-offset:3px}
 @media (max-width:640px){#cc-tab .tab{font-size:13px}#cc-tab .tab th{font-size:10.5px}}
+
+/* comparar candidatos: descida no município */
+.cc-md{margin-top:18px;padding:16px 18px;border:1px solid var(--linha);border-radius:16px;background:#fbf9f5}
+.cc-md-top{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+.cc-md-top h3{margin:0 0 6px;font:400 24px 'DM Serif Display',serif;color:var(--roxo)}
+.cc-md-trilha{font-size:14px;margin:4px 0 10px}.cc-md-trilha button{border:0;background:none;color:var(--roxo);font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+.cc-md-r{display:grid;grid-template-columns:minmax(180px,1.2fr) 3fr minmax(150px,auto);gap:12px;align-items:center;padding:6px 0;border-top:1px solid #ece8f6}
+.cc-md-b{background:#efecf8;border-radius:6px;height:14px;display:block}.cc-md-b>span{display:block;height:14px;border-radius:6px}
+.cc-md-v{text-align:right}.cc-dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:8px}
+.cc-md-niv{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:12px 0 8px;font-size:14px}
+.cc-md-niv .chip{font:inherit;font-size:13.5px;font-weight:600;border:1.5px solid var(--linha);background:#fff;color:var(--roxo);border-radius:999px;padding:6px 14px;cursor:pointer}
+.cc-md-niv .chip.on{background:var(--roxo);color:#fff;border-color:var(--roxo)}
+.cc-md-x{font:inherit;font-size:13px;font-weight:600;border:1.5px solid var(--linha);background:#fff;color:var(--roxo);border-radius:999px;padding:5px 12px;cursor:pointer}
+.cc-md-av{margin:6px 0;padding-left:0;list-style:none;font-size:13px;color:var(--tx2)}
+@media(max-width:700px){.cc-md-r{grid-template-columns:1fr}.cc-md-v{text-align:left}.cc-md-top h3{font-size:20px}}
