@@ -1,7 +1,7 @@
 // Carimba os módulos JS/CSS com ?v=<hash do conteúdo> para o navegador nunca usar uma versão antiga em cache.
 // Uso: node scripts/versao.mjs   (rodar antes de cada commit; é idempotente)
 import fs from 'node:fs'; import crypto from 'node:crypto'; import path from 'node:path';
-const limpa = s => s.replace(/(\.(?:js|css|svg))\?v=[0-9a-f]+/g, '$1');
+const limpa = s => s.replace(/(\.(?:js|css))\?v=[0-9a-f]+/g, '$1');
 const arqs = fs.readdirSync('js').filter(f => f.endsWith('.js')).map(f => 'js/' + f).concat(['css/app.css', 'css/consent.css', 'painel.html', 'index.html', 'conta.html', 'painel-inicio.html', 'radar/_login.html', 'radar/_shell.html', 'cartoes/cartoes.js', 'cartoes/cartoes.css', 'cartoes/index.html']);
 const base = Object.fromEntries(arqs.map(f => [f, limpa(fs.readFileSync(f, 'utf8'))]));
 const h = crypto.createHash('sha1'); for (const f of arqs.sort()) h.update(f + base[f]); const v = h.digest('hex').slice(0, 8);
