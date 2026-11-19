@@ -1,13 +1,12 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
-import { CONFIG } from './config.js?v=4fc9f7f4';
-import { getJSON } from './tse.js?v=4fc9f7f4';
-import { esc, sem, tabela } from './ui.js?v=4fc9f7f4';
-import { fNum, fInt } from './util.js?v=4fc9f7f4';
-import { dispersao } from './dispersao.js?v=4fc9f7f4';
-import { corPartido, corTextoSobre } from './partidos.js?v=4fc9f7f4';
-import { baixarCSV } from './export.js?v=4fc9f7f4';
+import { CONFIG } from './config.js?v=b4e9db8a';
+import { getJSON } from './tse.js?v=b4e9db8a';
+import { esc, sem, tabela } from './ui.js?v=b4e9db8a';
+import { fNum, fInt } from './util.js?v=b4e9db8a';
+import { corPartido, corTextoSobre } from './partidos.js?v=b4e9db8a';
+import { baixarCSV } from './export.js?v=b4e9db8a';
 
 export const MAX_CC = 4;
 const CH = ['a', 'b', 'c', 'd'];
@@ -217,24 +216,10 @@ function munSecao(el, cs, B) {
     p.push('<small>A correlação compara os municípios, não os eleitores: ela mostra onde cada candidatura foi forte, mas não prova que o mesmo eleitor votou nas duas.</small>');
     return p.join(' ');
   };
-  const disp = cs.length > 1 && emComum.length >= 5 ? `<div class="cc-eixos sem-export"><label>Eixo X <select id="cc-x">${cs.map((x, i) => `<option value="${i}">${esc(rotulo(x))}</option>`).join('')}</select></label><label>Eixo Y <select id="cc-y">${cs.map((x, i) => `<option value="${i}" ${i === 1 ? 'selected' : ''}>${esc(rotulo(x))}</option>`).join('')}</select></label></div><div id="cc-disp" class="cc-disp"></div>` : '';
   el.innerHTML = `${cs.length > 1 ? `<p class="cmp-leit">${leit()}</p>` : `<p class="cmp-leit"><b>${fInt(base.length)}</b> município${base.length === 1 ? '' : 's'} com votos neste recorte.</p>`}
-    ${disp}
     <div class="cc-agr sem-export" role="group" aria-label="Agrupar por"><span>Tabela por:</span><button type="button" data-g="mun" class="on">Município</button><button type="button" data-g="uf">Estado</button><button type="button" class="cc-csv">⬇ Planilha (CSV)</button></div>
     <div id="cc-tab"></div>
     <p class="cmp-nota">Percentual = votos da candidatura ÷ votos válidos nominais do mesmo cargo no município, no turno indicado. ${cs.length > 1 ? 'A tabela e o gráfico usam só os municípios que fazem parte dos recortes de todas as candidaturas escolhidas. ' : ''}${cs.some(x => x.vereador) ? 'Vereador: considera só o município da candidatura; o percentual é o informado no cadastro de candidaturas (votos ÷ votos válidos nominais de vereador no município). ' : ''}Nas eleições de 2006 a 2014 o TSE não separa os votos anulados sub judice nos arquivos por município; nesses anos usa-se o total de votos nominais. Fonte: TSE.</p>`;
-
-  const desenhaDisp = () => {
-    const d = el.querySelector('#cc-disp'); if (!d) return;
-    const ix = +el.querySelector('#cc-x').value, iy = +el.querySelector('#cc-y').value;
-    if (ix === iy) { d.innerHTML = '<p class="vazio">Escolha candidaturas diferentes nos dois eixos.</p>'; return; }
-    const A = cs[ix], Bc = cs[iy];
-    const pts = emComum.map(r => ({ id: r.cd, nome: r.nome, x: r.vals[ix].p, y: r.vals[iy].p, r: r.vals[ix].t, cor: SLOT[iy],
-      tip: `<b>${esc(r.nome)}${r.uf ? ' (' + r.uf + ')' : ''}</b><br>${esc(A.nome)} ${A.c[0]}: ${fNum(r.vals[ix].p, 1)}% (${fInt(r.vals[ix].v)})<br>${esc(Bc.nome)} ${Bc.c[0]}: ${fNum(r.vals[iy].p, 1)}% (${fInt(r.vals[iy].v)})` }));
-    const dec = k => { const m = Math.max(...pts.map(p => p[k])); return m < 1 ? 2 : m < 10 ? 1 : 0; }, dx = dec('x'), dy = dec('y');
-    dispersao(d, { pts, onClick: id => { const r = emComum.find(x => String(x.cd) === String(id)); if (r && r.uf) location.hash = `#/t1/mun/${r.uf}/${r.cd}`; }, xFmt: v => fNum(v, dx) + '%', yFmt: v => fNum(v, dy) + '%', xRot: `${A.nome} ${A.c[0]} (% no município)`, yRot: `${Bc.nome} ${Bc.c[0]} (% no município)` });
-  };
-  if (disp) { el.querySelectorAll('#cc-x,#cc-y').forEach(s => s.addEventListener('change', desenhaDisp)); desenhaDisp(); }
 
   let modo = 'mun', tab = null;
   const desenhaTab = () => {

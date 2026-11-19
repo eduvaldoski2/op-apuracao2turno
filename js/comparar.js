@@ -1,8 +1,8 @@
 // Comparador: Brasil, regiões, estados, municípios e bairros lado a lado (até 4), com leitura automática e imagem em 1:1, 4:5 e 9:16.
-import { MAX_COMPARAR, METRICAS, fmtMetrica, buscar, obter, bairrosDe, entradaPorRef } from './unidades.js?v=4fc9f7f4';
-import { esc, sem } from './ui.js?v=4fc9f7f4';
-import { CAND } from './util.js?v=4fc9f7f4';
-import { bonito } from './bairros.js?v=4fc9f7f4';
+import { MAX_COMPARAR, METRICAS, fmtMetrica, buscar, obter, bairrosDe, entradaPorRef } from './unidades.js?v=b4e9db8a';
+import { esc, sem } from './ui.js?v=b4e9db8a';
+import { CAND } from './util.js?v=b4e9db8a';
+import { bonito } from './bairros.js?v=b4e9db8a';
 
 const CHAVES = ['a', 'b', 'c', 'd'];
 export const refsDaRota = q => CHAVES.map(k => q.get(k)).filter(Boolean).slice(0, MAX_COMPARAR);
