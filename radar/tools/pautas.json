@@ -15,7 +15,7 @@
     "ueno_pagamentos",
     "itaipu_ueno_18"
    ],
-   "verificada": "2026-11-19-15h",
+   "verificada": "2026-11-19-19h",
    "fato_novo": false,
    "ultimo_fato": "19/11: a Itaipu acionou a Justiça para recuperar depósitos no Ueno Bank; no dia 18 o presidente Pedro Alliana demitiu o diretor paraguaio Justo Zacarías.",
    "proximo": "Recuperação dos depósitos da Itaipu na Justiça; indicação do novo diretor paraguaio; ação contra Peña."
@@ -55,9 +55,9 @@
     "lula_ministerios_centrao_18",
     "cadeiras_haddad_alckmin_camilo_19"
    ],
-   "verificada": "2026-11-19-15h",
+   "verificada": "2026-11-19-19h",
    "fato_novo": true,
-   "ultimo_fato": "19/11: Lula avalia remanejar Alckmin, Haddad e Camilo para postos estratégicos; Alckmin disse que a definição dos indicados começa nesta semana.",
+   "ultimo_fato": "19/11: Lula diz que não tem pressa para indicar ministros do quarto mandato; Alckmin disse que a definição começa nesta semana.",
    "proximo": "Anúncio dos primeiros ministros até o início de dezembro; Casa Civil e Fazenda."
   },
   {
@@ -73,7 +73,7 @@
     "dallagnol_tse_pauta",
     "toffoli_contas_campanha_lula_14_11"
    ],
-   "verificada": "2026-11-19-15h",
+   "verificada": "2026-11-19-19h",
    "fato_novo": false,
    "ultimo_fato": "Nada novo nesta passada além do que estava na pauta.",
    "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
@@ -95,7 +95,7 @@
     "pl_flavio_motta_consulta_121_deputados_17_11",
     "rockbridge_flavio_pf_18"
    ],
-   "verificada": "2026-11-19-15h",
+   "verificada": "2026-11-19-19h",
    "fato_novo": false,
    "ultimo_fato": "18/11: a PGR denunciou Flávio Bolsonaro por calúnia contra Lula, em publicação sobre Maduro; a PF apura ligações da campanha com a Rockbridge.",
    "proximo": "Decisão do STF sobre a denúncia; resposta da defesa."
@@ -134,8 +134,8 @@
     "senado_iphones_licitacao_18",
     "cca_penas_embriaguez_18"
    ],
-   "verificada": "2026-11-19-15h",
-   "fato_novo": true,
+   "verificada": "2026-11-19-19h",
+   "fato_novo": false,
    "ultimo_fato": "19/11: o Senado aprovou o ajuste fiscal sem mudanças; a Câmara vota na segunda-feira (23).",
    "proximo": "Votação do ajuste fiscal na Câmara (23/11); Mesas em 1º/02/2027."
   },
@@ -158,8 +158,8 @@
     "stf_codigo_etica_fachin_trava_2027_17_11",
     "vieira_interferencia_andrei_pf_17_11"
    ],
-   "verificada": "2026-11-19-15h",
-   "fato_novo": true,
+   "verificada": "2026-11-19-19h",
+   "fato_novo": false,
    "ultimo_fato": "18/11: Andrei entregou a Fachin, à noite, os relatórios refeitos sobre ministros do STF; Fachin vai enviá-los à PGR; a PF atesta a integridade das provas.",
    "proximo": "Decisão de Fachin sobre a distribuição do material; possível nova audiência no Senado."
   },
@@ -174,8 +174,8 @@
     "dino_6x1",
     "dino_5x2_plenario_presencial_17_11"
    ],
-   "verificada": "2026-11-19-15h",
-   "fato_novo": true,
+   "verificada": "2026-11-19-19h",
+   "fato_novo": false,
    "ultimo_fato": "19/11: Lula deve assinar nesta quinta o decreto que regulamenta a 6x1; a transição começa em dezembro, com jornada de 42 horas semanais.",
    "proximo": "Publicação do decreto no Diário Oficial; início da transição em dezembro."
   },
@@ -237,9 +237,9 @@
     "toyota_sorocaba_18",
     "fies_validacao_18"
    ],
-   "verificada": "2026-11-19-15h",
+   "verificada": "2026-11-19-19h",
    "fato_novo": true,
-   "ultimo_fato": "19/11: a Anthropic estreou na Nasdaq a US$ 83 por ação; o dólar abriu a R$ 5,91 depois de fechar em R$ 5,8667 na quarta.",
+   "ultimo_fato": "19/11: a Anthropic abriu a US$ 111,50 na estreia na Nasdaq (alta de 34% sobre a oferta de US$ 83); o BNDES teve lucro de R$ 20,3 bi até setembro.",
    "proximo": "Votação do ajuste fiscal na Câmara (23/11); primeiros resultados da Anthropic como empresa de capital aberto."
   },
   {
@@ -257,7 +257,7 @@
     "alasca_peltola_sullivan_tabulacao_18_11",
     "alasca_peltola_18"
    ],
-   "verificada": "2026-11-19-15h",
+   "verificada": "2026-11-19-19h",
    "fato_novo": false,
    "ultimo_fato": "17/11: Mary Peltola venceu no Alasca, e os democratas tiveram o maior avanço no Senado desde 1958 (Folha); Jeffries foi indicado pelos democratas para a presidência da Câmara dos EUA (18/11).",
    "proximo": "Certificação do resultado; posse da nova legislatura."
@@ -281,8 +281,8 @@
     "zelenski_starshield_spacex_14_11",
     "trump_xi_putin_shenzhen_14_11"
    ],
-   "verificada": "2026-11-19-15h",
-   "fato_novo": true,
+   "verificada": "2026-11-19-19h",
+   "fato_novo": false,
    "ultimo_fato": "19/11: a reunião trilateral em Shenzhen não trouxe data para nova rodada; a ponte de Kerch foi atingida por ataque na véspera.",
    "proximo": "Data da próxima rodada de negociações; participação europeia."
   },
@@ -296,7 +296,7 @@
     "israel",
     "israel_oposicao_acusa_netanyahu_golpe_16_11"
    ],
-   "verificada": "2026-11-19-15h",
+   "verificada": "2026-11-19-19h",
    "fato_novo": false,
    "ultimo_fato": "17/11: Knesset elege Matan Kahana (Yashar, de Eisenkot) para a presidência, com apoio da oposição a Netanyahu.",
    "proximo": "Resultado da votação."
@@ -314,7 +314,7 @@
     "ira_radar_bahrein_13_11",
     "ira_nega_ataque_washington_17_11"
    ],
-   "verificada": "2026-11-19-15h",
+   "verificada": "2026-11-19-19h",
    "fato_novo": false,
    "ultimo_fato": "17/11: Irã nega plano de ataque a Washington; Trump diz que não descarta a ameaça; ataques a base no Bahrein seguem.",
    "proximo": "Resposta dos EUA; APEC."
@@ -323,63 +323,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-19-15h",
-   "achado": "Trilateral Trump-Xi-Putin em Shenzhen (19/11); nenhuma queda, renúncia ou prisão de chefe de Estado nas fontes lidas."
+   "feita": "2026-11-19-19h",
+   "achado": "Nenhuma queda, renúncia ou prisão de chefe de Estado nas notícias lidas nesta passada; trilateral em Shenzhen sem novidades sobre queda de líderes."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-19-15h",
-   "achado": "Paraguai: Ueno Bank e Itaipu (19/11, Justiça); acordo militar EUA-Venezuela (Hegseth, 18/11)."
+   "feita": "2026-11-19-19h",
+   "achado": "Paraguai: Ueno Bank e Itaipu sem fato novo além do que já estava no Radar; nada novo nas notícias lidas."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-19-15h",
-   "achado": "Ucrânia: ponte de Kerch atingida (17/11); reunião trilateral sem data para nova rodada. Mianmar: genocídio reconhecido pela CIJ (19/11)."
+   "feita": "2026-11-19-19h",
+   "achado": "Riad: manchete de ataque houthi a sede de fundo soberano (19/11), sem texto lido; Groenlândia: Parlamento dinamarquês aprova acordo de segurança com EUA (19/11)."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-19-15h",
-   "achado": "Trump, Xi e Putin em Shenzhen; Jeffries escolhido pelos democratas; Fifa confirma Diallo e Tashima contra Infantino."
+   "feita": "2026-11-19-19h",
+   "achado": "Air Force One: jornalistas tiveram celulares recolhidos após cúpula em Shenzhen (19/11); Trump, Xi e Putin em Shenzhen."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-19-15h",
-   "achado": "Anthropic estreia na Nasdaq (19/11); dólar a R$ 5,91 na abertura."
+   "feita": "2026-11-19-19h",
+   "achado": "Anthropic abre a US$ 111,50 na Nasdaq (19/11)."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-19-15h",
-   "achado": "Decreto da 6x1 (19/11); cadeiras de Lula: Alckmin, Haddad e Camilo; Esplanada e Centrão."
+   "feita": "2026-11-19-19h",
+   "achado": "Lula diz que não tem pressa para indicar ministros (19/11); Nova CNH: Ministério dos Transportes divulga alta de 20% nas habilitações."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-19-15h",
-   "achado": "Senado aprovou ajuste fiscal (18/11); Câmara vota na segunda (23); maioridade penal em audiências."
+   "feita": "2026-11-19-19h",
+   "achado": "Sem fato novo lido nesta passada além do ajuste fiscal já no Radar (Câmara vota na segunda, 23)."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-19-15h",
-   "achado": "PF entrega relatórios a Fachin; Zambelli: investigação arquivada; PGR apoia prorrogação no caso de Jaques Wagner."
+   "feita": "2026-11-19-19h",
+   "achado": "Defesa de Oswaldo Eustáquio pede nulidade do processo no STF (19/11); Conselho da ANPD mantém suspensão das lives do Discord (19/11)."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-19-15h",
-   "achado": "PSB-PDT oficializam federação; Valdemar recua sobre Nikolas."
+   "feita": "2026-11-19-19h",
+   "achado": "Nada novo nas notícias lidas nesta passada."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-19-15h",
-   "achado": "Dólar e Ibovespa (19/11); sem decisão nova de juros nas fontes lidas."
+   "feita": "2026-11-19-19h",
+   "achado": "BNDES: lucro de R$ 20,3 bi até setembro (19/11); dólar abriu em alta a R$ 5,91; sem decisão nova de juros nas fontes lidas."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-19-15h",
-   "achado": "NE: Bacabal (MA), Anadia (AL), Sobral (CE). Demais sub-regiões: sem fato novo registrado nesta passada."
+   "feita": "2026-11-19-19h",
+   "achado": "RJ: Escola Municipal GET IV Centenário, na Maré, vence prêmio internacional (19/11); Enem: prazo de reaplicação termina na sexta (20). Demais sub-regiões sem fato novo lido nesta passada."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-19-15h",
-   "achado": "Pautas abertas verificadas nesta edição (ver ultimo_fato)."
+   "feita": "2026-11-19-19h",
+   "achado": "Pautas verificadas nesta edição das 19h; ver ultimo_fato."
   }
  ]
 }
