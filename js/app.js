@@ -1,30 +1,29 @@
-import { CONFIG, TESTE } from './config.js?v=36cf80c0';
-import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=36cf80c0';
-import { getJSON } from './tse.js?v=36cf80c0';
-import { calcular } from './model.js?v=36cf80c0';
-import { projetar, PARAMS } from './proj.js?v=36cf80c0';
-import { viewComparar, hashComparar } from './comparar.js?v=36cf80c0';
-import { viewCmpCand } from './cmpcand.jsmp1340';
-import { viewPerguntar } from './ia.js?v=36cf80c0';
-import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=36cf80c0';
-import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=36cf80c0';
-import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=36cf80c0';
-import { iniciarExportSecoes } from './expsec.js?v=36cf80c0';
-import { eventosEntre } from './avisos.js?v=36cf80c0';
-import { mostrarEleito } from './eleito.js?v=36cf80c0';
-import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=36cf80c0';
-import { abrirTelao, iniciarTV } from './tv.js?v=36cf80c0';
-import { iniciarConsentimento } from './consentimento.js?v=36cf80c0';
-import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=36cf80c0';
-import { lerCard } from './card.js?v=36cf80c0';
-import { abrirCompartilhar } from './compartilhar.js?v=36cf80c0';
-import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=36cf80c0';
-import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=36cf80c0';
-import { esc } from './ui.js?v=36cf80c0';
-import { getFoco, setFoco, comFoco } from './foco.js?v=36cf80c0';
-import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=36cf80c0';
-import { rotaHist, viewHist } from './hist.js?v=36cf80c0';
-import { CONTA, carregarConta } from './conta.js?v=36cf80c0';
+import { CONFIG, TESTE } from './config.js?v=9a1696e5';
+import { MODO_DEMO, carregarEstatico, lerAoVivo, criarDemo, municipiosDireto } from './data.js?v=9a1696e5';
+import { getJSON } from './tse.js?v=9a1696e5';
+import { calcular } from './model.js?v=9a1696e5';
+import { projetar, PARAMS } from './proj.js?v=9a1696e5';
+import { viewComparar, hashComparar } from './comparar.js?v=9a1696e5';
+import { viewCmpCand } from './cmpcand.js?v=9a1696e5';
+import { viewGeral, viewCand, viewUf, viewRegiao, viewCriterios } from './views.js?v=9a1696e5';
+import { viewMun, viewDistrito, viewBairro, viewLocal, trilhaHtml } from './bairros.js?v=9a1696e5';
+import { baixarCSV, baixarXLSX, baixarCardPNG, baixarPDF, slug } from './export.js?v=9a1696e5';
+import { iniciarExportSecoes } from './expsec.js?v=9a1696e5';
+import { eventosEntre } from './avisos.js?v=9a1696e5';
+import { mostrarEleito } from './eleito.js?v=9a1696e5';
+import { iniciarMetricas, evento, tela as metTela } from './metricas.js?v=9a1696e5';
+import { abrirTelao, iniciarTV } from './tv.js?v=9a1696e5';
+import { iniciarConsentimento } from './consentimento.js?v=9a1696e5';
+import { abrirLeads, leadsAtivos, guardaOrigem } from './leads.js?v=9a1696e5';
+import { lerCard } from './card.js?v=9a1696e5';
+import { abrirCompartilhar } from './compartilhar.js?v=9a1696e5';
+import { setEscala, CAND, fNum, fInt, horaBR } from './util.js?v=9a1696e5';
+import { carregarT1, prepT1, viewT1Geral, viewT1Uf } from './t1.js?v=9a1696e5';
+import { esc } from './ui.js?v=9a1696e5';
+import { getFoco, setFoco, comFoco } from './foco.js?v=9a1696e5';
+import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=9a1696e5';
+import { rotaHist, viewHist } from './hist.js?v=9a1696e5';
+import { CONTA, carregarConta } from './conta.js?v=9a1696e5';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };
@@ -49,7 +48,6 @@ function rota0() {
   let modo = 'ap'; if (p[0] === 'p' || p[0] === 'projecao') { modo = 'pr'; p.shift(); } else if (p[0] === 't1') { modo = 't1'; p.shift(); }
   if (p[0] === 'comparar' && p[1] === 'candidatos' && modo === 'ap') return { modo, tela: 'cmpcand', q };
   if (p[0] === 'comparar' && modo === 'ap') return { modo, tela: 'comparar', q };
-  if (p[0] === 'perguntar' && modo === 'ap' && TESTE) return { modo, tela: 'perguntar' };
   if (p[0] === 'metodo' || p[0] === 'criterios') return { modo, tela: 'criterios' };
   if (p[0] === 'cand' && CAND[p[1]]) return { modo, tela: 'cand', k: p[1] };
   if (p[0] === 'mun' && p[1] && p[2]) {
@@ -85,7 +83,6 @@ function render(manterScroll = false, forcar = false) {
   else if (r.tela === 'regiao') v = viewRegiao(ctx, r.reg);
   else if (r.tela === 'comparar') v = viewComparar(ctx, r.q);
   else if (r.tela === 'cmpcand') v = viewCmpCand(ctx, r.q);
-  else if (r.tela === 'perguntar') v = viewPerguntar(ctx);
   else if (r.tela === 'mun') v = viewMun(ctx, r.uf, r.cd);
   else if (r.tela === 'bairro') v = viewBairro(ctx, r.uf, r.cd, r.chave, r.di);
   else if (r.tela === 'distrito') v = viewDistrito(ctx, r.uf, r.cd, r.di);
@@ -228,10 +225,10 @@ document.addEventListener('click', e => { const b = e.target.closest('[data-exp]
 
 // ---------- início ----------
 function prepararVersao() {
-  if (!TESTE) { document.querySelector('.aba[data-tela=perguntar]')?.remove(); return; }   // endereço público: sem conta nem IA
+  if (!TESTE) return;
   document.title = '[TESTE] ' + document.title;
   const m = document.createElement('meta'); m.name = 'robots'; m.content = 'noindex, nofollow'; document.head.appendChild(m);
-  const f = document.createElement('div'); f.className = 'faixa-teste'; f.textContent = 'VERSÃO DE TESTES — inclui recursos em acerto (conta e pergunta à IA). Não divulgue este endereço.';
+  const f = document.createElement('div'); f.className = 'faixa-teste'; f.textContent = 'VERSÃO DE TESTES. Não divulgue este endereço.';
   document.body.prepend(f);
 }
 async function iniciar() {

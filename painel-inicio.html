@@ -153,7 +153,7 @@ footer{margin-top:40px;padding-block:22px 30px;border-top:1px solid var(--linha)
 <div id="sugestao-box"></div>
 <main id="conteudo">
 <div class="wrap hero">
-  <h1 class="h1-painel"><img src="img/painel-cor.svg?v=2" width="1475" height="300" alt="Painel Eleições"><span class="beta">beta</span><i class="amp">Em ampliação</i></h1>
+  <h1 class="h1-painel"><img src="img/painel-cor.svg?v=3" width="1475" height="300" alt="Painel Eleições"><span class="beta">beta</span><i class="amp">Em ampliação</i></h1>
   <p class="lede">Da eleição nacional à seção eleitoral. Dados do TSE, de 2006 a 2026.</p>
   <p class="vivo"><b>Resultado das eleições 2026</b><span>Presidente:</span><a href="painel.html#/t1">1º turno</a><a href="painel.html#/">2º turno</a></p>
 </div>
@@ -252,11 +252,11 @@ eDraw();upAll();
 function ent(){b.innerHTML='<a class="tc-b tc-on" href="painel.html?entrar=1">Entrar</a>'}
 function sair(){fetch(u,{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({acao:'sair'})}).then(function(){location.reload()},function(){location.reload()})}
 fetch(u,{credentials:'same-origin',headers:{Accept:'application/json'},cache:'no-store'}).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;if(!j.logado)return ent();
-import('./js/menuconta.js?v=36cf80c0').then(function(m){m.montarMenuConta(b,{tema:'escuro',contaUrl:(base||'/')+'conta.html',aoSair:sair}).atualizar(j.usuario)},function(){b.innerHTML='<a class="tc-b" href="'+(base||'/')+'conta.html">Minha conta</a>'})}).catch(ent)})();</script>
+import('./js/menuconta.js?v=9a1696e5').then(function(m){m.montarMenuConta(b,{tema:'escuro',contaUrl:(base||'/')+'conta.html',aoSair:sair}).atualizar(j.usuario)},function(){b.innerHTML='<a class="tc-b" href="'+(base||'/')+'conta.html">Minha conta</a>'})}).catch(ent)})();</script>
 <script type="module">
 // busca de candidato + caixa de comparação: só carrega quando a pessoa chega perto ou clica (não pesa na abertura da capa)
 var cb = document.getElementById('cand-box');
-function carregaCb() { import('./js/capabusca.js?v=36cf80c0').then(function (m) { m.montarBuscaCapa(cb, { painelUrl: 'painel.html' }); }, function () { cb.textContent = 'Não foi possível carregar a busca agora.'; }); }
+function carregaCb() { import('./js/capabusca.js?v=9a1696e5').then(function (m) { m.montarBuscaCapa(cb, { painelUrl: 'painel.html' }); }, function () { cb.textContent = 'Não foi possível carregar a busca agora.'; }); }
 if ('IntersectionObserver' in window) { new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); carregaCb(); } }, { rootMargin: '400px' }).observe(cb); } else carregaCb();
 </script>
 <script type="module" src="js/sugestao.js"></script>

@@ -1,12 +1,12 @@
 // Capa do Painel: busca de candidato pelo nome + caixa "Comparar" (cartões com a trajetória, no formato do Apuração 4013).
 // Dados: branch cand-pessoas (busca s/<3 letras>.json e perfis p/<3 primeiros do id>.json), os mesmos de js/cmpcand.js.
 // Não importa o cmpcand.js (que puxa a tela inteira de comparação): só leva até ele, pelo endereço, as candidaturas escolhidas.
-import { CONFIG } from './config.js?v=36cf80c0';
+import { CONFIG } from './config.js?v=9a1696e5';
 
 const RAW = `https://raw.githubusercontent.com/${CONFIG.repo}/`, MAX = 4;
 const SLOT = ['#3E347E', '#F08A24', '#1b8f6a', '#c8102e'];
 const CARGO = { 1: 'Presidente', 3: 'Governador', 5: 'Senador', 6: 'Dep. federal', 7: 'Dep. estadual', 8: 'Dep. distrital', 11: 'Prefeito', 13: 'Vereador' };
-const COM_VOTOS = new Set([1, 3, 5, 6, 7, 8, 11]);   // cargos com votos por município nos arquivos cv-<ano>
+const COM_VOTOS = new Set([1, 3, 5, 6, 7, 8, 11, 13]);   // cargos com votos por município (vereador: só o município da candidatura)
 const cache = new Map();
 const pega = url => { if (!cache.has(url)) cache.set(url, fetch(url).then(r => { if (r.status === 404) return null; if (!r.ok) throw new Error('http ' + r.status); return r.json(); }).catch(e => { cache.delete(url); throw e; })); return cache.get(url); };
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -19,7 +19,7 @@ const fInt = n => Number(n).toLocaleString('pt-BR');
 const compacto = n => n >= 1e6 ? (n / 1e6).toLocaleString('pt-BR', { maximumFractionDigits: 1 }) + ' mi' : n >= 1e4 ? Math.round(n / 1e3) + ' mil' : fInt(n);
 // candidatura = [ano, cargo, uf, município, partido, número, situação, sq, votos, %, votos 2º turno, % 2º turno]
 const refDe = (pid, c) => `${pid}.${c[0]}.${c[1]}.${c[2]}.${c[7]}`;
-const temVotos = c => COM_VOTOS.has(c[1]) && c[0] >= 2006 && (c[8] || c[10]);
+const temVotos = c => COM_VOTOS.has(c[1]) && c[0] >= 2006 && (c[1] === 13 ? c[8] > 0 && c[9] > 0 && !!c[3] : (c[8] || c[10]));
 const onde = c => [CARGO[c[1]] || 'Cargo ' + c[1], c[3] ? bonito(c[3]) + (c[2] ? ' (' + c[2] + ')' : '') : (c[2] && c[2] !== 'BR' ? c[2] : '')].filter(Boolean).join(' · ');
 
 const CSS = `
@@ -121,7 +121,7 @@ export function montarBuscaCapa(raiz, { painelUrl = 'painel.html' } = {}) {
       // escolha inicial: a candidatura mais recente com votos por município; sendo a primeira pessoa, também a anterior (mesmo candidato em anos diferentes)
       const com = p.c.filter(temVotos).sort((a, b) => b[0] - a[0] || a[1] - b[1]);
       const quer = pessoas.length === 1 ? 2 : 1; for (const c of com.slice(0, quer)) if (sel.length < MAX) sel.push(refDe(pid, c));
-      dica.textContent = com.length ? 'Marque as candidaturas que quer comparar (até 4) e abra a comparação.' : 'Esse candidato não tem votos por município na base (vereador, vice ou antes de 2006): veja a trajetória abaixo.';
+      dica.textContent = com.length ? 'Marque as candidaturas que quer comparar (até 4) e abra a comparação.' : 'Esse candidato não tem votos por município na base (vice, suplente ou antes de 2006): veja a trajetória abaixo.';
       desenha();
     } catch { dica.textContent = 'Não foi possível carregar esse candidato agora. Tente de novo.'; }
   }
