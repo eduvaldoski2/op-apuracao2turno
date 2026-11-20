@@ -27,7 +27,8 @@ PENDÊNCIA (publicada mesmo assim; corrija na passada 2 e republique): regras de
  - itaipu_diretor_destituido_20: fundo com 181 palavras (mínimo 300)
  - itaipu_diretor_destituido_20: resumo com 40 palavras; deve ter 50 a 120
  - itaipu_diretor_destituido_20: matéria de Mundo precisa de ao menos uma fonte fora da imprensa brasileira (agência, veículo internacional ou do país do fato)
- - pf_mendonca_20 [destaque]: fundo com 412 palavras (mínimo 600)
+ - pf_mendonca_20 [destaque]: fundo com 547 palavras (mínimo 600)
+ - pf_mendonca_20 [destaque]: matéria longa sem ao menos 2 intertítulos temáticos (h)
  - pf_mendonca_20 [destaque]: o lide cita veículo ("Agência Brasil"). Abra pelo fato; a atribuição vem no desenvolvimento, quando for necessária
  - van_hattem_20: fundo com 182 palavras (mínimo 300)
  - van_hattem_20: 1 veículo(s) distinto(s) com link (mínimo 2)
