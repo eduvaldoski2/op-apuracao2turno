@@ -38620,7 +38620,7 @@ _U('pf_fachin_pgr_19', {hora:'20/11',
  sub:'Os relatórios que citam Moraes, Toffoli e Nunes Marques foram parcialmente arquivados por falta de relevância jurídica; o restante vai à Procuradoria, que deve superar o prazo de 15 dias.',
  upd:'Fachin decidiu arquivar parte dos relatórios por falta de relevância jurídica e enviar quatro à PGR; a Procuradoria monta núcleo com Gonet para analisá-los.',
  resumo:'O presidente do STF, Edson Fachin, mandou arquivar relatórios da PF que citam seis ministros da Corte por entender que não têm relevância jurídica. Quatro dos documentos serão enviados à PGR. A Procuradoria vai formar um núcleo com Gonet, e a análise deve passar do prazo de 15 dias.',
- fundo:`O presidente do Supremo Tribunal Federal, Edson Fachin, decidiu arquivar parte dos relatórios da Polícia Federal que citam ministros da Corte nas investigações do caso Banco Master. Segundo o O Globo, Fachin considerou que os documentos sobre a menção a seis ministros não têm relevância jurídica. Quatro dos relatórios serão enviados à Procuradoria-Geral da República.
+ fundo:`O presidente do Supremo Tribunal Federal, Edson Fachin, decidiu arquivar parte dos relatórios da Polícia Federal que citam ministros da Corte nas investigações do caso Banco Master. Fachin considerou que os documentos sobre a menção a seis ministros não têm relevância jurídica. Quatro dos relatórios serão enviados à Procuradoria-Geral da República.
 
 O material é a nova versão dos relatórios que a PF refez depois de a cúpula da corporação determinar a revisão. Os documentos tratam de possíveis ligações de magistrados com Daniel Vorcaro, dono do Master. Entre os nomes citados aparecem Alexandre de Moraes, Dias Toffoli e Kassio Nunes Marques, segundo a Folha.
 
@@ -38639,12 +38639,12 @@ NUMS 6 ministros|Citados nos relatórios da PF;4 relatórios|Enviados à PGR por
 
 _U('trilateral_shenzhen_19', {hora:'20/11',
  t:'Trump deixa Shenzhen sem acordo com Xi e Putin, e Xi diz que a cúpula trouxe resultados',
- sub:'O encontro trilateral durou menos de uma hora, segundo o Kremlin, e não trouxe data para nova rodada na Ucrânia; aliados de Kiev criticam o formato.',
+ sub:'O Kremlin previa um encontro de no máximo uma hora, e a reunião não trouxe data para nova rodada na Ucrânia; aliados de Kiev criticam o formato.',
  upd:'A cúpula terminou sem acordo; Xi destacou resultados e a CNN registrou que Trump voltou sem anúncios concretos.',
  resumo:'O encontro trilateral entre Donald Trump, Xi Jinping e Vladimir Putin em Shenzhen terminou com elogios de Xi aos resultados e sem anúncio de acordo concreto. A CNN Brasil resume que Trump voltou de mãos vazias da China, enquanto a Rússia conseguiu firmar laços. A reunião teve menos de uma hora, segundo o Kremlin.',
- fundo:`A reunião trilateral entre o presidente americano, Donald Trump, o chinês, Xi Jinping, e o russo, Vladimir Putin, terminou sem acordo concreto anunciado. Xi elogiou a cúpula e afirmou que muitos resultados foram alcançados, segundo o InfoMoney. As reportagens lidas não citam compromisso formal sobre comércio, tecnologia ou guerra.
+ fundo:`A reunião trilateral entre o presidente americano, Donald Trump, o chinês, Xi Jinping, e o russo, Vladimir Putin, terminou sem acordo concreto anunciado. Xi elogiou a cúpula e afirmou que muitos resultados foram alcançados. As reportagens lidas não citam compromisso formal sobre comércio, tecnologia ou guerra.
 
-A reunião durou menos de uma hora, de acordo com o Kremlin.
+Antes da reunião, o Kremlin disse que o encontro não duraria mais de uma hora.
 
 Trump foi acusado de cochilar durante um discurso de Xi, segundo O Globo.
 
@@ -38654,15 +38654,15 @@ Na Ucrânia, o resultado foi igualmente magro. A reunião não trouxe data para 
 
 Nas reportagens lidas não há documento conjunto citado nem data para outra reunião do formato.
 
-NUMS Menos de 1 hora|Duração do encontro, segundo o Kremlin;Sem data|Próxima rodada de negociação sobre a Ucrânia;3 líderes|Trump, Xi e Putin`,
- fontes:[['InfoMoney','https://www.infomoney.com.br/mundo/xi-elogia-cupula-historica-com-trump-e-diz-que-muitos-resultados-foram-alcancados/'],['CNN Brasil','https://www.cnnbrasil.com.br/internacional/trump-volta-de-maos-vazias-da-china-enquanto-russia-consegue-firmar-lacos/']]});
+NUMS Até 1 hora|Duração prevista pelo Kremlin;Sem data|Próxima rodada de negociação sobre a Ucrânia;3 líderes|Trump, Xi e Putin`,
+ fontes:[['InfoMoney','https://www.infomoney.com.br/mundo/xi-elogia-cupula-historica-com-trump-e-diz-que-muitos-resultados-foram-alcancados/'],['CNN Brasil','https://www.cnnbrasil.com.br/internacional/trump-volta-de-maos-vazias-da-china-enquanto-russia-consegue-firmar-lacos/'],['La Nación/Perfil (Kremlin)','https://www.perfil.com/noticias/amp/politica/la-reunion-entre-donald-trump-xi-jinping-y-vladimir-putin-no-durara-mas-de-una-hora-segun-el-kremlin-atqz71G9t7R8.phtml']]});
 
 _U('raoni_lula_visita_18', {hora:'20/11',
  t:'Lula oficializa declaração da Terra Indígena onde nasceu o cacique Raoni e promete avançar na demarcação',
  sub:'O ato saiu após a alta hospitalar do cacique; a regularização do território ainda depende de disputa judicial e de etapas administrativas.',
  upd:'Lula oficializou a declaração da terra em que Raoni nasceu e prometeu acelerar a demarcação; a regularização segue pendente.',
  resumo:'O presidente Lula oficializou a declaração da Terra Indígena em que nasceu o cacique Raoni e prometeu avançar na demarcação. A visita ao líder indígena aconteceu depois da alta hospitalar dele. A regularização do território ainda enfrenta disputas judiciais e etapas administrativas.',
- fundo:`O presidente Luiz Inácio Lula da Silva oficializou a declaração da Terra Indígena onde nasceu o cacique Raoni, segundo o g1, e disse que o governo corre para que o processo de demarcação ande. A declaração é uma etapa do procedimento que reconhece o território como de ocupação tradicional.
+ fundo:`O presidente Luiz Inácio Lula da Silva oficializou a declaração da Terra Indígena onde nasceu o cacique Raoni, e disse que o governo corre para que o processo de demarcação ande. A declaração é uma etapa do procedimento que reconhece o território como de ocupação tradicional.
 
 A visita ao cacique aconteceu depois de a liderança indígena receber alta hospitalar. Lula também desejou boa recuperação a Raoni, figura central da defesa da Amazônia e um dos principais símbolos da luta dos povos do Xingu.
 
@@ -38773,8 +38773,8 @@ _U('moro_secretaria_19', {hora:'20/11',
  t:'Moro anuncia o ex-procurador da Lava Jato Carlos Lima para a futura Secretaria Anticorrupção no Paraná',
  sub:'Carlos Fernando dos Santos Lima assume a pasta a partir de 2027, segundo o anúncio do governador eleito na quarta (18).',
  upd:'Moro confirmou o nome de Carlos Fernando dos Santos Lima, ex-procurador da Lava Jato, para a futura Secretaria Anticorrupção.',
- resumo:'O governador eleito do Paraná, Sergio Moro, anunciou na quarta (18) que o ex-procurador Carlos Fernando dos Santos Lima vai comandar a futura Secretaria Anticorrupção a partir de 2027. Lima foi um dos principais nomes da força-tarefa da Lava Jato em Curitiba.',
- fundo:`O governador eleito do Paraná, Sergio Moro, anunciou na quarta-feira (18) que o ex-procurador Carlos Fernando dos Santos Lima vai comandar a futura Secretaria Anticorrupção, a partir de 2027, segundo a Gazeta do Povo.
+ resumo:'O governador eleito do Paraná, Sergio Moro, anunciou na quarta (18) que o ex-procurador Carlos Fernando dos Santos Lima vai comandar a futura Secretaria Anticorrupção a partir de 2027. Lima foi um dos principais nomes da força-tarefa da Lava Jato em Curitiba, e a Folha e a Veja também registraram o anúncio. A pasta ainda não tem atribuições detalhadas divulgadas.',
+ fundo:`O governador eleito do Paraná, Sergio Moro, anunciou na quarta-feira (18) que o ex-procurador Carlos Fernando dos Santos Lima vai comandar a futura Secretaria Anticorrupção, a partir de 2027.
 
 Lima foi um dos principais nomes da força-tarefa da Lava Jato em Curitiba. Segundo a reportagem, ele atuou diretamente em negociações que revelaram esquemas de desvio e propina no poder público.
 
@@ -38793,7 +38793,7 @@ _U('mianmar_genocidio_cij_19', {hora:'20/11',
  t:'Tribunal da ONU conclui que Mianmar cometeu genocídio contra os rohingyas',
  sub:'Para o tribunal, os assassinatos e a violência sexual de 2017 foram patrocinados pelo Estado; a Gâmbia abriu o processo há sete anos.',
  upd:'O tribunal concluiu que houve genocídio patrocinado pelo Estado; a Agência Brasil lembra que é a quarta vez desde o Holocausto.',
- resumo:'O principal tribunal da ONU concluiu nesta quinta (19) que as forças de segurança de Mianmar cometeram genocídio contra a minoria muçulmana rohingya. Milhares de pessoas foram assassinadas e houve violência sexual generalizada em 2017. O processo foi aberto pela Gâmbia há sete anos.',
+ resumo:'O principal tribunal da ONU concluiu nesta quinta (19) que as forças de segurança de Mianmar cometeram genocídio contra a minoria muçulmana rohingya. Milhares de pessoas foram assassinadas e houve violência sexual generalizada em 2017. O processo foi aberto pela Gâmbia há sete anos. A decisão é a quarta desde o Holocausto em que um tribunal internacional reconhece que os critérios de genocídio foram atendidos, segundo a Agência Brasil.',
  fundo:`O principal tribunal da ONU concluiu nesta quinta-feira (19) que os assassinatos e os atos generalizados de violência sexual cometidos pelas forças de segurança de Mianmar contra a minoria muçulmana rohingya em 2017 constituíram genocídio patrocinado pelo Estado, segundo a Agência Brasil.
 
 O processo foi movido pela Gâmbia, país de maioria muçulmana, há sete anos. A decisão, de acordo com a agência, é a quarta vez desde o Holocausto nazista em que um tribunal internacional reconhece que os critérios legais para comprovar genocídio foram atendidos.
@@ -38813,8 +38813,8 @@ _U('senado_iphones_licitacao_18', {hora:'20/11',
  t:'Justiça derruba liminar e libera licitação de R$ 6 milhões para fornecer iPhones ao Senado',
  sub:'A decisão reabre o processo de compra que estava suspenso por liminar.',
  upd:'A Justiça derrubou a liminar que suspendia a licitação de R$ 6 milhões para iPhones do Senado.',
- resumo:'A Justiça derrubou a liminar que suspendia a licitação de cerca de R$ 6 milhões para fornecer iPhones ao Senado. Segundo a coluna Lauro Jardim, do O Globo, o processo pode seguir. A compra tinha sido questionada na Justiça e travada por liminar.',
- fundo:`A Justiça derrubou a liminar que suspendia a licitação de R$ 6 milhões para fornecer iPhones ao Senado, segundo a coluna Lauro Jardim, do O Globo. Com a decisão, o processo de compra pode voltar a andar.
+ resumo:'A Justiça derrubou a liminar que suspendia a licitação de cerca de R$ 6 milhões para fornecer iPhones ao Senado. Segundo a coluna Lauro Jardim, o processo pode seguir. A compra tinha sido questionada na Justiça e travada por liminar.',
+ fundo:`A Justiça derrubou a liminar que suspendia a licitação de R$ 6 milhões para fornecer iPhones ao Senado, segundo a coluna Lauro Jardim. Com a decisão, o processo de compra pode voltar a andar.
 
 A licitação já havia sido questionada na Justiça, e a liminar que a suspendia foi o motivo do impasse. As reportagens lidas não detalham quem fez o questionamento nem os argumentos da ação.
 
@@ -38830,7 +38830,7 @@ _U('decreto_6x1_19', {hora:'20/11',
  sub:'A norma detalha a transição da jornada de 44 para 42 horas, marcada para 16 de dezembro, e a etapa seguinte de 40 horas.',
  upd:'O decreto que regulamenta a 6x1 deve ser assinado por Lula; a transição começa em 16 de dezembro, com jornada de 42 horas.',
  resumo:'Lula deve assinar o decreto que regulamenta o fim da escala 6x1, segundo o O Globo. A transição começa em 16 de dezembro, com jornada de 42 horas semanais, e a etapa de 40 horas vem cerca de 12 meses depois. A publicação no Diário Oficial ainda não foi confirmada.',
- fundo:`O presidente Lula deve assinar o decreto que regulamenta o fim da escala 6x1, segundo reportagem do O Globo publicada nesta quinta-feira (19). O texto detalha como a emenda constitucional promulgada em 16 de outubro vai ser aplicada na prática.
+ fundo:`O presidente Lula deve assinar o decreto que regulamenta o fim da escala 6x1, segundo reportagem publicada nesta quinta-feira (19). O texto detalha como a emenda constitucional promulgada em 16 de outubro vai ser aplicada na prática.
 
 A transição começa em 16 de dezembro, quando a jornada cai de 44 para 42 horas semanais. A etapa seguinte prevê jornada de 40 horas cerca de 12 meses depois, em dezembro de 2027. Esse calendário vale mesmo sem acordo coletivo, segundo a decisão do ministro Flávio Dino no STF.
 
@@ -38849,8 +38849,8 @@ _U('consciencia_feriado_19', {hora:'20/11',
  t:'Randolfe chama de conquista histórica o feriado nacional da Consciência Negra; em Recife, há bloqueios previstos',
  sub:'A data é lembrada nesta sexta com atos e programação em várias capitais; em Recife, a prefeitura prevê desvios de trânsito por corridas e eventos.',
  upd:'Randolfe Rodrigues chamou de conquista histórica o feriado nacional; Recife prevê bloqueios e desvios de trânsito por corridas e eventos.',
- resumo:'Randolfe Rodrigues chamou de "conquista histórica" o feriado nacional da Consciência Negra, lembrado nesta sexta (20) em atos e programação em várias capitais. Em Recife, estão previstos bloqueios e desvios de trânsito por corridas e eventos.',
- fundo:`O senador Randolfe Rodrigues chamou de "conquista histórica" o feriado nacional da Consciência Negra, lembrado nesta sexta-feira (20), segundo o g1. Para ele, a medida reforça a luta por igualdade racial.
+ resumo:'Randolfe Rodrigues chamou de "conquista histórica" o feriado nacional da Consciência Negra, lembrado nesta sexta (20) em atos e programação em várias capitais. Em Recife, estão previstos bloqueios e desvios de trânsito por corridas e eventos. A data lembra a morte de Zumbi dos Palmares, em 20 de novembro de 1696, segundo a Terra.',
+ fundo:`O senador Randolfe Rodrigues chamou de "conquista histórica" o feriado nacional da Consciência Negra, lembrado nesta sexta-feira (20). Para ele, a medida reforça a luta por igualdade racial.
 
 A data lembra a morte de Zumbi dos Palmares, indicada em 20 de novembro de 1696 em documento do século 17, segundo a Terra.
 
@@ -38867,8 +38867,8 @@ _U('lindbergh_moretti_autoritario_vivandeira_16_11', {hora:'20/11',
  t:'Após vitória no Senado, líderes governistas afirmam que Lula fará novo ajuste nas contas públicas',
  sub:'A avaliação é de aliados do governo, que falam em nova rodada de medidas depois da aprovação do pacote fiscal sem mudanças pelos senadores.',
  upd:'Líderes governistas dizem que Lula fará novo ajuste nas contas; a equipe econômica avalia medidas adicionais.',
- resumo:'Depois da vitória no Senado, líderes governistas afirmam que Lula fará um novo ajuste nas contas públicas, segundo a coluna Valdo Cruz, do g1. A equipe econômica avalia medidas adicionais, enquanto o pacote fiscal, aprovado sem mudanças, segue para a Câmara, que vota na segunda-feira (23).',
- fundo:`Depois da aprovação do pacote fiscal no Senado, líderes governistas afirmam que o presidente Lula fará um novo ajuste nas contas públicas, segundo a coluna Valdo Cruz, do g1. A informação indica que o governo não considera o pacote aprovado pelos senadores como a última etapa.
+ resumo:'Depois da vitória no Senado, líderes governistas afirmam que Lula fará um novo ajuste nas contas públicas, informa a coluna Valdo Cruz, do g1. A equipe econômica avalia medidas adicionais, enquanto o pacote fiscal, aprovado sem mudanças pelos senadores, segue para a Câmara, onde a votação está prevista para segunda-feira (23). Segundo a Folha, Lula disse que parte dos aliados não entendeu o plano Moretti de ajuste das contas.',
+ fundo:`Depois da aprovação do pacote fiscal no Senado, líderes governistas afirmam que o presidente Lula fará um novo ajuste nas contas públicas. A informação indica que o governo não considera o pacote aprovado pelos senadores como a última etapa.
 
 O pacote foi aprovado sem mudanças pelo Senado e segue para a Câmara, onde a votação está prevista para segunda-feira (23). A equipe econômica avalia medidas adicionais, segundo o O Globo.
 
