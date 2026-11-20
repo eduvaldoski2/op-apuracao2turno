@@ -16,8 +16,8 @@
         "itaipu_ueno_18",
         "itaipu_diretor_destituido_20"
       ],
-      "verificada": "2026-11-20-15h",
-      "fato_novo": true,
+      "verificada": "2026-11-20-19h",
+      "fato_novo": false,
       "ultimo_fato": "19/11: a Itaipu acionou o Ministério Público do Paraguai para recuperar US$ 182 milhões depositados no Ueno Bank; no dia 18 o presidente Pedro Alliana demitiu o diretor paraguaio Justo Zacarías.",
       "proximo": "Recuperação dos US$ 182 milhões na Justiça paraguaia; indicação do novo diretor paraguaio."
     },
@@ -57,8 +57,8 @@
         "cadeiras_haddad_alckmin_camilo_19",
         "lula_sem_pressa_ministros_20"
       ],
-      "verificada": "2026-11-20-15h",
-      "fato_novo": true,
+      "verificada": "2026-11-20-19h",
+      "fato_novo": false,
       "ultimo_fato": "20/11: Lula diz que quer evitar erros do atual mandato e não tem pressa para indicar ministros; no dia 19 anunciou que o próximo governo terá ministério voltado à população idosa.",
       "proximo": "Anúncio dos primeiros ministros até o início de dezembro; nome e formato da pasta do idoso."
     },
@@ -97,8 +97,8 @@
         "pl_flavio_motta_consulta_121_deputados_17_11",
         "rockbridge_flavio_pf_18"
       ],
-      "verificada": "2026-11-20-15h",
-      "fato_novo": true,
+      "verificada": "2026-11-20-19h",
+      "fato_novo": false,
       "ultimo_fato": "20/11: Moraes votou para manter as restrições ao senador e disse que a viagem aos EUA tentou obstruir investigações; no dia 18 a PGR denunciou Flávio por calúnia contra Lula.",
       "proximo": "Votação dos demais ministros da Primeira Turma; resposta da defesa."
     },
@@ -134,12 +134,13 @@
         "janones_exercito_lula_ajuste_fiscal_15_11",
         "nikolas_presidencia_camara_18",
         "senado_iphones_licitacao_18",
-        "cca_penas_embriaguez_18"
+        "cca_penas_embriaguez_18",
+        "ajuste_camara_20"
       ],
-      "verificada": "2026-11-20-15h",
+      "verificada": "2026-11-20-19h",
       "fato_novo": true,
-      "ultimo_fato": "20/11: o relator Mauro Benevides Filho (União-CE) manteve no ajuste fiscal o texto aprovado pelo Senado na quarta (18); a votação no plenário da Câmara está marcada para segunda (23).",
-      "proximo": "Votação do ajuste fiscal na Câmara (23/11); Mesas em 1º/02/2027."
+      "ultimo_fato": "18/11: o Senado aprovou o PLP 299/2026 sem mudanças; o relator na Câmara manteve o texto, e a votação no plenário está marcada para segunda (23/11).",
+      "proximo": "Votação do ajuste fiscal na Câmara (23/11) e sanção; eleição da Mesa da Câmara em 1º de fevereiro de 2027."
     },
     {
       "id": "seguranca-publica",
@@ -159,12 +160,13 @@
         "pf_relatorio_ministros_stf_vorcaro_fachin_17_11",
         "stf_codigo_etica_fachin_trava_2027_17_11",
         "vieira_interferencia_andrei_pf_17_11",
-        "pf_mendonca_20"
+        "pf_mendonca_20",
+        "mendonca_relatorio_20"
       ],
-      "verificada": "2026-11-20-15h",
+      "verificada": "2026-11-20-19h",
       "fato_novo": true,
-      "ultimo_fato": "20/11: Fachin tornou público o relatório da PF com menções a Mendonça e enviou à PGR relatórios que citam quatro ministros; a PGR montou núcleo com Gonet para analisá-los.",
-      "proximo": "Análise da PGR sobre os quatro relatórios; eventual pedido de investigação formal."
+      "ultimo_fato": "20/11: Fachin tirou o sigilo do relatório da PF que cita Mendonça, a pedido do ministro; a PF não achou conversa direta de Vorcaro com ele.",
+      "proximo": "Análise da PGR sobre os relatórios que citam quatro ministros do STF."
     },
     {
       "id": "escala-6x1",
@@ -176,12 +178,13 @@
         "dec_6x1_18",
         "dino_6x1",
         "dino_5x2_plenario_presencial_17_11",
-        "seis1x1"
+        "seis1x1",
+        "escala_6x1_20"
       ],
-      "verificada": "2026-11-20-15h",
+      "verificada": "2026-11-20-19h",
       "fato_novo": true,
-      "ultimo_fato": "20/11: o governo prepara o decreto que regulamenta a 6x1; a transição começa em 16 de dezembro, com jornada de 42 horas, e a etapa de 40 horas vem em dezembro de 2027.",
-      "proximo": "Publicação do decreto no Diário Oficial; início da transição em 16/12."
+      "ultimo_fato": "19/11: Lula assinou o decreto que extingue a escala 6x1; a jornada cai para 42 horas em 16/12 e para 40 horas em dezembro de 2027.",
+      "proximo": "Primeira portaria do Ministério do Trabalho na segunda (23/11); todas as portarias até 16/12; possível judicialização."
     },
     {
       "id": "economia-mercado",
@@ -242,12 +245,13 @@
         "fies_validacao_18",
         "dolar_20",
         "anthropic_queda_20",
-        "nvidia_china_20"
+        "nvidia_china_20",
+        "anthropic_ipo_20"
       ],
-      "verificada": "2026-11-20-15h",
+      "verificada": "2026-11-20-19h",
       "fato_novo": true,
-      "ultimo_fato": "20/11: o dólar fechou a R$ 5,93 na quinta (19), maior nível desde abril de 2025; a Anthropic abriu em queda após a estreia na Nasdaq; a Nvidia confirmou a suspensão de chips Hopper para a China.",
-      "proximo": "Votação do ajuste fiscal na Câmara (23/11); desempenho das ações da Anthropic."
+      "ultimo_fato": "20/11: a Anthropic estreou na Nasdaq a US$ 83 por ação; as bolsas europeias fecharam em queda com a venda de tecnologia.",
+      "proximo": "Desempenho das ações da Anthropic nas próximas sessões; votação do ajuste fiscal na Câmara (23/11)."
     },
     {
       "id": "eua-meio-mandato",
@@ -265,8 +269,8 @@
         "alasca_peltola_18",
         "jeffries_20"
       ],
-      "verificada": "2026-11-20-15h",
-      "fato_novo": true,
+      "verificada": "2026-11-20-19h",
+      "fato_novo": false,
       "ultimo_fato": "18/11: os democratas indicaram por unanimidade Hakeem Jeffries para a presidência da Câmara; Mary Peltola venceu no Alasca e garantiu maioria de 56 a 44 no Senado.",
       "proximo": "Posse da nova legislatura e eleição do speaker em plenário."
     },
@@ -290,8 +294,8 @@
         "trump_xi_putin_shenzhen_14_11",
         "shenzhen_trilateral_20"
       ],
-      "verificada": "2026-11-20-15h",
-      "fato_novo": true,
+      "verificada": "2026-11-20-19h",
+      "fato_novo": false,
       "ultimo_fato": "19/11: a cúpula trilateral em Shenzhen terminou sem acordo concreto; a ponte de Kerch foi atingida por ataque na véspera.",
       "proximo": "Data da próxima rodada de negociações; participação europeia."
     },
@@ -303,12 +307,13 @@
       "materias": [
         "knesset_kahana_18",
         "israel",
-        "israel_oposicao_acusa_netanyahu_golpe_16_11"
+        "israel_oposicao_acusa_netanyahu_golpe_16_11",
+        "israel_coalizao_20"
       ],
-      "verificada": "2026-11-20-15h",
-      "fato_novo": false,
-      "ultimo_fato": "17/11: Knesset elege Matan Kahana (Yashar, de Eisenkot) para a presidência, com apoio da oposição a Netanyahu.",
-      "proximo": "Resultado da votação."
+      "verificada": "2026-11-20-19h",
+      "fato_novo": true,
+      "ultimo_fato": "18/11: Netanyahu admitiu derrota na disputa pela presidência do Knesset; o bloco governista perdeu a maioria e a formação de coalizão segue em aberto.",
+      "proximo": "Negociação entre as bancadas para a formação de governo; data ainda não definida."
     },
     {
       "id": "ira-oriente-medio",
@@ -333,63 +338,63 @@
   "varredura": [
     {
       "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-      "feita": "2026-11-20-15h",
-      "achado": "Sem queda ou prisão de chefe de Estado nas fontes lidas nesta passada; Shenzhen reuniu Trump, Xi e Putin sem acordo concreto."
+      "feita": "2026-11-20-19h",
+      "achado": "Netanyahu admitiu derrota na disputa pela presidência do Knesset (18/11); nenhuma queda ou prisão de chefe de Estado nas fontes lidas nesta passada."
     },
     {
       "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-      "feita": "2026-11-20-15h",
-      "achado": "Colômbia: protestos e greve convocada contra a reforma tributária; Paraguai: Alliana demite diretor de Itaipu; Argentina: deficientes afetados por cortes (Folha)."
+      "feita": "2026-11-20-19h",
+      "achado": "Venezuela: Hegseth em Caracas (18/11) anuncia acordo militar e se reúne com Delcy Rodríguez; Argentina: famílias de deficientes denunciam cortes (Folha)."
     },
     {
       "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-      "feita": "2026-11-20-15h",
-      "achado": "Guerras: ataque dos houthis à PIF Tower em Riad (19/11); Israel amplia operações em Gaza, sem texto verificado nesta passada."
+      "feita": "2026-11-20-19h",
+      "achado": "Ucrânia: sem fato novo verificado após os encontros de enviados dos EUA com Putin (12/11); Itália: greve geral da CGIL nesta sexta (20/11)."
     },
     {
       "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-      "feita": "2026-11-20-15h",
-      "achado": "Shenzhen (trilateral Trump-Xi-Putin) sem acordo; Dólar e Anthropic são o principal fato econômico do dia."
+      "feita": "2026-11-20-19h",
+      "achado": "Megaspeed segue fora da lista de bloqueio do Comércio dos EUA, com cobrança do Tesouro (13/11, FT); Europa: protestos estudantis e greve na Itália."
     },
     {
       "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-      "feita": "2026-11-20-15h",
-      "achado": "Economia: dólar a R$ 5,93 (19/11), BC vendeu US$ 1 bi; Nvidia suspende chips Hopper para a China; Anthropic cai após estreia."
+      "feita": "2026-11-20-19h",
+      "achado": "Anthropic estreou na Nasdaq a US$ 83 por ação (20/11); bolsas europeias fecharam em queda pela venda de tecnologia."
     },
     {
       "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-      "feita": "2026-11-20-15h",
-      "achado": "Lula sem pressa para ministros; ministério para idosos (19/11); decreto da 6x1 em preparação."
+      "feita": "2026-11-20-19h",
+      "achado": "Lula assinou o decreto da 6x1 (19/11); primeira portaria do MTE sai na segunda (23/11); Lula diz não ter pressa para ministros."
     },
     {
       "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-      "feita": "2026-11-20-15h",
-      "achado": "Relator manteve texto do Senado no ajuste fiscal; votação na Câmara marcada para 23/11."
+      "feita": "2026-11-20-19h",
+      "achado": "Senado aprovou o ajuste fiscal (PLP 299/2026) sem mudanças (18/11); votação na Câmara marcada para segunda (23/11)."
     },
     {
       "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-      "feita": "2026-11-20-15h",
-      "achado": "STF: Fachin tornou público relatório da PF sobre Mendonça; PGR monta núcleo para os quatro relatórios; Dino vota para tornar Van Hattem réu."
+      "feita": "2026-11-20-19h",
+      "achado": "Fachin tornou público o relatório da PF que cita Mendonça, a pedido do ministro (20/11); PGR analisa relatórios sobre quatro ministros."
     },
     {
       "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-      "feita": "2026-11-20-15h",
-      "achado": "Galípolo disse à PF que alertou sobre risco de fuga de Vorcaro; Moraes libera ação sobre a dosimetria para plenário virtual (4 a 15/12)."
+      "feita": "2026-11-20-19h",
+      "achado": "PL oficializa direção em Minas com aliados de Nikolas (20/11); campanha pela primeira ministra negra no STF ganha força (Marina Silva, Fachin)."
     },
     {
       "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-      "feita": "2026-11-20-15h",
-      "achado": "Regiões: temporal em Tupanciretã (RS) destelhou ~8 mil casas; turista morto no Centro do Rio; morte da pianista Selma Britto (AL)."
+      "feita": "2026-11-20-19h",
+      "achado": "Nada novo verificado nas buscas desta passada sobre Copom e Banco Central; dólar com alta de sexta seguida (19/11), segundo a Forbes Brasil; ajuste fiscal como principal pauta econômica."
     },
     {
       "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-      "feita": "2026-11-20-15h",
-      "achado": "Pesquisas e partidos: sem novidade de pesquisa nesta passada; TSE sem decisão nova sobre a chapa."
+      "feita": "2026-11-20-19h",
+      "achado": "MG: governo defende aprovar o RRF até 20/12 (Itatiaia); NE: levantamento sobre eólicas (Poder360); Norte: Acre investiga morte de tenente da PM no Peru (g1 AC); RJ, SP, Sul e Centro-Oeste sem fato novo verificado nesta passada."
     },
     {
       "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-      "feita": "2026-11-20-15h",
-      "achado": "Vorcaro/Master: relatório da PF e depoimento de Galípolo; o caso tem novos desdobramentos hoje."
+      "feita": "2026-11-20-19h",
+      "achado": "Verificadas: escala-6x1, congresso-novo, seguranca-publica, economia-mercado, israel-governo (com fato novo); paraguai-pena, transicao-lula, flavio-senado, eua-meio-mandato, ucrania-paz sem fato novo verificado nesta passada."
     }
   ]
 }
