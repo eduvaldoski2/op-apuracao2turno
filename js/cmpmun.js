@@ -1,10 +1,11 @@
 // Comparar candidatos: descida dentro do município (região/distrito > bairro > local de votação > seção).
 // Dados: branches hist-<ano> (locais/<uf>/<cd>.json; <eleição>/<uf>/<cd>.json com as seções; votos do candidato por seção)
 // e data/bairros_geo, data/regioes (limites e nomes de distritos/bairros). Funciona para qualquer ano/cargo que tenha base por seção.
-import { CONFIG } from './config.js?v=59429884';
-import { getJSON } from './tse.js?v=59429884';
-import { esc, sem, tabela } from './ui.js?v=59429884';
-import { fNum, fInt } from './util.js?v=59429884';
+import { CONFIG } from './config.js?v=8cc600ea';
+import { getJSON } from './tse.js?v=8cc600ea';
+import { esc, sem, tabela } from './ui.js?v=8cc600ea';
+import { fNum, fInt } from './util.js?v=8cc600ea';
+import { ligarArrasto } from './cmparrasto.js?v=8cc600ea';
 
 const RAW = `https://raw.githubusercontent.com/${CONFIG.repo}/`;
 const cache = new Map();
@@ -49,12 +50,12 @@ export function viewCmpMun(ctx, q, uf, cd, H) {
     if (!refs.length) { cres.innerHTML = `<div class="aviso">Nenhuma candidatura escolhida. <a href="${volta}">Voltar à comparação</a>.</div>`; return; }
     const ok = (await Promise.allSettled(refs.map(r => H.carregar(r, turno, B)))).filter(x => x.status === 'fulfilled').map(x => x.value);
     if (!ok.length) { cres.innerHTML = `<div class="aviso">Não foi possível carregar as candidaturas. <a href="${volta}">Voltar à comparação</a>.</div>`; return; }
-    try { await montar(root, ctx, { cs: ok, cores: H.SLOT, rotulo: H.rotulo, mun: { cd: String(cd), uf, nome }, q, volta }); }
+    try { await montar(root, ctx, { cs: ok, cores: H.SLOT, rotulo: H.rotulo, mun: { cd: String(cd), uf, nome }, q, volta, refs, turno, hashCC: H.hashCC }); }
     catch (e) { cres.innerHTML = `<div class="aviso">Não foi possível montar a descida deste município (${esc(e?.message || e)}).</div>`; }
   } };
 }
 
-async function montar(root, ctx, { cs, cores, rotulo, mun, q, volta }) {
+async function montar(root, ctx, { cs, cores, rotulo, mun, q, volta, refs, turno, hashCC }) {
   const { cd, uf, nome } = mun, nC = cs.length;
   const [geo, geoB] = await Promise.all([pega(`data/bairros_geo/${cd}.json`, { retries: 0 }).catch(() => null), pega(`data/regioes/${cd}_bairros.json`, { retries: 0 }).catch(() => null)]);
   const temDist = geo?.rotulo === 'distrito', geoBairro = temDist ? geoB : (geo?.rotulo === 'bairro' ? geo : null);
@@ -93,6 +94,14 @@ async function montar(root, ctx, { cs, cores, rotulo, mun, q, volta }) {
   const nomeDe = { dist: o => o.dn, bairro: o => o.bn, local: o => o.ln, secao: o => `Zona ${o.z} · seção ${o.s}` };
   const subDe = { dist: () => '', bairro: () => '', local: o => [o.end, o.bn].filter(Boolean).join(' · '), secao: o => o.ln };
 
+  const posRef = cs.map(x => refs.indexOf(x.ref));
+  ligarArrasto(root, (de, para) => {   // reordena as candidaturas e mantém o recorte (nível, bairro, local) no endereço
+    if (de === para || de < 0 || para < 0 || de >= refs.length || para >= refs.length) return;
+    const rs = [...refs]; rs.splice(para, 0, rs.splice(de, 1)[0]);
+    const novo = new URLSearchParams(hashCC(rs, turno).split('?')[1] || ''), atual = new URLSearchParams(location.hash.split('?')[1] || '');
+    for (const k of ['nv', 'dk', 'bk', 'lid']) if (atual.has(k)) novo.set(k, atual.get(k));
+    location.hash = location.hash.split('?')[0] + '?' + novo.toString();
+  });
   const corpo = root.querySelector('#cm-corpo'), resumo = root.querySelector('#cm-resumo'), h2 = root.querySelector('#cm-h2');
   let tab = null;
   const guarda = () => { const p = new URLSearchParams(location.hash.split('?')[1] || ''); for (const k of ['nv', 'dk', 'bk', 'lid']) p.delete(k); p.set('nv', nav.nivel); for (const k of ['dk', 'bk', 'lid']) if (nav[k] != null) p.set(k, nav[k]); history.replaceState(null, '', location.hash.split('?')[0] + '?' + p.toString().replace(/%2C/g, ',')); };
@@ -107,7 +116,7 @@ async function montar(root, ctx, { cs, cores, rotulo, mun, q, volta }) {
     if (nav.lid != null) trilha.push(`<b>${esc(ln)}</b>`);
     const recorte = [dn, bn, ln].filter(Boolean).pop() || nome;
     const mx = Math.max(1, ...cs.map((_, j) => soma(fs, j)?.v || 0));
-    resumo.innerHTML = `<p class="sub">${esc(recorte)}${recorte !== nome ? ` · ${esc(nome)} (${esc(uf.toUpperCase())})` : ` (${esc(uf.toUpperCase())})`}</p>` + cs.map((x, i) => { const s = soma(fs, i); return `<div class="cc-md-r"><span><i class="cc-dot" style="background:${cores[i]}"></i><b>${esc(rotulo(x))}</b></span><span class="cc-md-b"><span style="width:${s ? Math.max(1.5, 100 * s.v / mx) : 0}%;background:${cores[i]}"></span></span><span class="cc-md-v">${s ? `<b>${fInt(s.v)}</b> votos · <b>${isFinite(s.p) ? fNum(s.p, 2) + '%' : '–'}</b>` : '<small>sem dado neste recorte</small>'}</span></div>`; }).join('');
+    resumo.innerHTML = `<p class="sub">${esc(recorte)}${recorte !== nome ? ` · ${esc(nome)} (${esc(uf.toUpperCase())})` : ` (${esc(uf.toUpperCase())})`}</p>` + cs.map((x, i) => { const s = soma(fs, i); return `<div class="cc-md-r cc-pega" data-drag="${posRef[i]}" title="Arraste para mudar a posição"><span><i class="cc-dot" style="background:${cores[i]}"></i><b>${esc(rotulo(x))}</b></span><span class="cc-md-b"><span style="width:${s ? Math.max(1.5, 100 * s.v / mx) : 0}%;background:${cores[i]}"></span></span><span class="cc-md-v">${s ? `<b>${fInt(s.v)}</b> votos · <b>${isFinite(s.p) ? fNum(s.p, 2) + '%' : '–'}</b>` : '<small>sem dado neste recorte</small>'}</span></div>`; }).join('');
     h2.textContent = `Comparação por ${nomeNivel(nav.nivel).toLowerCase()}${recorte !== nome ? ' · ' + recorte : ''}`;
     corpo.innerHTML = `<nav class="cc-md-trilha sem-export" aria-label="Onde você está">${trilha.join(' › ')}</nav>
       <div class="cc-md-niv sem-export" role="group" aria-label="Ver por"><span>Ver por:</span>${niveis.map(k => `<button type="button" class="chip${k === nav.nivel ? ' on' : ''}" data-n="${k}" aria-pressed="${k === nav.nivel}">${esc(nomeNivel(k))}</button>`).join('')}</div>
@@ -117,8 +126,8 @@ async function montar(root, ctx, { cs, cores, rotulo, mun, q, volta }) {
     const cols = [{ k: 'nome', t: nomeNivel(nav.nivel), h: r => `<b>${esc(r.nome)}</b>${r.sub ? `<small class="vt">${esc(r.sub)}</small>` : (nav.nivel !== 'secao' ? `<small class="vt">${fInt(r.n)} ${r.n === 1 ? 'seção' : 'seções'}</small>` : '')}`, v: r => sem(r.nome), x: r => r.nome, ini: 'asc', cls: 'nm' }];
     cs.forEach((x, i) => {
       const nm = `${x.nome} ${x.c[0]}`;
-      cols.push({ k: 'v' + i, t: `<span class="cc-th" style="--c:${cores[i]}">${esc(nm)} <small>· votos</small></span>`, h: r => r.vals[i] ? fInt(r.vals[i].v) : '–', v: r => r.vals[i]?.v ?? -1, x: r => r.vals[i]?.v ?? '', cls: 'num' });
-      cols.push({ k: 'p' + i, t: `<span class="cc-th" style="--c:${cores[i]}">${esc(nm)} <small>· % válidos</small></span>`, h: r => r.vals[i] && isFinite(r.vals[i].p) ? `<b>${fNum(r.vals[i].p, 2)}%</b>` : '–', v: r => r.vals[i]?.p ?? -1, x: r => r.vals[i] && isFinite(r.vals[i].p) ? fNum(r.vals[i].p, 2) : '', cls: 'num' });
+      cols.push({ k: 'v' + i, t: `<span class="cc-th" data-drag="${posRef[i]}" title="Arraste para mudar a posição da candidatura" style="--c:${cores[i]}">${esc(nm)} <small>· votos</small></span>`, h: r => r.vals[i] ? fInt(r.vals[i].v) : '–', v: r => r.vals[i]?.v ?? -1, x: r => r.vals[i]?.v ?? '', cls: 'num' });
+      cols.push({ k: 'p' + i, t: `<span class="cc-th" data-drag="${posRef[i]}" title="Arraste para mudar a posição da candidatura" style="--c:${cores[i]}">${esc(nm)} <small>· % válidos</small></span>`, h: r => r.vals[i] && isFinite(r.vals[i].p) ? `<b>${fNum(r.vals[i].p, 2)}%</b>` : '–', v: r => r.vals[i]?.p ?? -1, x: r => r.vals[i] && isFinite(r.vals[i].p) ? fNum(r.vals[i].p, 2) : '', cls: 'num' });
     });
     if (nC > 1) cols.push({ k: 'dif', t: 'Diferença (1ª − 2ª, p.p.)', h: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? `<span class="dlt ${Math.abs(d) < .05 ? 'zero' : d > 0 ? 'pos' : 'neg'}">${d > 0 ? '+' : d < 0 ? '−' : ''}${fNum(Math.abs(d), 1)}</span>` : '–'; }, v: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? d : null; }, x: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? fNum(d, 2) : ''; }, cls: 'num' });
     const desce = PROX[nav.nivel] ? r => {

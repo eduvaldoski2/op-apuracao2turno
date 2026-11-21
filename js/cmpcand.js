@@ -1,13 +1,14 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
-import { CONFIG } from './config.js?v=59429884';
-import { getJSON } from './tse.js?v=59429884';
-import { esc, sem, tabela } from './ui.js?v=59429884';
-import { fNum, fInt } from './util.js?v=59429884';
-import { corPartido, corTextoSobre } from './partidos.js?v=59429884';
-import { baixarCSV } from './export.js?v=59429884';
-import { viewCmpMun } from './cmpmun.js?v=59429884';
+import { CONFIG } from './config.js?v=8cc600ea';
+import { getJSON } from './tse.js?v=8cc600ea';
+import { esc, sem, tabela } from './ui.js?v=8cc600ea';
+import { fNum, fInt } from './util.js?v=8cc600ea';
+import { corPartido, corTextoSobre } from './partidos.js?v=8cc600ea';
+import { baixarCSV } from './export.js?v=8cc600ea';
+import { viewCmpMun } from './cmpmun.js?v=8cc600ea';
+import { ligarArrasto } from './cmparrasto.js?v=8cc600ea';
 
 export const MAX_CC = 24;   // teto técnico (tamanho do endereço e leitura da tabela); sem o limite de 4 de antes
 const CH = 'abcdefghijklmnopqrsuvwxyz'.split('');   // sem a letra "t", que é o turno
@@ -92,6 +93,9 @@ export function viewCmpCand(ctx, q) {
   <div id="cc-res"></div>`;
   return { html, titulo: 'Comparar candidatos', trilha: [['Brasil', '#/'], ['Comparar', '#/comparar'], ['Candidatos']], montar(root) {
     const ir = (rs, t = turno) => { location.hash = hashCC(rs, t); };
+    const mover = (de, para) => { if (de === para || de < 0 || para < 0 || de >= refs.length || para >= refs.length) return; const rs = [...refs]; rs.splice(para, 0, rs.splice(de, 1)[0]); ir(rs); };
+    ligarArrasto(root, mover);
+    root.addEventListener('click', e => { const b = e.target.closest('[data-mv]'); if (b) mover(+b.dataset.i, +b.dataset.i + +b.dataset.mv); });
     const sel = new Set(refs);
     const inp = root.querySelector('#cc-in'), sug = root.querySelector('#cc-sug'), dica = root.querySelector('#cc-dica'), pessoaEl = root.querySelector('#cc-pessoa');
     const cheio = () => refs.length >= MAX_CC;
@@ -147,7 +151,7 @@ export function viewCmpCand(ctx, q) {
       if (!alvo.isConnected) return;
       const ok = [], falhas = [], idxFalha = [];
       res.forEach((x, i) => x.status === 'fulfilled' ? ok.push({ ...x.value, i }) : (falhas.push(`${refs[i]}: ${x.reason?.message || x.reason}`), idxFalha.push(i)));
-      chips.innerHTML = ok.map(x => `<span class="cmp-chip" style="--c:${SLOT[x.i]}"><i class="cc-dot" style="background:${SLOT[x.i]}"></i><b>${esc(rotulo(x))}</b><button type="button" class="cmp-x" data-rm="${x.i}" aria-label="Remover ${esc(rotulo(x))}">✕</button></span>`).join('')
+      chips.innerHTML = ok.map(x => `<span class="cmp-chip cc-pega" data-drag="${x.i}" style="--c:${SLOT[x.i]}" title="Arraste para mudar a posição"><i class="cc-dot" style="background:${SLOT[x.i]}"></i><b>${esc(rotulo(x))}</b>${refs.length > 1 ? `<button type="button" class="cmp-x cc-mv" data-mv="-1" data-i="${x.i}" aria-label="Mover ${esc(rotulo(x))} para antes" ${x.i === 0 ? 'disabled' : ''}>‹</button><button type="button" class="cmp-x cc-mv" data-mv="1" data-i="${x.i}" aria-label="Mover ${esc(rotulo(x))} para depois" ${x.i === refs.length - 1 ? 'disabled' : ''}>›</button>` : ''}<button type="button" class="cmp-x" data-rm="${x.i}" aria-label="Remover ${esc(rotulo(x))}">✕</button></span>`).join('')
         + idxFalha.map(i => `<span class="cmp-chip cc-erro"><b>Não carregou</b><button type="button" class="cmp-x" data-rm="${i}" aria-label="Remover">✕</button></span>`).join('');
       alvo.innerHTML = resultado(ok, falhas, B, turno);
       ligarResultado(alvo, ok, B, ir, refs, turno);
@@ -160,7 +164,7 @@ function resultado(cs, falhas, B, turno) {
   if (!cs.length) return `<section class="painel sem-export"><div class="aviso">Não foi possível carregar os votos desta escolha. ${falhas.length ? esc(falhas.join('; ')) : ''}</div></section>`;
   const cards = cs.map(x => {
     const c = x.c, v = c[8] != null || c[10] != null;
-    return `<article class="cc-card" style="--c:${SLOT[x.i]}"><div class="cc-top"></div>
+    return `<article class="cc-card cc-pega" data-drag="${x.i}" style="--c:${SLOT[x.i]}" title="Arraste para mudar a posição"><div class="cc-top"></div><span class="cc-grip" aria-hidden="true">⠿</span>
       <h3>${esc(x.nome)}</h3><p class="cc-civil">${esc(bonito(x.p.n))}</p>
       <p class="cc-loc">${esc(local(c))} · <b>${c[0]}</b></p>
       <p class="cc-par">${chipP(c[4])}${c[5] ? ` <span>nº ${c[5]}</span>` : ''} ${situ(c[6])}</p>
@@ -242,8 +246,8 @@ function munSecao(el, cs, B) {
     const cols = [{ k: 'nome', t: modo === 'mun' ? 'Município' : 'Estado', h: r => `<b>${esc(r.nome)}</b>${modo === 'mun' && r.uf ? ` <small>${esc(r.uf)}</small>` : r.n ? ` <small>${fInt(r.n)} municípios</small>` : ''}`, v: r => sem(r.nome), x: r => r.nome, ini: 'asc', cls: 'nm' }];
     cs.forEach((x, i) => {
       const nm = `${x.nome} ${x.c[0]}`;
-      cols.push({ k: 'v' + i, t: `<span class="cc-th" style="--c:${SLOT[i]}">${esc(nm)} <small>· votos</small></span>`, h: r => r.vals[i] ? fInt(r.vals[i].v) : '–', v: r => r.vals[i]?.v ?? -1, x: r => r.vals[i]?.v ?? '', cls: 'num' });
-      cols.push({ k: 'p' + i, t: `<span class="cc-th" style="--c:${SLOT[i]}">${esc(nm)} <small>· % no local</small></span>`, h: r => r.vals[i] && isFinite(r.vals[i].p) ? `<b>${fNum(r.vals[i].p, 2)}%</b>` : '–', v: r => r.vals[i]?.p ?? -1, x: r => r.vals[i] && isFinite(r.vals[i].p) ? fNum(r.vals[i].p, 2) : '', cls: 'num' });
+      cols.push({ k: 'v' + i, t: `<span class="cc-th" data-drag="${cs[i].i}" title="Arraste para mudar a posição da candidatura" style="--c:${SLOT[i]}">${esc(nm)} <small>· votos</small></span>`, h: r => r.vals[i] ? fInt(r.vals[i].v) : '–', v: r => r.vals[i]?.v ?? -1, x: r => r.vals[i]?.v ?? '', cls: 'num' });
+      cols.push({ k: 'p' + i, t: `<span class="cc-th" data-drag="${cs[i].i}" title="Arraste para mudar a posição da candidatura" style="--c:${SLOT[i]}">${esc(nm)} <small>· % no local</small></span>`, h: r => r.vals[i] && isFinite(r.vals[i].p) ? `<b>${fNum(r.vals[i].p, 2)}%</b>` : '–', v: r => r.vals[i]?.p ?? -1, x: r => r.vals[i] && isFinite(r.vals[i].p) ? fNum(r.vals[i].p, 2) : '', cls: 'num' });
     });
     if (cs.length > 1) cols.push({ k: 'dif', t: 'Diferença (1ª − 2ª, p.p.)', h: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? `<span class="dlt ${Math.abs(d) < .05 ? 'zero' : d > 0 ? 'pos' : 'neg'}">${d > 0 ? '+' : d < 0 ? '−' : ''}${fNum(Math.abs(d), 1)}</span>` : '–'; }, v: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? d : null; }, x: r => { const d = r.vals[0]?.p - r.vals[1]?.p; return isFinite(d) ? fNum(d, 2) : ''; }, cls: 'num' });
     tab = tabela(el.querySelector('#cc-tab'), { cols, rows: rs, sort: 'v0', dir: 'desc', filtro: (r, q2) => sem(r.nome).includes(q2) || sem(r.uf || '').includes(q2), limite: modo === 'mun' ? 300 : 0, vazio: 'Sem dados', onRow: modo === 'mun' ? mostraMun : undefined });
