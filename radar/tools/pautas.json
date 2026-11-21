@@ -16,7 +16,7 @@
         "itaipu_ueno_18",
         "itaipu_diretor_destituido_20"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": true,
       "ultimo_fato": "20/11: o ex-procurador-geral Emiliano Rolón denunciou perseguição política à ONU; a Conmebol admitiu R$ 88 milhões aplicados no Ueno Bank.",
       "proximo": "Recuperação dos US$ 182 milhões da Itaipu na Justiça paraguaia; indicação do novo diretor paraguaio."
@@ -57,10 +57,10 @@
         "cadeiras_haddad_alckmin_camilo_19",
         "lula_sem_pressa_ministros_20"
       ],
-      "verificada": "2026-11-21-07h",
-      "fato_novo": false,
-      "ultimo_fato": "20/11: Lula diz que quer evitar erros do atual mandato e não tem pressa para indicar ministros; no dia 19 anunciou que o próximo governo terá ministério voltado à população idosa.",
-      "proximo": "Anúncio dos primeiros ministros até o início de dezembro; nome e formato da pasta do idoso."
+      "verificada": "2026-11-21-15h",
+      "fato_novo": true,
+      "ultimo_fato": "21/11: Lula diz que não há pressa para definir a equipe econômica e que o quarto mandato não terá aumento da idade da aposentadoria.",
+      "proximo": "Anúncio dos primeiros ministros até o início de dezembro."
     },
     {
       "id": "tse-acoes",
@@ -75,7 +75,7 @@
         "dallagnol_tse_pauta",
         "toffoli_contas_campanha_lula_14_11"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": false,
       "ultimo_fato": "Nada novo nesta passada além do que estava na pauta.",
       "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
@@ -97,10 +97,10 @@
         "pl_flavio_motta_consulta_121_deputados_17_11",
         "rockbridge_flavio_pf_18"
       ],
-      "verificada": "2026-11-21-07h",
-      "fato_novo": false,
-      "ultimo_fato": "20/11: Moraes votou para manter as restrições ao senador e disse que a viagem aos EUA tentou obstruir investigações; no dia 18 a PGR denunciou Flávio por calúnia contra Lula.",
-      "proximo": "Votação dos demais ministros da Primeira Turma; resposta da defesa."
+      "verificada": "2026-11-21-15h",
+      "fato_novo": true,
+      "ultimo_fato": "20/11: Moraes votou para manter Flávio sem passaportes e proibido de contatar Willer Tomaz; o senador deixou o país em 27/10 e o julgamento virtual segue até 30/11.",
+      "proximo": "Votos dos três ministros que faltam na Primeira Turma até 30/11."
     },
     {
       "id": "congresso-novo",
@@ -138,10 +138,10 @@
         "ajuste_camara_20",
         "alcolumbre_motta_reeleicao_dosimetria_21"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": true,
-      "ultimo_fato": "20/11: Alcolumbre e Motta acenam ao Planalto pelo ajuste fiscal e à oposição com a dosimetria, de olho na reeleição; votação do ajuste na Câmara segunda (23/11).",
-      "proximo": "Votação do ajuste fiscal na Câmara (23/11) e sanção."
+      "ultimo_fato": "21/11: Lula diz que o projeto fiscal aprovado pelo Senado é ajuste para 2027; o texto segue para a Câmara.",
+      "proximo": "Votação do ajuste fiscal na Câmara na próxima semana."
     },
     {
       "id": "seguranca-publica",
@@ -166,10 +166,10 @@
         "pgr_nucleo_relatorios_ministros_stf_21",
         "galipolo_20"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": true,
-      "ultimo_fato": "20/11: a PGR montou núcleo com Gonet para analisar os relatórios da PF sobre ministros do STF; Galípolo disse à PF que alertou sobre risco de fuga de Vorcaro.",
-      "proximo": "Análise da PGR sobre os relatórios; depoimentos no caso Master."
+      "ultimo_fato": "21/11: PF diz que não há conversas diretas entre Mendonça e Vorcaro; Fachin retirou o sigilo do relatório a pedido do ministro.",
+      "proximo": "Análise da PGR (núcleo de Gonet) sobre os relatórios da PF."
     },
     {
       "id": "escala-6x1",
@@ -185,7 +185,7 @@
         "escala_6x1_20",
         "hora_extra_divisor_21"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": true,
       "ultimo_fato": "20/11: com o decreto, o divisor da hora extra cai de 220 para 210 em 16/12 e para 200 em 2027.",
       "proximo": "Primeira portaria do MTE na segunda (23/11); possível judicialização."
@@ -254,10 +254,10 @@
         "nasdaq_pior_semana_2020_21",
         "trump_data_centers_exterior_21"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": true,
-      "ultimo_fato": "20/11: o Nasdaq caiu 5,28% na sexta e 10,02% na semana, a pior desde 2020; Trump ameaça taxar big techs com data centers no exterior.",
-      "proximo": "Sessões da próxima semana; votação do ajuste fiscal na Câmara (23/11)."
+      "ultimo_fato": "21/11: Costa propõe imposto de 3% sobre o faturamento das big techs no orçamento da UE; no Brasil, Lula chama o projeto fiscal do Senado de ajuste para 2027.",
+      "proximo": "Votação do ajuste na Câmara; negociação do orçamento da UE até o fim do ano."
     },
     {
       "id": "eua-meio-mandato",
@@ -275,7 +275,7 @@
         "alasca_peltola_18",
         "jeffries_20"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": false,
       "ultimo_fato": "18/11: os democratas indicaram por unanimidade Hakeem Jeffries para a presidência da Câmara; Mary Peltola venceu no Alasca e garantiu maioria de 56 a 44 no Senado.",
       "proximo": "Posse da nova legislatura e eleição do speaker em plenário."
@@ -302,10 +302,10 @@
         "polonia_misseis_russos_21",
         "trilateral_shenzhen_19"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": true,
-      "ultimo_fato": "20/11: dois mísseis e um drone russos caíram no sudeste da Polônia durante ataque em massa à Ucrânia e a Otan condenou; Trump comentou acordo nuclear após a cúpula de Shenzhen.",
-      "proximo": "Resposta da Otan; data da próxima rodada de negociações."
+      "ultimo_fato": "21/11: cargueiro com destino a Kaliningrado foi atingido por drones no Golfo da Finlândia; ataque russo em Kryvyi Rih matou criança de 7 anos.",
+      "proximo": "Resposta de Moscou e novas rodadas de negociação."
     },
     {
       "id": "israel-governo",
@@ -318,7 +318,7 @@
         "israel_oposicao_acusa_netanyahu_golpe_16_11",
         "israel_coalizao_20"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": false,
       "ultimo_fato": "18/11: Netanyahu admitiu derrota na disputa pela presidência do Knesset; o bloco governista perdeu a maioria e a formação de coalizão segue em aberto.",
       "proximo": "Negociação entre as bancadas para a formação de governo; data ainda não definida."
@@ -337,7 +337,7 @@
         "ira_nega_ataque_washington_17_11",
         "houthis_pif_tower_20"
       ],
-      "verificada": "2026-11-21-07h",
+      "verificada": "2026-11-21-15h",
       "fato_novo": false,
       "ultimo_fato": "20/11: ataque dos houthis atingiu a PIF Tower, em Riad, na quinta (19), e fechou o distrito financeiro da capital saudita.",
       "proximo": "Resposta de Riad e reação das companhias aéreas."
@@ -346,62 +346,62 @@
   "varredura": [
     {
       "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-      "feita": "2026-11-21-07h",
-      "achado": "Nada novo sobre queda ou prisão de chefe de Estado; Paraguai: ex-procurador Rolón denuncia perseguição à ONU."
+      "feita": "2026-11-21-15h",
+      "achado": "Nada novo sobre queda ou prisão de chefe de Estado; Lula diz ter feito ligações a Putin, Trump e Xi."
     },
     {
       "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-      "feita": "2026-11-21-07h",
-      "achado": "Paraguai: Rolón na ONU e Conmebol com R$ 88 milhões no Ueno; Peru: terremoto de magnitude 6,7 sentido no Acre."
+      "feita": "2026-11-21-15h",
+      "achado": "Argentina e Peru sem fato novo além do terremoto; Paraguai: procurador Rolón na ONU."
     },
     {
       "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-      "feita": "2026-11-21-07h",
-      "achado": "Mísseis russos caem na Polônia e a Otan condena; acordo nuclear Trump-Putin-Xi em Shenzhen."
+      "feita": "2026-11-21-15h",
+      "achado": "Ataque russo em Kryvyi Rih (criança morta); cargueiro atingido por drones no Golfo da Finlândia; ONU sem proibição de robôs assassinos."
     },
     {
       "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-      "feita": "2026-11-21-07h",
-      "achado": "UE e Reino Unido ligam mercados de carbono; Texas: execução de 63 minutos; protestos de jovens na Europa."
+      "feita": "2026-11-21-15h",
+      "achado": "Hackers atingem FBI e USDA; Trump ameaça punir empresas com data centers no exterior; Chapo Isidro preso no México."
     },
     {
       "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-      "feita": "2026-11-21-07h",
-      "achado": "Nasdaq tem a pior semana desde 2020; Trump ameaça taxar data centers no exterior."
+      "feita": "2026-11-21-15h",
+      "achado": "Imposto de 3% sobre big techs proposto pelo Conselho Europeu."
     },
     {
       "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-      "feita": "2026-11-21-07h",
+      "feita": "2026-11-21-15h",
       "achado": "Lula em MT: portaria da TI Kapôt Nhĩnore e visita a Raoni (19/11); nenhuma decisão nova sobre ministérios."
     },
     {
       "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-      "feita": "2026-11-21-07h",
+      "feita": "2026-11-21-15h",
       "achado": "Alcolumbre e Motta acenam ao Planalto pelo ajuste fiscal; votação na Câmara segunda (23/11)."
     },
     {
       "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-      "feita": "2026-11-21-07h",
+      "feita": "2026-11-21-15h",
       "achado": "PGR monta núcleo com Gonet para relatórios da PF sobre ministros do STF; Zanin leva Van Hattem ao plenário físico; Galípolo à PF."
     },
     {
       "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-      "feita": "2026-11-21-07h",
+      "feita": "2026-11-21-15h",
       "achado": "Sem pesquisa nova relevante além das matérias da edição."
     },
     {
       "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-      "feita": "2026-11-21-07h",
+      "feita": "2026-11-21-15h",
       "achado": "Sem pesquisa nova relevante além das matérias da edição."
     },
     {
       "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-      "feita": "2026-11-21-07h",
+      "feita": "2026-11-21-15h",
       "achado": "Sem pesquisa nova relevante além das matérias da edição."
     },
     {
       "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-      "feita": "2026-11-21-07h",
+      "feita": "2026-11-21-15h",
       "achado": "Sem pesquisa nova relevante além das matérias da edição."
     }
   ]
