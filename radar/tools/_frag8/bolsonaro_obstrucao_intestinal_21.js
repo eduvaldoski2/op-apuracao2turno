@@ -1,0 +1,27 @@
+// ED: politica
+_U('bolsonaro_obstrucao_intestinal_21', {hora:'21/11',
+ t:'Bolsonaro segue na UTI com abdômen agudo obstrutivo, estável e sem previsão de alta; Moraes libera visitas diárias dos filhos',
+ sub:'A equipe médica não descarta nova cirurgia, que seria a décima em oito anos, caso o quadro não evolua nas próximas 24 horas.',
+ dado:{n:'UTI', l:'ex-presidente segue estável, em jejum e com sonda gástrica, sem previsão de alta'},
+ resumo:'O ex-presidente Jair Bolsonaro está internado na UTI do Hospital DF Star, em Brasília, com diagnóstico de abdômen agudo obstrutivo. O boletim médico das 14h de sábado (21) o descreve como estável, consciente e orientado, em jejum, com hidratação, suporte nutricional e sonda gástrica, sem previsão de alta. A equipe avalia a necessidade de nova cirurgia. O ministro Alexandre de Moraes autorizou visitas diárias de três filhos e da enteada.',
+ fundo:`O ex-presidente Jair Bolsonaro (PL) permanece internado na unidade de terapia intensiva (UTI) do Hospital DF Star, em Brasília, com diagnóstico de abdômen agudo obstrutivo, informou a unidade em boletim divulgado na tarde deste sábado (21). Ele está estável, consciente e orientado, mas não há previsão de alta, e a equipe avalia se será preciso operar de novo.
+
+## O que diz o boletim médico
+
+O documento, assinado pelos cardiologistas Brasil Caiado e Leandro Echenique, pelo cirurgião do aparelho digestivo Claudio Birolini, pelo coordenador da UTI, Antonio Aurélio Fagundes Junior, e pelo diretor-geral do hospital, Allisson Barcelos Borges, lista as medidas iniciadas: hidratação, manutenção do jejum oral com suporte nutricional e passagem de sonda gástrica. Bolsonaro "encontra-se estável clinicamente, consciente, orientado e em respiração espontânea", diz o texto, informa a Agência Brasil.
+
+Ele chegou ao hospital na tarde de sexta-feira (20) com dor e distensão abdominal. Uma tomografia apontou obstrução quase total do intestino delgado, com sinais de inflamação e aderências na parede abdominal, relata o Correio Braziliense. Caiado disse ao Globo que há possibilidade de nova cirurgia, mas que a equipe aguarda a evolução do quadro. Se o procedimento for necessário, seria o décimo em oito anos, de acordo com o Correio Braziliense, que lembra que o ex-presidente já foi hospitalizado pelo mesmo problema.
+
+## A decisão de Moraes sobre as visitas
+
+O ministro Alexandre de Moraes, do Supremo Tribunal Federal (STF), atendeu a um pedido urgente da defesa e autorizou visitas diárias ao ex-presidente enquanto durar a internação. A autorização vale para os filhos Carlos e Jair Renan, para a filha mais nova, Laura, e para a enteada Letícia Firmo, filha da ex-primeira-dama Michelle Bolsonaro, informa o g1. As visitas não podem ser registradas por celulares, segundo o Correio Braziliense.
+
+Bolsonaro foi condenado a 27 anos e três meses de prisão por tentativa de golpe de Estado e cumpre a pena em prisão domiciliar desde março de 2026, de acordo com a Veja e o Amazonas Atual. A internação ocorre ao mesmo tempo em que Moraes liberou para o plenário virtual do STF, entre 4 e 15 de dezembro, as ações que contestam a Lei da Dosimetria, que reduz as penas dos envolvidos nos ataques de 8 de Janeiro e pode beneficiar o ex-presidente, informa o Estadão.
+
+## O que vem agora
+
+O próximo boletim e a decisão da equipe sobre cirurgia dependem da evolução nas próximas horas. O que ainda não está confirmado é a causa da obstrução e o prazo de internação.
+
+NUMS UTI|situação de Bolsonaro no DF Star;10ª|cirurgia em oito anos, se houver;4 a 15/12|julgamento da Lei da Dosimetria no plenário virtual do STF;4|familiares autorizados a visitar`,
+ fontes:[['Agência Brasil (Bolsonaro internado em UTI)','https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/ex-presidente-jair-bolsonaro-esta-internado-em-uti-no-distrito-federal'],['g1 (boletim médico e quadro estável)','https://g1.globo.com/politica/noticia/2026/11/21/bolsonaro-tem-obstrucao-intestinal-quadro-estavel-e-segue-sem-previsao-de-alta-diz-boletim-medico.ghtml'],['g1 (Moraes autoriza visitas diárias)','https://g1.globo.com/politica/noticia/2026/11/21/moraes-atende-a-pedido-e-autoriza-visitas-diarias-de-filhos-a-bolsonaro-durante-a-internacao.ghtml'],['Correio Braziliense (Moraes autoriza visita de filhos)','https://www.correiobraziliense.com.br/politica/2026/11/7542167-moraes-autoriza-visita-de-filhos-de-bolsonaro-no-hospital.html'],['Correio Braziliense (entenda o estado de saúde)','https://www.correiobraziliense.com.br/politica/2026/11/7542074-obstrucao-intestinal-entenda-o-estado-de-saude-jair-bolsonaro.html'],['Folha de Pernambuco (UTI, sem previsão de alta)','https://www.folhape.com.br/politica/bolsonaro-esta-internado-na-uti-com-abdomen-obstruido-em-estado/525470/'],['Amazonas Atual (Bolsonaro em UTI)','https://amazonasatual.com.br/ex-presidente-jair-bolsonaro-esta-internado-em-uti-no-distrito-federal/'],['Estadão (Lei da Dosimetria no plenário virtual)','https://www.estadao.com.br/politica/moraes-libera-acao-que-trata-da-lei-da-dosimetria-para-julgamento-no-plenario-virtual-do-stf/'],['Veja (Alcolumbre e o STF)','https://veja.abril.com.br/politica/os-rivais-de-davi-alcolumbre-na-disputa-para-emplacar-o-novo-ministro-do-stf/']],
+ upd:'O boletim médico de sábado (21) confirma UTI, quadro estável, jejum e sonda gástrica, sem previsão de alta; a cirurgia segue em avaliação e Moraes liberou visitas diárias de familiares.'});
