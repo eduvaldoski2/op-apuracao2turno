@@ -1,0 +1,60 @@
+federal AMOSTRA {"ele":"6259","t":"1","f":"o","sup":"n","tpabr":"uf","cdabr":"ac","dg":"04/10/2026","hg":"21:08:19","idg":"1922434","dt":"04/10/2026","ht":"19:07:54","dv":"s","tf":"s","and":"f","esae":"n","mnae":[],"carg":[{"cd":"6","nmn":"Deputado Federal","nmm":"Deputado Federal","nmf":"Deputada Federal","nv":"8","qe":"57811","fed":[{"n":"104","sg":"UNIÃO/PP","nm":"FEDERAÇÃO UNIÃO PROGRESSISTA","com":"UNIÃO/PP","npar":["11","44"]},{"n":"103","sg":"PRD/SOLIDARIEDADE","nm":"FEDERAÇÃO RENOVAÇÃO SOLIDÁRIA","com":"PRD/SOLIDARIEDADE","npar":["25","77"]},{"n":"100","sg":"PSDB/CIDADANIA","nm":"FEDERAÇÃO PSDB CIDADANIA","com":"PSDB/CIDADANIA","npar":["23","45"]},{"n":"102","sg":"PSOL/REDE","nm":"FEDERAÇÃO PSOL REDE","com":"PSOL/REDE","npar":["18","50"]},{"n":"101","sg":"PT/PC do B/PV","nm":"FEDERAÇÃO BRASIL DA ESPERANÇA - FE BRASIL","com":"PT/PC do B/PV","npar":["13","43","65"]}],"agr":[{"n":"10001800255","nm":"AVANTE","tp":"i","com":"AVANTE","vag":"0","par":[{"n":"70","sg":"AVANTE","nm":"AVANTE","nfed":"","dvt":"Válido (legenda)","tvtn":"614","tvtl":"68","tval":"68","tvan":"614","cand":[{"n":"7070","sqcand":"10002536301","nm":"ROSA MARIA DE LIMA","nmu":"ROSA MARIA","dt":"08/05/1968","dvt":"Válido","seq":"53","e":"n","st":"Não eleito","vap":"450","pvap":"0,10","pvapn":"0,096028271"},{"n":"7033","sqcand":"10002536299","nm":"NAUAN DA COSTA ARAGÃO FREIRES","nmu":"NAUAN ARAGÃO","dt":"06/06/2003","dvt":"Válido","seq":"83","e":"n","st":"Não eleito","vap":"10","pvap":"0,01","pvapn":"0,002133962"},{"n":"7012","sqcand":"10002536298","nm":"DAIANE FONTINELE COELHO","nmu":"DAIANE FONTINELE","dt":"21/08/1991","dvt":"Válido","seq":"85","e":"n","st":"Não eleito","vap":"6","pvap":"0,01","pvapn":"0,001280377"},{"n":"7000","sqcand":"10002536300","nm":"CLAUDEMIR VICENTE FERREIRA JUNIOR PARFAN","nmu":"MY PARFAN","dt":"13/06/1981","dvt":"Válido","seq":"69","e":"n","st":"Não eleito","vap":"148","pvap":"0,03","pvapn":"0,031582631"}]}]},{"n":"10001801153","nm":"PARTIDO DEMOCRÁTICO TRABALHISTA","tp":"i","com":"PDT","vag":"0","par":[{"n":"12","sg":"PDT","nm":"PARTIDO DEMOCRÁTICO TRABALHISTA","nfed":"","dvt":"Válido (legenda)","tvtn":"1038","tvtl":"1982","tval":"1982","tvan":"1038","cand":[{"n":"1200","sqcand":"10002550671","nm":"MARIA DE JESUS GOMES DA SILVA CAVALCANTE","nmu":"DJÊ CAVALCANTE","dt":"28/06/1984","dvt":"Válido","seq":"52","e":"n","st":"Não eleito","vap":"696","pvap":"0,15","pvapn":"0,148523725"},{"n":"1234","sqcand":"10002550670","nm":"REIDIVAN DA ROCHA DE FRANCA","nmu":"REIDIVAN ROCHA","dt
+federal estados lidos: 27 erros: 0
+federal ac 21:08:19 2270/2270 grupos 14 cand 87 eleitos 8 vag 8
+federal al 22:54:51 7101/7101 grupos 13 cand 101 eleitos 9 vag 9
+federal ap 18:27:15 1914/1914 grupos 12 cand 84 eleitos 8 vag 8
+federal am 10:14:54 8157/8157 grupos 17 cand 135 eleitos 8 vag 8
+federal ba 11:42:25 35476/35476 grupos 18 cand 502 eleitos 39 vag 39
+federal ce 23:11:37 23765/23765 grupos 19 cand 265 eleitos 22 vag 22
+federal df 09:08:10 6969/6969 grupos 21 cand 163 eleitos 8 vag 8
+federal es 20:57:09 9844/9844 grupos 15 cand 130 eleitos 10 vag 10
+federal go 22:39:26 15686/15686 grupos 16 cand 247 eleitos 17 vag 17
+federal ma 02:02:00 18093/18093 grupos 19 cand 266 eleitos 18 vag 18
+federal mt 21:32:10 8287/8287 grupos 17 cand 129 eleitos 8 vag 8
+federal ms 17:40:52 7106/7106 grupos 15 cand 119 eleitos 8 vag 8
+federal mg 19:12:00 52062/52062 grupos 20 cand 710 eleitos 53 vag 53
+federal pa 11:42:32 20827/20827 grupos 19 cand 250 eleitos 17 vag 17
+federal pb 12:49:44 10712/10712 grupos 17 cand 164 eleitos 12 vag 12
+federal pr 11:47:02 27142/27142 grupos 17 cand 404 eleitos 30 vag 30
+federal pe 12:42:11 21418/21418 grupos 18 cand 359 eleitos 25 vag 25
+federal pi 15:05:54 10225/10225 grupos 18 cand 154 eleitos 10 vag 10
+federal rj 15:09:58 37675/37675 grupos 21 cand 765 eleitos 46 vag 46
+federal rn 12:06:48 8115/8115 grupos 14 cand 99 eleitos 8 vag 8
+federal rs 11:46:30 27547/27547 grupos 20 cand 435 eleitos 31 vag 31
+federal ro 19:32:24 4698/4698 grupos 15 cand 125 eleitos 8 vag 8
+federal rr 21:09:59 1519/1519 grupos 14 cand 95 eleitos 8 vag 8
+federal sc 11:27:01 17326/17326 grupos 18 cand 224 eleitos 16 vag 16
+federal sp 11:47:48 103656/103656 grupos 20 cand 1045 eleitos 70 vag 70
+federal se 22:08:20 5923/5923 grupos 16 cand 121 eleitos 8 vag 8
+federal to 21:19:00 4384/4384 grupos 14 cand 84 eleitos 8 vag 8
+gravado federal 599 KB
+estadual AMOSTRA {"ele":"6259","t":"1","f":"o","sup":"n","tpabr":"uf","cdabr":"ac","dg":"04/10/2026","hg":"21:08:28","idg":"1923934","dt":"04/10/2026","ht":"19:07:54","dv":"s","tf":"s","and":"f","esae":"n","mnae":[],"carg":[{"cd":"7","nmn":"Deputado Estadual","nmm":"Deputado Estadual","nmf":"Deputada Estadual","nv":"24","qe":"19584","fed":[{"n":"100","sg":"PSDB/CIDADANIA","nm":"FEDERAÇÃO PSDB CIDADANIA","com":"PSDB/CIDADANIA","npar":["23","45"]},{"n":"104","sg":"UNIÃO/PP","nm":"FEDERAÇÃO UNIÃO PROGRESSISTA","com":"UNIÃO/PP","npar":["11","44"]},{"n":"103","sg":"PRD/SOLIDARIEDADE","nm":"FEDERAÇÃO RENOVAÇÃO SOLIDÁRIA","com":"PRD/SOLIDARIEDADE","npar":["25","77"]},{"n":"101","sg":"PT/PC do B/PV","nm":"FEDERAÇÃO BRASIL DA ESPERANÇA - FE BRASIL","com":"PT/PC do B/PV","npar":["13","43","65"]},{"n":"102","sg":"PSOL/REDE","nm":"FEDERAÇÃO PSOL REDE","com":"PSOL/REDE","npar":["18","50"]}],"agr":[{"n":"10001800724","nm":"FEDERAÇÃO UNIÃO PROGRESSISTA","tp":"f","com":"PP / UNIÃO","tvtn":"156049","tvan":"156049","tvtl":"6527","tval":"6527","vag":"9","par":[{"n":"44","sg":"UNIÃO","nm":"UNIÃO BRASIL","nfed":"104","dvt":"Válido (legenda)","tvtn":"76369","tvtl":"1603","tval":"1603","tvan":"76369","cand":[{"n":"44333","sqcand":"10002544526","nm":"PABLO THYAGO BREGENSE DE SOUZA","nmu":"TIO PABLO BREGENSE","dt":"15/03/1987","dvt":"Válido","seq":"14","e":"s","st":"Eleito por QP","vap":"9981","pvap":"2,11","pvapn":"2,109380944"},{"n":"44555","sqcand":"10002544533","nm":"WHENDY SNANKY PRAXEDES PONCIANO DA SILVA LIMA","nmu":"WHENDY LIMA","dt":"23/09/1982","dvt":"Válido","seq":"25","e":"n","st":"Suplente","vap":"9531","pvap":"2,01","pvapn":"2,014278106"},{"n":"44777","sqcand":"10002544534","nm":"FAGNER CALEGARIO DO NASCIMENTO","nmu":"FAGNER CALEGARIO","dt":"12/01/1981","dvt":"Válido","seq":"2","e":"s","st":"Eleito por QP","vap":"13640","pvap":"2,88","pvapn":"2,882672686"},{"n":"44022","sqcand":"10002544531","nm":"RILHAENE APARECIDA JIALDI FREZE","nmu":"RILA FREZE","dt":"24/02/1975","dvt":"Válido","seq":"127","e":"n","st":"Suplente","vap":"136","pvap":"0,03","pvapn":"0,028742191"},{"n":"44190","sqcand":"10002544536","nm":"TASSIA ROGERIO NOBRE","nmu":"TASSIA NOBRE","dt":"09/02/1988","dvt":"Válido","seq":"102","e":"n","st":"Suplente","vap":"283","pvap":"0,06","pvapn":"0,059809118"},{"n":"44800","sqcand":"10002544543","nm":"RUTÊNIO SÁ DE OLIVEIRA","nmu":"RUTÊNIO SÁ","dt":"26/01/1974","dvt":"Válido","seq":"45","e":"n","st":"Suplente","vap":"3004","pvap":"0,63","pvapn":"0,634864278"},{"n":"44444","sqcand"
+estadual estados lidos: 27 erros: 0
+estadual ac 21:08:28 2270/2270 grupos 13 cand 222 eleitos 24 vag 24
+estadual al 22:54:51 7101/7101 grupos 9 cand 122 eleitos 27 vag 27
+estadual ap 18:27:16 1914/1914 grupos 11 cand 183 eleitos 24 vag 24
+estadual am 10:14:54 8157/8157 grupos 14 cand 278 eleitos 24 vag 24
+estadual ba 11:42:33 35476/35476 grupos 16 cand 612 eleitos 63 vag 63
+estadual ce 23:11:39 23765/23765 grupos 16 cand 351 eleitos 46 vag 46
+estadual df 09:08:10 6969/6969 grupos 19 cand 415 eleitos 24 vag 24
+estadual es 20:57:10 9844/9844 grupos 16 cand 393 eleitos 30 vag 30
+estadual go 22:39:31 15686/15686 grupos 17 cand 556 eleitos 41 vag 41
+estadual ma 02:01:58 18093/18093 grupos 13 cand 271 eleitos 42 vag 42
+estadual mt 21:32:11 8287/8287 grupos 12 cand 255 eleitos 24 vag 24
+estadual ms 17:40:53 7106/7106 grupos 13 cand 237 eleitos 24 vag 24
+estadual mg 19:11:58 52062/52062 grupos 22 cand 943 eleitos 77 vag 77
+estadual pa 11:42:33 20827/20827 grupos 17 cand 393 eleitos 41 vag 41
+estadual pb 12:49:44 10712/10712 grupos 9 cand 195 eleitos 36 vag 36
+estadual pr 11:47:12 27142/27142 grupos 19 cand 591 eleitos 54 vag 54
+estadual pe 12:42:12 21418/21418 grupos 18 cand 487 eleitos 49 vag 49
+estadual pi 15:05:54 10225/10225 grupos 8 cand 143 eleitos 30 vag 30
+estadual rj 15:10:03 37675/37675 grupos 22 cand 1135 eleitos 70 vag 70
+estadual rn 12:06:48 8115/8115 grupos 10 cand 147 eleitos 24 vag 24
+estadual rs 11:46:33 27547/27547 grupos 16 cand 528 eleitos 55 vag 55
+estadual ro 19:32:24 4698/4698 grupos 13 cand 248 eleitos 24 vag 24
+estadual rr 21:09:59 1519/1519 grupos 11 cand 231 eleitos 24 vag 24
+estadual sc 11:27:03 17326/17326 grupos 16 cand 398 eleitos 40 vag 40
+estadual sp 11:48:53 103656/103656 grupos 22 cand 1346 eleitos 94 vag 94
+estadual se 22:08:20 5923/5923 grupos 11 cand 212 eleitos 24 vag 24
+estadual to 21:19:01 4384/4384 grupos 12 cand 194 eleitos 24 vag 24
+gravado estadual 853 KB
