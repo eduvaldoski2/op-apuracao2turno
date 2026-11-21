@@ -23,7 +23,7 @@ import { esc } from './ui.js?v=59429884';
 import { getFoco, setFoco, comFoco } from './foco.js?v=59429884';
 import { barraEleicao, ligarEleicao, ligarTopoConta, rotaExigeConta, nomeRotaConta, telaConta, marcarLogado } from './eleicao.js?v=59429884';
 import { rotaHist, viewHist } from './hist.js?v=59429884';
-import { CONTA, carregarConta } from './conta.js?v=59429884';
+import { CONTA, carregarConta } from './conta.js?v=w2239';
 
 const $ = s => document.querySelector(s);
 const S = { B: null, geo: null, snap: null, hist: [], meta: null, fonte: '', refMode: 'lfl', demo: null, simulado: false, vistoEm: 0, P: null, Psig: '', V: null, Vsig: '' };

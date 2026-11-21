@@ -1,7 +1,7 @@
 // Página "Minha conta" (conta.html): cadastro (nome, contato, senha, excluir) e preferências (boletim do Radar, novidades).
 // Mesma conta e mesmo cookie do Painel e do Radar. O menu do topo (ícone de pessoa) leva para cá.
-import { CONTA, carregarConta, montarConta, chamarConta, sairConta } from './conta.js?v=59429884';
-import { montarMenuConta } from './menuconta.js?v=59429884';
+import { CONTA, carregarConta, montarConta, chamarConta, sairConta } from './conta.js?v=w2239';
+import { montarMenuConta } from './menuconta.js?v=w2239';
 
 const app = document.getElementById('app');
 const REG = [['rj', 'Rio de Janeiro'], ['sp', 'São Paulo'], ['mg', 'Minas Gerais'], ['ne', 'Nordeste'], ['sul', 'Sul'], ['norte', 'Norte'], ['co', 'Centro-Oeste']];

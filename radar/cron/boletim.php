@@ -4,7 +4,7 @@
 //   php .../boletim.php --seco                              (só conta e confere, não envia)
 //   php .../boletim.php --teste=seu@email.com               (envia uma amostra a um endereço, sem tocar na lista)
 // Não roda pela web. Regras:
-//  - o boletim é o RESUMO DO DIA (junta todas as edições do dia, ver radar/tools/resumo_dia.cjs). Sai quando a edição das 19h é publicada,
+//  - o boletim é o RESUMO DO DIA (junta todas as edições do dia, ver radar/tools/resumo_dia.cjs). Sai DEPOIS da edição das 19h (a partir das 19h30, já com a segunda passada e a última edição do dia),
 //    no próprio dia; se a das 19h não sair, sai às 21h com o que o dia tiver (ou, se o cron tiver falhado, até as 12h do dia seguinte);
 //  - cada pessoa recebe no máximo uma vez por edição; quem falhou é tentado de novo na próxima rodada (até 8 rodadas);
 //  - TUDO fica registrado em radar/dados/boletim.log (erros do SMTP, destinatários, resultado) e o último estado em
@@ -50,7 +50,11 @@ $sm = cfg('CONTA', [])['smtp'] ?? []; $st['smtp_configurado'] = (!empty($sm['hos
 $d = rc_dados(); if (!$d) termina($st, 'sem dados da edição (radar/_dados_email.php)', 1, true);
 $dia = (string)($d['dia'] ?? ''); $hora = (string)($d['hora'] ?? ''); $st['edicao'] = "$dia $hora";
 $hoje = date('Y-m-d'); $ontem = date('Y-m-d', strtotime('-1 day'));
-$naJanela = ($dia === $hoje && ($hora === '19h' || (int)date('G') >= 21)) || ($dia === $ontem && (int)date('G') < 12);
+// A edição das 19h tem duas passadas (a segunda vai até ~19h25 e acrescenta matérias): o boletim só sai depois dela, a partir das 19h30
+// e com o resumo do dia parado há 10 min (nenhuma republicação recente). Se a das 19h não sair, sai às 21h com o que o dia tiver.
+$arqDados = dirname(__DIR__) . '/_dados_email.php'; $idadeDados = is_file($arqDados) ? time() - (int)filemtime($arqDados) : 0;
+$depoisDa19h30 = ((int)date('G') * 60 + (int)date('i')) >= 19 * 60 + 30;
+$naJanela = ($dia === $hoje && (($hora === '19h' && $depoisDa19h30 && $idadeDados >= 600) || (int)date('G') >= 21)) || ($dia === $ontem && (int)date('G') < 12);
 $st['edicoes_do_dia'] = $d['edicoes'] ?? [];
 $marcado = is_file($MARCA) ? trim((string)file_get_contents($MARCA)) : '';
 $jaEnviado = ($marcado === $dia); $st['ultimo_envio_completo'] = $marcado ?: null;
@@ -78,7 +82,7 @@ $sel0 = $alvos ? radar_boletim_montar($d, $alvos[0]['prefs']) : null; $st['monta
 
 if ($seco) termina($st, count($alvos) . ' destinatário(s); inscritos ativos ' . $cont['inscritos_ativos'] . '; edição ' . $st['edicao'] . '; envio por ' . $st['envio_por'] . '; modo seco, nada enviado');
 if (!$teste) {
-  if (!$naJanela) termina($st, "aguardando: a última edição é {$st['edicao']} (o resumo do dia sai com a edição das 19h, ou às 21h se ela não sair); nada enviado");
+  if (!$naJanela) termina($st, "aguardando: a última edição é {$st['edicao']} (o resumo do dia sai depois da edição das 19h, a partir das 19h30, ou às 21h se ela não sair); nada enviado");
   if ($jaEnviado) termina($st, "boletim de $dia já enviado a todos");
 }
 

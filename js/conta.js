@@ -67,6 +67,7 @@ export function montarConta(el, aoMudar = () => {}, op = {}) {
       corpo = `<form class="ct-form" data-f="cadastrar"><label>Seu nome<input name="nome" autocomplete="name" required maxlength="80"></label>
         ${wa ? `<fieldset class="ct-canal"><legend>Confirmar meu cadastro por</legend><label><input type="radio" name="canal" value="email" ${canalSel === 'email' ? 'checked' : ''}> E-mail</label><label><input type="radio" name="canal" value="whatsapp" ${canalSel === 'whatsapp' ? 'checked' : ''}> WhatsApp</label></fieldset>` : '<input type="hidden" name="canal" value="email">'}
         <label>${wa ? 'E-mail ou WhatsApp (com DDD)' : 'Seu e-mail'}<input name="contato" ${wa ? '' : 'type="email"'} autocomplete="${wa ? 'username' : 'email'}" required value="${esc(contatoAtual)}" placeholder="${wa ? (canalSel === 'whatsapp' ? '(21) 99999-0000' : 'voce@email.com') : 'voce@email.com'}"></label>
+        <label>WhatsApp <small>(opcional, com DDD)</small><input name="telefone" type="tel" inputmode="tel" autocomplete="tel-national" maxlength="20" placeholder="(21) 99999-0000"></label>
         <label>Crie uma senha<input type="password" name="senha" autocomplete="new-password" minlength="8" maxlength="72" required placeholder="mín. 8 caracteres, com letras e números"></label>
         <label class="ct-aceite"><input type="checkbox" name="aceite" required><span>${esc(TEXTO_ACEITE)} <a href="/privacidade.html" target="_blank" rel="noopener">Política de privacidade</a></span></label>
         ${aviso()}<div class="ct-bt"><button class="btn" type="submit" ${ocupado ? 'disabled' : ''}>Criar conta e receber o código</button></div></form>`;
@@ -118,7 +119,7 @@ export function montarConta(el, aoMudar = () => {}, op = {}) {
     try {
       if (t === 'cadastrar') {
         contatoAtual = (d.contato || '').trim(); canalSel = d.canal || 'email';
-        const j = await chamar('cadastrar', { nome: d.nome, canal: d.canal, contato: contatoAtual, senha: d.senha, aceite_mensagens: !!d.aceite });
+        const j = await chamar('cadastrar', { nome: d.nome, canal: d.canal, contato: contatoAtual, senha: d.senha, telefone: (d.telefone || '').trim(), aceite_mensagens: !!d.aceite });
         if (j.ok) { etapa = 'confirmar'; destino = j.destino || ''; msgOk = ''; iniciaEspera(); } else { msg = j.mensagem || 'Não foi possível criar a conta.'; if (j.erro === 'existe') aba = 'entrar'; }
       } else if (t === 'confirmar') {
         const j = await chamar('confirmar', { contato: contatoAtual, codigo: d.codigo });

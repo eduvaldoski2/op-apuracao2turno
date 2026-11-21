@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="css/consent.css?v=59429884">
 <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
 <link rel="manifest" href="/manifest.webmanifest?v=6">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=6">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=7">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Oficina Política">
@@ -113,6 +113,7 @@ input[aria-invalid=true]{border-color:var(--erro);background:#fff8f7}
 .nota{margin:12px 0 0;font-size:12.5px;color:var(--tx2)}
 .enviar{display:block;width:100%;margin-top:18px;min-height:54px;border:0;border-radius:14px;background:var(--laranja);color:#2a1700;font:700 16px 'Space Grotesk',system-ui,sans-serif;letter-spacing:.01em;cursor:pointer;transition:filter .15s,transform .15s}
 .enviar:hover{filter:brightness(.96);transform:translateY(-1px)}
+.cta-conta{display:flex;align-items:center;justify-content:center;max-width:460px;margin:18px auto 0;text-decoration:none;box-sizing:border-box}
 .enviar:disabled{opacity:.6;cursor:progress;transform:none}
 .msg{min-height:20px;margin:12px 0 0;font-size:14px;font-weight:600;color:var(--erro)}
 .ok-box{margin:28px auto 0;max-width:460px;background:#fff;border:1px solid #bfe3cd;border-radius:20px;padding:26px 22px;box-shadow:0 18px 40px -26px rgba(20,104,58,.35)}
@@ -144,24 +145,8 @@ footer.rodape p{margin:4px 0}
 
   <div class="sep" aria-hidden="true"><i></i></div>
 
-  <p class="breve">Em breve, um conjunto de ferramentas para quem é profissional da política.<b>Seja o primeiro a conhecer.</b></p>
-
-  <form id="f" novalidate autocomplete="on" aria-labelledby="t-form">
-    <span id="t-form" class="hp">Cadastro para conhecer as novas ferramentas</span>
-    <label class="c">Nome completo <small>(todos os campos são obrigatórios)</small>
-      <input type="text" name="nome" autocomplete="name" required maxlength="120" placeholder="Seu nome"></label>
-    <label class="c">E-mail
-      <input type="email" name="email" autocomplete="email" inputmode="email" required maxlength="160" placeholder="voce@exemplo.com.br"></label>
-    <label class="c">WhatsApp <small>(com DDD)</small>
-      <input type="tel" name="telefone" autocomplete="tel-national" inputmode="tel" required maxlength="20" placeholder="(21) 99999-9999"></label>
-    <div class="hp" aria-hidden="true"><label>Não preencha este campo<input type="text" name="site" tabindex="-1" autocomplete="off"></label></div>
-    <label class="ck"><input type="checkbox" name="c_contato" required>
-      <span id="txt-consent">Autorizo a Oficina Política a entrar em contato comigo por e-mail e WhatsApp para avisar sobre o lançamento e as novidades de suas ferramentas para profissionais da política. Posso revogar esta autorização a qualquer momento.</span></label>
-    <p class="nota">Seus dados não são vendidos nem usados para outra finalidade. Saiba mais na <a href="/privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>, que explica também como pedir a exclusão dos seus dados.</p>
-    <p class="msg" id="msg" role="alert" aria-live="polite"></p>
-    <button class="enviar" type="submit">Quero ser o primeiro a conhecer</button>
-  </form>
-  <div id="ok" class="ok-box" hidden tabindex="-1"><h2>Cadastro recebido!</h2><p id="ok-t">Obrigado. Avisaremos você assim que as ferramentas estiverem no ar.</p></div>
+  <p class="breve">Crie sua conta gratuita para acessar as funcionalidades da Oficina Política.<b>Leva um minuto.</b></p>
+  <a class="enviar cta-conta" href="conta.html">Criar minha conta</a>
 </main>
 
 <footer class="rodape">
@@ -174,55 +159,6 @@ footer.rodape p{margin:4px 0}
   var k = document.getElementById('kick-t'); if (!k) return;
   var ini = new Date('2026-10-25T17:00:00-03:00').getTime(), fim = new Date('2026-10-26T06:00:00-03:00').getTime(), agora = Date.now();
   k.textContent = agora < ini ? 'domingo, 25/10, a partir das 17h' : agora < fim ? 'apuração ao vivo' : 'resultado do 2º turno';
-})();
-</script>
-<script>
-(function () {
-  'use strict';
-  var TEXTO_VERSAO = 'h1', ENDPOINT = 'api/lead.php';
-  var f = document.getElementById('f'), msg = document.getElementById('msg');
-  // guarda a origem do acesso (UTM / site de referência) só nesta visita, para saber de onde veio o contato
-  var origem = {};
-  try {
-    var q = new URLSearchParams(location.search);
-    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) { if (q.get(k)) origem[k] = q.get(k).slice(0, 80); });
-    if (document.referrer && document.referrer.indexOf(location.origin) !== 0) origem.ref = new URL(document.referrer).hostname;
-  } catch (e) {}
-  // máscara do WhatsApp: (21) 99999-9999
-  var tel = f.telefone;
-  tel.addEventListener('input', function () {
-    var d = tel.value.replace(/\D+/g, '');
-    if (d.indexOf('55') === 0 && d.length > 11) d = d.slice(2);
-    d = d.slice(0, 11);
-    var s = d.length > 10 ? '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7)
-          : d.length > 6 ? '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6)
-          : d.length > 2 ? '(' + d.slice(0, 2) + ') ' + d.slice(2)
-          : d.length ? '(' + d : '';
-    tel.value = s;
-  });
-  function erro(campo, texto) { msg.textContent = texto; if (campo) { campo.setAttribute('aria-invalid', 'true'); campo.focus(); } }
-  Array.prototype.forEach.call(f.elements, function (el) { el.addEventListener('input', function () { el.removeAttribute('aria-invalid'); msg.textContent = ''; }); });
-  f.addEventListener('submit', function (e) {
-    e.preventDefault();
-    if (f.site.value) return;                                   // isca anti-robô
-    msg.textContent = '';
-    var nome = f.nome.value.trim().replace(/\s+/g, ' '), email = f.email.value.trim().toLowerCase(), dig = f.telefone.value.replace(/\D+/g, '');
-    if (nome.length < 3 || nome.indexOf(' ') < 0) return erro(f.nome, 'Informe seu nome completo.');
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return erro(f.email, 'Informe um e-mail válido.');
-    if (dig.length < 10 || dig.length > 11 || /^(\d)\1+$/.test(dig)) return erro(f.telefone, 'Informe o WhatsApp com DDD, por exemplo (21) 99999-9999.');
-    if (!f.c_contato.checked) return erro(f.c_contato, 'Para se cadastrar, marque a caixa de autorização para receber nossas mensagens.');
-    var bt = f.querySelector('.enviar'); bt.disabled = true; bt.textContent = 'Enviando…';
-    var corpo = { formulario: 'home', nome: nome, email: email, telefone: dig, consentimento_contato: true, texto_versao: TEXTO_VERSAO, pagina: 'home', origem: origem };
-    fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(corpo) })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { if (!r.ok || !j.ok) throw new Error(j.erro || 'falha'); }); })
-      .then(function () {
-        var ok = document.getElementById('ok');
-        document.getElementById('ok-t').textContent = 'Obrigado, ' + nome.split(' ')[0] + '. Avisaremos você por e-mail e WhatsApp assim que as ferramentas estiverem no ar.';
-        f.hidden = true; ok.hidden = false; ok.focus();
-        try { document.dispatchEvent(new CustomEvent('op:lead')); } catch (e) {}
-      })
-      .catch(function () { bt.disabled = false; bt.textContent = 'Quero ser o primeiro a conhecer'; msg.textContent = 'Não foi possível enviar agora. Tente de novo em instantes.'; });
-  });
 })();
 </script>
 <script type="module">

@@ -53,14 +53,18 @@ if ($acao === 'cadastrar') {
   if (!in_array($canal, canais_ativos(), true)) erro(422, 'canal', $canal === 'whatsapp' ? 'A confirmação por WhatsApp ainda não está disponível. Use o e-mail.' : 'Escolha e-mail ou WhatsApp.');
   if (!$p || $p[0] !== $canal) erro(422, 'contato', $canal === 'email' ? 'Informe um e-mail válido.' : 'Informe um WhatsApp válido, com DDD.');
   senha_valida($j['senha'] ?? null);
+  // WhatsApp opcional (além do contato de confirmação): se vier preenchido, precisa ser um número válido com DDD
+  $tel = ''; $telTxt = trim((string)($j['telefone'] ?? ''));
+  if ($telTxt !== '' && $canal === 'email') { $pt = contato_parse($telTxt); if (!$pt || $pt[0] !== 'whatsapp') erro(422, 'telefone', 'O WhatsApp é opcional, mas precisa ser um número válido com DDD, por exemplo (21) 99999-0000.'); $tel = $pt[1]; }
+  elseif ($canal === 'whatsapp') $tel = $p[1];
   if (empty($j['aceite_mensagens'])) erro(422, 'aceite', 'Para concluir o cadastro é necessário aceitar receber mensagens da Oficina Política.');
   $ex = acha_usuario($j['contato']);
   if ($ex && $ex['status'] === 'ativo') erro(409, 'existe', 'Já existe uma conta com este contato. Entre com sua senha ou use “Esqueci a senha”.');
   $hash = password_hash((string)$j['senha'], PASSWORD_DEFAULT);
   if ($ex) {   // cadastro iniciado e não confirmado: refaz com os dados novos
-    $db->prepare('UPDATE usuarios SET nome=?, senha_hash=?, status=\'pendente\', c_msgs=1, c_ts=?, c_versao=?, c_iph=? WHERE id=?')->execute([$nome, $hash, $agora, OP_TEXTO_VERSAO, $iph, $ex['id']]); $uid = $ex['id'];
+    $db->prepare('UPDATE usuarios SET nome=?, senha_hash=?, status=\'pendente\', c_msgs=1, c_ts=?, c_versao=?, c_iph=?, telefone=CASE WHEN ?<>\'\' THEN ? ELSE telefone END WHERE id=?')->execute([$nome, $hash, $agora, OP_TEXTO_VERSAO, $iph, $tel, $tel, $ex['id']]); $uid = $ex['id'];
   } else {
-    $db->prepare('INSERT INTO usuarios (criado, nome, canal, contato, senha_hash, status, c_msgs, c_ts, c_versao, c_iph) VALUES (?,?,?,?,?,?,?,?,?,?)')->execute([$agora, $nome, $p[0], $p[1], $hash, 'pendente', 1, $agora, OP_TEXTO_VERSAO, $iph]); $uid = (int)$db->lastInsertId();
+    $db->prepare('INSERT INTO usuarios (criado, nome, canal, contato, senha_hash, status, c_msgs, c_ts, c_versao, c_iph, telefone) VALUES (?,?,?,?,?,?,?,?,?,?,?)')->execute([$agora, $nome, $p[0], $p[1], $hash, 'pendente', 1, $agora, OP_TEXTO_VERSAO, $iph, $tel]); $uid = (int)$db->lastInsertId();
   }
   $u = ['id' => $uid, 'canal' => $p[0], 'contato' => $p[1]];
   resposta_envio(emite_codigo($u, 'confirmar'), $u);

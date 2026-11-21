@@ -3,7 +3,7 @@
 import { CONFIG, RAIZ } from './config.js?v=59429884';
 import { esc } from './ui.js?v=59429884';
 import { FERRAMENTAS, novaSessao, graficoHtml, resumo } from './iatools.js?v=59429884';
-import { CONTA, montarConta, atualizarCota, sessaoExpirou } from './conta.js?v=59429884';
+import { CONTA, montarConta, atualizarCota, sessaoExpirou } from './conta.js?v=w2239';
 
 const ENDPOINT = () => (CONFIG.ia?.endpoint ?? (RAIZ + 'api/ia.php'));
 const MAX_PASSOS = 8;
