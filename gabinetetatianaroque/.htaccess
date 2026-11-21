@@ -1,0 +1,16 @@
+# Radar do Gabinete Tatiana Roque (Hostinger, LiteSpeed/Apache)
+Options -Indexes
+DirectoryIndex index.php
+<FilesMatch "^(_.*\.php|.*\.sqlite.*|.*\.log|.*\.lock|.*\.stamp)$">
+Require all denied
+</FilesMatch>
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(dados|cron|tests)(/|$) - [F,L]
+</IfModule>
+<IfModule mod_headers.c>
+Header set X-Robots-Tag "noindex, nofollow"
+<FilesMatch "\.(js|css)$">
+Header set Cache-Control "no-cache"
+</FilesMatch>
+</IfModule>

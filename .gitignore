@@ -13,3 +13,7 @@ radar/dados/*
 radar/tools/_manchetes.json
 radar/tools/_historico.json
 radar/tools/_artigos.json
+
+# Radar do Gabinete Tatiana Roque: dados gerados/sincronizados no servidor (banco, edições vindas do GitHub, logs). A implantação apaga o que não é rastreado nem ignorado.
+gabinetetatianaroque/dados/*
+!gabinetetatianaroque/dados/.htaccess

@@ -1,0 +1,63 @@
+name: Radar do Gabinete Tatiana Roque (leitura dos diários e da Ordem do Dia)
+# Lê o Diário Oficial da Câmara (DCM), o D.O. Rio, a Ordem do Dia e a agenda da Câmara, monta a edição do dia
+# e grava em JSON no branch "gabinete-dados". O site (Hostinger, /gabinetetatianaroque) sincroniza de lá.
+# O coletor é neutro: as listas do mandato (PLs, temas) e as orientações de voto são aplicadas no servidor.
+on:
+  schedule:
+    - cron: '50 8 * * 1-5'      # 05h50 (Brasília): começa a espreitar; repete a cada 5 min até as 09h se ainda não saiu
+    - cron: '30 15 * * 1-5'     # 12h30: reforço (cadernos e suplementos tardios)
+    - cron: '30 21 * * 1-5'     # 18h30: reforço
+    - cron: '50 11 * * 0,6'     # sábado/domingo 08h50: só confere se houve publicação extraordinária
+  workflow_dispatch:
+    inputs:
+      data: { description: 'Data (AAAA-MM-DD); vazio = hoje', required: false, default: '' }
+      poll: { description: 'Esperar a publicação (repete a cada 5 min até as 09h)', required: false, default: 'false' }
+permissions: { contents: write }
+concurrency: { group: gabinete, cancel-in-progress: false }
+jobs:
+  coleta:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env: { TZ: America/Sao_Paulo }
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            scripts/gabinete
+          sparse-checkout-cone-mode: false
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: Dependências
+        run: |
+          python -m pip install --quiet requests beautifulsoup4 lxml
+          command -v pdftotext >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+      - name: Baixar dados já publicados (branch gabinete-dados)
+        run: |
+          rm -rf /tmp/dados && mkdir /tmp/dados && cd /tmp/dados && git init -q -b gabinete-dados
+          git remote add origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git"
+          git fetch -q --depth 1 origin gabinete-dados 2>/dev/null && git checkout -q FETCH_HEAD -- . 2>/dev/null || true
+      - name: Ler os diários, a Ordem do Dia e a agenda
+        env:
+          ENTRADA_DATA: ${{ github.event.inputs.data }}
+          ENTRADA_POLL: ${{ github.event.inputs.poll }}
+          AGENDADO: ${{ github.event.schedule }}
+        run: |
+          ARGS="--saida /tmp/dados"
+          [ -n "$ENTRADA_DATA" ] && ARGS="$ARGS --data $ENTRADA_DATA"
+          # o disparo das 05h50 espera a publicação (poll de 5 em 5 min até 09h); os demais conferem uma vez
+          if [ "$AGENDADO" = "50 8 * * 1-5" ] || [ "$ENTRADA_POLL" = "true" ]; then ARGS="$ARGS --poll --ate 09:00 --intervalo 300"; fi
+          python scripts/gabinete/coleta.py $ARGS 2>&1 | tee /tmp/coleta.log
+      - name: Publicar no branch gabinete-dados
+        run: |
+          cd /tmp/dados
+          git config user.name coletor && git config user.email coletor@users.noreply.github.com
+          cp /tmp/coleta.log ultimo-log.txt
+          git add -A
+          git diff --cached --quiet && { echo "sem mudanças"; exit 0; }
+          git commit -q -m "gabinete $(date -u +%FT%TZ)"
+          for i in 1 2 3 4; do
+            git push -q origin HEAD:gabinete-dados && exit 0
+            git fetch -q origin gabinete-dados && git rebase -q FETCH_HEAD || git rebase --abort
+            sleep 5
+          done
+          git push -q --force origin HEAD:gabinete-dados
