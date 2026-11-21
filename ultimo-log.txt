@@ -1,0 +1,3 @@
+erro na verificação: falha em https://dcmdigital.camara.rj.gov.br/: ('Connection aborted.', ConnectionResetError(104, 'Connection reset by peer'))
+[00:01] DCM: 0 caderno(s); D.O. RIO: 0 edição(ões)
+/tmp/dados/edicoes/2026-11-19.json
