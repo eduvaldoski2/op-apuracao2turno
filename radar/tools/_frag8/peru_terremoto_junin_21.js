@@ -7,7 +7,7 @@ _U('peru_terremoto_junin_21', {hora:'21/11',
  upd:'Entra o primeiro boletim oficial do Indeci, com 15 feridos e 127 casas danificadas, além das novas réplicas neste sábado.',
  fundo:`Um terremoto de magnitude 6,7 na região andina de Junín, no centro do Peru, deixou ao menos 15 feridos e danificou 127 casas, segundo o primeiro boletim oficial do Instituto Nacional de Defesa Civil (Indeci), divulgado neste sábado (21). Onze dos feridos foram registrados na cidade de Junín; os demais, em Huánuco, Lima, Callao e Pasco.
 
-O balanço foi noticiado pela agência AFP e pelo g1.
+O balanço foi noticiado pela agência AFP e pelo g1. Agências internacionais, como a repercutida pelo The Financial Express, de Bangladesh, também registraram o abalo de magnitude 6,7 no centro do Peru.
 
 ## O abalo e o balanço
 
@@ -26,4 +26,4 @@ O Peru está no Cinturão de Fogo do Pacífico, zona de grande atividade sísmic
 O Indeci deve atualizar o número de feridos e de imóveis afetados nos próximos dias, e as autoridades locais avaliam a segurança das construções danificadas. O que ainda não está confirmado é se houve vítimas fatais ou danos nas operações de mineração da região.
 
 NUMS 6,7|magnitude (USGS);15|feridos, segundo o Indeci;127|casas danificadas;~400|tremores anuais acima de 4,0 no Peru`,
- fontes:[['g1 (balanço do Indeci, via AFP)','https://g1.globo.com/mundo/noticia/2026/11/21/terremoto-de-magnitude-67-deixou-15-feridos-no-peru-e-danificou-127-casas.ghtml'],['Agência Brasil','https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/terremoto-de-magnitude-68-graus-atinge-o-peru'],['g1 Acre','https://g1.globo.com/ac/acre/noticia/2026/11/21/pensei-que-eu-ia-cair-diz-moradora-do-ac-apos-sentir-terremoto-no-peru.ghtml'],['Jornal Opção','https://www.jornalopcao.com.br/ultimas-noticias/terremoto-de-magnitude-67-deixa-15-feridos-e-danifica-mais-de-100-imoveis-no-peru-898829/'],['CartaCapital','https://www.cartacapital.com.br/mundo/terremoto-de-magnitude-67-deixa-15-feridos-no-peru/']]});
+ fontes:[['The Financial Express (Bangladesh)','https://thefinancialexpress.com.bd/america/magnitude-67-earthquake-strikes-central-peru'],['g1 (balanço do Indeci, via AFP)','https://g1.globo.com/mundo/noticia/2026/11/21/terremoto-de-magnitude-67-deixou-15-feridos-no-peru-e-danificou-127-casas.ghtml'],['Agência Brasil','https://agenciabrasil.ebc.com.br/internacional/noticia/2026-11/terremoto-de-magnitude-68-graus-atinge-o-peru'],['g1 Acre','https://g1.globo.com/ac/acre/noticia/2026/11/21/pensei-que-eu-ia-cair-diz-moradora-do-ac-apos-sentir-terremoto-no-peru.ghtml'],['Jornal Opção','https://www.jornalopcao.com.br/ultimas-noticias/terremoto-de-magnitude-67-deixa-15-feridos-e-danifica-mais-de-100-imoveis-no-peru-898829/'],['CartaCapital','https://www.cartacapital.com.br/mundo/terremoto-de-magnitude-67-deixa-15-feridos-no-peru/']]});

@@ -11,15 +11,21 @@ O valor captado consta do Correio Braziliense, e a queda de sexta foi apurada pe
 
 ## A estreia e a queda
 
-As ações começaram a ser negociadas com alta de 34% em relação ao preço da oferta, de US$ 83, e depois recuaram de US$ 111,50 para cerca de US$ 100, descreve a BBC. O preço da oferta avaliou a empresa em cerca de US$ 1,5 trilhão e a colocou na sexta posição entre as companhias mais valiosas do mundo, segundo o g1. Na sexta, a queda de 8,5% veio no mesmo dia em que a Nvidia, fabricante de chips para IA, também recuou e puxou uma onda global de aversão a risco.
+As ações começaram a ser negociadas com alta de 34% em relação ao preço da oferta, de US$ 83, e depois recuaram de US$ 111,50 para cerca de US$ 100, descreve a BBC. O preço da oferta avaliou a empresa em cerca de US$ 1,5 trilhão e a colocou na sexta posição entre as companhias mais valiosas do mundo, segundo o g1. O Valor Econômico informa que a queda de 8,5% de sexta veio no mesmo dia em que a Nvidia, fabricante de chips para IA, também recuou e puxou uma onda global de aversão a risco.
+
+Num IPO, a empresa vende ações ao público pela primeira vez e o preço da oferta é fixado antes da abertura, a partir da procura de grandes investidores. A abertura acima do preço indica que o mercado pagou mais do que o fixado pelos bancos coordenadores, e o recuo posterior mostra que parte dos compradores realizou lucros ou reavaliou o valor da companhia depois do primeiro impulso.
 
 ## A semana de Wall Street
 
-A Exame informa que o Nasdaq 100, índice das maiores empresas de tecnologia da bolsa, caiu 10% na semana, o pior desempenho desde março de 2020, e que o S&P 500, principal índice da bolsa americana, entrou em correção, com recuo de 12% desde o recorde de outubro. A queda de 5,28% do Nasdaq na sexta e a avaliação do Goldman Sachs de que as perdas podem continuar já constavam da cobertura de sexta. Nem a estreia da Anthropic, que o mercado esperava como sinal de apetite por IA, segurou o setor.
+A Exame informa que o Nasdaq 100, índice das maiores empresas de tecnologia da bolsa, caiu 10% na semana, o pior desempenho desde março de 2020, e que o S&P 500, principal índice da bolsa americana, entrou em correção, com recuo de 12% desde o recorde de outubro. Em linguagem de mercado, correção é uma queda de 10% ou mais a partir do pico. A queda de 5,28% do Nasdaq na sexta e a avaliação do Goldman Sachs de que as perdas podem continuar já constavam da cobertura do dia. Nem a estreia da Anthropic, que o mercado esperava como sinal de apetite por IA, segurou o setor.
+
+A coincidência entre a maior abertura de capital da história e a pior semana da tecnologia em mais de cinco anos reacendeu a discussão sobre uma possível bolha de IA, ou seja, a hipótese de que os preços das empresas do setor estejam acima do que seus lucros futuros justificam. O Valor Econômico apresentou o debate, que opõe analistas que veem na queda um ajuste normal depois de uma alta forte e os que enxergam sinal de esgotamento do ciclo de investimentos em inteligência artificial.
 
 ## Fortunas, protesto e rivalidade
 
-A oferta rendeu ganhos a investidores de capital de risco do Vale do Silício e a funcionários antigos da empresa, relata a Folha, que também registra que cerca de cem pessoas protestaram na quinta-feira (19), sob chuva, em frente aos escritórios da Anthropic em São Francisco, no dia da estreia. O g1 lembra que a abertura de capital se tornou símbolo da rivalidade entre Dario Amodei, presidente-executivo da Anthropic, e Sam Altman, da OpenAI, concorrente que também disputa o mercado de modelos de IA.
+A oferta rendeu ganhos a investidores de capital de risco do Vale do Silício e a funcionários antigos da empresa, relata a Folha, que também registra que cerca de cem pessoas protestaram na quinta-feira (19), sob chuva, em frente aos escritórios da Anthropic em São Francisco, no dia da estreia. Os manifestantes criticaram a empresa e a corrida por modelos de IA cada vez mais potentes. O g1 lembra que a abertura de capital se tornou símbolo da rivalidade entre Dario Amodei, presidente-executivo da Anthropic, e Sam Altman, da OpenAI, concorrente que também disputa o mercado de modelos de IA.
+
+Para o investidor comum, a oscilação inicial mostra o risco de comprar ações de uma empresa recém-listada, ainda sem histórico de balanços trimestrais públicos. A Anthropic passa a prestar contas a acionistas e ao mercado a cada trimestre, e os primeiros resultados dirão se a receita sustenta a avaliação de cerca de US$ 1,5 trilhão, valor equivalente a um país de economia grande.
 
 ## O que vem agora
 

@@ -3,7 +3,9 @@ _N('mlambo_ngcuka_morte_21', {ed:'mundo', k:'Mundo · África do Sul · Obituár
  t:'Morre Phumzile Mlambo-Ngcuka, primeira mulher vice-presidente da África do Sul e ex-chefe da ONU Mulheres',
  sub:'Ela tinha 71 anos e morreu na sexta (20) por complicações de um procedimento médico feito cerca de duas semanas antes.',
  resumo:'A ex-vice-presidente da África do Sul Phumzile Mlambo-Ngcuka morreu na sexta-feira (20), aos 71 anos, em decorrência de complicações de um procedimento médico realizado cerca de duas semanas antes. Primeira mulher a ocupar o cargo no país, ela depois dirigiu a ONU Mulheres, agência das Nações Unidas para a igualdade de gênero, de 2013 a 2021, e era referência global na pauta de direitos das mulheres.',
- fundo:`A ex-vice-presidente da África do Sul Phumzile Mlambo-Ngcuka morreu na sexta-feira (20), aos 71 anos, em decorrência de complicações de um procedimento médico realizado cerca de duas semanas antes. Ela foi a primeira mulher a ocupar a vice-presidência do país e, depois, a diretora-executiva da ONU Mulheres. A morte foi registrada neste sábado (21) pela Folha de S.Paulo e pelo g1.
+ fundo:`A ex-vice-presidente da África do Sul Phumzile Mlambo-Ngcuka morreu na sexta-feira (20), aos 71 anos, em decorrência de complicações de um procedimento médico realizado cerca de duas semanas antes. Ela foi a primeira mulher a ocupar a vice-presidência do país e, depois, a diretora-executiva da ONU Mulheres. 
+
+A morte foi noticiada neste sábado (21) pela Folha de S.Paulo e pelo g1.
 
 ## Uma carreira de primeiras vezes
 
