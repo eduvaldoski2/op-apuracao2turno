@@ -305,11 +305,12 @@
         "trump_xi_putin_shenzhen_14_11",
         "shenzhen_trilateral_20",
         "polonia_misseis_russos_21",
-        "trilateral_shenzhen_19"
+        "trilateral_shenzhen_19",
+        "ucrania_autoridades_nucleares_rede_eletrica_16_11"
       ],
       "verificada": "2026-11-21-19h",
-      "fato_novo": false,
-      "ultimo_fato": "21/11: cargueiro com destino a Kaliningrado foi atingido por drones no Golfo da Finlândia; ataque russo em Kryvyi Rih matou criança de 7 anos.",
+      "fato_novo": true,
+      "ultimo_fato": "21/11: ataque russo em Kryvyi Rih mata criança; cargueiro com destino a Kaliningrado é atingido por drones no Golfo da Finlândia; Zelensky avalia a cúpula de Shenzhen.",
       "proximo": "Resposta de Moscou e novas rodadas de negociação."
     },
     {
@@ -362,7 +363,7 @@
     {
       "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
       "feita": "2026-11-21-19h",
-      "achado": "Nada novo além dos ataques já registrados."
+      "achado": "Kryvyi Rih, cargueiro no Golfo da Finlândia e avaliação de Zelensky sobre a cúpula de Shenzhen."
     },
     {
       "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",

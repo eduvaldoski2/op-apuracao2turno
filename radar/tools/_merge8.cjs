@@ -1,5 +1,5 @@
 const fs=require('fs');let src=fs.readFileSync('radar/_edicao.php','utf8');
-const dirs=['radar/tools/_frag8/','radar/tools/_frag9/'];
+const dirs=['radar/tools/_frag8/','radar/tools/_frag9/','radar/tools/_frag10/'];
 let code="\n/* ---- Edição 19h 21/11 ---- */\nEDICAO.hora = '19h';\nEDICAO.data = 'Sábado, 21 de novembro de 2026';\n";
 const ord={politica:[],economia:[],mundo:[],regioes:[]};
 for(const d of dirs)for(const f of fs.readdirSync(d).filter(f=>f.endsWith('.js')).sort()){

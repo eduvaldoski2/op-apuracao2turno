@@ -20,8 +20,6 @@ O governo filipino não confirmou as afirmações, e não há texto de acordo pu
 
 
 
-Os próximos passos dependem de Manila: confirmar ou desmentir o acordo e explicar o alcance da salvaguarda. Para o setor suinícola brasileiro, o efeito imediato é a perda temporária de seu maior comprador, e a duração da suspensão, de 60 dias, define quando o tema volta à mesa.
-
-NUMS 22º|Lugar das Filipinas entre os destinos do agro brasileiro;60 dias|Suspensão das importações de carne suína;1º|Maior comprador de carne suína do Brasil`,
+Os próximos passos dependem de Manila: confirmar ou desmentir o acordo e explicar o alcance da salvaguarda. Para o setor suinícola brasileiro, o efeito imediato é a perda temporária de seu maior comprador, e a duração da suspensão, de 60 dias, define quando o tema volta à mesa.`,
  upd:'Entra o dado de que as Filipinas, maiores compradoras de carne suína do Brasil, são só o 22º destino do agro, e o contexto da salvaguarda de 60 dias discutida pelo ministro André de Paula.',
  fontes:[['g1 (Filipinas lideram compra de carne suína, mas são 22º destino do agro)','https://g1.globo.com/economia/agronegocios/noticia/2026/11/20/cobicadas-por-trump-filipinas-lideram-compra-de-carne-suina-do-brasil-mas-sao-22o-destino-das-exportacoes-do-agro.ghtml'],['Diário de Pernambuco (Filipinas suspendem importação de carne suína)','https://www.diariodepernambuco.com.br/economia/2026/11/11728714-filipinas-suspendem-importacao-de-carne-suina-brasileira-por-60-dias.html'],['Acessa (Filipinas suspendem importação de carne suína)','https://www.acessa.com/economia/2026/11/343914-filipinas-suspendem-importacao-de-carne-suina-brasileira-por-60-dias.html'],['ICL Notícias (Lula chega às Filipinas)','https://iclnoticias.com.br/economia/lula-chega-as-filipinas-com-agenda/'],['Legisweb (ministro André de Paula discute salvaguarda)','https://legisweb.com.br/noticia/?id=34844']]});
