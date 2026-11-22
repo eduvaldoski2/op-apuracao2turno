@@ -1,0 +1,33 @@
+// ED: economia
+_U('data_centers_economist_21', {hora:'21/11',
+ t:'Brasil lidera corrida da América Latina por data centers, mas ameaça de Trump de taxar empresas dos EUA que construírem fora do país entra no cálculo dos investimentos',
+ sub:'A Ascenty prepara US$ 1,2 bilhão em Vinhedo (SP) e o governo tem um regime de incentivos em vigor desde setembro; analistas dizem que as big techs não devem deixar de expandir no exterior.',
+ dado:{n:'US$ 1,2 bi', l:'aposta da Ascenty em expansão do campus de Vinhedo (SP), o maior da América Latina, com 61 MW'},
+ resumo:'Uma revista britânica de economia afirma que o Brasil lidera a disputa regional para virar polo de data centers, instalações que abrigam servidores e processam inteligência artificial. A Ascenty prepara US$ 1,2 bilhão em Vinhedo (SP), onde opera o maior complexo da América Latina, de 61 megawatts. Na sexta (20), Donald Trump ameaçou impor um imposto "enorme" a empresas americanas que construírem data centers fora dos EUA, sem detalhar a medida. Gigantes como Alphabet, Oracle e CoreWeave seguem com planos externos.',
+ upd:'Trump ameaçou taxar empresas dos EUA que construam data centers no exterior, e o texto passa a incluir o regime de incentivos do Redata e as reações de analistas e das empresas com projetos fora dos EUA.',
+ fundo:`O Brasil lidera a corrida entre os países da América Latina para se tornar um polo de data centers, as instalações que abrigam servidores, armazenam dados e processam inteligência artificial (IA), segundo reportagem da revista britânica The Economist, reproduzida neste sábado (21) por jornais brasileiros. A tese é que a energia hidrelétrica e solar abundante atrai empresas de tecnologia, mas a expansão ocorre sob a ameaça do presidente americano, Donald Trump, de taxar quem construir fora dos Estados Unidos.
+
+## O campus de Vinhedo
+
+A reportagem abre no maior data center da América Latina, um complexo de 61 megawatts (MW) em Vinhedo, no interior paulista. Há um prédio novo em construção e dois outros podem ser erguidos. A Ascenty, empresa que aluga a estrutura a clientes, trata os projetos como uma aposta de US$ 1,2 bilhão. "Estamos nos preparando para um boom", diz Chris Torto, presidente da empresa, citado pelo Estadão e pela Folha. O título da Folha aponta o horizonte: o crescimento é esperado até 2030, em uma região que há anos fica abaixo do potencial em infraestrutura digital.
+
+## O incentivo brasileiro
+
+O país tem desde setembro um regime próprio para atrair o setor. A lei do Redata, Regime Especial de Tributação para Serviços de Datacenter, foi publicada em 16 de setembro, informa o Senado Notícias. Ela suspende por cinco anos PIS/Cofins, IPI e Imposto de Importação na compra de equipamentos, e o governo estima renúncia de R$ 5,2 bilhões em 2026. Em troca, as empresas precisam usar energia limpa ou renovável em toda a demanda contratada, destinar ao menos 10% da capacidade ao mercado brasileiro e investir 2% do valor dos equipamentos beneficiados no país.
+
+O governo estima que o regime pode atrair de R$ 500 bilhões a R$ 1 trilhão, número descrito pelo Canaltech como potencial, não como valor contratado. Cerca de 60% das cargas digitais brasileiras ainda são processadas fora do país, segundo o Ministério do Desenvolvimento, Indústria, Comércio e Serviços citado pelo mesmo site. Entre os projetos está o data center do TikTok no Complexo do Pecém, no Ceará, que a Veja informa estar ameaçado pelas restrições americanas à exportação de chips.
+
+## A ameaça de Trump
+
+Na sexta-feira (20), em coletiva na Casa Branca, Trump disse que os EUA não permitirão que suas empresas construam data centers fora do país e que cobrarão um "imposto enorme" de quem o fizer, informa a Reuters, em texto republicado pelo Investing.com. Ele não explicou como a medida funcionaria. A Reuters cita a Equinix e a Digital Realty, grandes operadoras americanas com instalações no exterior, entre as empresas que poderiam ser afetadas, e lembra que esses centros costumam ficar perto dos usuários para reduzir a latência, o tempo de resposta.
+
+Parte das gigantes já tem planos fora dos EUA, relata o InvestNews, com base em texto do MarketWatch. A Alphabet, dona do Google, anunciou US$ 15 bilhões em data centers na Malásia para 2027 e 2028, e a CoreWeave, de computação para IA, planeja entrar em mais dez países ou regiões neste ano. A diretora financeira da Oracle, Hilary Maxson, citou a América Latina entre os mercados promissores. O analista Nick Frasse, da gestora VanEck, chamou de "visão de curtíssimo prazo" a ideia de que as empresas deixarão de construir fora, segundo o InvestNews. Esses textos não tratam do Brasil de forma direta.
+
+## Os estados e os vizinhos
+
+Em outros estados, os centros de dados entram na pauta local. A Gazeta do Povo informa que uma nova lei libera incentivos fiscais para atrair grandes operadores ao Paraná, e o Século Diário relata que uma deputada cobra informações sobre o consumo de água de um data center em Baixo Guandu, no Espírito Santo.
+
+## O que vem agora
+
+O governo americano ainda não disse como a ameaça viraria regra, e é essa definição que vai indicar o efeito sobre projetos de empresas dos EUA no Brasil. Também não está confirmado quantos dos projetos anunciados saem do papel até 2030.`,
+ fontes:[['Estadão (The Economist)','https://www.estadao.com.br/economia/the-economist-brasil-lidera-corrida-da-america-latina-para-virar-polo-global-de-data-centers/'],['Folha (mercado)','https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/brasil-lidera-avanco-regional-e-mira-boom-de-data-centers-ate-2030.shtml'],['Reuters (via Investing.com)','https://www.investing.com/news/world-news/trump-says-us-to-penalize-firms-building-data-centers-abroad-5042390'],['InvestNews (MarketWatch)','https://investnews.com.br/negocios/trump-data-centers-big-techs/'],['Senado Notícias (Redata)','https://www12.senado.leg.br/noticias/materias/2026/09/16/sancionada-lei-de-incentivo-para-a-instalacao-de-data-centers'],['Canaltech (Redata)','https://canaltech.com.br/mercado/governo-zera-impostos-de-servidores-para-atrair-r-1-trilhao-em-data-centers/'],['g1 (Trump e data centers)','https://g1.globo.com/mundo/noticia/2026/11/20/trump-diz-que-nao-permitira-que-empresas-construam-data-centers-fora-dos-eua.ghtml'],['Veja','https://veja.abril.com.br/economia/restricoes-dos-eua-a-chips-ameacam-data-center-bilionario-do-tiktok-no-ceara/'],['Gazeta do Povo','https://www.gazetadopovo.com.br/parana/nova-lei-libera-incentivos-fiscais-bilionarios-para-atrair-gigantes-de-data-centers-no-parana/']]});

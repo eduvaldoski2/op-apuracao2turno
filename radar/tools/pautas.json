@@ -16,7 +16,7 @@
         "itaipu_ueno_18",
         "itaipu_diretor_destituido_20"
       ],
-      "verificada": "2026-11-21-19h",
+      "verificada": "2026-11-22-07h",
       "fato_novo": false,
       "ultimo_fato": "20/11: o ex-procurador-geral Emiliano Rolón denunciou perseguição política à ONU; a Conmebol admitiu R$ 88 milhões aplicados no Ueno Bank.",
       "proximo": "Recuperação dos US$ 182 milhões da Itaipu na Justiça paraguaia; indicação do novo diretor paraguaio."
@@ -59,8 +59,8 @@
         "lula_janja_posse_21",
         "veja_lula_terceiriza_ajuste_21"
       ],
-      "verificada": "2026-11-21-19h",
-      "fato_novo": true,
+      "verificada": "2026-11-22-07h",
+      "fato_novo": false,
       "ultimo_fato": "21/11: em live com Janones, Lula diz que Janja coordena a posse de 5 de janeiro e que os ministérios não têm pressa; bastidor da Veja aponta que ele delegou a negociação do ajuste.",
       "proximo": "Anúncio dos primeiros ministros até o início de dezembro."
     },
@@ -77,7 +77,7 @@
         "dallagnol_tse_pauta",
         "toffoli_contas_campanha_lula_14_11"
       ],
-      "verificada": "2026-11-21-19h",
+      "verificada": "2026-11-22-07h",
       "fato_novo": false,
       "ultimo_fato": "Nada novo nesta passada além do que estava na pauta.",
       "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
@@ -99,7 +99,7 @@
         "pl_flavio_motta_consulta_121_deputados_17_11",
         "rockbridge_flavio_pf_18"
       ],
-      "verificada": "2026-11-21-19h",
+      "verificada": "2026-11-22-07h",
       "fato_novo": false,
       "ultimo_fato": "20/11: Moraes votou para manter Flávio sem passaportes e proibido de contatar Willer Tomaz; o senador deixou o país em 27/10 e o julgamento virtual segue até 30/11.",
       "proximo": "Votos dos três ministros que faltam na Primeira Turma até 30/11."
@@ -141,9 +141,9 @@
         "alcolumbre_motta_reeleicao_dosimetria_21",
         "ajuste_fiscal_lula_nao_reforma_21"
       ],
-      "verificada": "2026-11-21-19h",
+      "verificada": "2026-11-22-07h",
       "fato_novo": true,
-      "ultimo_fato": "21/11: Lula rebate esquerda e Faria Lima e defende o ajuste; a Câmara vota o texto na segunda (23).",
+      "ultimo_fato": "22/11: governo avalia projeto próprio sobre supersalários; Lula defende o ajuste e a Câmara vota o texto na segunda (23).",
       "proximo": "Votação do ajuste fiscal na Câmara na próxima semana."
     },
     {
@@ -168,11 +168,12 @@
         "mendonca_relatorio_20",
         "pgr_nucleo_relatorios_ministros_stf_21",
         "galipolo_20",
-        "gilmar_sigilo_relatorios_stf_21"
+        "gilmar_sigilo_relatorios_stf_21",
+        "galipolo_pf_vorcaro_20"
       ],
-      "verificada": "2026-11-21-19h",
+      "verificada": "2026-11-22-07h",
       "fato_novo": true,
-      "ultimo_fato": "21/11: Gilmar diz não ver problema em abrir o sigilo dos relatórios da PF e quer o caso Master no plenário.",
+      "ultimo_fato": "21/11: Galípolo disse à PF que informações do BC vazavam para o Master; Gilmar quer o caso no plenário do STF.",
       "proximo": "Análise da PGR (núcleo de Gonet) sobre os relatórios da PF."
     },
     {
@@ -189,9 +190,9 @@
         "escala_6x1_20",
         "hora_extra_divisor_21"
       ],
-      "verificada": "2026-11-21-19h",
+      "verificada": "2026-11-22-07h",
       "fato_novo": true,
-      "ultimo_fato": "21/11: decreto deixa brechas e senadores ainda defendem PEC; MTE publica a primeira portaria na segunda (23).",
+      "ultimo_fato": "22/11: decreto muda o divisor da hora extra, que fica 4,8% mais cara a partir de 16/12; empresas pedem prazo.",
       "proximo": "Primeira portaria do MTE na segunda (23/11); possível judicialização."
     },
     {
@@ -257,11 +258,13 @@
         "anthropic_ipo_20",
         "nasdaq_pior_semana_2020_21",
         "trump_data_centers_exterior_21",
-        "data_centers_economist_21"
+        "data_centers_economist_21",
+        "agenda_economica_semana_23_11",
+        "hora_extra_divisor_21"
       ],
-      "verificada": "2026-11-21-19h",
+      "verificada": "2026-11-22-07h",
       "fato_novo": true,
-      "ultimo_fato": "21/11: Anthropic cai 8,5% no segundo dia e a Nasdaq tem a pior semana desde 2020; Lula critica a Faria Lima.",
+      "ultimo_fato": "22/11: semana começa com o ajuste fiscal na Câmara (23), Focus, IPCA-15 (26) e PNAD (27); Selic em 13,75%.",
       "proximo": "Votação do ajuste na Câmara; negociação do orçamento da UE até o fim do ano."
     },
     {
@@ -280,7 +283,7 @@
         "alasca_peltola_18",
         "jeffries_20"
       ],
-      "verificada": "2026-11-21-19h",
+      "verificada": "2026-11-22-07h",
       "fato_novo": false,
       "ultimo_fato": "18/11: os democratas indicaram por unanimidade Hakeem Jeffries para a presidência da Câmara; Mary Peltola venceu no Alasca e garantiu maioria de 56 a 44 no Senado.",
       "proximo": "Posse da nova legislatura e eleição do speaker em plenário."
@@ -308,8 +311,8 @@
         "trilateral_shenzhen_19",
         "ucrania_autoridades_nucleares_rede_eletrica_16_11"
       ],
-      "verificada": "2026-11-21-19h",
-      "fato_novo": true,
+      "verificada": "2026-11-22-07h",
+      "fato_novo": false,
       "ultimo_fato": "21/11: ataque russo em Kryvyi Rih mata criança; cargueiro com destino a Kaliningrado é atingido por drones no Golfo da Finlândia; Zelensky avalia a cúpula de Shenzhen.",
       "proximo": "Resposta de Moscou e novas rodadas de negociação."
     },
@@ -324,10 +327,10 @@
         "israel_oposicao_acusa_netanyahu_golpe_16_11",
         "israel_coalizao_20"
       ],
-      "verificada": "2026-11-21-19h",
-      "fato_novo": false,
-      "ultimo_fato": "18/11: Netanyahu admitiu derrota na disputa pela presidência do Knesset; o bloco governista perdeu a maioria e a formação de coalizão segue em aberto.",
-      "proximo": "Negociação entre as bancadas para a formação de governo; data ainda não definida."
+      "verificada": "2026-11-22-07h",
+      "fato_novo": true,
+      "ultimo_fato": "21/11: Eisenkot convidou o Likud a negociar coalizão, com conversas a partir de domingo (22) e prazo até 6/12.",
+      "proximo": "Negociação entre Yashar e Likud a partir de 22/11."
     },
     {
       "id": "ira-oriente-medio",
@@ -343,7 +346,7 @@
         "ira_nega_ataque_washington_17_11",
         "houthis_pif_tower_20"
       ],
-      "verificada": "2026-11-21-19h",
+      "verificada": "2026-11-22-07h",
       "fato_novo": false,
       "ultimo_fato": "20/11: ataque dos houthis atingiu a PIF Tower, em Riad, na quinta (19), e fechou o distrito financeiro da capital saudita.",
       "proximo": "Resposta de Riad e reação das companhias aéreas."
@@ -352,63 +355,63 @@
   "varredura": [
     {
       "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-      "feita": "2026-11-21-19h",
-      "achado": "Cabo Verde reelege Neves; morre a ex-vice-presidente sul-africana Mlambo-Ngcuka; nada sobre queda de chefe de Estado."
+      "feita": "2026-11-22-07h",
+      "achado": "nada sobre queda ou prisão de chefe de Estado; México prende El Chapo Isidro em Sinaloa."
     },
     {
       "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-      "feita": "2026-11-21-19h",
-      "achado": "Peru: balanço do terremoto de Junín (15 feridos); Paraguai sem fato novo."
+      "feita": "2026-11-22-07h",
+      "achado": "Chile: acusação constitucional contra o ministro da Justiça; Nicarágua barra retorno de exilados; Peru sem fato novo."
     },
     {
       "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-      "feita": "2026-11-21-19h",
-      "achado": "Kryvyi Rih, cargueiro no Golfo da Finlândia e avaliação de Zelensky sobre a cúpula de Shenzhen."
+      "feita": "2026-11-22-07h",
+      "achado": "Israel: Eisenkot convida o Likud; Ucrânia sem fato novo além da edição anterior."
     },
     {
       "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-      "feita": "2026-11-21-19h",
-      "achado": "UE e Indonésia assinam acordo comercial; protestos de custo de vida na Europa."
+      "feita": "2026-11-22-07h",
+      "achado": "Protestos de jovens na Europa e proposta da UE de imposto de 3% sobre big techs."
     },
     {
       "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-      "feita": "2026-11-21-19h",
-      "achado": "Anthropic cai 8,5% no 2º dia; Nasdaq com pior semana desde 2020."
+      "feita": "2026-11-22-07h",
+      "achado": "Nada novo nos bancos centrais; agenda da semana e ameaça de Trump sobre data centers."
     },
     {
       "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-      "feita": "2026-11-21-19h",
-      "achado": "Lula em live: Janja coordena a posse; crítica à Faria Lima e à ala da esquerda."
+      "feita": "2026-11-22-07h",
+      "achado": "Governo avalia projeto sobre supersalários; Lula defende o ajuste."
     },
     {
       "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-      "feita": "2026-11-21-19h",
-      "achado": "Câmara vota o ajuste fiscal na segunda (23)."
+      "feita": "2026-11-22-07h",
+      "achado": "Câmara vota o ajuste na segunda (23); Senado articula resolução sobre violência política de gênero."
     },
     {
       "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-      "feita": "2026-11-21-19h",
-      "achado": "Gilmar quer o caso Master no plenário do STF."
+      "feita": "2026-11-22-07h",
+      "achado": "Zanin suspende congresso do Cidadania; Van Hattem; Moraes e visitas a Bolsonaro; Galípolo à PF."
     },
     {
       "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-      "feita": "2026-11-21-19h",
-      "achado": "Sem pesquisa nova relevante."
+      "feita": "2026-11-22-07h",
+      "achado": "Cidadania e a incorporação ao PP; nenhuma pesquisa nova."
     },
     {
       "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-      "feita": "2026-11-21-19h",
-      "achado": "iFood confirma invasão; Brasil lidera corrida por data centers na América Latina."
+      "feita": "2026-11-22-07h",
+      "achado": "Agenda da semana; Selic em 13,75%; hora extra e 6x1."
     },
     {
       "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-      "feita": "2026-11-21-19h",
-      "achado": "PR: tornados F1; BA: resgate na Chapada; CE: Crateús; GO: Rio Verde; SP: blackface em Leme; MG: ônibus incendiado em BH; RJ: júri Kathlen."
+      "feita": "2026-11-22-07h",
+      "achado": "Matérias em RJ, SP, MG, NE, Sul, Norte e CO."
     },
     {
       "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-      "feita": "2026-11-21-19h",
-      "achado": "Verificadas; fato novo em transição, Congresso, segurança, 6x1 e economia."
+      "feita": "2026-11-22-07h",
+      "achado": "Pautas P0/P1 verificadas; fato novo em ajuste, Master, 6x1, mercado e Israel."
     }
   ]
 }
