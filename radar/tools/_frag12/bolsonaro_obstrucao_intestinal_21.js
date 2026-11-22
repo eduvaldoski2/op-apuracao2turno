@@ -27,6 +27,8 @@ A defesa pediu com urgência que os familiares pudessem acompanhá-lo, e Moraes 
 
 Na mesma semana, Moraes liberou para o plenário virtual do STF, de 4 a 15 de dezembro, as ações que contestam a Lei da Dosimetria. O texto, aprovado pelo Congresso, reduz as penas dos envolvidos nos ataques de 8 de Janeiro e pode beneficiar Bolsonaro, informa o Estadão. O pedido para pautar o tema ainda neste ano partiu dos presidentes da Câmara, Hugo Motta (Republicanos-PB), e do Senado, Davi Alcolumbre (União Brasil-AP).
 
+Até que o hospital divulgue novo boletim, o quadro oficial é o descrito no último: estável, sem cirurgia e sem previsão de alta. É esse documento, e não os relatos de familiares, que serve de base para qualquer decisão sobre a permanência do ex-presidente no hospital e sobre as condições de sua prisão domiciliar durante a internação.
+
 ## O que vem agora
 
 O resultado do raio X com contraste e o próximo boletim vão indicar se o tratamento clínico basta. Sem alta, a prisão domiciliar com tornozeleira segue suspensa.

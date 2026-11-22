@@ -12,7 +12,7 @@ Os democratas já tinham passado dos 218 votos necessários para a maioria na ma
 
 A DW Brasil, braço brasileiro da emissora pública alemã, descreve o resultado como o melhor desde a vitória de Clinton, e a agência de notícias Associated Press, citada pela Folha, atribui a onda à alta dos preços e ao segundo mandato conturbado de Trump. Os democratas também controlam o Senado, o que cria um governo dividido: o Congresso é democrata, e a Casa Branca, republicana.
 
-## O que falta definir e o que os democratas prometem
+## As disputas restantes e as promessas dos democratas
 
 Ainda restam quatro disputas indefinidas: uma em Minnesota, uma no Tennessee e duas na Louisiana, que serão decididas em segundo turno em dezembro. A NPR calcula que os democratas chegariam a 260 cadeiras, o maior número desde o Congresso de 1991 a 1993, se vencessem todas as corridas em que lideram.
 

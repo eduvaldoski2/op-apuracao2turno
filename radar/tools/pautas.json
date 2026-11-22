@@ -17,9 +17,9 @@
     "itaipu_diretor_destituido_20"
    ],
    "verificada": "2026-11-22-19h",
-   "fato_novo": false,
-   "ultimo_fato": "20/11: o ex-procurador-geral Emiliano Rolón denunciou perseguição política à ONU; a Conmebol admitiu R$ 88 milhões aplicados no Ueno Bank.",
-   "proximo": "Recuperação dos US$ 182 milhões da Itaipu na Justiça paraguaia; indicação do novo diretor paraguaio."
+   "fato_novo": true,
+   "ultimo_fato": "22/11: o novo diretor paraguaio de Itaipu assinou resolução que habilitou o Ueno Bank (itaipu_diretor_destituido_20).",
+   "proximo": "Recuperação dos US$ 182 milhões da Itaipu na Justiça paraguaia."
   },
   {
    "id": "transicao-lula",
@@ -60,9 +60,9 @@
     "veja_lula_terceiriza_ajuste_21"
    ],
    "verificada": "2026-11-22-19h",
-   "fato_novo": false,
-   "ultimo_fato": "21/11: em live com Janones, Lula diz que Janja coordena a posse de 5 de janeiro e que os ministérios não têm pressa; bastidor da Veja aponta que ele delegou a negociação do ajuste.",
-   "proximo": "Anúncio dos primeiros ministros até o início de dezembro."
+   "fato_novo": true,
+   "ultimo_fato": "21-22/11: em live, Lula diz que escolhe ministros na hora que quiser; Alcolumbre pede Pacheco no STF e 3 ministérios; a Câmara vota o ajuste fiscal na segunda (23).",
+   "proximo": "Votação do ajuste na Câmara em 23/11 e definição dos ministérios."
   },
   {
    "id": "tse-acoes",
@@ -410,8 +410,8 @@
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-22-07h",
-   "achado": "Pautas P0/P1 verificadas; fato novo em ajuste, Master, 6x1, mercado e Israel."
+   "feita": "2026-11-22-19h",
+   "achado": "Paraguai: novo diretor paraguaio de Itaipu assinou a resolução que habilitou o Ueno Bank; Lula: live de 21/11 e votação do ajuste na Câmara em 23/11; demais pautas sem fato novo nas capas."
   }
  ]
 }

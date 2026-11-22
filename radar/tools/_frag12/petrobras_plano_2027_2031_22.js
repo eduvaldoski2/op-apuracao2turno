@@ -18,6 +18,8 @@ A presidente da Petrobras, Magda Chambriard, disse em setembro, na abertura da f
 
 O desafio é de escala. Pelas contas citadas pelo Estadão, a Empresa de Pesquisa Energética (EPE, órgão de planejamento do governo) projeta consumo de diesel 19% maior em dez anos, enquanto a oferta das refinarias da Petrobras deve crescer 13%. A expansão do refino depende do segundo trem da Refinaria Abreu e Lima (Rnest), em Pernambuco, e de novas unidades do Complexo de Energias Boaventura, no Rio de Janeiro.
 
+A apresentação de segunda é acompanhada de perto porque a Petrobras é a maior empresa do país e a União é sua acionista controladora. O tamanho dos investimentos, os dividendos e a política de preços dos combustíveis afetam as contas públicas, a inflação e o debate sobre o papel da estatal no governo Lula.
+
 ## O que vem agora
 
 O plano será apresentado na segunda (23), depois da aprovação do Conselho. O mercado vai comparar o valor total com os US$ 109 bilhões do ciclo atual, a divisão entre exploração, refino e energias de baixo carbono, a trajetória de produção, hoje com pico de 3,4 milhões de barris de óleo equivalente por dia previsto para 2028 e 2029, e a política de dividendos.

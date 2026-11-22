@@ -12,7 +12,7 @@ Os sites falsos copiam logotipos e fotos de produtos, às vezes com endereços e
 
 Há também a "maquiagem de preços": a loja eleva o valor antes de anunciar o "desconto". No exemplo da IstoÉ, um item de R$ 2.000 vai a R$ 2.800 e depois é oferecido por R$ 2.100, ainda acima do preço original. A Senacon, Secretaria Nacional do Consumidor, do Ministério da Justiça, orienta comparar preços antes da promoção, consultar a reputação da empresa em canais oficiais, conferir o CNPJ e desconfiar de ofertas muito abaixo do mercado.
 
-## O que os números mostram
+## A dimensão das fraudes
 
 Na Black Friday de 2024, a Serasa Experian barrou 32,4 mil tentativas de fraude, que poderiam causar R$ 51,8 milhões em prejuízo, segundo levantamento divulgado pelo SBT News. As tentativas dobraram entre a meia-noite e as 2h, quando há menos pedidos, e chegaram a 2% dos pedidos às 3h, o dobro da média do dia. O Pix, que não tem os mesmos filtros antifraude do cartão de crédito, respondeu por 570 mil pedidos.
 
