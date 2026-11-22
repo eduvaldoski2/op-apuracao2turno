@@ -16,6 +16,7 @@ for(const k in ord){const top=pri[k].filter(i=>ord[k].includes(i)).concat(ord[k]
 code+="HOME_LEAD = 'bolsonaro_obstrucao_intestinal_21';\nHOME_ROW = ['flavio_fox_news_sem_provas_22','cop31_impasse_fosseis_21','lula_volta_giro_agenda_16_11'];\n";
 const giro=novas.filter(([i,o])=>o.fontes&&o.fontes[0]&&o.fontes[0][1]).map(([i,o])=>{const s=o.sub||'';return [o.t.length>90?o.t.slice(0,88).replace(/\s+\S*$/,'')+'…':o.t, s.length>170?s.slice(0,168).replace(/\s+\S*$/,'')+'…':s, o.fontes[0][0].replace(/\s*\(.*$/,''), o.fontes[0][1],'',i];});
 code+="GIRO = "+JSON.stringify(giro.slice(0,14))+".concat(GIRO).slice(0,20);\n";
+code+=JSON.stringify(JSON.parse(fs.readFileSync('radar/tools/_aposentar12.json','utf8')))+".map(function(i){return [i,S[i]];}).filter(function(x){var a=x[1];return a && !a.velha && a.reg!=='sul' && parseInt(String(a.hora||'99').split('/')[0],10)<=19;}).sort(function(p,q){return parseInt(p[1].hora,10)-parseInt(q[1].hora,10);}).slice(0,79).forEach(function(x){ x[1].velha=true; x[1].velhaMotivo='sem desdobramento novo desde '+x[1].hora; });\n";
 code+="AMANHA = "+fs.readFileSync('radar/tools/_amanha.json','utf8')+";\n";
 fs.writeFileSync('radar/_edicao.php',src.replace(/\s*$/,'\n')+code);
 console.log(JSON.stringify(ord),giro.length);
