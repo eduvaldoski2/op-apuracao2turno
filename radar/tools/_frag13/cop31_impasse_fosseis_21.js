@@ -1,0 +1,37 @@
+// ED: mundo
+_U('cop31_impasse_fosseis_21', {hora:'22/11',
+ t:'COP31 termina sem acordo em Antália: impasse sobre combustíveis fósseis e financiamento derruba o texto final, e é a primeira conferência do clima sem consenso desde 2009',
+ sub:'O secretário-geral da ONU, António Guterres, falou em "profunda frustração"; a delegação brasileira criticou a falta de ambição e disse que o texto deixou de fora países em desenvolvimento e propostas do Brasil.',
+ dado:{n:'1ª desde 2009', l:'vez em que uma COP termina sem acordo por consenso; a de Antália foi a mais longa da história, com dois dias de prorrogação'},
+ resumo:'A 31ª Conferência do Clima da ONU terminou neste domingo (22), em Antália, na Turquia, sem decisão final. A União Europeia, as nações insulares do Pacífico e outros grupos rejeitaram o texto das presidências turca e australiana, que não citava os combustíveis fósseis, e o presidente Murat Kurum disse que não haveria nova versão. É a primeira COP sem consenso desde Copenhague, em 2009. Guterres lamentou o resultado e o Brasil criticou a falta de ambição e a exclusão de países em desenvolvimento.',
+ upd:'A COP31 terminou sem acordo no domingo (22): a UE e as ilhas do Pacífico rejeitaram o texto sem menção aos fósseis, Guterres lamentou o resultado e a delegação brasileira criticou a falta de ambição e a exclusão de países em desenvolvimento.',
+ fundo:`A 31ª Conferência das Nações Unidas sobre Mudança do Clima (COP31) terminou neste domingo (22), em Antália, na Turquia, sem aprovar um documento final. A União Europeia, as nações insulares do Pacífico e outros grupos rejeitaram a proposta das presidências turca e australiana porque ela não citava os combustíveis fósseis, principal causa do aquecimento global, e o impasse sobre o financiamento climático também ficou sem solução. É a primeira conferência do clima da ONU sem acordo por consenso desde Copenhague, em 2009, e a mais longa já realizada.
+
+## O texto rejeitado
+
+Em acordos da ONU sobre o clima, a decisão final precisa de consenso, o que dá a cada um dos quase 200 países o poder de barrar o documento. A proposta final, chamada de Pacto de Antália, reconhecia pela primeira vez que o aquecimento caminha para ultrapassar 1,5°C e pedia o desenvolvimento mais rápido de tecnologias de remoção de carbono para reverter o excesso ao longo do tempo, informa a Al Jazeera. Não mencionava os fósseis e apenas citava o acordo da COP28, em Dubai, em 2023, quando os países falaram em se afastar gradualmente de carvão, petróleo e gás.
+
+O rascunho de abertura, divulgado pela presidência na segunda-feira (16), pedia uma saída acelerada dos fósseis. Na quinta (19), a versão enxuta retirou todas as menções depois de objeções da Arábia Saudita e de outros grandes produtores de petróleo e gás, segundo a Al Jazeera. Também ficou de fora o roteiro global para a transição, o chamado mapa do caminho, que o Brasil apresentou na COP30, em Belém, em 2025, informa a Itatiaia. O documento mantinha a meta turca de elevar a eletricidade a 35% do consumo mundial de energia em 2035, ante cerca de 23% hoje, e, em financiamento, a Al Jazeera diz que a versão revista abandonou a referência de US$ 120 bilhões para ajudar países pobres a se adaptar, ponto de atrito com as nações em desenvolvimento.
+
+## O fim das negociações
+
+A conferência deveria ter acabado na sexta-feira (20) e foi prorrogada por dois dias, o que a BBC Brasil descreve como a mais longa da história da ONU sobre o clima. Na plenária de encerramento, o presidente da COP31 e ministro do Meio Ambiente da Turquia, Murat Kurum, afirmou: "Reconhecemos que não há consenso sobre este documento", e disse que não haveria novo texto. Ele criticou os países por se fixarem em uma palavra, afirmou que as decisões existentes serão implementadas e deixou o palco enquanto as delegações falavam, relata a Itatiaia.
+
+O ministro do Clima e da Energia da Austrália, Chris Bowen, que conduz as negociações com a Turquia, chamou o resultado de "muito decepcionante" e citou como avanço um compromisso de eletrificação assinado por mais de 90 países. O ministro do Clima da Irlanda, Darragh O'Brien, que fala pela União Europeia, disse que o pacto "não está à altura do momento", e a ministra francesa Monique Barbut chamou a proposta de retrocesso. A Rússia e a Arábia Saudita defenderam deixar a palavra de fora, e a Rússia afirmou que não aceitaria nenhuma formulação sobre combustíveis fósseis.
+
+## As reações
+
+Guterres disse estar "profundamente decepcionado" por a COP31 ter acabado sem consenso e que os interesses que lucram com a destruição do planeta não devem ditar os termos da luta para salvá-lo, de acordo com a Al Jazeera e o Brasil de Fato. As ilhas Marshall disseram ter sido deixadas na mão por todos os lados, Vanuatu chamou o silêncio sobre os fósseis de "inaceitável" e o Quênia reclamou que o acordo não tratava das necessidades da África. O Greenpeace Brasil classificou o resultado como decepcionante, e o diretor de um centro de estudos africano, Mohamed Adow, chamou a COP31 de "a pior de todos os tempos".
+
+A delegação brasileira lamentou a falta de consenso, criticou a falta de ambição e falou em exclusão de países em desenvolvimento e de propostas do Brasil, segundo a Terra e a BBC Brasil. A negociadora Liliam Chagas disse à CNN Brasil que não é correto dizer que a conferência fracassou, porque o processo multilateral continua e outras decisões foram tomadas, informa a Itatiaia. O Valor lembra que o encontro de Donald Trump, Xi Jinping e Vladimir Putin na China, na quinta, que acertou aumentar a oferta de derivados de petróleo, atingiu a conferência.
+
+## O que vem agora
+
+Os órgãos técnicos da convenção voltam a se reunir em Bonn, na Alemanha, em junho de 2027, e as negociações seguem na COP32. Os compromissos de conferências anteriores continuam valendo.
+
+## O que ainda não está confirmado
+
+Não há calendário para retomar o texto de Antália nem definição de como o financiamento de adaptação e a transição dos fósseis serão tratados até a próxima conferência.
+
+NUMS 1ª|COP sem acordo desde Copenhague, em 2009;2 dias|de prorrogação além de sexta (20);35%|meta turca de eletricidade no consumo de energia em 2035;90+|países no compromisso de eletrificação`,
+ fontes:[['Al Jazeera (reações ao colapso)','https://www.aljazeera.com/news/2026/11/22/countries-react-after-cop31-climate-talks-end-in-collapse'],['Al Jazeera (UE rejeita acordo sem fósseis)','https://www.aljazeera.com/news/2026/11/22/fossil-fuel-impasse-pushes-cop31-climate-talks-into-second-day-of-overtime'],['BBC Brasil','https://www.bbc.com/portuguese/articles/cq742zpk1ln4o'],['Agência Brasil (impasse sobre fósseis)','https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-11/com-impasse-sobre-combustiveis-fosseis-cop31-termina-sem-acordo-final'],['Valor Econômico (impasses sobre fósseis e financiamento)','https://valor.globo.com/mundo/noticia/2026/11/22/negociaes-climticas-devem-fracassar-e-cop31-deve-ficar-sem-acordo-final.ghtml'],['Brasil de Fato (Guterres)','https://www.brasildefato.com.br/2026/11/22/secretario-geral-da-onu-critica-fracasso-da-cop31-apos-encerramento-sem-acordo/'],['Terra (delegação brasileira)','https://www.terra.com.br/planeta/videos/apos-fracasso-da-cop31-delegacao-brasileira-critica-falta-de-ambicao-e-fala-em-exclusao,769fe94439129d574f3a91fd274d548950vsusln.html'],['Itatiaia (Chagas e plenária)','https://www.itatiaia.com.br/mundo/cop31-turquia-termina-sem-acordo-principal-negociacoes-tensas/']]});

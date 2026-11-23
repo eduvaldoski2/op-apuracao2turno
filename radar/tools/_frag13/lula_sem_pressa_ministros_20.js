@@ -1,0 +1,33 @@
+// ED: politica
+_U('lula_sem_pressa_ministros_20', {hora:'23/11',
+ t:'Lula ainda não definiu o ministro da Fazenda e deixa o anúncio da equipe para dezembro; reunião com Alcolumbre segue sem data',
+ sub:'O Planalto quer primeiro acomodar o Centrão e o presidente do Senado insiste em Rodrigo Pacheco para o Supremo e em três ministérios para o União Brasil.',
+ dado:{n:'Dezembro', l:'mês em que o presidente eleito pretende anunciar os primeiros ministros do quarto mandato'},
+ resumo:'O presidente Lula não escolheu o ministro da Fazenda e prevê anunciar os primeiros nomes da equipe só em dezembro, depois de acomodar partidos do Centrão. Ele diz que nomeia ministros "na hora que eu quiser". A reunião com o presidente do Senado, Davi Alcolumbre, que pede Rodrigo Pacheco no STF e três ministérios para o União Brasil, continua sem data. Alckmin e o governador do Piauí, Rafael Fonteles, aparecem como favoritos para a Fazenda, segundo a Reuters.',
+ upd:'A escolha do ministro da Fazenda ficou para dezembro, segundo o Poder360, e a reunião com Alcolumbre continua sem data; entram os nomes cotados para a Fazenda e o roteiro de anúncios a conta-gotas.',
+ fundo:`O presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) chega à última semana de novembro sem ter definido o ministro da Fazenda, e o anúncio dos primeiros nomes do quarto mandato ficou para dezembro. A informação é do Poder360, que relata que o presidente quer primeiro acomodar o Centrão e só depois escolher os ocupantes de cargos que não entram na partilha entre partidos. A reunião com o presidente do Senado, Davi Alcolumbre (União Brasil-AP, partido de centro-direita), prevista para a quarta-feira (18), também segue sem data.
+
+## O que Lula disse sobre a pressa
+
+Na quinta-feira (19), ao assinar no Palácio do Planalto o decreto do fim da escala 6x1, Lula afirmou que indicará cada ministro "na hora que eu quiser, no dia que eu quiser e na data que eu quiser". Criticou jornais que publicam listas de cotados, disse que nunca discutiu ministérios com ninguém e que "o cara vai inventando mentira para criar especulação", conforme o ICL Notícias. Reclamou da pressa do mercado por nomes para a Fazenda e disse que "quem senta na cadeira antes cai antes de sentar". Na mesma fala, confirmou a criação de um Ministério das Pessoas Idosas, segundo o WSCOM.
+
+O ministro da Fazenda é um dos cargos que ficam na cota pessoal do presidente, e não nas listas de indicações partidárias, observa o colunista Carlos Alberto Sardenberg, de O Globo. A reportagem do Correio Braziliense e do Estado de Minas de 15 de novembro já apontava como prioridades a Fazenda, o Planejamento, a Educação e o Desenvolvimento Social, com a negociação de cargos com o Centrão numa segunda etapa, condicionada ao apoio às propostas do governo no Congresso.
+
+## Quem aparece para a Fazenda
+
+A Reuters, em texto reproduzido pelo BP Money em 19 de novembro, cita o vice-presidente Geraldo Alckmin (PSB) e o governador do Piauí, Rafael Fonteles (PT), como favoritos, e diz que o atual ministro, Dario Durigan, não deve continuar. A agência atribui as informações a pessoas ligadas às negociações no PT e no Planalto, sob anonimato; as assessorias de Alckmin e Fonteles não comentaram. O Correio Braziliense inclui ainda o ex-ministro Fernando Haddad entre os nomes cogitados. O colunista Tales Faria, do Correio da Manhã, lembra que em 2022 Lula anunciou cinco nomes em 9 de dezembro, entre eles Haddad na Fazenda, e completou 37 pastas em 29 de dezembro, o que sugere um roteiro a conta-gotas.
+
+## O que Alcolumbre pede
+
+O Correio Braziliense informa, com base em interlocutores do senador, que ele pretende usar o encontro para negociar espaços de peso na Esplanada em troca de apoio à governabilidade e à própria recondução à presidência do Senado em 2027. A Metrópoles relata que ele quer reconhecimento do Planalto pelo papel na aprovação de medidas como o fim da escala 6x1 e que a preferência por Pacheco permanece. O jornal O Hoje acrescenta que Alcolumbre quer o União Brasil com três ministérios e se opõe à permanência de Waldez Góes na Integração e do Desenvolvimento Regional.
+
+A vaga em disputa no Supremo Tribunal Federal (STF) é a de Luís Roberto Barroso. Lula indicou Jorge Messias, que o Senado rejeitou em abril por 42 votos a 34, quando eram necessários 41 a favor. Rodrigo Pacheco, ministro do Tribunal de Contas da União, é o nome de Alcolumbre. Também são citados o procurador-geral da República, Paulo Gonet, e a ex-ministra Simone Tebet, segundo a CNN Brasil.
+
+## O que vem agora
+
+O Planalto quer anunciar o nome para o STF ainda em novembro, para que a sabatina na Comissão de Constituição e Justiça do Senado ocorra no início de dezembro. A equipe de governo, segundo os relatos, começa a ser divulgada na primeira semana de dezembro.
+
+## O que ainda não está confirmado
+
+Não há data para a reunião entre Lula e Alcolumbre, nem nome definido para o Supremo ou para os ministérios. Os cotados para a Fazenda vêm de fontes anônimas, e o presidente diz que não discutiu nomes com ninguém.`,
+ fontes:[['Poder360 (Lula não definiu ministro da Fazenda)','https://www.poder360.com.br/poder-governo/lula-nao-definiu-ministro-da-fazenda-anuncio-fica-para-dezembro/'],['BP Money (Reuters: Alckmin e Fonteles favoritos)','https://bpmoney.com.br/politica/lula-ministro-fazenda-fonteles-alckmin-favoritos/'],['Estado de Minas (Lula afunila lista, via Correio Braziliense)','https://www.em.com.br/politica/2026/11/7538832-lula-afunila-lista-dos-nomes-para-ministerio.html'],['Correio da Manhã (Tales Faria)','https://www.correiodamanha.com.br/colunistas/tales-faria/2026/11/333814-nomes-dos-futuros-ministros-podem-ser-indicados-aos-poucos.html'],['O Globo (coluna de Sardenberg)','https://oglobo.globo.com/opiniao/carlos-alberto-sardenberg/coluna/2026/11/precisa-se-de-ministro-da-fazenda.ghtml'],['Correio Braziliense (Lula avalia reunião com Alcolumbre)','https://www.correiobraziliense.com.br/politica/2026/11/7542358-lula-avalia-reuniao-com-alcolumbre-para-discutir-ministerios-e-stf.html'],['Metrópoles (Alcolumbre insiste em Pacheco)','https://www.metropoles.com/brasil/alcolumbre-insiste-em-pacheco-para-vaga-no-stf-e-espera-reuniao-com-lula'],['O Hoje (Alcolumbre mantém pressão)','https://ohoje.com/2026/11/22/alcolumbre-mantem-pressao-por-pacheco-no-stf-e-aguarda-reuniao-com-lula/'],['CNN Brasil (Lula planeja reunião com Alcolumbre)','https://www.cnnbrasil.com.br/blogs/gustavo-uribe/politica/lula-planeja-reuniao-com-alcolumbre-antes-de-definir-nome-para-o-stf/'],['ICL Notícias (Lula critica especulações)','https://iclnoticias.com.br/lula-critica-especulacoes-sobre-ministerio/']]});

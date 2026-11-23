@@ -1,0 +1,34 @@
+// ED: economia
+_N('risco_brasil_real_estagflacao_23', {ed:'economia', k:'Economia · Câmbio · Risco fiscal', hora:'23/11',
+ t:'Risco Brasil sobe ao maior nível desde 2025, dólar passa de R$ 5,93 e real perde mais de 17% desde a vitória de Lula; UBS vê risco de estagflação em 2027',
+ sub:'Estrangeiros ampliam compras de dólar futuro, e o Banco Central fez a primeira intervenção no câmbio desde 2024; a Câmara vota hoje o ajuste fiscal.',
+ dado:{n:'175,36 pontos', l:'Risco Brasil (CDS de 5 anos) em 20/11, o maior nível desde meados de 2025'},
+ resumo:'O CDS de cinco anos do Brasil, termômetro do risco-país, fechou sexta (20) em 175,36 pontos-base, o maior nível desde meados de 2025. O dólar comercial terminou a quinta (19) a R$ 5,93, o maior valor desde abril de 2025, mesmo após o Banco Central vender US$ 1 bilhão. O real é a moeda que mais perdeu entre as 20 mais negociadas desde a vitória de Lula: 17,65%. O UBS avisa que a demora do governo em definir o ajuste fiscal eleva o risco de estagflação, recessão com inflação alta, em 2027. A Câmara vota hoje o pacote fiscal.',
+ fundo:`O risco Brasil, medido pelo CDS (credit default swap, contrato que protege contra calote) de cinco anos, fechou a sexta-feira (20) em 175,36 pontos-base, o maior nível desde meados de 2025, informa o Poder360. O dólar comercial acumulou seis altas seguidas até a quinta (19) e fechou a R$ 5,932, o maior valor desde abril de 2025, mesmo depois de o Banco Central vender US$ 1 bilhão à vista. Nesse cenário, o banco suíço UBS alerta para o risco de estagflação, recessão combinada com inflação alta, no Brasil em 2027.
+
+## A moeda que mais perde no mundo
+
+Desde a vitória do presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) no segundo turno, em 25 de outubro, o real recuou 17,65% entre as 20 moedas mais negociadas do mundo, a maior queda da lista, segundo levantamento publicado pela Folha com dados da plataforma Investing. Em seguida vêm o rand sul-africano (6,08%), o dólar australiano (5,43%) e a coroa norueguesa (4,64%). Antes da abertura do mercado em 25 de outubro, o dólar valia R$ 4,97, segundo a BBC News Brasil. Na semana passada, a cotação subiu 4,87%.
+
+O CDS havia saltado 26% no dia seguinte à eleição, para 151,7 pontos, segundo a CNN Brasil, e mantém tendência de alta desde então. O Poder360 lembra que, nos quatro anos do governo de Jair Bolsonaro (PL, partido de direita), o indicador chegou a cerca de 93 pontos. No terceiro mandato de Lula, não voltou a esse patamar.
+
+## Intervenção e compras de estrangeiros
+
+O Banco Central vendeu US$ 1 bilhão em leilão à vista na quinta (19), entre 12h03 e 12h08, informa a Agência Brasil. A cotação chegou perto de R$ 5,85 e voltou a subir. Foi a primeira intervenção no mercado à vista desde dezembro de 2024, de acordo com a Bloomberg Línea, que associa a pressão adicional a uma fala de Lula. O presidente disse que indicará os ministros "quando eu quiser" e que não tem pressa de anunciar o nome do novo ministro da Fazenda.
+
+Investidores estrangeiros aumentaram a aposta na alta da moeda. Entre 26 de outubro e 13 de novembro, o saldo comprado de não residentes em derivativos de dólar na B3 somou cerca de US$ 17 bilhões, aponta o InfoMoney, com base em dados da B3 e da DataWise. Só no primeiro pregão depois do segundo turno foram US$ 6,84 bilhões. Em 19 de novembro, grandes bancos estrangeiros acompanhados pelo trader Léo Molini encerraram com saldo comprador de R$ 3,75 bilhões em dólar futuro, enquanto bancos e corretoras locais venderam R$ 1,38 bilhão, em recorte que não representa o mercado todo. O economista Rafael Perretti, da Clear Corretora, atribui a persistência da alta à busca por proteção; os dados não separam proteção de aposta direcional.
+
+## O alerta do UBS
+
+Em relatório de perspectivas para 2027, o UBS Global Wealth Management afirma que o cenário externo de juros altos nos países desenvolvidos dificulta ao Brasil adiar o problema das contas públicas, diz a diretora de investimentos e macroeconomia para o Brasil, Solange Srour. Para ela, o risco de estagflação cresce a cada dia que o governo adia medidas de ajuste. O UBS projeta recessão técnica, com queda do PIB no quarto trimestre de 2026 e no primeiro de 2027, e vê chance de o IPCA passar de 6% em 2027 se o câmbio não voltar perto de R$ 5,50. Srour considera possível que o Banco Central sinalize alta de juros já na reunião do Copom de dezembro.
+
+O governo responde que o foco é o pacote fiscal. O Senado aprovou o texto, que mira superávit primário de 0,5% do PIB em 2027, e a Câmara dos Deputados deve votá-lo nesta segunda (23). O ministro do Planejamento, Bruno Moretti, afirmou que podem vir medidas adicionais. Lula atribuiu parte das críticas a agentes que querem ganhar dinheiro com especulação e boatos.
+
+## O que vem agora
+
+A votação do pacote na Câmara e a definição do ministro da Fazenda são os próximos sinais que o mercado espera. Analistas discordam sobre o teto do dólar: um gestor ouvido por outro veículo vê possibilidade de passar de R$ 6, e o Morgan Stanley já citava esse nível em outubro se a pressão fiscal aumentasse.
+
+## O que ainda não está confirmado
+
+Não há data para o anúncio da equipe econômica nem decisão do Copom sobre juros antes da reunião de dezembro. A projeção de recessão e de inflação acima de 6% em 2027 é cenário do UBS, não estimativa oficial.`,
+ fontes:[['Poder360 (Risco Brasil atinge maior nível desde 2025)','https://www.poder360.com.br/poder-economia/com-estresse-fiscal-risco-brasil-atinge-maior-nivel-desde-junho-de-2025/'],['Folha (real se desvaloriza mais de 17%)','https://www1.folha.uol.com.br/mercado/2026/11/real-se-desvaloriza-mais-de-17-desde-vitoria-de-lula-e-impulsiona-ativos-de-protecao.shtml'],['InfoMoney (UBS vê estagflação em 2027)','https://www.infomoney.com.br/onde-investir/ubs-ve-possibilidade-de-estagflacao-no-brasil-em-2027-como-balancear-o-portfolio/'],['InfoMoney (estrangeiros reforçam compras de dólar futuro)','https://www.infomoney.com.br/mercados/estrangeiros-compras-dolar-futuro-pressao-real/'],['InfoMoney (compra de US$ 17 bi após a eleição)','https://www.infomoney.com.br/mercados/estrangeiros-compram-dolar-apos-eleicao-r-6/'],['Agência Brasil (dólar supera R$ 5,93)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-supera-r-593-e-fecha-no-maior-valor-desde-abril-de-2025'],['Bloomberg Línea (BC faz primeira intervenção desde 2024)','https://www.bloomberglinea.com.br/mercados/bc-faz-1-intervencao-cambial-desde-2024-apos-fala-de-lula-dolar-vai-a-r-594/'],['CNN Brasil (risco-país salta 26%)','https://www.cnnbrasil.com.br/economia/money/mercado/risco-pais-brasileiro-avanca-26-e-atinge-maior-nivel-desde-junho-de-2025/'],['BBC News Brasil via Terra (real é a moeda que mais perdeu)','https://www.terra.com.br/economia/ate-onde-o-dolar-pode-subir-por-que-o-real-e-a-moeda-que-mais-perdeu-valor-desde-a-reeleicao-de-lula,f98b0e93562e13bb65b4d5e5b9be86153bjbzndy.html']]});
