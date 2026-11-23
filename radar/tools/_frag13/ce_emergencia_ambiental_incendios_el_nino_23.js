@@ -4,7 +4,7 @@ _N('ce_emergencia_ambiental_incendios_el_nino_23', {ed:'regioes', reg:'ne', k:'R
  sub:'A medida é preventiva e vale em todo o estado até fevereiro de 2027; Fortaleza teve sensação térmica de 42°C em bairro no domingo (22).',
  dado:{n:'65', l:'municípios cearenses já estão em situação de emergência por efeitos do El Niño, desde o decreto de 13 de novembro'},
  resumo:'O governador do Ceará, Elmano de Freitas (PT), assinou na quinta-feira (19) o decreto 37.624, que declara emergência ambiental por risco de incêndios florestais, com vigência por região entre maio de 2026 e fevereiro de 2027. A medida é preventiva, segue o aviso técnico de um El Niño muito forte e complementa o decreto de 13 de novembro que pôs 65 municípios em emergência pela estiagem. O estado pediu recursos à bancada federal e conversou com o ministro Waldez Góes.',
- fundo:`O governo do Ceará declarou emergência ambiental no estado por risco de incêndios florestais. O decreto nº 37.624 foi assinado na quinta-feira (19) pelo governador Elmano de Freitas (PT, partido de esquerda), publicado no Diário Oficial e divulgado no fim de semana. A medida é preventiva e não significa que haja incêndios em todas as regiões, ressalvam os textos oficiais. Ela se soma ao decreto de 13 de novembro que colocou 65 municípios em emergência por efeitos do El Niño, fenômeno de aquecimento do Pacífico que reduz as chuvas no Nordeste.
+ fundo:`O governo do Ceará declarou emergência ambiental no estado por risco de incêndios florestais. O decreto nº 37.624 foi assinado na quinta-feira (19) pelo governador Elmano de Freitas (PT, partido de esquerda) e é preventivo. Ele se soma ao decreto de 13 de novembro que colocou 65 municípios em emergência por efeitos do El Niño.
 
 ## O que o decreto determina
 
@@ -12,7 +12,7 @@ _N('ce_emergencia_ambiental_incendios_el_nino_23', {ed:'regioes', reg:'ne', k:'R
 
 A vigência varia por mesorregião e é retroativa a 1º de maio de 2026. O Sul cearense está coberto de maio de 2026 a fevereiro de 2027, e o Centro-Sul, os Sertões e o Jaguaribe até fevereiro de 2027, com início em junho ou julho. O Noroeste e a região Metropolitana de Fortaleza vão até janeiro de 2027, e o Norte, até dezembro de 2026.
 
-## Por que agora
+## A seca de 2026 e o El Niño
 
 O decreto cita a previsão de El Niño, avaliada em nota técnica conjunta do Instituto Nacional de Pesquisas Espaciais (Inpe), do Instituto Nacional de Meteorologia (Inmet), da Fundação Cearense de Meteorologia (Funceme) e do Censipam, órgão do Ministério da Defesa, como muito provável no segundo semestre de 2026 e com possibilidade de se estender ao início de 2027. Uma nota técnica da Funceme de 10 de novembro aponta a consolidação de um El Niño "muito forte", com anomalias de temperatura acima de 2,4°C no Pacífico Equatorial, o que aumenta o risco de queimadas e ameaça a quadra chuvosa de 2027, segundo O Povo. No Nordeste, os efeitos esperados são menos chuva e temperaturas mais altas, que secam a vegetação e favorecem a propagação do fogo.
 
@@ -22,11 +22,6 @@ No domingo (22), um bairro de Fortaleza registrou sensação térmica acima de 4
 
 O estado estuda ainda pedir à União água da transposição do São Francisco para reforçar o açude Castanhão em 2027.
 
-## O que vem agora
 
-A Sema deve editar atos complementares para detalhar a execução, e o governo aguarda a resposta do ministério e da bancada federal sobre recursos.
-
-## O que ainda não está confirmado
-
-Os textos consultados não informam o valor para as ações nem restrições específicas, como proibição de queimadas ou multas.`,
+A Sema deve editar atos complementares para detalhar a execução, e o governo aguarda a resposta do ministério e da bancada federal sobre recursos.`,
  fontes:[['Diário do Nordeste (emergência ambiental por risco de incêndios)','https://diariodonordeste.verdesmares.com.br/ceara/governo-do-ce-decreta-emergencia-ambiental-devido-a-risco-de-incendios-florestais-no-estado-1.3807503'],['O Povo (Ceará decreta risco de incêndios florestais)','https://www.opovo.com.br/noticias/fortaleza/2026/11/22/ceara-decreta-risco-de-incendios-florestais.html'],['GC+ (períodos por região)','https://gcmais.com.br/noticias/2026/11/22/ceara-decreta-emergencia-ambiental-por-risco-de-incendios-florestais-veja-periodos-por-regiao'],['O Liberal (65 cidades por efeitos do El Niño)','https://www.oliberal.com/variedades/ceara-declara-situacao-de-emergencia-em-65-cidades-por-efeitos-do-el-nino-1.1194384'],['Diário do Nordeste (Ceará cogita água da transposição)','https://diariodonordeste.verdesmares.com.br/ceara/governo-do-ce-cogita-usar-agua-da-transposicao-para-conter-efeitos-do-el-nino-1.3804980']]});

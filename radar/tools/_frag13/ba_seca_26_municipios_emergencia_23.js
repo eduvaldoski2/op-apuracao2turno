@@ -10,7 +10,7 @@ _N('ba_seca_26_municipios_emergencia_23', {ed:'regioes', reg:'ne', k:'Regiões �
 
 Os dados são da Defesa Civil de Salvador (Codesal), atualizados às 13h de domingo. O maior acumulado de chuva em 24 horas foi de 6,4 milímetros, em Periperi, e o da estação de Nova Brasília ficou em 0,8 mm no dia, informa o Correio. A máxima de 35,8°C veio da estação da Ilha de Bom Jesus dos Passos, e a mínima, de 24,1°C, da Fundac, na Barro Duro. Em Ondina, o acumulado de novembro está em 46,2 mm, contra 108,2 mm esperados para o mês. A Defesa Civil registrou cinco ocorrências no dia, entre elas ameaças de desabamento e deslizamento no bairro da Liberdade.
 
-## As 26 cidades em emergência
+## Os municípios decretados e o que a chuva causou
 
 O número de municípios com decreto vigente subiu de 23, na quinta-feira (19), para 26 neste fim de semana, conforme o Notícias da Bahia e o Correio. A lista inclui Ilhéus, Porto Seguro, Eunápolis, Prado, Serrinha, Santa Maria da Vitória e Jaguaquara, entre outros. Em Caetanos, 150 mm de chuva caíram em menos de duas horas, sem mortes nem feridos. O governo estadual enviou colchões, cobertores, kits de higiene e cestas básicas a Caetanos, Jaguaquara, Ibirataia, Antônio Cardoso, Santo Estêvão, Rafael Jambeiro, Malhada e Arataca.
 

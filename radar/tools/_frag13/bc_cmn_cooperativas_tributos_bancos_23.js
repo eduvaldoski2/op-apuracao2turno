@@ -1,5 +1,5 @@
 // ED: economia
-_N('bc_cmn_cooperativas_tributos_bancos_23', {ed:'economia', k:'Economia · Banco Central · Regulação', hora:'19/11',
+_N('bc_cmn_cooperativas_tributos_bancos_23', {ed:'economia', k:'Economia · Banco Central · Regulação', hora:'20/11',
  t:'Banco Central amplia acesso de cooperativas ao mercado aberto, e CMN exige dos bancos dados mensais sobre tributos a partir de 2028',
  sub:'As novas regras do mercado aberto valem para operações a partir de 30 de novembro; a obrigação de envio de dados fiscais começa em 1º de janeiro de 2028.',
  dado:{n:'30/11/2026', l:'início das novas regras do mercado aberto; dados tributários dos bancos passam a ser mensais em 1º/1/2028'},

@@ -1,11 +1,11 @@
 // ED: politica
-_U('lula_sem_pressa_ministros_20', {hora:'23/11',
+_U('lula_sem_pressa_ministros_20', {ampliada:false, hora:'23/11',
  t:'Lula ainda não definiu o ministro da Fazenda e deixa o anúncio da equipe para dezembro; reunião com Alcolumbre segue sem data',
  sub:'O Planalto quer primeiro acomodar o Centrão e o presidente do Senado insiste em Rodrigo Pacheco para o Supremo e em três ministérios para o União Brasil.',
  dado:{n:'Dezembro', l:'mês em que o presidente eleito pretende anunciar os primeiros ministros do quarto mandato'},
  resumo:'O presidente Lula não escolheu o ministro da Fazenda e prevê anunciar os primeiros nomes da equipe só em dezembro, depois de acomodar partidos do Centrão. Ele diz que nomeia ministros "na hora que eu quiser". A reunião com o presidente do Senado, Davi Alcolumbre, que pede Rodrigo Pacheco no STF e três ministérios para o União Brasil, continua sem data. Alckmin e o governador do Piauí, Rafael Fonteles, aparecem como favoritos para a Fazenda, segundo a Reuters.',
  upd:'A escolha do ministro da Fazenda ficou para dezembro, segundo o Poder360, e a reunião com Alcolumbre continua sem data; entram os nomes cotados para a Fazenda e o roteiro de anúncios a conta-gotas.',
- fundo:`O presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) chega à última semana de novembro sem ter definido o ministro da Fazenda, e o anúncio dos primeiros nomes do quarto mandato ficou para dezembro. A informação é do Poder360, que relata que o presidente quer primeiro acomodar o Centrão e só depois escolher os ocupantes de cargos que não entram na partilha entre partidos. A reunião com o presidente do Senado, Davi Alcolumbre (União Brasil-AP, partido de centro-direita), prevista para a quarta-feira (18), também segue sem data.
+ fundo:`O presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) chega à última semana de novembro sem ter definido o ministro da Fazenda, e o anúncio dos primeiros nomes do quarto mandato ficou para dezembro. O presidente quer primeiro acomodar o Centrão e só depois escolher os ocupantes de cargos fora da partilha entre partidos. A reunião com o presidente do Senado, Davi Alcolumbre (União Brasil-AP, partido de centro-direita), prevista para a quarta-feira (18), também segue sem data.
 
 ## O que Lula disse sobre a pressa
 

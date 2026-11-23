@@ -25,11 +25,6 @@ Na madrugada de domingo, colonos incendiaram ao menos 12 veículos em ao menos c
 
 O Exército disse que condena "veementemente" os atos, e a polícia abriu investigação; não havia prisões até a noite. Eisenkot, que pediu prisão e "sanções severas" aos responsáveis, culpou o governo, incluindo Ben-Gvir e Smotrich. Ben-Gvir respondeu que ele "não faz ideia dos fatos nem da investigação". Yousef Jabareen disse que os colonos são o braço armado de partidos de extrema direita. A ONU registra, em média, seis ataques de colonos por dia na Cisjordânia em 2026, e a organização B'Tselem disse que apenas condenar não basta.
 
-## O que vem agora
 
-Uma nova rodada entre Yashar e Likud é esperada nos próximos dias, e Eisenkot precisa apresentar uma maioria a Herzog até 6 de dezembro.
-
-## O que ainda não está confirmado
-
-Não há data para a próxima reunião, acordo sobre o cargo de primeiro-ministro nem decisão sobre a participação de Ben-Gvir. A autoria dos incêndios depende da investigação da polícia.`,
+Uma nova rodada entre Yashar e Likud é esperada nos próximos dias, e Eisenkot precisa apresentar uma maioria a Herzog até 6 de dezembro.`,
  fontes:[['Al Jazeera (Likud e Yashar sem acordo)','https://www.aljazeera.com/news/2026/11/22/netanyahus-likud-eisenkots-yashar-end-coalition-talks-without-deal'],['Ynet (4 horas de conversas)','https://www.ynetnews.com/article/hj11rtyeyql'],['RTE (investigação dos incêndios na Cisjordânia)','https://www.rte.ie/news/middle-east/2026/1122/1600216-west-bank-fires/'],['ABC News Australia (Eisenkot e terrorismo judaico)','https://www.abc.net.au/news/2026-11-23/israel-gadi-eisenkot-west-bank-arson-attacks/107415280'],['Brasil de Fato (terrorismo judaico)','https://www.brasildefato.com.br/2026/11/22/terrorismo-judaico-eisenkot-cobra-punicao-por-ataques-de-colonos-contra-palestinos/'],['Times of Israel (Yashar e Likud)','https://www.timesofisrael.com/yashar-likud-meet-for-unity-talks-as-eisenkot-bloc-moves-to-assert-control-over-knesset/'],['Folha (Eisenkot convida o Likud)','https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/eisenkot-convida-partido-de-netanyahu-para-negociar-coalizao-em-israel.shtml']]});

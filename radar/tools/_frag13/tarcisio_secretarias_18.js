@@ -1,5 +1,5 @@
 // ED: regioes
-_U('tarcisio_secretarias_18', {hora:'18/11',
+_U('tarcisio_secretarias_18', {hora:'22/11',
  t:'Tarcísio mantém metade do secretariado do segundo mandato e só traz Ricardo Salles de fora do governo; Saúde, Educação e Segurança seguem em aberto',
  sub:'A reforma cria as pastas de Planejamento e de Meio Ambiente, extingue a supersecretaria de Meio Ambiente, Infraestrutura e Logística e troca o comando da Fazenda e da Gestão.',
  dado:{n:'7', l:'permanências confirmadas até 18/11, entre elas Casa Civil, Agricultura, Cultura, Comunicação e Governo'},

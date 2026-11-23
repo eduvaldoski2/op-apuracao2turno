@@ -14,5 +14,6 @@ for(const k in ord){const top=pri[k].filter(i=>ord[k].includes(i)).concat(ord[k]
 code+="HOME_LEAD = 'ajuste_camara_20';\nHOME_ROW = ['bolsonaro_obstrucao_intestinal_21','cop31_impasse_fosseis_21','petrobras_plano_2027_2031_22'];\n";
 const giro=novas.filter(([i,o])=>o.fontes&&o.fontes[0]&&o.fontes[0][1]).map(([i,o])=>{const s=o.sub||'';return [o.t.length>90?o.t.slice(0,88).replace(/\s+\S*$/,'')+'…':o.t, s.length>170?s.slice(0,168).replace(/\s+\S*$/,'')+'…':s, o.fontes[0][0].replace(/\s*\(.*$/,''), o.fontes[0][1],'',i];});
 code+="GIRO = "+JSON.stringify(giro.slice(0,14))+".concat(GIRO).slice(0,20);\n";
+code+="[['ajuste_fiscal_camara_19','superada por ajuste_camara_20'],['senado_iphones_licitacao_18','sem desdobramento novo desde 20/11'],['vorcaro_um_ano_prisao_stf_suspeita_15_11','superada por stf_gilmar_sigilo_relatorio_pf_ministros_23'],['nova_cnh_19','sem desdobramento novo desde 19/11'],['moro_secretaria_19','sem desdobramento novo desde 20/11'],['enem_reaplicacao_19','fato encerrado'],['discord_anpd_19','sem desdobramento novo desde 20/11'],['consciencia_stf_20','fato encerrado']].forEach(function(x){if(S[x[0]]){S[x[0]].velha=true;S[x[0]].velhaMotivo=x[1];}});\n";
 fs.writeFileSync('radar/_edicao.php',src.replace(/\s*$/,'\n')+code);
 console.log(JSON.stringify(ord),giro.length);

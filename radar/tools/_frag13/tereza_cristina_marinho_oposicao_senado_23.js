@@ -22,11 +22,6 @@ No domingo (22), em entrevista ao programa Sala de Imprensa, do SBT News, o gove
 
 O senador Flávio Bolsonaro (PL-RJ), derrotado na disputa pela Presidência, afirmou em entrevista à Fox News que não vai apoiar uma eventual candidatura de Hugo Motta (Republicanos-PB) à reeleição na Câmara e que orienta deputados da oposição a não votar nele. Disse que Motta descumpriu compromissos com o grupo conservador, principalmente sobre a anistia aos condenados pelo 8 de Janeiro, informa o Correio Braziliense.
 
-## O que vem agora
 
-Tereza Cristina e Marinho continuam negociando para não dividir os votos da oposição. Uma das hipóteses é a retirada de um dos nomes mais perto da eleição.
-
-## O que ainda não está confirmado
-
-Não há acordo entre PL e PP sobre o candidato único. O voto aberto depende dos próprios senadores, e as contagens de votos são projeções informais.`,
+Tereza Cristina e Marinho continuam negociando para não dividir os votos da oposição. Uma das hipóteses é a retirada de um dos nomes mais perto da eleição.`,
  fontes:[['Veja (a estratégia de Tereza Cristina)','https://veja.abril.com.br/politica/a-estrategia-de-tereza-cristina-para-destronar-marinho-como-candidato-de-oposicao-a-alcolumbre/'],['Congresso em Foco (disputa divide a direita)','https://www.congressoemfoco.com.br/noticia/131266/com-tres-nomes-em-jogo-disputa-pelo-senado-divide-a-direita'],['A Crítica (Tereza mantém candidatura)','https://acritica.net/politica/tereza-cristina-mantem-candidatura-a-presidencia-do-senado-e-pl-avalia-voto-aberto/'],['Folha de Pernambuco (federação União-PP)','https://www.folhape.com.br/politica/disputa-entre-alcolumbre-marinho-e-tereza-pelo-senado-expoe/523646/'],['Estado de Minas (Cleitinho apoia Nikolas e Marinho)','https://www.em.com.br/politica/2026/11/7542316-cleitinho-declara-apoio-a-nikolas-na-camara-e-a-rogerio-marinho-no-senado.html'],['Correio Braziliense (Flávio rejeita apoio a Motta)','https://www.correiobraziliense.com.br/politica/2026/11/7542442-flavio-rejeita-apoio-a-reeleicao-de-motta-e-volta-a-questionar-eleicoes.html']]});
