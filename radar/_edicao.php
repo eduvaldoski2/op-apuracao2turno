@@ -47568,12 +47568,1480 @@ _N('ce_emergencia_ambiental_incendios_el_nino_23', {ed:'regioes', reg:'ne', k:'R
  sub:'A medida é preventiva e vale em todo o estado até fevereiro de 2027; Fortaleza teve sensação térmica de 42°C em bairro no domingo (22).',
  dado:{n:'65', l:'municípios cearenses já estão em situação de emergência por efeitos do El Niño, desde o decreto de 13 de novembro'},
  resumo:'O governador do Ceará, Elmano de Freitas (PT), assinou na quinta-feira (19) o decreto 37.624, que declara emergência ambiental por risco de incêndios florestais, com vigência por região entre maio de 2026 e fevereiro de 2027. A medida é preventiva, segue o aviso técnico de um El Niño muito forte e complementa o decreto de 13 de novembro que pôs 65 municípios em emergência pela estiagem. O estado pediu recursos à bancada federal e conversou com o ministro Waldez Góes.',
- fundo:`O governo do Ceará declarou situação de emergência em 65 cidades por efeitos do El Niño, segundo a Folha de Pernambuco e o Diário do Nordeste. A edição anterior do Radar tratava o caso como risco de incêndios florestais; a nova informação mostra que o problema passou a envolver a estiagem.
+ fundo:`O governo do Ceará declarou emergência ambiental no estado por risco de incêndios florestais. O decreto nº 37.624 foi assinado na quinta-feira (19) pelo governador Elmano de Freitas (PT, partido de esquerda) e é preventivo. Ele se soma ao decreto de 13 de novembro que colocou 65 municípios em emergência por efeitos do El Niño.
+
+## O que o decreto determina
+
+Órgãos e entidades do estado devem intensificar a prevenção, o monitoramento, o controle e o combate a queimadas e incêndios florestais, informa o Diário do Nordeste. A Secretaria do Meio Ambiente e Mudança do Clima (Sema) fica autorizada a executar as ações, em articulação com o comitê Previna, que reúne órgãos estaduais de prevenção a incêndios, e pode editar atos complementares, relata o GC+. As demais pastas devem apoiar o Previna dentro de suas atribuições.
+
+A vigência varia por mesorregião e é retroativa a 1º de maio de 2026. O Sul cearense está coberto de maio de 2026 a fevereiro de 2027, e o Centro-Sul, os Sertões e o Jaguaribe até fevereiro de 2027, com início em junho ou julho. O Noroeste e a região Metropolitana de Fortaleza vão até janeiro de 2027, e o Norte, até dezembro de 2026.
+
+## A seca de 2026 e o El Niño
+
+O decreto cita a previsão de El Niño, avaliada em nota técnica conjunta do Instituto Nacional de Pesquisas Espaciais (Inpe), do Instituto Nacional de Meteorologia (Inmet), da Fundação Cearense de Meteorologia (Funceme) e do Censipam, órgão do Ministério da Defesa, como muito provável no segundo semestre de 2026 e com possibilidade de se estender ao início de 2027. Uma nota técnica da Funceme de 10 de novembro aponta a consolidação de um El Niño "muito forte", com anomalias de temperatura acima de 2,4°C no Pacífico Equatorial, o que aumenta o risco de queimadas e ameaça a quadra chuvosa de 2027, segundo O Povo. No Nordeste, os efeitos esperados são menos chuva e temperaturas mais altas, que secam a vegetação e favorecem a propagação do fogo.
+
+## O calor e o pedido de recursos
+
+No domingo (22), um bairro de Fortaleza registrou sensação térmica acima de 42°C, nível de emergência pelos critérios de calor, informam o Diário do Nordeste e O Povo. Ao decretar a emergência, o governo cearense pediu recursos à bancada federal do estado e conversou com o ministro da Integração e do Desenvolvimento Regional, Waldez Góes, sobre uma parceria com a União, relata O Povo. O decreto de 13 de novembro, de nº 37.608, vale por 180 dias e pode ser prorrogado, e a lista dos 65 municípios consta de seu anexo, informa O Liberal.
+
+O estado estuda ainda pedir à União água da transposição do São Francisco para reforçar o açude Castanhão em 2027.
+
+
+A Sema deve editar atos complementares para detalhar a execução, e o governo aguarda a resposta do ministério e da bancada federal sobre recursos.`,
+ fontes:[['Diário do Nordeste (emergência ambiental por risco de incêndios)','https://diariodonordeste.verdesmares.com.br/ceara/governo-do-ce-decreta-emergencia-ambiental-devido-a-risco-de-incendios-florestais-no-estado-1.3807503'],['O Povo (Ceará decreta risco de incêndios florestais)','https://www.opovo.com.br/noticias/fortaleza/2026/11/22/ceara-decreta-risco-de-incendios-florestais.html'],['GC+ (períodos por região)','https://gcmais.com.br/noticias/2026/11/22/ceara-decreta-emergencia-ambiental-por-risco-de-incendios-florestais-veja-periodos-por-regiao'],['O Liberal (65 cidades por efeitos do El Niño)','https://www.oliberal.com/variedades/ceara-declara-situacao-de-emergencia-em-65-cidades-por-efeitos-do-el-nino-1.1194384'],['Diário do Nordeste (Ceará cogita água da transposição)','https://diariodonordeste.verdesmares.com.br/ceara/governo-do-ce-cogita-usar-agua-da-transposicao-para-conter-efeitos-do-el-nino-1.3804980']]});
+
+_U('chapo_isidro_sinaloa_21', {hora:'23/11',
+ t:'México prende oito suspeitos ligados a "El Chapo Isidro" depois da onda de violência que seguiu a captura do chefe do grupo em Sinaloa',
+ sub:'A operação que levou o narcotraficante à prisão deixou 11 mortos, entre eles quatro militares, e provocou bloqueios e veículos incendiados em quatro cidades do estado.',
+ dado:{n:'8 presos', l:'suspeitos de integrar a quadrilha de Fausto Isidro Meza Flores, detidos na operação em Guasave (Sinaloa)'},
+ resumo:'Oito pessoas apontadas como integrantes do grupo de Fausto Isidro Meza Flores, o "Chapo Isidro", estão presas depois da operação que capturou o narcotraficante em Guasave, no estado mexicano de Sinaloa, e da reação armada que se seguiu. A ação, na noite de sexta-feira (20), deixou 11 mortos, quatro deles soldados. Meza Flores integrava a lista dos dez fugitivos mais procurados pelo FBI. Bloqueios, tiroteios e incêndios de veículos atingiram quatro cidades do estado.',
+ upd:'O governo mexicano confirma a prisão de oito suspeitos de integrar a quadrilha depois da onda de violência que se seguiu à captura. Três deles, entre os quais o próprio Meza Flores, foram levados de avião à Cidade do México.',
+ fundo:`Oito pessoas apontadas como integrantes da quadrilha de Fausto Isidro Meza Flores, o "Chapo Isidro", estão presas depois da operação que capturou o narcotraficante na noite de sexta-feira (20) em Guasave, no estado de Sinaloa, no noroeste do México, e da onda de violência que se seguiu. Meza Flores integrava a lista dos dez fugitivos mais procurados pelo FBI, a polícia federal dos Estados Unidos. A ação deixou 11 mortos, entre eles quatro soldados.
+
+## A operação e o balanço
+
+Unidades de forças especiais do Exército e da Guarda Nacional entraram no imóvel onde o grupo estava depois de serem recebidas a tiros e com explosivos, informa o Infobae, com base no relato da Secretaria da Defesa Nacional. A pasta contabilizou quatro militares e sete supostos integrantes da organização mortos. Os quatro soldados eram de infantaria e seguiam para Guasave para reforçar a segurança quando foram atingidos, de acordo com a Exame.
+
+Meza Flores e outros dois detidos, um apontado como número dois do grupo e outro descrito como operador financeiro, foram levados de avião à Cidade do México; os demais ficaram à disposição da Procuradoria-Geral da República em Culiacán, capital do estado. A Defesa divulga apenas as iniciais dos presos. Os militares apreenderam um fuzil calibre .50, um lança-granadas, granadas, outras armas, drogas e dinheiro. O secretário de Segurança e Proteção Cidadã, Omar García Harfuch, lamentou as mortes dos soldados e responsabilizou os grupos criminosos pela ameaça à população de Sinaloa. A operação teve apoio de inteligência dos Estados Unidos.
+
+## A reação armada em quatro cidades
+
+A captura foi seguida por bloqueios de estradas, veículos incendiados e tiroteios em Guasave, Ahome, Guamúchil e Navolato. Moradores relataram comércio fechado e aulas suspensas, e o governo estadual afirmou ter recuperado o controle das vias ao longo do fim de semana. As prisões posteriores atingiram suspeitos acusados de participar desses atos, que no México são chamados de narcobloqueios: veículos atravessados e incendiados em rodovias para impedir a circulação das forças de segurança.
+
+## Quem é Meza Flores
+
+Nascido em Guasave, Meza Flores foi apontado pelo Departamento do Tesouro dos Estados Unidos como chefe de uma organização ligada ao cartel dos Beltrán Leyva, grupo rival da facção dos filhos de Joaquín Guzmán, o Chapo, no controle das rotas de drogas do noroeste mexicano. Washington oferecia recompensa por informações que levassem à sua captura, e ele era procurado por tráfico de cocaína, metanfetamina e heroína para os Estados Unidos. Estava foragido havia mais de uma década e escapou de operações anteriores, inclusive de uma ação em Guasave no ano passado, quando o governo estadual negou que ele tivesse sido detido.
+
+Sinaloa vive desde 2024 uma guerra entre facções do cartel que leva o nome do estado, desencadeada depois da entrega de Ismael Zambada, o Mayo, às autoridades americanas. O governo federal mexicano enviou militares ao estado e, na avaliação de autoridades federais, reduziu a capacidade operacional dos grupos. A captura de Meza Flores é apresentada pelo governo como o golpe mais relevante da estratégia neste ano, em um período de pressão dos Estados Unidos por resultados no combate ao narcotráfico.
+
+## O que vem agora
+
+Os presos levados à Cidade do México devem ser apresentados à Procuradoria-Geral da República, que define as acusações. Os Estados Unidos mantêm pedido de extradição de Meza Flores, e cabe ao Judiciário mexicano decidir sobre o envio.`,
+ fontes:[
+  ['O Globo','https://oglobo.globo.com/mundo/noticia/2026/11/23/mexico-prende-oito-suspeitos-de-integrar-quadrilha-de-el-chapo-isidro-apos-onda-de-violencia.ghtml'],
+  ['Infobae (México)','https://www.infobae.com/mexico/2026/11/21/operativo-contra-el-chapo-isidro-deja-cuatro-militares-fallecidos-y-siete-presuntos-agresores-abatidos-harfuch-lamenta-decesos-de-la-defensa/'],
+  ['UnoTV (México)','https://www.unotv.com/nacional/captura-del-chapo-isidro-deja-11-muertos-en-sinaloa-cuatro-eran-militares/'],
+  ['TV Azteca (México)','https://www.tvazteca.com/aztecanoticias/detienen-en-sinaloa-a-fausto-isidro-meza-flores-alias-el-chapo-isidro-uno-los-mas-buscados-fbi'],
+  ['Exame','https://exame.com/mundo/prisao-de-el-chapo-isidro-mata-quatro-militares-e-leva-panico-a-cinco-cidades-do-mexico/'],
+  ['DW Brasil','https://www.dw.com/pt-br/méxico-captura-chapo-isidro-alvo-da-lista-de-mais-procurados-do-fbi/a-80010832?maca=bra-rss-br-all-1030-rdf']
+ ]});
+
+_N('cnj_registro_mortes_acoes_policiais_23', {ed:'politica', k:'Política · Segurança', hora:'22/11',
+ t:'Certidão de óbito passa a dizer quando a morte ocorreu em ação policial, e famílias poderão corrigir registros antigos',
+ sub:'A resolução do Conselho Nacional de Justiça proíbe expressões como auto de resistência e prevê a reunião desses dados em escala nacional.',
+ dado:{n:'2', l:'bases oficiais de mortes violentas no país, a da polícia e a da saúde, que a nova regra pretende aproximar'},
+ resumo:'Os cartórios de Registro Civil passam a anotar na certidão de óbito quando a morte decorreu de intervenção de órgãos de segurança pública, por resolução do Conselho Nacional de Justiça aprovada por unanimidade a partir de proposta do ministro Edson Fachin. O texto fixa uma redação padrão, veda termos como auto de resistência e confronto, alcança mortes causadas direta ou indiretamente por agentes e permite corrigir registros antigos. A medida busca aproximar os dados das polícias dos números do sistema de saúde, que tem nas certidões uma de suas principais fontes.',
+ fundo:`As certidões de óbito no Brasil passam a registrar quando a morte ocorreu em decorrência ou no contexto de uma intervenção de órgãos de segurança pública. A regra vem de resolução do Conselho Nacional de Justiça, órgão que fiscaliza o funcionamento do Judiciário, e alcança também documentos já emitidos: famílias poderão pedir a correção de registros antigos. A mudança foi detalhada neste fim de semana.
+
+## O que muda no documento
+
+Até agora, o documento trazia apenas a causa biológica imediata da morte, como traumatismo ou parada cardíaca, sem dizer em que circunstância ela aconteceu. A resolução determina que os cartórios de Registro Civil adotem uma redação específica para identificar essas mortes e proíbe expressões que estigmatizem ou criminalizem a vítima, entre elas auto de resistência, resistência seguida de morte, confronto e oposição à intervenção policial.
+
+A norma vale para mortes causadas direta ou indiretamente por agentes de segurança, inclusive nos casos em que a perícia não consegue identificar de qual arma partiu o disparo, e para desaparecimentos em que a morte presumida foi reconhecida pela Justiça. A proposta é do ministro Edson Fachin, presidente do Supremo Tribunal Federal e do Conselho Nacional de Justiça, e foi aprovada por unanimidade em sessão virtual. Ao defendê-la, Fachin afirmou que o fenômeno atinge sobretudo a população jovem, negra e periférica.
+
+## Por que a anotação importa
+
+O país convive com duas contagens de mortes violentas que não se encontram. Uma vem dos registros das polícias; a outra, do sistema de saúde, construído a partir das certidões de óbito. Como a informação sobre a intervenção policial raramente aparecia no documento, a estatística da saúde perdia justamente esse recorte.
+
+Pesquisador do Laboratório de Análise da Violência e professor de sociologia da Universidade do Estado do Rio de Janeiro, Ignácio Cano avalia que a mudança ajudará a reduzir a distância entre as duas bases, conforme explicou à Agência Brasil. Para ele, a determinação se enquadra em um esforço mais amplo de fiscalização e monitoramento da letalidade policial. A resolução prevê ainda a organização nacional desses dados, de acordo com o registro feito pelo News Rondônia, o que permitiria comparar estados com um critério único.
+
+## O efeito para as famílias
+
+Há um lado prático que começa no balcão do cartório. Parentes de vítimas precisavam comprovar repetidamente, em cada processo, que a morte ocorrera durante uma ação policial, para pedir reparação ou acessar benefícios. Com a circunstância descrita na própria certidão, essa prova passa a estar no documento.
+
+O Conselho Nacional de Justiça ressalva que a anotação não antecipa julgamento sobre responsabilidade nem garante indenização, questões que continuam a ser decididas em processos próprios. A discussão sobre corrigir registros de episódios antigos já havia chegado ao órgão, que examinou pedido relativo às vítimas da chacina de Acari, caso de 1990 em que onze jovens desapareceram no Rio de Janeiro.
+
+## O que vem agora
+
+Cabe agora às corregedorias e aos cartórios de Registro Civil aplicar a redação padronizada e processar os pedidos de retificação de documentos já emitidos.`,
+ fontes:[
+  ['Agência Brasil','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/cnj-cria-regra-para-corrigir-registros-por-mortes-em-acoes-policiais'],
+  ['News Rondônia','https://newsrondonia.com.br/politica/2026/11/22/cnj-padroniza-certidoes-de-obito-por-mortes-em-acoes-policiais/'],
+  ['Correio da Manhã','https://www.correiodamanha.com.br/nacional/brasil/2026/11/332263-cnj-muda-regras-para-registros-de-mortes-em-operacoes-policiais.html'],
+  ['CNJ (proposta)','https://www.cnj.jus.br/proposta-preve-registro-de-mortes-ocorridas-em-acoes-de-orgaos-de-seguranca/']
+ ]});
+
+_U('cop31_impasse_fosseis_21', {hora:'22/11',
+ t:'COP31 termina sem acordo em Antália: impasse sobre combustíveis fósseis e financiamento derruba o texto final, e é a primeira conferência do clima sem consenso desde 2009',
+ sub:'O secretário-geral da ONU, António Guterres, falou em "profunda frustração"; a delegação brasileira criticou a falta de ambição e disse que o texto deixou de fora países em desenvolvimento e propostas do Brasil.',
+ dado:{n:'1ª desde 2009', l:'vez em que uma COP termina sem acordo por consenso; a de Antália foi a mais longa da história, com dois dias de prorrogação'},
+ resumo:'A 31ª Conferência do Clima da ONU terminou neste domingo (22), em Antália, na Turquia, sem decisão final. A União Europeia, as nações insulares do Pacífico e outros grupos rejeitaram o texto das presidências turca e australiana, que não citava os combustíveis fósseis, e o presidente Murat Kurum disse que não haveria nova versão. É a primeira COP sem consenso desde Copenhague, em 2009. Guterres lamentou o resultado e o Brasil criticou a falta de ambição e a exclusão de países em desenvolvimento.',
+ upd:'A COP31 terminou sem acordo no domingo (22): a UE e as ilhas do Pacífico rejeitaram o texto sem menção aos fósseis, Guterres lamentou o resultado e a delegação brasileira criticou a falta de ambição e a exclusão de países em desenvolvimento.',
+ fundo:`A 31ª Conferência das Nações Unidas sobre Mudança do Clima (COP31) terminou neste domingo (22), em Antália, na Turquia, sem aprovar um documento final. A União Europeia e as nações insulares do Pacífico rejeitaram a proposta das presidências turca e australiana porque ela não citava os combustíveis fósseis, e o financiamento climático também ficou sem solução. É a primeira conferência do clima da ONU sem acordo por consenso desde Copenhague, em 2009, e a mais longa já realizada.
+
+## O texto rejeitado
+
+Em acordos da ONU sobre o clima, a decisão final precisa de consenso, o que dá a cada um dos quase 200 países o poder de barrar o documento. A proposta final, chamada de Pacto de Antália, reconhecia pela primeira vez que o aquecimento caminha para ultrapassar 1,5°C e pedia o desenvolvimento mais rápido de tecnologias de remoção de carbono para reverter o excesso ao longo do tempo, informa a Al Jazeera. Não mencionava os fósseis e apenas citava o acordo da COP28, em Dubai, em 2023, quando os países falaram em se afastar gradualmente de carvão, petróleo e gás.
+
+O rascunho de abertura, divulgado pela presidência na segunda-feira (16), pedia uma saída acelerada dos fósseis. Na quinta (19), a versão enxuta retirou todas as menções depois de objeções da Arábia Saudita e de outros grandes produtores de petróleo e gás, segundo a Al Jazeera. Também ficou de fora o roteiro global para a transição, o chamado mapa do caminho, que o Brasil apresentou na COP30, em Belém, em 2025, informa a Itatiaia. O documento mantinha a meta turca de elevar a eletricidade a 35% do consumo mundial de energia em 2035, ante cerca de 23% hoje, e, em financiamento, a Al Jazeera diz que a versão revista abandonou a referência de US$ 120 bilhões para ajudar países pobres a se adaptar, ponto de atrito com as nações em desenvolvimento.
+
+## O fim das negociações
+
+A conferência deveria ter acabado na sexta-feira (20) e foi prorrogada por dois dias, o que a BBC Brasil descreve como a mais longa da história da ONU sobre o clima. Na plenária de encerramento, o presidente da COP31 e ministro do Meio Ambiente da Turquia, Murat Kurum, afirmou: "Reconhecemos que não há consenso sobre este documento", e disse que não haveria novo texto. Ele criticou os países por se fixarem em uma palavra, afirmou que as decisões existentes serão implementadas e deixou o palco enquanto as delegações falavam, relata a Itatiaia.
+
+O ministro do Clima e da Energia da Austrália, Chris Bowen, que conduz as negociações com a Turquia, chamou o resultado de "muito decepcionante" e citou como avanço um compromisso de eletrificação assinado por mais de 90 países. O ministro do Clima da Irlanda, Darragh O'Brien, que fala pela União Europeia, disse que o pacto "não está à altura do momento", e a ministra francesa Monique Barbut chamou a proposta de retrocesso. A Rússia e a Arábia Saudita defenderam deixar a palavra de fora, e a Rússia afirmou que não aceitaria nenhuma formulação sobre combustíveis fósseis.
+
+## As reações
+
+Guterres disse estar "profundamente decepcionado" por a COP31 ter acabado sem consenso e que os interesses que lucram com a destruição do planeta não devem ditar os termos da luta para salvá-lo, de acordo com a Al Jazeera e o Brasil de Fato. As ilhas Marshall disseram ter sido deixadas na mão por todos os lados, Vanuatu chamou o silêncio sobre os fósseis de "inaceitável" e o Quênia reclamou que o acordo não tratava das necessidades da África. O Greenpeace Brasil classificou o resultado como decepcionante, e o diretor de um centro de estudos africano, Mohamed Adow, chamou a COP31 de "a pior de todos os tempos".
+
+A delegação brasileira lamentou a falta de consenso, criticou a falta de ambição e falou em exclusão de países em desenvolvimento e de propostas do Brasil, segundo a Terra e a BBC Brasil. A negociadora Liliam Chagas disse à CNN Brasil que não é correto dizer que a conferência fracassou, porque o processo multilateral continua e outras decisões foram tomadas, informa a Itatiaia. O Valor lembra que o encontro de Donald Trump, Xi Jinping e Vladimir Putin na China, na quinta, que acertou aumentar a oferta de derivados de petróleo, atingiu a conferência.
+
+## O que vem agora
+
+Os órgãos técnicos da convenção voltam a se reunir em Bonn, na Alemanha, em junho de 2027, e as negociações seguem na COP32. Os compromissos de conferências anteriores continuam valendo.
+
+## O que ainda não está confirmado
+
+Não há calendário para retomar o texto de Antália nem definição de como o financiamento de adaptação e a transição dos fósseis serão tratados até a próxima conferência.
+
+NUMS 1ª|COP sem acordo desde Copenhague, em 2009;2 dias|de prorrogação além de sexta (20);35%|meta turca de eletricidade no consumo de energia em 2035;90+|países no compromisso de eletrificação`,
+ fontes:[['Al Jazeera (reações ao colapso)','https://www.aljazeera.com/news/2026/11/22/countries-react-after-cop31-climate-talks-end-in-collapse'],['Al Jazeera (UE rejeita acordo sem fósseis)','https://www.aljazeera.com/news/2026/11/22/fossil-fuel-impasse-pushes-cop31-climate-talks-into-second-day-of-overtime'],['BBC Brasil','https://www.bbc.com/portuguese/articles/cq742zpk1ln4o'],['Agência Brasil (impasse sobre fósseis)','https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-11/com-impasse-sobre-combustiveis-fosseis-cop31-termina-sem-acordo-final'],['Valor Econômico (impasses sobre fósseis e financiamento)','https://valor.globo.com/mundo/noticia/2026/11/22/negociaes-climticas-devem-fracassar-e-cop31-deve-ficar-sem-acordo-final.ghtml'],['Brasil de Fato (Guterres)','https://www.brasildefato.com.br/2026/11/22/secretario-geral-da-onu-critica-fracasso-da-cop31-apos-encerramento-sem-acordo/'],['Terra (delegação brasileira)','https://www.terra.com.br/planeta/videos/apos-fracasso-da-cop31-delegacao-brasileira-critica-falta-de-ambicao-e-fala-em-exclusao,769fe94439129d574f3a91fd274d548950vsusln.html'],['Itatiaia (Chagas e plenária)','https://www.itatiaia.com.br/mundo/cop31-turquia-termina-sem-acordo-principal-negociacoes-tensas/']]});
+
+_N('decimo_terceiro_30_11_23', {ed:'economia', k:'Economia · Trabalho · Renda', hora:'23/11',
+ t:'Primeira parcela do 13º salário vence na segunda-feira (30); veja quem tem direito, como calcular e o que fazer se a empresa atrasar',
+ sub:'A segunda parcela tem prazo até 18 de dezembro, porque o dia 20 cai num domingo; o isento de Imposto de Renda até R$ 5 mil também vale para o 13º.',
+ dado:{n:'30/11', l:'prazo da primeira parcela do 13º (metade do valor, sem descontos); a segunda vence em 18/12'},
+ resumo:'Empresas têm até a próxima segunda-feira (30) para pagar a primeira parcela do 13º salário, equivalente à metade do salário, sem descontos de INSS e Imposto de Renda. A segunda parcela vence em 20 de dezembro, antecipada para sexta (18) por cair em domingo. Têm direito empregados com carteira, domésticos, rurais, avulsos, temporários e servidores que trabalharam ao menos 15 dias no ano e não foram demitidos por justa causa. Estagiários, autônomos, PJ e beneficiários do BPC ficam de fora.',
+ fundo:`Os empregadores têm até a próxima segunda-feira (30) para pagar a primeira parcela do 13º salário de 2026. O valor corresponde a metade do salário, sem desconto de INSS ou de Imposto de Renda, e a data coincide com a Cyber Monday, a segunda-feira de promoções que sucede a Black Friday. A segunda parcela vence em 20 de dezembro; como o dia cai num domingo, o pagamento deve ser feito até sexta-feira (18).
+
+## Quem tem direito e quem fica de fora
+
+O 13º é um direito previsto na Constituição e na Lei 4.090, de 1962. Recebem trabalhadores com carteira assinada, incluindo empregados domésticos, rurais, urbanos, avulsos, mensalistas, horistas e temporários, além de servidores públicos, de acordo com o InfoMoney. Para ter direito, é preciso ter trabalhado ao menos 15 dias no ano e não ter sido demitido por justa causa. Quem pede demissão, é dispensado sem justa causa ou termina contrato por prazo determinado recebe o valor proporcional aos meses trabalhados.
+
+Ficam fora estagiários, autônomos, prestadores de serviço como pessoa jurídica (PJ), trabalhadores informais e beneficiários do Bolsa Família e do BPC, o benefício assistencial pago a idosos e pessoas com deficiência de baixa renda, que não têm natureza de salário, informa o Estado de Minas. Para trabalhadores intermitentes, o 13º é proporcional aos dias trabalhados.
+
+## Como calcular
+
+A conta é o salário bruto dividido por 12 e multiplicado pelos meses trabalhados no ano. Cada mês com pelo menos 15 dias trabalhados conta por inteiro, e quem ficou os 12 meses na mesma empresa recebe o equivalente a um salário. Horas extras, adicional noturno, insalubridade, periculosidade e comissões pagas com frequência entram na base e podem aumentar o valor, conforme o NC News. Num exemplo do Estado de Minas e do Correio, quem ganha R$ 4 mil e tem direito integral recebe R$ 2 mil na primeira parcela.
+
+A empresa também pode pagar tudo de uma vez, desde que até 30 de novembro. O BPMoney e o InfoMoney afirmam que quitar o valor em parcela única depois dessa data é ilegal, e o Estado de Minas lembra que há interpretações divergentes sobre o prazo da parcela única, com advogados recomendando o pagamento em novembro. O adiantamento pode ocorrer a qualquer momento entre fevereiro e novembro, e a primeira parcela costuma ser paga com as férias quando empregado e empresa combinam.
+
+## O que muda no desconto
+
+Na segunda parcela, o empregador desconta INSS, Imposto de Renda, quando devido, e o adiantamento já pago, e por isso o valor costuma ser menor que o da primeira. O NC News lembra que, desde janeiro de 2026, quem tem rendimentos tributáveis de até R$ 5 mil por mês está isento de Imposto de Renda, regra que também alcança o 13º, tributado separadamente. Entre R$ 5.000,01 e R$ 7.350 há redução gradual do imposto, e acima disso vale a tabela progressiva. O INSS continua descontado normalmente.
+
+Quanto a aposentados e pensionistas do INSS, o governo antecipou o abono anual em 2026, pago a maioria entre abril e junho, e por isso a maior parte não terá novo depósito em dezembro. Quem começou a receber o benefício depois recebe o valor proporcional, conforme o calendário do instituto.
+
+## Se a empresa atrasar
+
+O trabalhador deve cobrar o pagamento, de preferência por escrito, e guardar contracheques, comprovantes bancários e registros de conversas. Se não houver solução, pode procurar o sindicato da categoria, denunciar ao Ministério do Trabalho e Emprego ou recorrer à Justiça do Trabalho. A lei não fixa multa específica no texto consultado, mas convenções coletivas podem prever penalidade para o atraso.
+
+## O que vem agora
+
+A primeira parcela vence na segunda (30) e a segunda, na sexta (18 de dezembro). Quem recebeu o adiantamento antes, com férias, só terá o restante em dezembro.
+
+## O que ainda não está confirmado
+
+Não há dado oficial consolidado sobre o volume total que o 13º injeta na economia neste ano nem sobre o efeito no consumo de fim de ano.`,
+ fontes:[['InfoMoney (tudo sobre a primeira parcela do 13º)','https://www.infomoney.com.br/minhas-financas/tudo-sobre-primeira-parcela-decimo-terceiro-2026/'],['Estado de Minas (primeira parcela até dia 30)','https://www.em.com.br/economia/2026/11/7532253-primeira-parcela-do-13-e-paga-ate-dia-30-veja-quem-tem-direito.html'],['Correio (como calcular)','https://www.correio24horas.com.br/brasil/primeira-parcela-do-13-salario-deve-ser-paga-ate-30-de-novembro-veja-quem-tem-direito-e-como-calcular-1126'],['NC News (13º pode ser maior em 2026)','https://ncnews.com.br/2026/11/22/13o-salario-pode-ser-maior-em-2026/'],['BPMoney (primeira parcela cai até 30)','https://bpmoney.com.br/educacao-financeira/13-salario-primeira-parcela-30-novembro-2026/']]});
+
+_U('escala_6x1_20', {hora:'23/11',
+ t:'Governo publica nesta segunda (23) a primeira portaria da nova jornada, com regras para regimes especiais; 5x2 começa em 16 de dezembro e empresas correm para se adaptar',
+ sub:'A liminar de Flávio Dino flexibiliza o prazo de compensação das folgas por negociação com sindicatos, e o ministro Luiz Marinho critica a ação das confederações no Supremo.',
+ dado:{n:'16/12/2026', l:'jornada cai de 44 para 42 horas, com dois dias de descanso remunerado; 40 horas em dezembro de 2027'},
+ resumo:'O Ministério do Trabalho e Emprego publica hoje a primeira de uma série de portarias que regulamentam o fim da escala 6x1, com orientações complementares, regras para regimes especiais como o 12x36 e um material de perguntas e respostas. A jornada cai de 44 para 42 horas em 16 de dezembro, sem redução de salário, e para 40 horas em dezembro de 2027. O ministro Flávio Dino, do STF, deixou a distribuição das folgas para a negociação coletiva, e o caso aguarda julgamento no plenário presencial. Pequenas empresas e construtoras contratam, renegociam acordos e pedem mais prazo.',
+ upd:'O Ministério do Trabalho publica hoje a primeira portaria; entram a liminar de Dino que entrega a distribuição das folgas à negociação sindical, as críticas de Marinho à ação no STF e a adaptação de pequenas empresas e construtoras.',
+ fundo:`O Ministério do Trabalho e Emprego (MTE) publica nesta segunda-feira (23) a primeira de uma série de portarias que regulamentam o fim da escala 6x1, com regras para regimes especiais, como a jornada 12x36 e os turnos ininterruptos de revezamento. A jornada máxima cai de 44 para 42 horas semanais em 16 de dezembro, com dois dias de descanso remunerado e sem redução de salário, e para 40 horas em dezembro de 2027.
+
+## O que o decreto e a portaria definem
+
+O decreto foi assinado pelo presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) na quinta-feira (19). Ele vale para empregados urbanos, rurais e domésticos e, no que couber, para avulsos, e fixa o divisor usado no cálculo da hora de trabalho: 210 para a jornada de 42 horas e 200 para a de 40 horas, ante 220 hoje. O salário mensal não muda, mas a hora e a hora extra ficam mais caras. Para um salário de R$ 3 mil, a hora passa de R$ 13,64 para R$ 14,29 e, em 2027, para R$ 15, informa o ministro Luiz Marinho.
+
+A escala 12x36, usada em hospitais e na vigilância, não será extinta, mas terá de seguir os novos limites, com compensação ou horas extras definidas em acordo coletivo. Nos turnos ininterruptos, a jornada de seis horas diárias fica mantida, salvo negociação. Segundo a CNN Brasil, o cálculo diferenciado da hora extra e as portarias de categorias especiais, como transporte, aviação, trabalho marítimo e petróleo, vêm em seguida, em diálogo com empregadores e trabalhadores. Marinho afirma que a regra geral é de duas folgas por semana e que, quando a empresa não conseguir garantir as duas na mesma semana, precisa assegurar as oito folgas do mês dentro de 30 dias.
+
+## A liminar de Dino e a negociação com sindicatos
+
+No Supremo Tribunal Federal (STF), o ministro Flávio Dino manteve em 12 de novembro a data de 16 de dezembro, mas flexibilizou a transição em ações da Confederação Nacional do Comércio (CNC) e da Confederação Nacional da Indústria (CNI). Até 15 de dezembro de 2027, as 42 horas podem ser distribuídas em cinco dias de até 8h24, sem hora extra pelos 24 minutos diários a mais. Dino também afastou as travas semanal e mensal para compensar a segunda folga: acordos e convenções coletivas podem ampliar o prazo, desde que os dois repousos semanais remunerados sejam preservados.
+
+Em manifestação nas redes no sábado (14), o ministro disse que a decisão não cria exceções nem permite acordos individuais, e que a participação dos sindicatos é obrigatória. Sem acordo ou convenção, prevalece a regra geral, escreveu. As advocacias da Câmara e do Senado pediram revisão, com o argumento de que a liminar altera parâmetros definidos pelo Congresso, segundo a Gazeta do Povo. O ministro Luiz Fux pediu destaque, e o caso, cujo julgamento recomeça do zero, vai ao plenário presencial, sem data definida pelo presidente do tribunal, Edson Fachin.
+
+## Marinho e o papel do Supremo
+
+Marinho, que é do PT, afirmou em entrevista ao Estadão, em 10 de novembro, que o STF "não tinha nem que ter acolhido" a ação da CNC, que pede adiar a primeira etapa para outubro de 2027 e as 40 horas para outubro de 2028. "O governo está omisso? Não está omisso", disse, e perguntou: "Para que o Supremo vai se meter?". Na audiência de conciliação conduzida por Dino, o ministro defendeu que era possível negociar sem intervenção do Judiciário, informa a Agência Brasil. Lula já havia previsto divergências de interpretação e pediu preparo de sindicatos e da Justiça do Trabalho.
+
+## Pequenas empresas e construtoras
+
+Pequenos e médios empresários aumentam o quadro, reorganizam escalas e negociam acordos coletivos, relata o Estadão. Um dono de rede de padarias de São Paulo, com 350 funcionários, precisa abrir 17 vagas em uma das quatro unidades e enfrenta falta de mão de obra. O Instituto para Desenvolvimento do Varejo (IDV) pede adiar as etapas para dezembro de 2027 e dezembro de 2028 e estima alta de custos de 10% a 22%; a FecomercioSP questiona a competência do Executivo para definir divisores.
+
+Na construção, a Câmara Brasileira da Indústria da Construção (CBIC) calcula 288 mil contratações para manter a produção, alta de cerca de 5% na hora trabalhada já na primeira etapa e até 15% no custo da mão de obra com as 40 horas. Pediu de 90 a 180 dias para reorganizar canteiros, e o Sindicato Nacional da Indústria da Construção Pesada (Sinicon) orientou associadas a adiar acordos coletivos até a regulamentação. As construtoras apostam em industrialização: o presidente do Sinduscon-SP, Yorki Estefan, diz que "hoje, já se compra a parede pronta" e prevê início "atrapalhado" por causa dos sistemas de folha, segundo o Sem Pauta.
+
+## O que vem agora
+
+A portaria sai hoje, e o MTE promete as demais até 16 de dezembro. Dino pediu manifestações do Congresso, da AGU e da PGR até o início do mês, antes do julgamento presencial, tratado em outra matéria do Radar.
+
+## O que ainda não está confirmado
+
+A data do julgamento no STF, o texto final das portarias por categoria e a regra das oito folgas em 30 dias, citada por Marinho e que ainda precisa virar norma.`,
+ fontes:[['CNN Brasil (decreto, portarias e STF)','https://cnnbrasil.com.br/politica/governo-regulamenta-jornada-5x2-enquanto-stf-ainda-discute-flexibilizacao'],['Jornal Cruzeiro (portaria que sai na segunda, Marinho)','https://www.jornalcruzeiro.com.br/geral/brasil/2026/11/768084-portaria-que-define-orientacoes-sobre-fim-da-escala-6x1-sai-amanha.html'],['Agência Brasil (Dino mantém prazo e flexibiliza transição)','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/dino-mantem-prazo-inicial-da-5x2-mas-flexibiliza-regra-de-transicao'],['Gazeta do Povo (Dino justifica flexibilização)','https://gazetadopovo.com.br/republica/apos-criticas-dino-justifica-flexibilizacao-das-regras-para-o-fim-da-escala-6x1'],['Gazeta do Povo (Marinho critica STF)','https://www.gazetadopovo.com.br/republica/ministro-de-lula-critica-stf-por-acao-que-tenta-adiar-fim-da-escala-6x1/'],['Estadão (PMEs se adaptam)','https://www.estadao.com.br/economia/como-as-pequenas-e-medias-empresas-estao-se-adaptando-ao-fim-da-escala-6x1/'],['Brasil 61 (varejo e construção pedem prazo)','https://brasil61.com/n/escala-5x2-leva-varejo-a-pedir-um-ano-de-adaptacao-e-construcao-a-defender-ate-seis-meses-bras2617504'],['ND Mais (CBIC e construção civil)','https://ndmais.com.br/economia/reducao-da-escala-6x1-desafia-construcao-civil-e-entidade-pede-5-anos-de-transicao/'],['Sem Pauta (construtoras e industrialização)','https://sempauta.com.br/noticia/53304/como-as-construtoras-estao-se-preparando-para-reduzir-o-impacto-do-fim-da-escala-6x1.html'],['O Tempo (Sinicon orienta construtoras)','https://www.otempo.com.br/economia/2026/11/4/construtoras-sao-orientadas-a-adiar-acordos-sobre-reducao-da-jornada'],['Valor Econômico (brechas e judicialização)','https://valor.globo.com/legislacao/noticia/2026/11/20/decreto-do-fim-da-escala-6x1-deixa-brechas-e-abre-margem-para-judicializacao.ghtml']]});
+
+_U('eua_delta_atlanta_atrasos_22', {hora:'22/11',
+ t:'Falha no sistema de peso e balanceamento da Delta atrasa mais de 1,6 mil voos a partir de Atlanta, e a companhia diz que não foi ataque hacker; shutdown pode voltar a afetar o setor em dezembro',
+ sub:'A pane, normalizada na tarde de domingo, ocorre na semana de Ação de Graças e depois de uma semana de falhas digitais nos EUA; o financiamento do governo federal vence em 12 de dezembro.',
+ dado:{n:'1,6 mil voos', l:'da Delta atrasados no domingo (22), 49% do total da companhia com mais de 15 minutos de espera, segundo a empresa'},
+ resumo:'Uma falha no sistema automatizado que calcula peso e balanceamento dos aviões da Delta Air Lines atrasou mais de 1,6 mil voos neste domingo (22), principalmente em Atlanta, o aeroporto mais movimentado do mundo. A FAA, autoridade de aviação dos EUA, suspendeu por cerca de uma hora os voos com destino a Atlanta e disse que o problema não envolve seus sistemas. A Delta nega ataque hacker e diz que normalizou o sistema à tarde. Uma paralisação do governo, se ocorrer em 12 de dezembro, pode afetar controladores e agentes de segurança.',
+ upd:'Entraram o balanço da pane (mais de 1,6 mil voos atrasados, 49% do total da Delta, sistema normalizado à tarde), a negativa de ataque hacker e o alerta para o risco de nova paralisação do governo em 12 de dezembro.',
+ fundo:`Uma falha no sistema automatizado de peso e balanceamento da Delta Air Lines atrasou mais de 1,6 mil voos da companhia neste domingo (22), a maior parte no Aeroporto Internacional Hartsfield-Jackson, em Atlanta, o mais movimentado do mundo. A empresa informou que 49% dos voos do dia sofreram atraso de mais de 15 minutos e que o sistema voltou ao normal na tarde de domingo. A Delta afirma que o problema não foi causado por um ataque de hackers, segundo a ABC News.
+
+## O que aconteceu em Atlanta
+
+O sistema calcula o peso total e o centro de gravidade de cada avião antes da decolagem, com base em dados de bagagem e carga. Com ele fora do ar, a equipe da Delta fez os cálculos manualmente. Em comunicado, a empresa disse usar "alternativas manuais para decolar com segurança enquanto trabalha para restaurar a automação", relata a Fox News, que cita ainda relatos de ao menos 3,5 mil voos atrasados em polos como Atlanta e LaGuardia, em Nova York, número que a emissora não confirmou.
+
+A FAA, a Administração Federal de Aviação dos Estados Unidos, suspendeu por pouco tempo os voos com destino a Atlanta, o que gerou cerca de uma hora de atraso, e afirmou que o problema é da companhia e não tem relação com os sistemas de controle de tráfego aéreo. A Delta remarcou passageiros, ofereceu refeições e hotel quando necessário e abriu reembolso a quem teve voo cancelado e não quis viajar, informa a ABC News. A Folha registra que a falha ocorre uma semana depois da paralisação nacional que cancelou milhares de voos.
+
+## Uma semana de falhas digitais
+
+A pane não é a única da semana. Em 13 de novembro, a FAA mandou parar todas as decolagens no país depois de uma falha de comunicações em instalações de tráfego aéreo, que o secretário de Transportes, Sean Duffy, atribuiu a um contratante que trocava cabos de cobre por fibra ótica, segundo a emissora local WRDW. Foi a maior paralisação desde os atentados de 11 de setembro de 2001, com mais de 9 mil voos cancelados na sexta, de acordo com a mesma emissora.
+
+A DW, emissora pública alemã, lembra que, em 12 de novembro, o Outlook, o Teams e o Copilot, da Microsoft, ficaram fora do ar por cerca de 24 horas, com prejuízo global estimado em bilhões de dólares, e que a semana quase não teve um dia sem nova falha cibernética grave. Segundo a DW, o caos digital alimentou teorias de ataque cibernético nos Estados Unidos, mas o problema reflete cortes orçamentários do governo de Donald Trump.
+
+## O risco de uma nova paralisação do governo
+
+A CNN Brasil alerta que o financiamento do governo federal, incluindo a TSA, agência de segurança dos transportes, e a FAA, vence em 12 de dezembro. Sem acordo no Congresso, agentes de segurança e controladores de tráfego aéreo podem ter de trabalhar sem salário, apenas duas semanas antes do aumento de viagens de fim de ano. No passado, isso causou falta de pessoal, filas de horas nos aeroportos e voos cancelados, e uma paralisação, o chamado shutdown, pode voltar a interromper voos.
+
+## O que vem agora
+
+O feriado de Ação de Graças cai na quinta-feira (26), e o período de maior movimento nos aeroportos americanos começa nesta semana. O Congresso precisa aprovar o financiamento do governo até 12 de dezembro para evitar nova paralisação.
+
+## O que ainda não está confirmado
+
+A causa técnica da falha da Delta não foi divulgada, e a companhia não apresentou balanço de cancelamentos.`,
+ fontes:[['ABC News (1,6 mil voos da Delta atrasados)','https://abcnews.com/US/equipment-outage-atlanta-causes-1300-delta-flight-delays/story?id=138360900'],['Fox News (atrasos em polos da Delta)','https://www.foxnews.com/us/faa-lifts-ground-stop-atlanta-bound-delta-flights-system-outage'],['DW Brasil (caos digital e teorias de ataque cibernético)','https://www.dw.com/pt-br/caos-digital-alimenta-teorias-de-ataque-cibernético-nos-estados-unidos/a-80013869?maca=bra-rss-br-all-1030-rdf'],['CNN Brasil (shutdown e voos)','https://www.cnnbrasil.com.br/economia/money/macroeconomia/voos-nos-eua-podem-voltar-ser-interrompidos-o-vilao-da-vez-o-shutdown/'],['Folha (todos os voos em Atlanta)','https://www1.folha.uol.com.br/mundo/2026/11/eua-dizem-que-todos-os-voos-em-atlanta-aeroporto-mais-movimentado-do-mundo-sofrem-atrasos.shtml'],['WRDW (paralisação de 13/11)','https://www.wrdw.com/2026/11/16/airlines-work-resume-regular-schedules-after-ground-stop/'],['g1 (FAA suspende decolagens da Delta)','https://g1.globo.com/mundo/noticia/2026/11/22/suspensao-temporaria-voos-companhia-aerea-eua-falha-em-sistema.ghtml']]});
+
+_U('eua_democratas_258_camara_22', {hora:'22/11',
+ t:'Democratas chegam a 258 das 435 cadeiras da Câmara dos EUA, a maior bancada em 34 anos, e Jeffries promete foco no custo de vida e fiscalização de Trump',
+ sub:'Quatro disputas seguem indefinidas, duas delas com segundo turno em dezembro na Louisiana; com o Senado também democrata, o país terá governo dividido, e a ala progressista cobra pautas mais ousadas do futuro presidente da Casa.',
+ dado:{n:'258 de 435', l:'cadeiras garantidas pelos democratas na Câmara dos EUA, a maior bancada desde 1992; os republicanos terão ao menos 173'},
+ resumo:'O Partido Democrata garantiu neste domingo (22) ao menos 258 das 435 cadeiras da Câmara dos Representantes, depois da vitória de Chuck Hubbard sobre a republicana Virginia Foxx na Carolina do Norte. Repete o número de 1992, o maior do partido em 34 anos. Os republicanos ficam com ao menos 173, e quatro vagas seguem indefinidas. O líder democrata Hakeem Jeffries, que deve ser eleito presidente da Casa em janeiro, promete agir sobre o custo de vida e fiscalizar o governo Trump.',
+ upd:'A marca de 258 cadeiras foi confirmada neste domingo (22) com a vitória de Chuck Hubbard na Carolina do Norte; entram o papel de Jeffries, a divisão entre moderados e progressistas do partido e o limite imposto pelo poder de veto de Trump.',
+ fundo:`O Partido Democrata garantiu neste domingo (22) ao menos 258 das 435 cadeiras da Câmara dos Representantes dos Estados Unidos, o melhor resultado na Casa desde 1992, quando também chegou a 258 com a eleição de Bill Clinton, há 34 anos. A marca veio com a vitória do democrata Chuck Hubbard sobre a deputada republicana Virginia Foxx, na Carolina do Norte. Os republicanos, do partido de direita do presidente Donald Trump, terão ao menos 173 cadeiras.
+
+## Uma vitória ampla em redutos conservadores
+
+A Associated Press projetou o controle democrata da Casa na madrugada seguinte à eleição de 3 de novembro, e o partido foi somando vitórias nos distritos mais apertados. Até agora tomou 44 cadeiras antes republicanas, quatro a mais que as 40 conquistadas em 2018, no primeiro governo Trump, informam o g1 e a Exame. Análise da rádio pública americana NPR, de 19 de novembro, conta 46 cadeiras viradas e calcula que os democratas tiveram cerca de 56% dos votos para a Câmara, contra 42% dos republicanos, a maior vantagem de um partido em 50 anos.
+
+A DW, emissora pública alemã, descreve o resultado como o melhor desde Clinton, e a AP, em texto da Folha, atribui a onda à alta dos preços e ao segundo mandato conturbado de Trump. Os democratas também controlam o Senado, o que cria um governo dividido: o Congresso é democrata, e a Casa Branca, republicana. Distritos que Trump venceu por dois dígitos mudaram de lado, segundo o Axios, e a projeção do jornal The New York Times, citada pelo site, chegou a prever 256 cadeiras democratas contra 178 republicanas.
+
+## Jeffries e a divisão interna
+
+O líder da minoria, Hakeem Jeffries, deputado democrata de Nova York, deve ser eleito presidente da Câmara em janeiro e seria o primeiro presidente negro da Casa. Na semana da eleição ele chamou o resultado de "tsunami americano", disse que os democratas venceram pela pauta do custo de vida e que devem governar com ela, e afirmou que o foco será resolver problemas, não buscar vingança contra Trump, informa a Al Jazeera. A agenda inclui baixar o preço de alimentos, gasolina, moradia e saúde e fiscalizar o governo, com intimações e investigações que podem alcançar a família Trump, segundo o InfoMoney.
+
+O Axios mostra que a bancada é heterogênea. Os moderados da New Democrat Coalition, liderados pelo deputado Greg Stanton, do Arizona, são uma das bases mais fiéis de Jeffries, e a maioria dos novatos em disputas apertadas teve o apoio do grupo. Já parlamentares progressistas do grupo The Bloc defendem Medicare para todos, o fim do financiamento do ICE, a agência de imigração, e o corte de ajuda a Israel, e vários ainda não se comprometeram a votar em Jeffries para presidente da Casa. Trump afirmou que não estava na cédula e que, se estivesse, a vitória seria dele, e o atual presidente da Câmara, Mike Johnson, republicano, chamou o resultado de decepcionante.
+
+## O limite do poder de veto
+
+A maioria ampla não garante leis aprovadas. A Al Jazeera lembra que Trump deixou virar lei sem assinatura o projeto de moradia aprovado em julho e o chamou de "irrelevante", e que ele já ameaçou vetar o que rejeitar, o que dificulta novas leis mesmo com a vantagem democrata. Para derrubar um veto, o Congresso precisa de dois terços dos votos nas duas Casas.
+
+## As disputas restantes
+
+Ainda restam quatro disputas indefinidas: uma em Minnesota, uma no Tennessee e duas na Louisiana, que serão decididas em segundo turno em dezembro. A NPR calcula que os democratas chegariam a 260 cadeiras, o maior número desde o Congresso de 1991 a 1993, se vencessem todas as corridas em que lideram.
+
+## O que vem agora
+
+O novo Congresso toma posse no início de janeiro, quando a Câmara escolhe seu presidente. Em dezembro, a Louisiana realiza os segundos turnos, e a contagem em Minnesota e no Tennessee deve ser concluída.
+
+## O que ainda não está confirmado
+
+O total final pode passar de 258. A abertura de investigações ou de um novo impeachment depende de decisões da liderança democrata, e o apoio dos progressistas a Jeffries na votação de janeiro ainda não está fechado.
+
+NUMS 258|cadeiras democratas (de 435);173|cadeiras republicanas, no mínimo;44|cadeiras tomadas dos republicanos;~56%|dos votos para a Câmara, segundo a NPR`,
+ fontes:[['DW Brasil (Deutsche Welle)','https://www.dw.com/pt-br/democratas-conquistam-maior-bancada-na-câmara-dos-eua-desde-1992/a-80015273?maca=bra-rss-br-all-1030-rdf'],['Al Jazeera (Jeffries e foco no custo de vida)','https://aljazeera.com/news/2026/11/4/hakeem-jeffries-promises-affordability-focus-after-democratic-midterm-win'],['Axios (Jeffries e a bancada)','https://axios.com/2026/11/04/hakeem-jeffries-democrats-left-majority-win'],['NPR via OPB (maior vitória em 50 anos)','https://www.opb.org/article/2026/11/19/democrats-house-win-was-the-largest-in-50-years/'],['States Newsroom (Democrats win sizable House majority)','https://www.newsfromthestates.com/article/democrats-win-sizable-us-house-majority-amid-sweep-close-races'],['Folha (AP: melhor resultado desde 1992)','https://www1.folha.uol.com.br/mundo/2026/11/democratas-garantem-258-cadeiras-na-camara-melhor-resultado-desde-1992.shtml'],['g1 (bancada democrata)','https://g1.globo.com/mundo/noticia/2026/11/22/bancada-democrata-na-camara-dos-eua-atinge-marca-historica.ghtml'],['InfoMoney','https://www.infomoney.com.br/mundo/democratas-atingem-258-cadeiras-na-camara-dos-eua-recorde-desde-1992/']]});
+
+_N('eua_iowa_detonacao_explosivos_ordem_judicial_23', {ed:'mundo', k:'Mundo · EUA · Meio ambiente', hora:'23/11',
+ t:'Exército dos EUA diz que vai detonar 5 toneladas de explosivo à base de chumbo em Iowa com base em poderes de emergência, mesmo com a suspensão da licença por um tribunal',
+ sub:'Ambientalistas e governos de Iowa e Illinois pedem adiamento por causa de uma nuvem de poeira de chumbo que pode chegar a 160 km; o Exército diz que a substância ficou instável e que o risco de explosão espontânea aumenta com o frio.',
+ dado:{n:'68 barris', l:'de azida de chumbo, cerca de 4,4 a 5 toneladas, a serem detonados na fábrica de munições de Iowa'},
+ resumo:'O Exército dos Estados Unidos informou à Justiça que vai destruir cerca de cinco toneladas de azida de chumbo, explosivo de detonadores, armazenadas em 68 barris na fábrica de munições de Iowa, usando uma exceção de emergência, depois que um tribunal federal de apelações suspendeu a licença da agência ambiental EPA. A operação, adiada de sexta (20), está prevista para esta segunda (23) ao meio-dia local, segundo duas fontes, e para quarta (25) segundo outras. Ambientalistas contestam a manobra.',
+ fundo:`O Exército dos Estados Unidos informou à Justiça que vai detonar cerca de cinco toneladas de azida de chumbo, um explosivo usado em detonadores, armazenadas na fábrica de munições Iowa Army Ammunition Plant, em Middletown, no estado de Iowa. Para isso, invocará uma exceção de emergência prevista nas regras ambientais, depois que um tribunal federal de apelações suspendeu a licença que a Agência de Proteção Ambiental (EPA) havia dado à operação. Ambientalistas dizem que a manobra contorna a decisão judicial.
+
+## A decisão do tribunal
+
+O material soma 68 barris, cerca de 4,4 toneladas pelas contas da Al Jazeera e perto de 9.700 libras, quase cinco toneladas, segundo a ABC News. A azida de chumbo ficava conservada em líquido, que evaporou e formou cristais sensíveis a calor, atrito e impacto, e está armazenada no local há quase duas décadas, informa o jornal Shaw Local. O Exército e a EPA concluíram que mover ou neutralizar a substância seria mais perigoso do que explodi-la no próprio local.
+
+As entidades Iowa Environmental Council e o capítulo de Iowa do Sierra Club, representadas pela organização jurídica Earthjustice, recorreram ao Tribunal de Apelações do 8º Circuito. Elas dizem que a EPA não exigiu a análise de alternativas mais seguras, que a licença não protege a saúde pública e que a população recebeu aviso com cinco dias de antecedência. O tribunal suspendeu temporariamente a licença, concedida em 13 de novembro. Em petição entregue no sábado (21), o governo disse que a operação seguirá com base na "exclusão de emergência para munições e explosivos", que, segundo o Departamento de Justiça, não depende da licença, relata a Al Jazeera.
+
+## O argumento do governo e o dos ambientalistas
+
+O secretário interino do Exército, Adam Telle, disse que a detonação controlada oferece o menor risco ao público. Em petição citada pela BBC e pelo g1, advogados do governo afirmaram que, "para proteger seus funcionários e as comunidades vizinhas, o Exército precisa agir rapidamente". O Exército alega que temperaturas abaixo de 30°F (cerca de -1°C), previstas para os próximos dias, aumentam o risco de explosão não controlada.
+
+A advogada da Earthjustice Thien Chau disse que o critério da exceção é muito alto e que o Exército precisa mostrar que não há alternativa segura: "Qualquer um pode alegar uma emergência a qualquer momento e fazer o que quiser". A Al Jazeera registra ainda que críticos questionam por que o explosivo ficou perigoso antes de ser destruído.
+
+## O risco da poeira de chumbo
+
+As explosões ocorrerão dentro de depósitos de concreto cobertos de terra, cercados por barreiras de areia, com o solo encharcado e borrifado com água. O Exército diz que o chumbo no ar ficará bem abaixo do nível que exigiria nova ação da EPA. O The Intercept relata, porém, que a poeira com chumbo pode chegar a até 160 km, e a ABC News cita modelagem que prevê chumbo depositado em uma faixa de cerca de 40 km por 8 km. O Centro de Controle de Doenças dos EUA (CDC) não reconhece nível seguro de chumbo no sangue de crianças.
+
+O governador de Illinois, JB Pritzker, e parlamentares do estado enviaram carta ao Exército e à EPA pedindo adiamento, e autoridades de Iowa recomendaram que criadores de gado levem animais e equipamentos para locais fechados. Moradores perto do parque municipal de Middletown foram orientados a deixar a área por algumas horas.
+
+## O que vem agora
+
+Duas detonações controladas estão previstas para cerca do meio-dia desta segunda-feira (23), segundo a Al Jazeera e o Shaw Local, com 24 de novembro como data-limite citada pelo governo; o g1 e a CNN falam em quarta-feira (25). O tribunal ainda pode se manifestar sobre a nova alegação do governo.
+
+## O que ainda não está confirmado
+
+O horário exato e as orientações de evacuação atualizadas não foram divulgados, e não há decisão do tribunal sobre a exceção de emergência.`,
+ fontes:[['Al Jazeera (plano do Exército)','https://www.aljazeera.com/news/2026/11/23/extremely-concerning-inside-a-us-army-plan-to-detonate-iowa-lead-stores'],['Shaw Local (exclusão de emergência, apesar da ordem judicial)','https://www.shawlocal.com/news/2026/11/22/army-says-it-will-detonate-lead-azide-in-iowa-under-emergency-exclusion-despite-court-order/'],['ABC News (detonação adiada)','https://abcnews.com/US/iowa-army-plant-lead-azide-detonation/story?id=138261613'],['The Intercept','https://theintercept.com/2026/11/19/iowa-lead-ammunition-detonation-army/'],['Earthjustice (ação judicial)','https://earthjustice.org/?p=58175'],['g1 (Exército planeja detonar, citando BBC)','https://g1.globo.com/mundo/noticia/2026/11/23/exercito-dos-eua-planeja-detonar-5-toneladas-de-explosivos-apesar-de-ordem-judicial-e-de-alerta-de-ambientalistas.ghtml']]});
+
+_N('indonesia_incendio_fabrica_mortos_23', {ed:'mundo', k:'Mundo · Indonésia', hora:'23/11',
+ t:'Incêndio em fábrica de doces na Indonésia deixa ao menos 24 mortos e cerca de 30 desaparecidos; identificação dos corpos dependerá de exame de DNA',
+ sub:'O fogo começou no sábado à noite em uma das unidades do complexo em Cikande, na província de Banten, onde cerca de 300 pessoas cumpriam turno; a suspeita inicial é de curto-circuito em um aparelho de ar-condicionado.',
+ dado:{n:'24 mortos', l:'confirmados pelo governo indonésio no incêndio da fábrica em Cikande, com cerca de 30 desaparecidos'},
+ resumo:'O governo da Indonésia confirmou nesta segunda-feira (23) ao menos 24 mortos no incêndio que atingiu no sábado (21) a fábrica de doces da PT Fonusa Agung Mulia, em Cikande, na província de Banten, a cerca de uma hora de carro de Jacarta. Outras 30 pessoas seguem desaparecidas e 29 foram localizadas com vida, cinco delas internadas. Cerca de 300 trabalhadores cumpriam turno no complexo. Os corpos não puderam ser reconhecidos visualmente e serão identificados por DNA.',
+ fundo:`Ao menos 24 pessoas morreram no incêndio que atingiu na noite de sábado (21) uma das unidades da fábrica de doces da PT Fonusa Agung Mulia, em Cikande, na província de Banten, a cerca de uma hora de carro de Jacarta, capital da Indonésia. O número foi confirmado pelo governo nesta segunda-feira (23), enquanto cerca de 30 trabalhadores continuavam desaparecidos e as equipes de resgate seguiam vasculhando os escombros.
+
+Cerca de 300 pessoas estavam no complexo no turno de sábado, afirmou o presidente-executivo da empresa, Steven Erwin Wijaya. Outras 29 foram localizadas com vida, cinco delas levadas a hospitais, informou Al Amrad, chefe da agência de busca e salvamento de Banten. Ele disse que o trabalho prosseguia nesta segunda em meio a focos de calor remanescentes e a uma estrutura cada vez mais instável, o que expõe as equipes a risco de desabamento.
+
+## Os corpos e a identificação
+
+Os socorristas retiraram 24 sacos com restos mortais, e as vítimas não puderam ser reconhecidas visualmente. A polícia passou a colher amostras de DNA de parentes para a identificação, processo que pode levar semanas, explicou a autoridade policial Wahyu Hidayati. A agência de busca e salvamento ainda não havia confirmado de forma independente o total de mortos divulgado em Jacarta, de acordo com a apuração da Reuters reproduzida pelo Irish Examiner.
+
+A confirmação oficial veio de Said Iqbal, assessor da Presidência para assuntos trabalhistas, que afirmou que os protocolos de segurança da unidade estão sendo avaliados e que convocaria o presidente-executivo da empresa para prestar esclarecimentos. A causa do incêndio ainda é investigada. Os relatórios preliminares apontam curto-circuito em um aparelho de ar-condicionado como hipótese principal.
+
+## A empresa e o setor
+
+A fábrica pertence ao grupo United Family Food, que emprega cerca de 5 mil pessoas, mantém quatro escritórios no exterior e produz bens de consumo, entre eles a marca de balas Milkita e o macarrão instantâneo Lemonilo. A companhia não respondeu de imediato aos pedidos de comentário. A unidade atingida fica em Cikande, no distrito de Serang, cerca de 50 quilômetros de Jacarta, em um dos polos industriais que concentram fábricas de alimentos e embalagens na ilha de Java.
+
+Acidentes com grande número de vítimas em plantas industriais são recorrentes no país, o quarto mais populoso do mundo, onde a fiscalização de normas de prevenção de incêndio costuma ser apontada como deficiente por sindicatos e pelo próprio governo. Em dezembro do ano passado, um incêndio em um edifício comercial em Jacarta matou 22 pessoas. Em outubro de 2017, a explosão de um depósito de fogos de artifício em Kosambi, também em Banten, deixou 47 mortos, no episódio mais letal da indústria indonésia na última década.
+
+## O que vem agora
+
+As buscas continuam enquanto a estrutura permitir a entrada das equipes, e o número de mortos deve subir conforme os desaparecidos forem localizados. A polícia e o Ministério do Trabalho apuram as condições de segurança da fábrica, e a identificação das vítimas depende do resultado dos exames de DNA.`,
+ fontes:[
+  ['Irish Examiner (Reuters)','https://www.irishexaminer.com/world/arid-41941194.html'],
+  ['WHBL (Reuters)','https://whbl.com/2026/11/22/indonesia-says-24-killed-in-factory-blaze-as-rescuers-search-for-dozens-missing/'],
+  ['New Straits Times','https://www.nst.com.my/world/region/2026/11/1583789/24-killed-indonesia-factory-fire-search-missing-continues'],
+  ['Business Recorder','https://www.brecorder.com/news/40450322/indonesia-says-24-killed-in-factory-blaze-as-rescuers-search-for-dozens-missing'],
+  ['NBC News (incêndio em Jacarta, 2025)','https://www.nbcnews.com/world/indonesia/indonesia-jakarta-fire-office-building-rcna248346']
+ ]});
+
+_U('ira_bahrein_drones_porta_avioes_roosevelt_16_11', {hora:'22/11',
+ t:'Ataques a navios no Estreito de Ormuz chegam ao maior nível desde o início da guerra entre EUA e Irã; novembro já é o segundo mês mais violento',
+ sub:'Três petroleiros foram atingidos por projéteis ao deixar o estreito na sexta e no sábado; um ataque iraniano a instalação industrial no Bahrein feriu duas pessoas.',
+ dado:{n:'22 incidentes', l:'contra navios na região do Estreito de Ormuz até 22 de novembro, depois de mais de 30 em outubro'},
+ resumo:'A navegação no Estreito de Ormuz vive a fase mais perigosa da guerra entre Estados Unidos e Irã, iniciada em fevereiro. Outubro teve mais de 30 incidentes contra navios e novembro chegou a 22 até domingo (22), contra uma média anterior de cerca de 10 por mês. Três petroleiros foram atingidos por projéteis na sexta (20) e no sábado (21) na saída do estreito. No Bahrein, um ataque iraniano a uma instalação industrial civil feriu duas pessoas. Donald Trump diz que não precisa de acordo com Teerã.',
+ upd:'Novembro já acumula 22 incidentes contra navios, depois de mais de 30 em outubro, e três petroleiros foram atingidos entre sexta e sábado na saída do estreito. Trump afirmou que os EUA não precisam de acordo porque já têm "o dinheiro" e "o estreito" do Irã.',
+ fundo:`A guerra entre Estados Unidos e Irã entrou na fase mais perigosa para a navegação comercial no Estreito de Ormuz, passagem de 33 quilômetros de largura por onde circulava cerca de um quinto do petróleo do mundo antes do conflito. Outubro registrou mais de 30 incidentes contra navios na região, o maior número mensal desde o começo dos combates, em fevereiro, e novembro chegou a 22 até domingo (22), já o segundo mês mais violento.
+
+Os números vêm do levantamento da UKMTO, a agência britânica que monitora o tráfego mercante no Golfo, e da Organização Marítima Internacional, braço da ONU para a navegação. A média antes de outubro era de cerca de 10 ataques por mês na área que reúne o estreito, o Golfo Pérsico e o Golfo de Omã. O tráfego segue muito abaixo do nível esperado para 2025, e a queda do preço do petróleo pressionou a receita iraniana, o que ajuda a explicar a decisão de Teerã de elevar o ritmo das ações contra navios.
+
+## Petroleiros atingidos na saída do estreito
+
+Três petroleiros que deixavam o estreito foram atingidos por projéteis na sexta-feira (20) e no sábado (21), conforme a empresa de gestão de risco Marisks, citada pela CNN e reproduzida pela Exame. Dois navios pegaram fogo e o terceiro teve a casa de máquinas danificada. Ninguém assumiu os ataques, mas a consultoria considera provável a participação iraniana. O risco é maior no corredor sul, perto da costa de Omã, rota que o Irã contesta e que a Marinha americana passou a indicar aos cargueiros.
+
+No início do mês, o boletim do centro de informações marítimas distribuído pela UKMTO havia contabilizado quatro ataques em 96 horas na área de Ormuz, todos em cerca de 52 horas, entre 1º e 3 de novembro, diante da costa de Musandam, em Omã. O mesmo documento descreve sobrevoos de drones, vigilância dirigida e chamadas de rádio contra navios mercantes, e registra oito ataques no Golfo Pérsico desde 7 de outubro. O comando militar americano para o Oriente Médio informou 144 embarcações desviadas e quatro inutilizadas no bloqueio naval ao Irã.
+
+## Bahrein volta a ser alvo
+
+O Bahrein, arquipélago que abriga a Quinta Frota da Marinha dos Estados Unidos, voltou a ser atingido no sábado. Um ataque iraniano a uma instalação industrial civil deixou dois feridos: um cidadão bareinita, em estado estável, e um paquistanês, em estado crítico. A Guarda Revolucionária, força militar de elite iraniana, reivindicou ataques repetidos a instalações americanas no país, que não era alvo desde setembro. A Arábia Saudita afirmou ter interceptado no domingo um míssil balístico lançado pelos houthis, grupo armado iemenita alinhado a Teerã, no oeste do território saudita.
+
+A guerra começou no fim de fevereiro, com ataques coordenados de Estados Unidos e Israel contra o Irã. Um cessar-fogo em abril encerrou quase 40 dias de bombardeios intensos, mas ruiu na metade do ano. Desde então, os dois lados alternam ofensivas contra alvos militares, energéticos e navios. Em setembro, o Irã disse ter atacado 10 embarcações depois que os americanos afundaram cinco petroleiros iranianos, na maior troca declarada de ataques à navegação até ali, quando o Brent superou US$ 100 o barril pela primeira vez desde julho.
+
+## A posição de Trump
+
+O presidente dos Estados Unidos, Donald Trump, afirmou que Washington não precisa de acordo com Teerã. Em publicação na rede social Truth Social, escreveu que os americanos já têm "o dinheiro" dos iranianos, centenas de bilhões de dólares, e "o estreito" deles. Ele também indicou que retomaria operações militares se julgar necessário, mantendo a decisão sobre uma nova ofensiva para depois do início do próximo ano, e pediu ao vice-presidente, JD Vance, que se concentre em outros assuntos.
+
+## O que vem agora
+
+A UKMTO orienta os navios a responder rapidamente a chamadas militares e a manter o sistema de identificação ligado, salvo risco de segurança. A decisão americana sobre novos ataques ao Irã segue adiada, e o bloqueio naval continua em vigor.`,
+ fontes:[
+  ['Exame (CNN/UKMTO/IMO)','https://exame.com/mundo/ataques-a-navios-no-estreito-de-ormuz-atingem-maior-nivel-desde-inicio-da-guerra-entre-eua-e-ira/'],
+  ['Ahram Online (AFP)','https://english.ahram.org.eg/News/580023.aspx'],
+  ['Gulf News (JMIC/UKMTO)','https://gulfnews.com/business/energy/hormuz-attacks-rise-as-iran-steps-up-pressure-on-shipping-ukmto-warns-1.500737866'],
+  ['USNI News','https://news.usni.org/2026/10/22/october-marks-highest-number-of-strait-of-hormuz-attacks'],
+  ['Diário do Comércio (Reuters)','https://diariodocomercio.com.br/internacional/ira-ataques-ormuz-petroleo/']
+ ]});
+
+_U('israel_coalizao_20', {hora:'22/11',
+ t:'Eisenkot, encarregado de formar o governo de Israel, negocia com o Likud de Netanyahu por mais de quatro horas sem acordo; ataques de colonos na Cisjordânia, chamados por ele de "terrorismo judaico", entram na disputa',
+ sub:'Os partidos concordaram em voltar a se reunir, talvez nesta segunda (23); o impasse está em quem seria premiê e se o ministro Itamar Ben-Gvir entra no governo, e o prazo vai até 6 de dezembro.',
+ dado:{n:'6 de dezembro', l:'prazo dado pelo presidente Isaac Herzog a Gadi Eisenkot para formar governo, prorrogável por 14 dias'},
+ resumo:'O ex-chefe das Forças Armadas Gadi Eisenkot, que tem o mandato do presidente Isaac Herzog para formar o próximo governo de Israel, convidou o Likud, partido do primeiro-ministro interino Binyamin Netanyahu, a negociar. Equipes dos dois lados se reuniram por mais de quatro horas em Herzliya neste domingo (22), sem acordo e com nova rodada prevista. No mesmo dia, Eisenkot chamou de "terrorismo judaico" incêndios de carros em vilarejos palestinos da Cisjordânia, que a polícia investiga.',
+ upd:'As equipes do Yashar e do Likud se reuniram por mais de quatro horas neste domingo (22), sem acordo e com nova rodada prevista; Eisenkot chamou de "terrorismo judaico" os incêndios em vilarejos da Cisjordânia, o que gerou troca de acusações com Ben-Gvir.',
+ fundo:`Gadi Eisenkot, ex-chefe das Forças Armadas de Israel e líder do partido Yashar, encarregado pelo presidente Isaac Herzog de formar o próximo governo, abriu neste domingo (22) negociações com o Likud, partido de direita do primeiro-ministro interino Binyamin Netanyahu. Negociadores dos dois lados se reuniram por mais de quatro horas em um hotel em Herzliya, sem acordo, e combinaram novo encontro, possivelmente nesta segunda (23), informa o Ynet. No mesmo dia, Eisenkot chamou de "terrorismo judaico" incêndios de carros em vilarejos palestinos da Cisjordânia.
+
+## A reunião em Herzliya
+
+Pelo Likud foram o presidente da bancada, Ofir Katz, e o advogado Michael Rabilo; pelo Yashar, o deputado Chili Tropper e os assessores Yoav Horowitz e Guy Gutman. Os partidos divulgaram nota conjunta dizendo que "expuseram suas posições em uma série de temas substantivos" e que haverá nova reunião, relata a Al Jazeera. O Likud exige que Netanyahu seja o primeiro a ocupar o cargo em uma rotação, algo que a oposição rejeita, e quer o ministro da Segurança Nacional, Itamar Ben-Gvir, do partido de extrema direita Poder Judaico, no governo, enquanto o Yashar quer excluí-lo.
+
+As equipes também concordaram em redigir uma proposta sobre o mandato da comissão de inquérito sobre as falhas de 7 de outubro de 2023, caso as conversas avancem, mas divergem sobre quem nomearia seus integrantes. O Likud diz que os ultraortodoxos precisam participar diretamente das negociações sobre o serviço militar obrigatório, segundo o Ynet. Depois da reunião, Netanyahu escreveu nas redes que "não se deve formar governo com Ahmad Tibi", deputado de um partido árabe.
+
+## Os números e o prazo
+
+As eleições de 27 de outubro não deram maioria a nenhum lado. O bloco de Eisenkot tem 48 das 120 cadeiras do Knesset, o Parlamento, 13 a menos que a maioria, e o de Netanyahu, 53. Os partidos de maioria árabe, que somaram 19 cadeiras, um recorde, seriam decisivos em uma coalizão sem o Likud, segundo a Al Jazeera. Herzog deu a Eisenkot até 6 de dezembro, com possível prorrogação de 14 dias.
+
+Se a negociação de unidade falhar, o Yashar pretende pedir ao Knesset um voto de confiança em um governo de minoria antes do fim do mandato, com apoio de fora da Lista Conjunta, liderada por Yousef Jabareen, e da Lista Árabe Unida, de Mansour Abbas, informa a Al Jazeera. Avigdor Liberman, do Yisrael Beiteinu, e Naftali Bennett, do bloco Juntos, rejeitam um governo de minoria. O ministro das Finanças, Bezalel Smotrich, de extrema direita, pediu à oposição que se una ao bloco de Netanyahu.
+
+## Incêndios de colonos na Cisjordânia
+
+Na madrugada de domingo, colonos incendiaram ao menos 12 veículos em ao menos cinco vilarejos palestinos da Cisjordânia ocupada, segundo a ABC australiana; as autoridades falam em quatro vilarejos: Deir as-Sudan, Deir Abu Mashaal, Kafr Malik e Al-Tuwani, de acordo com a emissora irlandesa RTE. Em Kafr Malik, o ativista local Jihad al-Qaq disse à AFP que cerca de oito carros foram queimados por volta das 2h e que muros receberam frases racistas. Uma delas, "em sangue e fogo a Judeia caiu, em sangue e fogo a Judeia se levantará", usa o nome bíblico da Cisjordânia.
+
+O Exército disse que condena "veementemente" os atos, e a polícia abriu investigação; não havia prisões até a noite. Eisenkot, que pediu prisão e "sanções severas" aos responsáveis, culpou o governo, incluindo Ben-Gvir e Smotrich. Ben-Gvir respondeu que ele "não faz ideia dos fatos nem da investigação". Yousef Jabareen disse que os colonos são o braço armado de partidos de extrema direita. A ONU registra, em média, seis ataques de colonos por dia na Cisjordânia em 2026, e a organização B'Tselem disse que apenas condenar não basta.
+
+
+Uma nova rodada entre Yashar e Likud é esperada nos próximos dias, e Eisenkot precisa apresentar uma maioria a Herzog até 6 de dezembro.`,
+ fontes:[['Al Jazeera (Likud e Yashar sem acordo)','https://www.aljazeera.com/news/2026/11/22/netanyahus-likud-eisenkots-yashar-end-coalition-talks-without-deal'],['Ynet (4 horas de conversas)','https://www.ynetnews.com/article/hj11rtyeyql'],['RTE (investigação dos incêndios na Cisjordânia)','https://www.rte.ie/news/middle-east/2026/1122/1600216-west-bank-fires/'],['ABC News Australia (Eisenkot e terrorismo judaico)','https://www.abc.net.au/news/2026-11-23/israel-gadi-eisenkot-west-bank-arson-attacks/107415280'],['Brasil de Fato (terrorismo judaico)','https://www.brasildefato.com.br/2026/11/22/terrorismo-judaico-eisenkot-cobra-punicao-por-ataques-de-colonos-contra-palestinos/'],['Times of Israel (Yashar e Likud)','https://www.timesofisrael.com/yashar-likud-meet-for-unity-talks-as-eisenkot-bloc-moves-to-assert-control-over-knesset/'],['Folha (Eisenkot convida o Likud)','https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/eisenkot-convida-partido-de-netanyahu-para-negociar-coalizao-em-israel.shtml']]});
+
+_N('janones_exercito_lula_perde_seguidores_23', {ed:'politica', k:'Política · Esquerda', hora:'23/11',
+ t:'Canal Exército do Lula perde 1,4 milhão de seguidores desde o 2º turno em meio à briga de Janones com críticos do ajuste fiscal no PSOL',
+ sub:'O deputado André Janones promete "mais dois soldados para cada um que sair" e fala em boicote; Glauber Braga e Jones Manoel, do PSOL, lideram as críticas ao pacote que a Câmara vota hoje.',
+ dado:{n:'1,4 milhão', l:'de seguidores perdidos pelo canal desde a noite do 2º turno, de 10,9 para 9,5 milhões'},
+ resumo:'O canal de WhatsApp Exército do Lula, criado pelo deputado André Janones (Rede-MG), caiu de 10,9 milhões de membros na noite do segundo turno para cerca de 9,5 milhões, uma perda de 1,4 milhão. A saída coincide com a discussão do ajuste fiscal, criticado por deputados do PSOL como Glauber Braga e Jones Manoel. Janones atribui parte da queda a um boicote e promete reação; os críticos dizem que o canal ignorou pautas da esquerda. A Câmara vota o ajuste nesta segunda (23).',
+ fundo:`O canal de WhatsApp Exército do Lula, criado pelo deputado federal André Janones (Rede-MG, partido de centro-esquerda) para mobilizar apoiadores do presidente Luiz Inácio Lula da Silva (PT, partido de esquerda), perdeu 1,4 milhão de integrantes desde a noite do segundo turno. Naquela noite o grupo tinha 10,9 milhões de membros; hoje tem cerca de 9,5 milhões. A queda ocorre enquanto a Câmara dos Deputados se prepara para votar o ajuste fiscal do governo, criticado por parte da própria esquerda.
+
+## A queda e o pano de fundo
+
+Os números variam conforme a data da contagem. O Boca Notícias registrou em 17 de novembro uma perda de mais de 1 milhão, com 9,7 milhões de integrantes, a partir de um pico de 10,7 milhões durante a campanha. O jornal A Crítica informa que o canal tinha mais de 10,5 milhões no segundo turno e cerca de 9,5 milhões na tarde de quinta (19). A redução começou depois da eleição, mas ganhou atenção quando a discussão do pacote fiscal expôs divisões na esquerda. Usuários passaram a postar o emoji de tesoura para expressar descontentamento.
+
+Segundo o Estadão, a disputa entre Janones e parlamentares da esquerda mais à esquerda do governo dá o pano de fundo do movimento. Os deputados Glauber Braga (PSOL-RJ) e Jones Manoel (PSOL-PE), deputado federal eleito, estão entre as principais vozes contra o projeto. O PSOL é um partido de esquerda. Entre as queixas, o jornal registra a de que o canal ignorou pautas como a demarcação de terras indígenas.
+
+## A resposta de Janones
+
+Na quinta (19), Janones minimizou a perda e prometeu reforçar a mobilização. "Vamos meter mais dois soldados para cada um que sair", escreveu em publicação no X, conforme A Crítica. Ele atribui parte das saídas a uma campanha de boicote, o que não foi verificado de forma independente. No sábado (14), já havia chamado os críticos de covardes e radicais extremistas e fixado a meta de recuperar 1 milhão de membros com uma nova mobilização digital, relata o Boca Notícias.
+
+O ajuste, o PLP 299/2026, já passou pelo Senado e prevê economia entre R$ 45,1 bilhões e R$ 56,1 bilhões em 2027. Opositores do pacote dizem temer cortes em saúde e educação e reclamam da falta de diálogo com a base e da proximidade com demandas do mercado financeiro, segundo o Boca Notícias. Jones Manoel tinha previsto participar da Marcha da Consciência Negra, em Recife, no dia 19, para criticar o neoliberalismo.
+
+## O que vem agora
+
+A votação do ajuste na Câmara, marcada para esta segunda (23), é o próximo teste da divisão. Janones diz que o canal seguirá ativo na defesa do governo.
+
+## O que ainda não está confirmado
+
+A alegada campanha de boicote contra o canal não foi comprovada. Jones Manoel nega ter articulado ação contra o grupo.`,
+ fontes:[['Estadão (Exército do Lula perde 1,4 milhão de seguidores)','https://www.estadao.com.br/politica/exercito-do-lula-perde-14-milhao-de-seguidores-e-janones-e-criticado-por-desprezar-queixas/'],['A Crítica (Janones e as críticas ao ajuste)','https://acritica.net/politica/janones-criticas-ajuste-fiscal-2/'],['Boca Notícias (perda de 1 milhão de seguidores)','https://boca.com.br/politica/exercito-de-lula-enfrenta-crise-com-perda-de-1-milhao-de-seguidores'],['Diário de Pernambuco (ajuste divide a esquerda)','https://www.diariodepernambuco.com.br/politica/2026/11/11729441-ajuste-fiscal-divide-esquerda-e-provoca-embates-entre-aliados-de-lula.html']]});
+
+_U('lula_sem_pressa_ministros_20', {ampliada:false, hora:'23/11',
+ t:'Lula ainda não definiu o ministro da Fazenda e deixa o anúncio da equipe para dezembro; reunião com Alcolumbre segue sem data',
+ sub:'O Planalto quer primeiro acomodar o Centrão e o presidente do Senado insiste em Rodrigo Pacheco para o Supremo e em três ministérios para o União Brasil.',
+ dado:{n:'Dezembro', l:'mês em que o presidente eleito pretende anunciar os primeiros ministros do quarto mandato'},
+ resumo:'O presidente Lula não escolheu o ministro da Fazenda e prevê anunciar os primeiros nomes da equipe só em dezembro, depois de acomodar partidos do Centrão. Ele diz que nomeia ministros "na hora que eu quiser". A reunião com o presidente do Senado, Davi Alcolumbre, que pede Rodrigo Pacheco no STF e três ministérios para o União Brasil, continua sem data. Alckmin e o governador do Piauí, Rafael Fonteles, aparecem como favoritos para a Fazenda, segundo a Reuters.',
+ upd:'A escolha do ministro da Fazenda ficou para dezembro, segundo o Poder360, e a reunião com Alcolumbre continua sem data; entram os nomes cotados para a Fazenda e o roteiro de anúncios a conta-gotas.',
+ fundo:`O presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) chega à última semana de novembro sem ter definido o ministro da Fazenda, e o anúncio dos primeiros nomes do quarto mandato ficou para dezembro. O presidente quer primeiro acomodar o Centrão e só depois escolher os ocupantes de cargos fora da partilha entre partidos. A reunião com o presidente do Senado, Davi Alcolumbre (União Brasil-AP, partido de centro-direita), prevista para a quarta-feira (18), também segue sem data.
+
+## O que Lula disse sobre a pressa
+
+Na quinta-feira (19), ao assinar no Palácio do Planalto o decreto do fim da escala 6x1, Lula afirmou que indicará cada ministro "na hora que eu quiser, no dia que eu quiser e na data que eu quiser". Criticou jornais que publicam listas de cotados, disse que nunca discutiu ministérios com ninguém e que "o cara vai inventando mentira para criar especulação", conforme o ICL Notícias. Reclamou da pressa do mercado por nomes para a Fazenda e disse que "quem senta na cadeira antes cai antes de sentar". Na mesma fala, confirmou a criação de um Ministério das Pessoas Idosas, segundo o WSCOM.
+
+O ministro da Fazenda é um dos cargos que ficam na cota pessoal do presidente, e não nas listas de indicações partidárias, observa o colunista Carlos Alberto Sardenberg, de O Globo. A reportagem do Correio Braziliense e do Estado de Minas de 15 de novembro já apontava como prioridades a Fazenda, o Planejamento, a Educação e o Desenvolvimento Social, com a negociação de cargos com o Centrão numa segunda etapa, condicionada ao apoio às propostas do governo no Congresso.
+
+## Quem aparece para a Fazenda
+
+A Reuters, em texto reproduzido pelo BP Money em 19 de novembro, cita o vice-presidente Geraldo Alckmin (PSB) e o governador do Piauí, Rafael Fonteles (PT), como favoritos, e diz que o atual ministro, Dario Durigan, não deve continuar. A agência atribui as informações a pessoas ligadas às negociações no PT e no Planalto, sob anonimato; as assessorias de Alckmin e Fonteles não comentaram. O Correio Braziliense inclui ainda o ex-ministro Fernando Haddad entre os nomes cogitados. O colunista Tales Faria, do Correio da Manhã, lembra que em 2022 Lula anunciou cinco nomes em 9 de dezembro, entre eles Haddad na Fazenda, e completou 37 pastas em 29 de dezembro, o que sugere um roteiro a conta-gotas.
+
+## O que Alcolumbre pede
+
+O Correio Braziliense informa, com base em interlocutores do senador, que ele pretende usar o encontro para negociar espaços de peso na Esplanada em troca de apoio à governabilidade e à própria recondução à presidência do Senado em 2027. A Metrópoles relata que ele quer reconhecimento do Planalto pelo papel na aprovação de medidas como o fim da escala 6x1 e que a preferência por Pacheco permanece. O jornal O Hoje acrescenta que Alcolumbre quer o União Brasil com três ministérios e se opõe à permanência de Waldez Góes na Integração e do Desenvolvimento Regional.
+
+A vaga em disputa no Supremo Tribunal Federal (STF) é a de Luís Roberto Barroso. Lula indicou Jorge Messias, que o Senado rejeitou em abril por 42 votos a 34, quando eram necessários 41 a favor. Rodrigo Pacheco, ministro do Tribunal de Contas da União, é o nome de Alcolumbre. Também são citados o procurador-geral da República, Paulo Gonet, e a ex-ministra Simone Tebet, segundo a CNN Brasil.
+
+## O que vem agora
+
+O Planalto quer anunciar o nome para o STF ainda em novembro, para que a sabatina na Comissão de Constituição e Justiça do Senado ocorra no início de dezembro. A equipe de governo, segundo os relatos, começa a ser divulgada na primeira semana de dezembro.
+
+## O que ainda não está confirmado
+
+Não há data para a reunião entre Lula e Alcolumbre, nem nome definido para o Supremo ou para os ministérios. Os cotados para a Fazenda vêm de fontes anônimas, e o presidente diz que não discutiu nomes com ninguém.`,
+ fontes:[['Poder360 (Lula não definiu ministro da Fazenda)','https://www.poder360.com.br/poder-governo/lula-nao-definiu-ministro-da-fazenda-anuncio-fica-para-dezembro/'],['BP Money (Reuters: Alckmin e Fonteles favoritos)','https://bpmoney.com.br/politica/lula-ministro-fazenda-fonteles-alckmin-favoritos/'],['Estado de Minas (Lula afunila lista, via Correio Braziliense)','https://www.em.com.br/politica/2026/11/7538832-lula-afunila-lista-dos-nomes-para-ministerio.html'],['Correio da Manhã (Tales Faria)','https://www.correiodamanha.com.br/colunistas/tales-faria/2026/11/333814-nomes-dos-futuros-ministros-podem-ser-indicados-aos-poucos.html'],['O Globo (coluna de Sardenberg)','https://oglobo.globo.com/opiniao/carlos-alberto-sardenberg/coluna/2026/11/precisa-se-de-ministro-da-fazenda.ghtml'],['Correio Braziliense (Lula avalia reunião com Alcolumbre)','https://www.correiobraziliense.com.br/politica/2026/11/7542358-lula-avalia-reuniao-com-alcolumbre-para-discutir-ministerios-e-stf.html'],['Metrópoles (Alcolumbre insiste em Pacheco)','https://www.metropoles.com/brasil/alcolumbre-insiste-em-pacheco-para-vaga-no-stf-e-espera-reuniao-com-lula'],['O Hoje (Alcolumbre mantém pressão)','https://ohoje.com/2026/11/22/alcolumbre-mantem-pressao-por-pacheco-no-stf-e-aguarda-reuniao-com-lula/'],['CNN Brasil (Lula planeja reunião com Alcolumbre)','https://www.cnnbrasil.com.br/blogs/gustavo-uribe/politica/lula-planeja-reuniao-com-alcolumbre-antes-de-definir-nome-para-o-stf/'],['ICL Notícias (Lula critica especulações)','https://iclnoticias.com.br/lula-critica-especulacoes-sobre-ministerio/']]});
+
+_N('mg_chuva_familias_isoladas_23', {ed:'regioes', reg:'mg', k:'Regiões · Minas Gerais · Clima', hora:'22/11',
+ t:'Enchente isola oito pessoas na zona rural de Aimorés, no Rio Doce; Defesa Civil prevê até 400 mm de chuva em Minas até 3 de dezembro',
+ sub:'A água baixou no domingo (22) e o resgate aéreo não foi necessário; o alerta estadual cobre o período de 19 de novembro a 3 de dezembro.',
+ dado:{n:'400 mm', l:'acumulado máximo de chuva previsto em áreas de Minas entre 19 de novembro e 3 de dezembro, segundo a Defesa Civil estadual'},
+ resumo:'Uma enchente na zona rural de Aimorés, na região do Rio Doce, em Minas Gerais, deixou oito pessoas ilhadas no povoado de Alto Capim a partir de sábado (21), e uma família foi retirada pelos bombeiros no Córrego de Todos os Santos. A água baixou na manhã de domingo (22), e os moradores optaram por ficar. A Defesa Civil estadual alerta para chuva intensa e persistente até 3 de dezembro, com acumulados de 150 a 300 mm na maior parte do estado e até 400 mm nas áreas mais críticas.',
+ fundo:`Uma enchente na zona rural de Aimorés, no Vale do Rio Doce, em Minas Gerais, deixou oito pessoas ilhadas desde a noite de sábado (21) no povoado de Alto Capim, perto de São Sebastião da Vala. O Corpo de Bombeiros divulgou no domingo (22) imagens dos alagamentos e informou que o nível da água baixou durante a manhã. O resgate aéreo planejado deixou de ser necessário, e os moradores decidiram permanecer onde estavam.
+
+## O que aconteceu em Aimorés
+
+Os bombeiros foram acionados por volta das 5h55 de sábado, de acordo com o Estado de Minas. Equipes do Pelotão de Bombeiros de Resplendor e da Defesa Civil de Aimorés foram ao Córrego de Todos os Santos, onde uma família estava isolada pela elevação da água, e a retiraram. O acesso por terra era difícil, e o estado solicitou apoio aéreo para chegar ao grupo de oito pessoas em Alto Capim.
+
+A Defesa Civil estadual informou, segundo o jornal, que os ilhados estavam bem e sem risco, à espera de resgate. O Tempo registra que a aeronave Pegasus, da Polícia Militar, chegou a ser preparada para o resgate na manhã de domingo, mas a operação foi dispensada com a queda do nível da água. Os bombeiros afirmaram que atuaram também em ações de recuperação e de Defesa Civil na região. Não há balanço de casas atingidas nem de valores de prejuízo.
+
+## Barragem no Espírito Santo, sem relação
+
+Na divisa com o Espírito Santo, uma barragem se rompeu na comunidade de São Domingos de Ibicaba, em Afonso Cláudio, atingiu uma casa e arrastou duas pessoas. Uma mulher foi resgatada com vida por moradores a cerca de 300 metros da residência, e o marido dela, de 72 anos, continuava desaparecido, segundo o Estado de Minas. A Defesa Civil mineira afirmou que o rompimento não causou a enchente de Aimorés, que resultou da chuva local, e os bombeiros capixabas também disseram não haver relação entre os casos.
+
+## O alerta para as próximas duas semanas
+
+A Coordenadoria Estadual de Defesa Civil (Cedec) emitiu alerta de chuva intensa e persistente entre 19 de novembro e 3 de dezembro, a partir de análise do Centro Integrado de Informações de Defesa Social (Cindec). Os acumulados podem chegar a 350 a 400 milímetros nas áreas de maior concentração e devem ficar entre 150 e 300 milímetros na maior parte do estado, informa o Estado de Minas. Os maiores valores, de 250 a 400 milímetros, são esperados na Grande Belo Horizonte, na região Central, no Oeste e no Campo das Vertentes. O Triângulo Mineiro e o Noroeste devem ter de 200 a 300 milímetros, e o Norte, o Jequitinhonha e o Mucuri, de 150 a 250.
+
+O meteorologista do Cindec Romero Wanzeler disse que os valores são elevados e pediu atenção a áreas vulneráveis. Os riscos listados são alagamentos, enxurradas, elevação de rios e córregos e deslizamentos de terra. O Instituto Nacional de Meteorologia (Inmet) emitiu alerta de tempestade e granizo para os 853 municípios mineiros, e a situação de Jaboticatubas, atingida por um temporal, foi normalizada.
+
+## O que vem agora
+
+A Defesa Civil orienta a não atravessar áreas alagadas a pé ou de carro, evitar passagens baixas e galerias e acionar o Corpo de Bombeiros, pelo 193, e a Defesa Civil municipal, pelo 199, em caso de trincas na casa. O cadastro para alertas por SMS é feito enviando o CEP para 40199.
+
+## O que ainda não está confirmado
+
+O volume de chuva registrado em Aimorés não foi divulgado, nem a extensão dos danos materiais. O estado também não informou municípios em situação de emergência.`,
+ fontes:[['O Tempo (destruição da chuva em Aimorés)','https://www.otempo.com.br/cidades/2026/11/22/veja-destruicao-causada-pela-chuva-que-deixou-familias-isoladas-em-mg'],['O Tempo (oito pessoas passam a noite ilhadas)','https://www.otempo.com.br/cidades/2026/11/22/oito-pessoas-passam-a-noite-ilhadas-apos-enchente-no-interior-de-minas'],['Estado de Minas (enchente em Aimorés)','https://www.em.com.br/gerais/2026/11/7542260-enchente-deixa-oito-pessoas-ilhadas-na-zona-rural-de-aimores.html'],['Estado de Minas (até 400 mm em 15 dias)','https://www.em.com.br/gerais/2026/11/7542277-minas-pode-registrar-ate-400mm-de-chuva-em-15-dias-alerta-defesa-civil.html']]});
+
+_U('mg_cleitinho_ana_elisa_22', {hora:'23/11',
+ t:'Cleitinho, governador eleito de Minas, se emociona com a votação da deputada petista Ana Elisa e declara apoio a Nikolas na Câmara e a Rogério Marinho no Senado',
+ sub:'O senador do Republicanos também negocia com Lula e o governo federal a dívida de Minas, de cerca de R$ 188 bilhões, e diz ter feito campanha por Flávio Bolsonaro.',
+ dado:{n:'R$ 188 bi', l:'dívida de Minas com a União, que Cleitinho quer renegociar com prazo maior e parcelas menores'},
+ resumo:'O governador eleito de Minas Gerais, Cleitinho Azevedo (Republicanos, partido de direita), se emocionou em entrevista ao programa Sala de Imprensa, do SBT News, ao falar da deputada federal eleita Ana Elisa (PT, partido de esquerda), de 21 anos, que teve mais de 500 mil votos. Na mesma conversa, disse que apoia o deputado Nikolas Ferreira (PL-MG) para a presidência da Câmara e, se pudesse votar, escolheria Rogério Marinho (PL-RN) para presidir o Senado. Também prometeu renegociar a dívida do estado com a União.',
+ fundo:`O governador eleito de Minas Gerais, senador Cleitinho Azevedo, do Republicanos, partido de direita, se emocionou no domingo (22) ao comentar a eleição de Ana Elisa, do PT, partido de esquerda, para a Câmara dos Deputados. Os dois são de Divinópolis, mas de campos políticos opostos. Na mesma entrevista ao programa Sala de Imprensa, do SBT News, ele declarou apoio ao deputado Nikolas Ferreira, do PL, partido de direita, para presidir a Câmara e a Rogério Marinho, também do PL, no Senado.
+
+## O elogio à conterrânea
+
+Cleitinho destacou a trajetória de Ana Elisa, de 21 anos, que será uma das deputadas federais mais jovens do país e recebeu mais de 500 mil votos. De acordo com o Estado de Minas, ele a chamou de divinopolitana do Bairro Niterói. "Fico aqui muito feliz, porque sou doido com a minha cidade. Saber que uma menina igual à Ana Elisa virou deputada federal com 500 mil votos, de onde ela saiu, eu tenho que ficar orgulhoso", afirmou, como reproduzem a Folha e a CartaCapital. Ele desejou à parlamentar sabedoria no mandato e disse que pretende trabalhar com ela por Minas, apesar de se definir como político de direita.
+
+## As escolhas para as presidências do Congresso
+
+Na mesma entrevista, o governador eleito disse apoiar a candidatura de Nikolas Ferreira à presidência da Câmara. Nikolas, deputado federal do PL de Minas, recebeu mais de 3 milhões de votos, e Cleitinho argumentou que, por ser o mais votado do país, ele deveria ocupar o posto. Afirmou que não interferirá na decisão, que cabe aos deputados, e reconheceu resistência a Nikolas, porque, segundo ele, o parlamentar não negocia, o que seria ponto forte e fraco ao mesmo tempo, informa o Estado de Minas.
+
+Sobre o Senado, Cleitinho disse que, se pudesse votar, escolheria Rogério Marinho, senador do PL do Rio Grande do Norte. Elogiou a senadora Tereza Cristina, do PP de Mato Grosso do Sul, e afirmou que seria histórico uma mulher presidir a Casa. Defendeu o rodízio na presidência e questionou a volta de Davi Alcolumbre, do União Brasil do Amapá, ex-presidente do Senado, ao cargo. Pouco antes, em 13 de novembro, ele havia visitado Nikolas no gabinete, em Brasília, e prometido que o governo estadual ficará à disposição das demandas do mandato do deputado, conforme o BH 24 Horas.
+
+## A relação com Lula e a dívida
+
+Cleitinho declarou que não vê dificuldade de relacionamento com o presidente Lula, do PT. Em 17 de novembro, ele se reuniu com o advogado-geral da União, Jorge Messias, com a senadora eleita Marília Campos, do PT, para apresentar duas propostas de renegociação da dívida mineira, hoje em torno de R$ 188 bilhões, informa o Estado de Minas. Ele diz não pedir perdão, e sim prazo maior e parcelas menores no Propag, programa federal de renegociação das dívidas estaduais, em que uma parcela chegaria a R$ 500 milhões. Se o governo federal recusar, afirmou que buscará investidores para ampliar a arrecadação.
+
+Ele também rebateu críticas por ter sido considerado neutro na campanha presidencial. Disse ter feito campanha para Flávio Bolsonaro, do PL, e que o candidato lhe telefonou depois da eleição para agradecer.
+
+## O perfil da eleição
+
+Cleitinho venceu no primeiro turno, com 6,3 milhões de votos, ou 55,4% do total. Um levantamento do Estadão mostra o menor custo de campanha por habitante entre os governadores eleitos em 2026: R$ 0,05, com arrecadação de mais de R$ 1,3 milhão, sem recursos próprios nem do Fundo Eleitoral.
+
+## O que vem agora
+
+A data da escolha dos presidentes da Câmara e do Senado depende da nova legislatura, e a resposta do governo federal às propostas sobre a dívida ainda não foi divulgada.
+
+## O que ainda não está confirmado
+
+Não há detalhes sobre agenda conjunta com Ana Elisa nem sobre os termos das duas propostas levadas à AGU.`,
+ upd:'Na entrevista de domingo (22), Cleitinho também declarou apoio a Nikolas Ferreira na Câmara e a Rogério Marinho no Senado e detalhou a proposta de renegociação da dívida.',
+ fontes:[['Folha (Cleitinho elogia Ana Elisa)','https://www1.folha.uol.com.br/poder/2026/11/cleitinho-elogia-ana-elisa-e-diz-ter-orgulho-da-deputada-petista.shtml'],['CartaCapital (orgulho de Ana Elisa)','https://www.cartacapital.com.br/politica/cleitinho-elogia-e-diz-ter-orgulho-de-ana-elisa-deputada-eleita-do-pt/'],['Estado de Minas (Cleitinho chora)','https://www.em.com.br/politica/2026/11/7542312-orgulho-cleitinho-azevedo-chora-ao-comentar-vitoria-de-ana-elisa.html'],['Estado de Minas (apoio a Nikolas e Marinho)','https://www.em.com.br/politica/2026/11/7542316-cleitinho-declara-apoio-a-nikolas-na-camara-e-a-rogerio-marinho-no-senado.html'],['Estado de Minas (críticas, cortes e dívida)','https://www.em.com.br/politica/2026/11/7542347-cleitinho-reage-a-criticas-por-derrota-de-flavio-em-mg-e-promete-cortes.html'],['BH 24 Horas (aproximação com Nikolas)','https://bh24horas.com.br/politica/cleitinho-reforca-aproximacao-com-nikolas-ferreira-e-promete-apoio-do-governo-de-minas-ao-mandato-do-deputado/'],['Estadão (gastos proporcionais de campanha)','https://www.estadao.com.br/politica/eleicoes/cleitinho-e-tarcisio-tiveram-menor-gasto-proporcional-entre-governadores-eleitos-veja-os-demais/']]});
+
+_N('ms_porto_murtinho_alagamento_23', {ed:'regioes', reg:'co', k:'Regiões · Mato Grosso do Sul · Clima', hora:'22/11',
+ t:'Porto Murtinho (MS) decreta calamidade pública depois que a chuva alagou 40% da área urbana; ao menos 50 famílias estão desabrigadas',
+ sub:'Choveu cerca de 230 mm em poucas horas no sábado (21), sobre 170 mm dos dias anteriores, e a previsão é de mais chuva; equipes usaram barcos para retirar pertences e moradores.',
+ dado:{n:'230 mm', l:'de chuva em poucas horas no sábado (21) em Porto Murtinho, segundo a prefeitura, sobre 170 mm acumulados nos dias anteriores'},
+ resumo:'O prefeito de Porto Murtinho, Nelson Cintra (PSDB), anunciou calamidade pública na cidade do sudoeste de Mato Grosso do Sul, onde cerca de 40% da área urbana foi alagada depois de 230 mm de chuva em poucas horas no sábado (21). Ao menos 50 famílias ribeirinhas estão desabrigadas em escolas, e a prefeitura recebe doações. Bombeiros, Assistência Social e Obras usaram barcos para ajudar moradores. Uma equipe da Defesa Civil estadual era esperada no domingo (22), e há previsão de mais chuva.',
+ fundo:`O prefeito de Porto Murtinho, Nelson Cintra, do PSDB, partido de centro, anunciou estado de calamidade pública na cidade do sudoeste de Mato Grosso do Sul depois que a chuva alagou cerca de 40% da área urbana no sábado (21). Ao menos 50 famílias ribeirinhas estão desabrigadas e foram levadas para escolas do município. A prefeitura recebe doações e a Defesa Civil faz o levantamento dos danos.
+
+## A chuva e os bairros atingidos
+
+Choveu cerca de 230 milímetros em poucas horas no sábado, volume que se somou a 170 milímetros dos dias anteriores, de acordo com o Enfoque MS. Na quinta-feira (19), uma chuva de cerca de 120 milímetros em duas horas já havia atingido 60 pessoas em oito bairros e levado seis famílias a um ginásio municipal. A água do sábado chegou a mais de 50 casas, e moradores foram retirados de barco e de trator. Cohab e Dom Pepe estão entre os bairros mais afetados, além de partes da Vila Célia, e o Valetão, canal ao lado do bairro Bogado, transbordou.
+
+O Estado Online informa que equipes da Assistência Social, da Secretaria de Obras e do Corpo de Bombeiros usaram barcos para ajudar moradores a retirar pertences de casas inundadas. Segundo o prefeito, cerca de 40% do município estava alagado. Ainda não havia balanço atualizado de desalojados depois da chuva de sábado.
+
+## Ajuda estadual e federal
+
+O prefeito conversou com o secretário estadual Rodrigo Perez, que, segundo o Enfoque MS, prometeu apoio do governo de Mato Grosso do Sul, e uma equipe da Defesa Civil estadual era esperada na cidade no domingo (22). O deputado estadual Zeca do PT, do PT, partido de esquerda, disse ter pedido ajuda ao presidente Lula e a autoridades federais para as famílias. O ministro Waldez Góes, da Integração e do Desenvolvimento Regional, deveria visitar o município no início desta semana para avaliar os danos. O decreto de calamidade formaliza a situação e facilita a mobilização de apoio.
+
+## Como ajudar e o que a prefeitura pede
+
+Segundo o Campo Grande News, a prefeitura aceita móveis, eletrodomésticos, roupas e roupas de cama em bom estado, entregues no CCI. Moradores devem registrar perdas pelo WhatsApp da Defesa Civil, e há atendimento presencial no Cine Teatro Ney Machado Mesquita, das 13h às 18h. A prefeitura alertou para bueiros abertos nas áreas alagadas e pediu que ninguém atravesse ruas inundadas. O Correio do Estado registra que há previsão de mais chuva para a cidade.
+
+## O que vem agora
+
+A visita do ministro Waldez Góes e o levantamento da Defesa Civil estadual devem definir o tamanho dos danos e o apoio que Porto Murtinho receberá. O decreto deve ser publicado no Diário Oficial do município.
+
+## O que ainda não está confirmado
+
+Não há balanço consolidado de desabrigados e desalojados depois da chuva de sábado, nem estimativa do prejuízo. O Enfoque MS cita, sem atribuir a um órgão, que o acumulado em três dias passou de 400 milímetros.`,
+ fontes:[['Enfoque MS (calamidade pública)','https://www.enfoquems.com.br/porto-murtinho-decreta-calamidade-publica-apos-chuva-alagar-40-da-cidade/'],['O Estado Online (barcos e 40% alagada)','https://oestadoonline.com.br/interior/chuvas-deixam-40-de-porto-murtinho-alagada-diz-prefeito-equipes-usam-barcos-para-ajudar-familias-em-ms/'],['Campo Grande News (doações a desabrigados)','https://www.campograndenews.com.br/cidades/interior/porto-murtinho-arrecada-doacoes-para-familias-desabrigadas-pelas-chuvas'],['Correio do Estado (previsão de mais chuva)','https://correiodoestado.com.br/cidades/2026/11/22/porto-murtinho-tem-previsao-de-mais-chuva-apos-temporal-alagar-40-da-area-urbana.html']]});
+
+_N('ne_el_nino_transposicao_sao_francisco_agua_23', {ed:'regioes', reg:'ne', k:'Regiões · Nordeste · Água', hora:'23/11',
+ t:'Temor de seca em 2027 acirra disputa entre estados do Nordeste pela água da transposição do São Francisco; Rio Grande do Norte não conseguiu acordo para ampliar volume',
+ sub:'Pernambuco cedeu parte da vazão à Paraíba, e o Ceará, maior demandante, avalia pedir mais água para o Castanhão.',
+ dado:{n:'81%', l:'de chance de El Niño muito forte entre outubro e dezembro de 2026, segundo projeção da agência americana NOAA citada em reportagem'},
+ resumo:'A previsão de seca mais intensa em 2027, ligada ao El Niño, aumentou a disputa entre estados nordestinos pela água da transposição do rio São Francisco. O Rio Grande do Norte tentou ampliar o volume que receberá no próximo ano e não fechou acordo com os demais estados, em especial o Ceará. Pernambuco cedeu parte da vazão à Paraíba. O Ceará estuda pedir à União água para reforçar o Castanhão, seu maior açude, e tem a maior demanda do projeto.',
+ fundo:`O temor de uma seca mais forte em 2027, associada ao El Niño, passou a acirrar a negociação entre estados do Nordeste pela água da transposição do rio São Francisco, obra federal que leva parte do rio a açudes e rios de quatro estados. Parte dos pedidos de ampliação apresentados à União já foi rejeitada. O Rio Grande do Norte tentou aumentar o volume previsto para o ano que vem e não chegou a acordo com os demais estados, especialmente o Ceará.
+
+## Como funciona a divisão
+
+A água da transposição pertence à União, e cada estado precisa informar anualmente ao Ministério da Integração e do Desenvolvimento Regional (MIDR) quanto deseja receber. O pedido é avaliado de acordo com a necessidade e as condições de oferta de cada um, explicou o diretor de operações da Companhia de Gestão dos Recursos Hídricos do Ceará (Cogerh), conforme o Diário do Nordeste. Parte da água do Eixo Norte do projeto fica armazenada em Jati, no Cariri cearense, e pode ser compartilhada com Ceará, Pernambuco, Rio Grande do Norte e Paraíba. Levantamento da Folha com os pleitos oficiais mostra que Pernambuco e a Paraíba chegaram a um entendimento no qual Pernambuco cedeu parte de sua vazão aos paraibanos.
+
+## O pedido do Ceará
+
+O governador do Ceará, Elmano de Freitas (PT, partido de esquerda), disse em entrevista à TV Verdes Mares, em Brasília, na quarta-feira (11), que o estado estuda pedir água da transposição para reforçar o Castanhão, o maior reservatório cearense, por causa do risco de seca em 2027. Em 2024, o Ceará usou o mesmo mecanismo quando o açude estava com 22,7% da capacidade: o ministério aprovou, e a água percorreu mais de 300 quilômetros em 15 a 20 dias, relata o Diário do Nordeste. Em junho, o conselho estadual de recursos hídricos já havia autorizado levar água do sistema Orós-Castanhão para a Região Metropolitana de Fortaleza, com mais de 4 milhões de moradores, até 31 de janeiro de 2027.
+
+## Quem mais depende da obra
+
+O Ceará concentra a maior demanda do projeto. Em 2030, os quatro estados devem pedir 64,53 metros cúbicos por segundo: 39,68 para o Ceará, 12,22 para o Rio Grande do Norte, 6,81 para a Paraíba e 5,83 para Pernambuco, de acordo com o Movimento Econômico. O Ceará responde por cerca de 61% do total. A mesma reportagem informa que o governo federal marcou para 12 de março de 2027 a abertura das propostas do leilão da concessão da transposição, contrato de R$ 13,65 bilhões em 30 anos.
+
+O cenário climático explica a pressa. Projeção do Centro de Previsão Climática da NOAA, agência americana de oceanos e atmosfera, apontava 81% de chance de El Niño muito forte entre outubro e dezembro de 2026, segundo O Povo. No Norte e no Nordeste, o fenômeno tende a intensificar períodos quentes e secos. Pelo Novo PAC, programa federal de obras, foram aportados mais de R$ 500 milhões para elevar a capacidade de bombeamento de 25 para 50 metros cúbicos por segundo, informa o jornal cearense.
+
+## O que vem agora
+
+O Ceará decide se formaliza o pedido de água ao ministério para 2027, e as solicitações dos demais estados seguem em análise. O leilão da concessão está marcado para março.
+
+## O que ainda não está confirmado
+
+Não há decisão do ministério sobre ampliar os volumes, e os valores pedidos por cada estado para 2027 não foram detalhados.`,
+ fontes:[['Folha (El Niño acirra disputa por água da transposição)','https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ambiente/2026/11/el-nino-acirra-disputa-de-estados-por-agua-da-transposicao-do-sao-francisco.shtml'],['Diário do Nordeste (Ceará cogita água da transposição)','https://diariodonordeste.verdesmares.com.br/ceara/governo-do-ce-cogita-usar-agua-da-transposicao-para-conter-efeitos-do-el-nino-1.3804980'],['Repórter Ceará (Castanhão em 2027)','https://reporterceara.com.br/2026/11/11/ceara-avalia-utilizar-aguas-da-transposicao-do-sao-francisco-para-reforcar-volume-do-castanhao-em-2027/'],['Movimento Econômico (leilão e demanda por estado)','https://movimentoeconomico.com.br/abastecimento/2026/11/17/leilao-da-transposicao-vale-r-1365-bilhoes-e-ceara-tem-a-maior-demanda-de-agua/'],['O Povo (ameaça do El Niño)','https://mais.opovo.com.br/jornal/economia/2026/07/14/ameaca-do-el-nino-acelera-plano-para-transposicao-do-sao-francisco-no-ceara.html']]});
+
+_N('norte_pavimentacao_floresta_resultado_eleitoral_23', {ed:'regioes', reg:'norte', k:'Regiões · Amazonas · BR-319', hora:'23/11',
+ t:'Pavimentação da BR-319 deve ganhar impulso em 2027 com a vitória eleitoral de defensores da obra; Senado avança em projeto e em emenda ao Orçamento',
+ sub:'A Comissão de Infraestrutura aprovou texto que trata a estrada como indispensável à segurança nacional e prevê licenciamento simplificado; o projeto ainda passa pela Comissão de Meio Ambiente.',
+ dado:{n:'~400 km', l:'de trecho da BR-319 a pavimentar entre Manaus (AM) e Porto Velho (RO), em área apontada como das mais preservadas da Amazônia'},
+ resumo:'A pavimentação de cerca de 400 quilômetros da BR-319, entre Manaus e Porto Velho, deve avançar em 2027 depois da vitória nas eleições de outubro de políticos favoráveis à obra. Na semana passada, a Comissão de Infraestrutura do Senado aprovou o projeto que declara a rodovia indispensável à segurança nacional e a Comissão Mista de Orçamento recebeu emenda para o asfaltamento. Ambientalistas apontam risco à floresta; o texto ainda precisa passar pela Comissão de Meio Ambiente.',
+ fundo:`A pavimentação de cerca de 400 quilômetros da BR-319, rodovia federal que liga Manaus (AM) a Porto Velho (RO), deve ter impulso em 2027 depois que defensores da obra venceram as eleições de outubro para governos estaduais e Legislativo. No Senado, propostas para reservar verba e afrouxar regras ambientais da via avançaram na semana passada. O trecho do meio da estrada, de cerca de 900 quilômetros, é apontado como uma das maiores ameaças à floresta amazônica.
+
+## O projeto na Comissão de Infraestrutura
+
+Na quarta-feira (18), a Comissão de Serviços de Infraestrutura do Senado aprovou, em votação simbólica, o parecer favorável ao Projeto de Lei 4.994/2023, do deputado federal Maurício Carvalho (União-RO), que a Câmara já havia aprovado, informam a Agência Senado e o Rondônia Dinâmica. O relator, senador Marcos Rogério (PL-RO, partido de direita), que preside a comissão, argumentou que a BR-319 é a única ligação rodoviária de Manaus com o resto do país e o acesso por terra a Roraima, e que a precariedade da estrada é "uma vulnerabilidade para a segurança nacional".
+
+O texto declara a rodovia infraestrutura crítica indispensável à segurança nacional e a torna prioritária nos planos federais de desenvolvimento. Cabe ao poder público garantir a trafegabilidade, com recuperação e manutenção do pavimento, passagens para animais e adaptação de pontes e viadutos. Obras de pequeno ou médio potencial poluidor poderão ter licenciamento simplificado ou por adesão e compromisso, procedimento em que o empreendedor assume obrigações em vez de passar pela análise completa. Marcos Rogério afirma que a proposta não dispensa o licenciamento e que as travas ideológicas "não podem ser impedimento ao progresso do país".
+
+## O que o Senado mudou
+
+O relator retirou do texto o artigo que permitia usar recursos do Fundo Amazônia, mantido com doações internacionais para a proteção da floresta, nas obras da estrada, sob o argumento de que isso poderia afetar a destinação ambiental do dinheiro e os compromissos com financiadores. Incluiu também a exigência de respeitar o orçamento anual e a Lei de Responsabilidade Fiscal. O projeto segue agora para a Comissão de Meio Ambiente, que ainda não escolheu relator, e só depois pode virar lei, informa o Rios de Notícias.
+
+## A emenda ao Orçamento de 2027
+
+Na segunda-feira (16), na Comissão Mista de Orçamento, o senador Eduardo Braga (MDB-AM), relator-geral do Orçamento de 2027, apresentou indicação para obras de asfaltamento da BR-319 na divisa entre Amazonas e Rondônia, em dotações da programação já atendida pelo Dnit, o departamento federal de infraestrutura de transportes, conforme o BNC Amazonas. A reportagem não informa o valor.
+
+## A obra no governo Lula
+
+O governo do presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) autorizou a pavimentação e abriu licitação, segundo o Nexo, e lideranças indígenas e organizações socioambientais criticam a falta de consultas públicas e de licenciamento adequado. No trecho do meio, de cerca de 406 km, o Dnit divide as obras em quatro lotes, que somam 339,4 km, e em outubro cerca de 17 km do Lote 4 haviam recebido tratamento superficial, informa o Rios de Notícias.
+
+## O que vem agora
+
+O projeto vai à Comissão de Meio Ambiente do Senado, e a emenda de Braga segue na tramitação do Orçamento de 2027 na Comissão Mista de Orçamento.
+
+## O que ainda não está confirmado
+
+Não há valor definido para a obra no Orçamento de 2027 nem cronograma de execução, e a aprovação na comissão não autoriza a execução imediata, que ainda depende de verba, contratos e licenças.`,
+ fontes:[['Folha (pavimentação que ameaça a floresta deve avançar em 2027)','https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/poder/2026/11/pavimentacao-que-ameaca-floresta-amazonica-deve-avancar-em-2027-com-resultado-eleitoral.shtml'],['Agência Senado (BR-319 indispensável à segurança nacional)','https://www12.senado.leg.br/noticias/materias/2026/11/18/br-319-e-indispensavel-a-seguranca-nacional-aprova-comissao-de-infraestrutura'],['Rondônia Dinâmica (Marcos Rogério e as travas ideológicas)','https://rondoniadinamica.com/noticias/2026/11/travas-ideologicas-nao-podem-ser-impedimento-ao-progresso-do-pais-marcos-rogerio-endurece-discurso-sobre-a-br-319,259107.shtml'],['Rios de Notícias (comissão aprova projeto)','https://www.riosdenoticias.com.br/comissao-do-senado-aprova-projeto-que-classifica-br-319-como-infraestrutura-critica-para-seguranca-nacional/'],['BNC Amazonas (emendas de Braga e Saullo Vianna)','https://bncamazonas.com.br/poder/braga-e-saullo/'],['Nexo (obras da BR-319 queimam etapas)','https://www.nexojornal.com.br/externo/2026/04/25/br-319-amazonia-ferrovia-estrada-obras-governo-lula-meio-ambiente']]});
+
+_U('norte_seca_el_nino_rr_am_ro_22', {hora:'23/11',
+ t:'Seca do El Niño atinge 54 dos 62 municípios do Amazonas e leva queimadas a Pará e Amapá; Roraima e Rondônia acionam planos de contingência',
+ sub:'O rio Negro em Manaus está em 15,91 metros, abaixo de 16, e indígenas bloqueiam a estrada de Alter do Chão (PA) em protesto contra o fogo.',
+ dado:{n:'54 de 62', l:'municípios do Amazonas em emergência pela seca, com 169.733 famílias afetadas'},
+ resumo:'A seca ligada ao El Niño pressiona o Norte. O Amazonas tem 54 dos 62 municípios em emergência e 169.733 famílias afetadas, e o rio Negro marcou 15,91 metros em Manaus no sábado (21). Em Roraima, a Agência Nacional de Águas declarou escassez hídrica em dois rios até abril de 2027. Em Rondônia, Porto Velho tem plano de R$ 3,3 milhões. No Pará e no Amapá, incêndios levaram indígenas a bloquear a estrada de Alter do Chão e o senador Randolfe Rodrigues a pedir brigadistas federais.',
+ upd:'Entram o balanço de 169.733 famílias e o rio Negro abaixo de 16 metros no Amazonas, os decretos de Rondônia, o bloqueio indígena em Alter do Chão (PA) e o pedido de brigadistas no Amapá.',
+ fundo:`A seca associada ao El Niño, fenômeno em que o aquecimento das águas do Pacífico reduz as chuvas em parte da Amazônia, atinge 54 dos 62 municípios do Amazonas, que estão em situação de emergência, segundo a Defesa Civil estadual, com dados de sábado (21). O número de famílias afetadas subiu de 165.008 para 169.733. O fogo e a estiagem pressionam também Roraima, Rondônia, Pará e Amapá, onde governos locais e federais acionam planos de contingência.
+
+## Amazonas: rios baixos e municípios em emergência
+
+Barcelos e São Gabriel da Cachoeira entraram na lista no último balanço, informa o Portal do Duro, e outros oito municípios seguem em alerta: Beruri, Canutama, Fonte Boa, Guajará, Iranduba, Manaus, São Sebastião do Uatumã e Tabatinga. O rio Negro marcou 15,91 metros em Manaus no sábado, abaixo da marca de 16 metros. A baixa dos rios dificulta o deslocamento, o transporte de mercadorias e o acesso a serviços de comunidades ribeirinhas e indígenas, e em alguns pontos a navegação difícil atrasa a chegada de ajuda, informa o g1 Amazonas. Em Manaus, a prefeitura proibiu temporariamente o banho na praia da Ponta Negra, onde instalou sinalização e barreiras.
+
+## Roraima e Rondônia
+
+Em Roraima, as chuvas ficaram em 37% da média histórica desde julho, relata o g1 Roraima. A Agência Nacional de Águas (ANA) declarou escassez hídrica em dois rios do estado até abril de 2027, e 11 municípios estão em alerta. Em Rondônia, levantamento da plataforma MARE, que acompanha decretos de emergência, contabiliza três municípios com decreto desde junho; em Porto Velho, a estiagem atinge 85 localidades rurais, ribeirinhas e indígenas, e a situação foi reconhecida pela União em 20 de outubro, informa o Rolnews. A Rondoniaovivo publica que a capital teve plano de Defesa Civil aprovado pelo governo federal, com R$ 3,3 milhões, no dia do anúncio de R$ 1,7 bilhão para enfrentar o El Niño.
+
+## Fogo no Pará e no Amapá
+
+No Pará, indígenas Borari bloquearam na noite de domingo (22) a estrada de acesso à vila de Alter do Chão, distrito de Santarém, em protesto contra as queimadas e para serem ouvidos pelo prefeito, Zé Maria Tapajós, informa O Liberal. A prefeitura declarou emergência em 9 de novembro e diz ter dado apoio logístico às brigadas comunitárias; um avião da Força Aérea Brasileira chegou a Santarém na sexta (20) para ajudar a conter os incêndios.
+
+No Amapá, o senador Randolfe Rodrigues (PT, partido de esquerda) pediu no sábado (21) mais brigadistas do Prevfogo, programa federal de combate a incêndios florestais, depois de focos atingirem o entorno do Bioparque da Amazônia, em Macapá, relata o Seles Nafes. O comandante-geral do Corpo de Bombeiros, coronel Pelsondré Martins da Silva, disse que as equipes controlaram os focos no Bioparque, e brigadistas que estavam em Oiapoque foram redirecionados. No Acre, A Gazeta do Acre informa 137 focos de queimadas em novembro, alta de 315% sobre 2025.
+
+## O que vem agora
+
+A declaração de escassez da ANA em Roraima vale até abril de 2027. No Amazonas, o balanço da Defesa Civil é atualizado periodicamente, e o rio Negro segue sob acompanhamento.
+
+## O que ainda não está confirmado
+
+Não foram divulgados a origem e o cronograma dos R$ 1,7 bilhão anunciados nem a divisão entre os estados. A área queimada em Alter do Chão não foi informada.`,
+ fontes:[['Portal do Duro (54 municípios em emergência no AM)','https://portaldedoduro.com/2026/11/22/seca-se-espalha-pelo-amazonas-e-numero-de-municipios-em-emergencia-chega-a-54/'],['g1 Amazonas (seca no Solimões)','https://g1.globo.com/am/amazonas/noticia/2026/11/21/seca-no-rio-solimoes-dificulta-navegacao-acesso-a-agua-potavel-e-a-escola-no-interior-do-am.ghtml'],['g1 Roraima (por que o estado enfrenta seca)','https://g1.globo.com/rr/roraima/noticia/2026/11/22/falta-de-chuva-e-queda-no-nivel-do-principal-rio-por-que-roraima-enfrenta-seca-severa.ghtml'],['Rolnews (decretos de emergência em Rondônia)','https://www.rolnews.com.br/noticia/tres-municipios-de-rondonia-ja-decretaram-emergencia-diante-dos-riscos-do-el-nino'],['Rondoniaovivo (R$ 1,7 bi e Porto Velho)','https://www.rondoniaovivo.com/noticia/geral/2026/11/22/emergencia-climatica-governo-anuncia-r-17-bi-para-enfrentar-el-nino-e-porto-velho-recebe-r-33-mi.html'],['O Liberal (indígenas Borari bloqueiam Alter do Chão)','https://www.oliberal.com/belem/indigenas-borari-bloqueiam-acesso-a-alter-do-chao-em-protesto-contra-queimadas-1.1197200'],['Seles Nafes (Randolfe pede brigadistas)','https://selesnafes.com/2026/11/incendios-no-amapa-levam-randolfe-a-pedir-reforco-de-brigadistas-federais/'],['A Gazeta do Acre (focos de queimadas no Acre)','https://agazetadoacre.com/2026/11/destaques/3o-destaque/acre-registra-137-focos-de-queimadas-em-novembro-alta-e-de-315-em-comparacao-a-2025/']]});
+
+_U('nvidia_bessent_huang_retorno_22', {hora:'22/11',
+ t:'Bessent não descarta volta de Jensen Huang à Nvidia, e o NYT diz que a executiva Alice Huang manteve contato com um agente da espionagem chinesa durante o caso com o ex-presidente-executivo',
+ sub:'O governo dos EUA diz não ter concluído que ela espionou para a China; a Megaspeed, empresa que ela dirigia, é investigada desde 2024 por suspeita de desviar chips avançados da Nvidia para o país.',
+ dado:{n:'1 ano', l:'de contatos de Alice Huang com um oficial do Ministério da Segurança do Estado da China, da primavera de 2025 ao outono de 2026, segundo o New York Times'},
+ resumo:'O secretário do Tesouro dos Estados Unidos, Scott Bessent, sugeriu neste domingo (22) que não se oporia ao retorno de Jensen Huang à Nvidia, uma semana depois de pedir um líder de fora. No mesmo dia, o New York Times informou que Alice Huang, ex-executiva da Megaspeed, cliente da Nvidia, manteve contato por mais de um ano com um oficial da espionagem chinesa. Autoridades americanas dizem não ter concluído que ela espionou. O conselho da Nvidia tem prazo até cerca de 25 de novembro para responder ao governo.',
+ upd:'Entrou o relato do New York Times de que Alice Huang manteve contato por mais de um ano com um oficial da espionagem chinesa, com a ressalva do governo americano de que não há conclusão sobre espionagem, e o histórico da Megaspeed, investigada desde 2024 por suspeita de desvio de chips.',
+ fundo:`O secretário do Tesouro dos Estados Unidos, Scott Bessent, deu a entender neste domingo (22) que não se oporia ao retorno de Jensen Huang à Nvidia, uma semana depois de pedir ao conselho da fabricante de chips uma "reformulação drástica". Huang deixou o cargo na semana passada. No mesmo dia, o jornal The New York Times informou que Alice Huang, a executiva no centro do escândalo, manteve contato por mais de um ano com um oficial da espionagem chinesa.
+
+## O recuo de Bessent
+
+Na semana passada, em entrevista à Fox News, Bessent acusou a Nvidia de manter uma "cultura de descumprimento das normas" e de possivelmente inflar receitas e lucros por meio de vendas aparentemente ilícitas de chips, informa o Financial Times, em texto reproduzido pela Folha e pelo Valor Econômico. Ele disse que o conselho precisava buscar "fora da empresa" o sucessor e deu ao colegiado e aos advogados externos dez dias para apresentar respostas sobre o cumprimento das regras de exportação, conforme relatam o Axios e a Al Jazeera. A contagem aponta para 25 de novembro.
+
+Neste domingo o tom foi mais ameno: Bessent afirmou que é do interesse da Nvidia agir rápido, porque o governo quer entender a cultura da empresa, e deixou em aberto a hipótese de que Huang volte. O presidente Donald Trump já havia dito na segunda-feira (16), segundo a Reuters, que não se importaria de ver Huang reintegrado. Aliados do executivo, relata o Financial Times, formam uma "sala de guerra" de líderes do Vale do Silício para pedir o retorno, e uma petição online reuniu mais de 160 mil assinaturas, não verificadas. A diretora financeira, Colette Kress, é a presidente-executiva interina, e o conselho diz que escolhe uma empresa de busca e que especular sobre candidatos é prematuro.
+
+## O contato com a espionagem
+
+O New York Times, em reportagem reproduzida pela Reuters, relata que Alice Huang esteve em contato com um oficial do Ministério da Segurança do Estado da China, principal serviço de inteligência do país, da primavera de 2025 ao outono de 2026. A informação vem de pessoas com acesso a relatórios de inteligência que descrevem os encontros. Um porta-voz de Jensen Huang não quis comentar, e Nvidia e a embaixada chinesa em Washington não responderam de imediato. A Reuters não conseguiu falar com Alice Huang, e o governo chinês nega as acusações.
+
+Autoridades americanas, porém, pedem cautela. O procurador-geral, Todd Blanche, disse neste mês que o Departamento de Justiça não chegou a uma conclusão, e o diretor de Inteligência Nacional, Jay Clayton, repetiu no domingo que vai "deixar a investigação seguir", segundo a Reuters. Parlamentares dos dois partidos questionam se o governo foi brando na aplicação dos controles de exportação de chips, e Bessent disse que o Departamento de Comércio tem perguntas a responder.
+
+## A espionagem e os chips
+
+Alice Huang dirigiu a Megaspeed International, sediada em Singapura e cliente importante da Nvidia, responsável por vendas de bilhões de dólares em chips. As autoridades dos EUA investigam a Megaspeed desde 2024 por suspeita de contrabando de chips avançados de inteligência artificial para a China, informa a Reuters. O escândalo começou em 29 de outubro, quando o New York Times revelou o relacionamento extraconjugal entre os dois e a suspeita de agentes americanos de que ela foi recrutada pela inteligência chinesa para ajudar empresas do país a driblar as restrições. Huang renunciou duas semanas depois, e a Nvidia perdeu mais de US$ 1,2 trilhão em valor de mercado, segundo o Axios.
+
+## O que vem agora
+
+O prazo de dez dias dado por Bessent ao conselho e aos advogados externos vence nos próximos dias, e cabe ao conselho escolher o sucessor permanente de Huang.
+
+## O que ainda não está confirmado
+
+Não há decisão do conselho sobre o retorno de Huang nem sobre um nome de fora. As suspeitas sobre Alice Huang dependem de relatórios de inteligência não divulgados, e o governo americano diz não ter concluído que ela espionou para a China.`,
+ fontes:[['Daily Maverick (Reuters: Alice Huang e a espionagem chinesa)','https://www.dailymaverick.co.za/article/2026-11-23-alice-huang-in-touch-with-chinese-spy-agency-during-affair-with-nvidia-ceo-nyt/'],['Folha (Financial Times: Bessent não descarta volta de Huang)','https://c-level.folha.uol.com.br/negocios/2026/11/secretario-do-tesouro-dos-eua-se-recusa-a-descartar-retorno-de-jensen-huang-a-nvidia.shtml'],['Valor Econômico (FT)','https://valor.globo.com/empresas/noticia/2026/11/22/ft-scott-bessent-agora-no-se-ope-ao-retorno-de-jensen-huang-nvidia.ghtml'],['g1 (Alice Huang contatou espião chinês)','https://g1.globo.com/mundo/noticia/2026/11/23/amante-de-ceo-da-nvidia-manteve-contato-com-oficial-da-espionagem-chinesa-segundo-o-nyt.ghtml'],['Al Jazeera (Bessent pede líder de fora)','https://www.aljazeera.com/news/2026/11/15/us-treasury-chief-calls-for-outsider-to-lead-embattled-tech-firm-nvidia'],['Axios (Bessent questiona vendas à China)','https://axios.com/2026/11/15/bessent-nvidia-earnings-china-chip-sales-ceo'],['IBTimes (aliados de Huang e conselho)','https://www.ibtimes.com.au/jensen-huang-nvidia-ceo-return-leadership-crisis-1878640']]});
+
+_N('pautas_economicas_governo_ate_dezembro_23', {ed:'economia', k:'Economia · Congresso', hora:'23/11',
+ t:'Depois do ajuste fiscal, governo ainda quer aprovar Orçamento de 2027, alíquota da CBS e o fim das bets antes do recesso',
+ sub:'A Comissão Mista de Orçamento precisa destravar a LDO e a peça orçamentária, e a medida provisória que proíbe as apostas de quota fixa corre contra o prazo de validade.',
+ dado:{n:'0,5% do PIB', l:'meta de superávit primário prevista para 2027 nos textos orçamentários em tramitação'},
+ resumo:'Com o pacote de ajuste fiscal na reta final de tramitação, o governo Lula tenta aprovar até o recesso parlamentar, em dezembro, uma lista extensa de propostas econômicas: a Lei de Diretrizes Orçamentárias e o Orçamento de 2027, a definição da alíquota da Contribuição sobre Bens e Serviços pelo Senado, medidas provisórias em prazo de caducidade e a que proíbe as apostas de quota fixa. Aliados do presidente admitem que parte pode ficar para 2027, quando a nova legislatura dará mais cadeiras à oposição.',
+ fundo:`Com o pacote de ajuste fiscal na reta final e a votação na Câmara marcada para esta segunda-feira (23), o governo do presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) disputa o calendário curto que resta até o recesso de dezembro para emplacar o resto da agenda econômica, do Orçamento de 2027 ao fim das apostas de quota fixa. Aliados já admitem que parte fica para 2027.
+
+## O Orçamento no centro da fila
+
+A peça mais urgente é a dupla orçamentária. A Lei de Diretrizes Orçamentárias de 2027, que fixa as regras e a meta de resultado primário, e a Lei Orçamentária Anual, que distribui as despesas, dependem de avanços na Comissão Mista de Orçamento, presidida pelo deputado Domingos Neto (PSD-CE, partido de centro-direita), antes de irem a sessão conjunta da Câmara e do Senado. Os textos em tramitação trabalham com superávit primário de 0,5% do Produto Interno Bruto em 2027.
+
+O calendário é curto. A análise da LDO está prevista para a primeira semana e meia de dezembro e a da peça orçamentária para a semana seguinte, de acordo com o levantamento publicado pela A Crítica. Se o Orçamento não for votado até o fim do ano, o governo entra em 2027 executando apenas despesas obrigatórias e um doze avos do custeio por mês, o que trava investimentos e emendas.
+
+## A reforma tributária volta ao Senado
+
+Outra pendência é a definição da alíquota da Contribuição sobre Bens e Serviços, o tributo federal que substituirá PIS e Cofins na reforma tributária. O percentual precisa ser fixado pelo Senado, com prazo que se encerra na metade de dezembro, e é peça central para calibrar a carga total do novo sistema, que entra em vigor por etapas.
+
+O governo também corre contra prazos de medidas provisórias que caducam se não forem votadas pelas duas Casas, entre elas a que proíbe as apostas de quota fixa, as chamadas bets. Editada em setembro e já em vigor, a MP 1.394/2026 entrou em regime de urgência e ainda não teve a comissão mista instalada, registra o Congresso em Foco. Sem aprovação, perde a validade, preservadas as relações jurídicas firmadas durante a vigência.
+
+## A conta política do calendário
+
+Há um motivo para a pressa. A legislatura que começa em fevereiro dará mais cadeiras à oposição, e integrantes da base governista reconhecem, segundo reportagem de O Globo, que propostas deixadas para 2027 encontrarão um Congresso menos favorável. O recesso está previsto para o dia 23 de dezembro, o que deixa cerca de quatro semanas úteis de trabalho.
+
+Além das pautas econômicas, disputam esse espaço propostas de peso político, como a PEC da Segurança Pública, já aprovada na Câmara e em análise no Senado, e a PEC do voto distrital misto, que o presidente da Câmara, Hugo Motta (Republicanos-PB, partido de direita), quer votar ainda neste ano. Cada uma dessas votações consome sessões que o governo gostaria de reservar ao Orçamento.
+
+## O que vem agora
+
+A Câmara vota nesta segunda-feira (23) o projeto do ajuste fiscal, e a tramitação da LDO depende do parecer na Comissão Mista de Orçamento. O prazo para a definição da alíquota da CBS no Senado termina em dezembro.`,
+ fontes:[
+  ['O Globo (pautas até dezembro)','https://oglobo.globo.com/economia/noticia/2026/11/23/alem-do-pacote-fiscal-que-camara-vota-hoje-veja-outras-pautas-economicas-que-governo-tenta-aprovar-ate-dezembro.ghtml'],
+  ['A Crítica (projetos prioritários)','https://acritica.net/politica/congresso-nove-projetos-prioritarios-votar-ate-dezembro-2026/'],
+  ['Congresso em Foco','https://www.congressoemfoco.com.br/noticia/131244/seguranca-bets-e-reforma-eleitoral-o-que-o-congresso-pode-votar'],
+  ['Folha de Pernambuco (votação na Câmara)','https://www.folhape.com.br/politica/chefe-da-articulacao-politica-diz-que-governo-acertou-com-motta/525051/']
+ ]});
+
+_U('pe_ipojuca_pe009_quatro_mortos_22', {hora:'23/11',
+ t:'Sobrevivente de acidente na PE-009 é transferida para hospital particular no Recife; polícia investiga velocidade e embriaguez do motorista',
+ sub:'Uma jovem que desceu do carro cerca de três minutos antes da batida diz que o motorista dirigia de forma brusca; as vítimas são veladas em Maceió nesta segunda (23).',
+ dado:{n:'4 mortos', l:'e 1 sobrevivente, em colisão contra árvore no km 60 da PE-009, em Ipojuca (PE)'},
+ resumo:'Nathalia Lins Peixoto Recco, única sobrevivente do acidente que matou quatro pessoas na PE-009, em Ipojuca (PE), saiu do Hospital Dom Helder Câmara e foi para um hospital particular do Recife, em estado estável. A Polícia Civil abriu inquérito para apurar velocidade e embriaguez, mas não há laudo. Uma jovem que desceu do carro minutos antes descreve direção brusca; as vítimas, entre elas uma médica residente de Alagoas, são veladas nesta segunda (23).',
+ upd:'A sobrevivente foi transferida para hospital particular no Recife, em estado estável; a Polícia Civil abriu inquérito e a jovem que desceu do carro minutos antes descreveu a direção do motorista.',
+ fundo:`A única sobrevivente do acidente que matou quatro pessoas na madrugada de domingo (22), na PE-009, em Ipojuca, no Litoral Sul de Pernambuco, deixou o hospital onde foi atendida e foi levada a uma unidade particular do Recife. Nathalia Lins Peixoto Recco está em estado estável, informou o Hospital Dom Helder Câmara, no Cabo de Santo Agostinho. As vítimas fatais são veladas nesta segunda-feira (23), em Maceió e em outras cidades.
+
+## A sobrevivente e o inquérito
+
+Em nota, o Dom Helder Câmara disse que a paciente recebeu atendimento imediato, foi avaliada por equipe multiprofissional e seria transferida para a rede privada, de acordo com o Diário de Pernambuco. Segundo o irmão dela, Gabriel Recco, os exames descartaram lesão no cérebro, e ela tem fraturas no fêmur, na clavícula e nas costelas e deve passar por cirurgia na perna, relata o blog AR News. Nathalia, de 29 anos, não se lembra das horas anteriores à batida e ainda não sabia da morte dos amigos.
+
+A Polícia Civil de Pernambuco registrou o caso como acidente de trânsito com morte, e a delegacia de Ipojuca conduz o inquérito. Os investigadores aguardam os laudos do Instituto de Criminalística e do Instituto de Medicina Legal (IML) para estimar a velocidade no momento do impacto e verificar se o motorista tinha ingerido bebida alcoólica. O depoimento da sobrevivente depende de liberação médica.
+
+## O que a jovem que desceu do carro contou
+
+A prima de uma das vítimas, a médica residente Beatriz de Melo Acioli, entrou no Toyota SW4 por insistência da familiar e pediu para descer menos de 200 metros depois, cerca de três minutos antes da colisão, conforme a TV Guararapes e a Folha de Pernambuco. Ela afirma que o motorista aparentava embriaguez, dirigia de forma brusca, passava por quebra-molas sem reduzir e ouvia música alta. Tentou convencer a prima a descer também, mas Beatriz ficou. Depois, já numa van com amigas, parou para ajudar as vítimas sem perceber, de início, que era o mesmo carro. Segundo ela, a sobrevivente era a única ocupante com cinto de segurança.
+
+Vídeos de stories publicados nas redes um dia antes mostravam um painel marcando 167 km/h, mas a TV Guararapes ressalva que a imagem não prova a velocidade na hora da colisão. A polícia não confirmou embriaguez nem excesso de velocidade.
+
+## O acidente e as vítimas
+
+O grupo voltava de uma festa na praia de Maracaípe e seguia para outro evento quando o veículo atingiu uma placa de sinalização com a orientação "Reduza a Velocidade" e, em seguida, uma árvore no quilômetro 60 da rodovia estadual, no trecho que liga Porto de Galinhas a Serrambi, informa o JC. O Corpo de Bombeiros Militar de Pernambuco mandou três viaturas e encontrou quatro pessoas mortas e presas às ferragens: três mulheres e um homem.
+
+Morreram o empresário David do Nascimento Melo, de 27 anos, apontado como motorista; a médica residente Beatriz de Melo Acioli, do Hospital do Idoso de Alagoas; a modelo Fernanda Eloi, de 31; e a dentista Ingrid Shelda Santos Machado, natural de Bezerros (PE), que faria 26 anos nesta segunda. A Tribuna Hoje, de Alagoas, registra que o corpo de Beatriz será velado em Maceió, e o TNH1 informa que uma unidade de saúde da capital alagoana fechou nesta segunda por causa da morte da médica.
+
+## O que vem agora
+
+O inquérito segue na delegacia de Ipojuca, à espera dos laudos periciais e do depoimento de Nathalia, que depende de liberação médica.
+
+## O que ainda não está confirmado
+
+A embriaguez e a velocidade do carro constam apenas de relatos e de imagens de redes sociais; não há exame nem laudo divulgado. Também não há data para a cirurgia nem para a alta da sobrevivente.`,
+ fontes:[['Diário de Pernambuco (sobrevivente estável e será transferida)','https://www.diariodepernambuco.com.br/vida-urbana/2026/11/11729705-unica-sobrevivente-de-acidente-com-quatro-mortos-em-ipojuca-esta-estavel-e-sera-transferida.html'],['AR News (transferência para o Recife e velórios)','https://www.arnewsnoticias.com/2026/11/acidente-pe-009-ipojuca-sobrevivente-transferida-recife-vitimas.html'],['TV Guararapes (jovem desceu minutos antes)','https://www.tvguararapes.com.br/pernambuco/2026/11/23/acidente-em-ipojuca-deixa-quatro-mortos-jovem-desceu-minutos-antes.html'],['Folha de Pernambuco (prima desistiu da carona)','https://www.folhape.com.br/noticias/prima-de-vitima-fatal-desistiu-de-carona-tres-minutos-antes-de/525533/'],['JC (colisão na PE-009)','https://jc.uol.com.br/pernambuco/2026/11/22/carro-colide-com-arvore-na-pe-009-e-deixa-quatro-mortos-em-ipojuca.html'],['TNH1 (sobrevivente estável, diz hospital)','https://www.tnh1.com.br/noticia/nid/unica-sobrevivente-de-acidente-em-ipojuca-tem-quadro-estavel-diz-hospital/'],['Tribuna Hoje (alagoanos entre os mortos)','https://tribunahoje.com/noticias/brasil/2026/11/22/199428-alagoanos-estao-entre-os-quatro-mortos-em-acidente-em-porto-de-galinhas']]});
+
+_N('pec_seguranca_guarda_civil_policias_municipais_23', {ed:'politica', k:'Política · Segurança', hora:'22/11',
+ t:'PEC da Segurança Pública permite que prefeituras criem polícias municipais, mas exige receita própria e regulamentação; 10 capitais já têm projetos',
+ sub:'O Brasil tem 1.417 municípios com guardas civis; um deputado estima que as regras de custeio limitem a mudança a cerca de 20% das cidades.',
+ dado:{n:'1.417', l:'municípios com guardas civis em atividade, que reúnem cerca de 107 mil agentes'},
+ resumo:'A Proposta de Emenda à Constituição (PEC) da Segurança Pública, aprovada pelo Congresso em 3 de novembro, autoriza prefeituras a criar polícias municipais, do zero ou a partir das guardas civis. A mudança não é automática: exige lei municipal, receita própria para manter a corporação, acreditação por conselhos estaduais, corregedoria e formação nacional. Ao menos dez capitais têm projetos, mas a regulamentação federal ainda falta. Um deputado estima que só cerca de 20% das cidades consigam cumprir as exigências.',
+ fundo:`A Proposta de Emenda à Constituição (PEC) 18/2025, conhecida como PEC da Segurança Pública, autoriza os municípios a criar polícias municipais, tanto do zero quanto a partir das guardas civis já existentes. O texto foi aprovado em definitivo pelo Congresso Nacional em 3 de novembro. A mudança, porém, não é automática: depende de entrada em vigor da emenda, de regulamentação federal e do cumprimento de exigências financeiras e administrativas por cada prefeitura.
+
+## O que a PEC permite
+
+As polícias municipais teriam natureza civil, estruturadas em carreira, e atuariam em policiamento ostensivo e comunitário, respeitadas as competências dos demais órgãos de segurança, segundo O Povo e o portal Sociedade Militar. O quadro seria formado por concurso público ou pela conversão dos cargos da guarda. Um município não pode manter guarda e polícia com funções sobrepostas, e a transformação exige lei municipal.
+
+Hoje, as guardas civis nasceram para proteger o patrimônio público e, nos últimos anos, ampliaram a atuação: o Supremo Tribunal Federal (STF) reconheceu que podem fazer prisões em flagrante e policiamento ostensivo comunitário, sem funcionar como polícia judiciária, conforme O Povo. O país tem 1.417 municípios com guardas ativas e cerca de 107 mil agentes, de acordo com levantamento do g1 com dados do Ministério do Trabalho e Emprego. Pelo menos dez capitais já têm projetos para transformar a guarda em polícia, informa o g1.
+
+## As exigências para os municípios
+
+A condição central é financeira: a corporação deve ser mantida com receita própria da prefeitura, sem contar repasses de outros entes. Também serão exigidos acreditação periódica pelo Conselho Estadual de Segurança Pública e Defesa Social, corregedoria com controle externo do Ministério Público, ouvidorias independentes e formação segundo parâmetros nacionais básicos.
+
+O deputado Aluisio Mendes disse ao g1 que essas regras protegem prefeitos de pressões por policiamento, mas devem restringir a mudança a cerca de 20% das cidades, porque muitos municípios dependem de repasses e têm falhas nos registros contábeis que dificultam comprovar capacidade financeira. A associação de guardas alerta que migrações sem os requisitos podem render sanções aos gestores.
+
+## A regulamentação ainda falta
+
+Em Fortaleza, a prefeitura de Evandro Leitão (PT, partido de esquerda) estuda os parâmetros e diz que a mudança depende de lei federal específica, que ainda definirá o funcionamento dos conselhos estaduais, informa O Povo. A assessoria do prefeito considera improvável a transformação ainda em 2026. Reinaldo Monteiro, presidente da AGM Brasil, associação do setor, estima que a espera pode durar dez anos ou mais.
+
+A PEC não fixa piso salarial nem equipara vencimentos aos de policiais estaduais, observa o Sociedade Militar. O projeto de lei 5.479/2026, que propõe piso de referência de R$ 7 mil para jornada de 40 horas, tramita na Câmara e não é direito vigente.
+
+## O que vem agora
+
+Cabe ao Congresso promulgar a emenda e ao governo federal e aos legisladores definir as regras de acreditação e custeio. Só depois as prefeituras poderão enviar projetos às câmaras municipais.
+
+## O que ainda não está confirmado
+
+A data de promulgação e de entrada em vigor não foi informada nas reportagens consultadas. O número de cidades que conseguirão criar polícia é estimativa de um parlamentar, e não dado oficial.`,
+ fontes:[['g1 (PEC prevê criação de polícias municipais)','https://g1.globo.com/politica/noticia/2026/11/22/pec-da-seguranca-como-uma-guarda-civil-municipal-pode-virar-policia.ghtml'],['g1 (maioria das cidades terá dificuldade, diz deputado)','https://g1.globo.com/politica/noticia/2026/11/22/exigencias-policia-municipal-prefeituras.ghtml'],['A Tarde (guarda civil vai virar policial?)','https://atarde.com.br/politica/guarda-civil-vai-virar-policial-entenda-o-que-muda-com-a-nova-pec-da-seguranca-1410377'],['Diário do Pará (guarda municipal vai virar policial?)','https://dol.com.br/noticias/brasil/969141/guarda-municipal-vai-virar-policial-entenda-o-que-muda-com-pec'],['O Povo (Fortaleza analisa mudança)','https://mais.opovo.com.br/jornal/politica/2026/11/11/fortaleza-analisa-mudanca-da-guarda-para-policia-municipal-mas-destaca-carencia-de-legislacao.html'],['Sociedade Militar (guardas e novas polícias)','https://www.sociedademilitar.com.br/2026/11/guardas-municipais-novas-policias-100-mil-agentes-65-mil-cargos-vagos-carreira-salarios-mgs.html']]});
+
+_U('petrobras_plano_2027_2031_22', {hora:'23/11',
+ t:'Petrobras anuncia nesta segunda (23) o plano de cinco anos, o primeiro depois da reeleição de Lula; mercado espera até US$ 120 bilhões, ante US$ 109 bilhões do ciclo atual',
+ sub:'O plano 2027-2031 deve priorizar diesel e a meta de produzir no país todo o combustível consumido; a diretoria apresenta o documento a investidores na terça (24), às 16h.',
+ dado:{n:'US$ 115-120 bi', l:'investimento projetado por investidores e analistas para 2027-2031, contra US$ 109 bi do plano 2026-2030'},
+ resumo:'A Petrobras divulga hoje, depois do fechamento do mercado, o Plano de Negócios 2027-2031. Pesquisa do Bradesco BBI com 30 fundos e projeções de bancos apontam investimento de US$ 115 bilhões a US$ 120 bilhões (R$ 684 bilhões a R$ 714 bilhões), acima dos US$ 109 bilhões do plano atual. O foco esperado é o diesel, com a meta de abastecer sozinha o mercado brasileiro, além da Margem Equatorial. Dividendos, endividamento e política de preços são os pontos que o mercado vai comparar.',
+ upd:'O anúncio sai hoje, depois do fechamento do mercado, com apresentação a investidores na terça (24); entram a pesquisa do Bradesco BBI, a meta de autossuficiência em diesel e as projeções de caixa e dividendos de BTG e Citi.',
+ fundo:`A Petrobras divulga nesta segunda-feira (23), depois do fechamento do mercado, o Plano de Negócios 2027-2031, o primeiro ciclo de cinco anos definido depois da reeleição do presidente Luiz Inácio Lula da Silva (PT, partido de esquerda). Investidores e bancos projetam entre US$ 115 bilhões (R$ 684 bilhões) e US$ 120 bilhões (R$ 714 bilhões) em investimentos, acima dos US$ 109 bilhões (R$ 648 bilhões) do plano 2026-2030. A diretoria apresenta o documento ao mercado na terça (24), às 16h, no horário de Brasília.
+
+## O que os analistas esperam
+
+A faixa de US$ 115 bilhões a US$ 120 bilhões vem de uma pesquisa do Bradesco BBI com 30 fundos brasileiros e estrangeiros, na qual a maioria dos participantes projeta esse intervalo, informa o Times Brasil. A Folha registra que a Ativa Investimentos espera que o dinheiro extra vá para a retomada de projetos, o diesel e a Margem Equatorial, a nova fronteira exploratória no litoral do Norte e do Nordeste que inclui a bacia da Foz do Amazonas. O Citi também projeta revisão para cima, puxada pelo diesel e por projetos de exploração e produção, e vê risco de aumento do endividamento se o petróleo cair, de acordo com o Agenda do Poder.
+
+O plano em vigor, aprovado no fim de 2025 em período de petróleo barato, soma US$ 109 bilhões: US$ 91 bilhões em projetos em implementação e US$ 18 bilhões em iniciativas em avaliação, conforme o comunicado da empresa. Ele ficou 1,8% abaixo do ciclo anterior, segundo o InfoMoney. Desde então a companhia superou a meta anual de investimentos por dois anos seguidos e antecipou projetos para aproveitar a alta do petróleo, afirma a presidente, Magda Chambriard.
+
+## A meta de autossuficiência em diesel
+
+Chambriard disse em setembro que o novo plano muito provavelmente traria uma meta de autossuficiência em diesel. Hoje as importações cobrem cerca de um quarto da demanda interna, segundo o Agenda do Poder, e a estatal já usa toda a capacidade de refino. A estratégia prevê ampliar as refinarias existentes e discutir a recompra da refinaria de Mataripe, na Bahia, vendida ao fundo Mubadala no governo de Jair Bolsonaro, o que elevaria o investimento.
+
+Pelas contas citadas pelo Times Brasil, a capacidade de refino passaria de 1,8 milhão para 2,1 milhões de barris por dia até 2030, com 320 mil barris adicionais vindos da ampliação de unidades existentes, sem refinarias novas. Entram nessa conta o segundo trem da Refinaria Abreu e Lima (Rnest), em Pernambuco, e o projeto Boaventura, no Rio de Janeiro, além de diesel com menos enxofre e biocombustíveis. A Empresa de Pesquisa Energética (EPE, órgão de planejamento do governo) projeta consumo de diesel 19% maior em dez anos, enquanto a oferta das refinarias da estatal deve crescer 13%, conforme o Estadão via Brapi.
+
+## Caixa, dividendos e preço do petróleo
+
+O mercado olha tanto para o tamanho do plano quanto para o retorno ao acionista. O BTG Pactual escreveu em relatório de 18 de novembro que a Petrobras pode aparecer operacionalmente mais forte, mas com retorno de caixa menor que o esperado antes. Pelas simulações do banco, o Brent precisaria de cerca de US$ 61 por barril para gerar caixa além dos dividendos ordinários, e de cerca de US$ 66 com US$ 2 bilhões a mais de investimento. O plano atual prevê US$ 45 bilhões a US$ 50 bilhões em dividendos ordinários acumulados e teto de dívida bruta de US$ 75 bilhões, com meta de convergir para US$ 65 bilhões.
+
+A estatal também elevou, no início de novembro, a previsão de gastos com arrendamentos em 2026 de US$ 10 bilhões para US$ 11 bilhões a US$ 11,5 bilhões, e a estimativa de investimento em projetos em implementação de US$ 19,4 bilhões para US$ 24 bilhões a US$ 25,5 bilhões, informa o Times Brasil e a Crítica, com a ressalva de que o custo total dos projetos não sobe. O gerente-executivo de Estratégia, Mario Jorge da Silva, trata a alta do petróleo causada pela guerra no Irã como temporária e espera preços perto dos níveis anteriores ao conflito em 2027; a Petrobras só aprova projetos viáveis com o barril a US$ 50.
+
+## Por que o plano pesa para o governo
+
+A União é a acionista controladora da Petrobras, e o tamanho dos investimentos, os dividendos e a política de preços dos combustíveis afetam as contas públicas, a inflação e o debate sobre o papel da estatal no governo Lula. Entre os riscos citados por analistas estão uma eventual volta da companhia à distribuição de combustíveis, um aporte na Braskem e a política de preços.
+
+## O que vem agora
+
+O comunicado sai hoje após o pregão, e a apresentação a investidores ocorre na terça (24). O mercado vai comparar o total com os US$ 109 bilhões do ciclo atual, a divisão entre exploração, refino e baixo carbono, a trajetória de produção e a política de dividendos.
+
+## O que ainda não está confirmado
+
+O valor final, a meta formal de autossuficiência em diesel, a recompra de Mataripe e a distribuição por segmento só serão conhecidos com o anúncio. As cifras de US$ 115 bilhões a US$ 120 bilhões são projeções de investidores e analistas, não decisões do Conselho de Administração.`,
+ fontes:[['Times Brasil (pesquisa do Bradesco BBI e projeções)','https://timesbrasil.com.br/empresas-e-negocios/petrobras-pode-elevar-investimentos-a-us-115-bilhoes/'],['Agenda do Poder (diesel, Citi e Mataripe)','https://agendadopoder.com.br/novo-plano-de-investimentos-da-petrobras-mira-autossuficiencia-em-diesel-com-projecao-de-ate-us-120-bilhoes/'],['A Crítica (anúncio na segunda, arrendamentos)','https://acritica.net/noticias/petrobras-deve-anunciar-plano-de-ate-us-120-bilhoes-em-investimentos-nesta-segunda-feira/'],['Folha (Petrobras deve elevar meta de investimentos)','https://c-level.folha.uol.com.br/negocios/2026/11/petrobras-deve-elevar-meta-de-investimentos-em-novo-plano-para-cinco-anos.shtml'],['Estadão via Brapi (Conselho avalia plano de US$ 115 bi a US$ 120 bi)','https://brapi.dev/news/conselho-da-petrobras-avalia-plano-de-us-115-bi-a-us-120-da539749'],['Agência Petrobras (Plano de Negócios 2026-2030)','https://agencia.petrobras.com.br/en/w/petrobras-aprova-plano-de-neg%C3%B3cios-2026-2030'],['InfoMoney (plano 2026-2030)','https://www.infomoney.com.br/mercados/petrobras-petr4-plano-negocios-2026-2030/']]});
+
+_N('previdencia_prova_vida_urnas_22mi_23', {ed:'economia', k:'Economia · Previdência', hora:'23/11',
+ t:'Ida às urnas em outubro renovou a prova de vida de 22,4 milhões de beneficiários do INSS, quatro vezes mais do que em 2024',
+ sub:'Cerca de 5,7 milhões desses segurados estavam com a verificação vencida; os demais venceriam nos próximos meses e ganharam mais doze meses de validade.',
+ dado:{n:'22.459.022', l:'beneficiários da Previdência que tiveram a prova de vida renovada pelo comparecimento nos dois turnos'},
+ resumo:'O comparecimento às urnas nos dois turnos das eleições deste ano renovou automaticamente a prova de vida de 22.459.022 beneficiários da Previdência Social, de acordo com dados da Dataprev. Desse total, cerca de 5,7 milhões estavam com a verificação vencida no INSS e os demais a venceriam em breve; todos passaram a ter doze meses de validade. Em 2024, na primeira vez em que os sistemas do INSS e da Justiça Eleitoral foram cruzados, o número ficou em torno de 5 milhões. A regra foi criada por portaria em 2022.',
+ fundo:`O comparecimento às urnas nos dois turnos das eleições deste ano renovou a prova de vida de 22.459.022 beneficiários da Previdência Social, segundo dados da Dataprev, a estatal que processa os sistemas do Instituto Nacional do Seguro Social. É mais de quatro vezes o alcance da primeira experiência do tipo, em 2024, quando cerca de 5 milhões de pessoas tiveram a verificação confirmada pelo voto.
+
+## Quem foi alcançado
+
+Do total deste ano, aproximadamente 5,7 milhões de segurados estavam com a prova de vida vencida no INSS, situação que pode levar à suspensão do pagamento do benefício. O restante estava regular, mas na iminência de vencer nos meses seguintes. Em todos esses casos, a verificação passou a valer por mais doze meses, informa a coluna de Lauro Jardim, em O Globo, que teve acesso aos números.
+
+A prova de vida é a checagem anual feita pelo instituto para confirmar que o titular de aposentadoria, pensão ou do Benefício de Prestação Continuada, pago a idosos e pessoas com deficiência de baixa renda, continua vivo. Durante anos, ela exigiu comparecimento à agência bancária. Desde 2023, o INSS passou a buscar a confirmação em bases de dados públicas, e o beneficiário só é acionado quando o cruzamento não dá resultado.
+
+## Como a Justiça Eleitoral entrou na conta
+
+O mecanismo funciona porque o Tribunal Superior Eleitoral compartilha com o INSS a lista de quem compareceu à votação. Quem votou não precisa fazer nada: a informação chega ao instituto e atualiza o cadastro, sem deslocamento a agência ou banco. Quem não votou também não perde o benefício de imediato, porque o INSS continua a procurar registros em outras bases e, se não encontrar, notifica o segurado para regularizar pelo aplicativo ou pelo site Meu INSS, pelo telefone 135 ou no banco em que recebe.
+
+A possibilidade foi criada por portaria editada em 2022, no governo de Jair Bolsonaro (PL, partido de direita), e aplicada pela primeira vez nas eleições municipais de 2024. Neste ano, o alcance cresceu porque o pleito foi geral, com dois turnos, o segundo deles em 25 de outubro, e porque o eleitorado idoso é mais numeroso em votação nacional.
+
+## A disputa em torno da medida
+
+Pouco antes do primeiro turno, o ministro da Previdência Social, Wolney Queiroz (PDT, partido de centro-esquerda), divulgou que o voto valeria como prova de vida. O anúncio virou alvo de ataques nas redes sociais por apoiadores de Bolsonaro, que sugeriram que a regra serviria para constranger beneficiários a votar, embora a norma tenha sido criada na gestão anterior e o não comparecimento não suspenda automaticamente o pagamento.
+
+A Justiça Eleitoral e o próprio instituto reforçaram a explicação durante a campanha, em comunicados que lembravam que a medida apenas dispensa o segurado de um deslocamento e que quem deixa de votar mantém os outros caminhos de comprovação.
+
+## O que vem agora
+
+Os beneficiários que não tiveram a situação confirmada pelo cruzamento de dados serão notificados pelo INSS e poderão regularizar a prova de vida pelo Meu INSS, pelo telefone 135 ou na rede bancária.`,
+ fontes:[
+  ['O Globo (coluna Lauro Jardim)','https://oglobo.globo.com/blogs/lauro-jardim/post/2026/11/comparecimento-as-urnas-renovou-prova-de-vida-de-224-milhoes-de-beneficiarios-da-previdencia.ghtml'],
+  ['Agência Gov (segundo turno)','https://agenciagov.ebc.com.br/noticias/202610/voto-no-segundo-turno-tambem-vale-como-prova-de-vida-no-inss'],
+  ['TSE','https://www.tse.jus.br/comunicacao/noticias/2026/Setembro/comparecimento-a-votacao-nas-eleicoes-2026-pode-ser-utilizado-como-prova-de-vida-do-inss'],
+  ['Agência Senado','https://www12.senado.leg.br/noticias/materias/2026/09/24/comparecimento-as-urnas-e-usado-como-prova-de-vida-do-inss']
+ ]});
+
+_U('rio_verde_feminicidio_21', {hora:'22/11',
+ t:'Homem preso por matar a companheira a facadas em Rio Verde (GO) tem antecedentes em Mato Grosso, inclusive por descumprir medida protetiva; caso é o 70º feminicídio do ano em Goiás',
+ sub:'Marcelo Profírio da Silva Filho, de 29 anos, deixou o filho do casal, de 1 ano e 4 meses, com um vizinho e foi achado escondido atrás de uma cama na casa da mãe.',
+ dado:{n:'70º', l:'feminicídio do ano em Goiás, segundo a contagem do site Mais Goiás, com 10 casos só em novembro'},
+ resumo:'Rosângela Santos Macedo, de 41 anos, foi morta a facadas dentro de casa, no Setor Jardim Helena, em Rio Verde (GO), por volta das 8h de sábado (21). O companheiro, Marcelo Profírio da Silva Filho, de 29 anos, foi preso em flagrante pela Polícia Militar. Ele disse que os dois discutiram e que a esfaqueou quando ela entrou no banheiro. Tem registros em Mato Grosso por lesão corporal, violação de domicílio e descumprimento de medida protetiva. A contagem de um site goiano aponta o 70º feminicídio do ano no estado.',
+ fundo:`Rosângela Santos Macedo, de 41 anos, foi morta a facadas dentro de casa, no Setor Jardim Helena, em Rio Verde, no sudoeste de Goiás, por volta das 8h de sábado (21). O companheiro dela, Marcelo Profírio da Silva Filho, de 29 anos, foi preso em flagrante pela Polícia Militar de Goiás (PMGO), escondido na casa da mãe. Na noite anterior, a vítima havia publicado nas redes sociais uma foto ao lado dele com a legenda "Pagodinho com ele".
+
+## O crime e a prisão
+
+Vizinhos ouviram barulhos e um deles foi até a casa. Encontrou o suspeito agitado, com sangue nas mãos, e recebeu dele o filho do casal, um bebê de 1 ano e 4 meses, conforme o Portal 6. O vizinho entrou depois que o homem saiu e viu Rosângela morta no chão. O g1 informa que o suspeito havia pedido que o vizinho levasse a criança e não entrasse no banheiro.
+
+Cerca de uma hora depois, a PM chegou à casa da mãe do suspeito, que estava trancada. A mãe disse que o filho não estava lá, mas ele foi encontrado escondido atrás de uma cama. À polícia, disse que os dois discutiram e que a esfaqueou quando ela entrava no banheiro. A Polícia Civil vai confrontar essa versão com o restante do inquérito.
+
+## O histórico do suspeito
+
+Segundo o Portal 6 e o Jornal Opção, Marcelo tem registros anteriores em Mato Grosso por lesão corporal, violação de domicílio e descumprimento de medida protetiva, instrumento judicial que obriga o agressor a manter distância da vítima. A investigação deve verificar esse histórico e se havia ocorrência anterior contra Rosângela em Goiás.
+
+## Um número que cresce em Goiás
+
+A contagem do site Mais Goiás, reproduzida pelo Portal 6, aponta o caso como o 70º feminicídio de 2026 no estado, com 10 só em novembro. O dado vem do veículo e não da Secretaria de Segurança Pública. O feminicídio, homicídio de mulher por razões da condição de sexo feminino, é uma qualificadora prevista no Código Penal desde 2015, e as denúncias podem ser feitas pelo Ligue 180 ou pelo 190, em caso de emergência.
+
+## O que vem agora
+
+O preso em flagrante passa por audiência de custódia, em que um juiz avalia a legalidade da prisão e decide se ela é mantida. O inquérito da Polícia Civil deve definir a tipificação do crime. O suspeito é considerado inocente até condenação definitiva.
+
+## O que ainda não está confirmado
+
+A defesa do suspeito não se manifestou, e a motivação do crime segue em apuração. A guarda do bebê não foi informada.`,
+ upd:'O suspeito foi identificado como Marcelo Profírio da Silva Filho, de 29 anos, com antecedentes em Mato Grosso por descumprir medida protetiva, e o caso foi contado como o 70º feminicídio do ano em Goiás.',
+ fontes:[['g1 Goiás (suspeito de matar a companheira)','https://g1.globo.com/go/goias/noticia/2026/11/21/homem-e-suspeito-de-matar-a-companheira-a-facadas-em-rio-verde.ghtml'],['Jornal Opção (preso após deixar filho com vizinho)','https://www.jornalopcao.com.br/ultimas-noticias/homem-e-preso-apos-matar-esposa-a-facadas-e-deixar-filho-de-1-ano-com-vizinho-em-rio-verde-898883/'],['Portal 6 (70º feminicídio em Goiás)','https://portal6.com.br/2026/11/22/feminicidio-rio-verde-70-goias-2026/']]});
+
+_N('risco_brasil_real_estagflacao_23', {ed:'economia', k:'Economia · Câmbio · Risco fiscal', hora:'23/11',
+ t:'Risco Brasil sobe ao maior nível desde 2025, dólar passa de R$ 5,93 e real perde mais de 17% desde a vitória de Lula; UBS vê risco de estagflação em 2027',
+ sub:'Estrangeiros ampliam compras de dólar futuro, e o Banco Central fez a primeira intervenção no câmbio desde 2024; a Câmara vota hoje o ajuste fiscal.',
+ dado:{n:'175,36 pontos', l:'Risco Brasil (CDS de 5 anos) em 20/11, o maior nível desde meados de 2025'},
+ resumo:'O CDS de cinco anos do Brasil, termômetro do risco-país, fechou sexta (20) em 175,36 pontos-base, o maior nível desde meados de 2025. O dólar comercial terminou a quinta (19) a R$ 5,93, o maior valor desde abril de 2025, mesmo após o Banco Central vender US$ 1 bilhão. O real é a moeda que mais perdeu entre as 20 mais negociadas desde a vitória de Lula: 17,65%. O UBS avisa que a demora do governo em definir o ajuste fiscal eleva o risco de estagflação, recessão com inflação alta, em 2027. A Câmara vota hoje o pacote fiscal.',
+ fundo:`O risco Brasil, medido pelo CDS (credit default swap, contrato que protege contra calote) de cinco anos, fechou a sexta-feira (20) em 175,36 pontos-base, o maior nível desde meados de 2025. O dólar comercial fechou a R$ 5,932, o maior valor desde abril de 2025, mesmo depois de o Banco Central vender US$ 1 bilhão à vista. O banco suíço UBS alerta para o risco de estagflação, recessão combinada com inflação alta, no Brasil em 2027.
+
+## A moeda que mais perde no mundo
+
+Desde a vitória do presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) no segundo turno, em 25 de outubro, o real recuou 17,65% entre as 20 moedas mais negociadas do mundo, a maior queda da lista, segundo levantamento publicado pela Folha com dados da plataforma Investing. Em seguida vêm o rand sul-africano (6,08%), o dólar australiano (5,43%) e a coroa norueguesa (4,64%). Antes da abertura do mercado em 25 de outubro, o dólar valia R$ 4,97, segundo a BBC News Brasil. Na semana passada, a cotação subiu 4,87%.
+
+O CDS havia saltado 26% no dia seguinte à eleição, para 151,7 pontos, segundo a CNN Brasil, e mantém tendência de alta desde então. O Poder360 lembra que, nos quatro anos do governo de Jair Bolsonaro (PL, partido de direita), o indicador chegou a cerca de 93 pontos. No terceiro mandato de Lula, não voltou a esse patamar.
+
+## Intervenção e compras de estrangeiros
+
+O Banco Central vendeu US$ 1 bilhão em leilão à vista na quinta (19), entre 12h03 e 12h08, informa a Agência Brasil. A cotação chegou perto de R$ 5,85 e voltou a subir. Foi a primeira intervenção no mercado à vista desde dezembro de 2024, de acordo com a Bloomberg Línea, que associa a pressão adicional a uma fala de Lula. O presidente disse que indicará os ministros "quando eu quiser" e que não tem pressa de anunciar o nome do novo ministro da Fazenda.
+
+Investidores estrangeiros aumentaram a aposta na alta da moeda. Entre 26 de outubro e 13 de novembro, o saldo comprado de não residentes em derivativos de dólar na B3 somou cerca de US$ 17 bilhões, aponta o InfoMoney, com base em dados da B3 e da DataWise. Só no primeiro pregão depois do segundo turno foram US$ 6,84 bilhões. Em 19 de novembro, grandes bancos estrangeiros acompanhados pelo trader Léo Molini encerraram com saldo comprador de R$ 3,75 bilhões em dólar futuro, enquanto bancos e corretoras locais venderam R$ 1,38 bilhão, em recorte que não representa o mercado todo. O economista Rafael Perretti, da Clear Corretora, atribui a persistência da alta à busca por proteção; os dados não separam proteção de aposta direcional.
+
+## O alerta do UBS
+
+Em relatório de perspectivas para 2027, o UBS Global Wealth Management afirma que o cenário externo de juros altos nos países desenvolvidos dificulta ao Brasil adiar o problema das contas públicas, diz a diretora de investimentos e macroeconomia para o Brasil, Solange Srour. Para ela, o risco de estagflação cresce a cada dia que o governo adia medidas de ajuste. O UBS projeta recessão técnica, com queda do PIB no quarto trimestre de 2026 e no primeiro de 2027, e vê chance de o IPCA passar de 6% em 2027 se o câmbio não voltar perto de R$ 5,50. Srour considera possível que o Banco Central sinalize alta de juros já na reunião do Copom de dezembro.
+
+O governo responde que o foco é o pacote fiscal. O Senado aprovou o texto, que mira superávit primário de 0,5% do PIB em 2027, e a Câmara dos Deputados deve votá-lo nesta segunda (23). O ministro do Planejamento, Bruno Moretti, afirmou que podem vir medidas adicionais. Lula atribuiu parte das críticas a agentes que querem ganhar dinheiro com especulação e boatos.
+
+## O que vem agora
+
+A votação do pacote na Câmara e a definição do ministro da Fazenda são os próximos sinais que o mercado espera. Analistas discordam sobre o teto do dólar: um gestor ouvido por outro veículo vê possibilidade de passar de R$ 6, e o Morgan Stanley já citava esse nível em outubro se a pressão fiscal aumentasse.
+
+## O que ainda não está confirmado
+
+Não há data para o anúncio da equipe econômica nem decisão do Copom sobre juros antes da reunião de dezembro. A projeção de recessão e de inflação acima de 6% em 2027 é cenário do UBS, não estimativa oficial.`,
+ fontes:[['Poder360 (Risco Brasil atinge maior nível desde 2025)','https://www.poder360.com.br/poder-economia/com-estresse-fiscal-risco-brasil-atinge-maior-nivel-desde-junho-de-2025/'],['Folha (real se desvaloriza mais de 17%)','https://www1.folha.uol.com.br/mercado/2026/11/real-se-desvaloriza-mais-de-17-desde-vitoria-de-lula-e-impulsiona-ativos-de-protecao.shtml'],['InfoMoney (UBS vê estagflação em 2027)','https://www.infomoney.com.br/onde-investir/ubs-ve-possibilidade-de-estagflacao-no-brasil-em-2027-como-balancear-o-portfolio/'],['InfoMoney (estrangeiros reforçam compras de dólar futuro)','https://www.infomoney.com.br/mercados/estrangeiros-compras-dolar-futuro-pressao-real/'],['InfoMoney (compra de US$ 17 bi após a eleição)','https://www.infomoney.com.br/mercados/estrangeiros-compram-dolar-apos-eleicao-r-6/'],['Agência Brasil (dólar supera R$ 5,93)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/dolar-supera-r-593-e-fecha-no-maior-valor-desde-abril-de-2025'],['Bloomberg Línea (BC faz primeira intervenção desde 2024)','https://www.bloomberglinea.com.br/mercados/bc-faz-1-intervencao-cambial-desde-2024-apos-fala-de-lula-dolar-vai-a-r-594/'],['CNN Brasil (risco-país salta 26%)','https://www.cnnbrasil.com.br/economia/money/mercado/risco-pais-brasileiro-avanca-26-e-atinge-maior-nivel-desde-junho-de-2025/'],['BBC News Brasil via Terra (real é a moeda que mais perdeu)','https://www.terra.com.br/economia/ate-onde-o-dolar-pode-subir-por-que-o-real-e-a-moeda-que-mais-perdeu-valor-desde-a-reeleicao-de-lula,f98b0e93562e13bb65b4d5e5b9be86153bjbzndy.html']]});
+
+_N('rj_chuva_forte_madrugada_previsao_23', {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro · Clima', hora:'23/11',
+ t:'Chuva forte alaga ruas do Rio na madrugada de segunda e há previsão de novas pancadas à tarde, com máxima de 37°C na Zona Oeste',
+ sub:'A estação da Grota Funda registrou mais de 50 mm em uma hora, e a instabilidade deve continuar até quarta (25), antes de uma queda de temperatura na quinta (26).',
+ dado:{n:'50 mm', l:'de chuva em uma hora na Grota Funda, na Zona Oeste, classificada como muito forte pelo Alerta Rio'},
+ resumo:'A chuva da madrugada desta segunda-feira (23) alagou trechos da cidade do Rio de Janeiro, como a Rua do Catete, na Zona Sul. O Alerta Rio, sistema de monitoramento da prefeitura, registrou mais de 50 mm em uma hora na Grota Funda, na Zona Oeste. O prefeito Eduardo Cavaliere disse que equipes municipais foram mobilizadas. A manhã deve ter tempo firme, com pancadas isoladas à tarde e à noite e máxima de 37°C. O Centro de Operações Rio prevê instabilidade até quarta (25) e frente fria na quinta.',
+ fundo:`A madrugada desta segunda-feira (23) teve chuva forte no Rio de Janeiro, com alagamentos em trechos da cidade, como a Rua do Catete, na Zona Sul. A estação da Grota Funda, na Zona Oeste, registrou mais de 50 milímetros em uma hora, volume que o Alerta Rio, sistema de meteorologia da prefeitura, classifica como chuva muito forte. A previsão é de manhã sem chuva, novas pancadas isoladas à tarde e à noite e temperatura máxima de 37°C.
+
+## O que choveu na madrugada
+
+O boletim do Centro de Operações Rio (COR), órgão da prefeitura que monitora a cidade, apontou seis estações com chuva forte antes das 6h. Os maiores volumes foram na Rocinha, com 45,8 milímetros, no Vidigal, com 42,8, e na Barra, na região da Barrinha, com 40, conforme a Agenda do Poder. O Jardim Botânico somou 35,8 milímetros, o Alto da Boa Vista, 35,2, e Copacabana, 28. Em boletim anterior, o Recreio dos Bandeirantes tinha registrado 44,4 milímetros em uma hora.
+
+Houve também chuva moderada em Santa Teresa, Laranjeiras, Urca, Tijuca, Grande Méier, Saúde, Grajaú e São Cristóvão. O prefeito Eduardo Cavaliere informou que equipes municipais foram mobilizadas para atender os pontos de acúmulo de água nas ruas, segundo o Brasil em Folhas.
+
+## A previsão para a semana
+
+De acordo com o Alerta Rio, a manhã deve ser sem chuva, com pancadas isoladas à tarde e à noite e ventos moderados. A máxima é de 37°C na Zona Oeste, de 35°C na Barra, em Jacarepaguá e na Zona Sul e de 34°C no Centro, na Grande Tijuca e na Zona Norte. O Diário do Rio, com base na previsão do Climatempo, diz que a mínima fica em 24°C e que o volume de chuva tende a ser menor que o de domingo (22), quando houve pancadas e alertas preventivos na Região Metropolitana.
+
+O COR projeta pancadas isoladas à tarde e à noite também na terça-feira (24), ligadas a uma área de baixa pressão, e na quarta (25), por causa do calor e de uma frente fria em alto mar. Na quinta-feira (26), o céu fica nublado a encoberto, com chuva moderada a forte de forma isolada, ventos moderados a fortes e queda acentuada de temperatura.
+
+## Orientações aos motoristas
+
+O COR recomenda reduzir a velocidade, manter distância segura, evitar freadas e manobras bruscas, usar faróis mesmo de dia e não usar o celular ao volante. Em caso de piora da visibilidade, a orientação é parar em local seguro.
+
+## O que vem agora
+
+As informações em tempo real são divulgadas pelo COR no X, no perfil @OperacoesRio, e no aplicativo COR.Rio. O Alerta Rio atualiza a previsão ao longo do dia.
+
+## O que ainda não está confirmado
+
+Não houve divulgação de feridos nem de ocorrências graves até a publicação das reportagens, e a prefeitura não informou se haverá mudança de estágio operacional.`,
+ fontes:[['Agenda do Poder (chuva forte e alagamentos)','https://agendadopoder.com.br/rio-tem-chuva-forte-com-alagamentos-na-madrugada-e-previsao-de-novas-pancadas-a-tarde-maxima-pode-chegar-a-37o/'],['Brasil em Folhas (Zona Sudoeste)','https://brasilemfolhas.com.br/2026/11/chuvas-fortes-atingem-zona-sudoeste-do-rio-nesta-segunda-feira/'],['COR Rio (previsão da semana)','https://cor.rio/noite-de-domingo-22-11-com-possibilidade-de-pancadas-de-chuva-moderada-a-pontualmente-forte-confira-proximos-dias/'],['Diário do Rio (calor de 37°C)','https://diariodorio.com/meio-ambiente/2026/11/23/rio-comeca-a-semana-com-calor-de-37-c-e-chance-de-chuva.html']]});
+
+_N('rj_rosinha_garotinho_fim_casamento_23', {ed:'regioes', reg:'rj', k:'Regiões · Rio de Janeiro · Política', hora:'22/11',
+ t:'Rosinha Garotinho anuncia o fim do casamento de quase 50 anos com Anthony Garotinho, casal que marcou a política do Rio',
+ sub:'Os dois governaram o estado e Campos dos Goytacazes; Anthony ainda não se manifestou sobre a nota divulgada na noite de domingo (22).',
+ dado:{n:'1981', l:'ano do casamento de Rosinha e Anthony Garotinho, que ficaram juntos por quase cinco décadas'},
+ resumo:'A ex-governadora do Rio de Janeiro Rosinha Garotinho, do MDB, publicou na noite de domingo (22) uma nota nas redes sociais em que anuncia o fim do casamento com o ex-governador Anthony Garotinho, do Republicanos. Ela cita diferenças de entendimento e caminhos e pede respeito à privacidade. O casal se casou em 1981, tem dez filhos, cinco biológicos e cinco adotados, e dominou a política de Campos dos Goytacazes e do estado a partir dos anos 1990. Não houve manifestação de Anthony até a publicação das reportagens.',
+ fundo:`A ex-governadora do Rio de Janeiro Rosinha Garotinho, do MDB, partido de centro, anunciou na noite de domingo (22) o fim do casamento com o ex-governador Anthony Garotinho, do Republicanos, partido de direita. A separação foi comunicada em nota publicada nas redes sociais, depois de quase 50 anos de união. Até a divulgação das reportagens, Anthony não havia se manifestado.
+
+## O que diz a nota
+
+Rosinha atribuiu a decisão a "diferenças de entendimento e caminhos que, neste momento, parecem não serem mais os mesmos", conforme o texto reproduzido pelo Extra e pelo O Liberal. Na nota, ela afirmou que a vida pessoal e as razões da separação dizem respeito exclusivamente ao casal e que não cabe a terceiros julgar ou especular. Também descreveu a história em comum como feita de conquistas e desafios, e pediu respeito à privacidade. A equipe de Anthony Garotinho foi procurada pelo Estadão e não respondeu até a publicação do texto.
+
+O casal se casou em 12 de dezembro de 1981 e completaria 45 anos de casamento no mês que vem, informa o Brasil em Folhas. A relação começou na adolescência, em Campos dos Goytacazes, no Norte Fluminense. Eles têm dez filhos, cinco biológicos e cinco adotados; Clarissa e Wladimir seguiram a vida política e ocuparam cargos eletivos, segundo o Terra e o Brasil em Folhas.
+
+## A trajetória do casal no Rio
+
+Anthony Garotinho foi prefeito de Campos dos Goytacazes em 1989-1992 e em 1997-1998, deputado estadual, governador do Rio entre 1999 e 2002 e candidato à Presidência da República pelo PSB em 2002, quando teve cerca de 18% dos votos, segundo a biografia dele na Wikipédia em inglês. Rosinha foi secretária estadual de Ação Social e Cidadania no governo do marido. Em 2002, sucedeu-o ao vencer a eleição para o governo estadual, pelo PSB, no primeiro turno, com cerca de 51% dos votos válidos, e se tornou a primeira mulher a governar o estado. Anthony foi secretário de Segurança Pública em 2003 e, depois, de Governo na gestão dela, que durou até 2007.
+
+Rosinha voltou à política local como prefeita de Campos dos Goytacazes, cargo que ocupou de 2009 a 2016. Juntos, atuaram também no rádio e na administração pública. O Brasil em Folhas registra que ambos foram alvo de investigações judiciais e chegaram a ser presos em ocasiões diferentes.
+
+## O momento político
+
+Neste ano, Rosinha acompanhou as agendas de campanha de Anthony, que disputou a eleição sob decisão judicial pendente, a chamada candidatura sub judice. Depois do primeiro turno, o Tribunal Superior Eleitoral (TSE) anulou os votos dele, e a retotalização declarou vencedor no Rio o candidato do PL, Douglas Ruas, conforme o mesmo veículo.
+
+## O que vem agora
+
+Não há anúncio de divórcio formal nem de repercussão sobre arranjos partidários na família. O silêncio de Anthony Garotinho deve ser o primeiro ponto a ser esclarecido nos próximos dias.
+
+## O que ainda não está confirmado
+
+Os motivos da separação não foram divulgados, e Rosinha pediu que não sejam especulados. Não há informação sobre efeito da decisão na atuação política dos dois.`,
+ fontes:[['Extra (Rosinha anuncia fim do casamento)','https://extra.globo.com/famosos/noticia/2026/11/rosinha-garotinho-anuncia-fim-do-casamento-com-antony-garotinho.ghtml'],['O Liberal (Estadão)','https://www.oliberal.com/politica/rosinha-anuncia-fim-de-casamento-com-anthony-garotinho-1.1197202'],['Terra (nota e trajetória)','https://terra.com.br/noticias/brasil/politica/rosinha-nuncia-separacao-de-anthony-garotinho-fim-em-razao-de-diferencas,ec5cd72b3fb8ab6ed248f17f82be4f5aek2vho1k.html'],['Brasil em Folhas (casamento e trajetória)','https://brasilemfolhas.com.br/2026/11/rosinha-garotinho-anuncia-fim-do-casamento-com-anthony-garotinho/'],['Wikipédia (Anthony Garotinho)','https://en.wikipedia.org/wiki/Anthony_Garotinho']]});
+
+_U('rs_tupancireta_20', {hora:'23/11',
+ t:'Governo federal aprova R$ 4,7 milhões em ajuda humanitária para Tupanciretã; temporais atingem 46 municípios gaúchos e mais de 25 mil pessoas',
+ sub:'A calamidade pública está reconhecida pela União; outros dois planos, para telhas e limpeza urbana, estão em preparo, e meteorologistas divergem se houve tornado ou microexplosão.',
+ dado:{n:'R$ 4,7 mi', l:'aprovados pelo Ministério da Integração para ajuda humanitária em Tupanciretã (RS)'},
+ resumo:'O Ministério da Integração e do Desenvolvimento Regional aprovou no domingo (22) R$ 4,7 milhões para ajuda humanitária em Tupanciretã (RS), depois do temporal de sexta (20) que deixou 5 mortos e 265 feridos. A Defesa Civil gaúcha contabiliza 46 municípios atingidos e 25.212 pessoas afetadas. A calamidade foi reconhecida pela União, o presidente Lula prestou solidariedade e há dúvida técnica sobre se a cidade foi atingida por tornado ou por microexplosões.',
+ upd:'O ministério aprovou R$ 4,7 milhões para ajuda humanitária, o balanço estadual subiu para 46 municípios atingidos e 25.212 pessoas afetadas, e meteorologistas divergem sobre tornado ou microexplosão.',
+ fundo:`O Ministério da Integração e do Desenvolvimento Regional (MIDR) aprovou no domingo (22) o primeiro plano de trabalho de assistência humanitária para Tupanciretã, no centro do Rio Grande do Sul, com R$ 4,7 milhões. O dinheiro vai para cestas básicas, kits de limpeza e higiene, colchões e kits dormitório, e outros itens. A cidade de pouco mais de 20 mil habitantes foi devastada por uma tempestade na madrugada de sexta-feira (20), que deixou 5 mortos e 265 feridos segundo a Defesa Civil estadual.
+
+## O dinheiro e a promessa do ministro
+
+O valor foi aprovado com rapidez pela Secretaria Nacional de Proteção e Defesa Civil (Sedec), órgão do ministério, depois de o ministro Waldez Góes prometer, em visita ao município no sábado (21), agilidade na liberação de verbas, informa o Correio do Povo. Dois outros planos de trabalho, para a compra de telhas e para a limpeza urbana, estão em andamento. Góes disse que a reconstrução de escolas, hospitais e praças será tratada em planos separados, e não em um único, relata o Brasil 247. A Sedec publicou em edição extra do Diário Oficial da União a portaria que reconhece o estado de calamidade pública por vendaval, medida que permite mobilizar recursos específicos de desastre, informa a GZH. Cinco técnicos da Defesa Civil Nacional chegam à cidade nesta segunda (23).
+
+O presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) prestou solidariedade ao povo de Tupanciretã durante transmissão ao vivo no sábado e citou a presença dos ministros Waldez Góes e Alexandre Padilha, da Saúde, na região, segundo a Agência Brasil. A comitiva ministerial incluiu o secretário nacional de Defesa Civil, Wolnei Wolff, e o deputado federal Paulo Pimenta, e visitou um assentamento do MST onde uma criança morreu depois da queda de um muro.
+
+## O alcance dos temporais no estado
+
+A Defesa Civil gaúcha atualizou para 46 o número de municípios atingidos desde sexta, com novas ocorrências em Porto Xavier, Santo Cristo, Tuparendi, São Martinho, Três de Maio, Ajuricaba e Nova Boa Vista. No total, 25.212 pessoas foram afetadas, 19.854 ficaram desalojadas e 48, desabrigadas; 7.973 casas perderam o telhado e 682 foram danificadas, e Tupanciretã concentra 7.796 das moradias destelhadas, informa a Agência Brasil. A prefeitura contabiliza seis mortes, porque inclui um ex-vereador que, segundo o laudo de necropsia, morreu de infarto durante a tempestade.
+
+## Tornado ou microexplosão
+
+Moradores e autoridades falam em tornado, mas meteorologistas ouvidos pelo g1 dizem que a cidade foi atingida por uma supercélula, tempestade intensa e persistente, acompanhada de microexplosões, correntes de ar que descem com força e se espalham junto ao solo. Árvores tombadas na mesma direção indicam esse tipo de fenômeno, e os ventos podem ter superado 200 km/h. A MetSul, empresa de meteorologia, entende que um tornado passou pelo município, mas diz que ele sozinho não explica a destruição, relata o Correio do Povo.
+
+## Saúde, campo e crédito
+
+A Força Nacional do SUS enviou 13 profissionais para avaliar o hospital local, que teve o telhado danificado. A C.Vale, cooperativa agropecuária com sede na cidade, estima mais de R$ 150 milhões em perdas, com silos e galpões cheios de trigo, soja e milho destruídos, informa a GZH. A Caixa liberou o saque calamidade do FGTS até 19 de fevereiro de 2027.
+
+## O que vem agora
+
+Os técnicos da Defesa Civil Nacional chegam nesta segunda, e os planos para telhas e limpeza urbana seguem em análise no ministério. A previsão é de sol e calor no Rio Grande do Sul, com risco isolado de temporal no Médio e no Alto Uruguai, segundo a MetSul.
+
+## O que ainda não está confirmado
+
+O valor dos planos de telhas, limpeza e reconstrução ainda não foi divulgado, e a classificação técnica do fenômeno (tornado ou microexplosão) segue em debate entre especialistas.`,
+ fontes:[['Correio do Povo (R$ 4,7 milhões para Tupanciretã)','https://www.correiodopovo.com.br/not%C3%ADcias/cidades/governo-federal-aprova-r-47-milhoes-para-ajuda-humanitaria-em-tupancireta-1.1766844'],['Brasil 247 (MIDR libera ajuda humanitária)','https://www.brasil247.com/sul/midr-libera-ajuda-humanitaria-de-r-47-milhoes-para-tupancireta-rs-apos-temporal/'],['GZH (calamidade reconhecida e R$ 4,7 milhões)','https://gauchazh.clicrbs.com.br/geral/noticia/2026/11/governo-federal-reconhece-estado-de-calamidade-publica-em-tupancireta-cmws6bq42028j015uqu5ejfu8.html'],['Agência Brasil (46 municípios atingidos)','https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-11/temporais-atingem-46-municipios-e-mais-de-25-mil-pessoas-no-rs'],['Agência Brasil (Lula presta solidariedade)','https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/lula-presta-solidariedade-cidade-gaucha-devastada-por-tempestade'],['g1 Fantástico (não foi tornado, explicam meteorologistas)','https://g1.globo.com/fantastico/noticia/2026/11/22/nao-foi-tornado-meteorologistas-explicam-supercelula-e-microexplosao-que-devastaram-cidade-no-rs.ghtml'],['Correio do Povo (tornado, segundo a MetSul)','https://www.correiodopovo.com.br/not%C3%ADcias/cidades/tornado-passou-por-tupancireta-afirma-metsul-1.1766773'],['Correio Braziliense (governo acelera socorro)','https://www.correiobraziliense.com.br/brasil/2026/11/7542455-governo-federal-acelera-socorro-e-envia-ajuda-emergencial-a-tupancireta.html']]});
+
+_N('sp_chuvas_defesa_civil_41_alertas_23', {ed:'regioes', reg:'sp', k:'Regiões · São Paulo · Clima', hora:'23/11',
+ t:'Defesa Civil de São Paulo envia 41 alertas de chuva no domingo e mantém monitoramento até terça (24) em todo o estado',
+ sub:'Seis regiões estão sob atenção especial, e a Linha 9-Esmeralda opera com intervalos maiores depois de falha de energia na subestação Morumbi.',
+ dado:{n:'41', l:'alertas à população enviados pela Defesa Civil estadual no domingo (22): 18 por Cell Broadcast e 23 por SMS'},
+ resumo:'A Defesa Civil do Estado de São Paulo enviou 41 alertas à população no domingo (22), 18 por Cell Broadcast e 23 por SMS, e mantém aviso de chuva forte em todo o território paulista até terça-feira (24). Todas as regiões da capital e cidades do ABC receberam mensagens. A previsão inclui raios, rajadas de até 60 km/h e queda de granizo. Na segunda (23), a Linha 9-Esmeralda funciona com intervalos maiores por falha de energia na subestação Morumbi.',
+ fundo:`A Defesa Civil do Estado de São Paulo enviou 41 alertas à população no domingo (22) por causa das chuvas fortes que atingiram diferentes regiões e mantém o aviso vigente até terça-feira (24), com previsão de mais precipitação em todo o território paulista. Dezoito mensagens foram disparadas por Cell Broadcast, sistema que envia um alerta a todos os celulares de uma área, e 23 por SMS, informa a Agência SP, órgão de comunicação do governo estadual.
+
+## Onde os alertas chegaram
+
+Os avisos foram enviados a várias localidades, entre elas todas as regiões da capital paulista e cidades do ABC, como São Bernardo do Campo, Diadema, Mauá e Santo André, conforme a Agência SP. A Defesa Civil afirma que o tempo permanece estável em grande parte do estado, com registros pontuais de chuva de moderada a forte na região leste, que inclui a Região Metropolitana de São Paulo. Mais cedo, no domingo, o órgão havia contabilizado 25 alertas até as 16h38 e acionado a sirene em Campos do Jordão por causa de chuva com granizo.
+
+O Centro de Gerenciamento de Emergências Climáticas (CGE) da prefeitura colocou todas as zonas da capital em estado de atenção para alagamentos, segundo o SBT News. O Spagora informa que o aviso estadual pede atenção especial a seis regiões: a Região Metropolitana de São Paulo, Campinas, Sorocaba, Itapeva, Registro, no Vale do Ribeira, e São José dos Campos, no Vale do Paraíba.
+
+## O que a previsão indica
+
+A previsão é de pancadas moderadas a fortes com raios, rajadas de até 60 quilômetros por hora e queda isolada de granizo, principalmente à tarde e à noite. As chuvas podem se formar rapidamente, mesmo em dias de sol e calor, e variar muito entre cidades vizinhas, de acordo com o Spagora e o SBT News. Os riscos citados são alagamentos, enxurradas e queda de árvores.
+
+Antes do domingo, a Defesa Civil já tinha enviado 47 alertas na sexta (20) e 17 por SMS no sábado (21), conforme o mesmo veículo. Os temporais anteriores deixaram danos em cidades como Aparecida, onde parte do forro do restaurante de um hotel caiu e feriu cinco hóspedes, e Guaratinguetá, onde 40 pessoas de dez famílias deixaram as casas com a cheia de rios. O órgão estadual faz monitoramento 24 horas, com apoio do Gabinete de Operação El Niño.
+
+## A falha na Linha 9-Esmeralda
+
+Na segunda-feira (23), a Linha 9-Esmeralda, que liga Osasco a Grajaú, opera com intervalos maiores entre os trens depois de uma falha de energia na subestação Morumbi, informa o UOL. A causa da falha e o horário previsto para a normalização não constam da nota inicial.
+
+## O que vem agora
+
+O aviso da Defesa Civil vale até terça (24). A orientação é não atravessar ruas alagadas nem água em movimento, buscar abrigo fechado durante raios e sair de áreas com sinais de deslizamento. Os telefones são 199, da Defesa Civil, e 193, do Corpo de Bombeiros, e o cadastro para alertas por SMS é feito enviando o CEP para 40199.
+
+## O que ainda não está confirmado
+
+Não há balanço de ocorrências do domingo nem de feridos associados à chuva na capital, e a relação entre o temporal e a falha de energia na Linha 9 não foi informada.`,
+ fontes:[['Agência SP (41 alertas neste domingo)','https://www.agenciasp.sp.gov.br/defesa-civil/defesa-civil-monitora-ocorrencias-provocadas-por-chuvas-em-municipios-de-sp-e-emite-41-alertas-neste-domingo-22/'],['Agência SP (25 alertas e sirene em Campos do Jordão)','https://www.agenciasp.sp.gov.br/defesa-civil/defesa-civil-de-sp-envia-25-alertas-de-chuvas-neste-domingo-22-para-o-estado-sirene-em-campos-do-jordao-e-acionada/'],['Spagora (temporais até terça)','https://www.spagora.com.br/cotidiano/clima/defesa-civil-alerta-temporais-sao-paulo-22-24-novembro-2026/'],['SBT News (alerta severo)','https://sbtnews.sbt.com.br/noticia/brasil/defesa-civil-emite-alerta-severo-de-chuva-em-sao-paulo-1'],['UOL (Linha 9-Esmeralda)','https://noticias.uol.com.br/cotidiano/ultimas-noticias/2026/11/23/linha-9-esmeralda-opera-com-maior-intervalo-apos-falha-de-energia.ghtm']]});
+
+_N('stf_gilmar_sigilo_relatorio_pf_ministros_23', {ed:'politica', k:'Política · STF · Caso Master', hora:'22/11',
+ t:'Gilmar Mendes não vê problema em abrir o sigilo dos relatórios da PF sobre ministros do STF, mas diz que não resolve a questão e quer o caso Master no plenário',
+ sub:'Quatro relatórios, sobre Moraes, Toffoli, Kassio Nunes Marques e Mendonça, estão na PGR, que tem 15 dias para se manifestar; Kassio avalia como voltar ao caso Master.',
+ dado:{n:'4 relatórios', l:'seguem na PGR (Moraes, Toffoli, Kassio Nunes Marques e Mendonça); seis foram arquivados por Fachin'},
+ resumo:'O decano do STF, Gilmar Mendes, disse na sexta (20), em Buenos Aires, que não vê problema em retirar o sigilo dos relatórios da PF sobre ministros do tribunal no caso Master, mas que isso não resolve a questão, porque é preciso examinar o conteúdo. Defendeu que o caso vá ao plenário, e não à Segunda Turma. Dos dez relatórios entregues por Andrei Rodrigues a Fachin, seis foram arquivados e quatro seguem na PGR. O sigilo só caiu no relatório de Mendonça, a pedido dele. Kassio Nunes Marques avalia como voltar ao caso, e o uso de petições em investigações do STF entrou no debate.',
+ fundo:`O ministro Gilmar Mendes, decano do Supremo Tribunal Federal (STF), disse na sexta-feira (20) que não vê problema na retirada do sigilo dos relatórios da Polícia Federal (PF) que citam ministros da Corte no caso Banco Master, mas que a medida não resolve a questão. As menções saíram do celular de Daniel Vorcaro, ex-controlador do banco, hoje preso preventivamente. Gilmar também defendeu que o caso seja analisado pelo plenário, e não pela Segunda Turma, e admitiu em entrevista que, no tribunal, talvez não haja autocontenção.
+
+## O que Gilmar disse em Buenos Aires
+
+A declaração foi feita no 2º Fórum de Buenos Aires, na Argentina, evento que o ministro organiza. Gilmar afirmou que a discussão "cabe, talvez, a quem está agora com a própria relatoria, no caso o presidente Fachin", numa referência ao presidente do STF, Edson Fachin, que assumiu provisoriamente o caso em setembro. "É preciso que se examine, de fato, o conteúdo", disse, segundo o Metrópoles e o Brasil de Fato. Sobre o tema na Segunda Turma, afirmou estar "bastante incomodado" e que o assunto "deveria vir ao plenário".
+
+Para a Gazeta do Povo, a fala minimiza o gesto do ministro André Mendonça, relator original do caso, que pediu a Fachin a retirada do sigilo do relatório que o cita, o que foi atendido na sexta. Analistas ouvidos pelo jornal veem na defesa do plenário uma forma de evitar que o caso volte a Mendonça. Em entrevista à rádio argentina Perfil, de acordo com o Correio Braziliense, Gilmar disse que a facilidade de acionar o STF amplia o protagonismo dos ministros e que "talvez não haja autocontenção".
+
+## Os relatórios e o papel da PF
+
+O diretor-geral da PF, Andrei Rodrigues, entregou a Fachin na quarta (18) dez relatórios, um HD com o material integral e as menções a ministros extraídas do celular de Vorcaro. Na quinta (19), Fachin arquivou seis, por entender que as menções eram de terceiros, e enviou à Procuradoria-Geral da República (PGR) os quatro que citam Alexandre de Moraes, Dias Toffoli, Kassio Nunes Marques e André Mendonça. A PGR tem 15 dias para pedir investigação, novas diligências ou o arquivamento, informa o JC.
+
+O relatório de Mendonça, tornado público, diz que Vorcaro não o procurou diretamente e registra encontro de março de 2025 que o ministro já havia reconhecido. Houve ainda uma crise interna na PF, conforme o BPMoney: duas delegadas perderam a chefia da unidade do caso, e Andrei disse ao Senado que foi por descumprimento das orientações para elaborar os documentos. A coluna de Malu Gaspar, em O Globo, relata, com base em áudios do celular do banqueiro, que advogados de Vorcaro disseram a ele ter conversado com Andrei sobre um inquérito da PF, em 2024.
+
+## O dilema de Kassio Nunes Marques
+
+Presidente do Tribunal Superior Eleitoral (TSE) durante a campanha, Kassio declarou-se impedido de votar em 15 de setembro, no plenário, no julgamento que definiria se Moraes deveria ser investigado, para não impactar o processo eleitoral. Disse na época que poderia voltar depois da eleição, informa a Veja. Agora, com um relatório da PF sobre ele na PGR, o ministro avalia se retorna ou amplia o afastamento. Segundo a Folhapress, mensagens do celular de Vorcaro, reveladas por Metrópoles e piauí, sugerem favores ao ministro. Kassio nega: diz que nunca trocou mensagens com Vorcaro e que o filho nunca prestou serviço ao banco.
+
+## Petições e poder dos ministros
+
+Uma reportagem do Estadão aponta que o STF usa petições, os PETs, para conduzir investigações criminais sem abrir inquérito formal, inclusive no caso Master e na trama golpista. São 575 em tramitação, 465 criminais, e Mendonça é o relator de 158. Especialistas ouvidos questionam a falta de prazos e o uso da prevenção para manter casos com o mesmo relator.
+
+## O que vem agora
+
+A PGR tem até o início de dezembro para se manifestar sobre os quatro relatórios. Fachin mantém a relatoria, ao menos até 12 de dezembro, enquanto o tribunal discute quem assume o caso.
+
+## O que ainda não está confirmado
+
+Não há decisão sobre retirar o sigilo dos demais relatórios nem sobre levar o caso ao plenário. Não se sabe se Kassio voltará ao julgamento.`,
+ fontes:[['Brasil de Fato (Gilmar defende plenário e fim de sigilo)','https://www.brasildefato.com.br/2026/11/21/gilmar-mendes-defende-envio-do-caso-master-ao-plenario-do-stf-e-fim-de-sigilo-da-pf/'],['Metrópoles (Gilmar não vê problema)','https://www.metropoles.com/mundo/master-gilmar-mendes-nao-ve-problema-em-retirar-sigilo-de-relatorios-da-pf'],['Gazeta do Povo (Gilmar minimiza gesto de Mendonça)','https://www.gazetadopovo.com.br/republica/gilmar-minimiza-gesto-de-mendonca-e-defende-levar-caso-master-ao-plenario-do-stf/'],['BPMoney (Gilmar e relatórios da PF)','https://bpmoney.com.br/politica/gilmar-sigilo-relatorios-pf-caso-master/'],['Correio Braziliense (entrevista à Perfil)','https://www.correiobraziliense.com.br/politica/2026/11/7542412-talvez-nao-haja-autocontencao-diz-gilmar-mendes-sobre-atuacao-do-stf.html'],['JC (o que a PGR pode fazer com os relatórios)','https://jc.uol.com.br/politica/2026/11/22/investigar-ou-arquivar-entenda-o-que-a-pgr-pode-fazer-com-os-relatorios-sobre-ministros-do-stf.html'],['Veja (o dilema de Kassio Nunes Marques)','https://veja.abril.com.br/politica/o-dilema-de-kassio-nunes-marques-para-voltar-ao-julgamento-do-caso-master/'],['CNN Brasil (Kassio se declara impedido)','https://www.cnnbrasil.com.br/politica/nunes-marques-se-declara-impedido-e-nao-vota-em-julgamento-sobre-moraes/'],['ICL Notícias (Folhapress, Kassio e impedimento)','https://iclnoticias.com.br/kassio-estuda-estender-impedimento-no-master/'],['Times Brasil (petições do STF, Estadão)','https://timesbrasil.com.br/brasil/investigacoes-fora-do-rito-formal-dos-inqueritos-no-stf-geram-questionamentos-juridicos/'],['O Globo (advogados de Vorcaro e Andrei)','https://oglobo.globo.com/blogs/malu-gaspar/post/2026/11/advogados-de-vorcaro-relatam-conversas-com-andrei-sobre-inquerito-da-pf.ghtml']]});
+
+_N('sudao_sul_ataque_paramilitar_mortos_23', {ed:'mundo', k:'Mundo · Sudão do Sul · Conflito', hora:'22/11',
+ t:'Ataque de grupo armado deixa ao menos 24 civis mortos, sete deles crianças, no estado de Warrap, no Sudão do Sul',
+ sub:'Autoridades locais dizem que o balanço pode subir e que quatro atacantes também morreram; a violência segue em alta depois de um confronto entre clãs que matou 17 na semana passada.',
+ dado:{n:'24 mortos', l:'civis, entre eles 7 crianças e 6 mulheres, no ataque em Tonj Leste (Sudão do Sul)'},
+ resumo:'Um ataque de homens armados na madrugada de domingo (22) matou ao menos 24 civis, incluindo sete crianças e seis mulheres, em Bol Bol Boma, no condado de Tonj Leste, estado de Warrap, no noroeste do Sudão do Sul. O balanço inicial era de 15 mortos. O comissário interino do condado diz que o número pode crescer e que uma equipe seria enviada ao local. Quatro atacantes, que usavam uniformes da oposição armada, também morreram.',
+ fundo:`Um ataque de homens armados deixou ao menos 24 civis mortos na madrugada de domingo (22) em Bol Bol Boma, no condado de Tonj Leste, no estado de Warrap, noroeste do Sudão do Sul. Sete das vítimas são crianças e seis são mulheres, e a agência francesa AFP informa que o balanço inicial, de 15 mortos, foi revisado ao longo do dia.
+
+## O ataque em Warrap
+
+O comissário interino de Tonj Leste, Machuei Bith, deu os números à AFP e afirmou que o total pode subir, porque uma equipe seria enviada ao local para contar os corpos. Entre os mortos há pastores, segundo o relato reproduzido pela Arab News. Quatro atacantes também foram mortos, o que um policial local confirmou à agência.
+
+Os agressores vinham do vizinho estado de Unity e, de acordo com a AFP, usavam uniformes do SPLA-IO, o Exército de Libertação do Povo do Sudão-Oposição, grupo ligado ao ex-vice-presidente Riek Machar. A imprensa brasileira trata o grupo como paramilitar. Machar está em prisão domiciliar desde março de 2025. A agência canadense CTV, que reproduz o texto da AFP, descreve a autoria como de forças de oposição.
+
+## A violência no estado
+
+O ataque ocorre em uma região de mortes por vingança, roubos de gado e disputas por território, agravadas pela quantidade de armas deixadas por décadas de guerra. Na semana passada, um confronto entre dois grupos de distritos diferentes de Warrap, em um mercado em Makuach, deixou 17 mortos e 23 feridos. Segundo a AFP, o conflito começou com uma briga pessoal que levou parentes de clãs rivais a se juntarem à luta, e o governador de Warrap enviou tropas para evitar novos episódios. No mês passado, ao menos 72 pessoas morreram em violência entre comunidades na divisa de Warrap com Unity.
+
+## O contexto nacional
+
+A guerra civil de 2013 a 2018 entre forças do presidente Salva Kiir e de Machar matou mais de 400 mil pessoas. Os combates entre as forças dos dois lados se intensificaram nos últimos meses, e a situação humanitária é descrita como catastrófica em várias áreas. O g1 lembra, em seu podcast O Assunto, que mais de 16 milhões de pessoas no país vivem sob ameaça de fome, surtos de doenças e deslocamento forçado, e que as primeiras eleições gerais da história do Sudão do Sul foram adiadas.
+
+## O que vem agora
+
+Uma equipe do governo local deve ir a Bol Bol Boma para confirmar o número de mortos e feridos. A resposta do governo estadual, que já mandou tropas para outra área de Warrap na semana passada, ainda não foi detalhada.
+
+## O que ainda não está confirmado
+
+O balanço final de vítimas e a autoria do ataque dependem de apuração local. Não há posição pública do SPLA-IO sobre o episódio.`,
+ fontes:[['Arab News (AFP: 24 civis mortos)','https://www.arabnews.com/world/24-civilians-killed-in-fresh-south-sudan-violence-3013613'],['CTV News (AFP)','https://www.ctvnews.ca/world/article/24-civilians-killed-in-fresh-south-sudan-violence/'],['EWN (AFP: 17 mortos em Warrap)','https://www.ewn.co.za/2026/11/17/17-killed-in-south-sudan-revenge-attack'],['Folha (ataque de grupo paramilitar)','https://www1.folha.uol.com.br/mundo/2026/11/ataque-de-grupo-paramilitar-deixa-ao-menos-24-mortos-no-sudao-do-sul.shtml'],['g1 (O Assunto: tragédia ignorada pelo mundo)','https://g1.globo.com/podcast/o-assunto/noticia/2026/11/23/sudao-do-sul-a-tragedia-ignorada-pelo-mundo-o-assunto-1850.ghtml']]});
+
+_U('tarcisio_secretarias_18', {hora:'22/11',
+ t:'Tarcísio mantém metade do secretariado do segundo mandato e só traz Ricardo Salles de fora do governo; Saúde, Educação e Segurança seguem em aberto',
+ sub:'A reforma cria as pastas de Planejamento e de Meio Ambiente, extingue a supersecretaria de Meio Ambiente, Infraestrutura e Logística e troca o comando da Fazenda e da Gestão.',
+ dado:{n:'7', l:'permanências confirmadas até 18/11, entre elas Casa Civil, Agricultura, Cultura, Comunicação e Governo'},
+ resumo:'O governador reeleito de São Paulo, Tarcísio de Freitas (Republicanos), anunciou em três rodadas, entre 11 e 18 de novembro, a maior parte do secretariado do mandato que começa em janeiro de 2027. A reestruturação cria as secretarias de Planejamento, Orçamento e Investimentos, com Natália Resende, e de Meio Ambiente, com Thomaz Toledo. Rogério Campos assume a Fazenda. Ricardo Salles, do Novo, é o único nome vindo de fora do governo. A Saúde perde o titular, e Educação, Habitação e Segurança ainda dependem de confirmação.',
+ fundo:`O governador reeleito de São Paulo, Tarcísio de Freitas, do Republicanos, partido de direita, confirmou entre 11 e 18 de novembro a maior parte do secretariado do segundo mandato, que começa em 6 de janeiro de 2027. Metade da equipe permanece, e o único nome trazido de fora da administração estadual é o do deputado federal Ricardo Salles, do Novo, partido de direita. A última rodada, na quarta-feira (18), também redesenhou a estrutura das pastas.
+
+## A reforma das secretarias
+
+Em entrevista à Rádio Cruzeiro, de Sorocaba, Tarcísio anunciou a divisão da chamada supersecretaria de Meio Ambiente, Infraestrutura e Logística, que deixa de existir. Natália Resende, que a comandava, passa à nova Secretaria de Planejamento, Orçamento e Investimentos, que ficará com planejamento, orçamento, avaliação de políticas e agências reguladoras. Ela participou da elaboração do plano de governo da reeleição e trabalhou com Tarcísio no Programa de Parcerias de Investimentos, no governo de Michel Temer, de acordo com o DGABC.
+
+A Fazenda fica com Rogério Campos, hoje secretário-executivo da pasta, no lugar de Samuel Kinoshita. A Infraestrutura passa a reunir transportes e logística, com o DER, o Metrô e a CPTM vinculados, e será chefiada por Rafael Benini, atual secretário de Parcerias em Investimentos, informa o ND Mais. O Meio Ambiente ganha estrutura própria sob Thomaz Toledo, presidente da Cetesb, a companhia ambiental paulista. As secretarias de Meio Ambiente, Infraestrutura e Logística, de Transportes Metropolitanos e de Parcerias em Investimentos têm as atribuições redistribuídas.
+
+## Quem fica e quem chega
+
+Na terça-feira (17), o governador havia confirmado Leonardo Sultani na Gestão e Governo Digital, no lugar de Caio Paes de Andrade. Sultani já era secretário-executivo da pasta e atuou no Ministério da Economia no governo de Jair Bolsonaro, segundo a CNN Brasil. Na mesma rodada, ficaram Roberto Carneiro, na Secretaria de Governo e Relações Institucionais e também presidente estadual do Republicanos, Laís Vita, na Comunicação, o coronel Rinaldo de Araújo Monteiro, na Casa Militar e na Defesa Civil, e Inês Maria Coimbra, na Procuradoria-Geral do Estado.
+
+Na semana anterior, em 11 de novembro, vieram os nomes de Salles, para a Justiça e Cidadania, de Marcos Guerson, para o Desenvolvimento Econômico, e de Anderson Ribeiro Correia, ex-reitor do ITA e presidente do IPT, para Ciência, Tecnologia e Inovação. Nerylson Lima (Casa Civil), Geraldo Melo Filho (Agricultura e Abastecimento) e Marília Marton (Cultura, Economia e Indústria Criativas) seguem nos cargos. Salles, ex-ministro do Meio Ambiente de Bolsonaro, desistiu de disputar o Senado depois da articulação de Tarcísio para apoiar Guilherme Derrite, do PP, e André do Prado, do PL, ambos eleitos, informa a CNN Brasil. A ministra Marina Silva cobrou explicações sobre a escolha, conforme o ND Mais.
+
+## As pastas que dependem de partido
+
+A Saúde terá novo titular, porque Eleuses Paiva, do PSD, avisou que deixa o cargo. A Metrópoles cita como cotados o secretário municipal de Saúde da capital, Luiz Carlos Zamarco, e o secretário-adjunto estadual, Maurício Serpa; o ND Mais inclui o nome de David Uip, indicado pelo PP. Na Segurança Pública, o PP quer manter o delegado Osvaldo Nico Gonçalves, no cargo desde dezembro de 2025 e cotado pelo partido para a Prefeitura de São Paulo em 2028, e o PL também disputa a pasta, segundo O Antagonista.
+
+Tarcísio recebeu nas últimas semanas Baleia Rossi, do MDB, Ciro Nogueira, do Progressistas, e Renata Abreu, do Podemos, e admite mais indicações partidárias do que no primeiro mandato, desde que com perfil técnico. O ND Mais registra que o MDB pode ganhar espaço, por causa da atuação do grupo do prefeito Ricardo Nunes na campanha, e que o PSD, de Gilberto Kassab, pode perder.
+
+## O que vem agora
+
+Faltam definir Saúde e, com confirmação oficial pendente, Educação, Habitação e Projetos Estratégicos. A presidência da Assembleia Legislativa, que o PL indica por acordo, deve ser decidida em fevereiro.
+
+## O que ainda não está confirmado
+
+A permanência de Renato Feder na Educação, de Marcelo Branco na Habitação e de Guilherme Afif Domingos em Projetos Estratégicos é apontada como tendência, sem anúncio. O destino de Kinoshita não foi informado.`,
+ upd:'Tarcísio concluiu a reforma das secretarias em 18/11, com Planejamento e Meio Ambiente separados, e confirmou a maior parte do secretariado; restam Saúde e pastas políticas em aberto.',
+ fontes:[['Metrópoles (mais quatro nomes confirmados)','https://www.metropoles.com/sao-paulo/tarcisio-confirma-mais-quatro-nomes-no-secretariado-estadual-em-2027'],['DGABC (aliados de Temer e Bolsonaro)','https://www.dgabc.com.br/Noticia/4369496/tarcisio-divide-secretarias-e-mantem-aliados-de-temer-e-bolsonaro'],['ND Mais (nomes e mudanças em 2027)','https://ndmais.com.br/politica/secretariado-de-tarcisio-nomes-e-mudancas-em-2027/'],['CNN Brasil (novo secretário e três mantidos)','https://www.cnnbrasil.com.br/politica/tarcisio-anuncia-novo-secretario-e-mantem-outros-tres-na-gestao-em-sp/'],['O Antagonista (pastas políticas em aberto)','https://oantagonista.com.br/brasil/tarcisio-confirma-secretarios-e-deixa-pastas-politicas-em-aberto/'],['Estadão (metade do secretariado, quem é quem)','https://www.estadao.com.br/politica/tarcisio-mantem-metade-do-secretariado-e-so-traz-salles-de-fora-do-governo-veja-quem-e-quem/']]});
+
+_N('tereza_cristina_marinho_oposicao_senado_23', {ed:'politica', k:'Política · Congresso', hora:'23/11',
+ t:'Tereza Cristina monta estratégia para tirar de Marinho a candidatura da oposição à presidência do Senado contra Alcolumbre',
+ sub:'O governador eleito de Minas, Cleitinho Azevedo, declara apoio a Marinho no Senado e a Nikolas Ferreira na Câmara, enquanto Flávio Bolsonaro diz que não apoia a reeleição de Hugo Motta.',
+ dado:{n:'41 votos', l:'necessários para eleger o presidente do Senado em 1º de fevereiro de 2027, numa Casa de 81 senadores'},
+ resumo:'A senadora Tereza Cristina (PP-MS) quer convencer aliados de que o PL sozinho não elege o presidente do Senado e de que ela teria mais chance do que o líder da oposição, Rogério Marinho (PL-RN), contra a reeleição de Davi Alcolumbre. A eleição é em 1º de fevereiro de 2027. O governador eleito de Minas, Cleitinho Azevedo, apoia Marinho no Senado e Nikolas Ferreira na Câmara. O senador Flávio Bolsonaro (PL-RJ) disse que não apoiará a reeleição de Hugo Motta.',
+ fundo:`A senadora Tereza Cristina (PP-MS) desenhou uma estratégia para tomar do senador Rogério Marinho (PL-RN) o lugar de candidato da oposição à presidência do Senado, hoje ocupada por Davi Alcolumbre (União Brasil-AP, partido de centro-direita), que busca a reeleição com apoio do governo. A eleição para o biênio 2027-2028 será em 1º de fevereiro de 2027. A disputa na direita ocorre ao mesmo tempo em que lideranças do campo bolsonarista e aliados discutem quem vai comandar a Câmara.
+
+## A tese de Tereza Cristina
+
+Segundo a Veja, Tereza Cristina vai argumentar a potenciais aliados que alguns senadores que votariam nela não aceitariam se alinhar a Marinho, ex-coordenador da campanha presidencial de Flávio Bolsonaro. A revista cita, como exemplos, Michelle Bolsonaro, Damares Alves e Reinaldo Azambuja. A ideia é sustentar que o PL sozinho não ganha, mas que, se apoiar Tereza, o partido de direita presidido por Valdemar Costa Neto teria mais chances de fazer o vencedor.
+
+A senadora mantém a candidatura e diz que quer ser a primeira mulher a presidir o Senado, informa a A Crítica. Marinho, líder da oposição, também mantém a dele e afirmou que não pretende disputar diretamente contra ela. Os dois lados discutiram um acordo de rodízio, em que um concorreria em 2027 e o outro em 2029, mas nada foi fechado.
+
+## Os números da disputa
+
+Para vencer em primeiro turno são necessários 41 dos 81 votos. O PL terá 29 senadores a partir de fevereiro, a maior bancada, segundo o Congresso em Foco; PL, Republicanos e Novo somariam 37 votos se votassem integralmente em Marinho. A federação União Progressista, formada por União Brasil e PP, terá 11 senadores e anunciou apoio a Alcolumbre, que também conta com PT, MDB e PSD. Aliados do presidente do Senado projetam até 48 votos, e aliados de Marinho também dizem ter perto disso, relata a Folha de Pernambuco, o que indica apoios contados duas vezes. A votação é secreta, e dirigentes da federação dizem que não vão punir quem votar diferente. O PL discutiu defender o voto aberto, vista como forma de pressionar senadores eleitos com apoio do bolsonarismo.
+
+## Cleitinho, Nikolas e Motta
+
+No domingo (22), em entrevista ao programa Sala de Imprensa, do SBT News, o governador eleito de Minas Gerais, Cleitinho Azevedo (Republicanos, partido de direita), disse que votaria em Marinho se pudesse. Elogiou Tereza Cristina, defendeu que uma mulher presida a Casa e criticou a volta de Alcolumbre, em nome da rotatividade, segundo o Estado de Minas. Na Câmara, afirmou apoiar uma eventual candidatura do deputado federal Nikolas Ferreira (PL-MG), que recebeu mais de 3 milhões de votos, mas disse que não vai interferir na escolha, que cabe aos deputados.
+
+O senador Flávio Bolsonaro (PL-RJ), derrotado na disputa pela Presidência, afirmou em entrevista à Fox News que não vai apoiar uma eventual candidatura de Hugo Motta (Republicanos-PB) à reeleição na Câmara e que orienta deputados da oposição a não votar nele. Disse que Motta descumpriu compromissos com o grupo conservador, principalmente sobre a anistia aos condenados pelo 8 de Janeiro, informa o Correio Braziliense.
+
+
+Tereza Cristina e Marinho continuam negociando para não dividir os votos da oposição. Uma das hipóteses é a retirada de um dos nomes mais perto da eleição.`,
+ fontes:[['Veja (a estratégia de Tereza Cristina)','https://veja.abril.com.br/politica/a-estrategia-de-tereza-cristina-para-destronar-marinho-como-candidato-de-oposicao-a-alcolumbre/'],['Congresso em Foco (disputa divide a direita)','https://www.congressoemfoco.com.br/noticia/131266/com-tres-nomes-em-jogo-disputa-pelo-senado-divide-a-direita'],['A Crítica (Tereza mantém candidatura)','https://acritica.net/politica/tereza-cristina-mantem-candidatura-a-presidencia-do-senado-e-pl-avalia-voto-aberto/'],['Folha de Pernambuco (federação União-PP)','https://www.folhape.com.br/politica/disputa-entre-alcolumbre-marinho-e-tereza-pelo-senado-expoe/523646/'],['Estado de Minas (Cleitinho apoia Nikolas e Marinho)','https://www.em.com.br/politica/2026/11/7542316-cleitinho-declara-apoio-a-nikolas-na-camara-e-a-rogerio-marinho-no-senado.html'],['Correio Braziliense (Flávio rejeita apoio a Motta)','https://www.correiobraziliense.com.br/politica/2026/11/7542442-flavio-rejeita-apoio-a-reeleicao-de-motta-e-volta-a-questionar-eleicoes.html']]});
+
+_U('tornados_parana_foz_manoel_ribas_21', {hora:'23/11',
+ t:'Tempestades no Paraná danificam mais de 250 casas e afetam 907 pessoas; quase 49 mil unidades seguiam sem luz no domingo',
+ sub:'Verê, Manoel Ribas e Iguatu concentram os afetados, e a Defesa Civil mantém aviso de temporais intensos no norte do estado até a madrugada de segunda (23).',
+ dado:{n:'250+', l:'casas danificadas e 907 pessoas afetadas por tempestades no Paraná desde sexta (20); 48.837 unidades sem luz no domingo'},
+ resumo:'O boletim da Defesa Civil do Paraná divulgado no domingo (22) contabiliza mais de 250 casas danificadas, quatro edificações destruídas, 18 desalojados e 907 pessoas afetadas pelas tempestades desde sexta (20). Vendavais atingiram nove cidades, e Manoel Ribas teve um tornado. Pela Copel, 48.837 unidades estavam sem energia às 16h09, 23 mil delas no oeste. Um sistema de baixa pressão mantém o risco de temporais no norte até a madrugada de segunda (23).',
+ upd:'A Defesa Civil contabiliza 250 casas danificadas e 907 pessoas afetadas em nove cidades; a Copel tinha 48.837 unidades sem luz no domingo, e o aviso de temporais no norte vale até a madrugada de segunda.',
+ fundo:`As tempestades que atingem o Paraná desde sexta-feira (20) danificaram mais de 250 casas, destruíram quatro edificações e afetaram 907 pessoas, informa o boletim da Defesa Civil estadual divulgado no domingo (22). Há 18 desalojados. Às 16h09 do domingo, 48.837 unidades consumidoras estavam sem energia, de acordo com a Copel, companhia elétrica do estado.
+
+## Onde os estragos se concentram
+
+Vendavais atingiram nove cidades: Cascavel, Foz do Iguaçu, Iguatu, Londrina, Maringá, Renascença, Santo Antônio do Sudoeste, Ubiratã e Verê, e São José dos Pinhais registrou granizo, relata o ND Mais. Manoel Ribas, na região central, foi atingida por um tornado. Verê, no Sudoeste, teve o maior número de afetados, com 200, seguida por Manoel Ribas, com 180, e Iguatu, com 156. O termo afetados inclui quem sofreu algum tipo de dano ou perda, como falta de energia, água ou comunicação, e não apenas quem teve a casa atingida.
+
+A região oeste concentrava 23.099 das unidades sem luz, e a Copel mantinha 512 equipes nas ruas para restabelecer o serviço, conforme o ND Mais e a CartaCapital. No sábado, o número de casas sem energia no estado passava de 50 mil, informou o Jornal Nacional.
+
+## Os tornados confirmados na sexta
+
+O Sistema de Tecnologia e Monitoramento Ambiental do Paraná (Simepar) confirmou dois tornados de intensidade F1 na sexta: por volta das 15h na Vila Yolanda, em Foz do Iguaçu, e por volta das 18h em Manoel Ribas, cidades separadas por 427 km. Na Escala Fujita, que mede a intensidade pelos danos, a categoria F1 corresponde a ventos de 117 km/h a 180 km/h, capazes de destelhar construções e derrubar árvores. Com os novos casos, o estado soma 15 tornados e dois landspouts em 2026, informa o g1 Paraná; landspout é um tipo de tornado que se forma sem a rotação de uma supercélula, tempestade que gira de forma persistente.
+
+Em Foz do Iguaçu, a Defesa Civil contabilizou dezenas de ocorrências de queda de árvores e galhos, e a tempestade deixou 36 mil imóveis sem luz, informa a Gazeta do Povo. No Norte do estado, uma pessoa ficou presa em uma tirolesa da decoração de Natal em Maringá, e o secretário municipal de Cultura de Londrina se feriu numa queda, conforme o g1.
+
+## A previsão para a semana
+
+A Defesa Civil emitiu aviso de tempestades intensas para o domingo e a madrugada de segunda (23), com risco alto e moderado, principalmente no norte do estado. Os fenômenos previstos incluem alagamentos, queda de árvores, granizo, enxurradas, destelhamentos, descargas elétricas e rajadas de vento. A causa é um sistema de baixa pressão no norte do Paraguai combinado com uma frente estacionária sobre o Paraná, e o aumento da temperatura no noroeste e no norte central eleva a instabilidade, informa o ND Mais.
+
+## O que vem agora
+
+A Defesa Civil e o Simepar acompanham as tempestades, e a Copel segue no restabelecimento da energia. O balanço de casas danificadas e de afetados tende a ser atualizado com novos registros das prefeituras.
+
+## O que ainda não está confirmado
+
+Não há previsão divulgada para a normalização total da energia, e a classificação dos fenômenos em cada cidade pode mudar depois de novas análises do Simepar.`,
+ fontes:[['ND Mais (250 casas danificadas e alerta)','https://ndmais.com.br/tempo/tempestades-no-parana-casas-danificadas-alerta/'],['CartaCapital (250 casas e 907 afetados)','https://www.cartacapital.com.br/sociedade/tempestades-no-parana-danificam-mais-de-250-casas-e-deixam-907-afetados/'],['Agora Litoral (milhares sem luz)','https://agoralitoral.com.br/2026/11/23/temporal-no-parana-danifica-centenas-de-casas-e-deixa-milhares-sem-luz/'],['g1 Paraná (dois tornados, Simepar)','https://g1.globo.com/pr/oeste-sudoeste/noticia/2026/11/21/dois-tornados-atingem-cidades-do-parana-no-mesmo-dia-diz-simepar.ghtml'],['g1 Jornal Nacional (50 mil casas sem luz)','https://g1.globo.com/jornal-nacional/noticia/2026/11/21/passagens-de-tornados-no-parana-deixam-mais-de-50-mil-casas-sem-energia.ghtml'],['g1 Paraná (tirolesa em Maringá, secretário ferido em Londrina)','https://g1.globo.com/pr/norte-noroeste/noticia/2026/11/21/estragos-chuva-norte-parana.ghtml'],['Gazeta do Povo (estragos em Foz do Iguaçu)','https://www.gazetadopovo.com.br/parana/tempestade-provoca-estragos-foz-do-imoveis-sem-luz-apos-chuva/'],['Agência Brasil (tempestades deixam mais de 250 casas danificadas)','https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-11/tempestades-no-parana-deixam-mais-de-250-casas-danificadas']]});
+
+_N('tse_lula_flavio_mil_acoes_campanha_23', {ed:'politica', k:'Política · TSE', hora:'23/11',
+ t:'Campanhas de Lula e Flávio Bolsonaro acionaram o TSE quase mil vezes; no 2º turno foram ao menos 529 ações, com 78 vitórias do senador e 75 do presidente',
+ sub:'O volume é bem maior que o de 2022, e levantamento da Uerj aponta que a corte decidiu mais rápido as ações de Flávio em parte do segundo turno.',
+ dado:{n:'529', l:'ações das equipes de Lula e Flávio no TSE no segundo turno, entre 5 e 25 de outubro'},
+ resumo:'A disputa jurídica da campanha presidencial de 2026 gerou quase mil ações no Tribunal Superior Eleitoral (TSE) apresentadas por Lula (PT) e por Flávio Bolsonaro (PL), segundo levantamento da Folha. No segundo turno, entre 5 e 25 de outubro, foram ao menos 529 acionamentos. O senador obteve 78 vitórias em 286 processos, 27% de êxito, e o presidente reeleito teve 75 decisões favoráveis. Outros levantamentos mostram alta de 147% nas ações em relação a 2022 e diferenças no tempo de decisão entre os dois lados.',
+ fundo:`A disputa jurídica da campanha ao Palácio do Planalto em 2026 resultou em quase mil ações apresentadas ao Tribunal Superior Eleitoral (TSE) pelo presidente reeleito, Luiz Inácio Lula da Silva (PT, partido de esquerda), e pelo senador Flávio Bolsonaro (PL-RJ, partido de direita), derrotado na eleição. Só no segundo turno, entre 5 e 25 de outubro, as equipes jurídicas dos dois acionaram a corte ao menos 529 vezes, sob a presidência do ministro Kassio Nunes Marques.
+
+## O placar das ações
+
+Nesse período, Flávio somou 78 vitórias em 286 processos, o que representa 27% de êxito, e teve leve vantagem numérica sobre Lula, que recebeu 75 decisões favoráveis da Justiça Eleitoral, informa a Folha. Os números contam decisões favoráveis, e não o resultado final de cada caso, e os processos tratam sobretudo de pedidos de remoção de conteúdo, direito de resposta e propaganda irregular.
+
+## Um volume sem precedente
+
+A comparação com campanhas anteriores confirma a escala. Levantamento do SBT News com base no painel estatístico do TSE contou 804 ações da disputa presidencial até 22 de outubro, três dias antes do segundo turno, contra 325 em 2022 e 416 em 2018. A alta sobre 2022 é de 147%. Desse total, 729 processos eram de propaganda eleitoral e 264 de desinformação, contra 159 em 2022. Já em 28 de setembro, o Congresso em Foco contou 301 processos entre candidatos desde 16 de agosto, dos quais 285 eram de Lula contra Flávio, 145 da campanha do senador e 140 da do presidente. Eles incluíam 164 pedidos de direito de resposta e 121 representações.
+
+## O ritmo das decisões
+
+Um estudo do professor Celso de Oliveira Santos, da Universidade do Estado do Rio de Janeiro (Uerj), publicado pelo Jornal do Brasil em 22 de outubro, comparou milhares de movimentações processuais. Ele encontrou que o gabinete de Nunes Marques cuidou de 43,3% das ações de Lula e de 16,8% das de Flávio no segundo turno. Das 38 ações de Lula nesse gabinete paradas havia ao menos três dias, nenhuma teve decisão no período; entre 15 ações comparáveis de Flávio, apenas uma andou. O advogado Alberto Rollo disse que o ritmo desigual pode gerar dúvidas sobre a imparcialidade da corte, e o professor Fernando Neisser avaliou que o ritmo é usado de forma estratégica. O TSE e o gabinete de Nunes Marques não comentaram. O mesmo texto lembra que Nunes Marques decidiu contra os dois lados em episódios diferentes.
+
+## O que vem agora
+
+Com o fim da campanha, as ações pendentes seguem tramitando no TSE, que também analisa recursos sobre registros e prestação de contas.
+
+## O que ainda não está confirmado
+
+O levantamento do Congresso em Foco observa que a base do TSE não informa se as liminares foram deferidas ou negadas em todos os casos, o que limita comparações de êxito entre os candidatos.`,
+ fontes:[['Folha (Lula e Flávio acionaram TSE quase mil vezes)','https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/poder/2026/11/lula-e-flavio-acionaram-tse-quase-mil-vezes-durante-campanha-mostra-levantamento.shtml'],['SBT News (ações no TSE crescem 147% sobre 2022)','https://sbtnews.sbt.com.br/noticia/eleicoes/numero-de-acoes-no-tse-cresce-147-em-comparacao-com-2022'],['Congresso em Foco (285 das 301 ações)','https://www.congressoemfoco.com.br/noticia/122608/lula-e-flavio-duelam-em-285-das-301-acoes-entre-presidenciaveis-no-tse'],['Jornal do Brasil (TSE decide mais rápido ações do senador)','https://www.jb.com.br/brasil/justica/2026/10/1061310-lula-x-flavio-tse-decide-mais-rapido-acoes-do-senador-diz-levantamento.html']]});
+
+_U('van_hattem_20', {hora:'23/11',
+ t:'Dino e Moraes votam para tornar Van Hattem réu por calúnia e injúria contra delegado da PF; Zanin leva o caso ao plenário físico, sem data',
+ sub:'O deputado, eleito senador, invoca a imunidade parlamentar e elogiou o destaque de Zanin; a OAB também pedia julgamento presencial, e o delegado Fábio Shor hoje é assessor de Moraes no STF.',
+ dado:{n:'2 votos', l:'de Dino e Moraes para receber a denúncia; faltam Zanin e Cármen Lúcia na Primeira Turma'},
+ resumo:'A Primeira Turma do STF começou na sexta (20), em plenário virtual, a julgar a denúncia da PGR contra o deputado Marcel van Hattem (Novo-RS), eleito senador, por calúnia e injúria contra o delegado da PF Fábio Shor. O relator, Flávio Dino, votou por recebê-la e Alexandre de Moraes o seguiu. Cristiano Zanin pediu destaque, e o caso vai à sessão presencial, sem data. A defesa invoca o artigo 53 da Constituição; para os dois ministros, a imunidade não protege as ofensas pessoais, replicadas nas redes sociais.',
+ upd:'Moraes acompanhou Dino; entram a justificativa de Dino sobre a replicação nas redes, a reação de Van Hattem ao destaque de Zanin, o apoio da OAB ao julgamento presencial e o fato de Shor ser hoje assessor de Moraes.',
+ fundo:`Os ministros Flávio Dino e Alexandre de Moraes, da Primeira Turma do Supremo Tribunal Federal (STF), votaram na sexta-feira (20) para receber a denúncia contra o deputado Marcel van Hattem (Novo-RS), eleito senador, por calúnia e injúria contra o delegado da Polícia Federal (PF) Fábio Shor. Em seguida, o ministro Cristiano Zanin pediu destaque, e o julgamento, que ocorria no plenário virtual, passou para sessão presencial, ainda sem data. Receber a denúncia tornaria Van Hattem réu, sem significar condenação.
+
+## A denúncia e os votos
+
+A Procuradoria-Geral da República (PGR) apresentou a denúncia em março de 2026, com base em queixa que Shor levou ao STF em 2024. Os fatos são falas de agosto a dezembro de 2024 na Câmara dos Deputados e em redes sociais. Van Hattem, que pertence ao Novo, partido de direita, exibiu a foto do delegado, o acusou de produzir relatórios fraudulentos na investigação sobre Filipe Martins, ex-assessor do ex-presidente Jair Bolsonaro, e o chamou de "bandido" e "covarde", informam a CNN Brasil e o Correio Braziliense. Shor atuou em inquéritos sobre Bolsonaro, como o da trama golpista, e foi nomeado em março de 2026 assessor no gabinete de Moraes no STF.
+
+Dino, relator do caso, votou por aceitar a acusação. Ele escreveu que a imunidade parlamentar não impede, por si só, a ação penal e exige vínculo entre as manifestações e o mandato, para não virar "privilégio pessoal". A replicação das falas nas redes, com legendas do próprio deputado, não permite reconhecer a proteção "de plano", ao menos nesta fase. Moraes antecipou o voto e acompanhou o relator: para ele, as falas visaram ofender a honra do delegado e vão além da crítica política, relata a Gazeta do Povo. Basta mais um voto favorável para formar maioria na Turma, de quatro ministros, que tem ainda Zanin e Cármen Lúcia.
+
+## O plenário físico e a reação do deputado
+
+A defesa de Van Hattem, do advogado Alexandre Wunderlich, pedira que o caso saísse do ambiente virtual, onde os votos são apenas registrados e a sustentação oral é gravada. Dino negou o pedido, e o Conselho Federal da OAB também defendeu o julgamento presencial. O destaque de Zanin atende, na prática, a esse pedido. No X, Van Hattem disse que "Zanin fez o correto" e que o caso vai ao plenário físico, "com a defesa oral do meu advogado", segundo O Antagonista. Ele afirmou que o voto de Dino ataca a imunidade parlamentar, é inconstitucional e, se seguido, o tornará réu pelo discurso na tribuna. Em outro momento, disse que poderia pegar até quatro anos de prisão, informa o Estado de Minas.
+
+## O debate sobre a imunidade
+
+O artigo 53 da Constituição garante a deputados e senadores inviolabilidade por opiniões, palavras e votos. A defesa sustenta que as falas integram o mandato e se baseiam em comunicado da agência americana de fronteiras sobre o registro migratório de Filipe Martins. A PGR entende que o deputado usou a imunidade de forma abusiva, com ataques pessoais também fora do Congresso, e que os documentos não indicam que Shor tenha fabricado prova. O Poder360 trata o voto de Dino como novo capítulo desse debate; em precedente recente, lembrado pelo Congresso em Foco, a mesma Turma tornou réu o deputado Gilvan da Federal (PL-ES) por ofensas ao comandante do Exército.
+
+Se for condenado ao fim da ação penal, Van Hattem pode perder o mandato e ter os direitos políticos suspensos pelo tempo da pena. Ele foi eleito senador pelo Rio Grande do Sul e toma posse em 2027.
+
+## O que vem agora
+
+O presidente da Turma precisa marcar a sessão presencial, com sustentação oral da defesa, quando votam Zanin e Cármen Lúcia e os votos já dados podem ser ajustados. Antes do destaque, o julgamento virtual ia até 30 de novembro.
+
+## O que ainda não está confirmado
+
+Não há data para o julgamento presencial. Não se sabe como votarão Zanin e Cármen Lúcia.
+
+NUMS 4|ministros na Primeira Turma;2|votos por receber a denúncia;30/11|fim previsto do julgamento virtual;4 anos|pena máxima citada por Van Hattem`,
+ fontes:[['CNN Brasil (Dino vota; Zanin pede destaque)','https://www.cnnbrasil.com.br/politica/dino-vota-para-tornar-van-hattem-reu-por-calunia-zanin-pede-destaque/'],['Correio Braziliense (Zanin leva a julgamento presencial)','https://www.correiobraziliense.com.br/politica/2026/11/7541831-zanin-leva-denuncia-contra-van-hattem-a-julgamento-presencial-no-stf.html'],['Gazeta do Povo (Moraes antecipa voto)','https://www.gazetadopovo.com.br/republica/moraes-antecipa-voto-no-stf-para-tornar-van-hattem-reu-por-calunia-contra-shor/'],['O Antagonista (Van Hattem reage ao destaque)','https://oantagonista.com.br/brasil/van-hattem-reage-a-pedido-de-destaque-de-zanin-no-stf/'],['Metrópoles (Manoela Alcântara)','https://www.metropoles.com/colunas/manoela-alcantara/dino-vota-para-tornar-marcel-van-hattem-reu-por-calunia-contra-delegado'],['Poder360 (imunidade parlamentar)','https://www.poder360.com.br/poder-justica/dino-reacende-debate-sobre-imunidade-parlamentar-no-caso-van-hattem/'],['Congresso em Foco (Van Hattem fala em perseguição)','https://www.congressoemfoco.com.br/noticia/131745/van-hattem-diz-sofrer-perseguicao-no-stf-por-criticas-a-delegado-da-pf'],['Estado de Minas (Van Hattem pede ajuda)','https://www.em.com.br/politica/2026/11/7541114-van-hattem-pede-ajuda-posso-pegar-quatro-anos-de-prisao.html'],['Folha','https://www1.folha.uol.com.br/poder/2026/11/dino-vota-para-tornar-van-hattem-reu-por-calunia-mas-julgamento-e-suspenso-apos-pedido-de-zanin.shtml'],['g1','https://g1.globo.com/politica/noticia/2026/11/20/dino-vota-para-tornar-van-hattem-reu-por-calunia-e-injuria-contra-delegado-da-policia-federal.ghtml']]});
+
+_N('vorcaro_advogados_andrei_inquerito_pf_23', {ed:'politica', k:'Política · Caso Master', hora:'23/11',
+ t:'Mensagens no celular de Vorcaro mostram advogados do banqueiro dizendo que trataram com o diretor-geral da PF de um inquérito contra o Banco Master',
+ sub:'A corporação nega que Andrei Rodrigues tenha repassado informações sobre investigações em andamento; os diálogos foram extraídos pela própria Polícia Federal.',
+ dado:{n:'2', l:'advogados de Daniel Vorcaro que, nas mensagens, afirmam ter conversado com o diretor-geral da PF sobre o inquérito'},
+ resumo:'Áudios e mensagens retirados pela Polícia Federal do celular do banqueiro Daniel Vorcaro mostram os advogados Ciro Soares e Walfrido Warde relatando a ele que trataram com o diretor-geral da corporação, Andrei Rodrigues, do andamento de um inquérito aberto em São Paulo sobre suspeita de manipulação do mercado de capitais envolvendo o Banco Master, a Gafisa e a Planner. A PF afirma que Andrei não compartilhou informações de investigações em curso. Warde não comentou; outro advogado do banqueiro diz ter seguido a lei. A Procuradoria-Geral da República tem prazo para se manifestar sobre relatórios do mesmo material.',
+ fundo:`Dois advogados da defesa de Daniel Vorcaro, dono do Banco Master, relataram ao banqueiro ter conversado com o diretor-geral da Polícia Federal, Andrei Passos Rodrigues, sobre o andamento de um inquérito que apurava suspeita de envolvimento do banco em manipulação do mercado de capitais. Os diálogos, com áudios e mensagens, foram extraídos do celular do empresário pela própria corporação e vieram a público nesta segunda-feira (23).
+
+## O que dizem as mensagens
+
+As conversas envolvem os advogados Ciro Soares e Walfrido Warde, informa a coluna de Malu Gaspar, em O Globo, que teve acesso ao material e situa os diálogos no início de julho. No mesmo dia, de acordo com a reportagem, Vorcaro encaminhou separadamente aos dois uma intimação da Polícia Federal, e eles responderam dizendo ter discutido detalhes da investigação com o chefe da corporação.
+
+O inquérito citado foi aberto pela Polícia Federal em São Paulo a partir de representação de Vladimir Timerman, gestor da Esh Capital, que acusava administradores da construtora Gafisa, do Banco Master e da corretora Planner de manipulação de mercado e crimes contra o sistema financeiro nacional. Em reportagem da Folhapress publicada pelo ICL Notícias, consta que, meses antes, Warde recebeu de Vorcaro a íntegra do inquérito, propôs uma petição que classificava Timerman como extorsionário e sugeriu tratar do assunto com o diretor-geral.
+
+O mesmo levantamento aponta um terceiro nome: o advogado Pierpaolo Bottini afirmou que se reuniria com Andrei e perguntaria sobre o inquérito. As mensagens não registram que o encontro tenha ocorrido nem que ele tenha recebido alguma informação.
+
+## As respostas
+
+A assessoria da Polícia Federal negou, em nota, que o diretor-geral tenha compartilhado com Warde ou com qualquer outra pessoa dados sobre inquéritos ou investigações em andamento. Warde, procurado, não quis se manifestar. Bottini declarou que sua atuação seguiu a ética profissional e a lei e que as demandas apresentadas às autoridades foram registradas em petições nos autos do processo.
+
+Andrei Rodrigues comanda a Polícia Federal desde 2023, nomeado no terceiro mandato do presidente Luiz Inácio Lula da Silva (PT, partido de esquerda). Foi sob sua gestão que a corporação deflagrou, em novembro de 2025, a Operação Compliance Zero, que apurou fraudes no Banco Master e terminou com a prisão de Vorcaro.
+
+## Um caso que já alcança o Supremo
+
+O episódio se soma a uma semana em que o próprio diretor-geral virou assunto. Na quarta-feira (18), ele entregou ao presidente do Supremo Tribunal Federal, Edson Fachin, relatórios produzidos a partir do celular do banqueiro que apontam menções a ministros da Corte. A Procuradoria-Geral da República terá quinze dias para dizer se pede investigação, pede novas diligências ou defende o arquivamento, informa o Jornal do Commercio.
+
+O material dividiu o tribunal. A coluna de Eliane Cantanhede, no Estadão, registra que Andrei afirmou que o relatório sobre o ministro André Mendonça foi descartado, e avalia que a condução do caso acabou por colocar o magistrado na posição de vítima. O ministro Gilmar Mendes, por sua vez, disse não ver problema na quebra de sigilo dos relatórios, embora considere que a medida não resolve a questão de fundo.
+
+## O que vem agora
+
+A manifestação da Procuradoria-Geral da República sobre os relatórios é o próximo passo do caso no Supremo. O inquérito sobre a suspeita de manipulação de mercado segue na Polícia Federal em São Paulo.`,
+ fontes:[
+  ['O Globo (coluna Malu Gaspar)','https://oglobo.globo.com/blogs/malu-gaspar/post/2026/11/advogados-de-vorcaro-relatam-conversas-com-andrei-sobre-inquerito-da-pf.ghtml'],
+  ['ICL Notícias (Folhapress)','https://iclnoticias.com.br/?p=135553'],
+  ['Jornal do Commercio (PGR e relatórios)','https://jc.uol.com.br/politica/2026/11/22/investigar-ou-arquivar-entenda-o-que-a-pgr-pode-fazer-com-os-relatorios-sobre-ministros-do-stf.html'],
+  ['Estadão (coluna Eliane Cantanhede)','https://www.estadao.com.br/politica/eliane-cantanhede/ao-confundir-alhos-com-bugalhos-pf-deu-a-mendonca-o-papel-de-vitima/']
+ ]});
+
+ORDER.politica = _top(ORDER.politica, ["ajuste_camara_20","bolsonaro_obstrucao_intestinal_21","lula_sem_pressa_ministros_20","stf_gilmar_sigilo_relatorio_pf_ministros_23","cnj_registro_mortes_acoes_policiais_23","janones_exercito_lula_perde_seguidores_23","pec_seguranca_guarda_civil_policias_municipais_23","tereza_cristina_marinho_oposicao_senado_23","tse_lula_flavio_mil_acoes_campanha_23","van_hattem_20","vorcaro_advogados_andrei_inquerito_pf_23"]);
+ORDER.economia = _top(ORDER.economia, ["petrobras_plano_2027_2031_22","escala_6x1_20","risco_brasil_real_estagflacao_23","bc_cmn_cooperativas_tributos_bancos_23","decimo_terceiro_30_11_23","nvidia_bessent_huang_retorno_22","pautas_economicas_governo_ate_dezembro_23","previdencia_prova_vida_urnas_22mi_23"]);
+ORDER.mundo = _top(ORDER.mundo, ["cop31_impasse_fosseis_21","eua_democratas_258_camara_22","chapo_isidro_sinaloa_21","eua_delta_atlanta_atrasos_22","eua_iowa_detonacao_explosivos_ordem_judicial_23","indonesia_incendio_fabrica_mortos_23","ira_bahrein_drones_porta_avioes_roosevelt_16_11","israel_coalizao_20","sudao_sul_ataque_paramilitar_mortos_23"]);
+ORDER.regioes = _top(ORDER.regioes, ["ba_seca_26_municipios_emergencia_23","ce_emergencia_ambiental_incendios_el_nino_23","mg_chuva_familias_isoladas_23","mg_cleitinho_ana_elisa_22","ms_porto_murtinho_alagamento_23","ne_el_nino_transposicao_sao_francisco_agua_23","norte_pavimentacao_floresta_resultado_eleitoral_23","norte_seca_el_nino_rr_am_ro_22","pe_ipojuca_pe009_quatro_mortos_22","rio_verde_feminicidio_21","rj_chuva_forte_madrugada_previsao_23","rj_rosinha_garotinho_fim_casamento_23","rs_tupancireta_20","sp_chuvas_defesa_civil_41_alertas_23","tarcisio_secretarias_18","tornados_parana_foz_manoel_ribas_21"]);
+HOME_LEAD = 'ajuste_camara_20';
+HOME_ROW = ['bolsonaro_obstrucao_intestinal_21','cop31_impasse_fosseis_21','petrobras_plano_2027_2031_22'];
+GIRO = [["Salvador chega a 35,8°C em domingo quase sem chuva, e Bahia tem 26 municípios em…","O Inmet emite alerta de ar seco para o Vale do São Francisco nesta segunda (23), e especialistas veem chance de déficit hídrico no verão.","Correio","https://www.correio24horas.com.br/salvador/salvador-registra-pouca-chuva-neste-domingo-temperatura-chega-a-358c-e-bahia-tem-26-municipios-em-situacao-de-emergencia-1126","","ba_seca_26_municipios_emergencia_23"],["Banco Central amplia acesso de cooperativas ao mercado aberto, e CMN exige dos bancos…","As novas regras do mercado aberto valem para operações a partir de 30 de novembro; a obrigação de envio de dados fiscais começa em 1º de janeiro de 2028.","Agência Brasil","https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/cmn-amplia-controle-sobre-recolhimentos-de-tributos-dos-bancos","","bc_cmn_cooperativas_tributos_bancos_23"],["Ceará decreta emergência ambiental por risco de incêndios florestais, em complemento à…","A medida é preventiva e vale em todo o estado até fevereiro de 2027; Fortaleza teve sensação térmica de 42°C em bairro no domingo (22).","Diário do Nordeste","https://diariodonordeste.verdesmares.com.br/ceara/governo-do-ce-decreta-emergencia-ambiental-devido-a-risco-de-incendios-florestais-no-estado-1.3807503","","ce_emergencia_ambiental_incendios_el_nino_23"],["Certidão de óbito passa a dizer quando a morte ocorreu em ação policial, e famílias…","A resolução do Conselho Nacional de Justiça proíbe expressões como auto de resistência e prevê a reunião desses dados em escala nacional.","Agência Brasil","https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/cnj-cria-regra-para-corrigir-registros-por-mortes-em-acoes-policiais","","cnj_registro_mortes_acoes_policiais_23"],["Primeira parcela do 13º salário vence na segunda-feira (30); veja quem tem direito,…","A segunda parcela tem prazo até 18 de dezembro, porque o dia 20 cai num domingo; o isento de Imposto de Renda até R$ 5 mil também vale para o 13º.","InfoMoney","https://www.infomoney.com.br/minhas-financas/tudo-sobre-primeira-parcela-decimo-terceiro-2026/","","decimo_terceiro_30_11_23"],["Exército dos EUA diz que vai detonar 5 toneladas de explosivo à base de chumbo em Iowa…","Ambientalistas e governos de Iowa e Illinois pedem adiamento por causa de uma nuvem de poeira de chumbo que pode chegar a 160 km; o Exército diz que a substância ficou…","Al Jazeera","https://www.aljazeera.com/news/2026/11/23/extremely-concerning-inside-a-us-army-plan-to-detonate-iowa-lead-stores","","eua_iowa_detonacao_explosivos_ordem_judicial_23"],["Incêndio em fábrica de doces na Indonésia deixa ao menos 24 mortos e cerca de 30…","O fogo começou no sábado à noite em uma das unidades do complexo em Cikande, na província de Banten, onde cerca de 300 pessoas cumpriam turno; a suspeita inicial é de…","Irish Examiner","https://www.irishexaminer.com/world/arid-41941194.html","","indonesia_incendio_fabrica_mortos_23"],["Canal Exército do Lula perde 1,4 milhão de seguidores desde o 2º turno em meio à briga…","O deputado André Janones promete \"mais dois soldados para cada um que sair\" e fala em boicote; Glauber Braga e Jones Manoel, do PSOL, lideram as críticas ao pacote que…","Estadão","https://www.estadao.com.br/politica/exercito-do-lula-perde-14-milhao-de-seguidores-e-janones-e-criticado-por-desprezar-queixas/","","janones_exercito_lula_perde_seguidores_23"],["Enchente isola oito pessoas na zona rural de Aimorés, no Rio Doce; Defesa Civil prevê…","A água baixou no domingo (22) e o resgate aéreo não foi necessário; o alerta estadual cobre o período de 19 de novembro a 3 de dezembro.","O Tempo","https://www.otempo.com.br/cidades/2026/11/22/veja-destruicao-causada-pela-chuva-que-deixou-familias-isoladas-em-mg","","mg_chuva_familias_isoladas_23"],["Porto Murtinho (MS) decreta calamidade pública depois que a chuva alagou 40% da área…","Choveu cerca de 230 mm em poucas horas no sábado (21), sobre 170 mm dos dias anteriores, e a previsão é de mais chuva; equipes usaram barcos para retirar pertences e…","Enfoque MS","https://www.enfoquems.com.br/porto-murtinho-decreta-calamidade-publica-apos-chuva-alagar-40-da-cidade/","","ms_porto_murtinho_alagamento_23"],["Temor de seca em 2027 acirra disputa entre estados do Nordeste pela água da…","Pernambuco cedeu parte da vazão à Paraíba, e o Ceará, maior demandante, avalia pedir mais água para o Castanhão.","Folha","https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ambiente/2026/11/el-nino-acirra-disputa-de-estados-por-agua-da-transposicao-do-sao-francisco.shtml","","ne_el_nino_transposicao_sao_francisco_agua_23"],["Pavimentação da BR-319 deve ganhar impulso em 2027 com a vitória eleitoral de…","A Comissão de Infraestrutura aprovou texto que trata a estrada como indispensável à segurança nacional e prevê licenciamento simplificado; o projeto ainda passa pela…","Folha","https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/poder/2026/11/pavimentacao-que-ameaca-floresta-amazonica-deve-avancar-em-2027-com-resultado-eleitoral.shtml","","norte_pavimentacao_floresta_resultado_eleitoral_23"],["Depois do ajuste fiscal, governo ainda quer aprovar Orçamento de 2027, alíquota da CBS…","A Comissão Mista de Orçamento precisa destravar a LDO e a peça orçamentária, e a medida provisória que proíbe as apostas de quota fixa corre contra o prazo de validade.","O Globo","https://oglobo.globo.com/economia/noticia/2026/11/23/alem-do-pacote-fiscal-que-camara-vota-hoje-veja-outras-pautas-economicas-que-governo-tenta-aprovar-ate-dezembro.ghtml","","pautas_economicas_governo_ate_dezembro_23"],["PEC da Segurança Pública permite que prefeituras criem polícias municipais, mas exige…","O Brasil tem 1.417 municípios com guardas civis; um deputado estima que as regras de custeio limitem a mudança a cerca de 20% das cidades.","g1","https://g1.globo.com/politica/noticia/2026/11/22/pec-da-seguranca-como-uma-guarda-civil-municipal-pode-virar-policia.ghtml","","pec_seguranca_guarda_civil_policias_municipais_23"]].concat(GIRO).slice(0,20);
+[['ajuste_fiscal_camara_19','superada por ajuste_camara_20'],['senado_iphones_licitacao_18','sem desdobramento novo desde 20/11'],['vorcaro_um_ano_prisao_stf_suspeita_15_11','superada por stf_gilmar_sigilo_relatorio_pf_ministros_23'],['nova_cnh_19','sem desdobramento novo desde 19/11'],['moro_secretaria_19','sem desdobramento novo desde 20/11'],['enem_reaplicacao_19','fato encerrado'],['discord_anpd_19','sem desdobramento novo desde 20/11'],['consciencia_stf_20','fato encerrado']].forEach(function(x){if(S[x[0]]){S[x[0]].velha=true;S[x[0]].velhaMotivo=x[1];}});
+
+/* ===== PATCH 11h 23/11 (passada 1) ===== */
+EDICAO = {hora:'11h', data:'Segunda, 23 de novembro de 2026'};
+_U('cop31_impasse_fosseis_21', {hora:'23/11',
+ t:'COP31 termina sem acordo na Turquia após impasse sobre combustíveis fósseis',
+ sub:'A conferência do clima da ONU, em Antália, encerrou no domingo (22) sem texto final; a China lamentou o resultado e disse que a transição verde é irreversível.',
+ dado:{n:'22/11', l:'domingo em que a COP31 terminou sem acordo, após negociações mais longas do que as de conferências anteriores'},
+ resumo:'A 31ª Conferência do Clima da ONU terminou no domingo (22), em Antália, na Turquia, sem um texto final. O impasse girou em torno de combustíveis fósseis. A China disse nesta segunda (23) que lamenta o fracasso, mas que a transição energética segue irreversível.',
+ upd:'A COP31 fechou sem acordo no domingo (22). A China reagiu nesta segunda (23) e a Folha passou a discutir o modelo de decisão por consenso da ONU.',
+ fundo:`A 31ª Conferência do Clima das Nações Unidas terminou no domingo (22), em Antália, na Turquia, sem um acordo final. As negociações se prolongaram mais do que em edições anteriores, mas não chegaram a um texto que todos os países aceitassem, por causa de divergências sobre os combustíveis fósseis.
+O revés reabriu o debate sobre o modelo de decisão da conferência. Como as decisões exigem consenso, uma pequena minoria, ou até um único país entre cerca de 200 participantes, pode travar qualquer avanço, lembra a Folha. O resultado reacendeu os apelos por uma reforma do sistema.
+A China expressou nesta segunda-feira (23) decepção com o fracasso, mas insistiu que a transição ecológica é irreversível, segundo a AFP, reproduzida pela Folha. A posição chinesa separa o resultado da conferência do avanço da energia limpa no próprio país.
+A delegação brasileira também criticou o resultado final. A Agência Brasil registra a crítica da delegação brasileira, que fala em falta de ambição no resultado final. A COP31 foi presidida pela Turquia, depois de o Brasil ter sediado a COP30 em Belém.
+## O que vem agora
+As reportagens lidas não apontam uma nova rodada de negociação com data marcada. O debate passa agora por propostas de reforma do modelo de decisão, sem prazo definido.
+## O que ainda não está confirmado
+Não há, nas fontes lidas, a lista oficial de países que se opuseram à menção aos fósseis nem a data de uma nova negociação.`,
+ fontes:[['Folha (AFP: China lamenta fracasso da COP31)','https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/economia-sustentavel/2026/11/china-lamenta-fracasso-da-cop31-mas-afirma-que-transicao-verde-e-irreversivel.shtml'],['Folha (Colapso da COP31 reabre debate sobre modelo de conferência da ONU)','https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/ambiente/2026/11/colapso-da-cop31-reabre-debate-sobre-modelo-de-conferencia-da-onu.shtml'],['g1 (COP31 fracasso Brasil Turquia)','https://g1.globo.com/meio-ambiente/noticia/2026/11/22/cop31-fracasso-brasil-turquia.ghtml']]});
+_N('focus_inflacao_pib_23', {ed:'economia', k:'Economia · Boletim Focus', hora:'23/11',
+ t:'Mercado eleva previsão de inflação e dólar de 2026 e reduz pela sexta semana o crescimento do PIB',
+ sub:'O boletim Focus do Banco Central mostra inflação de 5,15% e dólar a R$ 5,55 no fim do ano; crescimento cai para 1,70%.',
+ dado:{n:'5,15%', l:'projeção do mercado para a inflação de 2026, ante 5,11% na semana anterior'},
+ resumo:'O boletim Focus divulgado nesta segunda-feira (23) pelo Banco Central mostra que o mercado elevou a previsão de inflação de 2026 de 5,11% para 5,15% e a cotação do dólar no fim do ano de R$ 5,40 para R$ 5,55. A estimativa de crescimento do PIB caiu de 1,72% para 1,70%, a sexta semana seguida de revisão para baixo.',
+ fundo:`O mercado financeiro piorou, nesta segunda-feira (23), as projeções para a economia brasileira em 2026. O boletim Focus, do Banco Central, reúne as expectativas de bancos e consultorias e mostra alta na inflação e no dólar, combinada com um crescimento menor.
+A previsão para a inflação de 2026 subiu 0,04 ponto percentual em uma semana, de 5,11% para 5,15%, segundo a Veja. A alta é pequena, mas leva a previsão de inflação para acima de 5% em 2026.
+Na cambial, a projeção do dólar para o fim do ano passou de R$ 5,40 para R$ 5,55, informa a Agência Brasil. A moeda mais cara encarece importados e pressiona os preços de combustíveis e de produtos com insumo externo.
+No crescimento, a estimativa para o PIB de 2026 recuou de 1,72% para 1,70%. É a sexta semana consecutiva de revisão para baixo, o que mostra que o mercado vê a atividade perdendo força ao longo do ano, sem que a projeção chegue ao campo negativo.
+Em evento recente, o presidente do Banco Central, Gabriel Galípolo, afirmou que o cenário atual é mais desafiador do que o do biênio 2025-2026, segundo a Tribuna do Norte. A fala ajuda a explicar a cautela do mercado com a inflação.
+## O que vem agora
+A Câmara vota nesta segunda-feira o ajuste fiscal do governo, e o efeito da proposta sobre as contas públicas deve entrar nas próximas leituras do Focus. O próximo boletim semanal mostra se a revisão se mantém.
+## O que ainda não está confirmado
+O boletim traz expectativas, não decisões. Não há, nas fontes lidas, uma explicação oficial para a alta da previsão de inflação.`,
+ fontes:[['Veja (Mercado eleva projeções para dólar e inflação e reduz expectativa de crescimento do PIB)','https://veja.abril.com.br/economia/mercado-eleva-projecoes-para-dolar-e-inflacao-e-reduz-expectativa-de-crescimento-do-pib/'],['Agência Brasil (Mercado eleva projeção do dólar para R$ 5,55 em 2026)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/mercado-eleva-projecao-do-dolar-para-r-555-em-2026'],['Tribuna do Norte (Galípolo: cenário mais desafiador)','https://tribunadonorte.com.br/economia/cenario-atual-e-mais-desafiador-do-que-do-bienio-2025-2026-afirma-galipolo-em-evento/']]});
+_N('ucrania_navio_russo_libia_23', {ed:'mundo', k:'Mundo · Guerra na Ucrânia', hora:'23/11',
+ t:'Explosão afunda navio de guerra russo em base líbia, e Zelenski atribui ataque a drones ucranianos',
+ sub:'O episódio ocorreu na madrugada de domingo (22), em Benghazi, e deixou feridos; o governo do leste da Líbia confirmou a explosão.',
+ dado:{n:'Benghazi', l:'base naval no leste da Líbia onde o navio russo foi atingido na madrugada de domingo (22)'},
+ resumo:'Um navio de guerra russo, avaliado pela Folha em cerca de R$ 1 bilhão, foi atingido por uma explosão e afundou na madrugada de domingo (22) na base naval de Benghazi, no leste da Líbia. O presidente ucraniano, Volodimir Zelenski, disse que o ataque foi feito com drones ucranianos. O governo que controla a região confirmou a explosão.',
+ fundo:`Um navio de guerra russo foi atingido por uma explosão e afundou na madrugada de domingo (22), enquanto estava atracado na base naval de Benghazi, no leste da Líbia. O presidente da Ucrânia, Volodimir Zelenski, reivindicou a ação e disse que ela foi executada com drones ucranianos.
+O navio atracava para reabastecer e receber suprimentos antes de voltar à Rússia, segundo a DW. A explosão deixou feridos a bordo. O governo que controla o leste da Líbia confirmou o episódio, o que tira o caso do plano puramente militar e o coloca no terreno diplomático de um país que não faz parte do conflito.
+A DW afirma que o caso reforça temores de expansão da guerra entre Moscou e Kiev para além dos principais campos de batalha no leste europeu. A manchete da Folha resume o mesmo movimento: um ataque com drones navais no Mediterrâneo amplia o conflito.
+No mesmo período, a guerra voltou a produzir vítimas civis na própria Ucrânia. Segundo o g1, um ataque russo nos arredores de Kiev matou 11 pessoas, e um menino de 7 anos foi resgatado com vida após 14 horas sob os escombros de um prédio que desabou nesta segunda-feira (23).
+## O que vem agora
+O desdobramento mais provável é a reação de Moscou no mar e a apuração do dano sofrido pelo navio. As reportagens lidas não trazem a resposta russa.
+## O que ainda não está confirmado
+A extensão exata dos danos ao navio, o número de feridos e a autoria técnica do ataque, que ainda depende da versão ucraniana.`,
+ fontes:[['DW Brasil (Navio russo foi atingido na Líbia por drones ucranianos, diz Zelenski)','https://www.dw.com/pt-br/navio-russo-foi-atingido-na-líbia-por-drones-ucranianos-diz-zelenski/a-80014687?maca=bra-rss-br-all-1030-rdf'],['Folha (Ucrânia afunda navio de guerra russo de R$ 1 bi na Líbia)','https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/ucrania-afunda-navio-de-guerra-russo-de-r-1-bi-na-libia-veja-video.shtml'],['g1 (Menino de 7 anos é resgatado após 14 horas sob escombros na Ucrânia)','https://g1.globo.com/mundo/noticia/2026/11/23/menino-de-7-anos-e-resgatado-apos-14-horas-sob-escombros-na-ucrania-ataque-matou-11-pessoas.ghtml']]});
+HOME_ROW = ['bolsonaro_obstrucao_intestinal_21','cop31_impasse_fosseis_21','focus_inflacao_pib_23'];
+ORDER.economia = _top(ORDER.economia, ["focus_inflacao_pib_23"]);
+ORDER.mundo = _top(ORDER.mundo, ["ucrania_navio_russo_libia_23","cop31_impasse_fosseis_21"]);
+/* ===== PATCH 11h 23/11 (passada 2) ===== */
+EDICAO = {hora:'11h', data:'Segunda, 23 de novembro de 2026'};
+_N('senado_marinho_alcolumbre_23', {ed:'politica', k:'Política · Senado', hora:'23/11',
+ t:'Rogério Marinho lançado pelo PL como alternativa a Alcolumbre na presidência do Senado, e direita se divide',
+ sub:'Ex-líder do PL na Casa tenta reunir a oposição contra o atual presidente, que, segundo levantamento citado pelo Mais Goiás, chega a 48 votos.',
+ dado:{n:'48', l:'votos atribuídos a Alcolumbre na disputa pela presidência do Senado, segundo levantamento citado pelo Mais Goiás'},
+ resumo:'O PL lançou o senador Rogério Marinho (PL) como candidato à presidência do Senado contra Davi Alcolumbre. A disputa dividiu a direita, porque a senadora Tereza Cristina também resiste ao plano do partido, e Alcolumbre tem, segundo levantamento citado, 48 votos.',
+ fundo:`A disputa pela presidência do Senado ganhou um nome de oposição nesta semana. O PL lançou o senador Rogério Marinho para enfrentar Davi Alcolumbre, que tenta um novo mandato à frente da Casa.
+O anúncio foi feito como uma forma de reunir a oposição contra o atual presidente. Segundo o Congresso em Foco, Alcolumbre e Marinho largam próximos na disputa aberta pelo Senado. O Correio da Manhã descreve o lançamento como pressão contra Alcolumbre.
+## Uma direita dividida
+O movimento não é consenso entre os oposicionistas. A Folha Pernambuco relata que a disputa entre Alcolumbre, Marinho e Tereza Cristina expõe divergências na federação União-PP. A senadora Tereza Cristina, do PP-MS, tem sido citada como terceira via, o que enfraquece a chapa única que a oposição tenta montar.
+Segundo o Mais Goiás, Alcolumbre chegou a 48 votos, mas Marinho teme dissidências. A conta depende de quantos senadores mantêm a posição anunciada até a votação, e levantamentos desse tipo mudam com as articulações do plenário.
+## O que vem agora
+A eleição para a presidência do Senado define quem controla a pauta da Casa, inclusive o ajuste fiscal que o Senado já aprovou e a Câmara vota nesta segunda (23). O Ohoje afirma que a oposição aposta em Marinho para derrotar Alcolumbre.
+## O que ainda não está confirmado
+O número de votos de cada candidato ainda é estimativa de levantamentos, e nenhum lado fechou o apoio formal de todos os senadores.`,
+ fontes:[['Mais Goiás (Senado: Alcolumbre chega a 48 votos, Marinho teme dissidências)','https://www.maisgoias.com.br/politica/senado-alcolumbre-chega-a-48-votos-marinho-teme-dissidencias-e-tereza-desafia-partido/'],['Folha PE (Disputa entre Alcolumbre, Marinho e Tereza pelo Senado expõe divergências)','https://www.folhape.com.br/politica/disputa-entre-alcolumbre-marinho-e-tereza-pelo-senado-expoe/523646/'],['Congresso em Foco (Alcolumbre e Marinho largam próximos em disputa aberta pelo Senado)','https://www.congressoemfoco.com.br/conteudo/131331/alcolumbre-e-marinho-largam-proximos-em-disputa-aberta-pelo-senado'],['Correio da Manhã (Marinho anuncia candidatura com pressão contra Alcolumbre)','https://www.correiodamanha.com.br/politica/2026/11/332579-marinho-anuncia-candidatura-com-pressao-contra-alcolumbre.html']]});
+_N('itaipu_ueno_mp_paraguai_23', {ed:'economia', k:'Economia · Itaipu · Paraguai', hora:'23/11',
+ t:'Itaipu leva ao Ministério Público do Paraguai a tentativa de recuperar US$ 182 milhões do Ueno Bank',
+ sub:'A Binacional denunciou dirigentes do banco paraguaio; o Banco Central do Paraguai diz ter pago 93% dos clientes do Ueno.',
+ dado:{n:'US$ 182 mi', l:'valor que a Itaipu tenta recuperar do Ueno Bank, banco paraguaio que quebrou neste ano'},
+ resumo:'A Itaipu Binacional acionou o Ministério Público do Paraguai para tentar recuperar US$ 182 milhões depositados no Ueno Bank e denunciou dirigentes da instituição. O Banco Central do Paraguai afirma ter pago 93% dos clientes do banco, segundo o site BP Money.',
+ fundo:`A Itaipu Binacional acionou o Ministério Público do Paraguai para tentar recuperar US$ 182 milhões que tinha depositados no Ueno Bank, banco paraguaio que entrou em crise. A ação, noticiada pelo DGABC e pelo Bloomberg Línea, é o principal movimento da empresa binacional para reaver o dinheiro.
+A Itaipu já havia denunciado dirigentes do Ueno, informa a Gazeta do Povo, numa tentativa de recuperar recursos. A reportagem do Investnews diz que a Itaipu tinha quase R$ 1 bilhão no banco antes da crise que abalou o Paraguai.
+## Os números da crise
+O Banco Central do Paraguai diz ter pago 93% dos clientes do Ueno Bank, segundo o BP Money. O percentual indica que a maior parte dos depositantes foi ressarcida, mas o caso da Itaipu segue em disputa na Justiça e no Ministério Público paraguaio.
+Segundo o Clickpetróleo e Gás, a escolha do banco exigiu a aprovação de diretores brasileiros e paraguaios, o que coloca a decisão de depositar na instituição no centro da apuração.
+## O que vem agora
+A recuperação dos US$ 182 milhões depende da Justiça paraguaia. O próximo passo é a análise do Ministério Público sobre a denúncia contra os dirigentes do banco.
+## O que ainda não está confirmado
+Não há, nas fontes lidas, prazo para a devolução do dinheiro, nem o valor final que a Itaipu vai conseguir recuperar.`,
+ fontes:[['DGABC (Itaipu aciona Ministério Público do Paraguai para recuperar US$ 182 milhões)','https://www.dgabc.com.br/Noticia/4367508/itaipu-aciona-ministerio-publico-do-paraguai-para-recuperar-us-182-milhoes-depositados-no-ueno'],['Bloomberg Línea (Itaipu tenta recuperar US$ 182 milhões depositados no Ueno Bank)','https://www.bloomberglinea.com.br/internacional/itaipu-tenta-recuperar-us-182-milhoes-depositados-no-ueno-bank-do-paraguai/'],['BP Money (BC do Paraguai diz ter pago 93% dos clientes do Ueno Bank)','https://brapi.dev/news/bc-do-paraguai-diz-ter-pago-93-dos-clientes-do-ueno-bank-530091e2'],['Investnews (Itaipu tinha quase R$ 1 bilhão em banco que quebrou no Paraguai)','https://investnews.com.br/negocios/itaipu-tinha-quase-r-1-bilhao-em-banco-que-quebrou-no-paraguai/']]});
+_N('black_friday_golpes_23', {ed:'economia', k:'Economia · Consumo · Golpes', hora:'23/11',
+ t:'Black Friday de sexta (27) traz golpes com falso delegado, Pix falso e vídeos com inteligência artificial',
+ sub:'Criminosos passaram a levar a vítima a pagar algo que parece legítimo; o Procon-SP promove palestra sobre o tema nesta semana.',
+ dado:{n:'74 mil', l:'tentativas de fraude por dia durante a Black Friday, segundo levantamento citado pelo Diário do Pará'},
+ resumo:'A Black Friday, na sexta-feira (27), vem acompanhada de golpes mais sofisticados, como o falso delegado que levou um idoso a transferir R$ 275 mil, o Pix falso e os vídeos feitos com inteligência artificial. Um levantamento citado pelo Diário do Pará aponta 74 mil tentativas de fraude por dia.',
+ fundo:`A Black Friday, marcada para a sexta-feira (27), tem atraído golpes mais sofisticados que os de anos anteriores. A Folha, o UOL e o Correio Braziliense descrevem uma mudança de estratégia: os criminosos criam situações em que a vítima acredita estar fazendo um pagamento legítimo.
+Um caso noticiado pelo Estado de Minas mostra o método. Um idoso foi levado a transferir R$ 275 mil depois que um falso delegado entrou em contato com ele. A pressão de autoridade e a urgência são as ferramentas mais usadas nesse tipo de golpe.
+O Diário do Pará cita um levantamento que aponta 74 mil tentativas de fraude por dia durante a Black Friday. O número sugere que o golpe é ferramenta de massa, e não caso isolado. A Correio 24 Horas aponta a combinação de golpes com inteligência artificial e Pix falso como o principal risco da semana.
+## Como os golpes funcionam agora
+As fraudes mais comuns combinam promoções que parecem reais, sites copiados de lojas conhecidas e vídeos feitos com inteligência artificial. A vítima costuma ser induzida a pagar por Pix ou boleto em um canal que não é o da loja.
+A Agência SP informa que o Procon-SP realiza uma palestra virtual gratuita sobre a Black Friday na próxima semana, com dicas para identificar ofertas falsas e orientação sobre direitos do consumidor.
+## O que fazer antes de pagar
+Os órgãos de defesa do consumidor recomendam desconfiar de descontos muito acima do normal, conferir o site pelo endereço oficial e não transferir dinheiro por pedido de terceiros que se apresentem como autoridade.
+## O que ainda não está confirmado
+O levantamento de 74 mil tentativas por dia não tem, nas fontes lidas, a metodologia divulgada. Os números de golpes são estimativas de empresas e órgãos de segurança.`,
+ fontes:[['Folha (Black Friday exige atenção a golpes e compras por impulso)','https://www1.folha.uol.com.br/mercado/2026/11/black-friday-exige-atencao-a-golpes-e-compras-por-impulso-estrategias-de-criminosos-mudaram.shtml'],['Diário do Pará (Black Friday registra 74 mil tentativas de fraude por dia)','https://diariodopara.com.br/seu-bolso/black-friday-registra-74-mil-tentativas-de-fraude-por-dia-e-expoe-consumidores-a-golpes-milionarios-saiba-como-se-prevenir/'],['Correio 24 Horas (Golpes com inteligência artificial e Pix falso ameaçam compras da Black Friday)','https://www.correio24horas.com.br/economia/golpes-com-inteligencia-artificial-e-pix-falso-ameacam-compras-da-black-friday-veja-como-se-proteger-1126'],['Agência SP (Dicas para Black Friday são destaque na agenda do Procon-SP)','https://www.agenciasp.sp.gov.br/justica-e-cidadania/dicas-black-friday-procon-sp/']]});
+_N('israel_eisenkot_governo_23', {ed:'mundo', k:'Mundo · Israel · Governo', hora:'23/11',
+ t:'Presidente de Israel encarrega Eisenkot, rival de Netanyahu, de formar governo, e ele admite negociar com o partido do premiê',
+ sub:'Eisenkot tem a tarefa de montar uma coalizão numa oposição dividida; a Folha informa que ele convidou o partido de Netanyahu a negociar.',
+ dado:{n:'8/11', l:'data em que o presidente de Israel encarregou Gadi Eisenkot de formar governo, segundo a Al Jazeera'},
+ resumo:'O presidente de Israel encarregou Gadi Eisenkot, ex-chefe do Exército e rival de Benjamin Netanyahu, de formar um novo governo. Eisenkot disse estar aberto a negociar com o partido do premiê, mas a oposição segue dividida para formar a coalizão.',
+ fundo:`Israel tem um novo teste de governo. O presidente encarregou Gadi Eisenkot, ex-chefe do Exército e líder da oposição, de formar uma coalizão, uma tarefa que a Al Jazeera e o Al-Monitor descrevem como difícil diante de uma oposição fragmentada.
+A Folha informa que Eisenkot convidou o partido de Netanyahu para negociar a formação do governo. A Al Jazeera registra que ele se disse aberto a discutir a entrada do Likud na próxima coalizão.
+## Uma oposição dividida
+A reportagem da Al Jazeera sobre o bloco de Eisenkot pergunta se ele é menos de direita que Netanyahu. A pergunta reflete a dificuldade de juntar, em um mesmo governo, partidos com visões opostas sobre a guerra em Gaza e a Cisjordânia.
+O Poder360 e a CartaCapital registram outro fato que pesa nessa conta: a Folha noticia que Israel abriu investigação sobre incêndios atribuídos a colonos na Cisjordânia, e o próprio Eisenkot denunciou esses ataques no X.
+## O que vem agora
+Eisenkot precisa reunir votos suficientes no Knesset para formar governo. Se não conseguir, o caminho volta ao presidente, que pode indicar outro parlamentar.
+## O que ainda não está confirmado
+Não há, nas fontes lidas, acordo formal com o Likud, nem data para a votação de um novo governo.`,
+ fontes:[['Al Jazeera (Israel’s president tasks Eisenkot with forming government)','https://aljazeera.com/news/2026/11/8/israels-president-tasks-eisenkot-to-form-new-coalition-government'],['Al Jazeera (Is Israel’s opposition less right wing than Netanyahu?)','https://www.aljazeera.com/news/2026/11/16/is-israels-opposition-less-right-wing-than-netanyahu'],['Al-Monitor (Eisenkot given tough task forming Israeli government over Netanyahu)','https://www.al-monitor.com/originals/2026/11/eisenkot-given-tough-task-forming-israeli-government-over-netanyahu'],['Folha (Eisenkot convida partido de Netanyahu para negociar coalizão em Israel)','https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/eisenkot-convida-partido-de-netanyahu-para-negociar-coalizao-em-israel.shtml']]});
+ORDER.politica = _top(ORDER.politica, ["senado_marinho_alcolumbre_23"]);
+ORDER.economia = _top(ORDER.economia, ["itaipu_ueno_mp_paraguai_23","black_friday_golpes_23"]);
+ORDER.mundo = _top(ORDER.mundo, ["israel_eisenkot_governo_23"]);
+GIRO = [["Marinho contra Alcolumbre","O PL lançou Rogério Marinho para disputar a presidência do Senado, e a direita se divide.","Congresso em Foco","https://www.congressoemfoco.com.br/conteudo/131331/alcolumbre-e-marinho-largam-proximos-em-disputa-aberta-pelo-senado","","senado_marinho_alcolumbre_23"],["Itaipu contra o Ueno","A Itaipu acionou o Ministério Público do Paraguai para recuperar US$ 182 milhões.","DGABC","https://www.dgabc.com.br/Noticia/4367508/itaipu-aciona-ministerio-publico-do-paraguai-para-recuperar-us-182-milhoes-depositados-no-ueno","","itaipu_ueno_mp_paraguai_23"],["Black Friday e golpes","A Black Friday, na sexta (27), vem com golpes do falso delegado e Pix falso.","Diário do Pará","https://diariodopara.com.br/seu-bolso/black-friday-registra-74-mil-tentativas-de-fraude-por-dia-e-expoe-consumidores-a-golpes-milionarios-saiba-como-se-prevenir/","","black_friday_golpes_23"]].concat(GIRO);
+/* ===== PATCH 11h 23/11 (passada 3) ===== */
+EDICAO = {hora:'11h', data:'Segunda, 23 de novembro de 2026'};
+_U('ce_emergencia_ambiental_incendios_el_nino_23', {hora:'17/11',
+ t:'Ceará tem 65 cidades em situação de emergência pelo El Niño, e a seca já atinge todo o território estadual',
+ sub:'O governo decretou emergência em 65 municípios; reportagem do O Povo diz que a estiagem agrava-se no Cariri e atinge 100% do território.',
+ dado:{n:'65', l:'municípios cearenses em situação de emergência por efeitos do El Niño, segundo decreto estadual citado pela Folha de Pernambuco'},
+ resumo:'O governo do Ceará declarou situação de emergência em 65 cidades por efeitos do El Niño. Segundo o O Povo, a seca passou a atingir 100% do território estadual e se agrava no Cariri, no sul do estado.',
+ upd:'O decreto de emergência passou de risco de incêndios para 65 municípios por efeitos do El Niño, e o O Povo registra que a seca já cobre todo o território.',
+fundo:`O governo do Ceará declarou situação de emergência em 65 cidades por efeitos do El Niño, segundo a Folha de Pernambuco e o Diário do Nordeste. A edição anterior do Radar tratava o caso como risco de incêndios florestais; a nova informação mostra que o problema passou a envolver a estiagem.
 O O Povo informa que a seca passou a atingir 100% do território cearense e se agrava no Cariri, no sul do estado.
 O Pará também declarou emergência ambiental por incêndios florestais, segundo a Folha de Pernambuco, o que mostra que o efeito do El Niño atinge estados do Norte, além do Nordeste.
 O decreto cearense foi noticiado pelo O Povo em 13 de novembro. A reportagem de 17 de novembro mostra a evolução da estiagem no estado.
 ## O que vem agora
 A evolução dos reservatórios e a lista dos municípios afetados são os próximos dados a acompanhar.
 ## O que ainda não está confirmado
-Não há, nas fontes lidas, a lista completa dos 65 municípios nem o volume de recursos liberados pelo estado`,
+Não há, nas fontes lidas, a lista completa dos 65 municípios nem o volume de recursos liberados pelo estado.`,
  fontes:[['Folha PE (Ceará declara situação de emergência em 65 cidades por efeitos do El Niño)','https://www.folhape.com.br/noticias/ceara-situacao-de-emergencia-el-nino/524310/'],['Diário do Nordeste (Ceará decreta situação de emergência para 65 cidades por efeitos do El Niño)','https://diariodonordeste.verdesmares.com.br/ceara/ceara-decreta-situacao-de-emergencia-para-65-cidades-por-efeitos-do-el-nino-1.3805744'],['O Povo (El Niño: Ceará decreta situação de emergência em 65 municípios)','https://mais.opovo.com.br/jornal/farol/2026/11/13/el-nino-ceara-decreta-situacao-de-emergencia-em-65-municipios.html'],['O Povo (Seca passa a atingir 100% do território do Ceará e se agrava no Cariri)','https://mais.opovo.com.br/jornal/farol/2026/11/17/seca-passa-a-atingir-100-do-territorio-do-ceara-e-se-agrava-no-cariri.html']]});
