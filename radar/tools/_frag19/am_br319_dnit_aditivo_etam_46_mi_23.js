@@ -4,7 +4,7 @@ _N('am_br319_dnit_aditivo_etam_46_mi_23', {ed:'regioes', reg:'norte', k:'Regiõe
  sub:'O aditivo foi assinado em 17 de novembro e publicado nesta segunda (23); a mesma empresa tem outros contratos na rodovia, a única ligação por terra do Amazonas com o resto do país.',
  dado:{n:'R$ 270 mi', l:'novo valor do contrato de manutenção da BR-319 com a Etam, contra R$ 223,5 milhões originais'},
  resumo:'O Departamento Nacional de Infraestrutura de Transportes (Dnit) aumentou em R$ 46,4 milhões o contrato de manutenção e recuperação de um trecho da BR-319, no Amazonas, com a Construtora Etam. O valor passou de R$ 223,5 milhões para R$ 270 milhões. O aditivo foi assinado em 17 de novembro e publicado em 23 de novembro. O contrato original é de 15 de junho de 2026 e vale até 2029. O Dnit não explicou o motivo do acréscimo de serviços.',
- fundo:`O Departamento Nacional de Infraestrutura de Transportes (Dnit) aumentou em R$ 46,4 milhões o valor do contrato de manutenção e recuperação de um trecho da BR-319, no Amazonas, rodovia que é a única ligação por terra do estado com o restante do país. O aditivo foi assinado em 17 de novembro e publicado nesta segunda-feira (23). Com ele, o contrato com a Construtora Etam passa de R$ 223,5 milhões para R$ 270 milhões, informa o g1.
+ fundo:`O Departamento Nacional de Infraestrutura de Transportes (Dnit) aumentou em R$ 46,4 milhões o valor do contrato de manutenção e recuperação de um trecho da BR-319, no Amazonas, rodovia que é a única ligação por terra do estado com o restante do país. O aditivo foi assinado em 17 de novembro e publicado nesta segunda-feira (23). Com ele, o contrato com a Construtora Etam passa de R$ 223,5 milhões para R$ 270 milhões.
 
 ## O contrato e o aditivo
 

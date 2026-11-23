@@ -16,9 +16,9 @@
         "itaipu_ueno_18",
         "itaipu_diretor_destituido_20"
       ],
-      "verificada": "2026-11-23-07h",
-      "fato_novo": false,
-      "ultimo_fato": "Nada novo desde 22/11: buscas na imprensa brasileira e paraguaia trazem apenas a ação da Itaipu para recuperar US$ 182 milhões do Ueno Bank.",
+      "verificada": "2026-11-23-19h",
+      "fato_novo": true,
+      "ultimo_fato": "Peña pede ar-condicionado e geladeira em Viñas Cué e o isolamento é afrouxado (23/11).",
       "proximo": "Recuperação dos US$ 182 milhões da Itaipu na Justiça paraguaia."
     },
     {
@@ -58,11 +58,12 @@
         "lula_sem_pressa_ministros_20",
         "lula_janja_posse_21",
         "veja_lula_terceiriza_ajuste_21",
-        "janones_exercito_lula_perde_seguidores_23"
+        "janones_exercito_lula_perde_seguidores_23",
+        "messias_stf_lula_reafirma_23"
       ],
-      "verificada": "2026-11-23-15h",
+      "verificada": "2026-11-23-19h",
       "fato_novo": true,
-      "ultimo_fato": "23/11: Lula ainda não definiu o ministro da Fazenda e adiou para dezembro o anúncio da equipe; aliados pedem nome forte e o dólar pode chegar a R$ 6 (g1).",
+      "ultimo_fato": "23/11: Lula reafirma Jorge Messias para o STF em jantar com Gilmar, Zanin, Dino, Alexandre e a cúpula do Congresso; ministro da Fazenda segue indefinido e o anúncio da equipe fica para dezembro.",
       "proximo": "Escolha do ministro da Fazenda e anúncio dos ministérios em dezembro."
     },
     {
@@ -79,9 +80,9 @@
         "toffoli_contas_campanha_lula_14_11",
         "tse_lula_flavio_mil_acoes_campanha_23"
       ],
-      "verificada": "2026-11-23-15h",
-      "fato_novo": true,
-      "ultimo_fato": "23/11: Folha mostra que Lula e Flávio Bolsonaro acionaram o TSE quase mil vezes na campanha; no 2º turno foram 529 ações, com 78 vitórias do senador e 75 do presidente.",
+      "verificada": "2026-11-23-19h",
+      "fato_novo": false,
+      "ultimo_fato": "Sem fato novo desde a Folha de 23/11: Lula e Flávio Bolsonaro acionaram o TSE quase mil vezes na campanha.",
       "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
     },
     {
@@ -101,10 +102,10 @@
         "pl_flavio_motta_consulta_121_deputados_17_11",
         "rockbridge_flavio_pf_18"
       ],
-      "verificada": "2026-11-23-07h",
-      "fato_novo": false,
-      "ultimo_fato": "Sem fato novo na madrugada de 23/11; julgamento virtual da Primeira Turma segue até 30/11.",
-      "proximo": "Votos dos três ministros que faltam até 30/11."
+      "verificada": "2026-11-23-19h",
+      "fato_novo": true,
+      "ultimo_fato": "23/11: Moraes manda citar Flávio Bolsonaro por edital na ação por calúnia contra Lula, com 15 dias para defesa.",
+      "proximo": "Votos dos três ministros que faltam no julgamento virtual até 30/11."
     },
     {
       "id": "congresso-novo",
@@ -142,12 +143,13 @@
         "ajuste_camara_20",
         "alcolumbre_motta_reeleicao_dosimetria_21",
         "ajuste_fiscal_lula_nao_reforma_21",
-        "tereza_cristina_marinho_oposicao_senado_23"
+        "tereza_cristina_marinho_oposicao_senado_23",
+        "sus_piso_saude_ajuste_23"
       ],
-      "verificada": "2026-11-23-15h",
+      "verificada": "2026-11-23-19h",
       "fato_novo": true,
-      "ultimo_fato": "23/11: Câmara vota o ajuste fiscal com texto do Senado; relator diz ter 278 deputados de sete partidos, mas PL e PSol resistem (Metrópoles, g1).",
-      "proximo": "Resultado da votação do ajuste na Câmara e eventual sanção."
+      "ultimo_fato": "23/11: Câmara vota o ajuste fiscal (PLP 299/2026) com dólar a R$ 6; conclusão pode ficar para terça (24).",
+      "proximo": "Votação dos destaques do ajuste e sanção de Lula."
     },
     {
       "id": "seguranca-publica",
@@ -175,8 +177,8 @@
         "galipolo_pf_vorcaro_20",
         "pec_seguranca_guarda_civil_policias_municipais_23"
       ],
-      "verificada": "2026-11-23-07h",
-      "fato_novo": true,
+      "verificada": "2026-11-23-19h",
+      "fato_novo": false,
       "ultimo_fato": "22-23/11: PEC da Segurança permite polícias municipais, mas exige receita própria e regulamentação.",
       "proximo": "Regulamentação e promulgação da PEC."
     },
@@ -194,8 +196,8 @@
         "escala_6x1_20",
         "hora_extra_divisor_21"
       ],
-      "verificada": "2026-11-23-15h",
-      "fato_novo": true,
+      "verificada": "2026-11-23-19h",
+      "fato_novo": false,
       "ultimo_fato": "23/11: MTE deve publicar nesta segunda a primeira portaria da nova jornada 5x2 (Itatiaia, CartaCapital); transição começa em 16/12.",
       "proximo": "Demais portarias até 16/12."
     },
@@ -266,12 +268,14 @@
         "agenda_economica_semana_23_11",
         "hora_extra_divisor_21",
         "risco_brasil_real_estagflacao_23",
-        "petrobras_plano_2027_2031_22"
+        "petrobras_plano_2027_2031_22",
+        "mercado_dolar_toca_r6_ajuste_camara_23",
+        "braskem_acordo_credores_us49bi_23"
       ],
-      "verificada": "2026-11-23-15h",
+      "verificada": "2026-11-23-19h",
       "fato_novo": true,
-      "ultimo_fato": "23/11: Ibovespa cai 1% e dólar chega a R$ 6 com a agenda fiscal, o Focus e o exterior (InfoMoney); dívida em 82,9% do PIB (g1).",
-      "proximo": "Reação do mercado à votação do ajuste e ao nome da Fazenda."
+      "ultimo_fato": "23/11: dólar toca R$ 6 e fecha a R$ 5,93; Boletim Macrofiscal corta a projeção do PIB; Braskem fecha acordo de US$ 4,9 bi e CVM suspende BRB, Refit e Ambipar.",
+      "proximo": "Votação do ajuste na Câmara e plano da Petrobras."
     },
     {
       "id": "eua-meio-mandato",
@@ -291,8 +295,8 @@
         "eua_democratas_258_camara_22",
         "eua_delta_atlanta_atrasos_22"
       ],
-      "verificada": "2026-11-23-07h",
-      "fato_novo": true,
+      "verificada": "2026-11-23-19h",
+      "fato_novo": false,
       "ultimo_fato": "22/11: Democratas chegam a 258 cadeiras na Câmara dos EUA; Delta tem pane em Atlanta e shutdown pode afetar voos.",
       "proximo": "Prazo do financiamento do governo em 12/12."
     },
@@ -319,7 +323,7 @@
         "trilateral_shenzhen_19",
         "ucrania_autoridades_nucleares_rede_eletrica_16_11"
       ],
-      "verificada": "2026-11-23-07h",
+      "verificada": "2026-11-23-19h",
       "fato_novo": false,
       "ultimo_fato": "Nada novo localizado em 23/11.",
       "proximo": "Resposta de Moscou e novas rodadas de negociação."
@@ -335,7 +339,7 @@
         "israel_oposicao_acusa_netanyahu_golpe_16_11",
         "israel_coalizao_20"
       ],
-      "verificada": "2026-11-23-15h",
+      "verificada": "2026-11-23-19h",
       "fato_novo": false,
       "ultimo_fato": "22/11: Yashar, de Eisenkot, e Likud se reuniram por 4 horas no domingo sem avanço sobre quem seria premiê (Poder360).",
       "proximo": "Fechamento da coalizão ou novo prazo do presidente Herzog."
@@ -354,8 +358,8 @@
         "ira_nega_ataque_washington_17_11",
         "houthis_pif_tower_20"
       ],
-      "verificada": "2026-11-23-15h",
-      "fato_novo": true,
+      "verificada": "2026-11-23-19h",
+      "fato_novo": false,
       "ultimo_fato": "23/11: Irã diz que usará todos os meios contra o bloqueio naval dos EUA e fala em reabrir Ormuz em dois dias (CartaCapital, Folha).",
       "proximo": "Resposta de Washington ao Irã e reação das companhias aéreas."
     }
@@ -363,63 +367,63 @@
   "varredura": [
     {
       "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: renúncia do presidente da Mongólia aceita pelo Parlamento (19/11) e Israel sem acordo sobre o premiê; sem queda, golpe ou prisão de chefe de Estado hoje."
     },
     {
       "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: Paraguai (Peña pede ar-condicionado e geladeira na prisão) e Argentina (risco-país a 1.070, Santilli no Senado na quarta); sem fato novo nos demais."
     },
     {
       "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: Otan envia Awacs à Polônia após mísseis russos; Irã e bloqueio naval já no ar; Ucrânia sem fato novo além de Dimer."
     },
     {
       "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: protestos na França (6º fim de semana), ameaças de bomba em escolas na Alemanha e Dinamarca, Bangladesh; EUA sem fato novo."
     },
     {
       "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: Deutsche Bank investigado em Hesse, greve têxtil em Bangladesh; Nvidia reconduz Huang. Sem crise bancária nova."
     },
     {
       "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: Lula reafirma Messias ao STF em jantar com ministros e cúpula do Congresso; ministro da Fazenda segue indefinido."
     },
     {
       "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: Câmara vota o ajuste fiscal (PLP 299/2026), conclusão possível na terça (24); SUS e piso da saúde em debate."
     },
     {
       "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: varredura por capas (cobertura.cjs) e buscas das passadas 1 e 2; nada novo além do que as matérias desta edição registram."
     },
     {
       "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: varredura por capas (cobertura.cjs) e buscas das passadas 1 e 2; nada novo além do que as matérias desta edição registram."
     },
     {
       "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: varredura por capas (cobertura.cjs) e buscas das passadas 1 e 2; nada novo além do que as matérias desta edição registram."
     },
     {
       "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: varredura por capas (cobertura.cjs) e buscas das passadas 1 e 2; nada novo além do que as matérias desta edição registram."
     },
     {
       "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-      "feita": "2026-11-23-07h",
-      "achado": "Passada 1 (07h): Mundo e Política varridos por capas e buscas; COP31 sem acordo, Sudão do Sul, Iowa, Israel e EUA entram; sem queda ou prisão de chefe de Estado; Paraguai e Ucrânia sem fato novo."
+      "feita": "2026-11-23-19h",
+      "achado": "19h: varredura por capas (cobertura.cjs) e buscas das passadas 1 e 2; nada novo além do que as matérias desta edição registram."
     }
   ]
 }
