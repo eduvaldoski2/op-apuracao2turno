@@ -52582,3 +52582,7 @@ S.brb_cvm_suspensao_registro_24 = {ed:'economia', k:'Economia · Bancos', hora:'
 ORDER.regioes = _top(ORDER.regioes, ['rj_medicos_barra_audiencia_24','sp_pcc_lavagem_bloqueio_24','mg_lei_idosos_bh_24','go_operacao_destroyer_24','pr_tornados_2026_24','rs_tupancireta_entulho_24','mt_energisa_parques_cuiaba_24']);
 ORDER.economia = _top(ORDER.economia, ['brb_cvm_suspensao_registro_24']);
 /* ===== FIM PASSADA 2 · complementos ===== */
+/* ===== PASSADA 2 · ajuste de upd ===== */
+S.cash_out_bets_18.upd = "A PF fez três operações simultâneas nesta terça (24), com 72 mandados de busca; o TRF-3 manteve o cantor MC Ryan SP em liberdade.";
+S.escala_6x1_20.upd = "Desde a edição das 11h, o ministro Luiz Marinho recomendou que setores que queiram outra escala fechem acordos coletivos até 16 de dezembro.";
+/* ===== FIM ajuste de upd ===== */
