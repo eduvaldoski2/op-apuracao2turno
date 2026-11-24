@@ -1,6 +1,6 @@
 // Composição das cadeiras: hemiciclo em SVG (um ponto por cadeira, agrupado por partido) + legenda + imagem para redes (1:1, 4:5, 9:16).
 // Não classifica partidos em campos políticos: os grupos seguem do maior para o menor número de cadeiras.
-import { corPartido } from './partidos.js?v=8cc600ea';
+import { corPartido } from './partidos.js?v=45e795b9';
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sgTxt = s => String(s || '').replace(/PC do B/g, 'PCdoB');
@@ -38,14 +38,14 @@ function svgBloco(it, total, tit) {
   const circ = out.map(p => `<circle cx="${(cx + p.x * S).toFixed(1)}" cy="${(cy + p.y * S).toFixed(1)}" r="${(raio * S).toFixed(2)}" fill="${p.cor}"><title>${esc(sgTxt(p.sg) || 'sem partido definido')}</title></circle>`).join('');
   return `<svg class="cad-svg" viewBox="0 0 ${W} 116" role="img" aria-label="${esc(tit)}: ${ocup} de ${total} cadeiras">${circ}<text x="${cx}" y="${cy - 5}" text-anchor="middle" class="cad-num">${ocup}/${total}</text></svg>`;
 }
-const legenda = it => `<ul class="cad-leg">${it.map(x => `<li><i style="background:${corPartido(x.sg)}"></i><b>${esc(sgTxt(x.sg))}</b> ${x.n}</li>`).join('')}</ul>`;
+const legenda = (it, link, i) => `<ul class="cad-leg">${it.map(x => { const h = link && link(x.sg, i), c = `<i style="background:${corPartido(x.sg)}"></i><b>${esc(sgTxt(x.sg))}</b> ${x.n}`; return h ? `<li><a href="${esc(h)}" title="Ver candidatos de ${esc(sgTxt(x.sg))}">${c}</a></li>` : `<li>${c}</li>`; }).join('')}</ul>`;
 
 // blocos: [{rot, itens:[{sg,n}], total}]; o primeiro é o grande. Devolve o HTML da seção (ligarCadeiras ativa os botões de imagem).
-export function cadeirasHTML({ titulo, sub, blocos, fonte = 'TSE' }) {
+export function cadeirasHTML({ titulo, sub, blocos, fonte = 'TSE', link = null }) {
   const bs = blocos.filter(b => b.itens.length), id = 'cad' + (++_id);
   if (!bs.length) return '';
   const dados = esc(JSON.stringify({ titulo, sub, fonte, blocos: bs.map(b => ({ rot: b.rot, total: b.total, itens: b.itens })) }));
-  const corpo = bs.map((b, i) => `<div class="cad-b${i ? ' peq' : ''}"><h3>${esc(b.rot)}</h3>${svgBloco(b.itens, b.total, b.rot)}${legenda(b.itens)}</div>`).join('');
+  const corpo = bs.map((b, i) => `<div class="cad-b${i ? ' peq' : ''}"><h3>${esc(b.rot)}</h3>${svgBloco(b.itens, b.total, b.rot)}${legenda(b.itens, link, i)}</div>`).join('');
   const ocup = bs[0].itens.reduce((a, x) => a + x.n, 0);
   return `<section class="painel cad sem-export" id="${id}" data-cad="${dados}"><div class="cad-top"><h2>${esc(titulo)}</h2><details class="cad-png"><summary>↓ PNG</summary><div role="group" aria-label="Formato da imagem"><button type="button" data-f="1:1">1:1 · WhatsApp</button><button type="button" data-f="4:5">4:5 · Instagram</button><button type="button" data-f="9:16">9:16 · Stories</button></div></details></div>
     <p class="sub">${esc(sub || '')}${ocup < bs[0].total ? ' Cadeiras em cinza: sem eleito identificado na base do TSE (candidatura cassada ou indeferida, ou candidato ausente do cadastro).' : ''}</p><div class="cad-corpo">${corpo}</div></section>`;

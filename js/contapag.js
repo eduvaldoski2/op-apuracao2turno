@@ -162,5 +162,5 @@ function troca(k) {
 }
 window.addEventListener('hashchange', () => { if (CONTA.logado && (location.hash === '#cadastro' || location.hash === '#preferencias')) troca(location.hash.slice(1)); });
 
-(async () => { try { analise = await import('./consentimento.js?v=8cc600ea'); analise.iniciarConsentimento(); } catch { analise = null; } })();
+(async () => { try { analise = await import('./consentimento.js?v=45e795b9'); analise.iniciarConsentimento(); } catch { analise = null; } })();
 iniciar();
