@@ -4,7 +4,7 @@ _N('df_prf_skunk_seis_toneladas_br020_24', {ed:'regioes', reg:'co', k:'Regiões 
  sub:'A carga, avaliada em R$ 180 milhões, é a maior já registrada no DF e a segunda maior da história da PRF, e o caminhão vinha da região amazônica.',
  dado:{n:'6 t', l:'de skunk apreendidas no km 30 da BR-020, avaliadas em R$ 180 milhões'},
  resumo:'A Polícia Rodoviária Federal (PRF) e a Polícia Civil do Distrito Federal apreenderam seis toneladas de skunk e um fuzil de fabricação peruana no domingo (22), no km 30 da BR-020, perto de Planaltina. A droga, avaliada em R$ 180 milhões, estava em compartimentos ocultos de um caminhão que saiu do Amazonas com destino ao Centro-Oeste. Segundo a PRF, é a maior apreensão do tipo no DF e a segunda maior da corporação. O g1 corrigiu a informação inicial de que seria a maior da história da PRF.',
- fundo:`A Polícia Rodoviária Federal (PRF) e a Polícia Civil do Distrito Federal apreenderam seis toneladas de skunk e um fuzil peruano no domingo (22), no quilômetro 30 da BR-020, perto de Planaltina, no Distrito Federal. A carga, avaliada em R$ 180 milhões, estava escondida em compartimentos ocultos de um caminhão que saiu do Amazonas com destino ao Centro-Oeste, informa o g1 Distrito Federal.
+ fundo:`A Polícia Rodoviária Federal (PRF) e a Polícia Civil do Distrito Federal apreenderam seis toneladas de skunk e um fuzil peruano no domingo (22), no quilômetro 30 da BR-020, perto de Planaltina, no Distrito Federal. A carga, avaliada em R$ 180 milhões, estava escondida em compartimentos ocultos de um caminhão que saiu do Amazonas com destino ao Centro-Oeste.
 
 ## A apreensão
 

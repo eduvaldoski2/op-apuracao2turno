@@ -4,7 +4,7 @@ _N('lula_bc_diretoria_mercado_24', {ed:'politica', k:'Política · Governo', hor
  sub:'O recado foi levado a investidores pelo ministro da Fazenda, Dario Durigan, e foi lido como freio a nomes mais alinhados ao PT; duas diretorias estão vagas e outras vagam no início de 2027.',
  dado:{n:'R$ 5,9262', l:'fechamento do dólar na segunda (23), queda de 0,15% depois de tocar R$ 6,00 pela manhã, a primeira vez desde abril de 2025'},
  resumo:'Auxiliares da área econômica do governo recomendaram ao presidente Lula que escolha para a diretoria do Banco Central nomes que não afrontem o mercado financeiro. O ministro da Fazenda, Dario Durigan, levou a mensagem a investidores na segunda-feira (23), dia em que o dólar passou de R$ 6 e depois recuou. Operadores atribuíram a melhora do fim do dia à sinalização. A Faria Lima teme que o Copom seja ocupado por perfis pouco ortodoxos. Lula não anunciou os indicados.',
- fundo:`O presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) foi aconselhado por integrantes da área econômica do governo a indicar para a diretoria do Banco Central (BC) nomes que não afrontem o mercado financeiro. O recado foi levado a investidores na segunda-feira (23) pelo ministro da Fazenda, Dario Durigan, no mesmo dia em que o dólar ultrapassou R$ 6 pela manhã e fechou a R$ 5,9262, informa a Folha.
+ fundo:`O presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) foi aconselhado por integrantes da área econômica do governo a indicar para a diretoria do Banco Central (BC) nomes que não afrontem o mercado financeiro. O recado foi levado a investidores na segunda-feira (23) pelo ministro da Fazenda, Dario Durigan, no mesmo dia em que o dólar ultrapassou R$ 6 pela manhã e fechou a R$ 5,9262.
 
 ## O recado a investidores
 

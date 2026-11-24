@@ -4,7 +4,7 @@ _N('sp_trivia_cptm_controle_total_24', {ed:'regioes', reg:'sp', k:'Regiões · S
  sub:'A primeira transição, após a concessão, terminou em falhas e na volta da CPTM à operação em julho.',
  dado:{n:'26/11', l:'data em que a Trivia Trens reassume o controle total das linhas 11-Coral, 12-Safira e 13-Jade'},
  resumo:'A concessionária Trivia Trens vai reassumir na quinta-feira (26) o controle total das linhas 11-Coral, 12-Safira e 13-Jade da CPTM, na Grande São Paulo, depois das falhas que levaram a estatal a retomar a operação em julho. É a segunda tentativa de transferir o serviço à empresa desde a concessão. Em outubro, a CPTM e a Trivia fizeram operação conjunta na Linha 13-Jade e no Expresso Aeroporto.',
- fundo:`A concessionária Trivia Trens reassume na quinta-feira (26) o controle total das linhas 11-Coral, 12-Safira e 13-Jade da Companhia Paulista de Trens Metropolitanos (CPTM), na Grande São Paulo, depois de falhas que obrigaram a estatal a retomar a operação. A Metrópoles informa que é a segunda tentativa de transferir o serviço à Trivia desde a concessão das três linhas.
+ fundo:`A concessionária Trivia Trens reassume na quinta-feira (26) o controle total das linhas 11-Coral, 12-Safira e 13-Jade da Companhia Paulista de Trens Metropolitanos (CPTM), na Grande São Paulo, depois de falhas que obrigaram a estatal a retomar a operação. É a segunda tentativa de transferir o serviço à Trivia desde a concessão das três linhas.
 
 ## A primeira tentativa
 
