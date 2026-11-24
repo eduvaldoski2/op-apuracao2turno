@@ -1,6 +1,6 @@
 // Composição das cadeiras: hemiciclo em SVG (um ponto por cadeira, agrupado por partido) + legenda + imagem para redes (1:1, 4:5, 9:16).
 // Não classifica partidos em campos políticos: os grupos seguem do maior para o menor número de cadeiras.
-import { corPartido } from './partidos.js?v=45e795b9';
+import { corPartido } from './partidos.js?v=7d17f2f9';
 
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const sgTxt = s => String(s || '').replace(/PC do B/g, 'PCdoB');
@@ -38,13 +38,15 @@ function svgBloco(it, total, tit) {
   const circ = out.map(p => `<circle cx="${(cx + p.x * S).toFixed(1)}" cy="${(cy + p.y * S).toFixed(1)}" r="${(raio * S).toFixed(2)}" fill="${p.cor}"><title>${esc(sgTxt(p.sg) || 'sem partido definido')}</title></circle>`).join('');
   return `<svg class="cad-svg" viewBox="0 0 ${W} 116" role="img" aria-label="${esc(tit)}: ${ocup} de ${total} cadeiras">${circ}<text x="${cx}" y="${cy - 5}" text-anchor="middle" class="cad-num">${ocup}/${total}</text></svg>`;
 }
-const legenda = (it, link, i) => `<ul class="cad-leg">${it.map(x => { const h = link && link(x.sg, i), c = `<i style="background:${corPartido(x.sg)}"></i><b>${esc(sgTxt(x.sg))}</b> ${x.n}`; return h ? `<li><a href="${esc(h)}" title="Ver candidatos de ${esc(sgTxt(x.sg))}">${c}</a></li>` : `<li>${c}</li>`; }).join('')}</ul>`;
+// legenda por grupo: partidos de uma mesma federação (itens com o mesmo g, vizinhos) viram uma só entrada
+export const legGrupos = it => { const out = []; for (const x of it) { const k = x.g || '§' + x.sg, u = out[out.length - 1]; if (u && u.k === k) { u.n += x.n; u.sgs.push(x.sg); } else out.push({ k, rot: x.g || sgTxt(x.sg), n: x.n, sgs: [x.sg] }); } return out; };
+const legenda = (it, link, i) => `<ul class="cad-leg">${legGrupos(it).map(x => { const multi = x.sgs.length > 1 || !x.k.startsWith('§'), h = link && link(x.sgs[0], i, multi), c = `${x.sgs.map(sg => `<i style="background:${corPartido(sg)}"></i>`).join('')}<b>${esc(x.rot)}</b> ${x.n}`; return h ? `<li${multi ? ' class="fed"' : ''}><a href="${esc(h)}" title="Ver candidatos de ${esc(x.rot)}">${c}</a></li>` : `<li${multi ? ' class="fed"' : ''}>${c}</li>`; }).join('')}</ul>`;
 
 // blocos: [{rot, itens:[{sg,n}], total}]; o primeiro é o grande. Devolve o HTML da seção (ligarCadeiras ativa os botões de imagem).
 export function cadeirasHTML({ titulo, sub, blocos, fonte = 'TSE', link = null }) {
   const bs = blocos.filter(b => b.itens.length), id = 'cad' + (++_id);
   if (!bs.length) return '';
-  const dados = esc(JSON.stringify({ titulo, sub, fonte, blocos: bs.map(b => ({ rot: b.rot, total: b.total, itens: b.itens })) }));
+  const dados = esc(JSON.stringify({ titulo, sub, fonte, blocos: bs.map(b => ({ rot: b.rot, total: b.total, itens: b.itens, leg: legGrupos(b.itens) })) }));
   const corpo = bs.map((b, i) => `<div class="cad-b${i ? ' peq' : ''}"><h3>${esc(b.rot)}</h3>${svgBloco(b.itens, b.total, b.rot)}${legenda(b.itens, link, i)}</div>`).join('');
   const ocup = bs[0].itens.reduce((a, x) => a + x.n, 0);
   return `<section class="painel cad sem-export" id="${id}" data-cad="${dados}"><div class="cad-top"><h2>${esc(titulo)}</h2><details class="cad-png"><summary>↓ PNG</summary><div role="group" aria-label="Formato da imagem"><button type="button" data-f="1:1">1:1 · WhatsApp</button><button type="button" data-f="4:5">4:5 · Instagram</button><button type="button" data-f="9:16">9:16 · Stories</button></div></details></div>
@@ -68,8 +70,8 @@ async function desenha(d, fmt) {
   y += 14;
   const rodape = 96, livre = H - rodape - y, nb = d.blocos.length, lado = nb === 2 && H <= 1350, GAP = 40;
   // legenda: a fonte encolhe até o maior item caber na coluna
-  const legMed = (it, larg, cols) => { let fs = 26; const cl = larg / cols; for (; fs > 15; fs--) { g.font = `700 ${fs}px ${SANS}`; const m = Math.max(...it.map(x => g.measureText(sgTxt(x.sg)).width)); g.font = `400 ${fs}px ${SANS}`; if (m + g.measureText('000').width + fs * 1.9 <= cl) break; } const lh = Math.round(fs * 1.5); return { fs, lh, cols, h: Math.ceil(it.length / cols) * lh + 8 }; };
-  const legDesenha = (it, x0, larg, yy, m) => { const cl = larg / m.cols; it.forEach((x, k) => { const lx = x0 + (k % m.cols) * cl, ly = yy + Math.floor(k / m.cols) * m.lh + m.fs; g.fillStyle = corPartido(x.sg); g.beginPath(); g.arc(lx + m.fs * 0.45, ly - m.fs * 0.35, m.fs * 0.42, 0, 2 * Math.PI); g.fill(); g.fillStyle = '#1b1530'; g.font = `700 ${m.fs}px ${SANS}`; const t = sgTxt(x.sg); g.fillText(t, lx + m.fs * 1.15, ly); const tw = g.measureText(t).width; g.font = `400 ${m.fs}px ${SANS}`; g.fillText(String(x.n), lx + m.fs * 1.15 + tw + m.fs * 0.35, ly); }); };
+  const legMed = (it, larg, cols) => { let fs = 26; const cl = larg / cols; for (; fs > 15; fs--) { g.font = `700 ${fs}px ${SANS}`; const m = Math.max(...it.map(x => g.measureText(x.rot).width)); g.font = `400 ${fs}px ${SANS}`; if (m + g.measureText('000').width + fs * 1.9 <= cl) break; } const lh = Math.round(fs * 1.5); return { fs, lh, cols, h: Math.ceil(it.length / cols) * lh + 8 }; };
+  const legDesenha = (it, x0, larg, yy, m) => { const cl = larg / m.cols; it.forEach((x, k) => { const lx = x0 + (k % m.cols) * cl, ly = yy + Math.floor(k / m.cols) * m.lh + m.fs, cx0 = lx + m.fs * 0.45, cy0 = ly - m.fs * 0.35, ns = x.sgs.length; x.sgs.forEach((sg, q) => { g.fillStyle = corPartido(sg); g.beginPath(); if (ns > 1) g.moveTo(cx0, cy0); g.arc(cx0, cy0, m.fs * 0.42, -Math.PI / 2 + q * 2 * Math.PI / ns, -Math.PI / 2 + (q + 1) * 2 * Math.PI / ns); g.closePath(); g.fill(); }); g.fillStyle = '#1b1530'; g.font = `700 ${m.fs}px ${SANS}`; const t = x.rot; g.fillText(t, lx + m.fs * 1.15, ly); const tw = g.measureText(t).width; g.font = `400 ${m.fs}px ${SANS}`; g.fillText(String(x.n), lx + m.fs * 1.15 + tw + m.fs * 0.35, ly); }); };
   const desenhaHemi = (b, cx, cy, R) => {
     g.fillStyle = '#3E347E'; g.font = `700 26px ${SANS}`; g.textAlign = 'center'; g.fillText(b.rot.toUpperCase(), cx, cy - R - 26); g.textAlign = 'left';
     const { out, raio } = pontos(b.itens, b.total);
@@ -78,15 +80,15 @@ async function desenha(d, fmt) {
     const furo = (0.45 - raio) * R, fs = Math.min(R * 0.3, 1.3 * furo / w100 * 100); g.fillStyle = '#1b1530'; g.font = `400 ${Math.round(fs)}px ${SERIF}`; g.textAlign = 'center'; g.fillText(txt, cx, cy - R * 0.03); g.textAlign = 'left';
   };
   if (lado) {
-    const colW = (W - 2 * P - GAP) / 2, ms = d.blocos.map(b => legMed(b.itens, colW, 2)), legH = Math.max(...ms.map(m => m.h));
+    const colW = (W - 2 * P - GAP) / 2, ms = d.blocos.map(b => legMed(b.leg, colW, 2)), legH = Math.max(...ms.map(m => m.h));
     const R = Math.max(120, Math.min(colW / 2 - 4, livre - 56 - 28 - legH - 20)), cy = y + 56 + R;
-    d.blocos.forEach((b, i) => { const x0 = P + i * (colW + GAP); desenhaHemi(b, x0 + colW / 2, cy, R); legDesenha(b.itens, x0, colW, cy + 28, ms[i]); });
+    d.blocos.forEach((b, i) => { const x0 = P + i * (colW + GAP); desenhaHemi(b, x0 + colW / 2, cy, R); legDesenha(b.leg, x0, colW, cy + 28, ms[i]); });
   } else {
-    const cols = H <= 1350 ? 4 : 3, ms = d.blocos.map(b => legMed(b.itens, W - 2 * P, cols)), pesos = d.blocos.map((_, i) => i === 0 ? 1 : 0.55);
+    const cols = H <= 1350 ? 4 : 3, ms = d.blocos.map(b => legMed(b.leg, W - 2 * P, cols)), pesos = d.blocos.map((_, i) => i === 0 ? 1 : 0.55);
     const fixo = ms.reduce((a, m) => a + 56 + 28 + m.h + 26, 0), soma = pesos.reduce((a, b) => a + b, 0);
     d.blocos.forEach((b, i) => {
       const maxR = i === 0 ? (W - 2 * P) / 2 : 290, R = Math.max(110, Math.min(maxR, (livre - fixo) * pesos[i] / soma)), cy = y + 56 + R;
-      desenhaHemi(b, W / 2, cy, R); legDesenha(b.itens, P, W - 2 * P, cy + 28, ms[i]); y = cy + 28 + ms[i].h + 26;
+      desenhaHemi(b, W / 2, cy, R); legDesenha(b.leg, P, W - 2 * P, cy + 28, ms[i]); y = cy + 28 + ms[i].h + 26;
     });
   }
   g.fillStyle = '#5d5675'; g.font = `400 24px ${SANS}`; g.fillText(`Fonte: ${d.fonte}. oficinapolitica.com.br`, P, H - 44);

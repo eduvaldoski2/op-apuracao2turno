@@ -1,11 +1,11 @@
 // Comparar candidatos: descida dentro do município (região/distrito > bairro > local de votação > seção).
 // Dados: branches hist-<ano> (locais/<uf>/<cd>.json; <eleição>/<uf>/<cd>.json com as seções; votos do candidato por seção)
 // e data/bairros_geo, data/regioes (limites e nomes de distritos/bairros). Funciona para qualquer ano/cargo que tenha base por seção.
-import { CONFIG } from './config.js?v=45e795b9';
-import { getJSON } from './tse.js?v=45e795b9';
-import { esc, sem, tabela } from './ui.js?v=45e795b9';
-import { fNum, fInt } from './util.js?v=45e795b9';
-import { ligarArrasto } from './cmparrasto.js?v=45e795b9';
+import { CONFIG } from './config.js?v=7d17f2f9';
+import { getJSON } from './tse.js?v=7d17f2f9';
+import { esc, sem, tabela } from './ui.js?v=7d17f2f9';
+import { fNum, fInt } from './util.js?v=7d17f2f9';
+import { ligarArrasto } from './cmparrasto.js?v=7d17f2f9';
 
 const RAW = `https://raw.githubusercontent.com/${CONFIG.repo}/`;
 const cache = new Map();

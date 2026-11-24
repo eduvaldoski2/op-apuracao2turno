@@ -1,14 +1,14 @@
 // Comparar candidatos: busca por nome (2006-2026 + trajetória desde 1994), escolha da candidatura e cruzamento por município.
 // Dados: branch cand-pessoas (perfis p/<ddd>.json e busca s/<xxx>.json) e branches cv-<ano> (votos por município de cada candidatura).
 // Gerados por scripts/lake_cand/build_cand_votos.py a partir do TSE (votação por município e zona + consulta de candidatos). Dados pessoais: só o nome público, o ano de nascimento e o CPF MASCARADO (***.456.789-**), que serve para diferenciar homônimos.
-import { CONFIG } from './config.js?v=45e795b9';
-import { getJSON } from './tse.js?v=45e795b9';
-import { esc, sem, tabela } from './ui.js?v=45e795b9';
-import { fNum, fInt } from './util.js?v=45e795b9';
-import { corPartido, corTextoSobre } from './partidos.js?v=45e795b9';
-import { baixarCSV } from './export.js?v=45e795b9';
-import { viewCmpMun } from './cmpmun.js?v=45e795b9';
-import { ligarArrasto } from './cmparrasto.js?v=45e795b9';
+import { CONFIG } from './config.js?v=7d17f2f9';
+import { getJSON } from './tse.js?v=7d17f2f9';
+import { esc, sem, tabela } from './ui.js?v=7d17f2f9';
+import { fNum, fInt } from './util.js?v=7d17f2f9';
+import { corPartido, corTextoSobre } from './partidos.js?v=7d17f2f9';
+import { baixarCSV } from './export.js?v=7d17f2f9';
+import { viewCmpMun } from './cmpmun.js?v=7d17f2f9';
+import { ligarArrasto } from './cmparrasto.js?v=7d17f2f9';
 
 export const MAX_CC = 24;   // teto técnico (tamanho do endereço e leitura da tabela); sem o limite de 4 de antes
 const CH = 'abcdefghijklmnopqrsuvwxyz'.split('');   // sem a letra "t", que é o turno
