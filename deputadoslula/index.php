@@ -19,6 +19,13 @@ try {
   }
 } catch (Throwable $e) { $logado = false; }
 
+if ($logado && isset($_GET['pdf'])) {
+  $f = __DIR__ . '/_relatorio.pdf';
+  if (!is_file($f)) { http_response_code(404); echo 'PDF indisponível.'; exit; }
+  header_remove('Content-Type'); header('Content-Type: application/pdf');
+  header('Content-Disposition: attachment; filename="Relatorio_Deputados_de_Lula_simulacao_2026.pdf"');
+  header('Content-Length: ' . filesize($f)); readfile($f); exit;
+}
 if ($logado) {
   $c = @file_get_contents(__DIR__ . '/_conteudo.html');
   if ($c === false || trim($c) === '') { http_response_code(503); echo 'Relatório temporariamente indisponível.'; exit; }
