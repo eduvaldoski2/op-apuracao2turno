@@ -1,0 +1,39 @@
+// ED: politica
+_U('ajuste_camara_20', {hora:'23/11',
+ t:'Câmara aprova por 353 a 128 o ajuste fiscal de Lula sem mudar o texto do Senado, que vai à sanção; meta de 2027 é superávit de R$ 18,7 bi',
+ sub:'Todas as emendas foram rejeitadas, por 319 votos a 129, e a base conseguiu evitar o retorno do projeto ao Senado; o presidente da Câmara cobra novas medidas ainda em 2026.',
+ dado:{n:'353 a 128', l:'placar do texto-base do PLP 299/2026, com 5 abstenções; eram necessários 257 votos'},
+ resumo:'A Câmara dos Deputados aprovou na noite de segunda-feira (23) o texto-base do Projeto de Lei Complementar 299/2026, o ajuste fiscal do governo Lula, por 353 votos a 128 e 5 abstenções. O relator, Mauro Benevides Filho (União-CE), manteve o texto do Senado, e as emendas foram rejeitadas. A economia estimada em 2027 vai de R$ 45,1 bilhões a R$ 56,1 bilhões, para uma meta de superávit primário de R$ 18,7 bilhões. Sem alterações de mérito, o projeto segue para sanção presidencial.',
+ upd:'Plenário aprovou o texto-base por 353 a 128, rejeitou as emendas por 319 a 129 e manteve o texto do Senado; o projeto vai à sanção, e Hugo Motta defende novas medidas ainda em 2026.',
+ fundo:`A Câmara dos Deputados aprovou na noite de segunda-feira (23), por 353 votos a favor, 128 contra e 5 abstenções, o texto-base do Projeto de Lei Complementar (PLP) 299/2026, o ajuste fiscal do governo do presidente Luiz Inácio Lula da Silva (PT, partido de esquerda). Eram necessários 257 votos. Como os deputados não alteraram o texto aprovado pelo Senado na semana passada, o projeto não volta à outra Casa e segue para a sanção presidencial.
+
+## A votação e o placar
+
+A sessão extraordinária, convocada pelo presidente da Câmara, Hugo Motta (Republicanos-PB, partido de direita), começou às 18h e o texto-base só foi aprovado mais de quatro horas depois, informa o Brasil de Fato. A oposição tentou obstruir a votação sem sucesso. A líder da oposição, deputada Júlia Zanatta (PL-SC, partido de direita), disse que o ajuste é tirar dinheiro do povo cobrando mais impostos.
+
+O relator, deputado Mauro Benevides Filho (União-CE), apresentou parecer pela aprovação sem alterações. As emendas ao projeto foram rejeitadas por 319 votos contra 129 e 4 abstenções, de acordo com a Itatiaia. O Brasil de Fato conta dez destaques, pedidos de votação em separado de trechos do texto; a Veja informa que todos foram rejeitados, o que fechou a via para qualquer mudança. Se algum fosse aprovado, o projeto voltaria ao Senado e atrasaria as medidas previstas para 2027.
+
+## O que diz o texto e quanto ele rende
+
+O projeto, de autoria do senador Jaques Wagner (PT-BA) e apresentado pelo ministro do Planejamento, Bruno Moretti, amplia os instrumentos do governo para cumprir as metas fiscais. Prevê bloqueios adicionais de gastos, redução de benefícios tributários e mudanças em regras do arcabouço fiscal, como a do piso da saúde, segundo a Itatiaia e o g1. A economia estimada em 2027 vai de R$ 45,1 bilhões a R$ 56,1 bilhões no resultado primário, a diferença entre receitas e despesas antes dos juros, informa a Agência Brasil. A projeção reúne aumento de arrecadação e controle de despesas. O Valor acrescenta que o Ministério do Planejamento calcula também uma flexibilidade orçamentária de cerca de R$ 11 bilhões no ano que vem.
+
+A meta de 2027 é de superávit de R$ 18,7 bilhões após deduções de R$ 64,7 bilhões permitidas pelo arcabouço, que reduzem a meta de 0,5% do Produto Interno Bruto (PIB), equivalente a R$ 83,4 bilhões em valores nominais, explica o Diário de Pernambuco. Por isso, a imprensa econômica trata o projeto como parte de um conjunto de medidas, não como solução única do desequilíbrio das contas.
+
+## Por que a pressa
+
+A aprovação foi acelerada para evitar novos contingenciamentos em 2026, às vésperas do relatório bimestral de receitas e despesas, marcado para terça-feira (24), segundo o Valor. O ministro das Relações Institucionais, José Guimarães (PT), destacou ao longo do dia que a aprovação evitaria um volume maior de bloqueios, informa o Estado de Minas. Motta disse ter antecipado a votação diante da preocupação do Congresso com a alta do dólar, que tocou R$ 6 na segunda e fechou a R$ 5,9262, e com a perspectiva de juros altos, de acordo com o g1.
+
+## As críticas, de dentro e de fora da base
+
+O Estadão registra que o deputado Nikolas Ferreira (PL-MG) acusou Lula de enganar a população, que o PSOL, partido de esquerda, obstruiu a votação, e que o deputado Lindbergh Farias (PT-RJ) discursou contra o texto, alertando para riscos econômicos e defendendo alternativas de desenvolvimento. A bancada do PT havia anunciado voto favorável, e o líder do governo, Paulo Pimenta (PT-RS), disse que o partido votaria unido, mas parlamentares petistas e do PSOL criticaram o modelo ao longo da tramitação.
+
+Do lado do mercado, a recepção é cautelosa. A BBC News Brasil informa que o chamado Plano Moretti vem sendo recebido com pessimismo no mercado financeiro e que economistas avaliam que o pacote não deve ser suficiente. O governo aposta no projeto como resposta aos anseios do mercado, enquanto Lula se prepara para iniciar um quarto mandato em 2027.
+
+## O que vem agora
+
+O projeto vai à sanção, e o presidente tem prazo constitucional de 15 dias úteis para sancionar ou vetar. Motta cobrou, após a votação, que o governo adote mais medidas econômicas ainda em 2026 para derrubar o dólar e os juros, sem prejudicar os mais pobres, informa a Agência Câmara. O relator, Benevides, já havia dito à Folha que enviaria ao governo novas propostas, entre elas retirar investimentos das regras fiscais.
+
+## O que ainda não está confirmado
+
+O governo não informou a data da sanção. As estimativas de economia variam conforme a fonte e o método de cálculo, e o valor efetivo em 2027 depende da aplicação dos bloqueios e do corte de benefícios previstos no texto.`,
+ fontes:[['Agência Brasil (Câmara aprova texto-base)','https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/camara-aprova-texto-base-do-projeto-de-ajuste-fiscal'],['Valor Econômico (353 a 128; texto vai a sanção)','https://valor.globo.com/politica/noticia/2026/11/23/por-353-a-128-cmara-aprova-texto-base-do-projeto-de-lei-complementar-do-ajuste-fiscal.ghtml'],['Veja (destaques rejeitados; texto vai à sanção)','https://veja.abril.com.br/economia/camara-aprova-ajuste-fiscal-do-governo-lula/'],['Brasil de Fato (353 votos a 128; emendas rejeitadas)','https://www.brasildefato.com.br/2026/11/23/camara-aprova-ajuste-fiscal-sem-alteracoes-texto-vai-a-sancao-presidencial/'],['Diário de Pernambuco (meta de R$ 18,7 bi)','https://www.diariodepernambuco.com.br/economia/2026/11/11729787-por-353-votos-contra-128-camara-aprova-texto-base-do-ajuste-fiscal.html'],['Estadão (como votou cada deputado)','https://www.estadao.com.br/economia/veja-como-votou-cada-deputado-no-projeto-de-ajuste-fiscal-do-governo-lula/'],['g1 (Motta defende novas medidas em 2026)','https://g1.globo.com/politica/noticia/2026/11/24/apos-camara-aprovar-ajuste-de-lula-hugo-motta-defende-novas-medidas-fiscais-ainda-em-2026.ghtml'],['g1 (entenda o ajuste fiscal)','https://g1.globo.com/politica/noticia/2026/11/24/entenda-projeto-de-ajuste-fiscal-de-ate-r-56-bilhoes-para-governo-lula-aprovado-pela-camara.ghtml'],['Agência Câmara (Motta vê ajuste como essencial)','https://www.camara.leg.br/noticias/1322184-motta-ve-ajuste-fiscal-como-essencial-para-avancar-com-investimentos-em-2027'],['BBC News Brasil (por que o pacote é polêmico)','https://www.bbc.com/portuguese/articles/cqx2we1jgnzgo?at_medium=RSS&at_campaign=rss'],['Itatiaia (emendas rejeitadas por 319 a 129)','https://www.itatiaia.com.br/politica/camara-aprova-projeto-de-ajuste-fiscal-do-governo-federal/'],['Estado de Minas (texto-base; Guimarães)','https://www.em.com.br/politica/2026/11/7543143-camara-aprova-texto-base-de-ajuste-fiscal-que-pode-render-rs-50-bi-em-2027.html']]});

@@ -1,0 +1,33 @@
+// ED: politica
+_U('mendonca_relatorio_20', {hora:'23/11',
+ t:'Relatório da PF cita Mendonça em conversas de Vorcaro com terceiros, mas não acha diálogo direto; PGR recebe os quatro relatórios sobre ministros do STF',
+ sub:'O procurador-geral Paulo Gonet formou um grupo de trabalho e tem 15 dias, prazo que a Corte espera ver prorrogado, para dizer se pede diligências, inquérito ou arquivamento.',
+ dado:{n:'11 diálogos', l:'de terceiros com Vorcaro em que Mendonça é citado, entre 2024 e 2025; a PF não achou conversa direta entre os dois'},
+ resumo:'O relatório de 30 páginas da Polícia Federal, aberto por Edson Fachin a pedido de André Mendonça, registra menções ao ministro do STF em conversas de Daniel Vorcaro com advogados, um deputado, um jornalista e um ex-diretor do Banco Central, mas nenhum diálogo direto. Na segunda (23), a PGR recebeu os quatro relatórios da PF sobre ministros da Corte, e Paulo Gonet montou um grupo para analisá-los. Fachin deu 15 dias para a manifestação, e a PGR ainda não decidiu o que fará.',
+ upd:'A PGR recebeu na segunda (23) os quatro relatórios da PF sobre ministros, com prazo de 15 dias dado por Fachin; entram o detalhamento das menções a Mendonça entre 2024 e 2025 e a crise na PF com o afastamento de delegados.',
+ fundo:`O relatório da Polícia Federal (PF) que cita o ministro André Mendonça, do Supremo Tribunal Federal (STF), registra menções a ele em conversas do banqueiro Daniel Vorcaro com terceiros, entre elas tentativas de marcar encontros, mas não identifica nenhum diálogo direto entre os dois. Na segunda-feira (23), a Procuradoria-Geral da República (PGR) recebeu esse e outros três relatórios sobre ministros da Corte e abriu o prazo para decidir o que fazer com eles.
+
+## O que a PF encontrou
+
+O documento de 30 páginas foi tornado público na sexta-feira (20) por determinação do presidente do STF, Edson Fachin, a pedido do próprio Mendonça, que abriu mão do sigilo. Nas buscas por palavras-chave no celular de Vorcaro, ex-controlador do Banco Master, a PF afirma não ter achado registro de conversa direta com o ministro, por aplicativo ou outro canal, e ressalva que a diligência não pode ser considerada exaustiva, informa a CNN Brasil. Aparecem nas mensagens, como interlocutores de Vorcaro, advogados, o deputado Cezinha de Madureira (PL-SP), o jornalista Márcio Chaer, uma funcionária do banco, o ex-diretor do Banco Central Paulo Sérgio Neves de Souza e o ex-ministro das Comunicações Fábio Faria.
+
+As datas mostram uma sequência. Em fevereiro de 2024, Vorcaro avisou Faria, após um julgamento sobre o Mais Médicos, que a notícia era ruim porque Mendonça tinha votado contra. Em abril, o advogado Marcus Vinicius contou ao banqueiro que Mendonça o havia convidado para uma reunião no STF. Em fevereiro de 2025, o advogado Ciro Soares disse estar em reunião com o ministro e enviou uma foto. Em março de 2025, Cezinha de Madureira informou que um encontro com Mendonça estava marcado em São Paulo, e Vorcaro respondeu "Show. Marcado.", conforme a CNN. Em maio de 2025, uma pessoa não identificada enviou a Vorcaro convite para o lançamento do Instituto Iter, criado pelo ministro. A reportagem não traz resposta de Vorcaro a várias dessas mensagens.
+
+## O caminho dos relatórios até a PGR
+
+Ao todo, a PF produziu dez relatórios a partir de mensagens extraídas dos celulares de Vorcaro e do cunhado dele, Fabiano Zettel. Quatro tratam de Mendonça e dos ministros Alexandre de Moraes, Dias Toffoli e Kassio Nunes Marques e foram enviados à PGR; os outros seis foram arquivados por falta de relevância penal, segundo a CNN. A Itatiaia informa que Fachin deu 15 dias ao procurador-geral, Paulo Gonet, para pedir novas diligências à PF, defender a abertura de inquérito ou o arquivamento.
+
+A PGR não fixou data para se posicionar. Gonet reuniu um grupo de trabalho com o vice-procurador-geral Hindemburgo Chateaubriand e outros dois subprocuradores, de acordo com a CNN. A reportagem registra que o nome de Gonet também aparece em conversas com Vorcaro e que ele não se declarou impedido nem suspeito. Fontes do Supremo ouvidas pela emissora esperam que o prazo de 15 dias seja prorrogado e consideram mais provável o pedido de diligências complementares. Abrir inquérito exigiria nova autorização do plenário do STF.
+
+## A crise dentro da PF
+
+O episódio ocorre depois de um relatório da PF sobre Moraes ter sido rejeitado pela direção da corporação. O diretor-geral, Andrei Rodrigues, considerou o texto descritivo demais e mandou reformulá-lo, e dois delegados responsáveis pelos relatórios, Daniel Mostardeiro Cola e Wedson Cajé Lopes, foram afastados da chefia dias depois, informa o Diário de Pernambuco, com base em reportagem do UOL. A coluna de Eliane Cantanhede, no Estadão, avalia que a PF deu a Mendonça o papel de vítima, lembra que o ministro teve encontro com Vorcaro em março de 2025 e cita uma foto de Rodrigues com o banqueiro na Europa. Aliados de Mendonça, segundo o relato anterior da imprensa de Brasília, enxergam o material como tentativa de afastá-lo da relatoria do caso.
+
+## O que vem agora
+
+A PGR decide se pede diligências, defende inquérito ou arquiva os quatro relatórios. Fachin ainda não definiu quem será o relator do caso no STF, e o recesso do Judiciário reduz o tempo para decisões em 2026.
+
+## O que ainda não está confirmado
+
+A reportagem lida não traz declaração de Mendonça além do pedido para tornar o relatório público. A PGR não informou a data em que se manifestará.`,
+ fontes:[['CNN Brasil (o que as mensagens apreendidas dizem sobre Mendonça)','https://www.cnnbrasil.com.br/politica/caso-master-veja-o-que-mensagens-apreendidas-pela-pf-dizem-sobre-mendonca/'],['CNN Brasil (Teo Cury: PF não achou diálogo direto)','https://cnnbrasil.com.br/blogs/teo-cury/politica/pf-diz-nao-ter-achado-registro-de-dialogo-direto-entre-mendonca-e-vorcaro'],['CNN Brasil (PGR evita cravar prazo)','https://cnnbrasil.com.br/politica/pgr-evita-cravar-prazo-sobre-relatorios-do-caso-master'],['Itatiaia (PGR recebe quatro relatórios)','https://www.itatiaia.com.br/politica/pgr-recebe-quatro-relatorios-da-pf-sobre-ministros-do-stf-no-caso-master/'],['Diário de Pernambuco (relatório rejeitado pela PF)','https://www.diariodepernambuco.com.br/politica/2026/11/11729046-relatorio-rejeitado-pela-pf-cita-suspeita-de-moraes-ter-antecipado-voto-a-vorcaro.html'],['Estadão (Eliane Cantanhede)','https://www.estadao.com.br/politica/eliane-cantanhede/ao-confundir-alhos-com-bugalhos-pf-deu-a-mendonca-o-papel-de-vitima/'],['Folha (Bergamo: PF diz que Mendonça nunca falou com Vorcaro)','https://www1.folha.uol.com.br/colunas/monicabergamo/2026/11/pf-diz-em-relatorio-a-fachin-que-mendonca-nunca-falou-com-vorcaro-foi-apenas-citado-em-11-dialogos.shtml']]});
