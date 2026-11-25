@@ -1,0 +1,25 @@
+// ED: regioes
+// KIND: N
+_N('ms_balbinos_falencia_stj_tjms_25', {ed:'regioes', reg:'co', k:'Regiões · Mato Grosso do Sul', hora:'25/11', t:"Justiça de Mato Grosso do Sul diz que falência do frigorífico Balbinos pode voltar a tramitar, após o STJ revogar a liminar e a ministra Nancy Andrighi pedir desculpas ao TJMS", sub:"A empresa de Sidrolândia está parada desde abril, demitiu cerca de 350 pessoas e tem dívidas de mais de R$ 185 milhões; ainda cabem recursos.", dado:{n:'R$ 185 mi', l:'dívidas do frigorífico Balbinos, segundo relatos do caso'}, resumo:"A Justiça de Mato Grosso do Sul publicou na terça-feira (24) decisão que reconhece a possibilidade de o processo do frigorífico Balbinos, de Sidrolândia, voltar a tramitar como falência, depois de o Superior Tribunal de Justiça revogar, em 17 de novembro, a liminar que suspendia a quebra. A ministra Nancy Andrighi pediu desculpas ao tribunal estadual. Ainda cabem recursos.", fundo:`O Tribunal de Justiça de Mato Grosso do Sul (TJMS) publicou na terça-feira (24) decisão que reconhece a possibilidade de o processo do frigorífico Balbinos Agroindustrial, de Sidrolândia, voltar a tramitar como falência. A decisão vem depois de o Superior Tribunal de Justiça (STJ) revogar, em 17 de novembro, a liminar que suspendia a quebra da empresa. Ainda cabem recursos, informa o Correio do Estado.
+
+## O que decidiu o STJ
+
+A Terceira Turma do STJ concedeu em 10 de novembro, por unanimidade, liminar da ministra Daniela Teixeira que suspendia os efeitos da sentença de 20 de agosto, quando a Justiça de Campo Grande converteu a recuperação judicial da empresa em falência. O Four News informa que a medida também suspendeu a disputa para arrendar a estrutura industrial, uma das propostas previa R$ 200 mil por mês. A ministra Nancy Andrighi pediu vista, tempo extra para analisar o caso.
+
+Em 17 de novembro, a Turma decidiu por maioria não conhecer o pedido da empresa e revogar a liminar, segundo o portal A Crítica de Campo Grande. Nancy Andrighi, acompanhada por Moura Ribeiro, afirmou que um pedido urgente ligado a um recurso cabe ao tribunal que vai julgá-lo e que o STJ só analisa causas decididas em última instância pelos tribunais estaduais. Daniela Teixeira ficou vencida. Ela defendeu manter a liminar, por temer que uma empresa com centenas de empregados fosse à falência sem ouvir os credores.
+
+## O pedido de desculpas
+
+Na sessão, Nancy Andrighi pediu desculpas ao desembargador Marco André Nogueira Hanson, relator do recurso no TJMS, por suspeitas de demora levantadas em 10 de novembro. Ela disse que ele está em dia com o trabalho e que o STJ foi "induzido ao erro" por uma petição, informa o g1 MS. O JD1 Notícias resume que o STJ recuou depois de dar um "puxão de orelha" no tribunal estadual. A ministra lembrou que só dois credores aceitaram evitar a falência; os demais, entre eles a administradora judicial, apoiaram a quebra, segundo o portal.
+
+## A situação da empresa
+
+O último abate ocorreu em 18 de abril. Uma vistoria de 24 de julho, citada na sentença do juiz José Henrique Neiva de Carvalho e Silva, encontrou a planta parada e vazia. Cerca de 350 trabalhadores foram demitidos em agosto, e ex-funcionários protestaram em 27 de agosto por verbas trabalhistas. O Four News registra que a empresa disse ao STJ manter cerca de 600 empregos, número que diverge dos registros estaduais. O Correio do Estado aponta dívida de R$ 120,8 milhões no recurso em análise no TJMS; o Four News e A Crítica citam mais de R$ 185 milhões. A Justiça verificou que só R$ 600 mil do capital social de R$ 30 milhões foram integralizados.
+
+A defesa afirma que a falência foi decretada poucos dias antes da assembleia de credores e que o banco Daycoval reteve mais de R$ 25 milhões, o que comprometeu o capital de giro.
+
+## O que vem agora
+
+A Justiça de Campo Grande aguarda a comunicação oficial do julgamento do STJ para definir os passos seguintes. Pedidos de expedição de alvarás só serão analisados após o trânsito em julgado. O acórdão do STJ, que Nancy Andrighi redigirá, ainda não foi publicado, e o recurso contra a falência no TJMS não tem data de julgamento.
+
+NUMS 350|trabalhadores demitidos em agosto;18 de abril|data do último abate;R$ 185 mi|dívidas apontadas no caso;17 de novembro|STJ revoga a liminar`, fontes:[["Correio do Estado","https://correiodoestado.com.br/economia/2026/11/24/frigorifico-de-ms-com-divida-de-r-120-milhoes-pode-voltar-a-falencia.html"],["A Crítica de Campo Grande","https://acritica.net/economia/ministra-stj-pede-desculpas-desembargador-tjms-revoga-liminar-falencia-frigorifico-sidrolandia/"],["JD1 Notícias","https://www.jd1noticias.com/justica/2026/11/18/stj-recua-apos-dar-puxao-de-orelha-no-tjms-e-restabelece-falencia-de-frigorifico.html"],["Four News","https://fournews.com.br/11/11/2026/justica/frigorifico-balbinos-sem-funcionarios-desde-abril-alega-ter-600-empregados-ao-stj-e-consegue-suspender-falencia-em-sidrolandia/"],["g1 Mato Grosso do Sul","https://g1.globo.com/ms/mato-grosso-do-sul/noticia/2026/11/24/ministra-diz-que-foi-induzida-ao-erro-e-pede-desculpas-a-juiz-ao-manter-falencia-de-frigorifico-em-ms.ghtml"]]});

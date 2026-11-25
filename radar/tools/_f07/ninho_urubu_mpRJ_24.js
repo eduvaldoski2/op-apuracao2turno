@@ -16,7 +16,7 @@ O colegiado manteve a absolvição de Márcio Garotti, ex-diretor financeiro do 
 
 A sentença de primeira instância havia entendido que a perícia não fixou de forma definitiva a causa do curto-circuito inicial. O MPRJ sustentou que a responsabilidade dependia da cadeia de omissões e falhas que expôs os jovens ao risco, e não só da origem da faísca. Em parecer anterior, a procuradora de Justiça Carla Tereza de Freitas Baptista Cruz lembrou que o centro funcionava sem alvará desde 2012 e que, mesmo interditado pela prefeitura em 2017, seguiu abrigando adolescentes em alojamentos sem certificação dos bombeiros.
 
-## Famílias e próximos passos
+## As famílias e o recurso
 
 Parentes das vítimas acompanharam a sessão. Darlei Pisetta, pai de Bernardo Pisetta, de 14 anos, viajou do Rio Grande do Sul. Cristiano Esmério de Oliveira e Andréia Pinto Candido, pais de Christian Esmério, também estavam presentes, informa o Diário do Rio.
 

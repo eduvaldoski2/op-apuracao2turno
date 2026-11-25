@@ -1,0 +1,25 @@
+// ED: politica
+// KIND: U
+_U('tereza_cristina_marinho_oposicao_senado_23', {hora:'25/11', t:"Marinho soma 40 votos declarados contra 33 de Alcolumbre na disputa pelo Senado, mas nenhum chega aos 41 necessários, e Tereza Cristina mantém candidatura", sub:"O senador eleito Domingos Sávio, do PL, prevê cerca de 48 votos se Tereza Cristina se unir a Marinho; a eleição é em 1º de fevereiro de 2027, por voto secreto.", dado:{n:'40 a 33 a 8', l:'votos declarados: Marinho, Alcolumbre e Tereza Cristina'}, upd:"Em 24 de novembro, a contagem dos blocos deu 40 votos a Marinho, 33 a Alcolumbre e 8 a Tereza Cristina, e o senador eleito Domingos Sávio declarou voto em Marinho.", resumo:"Na disputa pela presidência do Senado, o líder da oposição, Rogério Marinho (PL-RN), soma 40 votos declarados, contra 33 do atual presidente, Davi Alcolumbre (União Brasil-AP), e 8 da senadora Tereza Cristina (PP-MS), segundo contagem dos próprios blocos. São necessários 41 dos 81 votos, em escrutínio secreto, em 1º de fevereiro de 2027. O senador eleito Domingos Sávio (PL-MG) prevê cerca de 48 votos se Tereza Cristina e Marinho se unirem, mas não há acordo fechado.", fundo:`O líder da oposição no Senado, Rogério Marinho (PL-RN, partido de direita), soma 40 votos declarados na disputa pela presidência da Casa, contra 33 do atual presidente, Davi Alcolumbre (União Brasil-AP), e 8 da senadora Tereza Cristina (PP-MS), segundo a contagem dos próprios blocos divulgada na terça-feira (24). Nenhum dos três chega aos 41 votos, a maioria dos 81 senadores, necessários no primeiro turno da eleição de 1º de fevereiro de 2027, por voto secreto.
+
+## A contagem de cada lado
+
+Os números não vêm de apuração independente. O levantamento aponta Marinho na frente, mas sem maioria, informa a TV Sim. Alcolumbre busca a reeleição, articulada desde outubro, e foi eleito em 2025 com 73 dos 81 votos. Segundo a TV Sim, ele usa o controle da pauta para distribuir relatorias e cargos a aliados. A federação União Progressista, formada por União Brasil e PP, anunciou apoio à reeleição, mas a decisão enfrenta resistência: Tereza Cristina disse que os senadores do PP podem votar como quiserem, e o senador Guilherme Derrite (PP-SP) afirmou que não seguirá a orientação, informa o Brasil 247.
+
+O senador eleito por Minas Gerais Domingos Sávio, do PL, disse ao programa Café com Política, do jornal O Tempo, que a oposição tem "algo próximo de 40" votos declarados e que, com o apoio de Tereza Cristina, chegaria a cerca de 48, o que chamou de "vitória muito segura". Ele declarou voto em Marinho e criticou Alcolumbre por não avançar pedidos de impeachment contra ministros do Supremo Tribunal Federal (STF), em especial Alexandre de Moraes. Segundo a TV Sim, há mais de 54 pedidos contra Moraes parados no Senado, e Marinho promete pautá-los se vencer.
+
+## O impasse entre Marinho e Tereza Cristina
+
+Marinho é o candidato oficial do PL desde 5 de novembro, com o apoio do senador Flávio Bolsonaro (PL-RJ). Tereza Cristina mantém a candidatura própria e negocia com ele uma candidatura única contra Alcolumbre. Pelo arranjo em discussão, quem tiver menos força desistiria em favor do outro antes da votação, e o Brasil 247 registrou, em outubro, a hipótese de ela presidir a Comissão de Constituição e Justiça (CCJ) num arranjo liderado por Marinho. Nada foi fechado.
+
+A senadora tem argumentado a aliados, segundo a Veja, que o PL sozinho não ganha e que alguns senadores não votariam em Marinho. Na direita, o governador eleito de Minas, Cleitinho Azevedo (Republicanos), declarou que votaria em Marinho se pudesse. O PL já discutiu defender voto aberto para pressionar senadores eleitos com apoio do bolsonarismo.
+
+## O que vem agora
+
+Marinho e Tereza Cristina seguem negociando uma candidatura única. A eleição para o biênio 2027-2028 ocorre em 1º de fevereiro de 2027.
+
+## O que ainda não está confirmado
+
+Os votos são declarados pelos próprios blocos e podem se repetir entre campos, porque aliados dos dois lados dizem ter perto de 48 votos. O voto é secreto, e dirigentes da federação União Progressista dizem que não punirão quem votar diferente.
+
+NUMS 40|votos declarados de Marinho;33|votos declarados de Alcolumbre;8|votos declarados de Tereza Cristina;41|maioria necessária entre os 81 senadores`, fontes:[["TV Sim (Marinho lidera, sem maioria)","https://tvsimbrasil.com.br/brasil/politica/noticia/2026/11/24/marinho-lidera-disputa-presidencia-senado-sem-maioria"],["O Tempo (Sávio declara voto em Marinho)","https://www.otempo.com.br/politica/2026/11/24/presidencia-do-senado-savio-declara-voto-em-marinho-e-preve-maioria-com-apoio-de-tereza-cristina"],["Brasil 247 (Marinho e Tereza articulam frente)","https://www.brasil247.com/brasilia/rogerio-marinho-e-tereza-cristina-articulam-frente-contra-alcolumbre/"],["Veja (estratégia de Tereza Cristina)","https://veja.abril.com.br/politica/a-estrategia-de-tereza-cristina-para-destronar-marinho-como-candidato-de-oposicao-a-alcolumbre/"],["Estado de Minas (Cleitinho apoia Marinho)","https://www.em.com.br/politica/2026/11/7542316-cleitinho-declara-apoio-a-nikolas-na-camara-e-a-rogerio-marinho-no-senado.html"]]});

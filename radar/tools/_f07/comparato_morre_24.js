@@ -10,13 +10,13 @@ O ex-ministro da Fazenda Fernando Haddad, do PT, havia sido convidado a integrar
 
 ## Uma carreira entre o direito comercial e os direitos humanos
 
-Comparato formou-se em direito na USP em 1959 e fez doutorado na Universidade Paris 1 Panthéon-Sorbonne, concluído em 1963. Foi professor titular da faculdade do Largo de São Francisco e recebeu o título de doutor honoris causa da Universidade de Coimbra, em Portugal. Começou a carreira no direito comercial, área em que publicou obras de referência.
+Comparato formou-se em direito na USP em 1959 e fez doutorado na Universidade Paris 1 Panthéon-Sorbonne, concluído em 1963. Foi professor titular da faculdade do Largo de São Francisco e recebeu o título de doutor honoris causa da Universidade de Coimbra, em Portugal. Começou a carreira no direito comercial, área em que publicou obras de referência, como "O Poder de Controle na Sociedade Anônima", estudo sobre a influência do acionista controlador nas companhias. Esse começo explica o tom técnico de sua obra posterior: ele chegou aos direitos humanos pela análise do poder econômico e de como ele se organiza dentro das instituições.
 
-Durante o regime militar, que durou de 1964 a 1985, passou a se dedicar aos direitos humanos, que via como instrumento para denunciar violações cometidas pelos militares, relata o g1. Ministrou o primeiro curso da matéria na faculdade. A Agência Brasil registra que ele deixou livros em direito constitucional, direito comercial e teoria dos direitos humanos.
+Durante o regime militar, que durou de 1964 a 1985, passou a se dedicar aos direitos humanos, que via como instrumento para denunciar violações cometidas pelos militares, relata o g1. Ministrou o primeiro curso da matéria na faculdade. A Agência Brasil registra que ele deixou livros em direito constitucional, direito comercial e teoria dos direitos humanos. Entre os mais conhecidos está "A Afirmação Histórica dos Direitos Humanos", que reconstrói a origem da ideia de dignidade humana, da Antiguidade à Declaração Universal de 1948.
 
 ## As duas Constituições
 
-Em coluna desta quarta (25), o jornalista Bernardo Mello Franco, em O Globo, lembra que Comparato via o país como governado por duas Constituições. Numa entrevista de 2010, ele disse que a oficial prevê que todo poder emana do povo, mas a real, a efetivamente aplicada, diz que o poder emana dos grupos oligárquicos, que o exercem sempre em nome do povo. Em "A oligarquia brasileira: visão histórica", resumiu que a classe rica permanece unida aos principais agentes do Estado, e o povo fica à margem das decisões.
+Em coluna desta quarta (25), o jornalista Bernardo Mello Franco, em O Globo, lembra que Comparato via o país como governado por duas Constituições. Numa entrevista de 2010, ele disse que a oficial prevê que todo poder emana do povo, mas a real, a efetivamente aplicada, diz que o poder emana dos grupos oligárquicos, que o exercem sempre em nome do povo. Em "A oligarquia brasileira: visão histórica", resumiu que a classe rica permanece unida aos principais agentes do Estado, e o povo fica à margem das decisões. A distinção entre o texto oficial e o poder efetivo resume a crítica que Comparato repetiu em livros, aulas e entrevistas: para ele, a distância entre a norma escrita e o funcionamento real do Estado explicava a persistência da desigualdade no país.
 
 ## As homenagens
 

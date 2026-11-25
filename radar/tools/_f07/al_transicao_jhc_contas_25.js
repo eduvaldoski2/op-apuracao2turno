@@ -20,7 +20,7 @@ O decreto deixa claro que a transição não transfere poder de decisão: a resp
 
 Em outra frente, o Tribunal de Contas do Estado (TCE-AL) elegeu por unanimidade, na terça (24), o conselheiro Bruno Toledo para a presidência no biênio 2027-2028, em votação secreta, informa o g1 Alagoas. Toledo já preside o órgão desde 23 de junho, e os mandatos atuais terminam em 31 de dezembro. A nova gestão assume no primeiro dia útil de janeiro e diz que priorizará a fiscalização preventiva e o uso de novas tecnologias. O tribunal recebe cópia do relatório de transição, o que o coloca como destinatário das contas que o próximo governo herdará.
 
-## O que vem agora
+## A reunião desta quarta e o prazo final
 
 A reunião de quarta mostra se a equipe de JHC passa a participar ou se mantém a cobrança por acesso direto. O relatório final vence em 15 de dezembro, e o eleito pode apresentar observações em até dez dias após recebê-lo.
 
