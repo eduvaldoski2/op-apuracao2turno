@@ -16,10 +16,10 @@
     "itaipu_ueno_18",
     "itaipu_diretor_destituido_20"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-19h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: a Promotoria paraguaia acusa Peña de lavagem e suborno; irmão e cunhada foram detidos.",
-   "proximo": "Audiências de medidas cautelares e recuperação dos US$ 182 milhões da Itaipu."
+   "ultimo_fato": "25/11 (19h): o Paraguai promete a Vieira restituir os fundos de Itaipu aplicados no Ueno; reunião Lula-Alliana em 4/12.",
+   "proximo": "Audiências de cautelares e devolução dos US$ 182 milhões da Itaipu."
   },
   {
    "id": "transicao-lula",
@@ -62,9 +62,9 @@
     "lula_bc_diretoria_mercado_24",
     "quirno_milei_desconvidado_posse_24"
    ],
-   "verificada": "2026-11-25-15h",
-   "fato_novo": true,
-   "ultimo_fato": "25/11: Lula reuniu ex-ministros da Justiça para a Segurança Pública; Trabuco é citado para a Fazenda; anúncio previsto para 5/12 (Correio).",
+   "verificada": "2026-11-25-19h",
+   "fato_novo": false,
+   "ultimo_fato": "25/11 (19h): Lula segue ouvindo ex-ministros sobre a Segurança Pública; anúncio da estrutura previsto para 5/12; Alcolumbre recebe a bancada feminina.",
    "proximo": "Anúncio da nova pasta e dos nomes para Fazenda e Casa Civil, previsto para 5 de dezembro."
   },
   {
@@ -81,9 +81,9 @@
     "toffoli_contas_campanha_lula_14_11",
     "tse_lula_flavio_mil_acoes_campanha_23"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-19h",
    "fato_novo": false,
-   "ultimo_fato": "Sem fato novo em 24/11 às 6h. (Sem fato novo na triagem das 19h de 24/11.) (Sem fato novo na triagem das 7h de 25/11.)",
+   "ultimo_fato": "Sem fato novo em 25/11 às 19h.",
    "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
   },
   {
@@ -103,9 +103,9 @@
     "pl_flavio_motta_consulta_121_deputados_17_11",
     "rockbridge_flavio_pf_18"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-19h",
    "fato_novo": false,
-   "ultimo_fato": "Sem fato novo em 24/11 às 6h: citação por edital de 23/11 segue valendo; julgamento virtual até 30/11. (Sem fato novo na triagem das 19h de 24/11.) (Sem fato novo na triagem das 7h de 25/11.)",
+   "ultimo_fato": "25/11 (19h): Flávio, sem mandato a partir de fevereiro, articula Carlos como porta-voz no Senado.",
    "proximo": "Votos dos três ministros que faltam no julgamento virtual até 30/11."
   },
   {
@@ -150,9 +150,9 @@
     "tereza_cristina_marinho_oposicao_senado_23",
     "sus_piso_saude_ajuste_23"
    ],
-   "verificada": "2026-11-25-15h",
-   "fato_novo": true,
-   "ultimo_fato": "25/11: Alcolumbre se compromete com a bancada feminina em meio à disputa pela reeleição; CCJ aprova por 15 a 0 projeto que tipifica fraude contábil.",
+   "verificada": "2026-11-25-19h",
+   "fato_novo": false,
+   "ultimo_fato": "25/11 (19h): Câmara aprova alerta automático em tornozeleiras de agressores; Moretti diz que 'não tem a PEC' fiscal; STF forma maioria sobre ex-assessora de Lira.",
    "proximo": "Disputa pela presidência do Senado e votações de fim de ano."
   },
   {
@@ -183,9 +183,9 @@
     "pec_seguranca_guarda_civil_policias_municipais_23",
     "moraes_suspeito_interferencia_24"
    ],
-   "verificada": "2026-11-25-15h",
+   "verificada": "2026-11-25-19h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: Moraes determina a destruição dos passaportes de Filipe Martins, condenado no caso do golpe.",
+   "ultimo_fato": "25/11 (19h): governo bloqueia 3.941 celulares de presos; relatórios da PF e Moraes seguem no radar da PGR; Zanin marca para 4/12 o julgamento do segundo turno no Rio.",
    "proximo": "Execução da decisão e demais processos ligados ao golpe."
   },
   {
@@ -202,9 +202,9 @@
     "escala_6x1_20",
     "hora_extra_divisor_21"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-19h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: a CNI aciona o STF contra o decreto e a portaria da escala 6x1; Marinho pede acordos coletivos até 16/12.",
+   "ultimo_fato": "25/11 (19h): a CNI aciona o STF contra o decreto 13.173 e a portaria da 6x1; Marinho pede acordos coletivos até 16/12.",
    "proximo": "Julgamento no STF e demais portarias até 16/12."
   },
   {
@@ -285,9 +285,9 @@
     "black_friday_recorde_cnc_endividamento_24",
     "mercado_pec_despesas_obrigatorias_25"
    ],
-   "verificada": "2026-11-25-15h",
+   "verificada": "2026-11-25-19h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: Moretti diz que a subvenção ao diesel será renovada por mais 30 dias (R$ 10,5 bi por período); USTR propõe tarifas a Brasil, China, UE, Japão e Índia por excesso de capacidade.",
+   "ultimo_fato": "25/11 (19h): Ibovespa fecha em alta de 1,58% e dólar a R$ 5,817; subvenção ao diesel vai ser prorrogada por 30 dias.",
    "proximo": "Renovação do subsídio até o fim de novembro e avanço da proposta de tarifas da Seção 301."
   },
   {
@@ -310,9 +310,9 @@
     "eua_delta_atlanta_atrasos_22",
     "eua_tarifas_china_ue_subsidios_25"
    ],
-   "verificada": "2026-11-25-15h",
+   "verificada": "2026-11-25-19h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: USTR propõe tarifas da Seção 301 a Brasil, China, UE, Japão e Índia; UE rejeita a justificativa de Washington.",
+   "ultimo_fato": "25/11 (19h): USTR propõe Seção 301 a 14 economias (o Brasil tem proposta separada: 10% para aviões e tarifa sobre o açúcar, audiência em 14/1).",
    "proximo": "Consulta e decisão sobre a aplicação das tarifas da Seção 301."
   },
   {
@@ -342,9 +342,9 @@
     "ucrania_navio_russo_libia_23",
     "ucrania_zelensky_prazo_janeiro_25"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-19h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: Zelensky diz que enviados de Trump querem acordo até janeiro; Trump nega prazo; 112 drones russos.",
+   "ultimo_fato": "25/11 (19h): Zelensky espera rodada quadrilateral; o Kremlin diz que ninguém negocia com ele.",
    "proximo": "Resposta de Moscou e novas rodadas."
   },
   {
@@ -359,9 +359,9 @@
     "israel_coalizao_20",
     "israel_eisenkot_governo_23"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-19h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: Eisenkot fecha primeiro acordo de coalizão com Lieberman; Democratas rompem; prazo até 6/12.",
+   "ultimo_fato": "25/11 (19h): Eisenkot fecha o primeiro acordo de coalizão com Lieberman; prazo até 6/12.",
    "proximo": "Fechamento da coalizão até 6/12."
   },
   {
@@ -388,63 +388,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-25-15h",
-   "achado": "25/11 (15h): sem fato de queda ou prisão de chefe de Estado nas capas lidas; Bolsonaro segue internado (boletim de 25/11)."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-25-15h",
-   "achado": "25/11 (15h): Argentina entrou em recessão técnica segundo o Indec, em notícia reproduzida pela CartaCapital; sem matéria nova nesta edição."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-25-15h",
-   "achado": "25/11 (15h): CCJ do Senado aprovou o projeto de fraude contábil (Agência Brasil); Alcolumbre recebeu a bancada feminina."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-25-15h",
-   "achado": "25/11 (15h): Moraes determinou a destruição dos passaportes de Filipe Martins; STF julga denúncia contra Van Hattem."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-25-15h",
-   "achado": "25/11 (15h): Moretti anuncia renovação da subvenção ao diesel; Trabuco aparece como opção para a Fazenda."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-25-15h",
-   "achado": "25/11 (15h): SP (Ubatuba e Barueri), DF (BRB) e NE (Serrita) cobertos; demais sub-regiões pendentes na passada 2."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-19h",
+   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   }
  ]
 }
