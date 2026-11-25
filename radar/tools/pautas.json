@@ -62,10 +62,10 @@
     "lula_bc_diretoria_mercado_24",
     "quirno_milei_desconvidado_posse_24"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: Itamaraty confirma que Lula não convida Milei para a posse e mantém o Brasil sem embaixador em Buenos Aires; equipe econômica busca nomes para o BC.",
-   "proximo": "Escolha do ministro da Fazenda e anúncio dos ministérios em dezembro."
+   "ultimo_fato": "25/11: Lula reuniu ex-ministros da Justiça para a Segurança Pública; Trabuco é citado para a Fazenda; anúncio previsto para 5/12 (Correio).",
+   "proximo": "Anúncio da nova pasta e dos nomes para Fazenda e Casa Civil, previsto para 5 de dezembro."
   },
   {
    "id": "tse-acoes",
@@ -114,6 +114,8 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "americanas_ccj_fraude_25",
+    "alcolumbre_bancada_feminina_25",
     "ajuste_fiscal_texto_base_24",
     "ajuste_fiscal_camara_19",
     "ajuste_senado_18",
@@ -148,10 +150,10 @@
     "tereza_cristina_marinho_oposicao_senado_23",
     "sus_piso_saude_ajuste_23"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: Lula sanciona sem vetos o ajuste fiscal e define a PEC da segunda etapa; Congresso tem menos de um mês até o recesso.",
-   "proximo": "Reunião da PEC às 15h e votações de fim de ano."
+   "ultimo_fato": "25/11: Alcolumbre se compromete com a bancada feminina em meio à disputa pela reeleição; CCJ aprova por 15 a 0 projeto que tipifica fraude contábil.",
+   "proximo": "Disputa pela presidência do Senado e votações de fim de ano."
   },
   {
    "id": "seguranca-publica",
@@ -159,6 +161,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "filipe_martins_passaportes_25",
     "pf_fachin_pgr_19",
     "pf_andrei_ccj_18",
     "ms_seg",
@@ -180,10 +183,10 @@
     "pec_seguranca_guarda_civil_policias_municipais_23",
     "moraes_suspeito_interferencia_24"
    ],
-   "verificada": "2026-11-25-07h",
-   "fato_novo": false,
-   "ultimo_fato": "24/11: relatório da PF cita tentativas de aproximação de Vorcaro com o ministro Mendonça; Moraes se declara suspeito em inquérito sobre interferência estrangeira. (Sem fato novo na triagem das 19h de 24/11.) (Sem fato novo na triagem das 7h de 25/11.)",
-   "proximo": "Regulamentação e promulgação da PEC."
+   "verificada": "2026-11-25-15h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: Moraes determina a destruição dos passaportes de Filipe Martins, condenado no caso do golpe.",
+   "proximo": "Execução da decisão e demais processos ligados ao golpe."
   },
   {
    "id": "escala-6x1",
@@ -210,6 +213,8 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "eua_secao301_capacidade_25",
+    "diesel_subvencao_25",
     "petrobras_dividendos_15_6_24",
     "fazenda_pib_inflacao_2027_24",
     "keeta_pizza_hut_19",
@@ -280,10 +285,10 @@
     "black_friday_recorde_cnc_endividamento_24",
     "mercado_pec_despesas_obrigatorias_25"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: mercado vê primeiro passo no plano Moretti e cobra segunda etapa; ações da Braskem caem 14%.",
-   "proximo": "PEC às 15h; IPCA-15 na quinta (26)."
+   "ultimo_fato": "25/11: Moretti diz que a subvenção ao diesel será renovada por mais 30 dias (R$ 10,5 bi por período); USTR propõe tarifas a Brasil, China, UE, Japão e Índia por excesso de capacidade.",
+   "proximo": "Renovação do subsídio até o fim de novembro e avanço da proposta de tarifas da Seção 301."
   },
   {
    "id": "eua-meio-mandato",
@@ -291,6 +296,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "eua_secao301_capacidade_25",
     "eua",
     "rubio_gabinete",
     "eua_meio_mandato_placar",
@@ -304,10 +310,10 @@
     "eua_delta_atlanta_atrasos_22",
     "eua_tarifas_china_ue_subsidios_25"
    ],
-   "verificada": "2026-11-25-07h",
+   "verificada": "2026-11-25-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: governo Trump prepara tarifas da Seção 301 contra China, UE e outras 14 economias; assessor de Trump para o Brasil deixa o cargo.",
-   "proximo": "Prazo do financiamento do governo em 12/12."
+   "ultimo_fato": "25/11: USTR propõe tarifas da Seção 301 a Brasil, China, UE, Japão e Índia; UE rejeita a justificativa de Washington.",
+   "proximo": "Consulta e decisão sobre a aplicação das tarifas da Seção 301."
   },
   {
    "id": "ucrania-paz",
@@ -382,13 +388,13 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-15h",
+   "achado": "25/11 (15h): sem fato de queda ou prisão de chefe de Estado nas capas lidas; Bolsonaro segue internado (boletim de 25/11)."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-15h",
+   "achado": "25/11 (15h): Argentina entrou em recessão técnica segundo o Indec, em notícia reproduzida pela CartaCapital; sem matéria nova nesta edição."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
@@ -412,13 +418,13 @@
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-15h",
+   "achado": "25/11 (15h): CCJ do Senado aprovou o projeto de fraude contábil (Agência Brasil); Alcolumbre recebeu a bancada feminina."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-15h",
+   "achado": "25/11 (15h): Moraes determinou a destruição dos passaportes de Filipe Martins; STF julga denúncia contra Van Hattem."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
@@ -427,13 +433,13 @@
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-15h",
+   "achado": "25/11 (15h): Moretti anuncia renovação da subvenção ao diesel; Trabuco aparece como opção para a Fazenda."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-25-07h",
-   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-25-15h",
+   "achado": "25/11 (15h): SP (Ubatuba e Barueri), DF (BRB) e NE (Serrita) cobertos; demais sub-regiões pendentes na passada 2."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
