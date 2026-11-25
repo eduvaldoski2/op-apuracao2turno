@@ -1,0 +1,27 @@
+// ED: regioes
+// KIND: N
+_N('go_alego_presidencia_loa_25', {ed:'regioes', reg:'co', k:'Regiões · Goiás', hora:'25/11', t:"Sucessão na Assembleia de Goiás passa pelo Palácio das Esmeraldas, e o Orçamento de 2027 deve ir a plenário em 14 ou 15 de dezembro", sub:"Issy Quinan, do MDB, lidera a disputa pela presidência da Alego, e Talles Barreto condiciona candidatura ao aval do governador Daniel Vilela e do ex-governador Ronaldo Caiado; proposta quer acabar com a reeleição na Mesa.", dado:{n:'1º/02/2027', l:'eleição da Mesa Diretora da Alego'}, resumo:"A eleição da Mesa da Assembleia Legislativa de Goiás está marcada para 1º de fevereiro de 2027, e Issy Quinan, do MDB, diz ter ao menos 22 apoios entre 41 deputados. O líder do governo, Talles Barreto, do União Brasil, afirma que a decisão depende do governador Daniel Vilela e do ex-governador Ronaldo Caiado e propõe acabar com a reeleição na Mesa. A Lei Orçamentária de 2027 deve ser votada na comissão em 10 de dezembro e em plenário em 14 ou 15.", fundo:`A disputa pela presidência da Assembleia Legislativa de Goiás (Alego) para 2027-2028 passa pelo Palácio das Esmeraldas, sede do governo. O líder do governo na Casa, Talles Barreto, do União Brasil, partido de centro-direita, diz que a escolha depende do governador Daniel Vilela, do MDB, partido de centro, e do ex-governador Ronaldo Caiado, do PSD, também de centro. A eleição da Mesa está marcada para 1º de fevereiro de 2027, informa O Hoje.
+
+## Um favorito e um grupo alternativo
+
+O deputado Issy Quinan, do MDB, é o nome mais forte. Ele afirma ter 22 apoios, contando o próprio voto, e o Jornal Opção cita estimativas entre 16 e 25 deputados em levantamento de 31 de outubro, com um parlamentar que projeta mais de 35 no fim do processo. São necessários 21 votos em uma Casa de 41 deputados, segundo O Hoje. Quinan tenta um acordo com dissidentes para evitar votação disputada, e disse que um entendimento sem disputa é "absolutamente viável". O jornal informa que parte da bancada do PT pode apoiá-lo, mas Quinan afirma que a bancada não comunicou isso oficialmente.
+
+Do outro lado está um grupo de dissidentes que articula candidatura alternativa. O Jornal Opção os chama de G6, com deputados do MDB, PP, União Brasil e Solidariedade, e aponta Virmondes Cruvinel, do União Brasil, como o nome mais forte do grupo. O Hoje traz uma lista de sete deputados, que inclui Talles Barreto. Três dos oito deputados ouvidos pelo Jornal Opção disseram que Quinan ficaria dois anos na presidência e Talles, os dois seguintes, num "acordo de cavalheiros". Talles, que está no quinto mandato, afirmou que só disputa com o aval de Vilela e de Caiado.
+
+## O fim da reeleição na Mesa
+
+Talles apresentou uma proposta de emenda à Constituição estadual que limita o comando da Alego a um único mandato de dois anos. Hoje o presidente pode ser reconduzido por mais dois, o que beneficiou o atual presidente, Bruno Peixoto, do União Brasil. Em reportagem de 17 de novembro, O Hoje registra que Talles diz que o governador é favorável ao fim da reeleição, que não há pressa para votar e que ainda não confirmou ter os votos necessários.
+
+## O Orçamento de 2027
+
+Na pauta financeira, o presidente da Comissão de Tributação, Finanças e Orçamento, deputado Thiago Albernaz, do MDB, disse ao Jornal Opção na terça (24) que há calendário aprovado para votar a Lei Orçamentária Anual, que define receitas e despesas do Estado, na comissão em 10 de dezembro, com ida ao plenário "por volta do dia 14 ou 15".
+
+## Anápolis e a Infraero
+
+Em outra frente, a Agência Goiana de Infraestrutura e Transportes (Goinfra) informou ao Jornal Opção que enviou ofício à Infraero para retomar a cessão do Aeroporto de Cargas de Anápolis. A recuperação ambiental da área, de 157,5 hectares, prevê investimento de R$ 37,5 milhões, com contenção de erosões, drenagem, desassoreamento e reconstrução da cabeceira da pista. Uma vistoria técnica em setembro apontou ajustes antes do recebimento da obra.
+
+## O que vem agora
+
+A comissão vota o orçamento em 10 de dezembro. A definição da chapa para a Mesa depende do retorno das negociações de Vilela e Caiado com a base. Os números de apoio citados são declarações dos próprios candidatos e de aliados, não contagens oficiais.
+
+NUMS 41|deputados na Alego;21|votos para eleger o presidente;22|apoios declarados por Issy Quinan;10/12|votação do orçamento na comissão`, fontes:[["O Hoje (Talles e Vilela)","https://ohoje.com/2026/11/17/talles-daniel-vilela-e-favoravel-ao-fim-da-reeleicao-na-presidencia-da-alego/"],["O Hoje (Issy Quinan)","https://ohoje.com/2026/11/05/issy-quinan-tenta-acordo-com-dissidentes-para-evitar-disputa-pela-presidencia-da-alego/"],["O Hoje (condição de Talles)","https://ohoje.com/2026/11/05/talles-barreto-condiciona-disputa-pela-presidencia-da-alego-a-apoio-de-caiado-e-daniel-vilela/"],["Jornal Opção (G6)","https://www.jornalopcao.com.br/ultimas-noticias/apesar-da-resistencia-do-g6-issy-quinan-esta-conquistando-o-apoio-da-maioria-dos-deputados-pra-presidir-a-assembleia-884689/"],["Jornal Opção (Talles)","https://www.jornalopcao.com.br/politica/talles-barreto-diz-que-eleicao-para-presidencia-da-alego-dependera-de-daniel-vilela-e-ronaldo-caiado-899690/"],["Jornal Opção (LOA)","https://www.jornalopcao.com.br/politica/loa-deve-ser-votada-em-plenario-entre-os-dias-14-e-15-de-dezembro-899705/"],["Jornal Opção (Aeroporto de Anápolis)","https://www.jornalopcao.com.br/infraestrutura/aeroporto-de-cargas-de-anapolis-esta-apto-a-ser-transferido-a-infraero-diz-goinfra-899658/"]]});

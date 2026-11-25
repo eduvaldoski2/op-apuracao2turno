@@ -1,0 +1,41 @@
+// ED: economia
+// KIND: N
+_N('mercado_pec_despesas_obrigatorias_25', {ed:'economia', k:'Economia · Contas públicas', hora:'25/11', t:"Mercado aprova o primeiro passo do plano Moretti, mas cobra a segunda etapa do ajuste; Lula reúne a equipe econômica hoje para definir a PEC sobre despesas obrigatórias", sub:"O dólar fechou a R$ 5,91 depois de tocar R$ 6, e o governo trabalha numa proposta de emenda à Constituição que mira pisos de saúde e educação, com impacto estimado em R$ 20 bilhões em 2027.", dado:{n:'R$ 5,91', l:'dólar na terça (24)'}, resumo:"A lei do ajuste fiscal, sancionada na terça (24) sem vetos, prevê economia de R$ 45,1 bilhões a R$ 56,1 bilhões em 2027, e o mercado a tratou como um começo, não como solução. O dólar recuou a R$ 5,91 com a notícia de uma segunda etapa, uma PEC sobre despesas obrigatórias. Lula reúne os ministros da área econômica às 15h desta quarta (25), no Palácio da Alvorada, para fixar o alcance do texto, que pode ser enviado ao Congresso na semana que vem.", fundo:`O presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) reúne nesta quarta-feira (25), às 15h, no Palácio da Alvorada, os ministros da equipe econômica para definir o alcance de uma proposta de emenda à Constituição (PEC) com novas medidas fiscais. O texto será a segunda etapa do ajuste, depois da lei complementar sancionada na terça (24), e terá como alvo as despesas obrigatórias, aquelas que o governo é obrigado a pagar por lei.
+
+## Um primeiro passo, na avaliação do mercado
+
+A Lei Complementar 239, publicada em edição extra do Diário Oficial da União, nasceu do projeto conhecido como plano Moretti, em referência ao ministro do Planejamento e Orçamento, Bruno Moretti. Lula sancionou o texto sem vetos menos de 24 horas depois da votação final na Câmara dos Deputados, que o aprovou por 353 votos a 128 na noite de segunda (23). O Senado havia concluído a análise na quarta (18). O governo estima economia de R$ 45,1 bilhões a R$ 56,1 bilhões em 2027.
+
+A lei amplia o corte de benefícios fiscais a empresas, de 10% para 20%, limita a 2% o crescimento real das despesas nos anos em que houver contingenciamento e restringe o uso de créditos tributários. Também reduz repasses da União a estados e municípios e trata dos supersalários do funcionalismo, informa a Agência Brasil. O texto permite ainda excluir da meta fiscal de 2026 os gastos com subsídio ao diesel.
+
+A reação do mercado financeiro foi de alívio com ressalvas. Economistas ouvidos pela Folha avaliam que o pacote é um avanço, mas não resolve o problema estrutural das contas, porque boa parte das medidas aumenta a arrecadação e pouco atinge as despesas obrigatórias, que crescem todo ano. O economista Eduardo Giannetti disse à BBC News Brasil que o plano está "muito aquém" do necessário. Para ele, o país corre "imenso risco" de recessão se o governo não apresentar até março de 2027 um programa que leve o superávit primário, o saldo das contas públicas sem os juros da dívida, a 1,5% a 2% do PIB até 2028.
+
+## O que a PEC deve conter
+
+Os contornos da proposta vêm de apuração da imprensa, porque o governo ainda não divulgou o texto. A Veja informa que a PEC deve dar mais flexibilidade aos pisos de saúde e educação, o gasto mínimo que a Constituição exige nessas áreas, levando em conta mudanças demográficas, e alinhar o crescimento das despesas obrigatórias ao ritmo previsto no arcabouço fiscal, o conjunto de regras que limita o avanço do gasto. Segundo a revista, mudanças no salário mínimo e nas aposentadorias não estão previstas.
+
+O impacto estimado é de R$ 20 bilhões no Orçamento de 2027, de acordo com a apuração da analista Isabel Mega, da CNN Brasil, reproduzida pela Rádio Itatiaia. O Estadão/Broadcast, que antecipou a reunião desta quarta, afirma que o presidente deu o aval ao envio da PEC antes da viagem que fez neste mês à Turquia, às Filipinas e à Espanha, e que o ministro da Fazenda, Dario Durigan, defende "medidas estruturais". Moretti disse, segundo o blog da jornalista Ana Flor, no g1, que a proposta trará mais "potência fiscal" para o cumprimento da meta.
+
+Na terça, Lula conversou sobre o tema com Durigan e com o ex-ministro da Fazenda Fernando Haddad, informa a Veja. O desenho final ainda passa pelo crivo do presidente, que na live de sábado (21) disse que o texto aprovado era um ajuste, não uma reforma.
+
+## Congresso e calendário
+
+O presidente da Câmara, Hugo Motta (Republicanos-PB, partido de direita), defendeu que o governo envie novas medidas ainda em 2026. Em plenário, disse que não propõe prejudicar os mais pobres, mas "condições de ter um ambiente econômico mais saudável", e que isso abriria caminho para juros e dólar menores, segundo o Estado de Minas. O presidente do Senado, Davi Alcolumbre (União-AP, partido de centro-direita), afirmou ver tempo para votar uma PEC neste ano se os líderes das bancadas concordarem, informa o Correio do Povo.
+
+O tempo é curto. O recesso parlamentar começa em 23 de dezembro, e o g1 contabiliza ao menos oito projetos econômicos do governo na fila, entre eles as Leis Orçamentárias de 2027, duas medidas provisórias e uma PEC ligada à reforma tributária. Uma PEC exige votação em dois turnos em cada Casa, com três quintos dos votos, o que torna o prazo apertado.
+
+## Os efeitos nos preços
+
+O dólar à vista fechou a R$ 5,9107 na terça, queda de 0,26%, um dia depois de passar de R$ 6 pela primeira vez desde abril de 2025. Na mínima, às 10h50, chegou a R$ 5,80. A Agência Brasil atribui a queda à sanção da lei e à expectativa de uma PEC sobre despesas obrigatórias. O Ibovespa, índice da bolsa brasileira, caiu 0,43%, a 164.089,81 pontos, pressionado pela Vale (queda de 5,51%) e pela Petrobras (1,82%), segundo o Money Times.
+
+O quadro de fundo é de perdas. Um mês depois da reeleição de Lula, o Ibovespa acumula queda de cerca de 20% desde o pico acima de 200 mil pontos, e as empresas listadas perderam mais de R$ 1 trilhão em valor de mercado, de acordo com levantamento da Economática para a Exame.
+
+## O que vem agora
+
+Depois da reunião no Alvorada, o governo deve anunciar o conteúdo da PEC e enviá-la ao Congresso, possivelmente na semana que vem. A Fazenda também publica o relatório bimestral de receitas e despesas, que atualiza o contingenciamento de R$ 16,1 bilhões do Orçamento de 2026.
+
+## O que ainda não está confirmado
+
+O texto da PEC, a data de envio e a estimativa de R$ 20 bilhões dependem da decisão do presidente. A reação dos partidos aos pisos de saúde e educação, tema sensível para a base do governo, também não está definida.
+
+NUMS R$ 56,1 bi|economia máxima em 2027;R$ 20 bi|impacto estimado da PEC;R$ 5,91|dólar no fechamento de terça;23 dez|início do recesso do Congresso`, fontes:[["Estadão (Lula reúne equipe para definir a PEC)","https://www.estadao.com.br/economia/lula-se-reune-com-equipe-economica-nesta-quarta-para-definir-escopo-de-pec-com-novas-medidas-fiscais/"],["Veja (PEC com aval de Lula)","https://veja.abril.com.br/politica/com-aval-de-lula-pec-com-novas-medidas-fiscais-pode-ser-enviada-ao-congresso-na-proxima-semana/"],["Folha (mercado vê avanço no plano Moretti)","https://www1.folha.uol.com.br/mercado/2026/11/mercado-ve-avanco-no-plano-moretti-mas-espera-novas-medidas-para-conter-gastos-de-forma-estrutual.shtml"],["Agência Brasil (entenda o pacote fiscal)","https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/entenda-o-pacote-fiscal-que-preve-ajuste-de-ate-r-56-bilhoes"],["BBC News Brasil (Giannetti)","https://www.bbc.com/portuguese/articles/c6d71g79qpe1o?at_medium=RSS&at_campaign=rss"],["Rádio Itatiaia (dólar e proposta sobre despesas)","https://www.itatiaia.com.br/economia/dolar-cai-lula-ibovespa-petrobras-vale-queda/"],["Estado de Minas (Motta)","https://www.em.com.br/politica/2026/11/7543470-motta-diz-que-congresso-esta-disposto-a-votar-mais-medidas-de-ajuste-fiscal.html"],["g1 (oito projetos econômicos)","https://g1.globo.com/politica/noticia/2026/11/25/governo-lula-tem-ao-menos-oito-projetos-economicos-para-aprovar-no-congresso-ate-o-fim-de-2026.ghtml"],["Money Times (fechamento de terça)","https://www.moneytimes.com.br/tempo-real-24-11-2026-davs/"],["Exame (Bolsa perde R$ 1 trilhão)","https://exame.com/invest/mercados/um-mes-apos-eleicao-de-lula-bolsa-perde-r-1-trilhao-veja-acoes-que-mais-subiram-e-cairam/"]]});

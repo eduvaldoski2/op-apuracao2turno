@@ -1,0 +1,1180 @@
+Manchetes de 2026-11-25T06:17:17.026-03:00 · 138/185 fontes · 1275 fatos distintos · 0 já cobertos · 82 LACUNAS
+
+1. →ATUALIZAR ajuste_camara_20 [102 veículos; capa: O Globo, Agência Brasil, UOL, Correio Braziliense, Valor Econômico, Terra, Veja, O Tempo, GZH, Estado de Minas, Diário de Pernambuco, [AC] g1 AC, [AL] g1 AL, [AL] Tribuna Hoje, [AP] g1 AP, [AM] g1 AM, [
+   O Globo, g1, Agência Brasil, Agência Câmara, UOL, CNN Brasil, Metrópoles, Correio Braziliense, Valor Econômico, InfoMoney, BBC Brasil, DW Brasil, CartaCapital, Terra, Exame, Veja, Brasil de Fato, Intercept Brasil, O Tempo, GZH, Estado de Minas, Diário
+2. →ATUALIZAR pt_redes_fogo_amigo_ajuste_17_11 [62 veículos; capa: O Globo, g1, Veja, [MA] O Estado MA, [MT] Gazeta Digital, [MS] g1 MS, [MG] O Tempo, [MG] Itatiaia, [PA] g1 PA, [PA] O Liberal, [PA] Agência Pará, [PB] g1 PB, [PR] g1 PR, [PR] Gazeta do Pov
+   O Globo, Folha, g1, Correio Braziliense, Veja, Diário de Pernambuco, [MA] Imirante, [MA] O Estado MA, [MT] Gazeta Digital, [MT] Olhar Direto, [MS] g1 MS, [MS] Correio do Estado, [MG] g1 MG, [MG] O Tempo, [MG] Estado de Minas, [MG] Itatiaia, [PA] g1 PA, [PA
+3. →ATUALIZAR nvidia_campea_nacional_ia_trump_shenzhen_16_11 [10 veículos; capa: UOL, Valor Econômico, O Tempo, [MG] O Tempo] A reviravolta que fez Jensen Huang voltar ao comando da Nvidia após escândalo de traição e espionagem
+   Folha, g1, UOL, Correio Braziliense, Valor Econômico, BBC Brasil, DW Brasil, Veja, O Tempo, [MG] O Tempo · https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/jensen-huang-pede-desculpas-aos-funcionari
+4. →ATUALIZAR ajuste_fiscal_lula_nao_reforma_21 [9 veículos; capa: Folha, Estadão, Correio Braziliense, Valor Econômico, Veja, O Tempo] Mercado vê avanço no plano Moretti, mas espera novas medidas para conter gastos de forma estrutural Equipe econômica
+   Folha, Estadão, g1, CNN Brasil, Metrópoles, Correio Braziliense, Valor Econômico, Veja, O Tempo · https://www1.folha.uol.com.br/mercado/2026/11/mercado-ve-avanco-no-plano-moretti-mas-espera-novas-medidas-para-conter-gastos-de-forma-estrutual.shtml
+5. →ATUALIZAR papa_francisco_diario_24 [7 veículos; capa: O Globo, Estado de Minas] 'Sedução pagã', 'voz do demônio', 'Virgem me salvou': veja frases escritas pelo papa Francisco no diário em que relatou ter visto o diabo
+   O Globo, g1, Correio Braziliense, BBC Brasil, DW Brasil, Veja, Estado de Minas · https://oglobo.globo.com/mundo/noticia/2026/11/25/diario-de-francisco-revela-que-papa-se-via-perto-da-morte-desde-os-60-anos.ghtml
+6. →ATUALIZAR quirno_milei_desconvidado_posse_24 [7 veículos; capa: Correio Braziliense, Valor Econômico] BRASIL-ARGENTINA Lula decide vetar Javier Milei na posse, crava imprensa argentina O que se sabe e o que ainda não está definido sobre a posse de Lu
+   Folha, g1, Metrópoles, Correio Braziliense, Valor Econômico, BBC Brasil, Exame · https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/governo-lula-nao-deve-chamar-milei-para-posse.shtml
+7. →NOVA [6 veículos; capa: Folha, UOL, Terra] Miss Universo 2026 Porto-riquenha Jennifer Barreto, 27, ganha torneio em casa e é a primeira vencedora mãe e casada da história; brasileira fica no Top 30 - Reprodução/In
+   Folha, UOL, CNN Brasil, Terra, O Tempo, [AL] TNH1 · https://f5.folha.uol.com.br/colunistas/de-faixa-a-coroa/2026/11/miss-universo-2026-porto-riquenha-e-a-primeira-vencedora-mae-e-casada-da-historia.shtml
+8. →ATUALIZAR cartagena_refens_24 [6 veículos] Ref�ns s�o resgatados na Col�mbia ap�s for�as de seguran�a invadirem supermercado em Cartagena
+   O Globo, Folha, g1, UOL, CNN Brasil, Veja · https://oglobo.globo.com/mundo/noticia/2026/11/25/refens-sao-resgatados-apos-17-horas-de-sequestro-em-supermercado-na-colombia.ghtml
+9. →ATUALIZAR abin_faccoes_31_grupos_24 [6 veículos] Norte e Nordeste dependem mais do SUS; em Boa Vista, 94% usam unicamente a rede pública Levantamento mostra que cobertura dos planos de saúde é menor ao norte do país
+   Folha, g1, UOL, [AL] Gazeta de Alagoas, [AL] TNH1, [CE] O Povo · https://www1.folha.uol.com.br/equilibrioesaude/2026/11/norte-e-nordeste-dependem-mais-do-sus-em-boa-vista-94-da-populacao-usa-apenas-a-rede-publica.shtml
+10. →NOVA [5 veículos; capa: Valor Econômico] Aliado da família Bolsonaro, assessor de Trump para o Brasil deixa cargo no Departamento de Estado dos EUA
+   Folha, g1, UOL, Valor Econômico, [DF] Jornal de Brasília · https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/aliado-dos-bolsonaros-e-critico-de-moraes-deixa-departamento-de-estado-dos-eua.shtml
+11. →NOVA [4 veículos; capa: O Globo, Estado de Minas, [BA] Correio] Descontos de até 50% Quer viajar? Confira os melhores preços e promoções da Black Friday 2026
+   O Globo, Terra, Estado de Minas, [BA] Correio · https://oglobo.globo.com/economia/noticia/2026/11/25/quer-viajar-confira-os-melhores-precos-e-promocoes-da-black-friday-2026.ghtml
+12. →ATUALIZAR messias_stf_lula_reafirma_23 [4 veículos; capa: O Globo, Estadão] Política Coluna do Estadão Bastidores: STJ avalia sugerir a Lula lista quíntupla com nomes de 3 mulheres para vagas na Corte
+   O Globo, Estadão, g1, Brasil de Fato · https://oglobo.globo.com/blogs/bela-megale/post/2026/11/as-tres-mulheres-que-foram-tema-da-conversa-entre-lula-e-um-ministro-do-stf-sobre-vaga-na-corte.ghtml
+13. →ATUALIZAR escala_6x1_20 [4 veículos; capa: Estadão, Valor Econômico] Fim da escala 6x1: ministro recomenda que setores 'corram' para fechar acordo coletivo até dia 16 se quiserem escala diferente
+   Folha, Estadão, g1, Valor Econômico · https://www1.folha.uol.com.br/mercado/2026/11/ninguem-morre-se-fechar-comercio-aos-domingos-diz-ministro-sobre-fim-da-escala-6x1.shtml
+14. →NOVA [4 veículos; capa: Diário de Pernambuco] CLIMATIZAÇÃO Calor impulsiona vendas de ventiladores e ar-condicionado às vésperas da Black Friday em PE
+   Folha, UOL, Valor Econômico, Diário de Pernambuco · https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/ia-pode-ajudar-consumidor-em-compras-na-black-friday-veja-como-utilizar-a-ferramenta.shtml
+15. →ATUALIZAR quirno_milei_desconvidado_posse_24 [4 veículos; capa: Correio Braziliense] Governo Lula decide n�o enviar embaixador de volta � Argentina ap�s novo ataque de Milei
+   Folha, Estadão, g1, Correio Braziliense · https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/governo-lula-decide-nao-enviar-embaixador-de-volta-a-argentina-apos-novo-ataque-de-milei.shtml
+16. →ATUALIZAR mendonca_inss_soltura_24 [4 veículos; capa: O Tempo] Mendonça revoga prisão domiciliar de ex-'número 2' do INSS preso em operação contra fraudes
+   g1, Correio Braziliense, O Tempo, [DF] Metrópoles DF · https://g1.globo.com/politica/noticia/2026/11/24/mendonca-revoga-prisao-domiciliar-de-ex-numero-2-do-inss-preso-em-operacao-contra-fraudes.ghtml
+17. →NOVA [4 veículos] PIONEIRO Missão histórica levará primeiro cidadão estrangeiro à estação espacial da China
+   O Globo, UOL, CNN Brasil, Diário de Pernambuco · https://oglobo.globo.com/mundo/noticia/2026/11/25/missao-espacial-chinesa-shenzhou-24-decola-com-sucesso-para-estacao-espacial.ghtml
+18. →ATUALIZAR bolsonaro_obstrucao_intestinal_21 [4 veículos] Bolsonaro tem melhora em quadro de obstru��o intestinal, mas segue sem previs�o de alta
+   Folha, Agência Brasil, Correio Braziliense, Valor Econômico · https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/blogs/brasilia-hoje/2026/11/bolsonaro-tem-melhora-em-quadro-de-obstrucao-intestinal-mas-segue-sem-previsao-d
+19. →ATUALIZAR gta6_receita_recorde_21 [4 veículos] Petrobras buscar� outras empresas de etanol de milho ap�s compra de fatia na Neomille, diz ag�ncia
+   Folha, g1, Agência Brasil, Exame · https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/petrobras-buscara-outras-empresas-de-etanol-de-milho-apos-compra-de-fatia-na-neomille-diz-agencia.shtml
+20. →ATUALIZAR braskem_acordo_credores_us49bi_23 [4 veículos] Braskem chega a acordo preliminar com credores para reestruturar dívida bilionária
+   Folha, g1, Correio Braziliense, Valor Econômico · https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/acoes-da-braskem-desabam-mais-de-13-apos-acordo-com-credores.shtml
+21. →ATUALIZAR damares_visita_vorcaro_papudinha_23 [4 veículos] CASO MASTER Damares pede afastamento de Andrei após pedir visita a Vorcaro
+   Correio Braziliense, CartaCapital, Terra, [DF] Jornal de Brasília · https://www.correiobraziliense.com.br/politica/2026/11/7543367-damares-pede-afastamento-de-andrei-apos-pedir-visita-a-vorcaro.html
+22. →NOVA [3 veículos; capa: Correio Braziliense, Estado de Minas, [AL] Tribuna Hoje] Recurso do MP/RJ Engenheiros são condenados em 2ª instância por incêndio no Ninho do Urubu
+   Correio Braziliense, Estado de Minas, [AL] Tribuna Hoje · https://www.correiobraziliense.com.br/brasil/2026/11/7543681-justica-condena-engenheiros-a-8-anos-por-tragedia-no-ninho-do-urubu.html
+23. →ATUALIZAR sul_alerta_vermelho_640_cidades_24 [3 veículos; capa: Folha, UOL] Inmet mant�m alerta de perigo para tempestades em todo o estado de S�o Paulo nesta quarta (25)
+   Folha, Agência Brasil, UOL · https://www1.folha.uol.com.br/cotidiano/2026/11/inmet-mantem-alerta-de-perigo-para-tempestades-em-todo-o-estado-de-sao-paulo-nesta-quarta-25.shtml
+24. →ATUALIZAR mendonca_relatorio_20 [3 veículos; capa: g1, O Tempo] Fachin autoriza pai de Vorcaro a fazer exames fora do presídio na Grande BH
+   g1, CNN Brasil, O Tempo · https://g1.globo.com/mg/minas-gerais/noticia/2026/11/24/fachin-autoriza-pai-de-daniel-vorcaro-a-fazer-exames-fora-do-presidio-na-grande-bh.ghtml
+25. →ATUALIZAR rj_niteroi_br101_carreta_portico_24 [3 veículos; capa: Agência Brasil, Veja] Brasil Queda de árvore atinge cinco crianças em escola da zona leste de São Paulo
+   Agência Brasil, CNN Brasil, Veja · https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-11/queda-de-arvore-em-escola-publica-em-sp-deixa-cinco-pessoas-feridas
+26. →ATUALIZAR rj_chuva_forte_madrugada_previsao_23 [3 veículos; capa: GZH, Estado de Minas] Previsão do tempo Chuva diminui no RS nesta quarta-feira, mas ainda há alerta para temporais; saiba onde
+   UOL, GZH, Estado de Minas · https://tnonline.uol.com.br/noticias/vale-do-ivai/confira-a-previsao-do-tempo-para-ivaipora-nesta-quarta-feira-25-1176201
+27. →NOVA [3 veículos; capa: O Tempo, Estado de Minas] Homem é preso suspeito de matar sogro a facadas no Agreste de Pernambuco
+   Terra, O Tempo, Estado de Minas · https://www.terra.com.br/noticias/homem-e-preso-suspeito-de-matar-sogro-a-facadas-no-agreste-de-pernambuco,2e06d4391280e4784bef690cb4a3c1feggu3mqhd.html
+28. →NOVA [3 veículos; capa: Diário de Pernambuco, [PE] Diario de Pernambuco] Esplanada por Leandro Mazzini Levou um ‘não’!
+   Diário de Pernambuco, [CE] O Povo, [PE] Diario de Pernambuco · https://www.diariodepernambuco.com.br/colunas/esplanada/2026/11/11729796-levou-um-nao.html
+29. →ATUALIZAR comparato_morre_24 [3 veículos; capa: O Globo] Lula comparece em velório do jurista Fábio Konder Comparato em São Paulo
+   O Globo, Estadão, Terra · https://oglobo.globo.com/blogs/bernardo-mello-franco/coluna/2026/11/no-brasil-todo-poder-emana-dos-ricos-ensinou-fabio-konder-comparato.ghtml
+30. →ATUALIZAR stf_gilmar_sigilo_relatorio_pf_ministros_23 [3 veículos; capa: g1] Nunes Marques é definido relator de pedido de Vorcaro para retirar caso Master do gabinete da presidência do STF
+   O Globo, Folha, g1 · https://oglobo.globo.com/politica/noticia/2026/11/25/ministros-do-stf-pressionam-por-nova-distribuicao-de-pedido-de-vorcaro-sobre-relatoria-do-master-entregue-a-nunes-marques.ghtml
+31. →ATUALIZAR nhs_ia_cancer_mama_24 [3 veículos; capa: Agência Brasil] Anvisa autoriza medicamento que pode ampliar o tratamento de câncer de mama agressivo Biossimilar do pertuzumabe pode reforçar combate ao tumor do tipo HER2-positivo
+   Folha, Agência Brasil, Correio Braziliense · https://www1.folha.uol.com.br/equilibrioesaude/2026/11/anvisa-aprova-remedio-que-pode-ampliar-tratamento-de-cancer-de-mama-agressivo.shtml
+32. →NOVA [3 veículos; capa: Estado de Minas] Atualiza��o do WhatsApp traz figurinhas com som; veja como funciona
+   Folha, g1, Estado de Minas · https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/tec/2026/11/atualizacao-do-whatsapp-traz-figurinhas-com-som-veja-como-funciona.shtml
+33. →ATUALIZAR zambelli_arquivamento_19 [3 veículos; capa: Agência Brasil] Moraes rejeita pedido da defesa de Zambelli para descontar de pena da ex-deputada tempo que ela ficou presa na Itália
+   g1, Agência Brasil, Terra · https://g1.globo.com/politica/noticia/2026/11/24/moraes-rejeita-pedido-da-defesa-de-zambelli-para-descontar-de-pena-da-ex-deputada-tempo-que-ela-ficou-presa-na-italia.ghtml
+34. →ATUALIZAR ue_imposto_big_techs_21 [3 veículos; capa: Agência Brasil] Projeto de regulação das big techs será votado na próxima semana
+   Agência Brasil, CartaCapital, Terra · https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/projeto-de-regulacao-das-big-techs-sera-votado-na-proxima-semana
+35. →ATUALIZAR inss_13o_novos_beneficiarios_24 [3 veículos; capa: Agência Brasil] Economia INSS começa a pagar décimo terceiro salário nesta terça-feira (24)
+   Agência Brasil, Valor Econômico, [AC] A Gazeta do Acre · https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/inss-comeca-pagar-decimo-terceiro-salario-nesta-terca-feira-24
+36. →ATUALIZAR paraguai [3 veículos; capa: Terra] MP do Paraguai pede ampliação das acusações contra ex-presidente Santiago Peña
+   CartaCapital, Terra, [DF] Jornal de Brasília · https://www.cartacapital.com.br/mundo/mp-do-paraguai-pede-ampliacao-das-acusacoes-contra-ex-presidente-santiago-pena/
+37. →NOVA [3 veículos; capa: Estado de Minas] 'É sobre Sandy, Junior e o público': como dupla prepara retorno aos palcos
+   Exame, Estado de Minas, [AC] ac24horas · https://exame.com/pop/e-sobre-sandy-junior-e-o-publico-como-dupla-prepara-retorno-aos-palcos/
+38. →NOVA [3 veículos] São Paulo tem novas regras para tráfego de helicópteros e aviões a partir desta quinta (26); veja Regra muda normas para o Campo de Marte e detalha trechos de passagem ob
+   O Globo, Folha, [BA] g1 BA · https://oglobo.globo.com/brasil/sao-paulo/noticia/2026/11/25/proibicao-de-voos-panoramicos-no-cristo-e-mudancas-no-campo-de-marte-as-novas-regras-para-helicopteros-em-rio-e-sp.ghtml
+39. →ATUALIZAR anthropic_estreia_20 [3 veículos] Anthropic fecha abaixo do preço do IPO pela primeira vez Investidores continuam cautelosos com caso da Nvidia e possível alta de juros nos EUA
+   Folha, g1, Veja · https://c-level.folha.uol.com.br/negocios/2026/11/anthropic-fecha-abaixo-do-preco-do-ipo-pela-primeira-vez-com-desaceleracao-de-acoes-de-tecnologia.shtml
+40. →ATUALIZAR am_exercito_skunk_sao_gabriel_jaguarete_24 [3 veículos] Venezuela divulga quadro macroeconômico e estima dívida em US$ 237,5 bilhões
+   Folha, Valor Econômico, Veja · https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/venezuela-divulga-plano-economico-e-estima-divida-em-us-2375-bilhoes.shtml
+
+== AC
+  [g1 AC] Professor de 78 anos morre após sofrer choque elétrico ao trocar fiação de casa no Acre
+  [g1 AC] Motorista perde controle de carro e morre após capotar próximo ao Aeroporto de Rio Branco
+  [g1 AC] Sessão na Câmara de Vereadores é cancelada por falta de energia em cidade no Acre
+  [g1 AC] Estudante de enfermagem é achada morta ao lado da filha de 1 mês no Acre
+  [g1 AC] VÍDEOS: Jornal do Acre 2ª Edição desta terça-feira, 24 de novembro de 2026
+  [g1 AC] Escola do AC pede que alunos levem merenda após falta de proteínas; Educação diz que deve enviar alimentos
+  [g1 AC] Família se despede de bióloga morta em acidente no AC e cobra esclarecimentos: 'Descaso'
+  [g1 AC] Carro fez conversão proibida e atingiu motocicleta com primas
+  [g1 AC] Vítima estava noiva e ia se casar em fevereiro
+  [ac24horas] Campeonato Estadual Sub-15 terá duelos eliminatórios no Tonicão e na Arena
+  [ac24horas] Vítima de Carminha em Avenida Brasil vê caminho para perdão em continuação
+  [ac24horas] Por Você: Aroldo aparece de surpresa para os filhos e estraga momento especial
+  [ac24horas] Lá na Minha Terra: Pedido de casamento de Raimundo termina em briga com Lina
+  [ac24horas] Independência vai enfrentar o Internacional na 1ª fase da Copa São Paulo
+  [ac24horas] Ministério da Saúde destina mais de R$ 1,5 milhão a hospitais do Acre
+  [ac24horas] MPF defende extinção de ação que tenta impedir João Marcos Luz de assumir vaga na Câmara de Rio Branco
+  [ac24horas] Assermurb faz 6 no Náuas e encaminha vaga na decisão do Estadual
+  [ac24horas] Operação Papai Noel reforça policiamento nas áreas comerciais de Cruzeiro do Sul
+  [ac24horas] Segurança identifica quatro suspeitos de matar motorista de aplicativo no Acre
+  [ac24horas] Caminhão-baú fica preso em portal e danifica estrutura em Tarauacá
+  [ac24horas] Polícia Penal e Militar realizam operação integrada em Manoel Urbano
+  [A Gazeta do Acre] Superlua ilumina o céu de Rio Branco nesta terça-feira; veja fotos
+  [A Gazeta do Acre] Motoristas de aplicativo fecham Terminal Urbano de Rio Branco durante protesto e interrompem circulação de ônibus
+  [A Gazeta do Acre] Lendas urbanas, bairros tradicionais e memórias de Rio Branco são tema de palestra no Palácio da Justiça
+  [A Gazeta do Acre] Caravana de Natal da Coca-Cola passa por Rio Branco na próxima segunda-feira; confira o trajeto
+  [A Gazeta do Acre] Espetáculo teatral “O Organismo” ganha apresentação gratuita no Sesc Centro, em Rio Branco
+  [A Gazeta do Acre] Hospital Santa Juliana deve receber mais de R$ 900 mil do Ministério da Saúde para assistência obstétrica no Acre
+  [A Gazeta do Acre] MP apura demora na liberação do corpo de jovem morta em acidente de trânsito em Rio Branco
+  [A Gazeta do Acre] Assassinato de tenente da PM do Acre no Peru: o que se sabe e o que falta esclarecer cinco dias após o crime
+  [A Gazeta do Acre] Motoristas de aplicativo iniciam ato em frente à Havan após assassinato de colega em Rio Branco
+  [A Gazeta do Acre] Avô é condenado a 12 anos de prisão por estuprar a própria neta menor de 14 anos no Acre
+  [A Gazeta do Acre] Dono do hit “Modo Avião”, cantor Tiee tem show confirmado em Rio Branco para 2027
+  [A Gazeta do Acre] ‘Sedução pagã’, ‘voz do demônio’, ‘Virgem me salvou’: veja frases escritas pelo papa Francisco no diário em que relatou ter visto o diabo
+
+== AL
+  [g1 AL] TCE-AL elege novos dirigentes para o biênio 2027-2028; veja nomes
+  [g1 AL] Ossada é encontrada polícia suspeita que seja de homem desaparecido
+  [g1 AL] PF investiga desvio de recursos do Fundeb em Campestre
+  [g1 AL] Moradores bloqueiam trecho da AL-101 em protesto contra falta de água em Passo de Camaragibe
+  [g1 AL] VÍDEOS: Jornal da Manhã Alagoas de terça-feira, 24 de novembro de 2026
+  [g1 AL] Governo publica resultado final da prova discursiva de concurso do Detran; confira
+  [g1 AL] Baixa umidade do ar coloca três regiões de Alagoas em estado de atenção
+  [Gazeta de Alagoas] Vídeo: Dia D para a transição em Alagoas e a estrutura que JHC vai herdar
+  [Gazeta de Alagoas] Atlético-MG x Corinthians: Onde assistir ao jogo da 36ª rodada do Brasileirão
+  [Gazeta de Alagoas] PSG x Roma: onde assistir ao vivo, horário e prováveis escalações
+  [Gazeta de Alagoas] Sabah x Barcelona ao vivo: onde assistir, horário e prováveis escalações
+  [Gazeta de Alagoas] Transmissão ao vivo em português: onde assistir rodada tripla da NBA hoje
+  [Gazeta de Alagoas] 13ª Mostra de Cinema de Gostoso termina com recorde de público e anuncia premiados
+  [Gazeta de Alagoas] Festa da Medalha Milagrosa terá programação especial até domingo em Maceió
+  [Gazeta de Alagoas] Lotofácil tem ganhador de R$ 3,7 milhões; veja os números sorteados
+  [Gazeta de Alagoas] Blade Runner 2099 estreia nesta quarta com os oito episódios de uma vez
+  [Gazeta de Alagoas] Aposta de Alagoas ganha R$ 38 mil na Mega-Sena; veja os números sorteados
+  [Gazeta de Alagoas] Fachin autoriza pai de Vorcaro a sair da prisão para fazer exames
+  [Gazeta de Alagoas] Grupos da Copinha são divulgados; veja os adversários dos clubes de Alagoas
+  [TNH1] Horóscopo do dia: previsão para os 12 signos em 25/11/2026
+  [TNH1] Você já experimentou suco de batata-doce com maçã? Saiba para que serve e como preparar
+  [TNH1] Onde viviam os dinossauros do Brasil? Veja lista com as espécies descobertas no país
+  [TNH1] 'Benjamin Franklin' é preso nos EUA após policiais reconhecerem suspeito foragido
+  [TNH1] Zezé Di Camargo pede para que Chitãozinho e Xororó repensem aposentadoria
+  [TNH1] Ofertas Black da Amazon: Galaxy Book4 da Samsung com 40% de desconto
+  [TNH1] Abin mapeia 31 organizações criminosas no Brasil; PCC foca no exterior e CV avança no Norte e Nordeste
+  [TNH1] CCJ realiza sabatina com indicados para a diretoria da Arsal
+  [TNH1] Moraes nega diminuir pena de Carla Zambelli
+  [TNH1] 5 filmes de Natal para assistir em família e entrar no clima das festas
+  [TNH1] Prime Video anuncia quarta temporada de 'O Senhor dos Anéis: Os Anéis de Poder'
+  [TNH1] Verão chegando: 8 exercícios para manter o corpo ativo nos dias quentes
+  [Tribuna Hoje] Aposta de Junqueiro acerta a quina da Mega-Sena e leva R$ 38,1 mil
+  [Tribuna Hoje] Ministério da Saúde destina R$ 4,2 milhões para maternidades de hospitais filantrópicos de Alagoas
+  [Tribuna Hoje] Alta no endividamento e melhora no consumo marcam mês de outubro em Maceió
+  [Tribuna Hoje] Polícia Civil cumpre mandado de prisão contra investigado por extorsão em Marechal Deodoro
+  [Tribuna Hoje] Município de Maceió deverá iniciar pagamento do Aluguel Maria da Penha até março de 2027
+  [Tribuna Hoje] Sorteio CRB, CSA e CSE conhecem adversários na fase de grupos da Copinha
+  [Tribuna Hoje] Presentes Adote uma carta até 10 de dezembro e participe da campanha de Natal Ufal Solidária
+  [Tribuna Hoje] 25 de novembro Confira aqui a Publicidade Legal do jornal Tribuna Independente desta quarta-feira
+  [Tribuna Hoje] 9 horas Câmara de Maceió realiza audiência em 2 de dezembro para discutir orçamento de 2027
+  [Tribuna Hoje] Programa Gás do Povo completa um ano com 403,6 mil famílias beneficiárias em Alagoas
+  [Tribuna Hoje] 24 a 30 de novembro Feira de Flores de Holambra chega a Arapiraca com mais de 200 espécies e preços a partir de R$ 5
+  [Tribuna Hoje] Confirmação Polícia Científica realizará exames para identificar ossada encontrada em Paripueira
+
+== AM
+  [g1 AM] Parintins tem a gasolina mais cara do Brasil, segundo ANP; outras três cidades amazônicas estão no top 10
+  [g1 AM] Empresa anuncia suspensão da merenda escolar em 52 escolas estaduais do AM a partir de quarta-feira
+  [g1 AM] Reciclar garrafas PET pode gerar desconto na passagem de ônibus em Manaus
+  [g1 AM] Padrasto é preso suspeito de abusar de adolescente após carta de socorro em escola
+  [g1 AM] Ufam e UEA suspendem aulas presenciais em Manaus por piora na qualidade do ar; escolas do interior também param
+  [g1 AM] Orçamento de Manaus para 2027 terá R$ 217,7 milhões em emendas; vereadores propõem armas para Guarda e auxílio para vítimas de violência
+  [g1 AM] Homem é flagrado dormindo no telhado de escola estadual na Zona Oeste de Manaus; VÍDEO
+  [A Crítica] Moraes se declara suspeito em ação sobre interferência nas eleições
+  [A Crítica] Oposição questiona gastos com shows internacionais na posse de Lula
+  [A Crítica] Arrecadação federal atinge R$ 294 bilhões e bate recorde em outubro
+  [A Crítica] MC Ryan SP tem bens bloqueados pela PF em esquema de R$ 4,3 bilhões
+  [A Crítica] Polícia procura suspeito de ferir três pessoas com garrafa em Manaus
+  [A Crítica] Mulher é presa por tentar matar vizinho a facadas no Coroado, em Manaus
+  [A Crítica] Homem é preso suspeito de matar e incendiar ex-enteado em São Gonçalo
+  [A Crítica] Polícia Militar resgata casal mantido preso em porta-malas em SP
+  [A Crítica] Operação apura compra irregular de créditos judiciais em SC e no RS
+  [A Crítica] Homem atropela namorado da ex e cunhada em Júlio Mesquita (SP)
+
+== AP
+  [g1 AP] Francês é preso suspeito de manter mulher em cárcere privado em hotel de Oiapoque
+  [g1 AP] Compras de Natal devem movimentar R$ 49 milhões em Macapá
+  [g1 AP] Veja como consultar os locais de prova do concurso de Governança e Gestão Estratégica do Amapá
+  [g1 AP] Incêndio em lixão de Oiapoque é controlado após quase um mês
+  [g1 AP] Circuito de Oportunidades oferece 700 vagas de emprego em Macapá
+  [g1 AP] Reveja os vídeos mais recentes da Rede Amazônica
+  [g1 AP] Notícias do momento e da sua região: baixe o app do g1
+  [Seles Nafes] 4 vereadores são afastados e PF bloqueia R$ 53 milhões
+  [Seles Nafes] Ciclistas encaram a Trilha dos Flamingos para chegar ao Lago do Bom Nome
+  [Seles Nafes] Morre Zoe, bebê que mobilizou uma corrente do bem agora precisa de ajuda para ser sepultada
+  [Seles Nafes] Universidade federal abre 57 vagas com salários de até R$ 13,7 mil
+  [Seles Nafes] Clécio quer encerrar mandato com novo HE em funcionamento
+  [Seles Nafes] Hóspede mantida trancada por homem dentro de quarto é libertada após pedidos de socorro
+  [Seles Nafes] “Quero ser esse herói na vida de alguém”: jovem salvo por bombeiro está prestes a entrar na mesma corporação no AP
+  [Seles Nafes] Com 3 reservatórios de petróleo em apenas 1 poço no Amapá, Petrobras anuncia investimento bilionário
+  [Seles Nafes] Piscicultura e empreendedorismo levam prefeito de Tartarugalzinho a Portugal
+  [Seles Nafes] “Passei o dia bebendo água”: diz vencedor de concurso que tomou 4 litros de açaí
+  [Diário do Amapá] Mineração e Capital
+  [Diário do Amapá] Prazo para manifestação
+  [Diário do Amapá] Habilita Amapá prevê alcançar dez mil beneficiários até o fim do ano
+  [Diário do Amapá] Gás do Povo completa um ano com 87,4 mil famílias beneficiárias no Amapá
+  [Diário do Amapá] Equipes de transição do Governo do Amapá fazem primeira reunião de alinhamento
+  [Diário do Amapá] Câmara aprova proposições e encaminha demandas nos bairros de Macapá
+  [Diário do Amapá] Levou um ‘não’!
+  [Diário do Amapá] Equipes de transição do Governo do Amapá fazem primeira reunião de alinhamento
+  [Diário do Amapá] Amapaense Liandra Costa conquista bronze no Mundial de Jiu-Jitsu em Abu Dhabi
+  [Diário do Amapá] Denúncia anônima leva polícia até pousada e adolescente é apreendida com drogas em Calçoene
+
+== BA
+  [g1 BA] Homem morre após ser atingido por garrafada na cabeça durante confusão
+  [g1 BA] Instituto de Cegos da Bahia pede doações para não fechar as portas
+  [g1 BA] CIEE oferece mais de 3,6 mil vagas de estágio e aprendizagem na Bahia
+  [g1 BA] Ex-vice-prefeito é condenado a 30 anos de prisão por mandar matar prefeito
+  [g1 BA] Rede Bahia promove 9ª edição do Natal do Bem em todo estado
+  [g1 BA] Renovação de matrícula da rede estadual da Bahia termina na sexta
+  [g1 BA] Vídeos do g1 e TV Bahia - terça-feira, 24 de novembro de 2026
+  [g1 BA (feed)] Carro bate em moto de entrega de gás na Av. Garibaldi e deixa o trânsito lento
+  [g1 BA (feed)] Paciente do Dr. Bumbum no Rio faz cirurgia para corrigir procedimento e relata ameaças
+  [g1 BA (feed)] Paulinho da Viola se apresenta com a filha no Teatro Castro Alves, em Salvador
+  [g1 BA (feed)] Claudette Soares e Ayrton Montarroyos se apresentam em Salvador com o show 'E então'
+  [g1 BA (feed)] Bahia Rural ensina a fazer receita de 'estrogobode', estrogonofe com carne de bode; veja vídeo
+  [g1 BA (feed)] Ingressos para o Festival de Inverno Bahia 2018 têm virada de preços no domingo
+  [g1 BA (feed)] Agenda cultural: Já sabe o que fazer no fim de semana? G1 lista dicas em Salvador
+  [g1 BA (feed)] Vitor Kley, Jammil e Pedro Pondé se apresentam em agosto no Armazém Hall, em Vilas do Atlântico
+  [g1 BA (feed)] Carga de eletrônicos roubada em Sergipe é recuperada pela PM na Bahia
+  [g1 BA (feed)] Acidente deixa trânsito lento na Avenida Luís Eduardo Magalhães, em Salvador
+  [g1 BA (feed)] Engavetamento entre quatro veículos deixa duas pessoas feridas na Via Regional, em Salvador
+  [g1 BA (feed)] Semáforos apagados alteram tráfego de veículos no cruzamento do Lucaia, em Salvador
+  [Correio] TURISMO Dois destinos baianos estão entre os mais desejados para viagens com pontos e milhas
+  [Correio] COMPRAS Cuidado com as ofertas imperdíveis da Black Friday
+  [Correio] TRABALHO Mutirões oferecem mais de 1,6 mil oportunidades de emprego na Bahia
+  [Correio] SHOW EM SALVADOR Adriana Calcanhotto e Arnaldo Antunes anunciam turnê conjunta
+  [Correio] MITOS E VERDADES Azeite extravirgem pode ir ao fogo? Confira 5 dúvidas comuns
+  [Correio] ALERTA Choque anafilático: entenda como um medicamento já utilizado pode provocar reação grave
+  [Correio] VISÃO Enxergar chuviscos o tempo todo pode ser sinal de uma condição neurológica
+  [Correio] NOVA PROFISSÃO? Ex-âncora do SBT deixa jornalismo e anuncia carreira em app de conteúdo adulto
+  [Correio] PATERNIDADE Aos 94 anos, Stênio Garcia descobre filho fora do casamento na Bahia e toma atitude
+  [Correio] Aeroporto de Salvador Oito passageiros são presos com 15 kg de cocaína no corpo e em bagagens
+  [Correio] BAHIA Casal de idosos é investigado por agiotagem após empresária pagar mais de R$ 12 mil em juros de empréstimo
+  [Correio] NOVIDADES WhatsApp começa a liberar figurinhas com áudio e surpreende usuários; veja como funciona
+  [A Tarde] ECONOMIA Ajuste fiscal: veja o que muda com nova lei e impactos para o país
+  [A Tarde] SALVADOR Carnaval na Barra vira alvo de investigação do Ministério Público Abertura do inquérito ocorre após uma solicitação da Associação d
+  [A Tarde] BRASIL Bancos vão poder bloquear contas de clientes com dívidas
+  [A Tarde] BRASIL Operadora encerra aluguel de patinetes elétricos após 2 anos
+  [A Tarde] BRASIL Caminhoneiros paralisam atividades por impasse em plano de saúde
+  [A Tarde] POLÍTICA & MEMÓRIA Roberto Santos, a trajetória de um intelectual no Palácio de Ondina
+  [A Tarde] CINEINSITE Nova minissérie viciante no TOP 10 da Netflix para sua quarta (25/11)
+  [A Tarde] E.C.BAHIA Rogério Ceni é especulado para assumir o Flamengo em 2027
+  [A Tarde] SALVADOR Prefeitura de Salvador decreta feriadão de 4 dias; veja quem pode aproveitar
+  [A Tarde] ESPORTES Guardiola revela desejo de treinar o Bahia: "Não sei se tem muito dinheiro para pagar"
+  [A Tarde] POLÍTICA Brasil decide não enviar embaixador de volta à Argentina após crise com Milei
+  [A Tarde] POLÍTICA Ex-major condenado pela morte de Marielle é demitido da PM do Rio
+  [Bahia Notícias] Bahia Notícias - Confira as últimas notícias de Salvador, da Bahia e do Brasil
+  [Bahia Notícias] Rowenna Brito se coloca à disposição para disputar Prefeitura de Salvador em 2028
+  [Bahia Notícias] Além das Manchetes: Como se proteger da agressividade do brasileiro comum
+  [Bahia Notícias] Conexões: O Brasil que queremos construir - economia, poder e sociedade
+  [Bahia Notícias] Entrevista Exclusiva: Ministra Rachel Barros detalha ações do MIR para a população negra
+  [Bahia Notícias] Com "várias frentes" atuando, Secult é cobiçada por diversos setores e "política" vira ingrediente de equação; entenda
+  [Bahia Notícias] declaração foi dada ao comentar o peso estratégico que a capital baiana terá para o campo progressista no próximo pleito
+  [Bahia Notícias] Sem "aceno direto a Lula", Léo Prates pode não ser cogitado pela oposição para disputar prefeitura de Salvador; entenda
+  [Bahia Notícias] MP-BA arquiva representação que tentava impedir show de Jorge & Mateus no Festival Virada Salvador 2027
+  [Bahia Notícias] Bruno Reis (União) defendeu a presença dos artistas
+  [Bahia Notícias] Prefeitura de Salvador avalia limitar corridas de rua após reclamações sobre trânsito
+  [Bahia Notícias] Reforma Casa Brasil: Bahia lidera no Nordeste com quase R$ 400 mi investidos pelo programa
+  [Metro1] Faça parte do canal da Metropole no WhatsApp
+  [Metro1] Busca da PF no celular de Vorcaro se limitou a nomes de ministros e excluiu anexos e imagens
+  [Metro1] Blocos afros e entidades culturais de Salvador poderão ter dívidas perdoadas
+  [Metro1] Após cobrança de MK, Sedur notifica Moura Dubeux por obra em antigo hotel de Patamares
+  [Metro1] Moradores de áreas restritas no Carnaval de Salvador têm até segunda para cadastrar veículos
+  [Metro1] Lula sanciona lei do ajuste fiscal que pode gerar economia de R$ 56 bilhões em 2027
+  [Metro1] Adriana Calcanhotto e Arnaldo Antunes anunciam show da turnê "Vice-Versa" em Salvador
+  [Metro1] O que você precisa saber para começar o dia
+  [Metro1] Homens armados fazem 25 reféns em supermercado na Colômbia
+  [Metro1] Aos Fatos: Quaest aponta cenários que favoreceram a vitória de Lula, e PF limita relatório do caso Master
+  [Metro1] Moraes autoriza advogado a visitar Jair Bolsonaro durante internação em Brasília
+  [Metro1] Justiça condena dois engenheiros pelo incêndio que matou 10 jovens no Ninho do Urubu
+
+== CE
+  [g1 CE] Foragido é preso na área turística de Fortaleza após ser identificado por tecnologia de reconhecimento facial
+  [g1 CE] Sobe para 221 o número de casos de mpox no Ceará em 2026; veja sintomas
+  [g1 CE] Cearense é diagnosticado com mpox e grava vídeo para alertar sobre doença
+  [g1 CE] Homem é condenado a 12 anos de prisão por morte de mulher em 1998
+  [g1 CE] Paulista está desaparecido há 5 dias após sair de casa em Aracati
+  [g1 CE] Mulher que teve casamento mais longevo do mundo morre aos 103 anos
+  [g1 CE] Julgamento de ex-PMs por assassinato de advogado em Fortaleza é adiado
+  [g1 CE] Operação prende 15 suspeitos de integrar o CV e de tráfico de drogas
+  [g1 CE (feed)] Maratona de sertanejo toma conta da Expocrato neste sábado
+  [g1 CE (feed)] Aplicativo da Expocrato dá acesso a conteúdos exclusivos do evento
+  [g1 CE (feed)] Feira de animais na Expocrato atrai curiosidade de visitantes
+  [g1 CE (feed)] Radialista morto em acidente no Beach Park é enterrado sob silêncio em Sorocaba
+  [g1 CE (feed)] Radialista morto em acidente no Beach Park é velado em Sorocaba
+  [g1 CE (feed)] Expocrato tem noite de rock e reggae nesta terça-feira
+  [g1 CE (feed)] 'Vai fazer muita falta', diz amigo de radialista que morreu em toboágua no Beach Park
+  [g1 CE (feed)] Expocrato conta com 194 policiais e delegacia móvel no evento
+  [g1 CE (feed)] Roda gigante é nova opção de diversão na Expocrato 2018
+  [g1 CE (feed)] Jovem do Ceará com síndrome grave realiza sonho de ser escritor e lança o primeiro livro ao sair de UTI; história sensibilizou editora no RJ
+  [g1 CE (feed)] Educador infantil suspeito de estuprar filha no DF é preso em Fortaleza
+  [g1 CE (feed)] Expocrato terá show 'piromusical' com queima de fogos sem barulho
+  [Diário do Nordeste] Esquartejamento e banho na rua para tirar sangue da vítima: 'Skidum' e mais 9 do CV são réus no Ceará
+  [Diário do Nordeste] 'Alex é fora de série', Mota elogiou novo técnico do Ceará em podcast
+  [Diário do Nordeste] Ceará é referência em modelo portuário, mas juros elevados freiam investimentos, diz MPor
+  [Diário do Nordeste] Porto de Fortaleza investe até R$ 11 milhões em boias para novos canais de acesso
+  [Diário do Nordeste] Flagrou algo? Envie para nós (85) 99969-0752
+  [Diário do Nordeste] Seduc-CE: gabarito oficial do concurso é divulgado; saiba como acessar
+  [Diário do Nordeste] 1 Capital tem 3 dos 6 bairros mais caros do Nordeste em 2026; veja ranking
+  [Diário do Nordeste] 2 'Alex é fora de série', Mota elogiou novo técnico do Ceará em podcast
+  [Diário do Nordeste] 3 Russos e chineses miram leilão de novo terminal de contêineres do Porto de Fortaleza
+  [Diário do Nordeste] 4 Ceará acerta contratação de Alex como treinador até o fim de 2027
+  [Diário do Nordeste] 5 Ceará registra 205 casos de Mpox confirmados em 2026; veja como se proteger
+  [O Povo] Evandro destaca Camilo e defende representação cearense no governo Lula 4
+  [O Povo] Um Safra se instala no Ceará de olho na alta renda
+  [O Povo] Entre Lula e o Senado, há espaço para a sociedade?
+  [O Povo] Ceará pede ampliação dos volumes de água da transposição do rio São Francisco
+  [O Povo] Quase 100 concursados da área da saúde são empossados em Fortaleza
+  [O Povo] Vertical | Irmã de Ciro fala em "eleição traumática" e nega retorno à gestão
+  [O Povo] Três municípios do Ceará registram mais de 39°C na terça-feira, 24
+  [O Povo] 3ª edição da revista Pause é lançada com homenagem a Hélio Rôla
+  [O Povo] Justiça determina consulta a indígenas em obra de Data Center
+  [O Povo] Em Fortaleza, padre Júlio Lancellotti recebe medalha e cobra bebedouros públicos
+  [O Povo] Whatsapp: app começa a liberar figurinhas com áudio; veja como fazer e enviar
+  [O Povo] Estátua da Liberdade da Havan está a caminho de Fortaleza; saiba mais
+
+== DF
+  [g1 DF] Mulher escapa de tentativa de estupro usando artes marciais; suspeito é preso
+  [g1 DF] Brasília prepara áreas para receber motorhomes, trailers e ônibus de caravanas
+  [g1 DF] GDF determina ponto facultativo nos dias de posse
+  [g1 DF] Suspeitos de operar bets ilegais são alvos de operação; casal ostentava vida de luxo
+  [g1 DF] Suspeito de esfaquear filho de 9 anos e ameaçar a esposa é procurado
+  [g1 DF] 'Doação de sangue pet' pode salvar vidas de cães e gatos em risco; veterinário tira dúvidas
+  [g1 DF] CCBB abre exposição em Brasília com saberes tradicionais e experiências de saúde indígena
+  [g1 DF] Previsão do tempo hoje para Brasília (DF): sol com algumas nuvens; chove rápido durante o dia e à noite
+  [g1 DF] Justiça derruba suspensão e restabelece regras para vale-refeição e alimentação; entenda
+  [g1 DF (feed)] Fiscalização nas redes sociais será desafio para eleições, avalia TRE-DF; leia entrevista
+  [g1 DF (feed)] Conheça a banda Belga, finalista do Brasília Independente 2018
+  [g1 DF (feed)] Evento 'Meu Eixão' leva oficinas, música e gastronomia à Asa Sul neste domingo
+  [g1 DF (feed)] Polícia prende em Jataí caseiro suspeito de matar e roubar professor de educação física do DF
+  [g1 DF (feed)] 'Médico fez a cabeça dela', diz filho de gerente de banco de MT que morreu após procedimento com Dr. Bumbum
+  [g1 DF (feed)] Corpo de gerente de banco que morreu após procedimento estético no RJ é enterrado em MT
+  [g1 DF (feed)] Professor é encontrado morto e tem picape roubada em fazenda de Cristalina
+  [g1 DF (feed)] Juiz do DF determina bloqueio de bens de Marcelo Crivella e de mais 8 investigados
+  [g1 DF (feed)] Conheça a dupla Marcello e Fabiano, finalista do Brasília Independente 2018
+  [g1 DF (feed)] Juiz do Distrito Federal rejeita pedido de liberdade de Eduardo Cunha
+  [g1 DF (feed)] Professor de escola pública do DF é selecionado para expor aquarelas no Museu do Louvre
+  [g1 DF (feed)] Ministério Público do DF recorre da absolvição de Geddel em acusação de obstrução de Justiça
+  [Metrópoles DF] Antes da fortuna, namorado da "Ninfeta das bets" ganhava vida com dancinhas
+  [Metrópoles DF] Corpos na Hilux: júri de réus por duplo homícídio é cancelado. Veja motivo
+  [Metrópoles DF] Em discurso racista, vereadora diz que jovem negro "tem alma branca"
+  [Metrópoles DF] Ibram, TJDFT, Metrô e mais. Veja os concursos no DF previstos para 2027
+  [Metrópoles DF] Valério Neves, ex-chefe de gabinete de Roriz, integrará o governo de Celina
+  [Metrópoles DF] Arsenal encontrado pela PCDF estava em mansão de preso na farra do INSS
+  [Metrópoles DF] Cafetina é presa pela PCDF por lucrar com bordel camuflado na Asa Norte
+  [Metrópoles DF] CLDF: secretário de Economia é convidado para detalhar contas públicas
+  [Metrópoles DF] Falha em tubulação reduz fornecimento de oxigênio em UTI neonatal do Hmib
+  [Metrópoles DF] Telefone 193 do CBMDF fica temporariamente fora do ar. Entenda
+  [Metrópoles DF] Ladrão rende e assalta adolescentes em pilotis de prédio na Asa Norte
+  [Metrópoles DF] PRF apreende 50 kg de cocaína escondidos em mesas de madeira em caminhão
+  [Jornal de Brasília] Grande júri acusa pai de Meghan Markle de posse de pornografia infantil
+  [Jornal de Brasília] Dois réus condenados a 8 anos de prisão pela morte de 10 promessas do Flamengo em incêndio
+  [Jornal de Brasília] Criminosos mantêm reféns há mais de dez horas em supermercado na Colômbia
+  [Jornal de Brasília] MP do Paraguai pede ampliação das acusações contra ex-presidente
+  [Jornal de Brasília] Disputa pela Casa Civil pode deixar Haddad fora do governo Lula 4
+  [Jornal de Brasília] Governo Lula libera R$ 3,4 bi do Orçamento após excluir mais despesas da meta de 2026
+  [Jornal de Brasília] Operação no DF identifica R$ 2 bilhões em movimentações fiscais irregulares
+  [Jornal de Brasília] MP denuncia ex-boxeador suspeito de espancar homem até a morte
+  [Jornal de Brasília] Relatório da Abin revela estratégias de PCC e Comando Vermelho para crescer no tráfico
+  [Jornal de Brasília] Damares quer ouvir Vorcaro, nem que seja na Papuda
+  [Jornal de Brasília] Modernização da Câmara
+  [Jornal de Brasília] Estefane ensaia voos na política nacional
+  [Agência Brasília] SECRETARIA DE ESTADO DA AGRICULTURA, ABASTECIMENTO E DESENVOLVIMENTO RURAL
+  [Agência Brasília] SECRETARIA DE ESTADO DE ATENDIMENTO À COMUNIDADE
+  [Agência Brasília] SECRETARIA DE ESTADO DE CULTURA E ECONOMIA CRIATIVA
+  [Agência Brasília] SECRETARIA DE ESTADO DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO
+  [Agência Brasília] SECRETARIA DE ESTADO DE ESPORTE E LAZER DO DISTRITO FEDERAL
+  [Agência Brasília] SECRETARIA DE DESENVOLVIMENTO URBANO E HABITAÇÃO
+  [Agência Brasília] SECRETARIA DE ESTADO DE JUSTIÇA E CIDADANIA
+  [Agência Brasília] SECRETARIA DE ESTADO DO MEIO AMBIENTE E PROTEÇÃO ANIMAL
+  [Agência Brasília] SECRETARIA DE ESTADO DE OBRAS E INFRAESTRUTURA
+  [Agência Brasília] SECRETARIA DE ESTADO DE FAMÍLIA E JUVENTUDE
+  [Agência Brasília] SECRETARIA DE ESTADO DE PROJETOS ESPECIAIS
+  [Agência Brasília] SECRETARIA DE ESTADO DE RELAÇÕES INSTITUCIONAIS
+
+== ES
+  [g1 ES] Chuvas intensas causam alagamentos e deixam desalojados no Norte e Noroeste do ES; veja vídeo
+  [g1 ES] No Sul, chuva provoca inundação, tira 500 pessoas de casa e faz 7 cidades decretarem situação de emergência
+  [g1 ES] Polícia apreende drogas, armas e R$ 20 mil escondidos e morador diz que foi ameaçado pelo tráfico
+  [g1 ES] Peixe-leão é capturado em navio do maior naufrágio planejado da América Latina em Guarapari
+  [g1 ES] Padrasto é preso após enteada de 13 anos achar montagens do próprio rosto em corpo nu, em Linhares
+  [g1 ES] Mulher é morta a pedradas em avenida movimentada de Cariacica
+  [g1 ES] Troca de mensagens, localização e encontro marcado: como mãe ajudou a prender suspeito de estuprar filha adolescente em moto aquática
+  [g1 ES] Suspeito se apresenta como CEO de loja de piscinas
+  [g1 ES (feed)] Homem é preso na BA apontado por estuprar filha de 11 anos e enteado; menina relatou que avó sabia dos abusos
+  [g1 ES (feed)] Homem é suspeito de matar mulher, atirar em dois enteados e se matar, no ES
+  [g1 ES (feed)] PM suspeito de abusar de menina de 11 anos presta depoimento em Colatina, ES
+  [g1 ES (feed)] Agenda Cultural: confira a programação de 20 a 22 de julho no ES
+  [g1 ES (feed)] Morador é indenizado no ES após descobrir que imóvel que comprou foi alugado para outra pessoa
+  [g1 ES (feed)] Músico sobrevive a acidente no Norte do ES com apenas um arranhão
+  [g1 ES (feed)] Quatro pessoas são presas por tortura e exploração sexual em Linhares, ES
+  [g1 ES (feed)] Ufes abre concursos para professor com salário de até R$ 9,5 mil
+  [g1 ES (feed)] Motoristas esperam por obra de asfaltamento na ES-446 desde 2012
+  [g1 ES (feed)] Jiboia é flagrada atravessando estrada no litoral de São Mateus, ES
+  [g1 ES (feed)] Preso acusado de estuprar a própria filha no ES aparece morto na cadeia
+  [g1 ES (feed)] Aluna vai prestar serviços à comunidade no ES após ofender professora em app de mensagens
+  [Folha Vitória] Projeto prevê gratuidade em eventos para pessoas com deficiência de baixa renda
+  [Folha Vitória] Turma fiel há mais de 20 anos celebra duplo aniversário com aparição especial de Toquinho
+  [Folha Vitória] RP reúne o ‘Pib da beleza’ em seis horas de Gypsy Folie, com cinco atrações
+  [Folha Vitória] Chaves, 40 anos no Brasil: exposição inédita no ES está no Shopping Vila Velha
+  [Folha Vitória] Crime brutal no ES: MPES denuncia sete pessoas por morte de homem carbonizado
+  [Folha Vitória] Helicóptero resgata pacientes em tratamento após enchente em Mimoso do Sul
+  [Folha Vitória] Suspeita de envolvimento no desaparecimento de lavrador no ES se entrega à polícia
+  [Folha Vitória] Quer jogar GTA 6? Veja quanto custa e tudo o que você precisa para começar
+  [Folha Vitória] Sensação térmica de 40°C em Vitória e mais chuva no ES: veja como fica o tempo
+  [Folha Vitória] Relatório da Abin revela estratégias de PCC e Comando Vermelho para crescer no tráfico
+  [Século Diário] Click here - to use the wp menu builder
+  [Século Diário] Prefeitura de Cachoeiro cria comissão especial para reforma administrativa
+  [Século Diário] Sindiupes cobra do governo estadual conclusão do Plano de Carreira do magistério
+  [Século Diário] A naturalização das urgências no Poder Legislativo
+  [Século Diário] ‘O YouTube paga para as pessoas odiarem as mulheres’
+  [Século Diário] ‘Bolsonaro é um estorvo para setores da direita’
+  [Século Diário] ‘Nosso saber é digno, não queremos frestas’
+  [Século Diário] ‘A receita do Estado subiu, mas a valorização do servidor desceu’
+  [Século Diário] ‘Tributo a Zumbi’: conheça a história do primeiro álbum do rap capixaba
+  [Século Diário] Três malucos num avião sem piloto e o mundo inteiro sem paraquedas
+  [Século Diário] A Santa Inquisição do gabarito do Enem
+  [Século Diário] Karla Coser afirma que assessor recebeu ameaça de lideranças comunitárias
+
+== GO
+  [g1 GO] Goiano morre na Bélgica enquanto dormia intoxicado com gás de aquecedor, diz família
+  [g1 GO] Jovem é preso suspeito de estuprar parente de 17 anos após deixá-la bêbada
+  [g1 GO] Mais de 30 adolescentes que atuavam no comércio de carnes em Goiás são afastados ao serem encontrados nas 'piores formas de trabalho infanti
+  [g1 GO] Água mineral Pura: fábrica que teve venda proibida envasa de garrafa a galão de 20 litros em Goiás
+  [g1 GO] Monitora de escola infantil é presa após denúncia de maus-tratos contra crianças; vídeo
+  [g1 GO] IFG abre inscrições de concurso para vagas com remuneração que pode chegar a R$ 10,3 mil
+  [g1 GO] Adolescente desaparece após mandar mensagem falando que estava indo para casa
+  [g1 GO (feed)] Caminhoneiro morre após bater em carreta e sair da pista na BR-452, em Itumbiara
+  [g1 GO (feed)] Arquitetos dão dicas de como aproveitar ambientes amplos em apartamentos de luxo, em Goiânia
+  [g1 GO (feed)] Funcionário público da Prefeitura de Palmas é preso suspeito de roubo a banco
+  [g1 GO (feed)] Veja receita de peixe na telha feito com pintado do Rio Araguaia, em Aruanã
+  [g1 GO (feed)] Ex-chefe diz que Dr. Bumbum se recusava a fazer residência médica
+  [g1 GO (feed)] Foragido, Dr. Bumbum foi indiciado ao menos 6 vezes pela polícia do DF
+  [g1 GO (feed)] Empreendimento residencial de alto padrão será construído no Setor Campinas, em Goiânia
+  [g1 GO (feed)] Ladrão empurra ciclista no meio da BR-060 para roubar bicicleta e vítima é atropelada, em Anápolis
+  [g1 GO (feed)] Anima compra centro de educação superior em Goiás por R$ 31,25 milhões
+  [g1 GO (feed)] Suspeito preso em shopping é investigado por assaltos a instituições financeiras no PI, MA e MT
+  [g1 GO (feed)] Acidente com caminhão de empresa terceirizada da Enel mata um funcionário e deixa cinco feridos na GO-237
+  [g1 GO (feed)] Marco Aurélio contraria decisão sobre prisão em 2ª instância ao conceder habeas corpus a ex-braço-direito de Beira-Mar
+  [Jornal Opção] Do pedido de ajuda à nota de pesar: o Brasil ainda não aprendeu a como proteger suas mulheres
+  [Jornal Opção] Projeto na Alego prevê cartão com acesso a serviços e rede de apoio para famílias de autistas; entenda
+  [Jornal Opção] Aeroporto de Cargas de Anápolis está apto a ser transferido à Infraero, diz Goinfra
+  [Jornal Opção] LOA deve ser votada em plenário entre os dias 14 e 15 de dezembro
+  [Jornal Opção] Talles Barreto diz que eleição para presidência da Alego dependerá de Daniel Vilela e Ronaldo Caiado
+  [Jornal Opção] 84,8% dos alunos da rede estadual de Goiás têm acesso à tecnologia, aponta pesquisa
+  [Jornal Opção] Gomide nega que disputará prefeitura de Anápolis em 2028
+  [Jornal Opção] Goiano de 21 anos usa aplicativo com IA para se preparar para o Ironman 70.3
+  [Jornal Opção] Sobe para 30 o número de deputados que apoiam Issy Quinan para a presidência da Alego; parlamentar diz que o processo ainda precisa ser “mat
+  [Jornal Opção] Mabel atribui vazamento no Cais Vila Nova a falha de manutenção
+  [Jornal Opção] De elevadores quebrados ao passe livre: TCM-GO apura barreiras enfrentadas por pessoas com deficiência no transporte coletivo da Grande Goiâ
+  [Jornal Opção] Sandy e Junior anunciam retorno aos palcos em 2027; veja detalhes e datas dos shows
+
+== MA
+  [g1 MA] Oito de dez municípios fiscalizados no MA ainda descartam lixo a céu aberto, aponta TCE
+  [g1 MA] Motorista fica preso às ferragens após carreta capotar na BR-135
+  [g1 MA] Condenado por estupro coletivo de mulher com deficiência é preso no MA
+  [g1 MA] Policiais militares controlam incêndio em casa e evitam explosão de botijão de gás no MA
+  [g1 MA] Reportagem da TV Mirante sobre o babaçu disputa prêmio nacional nesta quinta-feira (26)
+  [g1 MA] Mostra gratuita de cinema reúne filmes sobre identidade e cultura negra em São Luís
+  [g1 MA] Guarda municipal de folga flagra furto de portão e prende três homens em São Luís
+  [O Imparcial] Hospital da Ilha tem funcionamento integral liberado pelo MPMA
+  [O Imparcial] Pé-de-Meia Universitário: o que já foi anunciado e o que ainda não está regulamentado
+  [O Imparcial] Júri em Bacabal condena quatro réus; um pega 38 anos e 5 meses
+  [O Imparcial] Quilombo Frechal, em Mirinzal, é tombado como Patrimônio Cultural do Brasil
+  [O Imparcial] Governo do Rio demite major condenado por participação no assassinato de Marielle Franco
+  [O Imparcial] Moraes rejeita pedido para reduzir pena de Carla Zambelli
+  [O Imparcial] São Luís é segura para quem anda a pé?
+  [O Imparcial] Sancionado por Lula, novo ajuste fiscal prevê impacto de até R$ 56 bilhões no orçamento de 2027
+  [O Imparcial] Projeto Mini Bumba Meu Boi leva oficinas gratuitas de brinquedos de papel a escolas públicas da Grande São Luís
+  [O Imparcial] Policiais civis salvam bebê engasgada em São Luís
+  [O Imparcial] WhatsApp começa a liberar figurinhas com áudio e agendamento de mensagens
+  [O Imparcial] Coligação de Roseana Sarney tenta barrar diplomação de Lahésio Bonfim; ação pode mudar vagas do Senado
+  [Imirante] Tombamento Quilombo Frechal, no MA, é reconhecido como Patrimônio Cultural do Brasil pelo Iphan Localizado em Mirinzal, território quilombol
+  [Imirante] Lena Brandão anuncia saída da superintendência do Iphan no Maranhão
+  [Imirante] Foto: Reprodução / Poícia Civil do Maranhão .midia__credito{ display: none; } Assista ao vídeo Policiais civis salvam bebê engasgada em São 
+  [Imirante] Reprodução / TV Mirante .midia__credito{ display: none; } Descarte inadequado Auditoria aponta uso irregular de lixões a céu aberto no Maran
+  [Imirante] Foto: Sebrae/Divulgação .midia__credito{ display: none; } Prêmio Sebrae de Jornalismo Maranhão disputa final nacional do Prêmio Sebrae de Jo
+  [Imirante] Beach Tennis Divulgação / FBTM .midia__credito{ display: none; } Maranhão faz história e conquista 3º lugar no Brasileiro de Beach Tennis
+  [Imirante] Política Ricardo Stuckert / PR .midia__credito{ display: none; } Lula sanciona ajuste fiscal aprovado no Congresso Nacional
+  [Imirante] De olho em 2027 Maranhão Atlético reforça elenco com atacante ex-Grêmio e volante para 2027 Eliseu passou pelas categorias de base de Grêmio
+  [Imirante] Maranhão Atlético convoca eleição para o dia 30 de novembro
+  [Imirante] Economia Arrecadação federal atinge R$ 294 bilhões e bate recorde para outubro
+  [Imirante] Foto: Reprodução/Instagram .midia__credito{ display: none; } Viralizou Casal resgata lagartixa presa em fresta de concreto e vídeo viraliza 
+  [Imirante] Mãe dá à luz em frente de casa e mobiliza vizinhos no MA
+  [O Estado MA] Ronaldo Rocha .midia__credito{ display: none; } História O Estado: gratidão e saudade Ronaldo Rocha, repórter de Política, atuou por mais de
+  [O Estado MA] josé carlos .midia__credito{ display: none; } Nova Fase deste jornal O EstadoMA há 5 anos - em Alternativo
+  [O Estado MA] thiago bastos .midia__credito{ display: none; } Última página Para mim, não acabou... O EstadoMA há 5 anos - em Geral
+  [O Estado MA] riba cunha .midia__credito{ display: none; } Recordações Minha trajetória de 25 anos na grande escola Jornal O Estado do Maranhão O EstadoMA
+  [O Estado MA] capa joaquim haickel .midia__credito{ display: none; } Despedida Última edição O EstadoMA há 5 anos - em Alternativo
+  [O Estado MA] bruna e josé sarney .midia__credito{ display: none; } Depoimento Minha vida em O Estado O EstadoMA há 5 anos - em Alternativo
+  [O Estado MA] Benedito Buzar .midia__credito{ display: none; } Opinião O país e O Estado do Maranhão O EstadoMA há 5 anos - em Alternativo
+  [O Estado MA] brasil vai mudar .midia__credito{ display: none; } Lembranças A última edição O EstadoMA há 5 anos - em Alternativo
+  [O Estado MA] cabalau .midia__credito{ display: none; } Eternizado Fotografado na memória O EstadoMA há 5 anos - em Geral
+  [O Estado MA] selma figueiredo .midia__credito{ display: none; } Última edição Texto final O EstadoMA há 5 anos - em Geral
+  [O Estado MA] capa do jornal .midia__credito{ display: none; } Editorial Aos Nossos Leitores O EstadoMA há 5 anos - em Editorial
+  [O Estado MA] Câmara Federal .midia__credito{ display: none; } PEC 5/21 Saiba como cada deputado maranhense votou na PEC 5/21 Matéria foi rejeitada na noi
+
+== MG
+  [g1 MG] BH registra quase 13 mil alagamentos, inundações e deslizamentos em dez anos
+  [g1 MG] Quem era a mulher morta por sargento da PM reformado
+  [g1 MG] Vítima foi assassinada em salão de beleza dentro de casa
+  [g1 MG] Delegada investigada por emprestar viatura ao marido faz acordo com o MP
+  [g1 MG] Quem era 'Nego Gato', assassinado em adega de BH
+  [g1 MG] Justiça ordena internação de militar da Marinha suspeito de matar vizinho
+  [g1 MG] Polícia recolhe mais de mil animais em loja suspeita de maus-tratos
+  [g1 MG] Alemão encontrado morto dentro de casa: o que se sabe sobre o caso
+  [g1 MG (feed)] Governo de MG recorre contra decisão que determina pagamento integral aos professores no 5º dia útil
+  [g1 MG (feed)] Trinta e seis ônibus são incendiados em BH e Região Metropolitana de janeiro a julho, dizem empresas do transporte
+  [g1 MG (feed)] Travesti é julgada por matar rival asfixiada com alça da bolsa e marteladas em BH
+  [g1 MG (feed)] Acidente deixa mortos e feridos na BR-262 próximo a Nova Serrana; policiais estão entre as vítimas
+  [g1 MG (feed)] BHP é alvo de ação coletiva na Austrália por desastre de Mariana
+  [g1 MG (feed)] BR-381 é liberada 10 horas após acidente entre carreta e ônibus em MG
+  [g1 MG (feed)] Cantor sertanejo Amaraí morre aos 77 anos em Alfenas, MG
+  [g1 MG (feed)] Perícia feita no Inep indica fragilidades no processo de pontuação das medidas de provas do Enem 2016
+  [g1 MG (feed)] Artistas pintam tapumes e fazem mural no entorno da Praça da Liberdade, em BH
+  [g1 MG (feed)] Flanelinhas são detidos no entorno da Feira Hippie, em Belo Horizonte
+  [g1 MG (feed)] Acidente entre carreta e ônibus deixa um morto e dez feridos na BR-381, em MG
+  [g1 MG (feed)] Aeronave que transportava Anitta é interditada pela Anac em Belo Horizonte
+  [O Tempo] Delegada pagará 10 salários mais gasolina usada pelo marido em viatura
+  [O Tempo] Vozes pedindo sangue e beijo em corpo de empresária: Paola Stefany detalha morte de idosos
+  [O Tempo] Eduardo Azevedo defende ação de Damião contra usuários de drogas
+  [O Tempo] Negociação de Cleitinho com BYD tem produção de baterias para carros elétricos como prioridade em MG
+  [O Tempo] INVESTIMENTO --> Cleitinho dá passo importante para implantação da BYD em Minas
+  [O Tempo] DISPUTA ENTRE ESTADOS --> BYD coloca Minas em disputa por nova fábrica de R$ 1 bilhão no Brasil
+  [O Tempo] Cleitinho dá passo importante para implantação da BYD em Minas
+  [O Tempo] BYD coloca Minas em disputa por nova fábrica de R$ 1 bilhão no Brasil
+  [O Tempo] Moraes autoriza visita de advogado a Bolsonaro durante internação
+  [O Tempo] Bolsonaro tem melhora discreta, mas segue internado sem previsão de alta
+  [O Tempo] Economia da Argentina entra em recessão técnica após terceiro trimestre
+  [O Tempo] O Escudo das Américas: a armadilha de Tucídides invertida
+  [Estado de Minas] Guarda compartilhada de pets após a separação: entenda o que diz a nova lei
+  [Estado de Minas] Tecnologia ajuda setor de eventos a se preparar para a reforma tributária
+  [Estado de Minas] CONFIRA A CAPA DO ESTADO DE MINAS DO DIA 25/11/2026
+  [Estado de Minas] Saiba mais sobre o acordo que Cleitinho fechou com a BYD
+  [Estado de Minas] Vorcaro é candidato a peru da ceia de Natal do Supremo Tribunal Federal
+  [Estado de Minas] A janela de Lula: ajustes e STF
+  [Estado de Minas] Política fiscal
+  [Estado de Minas] Novembro Azul: homem não chora?
+  [Estado de Minas] "A Amazon é uma predadora", diz dono da Livraria da Travessa
+  [Estado de Minas] Monólogo de ator de BH vence Festival Nacional de Teatro de Juiz de Fora
+  [Estado de Minas] Cai quem quer?
+  [Estado de Minas] "O Quebra-nozes" com capoeira e dança urbana chega a BH
+  [Itatiaia] Lula sanciona pacote de ajuste fiscal que projeta economia de R$ 56 bilhões em 2027
+  [Itatiaia] Governo federal libera R$ 3,43 bi do Orçamento de 2026
+  [Itatiaia] Ajuste fiscal: o que muda nos gastos, impostos e benefícios
+  [Itatiaia] Dólar opera abaixo de R$ 5,90 com proposta do ajuste fiscal
+  [Itatiaia] Justiça mineira informará ao STF que pai de Vorcaro pode continuar tratamento na prisão
+  [Itatiaia] Oposição defende imunidade após votos para ação contra Van Hattem
+  [Itatiaia] Exclusivo: ‘Ano mais difícil da carreira’, zagueiro Fabrício Bruno avalia temporada pelo Cruzeiro
+  [Itatiaia] Pec evolui em recuperação de grave lesão e volta a treinar com elenco
+  [Itatiaia] Escalação do Atlético: Eduardo Domínguez deve mexer no time contra o Corinthians
+  [Itatiaia] Contra Corinthians, time alcançará marca expressiva na Arena MRV
+  [Itatiaia] Diarista suspeita de matar casal de idosos em BH detalha crime em audiência
+  [Itatiaia] Adolescentes são baleados e esfaqueados nos arredores de ginásio em Bocaiuva
+
+== MS
+  [g1 MS] Fotógrafo dá close em sucuri e revela efeito de arco-íris nas escamas da gigante do Pantanal
+  [g1 MS] Senar tem 510 vagas em cursos técnicos gratuitos; veja como se inscrever
+  [g1 MS] Bebê que nasceu com menos de 500g é batizada na UTI e mobiliza orações
+  [g1 MS] Ministra diz que foi ‘induzida ao erro’ e pede desculpas ao manter falência de frigorífico
+  [g1 MS] Morte de engenheira em acidente na BR-163 gera comoção entre profissionais de MS
+  [g1 MS] Mudança para escala 5x2 pode custar R$ 164 milhões e atrasar safra
+  [g1 MS] Concurso da Alems é homologado e nomeações devem começar em janeiro
+  [g1 MS (feed)] Homem morre ao cair de árvore quando tentava pegar pipa em MS
+  [g1 MS (feed)] Usuário de drogas é morto durante briga perto de casa em MS
+  [g1 MS (feed)] Maioria do armamento apreendido em MS seria levado para o RJ, diz PRF
+  [g1 MS (feed)] Mulher corre risco de perder bebê após ser agredida a socos e chutes
+  [g1 MS (feed)] PDT confirma candidatura de Odilon de Oliveira ao governo de MS
+  [g1 MS (feed)] PRF apreende em MS maconha que era levada para SP em carreta
+  [g1 MS (feed)] 'Levaram embora todo o nosso esforço' diz dona de moto roubada 3 dias após sair da concessionária
+  [g1 MS (feed)] Carro com placas do MT é encontrado com 202 quilos de maconha em MS
+  [g1 MS (feed)] Ponta Porã amanheceu gelada: Termômetros marcavam 6 graus
+  [g1 MS (feed)] Tempo muda em Ponta Porã e umidade do ar melhora em 50%
+  [g1 MS (feed)] Carga de bebidas furtada por estelionatários após golpe em MS é apreendida em MT
+  [g1 MS (feed)] Traficante abandona carro com 403 quilos de maconha em rodovia de MS
+  [Correio do Estado] ... Leia na coluna de hoje
+  [Correio do Estado] Ministério Público pede intervenção judicial no Corinthians por dívida
+  [Correio do Estado] Ouro fecha em queda com perspectiva de alta adicional nos juros pelo Fed
+  [Correio do Estado] Dólar recua com expectativa sobre PEC para gasto obrigatório
+  [Correio do Estado] Resultado da Dia de Sorte de hoje, concurso 1355, terça-feira (24/11)
+  [Correio do Estado] Resultado da Timemania de hoje, concurso 2472, terça-feira (24/11)
+  [Correio do Estado] Resultado da Lotofácil de hoje, concurso 3837, terça-feira (24/11)
+  [Correio do Estado] Resultado da Mega-Sena de hoje, concurso 3090, terça-feira (24/11)
+  [Correio do Estado] Rede de atacarejo abrirá às 6h em Campo Grande nesta sexta e anuncia 7 mil ofertas
+  [Correio do Estado] BR-267 terá desvio definitivo após rodovia romper com fortes chuvas em MS
+  [Correio do Estado] Lula sanciona integralmente projeto de lei complementar do ajuste fiscal
+  [Correio do Estado] Seu celular pode disparar uma sirene de emergência em MS; entenda
+
+== MT
+  [g1 MT] Ex-contadora é condenada a devolver R$ 248 mil por desviar dinheiro de posto
+  [g1 MT] Após cirurgia no coração e 95 dias internada, idosa recebe alta em Cuiabá
+  [g1 MT] Incêndio atinge casa onde funcionava pet shop e sete animais são resgatados
+  [g1 MT] VÍDEO: líder indígena se pendura em fita sobre cachoeira com mais de 80 metros
+  [g1 MT] VÍDEO: fritadeira causa princípio de incêndio no Aeroporto Marechal Rondon
+  [g1 MT] Prefeitura decreta emergência após enchente deixar famílias desalojadas e Câmara aprova auxílio de R$ 5 mil
+  [g1 MT] Gerente de fazenda morre após ser esfaqueado por funcionário
+  [g1 MT (feed)] Paciente do Dr. Bumbum no Rio faz cirurgia para corrigir procedimento e relata ameaças
+  [g1 MT (feed)] Homem morre ao cair de árvore quando tentava pegar pipa em MS
+  [g1 MT (feed)] Usuário de drogas é morto durante briga perto de casa em MS
+  [g1 MT (feed)] Imagens exclusivas mostram fuga de Dr. Bumbum de shopping e cobertura onde foi feito procedimento no Rio
+  [g1 MT (feed)] Maioria do armamento apreendido em MS seria levado para o RJ, diz PRF
+  [g1 MT (feed)] Mulher corre risco de perder bebê após ser agredida a socos e chutes
+  [g1 MT (feed)] PDT confirma candidatura de Odilon de Oliveira ao governo de MS
+  [g1 MT (feed)] PRF apreende em MS maconha que era levada para SP em carreta
+  [g1 MT (feed)] 'Levaram embora todo o nosso esforço' diz dona de moto roubada 3 dias após sair da concessionária
+  [g1 MT (feed)] Carro com placas do MT é encontrado com 202 quilos de maconha em MS
+  [g1 MT (feed)] Ponta Porã amanheceu gelada: Termômetros marcavam 6 graus
+  [g1 MT (feed)] Veja as cinco contradições entre o que disse Dr. Bumbum e os documentos da investigação policial
+  [Gazeta Digital] Fritadeira pega fogo e fumaça assusta passageiros em VG
+  [Gazeta Digital] Acusado de matar sem-teto com facada no peito é preso
+  [Gazeta Digital] Cuiabá e Energisa fazem acordo para revisão de débitos
+  [Gazeta Digital] Servidores da Defensoria de MT ganham panetones mofados
+  [Gazeta Digital] Câmara aprova auxílio de R$ 5 mil para vítimas de enchente
+  [Gazeta Digital] Cinco deputados federais de MT votaram contra reforma fiscal de Lula; entenda
+  [Gazeta Digital] Justiça suspende desconto em folha de consignados de 30 mil servidores de MT
+  [Gazeta Digital] Abilio diz que não irá gastar 'um centavo' com decoração de Natal
+  [Gazeta Digital] Vereadora esquece que foi excluída e retorno à base está em construção
+  [Gazeta Digital] Jovem de MT viraliza ao publicar encontro com Lula; 'Dia histórico'
+  [Gazeta Digital] Após pausa, dupla participa de show de Chitãozinho e Xororó em Cuiabá
+  [Gazeta Digital] 4ª Expominério será realizada entre os dias 25 a 27 de novembro no Centro de Eventos Pantanal
+  [Olhar Direto] Não perca a maior promoção do ano Anuncie agora →
+  [Olhar Direto] parques no escuro Dias 'detona' Energisa por cortes na iluminação pública e diz que ação deixou população em situação de insegurança
+  [Olhar Direto] Caso Heloysa Justiça define data de júri popular de pai e filho acusados pela morte de adolescente jogada em poço em Cuiabá
+  [Olhar Direto] DISCUSSÃO MORTAL Saiba quem é o gerente de fazenda morto a facadas por funcionário em Chapada dos Guimarães
+  [Olhar Direto] "FALOU, TÁ FALADO" Cattani garante que será 1° vice-presidência da AL após reunião com Max Russi: "chegou a minha vez; simples assim"
+  [Olhar Direto] Obra no Complexo Leblon Vídeo mostra avanço de obra de passagem subterrânea que vai ligar Consil e Araés e encurtar trajeto em Cuiabá; veja
+  [Olhar Direto] Fumaceira no Marechal Rondon Fritadeira do Bob’s pega fogo no aeroporto Marechal Rondon e assusta passageiros; veja vídeo
+  [Olhar Direto] Contratação direta Roberto Dorner compra R$ 4,3 milhões em livros sem licitação de empresa de Fortaleza
+  [Olhar Direto] Enxugamento da máquina Governo exonera 289 servidores antes de reforma administrativa; Educação lidera cortes com 90 desligamentos
+  [Olhar Direto] Veja vídeo Mato-grossense viraliza ao se emocionar vendo Lula e ganha resposta: ‘meu querido companheiro’
+  [Olhar Direto] CASO NICKOLAS PARANHOS Polícia localiza carro que teria sido usado para sequestrar rapaz e levá-lo a Tribunal do Crime
+  [Olhar Direto] SUSTO Turbina de avião da GOL explode na decolagem e provoca pânico em voo no aeroporto de VG, relata passageiro
+
+== PA
+  [g1 PA] Polícia investiga morte de bebê de cinco meses em Outeiro
+  [g1 PA] Justiça rejeita recurso e mantém condenação da Volkswagen por trabalho escravo no Pará
+  [g1 PA] Previsão do tempo hoje para Belém (PA): sol e muitas nuvens à tarde; à noite ocorrem pancadas de chuva
+  [g1 PA] Banpará é alvo de tentativa de fraude via Pix em conta vinculada à Sefa
+  [g1 PA] VÍDEOS: JL2 de terça-feira, 24 de novembro de 2026
+  [g1 PA] Homem e duas crianças são atingidos por carro enquanto andavam de bicicleta na Alça Viária, no Pará
+  [O Liberal] Horóscopo de hoje 25/11: veja a previsão para todos os signos
+  [O Liberal] Polícia Civil investiga morte de bebê de cinco meses em Outeiro
+  [O Liberal] Influenciador que dá 'conselhos amorosos' é acusado de agressão pela ex
+  [O Liberal] Saiba quem tem a tabela mais fácil na briga contra o rebaixamento no Brasileirão
+  [O Liberal] GTA 6: modelos de IA inspiradas em protagonista faturam até R$ 235 mil por mês
+  [O Liberal] Fraude no Banpará desvia R$ 8,5 milhões de conta do governo do Pará
+  [O Liberal] Assembleia e Remo abrem o 2º turno do campeonato com vitória
+  [O Liberal] PRF aponta acidentes no feriado da Consciência Negra no Pará
+  [O Liberal] CNI aciona STF contra regras do governo para escala 5x2
+  [O Liberal] Influencer que dá dicas amorosas é acusado de agressão pela ex
+  [O Liberal] Amy Lee, do Evanescence, já tomou cachaça de jambu; relembre
+  [O Liberal] alimentação Maioria das frutas fica mais cara em Belém; limão dispara 60% em outubro Levantamento do Dieese/PA aponta que dez das 13 frutas 
+  [Diário do Pará] Paysandu: “Sofremos com a vaidade do presidente”, dispara Maia contra Tuma
+  [Diário do Pará] Velho conhecido da torcida, Pedro Vitor pode voltar ao Remo em 2027
+  [Diário do Pará] Confira tudo o que você precisa saber sobre o fim da escala 6x1
+  [Diário do Pará] Por trás das entregas: trabalhadores relatam humilhação na Shein
+  [Diário do Pará] Abin mapeia avanço de PCC e CV, e identifica 31 facções no país
+  [Diário do Pará] Ex-padrasto é preso suspeito de matar enteado por vingança
+  [Diário do Pará] Água mineral tem venda proibida pela Anvisa após irregularidades
+  [Diário do Pará] Ajuste fiscal sancionado por Lula: veja o que muda a partir de agora
+  [Diário do Pará] Flamengo encaminha saída de Leonardo Jardim
+  [Diário do Pará] Dia 8 de dezembro é feriado no Brasil; veja quem terá folga!
+  [Diário do Pará] Toyota promete que Corolla 2028 será a geração mais ousada da história
+  [Diário do Pará] Funcionário da Nike é demitido por justa causa após postar vídeo
+  [Agência Pará] TURISMO E LAZER Governo do Pará e Exército entregam trilha no Parque da Cidade
+  [Agência Pará] MEIO AMBIENTE Após denúncias de mortandade de peixes, Semas multa mineradora em R$ 16,9 milhões e interdita extração de cobre em Tucumã
+  [Agência Pará] OBRAS PÚBLICAS Centro de Convenções de Castanhal alcança 65% de obras executadas e gera mais de 170 empregos locais
+  [Agência Pará] IDENTIDADE AMAZÔNICA Sabores do Pará ultrapassam fronteiras e conquistam o mundo
+  [Agência Pará] SEGURANÇA PÚBLICA Polícia Civil prende homem que desferiu 30 golpes de canivete contra ex-companheira
+  [Agência Pará] DE OLHO NO CÉU Planetário do Pará promove observação gratuita da Superlua nesta terça-feira (24)
+  [Agência Pará] DIREITO DO CONSUMIDOR Governo do Pará orienta consumidores na hora de aproveitar promoções da Black Friday
+  [Agência Pará] Santa Casa intensifica ações de prevenção de infecções e reforça a segurança dos pacientes
+  [Agência Pará] Hemopa leva unidade móvel ao Hospital Jean Bitar e mobiliza torcedores de Remo e Paysandu para doação de sangue
+  [Agência Pará] Em 2006, Policlínica de Tucuruí ultrapassa 15 mil atendimentos psicossociais
+  [Agência Pará] Hospital Regional de Oriximiná realiza mais de 600 exames de endoscopia em 2026
+  [Agência Pará] Teatro Gasômetro abre decoração natalina à visitação com atividade lúdica para estudantes da rede pública
+
+== PB
+  [g1 PB] Homem é morto a tiros em calçada, em João Pessoa
+  [g1 PB] Justiça Federal condena mulher por racismo após ofensas em chat do 'LOL' na Paraíba
+  [g1 PB] Secretário de Saúde de Juarez Távora morre após grave acidente entre carro e caminhão na BR-230
+  [g1 PB] MP recomenda fiscalização e remoção de publicidade irregular em fachadas de prédios de João Pessoa
+  [g1 PB] Suspeito de praticar roubos disfarçado de entregador de delivery é preso na Grande João Pessoa
+  [g1 PB] Polícia abre inquérito para investigar morte de fisioterapeuta em acidente entre motocicletas em Patos
+  [g1 PB] Mulher morre em acidente entre duas motocicletas
+  [g1 PB] 'Lagoa Azul' na PB viraliza com banho de moradores e prefeitura proíbe visitação por risco com mineração
+  [Jornal da Paraíba] Homem é condenado a mais de 15 anos de prisão por tentar matar ex-namorada em Monteiro
+  [Jornal da Paraíba] Falta água em João Pessoa: três bairros vão ter abastecimento interrompido nesta quarta (25)
+  [Jornal da Paraíba] Justiça condena mulher por racismo após ofensas em chat do 'LOL', em João Pessoa
+  [Jornal da Paraíba] Lucas Ribeiro anuncia Nabor Wanderley como novo secretário de Educação da Paraíba
+  [Jornal da Paraíba] Ajuste fiscal deve retirar R$ 200 milhões de regimes previdenciários da Paraíba, estima Famup
+  [Jornal da Paraíba] Secretário de Saúde de Juarez Távora morre após grave acidente na BR-230, em Ingá
+  [Jornal da Paraíba] MP recomenda remoção de publicidade irregular em fachadas de prédios de João Pessoa
+  [Jornal da Paraíba] João Pessoa recebe encontro nacional de ouvidores judiciais com representantes do STF, STJ e CNJ
+  [Jornal da Paraíba] MEC divulga regras para estados e municípios receberem verba extra do Fundeb
+  [Jornal da Paraíba] Patinetes elétricos na orla de João Pessoa: projeto enfrenta impasse na Câmara após alerta de lei
+  [Jornal da Paraíba] WhatsApp lança figurinhas com áudio; veja como funciona
+  [Jornal da Paraíba] UFPB promove evento para debater estratégias para desenvolvimento do turismo no Brejo
+  [ClickPB] Lucas Ribeiro anuncia Nabor Wanderley para Secretaria de Educação
+  [ClickPB] Ações da Vale desabam 5,51% e companhia atinge menor valor de mercado desde agosto de 2025
+  [ClickPB] Secretário de Saúde de Juarez Távora morre em acidente na BR-230, em Ingá
+  [ClickPB] Filme da Netflix com Brad Pitt recebe críticas por uso de IA
+  [ClickPB] ClickFM - AO VIVO
+  [ClickPB] Ajuste fiscal: Giannetti alerta para risco de recessão
+  [ClickPB] Cagepa convoca mais 22 aprovados em concurso público de 2024; veja cargos
+  [ClickPB] Mulher é condenada por racismo após ofensas em jogo online, na Paraíba
+  [ClickPB] Motorista é preso com 3 kg de cocaína avaliadas em R$ 75 mil em Sobrado
+  [ClickPB] Homem é preso após assaltar idosa com criança e ciclista em Jaguaribe
+  [ClickPB] Colégio da Polícia Militar oferta 180 vagas em João Pessoa; inscrições começam nesta quarta-feira
+  [ClickPB] Justiça Federal libera mais de R$ 67 milhões em pagamentos de dívidas a 8 mil beneficiários na Paraíba
+  [Paraíba Online] Armas roubadas de clubes de tiro eram usadas em ataques na Grande João Pessoa, diz polícia
+  [Paraíba Online] Motociclista morre em colisão frontal na BR-230; trecho já registra 11 mortes em acidentes
+  [Paraíba Online] Conselho de Educação recomenda medidas para proteger alunos do calor nas escolas da Paraíba
+  [Paraíba Online] Caso Victor Souto: advogado acusado de matar dois jovens com caminhonete será julgado pelo Tribunal do Júri
+  [Paraíba Online] MPPB e Cagepa discutem expansão de parceria e ações de proteção ambiental
+  [Paraíba Online] Justiça Federal condena mulher por racismo em chat de jogo online, na Paraíba
+  [Paraíba Online] Homem é condenado a mais de 15 anos por tentativa de feminicídio contra ex-namorada
+  [Paraíba Online] Homem é morto a tiros em calçada, em João Pessoa
+  [Paraíba Online] WhatsApp lança atualização com figurinhas sonoras
+  [Paraíba Online] Sandy e Junior confirmam seis apresentações em São Paulo em julho de 2027
+
+== PE
+  [g1 PE] Forte Orange, em Itamaracá, será concedido à iniciativa privada por 30 anos e pode ganhar restaurantes
+  [g1 PE] Única sobrevivente de acidente com quatro mortos usava cinto de segurança e vai precisar de cirurgias, diz família
+  [g1 PE] Natália Recco está internada no Hospital Esperança, no Recife
+  [g1 PE] Médica, dentista, modelo e empresário morreram
+  [g1 PE] Carro bateu em árvore e em placa de trânsito em Ipojuca
+  [g1 PE] Influência de Cria: Cris perdeu a casa na pandemia e encontrou nas redes uma saída para reconstruí-la
+  [g1 PE] Previsão do tempo hoje para o Recife (PE): sol com algumas nuvens e chuva passageira; à noite, muitas nuvens mas com tempo firme
+  [g1 PE] Previsão do tempo hoje para Paulista (PE): sol com muitas nuvens durante o dia e períodos de céu nublado; noite com muitas nuvens
+  [g1 PE] Previsão do tempo hoje para Olinda (PE): sol com muitas nuvens durante o dia e períodos de céu nublado; noite com muitas nuvens
+  [g1 PE (feed)] Filho estupra mãe na frente da irmã mais nova em Águas Belas, PE
+  [g1 PE (feed)] PM de Pernambuco é preso depois de atirar em irmão de policial civil durante discussão no litoral do RN
+  [g1 PE (feed)] Prouni Recife abre inscrições para 363 bolsas de estudo para faculdades
+  [g1 PE (feed)] Pró-Criança inscreve para 200 vagas em cursos gratuitos na área de informática, no Recife
+  [g1 PE (feed)] Banda Sinfônica do Recife faz dois concertos no Teatro de Santa Isabel
+  [g1 PE (feed)] Jaqueira tem mudanças na circulação de veículos e altera linhas de ônibus, no Recife
+  [g1 PE (feed)] Caminhão e carro se envolvem em acidente e atingem táxi, no Recife
+  [g1 PE (feed)] Faculdade Senac oferece minicursos gratuitos no Recife
+  [g1 PE (feed)] Poda de árvores causa interdição de rua e muda itinerário de ônibus no Recife
+  [g1 PE (feed)] Homem é preso suspeito de abusar sexualmente de dez crianças em Serra Talhada
+  [g1 PE (feed)] Pernambuco inscreve para cursos profissionalizantes gratuitos com quase 15 mil vagas
+  [g1 PE (feed)] Ambulância tomba em avenida após colisão com carro no Recife
+  [Diario de Pernambuco] Lula sanciona integralmente ajuste fiscal horas após aprovação na Câmara
+  [Diario de Pernambuco] Homologada sem vetos pelo presidente Lula, a lei também é assinada pelos ministros do Planejamento e Orçamento, Bruno Moretti, e da Fazenda,
+  [Diario de Pernambuco] "A saudade será eterna", diz amiga de dentista que morreu em acidente em Ipojuca Pernambuco | 22h33
+  [Diario de Pernambuco] Reforma da fachada do Hospital Otávio de Freitas vai custar R$ 20,48 milhões Pernambuco | 20h05
+  [Diario de Pernambuco] Diario Político por Renata Bezerra de Melo Votos do centrão no ajuste fiscal são aceno ao governo; Esplanada está na mira
+  [Diario de Pernambuco] Esplanada por Leandro Mazzini Levou um ‘não’!
+  [Diario de Pernambuco] Opinião ECA Digital: o dever de cuidado como herança do Recife
+  [Diario de Pernambuco] Contraponto Diario por Mano Ferreira Não adianta xingar o mercado
+  [Diario de Pernambuco] Diario Imobiliário por Pedro Ivo Bernardes Wallbox em condomínios, entenda os riscos de danos estruturais envolvidos
+  [Diario de Pernambuco] Diario no Ar por Igor Pires Com dados de outubro fechados, Recife continua buscando os 10 milhões de passageiros
+  [Diario de Pernambuco] Diario Econômico por Pedro Ivo Bernardes Turismo internacional em Pernambuco alça voos altos em 2026
+  [Diario de Pernambuco] Diario Mulher por Claudia Molinna Machosfera é o mais novo problema de saúde pública, segundo artigo científico
+  [Folha de Pernambuco] Ajuste Fiscal Lula sanciona integralmente projeto de lei complementar do ajuste fiscal
+  [Folha de Pernambuco] Com máxima de até 41º C, Pernambuco tem alerta de baixa umidade do ar; SES-PE monitora cenário climático
+  [Folha de Pernambuco] Professor de matemática de escola municipal do Recife é investigado por suspeita de assédio
+  [Folha de Pernambuco] Presidente do TJPE assume Prefeitura do Recife interinamente nesta terça-feira (24)
+  [Folha de Pernambuco] Sobrevivente de acidente que vitimou quatro pessoas em Ipojuca passa por cirurgia e está estável
+  [Folha de Pernambuco] Vídeo mostra explosão que deixou uma pessoa morta e outra ferida em pátio de eventos de Catende
+  [Folha de Pernambuco] Forte Orange, em Itamaracá, terá operação privatizada por 30 anos e pode ganhar restaurantes
+  [Folha de Pernambuco] Nova PEC fiscal expõe dilema de Lula entre economia e sustentação política
+  [Folha de Pernambuco] PSD quer Ministério da Pesca para aderir a Lula 4; confira a coluna desta quarta (25)
+  [Folha de Pernambuco] Governador da Paraíba defende ajuste fiscal: "Estados devem fazer dever de casa"
+  [Folha de Pernambuco] Opinião O vale da morte também existe no Sertão
+  [Folha de Pernambuco] Opinião Certificar médicos é garantir competência ou corrigir uma formação que falhou?
+  [JC] ECONOMIA Lula sanciona integralmente projeto de lei complementar do ajuste fiscal Medidas deverão ajudar o governo a alcançar o centro da me
+  [JC] Governo Lula elabora nova PEC para frear despesas e garantir cumprimento da meta fiscal
+  [JC] CARGO Presidente do TJPE assume Prefeitura do Recife após viagens de prefeito e presidente da Câmara
+  [JC] TRAGÉDIA Catende (PE): Engenheiro da prefeitura explica próximos passos após explosão em farmácia
+  [JC] Veja vídeo do momento da explosão em Catende (PE) que deixou uma vítima fatal e um ferido
+  [JC] ATUALIZAÇÃO Sobrevivente de colisão em Ipojuca passa por cirurgia no fêmur e deve realizar novos procedimentos
+  [JC] Pesquisa Black Friday 2026: comércio de Pernambuco deve movimentar R$ 165,8 milhões, aponta Fecomércio
+  [JC] DESAFIOS NA RMR JC Metro Quadrado debate reabilitação urbana e crédito imobiliário na Região Metropolitana do Recife
+  [JC] ENSINO SUPERIOR Enem: saiba quais são os principais erros que os candidatos cometem após a prova
+  [JC] INTERCÂMBIO UNIT-PE leva experiência internacional para alunos de Tecnologia a partir de 2027
+  [JC] MERCADO IMOBILIÁRIO Com feirão prorrogado, construtora Carrilho aposta no novo perfil de consumidor da RMR
+  [JC] batida Dois ônibus da mesma empresa colidem no Centro do Recife e motorista fica ferido
+
+== PI
+  [g1 PI] Em Teresina Feira mostra como sementes crioulas ajudam a reduzir custos na agricultura veja a programação
+  [g1 PI] Após ajudar a achar mais de 200 porções de drogas, cadela policial ganha saco de bolinhas
+  [g1 PI] Novo sítio rupestre reúne gravuras de lagartos, figuras humanas e símbolos misteriosos
+  [g1 PI] Tempo seco derruba umidade do ar e deve manter temperaturas acima de 41°C, alerta Semarh
+  [g1 PI] Rafael Fonteles define comando de três secretarias e coordenadoria; veja
+  [g1 PI] Prefeito em tratamento contra leucemia reencontra família e anuncia grupo de apoio a pacientes
+  [g1 PI] Empresário é revistado dentro de avião durante operação da PF
+  [g1 PI] Agentes também fizeram buscas em Teresina para investigar desvio
+  [g1 PI] Homem preso por estupro dopava vítimas antes dos abusos, diz polícia
+  [Meio Norte] Editar Suspeitos de tráfico de drogas no PI são presos em operação em Pernambuco
+  [Meio Norte] PIT divulga resultado preliminar de seleção para professores no Piauí
+  [Meio Norte] PI: Polícia apreende mais de 200 porções de maconha, cocaína e crack em imóvel
+  [Meio Norte] Homem que matou a esposa a facadas é condenado a 31 anos de prisão no Piauí
+  [Meio Norte] Medprev celebra 13 anos ampliando acesso à saúde no Piauí; veja como funciona
+  [Meio Norte] Editar ESTAVA EM BAR Quem é o jovem assassinado a tiros em possível briga de facções em Timon
+  [Meio Norte] MEC divulga regras para distribuição de verbas adicionais do Fundeb
+  [Meio Norte] Câmara de Teresina propõe ampliar número de vereadores de 29 para 31
+  [Meio Norte] Editar SUSTO Carro capota com casal de idosos na Avenida Duque de Caxias, na zona Norte de Teresina
+  [Meio Norte] Idoso fica desacordado após ser agredido durante assalto
+  [Meio Norte] Governo do Piauí anuncia proposta para extinguir 1.200 cargos
+  [Meio Norte] Editar combate ao crime Suspeito de tráfico é preso com 1,5 kg de cocaína na zona rural de Campinas do Piauí
+
+== PR
+  [g1 PR] Empresário e pai de criança de 8 anos: quem era motorista de van morreu em batida com caminhão
+  [g1 PR] Motorista de van que transportava universitários morre
+  [g1 PR] Político do Paraná preso no Paraguai mandou matar 6 pessoas e estava foragido há pelo menos 10 anos
+  [g1 PR] Entenda como ex-prefeito foi preso em país vizinho
+  [g1 PR] Pai descobre que filho assaltou motociclista e encontra vítima para pedir desculpas
+  [g1 PR] Juiz afastado após relatos de assédio sexual e gemidos durante expediente segue recebendo salário de R$ 37 mil
+  [g1 PR] Tribunal de Justiça apura conduta dele
+  [g1 PR] Casa de idosos mortos em alagamento já havia sido atingida por cinco enxurradas, diz família
+  [g1 PR] 252 sorteados no Nota Paraná têm entre R$ 2 mil e R$ 20 mil disponíveis para saque
+  [g1 PR] Deputado Marcelo Rangel fecha acordo para não ser processado por usar funcionários públicos em campanha eleitoral
+  [Gazeta do Povo PR] Paraná identifica mais de duzentas áreas de risco para desastres naturais
+  [Gazeta do Povo PR] Acessos da Ponte de Guaratuba devem ser concluídos em 60 dias, diz governador
+  [Gazeta do Povo PR] PF investiga esquema de venda de encomendas desviadas dos Correios no Paraná
+  [Gazeta do Povo PR] Justiça do Paraná suspende corte de árvores na Praça Osório em Curitiba
+  [Gazeta do Povo PR] Mapa mostra cidades do Paraná mais expostas a enchentes, alagamentos e deslizamentos
+  [Gazeta do Povo PR] Governo Moro busca chapa única pela presidência da Alep enquanto PSD pleiteia espaço
+  [Gazeta do Povo PR] Volvo volta a testar ônibus elétricos no transporte de Curitiba
+  [Gazeta do Povo PR] Justiça trava retirada de árvores de praça no centro de Curitiba
+  [Gazeta do Povo PR] Setor imobiliário projeta alta de 25% na procura por aluguel no litoral do PR
+  [Gazeta do Povo PR] Chuvas acima da média ameaçam escoamento agropecuário e isolam produtores rurais
+  [Gazeta do Povo PR] Sergio Moro define nomes que comandarão a segurança do Paraná em 2027
+  [Gazeta do Povo PR] Nova fábrica de R$ 1 bilhão da Prati-Donaduzzi vai gerar 500 empregos no Paraná
+  [Bem Paraná] Horóscopo 25/11/2026
+  [Bem Paraná] Paranaense que representa o Brasil no Miss Universo fica fora do top 12; Porto Rico vence
+  [Bem Paraná] Bem rapidinho: o que foi notícia nesta terça-feira, 24 de novembro
+  [Bem Paraná] Falecimentos desta terça-feira, 24 de novembro de 2026, em Curitiba
+  [Bem Paraná] Começa o Natal de Curitiba: pelos próximos 43 dias, serão mais de 150 atrações na cidade
+  [Bem Paraná] PM orienta consumidor sobre segurança durante as compras
+  [Bem Paraná] Feiras de Natal de Curitiba abrem e vão até 23 de dezembro
+  [Bem Paraná] Mutirão de empregos na Capital paranaense conta com mais de 16 mil vagas
+  [Bem Paraná] Consumidor tem até o dia 30 de novembro para negociar dívidas
+  [Bem Paraná] Empresa de patinetes supera 35 mil viagens em dois meses em Curitiba
+  [Bem Paraná] São Paulo encerra transmissão importada de sarampo
+  [Bem Paraná] Curitiba ainda terá diversas corridas de rua até o fim deste ano
+  [AEN-PR] Mulher, Igualdade Racial e Pessoa Idosa
+  [AEN-PR] 40 anos da Orquestra Sinfônica do Paraná
+  [AEN-PR] Geração Olímpica e Paralímpica Paris 2024
+  [AEN-PR] Paraná, a energia verde que renova o campo
+  [AEN-PR] Paraná terá mais 40 municípios em rede global de Cidades Amigas da Pessoa Idosa
+  [AEN-PR] Estado abre Semana da Inovação com certificação de servidores e plataforma de IA para rodovias
+  [AEN-PR] Com R$ 442 mil em prêmios, Estado reconhece destaques da ciência paranaense
+  [AEN-PR] Feira Paraná em Ação chega a Foz do Iguaçu nesta quinta-feira
+  [AEN-PR] Queda da violência amplia ação do Siate para socorrer vítimas de acidentes e outras emergências no Paraná
+  [AEN-PR] Tecpar e UEPG selecionam pacientes infantis com fissura palatal para pesquisa clínica
+  [AEN-PR] Com aporte do Estado, entrega de condomínio beneficia 384 famílias de Apucarana
+  [AEN-PR] Guaíra e Porto Rico recebem atividades gratuitas da Carreta da Inovação nesta semana
+
+== RJ
+  [g1 RJ] Viatura bateu antes de atropelar 4 pessoas na calçada; menina e mãe tiveram alta
+  [g1 RJ] Mulher é atropelada e agredida a pauladas após discussão em bar
+  [g1 RJ] 'Fui pra favela', 'caí numa braba': veja conversa que fez mãe suspeitar que alguém se passou por filho morto; ex-padrasto está preso
+  [g1 RJ] Padrasto deve responder por vicaricídio; polícia apura vingança contra mãe da vítima
+  [g1 RJ] Ex-CEO do Hurb é preso; empresário tentou fugir, diz polícia
+  [g1 RJ] Polícia diz que casal preso em suposto esquema de 'barriga de aluguel' controlava rotina de tailandesas; saída do hospital foi monitorada
+  [g1 RJ] Quem é João Ricardo Mendes, fundador da Hurb preso nesta terça-feira no Rio
+  [g1 RJ] Festival do Bem, no Hemorio, reúne artistas para incentivar doação de sangue nesta quarta
+  [g1 RJ] Exame aponta lesões em mulher que acusa gêmeos de grupo de pagode de estupro em MG
+  [g1 RJ] Previsão do tempo hoje para São Gonçalo (RJ): sol com muitas nuvens e períodos de céu nublado; noite com pancadas de chuva
+  [g1 RJ (feed)] Planetário do Rio inscreve para um dia de atividades nas férias
+  [g1 RJ (feed)] Mesmo com registro cassado no DF, Dr. Bumbum poderá atender se for solto
+  [g1 RJ (feed)] Adriane Galisteu estreia como vilã em 'O Tempo Não Para' e diz estar preparada para críticas: 'Não vou agradar a todos'
+  [g1 RJ (feed)] Maioria do armamento apreendido em MS seria levado para o RJ, diz PRF
+  [g1 RJ (feed)] Helio Eichbauer: cenógrafo que marcou teatro, música e cinema no Brasil morre aos 76 anos no Rio
+  [g1 RJ (feed)] PCB define apoio a Guilherme Boulos, do PSOL
+  [g1 RJ (feed)] Acidente deixa trânsito lento na Via Dutra em Piraí, RJ
+  [g1 RJ (feed)] CRM cassa registro profissional do Dr. Bumbum no DF
+  [g1 RJ (feed)] Caminhão com transformador de 480 t volta a circular pela Via Dutra, no Sul do RJ
+  [g1 RJ (feed)] Ministério confirma 677 casos de sarampo em seis estados do Brasil
+  [g1 RJ (feed)] Dr. Bumbum 'sofre de síndrome do pânico' e vai negociar ida à polícia, diz advogada
+  [g1 RJ (feed)] Foi aprovada lei que proíbe rebocar veículos em blitz? Não é verdade!
+  [O Dia] VIOLÊNCIA Vídeo: tiro atinge van com passageiros em Costa Barros A situação foi registrada pelo motorista do veículo, na tarde desta terça-f
+  [O Dia] SAIU NO DIÁRIO OFICIAL Condenado pela morte de Marielle, major Ronald é demitido da PM
+  [O Dia] LIGADO AO TCP Gerente do tráfico na Jaqueira é preso em Caxias
+  [O Dia] na cadeia 'X-Tudo' é encontrado dormindo e acaba preso na Baixada
+  [O Dia] CAOS SEM FIM Estação Pavuna do metrô fica às escuras; veja vídeo
+  [O Dia] Passageiros são evacuados em meio à fumaça no metrô
+  [O Dia] Metrô em Coelho Neto recebe posto para cadastro da Tarifa Social
+  [O Dia] absurdo Vizinho é preso por abusar de duas meninas em São João de Meriti
+  [O Dia] Suspeito é detido por compartilhar mais de 160 vídeos de abuso infantil
+  [O Dia] CRIME BÁRBARO Câmera mostra ex-padrasto comprando gasolina antes de morte de jovem
+  [O Dia] FORAGIDOS Condenados pela morte de PMs são procurados após saída temporária
+  [O Dia] glorioso Entenda motivo para Montoro ser reserva no Botafogo de Tite
+  [Extra] Neozelandês e chinesa são presos no Rio, suspeitos de tráfico internacional de bebês
+  [Extra] Sandy e Junior anunciam volta aos palcos, e cariocas terão que ir a São Paulo para ver a dupla
+  [Extra] Viatura da PM invade calçada e atinge pedestres em Nilópolis: veja vídeo
+  [Extra] Saiba com quem Bianca Andrade, a Boca Rosa, ficou do 'Dança dos Famosos'
+  [Extra] Seminário EXTRA Favelas na Rocinha debate infraestrutura, mobilidade e futuro dos jovens
+  [Extra] Plata, do Flamengo, sofre acidente durante folga e desloca o cotovelo
+  [Extra] PGR denuncia ao STF ex-secretário do governo do Rio, delegado da PF e PMs em investigação sobre crime organizado
+  [Extra] EXTRA e Valda estendem ação: quem comprar o jornal nas bancas no fim de semana ganha pastilhas
+  [Extra] Ex de Roberto Carlos, Myrian Rios é internada após mal-estar: 'Não deixem de cuidar da saúde'
+  [Extra] Condenado há 9 meses no caso Marielle, major Ronald é demitido da PM pelo governador do Rio de Janeiro
+  [Extra] Ex-atriz mirim da Globo expõe luta contra vício: 'Sem recaídas'
+  [Extra] Longe das novelas há 27 anos, Carolina Pavanelli fez sucesso em "Sonho meu", de 1993
+  [Diário do Rio] Aos 51 anos, Emissário Submarino de Ipanema passa por revitalização inédita de R$ 19,9 milhões
+  [Diário do Rio] A escala 2×5 dos vereadores do Rio e a polêmica licitação do Estádio de Remo – Bastidores do Rio
+  [Diário do Rio] Lojas do Rio poderão abrir aos domingos no fim de ano
+  [Diário do Rio] Palacete São Cornélio, na Glória, pode ganhar prédios de até 30 metros para bancar restauração do complexo histórico
+  [Diário do Rio] Programa CEP para Todos beneficia mais de 2,1 milhões de moradores de favelas e comunidades do RJ
+  [Diário do Rio] Neste domingo, Festival Consciências celebra a negritude no Sesc Madureira
+  [Diário do Rio] Alerj aprova instalação de tendas de atendimento para a população de baixa renda durante ondas de calor
+  [Diário do Rio] Cadastramento no BUI pode ser feito na estação Coelho Neto do MetrôRio até 4/12
+  [Diário do Rio] Campopiano e Pavanato recebem medalhas na Câmara do Rio em cerimônia antecipada para evitar hostilidades
+  [Diário do Rio] Douglas Ruas defende reajuste salarial para governador e secretários estaduais em meio a déficit de R$ 14 bilhões
+  [Diário do Rio] PGR denuncia ex-secretário de Cláudio Castro ao STF em investigação sobre crime organizado
+  [Diário do Rio] CPI da Educação de Japeri aponta irregularidades em contrato de R$ 4 milhões e pede investigação de ex-secretária
+
+== RN
+  [g1 RN] Sem previsão de acordo, greve dos caminhoneiros segue no RN com protestos em empresas
+  [g1 RN] Previsão do tempo hoje para Natal (RN): sol com muitas nuvens durante o dia e períodos de céu nublado; noite com muitas nuvens
+  [g1 RN] Homem é condenado a 38 anos de prisão por matar tio e prima no interior do RN
+  [g1 RN] Adolescente de 17 anos é apreendido após divulgar e tentar vender vídeos íntimos da ex-namorada em plataformas digitais
+  [g1 RN] Documentário potiguar retrata como música e literatura ajudaram ex-detento a reconstruir a própria história
+  [g1 RN] Polícia Civil vai devolver 2.200 celulares recuperados no RN; veja como consultar lista
+  [g1 RN] Suspeito de matar homem e enterrar corpo perto de lagoa é preso no RN
+  [Tribuna do Norte] Futsal: América vence Apodi e larga em vantagem na final do Estadual
+  [Tribuna do Norte] Top Natal reconhece as marcas mais lembradas pelos consumidores natalenses
+  [Tribuna do Norte] O Brasil perdeu
+  [Tribuna do Norte] Horóscopo de quarta-feira 25 de novembro de 2026
+  [Tribuna do Norte] ALRN recebe selo “Aqui Tem Ouvidoria” e reforça compromisso com a escuta cidadã
+
+== RO
+  [g1 RO] Previsão do tempo hoje para Porto Velho (RO): sol o dia todo; muitas nuvens e pancadas de chuva de manhã e à noite
+  [g1 RO] Tirolesa gratuita em Porto Velho: veja como participar e quem pode andar no Parque da Cidade
+  [g1 RO] Projeto de ajuste fiscal: veja como votaram os deputados de Rondônia
+  [g1 RO] Disputa por estrada usada por madeireiros acaba em condenação de 56 anos em RO
+  [g1 RO] CrediSIS JiCred realiza ação de educação financeira com Bombeiros Mirins
+  [g1 RO] Rondônia muda agendamento da nova identidade após reclamações e decisão da Justiça; confira novo cronograma
+  [Rondônia ao Vivo] Memorial vítimas do COVID-19 - Clique aqui e confira!
+  [Rondônia ao Vivo] Porto Velho Uma cidade que vale a pena
+  [Rondônia ao Vivo] TCE-RO cobra esclarecimentos sobre concessão de saneamento e efeitos na conta
+  [Rondônia ao Vivo] Governo de RO entrega kits do programa Vencer de capacitação gratuita
+  [Rondônia ao Vivo] TJRO promove ações de cidadania e proteção de idosos e crianças
+  [Rondônia ao Vivo] Carreta arrasta carro com idoso e criança na Jorge Teixeira
+  [Rondônia ao Vivo] TCE-RO cobra melhorias no Hospital Cosme e Damião para segurança das crianças
+  [Rondônia ao Vivo] Pref. de Jaru oferece exame DNA-HPV gratuito nas Unidades Básicas de Saúde
+  [Rondônia ao Vivo] Acendimento das luzes de natal encanta a comunidade e celebra união e esperança
+  [Rondônia ao Vivo] TJ/RO mantém condenação de Marcos Combate, que pode ficar inelegível
+  [Rondônia ao Vivo] Fenômeno ilumina o céu nesta terça e marca início de sequência de três eventos
+  [Rondônia ao Vivo] Taça do estadual é apresentada com renovação da parceria com o Sicredi
+  [Tudo Rondônia] Mosquini alerta para déficit de R$ 500 milhões na saúde
+  [Tudo Rondônia] Ieda Chaves cobra Cadastro Estadual de Pedófilos em RO
+  [Tudo Rondônia] TCE-RO cobra melhorias no Hospital Cosme e Damião para crianças
+  [Tudo Rondônia] Daniel quer cortar verba dos Poderes de RO e outras notas políticas
+  [Tudo Rondônia] Sindafisco elege nova diretoria para o triênio 2027/2029
+  [Tudo Rondônia] Luís Fernando prevê R$ 500 milhões para investimentos com Marcos Rogério
+  [Tudo Rondônia] DECISÃO DE DECRETO DAS 10.700 EXONERAÇÕES ESTÁ MANTIDO, MAS FUTUROS SECRETÁRIOS TERÃO COTA DE COMISSIONADOS
+  [Tudo Rondônia] Dra. Taíssa cobra explicações sobre contrato de R$ 56,6 milhões para oftalmologia em RO
+  [Tudo Rondônia] CCJ aprova capacitação sobre câncer infantil
+  [Tudo Rondônia] Deputados aprovam R$ 3,18 milhões para áreas sociais em RO
+  [Tudo Rondônia] Alero aprova desconto em folha para planos funerários
+  [Tudo Rondônia] Feirão Serasa oferece descontos em dívidas via Pix no Norte
+  [News Rondônia] TRE-RO aprova contas de campanha de Edevaldo Neves
+  [News Rondônia] Ministério da Justiça lança protocolo nacional de investigação policial com perspectiva racial e de gênero
+  [News Rondônia] Dra. Taíssa cobra explicações sobre suspensão de contratação de R$ 56,6 milhões na saúde
+  [News Rondônia] Dra. Taíssa cobra dados sobre atendimentos de Neurologia em Rondônia
+  [News Rondônia] Dra. Taíssa cobra revitalização de faixas e lombadas em Buritis
+  [News Rondônia] Alexandre de Moraes rejeita pedido para reduzir pena de Carla Zambelli no STF
+  [News Rondônia] Ieda Chaves cobra implantação de cadastro estadual em Rondônia
+  [News Rondônia] Nunes Marques será relator de recurso de Daniel Vorcaro contra condução de investigação por Edson Fachin
+  [News Rondônia] Lula sanciona sem vetos lei do ajuste fiscal com economia de até R$ 56 bilhões em 2027
+  [News Rondônia] Governo prepara PEC de ajuste fiscal após aprovação de pacote de R$ 56 bilhões na Câmara
+  [News Rondônia] Cristiane Lopes foi a única deputada federal a destinar emenda para o manejo sustentável de jacarés no Lago do Cuniã
+  [News Rondônia] Ministério da Igualdade Racial anuncia incubadora para apoiar 50 projetos de afroturismo
+
+== RR
+  [g1 RR] VÍDEO: Viatura da PM racha ao bater contra poste após carro avançar preferencial em Bonfim
+  [g1 RR] Empresa de ortopedia retira equipe do HGR e cobra dívidas do governo
+  [g1 RR] Presidente da Câmara de Boa Vista anula eleição de Carol Dantas para Mesa Diretora
+  [g1 RR] Funcionário de escola é preso por aliciar menina por aplicativo de mensagens em Roraima
+  [g1 RR] VÍDEO: Peixes morrem em meio à seca agravada pelo El Niño no maior rio de Roraima
+  [g1 RR] Governador eleito anuncia ex-secretário municipal para a Saúde de Roraima
+  [g1 RR] Assassinato e carbonização de adolescente em 'tribunal do crime' foi filmado em Boa Vista
+  [Folha BV] Black Friday 2026: como aproveitar os descontos sem comprometer o orçamento
+  [Folha BV] Servidor de escola é investigado por aliciar menina de 11 anos por aplicativo de mensagens
+  [Folha BV] Viatura da Polícia Militar fica partida ao meio após colisão; veja vídeo
+  [Folha BV] Chevrolet Onix LT 2019 para usar na Uber ou 99: qual reserva mensal cobre manutenção, IPVA e licenciamento do hatch com câmbio de seis march
+  [Folha BV] Série documental sobre Sócrates estreia em dezembro no Globoplay
+  [Folha BV] MP cobra cumprimento de regras de promoção na PM após lei que extinguiu interstício para coronel
+  [Folha BV] Homem é atacado com facão durante bebedeira em Rorainópolis; suspeito fugiu
+  [Folha BV] Trailer final de “Vingadores: Doutor Destino” revela filho do Capitão América e reúne heróis
+  [Folha BV] EGOÍSMO E O IMEDIATISMO: A pressa que põe tudo a perder
+  [Folha BV] Adolescente indígena brutalmente agredida pelo marido é socorrida por pescador; suspeito foi preso em flagrante
+
+== RS
+  [g1 RS] Hotel desaba parcialmente após incêndio no Centro Histórico de Porto Alegre
+  [g1 RS] Amadeu Weinmann, referência da advocacia criminal, morre aos 91 anos
+  [g1 RS] Idosa é encontrada morta em fosso de elevador em residencial geriátrico
+  [g1 RS] Esporotricose: doença transmitida por gatos já infectou quase 1,5 mil pessoas no RS; veja as cidades com mais casos em humanos
+  [GZH] "Gaúcha Hoje": informações, previsão do tempo, trânsito e mais; assista
+  [GZH] " title="Valter Campanato / Agência Brasil"/>
+  [GZH] Câmbio Do mercado financeiro ao supermercado: os motivos para a alta do dólar e como ela afeta a sua vida Mathias Boni
+  [GZH] + Dólar cai e fecha a R$ 5,91 após aprovação do ajuste fiscal
+  [GZH] " title="Ronaldo Bernardi / Agencia RBS"/>
+  [GZH] Previsão do tempo Chuva diminui no RS nesta quarta-feira, mas ainda há alerta para temporais; saiba onde
+  [GZH] Regiões próximas à divisa com Santa Catarina têm possibilidade de acumulados de até 50 milímetros
+  [GZH] Justiça Engenheiros são condenados por incêndio no Ninho do Urubu, CT do Flamengo
+  [GZH] Tragédia ocorreu em 2019 e vitimou 10 jovens que estavam nos alojamentos
+  [GZH] Como se preparar Onde se abrigar, o que levar e quando sair de casa: as orientações dos bombeiros para se proteger de temporais Ana Carolina
+  [GZH] Capitã do 7º BBM detalha medidas de prevenção, itens para kit de emergência e locais mais seguros dentro de casa durante eventos severos
+  [GZH] " title="Netflix / Divulgação"/> Streaming "Família é tudo igual, só muda o número de seguidores": Fernanda Souza fala sobre "Famosos Ilhado
+  [Correio do Povo] Correio do Povo - Portal do Correio do Povo
+  [Correio do Povo] Política Após projeto de ajuste fiscal, PEC com novas medidas pode gerar divisão na bancada governista Equipe econômica ainda discute alcanc
+  [Correio do Povo] Alcolumbre vê tempo para PEC de ajuste com líderes partidários
+  [Correio do Povo] Entenda o pacote fiscal que prevê ajuste de até R$ 56 bilhões
+  [Correio do Povo] Zucco, Sanderson e Van Hattem contra o ajuste fiscal: como votaram os deputados do RS
+  [Correio do Povo] Cidades Governo conclui o levantamento dos danos nos prédios do Estado em Tupanciretã
+  [Correio do Povo] Política Comissão da Câmara aprova convocação de ministro da Justiça para explicar sobre caso Master
+  [Correio do Povo] Economia Dólar recua e encerra sessão cotado a R$ 5,91 com expectativa sobre PEC para gasto obrigatório
+  [Correio do Povo] Política Assembleia Legislativa do RS aprova desafetação de área da Reserva Barba Negra para projeto da CMPC
+  [Correio do Povo] Cidades Hóspedes de hotel vão para abrigo após incêndio no Centro de Porto Alegre
+  [Correio do Povo] Política Relatório do governo alerta para facção que amplia presença pelo Brasil e busca ser "terceira via" entre PCC e CV
+  [Correio do Povo] Tempo Sol predomina na maior parte do RS nesta quarta
+  [Jornal do Comércio] Refap vai aumentar capacidade de processamento em cerca de 6% até 2031
+  [Jornal do Comércio] Incremento consta no Plano de Negócios da Petrobras
+  [Jornal do Comércio] Acesse as notícias mais importantes do dia na edição digital.
+  [Jornal do Comércio] Estaleiro recém-inaugurado em Triunfo busca contratos no curto prazo
+  [Jornal do Comércio] Abimaq prevê alta de 3% nas vendas de máquinas em 2027
+  [Jornal do Comércio] Estruturas do evento Porto Alegre Encantada estão quase prontas
+  [Jornal do Comércio] Assembleia aprova projeto que muda área de reserva ambiental por solicitação da CMPC
+  [Jornal do Comércio] Petrobras indica perfuração de três poços na Bacia de Pelotas até 2031
+  [Jornal do Comércio] Júlio Conte apresenta monólogo autoficcional na reabertura do Theatro São Pedro
+  [Jornal do Comércio] Cerro dos Porongos será tombado como patrimônio cultural brasileiro
+  [Jornal do Comércio] Fique por dentro das últimas notícias do JC
+  [Jornal do Comércio] Indústria da inovação desponta na nova economia do Rio Grande do Sul
+
+== SC
+  [g1 SC] Conheça o curso da UFSC com 10 vezes mais vagas do que candidatos
+  [g1 SC] VÍDEO: ruas viram 'rios' com alto volume de chuva
+  [g1 SC] Morre mulher com mesma doença de Lito cuidada 24h pelo marido
+  [g1 SC] Ex-boxeador que matou vendedor é denunciado por homicídio qualificado
+  [g1 SC] Reveja os VÍDEOS mais assistidos do g1 SC
+  [g1 SC] Vereadora diz em sessão que não atirou em Moraes 'porque seria presa'
+  [g1 SC] Visita à Ilha do Campeche fica mais cara após Florianópolis elevar taxa em 133%
+  [ND Mais] Ciclone extratropical associado à frente fria trará chuva de até 200 mm em 48h e nova queda de temperatura; saiba onde
+  [ND Mais] Compositor grava refrão no celular em 2018 e, oito anos depois, transforma ideia em hino para eternizar heróis da Chapecoense
+  [ND Mais] Empresa que projetou o One World Trade Center e a Shanghai Tower vai participar de arranha-céu de luxo de 400 metros em Balneário Camboriú
+  [ND Mais] Canecos da Oktoberfest vão representar Blumenau em cápsula do tempo que será aberta após 100 anos
+  [ND Mais] Antes de se tornar uma gigante mundial, empresa de SC começou com tecnologia europeia e enviou seu primeiro lote de compressores ao Peru
+  [ND Mais] Casos de sequestro são resolvidos sem pagamento de resgate desde 2012 em SC e delegado revela estratégias
+  [ND Mais] A santa por trás de Santa Catarina
+  [ND Mais] VÍDEO: Subtenente da PM é encontrado amarrado e com ferimentos em meio à mata após emboscada de criminosos em Manaus
+  [ND Mais] Temporal causa duas mortes e idosa desaparece em enxurrada no Paraná
+  [ND Mais] Grupo ND é o maior vencedor da noite e leva cinco troféus no Prêmio Águas de Jornalismo Ambiental em Santa Catarina
+  [ND Mais] Consumir pornografia no Brasil pode exigir validação pelo Gov.Br a cada 24h; enquete mostra maioria favorável
+  [ND Mais] Chuva intensa volta a alagar escola em SC e elevação de rio coloca cidades em alerta
+  [Notícias do Dia] Antes de se tornar uma gigante mundial, empresa de SC começou com tecnologia europeia e enviou seu primeiro lote de compressores ao Peru
+  [Notícias do Dia] Casos de sequestro são resolvidos sem pagamento de resgate desde 2012 em SC e delegado revela estratégias
+  [Notícias do Dia] VÍDEO: Subtenente da PM é encontrado amarrado e com ferimentos em meio à mata após emboscada de criminosos em Manaus
+  [Notícias do Dia] Grupo ND é o maior vencedor da noite e leva cinco troféus no Prêmio Águas de Jornalismo Ambiental em Santa Catarina
+  [Notícias do Dia] Maternidades de 64 instituições vão receber mais de R$ 11,7 milhões do SUS em repasse que alcança 63 municípios de SC
+  [Notícias do Dia] Incêndio no CT do Flamengo que matou dois catarinenses tem novo desdobramento na Justiça com pena de oito anos
+  [Notícias do Dia] Desembargadora foragida e acusada de receber R$ 86 mil por sentença é alvo de nova denúncia no STJ
+  [Notícias do Dia] Homem faz seguro de vida para peixe por US$ 1 e recebe US$ 650 após morte do animal
+  [Notícias do Dia] Deputado vê ‘conflito de interesses’ em projeto que libera políticos para advogar contra órgãos públicos
+  [Notícias do Dia] Após 10 anos de cegueira, foca passa por cirurgia e reencontra seus amigos
+  [Notícias do Dia] Final mundial do ‘Oscar’ do mercado imobiliário tem dois favoritos de Santa Catarina
+  [Notícias do Dia] Motorista morre após carro perder controle em curva e bater de frente com carreta em SC
+
+== SE
+  [g1 SE] Reveja as principais matérias dos telejornais da TV Sergipe
+  [g1 SE] Aracaju confirma primeiro caso de Mpox em 2026 e investiga mais dois
+  [g1 SE] Consumidores afetados pela falta d’água no semiárido terão desconto na tarifa
+  [g1 SE] Polícia investiga denúncia de injúria racial e agressão contra cliente em estabelecimento comercial
+  [g1 SE] Inquérito conclui que mulher forjou gravidez, internação e morte de bebê em Aracaju
+  [g1 SE] Calendário de pagamento do IPVA 2027 em Sergipe; confira as datas
+  [g1 SE] VÍDEO: Casal é preso em flagrante por maus-tratos contra cavalo em Aracaju
+  [Infonet] Não basta trocar Cadeiras: o Desafio da Gestão do Turismo em Sergipe
+  [Infonet] O amor a propósito de Paulo, Camões e Renato Russo
+  [Infonet] Crise hídrica avança e Governo de SE propõe criação de câmara técnica
+  [Infonet] Motorista é detido com arma e 37 munições na BR-101 em São Cristóvão
+  [Infonet] Sarauzin encerra 2026 com edição especial “Fim de Ano em Cores”
+  [Infonet] Sergipano Alexandre Rocha conquista os tatames nos Estados Unidos
+  [Infonet] Homem denuncia injúria racial e agressão em estabelecimento de Aracaju
+  [Infonet] Antônio Camilo resgata trajetória de Jairo Alves de Almeida em biografia
+  [Infonet] Retinopatia diabética afeta diabéticos e pode causar cegueira
+  [Infonet] Petrobras mantém projeto Sergipe Águas Profundas no plano 2027-2031
+
+== SP
+  [g1 SP] Justiça revoga prisão preventiva de homem acusado de se masturbar diante de dentista em academia
+  [g1 SP] Bicicleta de suspeito de roubar celular de influenciadora foi entregue à polícia, diz vítima
+  [g1 SP] Justiça bloqueia R$ 3,8 milhões e determina sequestro de imóveis e carros de luxo ligados a MC Ryan SP
+  [g1 SP] Quem é MC Ryan SP, funkeiro alvo de operação da PF contra esquema bilionário
+  [g1 SP] PF faz operações em SP e outros estados contra lavagem de dinheiro e criptomoedas ilegais; Justiça bloqueia R$ 4,3 bilhões
+  [g1 SP] PF prende 25 pessoas em operações contra esquema bilionário de lavagem de dinheiro
+  [g1 SP] Primeiro filhote de ararinha-azul nascido em zoológico brasileiro é apresentado em SP; espécie é considerada extinta na natureza
+  [g1 SP] MP pede intervenção judicial no Corinthians após apontar dívida de R$ 2,8 bilhões
+  [g1 SP] Operação prende integrante do PCC e mulher suspeitos de lavar dinheiro do tráfico; Justiça determina bloqueio de R$ 45,6 milhões
+  [g1 SP (feed)] Festival de bikes na Zona Sul de SP tem competição de manobras radicais e atividades pra criançada
+  [g1 SP (feed)] Desempregado pedala 20 km e passa 12 horas em fila para concorrer a emprego no interior de SP
+  [g1 SP (feed)] 'Não foi uma fatalidade', diz viúva de homem morto em acidente no Beach Park
+  [g1 SP (feed)] Zé Ramalho lembra sucessos e 'invoca' Raul Seixas na Festa Junina de Sorocaba
+  [g1 SP (feed)] PRF apreende em MS maconha que era levada para SP em carreta
+  [g1 SP (feed)] Jundiaí recebe 3ª edição da Festa Junina Canina neste sábado
+  [g1 SP (feed)] Maior Baile do Mundo, com Anitta e MCs, espera 35 mil pessoas em SP para 10 horas de shows
+  [g1 SP (feed)] PSTU oficializa Vera Lúcia para disputa da Presidência da República
+  [g1 SP (feed)] Feira da construção civil é realizada até este domingo em Jundiaí
+  [g1 SP (feed)] Caso Vitória: trio acusado de envolvimento no crime é transferido para Tremembé
+  [g1 SP (feed)] Concurso da prefeitura de Tabapuã tem inscrições abertas até 31 de julho
+  [g1 SP (feed)] Morador de rua é alvo de ladrões e boletim de ocorrência permite reencontro com família 37 anos depois; VÍDEO
+  [Agência SP] Investimentos em saneamento básico triplicam em São Paulo e chegam a R$ 12 bilhões em nove meses
+  [Agência SP] Casa em Dia: CDHU realiza plantão de atendimento para mutuários em Itanhaém
+  [Agência SP] Defesa Civil mobiliza Gabinete Especial da Operação El Niño para monitorar chuvas intensas nesta quarta (25) e quinta-feira (26)
+  [Agência SP] O que é o Fundo de Apoio à Universalização do Saneamento de São Paulo e como ele ajuda a reduzir tarifas? Veja perguntas e respostas
+  [Agência SP] Previsão do tempo para quarta-feira (25), em SP: instabilidades continuam
+  [Agência SP] Governo de SP reconhece mais de mil professores por práticas inovadoras em sala de aula
+  [Agência SP] Professores da rede estadual de SP já podem consultar valor do bônus por resultados no site da Secretaria da Educação
+  [Agência SP] Olisp: São Paulo reconhece 119,7 mil estudantes por desempenho em leitura e interpretação de texto
+  [Agência SP] Nascimento de ararinha-azul no Zoológico de São Paulo marca avanço na conservação da espécie
+  [Agência SP] Provão Paulista: prazo para escolha de cursos termina na sexta-feira (27)
+  [Diário do Grande ABC] Veja o Obituário do Grande ABC deste dia 25 de novembro de 2026
+  [Diário do Grande ABC] Bolsas da Ásia fecham em baixa com dúvidas sobre IA e temor de novas tarifas dos EUA
+  [Diário do Grande ABC] Sete em cada dez andreenses aprovam governo Gilvan Ferreira
+  [Diário do Grande ABC] Saiba quem tem a tabela mais fácil na briga contra o rebaixamento no Brasileirão
+  [Diário do Grande ABC] Ex-CEO da Hurb é preso no Rio de Janeiro após quase um ano foragido
+  [Diário do Grande ABC] Federação Paulista revela grupos e sedes da 57ª Copa São Paulo de Futebol Júnior
+  [Diário do Grande ABC] Confira os números sorteados nas loterias de terça-feira (24)
+  [Diário do Grande ABC] TCE-SP adia análise de contas de Auricchio por falta de manifestação da Promotoria
+  [Diário do Grande ABC] MP denuncia ex-boxeador suspeito de espancar homem até a morte
+  [Diário do Grande ABC] DDM de Santo André passa a funcionar 24 horas a partir de quinta-feira
+  [Diário do Grande ABC] Relatório da Abin revela estratégias de PCC e Comando Vermelho para crescer no tráfico
+  [Diário do Grande ABC] Moraes rejeita pedido para abater da pena de Zambelli o tempo de prisão na Itália e provisória
+  [Metrópoles SP] Caso Larissa: jovem pedia em diário que Deus "acalmasse" coração do marido
+  [Metrópoles SP] Major que estrangulou esposa foi beneficiado por reajuste na aposentadoria
+  [Metrópoles SP] Após 2 anos, governo volta a anunciar interdição de escola centenária em SP
+  [Metrópoles SP] Nasce o primeiro filhote de ararinha-azul brasileiro em São Paulo
+  [Metrópoles SP] Justiça revoga prisão de homem acusado de se masturbar em academia de SP
+  [Metrópoles SP] Câmara abre processo que pode cassar vereador acusado de agredir morador
+  [Metrópoles SP] Caso Larissa: PM entregou celular secundário à polícia e apagou conversas
+  [Metrópoles SP] Anatel identifica comércio que interferiu no GPS de aviões em Guarulhos
+  [Metrópoles SP] TJSP nega habeas corpus a mulher que matou o pai e saiu nua no litoral
+  [Metrópoles SP] Parque da Aclimação acorda com peixes mortos e moradores cobram prefeitura
+  [Metrópoles SP] Sobrado desaba e causa fratura exposta em perna de mulher na zona norte
+  [Metrópoles SP] Homem invade joalheria e, rastejando, furta R$ 2 milhões no interior de SP
+
+== TO
+  [g1 TO] Ministério Público apura suspeita de racismo em declarações de estudante de psicologia em vídeo
+  [g1 TO] Quatro suspeitos são indiciados por sequestro de jovem que conseguiu escapar de cativeiro em Palmas
+  [g1 TO] 'Me sinto motivado', diz gari convidado para aniversário de menino no TO
+  [g1 TO] Barracas ficam submersas no Rio Tocantins após abertura de comportas de usina; VÍDEO
+  [g1 TO] VÍDEOS: Jornal Anhanguera 2ª Edição-TO de terça-feira, 24 de novembro de 2026
+  [g1 TO] PM de folga salva engenheiro civil que se engasgou em bar no TO
+  [g1 TO] 'Família está destruída', diz mulher que perdeu duas irmãs e sobrinha em triplo feminicídio no TO
+  [Conexão Tocantins] Design, desempenho e economia estão entre fatores de escolha de veículos elétricos de duas rodas
+  [Conexão Tocantins] Equipes do Sesi Tocantins disputam a Etapa Nacional da Olimpíada Brasileira de Robótica na Paraíba
+  [Conexão Tocantins] Estudantes da UFT apresentam soluções inovadoras no Startup-SE Demo Day
+  [Conexão Tocantins] Extinta na natureza, ararinha-azul nasce no zoológico de São Paulo
+  [Conexão Tocantins] Gás do Povo completa um ano com 15 milhões de famílias beneficiárias
+  [Conexão Tocantins] Presidente Lula lamenta falta de acordo na COP31 e pede união pelo meio ambiente
+  [Conexão Tocantins] Feirão Serasa Limpa Nome oferece negociação de dívidas por telefone
+  [Conexão Tocantins] Junto com o presidente da CNI presidente da Fieto recebe a Ordem do Mérito Amazônico Danilo Remor
+  [Conexão Tocantins] Escola Sancha Ferreira vira palco na III Feira das Artes com 13 espetáculos teatrais criados pelos estudantes
+  [Conexão Tocantins] Sesi Tocantins conquista 10º lugar continental em torneio de robótica realizado no Canadá
+  [Conexão Tocantins] Banho Solidário inicia campanha de arrecadação de roupas e produtos de higiene
+  [Conexão Tocantins] Guarda Metropolitana de Palmas captura tamanduá-bandeira na região do Santa Bárbara
+  [T1 Notícias] Governo destina 123 imóveis públicos a órgãos estaduais e doa cinco áreas no Estado
+  [T1 Notícias] Prestadores de serviços propõem rescisão contratual e transição na saúde do Tocantins
+  [T1 Notícias] Municípios do TO recebem mais 15 caminhontes para políticas de assistência social
+  [T1 Notícias] "Nós pagamos os médicos", diz Eduardo sobre paralisação nas UPAs de Palmas
+  [T1 Notícias] Governo propõe antecipar repasse de sobras de fundos e autarquias ao caixa do Estado
+  [T1 Notícias] "Me senti expulsa": covereadora aciona Justiça para retornar ao mandato Coletivo Somos
+  [T1 Notícias] Área atingida por incêndios em Unidades de Conservação do Tocantins cai 25,6% em 2026
+  [T1 Notícias] Wanderlei recebe Vicentinho Jr. no Palácio pela primeira vez após eleições
+  [T1 Notícias] Presidente da Fieto Roberto Pires recebe Ordem do Mérito Amazônico
+  [T1 Notícias] Prestadores de serviços propõe rescisão contratual e transição
+  [T1 Notícias] Projeto de Ayres proíbe condenados de lucrar com a exploração de seus crimes
+  [T1 Notícias] Estudantes de Araguaína conquistam 10º lugar em torneio de robótica no Canadá

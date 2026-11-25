@@ -1,0 +1,82 @@
+Manchetes de 2026-11-25T06:17:17.026-03:00 · 138/185 fontes · 1275 fatos distintos · 0 já cobertos · 82 LACUNAS
+
+1. →ATUALIZAR ajuste_camara_20 [102 veículos; capa: O Globo, Agência Brasil, UOL, Correio Braziliense, Valor Econômico, Terra, Veja, O Tempo, GZH, Estado de Minas, Diário de Pernambuco, [AC] g1 AC, [AL] g1 AL, [AL] Tribuna Hoje, [AP] g1 AP, [AM] g1 AM, [BA] g1 BA, [BA] Correio, [BA] A Tarde, [BA] Bahia Notícias, [BA] Metro1, [CE] g1 CE, [CE] Diário do Nordeste, [CE] O Povo, [DF] g1 DF, [DF] Agência Brasília
+   O Globo, g1, Agência Brasil, Agência Câmara, UOL, CNN Brasil, Metrópoles, Correio Braziliense, Valor Econômico, InfoMoney, BBC Brasil, DW Brasil, CartaCapital, Terra, Exame, Veja, Brasil de Fato, Intercept Brasil, O Tempo, GZH, Estado de Minas, Diário de Pernambuco, [AC] g1 AC, [AC] ac24horas, [AC] A Gazeta do Acre, [AL] g1 AL, [AL] Gazeta de Alagoas, [AL] TNH1, [AL] Tribuna Hoje, [AP] g1 AP, [AP] Seles Nafe
+2. →ATUALIZAR pt_redes_fogo_amigo_ajuste_17_11 [62 veículos; capa: O Globo, g1, Veja, [MA] O Estado MA, [MT] Gazeta Digital, [MS] g1 MS, [MG] O Tempo, [MG] Itatiaia, [PA] g1 PA, [PA] O Liberal, [PA] Agência Pará, [PB] g1 PB, [PR] g1 PR, [PR] Gazeta do Povo PR, [PR] AEN-PR, [PE] g1 PE, [PE] Diario de Pernambuco, [PE] Folha de Pernambuco, [PE] JC, [PI] g1 PI, [PI] Meio Norte, [RJ] g1 RJ, [RJ] O Dia, [RJ] Extra, [R
+   O Globo, Folha, g1, Correio Braziliense, Veja, Diário de Pernambuco, [MA] Imirante, [MA] O Estado MA, [MT] Gazeta Digital, [MT] Olhar Direto, [MS] g1 MS, [MS] Correio do Estado, [MG] g1 MG, [MG] O Tempo, [MG] Estado de Minas, [MG] Itatiaia, [PA] g1 PA, [PA] O Liberal, [PA] Diário do Pará, [PA] Agência Pará, [PB] g1 PB, [PB] Jornal da Paraíba, [PB] ClickPB, [PB] Paraíba Online, [PR] g1 PR, [PR] Gazeta do Pov
+3. →ATUALIZAR nvidia_campea_nacional_ia_trump_shenzhen_16_11 [10 veículos; capa: UOL, Valor Econômico, O Tempo, [MG] O Tempo] A reviravolta que fez Jensen Huang voltar ao comando da Nvidia após escândalo de traição e espionagem
+   Folha, g1, UOL, Correio Braziliense, Valor Econômico, BBC Brasil, DW Brasil, Veja, O Tempo, [MG] O Tempo · https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/jensen-huang-pede-desculpas-aos-funcionarios-da-nvidia-e-diz-estar-fazendo-terapia.shtml
+4. →ATUALIZAR ajuste_fiscal_lula_nao_reforma_21 [9 veículos; capa: Folha, Estadão, Correio Braziliense, Valor Econômico, Veja, O Tempo] Mercado vê avanço no plano Moretti, mas espera novas medidas para conter gastos de forma estrutural Equipe econômica prepara nova etapa do ajuste, com foco em despesas ob
+   Folha, Estadão, g1, CNN Brasil, Metrópoles, Correio Braziliense, Valor Econômico, Veja, O Tempo · https://www1.folha.uol.com.br/mercado/2026/11/mercado-ve-avanco-no-plano-moretti-mas-espera-novas-medidas-para-conter-gastos-de-forma-estrutual.shtml
+5. →ATUALIZAR papa_francisco_diario_24 [7 veículos; capa: O Globo, Estado de Minas] 'Sedução pagã', 'voz do demônio', 'Virgem me salvou': veja frases escritas pelo papa Francisco no diário em que relatou ter visto o diabo
+   O Globo, g1, Correio Braziliense, BBC Brasil, DW Brasil, Veja, Estado de Minas · https://oglobo.globo.com/mundo/noticia/2026/11/25/diario-de-francisco-revela-que-papa-se-via-perto-da-morte-desde-os-60-anos.ghtml
+6. →ATUALIZAR quirno_milei_desconvidado_posse_24 [7 veículos; capa: Correio Braziliense, Valor Econômico] BRASIL-ARGENTINA Lula decide vetar Javier Milei na posse, crava imprensa argentina O que se sabe e o que ainda não está definido sobre a posse de Lula em 2027
+   Folha, g1, Metrópoles, Correio Braziliense, Valor Econômico, BBC Brasil, Exame · https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/governo-lula-nao-deve-chamar-milei-para-posse.shtml
+7. →NOVA [6 veículos; capa: Folha, UOL, Terra] Miss Universo 2026 Porto-riquenha Jennifer Barreto, 27, ganha torneio em casa e é a primeira vencedora mãe e casada da história; brasileira fica no Top 30 - Reprodução/In
+   Folha, UOL, CNN Brasil, Terra, O Tempo, [AL] TNH1 · https://f5.folha.uol.com.br/colunistas/de-faixa-a-coroa/2026/11/miss-universo-2026-porto-riquenha-e-a-primeira-vencedora-mae-e-casada-da-historia.shtml
+8. →ATUALIZAR cartagena_refens_24 [6 veículos] Ref�ns s�o resgatados na Col�mbia ap�s for�as de seguran�a invadirem supermercado em Cartagena
+   O Globo, Folha, g1, UOL, CNN Brasil, Veja · https://oglobo.globo.com/mundo/noticia/2026/11/25/refens-sao-resgatados-apos-17-horas-de-sequestro-em-supermercado-na-colombia.ghtml
+9. →ATUALIZAR abin_faccoes_31_grupos_24 [6 veículos] Norte e Nordeste dependem mais do SUS; em Boa Vista, 94% usam unicamente a rede pública Levantamento mostra que cobertura dos planos de saúde é menor ao norte do país
+   Folha, g1, UOL, [AL] Gazeta de Alagoas, [AL] TNH1, [CE] O Povo · https://www1.folha.uol.com.br/equilibrioesaude/2026/11/norte-e-nordeste-dependem-mais-do-sus-em-boa-vista-94-da-populacao-usa-apenas-a-rede-publica.shtml
+10. →NOVA [5 veículos; capa: Valor Econômico] Aliado da família Bolsonaro, assessor de Trump para o Brasil deixa cargo no Departamento de Estado dos EUA
+   Folha, g1, UOL, Valor Econômico, [DF] Jornal de Brasília · https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/aliado-dos-bolsonaros-e-critico-de-moraes-deixa-departamento-de-estado-dos-eua.shtml
+11. →NOVA [4 veículos; capa: O Globo, Estado de Minas, [BA] Correio] Descontos de até 50% Quer viajar? Confira os melhores preços e promoções da Black Friday 2026
+   O Globo, Terra, Estado de Minas, [BA] Correio · https://oglobo.globo.com/economia/noticia/2026/11/25/quer-viajar-confira-os-melhores-precos-e-promocoes-da-black-friday-2026.ghtml
+12. →ATUALIZAR messias_stf_lula_reafirma_23 [4 veículos; capa: O Globo, Estadão] Política Coluna do Estadão Bastidores: STJ avalia sugerir a Lula lista quíntupla com nomes de 3 mulheres para vagas na Corte
+   O Globo, Estadão, g1, Brasil de Fato · https://oglobo.globo.com/blogs/bela-megale/post/2026/11/as-tres-mulheres-que-foram-tema-da-conversa-entre-lula-e-um-ministro-do-stf-sobre-vaga-na-corte.ghtml
+13. →ATUALIZAR escala_6x1_20 [4 veículos; capa: Estadão, Valor Econômico] Fim da escala 6x1: ministro recomenda que setores 'corram' para fechar acordo coletivo até dia 16 se quiserem escala diferente
+   Folha, Estadão, g1, Valor Econômico · https://www1.folha.uol.com.br/mercado/2026/11/ninguem-morre-se-fechar-comercio-aos-domingos-diz-ministro-sobre-fim-da-escala-6x1.shtml
+14. →NOVA [4 veículos; capa: Diário de Pernambuco] CLIMATIZAÇÃO Calor impulsiona vendas de ventiladores e ar-condicionado às vésperas da Black Friday em PE
+   Folha, UOL, Valor Econômico, Diário de Pernambuco · https://redir.folha.com.br/redir/online/emcimadahora/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/ia-pode-ajudar-consumidor-em-compras-na-black-friday-veja-como-utilizar-a-ferramenta.shtml
+15. →ATUALIZAR quirno_milei_desconvidado_posse_24 [4 veículos; capa: Correio Braziliense] Governo Lula decide n�o enviar embaixador de volta � Argentina ap�s novo ataque de Milei
+   Folha, Estadão, g1, Correio Braziliense · https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/governo-lula-decide-nao-enviar-embaixador-de-volta-a-argentina-apos-novo-ataque-de-milei.shtml
+16. →ATUALIZAR mendonca_inss_soltura_24 [4 veículos; capa: O Tempo] Mendonça revoga prisão domiciliar de ex-'número 2' do INSS preso em operação contra fraudes
+   g1, Correio Braziliense, O Tempo, [DF] Metrópoles DF · https://g1.globo.com/politica/noticia/2026/11/24/mendonca-revoga-prisao-domiciliar-de-ex-numero-2-do-inss-preso-em-operacao-contra-fraudes.ghtml
+17. →NOVA [4 veículos] PIONEIRO Missão histórica levará primeiro cidadão estrangeiro à estação espacial da China
+   O Globo, UOL, CNN Brasil, Diário de Pernambuco · https://oglobo.globo.com/mundo/noticia/2026/11/25/missao-espacial-chinesa-shenzhou-24-decola-com-sucesso-para-estacao-espacial.ghtml
+18. →ATUALIZAR bolsonaro_obstrucao_intestinal_21 [4 veículos] Bolsonaro tem melhora em quadro de obstru��o intestinal, mas segue sem previs�o de alta
+   Folha, Agência Brasil, Correio Braziliense, Valor Econômico · https://redir.folha.com.br/redir/online/poder/rss091/*https://www1.folha.uol.com.br/blogs/brasilia-hoje/2026/11/bolsonaro-tem-melhora-em-quadro-de-obstrucao-intestinal-mas-segue-sem-previsao-de-alta.shtml
+19. →ATUALIZAR gta6_receita_recorde_21 [4 veículos] Petrobras buscar� outras empresas de etanol de milho ap�s compra de fatia na Neomille, diz ag�ncia
+   Folha, g1, Agência Brasil, Exame · https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/petrobras-buscara-outras-empresas-de-etanol-de-milho-apos-compra-de-fatia-na-neomille-diz-agencia.shtml
+20. →ATUALIZAR braskem_acordo_credores_us49bi_23 [4 veículos] Braskem chega a acordo preliminar com credores para reestruturar dívida bilionária
+   Folha, g1, Correio Braziliense, Valor Econômico · https://redir.folha.com.br/redir/online/mercado/rss091/*https://c-level.folha.uol.com.br/negocios/2026/11/acoes-da-braskem-desabam-mais-de-13-apos-acordo-com-credores.shtml
+21. →ATUALIZAR damares_visita_vorcaro_papudinha_23 [4 veículos] CASO MASTER Damares pede afastamento de Andrei após pedir visita a Vorcaro
+   Correio Braziliense, CartaCapital, Terra, [DF] Jornal de Brasília · https://www.correiobraziliense.com.br/politica/2026/11/7543367-damares-pede-afastamento-de-andrei-apos-pedir-visita-a-vorcaro.html
+22. →NOVA [3 veículos; capa: Correio Braziliense, Estado de Minas, [AL] Tribuna Hoje] Recurso do MP/RJ Engenheiros são condenados em 2ª instância por incêndio no Ninho do Urubu
+   Correio Braziliense, Estado de Minas, [AL] Tribuna Hoje · https://www.correiobraziliense.com.br/brasil/2026/11/7543681-justica-condena-engenheiros-a-8-anos-por-tragedia-no-ninho-do-urubu.html
+23. →ATUALIZAR sul_alerta_vermelho_640_cidades_24 [3 veículos; capa: Folha, UOL] Inmet mant�m alerta de perigo para tempestades em todo o estado de S�o Paulo nesta quarta (25)
+   Folha, Agência Brasil, UOL · https://www1.folha.uol.com.br/cotidiano/2026/11/inmet-mantem-alerta-de-perigo-para-tempestades-em-todo-o-estado-de-sao-paulo-nesta-quarta-25.shtml
+24. →ATUALIZAR mendonca_relatorio_20 [3 veículos; capa: g1, O Tempo] Fachin autoriza pai de Vorcaro a fazer exames fora do presídio na Grande BH
+   g1, CNN Brasil, O Tempo · https://g1.globo.com/mg/minas-gerais/noticia/2026/11/24/fachin-autoriza-pai-de-daniel-vorcaro-a-fazer-exames-fora-do-presidio-na-grande-bh.ghtml
+25. →ATUALIZAR rj_niteroi_br101_carreta_portico_24 [3 veículos; capa: Agência Brasil, Veja] Brasil Queda de árvore atinge cinco crianças em escola da zona leste de São Paulo
+   Agência Brasil, CNN Brasil, Veja · https://agenciabrasil.ebc.com.br/meio-ambiente/noticia/2026-11/queda-de-arvore-em-escola-publica-em-sp-deixa-cinco-pessoas-feridas
+26. →ATUALIZAR rj_chuva_forte_madrugada_previsao_23 [3 veículos; capa: GZH, Estado de Minas] Previsão do tempo Chuva diminui no RS nesta quarta-feira, mas ainda há alerta para temporais; saiba onde
+   UOL, GZH, Estado de Minas · https://tnonline.uol.com.br/noticias/vale-do-ivai/confira-a-previsao-do-tempo-para-ivaipora-nesta-quarta-feira-25-1176201
+27. →NOVA [3 veículos; capa: O Tempo, Estado de Minas] Homem é preso suspeito de matar sogro a facadas no Agreste de Pernambuco
+   Terra, O Tempo, Estado de Minas · https://www.terra.com.br/noticias/homem-e-preso-suspeito-de-matar-sogro-a-facadas-no-agreste-de-pernambuco,2e06d4391280e4784bef690cb4a3c1feggu3mqhd.html
+28. →NOVA [3 veículos; capa: Diário de Pernambuco, [PE] Diario de Pernambuco] Esplanada por Leandro Mazzini Levou um ‘não’!
+   Diário de Pernambuco, [CE] O Povo, [PE] Diario de Pernambuco · https://www.diariodepernambuco.com.br/colunas/esplanada/2026/11/11729796-levou-um-nao.html
+29. →ATUALIZAR comparato_morre_24 [3 veículos; capa: O Globo] Lula comparece em velório do jurista Fábio Konder Comparato em São Paulo
+   O Globo, Estadão, Terra · https://oglobo.globo.com/blogs/bernardo-mello-franco/coluna/2026/11/no-brasil-todo-poder-emana-dos-ricos-ensinou-fabio-konder-comparato.ghtml
+30. →ATUALIZAR stf_gilmar_sigilo_relatorio_pf_ministros_23 [3 veículos; capa: g1] Nunes Marques é definido relator de pedido de Vorcaro para retirar caso Master do gabinete da presidência do STF
+   O Globo, Folha, g1 · https://oglobo.globo.com/politica/noticia/2026/11/25/ministros-do-stf-pressionam-por-nova-distribuicao-de-pedido-de-vorcaro-sobre-relatoria-do-master-entregue-a-nunes-marques.ghtml
+31. →ATUALIZAR nhs_ia_cancer_mama_24 [3 veículos; capa: Agência Brasil] Anvisa autoriza medicamento que pode ampliar o tratamento de câncer de mama agressivo Biossimilar do pertuzumabe pode reforçar combate ao tumor do tipo HER2-positivo
+   Folha, Agência Brasil, Correio Braziliense · https://www1.folha.uol.com.br/equilibrioesaude/2026/11/anvisa-aprova-remedio-que-pode-ampliar-tratamento-de-cancer-de-mama-agressivo.shtml
+32. →NOVA [3 veículos; capa: Estado de Minas] Atualiza��o do WhatsApp traz figurinhas com som; veja como funciona
+   Folha, g1, Estado de Minas · https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/tec/2026/11/atualizacao-do-whatsapp-traz-figurinhas-com-som-veja-como-funciona.shtml
+33. →ATUALIZAR zambelli_arquivamento_19 [3 veículos; capa: Agência Brasil] Moraes rejeita pedido da defesa de Zambelli para descontar de pena da ex-deputada tempo que ela ficou presa na Itália
+   g1, Agência Brasil, Terra · https://g1.globo.com/politica/noticia/2026/11/24/moraes-rejeita-pedido-da-defesa-de-zambelli-para-descontar-de-pena-da-ex-deputada-tempo-que-ela-ficou-presa-na-italia.ghtml
+34. →ATUALIZAR ue_imposto_big_techs_21 [3 veículos; capa: Agência Brasil] Projeto de regulação das big techs será votado na próxima semana
+   Agência Brasil, CartaCapital, Terra · https://agenciabrasil.ebc.com.br/politica/noticia/2026-11/projeto-de-regulacao-das-big-techs-sera-votado-na-proxima-semana
+35. →ATUALIZAR inss_13o_novos_beneficiarios_24 [3 veículos; capa: Agência Brasil] Economia INSS começa a pagar décimo terceiro salário nesta terça-feira (24)
+   Agência Brasil, Valor Econômico, [AC] A Gazeta do Acre · https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/inss-comeca-pagar-decimo-terceiro-salario-nesta-terca-feira-24
+36. →ATUALIZAR paraguai [3 veículos; capa: Terra] MP do Paraguai pede ampliação das acusações contra ex-presidente Santiago Peña
+   CartaCapital, Terra, [DF] Jornal de Brasília · https://www.cartacapital.com.br/mundo/mp-do-paraguai-pede-ampliacao-das-acusacoes-contra-ex-presidente-santiago-pena/
+37. →NOVA [3 veículos; capa: Estado de Minas] 'É sobre Sandy, Junior e o público': como dupla prepara retorno aos palcos
+   Exame, Estado de Minas, [AC] ac24horas · https://exame.com/pop/e-sobre-sandy-junior-e-o-publico-como-dupla-prepara-retorno-aos-palcos/
+38. →NOVA [3 veículos] São Paulo tem novas regras para tráfego de helicópteros e aviões a partir desta quinta (26); veja Regra muda normas para o Campo de Marte e detalha trechos de passagem ob
+   O Globo, Folha, [BA] g1 BA · https://oglobo.globo.com/brasil/sao-paulo/noticia/2026/11/25/proibicao-de-voos-panoramicos-no-cristo-e-mudancas-no-campo-de-marte-as-novas-regras-para-helicopteros-em-rio-e-sp.ghtml
+39. →ATUALIZAR anthropic_estreia_20 [3 veículos] Anthropic fecha abaixo do preço do IPO pela primeira vez Investidores continuam cautelosos com caso da Nvidia e possível alta de juros nos EUA
+   Folha, g1, Veja · https://c-level.folha.uol.com.br/negocios/2026/11/anthropic-fecha-abaixo-do-preco-do-ipo-pela-primeira-vez-com-desaceleracao-de-acoes-de-tecnologia.shtml
+40. →ATUALIZAR am_exercito_skunk_sao_gabriel_jaguarete_24 [3 veículos] Venezuela divulga quadro macroeconômico e estima dívida em US$ 237,5 bilhões
+   Folha, Valor Econômico, Veja · https://redir.folha.com.br/redir/online/mercado/rss091/*https://www1.folha.uol.com.br/mercado/2026/11/venezuela-divulga-plano-economico-e-estima-divida-em-us-2375-bilhoes.shtml

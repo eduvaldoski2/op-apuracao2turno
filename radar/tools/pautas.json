@@ -16,10 +16,10 @@
     "itaipu_ueno_18",
     "itaipu_diretor_destituido_20"
    ],
-   "verificada": "2026-11-24-19h",
-   "fato_novo": false,
-   "ultimo_fato": "Sem fato novo localizado em 24/11 às 6h além do pedido de Peña por ar-condicionado e geladeira (23/11). (Sem fato novo na triagem das 19h de 24/11.)",
-   "proximo": "Recuperação dos US$ 182 milhões da Itaipu na Justiça paraguaia."
+   "verificada": "2026-11-25-07h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: a Promotoria paraguaia acusa Peña de lavagem e suborno; irmão e cunhada foram detidos.",
+   "proximo": "Audiências de medidas cautelares e recuperação dos US$ 182 milhões da Itaipu."
   },
   {
    "id": "transicao-lula",
@@ -59,11 +59,12 @@
     "veja_lula_terceiriza_ajuste_21",
     "janones_exercito_lula_perde_seguidores_23",
     "messias_stf_lula_reafirma_23",
-    "lula_bc_diretoria_mercado_24"
+    "lula_bc_diretoria_mercado_24",
+    "quirno_milei_desconvidado_posse_24"
    ],
-   "verificada": "2026-11-24-19h",
-   "fato_novo": false,
-   "ultimo_fato": "24/11: Lula admite indicar uma mulher ao STF e não descarta Messias; Fazenda e Banco Central seguem sem nomes definidos para as diretorias vagas. (Sem fato novo na triagem das 19h de 24/11.)",
+   "verificada": "2026-11-25-07h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: Itamaraty confirma que Lula não convida Milei para a posse e mantém o Brasil sem embaixador em Buenos Aires; equipe econômica busca nomes para o BC.",
    "proximo": "Escolha do ministro da Fazenda e anúncio dos ministérios em dezembro."
   },
   {
@@ -80,9 +81,9 @@
     "toffoli_contas_campanha_lula_14_11",
     "tse_lula_flavio_mil_acoes_campanha_23"
    ],
-   "verificada": "2026-11-24-19h",
+   "verificada": "2026-11-25-07h",
    "fato_novo": false,
-   "ultimo_fato": "Sem fato novo em 24/11 às 6h. (Sem fato novo na triagem das 19h de 24/11.)",
+   "ultimo_fato": "Sem fato novo em 24/11 às 6h. (Sem fato novo na triagem das 19h de 24/11.) (Sem fato novo na triagem das 7h de 25/11.)",
    "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
   },
   {
@@ -102,9 +103,9 @@
     "pl_flavio_motta_consulta_121_deputados_17_11",
     "rockbridge_flavio_pf_18"
    ],
-   "verificada": "2026-11-24-19h",
+   "verificada": "2026-11-25-07h",
    "fato_novo": false,
-   "ultimo_fato": "Sem fato novo em 24/11 às 6h: citação por edital de 23/11 segue valendo; julgamento virtual até 30/11. (Sem fato novo na triagem das 19h de 24/11.)",
+   "ultimo_fato": "Sem fato novo em 24/11 às 6h: citação por edital de 23/11 segue valendo; julgamento virtual até 30/11. (Sem fato novo na triagem das 19h de 24/11.) (Sem fato novo na triagem das 7h de 25/11.)",
    "proximo": "Votos dos três ministros que faltam no julgamento virtual até 30/11."
   },
   {
@@ -147,10 +148,10 @@
     "tereza_cristina_marinho_oposicao_senado_23",
     "sus_piso_saude_ajuste_23"
    ],
-   "verificada": "2026-11-24-19h",
-   "fato_novo": false,
-   "ultimo_fato": "23/11 (publicado em 24/11): Câmara aprovou sem alterações o ajuste fiscal, por 353 votos a 128; o texto segue para sanção de Lula. (Sem fato novo na triagem das 19h de 24/11.)",
-   "proximo": "Sanção presidencial do ajuste fiscal e votações de fim de ano."
+   "verificada": "2026-11-25-07h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: Lula sanciona sem vetos o ajuste fiscal e define a PEC da segunda etapa; Congresso tem menos de um mês até o recesso.",
+   "proximo": "Reunião da PEC às 15h e votações de fim de ano."
   },
   {
    "id": "seguranca-publica",
@@ -179,9 +180,9 @@
     "pec_seguranca_guarda_civil_policias_municipais_23",
     "moraes_suspeito_interferencia_24"
    ],
-   "verificada": "2026-11-24-19h",
+   "verificada": "2026-11-25-07h",
    "fato_novo": false,
-   "ultimo_fato": "24/11: relatório da PF cita tentativas de aproximação de Vorcaro com o ministro Mendonça; Moraes se declara suspeito em inquérito sobre interferência estrangeira. (Sem fato novo na triagem das 19h de 24/11.)",
+   "ultimo_fato": "24/11: relatório da PF cita tentativas de aproximação de Vorcaro com o ministro Mendonça; Moraes se declara suspeito em inquérito sobre interferência estrangeira. (Sem fato novo na triagem das 19h de 24/11.) (Sem fato novo na triagem das 7h de 25/11.)",
    "proximo": "Regulamentação e promulgação da PEC."
   },
   {
@@ -198,10 +199,10 @@
     "escala_6x1_20",
     "hora_extra_divisor_21"
    ],
-   "verificada": "2026-11-24-19h",
-   "fato_novo": false,
-   "ultimo_fato": "24/11: portaria do MTE fixa fiscalização em 90 dias e folgas no mesmo mês, e a AGU pede ao STF que a liminar de Dino deixe de valer; transição começa em 16/12. (Sem fato novo na triagem das 19h de 24/11.)",
-   "proximo": "Demais portarias até 16/12."
+   "verificada": "2026-11-25-07h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: a CNI aciona o STF contra o decreto e a portaria da escala 6x1; Marinho pede acordos coletivos até 16/12.",
+   "proximo": "Julgamento no STF e demais portarias até 16/12."
   },
   {
    "id": "economia-mercado",
@@ -276,12 +277,13 @@
     "mercado_dolar_toca_r6_ajuste_camara_23",
     "braskem_acordo_credores_us49bi_23",
     "lula_bc_diretoria_mercado_24",
-    "black_friday_recorde_cnc_endividamento_24"
+    "black_friday_recorde_cnc_endividamento_24",
+    "mercado_pec_despesas_obrigatorias_25"
    ],
-   "verificada": "2026-11-24-19h",
+   "verificada": "2026-11-25-07h",
    "fato_novo": true,
-   "ultimo_fato": "24/11: Fazenda reduz PIB de 2027 para 1,8% e eleva IPCA para 4,5%; Petrobras aprova R$ 15,6 bilhões em dividendos.",
-   "proximo": "Votação do ajuste na Câmara e plano da Petrobras."
+   "ultimo_fato": "25/11: mercado vê primeiro passo no plano Moretti e cobra segunda etapa; ações da Braskem caem 14%.",
+   "proximo": "PEC às 15h; IPCA-15 na quinta (26)."
   },
   {
    "id": "eua-meio-mandato",
@@ -299,11 +301,12 @@
     "alasca_peltola_18",
     "jeffries_20",
     "eua_democratas_258_camara_22",
-    "eua_delta_atlanta_atrasos_22"
+    "eua_delta_atlanta_atrasos_22",
+    "eua_tarifas_china_ue_subsidios_25"
    ],
-   "verificada": "2026-11-24-19h",
-   "fato_novo": false,
-   "ultimo_fato": "Sem fato novo em 24/11 às 6h. (Sem fato novo na triagem das 19h de 24/11.)",
+   "verificada": "2026-11-25-07h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: governo Trump prepara tarifas da Seção 301 contra China, UE e outras 14 economias; assessor de Trump para o Brasil deixa o cargo.",
    "proximo": "Prazo do financiamento do governo em 12/12."
   },
   {
@@ -330,12 +333,13 @@
     "trilateral_shenzhen_19",
     "ucrania_autoridades_nucleares_rede_eletrica_16_11",
     "russia_bomba_atomica_espaco_24",
-    "ucrania_navio_russo_libia_23"
+    "ucrania_navio_russo_libia_23",
+    "ucrania_zelensky_prazo_janeiro_25"
    ],
-   "verificada": "2026-11-24-19h",
-   "fato_novo": false,
-   "ultimo_fato": "24/11: Polônia acusa a Rússia de incursão deliberada de drone de vigilância; Coreia do Sul registra entrada de cinco bombardeiros russos em sua zona de defesa aérea. (Sem fato novo na triagem das 19h de 24/11.)",
-   "proximo": "Resposta de Moscou e novas rodadas de negociação."
+   "verificada": "2026-11-25-07h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: Zelensky diz que enviados de Trump querem acordo até janeiro; Trump nega prazo; 112 drones russos.",
+   "proximo": "Resposta de Moscou e novas rodadas."
   },
   {
    "id": "israel-governo",
@@ -346,12 +350,13 @@
     "knesset_kahana_18",
     "israel",
     "israel_oposicao_acusa_netanyahu_golpe_16_11",
-    "israel_coalizao_20"
+    "israel_coalizao_20",
+    "israel_eisenkot_governo_23"
    ],
-   "verificada": "2026-11-24-19h",
-   "fato_novo": false,
-   "ultimo_fato": "Sem fato novo em 24/11 às 6h além da reunião de 22/11 entre Yashar e Likud. (Sem fato novo na triagem das 19h de 24/11.)",
-   "proximo": "Fechamento da coalizão ou novo prazo do presidente Herzog."
+   "verificada": "2026-11-25-07h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: Eisenkot fecha primeiro acordo de coalizão com Lieberman; Democratas rompem; prazo até 6/12.",
+   "proximo": "Fechamento da coalizão até 6/12."
   },
   {
    "id": "ira-oriente-medio",
@@ -377,63 +382,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-24-19h",
-   "achado": "Sem queda, renúncia ou prisão de chefe de Estado nas capas e agências lidas às 19h; Argentina: governo Milei questiona a vitória de Lula (chanceler Quirno)."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-24-19h",
-   "achado": "Colômbia: assalto com reféns em supermercado de Cartagena terminou sem mortes confirmadas; Argentina: Santilli no Senado na quarta (25)."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-24-19h",
-   "achado": "Gaza: ataque israelense mata chefe de segurança interna do Hamas; Israel (Katz) fala em armas químicas do Irã."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-24-19h",
-   "achado": "WSJ: governo Trump deve anunciar tarifas contra China e UE; Austrália fecha acordo sobre lei de dever de cuidado digital."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-24-19h",
-   "achado": "Nvidia reage à volta de Huang; risco-país argentino acima de 1.100 pontos; arrecadação federal recorde em outubro."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-24-19h",
-   "achado": "Lula admite indicar mulher ao STF e não descarta Messias; Banco Central segue com diretorias vagas e Haddad vai a Brasília para encontro com Lula. Reverificado às 19h de 24/11 nas capas e feeds coletados: sem fato novo adicional."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-24-19h",
-   "achado": "Câmara aprova sem alterações o ajuste fiscal (353 a 128) e o texto segue para sanção; Marinho pede acordos da 6x1 até 16 de dezembro. Reverificado às 19h de 24/11 nas capas e feeds coletados: sem fato novo adicional."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-24-19h",
-   "achado": "PF exclui mensagens de Moraes do relatório do caso Master; PGR recebe relatórios sobre quatro ministros; Moraes se declara suspeito em ação de indenizações; Mendonça solta investigados do INSS. Reverificado às 19h de 24/11 nas capas e feeds coletados: sem fato novo adicional."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-24-19h",
-   "achado": "Quaest: eleitor 'liberal social' migrou para Lula no segundo turno; PGR pede que o STF encerre a ação do PSD sobre o segundo turno no Rio. Reverificado às 19h de 24/11 nas capas e feeds coletados: sem fato novo adicional."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-24-19h",
-   "achado": "Fazenda reduz PIB de 2027 para 1,8% e eleva IPCA para 4,5%; diretorias do BC seguem sem nomes definidos; Petrobras aprova R$ 15,6 bi em dividendos; CVM suspende registro do BRB. Reverificado às 19h de 24/11 nas capas e feeds coletados: sem fato novo adicional."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-24-19h",
-   "achado": "RJ: audiência do ataque aos médicos e ação do PSD; SP: operação contra lavagem do PCC; MG: lei de BH sobre idosos; CO: Operação Destroyer e Energisa em Cuiabá; Sul: tornados no PR e supercélula em Tupanciretã; Norte: Kapôt Nhinore e jacarés; NE: disputa pela água do São Francisco. Reverificado às 19h de 24/11 nas capas e feeds coletados: sem fato novo adicional."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-24-19h",
-   "achado": "Fato novo buscado só nas pautas com movimento nesta edição; as demais foram verificadas pela triagem das capas, sem nova busca completa. Reverificado às 19h de 24/11 nas capas e feeds coletados: sem fato novo adicional."
+   "feita": "2026-11-25-07h",
+   "achado": "7h de 25/11: pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
   }
  ]
 }

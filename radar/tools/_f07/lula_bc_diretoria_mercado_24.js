@@ -1,0 +1,29 @@
+// ED: politica
+// KIND: U
+_U('lula_bc_diretoria_mercado_24', {hora:'25/11', t:"Equipe econômica quer nomes 'amigáveis ao mercado' na diretoria do Banco Central, e Lula decide a PEC fiscal nesta quarta com o real 15,6% mais fraco em um mês", sub:"O presidente reúne a equipe às 15h no Alvorada; duas diretorias estão vagas, e as indicações dependem de aprovação do Senado.", dado:{n:'15,6%', l:'queda do real ante o dólar em um mês'}, upd:"Um mês depois do segundo turno, o real acumula queda de 15,6% e a Bolsa perde R$ 1 trilhão, e Lula se reúne nesta quarta com a equipe econômica, sem anunciar os nomes do BC.", resumo:"Auxiliares da área econômica recomendaram a Lula que indique para a diretoria do Banco Central nomes bem recebidos pelo mercado, mensagem que o ministro da Fazenda, Dario Durigan, levou a investidores na segunda (23). Um mês depois do segundo turno, o real perdeu 15,6% e o Ibovespa cai 20%. Lula se reúne nesta quarta (25), às 15h, com a equipe econômica sobre a PEC fiscal. Os indicados ao BC não foram anunciados e precisam passar pelo Senado.", fundo:`O presidente Luiz Inácio Lula da Silva (PT, partido de esquerda) segue sem anunciar os indicados para a diretoria do Banco Central (BC), enquanto a área econômica do governo o aconselha a escolher nomes que não afrontem o mercado financeiro. Nesta quarta-feira (25), às 15h, Lula reúne a equipe econômica no Palácio da Alvorada para definir o alcance da PEC de novas medidas fiscais, segundo o Estadão.
+
+## O recado a investidores
+
+O ministro da Fazenda, Dario Durigan, levou a mensagem a investidores na segunda-feira (23), dia em que o dólar passou de R$ 6 pela manhã e fechou a R$ 5,9262. Relatos obtidos pela Folha indicam que o mercado entendeu o recado como um freio a nomes como o de André Roncaglia, diretor-executivo do Brasil no Fundo Monetário Internacional (FMI), e de Guilherme Mello, secretário-executivo do Ministério do Planejamento. Os dois economistas são considerados mais alinhados ao pensamento econômico do PT. A leitura é de agentes do mercado, e o governo não a confirmou.
+
+O Estadão e a Broadcast, sistema de notícias em tempo real do Grupo Estado, apuraram que integrantes da equipe econômica querem preencher os postos abertos, e os que vagarão no início de 2027, com nomes "amigáveis ao mercado", termo usado por um interlocutor das conversas com Lula. O Correio do Estado, que reproduz a Broadcast, informa que são duas as diretorias vagas hoje.
+
+## Por que o mercado olha para o BC
+
+A diretoria do BC é formada pelo presidente, Gabriel Galípolo, e por oito diretores, indicados pelo presidente da República e sabatinados pelo Senado. Esses nomes compõem o Comitê de Política Monetária (Copom), que define a taxa básica de juros, a Selic. Para a Faria Lima, região de São Paulo que concentra bancos e gestoras, o empenho fiscal do governo já é fraco, o que prejudicaria a condução dos juros, informa o Estadão. O temor é que o Copom também seja ocupado por perfis pouco ortodoxos.
+
+## O mês depois da eleição
+
+O quadro de câmbio e Bolsa explica a cautela. Entre 23 de outubro, último pregão antes do segundo turno, e segunda (23), o real perdeu 15,63% ante o dólar, a maior queda entre 27 moedas analisadas pela consultoria Elos Ayta, informa a Exame. No mesmo período, o Ibovespa acumula queda de 20%, e as empresas listadas perderam mais de R$ 1 trilhão em valor de mercado, de acordo com levantamento da Economática para a revista. A projeção do boletim Focus, do BC, para o dólar no fim de 2026 subiu de R$ 5,20, em 2 de outubro, para R$ 5,55, segundo o g1.
+
+A Câmara aprovou o ajuste fiscal na segunda à noite, e Lula o sancionou sem vetos na terça. O economista Eduardo Giannetti disse ao Correio Braziliense que o país corre risco de recessão se o governo não apresentar, até março de 2027, um plano de ajuste mais robusto. O g1 já registrava a falta de definição da nova equipe econômica entre os fatores da cautela dos investidores.
+
+## O que vem agora
+
+A escolha dos indicados cabe a Lula, e cada nome precisa ser aprovado pelo Senado. A reunião desta quarta trata da PEC, e o tema do BC pode entrar na conversa.
+
+## O que ainda não está confirmado
+
+Não há data para as indicações, e o governo não confirmou publicamente os nomes que circulam.
+
+NUMS 15,63%|queda do real em um mês;20%|queda do Ibovespa desde a eleição;R$ 1 tri|valor de mercado perdido;2|diretorias vagas no BC`, fontes:[["Estadão (Market friendly: equipe econômica sugere nomes)","https://www.estadao.com.br/economia/market-friendly-equipe-economica-sugere-a-lula-nomes-para-o-bc-que-sejam-amigaveis-ao-mercado/"],["Estadão (Lula se reúne com equipe econômica nesta quarta)","https://www.estadao.com.br/economia/lula-se-reune-com-equipe-economica-nesta-quarta-para-definir-escopo-de-pec-com-novas-medidas-fiscais/"],["Folha (via Jornal de Brasília): Lula é aconselhado a indicar nomes que não afrontem o mercado","https://jornaldebrasilia.com.br/noticias/politica-e-poder/lula-e-aconselhado-pela-area-economica-a-indicar-nomes-para-bc-que-nao-afrontem-o-mercado/"],["Exame (Real perde 15,6% ante o dólar)","https://exame.com/invest/mercados/real-perde-156-ante-o-dolar-e-lidera-queda-entre-27-moedas-um-mes-apos-reeleicao-de-lula/"],["Exame (Bolsa perde R$ 1 trilhão)","https://exame.com/invest/mercados/um-mes-apos-eleicao-de-lula-bolsa-perde-r-1-trilhao-veja-acoes-que-mais-subiram-e-cairam/"],["Correio do Estado (Broadcast: dólar recua a R$ 5,9262)","https://correiodoestado.com.br/economia/2026/11/24/apos-tocar-r-600-dolar-recua-015-a-r-59262.html"],["g1 (Dólar a R$ 6: até onde pode ir)","https://g1.globo.com/economia/noticia/2026/11/24/dolar-a-r-6-o-que-explica-a-disparada-da-moeda-e-o-que-pode-frear-novas-altas.ghtml"],["Correio Braziliense (Giannetti)","https://www.correiobraziliense.com.br/economia/2026/11/7543482-brasil-tera-recessao-se-lula-nao-fizer-ajuste-fiscal-mais-robusto-diz-eduardo-giannetti.html"]]});
