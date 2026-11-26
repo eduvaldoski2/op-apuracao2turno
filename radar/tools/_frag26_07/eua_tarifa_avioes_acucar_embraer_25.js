@@ -1,0 +1,31 @@
+// ED: economia
+_U('eua_tarifa_avioes_acucar_embraer_25', {hora:'25/11',
+ t:'Planalto chama de inaceitável a nova tarifa proposta pelos EUA, vê pressão contra o Pix e diz que não cederá',
+ sub:'O governo não descarta recorrer à OMC ou aplicar reciprocidade; a proposta cobra 10% a mais sobre aviões brasileiros e eleva a taxação do açúcar.',
+ dado:{n:'10%', l:'sobretaxa proposta pelos EUA sobre aeronaves prontas fabricadas no Brasil, hoje isentas'},
+ resumo:'O governo brasileiro reagiu na tarde de quarta-feira (25) à proposta dos Estados Unidos de cobrar 10% sobre aviões do país e de aumentar a tarifa do açúcar acima da cota. Em nota, o Planalto chamou a medida de ação unilateral inaceitável, disse que o objetivo é forçar mudanças no Pix e no comércio digital e não descartou ir à Organização Mundial do Comércio ou adotar reciprocidade. A proposta ainda passa por consulta pública até 30 de dezembro e audiência em 14 de janeiro.',
+ upd:'O Planalto divulgou nota em que chama a proposta de inaceitável, liga a medida ao Pix e não descarta reciprocidade; a Amcham anunciou que participará da consulta e a secretária de Agricultura dos EUA defendeu as tarifas.',
+ fundo:`O governo brasileiro reagiu na tarde de quarta-feira (25) com "indignação" à proposta dos Estados Unidos de impor novas tarifas sobre aviões e açúcar do país. Em nota da Secretaria de Comunicação da Presidência, o Planalto chamou a iniciativa de ação unilateral inaceitável e afirmou que o Brasil não cederá a esse tipo de ameaça.
+
+Para o governo do presidente Lula, do PT, partido de esquerda, o objetivo de Washington é pressionar por mudanças em regras nacionais sobre o Pix, o sistema de pagamentos instantâneos do Banco Central, o comércio digital e os acordos preferenciais, temas citados no próprio anúncio americano. O Brasil informou que continuará buscando uma saída negociada, mas não descarta voltar à Organização Mundial do Comércio (OMC) nem adotar medidas de reciprocidade se as tarifas forem aplicadas.
+
+## O que Washington propôs
+
+A proposta partiu do representante de Comércio dos EUA, Jamieson Greer, e altera a ação aberta com base na Seção 301 da Lei de Comércio de 1974, que permite retaliar práticas consideradas desleais. A tarifa de 25% aplicada em julho deixou de fora as aeronaves, e o novo texto cobraria 10% sobre os aviões prontos, que o escritório de Greer descreve como a quarta maior exportação brasileira para o mercado americano. No açúcar que exceder a cota, as taxas passariam a ser cobradas por peso, com valores de US$ 0,44 a US$ 0,60 por quilo conforme o tipo, segundo texto do Estadão Conteúdo publicado pelo Seu Dinheiro.
+
+Greer afirma que o Brasil não fez progresso significativo depois de mais de um ano de conversas. A secretária de Agricultura americana, Brooke Rollins, defendeu a medida como proteção aos produtores do país contra o excesso de importações. Entre janeiro e outubro, os EUA compraram US$ 147 milhões do setor sucroalcooleiro brasileiro, o que os coloca como 22º destino das exportações do ramo, informa o g1.
+
+## A versão brasileira das negociações
+
+O Planalto atribui o atraso aos próprios americanos. Segundo a nota, Lula e o presidente Donald Trump, do Partido Republicano, de direita, combinaram por telefone em 21 de agosto criar um grupo de trabalho sobre comércio. Dez dias depois, os ministros Mauro Vieira, das Relações Exteriores, e Márcio Elias Rosa, do Desenvolvimento, Indústria, Comércio e Serviços, reuniram-se por vídeo com Greer, que prometeu enviar os termos de referência de um possível acordo. Houve novo encontro presencial em 30 de setembro, e o documento não chegou apesar dos pedidos.
+
+## Empresas e mercado
+
+A Embraer, fabricante de aviões com sede em São José dos Campos (SP), é a mais exposta. A companhia disse que analisa o relatório e defendeu tarifa zero para o setor, lembrando que mantém 2,5 mil funcionários e US$ 3,5 bilhões em ativos nos EUA. A ação chegou a cair quase 10% durante o pregão e fechou em baixa de 3,27%, a R$ 103,98.
+
+A Câmara Americana de Comércio para o Brasil (Amcham Brasil), que reúne empresas dos dois países, anunciou que participará da consulta. A entidade avalia que a ampliação das tarifas tende a comprometer ainda mais o comércio bilateral e defende intensificar as negociações para evitar restrições e reduzir as sobretaxas já em vigor, que hoje alcançam cerca de um quarto das exportações brasileiras aos EUA.
+
+## O que vem agora
+
+A consulta pública abre em 27 de novembro e recebe comentários até 30 de dezembro, com inscrições para depor até 7 de dezembro. A audiência está marcada para 14 de janeiro de 2027, em Washington, e só depois dela os EUA decidem se aplicam, alteram ou abandonam a proposta, que ainda não tem data para valer.`,
+ fontes:[['Agência Brasil (reação do governo)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/brasil-critica-possivel-novo-tarifaco-dos-eua-e-diz-que-nao-cedera'],['CartaCapital','https://cartacapital.com.br/politica/brasil-ve-pressao-dos-eua-para-mudar-pix-e-diz-que-nao-cedera-a-nova-ameaca-tarifaria'],['Diário do Grande ABC','https://www.dgabc.com.br/Noticia/4370775/governo-lula-reage-e-promete-nao-ceder-a-novas-tarifas-sobre-avioes-e-acucar'],['USTR (comunicado oficial)','https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-invites-public-comment-proposed-modifications-section-301-action-regarding-brazils-unreasonable'],['Seu Dinheiro (Estadão Conteúdo)','https://www.seudinheiro.com/2026/internacional/eua-propoem-tarifa-adicional-sobre-acucar-brasileiro-e-sobretaxa-de-10-para-aeronaves-pads/'],['g1 (secretária de Agricultura)','https://g1.globo.com/economia/agronegocios/noticia/2026/11/25/secretaria-de-agricultura-de-trump-defende-novas-tarifas-e-acusa-brasil-de-praticas-desleais-contra-agricultores-dos-eua.ghtml'],['g1 (nota da Embraer)','https://g1.globo.com/sp/vale-do-paraiba-regiao/noticia/2026/11/25/embraer-diz-que-analisa-proposta-dos-eua-de-tarifa-de-10percent-sobre-avioes-brasileiros.ghtml'],['Agência Brasil (Amcham)','https://agenciabrasil.ebc.com.br/economia/noticia/2026-11/amcham-participara-de-consulta-dos-eua-sobre-tarifas-ao-brasil'],['Correio do Povo (Amcham)','https://www.correiodopovo.com.br/not%C3%ADcias/economia/amcham-ve-tarifas-dos-eua-ao-brasil-com-preocupacao-e-pede-dialogo-1.1767736']]});
