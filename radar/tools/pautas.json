@@ -7,6 +7,7 @@
    "prio": "P0",
    "aberta": true,
    "materias": [
+    "milei_viagem_asuncion_alliana_25",
     "paraguai_procurador_18",
     "paraguai",
     "ueno_bank",
@@ -16,10 +17,10 @@
     "itaipu_ueno_18",
     "itaipu_diretor_destituido_20"
    ],
-   "verificada": "2026-11-25-19h",
+   "verificada": "2026-11-26-07h",
    "fato_novo": true,
-   "ultimo_fato": "25/11 (19h): o Paraguai promete a Vieira restituir os fundos de Itaipu aplicados no Ueno; reunião Lula-Alliana em 4/12.",
-   "proximo": "Audiências de cautelares e devolução dos US$ 182 milhões da Itaipu."
+   "ultimo_fato": "25/11 à noite: juiz decreta preventiva de Francisco Peña, irmão do ex-presidente, no caso Ueno Bank e bloqueia bens; Milei chegou a Assunção e se reúne com Alliana nesta quinta (26).",
+   "proximo": "Reunião Milei-Alliana (26/11) e Lula-Alliana em 4/12."
   },
   {
    "id": "transicao-lula",
@@ -27,6 +28,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "haddad_casa_civil_disputa_25",
     "stf_vaga_mulher_lula_24",
     "ministerios_lula4_19",
     "ministerio_40",
@@ -62,10 +64,10 @@
     "lula_bc_diretoria_mercado_24",
     "quirno_milei_desconvidado_posse_24"
    ],
-   "verificada": "2026-11-25-19h",
-   "fato_novo": false,
-   "ultimo_fato": "25/11 (19h): Lula segue ouvindo ex-ministros sobre a Segurança Pública; anúncio da estrutura previsto para 5/12; Alcolumbre recebe a bancada feminina.",
-   "proximo": "Anúncio da nova pasta e dos nomes para Fazenda e Casa Civil, previsto para 5 de dezembro."
+   "verificada": "2026-11-26-07h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: Haddad sinaliza que fica fora do ministério; Trabuco é sondado para a Fazenda e ainda não respondeu; Camilo desponta para a Casa Civil.",
+   "proximo": "Resposta de Trabuco e anúncios do ministério (primeiros dias de dezembro)."
   },
   {
    "id": "tse-acoes",
@@ -81,9 +83,9 @@
     "toffoli_contas_campanha_lula_14_11",
     "tse_lula_flavio_mil_acoes_campanha_23"
    ],
-   "verificada": "2026-11-25-19h",
+   "verificada": "2026-11-26-07h",
    "fato_novo": false,
-   "ultimo_fato": "Sem fato novo em 25/11 às 19h.",
+   "ultimo_fato": "Sem fato novo sobre as ações contra as chapas até a manhã de 26/11.",
    "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
   },
   {
@@ -103,10 +105,10 @@
     "pl_flavio_motta_consulta_121_deputados_17_11",
     "rockbridge_flavio_pf_18"
    ],
-   "verificada": "2026-11-25-19h",
+   "verificada": "2026-11-26-07h",
    "fato_novo": false,
-   "ultimo_fato": "25/11 (19h): Flávio, sem mandato a partir de fevereiro, articula Carlos como porta-voz no Senado.",
-   "proximo": "Votos dos três ministros que faltam no julgamento virtual até 30/11."
+   "ultimo_fato": "Sem fato novo sobre o Senado ou o julgamento até a manhã de 26/11.",
+   "proximo": "Votos no julgamento virtual até 30/11."
   },
   {
    "id": "congresso-novo",
@@ -114,6 +116,9 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "messias_stf_lula_reafirma_23",
+    "camara_marco_tempo_integral_26",
+    "congresso_pec_fiscal_pauta_25",
     "americanas_ccj_fraude_25",
     "alcolumbre_bancada_feminina_25",
     "ajuste_fiscal_texto_base_24",
@@ -150,10 +155,10 @@
     "tereza_cristina_marinho_oposicao_senado_23",
     "sus_piso_saude_ajuste_23"
    ],
-   "verificada": "2026-11-25-19h",
-   "fato_novo": false,
-   "ultimo_fato": "25/11 (19h): Câmara aprova alerta automático em tornozeleiras de agressores; Moretti diz que 'não tem a PEC' fiscal; STF forma maioria sobre ex-assessora de Lira.",
-   "proximo": "Disputa pela presidência do Senado e votações de fim de ano."
+   "verificada": "2026-11-26-07h",
+   "fato_novo": true,
+   "ultimo_fato": "25/11: Moretti diz não haver PEC fiscal fechada; Câmara aprova o marco da educação em tempo integral; Alcolumbre faz campanha com a bancada feminina.",
+   "proximo": "Decisão de Lula sobre as medidas fiscais; recesso em 23/12."
   },
   {
    "id": "seguranca-publica",
@@ -161,6 +166,9 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "tse_grupo_crime_organizado_26",
+    "debora_batom_cantata_filho_26",
+    "pf_relatorios_omissoes_moraes_toffoli_25",
     "filipe_martins_passaportes_25",
     "pf_fachin_pgr_19",
     "pf_andrei_ccj_18",
@@ -183,10 +191,10 @@
     "pec_seguranca_guarda_civil_policias_municipais_23",
     "moraes_suspeito_interferencia_24"
    ],
-   "verificada": "2026-11-25-19h",
+   "verificada": "2026-11-26-07h",
    "fato_novo": true,
-   "ultimo_fato": "25/11 (19h): governo bloqueia 3.941 celulares de presos; relatórios da PF e Moraes seguem no radar da PGR; Zanin marca para 4/12 o julgamento do segundo turno no Rio.",
-   "proximo": "Execução da decisão e demais processos ligados ao golpe."
+   "ultimo_fato": "25/11: chefe da PF diz que a PGR pode usar provas fora dos relatórios sobre ministros do STF; Moraes autoriza Débora do Batom a sair da domiciliar em 29/11 para uma cantata; TSE cria grupo sobre crime organizado nas eleições.",
+   "proximo": "Posição da PGR sobre os relatórios; julgamento sobre o Rio a partir de 4/12."
   },
   {
    "id": "escala-6x1",
@@ -202,10 +210,10 @@
     "escala_6x1_20",
     "hora_extra_divisor_21"
    ],
-   "verificada": "2026-11-25-19h",
-   "fato_novo": true,
-   "ultimo_fato": "25/11 (19h): a CNI aciona o STF contra o decreto 13.173 e a portaria da 6x1; Marinho pede acordos coletivos até 16/12.",
-   "proximo": "Julgamento no STF e demais portarias até 16/12."
+   "verificada": "2026-11-26-07h",
+   "fato_novo": false,
+   "ultimo_fato": "25/11: a CNI aciona o STF contra o decreto 13.173; Marinho recomenda acordos coletivos até 16/12. Sem fato novo até a manhã de 26/11.",
+   "proximo": "STF e demais portarias até 16/12."
   },
   {
    "id": "economia-mercado",
@@ -213,6 +221,9 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "agenda_quinta_ipca15_feriado_eua_26",
+    "mercado_fecha_ibovespa_166_dolar_581_25",
+    "cmn_rotativo_limite_cartao_endividamento_26",
     "eua_secao301_capacidade_25",
     "diesel_subvencao_25",
     "petrobras_dividendos_15_6_24",
@@ -285,10 +296,10 @@
     "black_friday_recorde_cnc_endividamento_24",
     "mercado_pec_despesas_obrigatorias_25"
    ],
-   "verificada": "2026-11-25-19h",
+   "verificada": "2026-11-26-07h",
    "fato_novo": true,
-   "ultimo_fato": "25/11 (19h): Ibovespa fecha em alta de 1,58% e dólar a R$ 5,817; subvenção ao diesel vai ser prorrogada por 30 dias.",
-   "proximo": "Renovação do subsídio até o fim de novembro e avanço da proposta de tarifas da Seção 301."
+   "ultimo_fato": "25/11: CMN e BC aprovam regras contra o endividamento; Ibovespa sobe 1,58% e dólar fecha a R$ 5,817. 26/11: IPCA-15 às 9h e contas externas; Wall Street fechada.",
+   "proximo": "Resultado do IPCA-15, portaria do diesel e coletiva do setor externo (26/11)."
   },
   {
    "id": "eua-meio-mandato",
@@ -310,10 +321,10 @@
     "eua_delta_atlanta_atrasos_22",
     "eua_tarifas_china_ue_subsidios_25"
    ],
-   "verificada": "2026-11-25-19h",
+   "verificada": "2026-11-26-07h",
    "fato_novo": true,
-   "ultimo_fato": "25/11 (19h): USTR propõe Seção 301 a 14 economias (o Brasil tem proposta separada: 10% para aviões e tarifa sobre o açúcar, audiência em 14/1).",
-   "proximo": "Consulta e decisão sobre a aplicação das tarifas da Seção 301."
+   "ultimo_fato": "25-26/11: China, UE e Índia rejeitam o argumento dos EUA para as tarifas da Seção 301; Planalto chama de inaceitável a proposta contra o Brasil.",
+   "proximo": "Comentários até 5/1 e audiências em janeiro."
   },
   {
    "id": "ucrania-paz",
@@ -321,6 +332,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "ue_cupula_orcamento_2028_26",
     "coreia_russia_bombardeiros_24",
     "polonia_drone_russo_24",
     "ucrania_paz_19",
@@ -342,10 +354,10 @@
     "ucrania_navio_russo_libia_23",
     "ucrania_zelensky_prazo_janeiro_25"
    ],
-   "verificada": "2026-11-25-19h",
+   "verificada": "2026-11-26-07h",
    "fato_novo": true,
-   "ultimo_fato": "25/11 (19h): Zelensky espera rodada quadrilateral; o Kremlin diz que ninguém negocia com ele.",
-   "proximo": "Resposta de Moscou e novas rodadas."
+   "ultimo_fato": "26/11: Kremlin rejeita a trégua de inverno proposta pela UE, após ataque a Kiev e Kharkiv.",
+   "proximo": "EUA marcarem a rodada; cúpula da UE até 27/11."
   },
   {
    "id": "israel-governo",
@@ -359,9 +371,9 @@
     "israel_coalizao_20",
     "israel_eisenkot_governo_23"
    ],
-   "verificada": "2026-11-25-19h",
+   "verificada": "2026-11-26-07h",
    "fato_novo": true,
-   "ultimo_fato": "25/11 (19h): Eisenkot fecha o primeiro acordo de coalizão com Lieberman; prazo até 6/12.",
+   "ultimo_fato": "25/11: Lieberman libera apoio a ultraortodoxos e o bloco de Eisenkot prepara posse na próxima semana.",
    "proximo": "Fechamento da coalizão até 6/12."
   },
   {
@@ -379,72 +391,72 @@
     "houthis_pif_tower_20",
     "ira_cantora_chibatadas_24"
    ],
-   "verificada": "2026-11-24-15h",
-   "fato_novo": false,
-   "ultimo_fato": "24/11: Irã aplica 74 chibatadas à cantora Parastoo Ahmadi por cantar sem hijab; bloqueio naval dos EUA segue.",
-   "proximo": "Resposta de Washington ao Irã e reação das companhias aéreas."
+   "verificada": "2026-11-26-07h",
+   "fato_novo": true,
+   "ultimo_fato": "26/11: Arábia Saudita intercepta mísseis houthis contra Riad; rebeldes dizem ter incendiado a refinaria de Ras Tanura.",
+   "proximo": "Reação saudita e dos mercados de petróleo."
   }
  ],
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Nenhuma queda, renúncia ou golpe novo nas buscas; ex-presidente Peña segue detido e o irmão teve preventiva decretada."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Paraguai (caso Ueno), Argentina (voto das PASO e Orçamento hoje), Milei em Assunção; Peru e Chile sem fato escrito."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Rússia rejeita trégua de inverno; houthis atacam Riad e Ras Tanura; Israel monta coalizão."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Seção 301 contestada por China, UE e Índia; debate a quatro na Espanha; cúpula da UE sobre orçamento."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Petróleo em alta com ataques houthis; Wall Street fechada pelo feriado; sem crise bancária nova."
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Haddad fora, Trabuco sondado, Planalto reage a tarifa; Lula-Cleitinho na agenda."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Marco do tempo integral aprovado; PEC fiscal sem texto; Senado e vaga no STF."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Relatórios do caso Master, denúncia contra Gayer, penduricalhos, TCU e Dilma, grupo do TSE, Débora do Batom."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Disputa pelo Senado e bastidores do ministério; nenhuma pesquisa nacional nova encontrada."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "CMN/BC, diesel, mercado, confederações contra a reforma, BRB, IBGE; IPCA-15 sai às 9h."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Matérias em RJ, SP, MG, Nordeste, Sul, Norte e Centro-Oeste."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-25-19h",
-   "achado": "25/11 (19h): pesquisa em capas, agências e veículos locais; achados nas matérias novas e atualizadas da edição."
+   "feita": "2026-11-26-07h",
+   "achado": "Todas as pautas verificadas; fato novo registrado em cada uma."
   }
  ]
 }

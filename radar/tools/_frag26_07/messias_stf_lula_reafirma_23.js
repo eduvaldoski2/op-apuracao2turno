@@ -9,7 +9,7 @@ _U('messias_stf_lula_reafirma_23', {hora:'25/11', k:'Política · STF e Senado',
 
 O senador defende o nome de seu aliado Rodrigo Pacheco (PSD-MG), do partido de centro, que presidiu o Senado e hoje é ministro do Tribunal de Contas da União (TCU). Lula mencionou na conversa do fim de semana a possibilidade de mandar de novo ao Senado o advogado-geral da União, Jorge Messias.
 
-## O risco de ficar para o ano que vem
+## A pressão do calendário
 
 Os dois devem se reunir outra vez, a sós, para tentar um entendimento, informa a Coluna do Estadão. Até agora nenhum cedeu: Alcolumbre insiste em Pacheco, e Lula recusa o nome, magoado com a ausência do aliado na disputa em Minas Gerais neste ano. A conversa deve ganhar um elemento novo, o aviso de que um indicado diferente de Pacheco corre o risco de não ser votado em 2026. Integrantes do próprio Supremo manifestam essa preocupação.
 

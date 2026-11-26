@@ -10,9 +10,9 @@ for(const f of fs.readdirSync(d).filter(f=>f.endsWith('.js')).sort()){
  if(m[1]==='N'){let o;new Function('_N','_U',t)((i,x)=>{o=x},()=>{});novas.push([m[2],o]);}
  code+=t.replace(/^\/\/ ED.*\n/gm,'')+'\n';}
 const pri={politica:['congresso_pec_fiscal_pauta_25','haddad_casa_civil_disputa_25','pf_relatorios_omissoes_moraes_toffoli_25','messias_stf_lula_reafirma_23','pgr_denuncia_gayer_cota_26','pgr_gonet_penduricalhos_324mi_14_11','camara_marco_tempo_integral_26','tse_grupo_crime_organizado_26','tcu_dilma_multas_2014_26'],
- economia:['cmn_rotativo_limite_cartao_endividamento_26','eua_tarifa_avioes_acucar_embraer_25','mercado_fecha_ibovespa_166_dolar_581_25','diesel_subvencao_25','confederacoes_stf_adiar_reforma_tributaria_26','brb_caixa_celina_fazenda_nega_26','confianca_consumidor_fgv_minima_4_anos_26'],
+ economia:['cmn_rotativo_limite_cartao_endividamento_26','eua_tarifa_avioes_acucar_embraer_25','mercado_fecha_ibovespa_166_dolar_581_25','diesel_subvencao_25','confederacoes_stf_adiar_reforma_tributaria_26','brb_caixa_celina_fazenda_nega_26'],
  mundo:['ucrania_zelensky_prazo_janeiro_25','houthis_pif_tower_20','argentina_senado_paso_26','eua_secao301_capacidade_25','paraguai','israel_eisenkot_governo_23','ue_cupula_orcamento_2028_26','espanha_debate_quatro_29n_26'],
- regioes:['rj_ruas_reajuste_primeiro_escalao_25','mg_cleitinho_divida_comissao_26','sp_saude_tarcisio_recusas_26','mt_tce_maluf_novelli_voltam_26','am_saude_divida_300mi_medicas_26','al_transicao_jhc_contas_25','pr_codigo_florestal_retirada_26','rj_lins_operacao_quatro_feridos_26']};
+ regioes:['rj_ruas_reajuste_primeiro_escalao_25','mg_cleitinho_divida_comissao_26','sp_saude_tarcisio_recusas_26','mt_tce_maluf_novelli_voltam_26','am_saude_divida_300mi_medicas_26','al_transicao_jhc_contas_25','rj_lins_operacao_quatro_feridos_26']};
 ord.mundo=ord.mundo.filter(i=>i!=='eua_secao301_capacidade_25');ord.economia.push('eua_secao301_capacidade_25');
 for(const k in ord){const top=pri[k].filter(i=>ord[k].includes(i)).concat(ord[k].filter(i=>!pri[k].includes(i)));code+=`ORDER.${k} = _top(ORDER.${k}, ${JSON.stringify(top)});\n`;}
 code+="HOME_LEAD = 'congresso_pec_fiscal_pauta_25';\nHOME_ROW = ['cmn_rotativo_limite_cartao_endividamento_26','ucrania_zelensky_prazo_janeiro_25'];\n";
