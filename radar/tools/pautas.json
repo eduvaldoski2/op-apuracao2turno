@@ -17,10 +17,10 @@
     "itaipu_ueno_18",
     "itaipu_diretor_destituido_20"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-26-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11 à noite: juiz decreta preventiva de Francisco Peña, irmão do ex-presidente, no caso Ueno Bank e bloqueia bens; Milei chegou a Assunção e se reúne com Alliana nesta quinta (26).",
-   "proximo": "Reunião Milei-Alliana (26/11) e Lula-Alliana em 4/12."
+   "ultimo_fato": "26/11: Milei e Alliana se reuniram em Assunção e a Argentina ofereceu cooperação para recuperar ativos do caso Ueno Bank.",
+   "proximo": "Lula-Alliana em 4/12 e andamento do caso Ueno."
   },
   {
    "id": "transicao-lula",
@@ -107,9 +107,9 @@
     "pl_flavio_motta_consulta_121_deputados_17_11",
     "rockbridge_flavio_pf_18"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-26-15h",
    "fato_novo": false,
-   "ultimo_fato": "Sem fato novo sobre o Senado ou o julgamento até a manhã de 26/11.",
+   "ultimo_fato": "26/11: sem fato novo sobre voto remoto, resposta do Senado ou julgamento; Flávio registrou dos EUA R$ 79,3 milhões em emendas para 2027.",
    "proximo": "Votos no julgamento virtual até 30/11."
   },
   {
@@ -216,10 +216,10 @@
     "escala_6x1_20",
     "hora_extra_divisor_21"
    ],
-   "verificada": "2026-11-26-07h",
-   "fato_novo": false,
-   "ultimo_fato": "25/11: a CNI aciona o STF contra o decreto 13.173; Marinho recomenda acordos coletivos até 16/12. Sem fato novo até a manhã de 26/11.",
-   "proximo": "STF e demais portarias até 16/12."
+   "verificada": "2026-11-26-15h",
+   "fato_novo": true,
+   "ultimo_fato": "26/11: o ministro Marinho descarta adiar o início em 16/12 e indica regras para jornadas especiais.",
+   "proximo": "Regulamentação e início da vigência em 16/12."
   },
   {
    "id": "economia-mercado",
@@ -329,10 +329,10 @@
     "eua_delta_atlanta_atrasos_22",
     "eua_tarifas_china_ue_subsidios_25"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-26-15h",
    "fato_novo": true,
-   "ultimo_fato": "25-26/11: China, UE e Índia rejeitam o argumento dos EUA para as tarifas da Seção 301; Planalto chama de inaceitável a proposta contra o Brasil.",
-   "proximo": "Comentários até 5/1 e audiências em janeiro."
+   "ultimo_fato": "26/11: Trump pediu investigação do BEA pela revisão do PIB do 3º trimestre divulgada após a eleição.",
+   "proximo": "Recontagens e certificação das cadeiras."
   },
   {
    "id": "ucrania-paz",
@@ -380,10 +380,10 @@
     "israel_coalizao_20",
     "israel_eisenkot_governo_23"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-26-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: Lieberman libera apoio a ultraortodoxos e o bloco de Eisenkot prepara posse na próxima semana.",
-   "proximo": "Fechamento da coalizão até 6/12."
+   "ultimo_fato": "26/11: o Yashar, de Eisenkot, anunciou acordo com os Democratas, de Yair Golan.",
+   "proximo": "Negociação de coalizão até 6/12, prorrogável por 14 dias."
   },
   {
    "id": "ira-oriente-medio",
@@ -409,18 +409,18 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-26-07h",
-   "achado": "Nenhuma queda, renúncia ou golpe novo nas buscas; ex-presidente Peña segue detido e o irmão teve preventiva decretada."
+   "feita": "2026-11-26-15h",
+   "achado": "Nenhuma queda, renúncia ou golpe novo nas buscas desta tarde."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-26-07h",
-   "achado": "Paraguai (caso Ueno), Argentina (voto das PASO e Orçamento hoje), Milei em Assunção; Peru e Chile sem fato escrito."
+   "feita": "2026-11-26-15h",
+   "achado": "Milei e Alliana em Assunção; Senado argentino vota suspensão das primárias; incêndio em refinaria na Venezuela."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
    "feita": "2026-11-26-15h",
-   "achado": "Trump diz ter pedido a Putin, na China, que recue de agressões militares na Europa; Macron chama a carne brasileira de \"dopada\"; EUA propõem tarifa de 10% sobre aviões brasileiros; navio com diesel vira em Ibiza."
+   "achado": "Israel mata novo chefe do Hamas em Gaza; ataque iraniano no Kuwait mata dois italianos."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
@@ -429,7 +429,8 @@
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "achado": ""
+   "achado": "Sem decisão de peso de bancos centrais ou crise bancária nova no exterior.",
+   "feita": "2026-11-26-15h"
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
@@ -448,23 +449,23 @@
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-26-07h",
-   "achado": "Disputa pelo Senado e bastidores do ministério; nenhuma pesquisa nacional nova encontrada."
+   "feita": "2026-11-26-15h",
+   "achado": "Bastidores do ministério e emendas de Flávio; nenhuma pesquisa nacional nova encontrada."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-26-07h",
-   "achado": "CMN/BC, diesel, mercado, confederações contra a reforma, BRB, IBGE; IPCA-15 sai às 9h."
+   "feita": "2026-11-26-15h",
+   "achado": "IPCA-15 de novembro, Ibovespa e dólar, contas externas de outubro, IFI sobre CBS, tarifa dos EUA sobre aviões."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-26-07h",
-   "achado": "Matérias em RJ, SP, MG, Nordeste, Sul, Norte e Centro-Oeste."
+   "feita": "2026-11-26-15h",
+   "achado": "RJ chuva; SP ViaMobilidade; MG dívida; MA contrato de livros; RS socorristas; AP peixes no Araguari; DF posse."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-26-07h",
-   "achado": "Todas as pautas verificadas; fato novo registrado em cada uma."
+   "feita": "2026-11-26-15h",
+   "achado": "Paraguai, escala 6x1, Israel e meio de mandato com fato novo; Flávio sem fato novo no Senado."
   }
  ]
 }
