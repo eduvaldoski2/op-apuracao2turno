@@ -28,6 +28,8 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "trabuco_fazenda_26",
+    "lula_sem_pressa_ministros_20",
     "haddad_casa_civil_disputa_25",
     "stf_vaga_mulher_lula_24",
     "ministerios_lula4_19",
@@ -56,7 +58,6 @@
     "lula_refem_mercado_direita_17_11",
     "lula_ministerios_centrao_18",
     "cadeiras_haddad_alckmin_camilo_19",
-    "lula_sem_pressa_ministros_20",
     "lula_janja_posse_21",
     "veja_lula_terceiriza_ajuste_21",
     "janones_exercito_lula_perde_seguidores_23",
@@ -64,9 +65,9 @@
     "lula_bc_diretoria_mercado_24",
     "quirno_milei_desconvidado_posse_24"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-26-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: Haddad sinaliza que fica fora do ministério; Trabuco é sondado para a Fazenda e ainda não respondeu; Camilo desponta para a Casa Civil.",
+   "ultimo_fato": "26/11: Trabuco (Bradesco) é cotado para a Fazenda e o PT acionou empresários para convencê-lo; Alckmin ganhou força para a Segurança Pública, pasta que depende da PEC da Segurança.",
    "proximo": "Resposta de Trabuco e anúncios do ministério (primeiros dias de dezembro)."
   },
   {
@@ -75,6 +76,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "estela_aranha_tse_26",
     "tse_novo",
     "tse_aije9",
     "tse_psol_se",
@@ -83,9 +85,9 @@
     "toffoli_contas_campanha_lula_14_11",
     "tse_lula_flavio_mil_acoes_campanha_23"
    ],
-   "verificada": "2026-11-26-07h",
-   "fato_novo": false,
-   "ultimo_fato": "Sem fato novo sobre as ações contra as chapas até a manhã de 26/11.",
+   "verificada": "2026-11-26-15h",
+   "fato_novo": true,
+   "ultimo_fato": "26/11: Estela Aranha diz no TSE que não recebeu solidariedade dos colegas diante de ataques misóginos; Nunes Marques pediu formalização das queixas.",
    "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
   },
   {
@@ -116,6 +118,8 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "stf_vaga_alcolumbre_messias_26",
+    "tornozeleira_alerta_agressor_26",
     "messias_stf_lula_reafirma_23",
     "camara_marco_tempo_integral_26",
     "congresso_pec_fiscal_pauta_25",
@@ -155,9 +159,9 @@
     "tereza_cristina_marinho_oposicao_senado_23",
     "sus_piso_saude_ajuste_23"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-26-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: Moretti diz não haver PEC fiscal fechada; Câmara aprova o marco da educação em tempo integral; Alcolumbre faz campanha com a bancada feminina.",
+   "ultimo_fato": "26/11: Alcolumbre diz que só ouviu Lula sobre a vaga no STF e defende Rodrigo Pacheco; Lula pode reenviar o nome de Messias. Câmara aprovou o PL 5.542/2026, das tornozeleiras de agressores, que segue ao Senado.",
    "proximo": "Decisão de Lula sobre as medidas fiscais; recesso em 23/12."
   },
   {
@@ -166,6 +170,8 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "lula_sem_pressa_ministros_20",
+    "tornozeleira_alerta_agressor_26",
     "tse_grupo_crime_organizado_26",
     "debora_batom_cantata_filho_26",
     "pf_relatorios_omissoes_moraes_toffoli_25",
@@ -191,9 +197,9 @@
     "pec_seguranca_guarda_civil_policias_municipais_23",
     "moraes_suspeito_interferencia_24"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-26-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: chefe da PF diz que a PGR pode usar provas fora dos relatórios sobre ministros do STF; Moraes autoriza Débora do Batom a sair da domiciliar em 29/11 para uma cantata; TSE cria grupo sobre crime organizado nas eleições.",
+   "ultimo_fato": "26/11: Alckmin ganha força para o Ministério da Segurança Pública, que depende da PEC da Segurança; Câmara aprovou alertas em tornozeleiras de agressores (PL 5.542/2026), que vai ao Senado.",
    "proximo": "Posição da PGR sobre os relatórios; julgamento sobre o Rio a partir de 4/12."
   },
   {
@@ -221,6 +227,8 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "trabuco_fazenda_26",
+    "eua_tarifa_avioes_acucar_embraer_25",
     "agenda_quinta_ipca15_feriado_eua_26",
     "mercado_fecha_ibovespa_166_dolar_581_25",
     "cmn_rotativo_limite_cartao_endividamento_26",
@@ -296,9 +304,9 @@
     "black_friday_recorde_cnc_endividamento_24",
     "mercado_pec_despesas_obrigatorias_25"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-26-15h",
    "fato_novo": true,
-   "ultimo_fato": "25/11: CMN e BC aprovam regras contra o endividamento; Ibovespa sobe 1,58% e dólar fecha a R$ 5,817. 26/11: IPCA-15 às 9h e contas externas; Wall Street fechada.",
+   "ultimo_fato": "26/11: IPCA-15 de novembro em 0,22%, abaixo dos 0,36% esperados; Ibovespa sobe cerca de 3%; EUA propõem tarifa de 10% sobre aviões brasileiros prontos e taxa sobre açúcar.",
    "proximo": "Resultado do IPCA-15, portaria do diesel e coletiva do setor externo (26/11)."
   },
   {
@@ -332,6 +340,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "trump_putin_europa_26",
     "ue_cupula_orcamento_2028_26",
     "coreia_russia_bombardeiros_24",
     "polonia_drone_russo_24",
@@ -354,9 +363,9 @@
     "ucrania_navio_russo_libia_23",
     "ucrania_zelensky_prazo_janeiro_25"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-26-15h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: Kremlin rejeita a trégua de inverno proposta pela UE, após ataque a Kiev e Kharkiv.",
+   "ultimo_fato": "26/11: Trump diz ter pedido a Putin, na China, que recue de toda agressão militar contra territórios europeus; Trump e Rutte defendem solução pacífica.",
    "proximo": "EUA marcarem a rodada; cúpula da UE até 27/11."
   },
   {
@@ -410,33 +419,32 @@
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-26-07h",
-   "achado": "Rússia rejeita trégua de inverno; houthis atacam Riad e Ras Tanura; Israel monta coalizão."
+   "feita": "2026-11-26-15h",
+   "achado": "Trump diz ter pedido a Putin, na China, que recue de agressões militares na Europa; Macron chama a carne brasileira de \"dopada\"; EUA propõem tarifa de 10% sobre aviões brasileiros; navio com diesel vira em Ibiza."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-26-07h",
-   "achado": "Seção 301 contestada por China, UE e Índia; debate a quatro na Espanha; cúpula da UE sobre orçamento."
+   "feita": "2026-11-26-15h",
+   "achado": "Trump diz ter pedido a Putin, na China, que recue de agressões militares na Europa; Macron chama a carne brasileira de \"dopada\"; EUA propõem tarifa de 10% sobre aviões brasileiros; navio com diesel vira em Ibiza."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "feita": "2026-11-26-07h",
-   "achado": "Petróleo em alta com ataques houthis; Wall Street fechada pelo feriado; sem crise bancária nova."
+   "achado": ""
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-26-07h",
-   "achado": "Haddad fora, Trabuco sondado, Planalto reage a tarifa; Lula-Cleitinho na agenda."
+   "feita": "2026-11-26-15h",
+   "achado": "Alcolumbre desconversa sobre a vaga do STF; Câmara aprova PL 5.542/2026 (tornozeleiras); Alckmin cotado para Segurança."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-26-07h",
-   "achado": "Marco do tempo integral aprovado; PEC fiscal sem texto; Senado e vaga no STF."
+   "feita": "2026-11-26-15h",
+   "achado": "Alcolumbre desconversa sobre a vaga do STF; Câmara aprova PL 5.542/2026 (tornozeleiras); Alckmin cotado para Segurança."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-26-07h",
-   "achado": "Relatórios do caso Master, denúncia contra Gayer, penduricalhos, TCU e Dilma, grupo do TSE, Débora do Batom."
+   "feita": "2026-11-26-15h",
+   "achado": "Alcolumbre desconversa sobre a vaga do STF; Câmara aprova PL 5.542/2026 (tornozeleiras); Alckmin cotado para Segurança."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
