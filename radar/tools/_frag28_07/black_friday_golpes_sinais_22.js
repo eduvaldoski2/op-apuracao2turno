@@ -1,7 +1,7 @@
 // ED: economia
 _U('black_friday_golpes_sinais_22', {hora:'27/11',
  t:'Black Friday tem fiscalização contra falsas ofertas e lojistas levados à delegacia em Salvador',
- sub:'Três responsáveis por lojas foram conduzidos por suspeita de propaganda enganosa; na sexta, 58% dos produtos monitorados pelo g1 estavam abaixo da média de preços.',
+ sub:'Três responsáveis por lojas foram conduzidos por suspeita de propaganda enganosa; um levantamento de preços achou 58% dos itens monitorados abaixo da média.',
  dado:{n:'58%', l:'dos 74 produtos monitorados com preço abaixo da média na sexta'},
  resumo:'A Black Friday de sexta (27) teve ação da polícia e de órgãos do consumidor. Em Salvador, responsáveis por três lojas de shoppings foram levados à delegacia por suspeita de falsas ofertas. Em João Pessoa, o Procon do Ministério Público fiscalizou o comércio e autuou estabelecimentos. Um levantamento de preços encontrou desconto real em 43 de 74 produtos. A Confederação Nacional do Comércio projetava R$ 11,52 bilhões em vendas, com crédito caro e endividamento como freios.',
  upd:'Na sexta (27) houve condução de lojistas à delegacia em Salvador, autuações em João Pessoa e novo levantamento de preços no dia do evento.',

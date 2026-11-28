@@ -8,7 +8,7 @@ _N('alckmin_seguranca_28', {ed:'politica', k:'Política · Segurança pública',
 
 Alckmin, do PSB, partido de centro-esquerda, governou São Paulo quatro vezes. Auxiliares do presidente avaliam que ele tem o perfil desejado para a área. A pasta terá de negociar com os governadores, já que as polícias Civil e Militar são comandadas pelos estados.
 
-## O que falta para a pasta existir
+## A emenda e a medida provisória
 
 O primeiro passo está no Congresso. A PEC (proposta de emenda à Constituição) da Segurança Pública passou no Senado em 3 de novembro e ainda precisa ser promulgada em sessão do Legislativo, sem necessidade de sanção. No dia 10, o presidente do Senado, Davi Alcolumbre (União-AP), falou em cerca de 15 dias para isso, e a previsão agora é de que ocorra na próxima semana.
 

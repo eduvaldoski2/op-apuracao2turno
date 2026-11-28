@@ -14,7 +14,7 @@ const pri={politica:['haddad_casa_civil_disputa_25','flavio_emendas_dino_28','lu
  mundo:['ira_bloqueio_pacific_archer_28','ucrania_drones_recorde_28','argentina_senado_paso_26','israel_eisenkot_governo_23','venezuela_gonzalez_volta_lei_28','arabia_houthis_missil_riad_28','eua_trump_cidadania_acao_gracas_28','paraguai','ue_cupula_orcamento_2028_26','brasileira_presa_russia_troca_28'],
  regioes:['rj_toffoli_divida_marco_28','mg_cleitinho_fazenda_seguranca_28','pa_santarem_emergencia_saude_fumaca_28','am_orcamento_queimadas_28','to_pf_indicia_siqueira_28','go_saneago_bloqueio_300mi_28','rj_18bpm_ocupacao_jacarepagua_28','sp_brt_abc_multa_artesp_28','ma_tjma_rescisao_brb_28']};
 for(const k in ord){const top=pri[k].filter(i=>ord[k].includes(i)).concat(ord[k].filter(i=>!pri[k].includes(i)));code+=`ORDER.${k} = _top(ORDER.${k}, ${JSON.stringify(top)});\n`;}
-code+="HOME_LEAD = 'trabuco_fazenda_26';\nHOME_ROW = ['haddad_casa_civil_disputa_25','ira_bloqueio_pacific_archer_28'];\n";
+code+="HOME_LEAD = 'trabuco_fazenda_26';\nHOME_ROW = ['haddad_casa_civil_disputa_25','flavio_emendas_dino_28','ira_bloqueio_pacific_archer_28'];\n";
 const gp=[].concat(...Object.values(pri));novas.sort((a,b)=>gp.indexOf(a[0])-gp.indexOf(b[0]));
 const cut=(s,n)=>s.length>n?s.slice(0,n-2).replace(/\s+\S*$/,'')+'…':s;
 const giro=novas.map(([i,o])=>[cut(o.t,90),cut(o.sub||'',170),o.fontes[0][0].replace(/\s*\(.*$/,''),o.fontes[0][1],'',i]);
