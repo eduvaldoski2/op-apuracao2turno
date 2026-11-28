@@ -1,0 +1,22 @@
+// ED: economia
+_N('openai_apple_acusacao_28', {ed:'economia', k:'Economia · Tecnologia', hora:'27/11', t:'OpenAI contra-ataca na Justiça e acusa Apple de roubar segredos e pressionar fornecedores', sub:'Criadora do ChatGPT afirma que a fabricante do iPhone constrange empresas que produzem peças para os dois lados; Apple chama a ação de tentativa de desviar o foco.', dado:{n:'19/7/2027',l:'data marcada para o julgamento do processo aberto pela Apple'}, resumo:'A OpenAI apresentou na sexta-feira (27), em um tribunal federal da Califórnia, uma ação em resposta ao processo que a Apple move contra ela desde julho. A empresa de inteligência artificial alega apropriação de segredos comerciais, interferência em contratos e concorrência desleal, e diz que a rival intimida fornecedores para atrapalhar o desenvolvimento de um aparelho próprio. A Apple nega, e os pedidos dos dois lados ainda dependem de decisão judicial.', fundo:`A OpenAI, criadora do ChatGPT, acusou a Apple de roubar seus segredos comerciais e de pressionar fornecedores para barrar um futuro concorrente. As alegações foram apresentadas na sexta-feira (27) a um tribunal federal da Califórnia, nos Estados Unidos, como resposta a uma ação movida pela fabricante do iPhone.
+
+O alvo de uma das acusações é um ex-funcionário que passou cerca de seis meses na OpenAI e depois voltou à Apple. Segundo a empresa de inteligência artificial, ele enviou para contas pessoais mais de 100 arquivos confidenciais sobre um aparelho ainda não lançado, e a Apple teria obtido informações sobre os planos da rival ao recontratá-lo. A acusação sobre os arquivos já havia sido feita em outubro, quando a Apple disse não ter encontrado material confidencial da OpenAI em sua apuração interna.
+
+A outra frente trata da cadeia de produção. A OpenAI sustenta que a Apple usa o peso de suas encomendas para "coagir e ameaçar" fabricantes que atendem as duas companhias, exigindo detalhes dos projetos e os nomes das equipes envolvidas. Pelo relato, alguns fornecedores mudaram horários e locais de reuniões, transferiram a produção para turnos noturnos ou encerraram a parceria.
+
+## De parceiras a rivais
+
+As duas empresas são parceiras desde 2024, quando a Apple levou o ChatGPT a seus aparelhos e à assistente de voz Siri. A relação se desgastou à medida que passaram a disputar profissionais e tecnologia. A OpenAI prepara dispositivos próprios, projeto reforçado em 2025 pela compra da io, empresa de equipamentos do designer Jony Ive, antigo chefe de design da Apple.
+
+A Apple foi à Justiça em 10 de julho contra a OpenAI, a io e dois ex-empregados, o engenheiro Chang Liu e Tang Tan, que havia comandado o desenho de produtos como iPhone e Apple Watch e passou a chefiar a área de equipamentos da nova empregadora. A queixa descreve um esforço coordenado para levar projetos, processos de fabricação e estratégias de suprimento, e afirma que candidatos eram incentivados a levar peças da Apple a entrevistas de emprego. A OpenAI e os dois executivos negam.
+
+Agora, a companhia de inteligência artificial devolve a imputação e afirma que a adversária usa "tamanho e riqueza para frustrar a concorrência". Também contesta práticas internas que, em sua versão, facilitariam acusar de furto de segredos quem pede demissão e os novos patrões dessas pessoas. As reivindicações se baseiam na lei federal de segredos comerciais e em regras da Califórnia.
+
+## O que diz a Apple
+
+A fabricante classificou a ofensiva como uma tentativa evidente de desviar a atenção do conteúdo de seu próprio processo. Declarou que não obteve informações sigilosas por meio do funcionário recontratado e que não sufocou concorrente algum. A empresa pediu ao juiz uma liminar para impedir o uso do material que diz ter sido retirado antes de haver sentença.
+
+## O que vem agora
+
+O caso está com o juiz Edward Davila, em San Jose. O julgamento da ação original foi marcado para 19 de julho de 2027, e até lá as acusações de ambos os lados permanecem sem comprovação judicial.`, fontes:[['Stock Analysis (ação da OpenAI)','https://stockanalysis.com/news/openai-countersues-apple-trade-secrets/'],['BigGo Finance (fornecedores e resposta)','https://finance.biggo.com/news/f4bb89a9-1296-4ced-a924-6ef8ef4b14cb'],['Al Jazeera (processo de julho)','https://www.aljazeera.com/amp/economy/2026/7/10/apple-files-lawsuit-accusing-chatgpt-maker-openai-of-stealing-trade-secrets'],['g1 (ação de sexta-feira)','https://g1.globo.com/tecnologia/noticia/2026/11/27/open-ai-apple-ia-segredo-processo.ghtml']]});

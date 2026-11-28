@@ -10,7 +10,7 @@ A maior parte dessas relações não aparece em cartório. Segundo o estudo, 92,
 
 A concentração cresce com a idade, mas começa cedo. O levantamento conta 2.332 casos aos 10 anos, 20.711 aos 14, 50.771 aos 15, 107.310 aos 16 e 193.386 aos 17. Nessa última faixa, 10,8% das meninas viviam com um companheiro, proporção quatro vezes maior que a dos meninos da mesma idade.
 
-## Quem são e onde estão
+## O retrato por idade e região
 
 Entre as pessoas de 10 a 17 anos em união, 68,2% são pretas ou pardas e 84,5% moram em domicílios com renda de até um salário mínimo por pessoa. No recorte dos 17 anos, a proporção chega a 29,75% entre indígenas, ante 12,73% entre pardos, 11,02% entre pretos e 8% entre brancos.
 
