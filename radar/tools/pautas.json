@@ -17,7 +17,7 @@
     "itaipu_ueno_18",
     "itaipu_diretor_destituido_20"
    ],
-   "verificada": "2026-11-28-11h",
+   "verificada": "2026-11-28-15h",
    "fato_novo": false,
    "ultimo_fato": "27/11: o ex-ministro Valdovinos se entregou à Justiça paraguaia no começo da tarde.",
    "proximo": "Interrogatório em 28/11, 10h30; Lula-Alliana em 4/12."
@@ -65,12 +65,13 @@
     "janones_exercito_lula_perde_seguidores_23",
     "messias_stf_lula_reafirma_23",
     "lula_bc_diretoria_mercado_24",
-    "quirno_milei_desconvidado_posse_24"
+    "quirno_milei_desconvidado_posse_24",
+    "pe_de_meia_universitario_28"
    ],
-   "verificada": "2026-11-28-11h",
+   "verificada": "2026-11-28-15h",
    "fato_novo": true,
-   "ultimo_fato": "28/11: Lula escolheu Camilo Santana para a Casa Civil e confirmou Trabuco na Fazenda; Alckmin é dado como certo na Segurança Pública.",
-   "proximo": "Anúncios oficiais antes da viagem ao Mercosul (3 e 4/12)."
+   "ultimo_fato": "28/11: Trabuco aceitou a Fazenda; Camilo Santana (Casa Civil) e Alckmin (Segurança Pública) devem ser anunciados na semana que vem, segundo O Globo e o Diário de Pernambuco.",
+   "proximo": "Anúncios de Camilo e Alckmin antes da viagem ao Mercosul (3 e 4/12)."
   },
   {
    "id": "tse-acoes",
@@ -87,7 +88,7 @@
     "toffoli_contas_campanha_lula_14_11",
     "tse_lula_flavio_mil_acoes_campanha_23"
    ],
-   "verificada": "2026-11-28-11h",
+   "verificada": "2026-11-28-15h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo nas ações até a madrugada de 28/11; prestação de contas segue em análise técnica.",
    "proximo": "Parecer conclusivo sobre as contas da chapa."
@@ -111,10 +112,10 @@
     "pl_flavio_motta_consulta_121_deputados_17_11",
     "rockbridge_flavio_pf_18"
    ],
-   "verificada": "2026-11-28-11h",
+   "verificada": "2026-11-28-15h",
    "fato_novo": true,
-   "ultimo_fato": "27/11: Dino suspendeu R$ 79 milhões em emendas de Flávio Bolsonaro e deu 5 dias ao Senado para explicar o mandato nos EUA.",
-   "proximo": "Resposta do Senado; julgamento virtual até 30/11."
+   "ultimo_fato": "27/11: Fachin prorrogou por 60 dias o inquérito sobre Jaques Wagner (caso Master) e a apuração sobre o financiamento do filme Dark Horse; Dino suspendeu R$ 79 milhões em emendas de Flávio Bolsonaro.",
+   "proximo": "Resposta do Senado às emendas; julgamento virtual até 30/11."
   },
   {
    "id": "congresso-novo",
@@ -162,12 +163,13 @@
     "alcolumbre_motta_reeleicao_dosimetria_21",
     "ajuste_fiscal_lula_nao_reforma_21",
     "tereza_cristina_marinho_oposicao_senado_23",
-    "sus_piso_saude_ajuste_23"
+    "sus_piso_saude_ajuste_23",
+    "gilmar_sumula_pautas_bomba_28"
    ],
-   "verificada": "2026-11-28-11h",
-   "fato_novo": false,
-   "ultimo_fato": "27/11: Dino levou a Lula o nome de Estela Aranha para a vaga no STF; Câmara aprovara o protocolo antirracismo, que vai ao Senado.",
-   "proximo": "Indicação ao STF e medidas fiscais; recesso em 23/12."
+   "verificada": "2026-11-28-15h",
+   "fato_novo": true,
+   "ultimo_fato": "28/11: Fachin pautou para 11/12 o início do julgamento da súmula de Gilmar Mendes contra pautas-bomba, no plenário virtual até 18/12.",
+   "proximo": "Julgamento da súmula a partir de 11/12; recesso em 23/12."
   },
   {
    "id": "seguranca-publica",
@@ -203,9 +205,9 @@
     "pec_seguranca_guarda_civil_policias_municipais_23",
     "moraes_suspeito_interferencia_24"
    ],
-   "verificada": "2026-11-28-11h",
+   "verificada": "2026-11-28-15h",
    "fato_novo": false,
-   "ultimo_fato": "27/11: Alckmin é dado como certo no Ministério da Segurança Pública.",
+   "ultimo_fato": "28/11: O Globo informa que Alckmin aceitou comandar o Ministério da Segurança Pública; o anúncio oficial deve sair na semana que vem.",
    "proximo": "Promulgação da PEC e medida provisória que cria a pasta."
   },
   {
@@ -222,7 +224,7 @@
     "escala_6x1_20",
     "hora_extra_divisor_21"
    ],
-   "verificada": "2026-11-28-11h",
+   "verificada": "2026-11-28-15h",
    "fato_novo": false,
    "ultimo_fato": "Sem fato novo localizado desde a fala de Marinho de 26/11.",
    "proximo": "Início da vigência em 16/12."
@@ -236,15 +238,12 @@
     "desemprego_outubro_51_28",
     "superavit_outubro_52bi_28",
     "fachin_brb_316mi_28",
-    "bandeira_verde_dezembro_28",
     "btg_fundo_consignados_brb_28",
-    "trabuco_fazenda_26",
     "eua_tarifa_avioes_acucar_embraer_25",
     "agenda_quinta_ipca15_feriado_eua_26",
     "mercado_fecha_ibovespa_166_dolar_581_25",
     "cmn_rotativo_limite_cartao_endividamento_26",
     "eua_secao301_capacidade_25",
-    "diesel_subvencao_25",
     "petrobras_dividendos_15_6_24",
     "fazenda_pib_inflacao_2027_24",
     "keeta_pizza_hut_19",
@@ -313,12 +312,16 @@
     "braskem_acordo_credores_us49bi_23",
     "lula_bc_diretoria_mercado_24",
     "black_friday_recorde_cnc_endividamento_24",
-    "mercado_pec_despesas_obrigatorias_25"
+    "mercado_pec_despesas_obrigatorias_25",
+    "trabuco_fazenda_26",
+    "bandeira_verde_dezembro_28",
+    "diesel_subvencao_25",
+    "black_friday_golpes_sinais_22"
    ],
-   "verificada": "2026-11-28-11h",
-   "fato_novo": false,
-   "ultimo_fato": "27/11: dólar a R$ 5,5156 (-7,07% na semana), Ibovespa 176.573 (+6,13% na semana); desemprego em 5,1% e superávit de R$ 52,3 bi em outubro.",
-   "proximo": "Plano fiscal e equipe de Trabuco; pregão de 30/11."
+   "verificada": "2026-11-28-15h",
+   "fato_novo": true,
+   "ultimo_fato": "28/11: Trabuco aceitou a Fazenda; na sexta (27) o dólar caiu 3,97%, para R$ 5,51. A Aneel manteve a bandeira verde em dezembro e o diesel teve subvenção de R$ 2,12 por litro prorrogada por 30 dias.",
+   "proximo": "Anúncios da equipe econômica na semana que vem; nova decisão sobre o diesel em até 30 dias."
   },
   {
    "id": "eua-meio-mandato",
@@ -425,63 +428,63 @@
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2.",
-   "feita": "2026-11-28-11h"
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução.",
+   "feita": "2026-11-28-15h"
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-28-11h",
-   "achado": "Passada 1 (11h): varredura parcial. Fatos desta edição: Camilo na Casa Civil, Espanha, Fachin e BRB, Jaques Wagner, Aneel, Black Friday. Varredura completa na passada 2."
+   "feita": "2026-11-28-15h",
+   "achado": "Passada 2 (15h): varredura parcial. Fatos desta edição: Trabuco na Fazenda e dólar; FHC; diesel; súmula de Gilmar; Malvinas; Afeganistão; Mianmar; Tuta (PCC); Pé-de-Meia; Espanha; Black Friday; Carandiru. Varredura completa não concluída nesta execução."
   }
  ]
 }
