@@ -17,10 +17,10 @@
     "itaipu_ueno_18",
     "itaipu_diretor_destituido_20"
    ],
-   "verificada": "2026-11-26-15h",
+   "verificada": "2026-11-28-07h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: Milei e Alliana se reuniram em Assunção e a Argentina ofereceu cooperação para recuperar ativos do caso Ueno Bank.",
-   "proximo": "Lula-Alliana em 4/12 e andamento do caso Ueno."
+   "ultimo_fato": "27/11: o ex-ministro Valdovinos se entregou à Justiça paraguaia no começo da tarde.",
+   "proximo": "Interrogatório em 28/11, 10h30; Lula-Alliana em 4/12."
   },
   {
    "id": "transicao-lula",
@@ -28,6 +28,8 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "alckmin_seguranca_28",
+    "lula_ajuste_niteroi_28",
     "trabuco_fazenda_26",
     "lula_sem_pressa_ministros_20",
     "haddad_casa_civil_disputa_25",
@@ -65,10 +67,10 @@
     "lula_bc_diretoria_mercado_24",
     "quirno_milei_desconvidado_posse_24"
    ],
-   "verificada": "2026-11-26-15h",
+   "verificada": "2026-11-28-07h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: Trabuco (Bradesco) é cotado para a Fazenda e o PT acionou empresários para convencê-lo; Alckmin ganhou força para a Segurança Pública, pasta que depende da PEC da Segurança.",
-   "proximo": "Resposta de Trabuco e anúncios do ministério (primeiros dias de dezembro)."
+   "ultimo_fato": "27/11: Trabuco confirmado na Fazenda; aliados dão Camilo Santana na Casa Civil e Alckmin na Segurança; Lula admitiu ajustes nas contas em Niterói.",
+   "proximo": "Anúncios antes de 3/12 e transição Trabuco-Durigan."
   },
   {
    "id": "tse-acoes",
@@ -85,10 +87,10 @@
     "toffoli_contas_campanha_lula_14_11",
     "tse_lula_flavio_mil_acoes_campanha_23"
    ],
-   "verificada": "2026-11-26-15h",
-   "fato_novo": true,
-   "ultimo_fato": "26/11: Estela Aranha diz no TSE que não recebeu solidariedade dos colegas diante de ataques misóginos; Nunes Marques pediu formalização das queixas.",
-   "proximo": "Análise de Toffoli sobre a resposta da chapa Lula-Alckmin."
+   "verificada": "2026-11-28-07h",
+   "fato_novo": false,
+   "ultimo_fato": "Sem fato novo nas ações até a madrugada de 28/11; prestação de contas segue em análise técnica.",
+   "proximo": "Parecer conclusivo sobre as contas da chapa."
   },
   {
    "id": "flavio-senado",
@@ -96,6 +98,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "flavio_emendas_dino_28",
     "pgr_flavio_calunia_18",
     "dark_horse_18",
     "flavio_senado",
@@ -107,10 +110,10 @@
     "pl_flavio_motta_consulta_121_deputados_17_11",
     "rockbridge_flavio_pf_18"
    ],
-   "verificada": "2026-11-26-15h",
-   "fato_novo": false,
-   "ultimo_fato": "26/11: sem fato novo sobre voto remoto, resposta do Senado ou julgamento; Flávio registrou dos EUA R$ 79,3 milhões em emendas para 2027.",
-   "proximo": "Votos no julgamento virtual até 30/11."
+   "verificada": "2026-11-28-07h",
+   "fato_novo": true,
+   "ultimo_fato": "27/11: Dino suspendeu R$ 79 milhões em emendas de Flávio Bolsonaro e deu 5 dias ao Senado para explicar o mandato nos EUA.",
+   "proximo": "Resposta do Senado; julgamento virtual até 30/11."
   },
   {
    "id": "congresso-novo",
@@ -118,6 +121,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "camara_protocolo_racismo_escolas_28",
     "stf_vaga_alcolumbre_messias_26",
     "tornozeleira_alerta_agressor_26",
     "messias_stf_lula_reafirma_23",
@@ -159,10 +163,10 @@
     "tereza_cristina_marinho_oposicao_senado_23",
     "sus_piso_saude_ajuste_23"
    ],
-   "verificada": "2026-11-26-15h",
+   "verificada": "2026-11-28-07h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: Alcolumbre diz que só ouviu Lula sobre a vaga no STF e defende Rodrigo Pacheco; Lula pode reenviar o nome de Messias. Câmara aprovou o PL 5.542/2026, das tornozeleiras de agressores, que segue ao Senado.",
-   "proximo": "Decisão de Lula sobre as medidas fiscais; recesso em 23/12."
+   "ultimo_fato": "27/11: Dino levou a Lula o nome de Estela Aranha para a vaga no STF; Câmara aprovara o protocolo antirracismo, que vai ao Senado.",
+   "proximo": "Indicação ao STF e medidas fiscais; recesso em 23/12."
   },
   {
    "id": "seguranca-publica",
@@ -170,6 +174,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "alckmin_seguranca_28",
     "lula_sem_pressa_ministros_20",
     "tornozeleira_alerta_agressor_26",
     "tse_grupo_crime_organizado_26",
@@ -197,10 +202,10 @@
     "pec_seguranca_guarda_civil_policias_municipais_23",
     "moraes_suspeito_interferencia_24"
    ],
-   "verificada": "2026-11-26-15h",
+   "verificada": "2026-11-28-07h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: Alckmin ganha força para o Ministério da Segurança Pública, que depende da PEC da Segurança; Câmara aprovou alertas em tornozeleiras de agressores (PL 5.542/2026), que vai ao Senado.",
-   "proximo": "Posição da PGR sobre os relatórios; julgamento sobre o Rio a partir de 4/12."
+   "ultimo_fato": "27/11: Alckmin é dado como certo no Ministério da Segurança Pública.",
+   "proximo": "Promulgação da PEC e medida provisória que cria a pasta."
   },
   {
    "id": "escala-6x1",
@@ -216,10 +221,10 @@
     "escala_6x1_20",
     "hora_extra_divisor_21"
    ],
-   "verificada": "2026-11-26-15h",
-   "fato_novo": true,
-   "ultimo_fato": "26/11: o ministro Marinho descarta adiar o início em 16/12 e indica regras para jornadas especiais.",
-   "proximo": "Regulamentação e início da vigência em 16/12."
+   "verificada": "2026-11-28-07h",
+   "fato_novo": false,
+   "ultimo_fato": "Sem fato novo localizado desde a fala de Marinho de 26/11.",
+   "proximo": "Início da vigência em 16/12."
   },
   {
    "id": "economia-mercado",
@@ -227,6 +232,11 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "desemprego_outubro_51_28",
+    "superavit_outubro_52bi_28",
+    "fachin_brb_316mi_28",
+    "bandeira_verde_dezembro_28",
+    "btg_fundo_consignados_brb_28",
     "trabuco_fazenda_26",
     "eua_tarifa_avioes_acucar_embraer_25",
     "agenda_quinta_ipca15_feriado_eua_26",
@@ -304,10 +314,10 @@
     "black_friday_recorde_cnc_endividamento_24",
     "mercado_pec_despesas_obrigatorias_25"
    ],
-   "verificada": "2026-11-26-15h",
+   "verificada": "2026-11-28-07h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: IPCA-15 de novembro em 0,22%, abaixo dos 0,36% esperados; Ibovespa sobe cerca de 3%; EUA propõem tarifa de 10% sobre aviões brasileiros prontos e taxa sobre açúcar.",
-   "proximo": "Resultado do IPCA-15, portaria do diesel e coletiva do setor externo (26/11)."
+   "ultimo_fato": "27/11: dólar a R$ 5,5156 (-7,07% na semana), Ibovespa 176.573 (+6,13% na semana); desemprego em 5,1% e superávit de R$ 52,3 bi em outubro.",
+   "proximo": "Plano fiscal e equipe de Trabuco; pregão de 30/11."
   },
   {
    "id": "eua-meio-mandato",
@@ -315,6 +325,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "eua_trump_cidadania_acao_gracas_28",
     "eua_secao301_capacidade_25",
     "eua",
     "rubio_gabinete",
@@ -329,10 +340,10 @@
     "eua_delta_atlanta_atrasos_22",
     "eua_tarifas_china_ue_subsidios_25"
    ],
-   "verificada": "2026-11-26-15h",
+   "verificada": "2026-11-28-07h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: Trump pediu investigação do BEA pela revisão do PIB do 3º trimestre divulgada após a eleição.",
-   "proximo": "Recontagens e certificação das cadeiras."
+   "ultimo_fato": "26-27/11: Trump publicou mensagem de Ação de Graças após liminar de 25/11 sobre cidadania; nada novo sobre certificação.",
+   "proximo": "Posse do novo Congresso em janeiro."
   },
   {
    "id": "ucrania-paz",
@@ -340,6 +351,7 @@
    "prio": "P1",
    "aberta": true,
    "materias": [
+    "ucrania_drones_recorde_28",
     "trump_putin_europa_26",
     "ue_cupula_orcamento_2028_26",
     "coreia_russia_bombardeiros_24",
@@ -363,10 +375,10 @@
     "ucrania_navio_russo_libia_23",
     "ucrania_zelensky_prazo_janeiro_25"
    ],
-   "verificada": "2026-11-26-15h",
+   "verificada": "2026-11-28-07h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: Trump diz ter pedido a Putin, na China, que recue de toda agressão militar contra territórios europeus; Trump e Rutte defendem solução pacífica.",
-   "proximo": "EUA marcarem a rodada; cúpula da UE até 27/11."
+   "ultimo_fato": "27-28/11: Moscou diz ter abatido 1.246 drones; Zelensky cobra os EUA; cúpula da UE terminou sem o empréstimo.",
+   "proximo": "Conversas trilaterais em dezembro; cúpula da UE em 17-18/12."
   },
   {
    "id": "israel-governo",
@@ -380,10 +392,10 @@
     "israel_coalizao_20",
     "israel_eisenkot_governo_23"
    ],
-   "verificada": "2026-11-26-15h",
+   "verificada": "2026-11-28-07h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: o Yashar, de Eisenkot, anunciou acordo com os Democratas, de Yair Golan.",
-   "proximo": "Negociação de coalizão até 6/12, prorrogável por 14 dias."
+   "ultimo_fato": "27/11: Eisenkot acusa o Likud de protelar a formação do governo.",
+   "proximo": "Fala de Mansour Abbas em 28/11; prazo em 6/12."
   },
   {
    "id": "ira-oriente-medio",
@@ -391,6 +403,8 @@
    "prio": "P2",
    "aberta": true,
    "materias": [
+    "ira_bloqueio_pacific_archer_28",
+    "arabia_houthis_missil_riad_28",
     "ira_proposta_catar",
     "iemen_houthis",
     "ira_iron_gate",
@@ -400,72 +414,72 @@
     "houthis_pif_tower_20",
     "ira_cantora_chibatadas_24"
    ],
-   "verificada": "2026-11-26-07h",
+   "verificada": "2026-11-28-07h",
    "fato_novo": true,
-   "ultimo_fato": "26/11: Arábia Saudita intercepta mísseis houthis contra Riad; rebeldes dizem ter incendiado a refinaria de Ras Tanura.",
-   "proximo": "Reação saudita e dos mercados de petróleo."
+   "ultimo_fato": "27-28/11: EUA anunciam disparo contra o navio Pacific Archer no bloqueio ao Irã; coalizão diz ter interceptado míssil houthi contra Riad.",
+   "proximo": "Reação ao bloqueio; reunião da Opep+ em 29/11."
   }
  ],
  "varredura": [
   {
    "tema": "Mundo: chefes de Estado e governo (queda, renúncia, impeachment, golpe, prisão, morte, doença)",
-   "feita": "2026-11-26-15h",
-   "achado": "Nenhuma queda, renúncia ou golpe novo nas buscas desta tarde."
+   "feita": "2026-11-28-07h",
+   "achado": "Nenhuma queda, renúncia ou golpe novo nas buscas de 27 e 28/11."
   },
   {
    "tema": "Mundo: vizinhos sul-americanos (Argentina, Paraguai, Uruguai, Chile, Bolívia, Peru, Colômbia, Venezuela, Equador) no veículo local",
-   "feita": "2026-11-26-15h",
-   "achado": "Milei e Alliana em Assunção; Senado argentino vota suspensão das primárias; incêndio em refinaria na Venezuela."
+   "feita": "2026-11-28-07h",
+   "achado": "Senado argentino aprova suspensão das primárias; Valdovinos se entrega no Paraguai; Venezuela vai revogar lei contra opositores e González anuncia volta."
   },
   {
    "tema": "Mundo: guerras e conflitos (Ucrânia, Oriente Médio, Sudão, outros) e diplomacia",
-   "feita": "2026-11-26-15h",
-   "achado": "Israel mata novo chefe do Hamas em Gaza; ataque iraniano no Kuwait mata dois italianos."
+   "feita": "2026-11-28-07h",
+   "achado": "Ucrânia (ataque recorde de drones), bloqueio naval ao Irã, míssil houthi contra Riad, ataques em Gaza; sem fato novo confirmado no Líbano."
   },
   {
    "tema": "Mundo: EUA, China, Europa e Ásia: decisões de governo, eleições, protestos, greves",
-   "feita": "2026-11-26-15h",
-   "achado": "Trump diz ter pedido a Putin, na China, que recue de agressões militares na Europa; Macron chama a carne brasileira de \"dopada\"; EUA propõem tarifa de 10% sobre aviões brasileiros; navio com diesel vira em Ibiza."
+   "feita": "2026-11-28-07h",
+   "achado": "Trump e cidadania; cúpula da UE sem acordo; China condena ex-governador de Guangxi (visto só em resumo)."
   },
   {
    "tema": "Mundo: economia e finanças (bancos centrais, crises bancárias, calotes, bolsas, petróleo)",
-   "achado": "Sem decisão de peso de bancos centrais ou crise bancária nova no exterior.",
-   "feita": "2026-11-26-15h"
+   "achado": "Brent perto de US$ 97 e Opep+ no domingo; nenhuma crise bancária nova.",
+   "feita": "2026-11-28-07h"
   },
   {
    "tema": "Política: Planalto (decisões, ministérios, viagens, pronunciamentos)",
-   "feita": "2026-11-26-15h",
-   "achado": "Alcolumbre desconversa sobre a vaga do STF; Câmara aprova PL 5.542/2026 (tornozeleiras); Alckmin cotado para Segurança."
+   "feita": "2026-11-28-07h",
+   "achado": "Verificado nas buscas de 28/11: transição do governo, Dino e Flávio Bolsonaro, caso Master/BRB e mercado após Trabuco; regiões com fumaça no Norte, dívidas do Rio e de Minas e secretariados."
   },
   {
    "tema": "Política: Congresso (plenário, CCJ, CPIs, vetos, MPs) pela Agência Câmara e Agência Senado",
-   "feita": "2026-11-26-15h",
-   "achado": "Alcolumbre desconversa sobre a vaga do STF; Câmara aprova PL 5.542/2026 (tornozeleiras); Alckmin cotado para Segurança."
+   "feita": "2026-11-28-07h",
+   "achado": "Verificado nas buscas de 28/11: transição do governo, Dino e Flávio Bolsonaro, caso Master/BRB e mercado após Trabuco; regiões com fumaça no Norte, dívidas do Rio e de Minas e secretariados."
   },
   {
    "tema": "Política: Judiciário (STF, STJ, TSE, TCU, PGR, PF, operações)",
-   "feita": "2026-11-26-15h",
-   "achado": "Alcolumbre desconversa sobre a vaga do STF; Câmara aprova PL 5.542/2026 (tornozeleiras); Alckmin cotado para Segurança."
+   "feita": "2026-11-28-07h",
+   "achado": "Verificado nas buscas de 28/11: transição do governo, Dino e Flávio Bolsonaro, caso Master/BRB e mercado após Trabuco; regiões com fumaça no Norte, dívidas do Rio e de Minas e secretariados."
   },
   {
    "tema": "Política: partidos, eleições, pesquisas (Quaest, Datafolha, AtlasIntel) e bastidores",
-   "feita": "2026-11-26-15h",
-   "achado": "Bastidores do ministério e emendas de Flávio; nenhuma pesquisa nacional nova encontrada."
+   "feita": "2026-11-28-07h",
+   "achado": "Verificado nas buscas de 28/11: transição do governo, Dino e Flávio Bolsonaro, caso Master/BRB e mercado após Trabuco; regiões com fumaça no Norte, dívidas do Rio e de Minas e secretariados."
   },
   {
    "tema": "Economia: Banco Central, Fazenda, mercado, indicadores e balanços",
-   "feita": "2026-11-26-15h",
-   "achado": "IPCA-15 de novembro, Ibovespa e dólar, contas externas de outubro, IFI sobre CBS, tarifa dos EUA sobre aviões."
+   "feita": "2026-11-28-07h",
+   "achado": "Verificado nas buscas de 28/11: transição do governo, Dino e Flávio Bolsonaro, caso Master/BRB e mercado após Trabuco; regiões com fumaça no Norte, dívidas do Rio e de Minas e secretariados."
   },
   {
    "tema": "Regiões: cada sub-região (RJ, SP, MG, Nordeste, Sul, Norte, Centro-Oeste) em ao menos 3 veículos locais",
-   "feita": "2026-11-26-15h",
-   "achado": "RJ chuva; SP ViaMobilidade; MG dívida; MA contrato de livros; RS socorristas; AP peixes no Araguari; DF posse."
+   "feita": "2026-11-28-07h",
+   "achado": "Verificado nas buscas de 28/11: transição do governo, Dino e Flávio Bolsonaro, caso Master/BRB e mercado após Trabuco; regiões com fumaça no Norte, dívidas do Rio e de Minas e secretariados."
   },
   {
    "tema": "Pautas abertas: pesquisa de fato novo em cada pauta P0 e P1 acima",
-   "feita": "2026-11-26-15h",
-   "achado": "Paraguai, escala 6x1, Israel e meio de mandato com fato novo; Flávio sem fato novo no Senado."
+   "feita": "2026-11-28-07h",
+   "achado": "Verificado nas buscas de 28/11: transição do governo, Dino e Flávio Bolsonaro, caso Master/BRB e mercado após Trabuco; regiões com fumaça no Norte, dívidas do Rio e de Minas e secretariados."
   }
  ]
 }
