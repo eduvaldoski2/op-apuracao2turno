@@ -63343,7 +63343,7 @@ O caso mistura direito internacional, petróleo e disputa territorial. O Reino U
 O próximo marco é o início da perfuração, em março de 2027. Até lá, Buenos Aires promete novas ações, segundo a nota oficial. Não há data marcada para nova decisão do tribunal.`,
 fontes:[['g1 (Tribunal internacional barra tentativa da Argentina de impedir exploração de petróleo nas Malvinas)','https://g1.globo.com/mundo/noticia/2026/11/28/argentina-perde-tentativa-de-barrar-exploracao-de-petroleo-nas-ilhas-malvinas.ghtml'],['O Liberal (Tribunal Internacional rejeita pedido argentino para frear exploração de petróleo nas Malvinas)','https://www.oliberal.com/mundo/tribunal-internacional-rejeita-pedido-argentino-para-frear-exploracao-de-petroleo-nas-malvinas-1.1199320'],['DW Brasil (Argentina fracassa ao barrar exploração de petróleo nas Ilhas Malvinas)','https://www.dw.com/pt-br/argentina-fracassa-ao-barrar-exploração-de-petróleo-nas-ilhas-malvinas/a-80086282?maca=bra-rss-br-all-1030-rdf'],['Folha (Tribunal rejeita pedido da Argentina para suspender atividades petrolíferas perto das Malvinas)','https://www1.folha.uol.com.br/mercado/2026/11/tribunal-rejeita-pedido-da-argentina-para-suspender-atividades-petroliferas-perto-das-malvinas.shtml']],
 upd:`O tribunal rejeitou nesta sábado o pedido argentino de suspensão, com votação de 18 a 3.`});
-ORDER.mundo = _top(ORDER.mundo, ['malvinas_tribunal_petroleo_28']);
+
 
 _N('carandiru_indenizacao_28', {ed:'regioes', reg:'sp', k:'São Paulo · Justiça · Carandiru', hora:'28/11',
 t:`Justiça de SP condena o Estado a indenizar sobrevivente do Carandiru, primeira decisão do tipo`,
@@ -63368,7 +63368,7 @@ Hoje educador social, Monteiro havia pedido R$ 200 mil por danos morais, segundo
 
 Com a sentença em primeira instância, o caminho é o recurso, que pode ser apresentado pelo Estado. Se a condenação for mantida, a decisão pode servir de referência para outros sobreviventes. Não há prazo definido para um eventual recurso.`,
 fontes:[['g1 SP (Sobrevivente do Massacre do Carandiru consegue na Justiça indenização de R$ 100 mil após 34 anos)','https://g1.globo.com/sp/sao-paulo/noticia/2026/11/28/sobrevivente-do-massacre-do-carandiru-consegue-na-justica-indenizacao-de-r-100-mil-apos-34-anos.ghtml'],['Brasil de Fato (Pela 1ª vez, Justiça condena Estado a indenizar sobrevivente do Carandiru)','https://www.brasildefato.com.br/2026/11/28/pela-1a-vez-justica-condena-estado-a-indenizar-sobrevivente-do-carandiru/'],['CNN Brasil (Massacre do Carandiru: sobrevivente deverá receber R$ 100 mil por tortura)','https://www.cnnbrasil.com.br/nacional/sudeste/sp/massacre-do-carandiru-sobrevivente-devera-receber-r-100-mil-por-tortura/']]});
-ORDER.regioes = _top(ORDER.regioes, ['carandiru_indenizacao_28']);
+
 
 _U('diesel_subvencao_25', {hora:'28/11', k:'Economia · Combustíveis · Subvenção',
 t:`Fazenda prorroga por 30 dias a subvenção de R$ 2,12 por litro de diesel`,
@@ -63419,7 +63419,7 @@ A proposta mira o ponto em que a disputa entre Executivo, Legislativo e Judiciá
 
 O julgamento começa em 11 de dezembro e vai ao plenário virtual até 18. Para virar vinculante, a súmula precisa do voto de dois terços dos ministros, ou seja, de oito dos onze. Ainda não há posição pública dos demais ministros registrada nas reportagens consultadas.`,
 fontes:[['Agência Brasil (STF marca para 11 de dezembro análise de súmula sobre pautas-bomba)','https://agenciabrasil.ebc.com.br/justica/noticia/2026-11/stf-marca-para-11-de-dezembro-analise-de-sumula-sobre-pautas-bomba'],['Correio do Povo (STF marca julgamento de súmula contra pautas-bomba para 11/12)','https://www.correiodopovo.com.br/not%C3%ADcias/pol%C3%ADtica/stf-marca-julgamento-de-sumula-contra-pautas-bomba-para-1112-1.1768681']]});
-ORDER.politica = _top(ORDER.politica, ['gilmar_sumula_pautas_bomba_28']);
+
 
 _N('afeganistao_kunar_escola_28', {ed:'mundo', k:'Mundo · Afeganistão · Explosão', hora:'28/11',
 t:`Explosão perto de escola no Afeganistão mata sete estudantes e fere cerca de 100`,
@@ -63444,7 +63444,7 @@ Kunar abriga diversas operações de mineração, segundo a Folha. O Talibã gov
 
 As autoridades afegãs investigam as circunstâncias e prometem mais detalhes assim que a apuração avançar. Não há responsabilização anunciada até agora. O balanço de mortos e feridos pode mudar nas próximas horas.`,
 fontes:[['JC (Explosão em escola no Afeganistão deixa sete mortos e mais de 90 feridos)','https://jc.uol.com.br/mundo/2026/11/28/explosao-em-escola-no-afeganistao-deixa-sete-mortos-e-mais-de-90-feridos.html'],['Folha (Explosão perto de escola mata 7 estudantes e fere cerca de 100 no Afeganistão)','https://redir.folha.com.br/redir/online/mundo/rss091/*https://www1.folha.uol.com.br/mundo/2026/11/explosao-perto-de-escola-mata-7-estudantes-e-fere-cerca-de-100-no-afeganistao.shtml']]});
-ORDER.mundo = _top(ORDER.mundo, ['afeganistao_kunar_escola_28']);
+
 
 _N('bom_retiro_incendio_28', {ed:'regioes', reg:'sp', k:'São Paulo · Cidade · Incêndio', hora:'28/11',
 t:`Incêndio em prédio residencial no Bom Retiro deixa oito feridos, entre eles um bebê de 4 meses`,
@@ -63791,7 +63791,7 @@ Em outra reportagem, o Poder360 registra que o ministro anunciou um estudo para 
 
 Os estudantes que querem entrar no programa precisam estar inscritos no CadÚnico e matriculados em universidade pública. O Ministério da Educação deve detalhar as regras, o valor do benefício e o calendário de pagamento antes de março. A extensão ao Ensino Médio público em 2027 depende da inclusão desse custo no orçamento do próximo ano.`,
 fontes:[['g1 (Ministro da Educação diz que Pé-de-Meia Universitário começa em março)','https://g1.globo.com/politica/noticia/2026/11/28/ministro-da-educacao-diz-que-pe-de-meia-universitario-comeca-em-marco.ghtml'],['Poder360 (Ministro anuncia estudo para ampliar Pé-de-Meia até 29 anos)','https://www.poder360.com.br/poder-governo/ministro-anuncia-estudo-para-ampliar-pe-de-meia-ate-29-anos/']]});
-ORDER.politica = _top(ORDER.politica, ['pe_de_meia_universitario_28']);
+
 
 _N('mianmar_bombardeio_casamento_28', {ed:'mundo', k:'Mundo · Mianmar · Guerra civil', hora:'28/11',
 t:`Bombardeio aéreo do Exército de Mianmar atinge casa em preparativos de casamento e mata 21`,
@@ -63816,7 +63816,7 @@ Mianmar vive uma guerra civil desde o golpe militar de 2021, que derrubou o gove
 
 Não há resposta oficial do governo militar até a publicação desta nota. A contagem de mortos pode subir, porque há feridos graves e corpos ainda não resgatados. A sequência de ataques deve pressionar organismos internacionais a tratar do tema.`,
 fontes:[['CartaCapital (Bombardeio atinge casamento em Mianmar e deixa 21 mortos)','https://www.cartacapital.com.br/mundo/bombardeio-atinge-casamento-em-mianmar-e-deixa-21-mortos/'],['g1 (Ataque aéreo a escola em Mianmar mata ao menos 30 pessoas, diz oposição)','https://g1.globo.com/mundo/noticia/2026/11/28/ataque-aereo-a-escola-em-mianmar.ghtml']]});
-ORDER.mundo = _top(ORDER.mundo, ['mianmar_bombardeio_casamento_28']);
+
 
 _U('espanha_eleicao_domingo_28', {hora:'28/11', k:'Mundo · Espanha · Eleições',
 t:`Espanha encerra campanha com Sánchez pedindo votos contra a ultradireita; eleição é domingo`,
@@ -63880,3 +63880,8 @@ Em João Pessoa, a Procuradoria de Defesa do Consumidor autuou 12 lojas por irre
 O levantamento sugere que o consumidor precisa comparar o preço do dia com a média dos meses anteriores, e não apenas com o preço "original" anunciado. A recomendação é verificar o histórico de preço antes de comprar, sobretudo em eletrônicos, que são os itens com maior variação. O que vem agora: o monitoramento continua nas próximas semanas, em torno do Natal, quando a oscilação costuma ser maior.`,
 fontes:[['g1 PA (Black Friday: quase 6 em cada 10 itens têm descontos reais na sexta)','https://g1.globo.com/guia/guia-de-compras/no-dia-da-black-friday-58percent-dos-itens-pesquisados-tem-descontos-33percent-estao-mais-caros.ghtml'],['g1 (Preços pós-Black Friday: 48% dos produtos seguem com desconto)','https://g1.globo.com/guia/guia-de-compras/depois-da-black-friday-48percent-dos-produtos-seguem-com-desconto-43percent-ficaram-mais-caros.ghtml'],['g1 PB (Black Friday João Pessoa: MP-Procon autua 12 lojas por irregularidades)','https://g1.globo.com/pb/paraiba/noticia/2026/11/28/operacao-autua-mais-de-10-estabelecimentos-por-irregularidades-durante-a-black-friday-em-joao-pesso'],['O Liberal (Décimo terceiro e Black Friday aquecem comércio de Belém neste sábado)','https://www.oliberal.com/belem/decimo-terceiro-e-black-friday-aquecem-comercio-de-belem-neste-sabado-1.1199325']],
 upd:`No dia da Black Friday, 58% dos itens monitorados tinham desconto; no dia seguinte, 43% já estavam mais caros.`});
+
+/* ---- Edição 15h 28/11: inclusão no ORDER (fim da lista, sem destaque) ---- */
+ORDER.mundo = ORDER.mundo.concat(['malvinas_tribunal_petroleo_28','afeganistao_kunar_escola_28','mianmar_bombardeio_casamento_28'].filter(function(i){return ORDER.mundo.indexOf(i)<0;}));
+ORDER.regioes = ORDER.regioes.concat(['carandiru_indenizacao_28'].filter(function(i){return ORDER.regioes.indexOf(i)<0;}));
+ORDER.politica = ORDER.politica.concat(['gilmar_sumula_pautas_bomba_28','pe_de_meia_universitario_28'].filter(function(i){return ORDER.politica.indexOf(i)<0;}));
